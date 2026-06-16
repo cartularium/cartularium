@@ -4,7 +4,6 @@ tests:
   - subject: RAND
     formula: =ISNUMBER(RAND())
     category: value
-    semanticDomain: volatile
     expect: true
     tags:
       - volatile
@@ -12,7 +11,6 @@ tests:
   - subject: RAND
     formula: =RAND()>=0
     category: value
-    semanticDomain: volatile
     expect: true
     tags:
       - volatile
@@ -20,7 +18,6 @@ tests:
   - subject: RAND
     formula: =RAND()<1
     category: value
-    semanticDomain: volatile
     expect: true
     tags:
       - volatile
@@ -28,7 +25,6 @@ tests:
   - subject: RAND
     formula: =ISNUMBER(RAND()+SEQUENCE(3))
     category: value
-    semanticDomain: volatile
     features:
       - broadcasting
       - dynamic-arrays
@@ -48,7 +44,6 @@ tests:
   - subject: RANDBETWEEN
     formula: =INT(RANDBETWEEN(1,10))=RANDBETWEEN(1,10)
     category: volatile
-    semanticDomain: volatile
     status: volatile
     expect:
       type: boolean
@@ -58,7 +53,6 @@ tests:
     name: randbetween-returns-integer
   - subject: RANDBETWEEN
     category: volatile
-    semanticDomain: volatile
     status: volatile
     formula: =RANDBETWEEN(5,5)
     expect:
@@ -69,7 +63,6 @@ tests:
   - subject: RANDBETWEEN
     formula: =RANDBETWEEN(10,1)
     category: volatile
-    semanticDomain: volatile
     status: volatile
     expect:
       any-of:
@@ -87,7 +80,6 @@ tests:
   - subject: RANDBETWEEN
     formula: =AND(RANDBETWEEN(-10,-5)>=-10, RANDBETWEEN(-10,-5)<=-5)
     category: value
-    semanticDomain: volatile
     expect: true
     tags:
       - volatile
@@ -95,7 +87,6 @@ tests:
   - subject: RANDARRAY
     formula: =ROWS(RANDARRAY(2,3))&"x"&COLUMNS(RANDARRAY(2,3))
     category: value
-    semanticDomain: volatile
     features:
       - broadcasting
       - dynamic-arrays
@@ -113,7 +104,6 @@ tests:
   - subject: RANDARRAY
     formula: =RANDARRAY(1, 3, 1, 10, TRUE)
     category: volatile
-    semanticDomain: volatile
     features:
       - broadcasting
       - dynamic-arrays
@@ -131,7 +121,6 @@ tests:
   - subject: NOW
     formula: =ISNUMBER(NOW())
     category: value
-    semanticDomain: volatile
     expect: true
     overrides:
       lattice:
@@ -144,7 +133,6 @@ tests:
   - subject: NOW
     formula: =NOW()>0
     category: value
-    semanticDomain: volatile
     expect: true
     tags:
       - volatile
@@ -152,7 +140,6 @@ tests:
   - subject: TODAY
     formula: =ISNUMBER(TODAY())
     category: value
-    semanticDomain: volatile
     expect: true
     overrides:
       lattice:
@@ -165,7 +152,6 @@ tests:
   - subject: TODAY
     formula: =TODAY()>0
     category: value
-    semanticDomain: volatile
     expect: true
     tags:
       - volatile
@@ -173,7 +159,6 @@ tests:
   - subject: NOW
     formula: =NOW()>=TODAY()
     category: value
-    semanticDomain: volatile
     expect: true
     tags:
       - volatile
@@ -181,7 +166,6 @@ tests:
   - subject: NOW
     formula: =TODAY()=INT(NOW())
     category: value
-    semanticDomain: volatile
     expect: true
     overrides:
       lattice:

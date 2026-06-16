@@ -12,8 +12,8 @@ It came out of the driver-contract session drilling down: a question about
 deliberate value contract. Companion to
 [`cell-value-schema-review-2026-05-30.md`](./cell-value-schema-review-2026-05-30.md)
 (the field-level survey) and [`comparison-model-design-2026-05-30.md`](./comparison-model-design-2026-05-30.md)
-(M3, whose Coverage/Behavior/Evidence ladder turns out to be this same ontology
-viewed from the comparison side).
+(M3, whose capability/circulating/terminal ladder — formerly Coverage/Behavior/Evidence —
+turns out to be this same ontology viewed from the comparison side).
 
 **Status:** the grounded inventory (Part 1) is fact; the north star (Part 4) is
 direction, not commitment. **The ontology evolved during the session — Part 2's
@@ -104,8 +104,8 @@ Key consequences:
 
 This is not invented. Two existing decisions already operate at the semantic
 layer: **β blank/null** (same scalar, distinct semantic values, kept apart
-because they behave differently) and the **Coverage/Behavior/Evidence** ladder
-(Behavior = semantic, Evidence = representation). The structure is latent in the
+because they behave differently) and the **capability/circulating/terminal** ladder
+(circulating = semantic, terminal = representation). The structure is latent in the
 design; the work is to make it explicit and uniform.
 
 ---
@@ -151,7 +151,7 @@ vocabulary and ⊥-transpilation. The pieces fall out of one core:
   *derived at comparison time*, undefined where they diverge (= the divergence).
 - **representation** = pure encoding; **cell** splits into identity
   (runtime-relevant: `env`'s address space) and presentation (runtime-irrelevant).
-- **Coverage** = transpilability (no *reachable* ⊥); **volatility** = a volatile
+- **capability** = transpilability (no *reachable* ⊥); **volatility** = a volatile
   node present; **canon** = the engine whose interpretation is authoritative for
   a node it invented.
 

@@ -185,11 +185,17 @@ fingerprintable; an assertion is not — it runs against a materialized result.*
    rich grids through it, so the divergence spine no longer manufactures agreement.
 3. ~~Default rung = circulating~~ **RESOLVED: the engine-invariant circulating core**
    (§2) — answers comparison open-Q2.
-4. **`semanticDomain` dissolution — DESIGN RATIFIED 2026-06-15; implementation
-   tracked-downstream.** Drop `semanticDomain`-as-scope; re-home volatility → captured
-   flag, lanes → derived outcome class. Load-bearing today (benchmark scoring + the
-   `volatile`-out-of-value-benchmarks lint), so the *code* bundles with the other
-   mechanical sweeps (the C/B/E body-rename; the `benchmark.ts:390` regex kill at §6.6).
+4. **`semanticDomain` dissolution — DESIGN RATIFIED 2026-06-15; ✅ IMPLEMENTED
+   2026-06-16.** Dropped `semanticDomain`-as-scope: the `TestCase` field and
+   `SemanticDomain` type are gone, the `semantic-domain-policy` lint rule (which only
+   forced authors to declare the now-derived field) is removed, and benchmark scoring
+   *derives* the non-value lane from a test's existing signals
+   (`status`/`category`/`subject`/`features`/`supportLevel`). Verified **lossless** —
+   the same 69 corpus tests are excluded as before. Volatility re-homes as a derived
+   signal (volatile subject + `category`/`status`); the richer lanes → outcome-class
+   re-home stays future work (the binary value-vs-not-value exclusion is what was
+   load-bearing). Still pending from this bundle: the C/B/E doc body-sweep. (The
+   `benchmark.ts:390` regex was already killed at §6.6.)
 5. **Build-now confirm — RESOLVED 2026-06-15: DEFER-but-ready.** The fingerprint is
    futureproofing (materialize is cheap at KB–MB; payoff is aggregate). Design is ready;
    defer the *build* behind the correctness path (§6.6 → read-model/cohost rework → D3/D4),

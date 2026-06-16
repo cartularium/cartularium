@@ -64,7 +64,8 @@ conversation from reading/generation.
 
 - Captured in
   [`comparison-model-design-2026-05-30.md`](./comparison-model-design-2026-05-30.md):
-  fidelity as **Coverage / Behavior / Evidence**; **green = relationship
+  fidelity as **capability / circulating / terminal** (renamed from Coverage /
+  Behavior / Evidence); **green = relationship
   stability** (descriptive, oracle-free; drift is the N=1 case); **canon as a
   set of typed reference nodes** (universal / origin-engine / spec / consensus)
   where truth is unambiguous; `cause` → mostly-derived annotation.
