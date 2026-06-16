@@ -138,7 +138,7 @@ substrate = per-engine ASTs + **one shared node vocabulary** + ⊥-transpilation
 |---|---|---|
 | **M1 — read truth from a sheet** (value model) | 🟢 mostly built | `RichCellValue` shipped; **collapse refinement paused** at the pin |
 | **M2 — fixture generation** (driver contract) | 🟡 designed, not built | two divergent orchestration loops; 3-layer contract designed |
-| **M3 — compare fixtures** | 🟡 designed, not built | Coverage/Behavior/Evidence + canon/origin |
+| **M3 — compare fixtures** | 🟡 designed, not built | capability/circulating/terminal + canon/origin |
 | **surface to consumers** | 🟡 partial | manifest exists; interleaf **compat-feed schema** now in contracts (assay-generated feed not built) |
 | **interleaf** (formula transpiler) | 🟢 owned, **v0** | Excel↔Sheets *text* only; no evaluator; tiny compat seed |
 | **operational-AST substrate** (north star) | 🔴 not built | blocked on the §5 shared-IR decision; multiple un-unified ASTs |

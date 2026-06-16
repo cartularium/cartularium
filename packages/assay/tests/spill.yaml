@@ -3,7 +3,6 @@ name: Spill behavior
 tests:
   - subject: SEQUENCE
     category: interaction
-    semanticDomain: grid-context
     features:
       - dynamic-arrays
     formula: =SEQUENCE(3)
@@ -14,7 +13,6 @@ tests:
     name: sequence-column-spill
   - subject: SEQUENCE
     category: interaction
-    semanticDomain: grid-context
     features:
       - dynamic-arrays
     formula: =SEQUENCE(1, 3)
@@ -25,7 +23,6 @@ tests:
     name: sequence-row-spill
   - subject: SEQUENCE
     category: interaction
-    semanticDomain: grid-context
     features:
       - dynamic-arrays
     formula: =SEQUENCE(3, 2)
@@ -121,7 +118,6 @@ tests:
   - subject: SORT
     formula: =SORT({3;1;2})
     category: interaction
-    semanticDomain: grid-context
     features:
       - dynamic-arrays
     expect:
@@ -135,7 +131,6 @@ tests:
   - subject: UNIQUE
     formula: =UNIQUE({1;2;1;3;2})
     category: interaction
-    semanticDomain: grid-context
     features:
       - dynamic-arrays
     expect:
@@ -149,7 +144,6 @@ tests:
   - subject: FILTER
     formula: =FILTER({1;2;3;4;5}, {1;0;1;0;1})
     category: interaction
-    semanticDomain: grid-context
     features:
       - dynamic-arrays
     expect:
@@ -162,7 +156,6 @@ tests:
     name: filter-spill
   - subject: MAP
     category: interaction
-    semanticDomain: grid-context
     formula: =MAP({1;2;3}, LAMBDA(x, x*2))
     expect:
       - - 2
@@ -177,7 +170,6 @@ tests:
     name: map-spill
   - subject: SUM
     category: interaction
-    semanticDomain: grid-context
     formula: =SUM(1, 2, 3)
     expect: 6
     name: single-cell-result-no-spill

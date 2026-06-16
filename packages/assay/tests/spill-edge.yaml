@@ -4,7 +4,6 @@ tests:
   - subject: feature:spill-blocking
     formula: =SEQUENCE(3)
     category: interaction
-    semanticDomain: grid-context
     features:
       - dynamic-arrays
     grid:
@@ -31,7 +30,6 @@ tests:
     name: spill-blocked-by-occupied-cell-column
   - subject: feature:spill-blocking
     category: interaction
-    semanticDomain: grid-context
     features:
       - dynamic-arrays
     status: observed
@@ -45,7 +43,6 @@ tests:
     name: spill-blocked-by-occupied-cell-row
   - subject: feature:spill-blocking
     category: interaction
-    semanticDomain: grid-context
     features:
       - dynamic-arrays
     status: observed
@@ -60,7 +57,6 @@ tests:
   - subject: feature:spill-blocking
     formula: =SEQUENCE(10)
     category: interaction
-    semanticDomain: grid-context
     features:
       - dynamic-arrays
     grid:

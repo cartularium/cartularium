@@ -103,7 +103,7 @@ When engines disagree, per-engine overrides record the deviation with a structur
 
 Full guide: [docs/writing-tests.md](docs/writing-tests.md).
 
-Benchmarks score only `semanticDomain: formula-value` tests by default. Display metadata, external effects, workbook metadata, grid-only behavior, and partial semantic smoke tests still run as corpus tests, but they are excluded from the headline compatibility score so that a matching scalar fixture does not imply support for behavior the runner cannot observe.
+Benchmarks score only pure formula-value tests by default. Display metadata, external effects, workbook metadata, grid-only behavior, volatile functions, and partial semantic smoke tests still run as corpus tests, but they are excluded from the headline compatibility score so that a matching scalar fixture does not imply support for behavior the runner cannot observe. The benchmark lane is **derived** from each test's `category`/`subject`/`features`/`supportLevel` (see [docs/writing-tests.md](docs/writing-tests.md)); there is no author-declared lane field.
 
 Scheduled fixture/history runs are documented in [docs/history-runs.md](docs/history-runs.md).
 Preview runner setup, platform defaults, and operational checks are documented in

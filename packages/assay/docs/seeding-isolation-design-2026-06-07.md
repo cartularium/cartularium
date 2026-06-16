@@ -644,7 +644,7 @@ without types or runtime data; the author wrote the seam test *on purpose* and a
 knows. This is the ratified intent (§5.1: "known seam tests **declare** their class up
 front, à la WPT `timeout=long`; the runtime ladder is the safety net for the
 undeclared"). A `TestCase` carries a declared **class** (one more declared field beside
-`status`/`semanticDomain`; default `ordinary`):
+`status`/`supportLevel`; default `ordinary`):
 
 | class | meaning | routing |
 |---|---|---|

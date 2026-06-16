@@ -30,16 +30,6 @@ export interface PlatformFormula {
 /** v2 test status */
 export type Status = "verified" | "volatile" | "observed";
 
-/** semantic lane used by benchmark scoring policy */
-export type SemanticDomain =
-  | "formula-value"
-  | "display"
-  | "external-effect"
-  | "grid-context"
-  | "metadata"
-  | "volatile"
-  | "partial";
-
 /** declared maturity of the covered surface, not an engine result */
 export type SupportLevel =
   | "full"
@@ -140,8 +130,6 @@ export interface TestCase {
   category: Category;
   /** capability dependencies (schema §4) */
   features?: string[];
-  /** benchmark lane; defaults to formula-value */
-  semanticDomain?: SemanticDomain;
   /** surface maturity for this test/function slice */
   supportLevel?: SupportLevel;
   status?: Status;

@@ -19,8 +19,10 @@ test.
 > Evidence). `circulating`/`terminal` is *also* the charter §1/§2 facet sorter (a facet
 > survives `=A1` or it doesn't), so the rung simply *is* how far down that partition you
 > compare; `capability` is the prior got-a-result gate. Canonical statement:
-> `value-equality-and-fingerprint-2026-06-15.md` §1. Later prose in this doc still saying
-> Coverage/Behavior/Evidence inherits this rename (a tracked body sweep).
+> `value-equality-and-fingerprint-2026-06-15.md` §1. The prose below was swept to the
+> canonical terms 2026-06-16; the §1 table still names the former Coverage/Behavior/Evidence
+> as the mapping, and `Kind/Detail/Evidence` in §5 is the *value-fidelity* ladder, a
+> different triple.
 
 Comparison can't be a fixed equivalence, because fidelity is a single knob and
 every audience rides its whole length (technical users, non-technical users,
@@ -74,8 +76,8 @@ behavior (`1+1=2`) and an engine that disagrees is *wrong*, not merely
 divergent. Canon is folded in as an **optional reference node in the
 relationship** — a participant whose value is *declared/derived* (correct)
 rather than *observed*. "Correct" = "agrees with the canon node," computed by
-the same grouping machinery. Canon lives at **Coverage and Behavior only, never
-Evidence** (there is no canonically-correct `raw_xml`).
+the same grouping machinery. Canon lives at **capability and circulating only, never
+terminal** (there is no canonically-correct `raw_xml`).
 
 Canon is **not one oracle per function** — it's a *set of typed nodes per case*,
 because a function has a core (clear) and edges (contested), from different
@@ -104,7 +106,7 @@ Hierarchy: **declared/computed canon > consensus (soft) > pure divergence.**
 Nice properties of origin-canon: the origin engine is *tautologically* correct
 for its own functions; canon is a *live* reference, so if the owner changes a
 function (Excel updates `FILTER`), the canon moves and laggards surface
-automatically; and the origin tag also structures the Coverage map (owner + who
+automatically; and the origin tag also structures the capability map (owner + who
 caught up).
 
 ## 4. Annotation (`cause`) → mostly derived
@@ -114,11 +116,11 @@ Given green = relationship-matches-documentation, the annotation unit is a
 deviation from a canonical value." And the *category* falls out of the rung
 where the split first appears:
 
-- split at **Coverage** → "missing function" — **mechanically detectable**, no
+- split at **capability** → "missing function" — **mechanically detectable**, no
   annotation needed.
-- split at **Behavior** → behavioral divergence (coercion / null-semantics /
+- split at **circulating** → behavioral divergence (coercion / null-semantics /
   error-vs-value) — category derived; only the prose *why* is authored.
-- split only at **Evidence** → representation divergence — usually self-evident.
+- split only at **terminal** → representation divergence — usually self-evident.
 
 So the hand-authored layer shrinks to its irreducible core (prose, only for
 non-obvious behavioral splits). Today's flat `overrides[].cause` enum mixed all
@@ -136,7 +138,7 @@ hard capture-side dependencies:
   captured property the comparison can exclude. (We already hand-filtered
   volatile drift out of fixtures — that manual step is exactly this gap.)
   Shovel-ready and self-justifying.
-- **Missing-function capture signal** — makes Coverage *derivable* rather than
+- **Missing-function capture signal** — makes capability *derivable* rather than
   hand-authored (ironcalc `#N/IMPL!`, pycel exceptions expose it; others bury
   it in `#NAME?`/`#REF!`).
 - **Function extraction per case** (parse formula → functions invoked) — feeds
@@ -149,9 +151,9 @@ hard capture-side dependencies:
 ## Experience sketch (future — sheets.wiki / assay.sheets.wiki)
 
 - **Reader (sheets.wiki function page):** progressive disclosure. Land on
-  Coverage ("✅ Excel/Sheets/Lattice · ❌ ironcalc/pycel"); descend to Behavior
-  (where the supported ones disagree) → Evidence (exact proof). Likely 3 named
-  presets ≈ Coverage / Behavior / Evidence.
+  capability ("✅ Excel/Sheets/Lattice · ❌ ironcalc/pycel"); descend to circulating
+  (where the supported ones disagree) → terminal (exact proof). Likely 3 named
+  presets ≈ capability / circulating / terminal.
 - **Editor (assay.sheets.wiki):** authors capture runs (evidence) and annotate
   only the non-obvious splits; they do not set fidelity.
 
@@ -162,9 +164,9 @@ hard capture-side dependencies:
    free), or is it a small registry to seed? This is the linchpin for the whole
    canon layer.
 2. **Default assertion fidelity** — when an author captures a formula, what does
-   a test assert by default: Coverage, or Behavior?
+   a test assert by default: capability, or circulating?
 3. **Does `expect:` fully dissolve** into evidence + drift + annotation, or
-   survive as an opt-in strict (Evidence-level) assertion?
+   survive as an opt-in strict (terminal-level) assertion?
 4. **Reader control** — 3 named presets vs a raw rung dial.
 5. **Descriptive vs consensus** — keep green purely "stable + documented," with
    consensus only a soft derived hint?

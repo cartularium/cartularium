@@ -1,7 +1,7 @@
 import { readFileSync } from "node:fs";
 import { parse as parseYaml } from "yaml";
 import { isCellError, type CellValue, type GridValue, type Platform, type CellError, ALL_PLATFORMS } from "./values.js";
-import { type TestSuite, type TestCase, type Override, type Matcher, type PlatformFormula, type Status, type SemanticDomain, type SupportLevel, type Cause, type Category } from "./catalogue.js";
+import { type TestSuite, type TestCase, type Override, type Matcher, type PlatformFormula, type Status, type SupportLevel, type Cause, type Category } from "./catalogue.js";
 import { reconcileFeatures, applyAdapter } from "./capabilities.js";
 import {
   deriveCategory,
@@ -138,7 +138,6 @@ function parseTestCase(
     name,
     category,
     features: Array.isArray(obj.features) ? (obj.features as string[]) : undefined,
-    semanticDomain: typeof obj.semanticDomain === "string" ? obj.semanticDomain as SemanticDomain : undefined,
     supportLevel: typeof obj.supportLevel === "string" ? obj.supportLevel as SupportLevel : undefined,
     status: obj.status as Status | undefined,
     formula,

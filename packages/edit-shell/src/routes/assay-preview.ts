@@ -534,7 +534,6 @@ function normalizeSubmittedCaseForSemanticHash(
     "expect",
     "overrides",
     "features",
-    "semanticDomain",
     "supportLevel",
     "status",
     "setup",

@@ -998,7 +998,6 @@ tests:
   - subject: CELL
     formula: =CELL("address", A1)
     category: value
-    semanticDomain: metadata
     grid:
       A1: 42
     expect: $A$1
@@ -1026,7 +1025,6 @@ tests:
   - subject: CELL
     formula: =CELL("contents", A1)
     category: value
-    semanticDomain: metadata
     grid:
       A1: 42
     expect: 42
@@ -1054,7 +1052,6 @@ tests:
   - subject: CELL
     formula: =CELL("row", B3)
     category: value
-    semanticDomain: metadata
     grid:
       B3: 42
     expect: 3
@@ -1082,7 +1079,6 @@ tests:
   - subject: CELL
     formula: =CELL("col", B3)
     category: value
-    semanticDomain: metadata
     grid:
       B3: 42
     expect: 2
@@ -1110,7 +1106,6 @@ tests:
   - subject: CELL
     formula: =CELL("type", A1)
     category: value
-    semanticDomain: metadata
     grid:
       A1: hello
     expect: l
@@ -1137,7 +1132,6 @@ tests:
     name: cell-type-text
   - subject: CELL
     category: format
-    semanticDomain: display
     status: observed
     formula: =CELL("format", A1)
     grid:
@@ -1148,7 +1142,6 @@ tests:
     name: cell-format
   - subject: SHEETS
     category: value
-    semanticDomain: metadata
     status: observed
     formula: =SHEETS()
     tags:
@@ -1158,7 +1151,6 @@ tests:
     name: sheets-no-arg
   - subject: SHEETS
     category: value
-    semanticDomain: metadata
     status: observed
     formula: =SHEETS(A1)
     tags:
