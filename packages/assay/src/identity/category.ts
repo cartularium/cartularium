@@ -1,6 +1,9 @@
 import type { Category } from "../format/catalogue.js";
 
-const VOLATILE_SUBJECTS = new Set(["RAND", "RANDBETWEEN", "RANDARRAY", "NOW", "TODAY"]);
+/** The canonical set of volatile function subjects. Single source of truth —
+ * `deriveCategory` maps these to category "volatile", and the benchmark's
+ * non-value-lane derivation reuses it (don't re-list the literals elsewhere). */
+export const VOLATILE_SUBJECTS = new Set(["RAND", "RANDBETWEEN", "RANDARRAY", "NOW", "TODAY"]);
 
 export interface CategoryInput {
   subject: string;

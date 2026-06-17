@@ -17,7 +17,7 @@ import {
   type RichGridValue,
 } from "./format/values.js";
 import { type TestCase } from "./format/catalogue.js";
-import { caseKey } from "./identity/index.js";
+import { caseKey, VOLATILE_SUBJECTS } from "./identity/index.js";
 
 export interface BenchmarkOptions {
   authority: Platform[];
@@ -577,17 +577,13 @@ function isAnnotatedGap(test: TestCase): boolean {
 // lane. Verified lossless against the prior author declarations across the corpus.
 function nonValueLane(test: TestCase): string | null {
   const subject = test.subject ?? "";
-  if (test.status === "volatile" || test.category === "volatile" || isVolatileSubject(subject)) return "volatile";
+  if (test.status === "volatile" || test.category === "volatile" || VOLATILE_SUBJECTS.has(subject)) return "volatile";
   if (test.category === "format") return "display";
   if (test.category === "interaction") return "grid-context";
   if (isMetadataSubject(subject)) return "metadata";
   if (test.features?.includes("external-io")) return "external-effect";
   if (test.supportLevel && test.supportLevel !== "full") return "partial";
   return null;
-}
-
-function isVolatileSubject(subject: string): boolean {
-  return subject === "RAND" || subject === "RANDBETWEEN" || subject === "RANDARRAY" || subject === "NOW" || subject === "TODAY";
 }
 
 function isMetadataSubject(subject: string): boolean {

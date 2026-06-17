@@ -79,6 +79,10 @@ export function partitionByAgreement(
   // order-independent, so the partition does not depend on a pivot engine.
   for (let i = 0; i < engines.length; i++) {
     for (let j = i + 1; j < engines.length; j++) {
+      // Already in the same component → the edge is redundant (a union would be
+      // a no-op, and under non-transitive tolerance a `false` here couldn't
+      // disconnect them). Skip the expensive equality check.
+      if (find(engines[i]) === find(engines[j])) continue;
       if (equal(engines[i], engines[j])) union(engines[i], engines[j]);
     }
   }

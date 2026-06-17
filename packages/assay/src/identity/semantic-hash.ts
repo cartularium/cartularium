@@ -8,6 +8,12 @@ export function semanticHashForCase(raw: Record<string, unknown>): `sha256:${str
   return `sha256:${createHash("sha256").update(canonicalJson(payload)).digest("hex")}`;
 }
 
+// This field list IS the case identity. Adding/removing a key changes the
+// semanticHash of every case that carries it — which orphans that case's
+// recorded fixtures (they are keyed by the old hash) until a regen re-keys or
+// re-records them. Bump `version` above and regenerate when you change this set.
+// (2026-06-16: dropping `semanticDomain` orphaned 69 cases; deferred to the
+// pending foundation regen rather than re-keyed.)
 function canonicalizeSemanticCase(raw: Record<string, unknown>): Record<string, unknown> {
   const out: Record<string, unknown> = {};
   for (const key of [
