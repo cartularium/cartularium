@@ -3,9 +3,9 @@
 // the B1 architecture-review fix. The legacy scalar comparison (projectScalarGrid →
 // cellsEqual) collapses BOTH `blank` and `null` to the same scalar `null`, so
 // `null === null` manufactures AGREEMENT on the ratified blank-vs-null divergence
-// (D8.β) — a CIRCULATING facet (it survives the deref map `=A1`). This module
-// canonicalizes a PrimitiveValue to its circulating identity, preserving the
-// distinctions the scalar projection drops, and compares over that.
+// (D8.β) — a CIRCULATING facet (it survives the deref map `=A1`). The circulating
+// projection (`canonicalizeCell`, now in the contracts value spine) preserves the
+// distinctions the scalar projection drops; this module is the comparison over it.
 //
 // What's compared (circulating facets, equality doc §1): value, type/coercion,
 // error-vs-value, blank-vs-null, opaque-by-kind. What's NOT (terminal — excluded
@@ -20,57 +20,16 @@
 // cannot see (cell-value.ts `opaque`; equality doc §3). A grid HOLE (no cell)
 // canonicalizes to `blank` (untouched).
 
-import type { PrimitiveValue, RichCellValue, RichGridValue } from "./values.js";
+import type { RichCellValue, RichGridValue, CirculatingCell } from "./values.js";
+import { canonicalizeCell } from "./values.js";
 
 /** Default relative numeric tolerance — mirrors match.ts cellsEqual. */
 export const DEFAULT_NUM_TOL = 1e-10;
 
-/** Canonical circulating identity of a cell — the unit rich equality compares.
- * Class `c` preserves the kind distinctions the scalar projection collapses. */
-export type CanonicalCell =
-  | { c: "number"; v: number }
-  | { c: "string"; v: string }
-  | { c: "boolean"; v: boolean }
-  // sentinel; classic `error` + `extended-error` unify by sentinel (the kind sets
-  // are disjoint per sentinel, so the same sentinel never spans both kinds).
-  | { c: "error"; v: string }
-  | { c: "blank" } // untouched / decays through eval — DISTINCT from null (D8.β)
-  | { c: "null" } // propagatable runtime Null that survives eval
-  | { c: "rich-text"; v: string } // collapsed runs
-  | { c: "opaque"; v: string }; // type_tag only — content is no-data
-
-/** Canonicalize a PrimitiveValue to its circulating identity. */
-export function canonicalizePrimitive(p: PrimitiveValue): CanonicalCell {
-  switch (p.kind) {
-    case "number":
-      return { c: "number", v: p.value };
-    case "string":
-      return { c: "string", v: p.value };
-    case "boolean":
-      return { c: "boolean", v: p.value };
-    case "error":
-    case "extended-error":
-      return { c: "error", v: p.sentinel };
-    case "blank":
-      return { c: "blank" };
-    case "null":
-      return { c: "null" };
-    case "rich-text":
-      return { c: "rich-text", v: p.collapsed };
-    case "opaque":
-      return { c: "opaque", v: p.type_tag };
-  }
-}
-
-/** Canonicalize a rich cell or a grid hole. A hole (no cell) is `blank` (untouched). */
-export function canonicalizeCell(cell: RichCellValue | null): CanonicalCell {
-  return cell ? canonicalizePrimitive(cell.primitive) : { c: "blank" };
-}
-
-/** True iff two canonical cells are equal (numbers within relative tolerance). */
+/** True iff two circulating cells are equal (numbers within relative tolerance). */
 export function canonicalEquals(
-  a: CanonicalCell,
-  b: CanonicalCell,
+  a: CirculatingCell,
+  b: CirculatingCell,
   tol: number = DEFAULT_NUM_TOL,
 ): boolean {
   if (a.c !== b.c) return false; // class distinction is load-bearing (descriptive default)

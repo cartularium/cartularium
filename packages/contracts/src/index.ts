@@ -259,12 +259,16 @@ export {
   isCellError,
   isRichGrid,
   toScalarGrid,
+  canonicalizePrimitive,
+  canonicalizeCell,
+  circulatingKey,
 } from "./cell-value.js"
 
 export type {
   CellError,
   CellValue,
   GridValue,
+  CirculatingCell,
   EngineExtras,
   ExcelExtras,
   FormulasExtras,

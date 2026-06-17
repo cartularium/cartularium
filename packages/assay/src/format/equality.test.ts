@@ -1,12 +1,8 @@
 import { describe, it, expect } from "vitest";
 import type { PrimitiveValue, RichCellValue, RichGridValue } from "./values.js";
 import { gridsEqual } from "./match.js";
-import {
-  canonicalizeCell,
-  canonicalEquals,
-  richCellsEqual,
-  richGridsEqual,
-} from "./equality.js";
+import { canonicalizeCell } from "./values.js";
+import { canonicalEquals, richCellsEqual, richGridsEqual } from "./equality.js";
 
 // Minimal rich cell — equality reads only `.primitive`, the engine stub is inert.
 const cell = (primitive: PrimitiveValue): RichCellValue => ({
