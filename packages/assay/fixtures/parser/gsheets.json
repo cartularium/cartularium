@@ -1,1583 +1,1821 @@
 {
   "platform": "gsheets",
-  "generatedAt": "2026-05-24T07:13:35.762Z",
+  "generatedAt": "2026-06-17T20:01:41.622Z",
   "results": {
     "sha256:178c9f1ab35ea8f6bbb6155d9d2dab7edf9a80084c441f89912274563348e4b6": {
-      "result": [
-        [
-          {
-            "primitive": {
-              "kind": "number",
-              "value": 12
-            },
-            "engine": {
-              "platform": "gsheets",
-              "wire_kind": "number",
-              "raw_api": {
-                "userEnteredValue": {
-                  "formulaValue": "=CONVERT(1, \"ft\", \"in\")"
-                },
-                "effectiveValue": {
-                  "numberValue": 12
-                },
-                "formattedValue": "12",
-                "effectiveFormat": {
-                  "textFormat": {
-                    "foregroundColor": {},
-                    "fontFamily": "Arial",
-                    "fontSize": 10,
-                    "bold": false,
-                    "italic": false,
-                    "strikethrough": false,
-                    "underline": false,
-                    "foregroundColorStyle": {
-                      "rgbColor": {}
-                    }
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 12
+              },
+              "engine": {
+                "platform": "gsheets",
+                "wire_kind": "number",
+                "raw_api": {
+                  "userEnteredValue": {
+                    "formulaValue": "=CONVERT(1, \"ft\", \"in\")"
                   },
-                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                  "effectiveValue": {
+                    "numberValue": 12
+                  },
+                  "formattedValue": "12",
+                  "effectiveFormat": {
+                    "textFormat": {
+                      "foregroundColor": {},
+                      "fontFamily": "Arial",
+                      "fontSize": 10,
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "foregroundColorStyle": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "hyperlinkDisplayType": "PLAIN_TEXT"
+                  }
                 }
-              }
-            },
-            "formula": "CONVERT(1, \"ft\", \"in\")",
-            "formatted": "12"
-          }
-        ]
-      ],
+              },
+              "formula": "CONVERT(1, \"ft\", \"in\")",
+              "formatted": "12"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=CONVERT(1, \"ft\", \"in\")"
     },
     "sha256:9a609c8e8dcbb3f6c9b0b34bbd9769417e914549b5aa452cb055d2c88d32ccdc": {
-      "result": [
-        [
-          {
-            "primitive": {
-              "kind": "number",
-              "value": 3.28083989501312
-            },
-            "engine": {
-              "platform": "gsheets",
-              "wire_kind": "number",
-              "raw_api": {
-                "userEnteredValue": {
-                  "formulaValue": "=CONVERT(1, \"m\", \"ft\")"
-                },
-                "effectiveValue": {
-                  "numberValue": 3.28083989501312
-                },
-                "formattedValue": "3.280839895",
-                "effectiveFormat": {
-                  "textFormat": {
-                    "foregroundColor": {},
-                    "fontFamily": "Arial",
-                    "fontSize": 10,
-                    "bold": false,
-                    "italic": false,
-                    "strikethrough": false,
-                    "underline": false,
-                    "foregroundColorStyle": {
-                      "rgbColor": {}
-                    }
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 3.28083989501312
+              },
+              "engine": {
+                "platform": "gsheets",
+                "wire_kind": "number",
+                "raw_api": {
+                  "userEnteredValue": {
+                    "formulaValue": "=CONVERT(1, \"m\", \"ft\")"
                   },
-                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                  "effectiveValue": {
+                    "numberValue": 3.28083989501312
+                  },
+                  "formattedValue": "3.280839895",
+                  "effectiveFormat": {
+                    "textFormat": {
+                      "foregroundColor": {},
+                      "fontFamily": "Arial",
+                      "fontSize": 10,
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "foregroundColorStyle": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "hyperlinkDisplayType": "PLAIN_TEXT"
+                  }
                 }
-              }
-            },
-            "formula": "CONVERT(1, \"m\", \"ft\")",
-            "formatted": "3.280839895"
-          }
-        ]
-      ],
+              },
+              "formula": "CONVERT(1, \"m\", \"ft\")",
+              "formatted": "3.280839895"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=CONVERT(1, \"m\", \"ft\")"
     },
     "sha256:7dc93dec3706aed8a1d0050f33710f7fd51e70def38fa794eab3d0a392a18c3f": {
-      "result": [
-        [
-          {
-            "primitive": {
-              "kind": "number",
-              "value": 2.20462262184878
-            },
-            "engine": {
-              "platform": "gsheets",
-              "wire_kind": "number",
-              "raw_api": {
-                "userEnteredValue": {
-                  "formulaValue": "=CONVERT(1, \"kg\", \"lbm\")"
-                },
-                "effectiveValue": {
-                  "numberValue": 2.20462262184878
-                },
-                "formattedValue": "2.204622622",
-                "effectiveFormat": {
-                  "textFormat": {
-                    "foregroundColor": {},
-                    "fontFamily": "Arial",
-                    "fontSize": 10,
-                    "bold": false,
-                    "italic": false,
-                    "strikethrough": false,
-                    "underline": false,
-                    "foregroundColorStyle": {
-                      "rgbColor": {}
-                    }
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 2.20462262184878
+              },
+              "engine": {
+                "platform": "gsheets",
+                "wire_kind": "number",
+                "raw_api": {
+                  "userEnteredValue": {
+                    "formulaValue": "=CONVERT(1, \"kg\", \"lbm\")"
                   },
-                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                  "effectiveValue": {
+                    "numberValue": 2.20462262184878
+                  },
+                  "formattedValue": "2.204622622",
+                  "effectiveFormat": {
+                    "textFormat": {
+                      "foregroundColor": {},
+                      "fontFamily": "Arial",
+                      "fontSize": 10,
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "foregroundColorStyle": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "hyperlinkDisplayType": "PLAIN_TEXT"
+                  }
                 }
-              }
-            },
-            "formula": "CONVERT(1, \"kg\", \"lbm\")",
-            "formatted": "2.204622622"
-          }
-        ]
-      ],
+              },
+              "formula": "CONVERT(1, \"kg\", \"lbm\")",
+              "formatted": "2.204622622"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=CONVERT(1, \"kg\", \"lbm\")"
     },
     "sha256:67e6ea0aa23587fad0fac1d04d3ceecb35587ad448969a3e2eb8277d9e5e0fe2": {
-      "result": [
-        [
-          {
-            "primitive": {
-              "kind": "number",
-              "value": 212
-            },
-            "engine": {
-              "platform": "gsheets",
-              "wire_kind": "number",
-              "raw_api": {
-                "userEnteredValue": {
-                  "formulaValue": "=CONVERT(100, \"C\", \"F\")"
-                },
-                "effectiveValue": {
-                  "numberValue": 212
-                },
-                "formattedValue": "212",
-                "effectiveFormat": {
-                  "textFormat": {
-                    "foregroundColor": {},
-                    "fontFamily": "Arial",
-                    "fontSize": 10,
-                    "bold": false,
-                    "italic": false,
-                    "strikethrough": false,
-                    "underline": false,
-                    "foregroundColorStyle": {
-                      "rgbColor": {}
-                    }
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 212
+              },
+              "engine": {
+                "platform": "gsheets",
+                "wire_kind": "number",
+                "raw_api": {
+                  "userEnteredValue": {
+                    "formulaValue": "=CONVERT(100, \"C\", \"F\")"
                   },
-                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                  "effectiveValue": {
+                    "numberValue": 212
+                  },
+                  "formattedValue": "212",
+                  "effectiveFormat": {
+                    "textFormat": {
+                      "foregroundColor": {},
+                      "fontFamily": "Arial",
+                      "fontSize": 10,
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "foregroundColorStyle": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "hyperlinkDisplayType": "PLAIN_TEXT"
+                  }
                 }
-              }
-            },
-            "formula": "CONVERT(100, \"C\", \"F\")",
-            "formatted": "212"
-          }
-        ]
-      ],
+              },
+              "formula": "CONVERT(100, \"C\", \"F\")",
+              "formatted": "212"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=CONVERT(100, \"C\", \"F\")"
     },
     "sha256:c53c8b400d3d2d461462637e1ee5a8d19e0f1dea1b3c05251bcf991f0fe74c86": {
-      "result": [
-        [
-          {
-            "primitive": {
-              "kind": "number",
-              "value": 3600
-            },
-            "engine": {
-              "platform": "gsheets",
-              "wire_kind": "number",
-              "raw_api": {
-                "userEnteredValue": {
-                  "formulaValue": "=CONVERT(1, \"hr\", \"sec\")"
-                },
-                "effectiveValue": {
-                  "numberValue": 3600
-                },
-                "formattedValue": "3600",
-                "effectiveFormat": {
-                  "textFormat": {
-                    "foregroundColor": {},
-                    "fontFamily": "Arial",
-                    "fontSize": 10,
-                    "bold": false,
-                    "italic": false,
-                    "strikethrough": false,
-                    "underline": false,
-                    "foregroundColorStyle": {
-                      "rgbColor": {}
-                    }
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 3600
+              },
+              "engine": {
+                "platform": "gsheets",
+                "wire_kind": "number",
+                "raw_api": {
+                  "userEnteredValue": {
+                    "formulaValue": "=CONVERT(1, \"hr\", \"sec\")"
                   },
-                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                  "effectiveValue": {
+                    "numberValue": 3600
+                  },
+                  "formattedValue": "3600",
+                  "effectiveFormat": {
+                    "textFormat": {
+                      "foregroundColor": {},
+                      "fontFamily": "Arial",
+                      "fontSize": 10,
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "foregroundColorStyle": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "hyperlinkDisplayType": "PLAIN_TEXT"
+                  }
                 }
-              }
-            },
-            "formula": "CONVERT(1, \"hr\", \"sec\")",
-            "formatted": "3600"
-          }
-        ]
-      ],
+              },
+              "formula": "CONVERT(1, \"hr\", \"sec\")",
+              "formatted": "3600"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=CONVERT(1, \"hr\", \"sec\")"
     },
     "sha256:27a909385b0f732ed27b9e5b8e6667d71d60a86d324da6ed6c7ea9fd3b808f20": {
-      "result": [
-        [
-          {
-            "primitive": {
-              "kind": "number",
-              "value": 0.621371192237334
-            },
-            "engine": {
-              "platform": "gsheets",
-              "wire_kind": "number",
-              "raw_api": {
-                "userEnteredValue": {
-                  "formulaValue": "=CONVERT(1, \"km\", \"mi\")"
-                },
-                "effectiveValue": {
-                  "numberValue": 0.621371192237334
-                },
-                "formattedValue": "0.6213711922",
-                "effectiveFormat": {
-                  "textFormat": {
-                    "foregroundColor": {},
-                    "fontFamily": "Arial",
-                    "fontSize": 10,
-                    "bold": false,
-                    "italic": false,
-                    "strikethrough": false,
-                    "underline": false,
-                    "foregroundColorStyle": {
-                      "rgbColor": {}
-                    }
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 0.621371192237334
+              },
+              "engine": {
+                "platform": "gsheets",
+                "wire_kind": "number",
+                "raw_api": {
+                  "userEnteredValue": {
+                    "formulaValue": "=CONVERT(1, \"km\", \"mi\")"
                   },
-                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                  "effectiveValue": {
+                    "numberValue": 0.621371192237334
+                  },
+                  "formattedValue": "0.6213711922",
+                  "effectiveFormat": {
+                    "textFormat": {
+                      "foregroundColor": {},
+                      "fontFamily": "Arial",
+                      "fontSize": 10,
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "foregroundColorStyle": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "hyperlinkDisplayType": "PLAIN_TEXT"
+                  }
                 }
-              }
-            },
-            "formula": "CONVERT(1, \"km\", \"mi\")",
-            "formatted": "0.6213711922"
-          }
-        ]
-      ],
+              },
+              "formula": "CONVERT(1, \"km\", \"mi\")",
+              "formatted": "0.6213711922"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=CONVERT(1, \"km\", \"mi\")"
     },
     "sha256:14dfe2730ab1be764cbbbf7637896e3c0e376154b0de0e72140907c3f9d8d59b": {
-      "result": [
-        [
-          {
-            "primitive": {
-              "kind": "error",
-              "sentinel": "#N/A"
-            },
-            "engine": {
-              "platform": "gsheets",
-              "wire_kind": "error",
-              "raw_api": {
-                "userEnteredValue": {
-                  "formulaValue": "=CONVERT(1, \"ft\", \"kg\")"
-                },
-                "effectiveValue": {
-                  "errorValue": {
-                    "type": "N_A",
-                    "message": "Invalid units for conversion."
-                  }
-                },
-                "formattedValue": "#N/A",
-                "effectiveFormat": {
-                  "textFormat": {
-                    "foregroundColor": {},
-                    "fontFamily": "Arial",
-                    "fontSize": 10,
-                    "bold": false,
-                    "italic": false,
-                    "strikethrough": false,
-                    "underline": false,
-                    "foregroundColorStyle": {
-                      "rgbColor": {}
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "error",
+                "sentinel": "#N/A"
+              },
+              "engine": {
+                "platform": "gsheets",
+                "wire_kind": "error",
+                "raw_api": {
+                  "userEnteredValue": {
+                    "formulaValue": "=CONVERT(1, \"ft\", \"kg\")"
+                  },
+                  "effectiveValue": {
+                    "errorValue": {
+                      "type": "N_A",
+                      "message": "Invalid units for conversion."
                     }
                   },
-                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                  "formattedValue": "#N/A",
+                  "effectiveFormat": {
+                    "textFormat": {
+                      "foregroundColor": {},
+                      "fontFamily": "Arial",
+                      "fontSize": 10,
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "foregroundColorStyle": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "hyperlinkDisplayType": "PLAIN_TEXT"
+                  }
                 }
-              }
-            },
-            "formula": "CONVERT(1, \"ft\", \"kg\")",
-            "formatted": "#N/A"
-          }
-        ]
-      ],
+              },
+              "formula": "CONVERT(1, \"ft\", \"kg\")",
+              "formatted": "#N/A"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=CONVERT(1, \"ft\", \"kg\")"
     },
     "sha256:63a533041344fe1620f62cd5f19605f03f0a4fe3a8a03af12a3096b752527339": {
-      "result": [
-        [
-          {
-            "primitive": {
-              "kind": "error",
-              "sentinel": "#N/A"
-            },
-            "engine": {
-              "platform": "gsheets",
-              "wire_kind": "error",
-              "raw_api": {
-                "userEnteredValue": {
-                  "formulaValue": "=CONVERT(1, \"xyz\", \"in\")"
-                },
-                "effectiveValue": {
-                  "errorValue": {
-                    "type": "N_A",
-                    "message": "Invalid units for conversion."
-                  }
-                },
-                "formattedValue": "#N/A",
-                "effectiveFormat": {
-                  "textFormat": {
-                    "foregroundColor": {},
-                    "fontFamily": "Arial",
-                    "fontSize": 10,
-                    "bold": false,
-                    "italic": false,
-                    "strikethrough": false,
-                    "underline": false,
-                    "foregroundColorStyle": {
-                      "rgbColor": {}
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "error",
+                "sentinel": "#N/A"
+              },
+              "engine": {
+                "platform": "gsheets",
+                "wire_kind": "error",
+                "raw_api": {
+                  "userEnteredValue": {
+                    "formulaValue": "=CONVERT(1, \"xyz\", \"in\")"
+                  },
+                  "effectiveValue": {
+                    "errorValue": {
+                      "type": "N_A",
+                      "message": "Invalid units for conversion."
                     }
                   },
-                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                  "formattedValue": "#N/A",
+                  "effectiveFormat": {
+                    "textFormat": {
+                      "foregroundColor": {},
+                      "fontFamily": "Arial",
+                      "fontSize": 10,
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "foregroundColorStyle": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "hyperlinkDisplayType": "PLAIN_TEXT"
+                  }
                 }
-              }
-            },
-            "formula": "CONVERT(1, \"xyz\", \"in\")",
-            "formatted": "#N/A"
-          }
-        ]
-      ],
+              },
+              "formula": "CONVERT(1, \"xyz\", \"in\")",
+              "formatted": "#N/A"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=CONVERT(1, \"xyz\", \"in\")"
     },
     "sha256:6780c88675e7ee5385abae98884bd5e106f32d5421b4bccd49eedc69b6e04993": {
-      "result": [
-        [
-          {
-            "primitive": {
-              "kind": "number",
-              "value": 44000
-            },
-            "engine": {
-              "platform": "gsheets",
-              "wire_kind": "number",
-              "raw_api": {
-                "userEnteredValue": {
-                  "formulaValue": "=TO_DATE(44000)"
-                },
-                "effectiveValue": {
-                  "numberValue": 44000
-                },
-                "formattedValue": "6/18/2020",
-                "effectiveFormat": {
-                  "numberFormat": {
-                    "type": "DATE"
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 44000
+              },
+              "engine": {
+                "platform": "gsheets",
+                "wire_kind": "number",
+                "raw_api": {
+                  "userEnteredValue": {
+                    "formulaValue": "=TO_DATE(44000)"
                   },
-                  "textFormat": {
-                    "foregroundColor": {},
-                    "fontFamily": "Arial",
-                    "fontSize": 10,
-                    "bold": false,
-                    "italic": false,
-                    "strikethrough": false,
-                    "underline": false,
-                    "foregroundColorStyle": {
-                      "rgbColor": {}
-                    }
+                  "effectiveValue": {
+                    "numberValue": 44000
                   },
-                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                  "formattedValue": "6/18/2020",
+                  "effectiveFormat": {
+                    "numberFormat": {
+                      "type": "DATE"
+                    },
+                    "textFormat": {
+                      "foregroundColor": {},
+                      "fontFamily": "Arial",
+                      "fontSize": 10,
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "foregroundColorStyle": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "hyperlinkDisplayType": "PLAIN_TEXT"
+                  }
                 }
+              },
+              "formula": "TO_DATE(44000)",
+              "formatted": "6/18/2020",
+              "number_format": {
+                "type": "DATE"
               }
-            },
-            "formula": "TO_DATE(44000)",
-            "formatted": "6/18/2020",
-            "number_format": {
-              "type": "DATE"
             }
-          }
-        ]
-      ],
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=TO_DATE(44000)"
     },
     "sha256:aae487612d0937d0aaa140a98e01994f761f1ec38008f6336eaf830fb161ae0c": {
-      "result": [
-        [
-          {
-            "primitive": {
-              "kind": "number",
-              "value": 0
-            },
-            "engine": {
-              "platform": "gsheets",
-              "wire_kind": "number",
-              "raw_api": {
-                "userEnteredValue": {
-                  "formulaValue": "=TO_DATE(0)"
-                },
-                "effectiveValue": {
-                  "numberValue": 0
-                },
-                "formattedValue": "12/30/1899",
-                "effectiveFormat": {
-                  "numberFormat": {
-                    "type": "DATE"
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 0
+              },
+              "engine": {
+                "platform": "gsheets",
+                "wire_kind": "number",
+                "raw_api": {
+                  "userEnteredValue": {
+                    "formulaValue": "=TO_DATE(0)"
                   },
-                  "textFormat": {
-                    "foregroundColor": {},
-                    "fontFamily": "Arial",
-                    "fontSize": 10,
-                    "bold": false,
-                    "italic": false,
-                    "strikethrough": false,
-                    "underline": false,
-                    "foregroundColorStyle": {
-                      "rgbColor": {}
-                    }
+                  "effectiveValue": {
+                    "numberValue": 0
                   },
-                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                  "formattedValue": "12/30/1899",
+                  "effectiveFormat": {
+                    "numberFormat": {
+                      "type": "DATE"
+                    },
+                    "textFormat": {
+                      "foregroundColor": {},
+                      "fontFamily": "Arial",
+                      "fontSize": 10,
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "foregroundColorStyle": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "hyperlinkDisplayType": "PLAIN_TEXT"
+                  }
                 }
+              },
+              "formula": "TO_DATE(0)",
+              "formatted": "12/30/1899",
+              "number_format": {
+                "type": "DATE"
               }
-            },
-            "formula": "TO_DATE(0)",
-            "formatted": "12/30/1899",
-            "number_format": {
-              "type": "DATE"
             }
-          }
-        ]
-      ],
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=TO_DATE(0)"
     },
     "sha256:dd2d5c39d0038f9ed3adb7a30c7a4c7a75612df63996bfad2c0ee594a2cec7d4": {
-      "result": [
-        [
-          {
-            "primitive": {
-              "kind": "string",
-              "value": "2024-01-15"
-            },
-            "engine": {
-              "platform": "gsheets",
-              "wire_kind": "string",
-              "raw_api": {
-                "userEnteredValue": {
-                  "formulaValue": "=TO_DATE(\"2024-01-15\")"
-                },
-                "effectiveValue": {
-                  "stringValue": "2024-01-15"
-                },
-                "formattedValue": "2024-01-15",
-                "effectiveFormat": {
-                  "numberFormat": {
-                    "type": "DATE"
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "string",
+                "value": "2024-01-15"
+              },
+              "engine": {
+                "platform": "gsheets",
+                "wire_kind": "string",
+                "raw_api": {
+                  "userEnteredValue": {
+                    "formulaValue": "=TO_DATE(\"2024-01-15\")"
                   },
-                  "textFormat": {
-                    "foregroundColor": {},
-                    "fontFamily": "Arial",
-                    "fontSize": 10,
-                    "bold": false,
-                    "italic": false,
-                    "strikethrough": false,
-                    "underline": false,
-                    "foregroundColorStyle": {
-                      "rgbColor": {}
-                    }
+                  "effectiveValue": {
+                    "stringValue": "2024-01-15"
                   },
-                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                  "formattedValue": "2024-01-15",
+                  "effectiveFormat": {
+                    "numberFormat": {
+                      "type": "DATE"
+                    },
+                    "textFormat": {
+                      "foregroundColor": {},
+                      "fontFamily": "Arial",
+                      "fontSize": 10,
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "foregroundColorStyle": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "hyperlinkDisplayType": "PLAIN_TEXT"
+                  }
                 }
+              },
+              "formula": "TO_DATE(\"2024-01-15\")",
+              "formatted": "2024-01-15",
+              "number_format": {
+                "type": "DATE"
               }
-            },
-            "formula": "TO_DATE(\"2024-01-15\")",
-            "formatted": "2024-01-15",
-            "number_format": {
-              "type": "DATE"
             }
-          }
-        ]
-      ],
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=TO_DATE(\"2024-01-15\")"
     },
     "sha256:137e5feb0086fad3ccf1fb426a67c77f34db3de3ff564e3c3276d587cb4dd290": {
-      "result": [
-        [
-          {
-            "primitive": {
-              "kind": "boolean",
-              "value": true
-            },
-            "engine": {
-              "platform": "gsheets",
-              "wire_kind": "boolean",
-              "raw_api": {
-                "userEnteredValue": {
-                  "formulaValue": "=TO_DATE(TRUE)"
-                },
-                "effectiveValue": {
-                  "boolValue": true
-                },
-                "formattedValue": "TRUE",
-                "effectiveFormat": {
-                  "numberFormat": {
-                    "type": "DATE"
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "boolean",
+                "value": true
+              },
+              "engine": {
+                "platform": "gsheets",
+                "wire_kind": "boolean",
+                "raw_api": {
+                  "userEnteredValue": {
+                    "formulaValue": "=TO_DATE(TRUE)"
                   },
-                  "textFormat": {
-                    "foregroundColor": {},
-                    "fontFamily": "Arial",
-                    "fontSize": 10,
-                    "bold": false,
-                    "italic": false,
-                    "strikethrough": false,
-                    "underline": false,
-                    "foregroundColorStyle": {
-                      "rgbColor": {}
-                    }
+                  "effectiveValue": {
+                    "boolValue": true
                   },
-                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                  "formattedValue": "TRUE",
+                  "effectiveFormat": {
+                    "numberFormat": {
+                      "type": "DATE"
+                    },
+                    "textFormat": {
+                      "foregroundColor": {},
+                      "fontFamily": "Arial",
+                      "fontSize": 10,
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "foregroundColorStyle": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "hyperlinkDisplayType": "PLAIN_TEXT"
+                  }
                 }
+              },
+              "formula": "TO_DATE(TRUE)",
+              "formatted": "TRUE",
+              "number_format": {
+                "type": "DATE"
               }
-            },
-            "formula": "TO_DATE(TRUE)",
-            "formatted": "TRUE",
-            "number_format": {
-              "type": "DATE"
             }
-          }
-        ]
-      ],
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=TO_DATE(TRUE)"
     },
     "sha256:47dacb3c68c74f027a7bd64600c93ffdf110c439e9979b7abe5f78db71b4a3f1": {
-      "result": [
-        [
-          {
-            "primitive": {
-              "kind": "string",
-              "value": "not-a-date"
-            },
-            "engine": {
-              "platform": "gsheets",
-              "wire_kind": "string",
-              "raw_api": {
-                "userEnteredValue": {
-                  "formulaValue": "=TO_DATE(\"not-a-date\")"
-                },
-                "effectiveValue": {
-                  "stringValue": "not-a-date"
-                },
-                "formattedValue": "not-a-date",
-                "effectiveFormat": {
-                  "numberFormat": {
-                    "type": "DATE"
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "string",
+                "value": "not-a-date"
+              },
+              "engine": {
+                "platform": "gsheets",
+                "wire_kind": "string",
+                "raw_api": {
+                  "userEnteredValue": {
+                    "formulaValue": "=TO_DATE(\"not-a-date\")"
                   },
-                  "textFormat": {
-                    "foregroundColor": {},
-                    "fontFamily": "Arial",
-                    "fontSize": 10,
-                    "bold": false,
-                    "italic": false,
-                    "strikethrough": false,
-                    "underline": false,
-                    "foregroundColorStyle": {
-                      "rgbColor": {}
-                    }
+                  "effectiveValue": {
+                    "stringValue": "not-a-date"
                   },
-                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                  "formattedValue": "not-a-date",
+                  "effectiveFormat": {
+                    "numberFormat": {
+                      "type": "DATE"
+                    },
+                    "textFormat": {
+                      "foregroundColor": {},
+                      "fontFamily": "Arial",
+                      "fontSize": 10,
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "foregroundColorStyle": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "hyperlinkDisplayType": "PLAIN_TEXT"
+                  }
                 }
+              },
+              "formula": "TO_DATE(\"not-a-date\")",
+              "formatted": "not-a-date",
+              "number_format": {
+                "type": "DATE"
               }
-            },
-            "formula": "TO_DATE(\"not-a-date\")",
-            "formatted": "not-a-date",
-            "number_format": {
-              "type": "DATE"
             }
-          }
-        ]
-      ],
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=TO_DATE(\"not-a-date\")"
     },
     "sha256:9bbac12e274f4fbed927622605d8185bc4a830eca21e0862e9f66407a46b1a50": {
-      "result": [
-        [
-          {
-            "primitive": {
-              "kind": "number",
-              "value": 1234
-            },
-            "engine": {
-              "platform": "gsheets",
-              "wire_kind": "number",
-              "raw_api": {
-                "userEnteredValue": {
-                  "formulaValue": "=TO_DOLLARS(1234)"
-                },
-                "effectiveValue": {
-                  "numberValue": 1234
-                },
-                "formattedValue": "$1,234.00",
-                "effectiveFormat": {
-                  "numberFormat": {
-                    "type": "CURRENCY",
-                    "pattern": "\"$\"#,##0.00"
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 1234
+              },
+              "engine": {
+                "platform": "gsheets",
+                "wire_kind": "number",
+                "raw_api": {
+                  "userEnteredValue": {
+                    "formulaValue": "=TO_DOLLARS(1234)"
                   },
-                  "textFormat": {
-                    "foregroundColor": {},
-                    "fontFamily": "Arial",
-                    "fontSize": 10,
-                    "bold": false,
-                    "italic": false,
-                    "strikethrough": false,
-                    "underline": false,
-                    "foregroundColorStyle": {
-                      "rgbColor": {}
-                    }
+                  "effectiveValue": {
+                    "numberValue": 1234
                   },
-                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                  "formattedValue": "$1,234.00",
+                  "effectiveFormat": {
+                    "numberFormat": {
+                      "type": "CURRENCY",
+                      "pattern": "\"$\"#,##0.00"
+                    },
+                    "textFormat": {
+                      "foregroundColor": {},
+                      "fontFamily": "Arial",
+                      "fontSize": 10,
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "foregroundColorStyle": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "hyperlinkDisplayType": "PLAIN_TEXT"
+                  }
                 }
+              },
+              "formula": "TO_DOLLARS(1234)",
+              "formatted": "$1,234.00",
+              "number_format": {
+                "type": "CURRENCY",
+                "pattern": "\"$\"#,##0.00"
               }
-            },
-            "formula": "TO_DOLLARS(1234)",
-            "formatted": "$1,234.00",
-            "number_format": {
-              "type": "CURRENCY",
-              "pattern": "\"$\"#,##0.00"
             }
-          }
-        ]
-      ],
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=TO_DOLLARS(1234)"
     },
     "sha256:f9859ba2a12aeadc7ef9d35ea4f30ed2b053cddb1e55685ea78c2f5586a0da29": {
-      "result": [
-        [
-          {
-            "primitive": {
-              "kind": "number",
-              "value": 1234.567
-            },
-            "engine": {
-              "platform": "gsheets",
-              "wire_kind": "number",
-              "raw_api": {
-                "userEnteredValue": {
-                  "formulaValue": "=TO_DOLLARS(1234.567)"
-                },
-                "effectiveValue": {
-                  "numberValue": 1234.567
-                },
-                "formattedValue": "$1,234.57",
-                "effectiveFormat": {
-                  "numberFormat": {
-                    "type": "CURRENCY",
-                    "pattern": "\"$\"#,##0.00"
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 1234.567
+              },
+              "engine": {
+                "platform": "gsheets",
+                "wire_kind": "number",
+                "raw_api": {
+                  "userEnteredValue": {
+                    "formulaValue": "=TO_DOLLARS(1234.567)"
                   },
-                  "textFormat": {
-                    "foregroundColor": {},
-                    "fontFamily": "Arial",
-                    "fontSize": 10,
-                    "bold": false,
-                    "italic": false,
-                    "strikethrough": false,
-                    "underline": false,
-                    "foregroundColorStyle": {
-                      "rgbColor": {}
-                    }
+                  "effectiveValue": {
+                    "numberValue": 1234.567
                   },
-                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                  "formattedValue": "$1,234.57",
+                  "effectiveFormat": {
+                    "numberFormat": {
+                      "type": "CURRENCY",
+                      "pattern": "\"$\"#,##0.00"
+                    },
+                    "textFormat": {
+                      "foregroundColor": {},
+                      "fontFamily": "Arial",
+                      "fontSize": 10,
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "foregroundColorStyle": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "hyperlinkDisplayType": "PLAIN_TEXT"
+                  }
                 }
+              },
+              "formula": "TO_DOLLARS(1234.567)",
+              "formatted": "$1,234.57",
+              "number_format": {
+                "type": "CURRENCY",
+                "pattern": "\"$\"#,##0.00"
               }
-            },
-            "formula": "TO_DOLLARS(1234.567)",
-            "formatted": "$1,234.57",
-            "number_format": {
-              "type": "CURRENCY",
-              "pattern": "\"$\"#,##0.00"
             }
-          }
-        ]
-      ],
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=TO_DOLLARS(1234.567)"
     },
     "sha256:f29f1bdcdf1a1a23517319900ae4fe3b9eec013ad9594389db1a31eefa0cd16c": {
-      "result": [
-        [
-          {
-            "primitive": {
-              "kind": "number",
-              "value": -42.5
-            },
-            "engine": {
-              "platform": "gsheets",
-              "wire_kind": "number",
-              "raw_api": {
-                "userEnteredValue": {
-                  "formulaValue": "=TO_DOLLARS(-42.5)"
-                },
-                "effectiveValue": {
-                  "numberValue": -42.5
-                },
-                "formattedValue": "-$42.50",
-                "effectiveFormat": {
-                  "numberFormat": {
-                    "type": "CURRENCY",
-                    "pattern": "\"$\"#,##0.00"
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": -42.5
+              },
+              "engine": {
+                "platform": "gsheets",
+                "wire_kind": "number",
+                "raw_api": {
+                  "userEnteredValue": {
+                    "formulaValue": "=TO_DOLLARS(-42.5)"
                   },
-                  "textFormat": {
-                    "foregroundColor": {},
-                    "fontFamily": "Arial",
-                    "fontSize": 10,
-                    "bold": false,
-                    "italic": false,
-                    "strikethrough": false,
-                    "underline": false,
-                    "foregroundColorStyle": {
-                      "rgbColor": {}
-                    }
+                  "effectiveValue": {
+                    "numberValue": -42.5
                   },
-                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                  "formattedValue": "-$42.50",
+                  "effectiveFormat": {
+                    "numberFormat": {
+                      "type": "CURRENCY",
+                      "pattern": "\"$\"#,##0.00"
+                    },
+                    "textFormat": {
+                      "foregroundColor": {},
+                      "fontFamily": "Arial",
+                      "fontSize": 10,
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "foregroundColorStyle": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "hyperlinkDisplayType": "PLAIN_TEXT"
+                  }
                 }
+              },
+              "formula": "TO_DOLLARS(-42.5)",
+              "formatted": "-$42.50",
+              "number_format": {
+                "type": "CURRENCY",
+                "pattern": "\"$\"#,##0.00"
               }
-            },
-            "formula": "TO_DOLLARS(-42.5)",
-            "formatted": "-$42.50",
-            "number_format": {
-              "type": "CURRENCY",
-              "pattern": "\"$\"#,##0.00"
             }
-          }
-        ]
-      ],
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=TO_DOLLARS(-42.5)"
     },
     "sha256:b4daf5d7c990e377caa9f2d9d536c23aea35618d06c3294dea28bc90ce58641c": {
-      "result": [
-        [
-          {
-            "primitive": {
-              "kind": "string",
-              "value": "99.99"
-            },
-            "engine": {
-              "platform": "gsheets",
-              "wire_kind": "string",
-              "raw_api": {
-                "userEnteredValue": {
-                  "formulaValue": "=TO_DOLLARS(\"99.99\")"
-                },
-                "effectiveValue": {
-                  "stringValue": "99.99"
-                },
-                "formattedValue": "99.99",
-                "effectiveFormat": {
-                  "numberFormat": {
-                    "type": "CURRENCY",
-                    "pattern": "\"$\"#,##0.00"
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "string",
+                "value": "99.99"
+              },
+              "engine": {
+                "platform": "gsheets",
+                "wire_kind": "string",
+                "raw_api": {
+                  "userEnteredValue": {
+                    "formulaValue": "=TO_DOLLARS(\"99.99\")"
                   },
-                  "textFormat": {
-                    "foregroundColor": {},
-                    "fontFamily": "Arial",
-                    "fontSize": 10,
-                    "bold": false,
-                    "italic": false,
-                    "strikethrough": false,
-                    "underline": false,
-                    "foregroundColorStyle": {
-                      "rgbColor": {}
-                    }
+                  "effectiveValue": {
+                    "stringValue": "99.99"
                   },
-                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                  "formattedValue": "99.99",
+                  "effectiveFormat": {
+                    "numberFormat": {
+                      "type": "CURRENCY",
+                      "pattern": "\"$\"#,##0.00"
+                    },
+                    "textFormat": {
+                      "foregroundColor": {},
+                      "fontFamily": "Arial",
+                      "fontSize": 10,
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "foregroundColorStyle": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "hyperlinkDisplayType": "PLAIN_TEXT"
+                  }
                 }
+              },
+              "formula": "TO_DOLLARS(\"99.99\")",
+              "formatted": "99.99",
+              "number_format": {
+                "type": "CURRENCY",
+                "pattern": "\"$\"#,##0.00"
               }
-            },
-            "formula": "TO_DOLLARS(\"99.99\")",
-            "formatted": "99.99",
-            "number_format": {
-              "type": "CURRENCY",
-              "pattern": "\"$\"#,##0.00"
             }
-          }
-        ]
-      ],
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=TO_DOLLARS(\"99.99\")"
     },
     "sha256:c2e0a1019c478342f2289c447bdd04b219766d8f996a49718dc56d0577bd979c": {
-      "result": [
-        [
-          {
-            "primitive": {
-              "kind": "boolean",
-              "value": true
-            },
-            "engine": {
-              "platform": "gsheets",
-              "wire_kind": "boolean",
-              "raw_api": {
-                "userEnteredValue": {
-                  "formulaValue": "=TO_DOLLARS(TRUE)"
-                },
-                "effectiveValue": {
-                  "boolValue": true
-                },
-                "formattedValue": "TRUE",
-                "effectiveFormat": {
-                  "numberFormat": {
-                    "type": "CURRENCY",
-                    "pattern": "\"$\"#,##0.00"
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "boolean",
+                "value": true
+              },
+              "engine": {
+                "platform": "gsheets",
+                "wire_kind": "boolean",
+                "raw_api": {
+                  "userEnteredValue": {
+                    "formulaValue": "=TO_DOLLARS(TRUE)"
                   },
-                  "textFormat": {
-                    "foregroundColor": {},
-                    "fontFamily": "Arial",
-                    "fontSize": 10,
-                    "bold": false,
-                    "italic": false,
-                    "strikethrough": false,
-                    "underline": false,
-                    "foregroundColorStyle": {
-                      "rgbColor": {}
-                    }
+                  "effectiveValue": {
+                    "boolValue": true
                   },
-                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                  "formattedValue": "TRUE",
+                  "effectiveFormat": {
+                    "numberFormat": {
+                      "type": "CURRENCY",
+                      "pattern": "\"$\"#,##0.00"
+                    },
+                    "textFormat": {
+                      "foregroundColor": {},
+                      "fontFamily": "Arial",
+                      "fontSize": 10,
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "foregroundColorStyle": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "hyperlinkDisplayType": "PLAIN_TEXT"
+                  }
                 }
+              },
+              "formula": "TO_DOLLARS(TRUE)",
+              "formatted": "TRUE",
+              "number_format": {
+                "type": "CURRENCY",
+                "pattern": "\"$\"#,##0.00"
               }
-            },
-            "formula": "TO_DOLLARS(TRUE)",
-            "formatted": "TRUE",
-            "number_format": {
-              "type": "CURRENCY",
-              "pattern": "\"$\"#,##0.00"
             }
-          }
-        ]
-      ],
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=TO_DOLLARS(TRUE)"
     },
     "sha256:2359190e9b8ee9089350c4a9e044c34eab854124a61c32e73c50f87bf416e5b2": {
-      "result": [
-        [
-          {
-            "primitive": {
-              "kind": "number",
-              "value": 0.25
-            },
-            "engine": {
-              "platform": "gsheets",
-              "wire_kind": "number",
-              "raw_api": {
-                "userEnteredValue": {
-                  "formulaValue": "=TO_PERCENT(0.25)"
-                },
-                "effectiveValue": {
-                  "numberValue": 0.25
-                },
-                "formattedValue": "25%",
-                "effectiveFormat": {
-                  "numberFormat": {
-                    "type": "PERCENT",
-                    "pattern": "0%"
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 0.25
+              },
+              "engine": {
+                "platform": "gsheets",
+                "wire_kind": "number",
+                "raw_api": {
+                  "userEnteredValue": {
+                    "formulaValue": "=TO_PERCENT(0.25)"
                   },
-                  "textFormat": {
-                    "foregroundColor": {},
-                    "fontFamily": "Arial",
-                    "fontSize": 10,
-                    "bold": false,
-                    "italic": false,
-                    "strikethrough": false,
-                    "underline": false,
-                    "foregroundColorStyle": {
-                      "rgbColor": {}
-                    }
+                  "effectiveValue": {
+                    "numberValue": 0.25
                   },
-                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                  "formattedValue": "25%",
+                  "effectiveFormat": {
+                    "numberFormat": {
+                      "type": "PERCENT",
+                      "pattern": "0%"
+                    },
+                    "textFormat": {
+                      "foregroundColor": {},
+                      "fontFamily": "Arial",
+                      "fontSize": 10,
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "foregroundColorStyle": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "hyperlinkDisplayType": "PLAIN_TEXT"
+                  }
                 }
+              },
+              "formula": "TO_PERCENT(0.25)",
+              "formatted": "25%",
+              "number_format": {
+                "type": "PERCENT",
+                "pattern": "0%"
               }
-            },
-            "formula": "TO_PERCENT(0.25)",
-            "formatted": "25%",
-            "number_format": {
-              "type": "PERCENT",
-              "pattern": "0%"
             }
-          }
-        ]
-      ],
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=TO_PERCENT(0.25)"
     },
     "sha256:8e38133c71c4d73fe80d1e7bc77473f3f9feb81363ffb55d7110b08c8a9ba59b": {
-      "result": [
-        [
-          {
-            "primitive": {
-              "kind": "number",
-              "value": 1
-            },
-            "engine": {
-              "platform": "gsheets",
-              "wire_kind": "number",
-              "raw_api": {
-                "userEnteredValue": {
-                  "formulaValue": "=TO_PERCENT(1)"
-                },
-                "effectiveValue": {
-                  "numberValue": 1
-                },
-                "formattedValue": "100%",
-                "effectiveFormat": {
-                  "numberFormat": {
-                    "type": "PERCENT",
-                    "pattern": "0%"
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 1
+              },
+              "engine": {
+                "platform": "gsheets",
+                "wire_kind": "number",
+                "raw_api": {
+                  "userEnteredValue": {
+                    "formulaValue": "=TO_PERCENT(1)"
                   },
-                  "textFormat": {
-                    "foregroundColor": {},
-                    "fontFamily": "Arial",
-                    "fontSize": 10,
-                    "bold": false,
-                    "italic": false,
-                    "strikethrough": false,
-                    "underline": false,
-                    "foregroundColorStyle": {
-                      "rgbColor": {}
-                    }
+                  "effectiveValue": {
+                    "numberValue": 1
                   },
-                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                  "formattedValue": "100%",
+                  "effectiveFormat": {
+                    "numberFormat": {
+                      "type": "PERCENT",
+                      "pattern": "0%"
+                    },
+                    "textFormat": {
+                      "foregroundColor": {},
+                      "fontFamily": "Arial",
+                      "fontSize": 10,
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "foregroundColorStyle": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "hyperlinkDisplayType": "PLAIN_TEXT"
+                  }
                 }
+              },
+              "formula": "TO_PERCENT(1)",
+              "formatted": "100%",
+              "number_format": {
+                "type": "PERCENT",
+                "pattern": "0%"
               }
-            },
-            "formula": "TO_PERCENT(1)",
-            "formatted": "100%",
-            "number_format": {
-              "type": "PERCENT",
-              "pattern": "0%"
             }
-          }
-        ]
-      ],
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=TO_PERCENT(1)"
     },
     "sha256:576ea3a9e94efa1d6bd8b85ee240fd604f03b57ead44f3031df24ada05a25e8c": {
-      "result": [
-        [
-          {
-            "primitive": {
-              "kind": "number",
-              "value": 0
-            },
-            "engine": {
-              "platform": "gsheets",
-              "wire_kind": "number",
-              "raw_api": {
-                "userEnteredValue": {
-                  "formulaValue": "=TO_PERCENT(0)"
-                },
-                "effectiveValue": {
-                  "numberValue": 0
-                },
-                "formattedValue": "0%",
-                "effectiveFormat": {
-                  "numberFormat": {
-                    "type": "PERCENT",
-                    "pattern": "0%"
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 0
+              },
+              "engine": {
+                "platform": "gsheets",
+                "wire_kind": "number",
+                "raw_api": {
+                  "userEnteredValue": {
+                    "formulaValue": "=TO_PERCENT(0)"
                   },
-                  "textFormat": {
-                    "foregroundColor": {},
-                    "fontFamily": "Arial",
-                    "fontSize": 10,
-                    "bold": false,
-                    "italic": false,
-                    "strikethrough": false,
-                    "underline": false,
-                    "foregroundColorStyle": {
-                      "rgbColor": {}
-                    }
+                  "effectiveValue": {
+                    "numberValue": 0
                   },
-                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                  "formattedValue": "0%",
+                  "effectiveFormat": {
+                    "numberFormat": {
+                      "type": "PERCENT",
+                      "pattern": "0%"
+                    },
+                    "textFormat": {
+                      "foregroundColor": {},
+                      "fontFamily": "Arial",
+                      "fontSize": 10,
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "foregroundColorStyle": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "hyperlinkDisplayType": "PLAIN_TEXT"
+                  }
                 }
+              },
+              "formula": "TO_PERCENT(0)",
+              "formatted": "0%",
+              "number_format": {
+                "type": "PERCENT",
+                "pattern": "0%"
               }
-            },
-            "formula": "TO_PERCENT(0)",
-            "formatted": "0%",
-            "number_format": {
-              "type": "PERCENT",
-              "pattern": "0%"
             }
-          }
-        ]
-      ],
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=TO_PERCENT(0)"
     },
     "sha256:805b846a0c689cce65db268cc57c42ee9c9e0c3d1d695a9c79b1da9140a13e16": {
-      "result": [
-        [
-          {
-            "primitive": {
-              "kind": "string",
-              "value": "0.5"
-            },
-            "engine": {
-              "platform": "gsheets",
-              "wire_kind": "string",
-              "raw_api": {
-                "userEnteredValue": {
-                  "formulaValue": "=TO_PERCENT(\"0.5\")"
-                },
-                "effectiveValue": {
-                  "stringValue": "0.5"
-                },
-                "formattedValue": "0.5",
-                "effectiveFormat": {
-                  "numberFormat": {
-                    "type": "PERCENT",
-                    "pattern": "0%"
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "string",
+                "value": "0.5"
+              },
+              "engine": {
+                "platform": "gsheets",
+                "wire_kind": "string",
+                "raw_api": {
+                  "userEnteredValue": {
+                    "formulaValue": "=TO_PERCENT(\"0.5\")"
                   },
-                  "textFormat": {
-                    "foregroundColor": {},
-                    "fontFamily": "Arial",
-                    "fontSize": 10,
-                    "bold": false,
-                    "italic": false,
-                    "strikethrough": false,
-                    "underline": false,
-                    "foregroundColorStyle": {
-                      "rgbColor": {}
-                    }
+                  "effectiveValue": {
+                    "stringValue": "0.5"
                   },
-                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                  "formattedValue": "0.5",
+                  "effectiveFormat": {
+                    "numberFormat": {
+                      "type": "PERCENT",
+                      "pattern": "0%"
+                    },
+                    "textFormat": {
+                      "foregroundColor": {},
+                      "fontFamily": "Arial",
+                      "fontSize": 10,
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "foregroundColorStyle": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "hyperlinkDisplayType": "PLAIN_TEXT"
+                  }
                 }
+              },
+              "formula": "TO_PERCENT(\"0.5\")",
+              "formatted": "0.5",
+              "number_format": {
+                "type": "PERCENT",
+                "pattern": "0%"
               }
-            },
-            "formula": "TO_PERCENT(\"0.5\")",
-            "formatted": "0.5",
-            "number_format": {
-              "type": "PERCENT",
-              "pattern": "0%"
             }
-          }
-        ]
-      ],
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=TO_PERCENT(\"0.5\")"
     },
     "sha256:276b38b8fc04abc537c92aaaa5e7dffa4715714980ec1c3f9ee0ee69231d4ea8": {
-      "result": [
-        [
-          {
-            "primitive": {
-              "kind": "number",
-              "value": -0.1
-            },
-            "engine": {
-              "platform": "gsheets",
-              "wire_kind": "number",
-              "raw_api": {
-                "userEnteredValue": {
-                  "formulaValue": "=TO_PERCENT(-0.1)"
-                },
-                "effectiveValue": {
-                  "numberValue": -0.1
-                },
-                "formattedValue": "-10%",
-                "effectiveFormat": {
-                  "numberFormat": {
-                    "type": "PERCENT",
-                    "pattern": "0%"
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": -0.1
+              },
+              "engine": {
+                "platform": "gsheets",
+                "wire_kind": "number",
+                "raw_api": {
+                  "userEnteredValue": {
+                    "formulaValue": "=TO_PERCENT(-0.1)"
                   },
-                  "textFormat": {
-                    "foregroundColor": {},
-                    "fontFamily": "Arial",
-                    "fontSize": 10,
-                    "bold": false,
-                    "italic": false,
-                    "strikethrough": false,
-                    "underline": false,
-                    "foregroundColorStyle": {
-                      "rgbColor": {}
-                    }
+                  "effectiveValue": {
+                    "numberValue": -0.1
                   },
-                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                  "formattedValue": "-10%",
+                  "effectiveFormat": {
+                    "numberFormat": {
+                      "type": "PERCENT",
+                      "pattern": "0%"
+                    },
+                    "textFormat": {
+                      "foregroundColor": {},
+                      "fontFamily": "Arial",
+                      "fontSize": 10,
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "foregroundColorStyle": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "hyperlinkDisplayType": "PLAIN_TEXT"
+                  }
                 }
+              },
+              "formula": "TO_PERCENT(-0.1)",
+              "formatted": "-10%",
+              "number_format": {
+                "type": "PERCENT",
+                "pattern": "0%"
               }
-            },
-            "formula": "TO_PERCENT(-0.1)",
-            "formatted": "-10%",
-            "number_format": {
-              "type": "PERCENT",
-              "pattern": "0%"
             }
-          }
-        ]
-      ],
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=TO_PERCENT(-0.1)"
     },
     "sha256:42bd6dfd6277c456e2efc0b0b532557184e90eed73fef1a1730f75a86dbb5c9b": {
-      "result": [
-        [
-          {
-            "primitive": {
-              "kind": "number",
-              "value": 0.25
-            },
-            "engine": {
-              "platform": "gsheets",
-              "wire_kind": "number",
-              "raw_api": {
-                "userEnteredValue": {
-                  "formulaValue": "=TO_PURE_NUMBER(0.25)"
-                },
-                "effectiveValue": {
-                  "numberValue": 0.25
-                },
-                "formattedValue": "0.25",
-                "effectiveFormat": {
-                  "textFormat": {
-                    "foregroundColor": {},
-                    "fontFamily": "Arial",
-                    "fontSize": 10,
-                    "bold": false,
-                    "italic": false,
-                    "strikethrough": false,
-                    "underline": false,
-                    "foregroundColorStyle": {
-                      "rgbColor": {}
-                    }
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 0.25
+              },
+              "engine": {
+                "platform": "gsheets",
+                "wire_kind": "number",
+                "raw_api": {
+                  "userEnteredValue": {
+                    "formulaValue": "=TO_PURE_NUMBER(0.25)"
                   },
-                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                  "effectiveValue": {
+                    "numberValue": 0.25
+                  },
+                  "formattedValue": "0.25",
+                  "effectiveFormat": {
+                    "textFormat": {
+                      "foregroundColor": {},
+                      "fontFamily": "Arial",
+                      "fontSize": 10,
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "foregroundColorStyle": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "hyperlinkDisplayType": "PLAIN_TEXT"
+                  }
                 }
-              }
-            },
-            "formula": "TO_PURE_NUMBER(0.25)",
-            "formatted": "0.25"
-          }
-        ]
-      ],
+              },
+              "formula": "TO_PURE_NUMBER(0.25)",
+              "formatted": "0.25"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=TO_PURE_NUMBER(0.25)"
     },
     "sha256:170c648e61e2c4c3e2cb773b989b964b0ec74690f88f13f4e69db510e42d2e48": {
-      "result": [
-        [
-          {
-            "primitive": {
-              "kind": "number",
-              "value": 42
-            },
-            "engine": {
-              "platform": "gsheets",
-              "wire_kind": "number",
-              "raw_api": {
-                "userEnteredValue": {
-                  "formulaValue": "=TO_PURE_NUMBER(42)"
-                },
-                "effectiveValue": {
-                  "numberValue": 42
-                },
-                "formattedValue": "42",
-                "effectiveFormat": {
-                  "textFormat": {
-                    "foregroundColor": {},
-                    "fontFamily": "Arial",
-                    "fontSize": 10,
-                    "bold": false,
-                    "italic": false,
-                    "strikethrough": false,
-                    "underline": false,
-                    "foregroundColorStyle": {
-                      "rgbColor": {}
-                    }
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 42
+              },
+              "engine": {
+                "platform": "gsheets",
+                "wire_kind": "number",
+                "raw_api": {
+                  "userEnteredValue": {
+                    "formulaValue": "=TO_PURE_NUMBER(42)"
                   },
-                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                  "effectiveValue": {
+                    "numberValue": 42
+                  },
+                  "formattedValue": "42",
+                  "effectiveFormat": {
+                    "textFormat": {
+                      "foregroundColor": {},
+                      "fontFamily": "Arial",
+                      "fontSize": 10,
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "foregroundColorStyle": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "hyperlinkDisplayType": "PLAIN_TEXT"
+                  }
                 }
-              }
-            },
-            "formula": "TO_PURE_NUMBER(42)",
-            "formatted": "42"
-          }
-        ]
-      ],
+              },
+              "formula": "TO_PURE_NUMBER(42)",
+              "formatted": "42"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=TO_PURE_NUMBER(42)"
     },
     "sha256:c32093ec24083ee9d1c5443d7231601f325af413a0209ace32e0024ce98425c3": {
-      "result": [
-        [
-          {
-            "primitive": {
-              "kind": "string",
-              "value": "123.45"
-            },
-            "engine": {
-              "platform": "gsheets",
-              "wire_kind": "string",
-              "raw_api": {
-                "userEnteredValue": {
-                  "formulaValue": "=TO_PURE_NUMBER(\"123.45\")"
-                },
-                "effectiveValue": {
-                  "stringValue": "123.45"
-                },
-                "formattedValue": "123.45",
-                "effectiveFormat": {
-                  "textFormat": {
-                    "foregroundColor": {},
-                    "fontFamily": "Arial",
-                    "fontSize": 10,
-                    "bold": false,
-                    "italic": false,
-                    "strikethrough": false,
-                    "underline": false,
-                    "foregroundColorStyle": {
-                      "rgbColor": {}
-                    }
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "string",
+                "value": "123.45"
+              },
+              "engine": {
+                "platform": "gsheets",
+                "wire_kind": "string",
+                "raw_api": {
+                  "userEnteredValue": {
+                    "formulaValue": "=TO_PURE_NUMBER(\"123.45\")"
                   },
-                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                  "effectiveValue": {
+                    "stringValue": "123.45"
+                  },
+                  "formattedValue": "123.45",
+                  "effectiveFormat": {
+                    "textFormat": {
+                      "foregroundColor": {},
+                      "fontFamily": "Arial",
+                      "fontSize": 10,
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "foregroundColorStyle": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "hyperlinkDisplayType": "PLAIN_TEXT"
+                  }
                 }
-              }
-            },
-            "formula": "TO_PURE_NUMBER(\"123.45\")",
-            "formatted": "123.45"
-          }
-        ]
-      ],
+              },
+              "formula": "TO_PURE_NUMBER(\"123.45\")",
+              "formatted": "123.45"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=TO_PURE_NUMBER(\"123.45\")"
     },
     "sha256:30bac1d837ee9c35f9051b5122c4ae3a87726e71260ae4c86727dc4e9db96402": {
-      "result": [
-        [
-          {
-            "primitive": {
-              "kind": "boolean",
-              "value": true
-            },
-            "engine": {
-              "platform": "gsheets",
-              "wire_kind": "boolean",
-              "raw_api": {
-                "userEnteredValue": {
-                  "formulaValue": "=TO_PURE_NUMBER(TRUE)"
-                },
-                "effectiveValue": {
-                  "boolValue": true
-                },
-                "formattedValue": "TRUE",
-                "effectiveFormat": {
-                  "textFormat": {
-                    "foregroundColor": {},
-                    "fontFamily": "Arial",
-                    "fontSize": 10,
-                    "bold": false,
-                    "italic": false,
-                    "strikethrough": false,
-                    "underline": false,
-                    "foregroundColorStyle": {
-                      "rgbColor": {}
-                    }
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "boolean",
+                "value": true
+              },
+              "engine": {
+                "platform": "gsheets",
+                "wire_kind": "boolean",
+                "raw_api": {
+                  "userEnteredValue": {
+                    "formulaValue": "=TO_PURE_NUMBER(TRUE)"
                   },
-                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                  "effectiveValue": {
+                    "boolValue": true
+                  },
+                  "formattedValue": "TRUE",
+                  "effectiveFormat": {
+                    "textFormat": {
+                      "foregroundColor": {},
+                      "fontFamily": "Arial",
+                      "fontSize": 10,
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "foregroundColorStyle": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "hyperlinkDisplayType": "PLAIN_TEXT"
+                  }
                 }
-              }
-            },
-            "formula": "TO_PURE_NUMBER(TRUE)",
-            "formatted": "TRUE"
-          }
-        ]
-      ],
+              },
+              "formula": "TO_PURE_NUMBER(TRUE)",
+              "formatted": "TRUE"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=TO_PURE_NUMBER(TRUE)"
     },
     "sha256:2c3b5aa6a1527919e3276dfda8222f53bc3396815232fb95726188febdb8214e": {
-      "result": [
-        [
-          {
-            "primitive": {
-              "kind": "string",
-              "value": "hello"
-            },
-            "engine": {
-              "platform": "gsheets",
-              "wire_kind": "string",
-              "raw_api": {
-                "userEnteredValue": {
-                  "formulaValue": "=TO_PURE_NUMBER(\"hello\")"
-                },
-                "effectiveValue": {
-                  "stringValue": "hello"
-                },
-                "formattedValue": "hello",
-                "effectiveFormat": {
-                  "textFormat": {
-                    "foregroundColor": {},
-                    "fontFamily": "Arial",
-                    "fontSize": 10,
-                    "bold": false,
-                    "italic": false,
-                    "strikethrough": false,
-                    "underline": false,
-                    "foregroundColorStyle": {
-                      "rgbColor": {}
-                    }
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "string",
+                "value": "hello"
+              },
+              "engine": {
+                "platform": "gsheets",
+                "wire_kind": "string",
+                "raw_api": {
+                  "userEnteredValue": {
+                    "formulaValue": "=TO_PURE_NUMBER(\"hello\")"
                   },
-                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                  "effectiveValue": {
+                    "stringValue": "hello"
+                  },
+                  "formattedValue": "hello",
+                  "effectiveFormat": {
+                    "textFormat": {
+                      "foregroundColor": {},
+                      "fontFamily": "Arial",
+                      "fontSize": 10,
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "foregroundColorStyle": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "hyperlinkDisplayType": "PLAIN_TEXT"
+                  }
                 }
-              }
-            },
-            "formula": "TO_PURE_NUMBER(\"hello\")",
-            "formatted": "hello"
-          }
-        ]
-      ],
+              },
+              "formula": "TO_PURE_NUMBER(\"hello\")",
+              "formatted": "hello"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=TO_PURE_NUMBER(\"hello\")"
     },
     "sha256:fa6a0049c8f24eb0801c11c20a4056529acc1f826eeb87448670624e758de6b7": {
-      "result": [
-        [
-          {
-            "primitive": {
-              "kind": "string",
-              "value": "42"
-            },
-            "engine": {
-              "platform": "gsheets",
-              "wire_kind": "string",
-              "raw_api": {
-                "userEnteredValue": {
-                  "formulaValue": "=TO_TEXT(42)"
-                },
-                "effectiveValue": {
-                  "stringValue": "42"
-                },
-                "formattedValue": "42",
-                "effectiveFormat": {
-                  "textFormat": {
-                    "foregroundColor": {},
-                    "fontFamily": "Arial",
-                    "fontSize": 10,
-                    "bold": false,
-                    "italic": false,
-                    "strikethrough": false,
-                    "underline": false,
-                    "foregroundColorStyle": {
-                      "rgbColor": {}
-                    }
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "string",
+                "value": "42"
+              },
+              "engine": {
+                "platform": "gsheets",
+                "wire_kind": "string",
+                "raw_api": {
+                  "userEnteredValue": {
+                    "formulaValue": "=TO_TEXT(42)"
                   },
-                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                  "effectiveValue": {
+                    "stringValue": "42"
+                  },
+                  "formattedValue": "42",
+                  "effectiveFormat": {
+                    "textFormat": {
+                      "foregroundColor": {},
+                      "fontFamily": "Arial",
+                      "fontSize": 10,
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "foregroundColorStyle": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "hyperlinkDisplayType": "PLAIN_TEXT"
+                  }
                 }
-              }
-            },
-            "formula": "TO_TEXT(42)",
-            "formatted": "42"
-          }
-        ]
-      ],
+              },
+              "formula": "TO_TEXT(42)",
+              "formatted": "42"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=TO_TEXT(42)"
     },
     "sha256:ae7282ddc8e72f5dea0f4e26fe6cd81a41c1cae8f0059a7e2569f5f1d1b25a6d": {
-      "result": [
-        [
-          {
-            "primitive": {
-              "kind": "string",
-              "value": "3.14159"
-            },
-            "engine": {
-              "platform": "gsheets",
-              "wire_kind": "string",
-              "raw_api": {
-                "userEnteredValue": {
-                  "formulaValue": "=TO_TEXT(3.14159)"
-                },
-                "effectiveValue": {
-                  "stringValue": "3.14159"
-                },
-                "formattedValue": "3.14159",
-                "effectiveFormat": {
-                  "textFormat": {
-                    "foregroundColor": {},
-                    "fontFamily": "Arial",
-                    "fontSize": 10,
-                    "bold": false,
-                    "italic": false,
-                    "strikethrough": false,
-                    "underline": false,
-                    "foregroundColorStyle": {
-                      "rgbColor": {}
-                    }
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "string",
+                "value": "3.14159"
+              },
+              "engine": {
+                "platform": "gsheets",
+                "wire_kind": "string",
+                "raw_api": {
+                  "userEnteredValue": {
+                    "formulaValue": "=TO_TEXT(3.14159)"
                   },
-                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                  "effectiveValue": {
+                    "stringValue": "3.14159"
+                  },
+                  "formattedValue": "3.14159",
+                  "effectiveFormat": {
+                    "textFormat": {
+                      "foregroundColor": {},
+                      "fontFamily": "Arial",
+                      "fontSize": 10,
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "foregroundColorStyle": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "hyperlinkDisplayType": "PLAIN_TEXT"
+                  }
                 }
-              }
-            },
-            "formula": "TO_TEXT(3.14159)",
-            "formatted": "3.14159"
-          }
-        ]
-      ],
+              },
+              "formula": "TO_TEXT(3.14159)",
+              "formatted": "3.14159"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=TO_TEXT(3.14159)"
     },
     "sha256:17c86f208f02ee32b12b191dbb46ba373c1a37e4e7ed9da79c9150242a42f884": {
-      "result": [
-        [
-          {
-            "primitive": {
-              "kind": "string",
-              "value": "TRUE"
-            },
-            "engine": {
-              "platform": "gsheets",
-              "wire_kind": "string",
-              "raw_api": {
-                "userEnteredValue": {
-                  "formulaValue": "=TO_TEXT(TRUE)"
-                },
-                "effectiveValue": {
-                  "stringValue": "TRUE"
-                },
-                "formattedValue": "TRUE",
-                "effectiveFormat": {
-                  "textFormat": {
-                    "foregroundColor": {},
-                    "fontFamily": "Arial",
-                    "fontSize": 10,
-                    "bold": false,
-                    "italic": false,
-                    "strikethrough": false,
-                    "underline": false,
-                    "foregroundColorStyle": {
-                      "rgbColor": {}
-                    }
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "string",
+                "value": "TRUE"
+              },
+              "engine": {
+                "platform": "gsheets",
+                "wire_kind": "string",
+                "raw_api": {
+                  "userEnteredValue": {
+                    "formulaValue": "=TO_TEXT(TRUE)"
                   },
-                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                  "effectiveValue": {
+                    "stringValue": "TRUE"
+                  },
+                  "formattedValue": "TRUE",
+                  "effectiveFormat": {
+                    "textFormat": {
+                      "foregroundColor": {},
+                      "fontFamily": "Arial",
+                      "fontSize": 10,
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "foregroundColorStyle": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "hyperlinkDisplayType": "PLAIN_TEXT"
+                  }
                 }
-              }
-            },
-            "formula": "TO_TEXT(TRUE)",
-            "formatted": "TRUE"
-          }
-        ]
-      ],
+              },
+              "formula": "TO_TEXT(TRUE)",
+              "formatted": "TRUE"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=TO_TEXT(TRUE)"
     },
     "sha256:29a918a76cca83d964544e54477e4a7f96de8fc57d4e350f28ce3ae7e6cb7301": {
-      "result": [
-        [
-          {
-            "primitive": {
-              "kind": "string",
-              "value": "hello"
-            },
-            "engine": {
-              "platform": "gsheets",
-              "wire_kind": "string",
-              "raw_api": {
-                "userEnteredValue": {
-                  "formulaValue": "=TO_TEXT(\"hello\")"
-                },
-                "effectiveValue": {
-                  "stringValue": "hello"
-                },
-                "formattedValue": "hello",
-                "effectiveFormat": {
-                  "textFormat": {
-                    "foregroundColor": {},
-                    "fontFamily": "Arial",
-                    "fontSize": 10,
-                    "bold": false,
-                    "italic": false,
-                    "strikethrough": false,
-                    "underline": false,
-                    "foregroundColorStyle": {
-                      "rgbColor": {}
-                    }
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "string",
+                "value": "hello"
+              },
+              "engine": {
+                "platform": "gsheets",
+                "wire_kind": "string",
+                "raw_api": {
+                  "userEnteredValue": {
+                    "formulaValue": "=TO_TEXT(\"hello\")"
                   },
-                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                  "effectiveValue": {
+                    "stringValue": "hello"
+                  },
+                  "formattedValue": "hello",
+                  "effectiveFormat": {
+                    "textFormat": {
+                      "foregroundColor": {},
+                      "fontFamily": "Arial",
+                      "fontSize": 10,
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "foregroundColorStyle": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "hyperlinkDisplayType": "PLAIN_TEXT"
+                  }
                 }
-              }
-            },
-            "formula": "TO_TEXT(\"hello\")",
-            "formatted": "hello"
-          }
-        ]
-      ],
+              },
+              "formula": "TO_TEXT(\"hello\")",
+              "formatted": "hello"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=TO_TEXT(\"hello\")"
     },
     "sha256:b296ab42bce8f8b5a6a93252f4fab1fba475fae3703c3a7381e22e34cc0e9d4c": {
-      "result": [
-        [
-          {
-            "primitive": {
-              "kind": "string",
-              "value": "1/15/2024"
-            },
-            "engine": {
-              "platform": "gsheets",
-              "wire_kind": "string",
-              "raw_api": {
-                "userEnteredValue": {
-                  "formulaValue": "=TO_TEXT(A1)"
-                },
-                "effectiveValue": {
-                  "stringValue": "1/15/2024"
-                },
-                "formattedValue": "1/15/2024",
-                "effectiveFormat": {
-                  "textFormat": {
-                    "foregroundColor": {},
-                    "fontFamily": "Arial",
-                    "fontSize": 10,
-                    "bold": false,
-                    "italic": false,
-                    "strikethrough": false,
-                    "underline": false,
-                    "foregroundColorStyle": {
-                      "rgbColor": {}
-                    }
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "string",
+                "value": "=DATE(2024, 1, 15)"
+              },
+              "engine": {
+                "platform": "gsheets",
+                "wire_kind": "string",
+                "raw_api": {
+                  "userEnteredValue": {
+                    "formulaValue": "=TO_TEXT(A1)"
                   },
-                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                  "effectiveValue": {
+                    "stringValue": "=DATE(2024, 1, 15)"
+                  },
+                  "formattedValue": "=DATE(2024, 1, 15)",
+                  "effectiveFormat": {
+                    "textFormat": {
+                      "foregroundColor": {},
+                      "fontFamily": "Arial",
+                      "fontSize": 10,
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "foregroundColorStyle": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "hyperlinkDisplayType": "PLAIN_TEXT"
+                  }
                 }
-              }
-            },
-            "formula": "TO_TEXT(A1)",
-            "formatted": "1/15/2024"
-          }
-        ]
-      ],
+              },
+              "formula": "TO_TEXT(A1)",
+              "formatted": "=DATE(2024, 1, 15)"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=TO_TEXT(A1)"
     },
     "sha256:39ca15be049515d82f9cd45d66a5314a12c986974e91f3740ce0db4f0d192286": {
-      "result": [
-        [
-          {
-            "primitive": {
-              "kind": "string",
-              "value": "-1234.5"
-            },
-            "engine": {
-              "platform": "gsheets",
-              "wire_kind": "string",
-              "raw_api": {
-                "userEnteredValue": {
-                  "formulaValue": "=TO_TEXT(-1234.5)"
-                },
-                "effectiveValue": {
-                  "stringValue": "-1234.5"
-                },
-                "formattedValue": "-1234.5",
-                "effectiveFormat": {
-                  "textFormat": {
-                    "foregroundColor": {},
-                    "fontFamily": "Arial",
-                    "fontSize": 10,
-                    "bold": false,
-                    "italic": false,
-                    "strikethrough": false,
-                    "underline": false,
-                    "foregroundColorStyle": {
-                      "rgbColor": {}
-                    }
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "string",
+                "value": "-1234.5"
+              },
+              "engine": {
+                "platform": "gsheets",
+                "wire_kind": "string",
+                "raw_api": {
+                  "userEnteredValue": {
+                    "formulaValue": "=TO_TEXT(-1234.5)"
                   },
-                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                  "effectiveValue": {
+                    "stringValue": "-1234.5"
+                  },
+                  "formattedValue": "-1234.5",
+                  "effectiveFormat": {
+                    "textFormat": {
+                      "foregroundColor": {},
+                      "fontFamily": "Arial",
+                      "fontSize": 10,
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "foregroundColorStyle": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "hyperlinkDisplayType": "PLAIN_TEXT"
+                  }
                 }
-              }
-            },
-            "formula": "TO_TEXT(-1234.5)",
-            "formatted": "-1234.5"
-          }
-        ]
-      ],
+              },
+              "formula": "TO_TEXT(-1234.5)",
+              "formatted": "-1234.5"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=TO_TEXT(-1234.5)"
     }
   }

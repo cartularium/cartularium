@@ -1,325 +1,856 @@
 {
   "platform": "pycel",
-  "generatedAt": "2026-05-11T09:34:43.806Z",
+  "generatedAt": "2026-06-17T19:40:23.782Z",
   "results": {
     "sha256:63da71ddec8acd73cc62f67f1c0e3e64f4a7a55b6bbd85dbb4d5623dffd7b013": {
-      "result": [
-        [
-          "hello world"
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "string",
+                "value": "hello world"
+              },
+              "engine": {
+                "platform": "pycel"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=CONCAT(\"hello\", \" world\")"
     },
     "sha256:2ae1f8d21716f47a3b0c7de10c33c203c71b702356ee48b7a4e3b17d6b4fd42e": {
-      "result": [
-        [
-          "Hello my World!"
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "string",
+                "value": "Hello my World!"
+              },
+              "engine": {
+                "platform": "pycel"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=CONCATENATE(A1, A2, A3, \"!\")"
     },
     "sha256:8898ccfd2634b84e04d2e7b4b9050eb41c79161451b6a87891a5359187c8c83a": {
-      "result": [
-        [
-          "value:42"
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "string",
+                "value": "value:42"
+              },
+              "engine": {
+                "platform": "pycel"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=CONCAT(\"value:\", 42)"
     },
     "sha256:bbdace663702eaa7b9798136b39111a3681ed00905ef0762ba9e9709b3b3ea6b": {
-      "result": [
-        [
-          "Sale"
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "string",
+                "value": "Sale"
+              },
+              "engine": {
+                "platform": "pycel"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=LEFT(\"Sale Price\", 4)"
     },
     "sha256:f3bc75466300ff421025fa9942e627fcd1ec5c51abe3eb1c02b3031b4be33cc8": {
-      "result": [
-        [
-          "S"
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "string",
+                "value": "S"
+              },
+              "engine": {
+                "platform": "pycel"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=LEFT(\"Sweden\")"
     },
     "sha256:4062ef9865389f276f59ea60b76ff7b333840dc2df798af151b91db1c6283eac": {
-      "result": [
-        [
-          "Price"
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "string",
+                "value": "Price"
+              },
+              "engine": {
+                "platform": "pycel"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=RIGHT(\"Sale Price\", 5)"
     },
     "sha256:49bc365d1f76444f717981a3ce076cf7c66089eb5c9d1899adf01395191bf7c2": {
-      "result": [
-        [
-          "r"
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "string",
+                "value": "r"
+              },
+              "engine": {
+                "platform": "pycel"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=RIGHT(\"Stock Number\")"
     },
     "sha256:99e6d3fe41577c6950bb29e168b5c8e4967a85b521a7a7015dccda0109fbb434": {
-      "result": [
-        [
-          "main"
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "string",
+                "value": "main"
+              },
+              "engine": {
+                "platform": "pycel"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=MID(\"Romain\", 3, 4)"
     },
     "sha256:fea12e2a54686cad82d9d5ae702d3f1f2099d402cc49535eeb271778ed85afdd": {
-      "result": [
-        [
-          "Ro"
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "string",
+                "value": "Ro"
+              },
+              "engine": {
+                "platform": "pycel"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=MID(\"Romain\", 1, 2)"
     },
     "sha256:67209a4f7cd2516a3925a9f0805dcab57be1533438ef0ebf54b271a2b0355acc": {
-      "result": [
-        [
-          "main"
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "string",
+                "value": "main"
+              },
+              "engine": {
+                "platform": "pycel"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=MID(\"Romain\", 3, 6)"
     },
     "sha256:f484f95755ac23867726907b05d3e9463e94cbf4b8fd9f30d2933a76d6e2f6ec": {
-      "result": [
-        [
-          {
-            "error": "#VALUE!"
-          }
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "error",
+                "sentinel": "#VALUE!"
+              },
+              "engine": {
+                "platform": "pycel"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=MID(\"Romain\", 0, 3)"
     },
     "sha256:d6d4a5436b54b1439cc11f815ac4837a9fbd6ef01feda24eb66ac2d8ba875447": {
-      "result": [
-        [
-          {
-            "error": "#NAME?"
-          }
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "error",
+                "sentinel": "#NAME?"
+              },
+              "engine": {
+                "platform": "pycel"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=MID(\"Romain\", 1, -1)"
     },
     "sha256:a1cdfca6e0e25109d7cfd0137852671b7d40f655f66f61f3f6bfc9905b21fe45": {
-      "result": [
-        [
-          11
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 11
+              },
+              "engine": {
+                "platform": "pycel"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=LEN(\"Phoenix, AZ\")"
     },
     "sha256:e0c3a0af848387ae8a3513c0dfed2ae467dbdc852d6db24b5290975b81f0e90f": {
-      "result": [
-        [
-          0
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 0
+              },
+              "engine": {
+                "platform": "pycel"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=LEN(\"\")"
     },
     "sha256:5f204b61e9028fc4f431a2642406ea3666fe65837759fed575e13a818b5a4a66": {
-      "result": [
-        [
-          11
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 11
+              },
+              "engine": {
+                "platform": "pycel"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=LEN(\"        One\")"
     },
     "sha256:566b3f32e6a29bc3837e3651414a8bac2a2d59eb3e32a7133c7cbba607040ed3": {
-      "result": [
-        [
-          "e. e. cummings"
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "string",
+                "value": "e. e. cummings"
+              },
+              "engine": {
+                "platform": "pycel"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=LOWER(\"E. E. Cummings\")"
     },
     "sha256:8058b9f105a1472efb2cff110b7b0c48d3c8435ba4f20d1865de57c542207952": {
-      "result": [
-        [
-          "TOTAL"
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "string",
+                "value": "TOTAL"
+              },
+              "engine": {
+                "platform": "pycel"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=UPPER(\"total\")"
     },
     "sha256:3f5be264566fe5d1e726b1b58b45206b0d5cc9d4489cf02d4c4c10aa23482145": {
-      "result": [
-        [
-          "YIELD"
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "string",
+                "value": "YIELD"
+              },
+              "engine": {
+                "platform": "pycel"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=UPPER(\"Yield\")"
     },
     "sha256:69f8cbb74d06d4c0b003c47757e693984abbcc3e45f311f2ee95ad92e0ed0697": {
-      "result": [
-        [
-          " First Quarter Earnings "
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "string",
+                "value": " First Quarter Earnings "
+              },
+              "engine": {
+                "platform": "pycel"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=TRIM(\" First Quarter Earnings \")"
     },
     "sha256:c935286d78ab871b647a5a71a24dd0484a1bc4e6a35282c7b086045f49cce5c8": {
-      "result": [
-        [
-          "hello earth"
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "string",
+                "value": "hello earth"
+              },
+              "engine": {
+                "platform": "pycel"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=SUBSTITUTE(\"hello world\", \"world\", \"earth\")"
     },
     "sha256:c4ec22d1041c0d277e00396c6c6a74739c4ee230fe07120ac2d50f7701335b4f": {
-      "result": [
-        [
-          "xbcxbc"
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "string",
+                "value": "xbcxbc"
+              },
+              "engine": {
+                "platform": "pycel"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=SUBSTITUTE(\"abcabc\", \"a\", \"x\")"
     },
     "sha256:c5ea79519c36863de8067b702a1f336265790a627414de9fcb6aca8f4f63c989": {
-      "result": [
-        [
-          "abcxbc"
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "string",
+                "value": "abcxbc"
+              },
+              "engine": {
+                "platform": "pycel"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=SUBSTITUTE(\"abcabc\", \"a\", \"x\", 2)"
     },
     "sha256:6d6e94fcceff35765cf5e8ee4b17d996bbf23e89aac3ca3c76f6dafd41d1972a": {
-      "result": [
-        [
-          1
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 1
+              },
+              "engine": {
+                "platform": "pycel"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=FIND(\"M\", \"Miriam McGovern\")"
     },
     "sha256:ac6f6d7d481930220929c118a051d94b67bcd3ae63d13a63601d15fc26421a55": {
-      "result": [
-        [
-          6
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 6
+              },
+              "engine": {
+                "platform": "pycel"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=FIND(\"m\", \"Miriam McGovern\")"
     },
     "sha256:45c330c4a9f0e090722617a5674ba8ef35b69f6b767bf2a7fbba35b08634b6f0": {
-      "result": [
-        [
-          8
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 8
+              },
+              "engine": {
+                "platform": "pycel"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=FIND(\"M\", \"Miriam McGovern\", 3)"
     },
     "sha256:2f12476ca0951e24d4143bc78d7d3620378f3bc3229e0afd2b7ffe1d825dfbb9": {
-      "result": [
-        [
-          {
-            "error": "#VALUE!"
-          }
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "error",
+                "sentinel": "#VALUE!"
+              },
+              "engine": {
+                "platform": "pycel"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=FIND(\"B\", \"Miriam McGovern\")"
     },
     "sha256:ed3409186ebe38d949e5c9e38146ce5c84d7ff229d0d3e92f89cec1b9d7a6267": {
-      "result": [
-        [
-          {
-            "error": "#NAME?"
-          }
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "error",
+                "sentinel": "#NAME?"
+              },
+              "engine": {
+                "platform": "pycel"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=EXACT(\"word\", \"word\")"
     },
     "sha256:97c0b139b26b7f51634d984a9c6e57b472aa28687463533cb2068897b8018d64": {
-      "result": [
-        [
-          {
-            "error": "#NAME?"
-          }
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "error",
+                "sentinel": "#NAME?"
+              },
+              "engine": {
+                "platform": "pycel"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=EXACT(\"Word\", \"word\")"
     },
     "sha256:02c3c069cf601a8ac590acabbdbe03e2f903300b04dff9645d0a887fee62ab10": {
-      "result": [
-        [
-          "abcde*k"
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "string",
+                "value": "abcde*k"
+              },
+              "engine": {
+                "platform": "pycel"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=REPLACE(\"abcdefghijk\", 6, 5, \"*\")"
     },
     "sha256:120d07910182623d71088e08589a459e0a8c93734ba8f152c801aeabc8f3befc": {
-      "result": [
-        [
-          "2010"
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "string",
+                "value": "2010"
+              },
+              "engine": {
+                "platform": "pycel"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=REPLACE(\"2009\", 3, 2, \"10\")"
     },
     "sha256:4e1c556294c41a62bcb9d06879855060b00adce2a2e587d0198d2fa0e5eef27d": {
-      "result": [
-        [
-          {
-            "error": "#NAME?"
-          }
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "error",
+                "sentinel": "#NAME?"
+              },
+              "engine": {
+                "platform": "pycel"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=REPT(\"ha\", 3)"
     },
     "sha256:c723cfb2d4acba92bdb8655a8dd2ba9938862b3707df89d86b608e089f0c6cdc": {
-      "result": [
-        [
-          {
-            "error": "#NAME?"
-          }
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "error",
+                "sentinel": "#NAME?"
+              },
+              "engine": {
+                "platform": "pycel"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=REPT(\"ha\", 0)"
     },
     "sha256:10aa131eb8b82c8ed80bc1b359a4bfa7fb45691709a59806ae79b436f44ec366": {
-      "result": [
-        [
-          {
-            "error": "#NAME?"
-          }
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "error",
+                "sentinel": "#NAME?"
+              },
+              "engine": {
+                "platform": "pycel"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=TEXTJOIN(\", \", TRUE, A1:A3)"
     },
     "sha256:32e78349a07dc8098ccd9021539a685d3539a4c1b4b3dc7ddc074dda9883ba5b": {
-      "result": [
-        [
-          {
-            "error": "#NAME?"
-          }
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "error",
+                "sentinel": "#NAME?"
+              },
+              "engine": {
+                "platform": "pycel"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=TEXTBEFORE(\"Brian Wiles\", \" \")"
     },
     "sha256:38eeec1255a433438cbe759746cf28aa01516058e53ccb8722ed0b51f1349c05": {
-      "result": [
-        [
-          {
-            "error": "#NAME?"
-          }
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "error",
+                "sentinel": "#NAME?"
+              },
+              "engine": {
+                "platform": "pycel"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=TEXTBEFORE(\"one,two,three\", \",\", 2)"
     },
     "sha256:353bc7923ee0b45829d10a84b52bec520a6f8d683feea12ac716934c1a94ab8f": {
-      "result": [
-        [
-          {
-            "error": "#NAME?"
-          }
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "error",
+                "sentinel": "#NAME?"
+              },
+              "engine": {
+                "platform": "pycel"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=TEXTAFTER(\"Brian Wiles\", \" \")"
     },
     "sha256:04f152413b6208c8c4a8416b20538f4226e802b36047a4a670d5c3a369dcd322": {
-      "result": [
-        [
-          {
-            "error": "#NAME?"
-          }
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "error",
+                "sentinel": "#NAME?"
+              },
+              "engine": {
+                "platform": "pycel"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=TEXTAFTER(\"one,two,three\", \",\", 2)"
     }
   }

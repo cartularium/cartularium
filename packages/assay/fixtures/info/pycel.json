@@ -1,835 +1,2144 @@
 {
   "platform": "pycel",
-  "generatedAt": "2026-05-11T09:34:43.802Z",
+  "generatedAt": "2026-06-17T19:40:23.780Z",
   "results": {
     "sha256:4dd5755ae4f7f54ae64288c2ea7a2eec30ce84cdb6f5141dd12891a165e50908": {
-      "result": [
-        [
-          true
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "boolean",
+                "value": true
+              },
+              "engine": {
+                "platform": "pycel"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=ISNUMBER(42)"
     },
     "sha256:8f1add71fc70962daceef547f845260b45a05118299f1c7237250f2632551424": {
-      "result": [
-        [
-          true
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "boolean",
+                "value": true
+              },
+              "engine": {
+                "platform": "pycel"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=ISNUMBER(3.14)"
     },
     "sha256:1dd6e6a61f2fe6539d47622844ac78f9984be77877ca95c0a8e7552afcc0229a": {
-      "result": [
-        [
-          false
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "boolean",
+                "value": false
+              },
+              "engine": {
+                "platform": "pycel"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=ISNUMBER(\"hello\")"
     },
     "sha256:e6408924d1d617c0edd3225e46f2716b9dbeacc1c94fb6a40f4d546d0a8052a1": {
-      "result": [
-        [
-          false
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "boolean",
+                "value": false
+              },
+              "engine": {
+                "platform": "pycel"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=ISNUMBER(\"42\")"
     },
     "sha256:57c54b8e3dd94e39a71cd9dd800185dd2c3f3c5e181217072d0346f3bb2cc0d9": {
-      "result": [
-        [
-          false
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "boolean",
+                "value": false
+              },
+              "engine": {
+                "platform": "pycel"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=ISNUMBER(TRUE)"
     },
     "sha256:e7a52fea40e62795579920aad76f2e08ca68c81880ad49bbb2159eb84c88d24d": {
-      "result": [
-        [
-          false
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "boolean",
+                "value": false
+              },
+              "engine": {
+                "platform": "pycel"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=ISNUMBER(A1)"
     },
     "sha256:167da6d242b5e027b519ed47c1450d7c06615835dfa230fbc61742b5adabb475": {
-      "result": [
-        [
-          true
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "boolean",
+                "value": true
+              },
+              "engine": {
+                "platform": "pycel"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=ISNUMBER(A1)"
     },
     "sha256:871204c60e155b3ca13e92ccab058cb3be9017afa1ef75d703baf9807f6dd0f9": {
-      "result": [
-        [
-          {
-            "error": "#NAME?"
-          }
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "error",
+                "sentinel": "#NAME?"
+              },
+              "engine": {
+                "platform": "pycel"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=ISNUMBER(1/0)"
     },
     "sha256:d3f26458ff2f99590a7138facb590e142394dce9e484cd3eebe1652ae19e2e3b": {
-      "result": [
-        [
-          true
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "boolean",
+                "value": true
+              },
+              "engine": {
+                "platform": "pycel"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=ISTEXT(\"hello\")"
     },
     "sha256:273ca89ee7545b8a3e2437b9770b8231b95fa367223ace25835e2ebb146aef0b": {
-      "result": [
-        [
-          true
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "boolean",
+                "value": true
+              },
+              "engine": {
+                "platform": "pycel"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=ISTEXT(\"\")"
     },
     "sha256:0a7ac0df8c7b514064f774412591ab2f62a8ffa0a66e6a72ee95452da713bf01": {
-      "result": [
-        [
-          false
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "boolean",
+                "value": false
+              },
+              "engine": {
+                "platform": "pycel"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=ISTEXT(42)"
     },
     "sha256:d8206164e2da83915f23b4a144ad1d085966aaece42964755c9410e300d70acc": {
-      "result": [
-        [
-          false
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "boolean",
+                "value": false
+              },
+              "engine": {
+                "platform": "pycel"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=ISTEXT(TRUE)"
     },
     "sha256:1281eea078b10b55d9ad65e7afb3f998933eaa5e8b2f0d28756d84e8c8be7962": {
-      "result": [
-        [
-          false
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "boolean",
+                "value": false
+              },
+              "engine": {
+                "platform": "pycel"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=ISTEXT(A1)"
     },
     "sha256:ab77110f5fc7b6200ad99f512369da3dea8858a1978f33d93fd0857ba9f414a4": {
-      "result": [
-        [
-          true
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "boolean",
+                "value": true
+              },
+              "engine": {
+                "platform": "pycel"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=ISTEXT(A1)"
     },
     "sha256:0b7e603153135937c2c48d93e3f5a63b2f84346e2e91658494a620c1bf2919b5": {
-      "result": [
-        [
-          {
-            "error": "#NAME?"
-          }
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "error",
+                "sentinel": "#NAME?"
+              },
+              "engine": {
+                "platform": "pycel"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=ISTEXT(1/0)"
     },
     "sha256:b9baf1a2807ab1d279736bab05df5bc444682172c7d58cb9984f6d4b939b5ab5": {
-      "result": [
-        [
-          true
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "boolean",
+                "value": true
+              },
+              "engine": {
+                "platform": "pycel"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=ISNONTEXT(42)"
     },
     "sha256:66ca554d1a9816a9cd5433a144231fe21a8580054b25c9bc8c766985fdcb6372": {
-      "result": [
-        [
-          false
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "boolean",
+                "value": false
+              },
+              "engine": {
+                "platform": "pycel"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=ISNONTEXT(\"hello\")"
     },
     "sha256:d65e05813267cfcd9e7f551b02d99a73f2499218b5737dfbc3e16a41edf2c133": {
-      "result": [
-        [
-          true
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "boolean",
+                "value": true
+              },
+              "engine": {
+                "platform": "pycel"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=ISNONTEXT(TRUE)"
     },
     "sha256:4a2a079bc5f2c71a87eba4f4af31da56491decfffc61932068bffa6ba14e12c9": {
-      "result": [
-        [
-          true
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "boolean",
+                "value": true
+              },
+              "engine": {
+                "platform": "pycel"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=ISNONTEXT(A1)"
     },
     "sha256:9b8a6f04991df247b471c731b59ba0174c1da18ff03866d4197498b3671ae421": {
-      "result": [
-        [
-          {
-            "error": "#NAME?"
-          }
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "error",
+                "sentinel": "#NAME?"
+              },
+              "engine": {
+                "platform": "pycel"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=ISNONTEXT(1/0)"
     },
     "sha256:9f67fcf7f0ab8a383bde24deb737db52602538b8c7cecd1ed0ca155c83fb00cd": {
-      "result": [
-        [
-          true
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "boolean",
+                "value": true
+              },
+              "engine": {
+                "platform": "pycel"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=ISLOGICAL(TRUE)"
     },
     "sha256:21212a93c7422ad8236fd2f916b84021972497f0e69a5ab21c1a0e967b0afc4c": {
-      "result": [
-        [
-          true
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "boolean",
+                "value": true
+              },
+              "engine": {
+                "platform": "pycel"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=ISLOGICAL(FALSE)"
     },
     "sha256:db20a974270e32f352515a4415939cc0d74620695682f12033b3a0e4e0511af2": {
-      "result": [
-        [
-          false
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "boolean",
+                "value": false
+              },
+              "engine": {
+                "platform": "pycel"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=ISLOGICAL(1)"
     },
     "sha256:44b2b489fc8b6963babb84e9be6e7d7151c5938c831e7e387da46d1265e5add5": {
-      "result": [
-        [
-          false
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "boolean",
+                "value": false
+              },
+              "engine": {
+                "platform": "pycel"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=ISLOGICAL(\"TRUE\")"
     },
     "sha256:85be5839546bb045c0c411dfeb9d8c74e318b1fcd2c7018f849ffea799845feb": {
-      "result": [
-        [
-          false
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "boolean",
+                "value": false
+              },
+              "engine": {
+                "platform": "pycel"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=ISLOGICAL(A1)"
     },
     "sha256:3f9a30ddd23b7d5992b59366187c0dbe3fc7212752bde22262e2ae7cb9611085": {
-      "result": [
-        [
-          {
-            "error": "#NAME?"
-          }
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "error",
+                "sentinel": "#NAME?"
+              },
+              "engine": {
+                "platform": "pycel"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=ISLOGICAL(1/0)"
     },
     "sha256:da51133ae74af62d81976312823588eafe2b10fea3d2a34d60ab2e505861803a": {
-      "result": [
-        [
-          true
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "boolean",
+                "value": true
+              },
+              "engine": {
+                "platform": "pycel"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=ISBLANK(A1)"
     },
     "sha256:8e154a0366a0b1793059a45b9a2ca7ffd1f87c25715c2b01668ed448184ef536": {
-      "result": [
-        [
-          false
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "boolean",
+                "value": false
+              },
+              "engine": {
+                "platform": "pycel"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=ISBLANK(A1)"
     },
     "sha256:958c99785bed3fc56d3ebb484b4df2aa18bd67199dbe1672a98747851adac4ed": {
-      "result": [
-        [
-          false
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "boolean",
+                "value": false
+              },
+              "engine": {
+                "platform": "pycel"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=ISBLANK(A1)"
     },
     "sha256:4bcb2e7765b87bab54ab00edf15ae44dca5e31260d86705021371c0211ac1ddc": {
-      "result": [
-        [
-          true
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "boolean",
+                "value": true
+              },
+              "engine": {
+                "platform": "pycel"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=ISBLANK(A1)"
     },
     "sha256:01b70e6f852b9a738f07f579450602d8dbb52c0fa526c5b862e20979809aeff4": {
-      "result": [
-        [
-          false
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "boolean",
+                "value": false
+              },
+              "engine": {
+                "platform": "pycel"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=ISBLANK(42)"
     },
     "sha256:9858abe39225275db66768b277209e1e39b62ee01c04fc958b0c75619fe77df3": {
-      "result": [
-        [
-          false
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "boolean",
+                "value": false
+              },
+              "engine": {
+                "platform": "pycel"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=ISBLANK(\"\")"
     },
     "sha256:ee59a2c03db0f442aa1b0aa039cc651e71e495dc1f10573fb28f67454aab3a6d": {
-      "result": [
-        [
-          {
-            "error": "#NAME?"
-          }
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "error",
+                "sentinel": "#NAME?"
+              },
+              "engine": {
+                "platform": "pycel"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=ISERR(1/0)"
     },
     "sha256:3b9dee9898070a8eca409252294f083a1dbd7fec1eefa3818956fa932e7113a0": {
-      "result": [
-        [
-          false
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "boolean",
+                "value": false
+              },
+              "engine": {
+                "platform": "pycel"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=ISERR(NA())"
     },
     "sha256:ba4a2377d52afccebf1dcbecfd3d1c56a93f40066fc4a8189da29cd8d552010d": {
-      "result": [
-        [
-          false
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "boolean",
+                "value": false
+              },
+              "engine": {
+                "platform": "pycel"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=ISERR(42)"
     },
     "sha256:18861de4176f6b7af633c368a2deb162b40bbb156d374d39e71cd6584fb40972": {
-      "result": [
-        [
-          false
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "boolean",
+                "value": false
+              },
+              "engine": {
+                "platform": "pycel"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=ISERR(\"hello\")"
     },
     "sha256:d49d9d7b7be0247a7a08a4688047b98fb7ce6e71141ef74dd4a49ddb7d92804d": {
-      "result": [
-        [
-          false
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "boolean",
+                "value": false
+              },
+              "engine": {
+                "platform": "pycel"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=ISERR(A1)"
     },
     "sha256:90a8bbc184f73e4fb1c44e2878e3a0ab73472b9555efb6a48e3eaa2c9a54e206": {
-      "result": [
-        [
-          {
-            "error": "#NAME?"
-          }
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "error",
+                "sentinel": "#NAME?"
+              },
+              "engine": {
+                "platform": "pycel"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=ISERROR(1/0)"
     },
     "sha256:aeeb329306524498623de11b49246939d9ec4cd3119602335003c08a7a272f38": {
-      "result": [
-        [
-          true
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "boolean",
+                "value": true
+              },
+              "engine": {
+                "platform": "pycel"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=ISERROR(NA())"
     },
     "sha256:30c28a012ca4677cceabbd0dc9f9f2beed63243a9657e54347f0660fc9b44d18": {
-      "result": [
-        [
-          {
-            "error": "#NAME?"
-          }
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "error",
+                "sentinel": "#NAME?"
+              },
+              "engine": {
+                "platform": "pycel"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=ISERROR(\"a\"+1)"
     },
     "sha256:475a6a4623ceb781a2418735f899ea0af4834265ec766072b41c7c5b2c348543": {
-      "result": [
-        [
-          false
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "boolean",
+                "value": false
+              },
+              "engine": {
+                "platform": "pycel"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=ISERROR(42)"
     },
     "sha256:22773c7a90caee63e73a8c44ab6bda928d9be529bf963b46d54245e03323bb17": {
-      "result": [
-        [
-          false
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "boolean",
+                "value": false
+              },
+              "engine": {
+                "platform": "pycel"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=ISERROR(\"hello\")"
     },
     "sha256:ad9a87d4e5233babc87ac31a8fe0d3929aca7b344808071c9d3e8993dedf69a0": {
-      "result": [
-        [
-          false
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "boolean",
+                "value": false
+              },
+              "engine": {
+                "platform": "pycel"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=ISERROR(A1)"
     },
     "sha256:56705a4d487e5bd509379fbcf03bf3687ed8c2cee305a81d1a67d0ae6f0df64a": {
-      "result": [
-        [
-          true
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "boolean",
+                "value": true
+              },
+              "engine": {
+                "platform": "pycel"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=ISNA(NA())"
     },
     "sha256:ba7c0aab3c23ea1a3b6723cbf6fc63ecb7e99555fc7b3d0b20cc131cdbe6f8b7": {
-      "result": [
-        [
-          {
-            "error": "#NAME?"
-          }
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "error",
+                "sentinel": "#NAME?"
+              },
+              "engine": {
+                "platform": "pycel"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=ISNA(1/0)"
     },
     "sha256:47724f7406e5ab3022a6f81c30071a63caf5446ed3db95a73dd061f2916df7dc": {
-      "result": [
-        [
-          false
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "boolean",
+                "value": false
+              },
+              "engine": {
+                "platform": "pycel"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=ISNA(42)"
     },
     "sha256:800e7866151ac849f38a8eba4f1be0615099b31f57a77df53bcd38929c6a85cb": {
-      "result": [
-        [
-          false
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "boolean",
+                "value": false
+              },
+              "engine": {
+                "platform": "pycel"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=ISNA(\"hello\")"
     },
     "sha256:7c7878af26dd9bf44c7a93a9199d4fcb881b4c1fa20b3d7854b15faff798bb8b": {
-      "result": [
-        [
-          true
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "boolean",
+                "value": true
+              },
+              "engine": {
+                "platform": "pycel"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=ISNA(MATCH(99, {1,2,3}, 0))"
     },
     "sha256:63c65f53892c8f6de25895f6a254b7a75d080da9c0f4a56df3dc5c3b43689881": {
-      "result": [
-        [
-          {
-            "error": "#NAME?"
-          }
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "error",
+                "sentinel": "#NAME?"
+              },
+              "engine": {
+                "platform": "pycel"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=ISFORMULA(A1)"
     },
     "sha256:ec56a5f857ec195516535b95e22881b41b1892e58f7ced0f91e7b1eb1de00c7f": {
-      "result": [
-        [
-          {
-            "error": "#NAME?"
-          }
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "error",
+                "sentinel": "#NAME?"
+              },
+              "engine": {
+                "platform": "pycel"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=ISFORMULA(A1)"
     },
     "sha256:d5895595ed01ff7ce8c0f6bccb966f24c4a981b47420e9d57e1830ab7e01ad80": {
-      "result": [
-        [
-          {
-            "error": "#NAME?"
-          }
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "error",
+                "sentinel": "#NAME?"
+              },
+              "engine": {
+                "platform": "pycel"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=ISFORMULA(A1)"
     },
     "sha256:e58537d3fa6af59f52babe1733ae46e767e8b13d01d7b88a431e326c5ba20fe8": {
-      "result": [
-        [
-          {
-            "error": "#NAME?"
-          }
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "error",
+                "sentinel": "#NAME?"
+              },
+              "engine": {
+                "platform": "pycel"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=ISFORMULA(A1)"
     },
     "sha256:929b98fed95b93ea857e89b7eeb7efa7aacf1f273694846469e80c60f2729f28": {
-      "result": [
-        [
-          {
-            "error": "#NAME?"
-          }
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "error",
+                "sentinel": "#NAME?"
+              },
+              "engine": {
+                "platform": "pycel"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=ISREF(A1)"
     },
     "sha256:29e7f0e877480adf937dd20e89b7e1c8ae22878471ca7d1e7396bd70d45c4fb7": {
-      "result": [
-        [
-          {
-            "error": "#NAME?"
-          }
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "error",
+                "sentinel": "#NAME?"
+              },
+              "engine": {
+                "platform": "pycel"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=ISREF(A1:A3)"
     },
     "sha256:b19c9c8848865821fc258052450baa9044c852b6c9f1df5bc1960609300729d2": {
-      "result": [
-        [
-          {
-            "error": "#NAME?"
-          }
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "error",
+                "sentinel": "#NAME?"
+              },
+              "engine": {
+                "platform": "pycel"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=ISREF(42)"
     },
     "sha256:470b7fed47cb8802fad3ff5e638ddae19bcd9ec534620f53ce044c8bb6568bcd": {
-      "result": [
-        [
-          {
-            "error": "#NAME?"
-          }
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "error",
+                "sentinel": "#NAME?"
+              },
+              "engine": {
+                "platform": "pycel"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=ISREF(\"A1\")"
     },
     "sha256:829067d9993835f4f519ca6e4c857675fcd509ceb7743e8ada0cf80a763974fc": {
-      "result": [
-        [
-          {
-            "error": "#NAME?"
-          }
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "error",
+                "sentinel": "#NAME?"
+              },
+              "engine": {
+                "platform": "pycel"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=ISREF(INDIRECT(\"A1\"))"
     },
     "sha256:13a0840c84e4ec8656592aaacfa4c78561f6a6d6dfc59b357e4c8824ab7068ed": {
-      "result": [
-        [
-          {
-            "error": "#NAME?"
-          }
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "error",
+                "sentinel": "#NAME?"
+              },
+              "engine": {
+                "platform": "pycel"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=ISDATE(\"2024-01-15\")"
     },
     "sha256:223fef4ae6c73ba2ff2bd8bf2898e79a85b8b16b7bfda3660170c5f962faaee7": {
-      "result": [
-        [
-          {
-            "error": "#NAME?"
-          }
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "error",
+                "sentinel": "#NAME?"
+              },
+              "engine": {
+                "platform": "pycel"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=ISDATE(42)"
     },
     "sha256:4c27092315b0a406608d80a3fb974d3ad7318e8a8ca3202f8e4efcc327d24a4b": {
-      "result": [
-        [
-          {
-            "error": "#NAME?"
-          }
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "error",
+                "sentinel": "#NAME?"
+              },
+              "engine": {
+                "platform": "pycel"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=ISDATE(\"hello\")"
     },
     "sha256:3ddae3680edb9777ce3e86199150b1fd715fe29add3cc5c454a2cd7e2b56adc7": {
-      "result": [
-        [
-          {
-            "error": "#NAME?"
-          }
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "error",
+                "sentinel": "#NAME?"
+              },
+              "engine": {
+                "platform": "pycel"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=ISDATE(DATE(2024,1,15))"
     },
     "sha256:50f849cece7519df45249b447dc06cb8e90a28b460bb829fb42b838ca6911b50": {
-      "result": [
-        [
-          {
-            "error": "#NAME?"
-          }
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "error",
+                "sentinel": "#NAME?"
+              },
+              "engine": {
+                "platform": "pycel"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=ISEMAIL(\"user@example.com\")"
     },
     "sha256:e7ec9413249f874f07602933ab7068de52ac87585108024c9ff6bfa4eb63198f": {
-      "result": [
-        [
-          {
-            "error": "#NAME?"
-          }
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "error",
+                "sentinel": "#NAME?"
+              },
+              "engine": {
+                "platform": "pycel"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=ISEMAIL(\"not-an-email\")"
     },
     "sha256:4854ed55cc2364bc665b8e19c60170371182f037bf0f56d8764d34737dc5fbb3": {
-      "result": [
-        [
-          {
-            "error": "#NAME?"
-          }
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "error",
+                "sentinel": "#NAME?"
+              },
+              "engine": {
+                "platform": "pycel"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=ISEMAIL(42)"
     },
     "sha256:f07407b2848244de9089129a99430e3d216137d0a2ead2709f9b9349e6cb0b9c": {
-      "result": [
-        [
-          {
-            "error": "#NAME?"
-          }
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "error",
+                "sentinel": "#NAME?"
+              },
+              "engine": {
+                "platform": "pycel"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=ISEMAIL(A1)"
     },
     "sha256:220bd5a64f8f5f5bf60249a09ccf07fa2a45cd05a357eab2acc9f036ffa7cdc8": {
-      "result": [
-        [
-          42
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 42
+              },
+              "engine": {
+                "platform": "pycel"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=N(42)"
     },
     "sha256:ebbc520f995dd027a09c6eecf384c4e7fd85b5bff0af28b048a47c745fba3f08": {
-      "result": [
-        [
-          0
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 0
+              },
+              "engine": {
+                "platform": "pycel"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=N(\"hello\")"
     },
     "sha256:a50bdb397d13f1c759e89a1ad303062213830ae831107624b37d57276205f6c5": {
-      "result": [
-        [
-          1
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 1
+              },
+              "engine": {
+                "platform": "pycel"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=N(TRUE)"
     },
     "sha256:90a409669fffa9c058de62744cd012e14f79c80baa48e2ddbd4aa2eebda09072": {
-      "result": [
-        [
-          0
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 0
+              },
+              "engine": {
+                "platform": "pycel"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=N(FALSE)"
     },
     "sha256:212650a6bcfb7197fc978fb919416058de0c7ceca37edf511ad4039fb21f6d2c": {
-      "result": [
-        [
-          0
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 0
+              },
+              "engine": {
+                "platform": "pycel"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=N(A1)"
     },
     "sha256:51e4c3369ff81bbc755667745a9dc327797338da4249140c90987bf3af4cf7ec": {
-      "result": [
-        [
-          {
-            "error": "#NAME?"
-          }
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "error",
+                "sentinel": "#NAME?"
+              },
+              "engine": {
+                "platform": "pycel"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=N(1/0)"
     },
     "sha256:bb9ad46be8219c57a2dfdccac2c11f62050f832d408fc08b80d996cee7688c0f": {
-      "result": [
-        [
-          {
-            "error": "#N/A"
-          }
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "error",
+                "sentinel": "#N/A"
+              },
+              "engine": {
+                "platform": "pycel"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=NA()"
     },
     "sha256:afafdd868daf1a9cacfa7db7166d28c6e07be24fb0b0ee8970c88d7cfe540eb6": {
-      "result": [
-        [
-          {
-            "error": "#NAME?"
-          }
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "error",
+                "sentinel": "#NAME?"
+              },
+              "engine": {
+                "platform": "pycel"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=NA()+1"
     },
     "sha256:7c0b12d3ac492b76a3b95f98597ab8359f3dcfe6c25b0c3d44d6657e1396e9fe": {
-      "result": [
-        [
-          "<class 'int'>"
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "string",
+                "value": "<class 'int'>"
+              },
+              "engine": {
+                "platform": "pycel"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=TYPE(42)"
     },
     "sha256:6eb75671fcee6da86382279fae292b581f74ede62e78520cd945d163be9e0f1c": {
-      "result": [
-        [
-          "<class 'str'>"
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "string",
+                "value": "<class 'str'>"
+              },
+              "engine": {
+                "platform": "pycel"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=TYPE(\"hello\")"
     },
     "sha256:3606e425e0bdeec2948967f3b4b0317ef838e98c8af653d83b756f61c3761598": {
-      "result": [
-        [
-          "<class 'bool'>"
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "string",
+                "value": "<class 'bool'>"
+              },
+              "engine": {
+                "platform": "pycel"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=TYPE(TRUE)"
     },
     "sha256:376d387ac90f65a73b9199e91f9602725eb2334a506f1948360bf0cf16065c73": {
-      "result": [
-        [
-          {
-            "error": "#NAME?"
-          }
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "error",
+                "sentinel": "#NAME?"
+              },
+              "engine": {
+                "platform": "pycel"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=TYPE(1/0)"
     },
     "sha256:8a384a4720668a858080e5c25b832c2d6e0f217c4b842eb04a62f1dadb6a0460": {
-      "result": [
-        [
-          "<class 'tuple'>"
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "string",
+                "value": "<class 'tuple'>"
+              },
+              "engine": {
+                "platform": "pycel"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=TYPE({1,2,3})"
     },
     "sha256:e68bf8ffa98e8e05e0d069f9604872e09dad66f69ed9c47bd0627fbf52e715d2": {
-      "result": [
-        [
-          "<class 'NoneType'>"
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "string",
+                "value": "<class 'NoneType'>"
+              },
+              "engine": {
+                "platform": "pycel"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=TYPE(A1)"
     },
     "sha256:cc1a6b251bc120c492e9b6d21358d9f21b3a74218121ebf15e26fdfc16391646": {
-      "result": [
-        [
-          {
-            "error": "#NAME?"
-          }
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "error",
+                "sentinel": "#NAME?"
+              },
+              "engine": {
+                "platform": "pycel"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=ERROR.TYPE(1/0)"
     },
     "sha256:e987c3adeb752e272ccba8a6405c751e457c040b492fcf963435acba66c6f389": {
-      "result": [
-        [
-          {
-            "error": "#NAME?"
-          }
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "error",
+                "sentinel": "#NAME?"
+              },
+              "engine": {
+                "platform": "pycel"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=ERROR.TYPE(NA())"
     },
     "sha256:b60034c75ea8cd3462326f9cc60f06695527b08b7aa9b0faf83ab8f36767355c": {
-      "result": [
-        [
-          {
-            "error": "#NAME?"
-          }
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "error",
+                "sentinel": "#NAME?"
+              },
+              "engine": {
+                "platform": "pycel"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=ERROR.TYPE(\"a\"+1)"
     },
     "sha256:c82b27468cd2cc6cd589099c2e794843ff730ce151d447509665f2706a7cca98": {
-      "result": [
-        [
-          {
-            "error": "#NAME?"
-          }
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "error",
+                "sentinel": "#NAME?"
+              },
+              "engine": {
+                "platform": "pycel"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=ERROR.TYPE(42)"
     },
     "sha256:147826f38b37eb9091c612c38e7227c0a17b8fb9563016c185b371a4c361c4d7": {
-      "result": [
-        [
-          {
-            "error": "#NAME?"
-          }
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "error",
+                "sentinel": "#NAME?"
+              },
+              "engine": {
+                "platform": "pycel"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=ERROR.TYPE(\"hello\")"
     },
     "sha256:4aa37cd41e3d9d2241e5301219278bede8b2ab37776c7ddaa66044c3516b137d": {
-      "result": [
-        [
-          {
-            "error": "#NAME?"
-          }
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "error",
+                "sentinel": "#NAME?"
+              },
+              "engine": {
+                "platform": "pycel"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=ERROR.TYPE(INDIRECT(\"ZZZZ99999999\"))"
     },
-    "sha256:baf5c0bc3c8ed3917335c8cdabd946eda29eafa6b89cb78b7f2e1de60df246d4": {
-      "result": [
-        [
-          {
-            "error": "#NAME?"
-          }
-        ]
-      ],
+    "sha256:58973e33599196980d433f3f5aaa8067fdda12b3e4c9549c45533d9da7a43712": {
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "error",
+                "sentinel": "#NAME?"
+              },
+              "engine": {
+                "platform": "pycel"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=CELL(\"address\", A1)"
     },
-    "sha256:935b4621e791c8ace9036f0b2f50d373d224b65984ac631e8aac5679ccfbc21e": {
-      "result": [
-        [
-          {
-            "error": "#NAME?"
-          }
-        ]
-      ],
+    "sha256:014fcb8c3340ba649e80a059fa59b088aa3f4d6db2145085d4b1b3e8c59e8b9f": {
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "error",
+                "sentinel": "#NAME?"
+              },
+              "engine": {
+                "platform": "pycel"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=CELL(\"contents\", A1)"
     },
-    "sha256:9957efadcf7a730ab2ee23188fb1425bce375afc303ab16a60d4355e8d483a8e": {
-      "result": [
-        [
-          {
-            "error": "#NAME?"
-          }
-        ]
-      ],
+    "sha256:1affc1b8301fceba2a481660c4099675f8eef63ca30a09c16f2c516eb727932e": {
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "error",
+                "sentinel": "#NAME?"
+              },
+              "engine": {
+                "platform": "pycel"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=CELL(\"row\", B3)"
     },
-    "sha256:4feedfd50637707e0ae962c900d02f1c3cf5c2b65daba381452af2a32d942f95": {
-      "result": [
-        [
-          {
-            "error": "#NAME?"
-          }
-        ]
-      ],
+    "sha256:d4d2a60cd27303034e7bd318c90fab4cbac59e26cd8bdabd3bf905ec6b722b66": {
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "error",
+                "sentinel": "#NAME?"
+              },
+              "engine": {
+                "platform": "pycel"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=CELL(\"col\", B3)"
     },
-    "sha256:caf2c73cfbe01bc283cee59044ffd20b0e216fc37edd6c73ff9eb924896e1df8": {
-      "result": [
-        [
-          {
-            "error": "#NAME?"
-          }
-        ]
-      ],
+    "sha256:1182529c16a5eb2558dc531cad1e98032d6851c2befe64d13d12bb0f2a587301": {
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "error",
+                "sentinel": "#NAME?"
+              },
+              "engine": {
+                "platform": "pycel"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=CELL(\"type\", A1)"
     },
-    "sha256:363ff5050b326c8b49a2867c4f8a0bf009441bb5993e72752a8b2a4bbf838c02": {
-      "result": [
-        [
-          {
-            "error": "#NAME?"
-          }
-        ]
-      ],
+    "sha256:d3505b84995ac6eafa492647e08e5fe6460e95fc87015f365bb734a181ef492c": {
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "error",
+                "sentinel": "#NAME?"
+              },
+              "engine": {
+                "platform": "pycel"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=CELL(\"format\", A1)"
     },
-    "sha256:864f23ef7183840f6422285029f9f6c18864f31c93120a3b2fb67b051f70e555": {
-      "result": [
-        [
-          {
-            "error": "#NAME?"
-          }
-        ]
-      ],
+    "sha256:a9dab71dccbff8744800fe3bcc2296e112d033826572369a3939cd9e240c8af8": {
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "error",
+                "sentinel": "#NAME?"
+              },
+              "engine": {
+                "platform": "pycel"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=SHEETS()"
     },
-    "sha256:1e8dfae22cdb79098124c9faaebf128d152439f0e097fe1451b9562fc3dfb8d4": {
-      "result": [
-        [
-          {
-            "error": "#NAME?"
-          }
-        ]
-      ],
+    "sha256:95559d18fc0fb87bc72fe37c69f4fca521bb81a84e516b388bb08e452eca9e4d": {
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "error",
+                "sentinel": "#NAME?"
+              },
+              "engine": {
+                "platform": "pycel"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=SHEETS(A1)"
     }
   }
