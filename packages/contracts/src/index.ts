@@ -2,6 +2,7 @@
 // and consumed by sheets-wiki at build time. see ASSAY-INTEGRATION.md for prose.
 
 import type { Platform } from "./platform.js"
+import type { CirculatingGrid } from "./cell-value.js"
 
 export { ALL_PLATFORMS, isPlatform } from "./platform.js"
 export type { Platform } from "./platform.js"
@@ -121,6 +122,103 @@ export interface ManifestV4 {
 }
 
 export type Manifest = ManifestV3 | ManifestV4
+
+// === ManifestV5 — the verdict-free comparison-output contract (CP2, 2026-06-17) ===
+// Replaces the V4 `engines: Record<Platform, TestVerdict>` smush with two relation-layer
+// axes — the agreement PARTITION (which engines agree: uniform vs forked) and per-engine
+// CAPABILITY (did the engine produce a value). No canonical value, no reference engine, no
+// verdict. Authored assertions ("oracles") live OUT OF BAND in a self-check lens, never here.
+// Added alongside V4; buildManifest re-seats onto it + the version bumps in the CP3 output step.
+
+/** Per-engine capability + the join into the agreement partition. Only `value` engines carry
+ * a `class` and appear in a `ManifestClass`; the rest produced no value (capture ≠ circulation,
+ * so they are never folded into an agreement-class as if they agreed). `unsupported` is the one
+ * capability-relevant skip ("engine lacks this") — the absent/partial signal; the no-data causes
+ * are genuinely unknown, not a capability claim. (channel is the open CrashChannel vocabulary,
+ * typed `string` here to avoid a back-edge to @cartularium/drivers.) */
+export type EngineObservation =
+  | { capability: "value"; class: number }
+  | { capability: "rejected"; reason?: string; code?: string }
+  | { capability: "crashed"; channel: string }
+  | { capability: "unsupported" }
+  | {
+      capability: "no-data"
+      cause: "policy" | "seed-infidelity" | "environment-incompatible" | "infra" | "driver-error" | "unclassified"
+    }
+
+/** One agreement-class. `engines` is an unordered set (no privileged member). `values` is the
+ * SET of distinct circulating values in the class: length 1 for exact agreement, >1 when relative
+ * tolerance merged near-but-not-identical values (the spread is then visible — a class is a
+ * connected component under cohort tolerance, NOT a pairwise-equal set). No field encodes
+ * correctness or a reference — the no-verdict principle made structural. */
+export interface ManifestClass {
+  engines: Platform[]
+  values: CirculatingGrid[]
+}
+
+export interface ManifestV5TestEntry {
+  ref: string
+  subject: string
+  subjectRef: string
+  name: string
+  suite: string
+  hash: `sha256:${string}`
+  url: string
+  aliases?: string[]
+  category: Category
+  engines: Partial<Record<Platform, EngineObservation>>
+  partition: ManifestClass[]
+}
+
+/** Fork causes = the difference-among-produced-values subset of `Cause`. The capability-shaped
+ * causes (missing-function / missing-arg-form / unimplemented-edge) are NOT fork causes — a
+ * missing function produces no value, carried by the capability axis (`unsupported`/`no-data`),
+ * never as a divergence. `TODO` is a placeholder, excluded. (Derived from the model, not corpus
+ * frequency: a heavily-authored capability-shaped cause is migration the regen heals, not a
+ * reason to admit it as a fork cause.) */
+export type ForkCause = Exclude<
+  Cause,
+  "missing-function" | "missing-arg-form" | "unimplemented-edge" | "TODO"
+>
+
+/** A descriptive, symmetric annotation on a fork. `cause` (controlled enum) + `engines`
+ * (symmetric set) are the LOAD-BEARING relation content; `summary` is NON-NORMATIVE display only
+ * (a human caption — nothing reads it as the relationship). */
+export interface ManifestForkAnnotation {
+  cause: ForkCause
+  engines: Platform[]
+  classes?: number[]
+  category: Category
+  summary: string
+}
+
+export interface ManifestV5FunctionEntry {
+  engines: Record<Platform, ManifestEngineEntry>
+  forks: string[]
+  tests: string[]
+}
+
+export interface ManifestV5AliasEntry {
+  target: string
+  kind: "public-ref"
+}
+
+export interface ManifestV5TombstoneEntry {
+  reason: string
+}
+
+export interface ManifestV5 {
+  version: 5
+  generatedAt: string
+  engines: readonly Platform[]
+  rung: "circulating"
+  tests: Record<string, ManifestV5TestEntry>
+  functions: Record<string, ManifestV5FunctionEntry>
+  annotations: Record<string, ManifestForkAnnotation>
+  aliases: Record<string, ManifestV5AliasEntry>
+  tombstones: Record<string, ManifestV5TombstoneEntry>
+  hashes: Record<`sha256:${string}`, string>
+}
 
 export type FormulaCompatibilitySupport =
   | "native"
@@ -269,6 +367,7 @@ export type {
   CellValue,
   GridValue,
   CirculatingCell,
+  CirculatingGrid,
   EngineExtras,
   ExcelExtras,
   FormulasExtras,
