@@ -60,6 +60,13 @@ const SHEET_PREFIX = "assay-t";
 // ⇒ fewer round-trip sequences (each chunk pays addSheet + 2 writes + CALC_WAIT + read
 // + deleteSheet). The amortization for gsheets is chunk-count, not write-volume.
 const CHUNK_SHEETS = 50;
+// `spreadsheets.get` carries each read range as a `ranges=` URL query param, so a
+// single read is bounded by URL length, NOT request body. At full-corpus chunk
+// scale a chunk holds up to CHUNK_SHEETS × TILE_FACTOR² tiles (~1250 ranges); packing
+// them all into one GET overflows Google's URL limit → a 400 HTML frontend rejection.
+// Cap ranges per GET and loop (the read splits across sub-requests, results reassembled
+// by title→index). ~100 ranges keeps the URL well under any limit.
+const MAX_RANGES_PER_GET = 100;
 const CALC_WAIT_MS = 400;
 const WRITE_REQUEST_INTERVAL_MS = 1100;
 
@@ -761,42 +768,49 @@ export class GSheetsDriver implements Driver {
     ranges: string[],
     spreadsheetId: string = this.config.spreadsheetId,
   ): Promise<RichGrid[]> {
-    const qs = [
-      ...ranges.map((r) => `ranges=${encodeURIComponent(r)}`),
-      "includeGridData=true",
-      `fields=${encodeURIComponent(GET_FIELD_MASK)}`,
-    ].join("&");
-    const res = await this.apiFetch(`?${qs}`, { method: "GET" }, spreadsheetId);
-    if (!res.ok) {
-      throw new Error(`spreadsheets.get: ${res.status} ${await res.text()}`);
-    }
-    const body = (await res.json()) as {
-      sheets?: Array<{
-        properties?: { title?: string };
-        data?: Array<{ rowData?: Array<{ values?: ApiCellData[] }> }>;
-      }>;
-    };
-    // Request indices grouped by title, in request order (so data[k] ↔ k-th range).
-    // Assumes each title appears ONCE in the response — load-bearing: host sheet titles
-    // are stamp-unique (`${SHEET_PREFIX}h${k}-${stamp}`), so a title never repeats across
-    // `body.sheets`; if it did, the later sheet would re-read this title's request list
-    // from index 0 and clobber earlier grids.
-    const reqByTitle = new Map<string, number[]>();
-    ranges.forEach((r, i) => {
-      const title = r.match(/^'([^']+)'!/)?.[1];
-      if (title === undefined) return;
-      const arr = reqByTitle.get(title);
-      if (arr) arr.push(i);
-      else reqByTitle.set(title, [i]);
-    });
     const out: RichGrid[] = ranges.map(() => []);
-    for (const sheet of body.sheets ?? []) {
-      const title = sheet.properties?.title;
-      if (!title) continue;
-      const reqIdx = reqByTitle.get(title) ?? [];
-      const data = sheet.data ?? [];
-      for (let k = 0; k < data.length && k < reqIdx.length; k++) {
-        out[reqIdx[k]] = rowDataToRichGrid(data[k]?.rowData ?? []);
+    // Bound ranges per GET (URL-length limit — see MAX_RANGES_PER_GET). Each sub-request
+    // is independent; its results map back to GLOBAL indices via `base + local`.
+    for (let base = 0; base < ranges.length; base += MAX_RANGES_PER_GET) {
+      const sub = ranges.slice(base, base + MAX_RANGES_PER_GET);
+      const qs = [
+        ...sub.map((r) => `ranges=${encodeURIComponent(r)}`),
+        "includeGridData=true",
+        `fields=${encodeURIComponent(GET_FIELD_MASK)}`,
+      ].join("&");
+      const res = await this.apiFetch(`?${qs}`, { method: "GET" }, spreadsheetId);
+      if (!res.ok) {
+        throw new Error(`spreadsheets.get: ${res.status} ${await res.text()}`);
+      }
+      const body = (await res.json()) as {
+        sheets?: Array<{
+          properties?: { title?: string };
+          data?: Array<{ rowData?: Array<{ values?: ApiCellData[] }> }>;
+        }>;
+      };
+      // Request indices grouped by title, in this sub-request's order (so data[k] ↔ the
+      // k-th range of that title in THIS GET). Assumes each title appears ONCE in the
+      // response — load-bearing: host sheet titles are stamp-unique
+      // (`${SHEET_PREFIX}h${k}-${stamp}`), so a title never repeats across `body.sheets`;
+      // if it did, the later sheet would re-read this title's request list from index 0
+      // and clobber earlier grids. (A title's tiles may split across sub-requests; each
+      // GET independently maps only its own ranges, so the split is safe.)
+      const reqByTitle = new Map<string, number[]>();
+      sub.forEach((r, i) => {
+        const title = r.match(/^'([^']+)'!/)?.[1];
+        if (title === undefined) return;
+        const arr = reqByTitle.get(title);
+        if (arr) arr.push(base + i);
+        else reqByTitle.set(title, [base + i]);
+      });
+      for (const sheet of body.sheets ?? []) {
+        const title = sheet.properties?.title;
+        if (!title) continue;
+        const reqIdx = reqByTitle.get(title) ?? [];
+        const data = sheet.data ?? [];
+        for (let k = 0; k < data.length && k < reqIdx.length; k++) {
+          out[reqIdx[k]] = rowDataToRichGrid(data[k]?.rowData ?? []);
+        }
       }
     }
     return out;
