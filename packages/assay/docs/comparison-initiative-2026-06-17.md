@@ -58,8 +58,14 @@ Re-seat `classify`/`manifest`/`catalogue-site`/`divergence-matrix` on the partit
 execute `divergence→forked`; migrate `sheets-wiki` V4→V5; generate the bridge feed
 and wire `interleaf` (retire its hardcoded table). **Finish** for the initiative.
 
-*(Open seam: CP3 may split into 3a output-rework / 3b consumer-migration —
-`sheets-wiki` being production is a real gate. Decide at CP2's close.)*
+*(Open seam: CP3 may split into 3a output-rework / 3b consumer-migration. Decide at
+CP2's close.)*
+
+**`sheets-wiki` is NOT a migration gate (maintainer, 2026-06-17).** It is acceptable
+to leave the website broken until the floor is solid — it was built on the unstable
+foundations and will be **reworked, not preserved**. So CP3 changes the manifest/feed
+contract freely (no V4→V5 back-compat obligation); the website rebuild rides on top of
+the settled contract, not in lockstep with it.
 
 ## The CP1↔CP2 interlock
 
