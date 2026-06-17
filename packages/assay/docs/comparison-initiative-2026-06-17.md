@@ -29,7 +29,7 @@ feed. One artifact, three payoffs. That is the bulk of "what remains."
 
 ## Checkpoints
 
-### CP1 — Floor closed. *Gate: the regen holds.*
+### CP1 — Floor closed. ✅ DONE (2026-06-17). *Gate: the regen holds — MET.*
 
 The floor is closed when something lands on it and it holds — the **regen** is that
 attack (first full end-to-end run: `drivers → Outcome → RichCellValue → fixtures →
@@ -45,12 +45,55 @@ equality`). Done when:
 
 This is **validation of an already-ratified design**, not new design.
 
+**✅ RESULT (2026-06-17): the floor held.** Live full-corpus regen on the ratified
+value/outcome model across the 6 runnable engines; **147 tests green** throughout (no
+value-model gap surfaced). excel **1955/1955**, gsheets **1950/1955**, pure engines
+(hyperformula/ironcalc/pycel/formulas) refreshed — the 69 hash-orphans healed for all 6.
+The attack also FOUND + FIXED a real first-class bug: the gsheets read packed ~1250 tile
+ranges into one `spreadsheets.get` URL → 400 HTML at full-corpus scale; fixed by bounding
+ranges/GET (commit `fix(drivers): bound spreadsheets.get ranges per request`). Even the
+failure degraded honestly (`infra` outcomes, never fake values — capability≠divergence held).
+**Open tail (NOT floor gaps):** lattice/libreoffice un-regenerated (no env — orphans persist,
+fixtures still legacy-shape); gsheets 404 default-spreadsheet-id (used a fresh scratch sheet —
+2 scratch sheets leaked, no `drive.file` delete scope); `lift.ts`/`legacyToOutcome` still live
+for the 6 lifted engines (retirement deferred).
+
 ### CP2 — Comparison-output contract. *Gate: the multiplicity shape designed + ratified.*
 
 The serialized partition (uniform/forked + class structure) as it appears in the
 manifest (V5) and the bridge feed. **Design-first** — it is a breaking contract with
 a production consumer. Lifts the §4 quarantine premise; the `divergence→forked`
 rename and the matrix rework follow from it. Most of "what remains" lives here.
+
+**CP2 progress (2026-06-17 — design STARTED, not ratified):**
+
+- **The keystone cut — three axes.** The old `TestVerdict = match|diverge` conflated
+  three things the philosophy separates: **relation** (which engines agree = the agreement
+  class), **capability** (did the engine produce a result: value / no-data / not-implemented),
+  and **oracle** (does the value satisfy an authored assertion — a lens). The multiplicity
+  output contract IS the un-smushing: three explicit fields where there was one verdict.
+- **Dead / rework / keep (grounded sweep).** DEAD HEART: `format/classify.ts`
+  (`Verdict`/`classifyEngineResult` vs a `canonicalGrid` from `expect`) + its cascade (manifest
+  `TestVerdict`, catalogue-site verdict cells/templates). REWORK: `divergence-matrix.ts`
+  ("agrees-with-canonical" → class membership); 4 CLI commands (benchmark/matrix/measure/history —
+  re-seat + relabel; `measure`'s verdict is a legitimate *portability* lens). KEEP: `relations.ts`
+  (the partition — the core), `runner.detectDivergence`, `report.ts`, `match.ts` (equality + matcher).
+  The matcher/`expect` survives as a LENS but is currently SMUGGLED into the verdict — decouple.
+- **Grounding (both contracts verified on real regen data).** number / error / spill /
+  capability-skip all structurally sound. `opaque` + `rich-text` kinds = **0** occurrences — but
+  **corpus≠territory**, so that is NOT evidence to drop them (rendered-rich is real engine behavior;
+  the corpus predates it + the headless API can't render it). blank≠null is real (24/7). `expect`
+  is demonstrably NOT truth (IMAGE `expect: #NAME?` vs reality `#REF!`).
+- **⏸ OPEN FORK — RESUME HERE (the test/input contract).** Where does an authored assertion live?
+  An `expect` on the test — *even optional* — is a "correct" in the catalogue, which the no-verdict
+  principle forbids (normativity lives at the point of use). Maintainer's instinct (more principled
+  than the "optional expect" half-measure I'd proposed): **the test is pure observation; the
+  assertion is an EXTERNAL, consumer-owned lens** — different consumers assert different correctness,
+  so no single `expect` belongs on the test. Reconciliation floated (not decided): `expect` survives
+  as **authoring sugar that compiles OUT to an external lens** at parse time (ergonomic authoring,
+  pure catalogue). Decided from PRINCIPLE, not the corpus's expect-density. **Foundational — flagged
+  to sleep on (2026-06-17).** Also pulls a dependency: `deriveCategory` reads `expect` today, so a
+  category basis must be found if `expect` leaves the test.
 
 ### CP3 — Migrate onto the partition; retire the fossil; wire the hub. *Gate: output verdict-free end-to-end and the hub reads it.*
 
