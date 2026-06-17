@@ -22,7 +22,7 @@ import {
   featureSkipFor,
   effectiveExpect,
   evaluateMatcher,
-  gridsEqual,
+  partitionByAgreement,
 } from "./format/index.js";
 import { toleranceFor } from "./format/tolerance.js";
 import { liftScalarGrid } from "@cartularium/drivers";
@@ -215,21 +215,25 @@ export function runFromFixtures(
     }
 
     if (platforms.length > 1) {
-      const available = Object.keys(testResults);
-      if (available.length > 1) {
-        const first = available[0] as Platform;
-        if (
-          available.some(
-            (p) => !gridsEqual(testResults[p], testResults[first], toleranceFor(p, first)),
-          )
-        ) {
-          divergences.push({ test, results: testResults });
-        }
-      }
+      const d = detectDivergence(test, testResults);
+      if (d) divergences.push(d);
     }
   }
 
   return buildResult(allResults, tests.length, divergences);
+}
+
+/** The single divergence-detection path, shared by the fixture and live runners.
+ * Computes the symmetric agreement partition (no pivot engine) at the circulating
+ * rung and reports a Divergence iff the engines split into more than one class. */
+function detectDivergence(
+  test: TestCase,
+  results: Record<string, RichGridValue>,
+): Divergence | null {
+  if (Object.keys(results).length < 2) return null;
+  const classes = partitionByAgreement(results);
+  if (classes.length <= 1) return null;
+  return { test, results, rung: "circulating", classes };
 }
 
 // run live against drivers
@@ -287,15 +291,8 @@ export async function runSuite(
         const val = driverResults.get(driver.platform)?.get(key);
         if (val) testResults[driver.platform] = val;
       }
-      const pkeys = Object.keys(testResults);
-      if (pkeys.length > 1) {
-        const first = pkeys[0];
-        if (
-          pkeys.some((p) => !gridsEqual(testResults[p], testResults[first], toleranceFor(p, first)))
-        ) {
-          divergences.push({ test, results: testResults });
-        }
-      }
+      const d = detectDivergence(test, testResults);
+      if (d) divergences.push(d);
     }
   }
 

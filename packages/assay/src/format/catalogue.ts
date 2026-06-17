@@ -9,6 +9,9 @@
 
 import type { CellValue, GridValue, RichGridValue, Platform } from "./values.js";
 import type { Cause, Category } from "@cartularium/contracts";
+// type-only — the agreement partition embedded in a Divergence. Type-only so the
+// catalogue → relations → match → catalogue cycle is erased (no runtime cycle).
+import type { AgreementClass } from "./relations.js";
 
 // re-exported from @cartularium/contracts (canonical manifest enum surface)
 export type { Cause, Category } from "@cartularium/contracts";
@@ -172,8 +175,16 @@ export interface TestResult {
   timeMs: number;
 }
 
-/** divergence between platforms on the same test */
+/** divergence between platforms on the same test.
+ *
+ * `results` is symmetric evidence (no privileged engine). `classes` is the
+ * verdict-free agreement partition computed by `partitionByAgreement` — it flags
+ * no engine as correct; `classes.length > 1` is the only "divergence" judgment.
+ * `rung` names which equality rung the partition was computed at (the
+ * capability/terminal projections of the same machinery come later — spec §6). */
 export interface Divergence {
   test: TestCase;
   results: Record<string, RichGridValue>;
+  rung: "circulating";
+  classes: AgreementClass[];
 }
