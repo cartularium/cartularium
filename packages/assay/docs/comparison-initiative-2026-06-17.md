@@ -58,14 +58,29 @@ fixtures still legacy-shape); gsheets 404 default-spreadsheet-id (used a fresh s
 2 scratch sheets leaked, no `drive.file` delete scope); `lift.ts`/`legacyToOutcome` still live
 for the 6 lifted engines (retirement deferred).
 
-### CP2 — Comparison-output contract. *Gate: the multiplicity shape designed + ratified.*
+### CP2 — Comparison-output contract. ✅ RATIFIED (2026-06-17). *Gate: the multiplicity shape designed + ratified — MET.*
+
+**✅ RESULT: ratified after three adversarial rounds** (two break-it, one sanity check →
+RATIFY-WITH-TRIVIAL-FIXES). The full design is `comparison-output-contract-2026-06-17.md`. The
+keystone is the **authoring contract** (the litmus + five kinds S/I/O/R/A); `override` retires;
+ManifestV5 carries two relation axes (partition + capability, with a distinct `unsupported`
+value) and set-valued classes (`CirculatingGrid` = the existing `CanonicalCell` projection,
+moved to contracts); oracles are out-of-band; the R-vs-A line is structural (controlled `cause`
+enum + display-only `summary`). Interleaf deferred. CP3 is now the next checkpoint.
+
 
 The serialized partition (uniform/forked + class structure) as it appears in the
 manifest (V5) and the bridge feed. **Design-first** — it is a breaking contract with
 a production consumer. Lifts the §4 quarantine premise; the `divergence→forked`
 rename and the matrix rework follow from it. Most of "what remains" lives here.
 
-**CP2 progress (2026-06-17 — design STARTED, not ratified):**
+**CP2 progress (2026-06-17 — fork RESOLVED + full design drafted; final review next).**
+The complete design is `comparison-output-contract-2026-06-17.md` (the authoring contract +
+ManifestV5, REVISED STRAWMAN incorporating round-1 adversarial review). Headline moves: the
+**authoring theory** (the litmus + five kinds S/I/O/R/A) is the keystone, `override` **retires**
+as a concept, the class representative becomes a **set** (`CirculatingGrid[]`, reusing the
+existing `CanonicalCell` projection — renamed, moved to contracts), and **interleaf is deferred**.
+Earlier-progress notes below retained for the record.
 
 - **The keystone cut — three axes.** The old `TestVerdict = match|diverge` conflated
   three things the philosophy separates: **relation** (which engines agree = the agreement
@@ -84,16 +99,30 @@ rename and the matrix rework follow from it. Most of "what remains" lives here.
   **corpus≠territory**, so that is NOT evidence to drop them (rendered-rich is real engine behavior;
   the corpus predates it + the headless API can't render it). blank≠null is real (24/7). `expect`
   is demonstrably NOT truth (IMAGE `expect: #NAME?` vs reality `#REF!`).
-- **⏸ OPEN FORK — RESUME HERE (the test/input contract).** Where does an authored assertion live?
-  An `expect` on the test — *even optional* — is a "correct" in the catalogue, which the no-verdict
-  principle forbids (normativity lives at the point of use). Maintainer's instinct (more principled
-  than the "optional expect" half-measure I'd proposed): **the test is pure observation; the
-  assertion is an EXTERNAL, consumer-owned lens** — different consumers assert different correctness,
-  so no single `expect` belongs on the test. Reconciliation floated (not decided): `expect` survives
-  as **authoring sugar that compiles OUT to an external lens** at parse time (ergonomic authoring,
-  pure catalogue). Decided from PRINCIPLE, not the corpus's expect-density. **Foundational — flagged
-  to sleep on (2026-06-17).** Also pulls a dependency: `deriveCategory` reads `expect` today, so a
-  category basis must be found if `expect` leaves the test.
+- **✅ OPEN FORK — RESOLVED (2026-06-17).** Where does an authored assertion live? Decided from
+  principle: **the test is pure observation; the assertion is EXTERNAL and consumer-owned.** Three
+  parts:
+  - **Test = pure observation.** The catalogue record holds formula + grid + identity + category +
+    observed per-engine Outcomes. No `expect` field on the catalogue test, no `canonicalGrid`, no
+    verdict.
+  - **Oracles stay out-of-band (maintainer call).** An authored assertion is **not** a field in
+    ManifestV5 and **not** an optional projection inside it — it lives in a **separate lens artifact**
+    a consumer joins against by case id. This *sharpens the three-axes cut*: the manifest carries the
+    two relation-layer axes only — the agreement **partition**/classes + per-engine **capability** —
+    and the oracle axis is exiled entirely out-of-band. (So V5 = two axes; the third is a separate,
+    joinable lens, not an optional column.)
+  - **`expect:` survives as lens sugar, not canon.** Inline `expect:` stays for authoring ergonomics,
+    but at parse time it **compiles OUT** into the author's own out-of-band self-check lens — binding
+    on no other consumer, never labeled `canonical`, never scored against as truth. Naming must read
+    "the author's self-check lens" so sugar is never mistaken for canon.
+
+  *Two findings de-risked this against the code (grounded, not abstract):* (1) the `deriveCategory`
+  dependency is **shallow** — `category` is already a *required authored field* (`catalogue.ts:133`);
+  `parse.ts:128-132` only calls `deriveCategory` as fallback sugar when omitted, so `expect` leaving
+  the test needs no new category basis. (2) The drift-tripwire value of `expect` is **already served
+  descriptively** by the recorded fixtures (recorded-observation vs re-run = the stability relation);
+  the only thing a normative `expect` adds over the fixture is an a-priori "correct," which is exactly
+  the act the principle exiles. So removing normative `expect` loses nothing real.
 
 ### CP3 — Migrate onto the partition; retire the fossil; wire the hub. *Gate: output verdict-free end-to-end and the hub reads it.*
 

@@ -122,6 +122,21 @@ from the relation layer; relocate it into clearly-owned lenses.*
 - **oracle / matcher / `expect`** — an **opt-in, authored assertion** (a harness
   self-check, or a per-test strict check). A structural-subset assertion
   evaluated on a materialized result. **Not** engine-correctness canon.
+  **Out-of-band (ratified 2026-06-17).** An oracle is *never* a field on the
+  catalogue test and *never* a column/optional projection in the manifest — it
+  lives in a **separate lens artifact** that a consumer joins to a case by id.
+  This keeps the relation layer (catalogue + manifest) verdict-free; the manifest
+  carries only the agreement **partition** + per-engine **capability**, and the
+  oracle axis sits entirely outside it.
+- **lens sugar (`expect:`)** — inline `expect:` is retained for authoring
+  ergonomics, but it is **sugar, not canon**: at parse time it **compiles OUT**
+  into the author's own out-of-band self-check lens. It is the *assay author's*
+  assertion (a legitimate named lens — the suite's reference-implementation
+  self-check), binding on no other consumer, never labeled `canonical`, never
+  scored against as truth. Different consumers (interleaf's target, the benchmark)
+  assert their own correctness as their own lenses over the same partition. When
+  naming or rendering it, read it as "the author's self-check lens," so sugar is
+  never mistaken for canon.
 - **conformance** — a lens read over a stored partition: "conformance to ⟨engine⟩"
   = *which class contains ⟨engine⟩, and what falls outside it.* The arrow lives
   only in the lens.
