@@ -170,22 +170,18 @@ export interface ManifestV5TestEntry {
   partition: ManifestClass[]
 }
 
-/** Fork causes = the difference-among-produced-values subset of `Cause`. The capability-shaped
- * causes (missing-function / missing-arg-form / unimplemented-edge) are NOT fork causes — a
- * missing function produces no value, carried by the capability axis (`unsupported`/`no-data`),
- * never as a divergence. `TODO` is a placeholder, excluded. (Derived from the model, not corpus
- * frequency: a heavily-authored capability-shaped cause is migration the regen heals, not a
- * reason to admit it as a fork cause.) */
-export type ForkCause = Exclude<
-  Cause,
-  "missing-function" | "missing-arg-form" | "unimplemented-edge" | "TODO"
->
-
-/** A descriptive, symmetric annotation on a fork. `cause` (controlled enum) + `engines`
- * (symmetric set) are the LOAD-BEARING relation content; `summary` is NON-NORMATIVE display only
- * (a human caption — nothing reads it as the relationship). */
+/** A descriptive, symmetric annotation on a fork. `cause` (the controlled `Cause` enum) +
+ * `engines` (symmetric set) are the LOAD-BEARING relation content; `summary` is NON-NORMATIVE
+ * display only (a human caption — nothing reads it as the relationship).
+ *
+ * "Capability not cause" is enforced MECHANICALLY, not by restricting this vocabulary: an
+ * annotation is emitted only for a case that actually FORKS (partition.length > 1). A
+ * `missing-function` that produces no value is `unsupported` on the capability axis — uniform,
+ * no fork, no annotation; a `missing-function` that RUNS and returns `#NAME?` is an error-value
+ * fork (the engine produced a value), so the annotation is kept and `missing-function` is a
+ * faithful cause for it. So `cause` is the full `Cause` — the split lives in the partition. */
 export interface ManifestForkAnnotation {
-  cause: ForkCause
+  cause: Cause
   engines: Platform[]
   classes?: number[]
   category: Category
