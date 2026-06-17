@@ -1,2284 +1,2655 @@
 {
   "platform": "gsheets",
-  "generatedAt": "2026-05-24T07:13:35.765Z",
+  "generatedAt": "2026-06-17T20:01:41.625Z",
   "results": {
     "sha256:e646045cf799f7e81c25b874783c5132cdb4cc11d43a745fa6b75faadfde9188": {
-      "result": [
-        [
-          {
-            "primitive": {
-              "kind": "number",
-              "value": 0.7745966692414835
-            },
-            "engine": {
-              "platform": "gsheets",
-              "wire_kind": "number",
-              "raw_api": {
-                "userEnteredValue": {
-                  "formulaValue": "=CORREL(A1:A5, B1:B5)"
-                },
-                "effectiveValue": {
-                  "numberValue": 0.7745966692414835
-                },
-                "formattedValue": "0.7745966692",
-                "effectiveFormat": {
-                  "textFormat": {
-                    "foregroundColor": {},
-                    "fontFamily": "Arial",
-                    "fontSize": 10,
-                    "bold": false,
-                    "italic": false,
-                    "strikethrough": false,
-                    "underline": false,
-                    "foregroundColorStyle": {
-                      "rgbColor": {}
-                    }
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 0.7745966692414835
+              },
+              "engine": {
+                "platform": "gsheets",
+                "wire_kind": "number",
+                "raw_api": {
+                  "userEnteredValue": {
+                    "formulaValue": "=CORREL(A1:A5, B1:B5)"
                   },
-                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                  "effectiveValue": {
+                    "numberValue": 0.7745966692414835
+                  },
+                  "formattedValue": "0.7745966692",
+                  "effectiveFormat": {
+                    "textFormat": {
+                      "foregroundColor": {},
+                      "fontFamily": "Arial",
+                      "fontSize": 10,
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "foregroundColorStyle": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "hyperlinkDisplayType": "PLAIN_TEXT"
+                  }
                 }
-              }
-            },
-            "formula": "CORREL(A1:A5, B1:B5)",
-            "formatted": "0.7745966692"
-          }
-        ]
-      ],
+              },
+              "formula": "CORREL(A1:A5, B1:B5)",
+              "formatted": "0.7745966692"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=CORREL(A1:A5, B1:B5)"
     },
     "sha256:20f0d33c1b64cf5eab20a401164a8cff3c3e611ce7e1307c0fd1ced34dcde941": {
-      "result": [
-        [
-          {
-            "primitive": {
-              "kind": "number",
-              "value": 1
-            },
-            "engine": {
-              "platform": "gsheets",
-              "wire_kind": "number",
-              "raw_api": {
-                "userEnteredValue": {
-                  "formulaValue": "=CORREL(A1:A3, B1:B3)"
-                },
-                "effectiveValue": {
-                  "numberValue": 1
-                },
-                "formattedValue": "1",
-                "effectiveFormat": {
-                  "textFormat": {
-                    "foregroundColor": {},
-                    "fontFamily": "Arial",
-                    "fontSize": 10,
-                    "bold": false,
-                    "italic": false,
-                    "strikethrough": false,
-                    "underline": false,
-                    "foregroundColorStyle": {
-                      "rgbColor": {}
-                    }
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 1
+              },
+              "engine": {
+                "platform": "gsheets",
+                "wire_kind": "number",
+                "raw_api": {
+                  "userEnteredValue": {
+                    "formulaValue": "=CORREL(A1:A3, B1:B3)"
                   },
-                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                  "effectiveValue": {
+                    "numberValue": 1
+                  },
+                  "formattedValue": "1",
+                  "effectiveFormat": {
+                    "textFormat": {
+                      "foregroundColor": {},
+                      "fontFamily": "Arial",
+                      "fontSize": 10,
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "foregroundColorStyle": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "hyperlinkDisplayType": "PLAIN_TEXT"
+                  }
                 }
-              }
-            },
-            "formula": "CORREL(A1:A3, B1:B3)",
-            "formatted": "1"
-          }
-        ]
-      ],
+              },
+              "formula": "CORREL(A1:A3, B1:B3)",
+              "formatted": "1"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=CORREL(A1:A3, B1:B3)"
     },
     "sha256:df450d94569a591f8723c046ff08cb4cb47bf27a4ee96d7d5922aa3a1d9dddae": {
-      "result": [
-        [
-          {
-            "primitive": {
-              "kind": "number",
-              "value": -1
-            },
-            "engine": {
-              "platform": "gsheets",
-              "wire_kind": "number",
-              "raw_api": {
-                "userEnteredValue": {
-                  "formulaValue": "=CORREL(A1:A3, B1:B3)"
-                },
-                "effectiveValue": {
-                  "numberValue": -1
-                },
-                "formattedValue": "-1",
-                "effectiveFormat": {
-                  "textFormat": {
-                    "foregroundColor": {},
-                    "fontFamily": "Arial",
-                    "fontSize": 10,
-                    "bold": false,
-                    "italic": false,
-                    "strikethrough": false,
-                    "underline": false,
-                    "foregroundColorStyle": {
-                      "rgbColor": {}
-                    }
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": -1
+              },
+              "engine": {
+                "platform": "gsheets",
+                "wire_kind": "number",
+                "raw_api": {
+                  "userEnteredValue": {
+                    "formulaValue": "=CORREL(A1:A3, B1:B3)"
                   },
-                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                  "effectiveValue": {
+                    "numberValue": -1
+                  },
+                  "formattedValue": "-1",
+                  "effectiveFormat": {
+                    "textFormat": {
+                      "foregroundColor": {},
+                      "fontFamily": "Arial",
+                      "fontSize": 10,
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "foregroundColorStyle": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "hyperlinkDisplayType": "PLAIN_TEXT"
+                  }
                 }
-              }
-            },
-            "formula": "CORREL(A1:A3, B1:B3)",
-            "formatted": "-1"
-          }
-        ]
-      ],
+              },
+              "formula": "CORREL(A1:A3, B1:B3)",
+              "formatted": "-1"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=CORREL(A1:A3, B1:B3)"
     },
     "sha256:e5eb0fabdb9c17fe5a78f60e56475ebf70ae0f58df4802fcb1b354349162af1b": {
-      "result": [
-        [
-          {
-            "primitive": {
-              "kind": "number",
-              "value": 1.2000000000000002
-            },
-            "engine": {
-              "platform": "gsheets",
-              "wire_kind": "number",
-              "raw_api": {
-                "userEnteredValue": {
-                  "formulaValue": "=COVAR(A1:A5, B1:B5)"
-                },
-                "effectiveValue": {
-                  "numberValue": 1.2000000000000002
-                },
-                "formattedValue": "1.2",
-                "effectiveFormat": {
-                  "textFormat": {
-                    "foregroundColor": {},
-                    "fontFamily": "Arial",
-                    "fontSize": 10,
-                    "bold": false,
-                    "italic": false,
-                    "strikethrough": false,
-                    "underline": false,
-                    "foregroundColorStyle": {
-                      "rgbColor": {}
-                    }
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 1.2000000000000002
+              },
+              "engine": {
+                "platform": "gsheets",
+                "wire_kind": "number",
+                "raw_api": {
+                  "userEnteredValue": {
+                    "formulaValue": "=COVAR(A1:A5, B1:B5)"
                   },
-                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                  "effectiveValue": {
+                    "numberValue": 1.2000000000000002
+                  },
+                  "formattedValue": "1.2",
+                  "effectiveFormat": {
+                    "textFormat": {
+                      "foregroundColor": {},
+                      "fontFamily": "Arial",
+                      "fontSize": 10,
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "foregroundColorStyle": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "hyperlinkDisplayType": "PLAIN_TEXT"
+                  }
                 }
-              }
-            },
-            "formula": "COVAR(A1:A5, B1:B5)",
-            "formatted": "1.2"
-          }
-        ]
-      ],
+              },
+              "formula": "COVAR(A1:A5, B1:B5)",
+              "formatted": "1.2"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=COVAR(A1:A5, B1:B5)"
     },
     "sha256:487677f548f9b4bf117216ac2ad92f16b7d599c7b013e2c9a7526948a6ee9a47": {
-      "result": [
-        [
-          {
-            "primitive": {
-              "kind": "number",
-              "value": 1.3333333333333333
-            },
-            "engine": {
-              "platform": "gsheets",
-              "wire_kind": "number",
-              "raw_api": {
-                "userEnteredValue": {
-                  "formulaValue": "=COVAR(A1:A3, B1:B3)"
-                },
-                "effectiveValue": {
-                  "numberValue": 1.3333333333333333
-                },
-                "formattedValue": "1.333333333",
-                "effectiveFormat": {
-                  "textFormat": {
-                    "foregroundColor": {},
-                    "fontFamily": "Arial",
-                    "fontSize": 10,
-                    "bold": false,
-                    "italic": false,
-                    "strikethrough": false,
-                    "underline": false,
-                    "foregroundColorStyle": {
-                      "rgbColor": {}
-                    }
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 1.3333333333333333
+              },
+              "engine": {
+                "platform": "gsheets",
+                "wire_kind": "number",
+                "raw_api": {
+                  "userEnteredValue": {
+                    "formulaValue": "=COVAR(A1:A3, B1:B3)"
                   },
-                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                  "effectiveValue": {
+                    "numberValue": 1.3333333333333333
+                  },
+                  "formattedValue": "1.333333333",
+                  "effectiveFormat": {
+                    "textFormat": {
+                      "foregroundColor": {},
+                      "fontFamily": "Arial",
+                      "fontSize": 10,
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "foregroundColorStyle": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "hyperlinkDisplayType": "PLAIN_TEXT"
+                  }
                 }
-              }
-            },
-            "formula": "COVAR(A1:A3, B1:B3)",
-            "formatted": "1.333333333"
-          }
-        ]
-      ],
+              },
+              "formula": "COVAR(A1:A3, B1:B3)",
+              "formatted": "1.333333333"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=COVAR(A1:A3, B1:B3)"
     },
     "sha256:d9f4fd6468e5b1c9a1d886f0b643a22a833bff8d74b6901fbc9a076d58f41cbf": {
-      "result": [
-        [
-          {
-            "primitive": {
-              "kind": "number",
-              "value": 1.2000000000000002
-            },
-            "engine": {
-              "platform": "gsheets",
-              "wire_kind": "number",
-              "raw_api": {
-                "userEnteredValue": {
-                  "formulaValue": "=COVARIANCE.P(A1:A5, B1:B5)"
-                },
-                "effectiveValue": {
-                  "numberValue": 1.2000000000000002
-                },
-                "formattedValue": "1.2",
-                "effectiveFormat": {
-                  "textFormat": {
-                    "foregroundColor": {},
-                    "fontFamily": "Arial",
-                    "fontSize": 10,
-                    "bold": false,
-                    "italic": false,
-                    "strikethrough": false,
-                    "underline": false,
-                    "foregroundColorStyle": {
-                      "rgbColor": {}
-                    }
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 1.2000000000000002
+              },
+              "engine": {
+                "platform": "gsheets",
+                "wire_kind": "number",
+                "raw_api": {
+                  "userEnteredValue": {
+                    "formulaValue": "=COVARIANCE.P(A1:A5, B1:B5)"
                   },
-                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                  "effectiveValue": {
+                    "numberValue": 1.2000000000000002
+                  },
+                  "formattedValue": "1.2",
+                  "effectiveFormat": {
+                    "textFormat": {
+                      "foregroundColor": {},
+                      "fontFamily": "Arial",
+                      "fontSize": 10,
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "foregroundColorStyle": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "hyperlinkDisplayType": "PLAIN_TEXT"
+                  }
                 }
-              }
-            },
-            "formula": "COVARIANCE.P(A1:A5, B1:B5)",
-            "formatted": "1.2"
-          }
-        ]
-      ],
+              },
+              "formula": "COVARIANCE.P(A1:A5, B1:B5)",
+              "formatted": "1.2"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=COVARIANCE.P(A1:A5, B1:B5)"
     },
     "sha256:433e33adc9034326932fd3bd327378c1e053460e500433d14b78aa5203314751": {
-      "result": [
-        [
-          {
-            "primitive": {
-              "kind": "number",
-              "value": 1.3333333333333333
-            },
-            "engine": {
-              "platform": "gsheets",
-              "wire_kind": "number",
-              "raw_api": {
-                "userEnteredValue": {
-                  "formulaValue": "=COVARIANCE.P(A1:A3, B1:B3)"
-                },
-                "effectiveValue": {
-                  "numberValue": 1.3333333333333333
-                },
-                "formattedValue": "1.333333333",
-                "effectiveFormat": {
-                  "textFormat": {
-                    "foregroundColor": {},
-                    "fontFamily": "Arial",
-                    "fontSize": 10,
-                    "bold": false,
-                    "italic": false,
-                    "strikethrough": false,
-                    "underline": false,
-                    "foregroundColorStyle": {
-                      "rgbColor": {}
-                    }
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 1.3333333333333333
+              },
+              "engine": {
+                "platform": "gsheets",
+                "wire_kind": "number",
+                "raw_api": {
+                  "userEnteredValue": {
+                    "formulaValue": "=COVARIANCE.P(A1:A3, B1:B3)"
                   },
-                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                  "effectiveValue": {
+                    "numberValue": 1.3333333333333333
+                  },
+                  "formattedValue": "1.333333333",
+                  "effectiveFormat": {
+                    "textFormat": {
+                      "foregroundColor": {},
+                      "fontFamily": "Arial",
+                      "fontSize": 10,
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "foregroundColorStyle": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "hyperlinkDisplayType": "PLAIN_TEXT"
+                  }
                 }
-              }
-            },
-            "formula": "COVARIANCE.P(A1:A3, B1:B3)",
-            "formatted": "1.333333333"
-          }
-        ]
-      ],
+              },
+              "formula": "COVARIANCE.P(A1:A3, B1:B3)",
+              "formatted": "1.333333333"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=COVARIANCE.P(A1:A3, B1:B3)"
     },
     "sha256:f9e788fdf9d9a8d94ea393d42e4f05c0c38294fe16aafa4bf20ff27fbdb9f9ad": {
-      "result": [
-        [
-          {
-            "primitive": {
-              "kind": "number",
-              "value": 1.5
-            },
-            "engine": {
-              "platform": "gsheets",
-              "wire_kind": "number",
-              "raw_api": {
-                "userEnteredValue": {
-                  "formulaValue": "=COVARIANCE.S(A1:A5, B1:B5)"
-                },
-                "effectiveValue": {
-                  "numberValue": 1.5
-                },
-                "formattedValue": "1.5",
-                "effectiveFormat": {
-                  "textFormat": {
-                    "foregroundColor": {},
-                    "fontFamily": "Arial",
-                    "fontSize": 10,
-                    "bold": false,
-                    "italic": false,
-                    "strikethrough": false,
-                    "underline": false,
-                    "foregroundColorStyle": {
-                      "rgbColor": {}
-                    }
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 1.5
+              },
+              "engine": {
+                "platform": "gsheets",
+                "wire_kind": "number",
+                "raw_api": {
+                  "userEnteredValue": {
+                    "formulaValue": "=COVARIANCE.S(A1:A5, B1:B5)"
                   },
-                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                  "effectiveValue": {
+                    "numberValue": 1.5
+                  },
+                  "formattedValue": "1.5",
+                  "effectiveFormat": {
+                    "textFormat": {
+                      "foregroundColor": {},
+                      "fontFamily": "Arial",
+                      "fontSize": 10,
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "foregroundColorStyle": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "hyperlinkDisplayType": "PLAIN_TEXT"
+                  }
                 }
-              }
-            },
-            "formula": "COVARIANCE.S(A1:A5, B1:B5)",
-            "formatted": "1.5"
-          }
-        ]
-      ],
+              },
+              "formula": "COVARIANCE.S(A1:A5, B1:B5)",
+              "formatted": "1.5"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=COVARIANCE.S(A1:A5, B1:B5)"
     },
     "sha256:9cf528d749fc9f0cdeab2ed33641e142370be39bc91e0b47cd8a123a88441e09": {
-      "result": [
-        [
-          {
-            "primitive": {
-              "kind": "number",
-              "value": 2
-            },
-            "engine": {
-              "platform": "gsheets",
-              "wire_kind": "number",
-              "raw_api": {
-                "userEnteredValue": {
-                  "formulaValue": "=COVARIANCE.S(A1:A3, B1:B3)"
-                },
-                "effectiveValue": {
-                  "numberValue": 2
-                },
-                "formattedValue": "2",
-                "effectiveFormat": {
-                  "textFormat": {
-                    "foregroundColor": {},
-                    "fontFamily": "Arial",
-                    "fontSize": 10,
-                    "bold": false,
-                    "italic": false,
-                    "strikethrough": false,
-                    "underline": false,
-                    "foregroundColorStyle": {
-                      "rgbColor": {}
-                    }
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 2
+              },
+              "engine": {
+                "platform": "gsheets",
+                "wire_kind": "number",
+                "raw_api": {
+                  "userEnteredValue": {
+                    "formulaValue": "=COVARIANCE.S(A1:A3, B1:B3)"
                   },
-                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                  "effectiveValue": {
+                    "numberValue": 2
+                  },
+                  "formattedValue": "2",
+                  "effectiveFormat": {
+                    "textFormat": {
+                      "foregroundColor": {},
+                      "fontFamily": "Arial",
+                      "fontSize": 10,
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "foregroundColorStyle": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "hyperlinkDisplayType": "PLAIN_TEXT"
+                  }
                 }
-              }
-            },
-            "formula": "COVARIANCE.S(A1:A3, B1:B3)",
-            "formatted": "2"
-          }
-        ]
-      ],
+              },
+              "formula": "COVARIANCE.S(A1:A3, B1:B3)",
+              "formatted": "2"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=COVARIANCE.S(A1:A3, B1:B3)"
     },
     "sha256:9141d9c4e88f00f984f964d6154a47f7f83476759c6fbb3da2b28bbf138a6e4e": {
-      "result": [
-        [
-          {
-            "primitive": {
-              "kind": "number",
-              "value": 5.800000000000001
-            },
-            "engine": {
-              "platform": "gsheets",
-              "wire_kind": "number",
-              "raw_api": {
-                "userEnteredValue": {
-                  "formulaValue": "=FORECAST(6, B1:B5, A1:A5)"
-                },
-                "effectiveValue": {
-                  "numberValue": 5.800000000000001
-                },
-                "formattedValue": "5.8",
-                "effectiveFormat": {
-                  "textFormat": {
-                    "foregroundColor": {},
-                    "fontFamily": "Arial",
-                    "fontSize": 10,
-                    "bold": false,
-                    "italic": false,
-                    "strikethrough": false,
-                    "underline": false,
-                    "foregroundColorStyle": {
-                      "rgbColor": {}
-                    }
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 5.800000000000001
+              },
+              "engine": {
+                "platform": "gsheets",
+                "wire_kind": "number",
+                "raw_api": {
+                  "userEnteredValue": {
+                    "formulaValue": "=FORECAST(6, B1:B5, A1:A5)"
                   },
-                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                  "effectiveValue": {
+                    "numberValue": 5.800000000000001
+                  },
+                  "formattedValue": "5.8",
+                  "effectiveFormat": {
+                    "textFormat": {
+                      "foregroundColor": {},
+                      "fontFamily": "Arial",
+                      "fontSize": 10,
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "foregroundColorStyle": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "hyperlinkDisplayType": "PLAIN_TEXT"
+                  }
                 }
-              }
-            },
-            "formula": "FORECAST(6, B1:B5, A1:A5)",
-            "formatted": "5.8"
-          }
-        ]
-      ],
+              },
+              "formula": "FORECAST(6, B1:B5, A1:A5)",
+              "formatted": "5.8"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=FORECAST(6, B1:B5, A1:A5)"
     },
     "sha256:d7ac02b9a578ec31bb31765ef4233d1173628c5d31ddf1c87cc324b4e56d9da9": {
-      "result": [
-        [
-          {
-            "primitive": {
-              "kind": "number",
-              "value": 8
-            },
-            "engine": {
-              "platform": "gsheets",
-              "wire_kind": "number",
-              "raw_api": {
-                "userEnteredValue": {
-                  "formulaValue": "=FORECAST(4, B1:B3, A1:A3)"
-                },
-                "effectiveValue": {
-                  "numberValue": 8
-                },
-                "formattedValue": "8",
-                "effectiveFormat": {
-                  "textFormat": {
-                    "foregroundColor": {},
-                    "fontFamily": "Arial",
-                    "fontSize": 10,
-                    "bold": false,
-                    "italic": false,
-                    "strikethrough": false,
-                    "underline": false,
-                    "foregroundColorStyle": {
-                      "rgbColor": {}
-                    }
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 8
+              },
+              "engine": {
+                "platform": "gsheets",
+                "wire_kind": "number",
+                "raw_api": {
+                  "userEnteredValue": {
+                    "formulaValue": "=FORECAST(4, B1:B3, A1:A3)"
                   },
-                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                  "effectiveValue": {
+                    "numberValue": 8
+                  },
+                  "formattedValue": "8",
+                  "effectiveFormat": {
+                    "textFormat": {
+                      "foregroundColor": {},
+                      "fontFamily": "Arial",
+                      "fontSize": 10,
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "foregroundColorStyle": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "hyperlinkDisplayType": "PLAIN_TEXT"
+                  }
                 }
-              }
-            },
-            "formula": "FORECAST(4, B1:B3, A1:A3)",
-            "formatted": "8"
-          }
-        ]
-      ],
+              },
+              "formula": "FORECAST(4, B1:B3, A1:A3)",
+              "formatted": "8"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=FORECAST(4, B1:B3, A1:A3)"
     },
     "sha256:31d20fd90266b0f797c174232bfbeabae51a0d39990ffcb970c10183fca7a42b": {
-      "result": [
-        [
-          {
-            "primitive": {
-              "kind": "number",
-              "value": 5.800000000000001
-            },
-            "engine": {
-              "platform": "gsheets",
-              "wire_kind": "number",
-              "raw_api": {
-                "userEnteredValue": {
-                  "formulaValue": "=FORECAST.LINEAR(6, B1:B5, A1:A5)"
-                },
-                "effectiveValue": {
-                  "numberValue": 5.800000000000001
-                },
-                "formattedValue": "5.8",
-                "effectiveFormat": {
-                  "textFormat": {
-                    "foregroundColor": {},
-                    "fontFamily": "Arial",
-                    "fontSize": 10,
-                    "bold": false,
-                    "italic": false,
-                    "strikethrough": false,
-                    "underline": false,
-                    "foregroundColorStyle": {
-                      "rgbColor": {}
-                    }
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 5.800000000000001
+              },
+              "engine": {
+                "platform": "gsheets",
+                "wire_kind": "number",
+                "raw_api": {
+                  "userEnteredValue": {
+                    "formulaValue": "=FORECAST.LINEAR(6, B1:B5, A1:A5)"
                   },
-                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                  "effectiveValue": {
+                    "numberValue": 5.800000000000001
+                  },
+                  "formattedValue": "5.8",
+                  "effectiveFormat": {
+                    "textFormat": {
+                      "foregroundColor": {},
+                      "fontFamily": "Arial",
+                      "fontSize": 10,
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "foregroundColorStyle": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "hyperlinkDisplayType": "PLAIN_TEXT"
+                  }
                 }
-              }
-            },
-            "formula": "FORECAST.LINEAR(6, B1:B5, A1:A5)",
-            "formatted": "5.8"
-          }
-        ]
-      ],
+              },
+              "formula": "FORECAST.LINEAR(6, B1:B5, A1:A5)",
+              "formatted": "5.8"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=FORECAST.LINEAR(6, B1:B5, A1:A5)"
     },
     "sha256:25bb9c7019946fc7e9a58f8f2ae4790af7e2e6707fe80c3f219abb639639ba18": {
-      "result": [
-        [
-          {
-            "primitive": {
-              "kind": "number",
-              "value": 8
-            },
-            "engine": {
-              "platform": "gsheets",
-              "wire_kind": "number",
-              "raw_api": {
-                "userEnteredValue": {
-                  "formulaValue": "=FORECAST.LINEAR(4, B1:B3, A1:A3)"
-                },
-                "effectiveValue": {
-                  "numberValue": 8
-                },
-                "formattedValue": "8",
-                "effectiveFormat": {
-                  "textFormat": {
-                    "foregroundColor": {},
-                    "fontFamily": "Arial",
-                    "fontSize": 10,
-                    "bold": false,
-                    "italic": false,
-                    "strikethrough": false,
-                    "underline": false,
-                    "foregroundColorStyle": {
-                      "rgbColor": {}
-                    }
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 8
+              },
+              "engine": {
+                "platform": "gsheets",
+                "wire_kind": "number",
+                "raw_api": {
+                  "userEnteredValue": {
+                    "formulaValue": "=FORECAST.LINEAR(4, B1:B3, A1:A3)"
                   },
-                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                  "effectiveValue": {
+                    "numberValue": 8
+                  },
+                  "formattedValue": "8",
+                  "effectiveFormat": {
+                    "textFormat": {
+                      "foregroundColor": {},
+                      "fontFamily": "Arial",
+                      "fontSize": 10,
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "foregroundColorStyle": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "hyperlinkDisplayType": "PLAIN_TEXT"
+                  }
                 }
-              }
-            },
-            "formula": "FORECAST.LINEAR(4, B1:B3, A1:A3)",
-            "formatted": "8"
-          }
-        ]
-      ],
+              },
+              "formula": "FORECAST.LINEAR(4, B1:B3, A1:A3)",
+              "formatted": "8"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=FORECAST.LINEAR(4, B1:B3, A1:A3)"
     },
     "sha256:10031ab14fa3dc986070691b00ea8a830c6ec2fa42b2976edc1c7750aa1473f0": {
-      "result": [
-        [
-          {
-            "primitive": {
-              "kind": "number",
-              "value": 2.1999999999999997
-            },
-            "engine": {
-              "platform": "gsheets",
-              "wire_kind": "number",
-              "raw_api": {
-                "userEnteredValue": {
-                  "formulaValue": "=INTERCEPT(B1:B5, A1:A5)"
-                },
-                "effectiveValue": {
-                  "numberValue": 2.1999999999999997
-                },
-                "formattedValue": "2.2",
-                "effectiveFormat": {
-                  "textFormat": {
-                    "foregroundColor": {},
-                    "fontFamily": "Arial",
-                    "fontSize": 10,
-                    "bold": false,
-                    "italic": false,
-                    "strikethrough": false,
-                    "underline": false,
-                    "foregroundColorStyle": {
-                      "rgbColor": {}
-                    }
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 2.1999999999999997
+              },
+              "engine": {
+                "platform": "gsheets",
+                "wire_kind": "number",
+                "raw_api": {
+                  "userEnteredValue": {
+                    "formulaValue": "=INTERCEPT(B1:B5, A1:A5)"
                   },
-                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                  "effectiveValue": {
+                    "numberValue": 2.1999999999999997
+                  },
+                  "formattedValue": "2.2",
+                  "effectiveFormat": {
+                    "textFormat": {
+                      "foregroundColor": {},
+                      "fontFamily": "Arial",
+                      "fontSize": 10,
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "foregroundColorStyle": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "hyperlinkDisplayType": "PLAIN_TEXT"
+                  }
                 }
-              }
-            },
-            "formula": "INTERCEPT(B1:B5, A1:A5)",
-            "formatted": "2.2"
-          }
-        ]
-      ],
+              },
+              "formula": "INTERCEPT(B1:B5, A1:A5)",
+              "formatted": "2.2"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=INTERCEPT(B1:B5, A1:A5)"
     },
     "sha256:eff5d792eb0bebf0b5c9b3ba8943f0c819f3748cdd71ca37402ebc8731590fd4": {
-      "result": [
-        [
-          {
-            "primitive": {
-              "kind": "number",
-              "value": 1
-            },
-            "engine": {
-              "platform": "gsheets",
-              "wire_kind": "number",
-              "raw_api": {
-                "userEnteredValue": {
-                  "formulaValue": "=INTERCEPT(B1:B3, A1:A3)"
-                },
-                "effectiveValue": {
-                  "numberValue": 1
-                },
-                "formattedValue": "1",
-                "effectiveFormat": {
-                  "textFormat": {
-                    "foregroundColor": {},
-                    "fontFamily": "Arial",
-                    "fontSize": 10,
-                    "bold": false,
-                    "italic": false,
-                    "strikethrough": false,
-                    "underline": false,
-                    "foregroundColorStyle": {
-                      "rgbColor": {}
-                    }
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 1
+              },
+              "engine": {
+                "platform": "gsheets",
+                "wire_kind": "number",
+                "raw_api": {
+                  "userEnteredValue": {
+                    "formulaValue": "=INTERCEPT(B1:B3, A1:A3)"
                   },
-                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                  "effectiveValue": {
+                    "numberValue": 1
+                  },
+                  "formattedValue": "1",
+                  "effectiveFormat": {
+                    "textFormat": {
+                      "foregroundColor": {},
+                      "fontFamily": "Arial",
+                      "fontSize": 10,
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "foregroundColorStyle": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "hyperlinkDisplayType": "PLAIN_TEXT"
+                  }
                 }
-              }
-            },
-            "formula": "INTERCEPT(B1:B3, A1:A3)",
-            "formatted": "1"
-          }
-        ]
-      ],
+              },
+              "formula": "INTERCEPT(B1:B3, A1:A3)",
+              "formatted": "1"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=INTERCEPT(B1:B3, A1:A3)"
     },
     "sha256:4bf7eabc84024ff6a17dcbc34c9c3189167eba09d273f047898b8071a026808b": {
-      "result": [
-        [
-          {
-            "primitive": {
-              "kind": "number",
-              "value": 0.7745966692414835
-            },
-            "engine": {
-              "platform": "gsheets",
-              "wire_kind": "number",
-              "raw_api": {
-                "userEnteredValue": {
-                  "formulaValue": "=PEARSON(A1:A5, B1:B5)"
-                },
-                "effectiveValue": {
-                  "numberValue": 0.7745966692414835
-                },
-                "formattedValue": "0.7745966692",
-                "effectiveFormat": {
-                  "textFormat": {
-                    "foregroundColor": {},
-                    "fontFamily": "Arial",
-                    "fontSize": 10,
-                    "bold": false,
-                    "italic": false,
-                    "strikethrough": false,
-                    "underline": false,
-                    "foregroundColorStyle": {
-                      "rgbColor": {}
-                    }
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 0.7745966692414835
+              },
+              "engine": {
+                "platform": "gsheets",
+                "wire_kind": "number",
+                "raw_api": {
+                  "userEnteredValue": {
+                    "formulaValue": "=PEARSON(A1:A5, B1:B5)"
                   },
-                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                  "effectiveValue": {
+                    "numberValue": 0.7745966692414835
+                  },
+                  "formattedValue": "0.7745966692",
+                  "effectiveFormat": {
+                    "textFormat": {
+                      "foregroundColor": {},
+                      "fontFamily": "Arial",
+                      "fontSize": 10,
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "foregroundColorStyle": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "hyperlinkDisplayType": "PLAIN_TEXT"
+                  }
                 }
-              }
-            },
-            "formula": "PEARSON(A1:A5, B1:B5)",
-            "formatted": "0.7745966692"
-          }
-        ]
-      ],
+              },
+              "formula": "PEARSON(A1:A5, B1:B5)",
+              "formatted": "0.7745966692"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=PEARSON(A1:A5, B1:B5)"
     },
     "sha256:b54afc2aab2d9073b64c570a756695b403d3263c5811138ba335b3ad598d5930": {
-      "result": [
-        [
-          {
-            "primitive": {
-              "kind": "number",
-              "value": 1
-            },
-            "engine": {
-              "platform": "gsheets",
-              "wire_kind": "number",
-              "raw_api": {
-                "userEnteredValue": {
-                  "formulaValue": "=PEARSON(A1:A3, B1:B3)"
-                },
-                "effectiveValue": {
-                  "numberValue": 1
-                },
-                "formattedValue": "1",
-                "effectiveFormat": {
-                  "textFormat": {
-                    "foregroundColor": {},
-                    "fontFamily": "Arial",
-                    "fontSize": 10,
-                    "bold": false,
-                    "italic": false,
-                    "strikethrough": false,
-                    "underline": false,
-                    "foregroundColorStyle": {
-                      "rgbColor": {}
-                    }
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 1
+              },
+              "engine": {
+                "platform": "gsheets",
+                "wire_kind": "number",
+                "raw_api": {
+                  "userEnteredValue": {
+                    "formulaValue": "=PEARSON(A1:A3, B1:B3)"
                   },
-                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                  "effectiveValue": {
+                    "numberValue": 1
+                  },
+                  "formattedValue": "1",
+                  "effectiveFormat": {
+                    "textFormat": {
+                      "foregroundColor": {},
+                      "fontFamily": "Arial",
+                      "fontSize": 10,
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "foregroundColorStyle": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "hyperlinkDisplayType": "PLAIN_TEXT"
+                  }
                 }
-              }
-            },
-            "formula": "PEARSON(A1:A3, B1:B3)",
-            "formatted": "1"
-          }
-        ]
-      ],
+              },
+              "formula": "PEARSON(A1:A3, B1:B3)",
+              "formatted": "1"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=PEARSON(A1:A3, B1:B3)"
     },
     "sha256:17d1d92aa967511109338172f801c6ab2b0695d93c081e2c89939eec7be1ede5": {
-      "result": [
-        [
-          {
-            "primitive": {
-              "kind": "number",
-              "value": 0.6000000000000002
-            },
-            "engine": {
-              "platform": "gsheets",
-              "wire_kind": "number",
-              "raw_api": {
-                "userEnteredValue": {
-                  "formulaValue": "=RSQ(B1:B5, A1:A5)"
-                },
-                "effectiveValue": {
-                  "numberValue": 0.6000000000000002
-                },
-                "formattedValue": "0.6",
-                "effectiveFormat": {
-                  "textFormat": {
-                    "foregroundColor": {},
-                    "fontFamily": "Arial",
-                    "fontSize": 10,
-                    "bold": false,
-                    "italic": false,
-                    "strikethrough": false,
-                    "underline": false,
-                    "foregroundColorStyle": {
-                      "rgbColor": {}
-                    }
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 0.6000000000000002
+              },
+              "engine": {
+                "platform": "gsheets",
+                "wire_kind": "number",
+                "raw_api": {
+                  "userEnteredValue": {
+                    "formulaValue": "=RSQ(B1:B5, A1:A5)"
                   },
-                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                  "effectiveValue": {
+                    "numberValue": 0.6000000000000002
+                  },
+                  "formattedValue": "0.6",
+                  "effectiveFormat": {
+                    "textFormat": {
+                      "foregroundColor": {},
+                      "fontFamily": "Arial",
+                      "fontSize": 10,
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "foregroundColorStyle": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "hyperlinkDisplayType": "PLAIN_TEXT"
+                  }
                 }
-              }
-            },
-            "formula": "RSQ(B1:B5, A1:A5)",
-            "formatted": "0.6"
-          }
-        ]
-      ],
+              },
+              "formula": "RSQ(B1:B5, A1:A5)",
+              "formatted": "0.6"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=RSQ(B1:B5, A1:A5)"
     },
     "sha256:29c82f0afede74c28d9d081defdfc9796dd03b3651af75534349499fc68ebf13": {
-      "result": [
-        [
-          {
-            "primitive": {
-              "kind": "number",
-              "value": 1
-            },
-            "engine": {
-              "platform": "gsheets",
-              "wire_kind": "number",
-              "raw_api": {
-                "userEnteredValue": {
-                  "formulaValue": "=RSQ(B1:B3, A1:A3)"
-                },
-                "effectiveValue": {
-                  "numberValue": 1
-                },
-                "formattedValue": "1",
-                "effectiveFormat": {
-                  "textFormat": {
-                    "foregroundColor": {},
-                    "fontFamily": "Arial",
-                    "fontSize": 10,
-                    "bold": false,
-                    "italic": false,
-                    "strikethrough": false,
-                    "underline": false,
-                    "foregroundColorStyle": {
-                      "rgbColor": {}
-                    }
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 1
+              },
+              "engine": {
+                "platform": "gsheets",
+                "wire_kind": "number",
+                "raw_api": {
+                  "userEnteredValue": {
+                    "formulaValue": "=RSQ(B1:B3, A1:A3)"
                   },
-                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                  "effectiveValue": {
+                    "numberValue": 1
+                  },
+                  "formattedValue": "1",
+                  "effectiveFormat": {
+                    "textFormat": {
+                      "foregroundColor": {},
+                      "fontFamily": "Arial",
+                      "fontSize": 10,
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "foregroundColorStyle": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "hyperlinkDisplayType": "PLAIN_TEXT"
+                  }
                 }
-              }
-            },
-            "formula": "RSQ(B1:B3, A1:A3)",
-            "formatted": "1"
-          }
-        ]
-      ],
+              },
+              "formula": "RSQ(B1:B3, A1:A3)",
+              "formatted": "1"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=RSQ(B1:B3, A1:A3)"
     },
     "sha256:b6414f0c29e8eefd8e54dba2b357952ab73a2d859e2926c704ff9dac2d0e638d": {
-      "result": [
-        [
-          {
-            "primitive": {
-              "kind": "number",
-              "value": 0.6000000000000001
-            },
-            "engine": {
-              "platform": "gsheets",
-              "wire_kind": "number",
-              "raw_api": {
-                "userEnteredValue": {
-                  "formulaValue": "=SLOPE(B1:B5, A1:A5)"
-                },
-                "effectiveValue": {
-                  "numberValue": 0.6000000000000001
-                },
-                "formattedValue": "0.6",
-                "effectiveFormat": {
-                  "textFormat": {
-                    "foregroundColor": {},
-                    "fontFamily": "Arial",
-                    "fontSize": 10,
-                    "bold": false,
-                    "italic": false,
-                    "strikethrough": false,
-                    "underline": false,
-                    "foregroundColorStyle": {
-                      "rgbColor": {}
-                    }
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 0.6000000000000001
+              },
+              "engine": {
+                "platform": "gsheets",
+                "wire_kind": "number",
+                "raw_api": {
+                  "userEnteredValue": {
+                    "formulaValue": "=SLOPE(B1:B5, A1:A5)"
                   },
-                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                  "effectiveValue": {
+                    "numberValue": 0.6000000000000001
+                  },
+                  "formattedValue": "0.6",
+                  "effectiveFormat": {
+                    "textFormat": {
+                      "foregroundColor": {},
+                      "fontFamily": "Arial",
+                      "fontSize": 10,
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "foregroundColorStyle": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "hyperlinkDisplayType": "PLAIN_TEXT"
+                  }
                 }
-              }
-            },
-            "formula": "SLOPE(B1:B5, A1:A5)",
-            "formatted": "0.6"
-          }
-        ]
-      ],
+              },
+              "formula": "SLOPE(B1:B5, A1:A5)",
+              "formatted": "0.6"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=SLOPE(B1:B5, A1:A5)"
     },
     "sha256:e7e56ddedfac94b7fbfbcad8d675b0f642962c6aa7db5f194b7fd50784f58cbf": {
-      "result": [
-        [
-          {
-            "primitive": {
-              "kind": "number",
-              "value": 2
-            },
-            "engine": {
-              "platform": "gsheets",
-              "wire_kind": "number",
-              "raw_api": {
-                "userEnteredValue": {
-                  "formulaValue": "=SLOPE(B1:B3, A1:A3)"
-                },
-                "effectiveValue": {
-                  "numberValue": 2
-                },
-                "formattedValue": "2",
-                "effectiveFormat": {
-                  "textFormat": {
-                    "foregroundColor": {},
-                    "fontFamily": "Arial",
-                    "fontSize": 10,
-                    "bold": false,
-                    "italic": false,
-                    "strikethrough": false,
-                    "underline": false,
-                    "foregroundColorStyle": {
-                      "rgbColor": {}
-                    }
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 2
+              },
+              "engine": {
+                "platform": "gsheets",
+                "wire_kind": "number",
+                "raw_api": {
+                  "userEnteredValue": {
+                    "formulaValue": "=SLOPE(B1:B3, A1:A3)"
                   },
-                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                  "effectiveValue": {
+                    "numberValue": 2
+                  },
+                  "formattedValue": "2",
+                  "effectiveFormat": {
+                    "textFormat": {
+                      "foregroundColor": {},
+                      "fontFamily": "Arial",
+                      "fontSize": 10,
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "foregroundColorStyle": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "hyperlinkDisplayType": "PLAIN_TEXT"
+                  }
                 }
-              }
-            },
-            "formula": "SLOPE(B1:B3, A1:A3)",
-            "formatted": "2"
-          }
-        ]
-      ],
+              },
+              "formula": "SLOPE(B1:B3, A1:A3)",
+              "formatted": "2"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=SLOPE(B1:B3, A1:A3)"
     },
     "sha256:c7592ce8c1b2a589f9dd4e7c6f7b9f4c59f4b0b2942d8118f4a1ee27ed30145c": {
-      "result": [
-        [
-          {
-            "primitive": {
-              "kind": "number",
-              "value": 0.8944271909999156
-            },
-            "engine": {
-              "platform": "gsheets",
-              "wire_kind": "number",
-              "raw_api": {
-                "userEnteredValue": {
-                  "formulaValue": "=STEYX(B1:B5, A1:A5)"
-                },
-                "effectiveValue": {
-                  "numberValue": 0.8944271909999156
-                },
-                "formattedValue": "0.894427191",
-                "effectiveFormat": {
-                  "textFormat": {
-                    "foregroundColor": {},
-                    "fontFamily": "Arial",
-                    "fontSize": 10,
-                    "bold": false,
-                    "italic": false,
-                    "strikethrough": false,
-                    "underline": false,
-                    "foregroundColorStyle": {
-                      "rgbColor": {}
-                    }
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 0.8944271909999156
+              },
+              "engine": {
+                "platform": "gsheets",
+                "wire_kind": "number",
+                "raw_api": {
+                  "userEnteredValue": {
+                    "formulaValue": "=STEYX(B1:B5, A1:A5)"
                   },
-                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                  "effectiveValue": {
+                    "numberValue": 0.8944271909999156
+                  },
+                  "formattedValue": "0.894427191",
+                  "effectiveFormat": {
+                    "textFormat": {
+                      "foregroundColor": {},
+                      "fontFamily": "Arial",
+                      "fontSize": 10,
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "foregroundColorStyle": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "hyperlinkDisplayType": "PLAIN_TEXT"
+                  }
                 }
-              }
-            },
-            "formula": "STEYX(B1:B5, A1:A5)",
-            "formatted": "0.894427191"
-          }
-        ]
-      ],
+              },
+              "formula": "STEYX(B1:B5, A1:A5)",
+              "formatted": "0.894427191"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=STEYX(B1:B5, A1:A5)"
     },
     "sha256:b9d882fc6d7f9d98f0052176eb1ab299ed7e2ebc37ad235aeb5dab0c9fba9532": {
-      "result": [
-        [
-          {
-            "primitive": {
-              "kind": "number",
-              "value": 0
-            },
-            "engine": {
-              "platform": "gsheets",
-              "wire_kind": "number",
-              "raw_api": {
-                "userEnteredValue": {
-                  "formulaValue": "=STEYX(B1:B4, A1:A4)"
-                },
-                "effectiveValue": {
-                  "numberValue": 0
-                },
-                "formattedValue": "0",
-                "effectiveFormat": {
-                  "textFormat": {
-                    "foregroundColor": {},
-                    "fontFamily": "Arial",
-                    "fontSize": 10,
-                    "bold": false,
-                    "italic": false,
-                    "strikethrough": false,
-                    "underline": false,
-                    "foregroundColorStyle": {
-                      "rgbColor": {}
-                    }
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 0
+              },
+              "engine": {
+                "platform": "gsheets",
+                "wire_kind": "number",
+                "raw_api": {
+                  "userEnteredValue": {
+                    "formulaValue": "=STEYX(B1:B4, A1:A4)"
                   },
-                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                  "effectiveValue": {
+                    "numberValue": 0
+                  },
+                  "formattedValue": "0",
+                  "effectiveFormat": {
+                    "textFormat": {
+                      "foregroundColor": {},
+                      "fontFamily": "Arial",
+                      "fontSize": 10,
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "foregroundColorStyle": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "hyperlinkDisplayType": "PLAIN_TEXT"
+                  }
                 }
-              }
-            },
-            "formula": "STEYX(B1:B4, A1:A4)",
-            "formatted": "0"
-          }
-        ]
-      ],
+              },
+              "formula": "STEYX(B1:B4, A1:A4)",
+              "formatted": "0"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=STEYX(B1:B4, A1:A4)"
     },
     "sha256:31af75b64e3819fd838c1310f74dca742d9e6ede28b3683f96cf18c5ec3ed13c": {
-      "result": [
-        [
-          {
-            "primitive": {
-              "kind": "number",
-              "value": 0.1959963986120195
-            },
-            "engine": {
-              "platform": "gsheets",
-              "wire_kind": "number",
-              "raw_api": {
-                "userEnteredValue": {
-                  "formulaValue": "=CONFIDENCE(0.05, 1, 100)"
-                },
-                "effectiveValue": {
-                  "numberValue": 0.1959963986120195
-                },
-                "formattedValue": "0.1959963986",
-                "effectiveFormat": {
-                  "textFormat": {
-                    "foregroundColor": {},
-                    "fontFamily": "Arial",
-                    "fontSize": 10,
-                    "bold": false,
-                    "italic": false,
-                    "strikethrough": false,
-                    "underline": false,
-                    "foregroundColorStyle": {
-                      "rgbColor": {}
-                    }
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 0.1959963986120195
+              },
+              "engine": {
+                "platform": "gsheets",
+                "wire_kind": "number",
+                "raw_api": {
+                  "userEnteredValue": {
+                    "formulaValue": "=CONFIDENCE(0.05, 1, 100)"
                   },
-                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                  "effectiveValue": {
+                    "numberValue": 0.1959963986120195
+                  },
+                  "formattedValue": "0.1959963986",
+                  "effectiveFormat": {
+                    "textFormat": {
+                      "foregroundColor": {},
+                      "fontFamily": "Arial",
+                      "fontSize": 10,
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "foregroundColorStyle": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "hyperlinkDisplayType": "PLAIN_TEXT"
+                  }
                 }
-              }
-            },
-            "formula": "CONFIDENCE(0.05, 1, 100)",
-            "formatted": "0.1959963986"
-          }
-        ]
-      ],
+              },
+              "formula": "CONFIDENCE(0.05, 1, 100)",
+              "formatted": "0.1959963986"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=CONFIDENCE(0.05, 1, 100)"
     },
     "sha256:a0e1d4334210e35897726aa1eca6d6db2338e58c4e67e531e1e5291071aa96c9": {
-      "result": [
-        [
-          {
-            "primitive": {
-              "kind": "number",
-              "value": 0.9106931848827708
-            },
-            "engine": {
-              "platform": "gsheets",
-              "wire_kind": "number",
-              "raw_api": {
-                "userEnteredValue": {
-                  "formulaValue": "=CONFIDENCE(0.01, 2.5, 50)"
-                },
-                "effectiveValue": {
-                  "numberValue": 0.9106931848827708
-                },
-                "formattedValue": "0.9106931849",
-                "effectiveFormat": {
-                  "textFormat": {
-                    "foregroundColor": {},
-                    "fontFamily": "Arial",
-                    "fontSize": 10,
-                    "bold": false,
-                    "italic": false,
-                    "strikethrough": false,
-                    "underline": false,
-                    "foregroundColorStyle": {
-                      "rgbColor": {}
-                    }
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 0.9106931848827708
+              },
+              "engine": {
+                "platform": "gsheets",
+                "wire_kind": "number",
+                "raw_api": {
+                  "userEnteredValue": {
+                    "formulaValue": "=CONFIDENCE(0.01, 2.5, 50)"
                   },
-                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                  "effectiveValue": {
+                    "numberValue": 0.9106931848827708
+                  },
+                  "formattedValue": "0.9106931849",
+                  "effectiveFormat": {
+                    "textFormat": {
+                      "foregroundColor": {},
+                      "fontFamily": "Arial",
+                      "fontSize": 10,
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "foregroundColorStyle": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "hyperlinkDisplayType": "PLAIN_TEXT"
+                  }
                 }
-              }
-            },
-            "formula": "CONFIDENCE(0.01, 2.5, 50)",
-            "formatted": "0.9106931849"
-          }
-        ]
-      ],
+              },
+              "formula": "CONFIDENCE(0.01, 2.5, 50)",
+              "formatted": "0.9106931849"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=CONFIDENCE(0.01, 2.5, 50)"
     },
     "sha256:539a5acff6fa968f01a2c8446e11e0a258257b74c4682d2df1fd7e167bc61def": {
-      "result": [
-        [
-          {
-            "primitive": {
-              "kind": "number",
-              "value": 0.41277971232560456
-            },
-            "engine": {
-              "platform": "gsheets",
-              "wire_kind": "number",
-              "raw_api": {
-                "userEnteredValue": {
-                  "formulaValue": "=CONFIDENCE.T(0.05, 1, 25)"
-                },
-                "effectiveValue": {
-                  "numberValue": 0.41277971232560456
-                },
-                "formattedValue": "0.4127797123",
-                "effectiveFormat": {
-                  "textFormat": {
-                    "foregroundColor": {},
-                    "fontFamily": "Arial",
-                    "fontSize": 10,
-                    "bold": false,
-                    "italic": false,
-                    "strikethrough": false,
-                    "underline": false,
-                    "foregroundColorStyle": {
-                      "rgbColor": {}
-                    }
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 0.41277971232560456
+              },
+              "engine": {
+                "platform": "gsheets",
+                "wire_kind": "number",
+                "raw_api": {
+                  "userEnteredValue": {
+                    "formulaValue": "=CONFIDENCE.T(0.05, 1, 25)"
                   },
-                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                  "effectiveValue": {
+                    "numberValue": 0.41277971232560456
+                  },
+                  "formattedValue": "0.4127797123",
+                  "effectiveFormat": {
+                    "textFormat": {
+                      "foregroundColor": {},
+                      "fontFamily": "Arial",
+                      "fontSize": 10,
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "foregroundColorStyle": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "hyperlinkDisplayType": "PLAIN_TEXT"
+                  }
                 }
-              }
-            },
-            "formula": "CONFIDENCE.T(0.05, 1, 25)",
-            "formatted": "0.4127797123"
-          }
-        ]
-      ],
+              },
+              "formula": "CONFIDENCE.T(0.05, 1, 25)",
+              "formatted": "0.4127797123"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=CONFIDENCE.T(0.05, 1, 25)"
     },
     "sha256:be4ee279800aab2aaade913b472854ece9b03a852fa2ae70c9de541ba94752ef": {
-      "result": [
-        [
-          {
-            "primitive": {
-              "kind": "number",
-              "value": 0.7104921387393245
-            },
-            "engine": {
-              "platform": "gsheets",
-              "wire_kind": "number",
-              "raw_api": {
-                "userEnteredValue": {
-                  "formulaValue": "=CONFIDENCE.T(0.05, 2.5, 50)"
-                },
-                "effectiveValue": {
-                  "numberValue": 0.7104921387393245
-                },
-                "formattedValue": "0.7104921387",
-                "effectiveFormat": {
-                  "textFormat": {
-                    "foregroundColor": {},
-                    "fontFamily": "Arial",
-                    "fontSize": 10,
-                    "bold": false,
-                    "italic": false,
-                    "strikethrough": false,
-                    "underline": false,
-                    "foregroundColorStyle": {
-                      "rgbColor": {}
-                    }
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 0.7104921387393245
+              },
+              "engine": {
+                "platform": "gsheets",
+                "wire_kind": "number",
+                "raw_api": {
+                  "userEnteredValue": {
+                    "formulaValue": "=CONFIDENCE.T(0.05, 2.5, 50)"
                   },
-                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                  "effectiveValue": {
+                    "numberValue": 0.7104921387393245
+                  },
+                  "formattedValue": "0.7104921387",
+                  "effectiveFormat": {
+                    "textFormat": {
+                      "foregroundColor": {},
+                      "fontFamily": "Arial",
+                      "fontSize": 10,
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "foregroundColorStyle": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "hyperlinkDisplayType": "PLAIN_TEXT"
+                  }
                 }
-              }
-            },
-            "formula": "CONFIDENCE.T(0.05, 2.5, 50)",
-            "formatted": "0.7104921387"
-          }
-        ]
-      ],
+              },
+              "formula": "CONFIDENCE.T(0.05, 2.5, 50)",
+              "formatted": "0.7104921387"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=CONFIDENCE.T(0.05, 2.5, 50)"
     },
     "sha256:4e5144492cc2d1c8d8a652996cfe089b6f081f871803f52e18ef0b16bc15b7b6": {
-      "result": [
-        [
-          {
-            "primitive": {
-              "kind": "number",
-              "value": 0.6328124999999993
-            },
-            "engine": {
-              "platform": "gsheets",
-              "wire_kind": "number",
-              "raw_api": {
-                "userEnteredValue": {
-                  "formulaValue": "=F.TEST(A1:A5, B1:B5)"
-                },
-                "effectiveValue": {
-                  "numberValue": 0.6328124999999993
-                },
-                "formattedValue": "0.6328125",
-                "effectiveFormat": {
-                  "textFormat": {
-                    "foregroundColor": {},
-                    "fontFamily": "Arial",
-                    "fontSize": 10,
-                    "bold": false,
-                    "italic": false,
-                    "strikethrough": false,
-                    "underline": false,
-                    "foregroundColorStyle": {
-                      "rgbColor": {}
-                    }
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 0.6328124999999993
+              },
+              "engine": {
+                "platform": "gsheets",
+                "wire_kind": "number",
+                "raw_api": {
+                  "userEnteredValue": {
+                    "formulaValue": "=F.TEST(A1:A5, B1:B5)"
                   },
-                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                  "effectiveValue": {
+                    "numberValue": 0.6328124999999993
+                  },
+                  "formattedValue": "0.6328125",
+                  "effectiveFormat": {
+                    "textFormat": {
+                      "foregroundColor": {},
+                      "fontFamily": "Arial",
+                      "fontSize": 10,
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "foregroundColorStyle": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "hyperlinkDisplayType": "PLAIN_TEXT"
+                  }
                 }
-              }
-            },
-            "formula": "F.TEST(A1:A5, B1:B5)",
-            "formatted": "0.6328125"
-          }
-        ]
-      ],
+              },
+              "formula": "F.TEST(A1:A5, B1:B5)",
+              "formatted": "0.6328125"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=F.TEST(A1:A5, B1:B5)"
     },
     "sha256:bdf6c70f9e36bb2f4cd6503a25bdbe09a0977ecb2eef7dd5a8d6097a8fe1fbbc": {
-      "result": [
-        [
-          {
-            "primitive": {
-              "kind": "number",
-              "value": 0.0033350518526121726
-            },
-            "engine": {
-              "platform": "gsheets",
-              "wire_kind": "number",
-              "raw_api": {
-                "userEnteredValue": {
-                  "formulaValue": "=F.TEST(A1:A4, B1:B4)"
-                },
-                "effectiveValue": {
-                  "numberValue": 0.0033350518526121726
-                },
-                "formattedValue": "0.003335051853",
-                "effectiveFormat": {
-                  "textFormat": {
-                    "foregroundColor": {},
-                    "fontFamily": "Arial",
-                    "fontSize": 10,
-                    "bold": false,
-                    "italic": false,
-                    "strikethrough": false,
-                    "underline": false,
-                    "foregroundColorStyle": {
-                      "rgbColor": {}
-                    }
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 0.0033350518526121726
+              },
+              "engine": {
+                "platform": "gsheets",
+                "wire_kind": "number",
+                "raw_api": {
+                  "userEnteredValue": {
+                    "formulaValue": "=F.TEST(A1:A4, B1:B4)"
                   },
-                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                  "effectiveValue": {
+                    "numberValue": 0.0033350518526121726
+                  },
+                  "formattedValue": "0.003335051853",
+                  "effectiveFormat": {
+                    "textFormat": {
+                      "foregroundColor": {},
+                      "fontFamily": "Arial",
+                      "fontSize": 10,
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "foregroundColorStyle": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "hyperlinkDisplayType": "PLAIN_TEXT"
+                  }
                 }
-              }
-            },
-            "formula": "F.TEST(A1:A4, B1:B4)",
-            "formatted": "0.003335051853"
-          }
-        ]
-      ],
+              },
+              "formula": "F.TEST(A1:A4, B1:B4)",
+              "formatted": "0.003335051853"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=F.TEST(A1:A4, B1:B4)"
     },
     "sha256:3644b7c9884daa21fab601c29eff706b943f89c6634385ea15c91534c1a01fba": {
-      "result": [
-        [
-          {
-            "primitive": {
-              "kind": "number",
-              "value": 0.6328124999999993
-            },
-            "engine": {
-              "platform": "gsheets",
-              "wire_kind": "number",
-              "raw_api": {
-                "userEnteredValue": {
-                  "formulaValue": "=FTEST(A1:A5, B1:B5)"
-                },
-                "effectiveValue": {
-                  "numberValue": 0.6328124999999993
-                },
-                "formattedValue": "0.6328125",
-                "effectiveFormat": {
-                  "textFormat": {
-                    "foregroundColor": {},
-                    "fontFamily": "Arial",
-                    "fontSize": 10,
-                    "bold": false,
-                    "italic": false,
-                    "strikethrough": false,
-                    "underline": false,
-                    "foregroundColorStyle": {
-                      "rgbColor": {}
-                    }
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 0.6328124999999993
+              },
+              "engine": {
+                "platform": "gsheets",
+                "wire_kind": "number",
+                "raw_api": {
+                  "userEnteredValue": {
+                    "formulaValue": "=FTEST(A1:A5, B1:B5)"
                   },
-                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                  "effectiveValue": {
+                    "numberValue": 0.6328124999999993
+                  },
+                  "formattedValue": "0.6328125",
+                  "effectiveFormat": {
+                    "textFormat": {
+                      "foregroundColor": {},
+                      "fontFamily": "Arial",
+                      "fontSize": 10,
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "foregroundColorStyle": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "hyperlinkDisplayType": "PLAIN_TEXT"
+                  }
                 }
-              }
-            },
-            "formula": "FTEST(A1:A5, B1:B5)",
-            "formatted": "0.6328125"
-          }
-        ]
-      ],
+              },
+              "formula": "FTEST(A1:A5, B1:B5)",
+              "formatted": "0.6328125"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=FTEST(A1:A5, B1:B5)"
     },
     "sha256:7a747d4e8c1bc89eb088c241daca62358d5c3bede681ec51d821ea3d938ac3f3": {
-      "result": [
-        [
-          {
-            "primitive": {
-              "kind": "number",
-              "value": 0.0033350518526121726
-            },
-            "engine": {
-              "platform": "gsheets",
-              "wire_kind": "number",
-              "raw_api": {
-                "userEnteredValue": {
-                  "formulaValue": "=FTEST(A1:A4, B1:B4)"
-                },
-                "effectiveValue": {
-                  "numberValue": 0.0033350518526121726
-                },
-                "formattedValue": "0.003335051853",
-                "effectiveFormat": {
-                  "textFormat": {
-                    "foregroundColor": {},
-                    "fontFamily": "Arial",
-                    "fontSize": 10,
-                    "bold": false,
-                    "italic": false,
-                    "strikethrough": false,
-                    "underline": false,
-                    "foregroundColorStyle": {
-                      "rgbColor": {}
-                    }
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 0.0033350518526121726
+              },
+              "engine": {
+                "platform": "gsheets",
+                "wire_kind": "number",
+                "raw_api": {
+                  "userEnteredValue": {
+                    "formulaValue": "=FTEST(A1:A4, B1:B4)"
                   },
-                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                  "effectiveValue": {
+                    "numberValue": 0.0033350518526121726
+                  },
+                  "formattedValue": "0.003335051853",
+                  "effectiveFormat": {
+                    "textFormat": {
+                      "foregroundColor": {},
+                      "fontFamily": "Arial",
+                      "fontSize": 10,
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "foregroundColorStyle": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "hyperlinkDisplayType": "PLAIN_TEXT"
+                  }
                 }
-              }
-            },
-            "formula": "FTEST(A1:A4, B1:B4)",
-            "formatted": "0.003335051853"
-          }
-        ]
-      ],
+              },
+              "formula": "FTEST(A1:A4, B1:B4)",
+              "formatted": "0.003335051853"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=FTEST(A1:A4, B1:B4)"
     },
     "sha256:93846e2ae18a43700d40446de51467d84e77a9650728d56bab525a83ba19c117": {
-      "result": [
-        [
-          {
-            "primitive": {
-              "kind": "number",
-              "value": -1.2000000000000002
-            },
-            "engine": {
-              "platform": "gsheets",
-              "wire_kind": "number",
-              "raw_api": {
-                "userEnteredValue": {
-                  "formulaValue": "=KURT(A1:A5)"
-                },
-                "effectiveValue": {
-                  "numberValue": -1.2000000000000002
-                },
-                "formattedValue": "-1.2",
-                "effectiveFormat": {
-                  "textFormat": {
-                    "foregroundColor": {},
-                    "fontFamily": "Arial",
-                    "fontSize": 10,
-                    "bold": false,
-                    "italic": false,
-                    "strikethrough": false,
-                    "underline": false,
-                    "foregroundColorStyle": {
-                      "rgbColor": {}
-                    }
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": -1.2000000000000002
+              },
+              "engine": {
+                "platform": "gsheets",
+                "wire_kind": "number",
+                "raw_api": {
+                  "userEnteredValue": {
+                    "formulaValue": "=KURT(A1:A5)"
                   },
-                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                  "effectiveValue": {
+                    "numberValue": -1.2000000000000002
+                  },
+                  "formattedValue": "-1.2",
+                  "effectiveFormat": {
+                    "textFormat": {
+                      "foregroundColor": {},
+                      "fontFamily": "Arial",
+                      "fontSize": 10,
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "foregroundColorStyle": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "hyperlinkDisplayType": "PLAIN_TEXT"
+                  }
                 }
-              }
-            },
-            "formula": "KURT(A1:A5)",
-            "formatted": "-1.2"
-          }
-        ]
-      ],
+              },
+              "formula": "KURT(A1:A5)",
+              "formatted": "-1.2"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=KURT(A1:A5)"
     },
     "sha256:88e02a170b799adbec363b81affd8d033f0842c491de8c3b1981d6db63af45b0": {
-      "result": [
-        [
-          {
-            "primitive": {
-              "kind": "number",
-              "value": 1.9999999999999982
-            },
-            "engine": {
-              "platform": "gsheets",
-              "wire_kind": "number",
-              "raw_api": {
-                "userEnteredValue": {
-                  "formulaValue": "=KURT(A1:A5)"
-                },
-                "effectiveValue": {
-                  "numberValue": 1.9999999999999982
-                },
-                "formattedValue": "2",
-                "effectiveFormat": {
-                  "textFormat": {
-                    "foregroundColor": {},
-                    "fontFamily": "Arial",
-                    "fontSize": 10,
-                    "bold": false,
-                    "italic": false,
-                    "strikethrough": false,
-                    "underline": false,
-                    "foregroundColorStyle": {
-                      "rgbColor": {}
-                    }
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 1.9999999999999982
+              },
+              "engine": {
+                "platform": "gsheets",
+                "wire_kind": "number",
+                "raw_api": {
+                  "userEnteredValue": {
+                    "formulaValue": "=KURT(A1:A5)"
                   },
-                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                  "effectiveValue": {
+                    "numberValue": 1.9999999999999982
+                  },
+                  "formattedValue": "2",
+                  "effectiveFormat": {
+                    "textFormat": {
+                      "foregroundColor": {},
+                      "fontFamily": "Arial",
+                      "fontSize": 10,
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "foregroundColorStyle": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "hyperlinkDisplayType": "PLAIN_TEXT"
+                  }
                 }
-              }
-            },
-            "formula": "KURT(A1:A5)",
-            "formatted": "2"
-          }
-        ]
-      ],
+              },
+              "formula": "KURT(A1:A5)",
+              "formatted": "2"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=KURT(A1:A5)"
     },
     "sha256:f94d1061e576875802417f162dac5bbce96ffa414516a5a7df98ebec9528a06b": {
-      "result": [
-        [
-          {
-            "primitive": {
-              "kind": "number",
-              "value": -0.15179963720841627
-            },
-            "engine": {
-              "platform": "gsheets",
-              "wire_kind": "number",
-              "raw_api": {
-                "userEnteredValue": {
-                  "formulaValue": "=KURT(3, 4, 5, 2, 3, 4, 5, 6, 4, 7)"
-                },
-                "effectiveValue": {
-                  "numberValue": -0.15179963720841627
-                },
-                "formattedValue": "-0.1517996372",
-                "effectiveFormat": {
-                  "textFormat": {
-                    "foregroundColor": {},
-                    "fontFamily": "Arial",
-                    "fontSize": 10,
-                    "bold": false,
-                    "italic": false,
-                    "strikethrough": false,
-                    "underline": false,
-                    "foregroundColorStyle": {
-                      "rgbColor": {}
-                    }
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": -0.15179963720841627
+              },
+              "engine": {
+                "platform": "gsheets",
+                "wire_kind": "number",
+                "raw_api": {
+                  "userEnteredValue": {
+                    "formulaValue": "=KURT(3, 4, 5, 2, 3, 4, 5, 6, 4, 7)"
                   },
-                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                  "effectiveValue": {
+                    "numberValue": -0.15179963720841627
+                  },
+                  "formattedValue": "-0.1517996372",
+                  "effectiveFormat": {
+                    "textFormat": {
+                      "foregroundColor": {},
+                      "fontFamily": "Arial",
+                      "fontSize": 10,
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "foregroundColorStyle": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "hyperlinkDisplayType": "PLAIN_TEXT"
+                  }
                 }
-              }
-            },
-            "formula": "KURT(3, 4, 5, 2, 3, 4, 5, 6, 4, 7)",
-            "formatted": "-0.1517996372"
-          }
-        ]
-      ],
+              },
+              "formula": "KURT(3, 4, 5, 2, 3, 4, 5, 6, 4, 7)",
+              "formatted": "-0.1517996372"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=KURT(3, 4, 5, 2, 3, 4, 5, 6, 4, 7)"
     },
     "sha256:786f7c4a11c0abb2f58c06e644c5be3934d9c8be796effec25a78ae74a0830f6": {
-      "result": [
-        [
-          {
-            "primitive": {
-              "kind": "number",
-              "value": 0.04718417110127355
-            },
-            "engine": {
-              "platform": "gsheets",
-              "wire_kind": "number",
-              "raw_api": {
-                "userEnteredValue": {
-                  "formulaValue": "=MARGINOFERROR(A1:A5, 0.05)"
-                },
-                "effectiveValue": {
-                  "numberValue": 0.04718417110127355
-                },
-                "formattedValue": "0.0471841711",
-                "effectiveFormat": {
-                  "textFormat": {
-                    "foregroundColor": {},
-                    "fontFamily": "Arial",
-                    "fontSize": 10,
-                    "bold": false,
-                    "italic": false,
-                    "strikethrough": false,
-                    "underline": false,
-                    "foregroundColorStyle": {
-                      "rgbColor": {}
-                    }
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 0.04718417110127355
+              },
+              "engine": {
+                "platform": "gsheets",
+                "wire_kind": "number",
+                "raw_api": {
+                  "userEnteredValue": {
+                    "formulaValue": "=MARGINOFERROR(A1:A5, 0.05)"
                   },
-                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                  "effectiveValue": {
+                    "numberValue": 0.04718417110127355
+                  },
+                  "formattedValue": "0.0471841711",
+                  "effectiveFormat": {
+                    "textFormat": {
+                      "foregroundColor": {},
+                      "fontFamily": "Arial",
+                      "fontSize": 10,
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "foregroundColorStyle": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "hyperlinkDisplayType": "PLAIN_TEXT"
+                  }
                 }
-              }
-            },
-            "formula": "MARGINOFERROR(A1:A5, 0.05)",
-            "formatted": "0.0471841711"
-          }
-        ]
-      ],
+              },
+              "formula": "MARGINOFERROR(A1:A5, 0.05)",
+              "formatted": "0.0471841711"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=MARGINOFERROR(A1:A5, 0.05)"
     },
     "sha256:15d552cbad592548cc2cf0e5abba8a6ed46f14b201658ab88d965b97aaad8240": {
-      "result": [
-        [
-          {
-            "primitive": {
-              "kind": "number",
-              "value": 0.09428439626864216
-            },
-            "engine": {
-              "platform": "gsheets",
-              "wire_kind": "number",
-              "raw_api": {
-                "userEnteredValue": {
-                  "formulaValue": "=MARGINOFERROR(A1:A5, 0.01)"
-                },
-                "effectiveValue": {
-                  "numberValue": 0.09428439626864216
-                },
-                "formattedValue": "0.09428439627",
-                "effectiveFormat": {
-                  "textFormat": {
-                    "foregroundColor": {},
-                    "fontFamily": "Arial",
-                    "fontSize": 10,
-                    "bold": false,
-                    "italic": false,
-                    "strikethrough": false,
-                    "underline": false,
-                    "foregroundColorStyle": {
-                      "rgbColor": {}
-                    }
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 0.09428439626864216
+              },
+              "engine": {
+                "platform": "gsheets",
+                "wire_kind": "number",
+                "raw_api": {
+                  "userEnteredValue": {
+                    "formulaValue": "=MARGINOFERROR(A1:A5, 0.01)"
                   },
-                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                  "effectiveValue": {
+                    "numberValue": 0.09428439626864216
+                  },
+                  "formattedValue": "0.09428439627",
+                  "effectiveFormat": {
+                    "textFormat": {
+                      "foregroundColor": {},
+                      "fontFamily": "Arial",
+                      "fontSize": 10,
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "foregroundColorStyle": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "hyperlinkDisplayType": "PLAIN_TEXT"
+                  }
                 }
-              }
-            },
-            "formula": "MARGINOFERROR(A1:A5, 0.01)",
-            "formatted": "0.09428439627"
-          }
-        ]
-      ],
+              },
+              "formula": "MARGINOFERROR(A1:A5, 0.01)",
+              "formatted": "0.09428439627"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=MARGINOFERROR(A1:A5, 0.01)"
     },
     "sha256:dffc12fbbb79a908a44a39ca7d275b06652685ff6a8750fcdaa1e1fbbbfcc6c4": {
-      "result": [
-        [
-          {
-            "primitive": {
-              "kind": "number",
-              "value": 0.6000000000000001
-            },
-            "engine": {
-              "platform": "gsheets",
-              "wire_kind": "number",
-              "raw_api": {
-                "userEnteredValue": {
-                  "formulaValue": "=PROB(A1:A5, B1:B5, 2, 4)"
-                },
-                "effectiveValue": {
-                  "numberValue": 0.6000000000000001
-                },
-                "formattedValue": "0.6",
-                "effectiveFormat": {
-                  "textFormat": {
-                    "foregroundColor": {},
-                    "fontFamily": "Arial",
-                    "fontSize": 10,
-                    "bold": false,
-                    "italic": false,
-                    "strikethrough": false,
-                    "underline": false,
-                    "foregroundColorStyle": {
-                      "rgbColor": {}
-                    }
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 0.6000000000000001
+              },
+              "engine": {
+                "platform": "gsheets",
+                "wire_kind": "number",
+                "raw_api": {
+                  "userEnteredValue": {
+                    "formulaValue": "=PROB(A1:A5, B1:B5, 2, 4)"
                   },
-                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                  "effectiveValue": {
+                    "numberValue": 0.6000000000000001
+                  },
+                  "formattedValue": "0.6",
+                  "effectiveFormat": {
+                    "textFormat": {
+                      "foregroundColor": {},
+                      "fontFamily": "Arial",
+                      "fontSize": 10,
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "foregroundColorStyle": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "hyperlinkDisplayType": "PLAIN_TEXT"
+                  }
                 }
-              }
-            },
-            "formula": "PROB(A1:A5, B1:B5, 2, 4)",
-            "formatted": "0.6"
-          }
-        ]
-      ],
+              },
+              "formula": "PROB(A1:A5, B1:B5, 2, 4)",
+              "formatted": "0.6"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=PROB(A1:A5, B1:B5, 2, 4)"
     },
     "sha256:cb694f0aa8a7f39aa27755f5eed2168496f67d799a059f84dfdd049129bb5acb": {
-      "result": [
-        [
-          {
-            "primitive": {
-              "kind": "number",
-              "value": 0.2
-            },
-            "engine": {
-              "platform": "gsheets",
-              "wire_kind": "number",
-              "raw_api": {
-                "userEnteredValue": {
-                  "formulaValue": "=PROB(A1:A5, B1:B5, 3)"
-                },
-                "effectiveValue": {
-                  "numberValue": 0.2
-                },
-                "formattedValue": "0.2",
-                "effectiveFormat": {
-                  "textFormat": {
-                    "foregroundColor": {},
-                    "fontFamily": "Arial",
-                    "fontSize": 10,
-                    "bold": false,
-                    "italic": false,
-                    "strikethrough": false,
-                    "underline": false,
-                    "foregroundColorStyle": {
-                      "rgbColor": {}
-                    }
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 0.2
+              },
+              "engine": {
+                "platform": "gsheets",
+                "wire_kind": "number",
+                "raw_api": {
+                  "userEnteredValue": {
+                    "formulaValue": "=PROB(A1:A5, B1:B5, 3)"
                   },
-                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                  "effectiveValue": {
+                    "numberValue": 0.2
+                  },
+                  "formattedValue": "0.2",
+                  "effectiveFormat": {
+                    "textFormat": {
+                      "foregroundColor": {},
+                      "fontFamily": "Arial",
+                      "fontSize": 10,
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "foregroundColorStyle": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "hyperlinkDisplayType": "PLAIN_TEXT"
+                  }
                 }
-              }
-            },
-            "formula": "PROB(A1:A5, B1:B5, 3)",
-            "formatted": "0.2"
-          }
-        ]
-      ],
+              },
+              "formula": "PROB(A1:A5, B1:B5, 3)",
+              "formatted": "0.2"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=PROB(A1:A5, B1:B5, 3)"
     },
     "sha256:5e442dd92785c95c934c788185a5eb16ace7be753dfeb0380f2e988eb0c68405": {
-      "result": [
-        [
-          {
-            "primitive": {
-              "kind": "number",
-              "value": 1
-            },
-            "engine": {
-              "platform": "gsheets",
-              "wire_kind": "number",
-              "raw_api": {
-                "userEnteredValue": {
-                  "formulaValue": "=PROB(A1:A3, B1:B3, 1, 3)"
-                },
-                "effectiveValue": {
-                  "numberValue": 1
-                },
-                "formattedValue": "1",
-                "effectiveFormat": {
-                  "textFormat": {
-                    "foregroundColor": {},
-                    "fontFamily": "Arial",
-                    "fontSize": 10,
-                    "bold": false,
-                    "italic": false,
-                    "strikethrough": false,
-                    "underline": false,
-                    "foregroundColorStyle": {
-                      "rgbColor": {}
-                    }
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 1
+              },
+              "engine": {
+                "platform": "gsheets",
+                "wire_kind": "number",
+                "raw_api": {
+                  "userEnteredValue": {
+                    "formulaValue": "=PROB(A1:A3, B1:B3, 1, 3)"
                   },
-                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                  "effectiveValue": {
+                    "numberValue": 1
+                  },
+                  "formattedValue": "1",
+                  "effectiveFormat": {
+                    "textFormat": {
+                      "foregroundColor": {},
+                      "fontFamily": "Arial",
+                      "fontSize": 10,
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "foregroundColorStyle": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "hyperlinkDisplayType": "PLAIN_TEXT"
+                  }
                 }
-              }
-            },
-            "formula": "PROB(A1:A3, B1:B3, 1, 3)",
-            "formatted": "1"
-          }
-        ]
-      ],
+              },
+              "formula": "PROB(A1:A3, B1:B3, 1, 3)",
+              "formatted": "1"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=PROB(A1:A3, B1:B3, 1, 3)"
     },
     "sha256:c9d0ee1ad075a9056af21779d791500ea49cab2163f6289df1f32c7bb3a9fea4": {
-      "result": [
-        [
-          {
-            "primitive": {
-              "kind": "number",
-              "value": 0
-            },
-            "engine": {
-              "platform": "gsheets",
-              "wire_kind": "number",
-              "raw_api": {
-                "userEnteredValue": {
-                  "formulaValue": "=SKEW(A1:A5)"
-                },
-                "effectiveValue": {
-                  "numberValue": 0
-                },
-                "formattedValue": "0",
-                "effectiveFormat": {
-                  "textFormat": {
-                    "foregroundColor": {},
-                    "fontFamily": "Arial",
-                    "fontSize": 10,
-                    "bold": false,
-                    "italic": false,
-                    "strikethrough": false,
-                    "underline": false,
-                    "foregroundColorStyle": {
-                      "rgbColor": {}
-                    }
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 0
+              },
+              "engine": {
+                "platform": "gsheets",
+                "wire_kind": "number",
+                "raw_api": {
+                  "userEnteredValue": {
+                    "formulaValue": "=SKEW(A1:A5)"
                   },
-                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                  "effectiveValue": {
+                    "numberValue": 0
+                  },
+                  "formattedValue": "0",
+                  "effectiveFormat": {
+                    "textFormat": {
+                      "foregroundColor": {},
+                      "fontFamily": "Arial",
+                      "fontSize": 10,
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "foregroundColorStyle": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "hyperlinkDisplayType": "PLAIN_TEXT"
+                  }
                 }
-              }
-            },
-            "formula": "SKEW(A1:A5)",
-            "formatted": "0"
-          }
-        ]
-      ],
+              },
+              "formula": "SKEW(A1:A5)",
+              "formatted": "0"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=SKEW(A1:A5)"
     },
     "sha256:d2299b682f2e2e278237b3915d6e18840ce7a396182b6d38e9a9e0adf36a0e0c": {
-      "result": [
-        [
-          {
-            "primitive": {
-              "kind": "number",
-              "value": 1.9805481930337374
-            },
-            "engine": {
-              "platform": "gsheets",
-              "wire_kind": "number",
-              "raw_api": {
-                "userEnteredValue": {
-                  "formulaValue": "=SKEW(A1:A5)"
-                },
-                "effectiveValue": {
-                  "numberValue": 1.9805481930337374
-                },
-                "formattedValue": "1.980548193",
-                "effectiveFormat": {
-                  "textFormat": {
-                    "foregroundColor": {},
-                    "fontFamily": "Arial",
-                    "fontSize": 10,
-                    "bold": false,
-                    "italic": false,
-                    "strikethrough": false,
-                    "underline": false,
-                    "foregroundColorStyle": {
-                      "rgbColor": {}
-                    }
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 1.9805481930337374
+              },
+              "engine": {
+                "platform": "gsheets",
+                "wire_kind": "number",
+                "raw_api": {
+                  "userEnteredValue": {
+                    "formulaValue": "=SKEW(A1:A5)"
                   },
-                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                  "effectiveValue": {
+                    "numberValue": 1.9805481930337374
+                  },
+                  "formattedValue": "1.980548193",
+                  "effectiveFormat": {
+                    "textFormat": {
+                      "foregroundColor": {},
+                      "fontFamily": "Arial",
+                      "fontSize": 10,
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "foregroundColorStyle": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "hyperlinkDisplayType": "PLAIN_TEXT"
+                  }
                 }
-              }
-            },
-            "formula": "SKEW(A1:A5)",
-            "formatted": "1.980548193"
-          }
-        ]
-      ],
+              },
+              "formula": "SKEW(A1:A5)",
+              "formatted": "1.980548193"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=SKEW(A1:A5)"
     },
     "sha256:80f9a102708c5ad8fb14977be88f887bf5fe4166df6559000fa85c1ef0fe8d90": {
-      "result": [
-        [
-          {
-            "primitive": {
-              "kind": "number",
-              "value": 0.3595430714067974
-            },
-            "engine": {
-              "platform": "gsheets",
-              "wire_kind": "number",
-              "raw_api": {
-                "userEnteredValue": {
-                  "formulaValue": "=SKEW(3, 4, 5, 2, 3, 4, 5, 6, 4, 7)"
-                },
-                "effectiveValue": {
-                  "numberValue": 0.3595430714067974
-                },
-                "formattedValue": "0.3595430714",
-                "effectiveFormat": {
-                  "textFormat": {
-                    "foregroundColor": {},
-                    "fontFamily": "Arial",
-                    "fontSize": 10,
-                    "bold": false,
-                    "italic": false,
-                    "strikethrough": false,
-                    "underline": false,
-                    "foregroundColorStyle": {
-                      "rgbColor": {}
-                    }
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 0.3595430714067974
+              },
+              "engine": {
+                "platform": "gsheets",
+                "wire_kind": "number",
+                "raw_api": {
+                  "userEnteredValue": {
+                    "formulaValue": "=SKEW(3, 4, 5, 2, 3, 4, 5, 6, 4, 7)"
                   },
-                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                  "effectiveValue": {
+                    "numberValue": 0.3595430714067974
+                  },
+                  "formattedValue": "0.3595430714",
+                  "effectiveFormat": {
+                    "textFormat": {
+                      "foregroundColor": {},
+                      "fontFamily": "Arial",
+                      "fontSize": 10,
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "foregroundColorStyle": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "hyperlinkDisplayType": "PLAIN_TEXT"
+                  }
                 }
-              }
-            },
-            "formula": "SKEW(3, 4, 5, 2, 3, 4, 5, 6, 4, 7)",
-            "formatted": "0.3595430714"
-          }
-        ]
-      ],
+              },
+              "formula": "SKEW(3, 4, 5, 2, 3, 4, 5, 6, 4, 7)",
+              "formatted": "0.3595430714"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=SKEW(3, 4, 5, 2, 3, 4, 5, 6, 4, 7)"
     },
     "sha256:c4698d620437bdea131dd2bcb7e28b0f935a261f33631a6620c02b972a9899a3": {
-      "result": [
-        [
-          {
-            "primitive": {
-              "kind": "number",
-              "value": 0
-            },
-            "engine": {
-              "platform": "gsheets",
-              "wire_kind": "number",
-              "raw_api": {
-                "userEnteredValue": {
-                  "formulaValue": "=SKEW.P(A1:A5)"
-                },
-                "effectiveValue": {
-                  "numberValue": 0
-                },
-                "formattedValue": "0",
-                "effectiveFormat": {
-                  "textFormat": {
-                    "foregroundColor": {},
-                    "fontFamily": "Arial",
-                    "fontSize": 10,
-                    "bold": false,
-                    "italic": false,
-                    "strikethrough": false,
-                    "underline": false,
-                    "foregroundColorStyle": {
-                      "rgbColor": {}
-                    }
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 0
+              },
+              "engine": {
+                "platform": "gsheets",
+                "wire_kind": "number",
+                "raw_api": {
+                  "userEnteredValue": {
+                    "formulaValue": "=SKEW.P(A1:A5)"
                   },
-                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                  "effectiveValue": {
+                    "numberValue": 0
+                  },
+                  "formattedValue": "0",
+                  "effectiveFormat": {
+                    "textFormat": {
+                      "foregroundColor": {},
+                      "fontFamily": "Arial",
+                      "fontSize": 10,
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "foregroundColorStyle": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "hyperlinkDisplayType": "PLAIN_TEXT"
+                  }
                 }
-              }
-            },
-            "formula": "SKEW.P(A1:A5)",
-            "formatted": "0"
-          }
-        ]
-      ],
+              },
+              "formula": "SKEW.P(A1:A5)",
+              "formatted": "0"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=SKEW.P(A1:A5)"
     },
     "sha256:bb1bb8db6463a099fe0c60a472ca55bb1aac067bc5ac1f0f2137d0c9ad33568a": {
-      "result": [
-        [
-          {
-            "primitive": {
-              "kind": "number",
-              "value": 1.3285921177013436
-            },
-            "engine": {
-              "platform": "gsheets",
-              "wire_kind": "number",
-              "raw_api": {
-                "userEnteredValue": {
-                  "formulaValue": "=SKEW.P(A1:A5)"
-                },
-                "effectiveValue": {
-                  "numberValue": 1.3285921177013436
-                },
-                "formattedValue": "1.328592118",
-                "effectiveFormat": {
-                  "textFormat": {
-                    "foregroundColor": {},
-                    "fontFamily": "Arial",
-                    "fontSize": 10,
-                    "bold": false,
-                    "italic": false,
-                    "strikethrough": false,
-                    "underline": false,
-                    "foregroundColorStyle": {
-                      "rgbColor": {}
-                    }
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 1.3285921177013436
+              },
+              "engine": {
+                "platform": "gsheets",
+                "wire_kind": "number",
+                "raw_api": {
+                  "userEnteredValue": {
+                    "formulaValue": "=SKEW.P(A1:A5)"
                   },
-                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                  "effectiveValue": {
+                    "numberValue": 1.3285921177013436
+                  },
+                  "formattedValue": "1.328592118",
+                  "effectiveFormat": {
+                    "textFormat": {
+                      "foregroundColor": {},
+                      "fontFamily": "Arial",
+                      "fontSize": 10,
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "foregroundColorStyle": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "hyperlinkDisplayType": "PLAIN_TEXT"
+                  }
                 }
-              }
-            },
-            "formula": "SKEW.P(A1:A5)",
-            "formatted": "1.328592118"
-          }
-        ]
-      ],
+              },
+              "formula": "SKEW.P(A1:A5)",
+              "formatted": "1.328592118"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=SKEW.P(A1:A5)"
     },
     "sha256:7c789fe5ad1006a1294b8527accd040c76d1ae8d0a0095bdfe5d9827e0e92551": {
-      "result": [
-        [
-          {
-            "primitive": {
-              "kind": "number",
-              "value": 0.08900934250008569
-            },
-            "engine": {
-              "platform": "gsheets",
-              "wire_kind": "number",
-              "raw_api": {
-                "userEnteredValue": {
-                  "formulaValue": "=T.TEST(A1:A5, B1:B5, 2, 1)"
-                },
-                "effectiveValue": {
-                  "numberValue": 0.08900934250008569
-                },
-                "formattedValue": "0.0890093425",
-                "effectiveFormat": {
-                  "textFormat": {
-                    "foregroundColor": {},
-                    "fontFamily": "Arial",
-                    "fontSize": 10,
-                    "bold": false,
-                    "italic": false,
-                    "strikethrough": false,
-                    "underline": false,
-                    "foregroundColorStyle": {
-                      "rgbColor": {}
-                    }
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 0.08900934250008569
+              },
+              "engine": {
+                "platform": "gsheets",
+                "wire_kind": "number",
+                "raw_api": {
+                  "userEnteredValue": {
+                    "formulaValue": "=T.TEST(A1:A5, B1:B5, 2, 1)"
                   },
-                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                  "effectiveValue": {
+                    "numberValue": 0.08900934250008569
+                  },
+                  "formattedValue": "0.0890093425",
+                  "effectiveFormat": {
+                    "textFormat": {
+                      "foregroundColor": {},
+                      "fontFamily": "Arial",
+                      "fontSize": 10,
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "foregroundColorStyle": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "hyperlinkDisplayType": "PLAIN_TEXT"
+                  }
                 }
-              }
-            },
-            "formula": "T.TEST(A1:A5, B1:B5, 2, 1)",
-            "formatted": "0.0890093425"
-          }
-        ]
-      ],
+              },
+              "formula": "T.TEST(A1:A5, B1:B5, 2, 1)",
+              "formatted": "0.0890093425"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=T.TEST(A1:A5, B1:B5, 2, 1)"
     },
     "sha256:2f669f55e8c7eeabb1f28cedb8c3914a0994bbc333d771a319b79599c9f801b9": {
-      "result": [
-        [
-          {
-            "primitive": {
-              "kind": "number",
-              "value": 0.14799965245785135
-            },
-            "engine": {
-              "platform": "gsheets",
-              "wire_kind": "number",
-              "raw_api": {
-                "userEnteredValue": {
-                  "formulaValue": "=T.TEST(A1:A5, B1:B5, 1, 2)"
-                },
-                "effectiveValue": {
-                  "numberValue": 0.14799965245785135
-                },
-                "formattedValue": "0.1479996525",
-                "effectiveFormat": {
-                  "textFormat": {
-                    "foregroundColor": {},
-                    "fontFamily": "Arial",
-                    "fontSize": 10,
-                    "bold": false,
-                    "italic": false,
-                    "strikethrough": false,
-                    "underline": false,
-                    "foregroundColorStyle": {
-                      "rgbColor": {}
-                    }
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 0.14799965245785135
+              },
+              "engine": {
+                "platform": "gsheets",
+                "wire_kind": "number",
+                "raw_api": {
+                  "userEnteredValue": {
+                    "formulaValue": "=T.TEST(A1:A5, B1:B5, 1, 2)"
                   },
-                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                  "effectiveValue": {
+                    "numberValue": 0.14799965245785135
+                  },
+                  "formattedValue": "0.1479996525",
+                  "effectiveFormat": {
+                    "textFormat": {
+                      "foregroundColor": {},
+                      "fontFamily": "Arial",
+                      "fontSize": 10,
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "foregroundColorStyle": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "hyperlinkDisplayType": "PLAIN_TEXT"
+                  }
                 }
-              }
-            },
-            "formula": "T.TEST(A1:A5, B1:B5, 1, 2)",
-            "formatted": "0.1479996525"
-          }
-        ]
-      ],
+              },
+              "formula": "T.TEST(A1:A5, B1:B5, 1, 2)",
+              "formatted": "0.1479996525"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=T.TEST(A1:A5, B1:B5, 1, 2)"
     },
     "sha256:55acefdf4a2d066b8d99830059643dbdd52090da64d2e02a05826eb2ecfcee3e": {
-      "result": [
-        [
-          {
-            "primitive": {
-              "kind": "number",
-              "value": 0.2979516878668571
-            },
-            "engine": {
-              "platform": "gsheets",
-              "wire_kind": "number",
-              "raw_api": {
-                "userEnteredValue": {
-                  "formulaValue": "=T.TEST(A1:A5, B1:B5, 2, 3)"
-                },
-                "effectiveValue": {
-                  "numberValue": 0.2979516878668571
-                },
-                "formattedValue": "0.2979516879",
-                "effectiveFormat": {
-                  "textFormat": {
-                    "foregroundColor": {},
-                    "fontFamily": "Arial",
-                    "fontSize": 10,
-                    "bold": false,
-                    "italic": false,
-                    "strikethrough": false,
-                    "underline": false,
-                    "foregroundColorStyle": {
-                      "rgbColor": {}
-                    }
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 0.2979516878668571
+              },
+              "engine": {
+                "platform": "gsheets",
+                "wire_kind": "number",
+                "raw_api": {
+                  "userEnteredValue": {
+                    "formulaValue": "=T.TEST(A1:A5, B1:B5, 2, 3)"
                   },
-                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                  "effectiveValue": {
+                    "numberValue": 0.2979516878668571
+                  },
+                  "formattedValue": "0.2979516879",
+                  "effectiveFormat": {
+                    "textFormat": {
+                      "foregroundColor": {},
+                      "fontFamily": "Arial",
+                      "fontSize": 10,
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "foregroundColorStyle": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "hyperlinkDisplayType": "PLAIN_TEXT"
+                  }
                 }
-              }
-            },
-            "formula": "T.TEST(A1:A5, B1:B5, 2, 3)",
-            "formatted": "0.2979516879"
-          }
-        ]
-      ],
+              },
+              "formula": "T.TEST(A1:A5, B1:B5, 2, 3)",
+              "formatted": "0.2979516879"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=T.TEST(A1:A5, B1:B5, 2, 3)"
     },
     "sha256:2e56eb9fb64f041ff947ffde79004371a649cce0a177d1d040c1c774636c828b": {
-      "result": [
-        [
-          {
-            "primitive": {
-              "kind": "number",
-              "value": 0.08900934250008569
-            },
-            "engine": {
-              "platform": "gsheets",
-              "wire_kind": "number",
-              "raw_api": {
-                "userEnteredValue": {
-                  "formulaValue": "=TTEST(A1:A5, B1:B5, 2, 1)"
-                },
-                "effectiveValue": {
-                  "numberValue": 0.08900934250008569
-                },
-                "formattedValue": "0.0890093425",
-                "effectiveFormat": {
-                  "textFormat": {
-                    "foregroundColor": {},
-                    "fontFamily": "Arial",
-                    "fontSize": 10,
-                    "bold": false,
-                    "italic": false,
-                    "strikethrough": false,
-                    "underline": false,
-                    "foregroundColorStyle": {
-                      "rgbColor": {}
-                    }
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 0.08900934250008569
+              },
+              "engine": {
+                "platform": "gsheets",
+                "wire_kind": "number",
+                "raw_api": {
+                  "userEnteredValue": {
+                    "formulaValue": "=TTEST(A1:A5, B1:B5, 2, 1)"
                   },
-                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                  "effectiveValue": {
+                    "numberValue": 0.08900934250008569
+                  },
+                  "formattedValue": "0.0890093425",
+                  "effectiveFormat": {
+                    "textFormat": {
+                      "foregroundColor": {},
+                      "fontFamily": "Arial",
+                      "fontSize": 10,
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "foregroundColorStyle": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "hyperlinkDisplayType": "PLAIN_TEXT"
+                  }
                 }
-              }
-            },
-            "formula": "TTEST(A1:A5, B1:B5, 2, 1)",
-            "formatted": "0.0890093425"
-          }
-        ]
-      ],
+              },
+              "formula": "TTEST(A1:A5, B1:B5, 2, 1)",
+              "formatted": "0.0890093425"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=TTEST(A1:A5, B1:B5, 2, 1)"
     },
     "sha256:7c721c200530277e05dcbd46c4b56394164e0451eac2f99a43098a23089de652": {
-      "result": [
-        [
-          {
-            "primitive": {
-              "kind": "number",
-              "value": 0.14799965245785135
-            },
-            "engine": {
-              "platform": "gsheets",
-              "wire_kind": "number",
-              "raw_api": {
-                "userEnteredValue": {
-                  "formulaValue": "=TTEST(A1:A5, B1:B5, 1, 2)"
-                },
-                "effectiveValue": {
-                  "numberValue": 0.14799965245785135
-                },
-                "formattedValue": "0.1479996525",
-                "effectiveFormat": {
-                  "textFormat": {
-                    "foregroundColor": {},
-                    "fontFamily": "Arial",
-                    "fontSize": 10,
-                    "bold": false,
-                    "italic": false,
-                    "strikethrough": false,
-                    "underline": false,
-                    "foregroundColorStyle": {
-                      "rgbColor": {}
-                    }
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 0.14799965245785135
+              },
+              "engine": {
+                "platform": "gsheets",
+                "wire_kind": "number",
+                "raw_api": {
+                  "userEnteredValue": {
+                    "formulaValue": "=TTEST(A1:A5, B1:B5, 1, 2)"
                   },
-                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                  "effectiveValue": {
+                    "numberValue": 0.14799965245785135
+                  },
+                  "formattedValue": "0.1479996525",
+                  "effectiveFormat": {
+                    "textFormat": {
+                      "foregroundColor": {},
+                      "fontFamily": "Arial",
+                      "fontSize": 10,
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "foregroundColorStyle": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "hyperlinkDisplayType": "PLAIN_TEXT"
+                  }
                 }
-              }
-            },
-            "formula": "TTEST(A1:A5, B1:B5, 1, 2)",
-            "formatted": "0.1479996525"
-          }
-        ]
-      ],
+              },
+              "formula": "TTEST(A1:A5, B1:B5, 1, 2)",
+              "formatted": "0.1479996525"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=TTEST(A1:A5, B1:B5, 1, 2)"
     },
     "sha256:7981c1a8c8ad596d8dede97f81ded6e64782c2884522bd50efa4c035599a6dda": {
-      "result": [
-        [
-          {
-            "primitive": {
-              "kind": "number",
-              "value": 0.5
-            },
-            "engine": {
-              "platform": "gsheets",
-              "wire_kind": "number",
-              "raw_api": {
-                "userEnteredValue": {
-                  "formulaValue": "=Z.TEST(A1:A5, 3)"
-                },
-                "effectiveValue": {
-                  "numberValue": 0.5
-                },
-                "formattedValue": "0.5",
-                "effectiveFormat": {
-                  "textFormat": {
-                    "foregroundColor": {},
-                    "fontFamily": "Arial",
-                    "fontSize": 10,
-                    "bold": false,
-                    "italic": false,
-                    "strikethrough": false,
-                    "underline": false,
-                    "foregroundColorStyle": {
-                      "rgbColor": {}
-                    }
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 0.5
+              },
+              "engine": {
+                "platform": "gsheets",
+                "wire_kind": "number",
+                "raw_api": {
+                  "userEnteredValue": {
+                    "formulaValue": "=Z.TEST(A1:A5, 3)"
                   },
-                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                  "effectiveValue": {
+                    "numberValue": 0.5
+                  },
+                  "formattedValue": "0.5",
+                  "effectiveFormat": {
+                    "textFormat": {
+                      "foregroundColor": {},
+                      "fontFamily": "Arial",
+                      "fontSize": 10,
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "foregroundColorStyle": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "hyperlinkDisplayType": "PLAIN_TEXT"
+                  }
                 }
-              }
-            },
-            "formula": "Z.TEST(A1:A5, 3)",
-            "formatted": "0.5"
-          }
-        ]
-      ],
+              },
+              "formula": "Z.TEST(A1:A5, 3)",
+              "formatted": "0.5"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=Z.TEST(A1:A5, 3)"
     },
     "sha256:8449a703b823114609f4763b9981eac6533fa24a35134656d3a97bfbbdebcc42": {
-      "result": [
-        [
-          {
-            "primitive": {
-              "kind": "number",
-              "value": 0.9319814359429281
-            },
-            "engine": {
-              "platform": "gsheets",
-              "wire_kind": "number",
-              "raw_api": {
-                "userEnteredValue": {
-                  "formulaValue": "=Z.TEST(A1:A5, 4, 1.5)"
-                },
-                "effectiveValue": {
-                  "numberValue": 0.9319814359429281
-                },
-                "formattedValue": "0.9319814359",
-                "effectiveFormat": {
-                  "textFormat": {
-                    "foregroundColor": {},
-                    "fontFamily": "Arial",
-                    "fontSize": 10,
-                    "bold": false,
-                    "italic": false,
-                    "strikethrough": false,
-                    "underline": false,
-                    "foregroundColorStyle": {
-                      "rgbColor": {}
-                    }
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 0.9319814359429281
+              },
+              "engine": {
+                "platform": "gsheets",
+                "wire_kind": "number",
+                "raw_api": {
+                  "userEnteredValue": {
+                    "formulaValue": "=Z.TEST(A1:A5, 4, 1.5)"
                   },
-                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                  "effectiveValue": {
+                    "numberValue": 0.9319814359429281
+                  },
+                  "formattedValue": "0.9319814359",
+                  "effectiveFormat": {
+                    "textFormat": {
+                      "foregroundColor": {},
+                      "fontFamily": "Arial",
+                      "fontSize": 10,
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "foregroundColorStyle": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "hyperlinkDisplayType": "PLAIN_TEXT"
+                  }
                 }
-              }
-            },
-            "formula": "Z.TEST(A1:A5, 4, 1.5)",
-            "formatted": "0.9319814359"
-          }
-        ]
-      ],
+              },
+              "formula": "Z.TEST(A1:A5, 4, 1.5)",
+              "formatted": "0.9319814359"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=Z.TEST(A1:A5, 4, 1.5)"
     },
     "sha256:498ad442cafd44b9ce2410a29920ddf09ac19cdc0a17f66d3a12d8bf78f9de59": {
-      "result": [
-        [
-          {
-            "primitive": {
-              "kind": "number",
-              "value": 0.5
-            },
-            "engine": {
-              "platform": "gsheets",
-              "wire_kind": "number",
-              "raw_api": {
-                "userEnteredValue": {
-                  "formulaValue": "=ZTEST(A1:A5, 3)"
-                },
-                "effectiveValue": {
-                  "numberValue": 0.5
-                },
-                "formattedValue": "0.5",
-                "effectiveFormat": {
-                  "textFormat": {
-                    "foregroundColor": {},
-                    "fontFamily": "Arial",
-                    "fontSize": 10,
-                    "bold": false,
-                    "italic": false,
-                    "strikethrough": false,
-                    "underline": false,
-                    "foregroundColorStyle": {
-                      "rgbColor": {}
-                    }
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 0.5
+              },
+              "engine": {
+                "platform": "gsheets",
+                "wire_kind": "number",
+                "raw_api": {
+                  "userEnteredValue": {
+                    "formulaValue": "=ZTEST(A1:A5, 3)"
                   },
-                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                  "effectiveValue": {
+                    "numberValue": 0.5
+                  },
+                  "formattedValue": "0.5",
+                  "effectiveFormat": {
+                    "textFormat": {
+                      "foregroundColor": {},
+                      "fontFamily": "Arial",
+                      "fontSize": 10,
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "foregroundColorStyle": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "hyperlinkDisplayType": "PLAIN_TEXT"
+                  }
                 }
-              }
-            },
-            "formula": "ZTEST(A1:A5, 3)",
-            "formatted": "0.5"
-          }
-        ]
-      ],
+              },
+              "formula": "ZTEST(A1:A5, 3)",
+              "formatted": "0.5"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=ZTEST(A1:A5, 3)"
     },
     "sha256:c4e375418ba3339f944506083c66ccef4fd691f92c8bd7919d622567cb882133": {
-      "result": [
-        [
-          {
-            "primitive": {
-              "kind": "number",
-              "value": 0.9319814359429281
-            },
-            "engine": {
-              "platform": "gsheets",
-              "wire_kind": "number",
-              "raw_api": {
-                "userEnteredValue": {
-                  "formulaValue": "=ZTEST(A1:A5, 4, 1.5)"
-                },
-                "effectiveValue": {
-                  "numberValue": 0.9319814359429281
-                },
-                "formattedValue": "0.9319814359",
-                "effectiveFormat": {
-                  "textFormat": {
-                    "foregroundColor": {},
-                    "fontFamily": "Arial",
-                    "fontSize": 10,
-                    "bold": false,
-                    "italic": false,
-                    "strikethrough": false,
-                    "underline": false,
-                    "foregroundColorStyle": {
-                      "rgbColor": {}
-                    }
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 0.9319814359429281
+              },
+              "engine": {
+                "platform": "gsheets",
+                "wire_kind": "number",
+                "raw_api": {
+                  "userEnteredValue": {
+                    "formulaValue": "=ZTEST(A1:A5, 4, 1.5)"
                   },
-                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                  "effectiveValue": {
+                    "numberValue": 0.9319814359429281
+                  },
+                  "formattedValue": "0.9319814359",
+                  "effectiveFormat": {
+                    "textFormat": {
+                      "foregroundColor": {},
+                      "fontFamily": "Arial",
+                      "fontSize": 10,
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "foregroundColorStyle": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "hyperlinkDisplayType": "PLAIN_TEXT"
+                  }
                 }
-              }
-            },
-            "formula": "ZTEST(A1:A5, 4, 1.5)",
-            "formatted": "0.9319814359"
-          }
-        ]
-      ],
+              },
+              "formula": "ZTEST(A1:A5, 4, 1.5)",
+              "formatted": "0.9319814359"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=ZTEST(A1:A5, 4, 1.5)"
     }
   }
