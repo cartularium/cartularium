@@ -28,6 +28,8 @@ export {
   DEFAULT_NUM_TOL,
   type CanonicalCell,
 } from "./equality.js";
+// M3 relation layer — verdict-free cross-engine agreement partition
+export { partitionByAgreement, isDivergent, type AgreementClass } from "./relations.js";
 // capability DATA (moves to @cartularium/drivers) vs ADAPTERS (stay in assay)
 export {
   loadCapability,
