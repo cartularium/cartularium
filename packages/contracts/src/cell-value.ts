@@ -238,6 +238,10 @@ export type CirculatingCell =
   | { c: "rich-text"; v: string } // collapsed runs
   | { c: "opaque"; v: string } // type_tag only — content is no-data
 
+/** A grid of circulating cells. Grid holes (no cell) canonicalize to `{c:"blank"}`, so a
+ * circulating grid has no null cells (unlike RichGridValue). */
+export type CirculatingGrid = CirculatingCell[][]
+
 /** Project a PrimitiveValue to its circulating identity (drops everything terminal). */
 export function canonicalizePrimitive(p: PrimitiveValue): CirculatingCell {
   switch (p.kind) {
