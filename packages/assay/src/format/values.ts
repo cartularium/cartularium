@@ -16,10 +16,14 @@ export {
   isCellError,
   isRichGrid,
   toScalarGrid,
+  canonicalizePrimitive,
+  canonicalizeCell,
+  circulatingKey,
 } from "@cartularium/contracts";
 export type {
   CellError,
   CellValue,
+  CirculatingCell,
   GridValue,
   EngineExtras,
   ExcelExtras,
