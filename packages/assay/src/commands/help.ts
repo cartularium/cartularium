@@ -13,10 +13,12 @@ Commands:
                                   fixtures; flag drift. \`--accept\` rewrites the baselines.
   assay lint <files...>           Static checks (e.g. array-literal tests must declare
                                   broadcasting intent per schema §4).
-  assay matrix <files...>         Aggregate per-engine override structure into a divergence
-                                  matrix. Static analysis over YAML — no runtime needed.
-                                  Use --view=headline|pairwise|by-cause|by-category|clusters.
-                                  --seed-catalogue <dir> writes one DV-####.yaml per cluster.
+  assay matrix <files...>         Verdict-free agreement matrix over observed Outcomes:
+                                  pairwise co-classing, per-engine capability + fork
+                                  profile, recurring fork-shapes. Reads fixtures.
+                                  Use --view=headline|pairwise|engines|forks.
+                                  --seed-catalogue <dir> writes DV-####.yaml (override-based,
+                                  quarantined — retires with the authoring layer).
   assay catalogue --build <dir>   Render the seeded divergence catalogue
                                   (divergences/DV-*.yaml) to a browsable static site.
   assay manifest                  Emit the function manifest (engine status, DV refs,
