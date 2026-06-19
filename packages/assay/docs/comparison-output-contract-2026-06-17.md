@@ -26,6 +26,44 @@ bridge feed (§8) is **deferred** ("asleep until assay's relation layer is set")
   loses auto-seed (P3); the `observed`-as-intended signal **migrates to the lens** (P5);
   benchmark (I)-fields read from the **case**, not the manifest (P6).
 
+## Refinement (2026-06-19, ratified) — the annotation layer moves out-of-band
+
+CP2 placed `cause` **load-bearing in the manifest** as an (R) relational annotation (§4).
+A philosophy review of DV-identity (2026-06-19) found this blurs the relation/authored
+line. The sharpening: a DV bundles **three** kinds of claim, not two —
+
+- the **fork** (partition + values): *observed*, symmetric, indisputable — pure relation;
+- the **cause**: *authored interpretation* — it classifies the *dimension* of difference
+  (precision/locale/null-vs-zero), carries no arrow (names no deviant), but is **defeasible**
+  and gravity-bearing (like provenance, yet unlike provenance it is a *reading*, not a brute
+  fact). Not a verdict — but not observation either;
+- the **summary / curation**: editorial attention.
+
+Sitting *inside* the relation output, `cause` reads as fact. Resolution: the **whole
+annotation layer** (`cause` + summary + curation) leaves the manifest and sits **out-of-band**,
+alongside the oracle sidecar (its own artifact — the `divergences/DV-*.yaml` files, reframed),
+joined to forks by case-ref. Concretely:
+
+- **ManifestV5 = observation only.** Drop `annotations` + `ManifestForkAnnotation` from the
+  manifest; it carries only the two *observed* axes — per-test `partition` + per-engine
+  `capability`. `ManifestV5FunctionEntry.forks` becomes observed forked-case-refs only (no
+  annotation ids). A grep for fork-`cause`/`annotation` in the manifest output is now empty —
+  the no-verdict invariant made structural at the output boundary.
+- **Fork-annotations are the out-of-band authored layer** — sticky-id identity (the `DV-####`,
+  which always *was* the identity; the content-fingerprint `clusterKey(cause+engines+values)`
+  was an auto-maintenance crutch), referencing forks by case-ref. This is the home the
+  DV-identity re-founding lands in (next checkpoint).
+- **Keep** the capability axis's `no-data` `cause` (`policy`/`seed-infidelity`/`infra`/
+  `driver-error`/…) — that is the *operational* reason there's no data (mechanical, observed),
+  NOT an interpretation of engine semantics. Different `cause`; it stays.
+- **Touches already-built code:** `buildManifestV5` (CP3 step 4) stops emitting `annotations`
+  and reading `dv.cause`; its annotation tests move to the sidecar's tests.
+
+The three-way distinction generalizes: **observed** (relation) / **authored-descriptive-with-
+gravity** (`cause`, kept honest like provenance — but exiled out-of-band for the extra wall) /
+**authored-normative** (oracle, already exiled CP2). The catalogue *lives*; it just stops
+impersonating the relation layer (a *reading*, not the territory).
+
 ## 0. Binding constraints (settled — not under review)
 
 - **No-verdict.** The relation layer (catalogue + manifest) holds relationships, never verdicts.
