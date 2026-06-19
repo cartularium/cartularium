@@ -5,6 +5,8 @@ import { join } from "node:path";
 import * as YAML from "yaml";
 import { loadTestSuite } from "../format/parse.js";
 import { caseKey } from "../identity/index.js";
+import { liftEntryToOutcome, type LegacyEntry } from "../fixtures.js";
+import { isPlatform, type Outcome, type Platform } from "../format/values.js";
 
 export interface DvEntry {
   id: string;
@@ -145,6 +147,46 @@ export function loadFixtures(
         for (const target of targets) {
           if (!out.has(target)) out.set(target, new Map());
           out.get(target)!.set(engine, entry?.result);
+        }
+      }
+    }
+  }
+  return out;
+}
+
+// test key → engine → the §6.6 Outcome, lifted on read (legacy fixtures stay
+// loadable until regenerated). The Outcome-aware sibling of loadFixtures — it
+// keeps the full attribution (value/rejected/crashed/skipped/…) the V5 manifest
+// partitions on, where loadFixtures discards everything but `.result`. Same key
+// resolution (semantic-hash rows re-exposed under public refs).
+export function loadFixtureOutcomes(
+  dir: string,
+  keep: Set<string> | Map<string, TestInfo>,
+): Map<string, Map<Platform, Outcome>> {
+  const out = new Map<string, Map<Platform, Outcome>>();
+  if (!existsSync(dir)) return out;
+  const keyTargets = fixtureKeyTargets(keep);
+  for (const suite of readdirSync(dir)) {
+    const suitePath = join(dir, suite);
+    let stat;
+    try { stat = readdirSync(suitePath); } catch { continue; }
+    for (const f of stat) {
+      if (!f.endsWith(".json")) continue;
+      const engine = f.replace(/\.json$/, "");
+      if (!isPlatform(engine)) continue;
+      let fx: { results?: Record<string, LegacyEntry> };
+      try {
+        fx = JSON.parse(readFileSync(join(suitePath, f), "utf8"));
+      } catch {
+        continue;
+      }
+      for (const [tid, entry] of Object.entries(fx.results ?? {})) {
+        const targets = keyTargets.get(tid) ?? (keep instanceof Set && isSemanticHash(tid) ? [tid] : undefined);
+        if (!targets) continue;
+        const outcome = liftEntryToOutcome(entry, engine);
+        for (const target of targets) {
+          if (!out.has(target)) out.set(target, new Map());
+          out.get(target)!.set(engine, outcome);
         }
       }
     }
