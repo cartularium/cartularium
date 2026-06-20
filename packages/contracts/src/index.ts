@@ -127,7 +127,10 @@ export type Manifest = ManifestV3 | ManifestV4
 // Replaces the V4 `engines: Record<Platform, TestVerdict>` smush with two relation-layer
 // axes — the agreement PARTITION (which engines agree: uniform vs forked) and per-engine
 // CAPABILITY (did the engine produce a value). No canonical value, no reference engine, no
-// verdict. Authored assertions ("oracles") live OUT OF BAND in a self-check lens, never here.
+// verdict. The manifest is OBSERVATION ONLY: every interpretive layer is out of band, joined
+// by case-ref — authored normative assertions ("oracles") in a self-check lens, and authored
+// descriptive annotations (cause/summary/clustering) in the contributed annotation layer
+// (the no-authority-over-meaning refinement, 2026-06-19). Neither is ever a field here.
 // Added alongside V4; buildManifest re-seats onto it + the version bumps in the CP3 output step.
 
 /** Per-engine capability + the join into the agreement partition. Only `value` engines carry
@@ -170,26 +173,11 @@ export interface ManifestV5TestEntry {
   partition: ManifestClass[]
 }
 
-/** A descriptive, symmetric annotation on a fork. `cause` (the controlled `Cause` enum) +
- * `engines` (symmetric set) are the LOAD-BEARING relation content; `summary` is NON-NORMATIVE
- * display only (a human caption — nothing reads it as the relationship).
- *
- * "Capability not cause" is enforced MECHANICALLY, not by restricting this vocabulary: an
- * annotation is emitted only for a case that actually FORKS (partition.length > 1). A
- * `missing-function` that produces no value is `unsupported` on the capability axis — uniform,
- * no fork, no annotation; a `missing-function` that RUNS and returns `#NAME?` is an error-value
- * fork (the engine produced a value), so the annotation is kept and `missing-function` is a
- * faithful cause for it. So `cause` is the full `Cause` — the split lives in the partition. */
-export interface ManifestForkAnnotation {
-  cause: Cause
-  engines: Platform[]
-  classes?: number[]
-  category: Category
-  summary: string
-}
-
 export interface ManifestV5FunctionEntry {
   engines: Record<Platform, ManifestEngineEntry>
+  /** Observed forked case-refs only (the function's cases whose partition has >1 class). No
+   * authored ids: the interpretive annotation layer (cause/summary/clustering) lives OUT OF
+   * BAND, joined to forks by case-ref — the no-authority-over-meaning refinement (2026-06-19). */
   forks: string[]
   tests: string[]
 }
@@ -210,7 +198,6 @@ export interface ManifestV5 {
   rung: "circulating"
   tests: Record<string, ManifestV5TestEntry>
   functions: Record<string, ManifestV5FunctionEntry>
-  annotations: Record<string, ManifestForkAnnotation>
   aliases: Record<string, ManifestV5AliasEntry>
   tombstones: Record<string, ManifestV5TombstoneEntry>
   hashes: Record<`sha256:${string}`, string>

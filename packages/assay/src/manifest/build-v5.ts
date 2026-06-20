@@ -4,29 +4,28 @@
 // `expect`) with the two relation-layer axes, computed MECHANICALLY from per-engine Outcomes:
 //   - the agreement PARTITION (partitionByAgreement over value outcomes) — uniform vs forked,
 //   - per-engine CAPABILITY (EngineObservation) — value / rejected / crashed / unsupported / no-data.
-// No canonical value, no reference engine, no verdict. Authored assertions are out-of-band.
+// No canonical value, no reference engine, no verdict. The manifest is OBSERVATION ONLY:
+// every interpretive layer (oracles, and the cause/summary annotation layer) is out-of-band,
+// joined by case-ref — never a field here (the no-authority-over-meaning refinement, 2026-06-19).
 //
 // "Capability not cause" is mechanical: only `value` outcomes enter the partition; a
-// missing-function that produces no value is `unsupported` (uniform, no fork, no annotation),
-// while one that runs and returns #NAME? is a value → an error-value fork. Annotations are gated
-// by whether the case actually forks, NOT by the cause label.
+// missing-function that produces no value is `unsupported` (uniform, no fork), while one that
+// runs and returns #NAME? is a value → an error-value fork. The capability/partition split is
+// the whole story — there is no annotation gate, because there are no annotations.
 //
 // Added alongside the V4 builder (build.ts) during the CP3 transition; the catalogue-site still
 // renders off V4. The V4 builder + classify.ts retire with the website rework.
 
 import {
   ALL_PLATFORMS,
-  isPlatform,
   canonicalizeCell,
   circulatingKey,
   type Platform,
-  type Cause,
   type Category,
   type CirculatingGrid,
   type EngineObservation,
   type ManifestClass,
   type ManifestEngineEntry,
-  type ManifestForkAnnotation,
   type ManifestV5,
   type ManifestV5AliasEntry,
   type ManifestV5FunctionEntry,
@@ -37,7 +36,7 @@ import { partitionByAgreement } from "../format/relations.js";
 import type { Outcome, RichGridValue } from "../format/values.js";
 import { isFunctionName } from "../format/catalogue.js";
 import type { DvEntry, TestInfo } from "../catalogue-site/load.js";
-import { cleanSummary, indexDvsByFunction, indexTestsByFunction, manifestHash } from "./build.js";
+import { indexTestsByFunction, manifestHash } from "./build.js";
 
 export const MANIFEST_V5_VERSION = 5 as const;
 
@@ -154,11 +153,13 @@ function rollupStatus(observations: EngineObservation[]): ManifestEngineEntry {
 }
 
 export function buildManifestV5(input: BuildManifestV5Input): ManifestV5 {
+  // `input.dvs` now only widens the function universe (a DV references real functions); the
+  // observation-only manifest reads no `dv.cause`/annotation. The DV-identity re-founding moves
+  // even this seeding out of band (a later checkpoint).
   const fnSet = new Set<string>();
   for (const t of input.tests.values()) if (isFunctionName(t.subject)) fnSet.add(t.subject);
   for (const dv of input.dvs) for (const s of dv.subjects) if (isFunctionName(s)) fnSet.add(s);
 
-  const dvsByFn = indexDvsByFunction(input.dvs, fnSet);
   const testsByFn = indexTestsByFunction(input.tests, fnSet);
 
   // per-test entries (function-subject tests only, matching the manifest scope) + fork set
@@ -188,20 +189,7 @@ export function buildManifestV5(input: BuildManifestV5Input): ManifestV5 {
     fnEngineObs.set(t.subject, perEngine);
   }
 
-  // annotations — emitted ONLY for DVs whose referenced cases actually fork (mechanical gate;
-  // capability gaps that produce no value are uniform → no fork → no annotation).
-  const annotations: Record<string, ManifestForkAnnotation> = {};
-  for (const dv of input.dvs) {
-    if (!dv.tests.some((ref) => forkedRefs.has(ref))) continue;
-    annotations[dv.id] = {
-      cause: dv.cause as Cause,
-      engines: dv.engines.filter(isPlatform),
-      category: dv.category as Category,
-      summary: cleanSummary(dv.summary),
-    };
-  }
-
-  // function rollup — capability status per engine + the fn's forked cases & annotations
+  // function rollup — capability status per engine + the fn's observed forked cases
   const functions: Record<string, ManifestV5FunctionEntry> = {};
   for (const fn of [...fnSet].sort()) {
     const perEngine = fnEngineObs.get(fn) ?? new Map<Platform, EngineObservation[]>();
@@ -210,11 +198,10 @@ export function buildManifestV5(input: BuildManifestV5Input): ManifestV5 {
 
     const caseRefs = (testsByFn.get(fn) ?? []).map((t) => t.ref);
     const fnForkedCases = caseRefs.filter((ref) => forkedRefs.has(ref));
-    const fnAnnotations = (dvsByFn.get(fn) ?? []).map((dv) => dv.id).filter((id) => annotations[id]);
 
     functions[fn] = {
       engines,
-      forks: [...fnForkedCases, ...fnAnnotations],
+      forks: fnForkedCases,
       tests: caseRefs,
     };
   }
@@ -226,7 +213,6 @@ export function buildManifestV5(input: BuildManifestV5Input): ManifestV5 {
     rung: "circulating",
     tests,
     functions,
-    annotations,
     aliases,
     tombstones: {} as Record<string, ManifestV5TombstoneEntry>,
     hashes,
