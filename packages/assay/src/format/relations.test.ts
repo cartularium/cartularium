@@ -1,6 +1,6 @@
 import { describe, it, expect } from "vitest";
 import type { PrimitiveValue, RichCellValue, RichGridValue } from "./values.js";
-import { partitionByAgreement, isDivergent, type AgreementClass } from "./relations.js";
+import { partitionByAgreement, isForked, type AgreementClass } from "./relations.js";
 
 // Minimal rich cell — gridsEqual reads only `.primitive`, the engine stub is inert.
 const cell = (primitive: PrimitiveValue): RichCellValue => ({
@@ -42,12 +42,12 @@ describe("partitionByAgreement — verdict-free cross-engine relation", () => {
     ]);
   });
 
-  it("all-agree ⇒ one class ⇒ not divergent; any split ⇒ divergent", () => {
+  it("all-agree ⇒ one class ⇒ not forked; any split ⇒ forked", () => {
     const agree = { excel: num(1), gsheets: num(1), hyperformula: num(1) };
     const split = { excel: num(1), gsheets: num(1), hyperformula: num(9) };
-    expect(isDivergent(partitionByAgreement(agree))).toBe(false);
+    expect(isForked(partitionByAgreement(agree))).toBe(false);
     expect(partitionByAgreement(agree)).toHaveLength(1);
-    expect(isDivergent(partitionByAgreement(split))).toBe(true);
+    expect(isForked(partitionByAgreement(split))).toBe(true);
   });
 
   it("relative numeric tolerance still groups (ironcalc relaxed to 1e-9)", () => {
@@ -93,14 +93,14 @@ describe("partitionByAgreement — verdict-free cross-engine relation", () => {
 
 describe("partitionByAgreement — union-find under non-transitive tolerance (injected relation)", () => {
   // The documented delta vs the old `first`-pivot boolean. With A≈B and B≈C but
-  // A≉C, the old pivot (first = A) flagged divergence because C≠A. Honest cohort
-  // grouping is connected components: {A,B,C} is ONE class — not divergent. We
+  // A≉C, the old pivot (first = A) flagged a fork because C≠A. Honest cohort
+  // grouping is connected components: {A,B,C} is ONE class — not forked. We
   // accept this chaining (spec §5); pin it so the behavior change stays visible.
   it("a near-tolerance chain merges into one class (cohort equality)", () => {
     const results = { A: num(0), B: num(0), C: num(0) };
     const classes = partitionByAgreement(results, edges("A-B", "B-C"));
     expect(shape(classes)).toEqual([["A", "B", "C"]]);
-    expect(isDivergent(classes)).toBe(false);
+    expect(isForked(classes)).toBe(false);
   });
 
   it("disjoint agreement yields multiple classes", () => {

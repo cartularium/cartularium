@@ -7,7 +7,7 @@
 //
 // The cross-engine relation is a SYMMETRIC partition of the engines into
 // agreement-classes at a chosen rung — no engine is the reference, none is
-// "correct." "Divergence" is just "more than one class." The symmetry is
+// "correct." A "fork" is just "more than one class." The symmetry is
 // structural: no field encodes correctness/reference, and the partition is
 // invariant under permutation of the input engines (the executable guarantee;
 // see relations.test.ts). This replaces the old `first`-pivot boolean, which
@@ -114,9 +114,8 @@ export function partitionByAgreement(
   return classes;
 }
 
-/** True iff the partition shows divergence — more than one agreement-class.
- * The class COUNT is the only judgment the relation makes; it flags no class as
- * correct. */
-export function isDivergent(classes: AgreementClass[]): boolean {
+/** True iff the partition forks — more than one agreement-class. The class COUNT
+ * is the only judgment the relation makes; it flags no class as correct. */
+export function isForked(classes: AgreementClass[]): boolean {
   return classes.length > 1;
 }

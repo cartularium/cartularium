@@ -22,11 +22,11 @@ export async function run(args: string[]): Promise<void> {
   const wantJson = values.json as boolean;
 
   const allFailures: Array<{ suite: string; name: string; details: string }> = [];
-  const allDivergences: Array<{ suite: string; name: string; details: string }> = [];
+  const allForks: Array<{ suite: string; name: string; details: string }> = [];
   const missingFixtureList: Array<{ suite: string; platform: string }> = [];
-  let totalTests = 0, totalPassed = 0, totalFailed = 0, totalRecorded = 0, totalDiv = 0;
+  let totalTests = 0, totalPassed = 0, totalFailed = 0, totalRecorded = 0, totalForks = 0;
 
-  const perSuite: Array<{ name: string; total: number; passed: number; failed: number; recorded: number; div: number }> = [];
+  const perSuite: Array<{ name: string; total: number; passed: number; failed: number; recorded: number; forks: number }> = [];
   const jsonSuites: unknown[] = [];
 
   for (const file of files) {
@@ -50,14 +50,14 @@ export async function run(args: string[]): Promise<void> {
     totalPassed += result.summary.passed;
     totalFailed += result.summary.failed;
     totalRecorded += result.summary.recorded;
-    totalDiv += result.divergences.length;
+    totalForks += result.forks.length;
     perSuite.push({
       name: suiteName,
       total: result.summary.total,
       passed: result.summary.passed,
       failed: result.summary.failed,
       recorded: result.summary.recorded,
-      div: result.divergences.length,
+      forks: result.forks.length,
     });
 
     if (wantJson) jsonSuites.push(JSON.parse(jsonReport(result)));
@@ -74,17 +74,17 @@ export async function run(args: string[]): Promise<void> {
       }
     }
 
-    for (const d of result.divergences) {
-      const parts = Object.entries(d.results)
-        .map(([p, g]) => `${p}=${formatGridCompact(g)}`)
+    for (const p of result.forks) {
+      const parts = Object.entries(p.results)
+        .map(([plat, g]) => `${plat}=${formatGridCompact(g)}`)
         .join("  ");
-      allDivergences.push({ suite: suiteName, name: d.test.id, details: parts });
+      allForks.push({ suite: suiteName, name: p.test.id, details: parts });
     }
   }
 
   if (wantJson) {
     console.log(JSON.stringify({
-      summary: { total: totalTests, passed: totalPassed, failed: totalFailed, recorded: totalRecorded, divergences: totalDiv },
+      summary: { total: totalTests, passed: totalPassed, failed: totalFailed, recorded: totalRecorded, forks: totalForks },
       missingFixtures: missingFixtureList,
       suites: jsonSuites,
     }, null, 2));
@@ -94,17 +94,17 @@ export async function run(args: string[]): Promise<void> {
   }
 
   if (!verbose) {
-    console.log(`\n${"suite".padEnd(26)} ${"pass".padStart(6)} ${"fail".padStart(5)} ${"rec".padStart(4)} ${"div".padStart(4)}   total`);
+    console.log(`\n${"suite".padEnd(26)} ${"pass".padStart(6)} ${"fail".padStart(5)} ${"rec".padStart(4)} ${"fork".padStart(4)}   total`);
     console.log("-".repeat(60));
     for (const s of perSuite) {
-      const mark = s.failed > 0 ? "✗" : s.div > 0 ? "△" : " ";
-      console.log(`${mark} ${s.name.padEnd(24)} ${String(s.passed).padStart(6)} ${String(s.failed).padStart(5)} ${String(s.recorded).padStart(4)} ${String(s.div).padStart(4)}   ${s.total}`);
+      const mark = s.failed > 0 ? "✗" : s.forks > 0 ? "△" : " ";
+      console.log(`${mark} ${s.name.padEnd(24)} ${String(s.passed).padStart(6)} ${String(s.failed).padStart(5)} ${String(s.recorded).padStart(4)} ${String(s.forks).padStart(4)}   ${s.total}`);
     }
   }
 
   console.log(
     `\nTotal: ${totalTests} tests, ${totalPassed} passed, ${totalFailed} failed, ` +
-      `${totalRecorded} recorded, ${totalDiv} divergences`,
+      `${totalRecorded} recorded, ${totalForks} forked`,
   );
 
   if (allFailures.length > 0) {
@@ -116,9 +116,9 @@ export async function run(args: string[]): Promise<void> {
     if (!verbose && allFailures.length > 20) console.log(`  … ${allFailures.length - 20} more (use -v)`);
   }
 
-  if (allDivergences.length > 0 && verbose) {
-    console.log(`\nDivergences:`);
-    for (const d of allDivergences) {
+  if (allForks.length > 0 && verbose) {
+    console.log(`\nForks:`);
+    for (const d of allForks) {
       console.log(`  △ [${d.suite}] ${d.name}`);
       console.log(`    ${d.details}`);
     }

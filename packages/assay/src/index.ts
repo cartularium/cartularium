@@ -138,7 +138,7 @@ export type {
   TestCase,
   TestSuite,
   TestResult,
-  Divergence,
+  AgreementPartition,
 } from "./format/catalogue.js";
 
 export {
