@@ -32,6 +32,18 @@ case-ref. Identity is a **sticky id** (the `DV-####`); the content-fingerprint `
 **retires**. A shared explanation **is** a cluster (the grouping is interpretation, so it
 lives here, authored once; the observed forks stay atomic in the manifest).
 
+**Sharpening (2026-06-20) — case-properties vs outcome-claims.** The line "the relation
+layer holds no interpretation" is not "no metadata reaches the manifest." It is: the
+catalogue may hold author-declared **properties of the case** (its intrinsic shape/intent —
+`subject`, `category`, `features`, `tags`; e.g. `complex-number`, `volatile`,
+`locale-sensitive`), but never an author **claim about the cross-engine outcome** (`pycel-
+missing`, `excel-only`, `forks-on-precision`). A case-property describes the formula and
+asserts nothing cross-engine; an outcome-claim is the *meaning*, which belongs in the
+attributed annotation. This is the rule that keeps test tags (§4) honest as a predicate
+surface — and it is why a direct `links.divergence: DV-id` on a test is **not** adopted (§4):
+naming a specific annotation in the repo re-homes cluster-membership interpretation into the
+git corpus, the very thing annotation-layer §5 exiled.
+
 ## 2. Current-state map (the rails that exist — anchors for the build)
 
 **Migration source — assay (`packages/assay`):**
@@ -103,28 +115,61 @@ Invariants (from the principle):
   DV-0001 (pycel missing-function, 78 subjects) every new pycel-missing function is a manual
   scope edit. The design accepts this ("new same-shaped cases don't auto-join").
 
-**Option P — predicate.** `scope = { kind: "predicate", query: ForkPredicate }` — e.g.
-*"forks where pycel is alone-in-class with `#NAME?` on subject ∈ {…}"*, evaluated lazily
-against the live partition.
-- *Coverage-growth fix:* auto-covers future matching forks — one annotation tracks a class as
-  the corpus grows (§4 of the principle: "this doubles as the coverage-growth fix").
-- *Cost:* needs a **fork-property matcher** (partition shape / engines / subject / value-kind)
-  — itself deferred work (annotation-layer §7; charter §7). Risks over-coverage (matching
-  forks the author didn't mean) and must be kept honest: a predicate must **not** become a
-  disguised content-key auto-cluster (the very thing the principle retired — §3 "grouping is
-  what an author *chose* to scope, never 'same cause value'").
+**Option P — predicate.** `scope = { kind: "predicate", query: ForkPredicate }`, evaluated
+lazily against the live partition. It auto-covers future matching forks — one annotation
+tracks a class as the corpus grows (the principle's "doubles as the coverage-growth fix").
+A predicate has **two kinds of dimension, with very different cost**:
+- **author-declared case-tags** (`tags`) — *matcher-free*. The author writes a case-property
+  tag at authoring time (§1: a property of the case, never an outcome-claim); the predicate
+  reads it. No partition computation; the tag is already there. This is the cheap coverage-
+  growth path, and it is the home for the *connect-at-authoring-time* ergonomic (the author
+  tags the **concept**, not a DV id — so no `links.divergence`, no git↔DB back-edge).
+- **observed fork-properties** (`enginesAlone`, `valueKind`, `sentinel`, partition shape) —
+  needs the **fork-property matcher** (annotation-layer §7; charter §7), which is deferred.
+
+Discipline (both kinds): a predicate must **not** become a disguised content-key auto-cluster
+(§3, retired). Case-tags must be **author-declared intent**, never machine-inferred from
+outcomes — an inferred tag is the `clusterKey` crutch sneaking back. A predicate composes the
+two honestly: `tags` narrows by author-declared case-property; the observed dimensions do the
+cross-engine part (assay's job).
+
+```ts
+// @cartularium/contracts — assay-fork-annotation.ts
+export type AnnotationScope =
+  | { kind: "ref-set";   refs: string[] }          // explicit case-refs (SUBJECT/name)
+  | { kind: "predicate"; query: ForkPredicate }
+
+export interface ForkPredicate {
+  tags?: string[]            // author-declared CASE properties — MATCHER-FREE (v1-shippable)
+  enginesAlone?: Platform[]  // observed — needs the deferred matcher
+  valueKind?: "error" | "number" | "text" | "blank"
+  sentinel?: string
+  subjectIn?: string[]
+}
+```
+D1: `scope_kind TEXT CHECK (scope_kind IN ('ref-set','predicate'))` + `scope_json TEXT`.
 
 **Proposed resolution (for ratification, not decided):**
-1. Make `scope` a **tagged union from day one** in the contracts DTO + the D1 column
-   (`scope_kind` + `scope_json`), so predicate can land later **without a schema migration**.
+1. **Tagged union from day one** (DTO + the two D1 columns), so predicate lands with **no
+   schema migration**.
 2. **Migrate every DV as ref-set** — the honest snapshot. A predicate would re-interpret the
    2026-04-25 grouping into a guessed rule; the ref-set preserves what was observed.
-3. **Defer the predicate matcher** to its own increment (it is the same matcher the charter
-   already defers). Until then `scope_kind` is effectively ref-set-only at runtime, but the
-   schema is ready.
+3. **Tag-predicates are v1-shippable**, observed-predicates wait on the matcher. The
+   `tags`-only predicate needs no matcher — only that the manifest publishes test tags so the
+   edit-shell join can read them (the flag below). The observed dimensions defer with the
+   matcher (the same one the charter defers).
+4. **`links.divergence` stays retired** — the connect-at-authoring ergonomic routes through
+   case-tags (§1), not a DV-id in the test YAML.
 
-*Open sub-question (defer):* the `ForkPredicate` vocabulary (the matcher surface). Out of 3a;
-it belongs to the matcher increment.
+**Manifest flag (new dep of tag-predicates):** `ManifestV5TestEntry` carries no `tags` today.
+For an edit-shell predicate to join by tag at read-time, the manifest must **publish test
+`tags`** — observation-only (a case descriptor, like the `category` already there). A small,
+clean additive change to the contracts schema + `build-v5.ts`, sequenced with the tag-
+predicate (§10).
+
+*Open sub-questions (defer):* the observed-property matcher surface; and **who blesses the
+case-tag vocabulary** — which tags are legitimate case-properties vs smuggled outcome-claims
+(a discipline/review concern, not a schema one).
 
 ## 5. The migration (255 DVs → annotation rows)
 
@@ -193,18 +238,22 @@ Mount under `/api/edit/assay` alongside the submitted-case routes; reuse `requir
 ## 10. Sequencing & deferred
 
 1. **3a (this doc)** — schema + migration + coverage design, ratified section-by-section.
-2. **3b** — contracts DTO (`AssayForkAnnotationV1`) + D1 migration + CRUD API. (Worktree/branch
-   decided here.)
+2. **3b** — contracts DTO (`AssayForkAnnotationV1`, scope tagged-union) + D1 migration + CRUD API.
+   (Worktree/branch decided here.)
 3. **3c** — the one-time 255-DV import (ref-set, provisional author).
 4. **3d** — coverage/staleness derived-read views (annotations ⋈ manifest).
-5. **Deferred:** the predicate matcher (§4) + its `ForkPredicate` vocabulary; the stability/
-   lifecycle column shape (§7); retiring the in-repo `history`/`seedCatalogue`/YAML — **with #4**
-   (the website rework), never before. The sheets-wiki render is #4.
+5. **3e (tag-predicates)** — publish test `tags` on `ManifestV5TestEntry` (observation-only) +
+   resolve `tags`-only predicates. Matcher-free; can land any time after 3b.
+6. **Deferred:** the *observed*-property matcher (§4) for the non-tag predicate dimensions; the
+   stability/lifecycle column shape (§7); retiring the in-repo `history`/`seedCatalogue`/YAML —
+   **with #4** (the website rework), never before. The sheets-wiki render is #4.
 
 ## 11. Open decisions (the ratification forks)
 
-- **§4 scope grain** — ratify the proposed resolution (tagged-union schema now, migrate as
-  ref-set, defer the predicate matcher), or take Option P up front (build the matcher first).
+- **§4 scope grain** — ratify the proposed resolution (tagged-union schema now; migrate as
+  ref-set; tag-predicates v1-shippable via published manifest tags; observed-predicates defer
+  with the matcher; `links.divergence` stays retired). The §1 case-property-vs-outcome-claim
+  rule is the discipline that keeps the tag surface honest — ratify it too.
 - **§8 contracts edge** — confirm edit-shell taking a contracts dependency is acceptable here
   (it is the first such edge).
 - **§9 review gate** — do contributed annotations publish immediately (attributed, no gate) or
