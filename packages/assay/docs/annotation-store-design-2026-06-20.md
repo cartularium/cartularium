@@ -1,6 +1,7 @@
 # The fork-annotation store — schema, migration, coverage (design, 3a)
 
-**Status: PROPOSED (2026-06-20) — for section-by-section ratification.** This is the
+**Status: PROPOSED (2026-06-20) — ratifying section-by-section; §1–§4 RATIFIED 2026-06-20,
+§5–§11 pending.** This is the
 build design for **CP3 increment #3**: the attributed fork-annotation store that the
 ratified annotation-layer principle (`annotation-layer-design-2026-06-19.md`) routes to
 **edit-shell**. It turns that principle into a concrete schema (landing in
@@ -79,17 +80,25 @@ One annotation = one authored, attributed, scoped claim. The **DTO lives in cont
 (versioned, §8); the **D1 table** in edit-shell mirrors it.
 
 ```
-AssayForkAnnotation (v1)
-  id            string         # sticky identity; migrated DVs keep "DV-####"
-  author_id     string         # provenance; "auto-seeded (provisional)" for migrated rows
-  cause         Cause          # the controlled enum (descriptive dimension, no arrow)
-  content       string         # the human explanation (the DV summary, for migrated rows)
-  engines       Platform[]     # the engines the fork concerns (symmetric set)
-  category      Category
+AssayForkAnnotation (v1)        # STORES only what is authored
+  id            string          # sticky identity; migrated DVs keep "DV-####"
+  author_id     string          # provenance; "auto-seeded (provisional)" for migrated rows
+  content       string          # the human explanation (the DV summary, for migrated rows)
+  cause?        Cause           # optional controlled facet (coarse; not identity, no arrow)
   scope         AnnotationScope  # WHICH forks this covers — see §4 (the open fork)
-  status        ?              # lifecycle, see §7 (neutral vocab; deferred shape)
+  status?       …               # lifecycle, see §7 (neutral vocab; deferred shape)
   created_at / updated_at
 ```
+
+**`engines` + `category` are DERIVED, not stored (ratified 2026-06-20).** Both are *observed*
+facts — the manifest already publishes, per fork, the partition (which engines class up) and
+the test category. Storing them on the annotation would freeze an observed fact that **drifts**
+when the scoped forks change. So they are computed at read-time from the manifest join
+(`engines` = the union over the scoped forks' classes; `category` from the joined cases) —
+the same derived-reads discipline as coverage (§6), and the join is already happening. The
+migration does **not** copy a DV's `engines`/`category`; they reconstruct from the forks its
+`tests[]` point at. Cost: list/filter queries can't index a stored `engines` column — negligible
+at this table size; a materialized view is the fix if it ever bites, never a drifting column.
 
 Invariants (from the principle):
 - **Out-of-band.** Never a field in ManifestV5 — joined to forks by case-ref (the oracle
@@ -133,10 +142,18 @@ outcomes — an inferred tag is the `clusterKey` crutch sneaking back. A predica
 two honestly: `tags` narrows by author-declared case-property; the observed dimensions do the
 cross-engine part (assay's job).
 
+**`scope` is a LIST of clauses, unioned (ratified 2026-06-20).** Not one ref-set *or* one
+predicate — a list, so an author can compose a **predicate clause** (auto-covers matching
+forks) **with cherry-picked ref-set clauses** (the explicit stragglers the predicate misses).
+An annotation covers a fork iff **any** clause matches (union). Exclusion ("cherry-pick out")
+is a possible future clause attribute — deferred; v1 is additive-union only.
+
 ```ts
 // @cartularium/contracts — assay-fork-annotation.ts
-export type AnnotationScope =
-  | { kind: "ref-set";   refs: string[] }          // explicit case-refs (SUBJECT/name)
+export type AnnotationScope = ScopeClause[]          // unioned; covers a fork iff ANY clause does
+
+export type ScopeClause =
+  | { kind: "ref-set";   refs: string[] }            // explicit case-refs (SUBJECT/name)
   | { kind: "predicate"; query: ForkPredicate }
 
 export interface ForkPredicate {
@@ -147,19 +164,26 @@ export interface ForkPredicate {
   subjectIn?: string[]
 }
 ```
-D1: `scope_kind TEXT CHECK (scope_kind IN ('ref-set','predicate'))` + `scope_json TEXT`.
+D1: `scope_json TEXT` holds the clause array (the source of truth). No `scope_kind` column —
+a list can mix kinds; if "has a predicate clause" filtering is ever needed (e.g. re-evaluate
+when the matcher changes), it's derived, not a stored column.
 
-**Proposed resolution (for ratification, not decided):**
-1. **Tagged union from day one** (DTO + the two D1 columns), so predicate lands with **no
-   schema migration**.
-2. **Migrate every DV as ref-set** — the honest snapshot. A predicate would re-interpret the
-   2026-04-25 grouping into a guessed rule; the ref-set preserves what was observed.
+**Resolution (ratified 2026-06-20):**
+1. **`scope` is a clause LIST** (the union-of-clauses above), so predicate + cherry-picked
+   refs compose. The clause kinds are open-ended (predicate lands with **no schema migration** —
+   just a new clause kind/dimension in `scope_json`).
+2. **Migrate every DV as a single ref-set clause** — `scope: [{kind:"ref-set", refs: tests}]`.
+   The honest snapshot. **This is a *provisional* state**, not the final scoping (3 below).
 3. **Tag-predicates are v1-shippable**, observed-predicates wait on the matcher. The
    `tags`-only predicate needs no matcher — only that the manifest publishes test tags so the
    edit-shell join can read them (the flag below). The observed dimensions defer with the
    matcher (the same one the charter defers).
 4. **`links.divergence` stays retired** — the connect-at-authoring ergonomic routes through
    case-tags (§1), not a DV-id in the test YAML.
+5. **The case-tag vocabulary is OPEN** (free-form strings), not a controlled enum. The §1
+   case-property-vs-outcome-claim rule is a **documented norm**, not a gate — closing the vocab
+   is a governance burden we decline. A smuggled outcome-claim tag is caught by review culture
+   (and is self-limiting: it just makes a worse predicate), not by schema.
 
 **Manifest flag (new dep of tag-predicates):** `ManifestV5TestEntry` carries no `tags` today.
 For an edit-shell predicate to join by tag at read-time, the manifest must **publish test
@@ -167,16 +191,22 @@ For an edit-shell predicate to join by tag at read-time, the manifest must **pub
 clean additive change to the contracts schema + `build-v5.ts`, sequenced with the tag-
 predicate (§10).
 
-*Open sub-questions (defer):* the observed-property matcher surface; and **who blesses the
-case-tag vocabulary** — which tags are legitimate case-properties vs smuggled outcome-claims
-(a discipline/review concern, not a schema one).
+**Reclassification is a later, automatable phase (deferred until the infra exists).** The
+ref-set migration (2) is provisional; once the store + manifest-tags + API are in place, a
+**policy-driven reclassification pass** converts provisional ref-sets into better tag/predicate
+scopes, labels tests with case-tags, and authors annotation content. The maintainer expects
+much of this to be **workflow-automated** (the same automation wave that writes new tests) —
+but it is explicitly **gated on all the infra landing first**. The *policy* it encodes (how to
+classify/label) is itself future work, out of 3a. The observed-property matcher surface is the
+other deferred sub-question.
 
 ## 5. The migration (255 DVs → annotation rows)
 
 A **one-time import**, additive and non-breaking:
 - Each `DV-####.yaml` → one `assay_fork_annotations` row: `id = DV-####`,
-  `author_id = "auto-seeded (provisional)"`, `cause`/`content = cause`+`summary`, `engines`,
-  `category`, `scope = { kind: "ref-set", refs: tests }`.
+  `author_id = "auto-seeded (provisional)"`, `content = summary`, `cause = cause`,
+  `scope = [{ kind: "ref-set", refs: tests }]`. The DV's `engines`/`category` are **not**
+  copied — they derive from the joined forks (§3).
 - The **10 vanished** DVs import cleanly — their scope simply matches no current fork, so they
   read as "stale/matching-nothing" in the derived coverage view (§6). No special-casing.
 - **What it does NOT touch:** the `DV-*.yaml` files, `divergences/`, `seedCatalogue`, and the
@@ -238,22 +268,26 @@ Mount under `/api/edit/assay` alongside the submitted-case routes; reuse `requir
 ## 10. Sequencing & deferred
 
 1. **3a (this doc)** — schema + migration + coverage design, ratified section-by-section.
-2. **3b** — contracts DTO (`AssayForkAnnotationV1`, scope tagged-union) + D1 migration + CRUD API.
+2. **3b** — contracts DTO (`AssayForkAnnotationV1`, scope clause-list) + D1 migration + CRUD API.
    (Worktree/branch decided here.)
 3. **3c** — the one-time 255-DV import (ref-set, provisional author).
 4. **3d** — coverage/staleness derived-read views (annotations ⋈ manifest).
 5. **3e (tag-predicates)** — publish test `tags` on `ManifestV5TestEntry` (observation-only) +
    resolve `tags`-only predicates. Matcher-free; can land any time after 3b.
-6. **Deferred:** the *observed*-property matcher (§4) for the non-tag predicate dimensions; the
+6. **3f (reclassification) — deferred until 3b–3e land.** A policy-driven, largely
+   **workflow-automated** pass (§4) that converts the provisional ref-set migrations into
+   tag/predicate scopes, labels tests with case-tags, and authors annotation content. Gated on
+   all the infra existing first; the classification *policy* is its own future design.
+7. **Deferred:** the *observed*-property matcher (§4) for the non-tag predicate dimensions; the
    stability/lifecycle column shape (§7); retiring the in-repo `history`/`seedCatalogue`/YAML —
    **with #4** (the website rework), never before. The sheets-wiki render is #4.
 
 ## 11. Open decisions (the ratification forks)
 
-- **§4 scope grain** — ratify the proposed resolution (tagged-union schema now; migrate as
-  ref-set; tag-predicates v1-shippable via published manifest tags; observed-predicates defer
-  with the matcher; `links.divergence` stays retired). The §1 case-property-vs-outcome-claim
-  rule is the discipline that keeps the tag surface honest — ratify it too.
+- **§1–§4 RATIFIED 2026-06-20** — the principle + case-property/outcome-claim rule; the
+  current-state map; the annotation model (engines/category derived); the scope grain (clause
+  list; ref-set migration provisional; open case-tag vocab; tag-predicates v1-shippable;
+  reclassification deferred to 3f). Remaining forks below.
 - **§8 contracts edge** — confirm edit-shell taking a contracts dependency is acceptable here
   (it is the first such edge).
 - **§9 review gate** — do contributed annotations publish immediately (attributed, no gate) or
