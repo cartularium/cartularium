@@ -1,7 +1,7 @@
 # The fork-annotation store — schema, migration, coverage (design, 3a)
 
-**Status: PROPOSED (2026-06-20) — ratifying section-by-section; §1–§4 RATIFIED 2026-06-20,
-§5–§11 pending.** This is the
+**Status: PROPOSED (2026-06-20) — ratifying section-by-section; §1–§7 RATIFIED 2026-06-20,
+§8–§9 pending.** This is the
 build design for **CP3 increment #3**: the attributed fork-annotation store that the
 ratified annotation-layer principle (`annotation-layer-design-2026-06-19.md`) routes to
 **edit-shell**. It turns that principle into a concrete schema (landing in
@@ -86,9 +86,11 @@ AssayForkAnnotation (v1)        # STORES only what is authored
   content       string          # the human explanation (the DV summary, for migrated rows)
   cause?        Cause           # optional controlled facet (coarse; not identity, no arrow)
   scope         AnnotationScope  # WHICH forks this covers — see §4 (the open fork)
-  status?       …               # lifecycle, see §7 (neutral vocab; deferred shape)
   created_at / updated_at
 ```
+
+No temporal/lifecycle field: the annotation is **history-agnostic** (§7). "Did this change?"
+is computed from the test-results history scoped by `scope` (§6), never stored here.
 
 **`engines` + `category` are DERIVED, not stored (ratified 2026-06-20).** Both are *observed*
 facts — the manifest already publishes, per fork, the partition (which engines class up) and
@@ -229,14 +231,48 @@ change" becomes "compute the coverage view when you want it"). It also means the
 (`build-v5.ts`); the runner already observes forks for contributed cases. Annotations are
 pure authored claims.
 
-## 7. Lifecycle = the stability relation (framed, mostly deferred)
+**Annotations are history-agnostic; "this engine changed" is a composed read (2026-06-20).**
+Derived-reads covers *annotation coverage* (a current-snapshot join, above). The other
+question — *"did this engine change?"* (pycel used to return `#NAME?` on this case, now returns
+a value) — is **not** a property of the annotation and needs **no** lifecycle store on it. The
+annotation stays agnostic (authored claim + scope only). "Change for a DV" is reconstructed at
+query time by composing:
+
+> **(annotation.scope → case-refs) × (test-results-history at two points) → diff.**
+
+The annotation supplies only *which cases to look at*; the temporal data lives entirely in the
+**test-results record over time** — an independent, observation-side artifact (a series of
+published ManifestV5, with the committed fixtures' git history as the raw substrate). You pull
+the actual results at two points of that history and diff, scoped by the annotation's refs.
+
+Why this is better than coupling a timeline to the annotation: the annotation never touches
+history (no `status`, no lifecycle fields — §7's column question disappears), and the DV
+lifecycle machinery (`dv_events`, `clusterKey`) can **fully retire** — what it tracked is
+reconstructable from `scope × results-history×2`, not something to re-found in the store.
+
+**Retirement constraint (binds §10):** the only thing that must persist is the **test-results
+record over time** (already true — committed fixtures; ideally projected as a queryable
+ManifestV5 series). Given that, the in-repo `history`/`dv-lifecycle`/`clusterKey` machinery
+retires freely. *Open (deferred):* the queryable substrate for the results-history — git-diff
+of fixtures vs. a stored ManifestV5 series vs. a results table; not decided here.
+
+## 7. Lifecycle = the stability relation (NOT an annotation property)
 
 The DV "lifecycle" (seeded/confirmed/grown/shrunk/vanished, today in `dv-lifecycle.ts`) is, in
-the no-verdict frame, the **stability relation** over an annotation's referenced forks
-(terminology §0): does the fork persist across re-runs/conditions? Neutral vocabulary — no
-"resolved"/"vanished-as-defect" (a fork converging is not a defect being fixed). For 3a:
-import the 10 vanished DVs as-is; the `status` column shape + the stability computation are a
-**later increment**, not this build. Flagged so the column isn't designed into a corner.
+the no-verdict frame, the **stability relation** over observations (terminology §0): did a
+case's cross-engine result change across re-runs / conditions? Per §6, this is **not** a
+property of the annotation — the annotation is history-agnostic. Stability/change is computed
+from the **test-results history**, optionally scoped by an annotation's refs. Neutral
+vocabulary — no "resolved"/"vanished-as-defect" (a fork converging is not a defect being
+fixed); just *changed / stable*.
+
+Consequences for 3a:
+- **No `status` (or any temporal field) on the annotation row.** The §3 shape stands as the
+  pure authored claim; the `status?` placeholder is **removed**.
+- The 10 vanished DVs import as plain annotations; their "vanished-ness" is just that their
+  scoped refs currently match no fork (a derived read), not a stored state.
+- The stability *computation* + the queryable results-history substrate are **deferred** (§6
+  open item) — observation-side work, independent of the annotation store.
 
 ## 8. Where the schema lives — contracts (the first edit-shell→contracts edge)
 
@@ -279,19 +315,22 @@ Mount under `/api/edit/assay` alongside the submitted-case routes; reuse `requir
    tag/predicate scopes, labels tests with case-tags, and authors annotation content. Gated on
    all the infra existing first; the classification *policy* is its own future design.
 7. **Deferred:** the *observed*-property matcher (§4) for the non-tag predicate dimensions; the
-   stability/lifecycle column shape (§7); retiring the in-repo `history`/`seedCatalogue`/YAML —
-   **with #4** (the website rework), never before. The sheets-wiki render is #4.
+   stability computation + the queryable results-history substrate (§6/§7 — observation-side,
+   independent of the store); retiring the in-repo `history`/`dv-lifecycle`/`seedCatalogue`/YAML
+   — **with #4** (the website rework). The DV-lifecycle (`dv_events`/`clusterKey`) retires fully;
+   the only persistence requirement is the **test-results record over time** (already met by the
+   committed fixtures). "This engine changed" reconstructs from `scope × results-history×2`.
+   The sheets-wiki render is #4.
 
 ## 11. Open decisions (the ratification forks)
 
-- **§1–§4 RATIFIED 2026-06-20** — the principle + case-property/outcome-claim rule; the
-  current-state map; the annotation model (engines/category derived); the scope grain (clause
-  list; ref-set migration provisional; open case-tag vocab; tag-predicates v1-shippable;
-  reclassification deferred to 3f). Remaining forks below.
+- **§1–§7 RATIFIED 2026-06-20** — the principle + case-property/outcome-claim rule; the
+  current-state map; the annotation model (engines/category derived, no temporal field); the
+  scope grain (clause list; provisional ref-set migration; open case-tag vocab; tag-predicates
+  v1-shippable; reclassification deferred to 3f); migration (oneshot idempotent script); coverage
+  as derived reads; **annotations history-agnostic** — "did this change?" = `scope × results-
+  history×2`, the DV-lifecycle retires fully. Remaining forks below.
 - **§8 contracts edge** — confirm edit-shell taking a contracts dependency is acceptable here
   (it is the first such edge).
 - **§9 review gate** — do contributed annotations publish immediately (attributed, no gate) or
   pass a light maintainer review before they join the rendered view?
-- **§7 lifecycle** — confirm the stability-relation framing + that the `status` shape is
-  deferred (import vanished DVs as-is for now).
-- **§5 import mechanism** — script vs endpoint; confirm idempotent-on-`id`.
