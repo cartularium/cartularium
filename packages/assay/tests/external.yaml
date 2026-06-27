@@ -541,6 +541,8 @@ tests:
     formula: =DETECTLANGUAGE("hello world")
     category: value
     supportLevel: design-pending
+    features:
+      - external-io
     expect: en
     overrides:
       excel:
