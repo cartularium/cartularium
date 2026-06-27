@@ -24,7 +24,7 @@ Cloudflare Worker that powers the inline contribution flow for sheets.wiki and a
 ## Boundaries
 
 - **Assay owns engine execution; edit-shell owns lifecycle, storage, and API.** Don't blur these. The submitted-case state machine (draft → submitted → accepted/rejected, queueing, acceptance materialization, PR materialization) lives here. Engine evaluation lives in assay.
-- **Don't currently import from `@cartularium/contracts`.** This is the post-DTO-migration target but doesn't exist today. The package.json only lists Hono, Octokit, valibot as runtime deps.
+- **Imports `@cartularium/contracts`** (since the fork-annotation store, 2026-06-26) — the shared `AssayForkAnnotation*` DTO + `ALL_CAUSES`/`ALL_PLATFORMS` for request validation. This is a **runtime** edge, so build-before-consume applies: every contracts-consuming script (`dev`/`deploy`/`test`/`typecheck`) is prefixed with `pnpm --filter @cartularium/contracts run build`, and a `check` script brings edit-shell under the root `pnpm check`. Runtime deps: Hono, Octokit, valibot, @cartularium/contracts. When adding cross-package DTOs, land them in contracts (not a new per-package duplicate).
 - **`/api/edit/assay/*` lane consumes assay's evolving case format.** Don't build new consumers of this lane while assay's case format is in flux. Pin to a specific contract version explicitly (submitted-case v1, preview-result v1).
 - **Don't add ad-hoc fields to submitted-case v1.** Richer cases get new contract versions plus runner capability negotiation.
 - **Default review lane: excel + gsheets.** HyperFormula is available for explicit smoke jobs and hosts not ready for Excel/GSheets, but not the default.
