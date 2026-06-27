@@ -210,6 +210,19 @@ A one-time, additive import:
 
 ## 6. Coverage and history
 
+**Built 2026-06-26 (3d):** the pure join `computeForkCoverage(manifest, annotations)` lives in
+`@cartularium/contracts` (`fork-coverage.ts`) — the only home shareable by every consumer (the
+assay CLI now; the sheets-wiki renderer / an edit-shell endpoint later, neither of which can depend
+on assay). It classifies each scoped `ref-set` ref against the manifest as **live-fork** (still
+forks) / **converged** (exists, now uniform) / **dangling** (no longer resolves — R3), following one
+alias hop so an aliased rename resolves rather than dangles; the inverse is the uncovered-fork
+contribution list. `predicate` clauses are counted-but-unresolved (tags need 3e; observed-dim needs
+the deferred matcher). Exercised by `assay annotation-coverage --annotations <export>.json` (manifest
+built inline; the snapshot is an export of `GET /api/edit/assay/fork-annotations`). The live
+edit-shell endpoint needs the manifest delivered into the Worker — that + the render ride #4. Verified
+live on the seeded store: 1837 forks, 960 covered (52.3%), 877 uncovered prompts, 18 annotations
+covering no live fork (real corpus drift — e.g. `op:divide/division`, an unaliased rename).
+
 Coverage is a derived read, computed on demand from the current manifest × the annotations:
 
 - forks with no annotation → contribution prompts.

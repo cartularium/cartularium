@@ -303,6 +303,10 @@ export type {
   ScopeClause,
 } from "./assay-fork-annotation.js"
 
+// fork-annotation coverage — derived read (manifest × annotations); see fork-coverage.ts
+export { computeForkCoverage } from "./fork-coverage.js"
+export type { AnnotationCoverage, ForkCoverageReport } from "./fork-coverage.js"
+
 // edit-wiki page index — see edit-index.ts
 export {
   EDIT_INDEX_VERSION,
