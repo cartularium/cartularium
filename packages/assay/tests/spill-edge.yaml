@@ -19,7 +19,7 @@ tests:
           - - error: "#VALUE!"
           - - blocker
       gsheets:
-        cause: missing-function
+        cause: error-code
         recorded:
           - - error: "#REF!"
           - - blocker
@@ -82,7 +82,7 @@ tests:
           - - null
           - - blocker
       gsheets:
-        cause: missing-function
+        cause: error-code
         recorded:
           - - error: "#REF!"
           - - null

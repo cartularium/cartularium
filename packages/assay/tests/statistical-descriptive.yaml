@@ -1973,7 +1973,7 @@ tests:
     expect: 1
     overrides:
       gsheets:
-        cause: error-code
+        cause: arg-semantics
         recorded:
           error: "#NUM!"
       ironcalc:
