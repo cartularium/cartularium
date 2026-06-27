@@ -65,7 +65,48 @@ matrix, which retires the cause/override layer wholesale; these source fixes fee
   probe spreadsheet (turns the skips into real evidence). IMAGE likely stays unseedable headless
   (charter caveat). Needs the maintainer to flip the toggle on a probe sheet.
 
+## Completed (2026-06-27, continued)
+
+Next-task items 1 + 2 done (item 3, the 37 multi-engine spot-checks, left for later).
+Same proven harness — one gold probe (direct `values:batchUpdate` +
+`spreadsheets.get` reading `effectiveValue.errorValue.{type,message}`), all 11
+formulas in spaced columns on one scratch sheet.
+
+**Item 1 — 8 gsheets-only DVs reprobed (commit `1d7ff3ed`).** 4 cause relabels at
+source; the rest confirmed value-faithful:
+- DV-0071 `permutationa-zero-pick`: gsheets `#NUM!` "param 2 value is 0, must be
+  >=1" where Excel returns 1 → `error-code` → **`arg-semantics`** (errors on an arg
+  domain Excel accepts; not a both-error code clash).
+- DV-0071 `mid-start-0`: gsheets `#NUM!` (handoff guessed `#VALUE!` — it is `#NUM!`,
+  same domain message). Excel is `#VALUE!`, so both-error → `error-code` **stands**.
+  The cluster's real split: PERMUTATIONA (value-vs-error) vs MID (error-vs-error).
+- DV-0152 `ppmt-ipmt-plus-ppmt-equals-pmt`: every engine returns ~1073.6432; the
+  authored `expect` (1073.64) is rounded to 2dp → the spread is pure FP, no arg
+  interpretation. `arg-semantics` → **`precision`** (all 6 value engines).
+- DV-0210/0212 spill-block: gsheets `#REF!` "Array result was not expanded because
+  it would overwrite data" — a real spill-block (SEQUENCE works), mirror of Excel's
+  `#VALUE!`. `missing-function` → **`error-code`**.
+- Confirmed unchanged: DV-0056 SORTN ×2 = `[[1],[2],[4]]` (value correct; cause
+  "shape" imperfect but retires under CP3); DV-0120/0121/0123 DDB + DV-0221 GEOMEAN
+  FP-precision exact.
+
+**Item 2 — external-access sweep (commit `d9f9c4cc`).** No toggle-artifact `#REF!`
+remains in `external.yaml` (prior commit stripped IMPORT*/IMAGE; the Google-fetch
+fns carry no gsheets override, all `skip-reason:network`). One consistency gap:
+DETECTLANGUAGE lacked `features:[external-io]` its 8 siblings declare → added.
+FLATTEN (array-longtail.yaml) untouched — its `missing-function` overrides are the
+Excel-family engines that genuinely lack it; not an external-fetch fn.
+
+Open follow-ups (noted, not done): DV-0152's authored `expect` 1073.64 is rounded
+(the whole case is precision, not a real divergence — a future `expect` fix); item 3
+(37 multi-engine gsheets-touching DVs); the parked external-fetch build.
+
+166 assay tests green. 3 commits on `integrate/assay-onto-main` (LOCAL, not pushed):
+`56eb16bf` (prior fixes) · `1d7ff3ed` (item 1) · `d9f9c4cc` (item 2).
+
 ## Cleanup
 
-- Trash the scratch sheet: `https://docs.google.com/spreadsheets/d/1Si5d6lwYC4FxGMA-wlUbhSqwh0SYG8N0z6McWI6v8d8`
-- Temp probe test already removed.
+- Trash the scratch sheets (assay token is sheets-scope only — can't delete via API):
+  - `https://docs.google.com/spreadsheets/d/1Si5d6lwYC4FxGMA-wlUbhSqwh0SYG8N0z6McWI6v8d8` (prior session)
+  - `https://docs.google.com/spreadsheets/d/1LHeyeY9U7clGjhqXMmpYQpEH8mYtjpKRP5PP_Roqw3w` (this session's probe)
+- Temp probe test removed.
