@@ -221,11 +221,6 @@ tests:
     formula: =IMPORTDATA("https://example.com/data.csv")
     expect:
       error: "#NAME?"
-    overrides:
-      gsheets:
-        cause: missing-function
-        recorded:
-          error: "#REF!"
     tags:
       - external
       - skip-reason:network
@@ -238,11 +233,6 @@ tests:
     formula: =IMPORTFEED("https://example.com/feed.xml")
     expect:
       error: "#NAME?"
-    overrides:
-      gsheets:
-        cause: missing-function
-        recorded:
-          error: "#REF!"
     tags:
       - external
       - skip-reason:network
@@ -255,11 +245,6 @@ tests:
     formula: =IMPORTHTML("https://example.com/page.html", "table", 1)
     expect:
       error: "#NAME?"
-    overrides:
-      gsheets:
-        cause: missing-function
-        recorded:
-          error: "#REF!"
     tags:
       - external
       - skip-reason:network
@@ -272,11 +257,6 @@ tests:
     formula: =IMPORTXML("https://example.com/data.xml", "//title")
     expect:
       error: "#NAME?"
-    overrides:
-      gsheets:
-        cause: missing-function
-        recorded:
-          error: "#REF!"
     tags:
       - external
       - skip-reason:network
@@ -289,11 +269,6 @@ tests:
     formula: =IMPORTRANGE("https://docs.google.com/spreadsheets/d/abc123", "Sheet1!A1:B2")
     expect:
       error: "#NAME?"
-    overrides:
-      gsheets:
-        cause: missing-function
-        recorded:
-          error: "#REF!"
     tags:
       - external
       - skip-reason:network
@@ -609,11 +584,6 @@ tests:
     formula: =IMAGE("https://example.com/pic.png")
     expect:
       error: "#NAME?"
-    overrides:
-      gsheets:
-        cause: missing-function
-        recorded:
-          error: "#REF!"
     tags:
       - google
       - skip-reason:network
