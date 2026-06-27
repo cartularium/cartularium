@@ -1,6 +1,6 @@
 # The fork-annotation store (design, 3a)
 
-**Status: PROPOSED — 2026-06-20.** The build design for CP3 increment #3: an attributed store
+**Status: RATIFIED — 2026-06-26.** The build design for CP3 increment #3: an attributed store
 for fork annotations, living in edit-shell and joined to assay's observations out of band. It
 turns the annotation-layer principle (`annotation-layer-design-2026-06-19.md`) into a concrete
 schema (in `@cartularium/contracts`), a D1 table + API in `packages/edit-shell`, and a one-time
@@ -11,22 +11,27 @@ contract-2026-06-17.md` (the manifest is observation-only — shipped), `termino
 (vocabulary). Settled steers: the schema lives in contracts; the build (3b+) starts after this
 doc.
 
-**Review state.** §1–§7 are agreed in principle; §8 (contracts dependency) and §9 (review
-gate) are open. An adversarial pass (2026-06-20) raised four items to settle on this read —
-marked `[R#]` in the text:
+**Review state — resolved 2026-06-26 (maintainer greenlight).** §1–§7 held in principle; the
+two open decisions and the four adversarial items are settled. Each `[R#]` marker in the text
+below has been folded to its verdict.
 
-- **R1 (§4)** — publishing test `tags` to the manifest would expose outcome-claim tags that
-  *already exist* in the corpus (`excel-only`, `divergence`, `coercion-divergence`). The §1 rule
-  is only a norm, and the corpus shows it already leaks, so the publish step needs a hygiene
-  gate, not just a norm.
-- **R2 (§6/§7)** — "the DV-lifecycle retires fully" is overstated. The "did this engine change?"
-  reconstruction has a key mismatch (scope refs are `SUBJECT/name`; the results history is keyed
-  differently) and can't tell a rename from a convergence. Retirement is coupled to a
-  results-history substrate that isn't designed yet.
-- **R3 (§5/§6)** — a ref-set scope whose ref no longer resolves (renamed/deleted case) looks
-  identical to a converged fork. The coverage view needs a distinct "dangling ref" signal.
-- **R4 (§9)** — publish-on-sign puts a contributor's annotation on the public render with only
-  rate-limit + delete behind it, and the tiered render that would soften that doesn't exist yet.
+- **§8 — contracts dependency: CONFIRMED.** edit-shell takes its first `@cartularium/contracts`
+  edge so it and sheets-wiki share one `AssayForkAnnotationV1` shape. Contracts is Worker-safe;
+  the build-before-consume rule applies.
+- **§9/R4 — review gate: OPTION B (light maintainer review before public render).** Publish-on-
+  sign (A) needs the tiered "attributed-but-unreviewed" render to soften exposure, and that
+  render does not exist yet. B is the safe, reversible call. **Constraint:** B is moderation /
+  hygiene only (spam, abuse, off-topic) — it must NOT become correctness-vouching, or it
+  re-breaks the no-authority principle. The API is shaped so flipping to A is trivial once the
+  tiered render lands.
+- **R1 (§4) — tag publish: GATE, not sweep.** A publish-time filter keeps case-property tags and
+  drops outcome-claim tags (`excel-only`, `divergence`, `coercion-divergence`); a one-time sweep
+  rots as new tags are authored. Recorded as 3e work.
+- **R2 (§6/§7) — DV-lifecycle does NOT "retire fully":** corrected below. Retirement is coupled
+  to an undesigned results-history substrate (keyed by the same case-ref the scope uses, able to
+  tell a rename from a convergence) and is explicitly deferred, not claimed done.
+- **R3 (§5/§6) — dangling-ref signal:** the coverage view (3d) gets a distinct "dangling ref"
+  signal so a scope whose ref no longer resolves does not read as a converged fork.
 
 What held up under the adversary: the join key is genuinely synced, `category` already lives on
 the manifest test entry, contracts is Worker-safe, and most DVs are real value-forks (so the
@@ -104,8 +109,11 @@ It stores nothing observed and nothing temporal:
   already publishes per fork. Storing them would freeze a fact that drifts when the scoped forks
   change, so they're computed from the manifest join at read time (`engines` = the union over the
   scoped forks' classes; `category` from the joined cases). The migration does not copy them.
-- **No lifecycle/status field.** "Did this change?" is a question about the results over time, not
-  about the annotation (§6).
+- **No stability-lifecycle field.** "Did this change?" (seeded / grown / vanished) is a question
+  about the results over time, not about the annotation (§6) — never stored here. *Distinct from
+  this:* the row carries a publication `status` (`pending`/`published`/`rejected`) for the §9
+  review gate. That is an operational moderation column on the table (like `created_at`), not
+  authored content and not the stability lifecycle — it stays out of the authored DTO.
 
 Invariants: out of band (never a manifest field); attributed, not authority (signed — "@alice's
 reading," not assay's verdict); sticky id; and the unit is the annotation, not the `cause` (two
@@ -155,15 +163,19 @@ Tags are author-declared intent, never machine-inferred from outcomes.
 2. Migrate every DV as one ref-set clause (`[{kind:"ref-set", refs: tests}]`) — the faithful
    snapshot. This is provisional (see §4 reclassification).
 3. Tag-predicates ship in v1; observed-predicates wait for the matcher. Tag-predicates need the
-   manifest to publish test `tags` (below). **[R1: that publish needs a hygiene gate.]**
+   manifest to publish test `tags` (below). **[R1 — resolved: GATE the publish, see below.]**
 4. `links.divergence` stays retired; authoring-time connection goes through case-tags.
 5. The case-tag vocabulary is open (free-form), not an enum. The §1 rule is a norm for *authoring*.
-   **[R1: but publishing tags into the manifest is a relation-layer boundary that does need a
-   gate — the corpus already carries outcome-claim tags.]**
+   **[R1 — resolved: but publishing tags into the manifest is a relation-layer boundary, so it
+   gets a hygiene GATE (not merely the authoring norm) — the corpus already carries outcome-claim
+   tags.]**
 
 **Manifest tags.** `ManifestV5TestEntry` has no `tags` today. Tag-predicates need it, so the
 manifest must publish test `tags` — additive, alongside the `category` it already carries.
-**[R1: gated on tag hygiene, not a clean drop-in.]**
+**[R1 — resolved: a publish-time hygiene GATE filters the set — case-property tags pass,
+outcome-claim tags (`excel-only`, `divergence`, `coercion-divergence`) are dropped at the
+relation boundary. A gate, not a one-time sweep, because new tags keep being authored. This is
+3e work; v1 of the store does not depend on it.]**
 
 **Reclassification (deferred).** The ref-set migration is provisional. Once the store,
 manifest-tags, and API exist, a policy-driven pass — likely workflow-automated, alongside
@@ -175,10 +187,13 @@ writes annotation content. Gated on all the infra landing first; the policy itse
 A one-time, additive import:
 
 - Each `DV-####.yaml` → one row: `id = DV-####`, `author_id = "auto-seeded (provisional)"`,
-  `content = summary`, `cause = cause`, `scope = [{kind:"ref-set", refs: tests}]`.
+  `content = summary`, `cause = cause`, `scope = [{kind:"ref-set", refs: tests}]`,
+  `status = published` (existing catalogue content, not a new contribution — §9).
   `engines`/`category` are not copied (derived, §3).
-- The 10 vanished DVs import as plain rows; they simply match no current fork. **[R3: that should
-  read as a distinct "dangling ref," not as a convergence.]**
+- The 10 vanished DVs import as plain rows; they simply match no current fork. **[R3 — resolved:
+  the coverage view (3d) distinguishes "dangling ref" (a scoped ref that no longer resolves —
+  renamed/deleted case) from "converged" (the fork resolved). The migration imports them plain;
+  3d adds the signal.]**
 - It touches nothing in-repo: the YAML, `seedCatalogue`, and `history` stay (the V4 site still
   renders them). They retire with #4, not here.
 - Mechanism: a maintainer-run script reading `loadDvs()`, idempotent on `id`
@@ -201,9 +216,11 @@ about the results over time, not about the annotation, and is answered by compos
 
 The annotation only says which cases to look at; the time data lives in an independent,
 observation-side record (a series of published manifests, with the committed fixtures as the raw
-substrate). **[R2: this needs a results-history keyed by the same case-ref the scope uses and able
-to tell a rename from a convergence. That substrate isn't designed yet, so the DV-lifecycle does
-not "retire fully" until it is.]**
+substrate). **[R2 — resolved: this substrate is NOT yet designed. It needs a results-history
+keyed by the same case-ref the scope uses (today's scope refs are `SUBJECT/name`; the results
+history is keyed differently) and able to tell a rename from a convergence. Until it exists the
+in-repo DV-lifecycle does NOT "retire fully" — the YAML/`history`/`seedCatalogue` stay as the V4
+substrate (they retire with #4, not 3a). 3a claims no stability computation.]**
 
 ## 7. Stability is observation-side, not an annotation property
 
@@ -221,7 +238,7 @@ The DTO lands in `@cartularium/contracts` (`assay-fork-annotation.ts`, versioned
 **edit-shell imports contracts for the first time** — a new dependency and the build-before-consume
 rule. It's the right edge: edit-shell and sheets-wiki then share one `AssayForkAnnotationV1` shape
 instead of duplicating it, and the adversary confirmed contracts is Worker-safe, so the bundling
-risk is low. **Open: confirm the dependency.**
+risk is low. **Resolved 2026-06-26: CONFIRMED** — edit-shell takes the contracts edge.
 
 ## 9. API and the review gate
 
@@ -232,14 +249,29 @@ Mount under `/api/edit/assay`, reusing `requireSession`, `rateLimit`, `isAssayMa
 - `PATCH /fork-annotations/:id` — edit own (or maintainer).
 - `DELETE /fork-annotations/:id` — retire own (or maintainer).
 
-**Open — the review gate.** An annotation is attributed, not vouched, so in principle it needs no
-accept gate (a creation gate would put the maintainer back in charge of meaning). Two options:
+**Resolved 2026-06-26 — OPTION B (light review).** An annotation is attributed, not vouched, so
+in principle it needs no accept gate. Two options were on the table:
 
 - **A — publish on sign:** authenticated + rate-limited + maintainer-can-delete.
-- **B — light review:** a maintainer pass before it joins the public render.
+- **B — light review:** a maintainer pass before it joins the public render. ← **CHOSEN.**
 
-**[R4: publish-on-sign exposes contributor annotations on the public render with only rate-limit
-behind them, and the tiered render that would mark them as unreviewed doesn't exist yet.]**
+**Why B, and the constraint.** Publish-on-sign (A) exposes a contributor's annotation on the
+public render with only rate-limit behind it, and the tiered "attributed-but-unreviewed" render
+that would soften that **[R4]** does not exist yet. B is the safe, reversible interim. **The
+review is moderation / hygiene only** (spam, abuse, off-topic) — it must NOT slide into vouching
+for the annotation's correctness, or it re-breaks the no-authority-over-meaning principle (§1).
+
+Concretely, this adds a `status` to the *row* (NOT the DTO's authored content — a publication-
+state column: `pending` → `published`, plus maintainer `rejected`), so:
+
+- `POST` creates a `pending` row (author-visible immediately; not on the public render).
+- A maintainer publish/reject action flips it (reuse `isAssayMaintainer()`, mirror the
+  submit/review rails of `assay-preview.ts`).
+- `GET` filters by `status` so the public renderer asks for `published` only.
+
+Shape the API so flipping to A later (drop the gate; default `published`) is trivial once the
+tiered render lands. Migrated DVs import directly as `published` (§5) — they are existing
+catalogue content, not new contributions.
 
 ## 10. Sequencing
 
@@ -253,8 +285,15 @@ behind them, and the tiered render that would mark them as unreviewed doesn't ex
    substrate (R2); retiring the in-repo `history`/`seedCatalogue`/YAML with #4. The sheets-wiki
    render is #4.
 
-## 11. Open decisions
+## 11. Resolved decisions (2026-06-26)
 
-- **§8** — confirm the edit-shell → contracts dependency.
-- **§9** — the review gate (publish-on-sign vs light review), informed by R4.
-- **R1–R4** (top) — fold into §4/§6/§7/§9 as each is decided.
+All open items are settled (maintainer greenlight); the doc is RATIFIED.
+
+- **§8** — edit-shell → contracts dependency: **CONFIRMED.**
+- **§9 / R4** — review gate: **OPTION B (light review)** — a publication `status`
+  (`pending`/`published`/`rejected`) moderation gate, hygiene-only, API shaped to flip to A later.
+- **R1** — manifest tag publish: **GATE** (publish-time hygiene filter), 3e work.
+- **R2** — DV-lifecycle does NOT retire fully; the results-history substrate is deferred (#4).
+- **R3** — coverage view (3d) distinguishes dangling-ref from converged.
+
+Build proceeds at **3b** (§10): contracts DTO + D1 migration + CRUD API.
