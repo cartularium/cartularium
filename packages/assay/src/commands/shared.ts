@@ -51,6 +51,8 @@ const parsed = parseArgs({
     output: { type: "string" },
     // seed-fork-annotations
     now: { type: "string" },
+    // annotation-coverage
+    annotations: { type: "string" },
     // history
     record: { type: "boolean", default: false },
     inspect: { type: "string" },
