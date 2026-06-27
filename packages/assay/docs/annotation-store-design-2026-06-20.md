@@ -185,6 +185,14 @@ writes annotation content. Gated on all the infra landing first; the policy itse
 
 ## 5. The migration
 
+**Built 2026-06-26 (3c):** `assay seed-fork-annotations` emits idempotent UPSERT SQL from
+`loadDvs()`; a maintainer applies it with `wrangler d1 execute cartularium-assay-preview --file=…`.
+It is an assay-side SQL exporter, NOT an API feed (the CRUD API forces a random id / session author
+/ `pending` status, which the import must override). `ON CONFLICT(id) DO UPDATE` refreshes the
+YAML-derived fields only, preserving `author_id`/`status`/`created_at`. The legacy `feature-absent`
+cause normalises to `missing-function`. Verified live on local D1 (255 rows, idempotent,
+preservation contract holds). Pure logic: `src/catalogue-site/fork-annotation-seed.ts`.
+
 A one-time, additive import:
 
 - Each `DV-####.yaml` → one row: `id = DV-####`, `author_id = "auto-seeded (provisional)"`,
