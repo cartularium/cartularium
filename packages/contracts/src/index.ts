@@ -8,25 +8,32 @@ export { ALL_PLATFORMS, isPlatform } from "./platform.js"
 export type { Platform } from "./platform.js"
 
 // closed enum of override causes (assay schema §7)
-export type Cause =
-  | "missing-function"
-  | "missing-arg-form"
-  | "argument-arity"
-  | "arg-semantics"
-  | "precision"
-  | "format-rendering"
-  | "locale"
-  | "shape"
-  | "array-orientation"
-  | "error-code"
-  | "error-attribution"
-  | "null-vs-zero"
-  | "recalc-semantics"
-  | "array-handling"
-  | "unimplemented-edge"
-  | "version-skew"
-  | "intentional-spec"
-  | "TODO"
+export const ALL_CAUSES = [
+  "missing-function",
+  "missing-arg-form",
+  "argument-arity",
+  "arg-semantics",
+  "precision",
+  "format-rendering",
+  "locale",
+  "shape",
+  "array-orientation",
+  "error-code",
+  "error-attribution",
+  "null-vs-zero",
+  "recalc-semantics",
+  "array-handling",
+  "unimplemented-edge",
+  "version-skew",
+  "intentional-spec",
+  "TODO",
+] as const
+
+export type Cause = (typeof ALL_CAUSES)[number]
+
+export function isCause(value: string): value is Cause {
+  return (ALL_CAUSES as readonly string[]).includes(value)
+}
 
 // test category (assay schema §3)
 export const ALL_CATEGORIES = [
@@ -283,6 +290,18 @@ export function assertSupportedFormulaCompatibilityManifestVersion(
     )
   }
 }
+
+// assay fork-annotation store — see assay-fork-annotation.ts
+export { ASSAY_FORK_ANNOTATION_VERSION } from "./assay-fork-annotation.js"
+
+export type {
+  AnnotationScope,
+  AssayForkAnnotationInput,
+  AssayForkAnnotationStatus,
+  AssayForkAnnotationV1,
+  ForkPredicate,
+  ScopeClause,
+} from "./assay-fork-annotation.js"
 
 // edit-wiki page index — see edit-index.ts
 export {
