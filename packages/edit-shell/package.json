@@ -11,6 +11,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@cartularium/contracts": "workspace:*",
     "hono": "^4.6.0",
     "@octokit/auth-app": "^7.1.0",
     "@octokit/rest": "^21.0.0",

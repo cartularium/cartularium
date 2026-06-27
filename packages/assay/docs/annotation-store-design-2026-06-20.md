@@ -113,7 +113,8 @@ It stores nothing observed and nothing temporal:
   about the results over time, not about the annotation (§6) — never stored here. *Distinct from
   this:* the row carries a publication `status` (`pending`/`published`/`rejected`) for the §9
   review gate. That is an operational moderation column on the table (like `created_at`), not
-  authored content and not the stability lifecycle — it stays out of the authored DTO.
+  authored content and not the stability lifecycle — it stays out of the authored input
+  (`AssayForkAnnotationInput`) and lives on the canonical record (`AssayForkAnnotationV1`).
 
 Invariants: out of band (never a manifest field); attributed, not authority (signed — "@alice's
 reading," not assay's verdict); sticky id; and the unit is the annotation, not the `cause` (two

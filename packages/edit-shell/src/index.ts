@@ -6,6 +6,7 @@ import { rateLimit } from "./middleware/rate-limit"
 import { requestId } from "./middleware/request-id"
 import { requireSession } from "./middleware/session"
 import assetsRoutes from "./routes/assets"
+import assayForkAnnotationRoutes from "./routes/assay-fork-annotations"
 import assayPreviewRoutes from "./routes/assay-preview"
 import assayRunnerRoutes from "./routes/assay-runner"
 import authRoutes from "./routes/auth"
@@ -42,6 +43,8 @@ app.use("/api/edit/assets/*", requireSession, rateLimit)
 app.route("/api/edit/assets", assetsRoutes)
 
 app.use("/api/edit/assay/*", requireSession, rateLimit)
+// More specific mount first: fork-annotations is a distinct sub-lane of the assay group.
+app.route("/api/edit/assay/fork-annotations", assayForkAnnotationRoutes)
 app.route("/api/edit/assay", assayPreviewRoutes)
 
 app.route("/api/edit/assay-runner", assayRunnerRoutes)
