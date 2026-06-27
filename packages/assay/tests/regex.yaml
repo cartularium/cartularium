@@ -222,7 +222,7 @@ tests:
     expect: true
     overrides:
       gsheets:
-        cause: missing-function
+        cause: missing-arg-form
         recorded:
           error: "#REF!"
     tags:
@@ -240,7 +240,7 @@ tests:
     expect: false
     overrides:
       gsheets:
-        cause: missing-function
+        cause: missing-arg-form
         recorded:
           error: "#REF!"
     tags:
@@ -258,7 +258,7 @@ tests:
     expect: true
     overrides:
       gsheets:
-        cause: missing-function
+        cause: missing-arg-form
         recorded:
           error: "#REF!"
     tags:
@@ -550,7 +550,7 @@ tests:
     expect: true
     overrides:
       gsheets:
-        cause: missing-function
+        cause: missing-arg-form
         recorded:
           error: "#REF!"
     tags:
@@ -568,7 +568,7 @@ tests:
     expect: true
     overrides:
       gsheets:
-        cause: missing-function
+        cause: missing-arg-form
         recorded:
           error: "#REF!"
     tags:
@@ -586,7 +586,7 @@ tests:
     expect: true
     overrides:
       gsheets:
-        cause: missing-function
+        cause: missing-arg-form
         recorded:
           error: "#REF!"
     tags:
