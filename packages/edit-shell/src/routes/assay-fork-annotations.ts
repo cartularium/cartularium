@@ -24,17 +24,19 @@ const STATUSES: AssayForkAnnotationStatus[] = ["pending", "published", "rejected
 
 // === request validation (valibot) ===
 
+const Token = v.pipe(v.string(), v.trim(), v.nonEmpty()) // no blank/whitespace-only refs, tags, subjects
+
 const RefSetClause = v.object({
   kind: v.literal("ref-set"),
-  refs: v.pipe(v.array(v.pipe(v.string(), v.nonEmpty())), v.minLength(1)),
+  refs: v.pipe(v.array(Token), v.minLength(1)),
 })
 
 const ForkPredicateSchema = v.object({
-  tags: v.optional(v.array(v.pipe(v.string(), v.nonEmpty()))),
+  tags: v.optional(v.array(Token)),
   enginesAlone: v.optional(v.array(v.picklist(ALL_PLATFORMS))),
   valueKind: v.optional(v.picklist(["error", "number", "text", "blank"])),
-  sentinel: v.optional(v.string()),
-  subjectIn: v.optional(v.array(v.pipe(v.string(), v.nonEmpty()))),
+  sentinel: v.optional(v.pipe(v.string(), v.nonEmpty())),
+  subjectIn: v.optional(v.array(Token)),
 })
 
 const PredicateClause = v.object({
@@ -53,10 +55,11 @@ const CreateBody = v.object({
   scope: ScopeSchema,
 })
 
-// at least one field present is enforced in the handler (valibot allows an all-omitted object)
+// at least one field present is enforced in the handler (valibot allows an all-omitted object).
+// `cause` is nullable so an author can CLEAR it (null) vs leave it (omitted) — `cause?` is optional.
 const PatchBody = v.object({
   content: v.optional(ContentSchema),
-  cause: v.optional(v.picklist(ALL_CAUSES)),
+  cause: v.optional(v.nullable(v.picklist(ALL_CAUSES))),
   scope: v.optional(ScopeSchema),
 })
 
@@ -95,6 +98,17 @@ async function loadRow(env: Env, id: string): Promise<ForkAnnotationRow | null> 
   return env.ASSAY_PREVIEW_DB.prepare(`SELECT * FROM assay_fork_annotations WHERE id = ?`)
     .bind(id)
     .first<ForkAnnotationRow>()
+}
+
+// Same visibility rule the list GET applies: published rows are public; a pending/rejected row is
+// visible only to its author or a maintainer. A caller who can't see a row gets 404 everywhere
+// (read AND write), so existence is never leaked via a 403/404 difference.
+function canSee(row: ForkAnnotationRow, login: string, maintainer: boolean): boolean {
+  return row.status === "published" || row.author_id === login || maintainer
+}
+
+function canWrite(row: ForkAnnotationRow, login: string, maintainer: boolean): boolean {
+  return row.author_id === login || maintainer
 }
 
 // === routes ===
@@ -138,9 +152,7 @@ app.get("/:id", async (c) => {
   const row = await loadRow(c.env, c.req.param("id"))
   if (!row) return c.json({ error: "not_found" }, 404)
   const login = c.var.session.user_login
-  if (row.status !== "published" && row.author_id !== login && !isAssayMaintainer(c.env, login)) {
-    return c.json({ error: "not_found" }, 404)
-  }
+  if (!canSee(row, login, isAssayMaintainer(c.env, login))) return c.json({ error: "not_found" }, 404)
   return c.json({ annotation: rowToAnnotation(row) })
 })
 
@@ -177,7 +189,8 @@ app.patch("/:id", async (c) => {
 
   const login = c.var.session.user_login
   const maintainer = isAssayMaintainer(c.env, login)
-  if (row.author_id !== login && !maintainer) return c.json({ error: "forbidden" }, 403)
+  if (!canSee(row, login, maintainer)) return c.json({ error: "not_found" }, 404)
+  if (!canWrite(row, login, maintainer)) return c.json({ error: "forbidden" }, 403)
 
   const json = await c.req.json().catch(() => null)
   const parsed = v.safeParse(PatchBody, json)
@@ -202,8 +215,10 @@ app.patch("/:id", async (c) => {
     sets.push(`scope_json = ?`)
     binds.push(JSON.stringify(scope))
   }
-  // re-moderate a published row edited by its (non-maintainer) author
-  if (!maintainer && row.status === "published") sets.push(`status = 'pending'`)
+  // re-moderate any already-decided row edited by its (non-maintainer) author: an edited published
+  // row OR an edited rejected row goes back to pending for review (a rejected row isn't stuck —
+  // the author addresses feedback and re-submits). A pending row stays pending.
+  if (!maintainer && row.status !== "pending") sets.push(`status = 'pending'`)
   sets.push(`updated_at = ?`)
   binds.push(now)
 
@@ -222,9 +237,9 @@ app.delete("/:id", async (c) => {
   if (!row) return c.json({ error: "not_found" }, 404)
 
   const login = c.var.session.user_login
-  if (row.author_id !== login && !isAssayMaintainer(c.env, login)) {
-    return c.json({ error: "forbidden" }, 403)
-  }
+  const maintainer = isAssayMaintainer(c.env, login)
+  if (!canSee(row, login, maintainer)) return c.json({ error: "not_found" }, 404)
+  if (!canWrite(row, login, maintainer)) return c.json({ error: "forbidden" }, 403)
 
   await c.env.ASSAY_PREVIEW_DB.prepare(`DELETE FROM assay_fork_annotations WHERE id = ?`).bind(id).run()
   return c.body(null, 204)

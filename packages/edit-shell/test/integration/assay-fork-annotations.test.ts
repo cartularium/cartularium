@@ -158,12 +158,44 @@ describe("assay fork-annotation store", () => {
     expect(((await patched.json()) as any).annotation.status).toBe("published")
   })
 
-  it("lets the author delete, but not a stranger", async () => {
+  it("re-enters review when a rejected row is edited by its author", async () => {
+    const bob = await makeSession("bob")
+    const alice = await makeSession("alice")
+    const id = ((await (await create(bob)).json()) as any).annotation.id
+    await SELF.fetch(`${BASE}/${id}/review`, authed(alice, "POST", { decision: "reject" }))
+
+    const patched = await SELF.fetch(`${BASE}/${id}`, authed(bob, "PATCH", { content: "addressed the feedback" }))
+    expect(patched.status).toBe(200)
+    expect(((await patched.json()) as any).annotation.status).toBe("pending")
+  })
+
+  it("clears cause with an explicit null", async () => {
+    const bob = await makeSession("bob")
+    const id = ((await (await create(bob)).json()) as any).annotation.id // created with cause: error-attribution
+    const patched = await SELF.fetch(`${BASE}/${id}`, authed(bob, "PATCH", { cause: null }))
+    expect(patched.status).toBe(200)
+    expect(((await patched.json()) as any).annotation.cause).toBeUndefined()
+  })
+
+  it("rejects whitespace-only scope tokens", async () => {
+    const bob = await makeSession("bob")
+    expect((await create(bob, { content: "x", scope: [{ kind: "ref-set", refs: ["   "] }] })).status).toBe(400)
+  })
+
+  it("hides a pending row from a stranger's delete (404), but 403s a visible one", async () => {
     const bob = await makeSession("bob")
     const carol = await makeSession("carol")
+    const alice = await makeSession("alice")
     const id = ((await (await create(bob)).json()) as any).annotation.id
 
+    // pending row: carol can't see it -> 404 (existence hidden, consistent with GET)
+    expect((await SELF.fetch(`${BASE}/${id}`, authed(carol, "DELETE"))).status).toBe(404)
+
+    // once published, carol can see it -> 403 (visible, but not hers)
+    await SELF.fetch(`${BASE}/${id}/review`, authed(alice, "POST", { decision: "publish" }))
     expect((await SELF.fetch(`${BASE}/${id}`, authed(carol, "DELETE"))).status).toBe(403)
+
+    // the author can delete
     expect((await SELF.fetch(`${BASE}/${id}`, authed(bob, "DELETE"))).status).toBe(204)
     expect((await SELF.fetch(`${BASE}/${id}`, authed(bob, "GET"))).status).toBe(404)
   })
