@@ -55,13 +55,33 @@ export interface AssayForkAnnotationInput {
 }
 
 /** The canonical stored + published entity: the authored input plus server-assigned identity,
- * attribution, publication status, and timestamps. `id` is sticky (migrated DVs keep their
- * `DV-####`); the old content-fingerprint (`clusterKey`) is retired. The renderer consumes only
- * `published` rows and may ignore `status`. */
+ * attribution, publication status, verification provenance, and timestamps. `id` is sticky
+ * (migrated DVs keep their `DV-####`); the old content-fingerprint (`clusterKey`) is retired. The
+ * renderer consumes only `published` rows and may ignore `status`.
+ *
+ * THREE INDEPENDENT PROVENANCE AXES — keep them un-smushed:
+ *  - `author_id`        — WHO wrote the content (authorship).
+ *  - `status`           — operational HYGIENE moderation (pending/published/rejected); never
+ *                         correctness-vouching (see {@link AssayForkAnnotationStatus}).
+ *  - `verified_by`/`_at` — a named human has CHECKED this annotation's claim against the live
+ *                         evidence and signed. This is the value signal: agent-seeded annotations
+ *                         are unverified (`null`) scaffolding; a human-verified lens is the asset.
+ *
+ * Why this stays inside the no-verdict principle: verification is ATTRIBUTED (`verified_by` names
+ * the human) — it is that person's claim about a contributed annotation, owned at the point of
+ * use, NOT assay adjudicating engine correctness. assay still holds no verdicts; the store records
+ * who-attested-what. `verified_by` is server-set (a verification act, not authored content), so it
+ * is absent from {@link AssayForkAnnotationInput}. An edit to the authored content invalidates a
+ * prior attestation — the store clears `verified_*` on any content/cause/scope change. */
 export interface AssayForkAnnotationV1 extends AssayForkAnnotationInput {
   id: string
   author_id: string
   status: AssayForkAnnotationStatus
+  /** login of the human who verified this annotation against live evidence; `null` = unverified
+   * (the auto-seeded / provisional default). Cleared whenever the authored content is edited. */
+  verified_by: string | null
+  /** ISO timestamp of the verification act; `null` iff `verified_by` is `null`. */
+  verified_at: string | null
   created_at: string
   updated_at: string
 }

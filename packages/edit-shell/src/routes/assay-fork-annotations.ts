@@ -67,6 +67,10 @@ const ReviewBody = v.object({
   decision: v.picklist(["publish", "reject"]),
 })
 
+const VerifyBody = v.object({
+  verified: v.boolean(),
+})
+
 // === row <-> DTO ===
 
 interface ForkAnnotationRow {
@@ -76,6 +80,8 @@ interface ForkAnnotationRow {
   cause: string | null
   scope_json: string
   status: AssayForkAnnotationStatus
+  verified_by: string | null
+  verified_at: string | null
   created_at: string
   updated_at: string
 }
@@ -87,6 +93,8 @@ function rowToAnnotation(row: ForkAnnotationRow): AssayForkAnnotationV1 {
     content: row.content,
     scope: JSON.parse(row.scope_json) as AnnotationScope,
     status: row.status,
+    verified_by: row.verified_by ?? null,
+    verified_at: row.verified_at ?? null,
     created_at: row.created_at,
     updated_at: row.updated_at,
   }
@@ -125,6 +133,13 @@ app.get("/", async (c) => {
     return c.json({ error: "bad_status" }, 400)
   }
 
+  // ?verified=true|false narrows by verification provenance — `false` is the human-verification
+  // backlog (annotations a human should still check; the auto-seeded provisional ones).
+  const verifiedParam = c.req.query("verified")
+  if (verifiedParam !== undefined && verifiedParam !== "true" && verifiedParam !== "false") {
+    return c.json({ error: "bad_verified" }, 400)
+  }
+
   const where: string[] = []
   const binds: string[] = []
   if (!maintainer) {
@@ -134,6 +149,9 @@ app.get("/", async (c) => {
   if (statusParam !== undefined) {
     where.push(`status = ?`)
     binds.push(statusParam)
+  }
+  if (verifiedParam !== undefined) {
+    where.push(verifiedParam === "true" ? `verified_at IS NOT NULL` : `verified_at IS NULL`)
   }
 
   const sql =
@@ -215,6 +233,10 @@ app.patch("/:id", async (c) => {
     sets.push(`scope_json = ?`)
     binds.push(JSON.stringify(scope))
   }
+  // any edit to the authored content invalidates a prior human verification — an attestation is to a
+  // content SNAPSHOT, so the row drops back into the unverified backlog (applies to maintainer edits
+  // too; PATCH always mutates content/cause/scope, the empty patch is rejected above).
+  sets.push(`verified_by = NULL`, `verified_at = NULL`)
   // re-moderate any already-decided row edited by its (non-maintainer) author: an edited published
   // row OR an edited rejected row goes back to pending for review (a rejected row isn't stuck —
   // the author addresses feedback and re-submits). A pending row stays pending.
@@ -263,6 +285,37 @@ app.post("/:id/review", async (c) => {
   const now = new Date().toISOString()
   await c.env.ASSAY_PREVIEW_DB.prepare(`UPDATE assay_fork_annotations SET status = ?, updated_at = ? WHERE id = ?`)
     .bind(status, now, id)
+    .run()
+
+  const updated = await loadRow(c.env, id)
+  return c.json({ annotation: rowToAnnotation(updated!) })
+})
+
+// POST /:id/verify — the verification act (the THIRD provenance axis). Maintainer-only; a named
+// human attests this annotation's claim holds against the live evidence (`verified: true`) or
+// retracts that (`verified: false`). Distinct from /review (which is hygiene moderation, never
+// correctness): verification is the attributed confidence signal that turns an auto-seeded
+// provisional annotation into the asset — a human-verified lens. It stays inside the no-verdict
+// principle because it names the verifier (`verified_by`); assay still vouches for nothing.
+app.post("/:id/verify", async (c) => {
+  const login = c.var.session.user_login
+  if (!isAssayMaintainer(c.env, login)) return c.json({ error: "forbidden" }, 403)
+
+  const id = c.req.param("id")
+  const row = await loadRow(c.env, id)
+  if (!row) return c.json({ error: "not_found" }, 404)
+
+  const json = await c.req.json().catch(() => null)
+  const parsed = v.safeParse(VerifyBody, json)
+  if (!parsed.success) return c.json({ error: "bad_body" }, 400)
+
+  const now = new Date().toISOString()
+  const verifiedBy = parsed.output.verified ? login : null
+  const verifiedAt = parsed.output.verified ? now : null
+  await c.env.ASSAY_PREVIEW_DB.prepare(
+    `UPDATE assay_fork_annotations SET verified_by = ?, verified_at = ?, updated_at = ? WHERE id = ?`,
+  )
+    .bind(verifiedBy, verifiedAt, now, id)
     .run()
 
   const updated = await loadRow(c.env, id)
