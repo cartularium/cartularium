@@ -97,9 +97,20 @@ DETECTLANGUAGE lacked `features:[external-io]` its 8 siblings declare → added.
 FLATTEN (array-longtail.yaml) untouched — its `missing-function` overrides are the
 Excel-family engines that genuinely lack it; not an external-fetch fn.
 
-Open follow-ups (noted, not done): DV-0152's authored `expect` 1073.64 is rounded
-(the whole case is precision, not a real divergence — a future `expect` fix); item 3
-(37 multi-engine gsheets-touching DVs); the parked external-fetch build.
+Open follow-ups (noted, not done): item 3 (37 multi-engine gsheets-touching DVs);
+the parked external-fetch build.
+
+**DV-0152 — DO NOT chase an `expect` edit.** Archaeology (2026-06-27): per the
+ratified CP2 contract (`comparison-output-contract-2026-06-17.md`), `expect:` is
+**lens sugar, not canon** — an out-of-band (A) self-check assertion, not the oracle.
+Under the verdict-free regen the partition is computed from the **recorded cross-engine
+values**, not from `expect`. PPMT's engines all return ~1073.6432 ⇒ **uniform (no
+fork)**; the old "divergence" was an artifact of scoring full-precision results against
+a 2-dp `expect`. So the rounded `expect` self-dissolves when the matrix stops being
+scored against it — no manual edit needed. (The authoring-schema migration that moves
+`expect`→lens sidecar + retires `override` is DESIGNED but NOT built — a named CP3 cost,
+see §3 of that doc; today `catalogue.ts` still carries `expect`/`overrides`/`status`
+with their old canon semantics.)
 
 166 assay tests green. 3 commits on `integrate/assay-onto-main` (LOCAL, not pushed):
 `56eb16bf` (prior fixes) · `1d7ff3ed` (item 1) · `d9f9c4cc` (item 2).
