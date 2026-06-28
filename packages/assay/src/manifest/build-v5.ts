@@ -40,6 +40,20 @@ import { indexTestsByFunction, manifestHash } from "./build.js";
 
 export const MANIFEST_V5_VERSION = 5 as const;
 
+// R1 hygiene GATE (annotation-store-design §4): publishing case tags into the manifest is a
+// relation-layer boundary, so OUTCOME-CLAIM tags — ones that assert a cross-engine verdict rather
+// than describe the case — are dropped here. Only descriptive case-property tags reach the
+// observation manifest, where tag-predicates resolve against them. A GATE re-applied every build
+// (not a one-time sweep), since new tags keep being authored; extend the set as new outcome-claim
+// tags surface.
+const OUTCOME_CLAIM_TAGS = new Set(["divergence", "coercion-divergence", "excel-only"]);
+
+function gateTags(tags: string[] | undefined): string[] | undefined {
+  if (!tags) return undefined;
+  const kept = tags.filter((t) => !OUTCOME_CLAIM_TAGS.has(t));
+  return kept.length > 0 ? kept : undefined;
+}
+
 export interface BuildManifestV5Input {
   dvs: DvEntry[];
   tests: Map<string, TestInfo>;
@@ -124,6 +138,8 @@ function buildTestEntry(t: TestInfo, ref: string, byEngine: Map<Platform, Outcom
     if (obs) engines[engine] = obs;
   }
 
+  const tags = gateTags(t.tags);
+
   return {
     ref,
     subject: t.subject,
@@ -135,6 +151,7 @@ function buildTestEntry(t: TestInfo, ref: string, byEngine: Map<Platform, Outcom
     category: t.category as Category,
     engines,
     ...(t.aliases && t.aliases.length > 0 ? { aliases: t.aliases } : {}),
+    ...(tags ? { tags } : {}),
     partition,
   };
 }

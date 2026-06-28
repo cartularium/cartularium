@@ -13,7 +13,7 @@ const num = (n: number): Outcome => valueOutcome([[cell({ kind: "number", value:
 const err = (sentinel: string): Outcome => valueOutcome([[cell({ kind: "error", sentinel })]]);
 const capabilitySkip: Outcome = { kind: "skipped", cause: "capability" };
 
-function test(id: string, subject: string, hash: string): TestInfo {
+function test(id: string, subject: string, hash: string, tags?: string[]): TestInfo {
   const [subjectRef, name] = id.split("/");
   return {
     id,
@@ -26,6 +26,7 @@ function test(id: string, subject: string, hash: string): TestInfo {
     category: "value",
     suite: subject.toLowerCase(),
     expect: undefined,
+    ...(tags ? { tags } : {}),
     overrides: {},
   };
 }
@@ -99,6 +100,26 @@ describe("buildManifestV5 — verdict-free comparison output", () => {
     expect(e.engines.excel).toEqual({ capability: "unsupported" });
     expect(m.functions.QUERY.forks).toEqual([]); // uniform → no fork (capability axis carries the gap)
     expect(m.functions.QUERY.engines.excel.status).toBe("missing");
+  });
+
+  it("publishes case-property tags through the R1 hygiene gate (outcome-claim tags dropped)", () => {
+    const m = build([
+      [
+        test("SUM/add", "SUM", "sha256:sum", ["financial", "volatile", "divergence", "excel-only", "coercion-divergence"]),
+        { excel: num(3), gsheets: num(3) },
+      ],
+    ]);
+    // case-property tags pass; the three outcome-claim tags are dropped at the relation boundary
+    expect(m.tests["SUM/add"].tags).toEqual(["financial", "volatile"]);
+  });
+
+  it("omits tags entirely when the gated set is empty (all outcome-claim, or none)", () => {
+    const m = build([
+      [test("A/a", "A", "sha256:a", ["divergence"]), { excel: num(1), gsheets: num(1) }],
+      [test("B/b", "B", "sha256:b"), { excel: num(1), gsheets: num(1) }],
+    ]);
+    expect(m.tests["A/a"]).not.toHaveProperty("tags"); // only an outcome-claim tag → gated to empty → omitted
+    expect(m.tests["B/b"]).not.toHaveProperty("tags"); // no tags authored
   });
 
   it("tolerance-merged class keeps the distinct values visible (set length > 1)", () => {

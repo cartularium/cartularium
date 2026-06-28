@@ -34,6 +34,9 @@ export interface TestInfo {
   suite: string;
   expect: unknown;
   aliases?: string[];
+  /** author-declared case-property tags (yaml `tags:`); the manifest publishes these (through the
+   * R1 hygiene gate) so tag-predicate annotation scopes can resolve (3e). */
+  tags?: string[];
   // only fields the site actually renders — override.expect / .note not loaded
   overrides: Record<string, { cause: string; recorded?: unknown }>;
 }
@@ -111,6 +114,7 @@ export function loadTests(dir: string): Map<string, TestInfo> {
         suite,
         expect: t.expect,
         aliases: Array.isArray(t.aliases) ? t.aliases : undefined,
+        tags: Array.isArray(t.tags) ? (t.tags as string[]).filter((x) => typeof x === "string") : undefined,
         overrides,
       });
     }
