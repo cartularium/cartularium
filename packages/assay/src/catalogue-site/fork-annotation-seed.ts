@@ -29,6 +29,10 @@ export interface SeedRow {
   cause: string | null;
   scope_json: string;
   status: "published";
+  // auto-seeded rows are always UNVERIFIED — verification is a human act (the value signal), never
+  // something the bridge can claim on a contributor's behalf.
+  verified_by: null;
+  verified_at: null;
   created_at: string;
   updated_at: string;
 }
@@ -63,6 +67,8 @@ export function dvsToSeedRows(dvs: DvEntry[], now: string): SeedResult {
     // one ref-set clause holding the DV's case-refs (SUBJECT/name); the scope is a clause LIST
     scope_json: JSON.stringify([{ kind: "ref-set", refs: dv.tests }]),
     status: "published",
+    verified_by: null,
+    verified_at: null,
     created_at: now,
     updated_at: now,
   }));
@@ -81,12 +87,22 @@ function sqlVal(s: string | null): string {
 // One UPSERT per row. ON CONFLICT(id) DO UPDATE refreshes ONLY the YAML-derived fields; it
 // PRESERVES author_id, status, and created_at, so re-running after a later re-attribution or
 // moderation (3f) does not clobber human changes. Idempotent on `id`.
+//
+// Verification provenance is content-bound: a re-seed that CHANGES the claim (content/cause/scope)
+// invalidates any prior human verification (the same snapshot invariant the route enforces on
+// PATCH); a re-seed that leaves the claim identical preserves it. The CASE refs to bare columns are
+// the pre-update (existing) row values; `excluded.*` are the would-be-inserted YAML values, so the
+// guard reads "claim unchanged?" (`cause IS excluded.cause` is NULL-safe).
 export function buildSeedSql(rows: SeedRow[]): string {
+  const claimUnchanged = `content = excluded.content AND scope_json = excluded.scope_json AND cause IS excluded.cause`;
   const stmts = rows.map(
     (r) =>
-      `INSERT INTO assay_fork_annotations (id, author_id, content, cause, scope_json, status, created_at, updated_at)\n` +
-      `VALUES (${sqlStr(r.id)}, ${sqlStr(r.author_id)}, ${sqlStr(r.content)}, ${sqlVal(r.cause)}, ${sqlStr(r.scope_json)}, ${sqlStr(r.status)}, ${sqlStr(r.created_at)}, ${sqlStr(r.updated_at)})\n` +
-      `ON CONFLICT(id) DO UPDATE SET content = excluded.content, cause = excluded.cause, scope_json = excluded.scope_json, updated_at = excluded.updated_at;`,
+      `INSERT INTO assay_fork_annotations (id, author_id, content, cause, scope_json, status, verified_by, verified_at, created_at, updated_at)\n` +
+      `VALUES (${sqlStr(r.id)}, ${sqlStr(r.author_id)}, ${sqlStr(r.content)}, ${sqlVal(r.cause)}, ${sqlStr(r.scope_json)}, ${sqlStr(r.status)}, NULL, NULL, ${sqlStr(r.created_at)}, ${sqlStr(r.updated_at)})\n` +
+      `ON CONFLICT(id) DO UPDATE SET content = excluded.content, cause = excluded.cause, scope_json = excluded.scope_json, ` +
+      `verified_by = CASE WHEN ${claimUnchanged} THEN verified_by ELSE NULL END, ` +
+      `verified_at = CASE WHEN ${claimUnchanged} THEN verified_at ELSE NULL END, ` +
+      `updated_at = excluded.updated_at;`,
   );
   const header =
     `-- Fork-annotation store seed — one-time DV import (CP3 increment #3, 3c).\n` +

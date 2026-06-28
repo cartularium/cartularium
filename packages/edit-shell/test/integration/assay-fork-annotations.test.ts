@@ -2,7 +2,8 @@ import { env, SELF } from "cloudflare:test"
 import { beforeEach, describe, expect, it } from "vitest"
 import { createSession } from "../../src/auth/session"
 
-// mirrors migrations/0007_assay_fork_annotations.sql (tests apply schema manually)
+// mirrors migrations/0007 + 0008 (tests apply schema manually); verified_by/verified_at are the
+// 0008 verification-provenance columns.
 const SCHEMA = `
 CREATE TABLE IF NOT EXISTS assay_fork_annotations (
   id TEXT PRIMARY KEY,
@@ -13,6 +14,8 @@ CREATE TABLE IF NOT EXISTS assay_fork_annotations (
   status TEXT NOT NULL DEFAULT 'pending' CHECK (
     status IN ('pending', 'published', 'rejected')
   ),
+  verified_by TEXT,
+  verified_at TEXT,
   created_at TEXT NOT NULL,
   updated_at TEXT NOT NULL
 );`
@@ -67,7 +70,7 @@ describe("assay fork-annotation store", () => {
     expect(res.status).toBe(401)
   })
 
-  it("creates a pending, attributed annotation", async () => {
+  it("creates a pending, attributed, unverified annotation", async () => {
     const bob = await makeSession("bob")
     const res = await create(bob)
     expect(res.status).toBe(201)
@@ -77,6 +80,9 @@ describe("assay fork-annotation store", () => {
     expect(annotation.status).toBe("pending")
     expect(annotation.cause).toBe("error-attribution")
     expect(annotation.scope).toEqual(VALID.scope)
+    // verification is the third axis, independent of authorship/moderation — new rows are unverified
+    expect(annotation.verified_by).toBeNull()
+    expect(annotation.verified_at).toBeNull()
   })
 
   it("rejects an empty scope, empty content, and an unknown cause", async () => {
@@ -198,5 +204,62 @@ describe("assay fork-annotation store", () => {
     // the author can delete
     expect((await SELF.fetch(`${BASE}/${id}`, authed(bob, "DELETE"))).status).toBe(204)
     expect((await SELF.fetch(`${BASE}/${id}`, authed(bob, "GET"))).status).toBe(404)
+  })
+
+  it("gates verification behind maintainer; a maintainer attests with their login", async () => {
+    const bob = await makeSession("bob")
+    const alice = await makeSession("alice")
+    const id = ((await (await create(bob)).json()) as any).annotation.id
+
+    // a non-maintainer cannot verify
+    expect((await SELF.fetch(`${BASE}/${id}/verify`, authed(bob, "POST", { verified: true }))).status).toBe(403)
+
+    // a maintainer attests — verified_by is the verifier's login (attributed), verified_at set
+    const res = await SELF.fetch(`${BASE}/${id}/verify`, authed(alice, "POST", { verified: true }))
+    expect(res.status).toBe(200)
+    const verified = ((await res.json()) as any).annotation
+    expect(verified.verified_by).toBe("alice")
+    expect(verified.verified_at).toBeTruthy()
+
+    // un-verify clears both
+    const un = await SELF.fetch(`${BASE}/${id}/verify`, authed(alice, "POST", { verified: false }))
+    const unbody = ((await un.json()) as any).annotation
+    expect(unbody.verified_by).toBeNull()
+    expect(unbody.verified_at).toBeNull()
+  })
+
+  it("invalidates verification when the authored content is edited", async () => {
+    const bob = await makeSession("bob")
+    const alice = await makeSession("alice")
+    const id = ((await (await create(bob)).json()) as any).annotation.id
+    await SELF.fetch(`${BASE}/${id}/review`, authed(alice, "POST", { decision: "publish" }))
+    await SELF.fetch(`${BASE}/${id}/verify`, authed(alice, "POST", { verified: true }))
+
+    // a maintainer tidy-up still clears verification — the attestation was to the old content snapshot
+    const patched = await SELF.fetch(`${BASE}/${id}`, authed(alice, "PATCH", { content: "revised after verify" }))
+    const body = ((await patched.json()) as any).annotation
+    expect(body.content).toBe("revised after verify")
+    expect(body.verified_by).toBeNull()
+    expect(body.verified_at).toBeNull()
+  })
+
+  it("?verified= narrows the list (the human-verification backlog)", async () => {
+    const bob = await makeSession("bob")
+    const alice = await makeSession("alice")
+    const a = ((await (await create(bob)).json()) as any).annotation.id
+    const b = ((await (await create(bob, { ...VALID, content: "second fork annotation here" })).json()) as any)
+      .annotation.id
+    // publish both so bob (and the filter) see them, then verify only one
+    await SELF.fetch(`${BASE}/${a}/review`, authed(alice, "POST", { decision: "publish" }))
+    await SELF.fetch(`${BASE}/${b}/review`, authed(alice, "POST", { decision: "publish" }))
+    await SELF.fetch(`${BASE}/${a}/verify`, authed(alice, "POST", { verified: true }))
+
+    const verified = (await (await SELF.fetch(`${BASE}?verified=true`, authed(bob, "GET"))).json()) as any
+    expect(verified.annotations.map((x: any) => x.id)).toEqual([a])
+
+    const backlog = (await (await SELF.fetch(`${BASE}?verified=false`, authed(bob, "GET"))).json()) as any
+    expect(backlog.annotations.map((x: any) => x.id)).toEqual([b])
+
+    expect((await SELF.fetch(`${BASE}?verified=maybe`, authed(bob, "GET"))).status).toBe(400)
   })
 })

@@ -20,6 +20,8 @@ test("a well-formed annotation is assignable to AssayForkAnnotationV1", () => {
     content: "excel forks on error attribution",
     cause: "error-attribution",
     status: "published",
+    verified_by: null, // auto-seeded / provisional default
+    verified_at: null,
     scope: [
       { kind: "ref-set", refs: ["IFERROR/nested"] },
       { kind: "predicate", query: { tags: ["volatile"], valueKind: "number" } },
@@ -28,4 +30,21 @@ test("a well-formed annotation is assignable to AssayForkAnnotationV1", () => {
     updated_at: "2026-06-26T00:00:00.000Z",
   }
   assert.equal(annotation.scope.length, 2)
+})
+
+test("a verified annotation carries an attributed verifier + timestamp", () => {
+  const verified: AssayForkAnnotationV1 = {
+    id: "DV-0002",
+    author_id: "auto-seeded (provisional)",
+    content: "gsheets forks on precision",
+    cause: "precision",
+    status: "published",
+    verified_by: "octocat",
+    verified_at: "2026-06-27T00:00:00.000Z",
+    scope: [{ kind: "ref-set", refs: ["GEOMEAN/geomean-perfect-square"] }],
+    created_at: "2026-06-26T00:00:00.000Z",
+    updated_at: "2026-06-27T00:00:00.000Z",
+  }
+  assert.equal(verified.verified_by, "octocat")
+  assert.ok(verified.verified_at)
 })

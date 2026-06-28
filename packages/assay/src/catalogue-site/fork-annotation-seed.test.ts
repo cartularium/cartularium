@@ -33,6 +33,8 @@ describe("dvsToSeedRows", () => {
       cause: "arg-semantics",
       scope_json: JSON.stringify([{ kind: "ref-set", refs: ["NOW/a", "NOW/b"] }]),
       status: "published",
+      verified_by: null,
+      verified_at: null,
       created_at: NOW,
       updated_at: NOW,
     });
@@ -73,6 +75,11 @@ describe("buildSeedSql", () => {
     expect(setClause).not.toContain("author_id =");
     expect(setClause).not.toContain("status =");
     expect(setClause).not.toContain("created_at =");
+    // verification is content-bound: inserted NULL, and on conflict preserved only when the claim
+    // is unchanged (the snapshot invariant) — cleared otherwise.
+    expect(sql).toContain("verified_by, verified_at, created_at");
+    expect(setClause).toContain("verified_by = CASE WHEN content = excluded.content");
+    expect(setClause).toContain("THEN verified_by ELSE NULL END");
   });
 
   it("escapes single quotes in content (SQLite literal doubling)", () => {
