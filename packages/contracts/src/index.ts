@@ -176,6 +176,12 @@ export interface ManifestV5TestEntry {
   url: string
   aliases?: string[]
   category: Category
+  /** Author-declared case-property tags, published so tag-predicate annotation scopes can resolve
+   * against them (3e). Passed through the R1 publish-time HYGIENE GATE: only descriptive
+   * case-property tags reach the manifest — OUTCOME-CLAIM tags (e.g. `divergence`, `excel-only`,
+   * `coercion-divergence`) are dropped at this relation-layer boundary, so the observation manifest
+   * never carries a verdict-flavored claim. Omitted when the gated set is empty. */
+  tags?: string[]
   engines: Partial<Record<Platform, EngineObservation>>
   partition: ManifestClass[]
 }

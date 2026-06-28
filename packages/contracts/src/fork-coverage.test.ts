@@ -47,11 +47,11 @@ test("an annotation covering only converged/dangling refs is flagged without a l
   assert.equal(report.totals.annotationsWithoutLiveFork, 1)
 })
 
-test("predicate clauses are counted unresolved, ref-set clauses still resolve", () => {
+test("an OBSERVED-dimension predicate stays counted-unresolved; ref-set clauses still resolve", () => {
   const manifest = manifestWith(["A/1"], [])
   const scope: AnnotationScope = [
     { kind: "ref-set", refs: ["A/1"] },
-    { kind: "predicate", query: { valueKind: "error" } },
+    { kind: "predicate", query: { valueKind: "error" } }, // observed dim → needs the deferred matcher
   ]
   const report = computeForkCoverage(manifest, [ann("DV-1", scope)])
   const cov = report.annotations[0]
@@ -59,11 +59,67 @@ test("predicate clauses are counted unresolved, ref-set clauses still resolve", 
   assert.equal(cov.unresolvedPredicateClauses, 1)
 })
 
-test("a predicate-only annotation is not flagged (no resolved refs to judge)", () => {
-  const manifest = manifestWith(["A/1"], [])
-  const report = computeForkCoverage(manifest, [ann("DV-1", [{ kind: "predicate", query: { tags: ["t"] } }])])
-  assert.equal(report.annotations[0].coversLiveFork, false)
-  assert.equal(report.totals.annotationsWithoutLiveFork, 0)
+// === author-declared predicate resolution (3e) ===
+
+// forked entries carrying subject + published (gated) tags — what a tag-predicate resolves against.
+function forkEntry(subject: string, tags: string[]): ManifestV5TestEntry {
+  return { subject, tags, partition: [{ engines: [], values: [] }, { engines: [], values: [] }] } as unknown as ManifestV5TestEntry
+}
+function taggedManifest(entries: Record<string, ManifestV5TestEntry>): ManifestV5 {
+  return { tests: entries, aliases: {} } as unknown as ManifestV5
+}
+
+test("a tag-predicate auto-covers every forked ref carrying the tag", () => {
+  const manifest = taggedManifest({
+    "A/1": forkEntry("A", ["volatile"]),
+    "A/2": forkEntry("A", ["volatile", "spill"]),
+    "B/1": forkEntry("B", ["financial"]),
+  })
+  const report = computeForkCoverage(manifest, [ann("DV-1", [{ kind: "predicate", query: { tags: ["volatile"] } }])])
+  const cov = report.annotations[0]
+  assert.deepEqual(cov.liveFork.sort(), ["A/1", "A/2"])
+  assert.equal(cov.unresolvedPredicateClauses, 0)
+  assert.equal(report.totals.coveredForks, 2)
+  assert.deepEqual(report.uncoveredForks, ["B/1"])
+})
+
+test("tags within a clause are a conjunction (every listed tag must be present)", () => {
+  const manifest = taggedManifest({
+    "A/1": forkEntry("A", ["volatile", "spill"]),
+    "A/2": forkEntry("A", ["volatile"]),
+  })
+  const report = computeForkCoverage(manifest, [ann("DV-1", [{ kind: "predicate", query: { tags: ["volatile", "spill"] } }])])
+  assert.deepEqual(report.annotations[0].liveFork, ["A/1"])
+})
+
+test("subjectIn resolves on the published subject (membership)", () => {
+  const manifest = taggedManifest({
+    "SUM/1": forkEntry("SUM", []),
+    "AVG/1": forkEntry("AVG", []),
+    "MAX/1": forkEntry("MAX", []),
+  })
+  const report = computeForkCoverage(manifest, [ann("DV-1", [{ kind: "predicate", query: { subjectIn: ["SUM", "AVG"] } }])])
+  assert.deepEqual(report.annotations[0].liveFork.sort(), ["AVG/1", "SUM/1"])
+})
+
+test("a predicate auto-cover dedupes against a ref-set naming the same fork (authored ref wins)", () => {
+  const manifest = taggedManifest({ "A/1": forkEntry("A", ["volatile"]) })
+  const scope: AnnotationScope = [
+    { kind: "predicate", query: { tags: ["volatile"] } },
+    { kind: "ref-set", refs: ["A/1"] },
+  ]
+  const report = computeForkCoverage(manifest, [ann("DV-1", scope)])
+  assert.deepEqual(report.annotations[0].liveFork, ["A/1"]) // recorded once, not twice
+  assert.equal(report.totals.coveredForks, 1)
+})
+
+test("a tag-predicate matching no fork covers nothing and is resolved (not unresolved)", () => {
+  const manifest = taggedManifest({ "A/1": forkEntry("A", ["financial"]) })
+  const report = computeForkCoverage(manifest, [ann("DV-1", [{ kind: "predicate", query: { tags: ["volatile"] } }])])
+  const cov = report.annotations[0]
+  assert.deepEqual(cov.liveFork, [])
+  assert.equal(cov.unresolvedPredicateClauses, 0) // resolved (author-declared), just matched nothing
+  assert.equal(report.totals.annotationsWithoutLiveFork, 0) // no resolved refs to judge
 })
 
 test("repeated refs within a scope are de-duplicated and a fork is covered once", () => {
