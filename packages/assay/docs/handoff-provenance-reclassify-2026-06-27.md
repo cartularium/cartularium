@@ -54,9 +54,25 @@ evidence and signed). Stays no-verdict: verification is ATTRIBUTED, not assay ad
    `divergence-matrix` auto-seed / `history` / `seedCatalogue` fossils fall out. Blocked on the
    store→build delivery path (currently deferred).
 
+## 3e — DONE (commit `6576a371`)
+
+Publish manifest `tags` (R1 hygiene gate) + resolve author-declared predicates — lights up the
+`predicate{tags}` clause 3d counted-but-couldn't-resolve.
+- `ManifestV5TestEntry.tags` (threaded `TestInfo`→build-v5); a publish-time **hygiene GATE** drops
+  outcome-claim tags (`divergence`/`coercion-divergence`/`excel-only`) at the relation-layer
+  boundary — denylist (open vocab), re-applied every build. Live: 1867 tests, 1651 tagged, 0 leaks.
+- `fork-coverage.ts`: an author-declared predicate (`tags` conjunction / `subjectIn` membership)
+  auto-covers matching forked refs; observed-dimension predicates (`enginesAlone`/`valueKind`/
+  `sentinel`) stay counted-unresolved (deferred fork-property matcher). Two-pass + canonical dedupe.
+- contracts 57, assay 168 green.
+
 ## Open / next
 
-- **3e** (the main CP3 thread): publish manifest `tags` (R1 gate) + resolve tag-predicates.
-- A human-facing authoring/verification surface (turn the backlog into actual human passes) rides
-  the deferred "live edit-shell coverage endpoint + manifest-into-Worker delivery."
+- **3f reclassification** (now unblocked by 3e): the policy-driven pass converting the provisional
+  ref-set DV scopes → tag/predicate scopes (auto-covering same-shaped forks), labelling tests, and
+  writing annotation content. Likely workflow-automated; the 3d coverage report + the now-resolving
+  tag-predicates are the inputs. This is where the agent-seeded scaffolding starts becoming
+  human-authored/verified lenses at scale.
+- A human-facing authoring/verification surface (turn the `?verified=false` backlog into actual
+  human passes) rides the deferred "live edit-shell coverage endpoint + manifest-into-Worker delivery."
 - Smaller gsheets follow-ups still parked: item 3 (37 multi-engine spot-checks); external-fetch build.
