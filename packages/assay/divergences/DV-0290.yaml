@@ -1,0 +1,14 @@
+id: DV-0290
+summary: "gsheets, hyperformula: different error code for an out-of-range index (#NUM! vs #VALUE! on excel, formulas, ironcalc, lattice, pycel) — CHOOSE"
+cause: error-code
+category: value
+engines:
+  - gsheets
+  - hyperformula
+test-count: 1
+subjects:
+  - CHOOSE
+tests:
+  - CHOOSE/choose-out-of-range
+seeded: 2026-07-11
+last-confirmed: 2026-07-11

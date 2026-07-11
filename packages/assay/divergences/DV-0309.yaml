@@ -1,0 +1,18 @@
+id: DV-0309
+summary: "hyperformula, pycel: IF over array condition or branches not broadcast (hyperformula #NAME?, pycel first-element scalar or #NAME?; ironcalc #N/IMPL!, libreoffice blank) where excel, formulas, gsheets, lattice map elementwise — IF"
+cause: array-handling
+category: value
+engines:
+  - hyperformula
+  - ironcalc
+  - libreoffice
+  - pycel
+test-count: 3
+subjects:
+  - IF
+tests:
+  - IF/if-broadcasting-scalar-condition-to-array-branches
+  - IF/if-with-array-condition
+  - IF/if-with-array-condition-and-array-branches
+seeded: 2026-07-11
+last-confirmed: 2026-07-11

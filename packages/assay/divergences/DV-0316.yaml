@@ -1,0 +1,20 @@
+id: DV-0316
+summary: "excel, gsheets, ironcalc: numeric precision differs — complex-number text carries ~15 significant digits where formulas, hyperformula, lattice carry full double precision (IMPOWER of i^2: formulas, lattice give exact -1; ironcalc renders the residual in decimal notation) — IMLN, IMSQRT (+1 more)"
+cause: precision
+category: value
+engines:
+  - excel
+  - gsheets
+  - ironcalc
+test-count: 4
+subjects:
+  - IMLN
+  - IMPOWER
+  - IMSQRT
+tests:
+  - IMLN/imln-of-complex
+  - IMLN/imln-of-i
+  - IMSQRT/imsqrt-of-i
+  - IMPOWER/impower-of-i-squared
+seeded: 2026-07-11
+last-confirmed: 2026-07-11

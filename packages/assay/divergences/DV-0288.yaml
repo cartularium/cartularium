@@ -1,0 +1,17 @@
+id: DV-0288
+summary: "gsheets, ironcalc, lattice, libreoffice, pycel: out-of-range code point handled differently — CHAR"
+cause: error-code
+category: value
+engines:
+  - gsheets
+  - ironcalc
+  - lattice
+  - libreoffice
+  - pycel
+test-count: 1
+subjects:
+  - CHAR
+tests:
+  - CHAR/char-out-of-range
+seeded: 2026-07-11
+last-confirmed: 2026-07-11

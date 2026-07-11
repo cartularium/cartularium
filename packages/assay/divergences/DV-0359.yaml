@@ -1,0 +1,14 @@
+id: DV-0359
+summary: "gsheets, lattice: empty-text input yields an empty string; excel, formulas, libreoffice: yields blank — REGEXREPLACE"
+cause: null-vs-zero
+category: value
+engines:
+  - gsheets
+  - lattice
+test-count: 1
+subjects:
+  - REGEXREPLACE
+tests:
+  - REGEXREPLACE/replace-empty-text-unchanged
+seeded: 2026-07-11
+last-confirmed: 2026-07-11

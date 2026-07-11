@@ -1,0 +1,17 @@
+id: DV-0346
+summary: "hyperformula: TRUE/FALSE inside an array constant resolve as unknown names (#NAME?) where excel, formulas, gsheets, lattice coerce them to 1/0 in arithmetic (ironcalc #N/IMPL!, libreoffice a blank cell, pycel #NAME?) — op:+"
+cause: unimplemented-edge
+category: value
+engines:
+  - hyperformula
+  - ironcalc
+  - libreoffice
+  - pycel
+test-count: 2
+subjects:
+  - "op:+"
+tests:
+  - "op:add/boolean-array-coerced-in-arithmetic"
+  - "op:add/mixed-type-array-plus-scalar"
+seeded: 2026-07-11
+last-confirmed: 2026-07-11

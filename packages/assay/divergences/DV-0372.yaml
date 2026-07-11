@@ -1,0 +1,14 @@
+id: DV-0372
+summary: "excel, gsheets: SUM over a range containing an error cell returns the numeric total; formulas, hyperformula, ironcalc, lattice propagate the error — SUM"
+cause: array-handling
+category: value
+engines:
+  - excel
+  - gsheets
+test-count: 1
+subjects:
+  - SUM
+tests:
+  - SUM/sum-of-range-with-error-cell
+seeded: 2026-07-11
+last-confirmed: 2026-07-11

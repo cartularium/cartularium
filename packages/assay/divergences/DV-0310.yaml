@@ -1,0 +1,16 @@
+id: DV-0310
+summary: "pycel: returns #NAME? on nested calls and error-producing arguments where other engines produce a value (plain forms of the same functions evaluate) — IF, IFERROR"
+cause: unimplemented-edge
+category: value
+engines:
+  - pycel
+test-count: 3
+subjects:
+  - IF
+  - IFERROR
+tests:
+  - IF/if-nested
+  - IFERROR/iferror-nested
+  - IFERROR/iferror-with-error
+seeded: 2026-07-11
+last-confirmed: 2026-07-11

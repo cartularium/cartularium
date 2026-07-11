@@ -1,0 +1,22 @@
+id: DV-0322
+summary: "pycel: error-producing argument expression (1/0, \"a\"+1) evaluates to #NAME? where other engines propagate the error into the predicate — ISERR, ISERROR (+3 more)"
+cause: unimplemented-edge
+category: value
+engines:
+  - pycel
+test-count: 6
+subjects:
+  - ISERR
+  - ISERROR
+  - ISLOGICAL
+  - ISNA
+  - ISNONTEXT
+tests:
+  - ISERR/iserr-of-div-0
+  - ISERROR/iserror-of-div-0
+  - ISERROR/iserror-of-value
+  - ISLOGICAL/islogical-of-error
+  - ISNA/isna-of-div-0
+  - ISNONTEXT/isnontext-of-error
+seeded: 2026-07-11
+last-confirmed: 2026-07-11

@@ -1,0 +1,16 @@
+id: DV-0289
+summary: "lattice vs excel, formulas, gsheets, hyperformula: chi-squared test degrees of freedom derived differently from the table shape (p-values consistent with rows*cols-1 on lattice vs (rows-1)*(cols-1) elsewhere) — CHISQ.TEST, CHITEST"
+cause: arg-semantics
+category: value
+engines:
+  - lattice
+test-count: 3
+subjects:
+  - CHISQ.TEST
+  - CHITEST
+tests:
+  - CHISQ.TEST/chisq-test-2x3-contingency
+  - CHITEST/chitest-2x3-contingency
+  - CHITEST/chitest-small-table
+seeded: 2026-07-11
+last-confirmed: 2026-07-11

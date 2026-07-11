@@ -1,0 +1,16 @@
+id: DV-0265
+summary: "gsheets, ironcalc, pycel: function not implemented — CONFIDENCE"
+cause: missing-function
+category: value
+engines:
+  - gsheets
+  - ironcalc
+  - pycel
+test-count: 2
+subjects:
+  - CONFIDENCE
+tests:
+  - CONFIDENCE/confidence-normal-95
+  - CONFIDENCE/confidence-normal-99
+seeded: 2026-07-11
+last-confirmed: 2026-07-11

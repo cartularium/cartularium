@@ -1,0 +1,14 @@
+id: DV-0348
+summary: "libreoffice, pycel: scalar arithmetic on an error literal diverges — libreoffice yields a blank cell and pycel resolves #DIV/0! as an unknown name (#NAME?) where excel, formulas, gsheets, hyperformula, ironcalc, lattice propagate #DIV/0! — op:+"
+cause: unimplemented-edge
+category: value
+engines:
+  - libreoffice
+  - pycel
+test-count: 1
+subjects:
+  - "op:+"
+tests:
+  - "op:add/scalar-plus-error-value"
+seeded: 2026-07-11
+last-confirmed: 2026-07-11

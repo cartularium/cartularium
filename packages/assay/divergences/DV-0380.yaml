@@ -1,0 +1,16 @@
+id: DV-0380
+summary: "excel, gsheets, hyperformula: different argument interpretation (dates-range argument yields #VALUE! where formulas, ironcalc, lattice coerce it and produce a numeric result) — XNPV"
+cause: arg-semantics
+category: value
+engines:
+  - excel
+  - gsheets
+  - hyperformula
+test-count: 2
+subjects:
+  - XNPV
+tests:
+  - XNPV/xnpv-single-future-flow
+  - XNPV/xnpv-standard
+seeded: 2026-07-11
+last-confirmed: 2026-07-11

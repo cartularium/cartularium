@@ -1,0 +1,14 @@
+id: DV-0278
+summary: "lattice, pycel: function not implemented — T.INV.2T"
+cause: missing-function
+category: value
+engines:
+  - lattice
+  - pycel
+test-count: 1
+subjects:
+  - T.INV.2T
+tests:
+  - T.INV.2T/t-inv-2t-roundtrip
+seeded: 2026-07-11
+last-confirmed: 2026-07-11

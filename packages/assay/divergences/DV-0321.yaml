@@ -1,0 +1,15 @@
+id: DV-0321
+summary: "gsheets, hyperformula, ironcalc: cell holding an empty string treated as non-blank, where excel, formulas, lattice, pycel treat it as blank — ISBLANK"
+cause: null-vs-zero
+category: value
+engines:
+  - gsheets
+  - hyperformula
+  - ironcalc
+test-count: 1
+subjects:
+  - ISBLANK
+tests:
+  - ISBLANK/isblank-of-empty-string-cell
+seeded: 2026-07-11
+last-confirmed: 2026-07-11

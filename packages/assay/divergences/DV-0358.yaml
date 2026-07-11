@@ -1,0 +1,15 @@
+id: DV-0358
+summary: "formulas: $n replacement tokens pass through literally; excel, gsheets, lattice: $n substitutes the captured group — REGEXREPLACE"
+cause: arg-semantics
+category: value
+engines:
+  - formulas
+test-count: 3
+subjects:
+  - REGEXREPLACE
+tests:
+  - REGEXREPLACE/replace-date-reformat-three-groups
+  - REGEXREPLACE/replace-swap-first-and-last-name
+  - REGEXREPLACE/replace-with-single-backreference
+seeded: 2026-07-11
+last-confirmed: 2026-07-11

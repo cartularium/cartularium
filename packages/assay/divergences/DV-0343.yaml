@@ -1,0 +1,13 @@
+id: DV-0343
+summary: "pycel: arity acceptance differs (six-cashflow call resolves as unknown name #NAME? while the shorter three-cashflow form computes) — NPV"
+cause: argument-arity
+category: value
+engines:
+  - pycel
+test-count: 1
+subjects:
+  - NPV
+tests:
+  - NPV/npv-five-year-annuity
+seeded: 2026-07-11
+last-confirmed: 2026-07-11

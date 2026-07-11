@@ -1,0 +1,19 @@
+id: DV-0324
+summary: "pycel: error-valued operand inside a larger expression surfaces as #NAME? (standalone NA() agrees with the majority) — ISNUMBER, ISTEXT (+2 more)"
+cause: error-code
+category: value
+engines:
+  - pycel
+test-count: 4
+subjects:
+  - ISNUMBER
+  - ISTEXT
+  - N
+  - NA
+tests:
+  - ISNUMBER/isnumber-of-error
+  - ISTEXT/istext-of-error
+  - N/n-of-error-info
+  - NA/na-used-in-arithmetic
+seeded: 2026-07-11
+last-confirmed: 2026-07-11

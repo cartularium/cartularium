@@ -1,0 +1,14 @@
+id: DV-0366
+summary: "gsheets: different argument interpretation (third argument read as boolean is_ascending, so -1 sorts ascending; excel, formulas, lattice read -1 as descending sort_order) — SORT"
+cause: arg-semantics
+category: value
+engines:
+  - gsheets
+test-count: 2
+subjects:
+  - SORT
+tests:
+  - SORT/sort-descending-unique
+  - SORT/sort-of-sequence-descending
+seeded: 2026-07-11
+last-confirmed: 2026-07-11

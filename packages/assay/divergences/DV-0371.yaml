@@ -1,0 +1,14 @@
+id: DV-0371
+summary: "lattice, pycel: zero-argument call accepted, returning 0; excel, libreoffice surface blank; formulas, gsheets, hyperformula, ironcalc reject with differing error sentinels (#VALUE!, #N/A, #ERROR!) — SUM"
+cause: argument-arity
+category: value
+engines:
+  - lattice
+  - pycel
+test-count: 1
+subjects:
+  - SUM
+tests:
+  - SUM/sum-no-args
+seeded: 2026-07-11
+last-confirmed: 2026-07-11

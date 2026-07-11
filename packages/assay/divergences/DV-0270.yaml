@@ -1,0 +1,28 @@
+id: DV-0270
+summary: "ironcalc, libreoffice, pycel: function not implemented — FDIST, FILTER, FINV (+3 more)"
+cause: missing-function
+category: value
+engines:
+  - ironcalc
+  - libreoffice
+  - pycel
+test-count: 9
+subjects:
+  - FDIST
+  - FILTER
+  - FINV
+  - GAMMAINV
+  - STDEV
+  - STDEVP
+tests:
+  - FDIST/fdist-central
+  - FDIST/fdist-tail
+  - FILTER/filter-basic
+  - FILTER/filter-with-condition
+  - FINV/finv-roundtrip
+  - GAMMAINV/gammainv-at-0-5
+  - STDEV/stdev-sample-1-5
+  - STDEV/stdev-two-values
+  - STDEVP/stdevp-population-1-5
+seeded: 2026-07-11
+last-confirmed: 2026-07-11

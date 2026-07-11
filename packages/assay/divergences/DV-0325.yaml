@@ -1,0 +1,15 @@
+id: DV-0325
+summary: "ironcalc, pycel: array argument collapsed to a single scalar verdict (ironcalc FALSE for the array as a whole, pycel TRUE from the first element; libreoffice blank) where excel, formulas, gsheets, hyperformula, lattice map elementwise — ISNUMBER"
+cause: array-handling
+category: value
+engines:
+  - ironcalc
+  - libreoffice
+  - pycel
+test-count: 1
+subjects:
+  - ISNUMBER
+tests:
+  - ISNUMBER/isnumber-over-mixed-row
+seeded: 2026-07-11
+last-confirmed: 2026-07-11

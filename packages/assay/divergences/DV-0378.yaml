@@ -1,0 +1,13 @@
+id: DV-0378
+summary: "excel: duplicates matched case-insensitively, collapsing values that differ only in case (formulas, gsheets, lattice match case-sensitively) — UNIQUE"
+cause: arg-semantics
+category: value
+engines:
+  - excel
+test-count: 1
+subjects:
+  - UNIQUE
+tests:
+  - UNIQUE/unique-mixed-types-case
+seeded: 2026-07-11
+last-confirmed: 2026-07-11

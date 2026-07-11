@@ -1,0 +1,17 @@
+id: DV-0341
+summary: "gsheets: numeric precision differs on legacy inverse-normal (deviates ~1e-9 from its own NORM.INV/NORM.S.INV results); ironcalc, pycel: function not implemented — NORMINV, NORMSINV"
+cause: precision
+category: value
+engines:
+  - gsheets
+  - ironcalc
+  - pycel
+test-count: 2
+subjects:
+  - NORMINV
+  - NORMSINV
+tests:
+  - NORMINV/norminv-at-0-95
+  - NORMSINV/normsinv-at-0-025
+seeded: 2026-07-11
+last-confirmed: 2026-07-11

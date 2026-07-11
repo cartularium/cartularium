@@ -1,0 +1,28 @@
+id: DV-0275
+summary: "formulas, hyperformula, ironcalc, libreoffice, pycel: function not implemented — LAMBDA, REGEXEXTRACT"
+cause: missing-function
+category: value
+engines:
+  - formulas
+  - hyperformula
+  - ironcalc
+  - libreoffice
+  - pycel
+test-count: 11
+subjects:
+  - LAMBDA
+  - REGEXEXTRACT
+tests:
+  - LAMBDA/lambda-as-higher-order
+  - LAMBDA/lambda-basic-iife
+  - LAMBDA/lambda-nested
+  - LAMBDA/lambda-two-args
+  - REGEXEXTRACT/extract-case-insensitive-via-inline-flag
+  - REGEXEXTRACT/extract-first-of-multiple-full-matches
+  - REGEXEXTRACT/extract-full-match-no-groups-with-dollar-sign
+  - REGEXEXTRACT/extract-full-match-when-no-capture-groups
+  - REGEXEXTRACT/extract-no-match-on-empty-text
+  - REGEXEXTRACT/extract-no-match-returns-na
+  - REGEXEXTRACT/extract-non-ascii-literal
+seeded: 2026-07-11
+last-confirmed: 2026-07-11

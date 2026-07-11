@@ -1,0 +1,27 @@
+id: DV-0282
+summary: "pycel: #NAME? on negative-literal, out-of-domain, or compound arguments where the same functions evaluate simpler arguments (other engines return a value or #NUM!) — ACOS, ASIN (+5 more)"
+cause: unimplemented-edge
+category: value
+engines:
+  - pycel
+test-count: 9
+subjects:
+  - ACOS
+  - ASIN
+  - ASINH
+  - ATAN
+  - ATAN2
+  - ATANH
+  - COS
+tests:
+  - ACOS/acos-negative
+  - ACOS/acos-out-of-domain
+  - ASIN/asin-negative
+  - ASIN/asin-out-of-domain
+  - ASINH/asinh-negative
+  - ATAN/atan-negative
+  - ATAN2/atan2-negative
+  - ATANH/atanh-negative
+  - COS/cos-at-pi-2
+seeded: 2026-07-11
+last-confirmed: 2026-07-11

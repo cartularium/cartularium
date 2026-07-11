@@ -1,0 +1,41 @@
+id: DV-0260
+summary: "excel, formulas, hyperformula, ironcalc, pycel: function not implemented — ADD, FLATTEN, GT (+7 more)"
+cause: missing-function
+category: value
+engines:
+  - excel
+  - formulas
+  - hyperformula
+  - ironcalc
+  - pycel
+test-count: 16
+subjects:
+  - ADD
+  - FLATTEN
+  - GT
+  - GTE
+  - IMCOTH
+  - IMLOG
+  - IMTANH
+  - ISDATE
+  - LTE
+  - MARGINOFERROR
+tests:
+  - ADD/add-non-numeric-string
+  - FLATTEN/flatten-2x2-order
+  - FLATTEN/flatten-col
+  - FLATTEN/flatten-row
+  - GT/gt-boolean-vs-number
+  - GTE/gte-boolean
+  - IMCOTH/imcoth-complex
+  - IMCOTH/imcoth-real
+  - IMLOG/imlog-complex
+  - IMLOG/imlog-natural-of-1
+  - IMTANH/imtanh-complex
+  - IMTANH/imtanh-zero
+  - ISDATE/isdate-of-date-string
+  - LTE/lte-boolean
+  - MARGINOFERROR/marginoferror-basic
+  - MARGINOFERROR/marginoferror-wider-data
+seeded: 2026-07-11
+last-confirmed: 2026-07-11

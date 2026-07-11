@@ -1,0 +1,13 @@
+id: DV-0291
+summary: "lattice: different argument interpretation (no-argument form resolves the host cell to column 26 where the other engines resolve 27) — COLUMN"
+cause: arg-semantics
+category: value
+engines:
+  - lattice
+test-count: 1
+subjects:
+  - COLUMN
+tests:
+  - COLUMN/column-no-arg
+seeded: 2026-07-11
+last-confirmed: 2026-07-11

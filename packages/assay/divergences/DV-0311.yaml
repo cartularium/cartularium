@@ -1,0 +1,14 @@
+id: DV-0311
+summary: "lattice: two-argument IF with a false condition yields blank where excel, formulas, gsheets, hyperformula, ironcalc return FALSE; pycel returns #NAME? on this form — IF"
+cause: arg-semantics
+category: value
+engines:
+  - lattice
+  - pycel
+test-count: 1
+subjects:
+  - IF
+tests:
+  - IF/if-two-args-false
+seeded: 2026-07-11
+last-confirmed: 2026-07-11

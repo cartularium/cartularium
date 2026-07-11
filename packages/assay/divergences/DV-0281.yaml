@@ -1,0 +1,21 @@
+id: DV-0281
+summary: "excel, gsheets, formulas, lattice: different argument interpretation (accrued-interest day-count/period handling; agreement pattern varies by case); hyperformula, ironcalc, pycel: function not implemented (#NAME?); libreoffice: returns blank — ACCRINT"
+cause: arg-semantics
+category: value
+engines:
+  - excel
+  - formulas
+  - gsheets
+  - hyperformula
+  - ironcalc
+  - lattice
+  - libreoffice
+  - pycel
+test-count: 2
+subjects:
+  - ACCRINT
+tests:
+  - ACCRINT/accrint-annual-basis-1
+  - ACCRINT/accrint-semiannual
+seeded: 2026-07-11
+last-confirmed: 2026-07-11

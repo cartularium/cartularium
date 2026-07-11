@@ -1,0 +1,32 @@
+id: DV-0327
+summary: "ironcalc, libreoffice, pycel: operator broadcasting over arrays/ranges not evaluated (ironcalc #N/IMPL!, libreoffice a blank cell, pycel #NAME?) where excel, formulas, gsheets, hyperformula, lattice produce the elementwise result — op:+, op:* (+4 more)"
+cause: array-handling
+category: value
+engines:
+  - ironcalc
+  - libreoffice
+  - pycel
+test-count: 13
+subjects:
+  - "op:%"
+  - "op:&"
+  - "op:*"
+  - "op:+"
+  - "op:/"
+  - "op:unary-"
+tests:
+  - "legacy:6f703a25/percent-on-row"
+  - "op:add/blank-in-range-treated-as-zero"
+  - "op:add/error-in-row-vector-propagates-per-cell"
+  - "op:add/numeric-strings-in-array-coerced"
+  - "op:add/range-column-plus-range-row-outer"
+  - "op:concat/concat-blank-coerces-to-empty-string"
+  - "op:concat/concat-row-and-column-outer"
+  - "op:concat/concat-scalar-to-row"
+  - "op:divide/division-by-row-with-zero"
+  - "op:multiply/range-times-range-elementwise"
+  - "op:multiply/range-vs-scalar-broadcast"
+  - "op:unary-/unary-minus-on-2d"
+  - "op:unary-/unary-minus-on-row"
+seeded: 2026-07-11
+last-confirmed: 2026-07-11

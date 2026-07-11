@@ -1,0 +1,14 @@
+id: DV-0352
+summary: "libreoffice, pycel: error-literal operand interpreted differently — op:*"
+cause: arg-semantics
+category: value
+engines:
+  - libreoffice
+  - pycel
+test-count: 1
+subjects:
+  - "op:*"
+tests:
+  - "op:multiply/error-times-number"
+seeded: 2026-07-11
+last-confirmed: 2026-07-11

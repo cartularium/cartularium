@@ -1,0 +1,15 @@
+id: DV-0357
+summary: "excel: patterns with capture groups return the first full match; gsheets, lattice: return the captured group values (one cell per group, spilling when multiple) — REGEXEXTRACT"
+cause: arg-semantics
+category: value
+engines:
+  - excel
+test-count: 3
+subjects:
+  - REGEXEXTRACT
+tests:
+  - REGEXEXTRACT/extract-capture-groups-when-multiple-groups-present
+  - REGEXEXTRACT/extract-single-capture-group
+  - REGEXEXTRACT/extract-two-word-groups
+seeded: 2026-07-11
+last-confirmed: 2026-07-11

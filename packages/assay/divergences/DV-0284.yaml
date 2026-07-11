@@ -1,0 +1,18 @@
+id: DV-0284
+summary: "formulas: broadcast with mismatched array shapes rejected where excel, gsheets, hyperformula, lattice pad the out-of-range cells with #N/A (ironcalc #N/IMPL!, libreoffice blank, pycel #NAME?) — ADD"
+cause: array-handling
+category: value
+engines:
+  - formulas
+  - ironcalc
+  - libreoffice
+  - pycel
+test-count: 3
+subjects:
+  - ADD
+tests:
+  - ADD/add-2d-incompatible-shape
+  - ADD/add-column-vectors-mismatched-length
+  - ADD/add-row-vectors-mismatched-length
+seeded: 2026-07-11
+last-confirmed: 2026-07-11

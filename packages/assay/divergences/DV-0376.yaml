@@ -1,0 +1,13 @@
+id: DV-0376
+summary: "ironcalc: inline-array argument not implemented (#N/IMPL!) where excel, formulas, gsheets, lattice return 64 — TYPE"
+cause: unimplemented-edge
+category: value
+engines:
+  - ironcalc
+test-count: 1
+subjects:
+  - TYPE
+tests:
+  - TYPE/type-of-array
+seeded: 2026-07-11
+last-confirmed: 2026-07-11

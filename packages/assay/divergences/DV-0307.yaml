@@ -1,0 +1,15 @@
+id: DV-0307
+summary: "formulas: column-vector new_x argument yields #REF! where excel, gsheets, lattice return the predicted column — GROWTH, TREND"
+cause: unimplemented-edge
+category: value
+engines:
+  - formulas
+test-count: 2
+subjects:
+  - GROWTH
+  - TREND
+tests:
+  - GROWTH/growth-new-x
+  - TREND/trend-new-x
+seeded: 2026-07-11
+last-confirmed: 2026-07-11

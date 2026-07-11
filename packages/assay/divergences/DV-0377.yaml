@@ -1,0 +1,13 @@
+id: DV-0377
+summary: "lattice: blank-cell argument yields #N/A where excel, formulas, gsheets, ironcalc report 1 — TYPE"
+cause: null-vs-zero
+category: value
+engines:
+  - lattice
+test-count: 1
+subjects:
+  - TYPE
+tests:
+  - TYPE/type-of-blank-cell
+seeded: 2026-07-11
+last-confirmed: 2026-07-11

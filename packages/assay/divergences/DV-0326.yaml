@@ -1,0 +1,16 @@
+id: DV-0326
+summary: "hyperformula, pycel: reference argument not detected as a reference (hyperformula returns FALSE for cell, range, and INDIRECT forms; pycel yields #NAME?) — ISREF"
+cause: arg-semantics
+category: value
+engines:
+  - hyperformula
+  - pycel
+test-count: 3
+subjects:
+  - ISREF
+tests:
+  - ISREF/isref-of-indirect-valid
+  - ISREF/isref-of-range
+  - ISREF/isref-of-single-cell
+seeded: 2026-07-11
+last-confirmed: 2026-07-11

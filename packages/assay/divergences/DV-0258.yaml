@@ -1,0 +1,87 @@
+id: DV-0258
+summary: "hyperformula, ironcalc, libreoffice, pycel: function not implemented — ACCRINTM, BYCOL, BYROW (+22 more)"
+cause: missing-function
+category: value
+engines:
+  - hyperformula
+  - ironcalc
+  - libreoffice
+  - pycel
+test-count: 48
+subjects:
+  - ACCRINTM
+  - BYCOL
+  - BYROW
+  - DISC
+  - DURATION
+  - EXPONDIST
+  - GAMMADIST
+  - GAMMAINV
+  - INTRATE
+  - LET
+  - MAKEARRAY
+  - MAP
+  - MDURATION
+  - PRICE
+  - PRICEDISC
+  - PRICEMAT
+  - RECEIVED
+  - REDUCE
+  - REGEXREPLACE
+  - SCAN
+  - SORT
+  - UNIQUE
+  - WRAPROWS
+  - YIELD
+  - YIELDDISC
+tests:
+  - ACCRINTM/accrintm-basis-1
+  - ACCRINTM/accrintm-short-period
+  - ACCRINTM/accrintm-standard
+  - BYCOL/bycol-sum
+  - BYROW/byrow-sum
+  - DISC/disc-basis-1
+  - DISC/disc-standard
+  - DURATION/duration-annual-basis-1
+  - DURATION/duration-standard-bond
+  - EXPONDIST/expondist-pdf
+  - GAMMADIST/gammadist-cdf
+  - GAMMADIST/gammadist-pdf
+  - GAMMAINV/gammainv-roundtrip
+  - INTRATE/intrate-basis-1
+  - INTRATE/intrate-standard
+  - LET/let-basic
+  - LET/let-multiple-bindings
+  - MAKEARRAY/makearray-multiplication-table
+  - MAP/map-over-column
+  - MAP/map-over-row
+  - MAP/map-two-arrays
+  - MDURATION/mduration-annual-basis-1
+  - MDURATION/mduration-standard-bond
+  - PRICE/price-annual-basis-1
+  - PRICE/price-quarterly
+  - PRICE/price-standard-bond
+  - PRICEDISC/pricedisc-basis-1
+  - PRICEDISC/pricedisc-standard
+  - PRICEMAT/pricemat-basis-1
+  - PRICEMAT/pricemat-standard
+  - RECEIVED/received-basis-1
+  - RECEIVED/received-standard
+  - REDUCE/reduce-product
+  - REDUCE/reduce-string-concat
+  - REDUCE/reduce-sum
+  - REGEXREPLACE/replace-all-digits
+  - REGEXREPLACE/replace-case-insensitive-via-inline-flag
+  - REGEXREPLACE/replace-greedy-pattern-all-occurrences
+  - REGEXREPLACE/replace-no-match-unchanged
+  - REGEXREPLACE/replace-whitespace-all
+  - SCAN/scan-cumulative-sum
+  - SORT/sort-ascending
+  - UNIQUE/unique-column
+  - WRAPROWS/wraprows-with-pad
+  - YIELD/yield-annual-basis-1
+  - YIELD/yield-quarterly
+  - YIELD/yield-standard-bond
+  - YIELDDISC/yielddisc-basis-1
+seeded: 2026-07-11
+last-confirmed: 2026-07-11

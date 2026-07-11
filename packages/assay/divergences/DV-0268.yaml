@@ -1,0 +1,40 @@
+id: DV-0268
+summary: "libreoffice, pycel: function not implemented — DOLLARDE, F.DIST.RT, F.INV (+9 more)"
+cause: missing-function
+category: value
+engines:
+  - libreoffice
+  - pycel
+test-count: 16
+subjects:
+  - DOLLARDE
+  - F.DIST.RT
+  - F.INV
+  - F.INV.RT
+  - FISHER
+  - GAMMA.INV
+  - GAUSS
+  - STDEV.S
+  - STDEVA
+  - STDEVPA
+  - VARA
+  - VARPA
+tests:
+  - DOLLARDE/dollarde-thirty-twos
+  - F.DIST.RT/f-dist-rt-central
+  - F.DIST.RT/f-dist-rt-tail
+  - F.INV.RT/f-inv-rt-at-0-05
+  - F.INV.RT/f-inv-rt-roundtrip
+  - F.INV/f-inv-at-0-5
+  - FISHER/fisher-at-0-5
+  - GAMMA.INV/gamma-inv-at-0-5
+  - GAUSS/gauss-at-1
+  - STDEV.S/stdev-s-sample-1-5
+  - STDEVA/stdeva-mixed-types
+  - STDEVA/stdeva-numeric-only
+  - STDEVPA/stdevpa-mixed-types
+  - STDEVPA/stdevpa-numeric-only
+  - VARA/vara-mixed-types
+  - VARPA/varpa-mixed-types
+seeded: 2026-07-11
+last-confirmed: 2026-07-11
