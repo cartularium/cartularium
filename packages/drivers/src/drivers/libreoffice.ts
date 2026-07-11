@@ -10,7 +10,9 @@ import { liftScalarGrid, liftTaskResults } from "./lift.js";
 import { probePythonVersion } from "./python-helpers.js";
 
 // libreoffice calc driver — drives `soffice --headless` via a python helper
-// openpyxl writes/reads the xlsx; libreoffice recalcs in between.
+// openpyxl writes/reads the xlsx; libreoffice recalcs in between. The helper
+// pre-seeds a profile forcing recalc-on-load — otherwise headless soffice ships
+// blank formula cells (openpyxl writes no cached value; default load mode skips recalc).
 // install: `brew install --cask libreoffice` or `apt install libreoffice-calc`.
 // single-task wraps in a one-item batch — soffice startup (~2s) dominates either way.
 
