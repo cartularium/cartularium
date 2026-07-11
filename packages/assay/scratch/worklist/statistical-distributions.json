@@ -1,0 +1,9084 @@
+[
+ {
+  "ref": "BETA.DIST/beta-dist-cdf-at-0-5",
+  "suite": "statistical-distributions",
+  "subject": "BETA.DIST",
+  "name": "beta-dist-cdf-at-0-5",
+  "formula": "=BETA.DIST(0.5, 2, 2, TRUE, 0, 1)",
+  "tags": [
+   "statistical",
+   "distributions"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.5
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.49999999999999956
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.4999999999999998
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "BETA.DIST/beta-dist-pdf-at-0-5",
+  "suite": "statistical-distributions",
+  "subject": "BETA.DIST",
+  "name": "beta-dist-pdf-at-0-5",
+  "formula": "=BETA.DIST(0.5, 2, 2, FALSE, 0, 1)",
+  "tags": [
+   "statistical",
+   "distributions"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 1.5
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 1.5000000000000007
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 1.4999999999999991
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "BETA.INV/beta-inv-at-0-5",
+  "suite": "statistical-distributions",
+  "subject": "BETA.INV",
+  "name": "beta-inv-at-0-5",
+  "formula": "=BETA.INV(0.5, 2, 2, 0, 1)",
+  "tags": [
+   "statistical",
+   "distributions"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.5
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.5000000000000001
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.49999999999999994
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "BETA.INV/beta-inv-roundtrip",
+  "suite": "statistical-distributions",
+  "subject": "BETA.INV",
+  "name": "beta-inv-roundtrip",
+  "formula": "=BETA.INV(BETA.DIST(0.3, 2, 5, TRUE, 0, 1), 2, 5, 0, 1)",
+  "tags": [
+   "statistical",
+   "distributions"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.30000000000000004
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.3000000000000002
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.2999999999999998
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.3
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.29999999999999977
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "BETADIST/betadist-central",
+  "suite": "statistical-distributions",
+  "subject": "BETADIST",
+  "name": "betadist-central",
+  "formula": "=BETADIST(0.5, 2, 2)",
+  "tags": [
+   "statistical",
+   "distributions"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.5
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.49999999999999956
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.4999999999999998
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#N/A"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "ironcalc",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "BETADIST/betadist-with-bounds",
+  "suite": "statistical-distributions",
+  "subject": "BETADIST",
+  "name": "betadist-with-bounds",
+  "formula": "=BETADIST(5, 2, 3, 0, 10)",
+  "tags": [
+   "statistical",
+   "distributions"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.6875
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.6875000000000001
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NUM!"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "ironcalc",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "BETAINV/betainv-at-0-5",
+  "suite": "statistical-distributions",
+  "subject": "BETAINV",
+  "name": "betainv-at-0-5",
+  "formula": "=BETAINV(0.5, 2, 2)",
+  "tags": [
+   "statistical",
+   "distributions"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.5
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.5000000000000001
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.49999999999999994
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "ironcalc",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "BETAINV/betainv-roundtrip",
+  "suite": "statistical-distributions",
+  "subject": "BETAINV",
+  "name": "betainv-roundtrip",
+  "formula": "=BETAINV(BETADIST(0.4, 3, 2), 3, 2)",
+  "tags": [
+   "statistical",
+   "distributions"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.4000000000000001
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.4
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#N/A"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "ironcalc",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "BINOM.DIST/binom-dist-pmf-at-0",
+  "suite": "statistical-distributions",
+  "subject": "BINOM.DIST",
+  "name": "binom-dist-pmf-at-0",
+  "formula": "=BINOM.DIST(0, 10, 0.5, FALSE)",
+  "tags": [
+   "statistical",
+   "distributions"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.0009765625
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.0009765624999999993
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.000976562
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "BINOM.DIST/binom-dist-pmf-at-k-5-n-10",
+  "suite": "statistical-distributions",
+  "subject": "BINOM.DIST",
+  "name": "binom-dist-pmf-at-k-5-n-10",
+  "formula": "=BINOM.DIST(5, 10, 0.5, FALSE)",
+  "tags": [
+   "statistical",
+   "distributions"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.2460937500000001
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.2460937500000002
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.24609375
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.2460937500000009
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "BINOM.DIST/binom-dist-tail-probability",
+  "suite": "statistical-distributions",
+  "subject": "BINOM.DIST",
+  "name": "binom-dist-tail-probability",
+  "formula": "=BINOM.DIST(3, 10, 0.25, TRUE)",
+  "tags": [
+   "statistical",
+   "distributions"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.7758750915527344
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.775875092
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.7758750915527364
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "BINOMDIST/binomdist-cdf",
+  "suite": "statistical-distributions",
+  "subject": "BINOMDIST",
+  "name": "binomdist-cdf",
+  "formula": "=BINOMDIST(2, 5, 0.5, TRUE)",
+  "tags": [
+   "statistical",
+   "distributions"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.4999999999999999
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.5
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.49999999999999994
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula",
+     "ironcalc",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "CHIDIST/chidist-at-mean-df-4",
+  "suite": "statistical-distributions",
+  "subject": "CHIDIST",
+  "name": "chidist-at-mean-df-4",
+  "formula": "=CHIDIST(4, 4)",
+  "tags": [
+   "statistical",
+   "distributions"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.4060058497098381
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.40600584970983794
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.40600584970983833
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.40600584971
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.4060058497098389
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "ironcalc",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "CHIDIST/chidist-tail-df-10",
+  "suite": "statistical-distributions",
+  "subject": "CHIDIST",
+  "name": "chidist-tail-df-10",
+  "formula": "=CHIDIST(18.307, 10)",
+  "tags": [
+   "statistical",
+   "distributions"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.05000058909139811
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.050000589091398075
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.05000058909139815
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.050000589091
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "ironcalc",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "CHIINV/chiinv-0-05-df-10",
+  "suite": "statistical-distributions",
+  "subject": "CHIINV",
+  "name": "chiinv-0-05-df-10",
+  "formula": "=CHIINV(0.05, 10)",
+  "tags": [
+   "statistical",
+   "distributions"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 18.307038053275146
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 18.307038053275143
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 18.307038053
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "ironcalc",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "CHIINV/chiinv-roundtrip",
+  "suite": "statistical-distributions",
+  "subject": "CHIINV",
+  "name": "chiinv-roundtrip",
+  "formula": "=CHIINV(CHIDIST(5, 4), 4)",
+  "tags": [
+   "statistical",
+   "distributions"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 5
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 4.999999999999999
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 5.000000000000002
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "ironcalc",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "CHISQ.DIST.RT/chisq-dist-rt-df-10",
+  "suite": "statistical-distributions",
+  "subject": "CHISQ.DIST.RT",
+  "name": "chisq-dist-rt-df-10",
+  "formula": "=CHISQ.DIST.RT(18.307, 10)",
+  "tags": [
+   "statistical",
+   "distributions"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.05000058909139811
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.050000589091398075
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.05000058909139815
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.050000589091
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.050000589
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "CHISQ.DIST.RT/chisq-dist-rt-median",
+  "suite": "statistical-distributions",
+  "subject": "CHISQ.DIST.RT",
+  "name": "chisq-dist-rt-median",
+  "formula": "=CHISQ.DIST.RT(4, 4)",
+  "tags": [
+   "statistical",
+   "distributions"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.4060058497098381
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.40600584970983794
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.40600584970983833
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.40600584971
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.40600585
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.4060058497098389
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "CHISQ.DIST/chisq-dist-cdf-df-4",
+  "suite": "statistical-distributions",
+  "subject": "CHISQ.DIST",
+  "name": "chisq-dist-cdf-df-4",
+  "formula": "=CHISQ.DIST(4, 4, TRUE)",
+  "tags": [
+   "statistical",
+   "distributions"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.5939941502901619
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.5939941502901616
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.5939941502901617
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.59399415
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.5939941502901611
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "CHISQ.DIST/chisq-dist-pdf-df-4",
+  "suite": "statistical-distributions",
+  "subject": "CHISQ.DIST",
+  "name": "chisq-dist-pdf-df-4",
+  "formula": "=CHISQ.DIST(4, 4, FALSE)",
+  "tags": [
+   "statistical",
+   "distributions"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.13533528323661273
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.1353352832366127
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.135335283
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "CHISQ.INV.RT/chisq-inv-rt-at-0-05-df-10",
+  "suite": "statistical-distributions",
+  "subject": "CHISQ.INV.RT",
+  "name": "chisq-inv-rt-at-0-05-df-10",
+  "formula": "=CHISQ.INV.RT(0.05, 10)",
+  "tags": [
+   "statistical",
+   "distributions"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 18.307038053275146
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 18.307038053275143
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 18.307038053
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "CHISQ.INV.RT/chisq-inv-rt-roundtrip",
+  "suite": "statistical-distributions",
+  "subject": "CHISQ.INV.RT",
+  "name": "chisq-inv-rt-roundtrip",
+  "formula": "=CHISQ.INV.RT(CHISQ.DIST.RT(5, 4), 4)",
+  "tags": [
+   "statistical",
+   "distributions"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 5
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 4.999999999999999
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 5.000000000000002
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "CHISQ.INV/chisq-inv-at-0-5-df-4",
+  "suite": "statistical-distributions",
+  "subject": "CHISQ.INV",
+  "name": "chisq-inv-at-0-5-df-4",
+  "formula": "=CHISQ.INV(0.5, 4)",
+  "tags": [
+   "statistical",
+   "distributions"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 3.3566939800333215
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 3.3566939800333224
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 3.35669398
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 3.3566939800333233
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "CHISQ.INV/chisq-inv-roundtrip",
+  "suite": "statistical-distributions",
+  "subject": "CHISQ.INV",
+  "name": "chisq-inv-roundtrip",
+  "formula": "=CHISQ.INV(CHISQ.DIST(5, 4, TRUE), 4)",
+  "tags": [
+   "statistical",
+   "distributions"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 5
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 4.999999999999999
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 5.000000000000002
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "CHISQ.TEST/chisq-test-2x3-contingency",
+  "suite": "statistical-distributions",
+  "subject": "CHISQ.TEST",
+  "name": "chisq-test-2x3-contingency",
+  "formula": "=CHISQ.TEST(A1:C2, A4:C5)",
+  "tags": [
+   "statistical",
+   "distributions"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.00030819201700830936
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.0003081920170083095
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.0003081920170082686
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.00030819201701
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.000308192
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.0063762422150260845
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "CHITEST/chitest-2x3-contingency",
+  "suite": "statistical-distributions",
+  "subject": "CHITEST",
+  "name": "chitest-2x3-contingency",
+  "formula": "=CHITEST(A1:C2, A4:C5)",
+  "tags": [
+   "statistical",
+   "distributions"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.00030819201700830936
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.0003081920170083095
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.0003081920170082686
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.00030819201701
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "ironcalc",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.0063762422150260845
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "CHITEST/chitest-small-table",
+  "suite": "statistical-distributions",
+  "subject": "CHITEST",
+  "name": "chitest-small-table",
+  "formula": "=CHITEST(A1:B2, A4:B5)",
+  "tags": [
+   "statistical",
+   "distributions"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.31487864133641985
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.3148786413364169
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.31487864133641963
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.31487864134
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "ironcalc",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.798807828845659
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "CONFIDENCE.NORM/confidence-norm-99-percent",
+  "suite": "statistical-distributions",
+  "subject": "CONFIDENCE.NORM",
+  "name": "confidence-norm-99-percent",
+  "formula": "=CONFIDENCE.NORM(0.01, 2.5, 50)",
+  "tags": [
+   "statistical",
+   "distributions"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.9106931838592245
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.9106931838592246
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.9106931848827708
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.91069318386
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.910693184
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.9106931837632511
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "CONFIDENCE.NORM/confidence-norm-standard",
+  "suite": "statistical-distributions",
+  "subject": "CONFIDENCE.NORM",
+  "name": "confidence-norm-standard",
+  "formula": "=CONFIDENCE.NORM(0.05, 1, 100)",
+  "tags": [
+   "statistical",
+   "distributions"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.19599639845400538
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.19599639845400535
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.1959963986120195
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.19599639845
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.195996398
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.1959963984539396
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "EXPON.DIST/expon-dist-cdf-at-mean",
+  "suite": "statistical-distributions",
+  "subject": "EXPON.DIST",
+  "name": "expon-dist-cdf-at-mean",
+  "formula": "=EXPON.DIST(1, 1, TRUE)",
+  "tags": [
+   "statistical",
+   "distributions"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.6321205588285577
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.632120559
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "EXPON.DIST/expon-dist-pdf-at-x-1",
+  "suite": "statistical-distributions",
+  "subject": "EXPON.DIST",
+  "name": "expon-dist-pdf-at-x-1",
+  "formula": "=EXPON.DIST(1, 2, FALSE)",
+  "tags": [
+   "statistical",
+   "distributions"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.2706705664732254
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.270670566
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "EXPONDIST/expondist-cdf",
+  "suite": "statistical-distributions",
+  "subject": "EXPONDIST",
+  "name": "expondist-cdf",
+  "formula": "=EXPONDIST(2, 0.5, TRUE)",
+  "tags": [
+   "statistical",
+   "distributions"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.6321205588285577
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula",
+     "ironcalc",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "EXPONDIST/expondist-pdf",
+  "suite": "statistical-distributions",
+  "subject": "EXPONDIST",
+  "name": "expondist-pdf",
+  "formula": "=EXPONDIST(2, 0.5, FALSE)",
+  "tags": [
+   "statistical",
+   "distributions"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.18393972058572117
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula",
+     "ironcalc",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "F.DIST.RT/f-dist-rt-central",
+  "suite": "statistical-distributions",
+  "subject": "F.DIST.RT",
+  "name": "f-dist-rt-central",
+  "formula": "=F.DIST.RT(1, 5, 10)",
+  "tags": [
+   "statistical",
+   "distributions"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.4651194265378005
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.46511942653780036
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.46511942654
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.465119427
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.4651194265377998
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "F.DIST.RT/f-dist-rt-tail",
+  "suite": "statistical-distributions",
+  "subject": "F.DIST.RT",
+  "name": "f-dist-rt-tail",
+  "formula": "=F.DIST.RT(3.33, 5, 10)",
+  "tags": [
+   "statistical",
+   "distributions"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.049831275797221304
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.04983127579722135
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.04983127579722124
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.049831275749
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.049831276
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "F.DIST/f-dist-cdf",
+  "suite": "statistical-distributions",
+  "subject": "F.DIST",
+  "name": "f-dist-cdf",
+  "formula": "=F.DIST(1, 5, 10, TRUE)",
+  "tags": [
+   "statistical",
+   "distributions"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.5348805734621995
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.5348805734621996
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.534880573
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.5348805734622002
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "F.DIST/f-dist-pdf",
+  "suite": "statistical-distributions",
+  "subject": "F.DIST",
+  "name": "f-dist-pdf",
+  "formula": "=F.DIST(1, 5, 10, FALSE)",
+  "tags": [
+   "statistical",
+   "distributions"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.49547978348663885
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.4954797834866395
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.4954797834866386
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.495479783
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.4954797834866404
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "F.INV.RT/f-inv-rt-at-0-05",
+  "suite": "statistical-distributions",
+  "subject": "F.INV.RT",
+  "name": "f-inv-rt-at-0-05",
+  "formula": "=F.INV.RT(0.05, 5, 10)",
+  "tags": [
+   "statistical",
+   "distributions"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 3.325834530413013
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 3.3258345304130104
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 3.3258345304130126
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 3.3258345292
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 3.32583453
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 3.3258345304130117
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "F.INV.RT/f-inv-rt-roundtrip",
+  "suite": "statistical-distributions",
+  "subject": "F.INV.RT",
+  "name": "f-inv-rt-roundtrip",
+  "formula": "=F.INV.RT(F.DIST.RT(2, 5, 10), 5, 10)",
+  "tags": [
+   "statistical",
+   "distributions"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 2.0000000000000004
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 1.9999999999999993
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 2
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 2.0000000000000018
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "F.INV/f-inv-at-0-5",
+  "suite": "statistical-distributions",
+  "subject": "F.INV",
+  "name": "f-inv-at-0-5",
+  "formula": "=F.INV(0.5, 5, 10)",
+  "tags": [
+   "statistical",
+   "distributions"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.9319331608510484
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.931933160851048
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.9319331608510488
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.93193316085
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.931933161
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "F.INV/f-inv-roundtrip",
+  "suite": "statistical-distributions",
+  "subject": "F.INV",
+  "name": "f-inv-roundtrip",
+  "formula": "=F.INV(F.DIST(2, 5, 10, TRUE), 5, 10)",
+  "tags": [
+   "statistical",
+   "distributions"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 2.0000000000000004
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 1.9999999999999993
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 2
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 2.0000000000000018
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "FDIST/fdist-central",
+  "suite": "statistical-distributions",
+  "subject": "FDIST",
+  "name": "fdist-central",
+  "formula": "=FDIST(1, 5, 10)",
+  "tags": [
+   "statistical",
+   "distributions"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.4651194265378005
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.46511942653780036
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.46511942654
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.4651194265377998
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "ironcalc",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "FDIST/fdist-tail",
+  "suite": "statistical-distributions",
+  "subject": "FDIST",
+  "name": "fdist-tail",
+  "formula": "=FDIST(3.33, 5, 10)",
+  "tags": [
+   "statistical",
+   "distributions"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.049831275797221304
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.04983127579722135
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.04983127579722124
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.049831275749
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "ironcalc",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "FINV/finv-at-0-05",
+  "suite": "statistical-distributions",
+  "subject": "FINV",
+  "name": "finv-at-0-05",
+  "formula": "=FINV(0.05, 5, 10)",
+  "tags": [
+   "statistical",
+   "distributions"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 3.325834530413013
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 3.3258345304130104
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 3.3258345304130126
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 3.3258345304130117
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 3.3258345292
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "ironcalc",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "FINV/finv-roundtrip",
+  "suite": "statistical-distributions",
+  "subject": "FINV",
+  "name": "finv-roundtrip",
+  "formula": "=FINV(FDIST(2, 5, 10), 5, 10)",
+  "tags": [
+   "statistical",
+   "distributions"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 2.0000000000000004
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 1.9999999999999993
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 2
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 2.0000000000000018
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "ironcalc",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "FISHER/fisher-at-0-5",
+  "suite": "statistical-distributions",
+  "subject": "FISHER",
+  "name": "fisher-at-0-5",
+  "formula": "=FISHER(0.5)",
+  "tags": [
+   "statistical",
+   "distributions"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.5493061443340549
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.54930614433
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.549306144
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "GAMMA.DIST/gamma-dist-cdf",
+  "suite": "statistical-distributions",
+  "subject": "GAMMA.DIST",
+  "name": "gamma-dist-cdf",
+  "formula": "=GAMMA.DIST(2, 2, 1, TRUE)",
+  "tags": [
+   "statistical",
+   "distributions"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.5939941502901619
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.5939941502901616
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.5939941502901617
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.59399415
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.5939941502901611
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "GAMMA.DIST/gamma-dist-pdf",
+  "suite": "statistical-distributions",
+  "subject": "GAMMA.DIST",
+  "name": "gamma-dist-pdf",
+  "formula": "=GAMMA.DIST(2, 2, 1, FALSE)",
+  "tags": [
+   "statistical",
+   "distributions"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.27067056647322546
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.2706705664732254
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.270670566
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "GAMMA.INV/gamma-inv-at-0-5",
+  "suite": "statistical-distributions",
+  "subject": "GAMMA.INV",
+  "name": "gamma-inv-at-0-5",
+  "formula": "=GAMMA.INV(0.5, 2, 1)",
+  "tags": [
+   "statistical",
+   "distributions"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 1.6783469900166608
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 1.6783469900166612
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 1.67834699
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 1.6783469900166617
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "GAMMA/gamma-at-0-5",
+  "suite": "statistical-distributions",
+  "subject": "GAMMA",
+  "name": "gamma-at-0-5",
+  "formula": "=GAMMA(0.5)",
+  "tags": [
+   "statistical",
+   "distributions"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "ironcalc",
+     "lattice",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 1.772453850905516
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 1.7724538509055159
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 1.772453851
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 1.7724538559
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "GAMMADIST/gammadist-cdf",
+  "suite": "statistical-distributions",
+  "subject": "GAMMADIST",
+  "name": "gammadist-cdf",
+  "formula": "=GAMMADIST(2, 2, 1, TRUE)",
+  "tags": [
+   "statistical",
+   "distributions"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.5939941502901619
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.5939941502901616
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.5939941502901617
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.5939941502901611
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula",
+     "ironcalc",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "GAMMADIST/gammadist-pdf",
+  "suite": "statistical-distributions",
+  "subject": "GAMMADIST",
+  "name": "gammadist-pdf",
+  "formula": "=GAMMADIST(2, 2, 1, FALSE)",
+  "tags": [
+   "statistical",
+   "distributions"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.27067056647322546
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.2706705664732254
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula",
+     "ironcalc",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "GAMMAINV/gammainv-at-0-5",
+  "suite": "statistical-distributions",
+  "subject": "GAMMAINV",
+  "name": "gammainv-at-0-5",
+  "formula": "=GAMMAINV(0.5, 2, 1)",
+  "tags": [
+   "statistical",
+   "distributions"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 1.6783469900166608
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 1.6783469900166612
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 1.67834699
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 1.6783469900166617
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "ironcalc",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "GAMMAINV/gammainv-roundtrip",
+  "suite": "statistical-distributions",
+  "subject": "GAMMAINV",
+  "name": "gammainv-roundtrip",
+  "formula": "=GAMMAINV(GAMMADIST(3, 2, 1, TRUE), 2, 1)",
+  "tags": [
+   "statistical",
+   "distributions"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 2.9999999999999996
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 3
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula",
+     "ironcalc",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "GAUSS/gauss-at-1",
+  "suite": "statistical-distributions",
+  "subject": "GAUSS",
+  "name": "gauss-at-1",
+  "formula": "=GAUSS(1)",
+  "tags": [
+   "statistical",
+   "distributions"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.34134474606854304
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.3413447460685429
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.34134474607
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.341344746
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "HYPGEOM.DIST/hypgeom-dist-at-0",
+  "suite": "statistical-distributions",
+  "subject": "HYPGEOM.DIST",
+  "name": "hypgeom-dist-at-0",
+  "formula": "=HYPGEOM.DIST(0, 4, 8, 20, FALSE)",
+  "tags": [
+   "statistical",
+   "distributions"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.10216718266253864
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.10216718266253871
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.1021671826625387
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.102167183
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.1021671826625393
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "HYPGEOM.DIST/hypgeom-dist-cdf",
+  "suite": "statistical-distributions",
+  "subject": "HYPGEOM.DIST",
+  "name": "hypgeom-dist-cdf",
+  "formula": "=HYPGEOM.DIST(1, 4, 8, 20, TRUE)",
+  "tags": [
+   "statistical",
+   "distributions"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.46542827657378727
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.4654282765737874
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.46542827657378744
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.465428277
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.4654282765737914
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "HYPGEOM.DIST/hypgeom-dist-pmf",
+  "suite": "statistical-distributions",
+  "subject": "HYPGEOM.DIST",
+  "name": "hypgeom-dist-pmf",
+  "formula": "=HYPGEOM.DIST(1, 4, 8, 20, FALSE)",
+  "tags": [
+   "statistical",
+   "distributions"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.3632610939112486
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.36326109391124867
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.3632610939112487
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.363261094
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.36326109391125205
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "HYPGEOMDIST/hypgeomdist-basic",
+  "suite": "statistical-distributions",
+  "subject": "HYPGEOMDIST",
+  "name": "hypgeomdist-basic",
+  "formula": "=HYPGEOMDIST(1, 4, 8, 20)",
+  "tags": [
+   "statistical",
+   "distributions"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.3632610939112486
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.36326109391124867
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.3632610939112487
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.36326109391125205
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#N/A"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "ironcalc",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "HYPGEOMDIST/hypgeomdist-zero-successes",
+  "suite": "statistical-distributions",
+  "subject": "HYPGEOMDIST",
+  "name": "hypgeomdist-zero-successes",
+  "formula": "=HYPGEOMDIST(0, 4, 8, 20)",
+  "tags": [
+   "statistical",
+   "distributions"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.10216718266253864
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.10216718266253871
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.1021671826625387
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.1021671826625393
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#N/A"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "ironcalc",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "LOGINV/loginv-roundtrip",
+  "suite": "statistical-distributions",
+  "subject": "LOGINV",
+  "name": "loginv-roundtrip",
+  "formula": "=LOGINV(LOGNORMDIST(2, 0, 1), 0, 1)",
+  "tags": [
+   "statistical",
+   "distributions"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 2.0000000000000004
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 2
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "gsheets"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 1.999999999701634
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#N/A"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "ironcalc",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "LOGNORM.DIST/lognorm-dist-cdf",
+  "suite": "statistical-distributions",
+  "subject": "LOGNORM.DIST",
+  "name": "lognorm-dist-cdf",
+  "formula": "=LOGNORM.DIST(2, 0, 1, TRUE)",
+  "tags": [
+   "statistical",
+   "distributions"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.7558914042144174
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.7558914042144173
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.7558914042144171
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.755891404
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "LOGNORM.DIST/lognorm-dist-pdf",
+  "suite": "statistical-distributions",
+  "subject": "LOGNORM.DIST",
+  "name": "lognorm-dist-pdf",
+  "formula": "=LOGNORM.DIST(2, 0, 1, FALSE)",
+  "tags": [
+   "statistical",
+   "distributions"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.1568740192789811
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.15687401927898112
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.156874019
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "LOGNORM.INV/lognorm-inv-roundtrip",
+  "suite": "statistical-distributions",
+  "subject": "LOGNORM.INV",
+  "name": "lognorm-inv-roundtrip",
+  "formula": "=LOGNORM.INV(LOGNORM.DIST(2, 0, 1, TRUE), 0, 1)",
+  "tags": [
+   "statistical",
+   "distributions"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 2.0000000000000004
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 2
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 1.999999999701634
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "LOGNORMDIST/lognormdist-at-2",
+  "suite": "statistical-distributions",
+  "subject": "LOGNORMDIST",
+  "name": "lognormdist-at-2",
+  "formula": "=LOGNORMDIST(2, 0, 1)",
+  "tags": [
+   "statistical",
+   "distributions"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.7558914042144174
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.7558914042144173
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.7558914042144171
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#N/A"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "ironcalc",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "NEGBINOM.DIST/negbinom-dist-at-0-failures",
+  "suite": "statistical-distributions",
+  "subject": "NEGBINOM.DIST",
+  "name": "negbinom-dist-at-0-failures",
+  "formula": "=NEGBINOM.DIST(0, 5, 0.5, FALSE)",
+  "tags": [
+   "statistical",
+   "distributions"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.03125
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.031249999999999997
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "NEGBINOM.DIST/negbinom-dist-cdf",
+  "suite": "statistical-distributions",
+  "subject": "NEGBINOM.DIST",
+  "name": "negbinom-dist-cdf",
+  "formula": "=NEGBINOM.DIST(10, 5, 0.25, TRUE)",
+  "tags": [
+   "statistical",
+   "distributions"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.31351405847817665
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.3135140584781766
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.313514058
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.31351405847817704
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "NEGBINOM.DIST/negbinom-dist-pmf",
+  "suite": "statistical-distributions",
+  "subject": "NEGBINOM.DIST",
+  "name": "negbinom-dist-pmf",
+  "formula": "=NEGBINOM.DIST(10, 5, 0.25, FALSE)",
+  "tags": [
+   "statistical",
+   "distributions"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.05504866037517785
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.05504866037517788
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.05504866037517786
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.05504866
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.05504866037517768
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "NEGBINOMDIST/negbinomdist-at-0",
+  "suite": "statistical-distributions",
+  "subject": "NEGBINOMDIST",
+  "name": "negbinomdist-at-0",
+  "formula": "=NEGBINOMDIST(0, 5, 0.5)",
+  "tags": [
+   "statistical",
+   "distributions"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.03125
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.031249999999999997
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#N/A"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "ironcalc",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "NEGBINOMDIST/negbinomdist-basic",
+  "suite": "statistical-distributions",
+  "subject": "NEGBINOMDIST",
+  "name": "negbinomdist-basic",
+  "formula": "=NEGBINOMDIST(10, 5, 0.25)",
+  "tags": [
+   "statistical",
+   "distributions"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.05504866037517785
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.05504866037517788
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.05504866037517786
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.05504866037517768
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#N/A"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "ironcalc",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "NORM.DIST/norm-dist-at-1-sigma-cdf",
+  "suite": "statistical-distributions",
+  "subject": "NORM.DIST",
+  "name": "norm-dist-at-1-sigma-cdf",
+  "formula": "=NORM.DIST(1, 0, 1, TRUE)",
+  "tags": [
+   "statistical",
+   "distributions"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.841344746068543
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.8413447460685429
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.841344746
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "NORM.DIST/norm-dist-at-mean-pdf",
+  "suite": "statistical-distributions",
+  "subject": "NORM.DIST",
+  "name": "norm-dist-at-mean-pdf",
+  "formula": "=NORM.DIST(0, 0, 1, FALSE)",
+  "tags": [
+   "statistical",
+   "distributions"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.3989422804014327
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.39894228
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "NORM.DIST/norm-dist-non-standard",
+  "suite": "statistical-distributions",
+  "subject": "NORM.DIST",
+  "name": "norm-dist-non-standard",
+  "formula": "=NORM.DIST(42, 40, 1.5, TRUE)",
+  "tags": [
+   "statistical",
+   "distributions"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.9087887802741321
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.90878878
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "NORM.INV/norm-inv-at-0-975",
+  "suite": "statistical-distributions",
+  "subject": "NORM.INV",
+  "name": "norm-inv-at-0-975",
+  "formula": "=NORM.INV(0.975, 0, 1)",
+  "tags": [
+   "statistical",
+   "distributions"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 1.9599639845400536
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 1.9599639845400534
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 1.959963986120195
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 1.9599639845
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 1.959963985
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 1.959963984539396
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "NORM.INV/norm-inv-roundtrip",
+  "suite": "statistical-distributions",
+  "subject": "NORM.INV",
+  "name": "norm-inv-roundtrip",
+  "formula": "=NORM.INV(NORM.DIST(1.5, 0, 1, TRUE), 0, 1)",
+  "tags": [
+   "statistical",
+   "distributions"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 1.5
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 1.4999999999999998
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 1.5000000013626391
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "NORM.S.DIST/norm-s-dist-at-0-pdf",
+  "suite": "statistical-distributions",
+  "subject": "NORM.S.DIST",
+  "name": "norm-s-dist-at-0-pdf",
+  "formula": "=NORM.S.DIST(0, FALSE)",
+  "tags": [
+   "statistical",
+   "distributions"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.3989422804014327
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.39894228
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "NORM.S.DIST/norm-s-dist-at-1-96",
+  "suite": "statistical-distributions",
+  "subject": "NORM.S.DIST",
+  "name": "norm-s-dist-at-1-96",
+  "formula": "=NORM.S.DIST(1.96, TRUE)",
+  "tags": [
+   "statistical",
+   "distributions"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.9750021048517795
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.9750021048517794
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.975002105
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.9750021048517796
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "NORM.S.INV/norm-s-inv-at-0-975",
+  "suite": "statistical-distributions",
+  "subject": "NORM.S.INV",
+  "name": "norm-s-inv-at-0-975",
+  "formula": "=NORM.S.INV(0.975)",
+  "tags": [
+   "statistical",
+   "distributions"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 1.9599639845400536
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 1.9599639845400534
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 1.959963986120195
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 1.9599639845
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 1.959963985
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 1.959963984539396
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "NORMDIST/normdist-at-mean-pdf",
+  "suite": "statistical-distributions",
+  "subject": "NORMDIST",
+  "name": "normdist-at-mean-pdf",
+  "formula": "=NORMDIST(0, 0, 1, FALSE)",
+  "tags": [
+   "statistical",
+   "distributions"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.3989422804014327
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula",
+     "ironcalc",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "NORMINV/norminv-at-0-95",
+  "suite": "statistical-distributions",
+  "subject": "NORMINV",
+  "name": "norminv-at-0-95",
+  "formula": "=NORMINV(0.95, 0, 1)",
+  "tags": [
+   "statistical",
+   "distributions"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "hyperformula",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 1.6448536269514715
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 1.644853627
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "gsheets"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 1.644853625133699
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "ironcalc",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "NORMSDIST/normsdist-at-1-96",
+  "suite": "statistical-distributions",
+  "subject": "NORMSDIST",
+  "name": "normsdist-at-1-96",
+  "formula": "=NORMSDIST(1.96)",
+  "tags": [
+   "statistical",
+   "distributions"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.9750021048517795
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.9750021048517794
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.9750021048517796
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#N/A"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "ironcalc",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "NORMSINV/normsinv-at-0-025",
+  "suite": "statistical-distributions",
+  "subject": "NORMSINV",
+  "name": "normsinv-at-0-025",
+  "formula": "=NORMSINV(0.025)",
+  "tags": [
+   "statistical",
+   "distributions"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "hyperformula",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": -1.9599639845400538
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": -1.9599639845
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": -1.959963984539396
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "gsheets"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": -1.959963986120195
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "ironcalc",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "PHI/phi-at-0",
+  "suite": "statistical-distributions",
+  "subject": "PHI",
+  "name": "phi-at-0",
+  "formula": "=PHI(0)",
+  "tags": [
+   "statistical",
+   "distributions"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.3989422804014327
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.3989422804
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.39894228
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "PHI/phi-at-1",
+  "suite": "statistical-distributions",
+  "subject": "PHI",
+  "name": "phi-at-1",
+  "formula": "=PHI(1)",
+  "tags": [
+   "statistical",
+   "distributions"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.24197072451914337
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.24197072452
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.241970725
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "POISSON.DIST/poisson-dist-cdf",
+  "suite": "statistical-distributions",
+  "subject": "POISSON.DIST",
+  "name": "poisson-dist-cdf",
+  "formula": "=POISSON.DIST(5, 3, TRUE)",
+  "tags": [
+   "statistical",
+   "distributions"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.9160820579686966
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.9160820579686965
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.916082058
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.9160820579686967
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "POISSON.DIST/poisson-dist-pmf-at-0",
+  "suite": "statistical-distributions",
+  "subject": "POISSON.DIST",
+  "name": "poisson-dist-pmf-at-0",
+  "formula": "=POISSON.DIST(0, 3, FALSE)",
+  "tags": [
+   "statistical",
+   "distributions"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.049787068367863944
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.049787068
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "POISSON.DIST/poisson-dist-pmf-at-mean",
+  "suite": "statistical-distributions",
+  "subject": "POISSON.DIST",
+  "name": "poisson-dist-pmf-at-mean",
+  "formula": "=POISSON.DIST(3, 3, FALSE)",
+  "tags": [
+   "statistical",
+   "distributions"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.22404180765538778
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.22404180765538775
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.224041808
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "POISSON/poisson-cdf",
+  "suite": "statistical-distributions",
+  "subject": "POISSON",
+  "name": "poisson-cdf",
+  "formula": "=POISSON(5, 3, TRUE)",
+  "tags": [
+   "statistical",
+   "distributions"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.9160820579686966
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.9160820579686965
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.9160820579686967
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula",
+     "ironcalc",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "POISSON/poisson-pmf-at-0",
+  "suite": "statistical-distributions",
+  "subject": "POISSON",
+  "name": "poisson-pmf-at-0",
+  "formula": "=POISSON(0, 3, FALSE)",
+  "tags": [
+   "statistical",
+   "distributions"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.049787068367863944
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula",
+     "ironcalc",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "POISSON/poisson-pmf-at-mean",
+  "suite": "statistical-distributions",
+  "subject": "POISSON",
+  "name": "poisson-pmf-at-mean",
+  "formula": "=POISSON(3, 3, FALSE)",
+  "tags": [
+   "statistical",
+   "distributions"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.22404180765538778
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.22404180765538775
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula",
+     "ironcalc",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "T.DIST.2T/t-dist-2t-central",
+  "suite": "statistical-distributions",
+  "subject": "T.DIST.2T",
+  "name": "t-dist-2t-central",
+  "formula": "=T.DIST.2T(0.5, 10)",
+  "tags": [
+   "statistical",
+   "distributions"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.6278936057429729
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.627893605742973
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.6278936057429731
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.62789360574
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.627893606
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#PARSE!"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "T.DIST.2T/t-dist-2t-df-10",
+  "suite": "statistical-distributions",
+  "subject": "T.DIST.2T",
+  "name": "t-dist-2t-df-10",
+  "formula": "=T.DIST.2T(1.812, 10)",
+  "tags": [
+   "statistical",
+   "distributions"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.10007526206584734
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.10007526206584715
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.10007526206584694
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.10007526184
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.100075262
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#PARSE!"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "T.DIST.RT/t-dist-rt-df-10",
+  "suite": "statistical-distributions",
+  "subject": "T.DIST.RT",
+  "name": "t-dist-rt-df-10",
+  "formula": "=T.DIST.RT(1.812, 10)",
+  "tags": [
+   "statistical",
+   "distributions"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.05003763103292367
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.05003763103292357
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.05003763103292347
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.050037630918
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.050037631
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.05003763103292358
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "T.DIST/t-dist-pdf-at-0",
+  "suite": "statistical-distributions",
+  "subject": "T.DIST",
+  "name": "t-dist-pdf-at-0",
+  "formula": "=T.DIST(0, 10, FALSE)",
+  "tags": [
+   "statistical",
+   "distributions"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.38910838396603115
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.3891083839660306
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.389108384
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.3891083839660311
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "T.DIST/t-dist-tail",
+  "suite": "statistical-distributions",
+  "subject": "T.DIST",
+  "name": "t-dist-tail",
+  "formula": "=T.DIST(1.812, 10, TRUE)",
+  "tags": [
+   "statistical",
+   "distributions"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.9499623689670763
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.9499623689670764
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.9499623689670765
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.949962369
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "T.INV.2T/t-inv-2t-95-df-10",
+  "suite": "statistical-distributions",
+  "subject": "T.INV.2T",
+  "name": "t-inv-2t-95-df-10",
+  "formula": "=T.INV.2T(0.05, 10)",
+  "tags": [
+   "statistical",
+   "distributions"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "ironcalc"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 2.2281388519862744
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 2.228138851986274
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 2.2281388519862735
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 2.228138852
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 2.2281388425
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#PARSE!"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "T.INV.2T/t-inv-2t-roundtrip",
+  "suite": "statistical-distributions",
+  "subject": "T.INV.2T",
+  "name": "t-inv-2t-roundtrip",
+  "formula": "=T.INV.2T(T.DIST.2T(1.5, 10), 10)",
+  "tags": [
+   "statistical",
+   "distributions"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 1.4999999999999996
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 1.5000000000000002
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 1.4999999999999993
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 1.5
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#PARSE!"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "T.INV/t-inv-roundtrip",
+  "suite": "statistical-distributions",
+  "subject": "T.INV",
+  "name": "t-inv-roundtrip",
+  "formula": "=T.INV(T.DIST(1.5, 10, TRUE), 10)",
+  "tags": [
+   "statistical",
+   "distributions"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 1.4999999999999996
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 1.5000000000000002
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 1.4999999999999993
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 1.5
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 1.4999999999999967
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "TDIST/tdist-one-tailed",
+  "suite": "statistical-distributions",
+  "subject": "TDIST",
+  "name": "tdist-one-tailed",
+  "formula": "=TDIST(1.812, 10, 1)",
+  "tags": [
+   "statistical",
+   "distributions"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.05003763103292367
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.05003763103292357
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.05003763103292347
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.05003763103292358
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.050037630918
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "ironcalc",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "TDIST/tdist-two-tailed",
+  "suite": "statistical-distributions",
+  "subject": "TDIST",
+  "name": "tdist-two-tailed",
+  "formula": "=TDIST(1.812, 10, 2)",
+  "tags": [
+   "statistical",
+   "distributions"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.10007526206584734
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.10007526206584715
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.10007526206584694
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.10007526206584727
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.10007526184
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "ironcalc",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "TINV/tinv-95-df-10",
+  "suite": "statistical-distributions",
+  "subject": "TINV",
+  "name": "tinv-95-df-10",
+  "formula": "=TINV(0.05, 10)",
+  "tags": [
+   "statistical",
+   "distributions"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 2.2281388519862744
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 2.228138851986274
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 2.2281388519862735
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 2.228138851986275
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 2.2281388425
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "ironcalc",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "TINV/tinv-roundtrip",
+  "suite": "statistical-distributions",
+  "subject": "TINV",
+  "name": "tinv-roundtrip",
+  "formula": "=TINV(TDIST(1.5, 10, 2), 10)",
+  "tags": [
+   "statistical",
+   "distributions"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 1.4999999999999996
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 1.5000000000000002
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 1.4999999999999993
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 1.5
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 1.4999999999999967
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "ironcalc",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "WEIBULL.DIST/weibull-dist-cdf",
+  "suite": "statistical-distributions",
+  "subject": "WEIBULL.DIST",
+  "name": "weibull-dist-cdf",
+  "formula": "=WEIBULL.DIST(2, 2, 1, TRUE)",
+  "tags": [
+   "statistical",
+   "distributions"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.9816843611112658
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.981684361
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "WEIBULL.DIST/weibull-dist-pdf",
+  "suite": "statistical-distributions",
+  "subject": "WEIBULL.DIST",
+  "name": "weibull-dist-pdf",
+  "formula": "=WEIBULL.DIST(2, 2, 1, FALSE)",
+  "tags": [
+   "statistical",
+   "distributions"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.07326255555493671
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.073262556
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "WEIBULL/weibull-cdf",
+  "suite": "statistical-distributions",
+  "subject": "WEIBULL",
+  "name": "weibull-cdf",
+  "formula": "=WEIBULL(2, 2, 1, TRUE)",
+  "tags": [
+   "statistical",
+   "distributions"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.9816843611112658
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula",
+     "ironcalc",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "WEIBULL/weibull-pdf",
+  "suite": "statistical-distributions",
+  "subject": "WEIBULL",
+  "name": "weibull-pdf",
+  "formula": "=WEIBULL(2, 2, 1, FALSE)",
+  "tags": [
+   "statistical",
+   "distributions"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.07326255555493671
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula",
+     "ironcalc",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ }
+]

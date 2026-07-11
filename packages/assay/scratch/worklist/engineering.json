@@ -1,0 +1,4911 @@
+[
+ {
+  "ref": "BIN2DEC/bin2dec-max-negative-two-s-complement",
+  "suite": "engineering",
+  "subject": "BIN2DEC",
+  "name": "bin2dec-max-negative-two-s-complement",
+  "formula": "=BIN2DEC(\"1111111111\")",
+  "tags": [
+   "engineering"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": -1
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "BIN2DEC/bin2dec-negative-via-two-s-complement",
+  "suite": "engineering",
+  "subject": "BIN2DEC",
+  "name": "bin2dec-negative-via-two-s-complement",
+  "formula": "=BIN2DEC(\"1111111110\")",
+  "tags": [
+   "engineering"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": -2
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "BIN2DEC/bin2dec-positive",
+  "suite": "engineering",
+  "subject": "BIN2DEC",
+  "name": "bin2dec-positive",
+  "formula": "=BIN2DEC(\"1010\")",
+  "tags": [
+   "engineering"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 10
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "BIN2DEC/bin2dec-zero",
+  "suite": "engineering",
+  "subject": "BIN2DEC",
+  "name": "bin2dec-zero",
+  "formula": "=BIN2DEC(\"0\")",
+  "tags": [
+   "engineering"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 0
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "BIN2HEX/bin2hex-negative-two-s-complement",
+  "suite": "engineering",
+  "subject": "BIN2HEX",
+  "name": "bin2hex-negative-two-s-complement",
+  "formula": "=BIN2HEX(\"1111111111\")",
+  "tags": [
+   "engineering"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "string",
+        "v": "FFFFFFFFFF"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "BIN2HEX/bin2hex-positive",
+  "suite": "engineering",
+  "subject": "BIN2HEX",
+  "name": "bin2hex-positive",
+  "formula": "=BIN2HEX(\"1010\")",
+  "tags": [
+   "engineering"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "string",
+        "v": "A"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "BIN2HEX/bin2hex-with-places-padding",
+  "suite": "engineering",
+  "subject": "BIN2HEX",
+  "name": "bin2hex-with-places-padding",
+  "formula": "=BIN2HEX(\"1010\", 4)",
+  "tags": [
+   "engineering"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "string",
+        "v": "000A"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "BIN2OCT/bin2oct-negative-two-s-complement",
+  "suite": "engineering",
+  "subject": "BIN2OCT",
+  "name": "bin2oct-negative-two-s-complement",
+  "formula": "=BIN2OCT(\"1111111111\")",
+  "tags": [
+   "engineering"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "string",
+        "v": "7777777777"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "BIN2OCT/bin2oct-positive",
+  "suite": "engineering",
+  "subject": "BIN2OCT",
+  "name": "bin2oct-positive",
+  "formula": "=BIN2OCT(\"1001\")",
+  "tags": [
+   "engineering"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "string",
+        "v": "11"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "BIN2OCT/bin2oct-with-places-padding",
+  "suite": "engineering",
+  "subject": "BIN2OCT",
+  "name": "bin2oct-with-places-padding",
+  "formula": "=BIN2OCT(\"1001\", 4)",
+  "tags": [
+   "engineering"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "string",
+        "v": "0011"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "DEC2BIN/dec2bin-negative",
+  "suite": "engineering",
+  "subject": "DEC2BIN",
+  "name": "dec2bin-negative",
+  "formula": "=DEC2BIN(-2)",
+  "tags": [
+   "engineering"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "string",
+        "v": "1111111110"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "DEC2BIN/dec2bin-positive",
+  "suite": "engineering",
+  "subject": "DEC2BIN",
+  "name": "dec2bin-positive",
+  "formula": "=DEC2BIN(10)",
+  "tags": [
+   "engineering"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "string",
+        "v": "1010"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "DEC2BIN/dec2bin-with-places-padding",
+  "suite": "engineering",
+  "subject": "DEC2BIN",
+  "name": "dec2bin-with-places-padding",
+  "formula": "=DEC2BIN(10, 8)",
+  "tags": [
+   "engineering"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "string",
+        "v": "00001010"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "DEC2HEX/dec2hex-negative",
+  "suite": "engineering",
+  "subject": "DEC2HEX",
+  "name": "dec2hex-negative",
+  "formula": "=DEC2HEX(-1)",
+  "tags": [
+   "engineering"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "string",
+        "v": "FFFFFFFFFF"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "DEC2HEX/dec2hex-positive",
+  "suite": "engineering",
+  "subject": "DEC2HEX",
+  "name": "dec2hex-positive",
+  "formula": "=DEC2HEX(255)",
+  "tags": [
+   "engineering"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "string",
+        "v": "FF"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "DEC2HEX/dec2hex-with-places-padding",
+  "suite": "engineering",
+  "subject": "DEC2HEX",
+  "name": "dec2hex-with-places-padding",
+  "formula": "=DEC2HEX(10, 4)",
+  "tags": [
+   "engineering"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "string",
+        "v": "000A"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "DEC2OCT/dec2oct-negative",
+  "suite": "engineering",
+  "subject": "DEC2OCT",
+  "name": "dec2oct-negative",
+  "formula": "=DEC2OCT(-1)",
+  "tags": [
+   "engineering"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "string",
+        "v": "7777777777"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "DEC2OCT/dec2oct-positive",
+  "suite": "engineering",
+  "subject": "DEC2OCT",
+  "name": "dec2oct-positive",
+  "formula": "=DEC2OCT(8)",
+  "tags": [
+   "engineering"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "string",
+        "v": "10"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "DEC2OCT/dec2oct-with-places-padding",
+  "suite": "engineering",
+  "subject": "DEC2OCT",
+  "name": "dec2oct-with-places-padding",
+  "formula": "=DEC2OCT(8, 4)",
+  "tags": [
+   "engineering"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "string",
+        "v": "0010"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "ERF.PRECISE/erf-precise-negative",
+  "suite": "engineering",
+  "subject": "ERF.PRECISE",
+  "name": "erf-precise-negative",
+  "formula": "=ERF.PRECISE(-0.5)",
+  "tags": [
+   "engineering"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": -0.5204998778130465
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": -0.5204998778130466
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": -0.520499878
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "ERF.PRECISE/erf-precise-one",
+  "suite": "engineering",
+  "subject": "ERF.PRECISE",
+  "name": "erf-precise-one",
+  "formula": "=ERF.PRECISE(1)",
+  "tags": [
+   "engineering"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.8427007929497149
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.8427007929497148
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.8427007929497151
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.842700793
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "ERF/erf-negative",
+  "suite": "engineering",
+  "subject": "ERF",
+  "name": "erf-negative",
+  "formula": "=ERF(-1)",
+  "tags": [
+   "engineering"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": -0.8427007929497149
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": -0.8427007929497148
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": -0.8427007929497151
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": -0.84270079295
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": -0.842700793
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "ERF/erf-one",
+  "suite": "engineering",
+  "subject": "ERF",
+  "name": "erf-one",
+  "formula": "=ERF(1)",
+  "tags": [
+   "engineering"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.8427007929497149
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.8427007929497148
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.8427007929497151
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.84270079295
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.842700793
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "ERF/erf-two-arg-lower-upper",
+  "suite": "engineering",
+  "subject": "ERF",
+  "name": "erf-two-arg-lower-upper",
+  "formula": "=ERF(0, 1)",
+  "tags": [
+   "engineering"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.8427007929497149
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.8427007929497148
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.8427007929497151
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.84270079295
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.842700793
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#N/A"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "ERF/erf-zero",
+  "suite": "engineering",
+  "subject": "ERF",
+  "name": "erf-zero",
+  "formula": "=ERF(0)",
+  "tags": [
+   "engineering"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 0
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "HEX2BIN/hex2bin-negative-two-s-complement",
+  "suite": "engineering",
+  "subject": "HEX2BIN",
+  "name": "hex2bin-negative-two-s-complement",
+  "formula": "=HEX2BIN(\"FFFFFFFFFF\")",
+  "tags": [
+   "engineering"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "string",
+        "v": "1111111111"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "HEX2BIN/hex2bin-positive",
+  "suite": "engineering",
+  "subject": "HEX2BIN",
+  "name": "hex2bin-positive",
+  "formula": "=HEX2BIN(\"A\")",
+  "tags": [
+   "engineering"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "string",
+        "v": "1010"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "HEX2BIN/hex2bin-with-places-padding",
+  "suite": "engineering",
+  "subject": "HEX2BIN",
+  "name": "hex2bin-with-places-padding",
+  "formula": "=HEX2BIN(\"A\", 8)",
+  "tags": [
+   "engineering"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "string",
+        "v": "00001010"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "HEX2DEC/hex2dec-negative-two-s-complement",
+  "suite": "engineering",
+  "subject": "HEX2DEC",
+  "name": "hex2dec-negative-two-s-complement",
+  "formula": "=HEX2DEC(\"FFFFFFFFFF\")",
+  "tags": [
+   "engineering"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": -1
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "HEX2DEC/hex2dec-two-letters",
+  "suite": "engineering",
+  "subject": "HEX2DEC",
+  "name": "hex2dec-two-letters",
+  "formula": "=HEX2DEC(\"FF\")",
+  "tags": [
+   "engineering"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 255
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "HEX2DEC/hex2dec-zero",
+  "suite": "engineering",
+  "subject": "HEX2DEC",
+  "name": "hex2dec-zero",
+  "formula": "=HEX2DEC(\"0\")",
+  "tags": [
+   "engineering"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 0
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "HEX2OCT/hex2oct-negative-two-s-complement",
+  "suite": "engineering",
+  "subject": "HEX2OCT",
+  "name": "hex2oct-negative-two-s-complement",
+  "formula": "=HEX2OCT(\"FFFFFFFFFF\")",
+  "tags": [
+   "engineering"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "string",
+        "v": "7777777777"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "HEX2OCT/hex2oct-positive",
+  "suite": "engineering",
+  "subject": "HEX2OCT",
+  "name": "hex2oct-positive",
+  "formula": "=HEX2OCT(\"F\")",
+  "tags": [
+   "engineering"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "string",
+        "v": "17"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "HEX2OCT/hex2oct-with-places-padding",
+  "suite": "engineering",
+  "subject": "HEX2OCT",
+  "name": "hex2oct-with-places-padding",
+  "formula": "=HEX2OCT(\"F\", 4)",
+  "tags": [
+   "engineering"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "string",
+        "v": "0017"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "IMARGUMENT/imargument-basic",
+  "suite": "engineering",
+  "subject": "IMARGUMENT",
+  "name": "imargument-basic",
+  "formula": "=IMARGUMENT(\"3+4i\")",
+  "tags": [
+   "engineering"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.9272952180016122
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.927295218
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "IMARGUMENT/imargument-pure-imaginary",
+  "suite": "engineering",
+  "subject": "IMARGUMENT",
+  "name": "imargument-pure-imaginary",
+  "formula": "=IMARGUMENT(\"i\")",
+  "tags": [
+   "engineering"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 1.5707963267948966
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 1.5707963268
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 1.570796327
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "formulas"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#DIV/0!"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "IMCOS/imcos-complex",
+  "suite": "engineering",
+  "subject": "IMCOS",
+  "name": "imcos-complex",
+  "formula": "=IMCOS(\"1+1i\")",
+  "tags": [
+   "engineering"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "gsheets",
+     "ironcalc"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "string",
+        "v": "0.833730025131149-0.988897705762865i"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "formulas",
+     "hyperformula",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "string",
+        "v": "0.8337300251311491-0.9888977057628651i"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "IMCOS/imcos-zero",
+  "suite": "engineering",
+  "subject": "IMCOS",
+  "name": "imcos-zero",
+  "formula": "=IMCOS(\"0\")",
+  "tags": [
+   "engineering"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "string",
+        "v": "1"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "IMCOSH/imcosh-complex",
+  "suite": "engineering",
+  "subject": "IMCOSH",
+  "name": "imcosh-complex",
+  "formula": "=IMCOSH(\"1+1i\")",
+  "tags": [
+   "engineering"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "gsheets",
+     "ironcalc"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "string",
+        "v": "0.833730025131149+0.988897705762865i"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "formulas",
+     "hyperformula",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "string",
+        "v": "0.8337300251311491+0.9888977057628651i"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "IMCOSH/imcosh-zero",
+  "suite": "engineering",
+  "subject": "IMCOSH",
+  "name": "imcosh-zero",
+  "formula": "=IMCOSH(\"0\")",
+  "tags": [
+   "engineering"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "string",
+        "v": "1"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "IMCOT/imcot-complex",
+  "suite": "engineering",
+  "subject": "IMCOT",
+  "name": "imcot-complex",
+  "formula": "=IMCOT(\"1+1i\")",
+  "tags": [
+   "engineering"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "gsheets",
+     "ironcalc"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "string",
+        "v": "0.217621561854403-0.868014142895925i"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "formulas"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "string",
+        "v": "0.2176215618544028-0.8680141428959252i"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "string",
+        "v": "0.21762156185440265-0.8680141428959249i"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "IMCOT/imcot-real",
+  "suite": "engineering",
+  "subject": "IMCOT",
+  "name": "imcot-real",
+  "formula": "=IMCOT(\"1\")",
+  "tags": [
+   "engineering"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "gsheets",
+     "ironcalc"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "string",
+        "v": "0.642092615934331"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "formulas",
+     "hyperformula",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "string",
+        "v": "0.6420926159343308"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "IMCOTH/imcoth-complex",
+  "suite": "engineering",
+  "subject": "IMCOTH",
+  "name": "imcoth-complex",
+  "formula": "=IMCOTH(\"1+1i\")",
+  "tags": [
+   "engineering"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "hyperformula",
+     "ironcalc",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "gsheets"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "string",
+        "v": "0.868014142895925-0.217621561854403i"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "string",
+        "v": "0.8680141428959249-0.21762156185440265i"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "IMCOTH/imcoth-real",
+  "suite": "engineering",
+  "subject": "IMCOTH",
+  "name": "imcoth-real",
+  "formula": "=IMCOTH(\"1\")",
+  "tags": [
+   "engineering"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "hyperformula",
+     "ironcalc",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "gsheets"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "string",
+        "v": "1.31303528549933"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "string",
+        "v": "1.3130352854993315"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "IMCSC/imcsc-complex",
+  "suite": "engineering",
+  "subject": "IMCSC",
+  "name": "imcsc-complex",
+  "formula": "=IMCSC(\"1+1i\")",
+  "tags": [
+   "engineering"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "string",
+        "v": "0.621518017170428-0.303931001628427i"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "formulas"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "string",
+        "v": "0.6215180171704284-0.30393100162842646i"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "gsheets",
+     "ironcalc"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "string",
+        "v": "0.621518017170429-0.303931001628426i"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "string",
+        "v": "0.6215180171704283-0.3039310016284264i"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "IMCSC/imcsc-real",
+  "suite": "engineering",
+  "subject": "IMCSC",
+  "name": "imcsc-real",
+  "formula": "=IMCSC(\"1\")",
+  "tags": [
+   "engineering"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "gsheets",
+     "ironcalc"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "string",
+        "v": "1.18839510577812"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "formulas",
+     "hyperformula",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "string",
+        "v": "1.1883951057781212"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "IMCSCH/imcsch-complex",
+  "suite": "engineering",
+  "subject": "IMCSCH",
+  "name": "imcsch-complex",
+  "formula": "=IMCSCH(\"1+1i\")",
+  "tags": [
+   "engineering"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "gsheets",
+     "ironcalc"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "string",
+        "v": "0.303931001628426-0.621518017170429i"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "formulas"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "string",
+        "v": "0.30393100162842646-0.6215180171704284i"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "string",
+        "v": "0.3039310016284264-0.6215180171704283i"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "IMCSCH/imcsch-real",
+  "suite": "engineering",
+  "subject": "IMCSCH",
+  "name": "imcsch-real",
+  "formula": "=IMCSCH(\"1\")",
+  "tags": [
+   "engineering"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "gsheets",
+     "ironcalc"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "string",
+        "v": "0.850918128239322"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "formulas"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "string",
+        "v": "0.8509181282393216"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "string",
+        "v": "0.8509181282393217"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "IMDIV/imdiv-by-zero",
+  "suite": "engineering",
+  "subject": "IMDIV",
+  "name": "imdiv-by-zero",
+  "formula": "=IMDIV(\"1+2i\", \"0\")",
+  "tags": [
+   "engineering"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "hyperformula",
+     "ironcalc"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NUM!"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "gsheets",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#DIV/0!"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "IMEXP/imexp-imaginary",
+  "suite": "engineering",
+  "subject": "IMEXP",
+  "name": "imexp-imaginary",
+  "formula": "=IMEXP(\"1+1i\")",
+  "tags": [
+   "engineering"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "gsheets",
+     "ironcalc"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "string",
+        "v": "1.46869393991589+2.28735528717884i"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "formulas",
+     "hyperformula",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "string",
+        "v": "1.4686939399158851+2.2873552871788423i"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "IMEXP/imexp-real",
+  "suite": "engineering",
+  "subject": "IMEXP",
+  "name": "imexp-real",
+  "formula": "=IMEXP(\"1\")",
+  "tags": [
+   "engineering"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "gsheets",
+     "ironcalc"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "string",
+        "v": "2.71828182845905"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "formulas",
+     "hyperformula",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "string",
+        "v": "2.718281828459045"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "IMEXP/imexp-zero",
+  "suite": "engineering",
+  "subject": "IMEXP",
+  "name": "imexp-zero",
+  "formula": "=IMEXP(\"0\")",
+  "tags": [
+   "engineering"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "string",
+        "v": "1"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "IMLOG/imlog-complex",
+  "suite": "engineering",
+  "subject": "IMLOG",
+  "name": "imlog-complex",
+  "formula": "=IMLOG(\"3+4i\")",
+  "tags": [
+   "engineering"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "hyperformula",
+     "ironcalc",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "gsheets"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "string",
+        "v": "0.698970004336019+0.402719196273373i"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "string",
+        "v": "0.6989700043360187+0.4027191962733731i"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "IMLOG/imlog-natural-of-1",
+  "suite": "engineering",
+  "subject": "IMLOG",
+  "name": "imlog-natural-of-1",
+  "formula": "=IMLOG(\"1\")",
+  "tags": [
+   "engineering"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "hyperformula",
+     "ironcalc",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "gsheets",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "string",
+        "v": "0"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "IMLOG10/imlog10-complex",
+  "suite": "engineering",
+  "subject": "IMLOG10",
+  "name": "imlog10-complex",
+  "formula": "=IMLOG10(\"3+4i\")",
+  "tags": [
+   "engineering"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "gsheets",
+     "ironcalc"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "string",
+        "v": "0.698970004336019+0.402719196273373i"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "formulas",
+     "hyperformula",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "string",
+        "v": "0.6989700043360187+0.4027191962733731i"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "IMLOG10/imlog10-of-10",
+  "suite": "engineering",
+  "subject": "IMLOG10",
+  "name": "imlog10-of-10",
+  "formula": "=IMLOG10(\"10\")",
+  "tags": [
+   "engineering"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "string",
+        "v": "1"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "IMLOG2/imlog2-complex",
+  "suite": "engineering",
+  "subject": "IMLOG2",
+  "name": "imlog2-complex",
+  "formula": "=IMLOG2(\"3+4i\")",
+  "tags": [
+   "engineering"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "gsheets",
+     "ironcalc"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "string",
+        "v": "2.32192809488736+1.33780421245098i"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "formulas",
+     "hyperformula",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "string",
+        "v": "2.321928094887362+1.3378042124509761i"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "IMLOG2/imlog2-of-8",
+  "suite": "engineering",
+  "subject": "IMLOG2",
+  "name": "imlog2-of-8",
+  "formula": "=IMLOG2(\"8\")",
+  "tags": [
+   "engineering"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "string",
+        "v": "3"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "formulas"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "string",
+        "v": "2.9999999999999996"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "IMSEC/imsec-complex",
+  "suite": "engineering",
+  "subject": "IMSEC",
+  "name": "imsec-complex",
+  "formula": "=IMSEC(\"1+1i\")",
+  "tags": [
+   "engineering"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "gsheets",
+     "ironcalc"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "string",
+        "v": "0.498337030555187+0.591083841721045i"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "formulas",
+     "hyperformula",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "string",
+        "v": "0.4983370305551868+0.591083841721045i"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "IMSEC/imsec-zero",
+  "suite": "engineering",
+  "subject": "IMSEC",
+  "name": "imsec-zero",
+  "formula": "=IMSEC(\"0\")",
+  "tags": [
+   "engineering"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "string",
+        "v": "1"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "IMSECH/imsech-complex",
+  "suite": "engineering",
+  "subject": "IMSECH",
+  "name": "imsech-complex",
+  "formula": "=IMSECH(\"1+1i\")",
+  "tags": [
+   "engineering"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "gsheets",
+     "ironcalc"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "string",
+        "v": "0.498337030555187-0.591083841721045i"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "formulas",
+     "hyperformula",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "string",
+        "v": "0.4983370305551868-0.591083841721045i"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "IMSECH/imsech-zero",
+  "suite": "engineering",
+  "subject": "IMSECH",
+  "name": "imsech-zero",
+  "formula": "=IMSECH(\"0\")",
+  "tags": [
+   "engineering"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "string",
+        "v": "1"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "IMSIN/imsin-complex",
+  "suite": "engineering",
+  "subject": "IMSIN",
+  "name": "imsin-complex",
+  "formula": "=IMSIN(\"1+1i\")",
+  "tags": [
+   "engineering"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "gsheets",
+     "ironcalc"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "string",
+        "v": "1.29845758141598+0.634963914784736i"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "formulas",
+     "hyperformula",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "string",
+        "v": "1.2984575814159773+0.6349639147847361i"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "IMSIN/imsin-zero",
+  "suite": "engineering",
+  "subject": "IMSIN",
+  "name": "imsin-zero",
+  "formula": "=IMSIN(\"0\")",
+  "tags": [
+   "engineering"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "string",
+        "v": "0"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "IMSINH/imsinh-complex",
+  "suite": "engineering",
+  "subject": "IMSINH",
+  "name": "imsinh-complex",
+  "formula": "=IMSINH(\"1+1i\")",
+  "tags": [
+   "engineering"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "gsheets",
+     "ironcalc"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "string",
+        "v": "0.634963914784736+1.29845758141598i"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "formulas",
+     "hyperformula",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "string",
+        "v": "0.6349639147847361+1.2984575814159773i"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "IMSINH/imsinh-zero",
+  "suite": "engineering",
+  "subject": "IMSINH",
+  "name": "imsinh-zero",
+  "formula": "=IMSINH(\"0\")",
+  "tags": [
+   "engineering"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "string",
+        "v": "0"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "IMTAN/imtan-complex",
+  "suite": "engineering",
+  "subject": "IMTAN",
+  "name": "imtan-complex",
+  "formula": "=IMTAN(\"1+1i\")",
+  "tags": [
+   "engineering"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "gsheets",
+     "ironcalc"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "string",
+        "v": "0.271752585319512+1.08392332733869i"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "formulas"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "string",
+        "v": "0.27175258531951174+1.0839233273386943i"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "string",
+        "v": "0.2717525853195117+1.0839233273386946i"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "IMTAN/imtan-zero",
+  "suite": "engineering",
+  "subject": "IMTAN",
+  "name": "imtan-zero",
+  "formula": "=IMTAN(\"0\")",
+  "tags": [
+   "engineering"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "string",
+        "v": "0"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "IMTANH/imtanh-complex",
+  "suite": "engineering",
+  "subject": "IMTANH",
+  "name": "imtanh-complex",
+  "formula": "=IMTANH(\"1+1i\")",
+  "tags": [
+   "engineering"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "hyperformula",
+     "ironcalc",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "gsheets"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "string",
+        "v": "1.08392332733869+0.271752585319512i"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "string",
+        "v": "1.0839233273386946+0.2717525853195117i"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "IMTANH/imtanh-zero",
+  "suite": "engineering",
+  "subject": "IMTANH",
+  "name": "imtanh-zero",
+  "formula": "=IMTANH(\"0\")",
+  "tags": [
+   "engineering"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "hyperformula",
+     "ironcalc",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "gsheets",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "string",
+        "v": "0"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "OCT2BIN/oct2bin-negative-two-s-complement",
+  "suite": "engineering",
+  "subject": "OCT2BIN",
+  "name": "oct2bin-negative-two-s-complement",
+  "formula": "=OCT2BIN(\"7777777777\")",
+  "tags": [
+   "engineering"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "string",
+        "v": "1111111111"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "OCT2BIN/oct2bin-positive",
+  "suite": "engineering",
+  "subject": "OCT2BIN",
+  "name": "oct2bin-positive",
+  "formula": "=OCT2BIN(\"7\")",
+  "tags": [
+   "engineering"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "string",
+        "v": "111"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "OCT2BIN/oct2bin-with-places-padding",
+  "suite": "engineering",
+  "subject": "OCT2BIN",
+  "name": "oct2bin-with-places-padding",
+  "formula": "=OCT2BIN(\"7\", 8)",
+  "tags": [
+   "engineering"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "string",
+        "v": "00000111"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "OCT2DEC/oct2dec-negative-two-s-complement",
+  "suite": "engineering",
+  "subject": "OCT2DEC",
+  "name": "oct2dec-negative-two-s-complement",
+  "formula": "=OCT2DEC(\"7777777777\")",
+  "tags": [
+   "engineering"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": -1
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "OCT2DEC/oct2dec-positive",
+  "suite": "engineering",
+  "subject": "OCT2DEC",
+  "name": "oct2dec-positive",
+  "formula": "=OCT2DEC(\"17\")",
+  "tags": [
+   "engineering"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 15
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "OCT2DEC/oct2dec-zero",
+  "suite": "engineering",
+  "subject": "OCT2DEC",
+  "name": "oct2dec-zero",
+  "formula": "=OCT2DEC(\"0\")",
+  "tags": [
+   "engineering"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 0
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "OCT2HEX/oct2hex-negative-two-s-complement",
+  "suite": "engineering",
+  "subject": "OCT2HEX",
+  "name": "oct2hex-negative-two-s-complement",
+  "formula": "=OCT2HEX(\"7777777777\")",
+  "tags": [
+   "engineering"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "string",
+        "v": "FFFFFFFFFF"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "OCT2HEX/oct2hex-positive",
+  "suite": "engineering",
+  "subject": "OCT2HEX",
+  "name": "oct2hex-positive",
+  "formula": "=OCT2HEX(\"17\")",
+  "tags": [
+   "engineering"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "string",
+        "v": "F"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "OCT2HEX/oct2hex-with-places-padding",
+  "suite": "engineering",
+  "subject": "OCT2HEX",
+  "name": "oct2hex-with-places-padding",
+  "formula": "=OCT2HEX(\"17\", 4)",
+  "tags": [
+   "engineering"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "string",
+        "v": "000F"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ }
+]

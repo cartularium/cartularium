@@ -1,0 +1,2840 @@
+[
+ {
+  "ref": "AVERAGE/average-empty-range",
+  "suite": "statistical-descriptive",
+  "subject": "AVERAGE",
+  "name": "average-empty-range",
+  "formula": "=AVERAGE(A1:A3)",
+  "tags": [
+   "statistical"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#DIV/0!"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "AVERAGE/average-ignores-text-in-range",
+  "suite": "statistical-descriptive",
+  "subject": "AVERAGE",
+  "name": "average-ignores-text-in-range",
+  "formula": "=AVERAGE(A1:A3)",
+  "tags": [
+   "statistical"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 15
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "AVERAGE/average-inline",
+  "suite": "statistical-descriptive",
+  "subject": "AVERAGE",
+  "name": "average-inline",
+  "formula": "=AVERAGE(2, 4, 6)",
+  "tags": [
+   "statistical"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 4
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "AVERAGE/average-whole-numbers",
+  "suite": "statistical-descriptive",
+  "subject": "AVERAGE",
+  "name": "average-whole-numbers",
+  "formula": "=AVERAGE(A1:A5)",
+  "tags": [
+   "statistical"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 3
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "AVERAGEA/averagea-inline-booleans",
+  "suite": "statistical-descriptive",
+  "subject": "AVERAGEA",
+  "name": "averagea-inline-booleans",
+  "formula": "=AVERAGEA(1, 2, TRUE)",
+  "tags": [
+   "statistical"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 1.3333333333333333
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 1.333333333
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "AVERAGEIF/averageif-exact-value",
+  "suite": "statistical-descriptive",
+  "subject": "AVERAGEIF",
+  "name": "averageif-exact-value",
+  "formula": "=AVERAGEIF(A1:A4, 2)",
+  "tags": [
+   "statistical"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 2
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "AVERAGEIF/averageif-greater-than",
+  "suite": "statistical-descriptive",
+  "subject": "AVERAGEIF",
+  "name": "averageif-greater-than",
+  "formula": "=AVERAGEIF(A1:A5, \">2\")",
+  "tags": [
+   "statistical"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 4
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "AVERAGEIF/averageif-label-a",
+  "suite": "statistical-descriptive",
+  "subject": "AVERAGEIF",
+  "name": "averageif-label-a",
+  "formula": "=AVERAGEIF(D1:D5, \"A\", E1:E5)",
+  "tags": [
+   "statistical"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 30
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "AVERAGEIF/averageif-no-match",
+  "suite": "statistical-descriptive",
+  "subject": "AVERAGEIF",
+  "name": "averageif-no-match",
+  "formula": "=AVERAGEIF(A1:A3, \">100\")",
+  "tags": [
+   "statistical"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#DIV/0!"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "COUNT/count-empty-range",
+  "suite": "statistical-descriptive",
+  "subject": "COUNT",
+  "name": "count-empty-range",
+  "formula": "=COUNT(A1:A3)",
+  "tags": [
+   "statistical"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 0
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "COUNT/count-ignores-text",
+  "suite": "statistical-descriptive",
+  "subject": "COUNT",
+  "name": "count-ignores-text",
+  "formula": "=COUNT(A1:A5)",
+  "tags": [
+   "statistical"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 3
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "COUNT/count-inline-statistical-descriptive",
+  "suite": "statistical-descriptive",
+  "subject": "COUNT",
+  "name": "count-inline-statistical-descriptive",
+  "formula": "=COUNT(1, 2, 3, 4, 5)",
+  "tags": [
+   "statistical"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 5
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "COUNTA/counta-empty-string-cell",
+  "suite": "statistical-descriptive",
+  "subject": "COUNTA",
+  "name": "counta-empty-string-cell",
+  "formula": "=COUNTA(A1:A3)",
+  "tags": [
+   "statistical"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 2
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "gsheets",
+     "hyperformula",
+     "ironcalc"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 3
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "GEOMEAN/geomean-1-5",
+  "suite": "statistical-descriptive",
+  "subject": "GEOMEAN",
+  "name": "geomean-1-5",
+  "formula": "=GEOMEAN(A1:A5)",
+  "tags": [
+   "statistical"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 2.605171084697352
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 2.6051710846973517
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 2.6051710847
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 2.605171085
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "HARMEAN/harmean-1-5",
+  "suite": "statistical-descriptive",
+  "subject": "HARMEAN",
+  "name": "harmean-1-5",
+  "formula": "=HARMEAN(A1:A5)",
+  "tags": [
+   "statistical"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 2.18978102189781
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 2.1897810219
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 2.189781022
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "LARGE/large-1st-statistical-descriptive",
+  "suite": "statistical-descriptive",
+  "subject": "LARGE",
+  "name": "large-1st-statistical-descriptive",
+  "formula": "=LARGE(A1:A5, 1)",
+  "tags": [
+   "statistical"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 5
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "LARGE/large-3rd-statistical-descriptive",
+  "suite": "statistical-descriptive",
+  "subject": "LARGE",
+  "name": "large-3rd-statistical-descriptive",
+  "formula": "=LARGE(A1:A5, 3)",
+  "tags": [
+   "statistical"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 3
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "MAX/max-empty-range",
+  "suite": "statistical-descriptive",
+  "subject": "MAX",
+  "name": "max-empty-range",
+  "formula": "=MAX(A1:A3)",
+  "tags": [
+   "statistical"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 0
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "MAX/max-ignores-text",
+  "suite": "statistical-descriptive",
+  "subject": "MAX",
+  "name": "max-ignores-text",
+  "formula": "=MAX(A1:A3)",
+  "tags": [
+   "statistical"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 10
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "MAX/max-inline-negatives",
+  "suite": "statistical-descriptive",
+  "subject": "MAX",
+  "name": "max-inline-negatives",
+  "formula": "=MAX(-3, -1, -7)",
+  "tags": [
+   "statistical"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": -1
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "MAX/max-whole-numbers",
+  "suite": "statistical-descriptive",
+  "subject": "MAX",
+  "name": "max-whole-numbers",
+  "formula": "=MAX(A1:A5)",
+  "tags": [
+   "statistical"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 5
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "MIN/min-empty-range",
+  "suite": "statistical-descriptive",
+  "subject": "MIN",
+  "name": "min-empty-range",
+  "formula": "=MIN(A1:A3)",
+  "tags": [
+   "statistical"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 0
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "MIN/min-ignores-text",
+  "suite": "statistical-descriptive",
+  "subject": "MIN",
+  "name": "min-ignores-text",
+  "formula": "=MIN(A1:A3)",
+  "tags": [
+   "statistical"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 5
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "MIN/min-inline-negatives",
+  "suite": "statistical-descriptive",
+  "subject": "MIN",
+  "name": "min-inline-negatives",
+  "formula": "=MIN(-3, -1, -7)",
+  "tags": [
+   "statistical"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": -7
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "MIN/min-whole-numbers",
+  "suite": "statistical-descriptive",
+  "subject": "MIN",
+  "name": "min-whole-numbers",
+  "formula": "=MIN(A1:A5)",
+  "tags": [
+   "statistical"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 1
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "MODE.MULT/mode-mult-no-repeats",
+  "suite": "statistical-descriptive",
+  "subject": "MODE.MULT",
+  "name": "mode-mult-no-repeats",
+  "formula": "=MODE.MULT(1, 2, 3)",
+  "tags": [
+   "statistical"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#N/A"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula",
+     "ironcalc",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "MODE.MULT/mode-mult-single-mode",
+  "suite": "statistical-descriptive",
+  "subject": "MODE.MULT",
+  "name": "mode-mult-single-mode",
+  "formula": "=MODE.MULT(1, 2, 2, 3, 4)",
+  "tags": [
+   "statistical"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "gsheets",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 2
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "formulas"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "string",
+        "v": "[2]"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula",
+     "ironcalc",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "MODE.MULT/mode-mult-tied-dataset",
+  "suite": "statistical-descriptive",
+  "subject": "MODE.MULT",
+  "name": "mode-mult-tied-dataset",
+  "formula": "=MODE.MULT(B1:B5)",
+  "tags": [
+   "statistical"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "gsheets",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 2
+       }
+      ],
+      [
+       {
+        "c": "number",
+        "v": 3
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "formulas"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "string",
+        "v": "[2, 3]"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula",
+     "ironcalc",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "PERCENTRANK.EXC/percentrank-exc-minimum-value",
+  "suite": "statistical-descriptive",
+  "subject": "PERCENTRANK.EXC",
+  "name": "percentrank-exc-minimum-value",
+  "formula": "=PERCENTRANK.EXC(A1:A5, 1)",
+  "tags": [
+   "statistical"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.166
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "gsheets",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.167
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula",
+     "ironcalc",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "SMALL/small-1st-statistical-descriptive",
+  "suite": "statistical-descriptive",
+  "subject": "SMALL",
+  "name": "small-1st-statistical-descriptive",
+  "formula": "=SMALL(A1:A5, 1)",
+  "tags": [
+   "statistical"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 1
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "SMALL/small-3rd",
+  "suite": "statistical-descriptive",
+  "subject": "SMALL",
+  "name": "small-3rd",
+  "formula": "=SMALL(A1:A5, 3)",
+  "tags": [
+   "statistical"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 3
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "STDEV.P/stdev-p-population-1-5",
+  "suite": "statistical-descriptive",
+  "subject": "STDEV.P",
+  "name": "stdev-p-population-1-5",
+  "formula": "=STDEV.P(A1:A5)",
+  "tags": [
+   "statistical"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 1.4142135623730951
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 1.4142135624
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 1.414213562
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "STDEV.S/stdev-s-sample-1-5",
+  "suite": "statistical-descriptive",
+  "subject": "STDEV.S",
+  "name": "stdev-s-sample-1-5",
+  "formula": "=STDEV.S(A1:A5)",
+  "tags": [
+   "statistical"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 1.5811388300841898
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 1.5811388301
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 1.58113883
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "STDEV/stdev-sample-1-5",
+  "suite": "statistical-descriptive",
+  "subject": "STDEV",
+  "name": "stdev-sample-1-5",
+  "formula": "=STDEV(A1:A5)",
+  "tags": [
+   "statistical"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 1.5811388300841898
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 1.5811388301
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "ironcalc",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "STDEV/stdev-two-values",
+  "suite": "statistical-descriptive",
+  "subject": "STDEV",
+  "name": "stdev-two-values",
+  "formula": "=STDEV(1, 3)",
+  "tags": [
+   "statistical"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 1.4142135623730951
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 1.4142135624
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "ironcalc",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "STDEVA/stdeva-inline-boolean",
+  "suite": "statistical-descriptive",
+  "subject": "STDEVA",
+  "name": "stdeva-inline-boolean",
+  "formula": "=STDEVA(1, 2, TRUE)",
+  "tags": [
+   "statistical"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.5773502691896258
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.5773502691896257
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "ironcalc"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.707106781
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "STDEVA/stdeva-mixed-types",
+  "suite": "statistical-descriptive",
+  "subject": "STDEVA",
+  "name": "stdeva-mixed-types",
+  "formula": "=STDEVA(C1:C5)",
+  "tags": [
+   "statistical"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.8366600265340756
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.83666002653
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.836660027
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "STDEVA/stdeva-numeric-only",
+  "suite": "statistical-descriptive",
+  "subject": "STDEVA",
+  "name": "stdeva-numeric-only",
+  "formula": "=STDEVA(A1:A5)",
+  "tags": [
+   "statistical"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 1.5811388300841898
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 1.5811388301
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 1.58113883
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "STDEVP/stdevp-population-1-5",
+  "suite": "statistical-descriptive",
+  "subject": "STDEVP",
+  "name": "stdevp-population-1-5",
+  "formula": "=STDEVP(A1:A5)",
+  "tags": [
+   "statistical"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 1.4142135623730951
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 1.4142135624
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "ironcalc",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "STDEVPA/stdevpa-inline-boolean",
+  "suite": "statistical-descriptive",
+  "subject": "STDEVPA",
+  "name": "stdevpa-inline-boolean",
+  "formula": "=STDEVPA(1, 2, TRUE)",
+  "tags": [
+   "statistical"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.4714045207910317
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "ironcalc"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.5
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "STDEVPA/stdevpa-mixed-types",
+  "suite": "statistical-descriptive",
+  "subject": "STDEVPA",
+  "name": "stdevpa-mixed-types",
+  "formula": "=STDEVPA(C1:C5)",
+  "tags": [
+   "statistical"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.7483314773547883
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.7483314773547882
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.74833147735
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.748331477
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "STDEVPA/stdevpa-numeric-only",
+  "suite": "statistical-descriptive",
+  "subject": "STDEVPA",
+  "name": "stdevpa-numeric-only",
+  "formula": "=STDEVPA(A1:A5)",
+  "tags": [
+   "statistical"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 1.4142135623730951
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 1.4142135624
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 1.414213562
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "VARA/vara-inline-boolean",
+  "suite": "statistical-descriptive",
+  "subject": "VARA",
+  "name": "vara-inline-boolean",
+  "formula": "=VARA(1, 2, TRUE)",
+  "tags": [
+   "statistical"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.3333333333333335
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.3333333333333333
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "ironcalc"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.5
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "VARA/vara-mixed-types",
+  "suite": "statistical-descriptive",
+  "subject": "VARA",
+  "name": "vara-mixed-types",
+  "formula": "=VARA(C1:C5)",
+  "tags": [
+   "statistical"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.7
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.7000000000000001
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "VARPA/varpa-inline-boolean",
+  "suite": "statistical-descriptive",
+  "subject": "VARPA",
+  "name": "varpa-inline-boolean",
+  "formula": "=VARPA(1, 2, TRUE)",
+  "tags": [
+   "statistical"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.2222222222222222
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "ironcalc"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.25
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "VARPA/varpa-mixed-types",
+  "suite": "statistical-descriptive",
+  "subject": "VARPA",
+  "name": "varpa-mixed-types",
+  "formula": "=VARPA(C1:C5)",
+  "tags": [
+   "statistical"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.56
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.5599999999999999
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ }
+]

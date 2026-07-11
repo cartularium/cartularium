@@ -1,0 +1,210 @@
+[
+  {
+    "content": "In every one of these cases all real engines agree exactly on the value (Excel, Google Sheets, HyperFormula, IronCalc, Lattice, formulas, and pycel all return the same number or string), so the only split is LibreOffice, which recorded a blank cell for the entire engineering suite. LibreOffice Calc fully supports these Analysis-ToolPak functions, so this is a recording/harness artifact rather than a real semantic divergence: all 147 engineering results in the 2026-05-11 LibreOffice fixture are null, and earlier LibreOffice fixtures (2026-04-25, see DV-0008 and DV-0017) returned real values and error codes for the same subjects. The base-conversion answers themselves are portable: the 10-bit two's-complement forms (e.g. BIN2DEC(\"1111111111\")=-1, DEC2OCT(-1)=\"7777777777\", HEX2DEC(\"FFFFFFFFFF\")=-1) and the places-padding forms all match across the seven computing engines.",
+    "cause": "version-skew",
+    "scope": [
+      {
+        "kind": "ref-set",
+        "refs": [
+          "BIN2DEC/bin2dec-max-negative-two-s-complement",
+          "BIN2DEC/bin2dec-negative-via-two-s-complement",
+          "BIN2DEC/bin2dec-positive",
+          "BIN2DEC/bin2dec-zero",
+          "BIN2HEX/bin2hex-negative-two-s-complement",
+          "BIN2HEX/bin2hex-positive",
+          "BIN2HEX/bin2hex-with-places-padding",
+          "BIN2OCT/bin2oct-negative-two-s-complement",
+          "BIN2OCT/bin2oct-positive",
+          "BIN2OCT/bin2oct-with-places-padding",
+          "DEC2BIN/dec2bin-positive",
+          "DEC2BIN/dec2bin-with-places-padding",
+          "DEC2HEX/dec2hex-positive",
+          "DEC2HEX/dec2hex-with-places-padding",
+          "DEC2OCT/dec2oct-positive",
+          "DEC2OCT/dec2oct-with-places-padding",
+          "HEX2BIN/hex2bin-negative-two-s-complement",
+          "HEX2BIN/hex2bin-positive",
+          "HEX2BIN/hex2bin-with-places-padding",
+          "HEX2DEC/hex2dec-negative-two-s-complement",
+          "HEX2DEC/hex2dec-two-letters",
+          "HEX2DEC/hex2dec-zero",
+          "HEX2OCT/hex2oct-negative-two-s-complement",
+          "HEX2OCT/hex2oct-positive",
+          "HEX2OCT/hex2oct-with-places-padding",
+          "OCT2BIN/oct2bin-negative-two-s-complement",
+          "OCT2BIN/oct2bin-positive",
+          "OCT2BIN/oct2bin-with-places-padding",
+          "OCT2DEC/oct2dec-negative-two-s-complement",
+          "OCT2DEC/oct2dec-positive",
+          "OCT2DEC/oct2dec-zero",
+          "OCT2HEX/oct2hex-negative-two-s-complement",
+          "OCT2HEX/oct2hex-positive",
+          "OCT2HEX/oct2hex-with-places-padding",
+          "ERF/erf-zero",
+          "ERF/erf-one"
+        ]
+      }
+    ],
+    "_meta": {
+      "batch": "engineering",
+      "confidence": "high",
+      "evidence": "recorded fixtures (all 147 libreoffice engineering results are null; DV-0008/DV-0017 show earlier libreoffice returned real values/errors) + live pure-engine probe confirming the seven computing engines agree",
+      "wants_probe": []
+    }
+  },
+  {
+    "content": "pycel implements DEC2BIN/DEC2HEX/DEC2OCT and ERF only over their non-negative domain: for a negative argument its Python implementation raises, and the runner maps that to #NAME?. Live probe on pycel confirms the split within a single function: DEC2BIN(10)=\"1010\" but DEC2BIN(-2)=#NAME?, DEC2HEX(255)=\"FF\" but DEC2HEX(-1)=#NAME?, DEC2OCT(8)=\"10\" but DEC2OCT(-1)=#NAME?, and ERF(1)=0.8427 but ERF(-1)=#NAME?. Every other computing engine (Excel, Google Sheets, HyperFormula, IronCalc, Lattice, formulas) returns the two's-complement string or the negated ERF value (e.g. DEC2BIN(-2)=\"1111111110\", DEC2OCT(-1)=\"7777777777\", ERF(-1)=-0.8427007929...). LibreOffice is blank here for the same harness-artifact reason as the rest of the engineering suite.",
+    "cause": "unimplemented-edge",
+    "scope": [
+      {
+        "kind": "ref-set",
+        "refs": [
+          "DEC2BIN/dec2bin-negative",
+          "DEC2HEX/dec2hex-negative",
+          "DEC2OCT/dec2oct-negative",
+          "ERF/erf-negative"
+        ]
+      }
+    ],
+    "_meta": {
+      "batch": "engineering",
+      "confidence": "high",
+      "evidence": "live pure-engine probe (scratch/engineering-probe1.mts): pycel returns #NAME? for negative args while non-negative args succeed",
+      "wants_probe": []
+    }
+  },
+  {
+    "content": "pycel does not implement the transcendental complex functions at all: IMCOS, IMCOSH, IMSIN, IMSINH, IMTAN, IMSEC, IMSECH, IMCSC, IMCSCH, IMEXP, IMLOG10, and IMARGUMENT all return #NAME? on pycel even for trivial inputs (live probe: IMCOS(\"0\")=#NAME?, IMEXP(\"0\")=#NAME?, IMARGUMENT(\"3+4i\")=#NAME?). In these particular cases every computing engine that does implement the function agrees on the answer within tolerance -- the complex identities (IMCOS/IMCOSH/IMSEC/IMSECH/IMEXP/IMLOG10 of the real-1 or zero argument = \"1\"; IMSIN/IMSINH/IMTAN of \"0\" = \"0\") and IMARGUMENT(\"3+4i\")=atan2(4,3)=0.927295218... are portable -- so the split is only pycel (#NAME?) versus the rest, plus the LibreOffice blank-fixture artifact. This extends DV-0001, which records pycel's missing-function #NAME? for other IM subjects (IMABS, IMDIV-basic, IMSUM, etc.) but not this transcendental family.",
+    "cause": "missing-function",
+    "scope": [
+      {
+        "kind": "ref-set",
+        "refs": [
+          "IMCOS/imcos-zero",
+          "IMCOSH/imcosh-zero",
+          "IMEXP/imexp-zero",
+          "IMLOG10/imlog10-of-10",
+          "IMSEC/imsec-zero",
+          "IMSECH/imsech-zero",
+          "IMSIN/imsin-zero",
+          "IMSINH/imsinh-zero",
+          "IMTAN/imtan-zero",
+          "IMARGUMENT/imargument-basic"
+        ]
+      }
+    ],
+    "_meta": {
+      "batch": "engineering",
+      "confidence": "high",
+      "evidence": "live pure-engine probe: pycel returns #NAME? for all transcendental IM functions incl. trivial inputs; DV-0001 already records pycel-missing for other IM subjects",
+      "wants_probe": []
+    }
+  },
+  {
+    "content": "The transcendental complex functions return their result as a formatted string (\"x+yi\"), so the divergence-matcher compares them by exact string equality rather than numeric tolerance, and any difference in float-to-string rendering becomes a distinct agreement class. Two rendering families emerge, confirmed by live probe: Excel, Google Sheets, and IronCalc format each component to 15 significant digits (IMCOS(\"1+1i\")=\"0.833730025131149-0.988897705762865i\"), while formulas, HyperFormula, and Lattice serialize the raw IEEE-754 double at full round-trip precision (\"0.8337300251311491-0.9888977057628651i\"). On top of the 15-vs-17-digit family split there are ULP-level sub-splits among the full-precision engines (e.g. IMCOT(\"1+1i\") and IMCSC(\"1+1i\") each produce three or four distinct strings) because the libraries decompose the complex arithmetic differently and accumulate rounding in the last one or two units in the last place. IMLOG2(\"8\") is the clearest artifact of this: most engines print \"3\" but formulas prints \"2.9999999999999996\". pycel returns #NAME? throughout (it lacks these functions) and LibreOffice is blank (fixture artifact). The values are numerically equivalent to ~15 digits everywhere; only the string form diverges.",
+    "cause": "precision",
+    "scope": [
+      {
+        "kind": "ref-set",
+        "refs": [
+          "IMCOS/imcos-complex",
+          "IMCOSH/imcosh-complex",
+          "IMCOT/imcot-complex",
+          "IMCOT/imcot-real",
+          "IMCSC/imcsc-complex",
+          "IMCSC/imcsc-real",
+          "IMCSCH/imcsch-complex",
+          "IMCSCH/imcsch-real",
+          "IMEXP/imexp-imaginary",
+          "IMEXP/imexp-real",
+          "IMLOG10/imlog10-complex",
+          "IMLOG2/imlog2-complex",
+          "IMLOG2/imlog2-of-8",
+          "IMSEC/imsec-complex",
+          "IMSECH/imsech-complex",
+          "IMSIN/imsin-complex",
+          "IMSINH/imsinh-complex",
+          "IMTAN/imtan-complex"
+        ]
+      }
+    ],
+    "_meta": {
+      "batch": "engineering",
+      "confidence": "high",
+      "evidence": "live pure-engine probe: ironcalc renders 15 sig digits, hyperformula/formulas render full IEEE-754; formulas IMLOG2(8)=2.9999999999999996",
+      "wants_probe": ["engineering-003"]
+    }
+  },
+  {
+    "content": "IMLOG, IMCOTH, and IMTANH are Google Sheets extensions to the complex-number function set and are not part of Excel's function library. Excel, formulas, HyperFormula, IronCalc, and pycel all return #NAME? (name not recognized), while only Google Sheets and Lattice compute a value; LibreOffice is blank (fixture artifact). Live probe confirms HyperFormula, IronCalc, and formulas each return #NAME? for IMLOG(\"1\"), IMCOTH(\"1\"), and IMTANH(\"0\"). Where Google Sheets and Lattice both compute, they further split on the same string-precision mechanism as the other complex functions: Google Sheets renders 15 significant digits (IMCOTH(\"1+1i\")=\"0.868014142895925-0.217621561854403i\") and Lattice renders full IEEE-754 (\"0.8680141428959249-0.21762156185440265i\"). The wiki pages for these three functions were imported from Google Sheets documentation, consistent with their gsheets-native origin.",
+    "cause": "missing-function",
+    "scope": [
+      {
+        "kind": "ref-set",
+        "refs": [
+          "IMLOG/imlog-complex",
+          "IMLOG/imlog-natural-of-1",
+          "IMCOTH/imcoth-complex",
+          "IMCOTH/imcoth-real",
+          "IMTANH/imtanh-complex",
+          "IMTANH/imtanh-zero"
+        ]
+      }
+    ],
+    "_meta": {
+      "batch": "engineering",
+      "confidence": "high",
+      "evidence": "live pure-engine probe (hyperformula/ironcalc/formulas all #NAME? for IMLOG/IMCOTH/IMTANH) + recorded fixtures (gsheets+lattice compute) + wiki pages sourced from support.google.com",
+      "wants_probe": ["engineering-001"]
+    }
+  },
+  {
+    "content": "IMDIV by a zero divisor produces two different error codes: Excel, formulas, HyperFormula, and IronCalc return #NUM!, whereas Google Sheets and Lattice return #DIV/0!. Live probe confirms HyperFormula, IronCalc, and formulas all return #NUM! for IMDIV(\"1+2i\",\"0\"). The #NUM! branch treats complex division by a zero-modulus complex number as a numeric-domain failure of the IMDIV algorithm; the #DIV/0! branch surfaces the underlying division-by-zero directly. pycel returns #NAME? because it does not implement IMDIV (extends DV-0001; note DV-0045 separately records formulas returning #NUM! for the non-error IMDIV/imdiv-by-real case). LibreOffice is blank (fixture artifact).",
+    "cause": "error-code",
+    "scope": [{ "kind": "ref-set", "refs": ["IMDIV/imdiv-by-zero"] }],
+    "_meta": {
+      "batch": "engineering",
+      "confidence": "high",
+      "evidence": "live pure-engine probe (hyperformula/ironcalc/formulas = #NUM!) + recorded fixtures (gsheets/lattice = #DIV/0!, pycel = #NAME?)",
+      "wants_probe": ["engineering-002"]
+    }
+  },
+  {
+    "content": "ERF.PRECISE is implemented by Excel, formulas, Google Sheets, IronCalc, and Lattice but not by HyperFormula or pycel, which both return #NAME?. Live probe confirms HyperFormula and pycel return #NAME? for ERF.PRECISE(1) while IronCalc and formulas compute it (IronCalc 0.842700793, formulas 0.8427007929497148). Among the computing engines the numeric answers agree within tolerance (they only differ in displayed precision: IronCalc rounds to ~9 digits, the JS engines carry full double precision), so the matcher groups them as one class and the fork is purely HyperFormula+pycel (#NAME?) versus the rest, plus the LibreOffice blank-fixture artifact. This extends DV-0017, which records the same HyperFormula/pycel #NAME? for ERF.PRECISE but on a different test case (erf-precise-zero).",
+    "cause": "missing-function",
+    "scope": [
+      {
+        "kind": "ref-set",
+        "refs": ["ERF.PRECISE/erf-precise-negative", "ERF.PRECISE/erf-precise-one"]
+      }
+    ],
+    "_meta": {
+      "batch": "engineering",
+      "confidence": "high",
+      "evidence": "live pure-engine probe (hyperformula+pycel #NAME?, ironcalc+formulas compute); extends DV-0017",
+      "wants_probe": []
+    }
+  },
+  {
+    "content": "The two-argument form ERF(lower_limit, upper_limit) is not supported by Lattice, which returns #N/A, whereas Excel, formulas, Google Sheets, HyperFormula, and IronCalc all evaluate it (ERF(0,1) equals ERF(1)=0.8427007929... because the lower limit is zero). Live probe confirms HyperFormula returns 0.84270079295 and IronCalc 0.842700793 for ERF(0,1). pycel returns #NAME? -- consistent with its rejection of any ERF call outside a single non-negative argument (it also #NAME?s ERF(-1); see the DEC2/ERF negative-domain cluster). LibreOffice is blank (fixture artifact). So this one case carries three separate mechanisms: Lattice's missing two-arg form, pycel's arity/domain rejection, and the LibreOffice recording artifact.",
+    "cause": "missing-arg-form",
+    "scope": [{ "kind": "ref-set", "refs": ["ERF/erf-two-arg-lower-upper"] }],
+    "_meta": {
+      "batch": "engineering",
+      "confidence": "high",
+      "evidence": "live pure-engine probe (hyperformula/ironcalc compute ERF(0,1); pycel #NAME?) + recorded fixture (lattice #N/A)",
+      "wants_probe": []
+    }
+  },
+  {
+    "content": "IMARGUMENT of a pure-imaginary number exposes a division-by-zero in the formulas library: IMARGUMENT(\"i\") returns #DIV/0! on formulas (live-confirmed), whereas Excel, Google Sheets, HyperFormula, IronCalc, and Lattice all return the correct argument pi/2 = 1.5707963267948966 (grouped within numeric tolerance despite display-precision differences). The mechanism is that formulas computes the argument as atan2 or an arctangent of imaginary/real and does not special-case a zero real part, so the pure-imaginary input divides by zero; the other engines special-case the axis to +pi/2. pycel returns #NAME? (it does not implement IMARGUMENT for complex strings) and LibreOffice is blank (fixture artifact).",
+    "cause": "error-attribution",
+    "scope": [{ "kind": "ref-set", "refs": ["IMARGUMENT/imargument-pure-imaginary"] }],
+    "_meta": {
+      "batch": "engineering",
+      "confidence": "high",
+      "evidence": "live pure-engine probe (formulas IMARGUMENT(\"i\")=#DIV/0!, hyperformula/ironcalc compute pi/2, pycel #NAME?)",
+      "wants_probe": []
+    }
+  }
+]

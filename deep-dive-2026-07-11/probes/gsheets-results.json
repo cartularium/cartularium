@@ -1,0 +1,5736 @@
+[
+  {
+    "id": "arrays-002",
+    "formula_used": "=LINEST({1,2,3,4}, {1,2,3,4}, TRUE, TRUE)",
+    "outcome": {
+      "kind": "value",
+      "grid": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 0.9999999999999998
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "number",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=LINEST({1,2,3,4}, {1,2,3,4}, TRUE, TRUE)"
+                },
+                "effectiveValue": {
+                  "numberValue": 0.9999999999999998
+                },
+                "formattedValue": "1",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "LINEST({1,2,3,4}, {1,2,3,4}, TRUE, TRUE)",
+            "formatted": "1"
+          },
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 4.440892098500626e-16
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "number",
+              "raw_api": {
+                "effectiveValue": {
+                  "numberValue": 4.440892098500626e-16
+                },
+                "formattedValue": "0",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formatted": "0"
+          }
+        ],
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 2.1065000811460205e-16
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "number",
+              "raw_api": {
+                "effectiveValue": {
+                  "numberValue": 2.1065000811460205e-16
+                },
+                "formattedValue": "0",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formatted": "0"
+          },
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 5.768888059150692e-16
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "number",
+              "raw_api": {
+                "effectiveValue": {
+                  "numberValue": 5.768888059150692e-16
+                },
+                "formattedValue": "0",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formatted": "0"
+          }
+        ],
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 1
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "number",
+              "raw_api": {
+                "effectiveValue": {
+                  "numberValue": 1
+                },
+                "formattedValue": "1",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formatted": "1"
+          },
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 4.710277376051325e-16
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "number",
+              "raw_api": {
+                "effectiveValue": {
+                  "numberValue": 4.710277376051325e-16
+                },
+                "formattedValue": "0",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formatted": "0"
+          }
+        ],
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 2.253601067072408e31
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "number",
+              "raw_api": {
+                "effectiveValue": {
+                  "numberValue": 2.253601067072408e31
+                },
+                "formattedValue": "2.2536E+31",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formatted": "2.2536E+31"
+          },
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 2
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "number",
+              "raw_api": {
+                "effectiveValue": {
+                  "numberValue": 2
+                },
+                "formattedValue": "2",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formatted": "2"
+          }
+        ],
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 5
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "number",
+              "raw_api": {
+                "effectiveValue": {
+                  "numberValue": 5
+                },
+                "formattedValue": "5",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formatted": "5"
+          },
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 4.437342591868191e-31
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "number",
+              "raw_api": {
+                "effectiveValue": {
+                  "numberValue": 4.437342591868191e-31
+                },
+                "formattedValue": "0",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formatted": "0"
+          }
+        ]
+      ],
+      "extent": {
+        "rows": 5,
+        "cols": 2
+      }
+    },
+    "verdict": "confirmed",
+    "note": "gsheets F-statistic cell = 2.2536e31 (perfect-fit residual df=0 → finite huge number, not #NUM!); r²≈1, slope≈1, intercept≈0. Matches the ~2.25e31 prediction exactly."
+  },
+  {
+    "id": "arrays-003",
+    "formula_used": "=TREND({1,2,3,4}, {1,2,3,4}, {5;6;7})",
+    "outcome": {
+      "kind": "value",
+      "grid": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 5
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "number",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=TREND({1,2,3,4}, {1,2,3,4}, {5;6;7})"
+                },
+                "effectiveValue": {
+                  "numberValue": 5
+                },
+                "formattedValue": "5",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "TREND({1,2,3,4}, {1,2,3,4}, {5;6;7})",
+            "formatted": "5"
+          }
+        ],
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 5.999999999999998
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "number",
+              "raw_api": {
+                "effectiveValue": {
+                  "numberValue": 5.999999999999998
+                },
+                "formattedValue": "6",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formatted": "6"
+          }
+        ],
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 6.999999999999998
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "number",
+              "raw_api": {
+                "effectiveValue": {
+                  "numberValue": 6.999999999999998
+                },
+                "formattedValue": "7",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formatted": "7"
+          }
+        ]
+      ],
+      "extent": {
+        "rows": 3,
+        "cols": 1
+      }
+    },
+    "verdict": "confirmed",
+    "note": "gsheets accepts the column-oriented new_x {5;6;7} and spills the 3 projected values as a column [5, 6, 7] (float noise: 5.9999.., 6.9999..). No #REF!."
+  },
+  {
+    "id": "arrays-004",
+    "formula_used": "=WRAPROWS({1,2,3}, 2)",
+    "outcome": {
+      "kind": "value",
+      "grid": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 1
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "number",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=WRAPROWS({1,2,3}, 2)"
+                },
+                "effectiveValue": {
+                  "numberValue": 1
+                },
+                "formattedValue": "1",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "WRAPROWS({1,2,3}, 2)",
+            "formatted": "1"
+          },
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 2
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "number",
+              "raw_api": {
+                "effectiveValue": {
+                  "numberValue": 2
+                },
+                "formattedValue": "2",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formatted": "2"
+          }
+        ],
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 3
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "number",
+              "raw_api": {
+                "effectiveValue": {
+                  "numberValue": 3
+                },
+                "formattedValue": "3",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formatted": "3"
+          },
+          {
+            "primitive": {
+              "kind": "error",
+              "sentinel": "#N/A"
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "error",
+              "raw_api": {
+                "effectiveValue": {
+                  "errorValue": {
+                    "type": "N_A",
+                    "message": "There is no value for this cell. Consider using the pad_with argument to replace #N/A with the value of your choice."
+                  }
+                },
+                "formattedValue": "#N/A",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formatted": "#N/A"
+          }
+        ]
+      ],
+      "extent": {
+        "rows": 2,
+        "cols": 2
+      }
+    },
+    "verdict": "confirmed",
+    "note": "gsheets default-pads the trailing empty WRAPROWS slot with #N/A: [1,2]/[3,#N/A]. Not blank, not 0."
+  },
+  {
+    "id": "arrays-005",
+    "formula_used": "=SEQUENCE(2, 3, 10, 5)",
+    "outcome": {
+      "kind": "value",
+      "grid": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 10
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "number",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=SEQUENCE(2, 3, 10, 5)"
+                },
+                "effectiveValue": {
+                  "numberValue": 10
+                },
+                "formattedValue": "10",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "SEQUENCE(2, 3, 10, 5)",
+            "formatted": "10"
+          },
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 15
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "number",
+              "raw_api": {
+                "effectiveValue": {
+                  "numberValue": 15
+                },
+                "formattedValue": "15",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formatted": "15"
+          },
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 20
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "number",
+              "raw_api": {
+                "effectiveValue": {
+                  "numberValue": 20
+                },
+                "formattedValue": "20",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formatted": "20"
+          }
+        ],
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 25
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "number",
+              "raw_api": {
+                "effectiveValue": {
+                  "numberValue": 25
+                },
+                "formattedValue": "25",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formatted": "25"
+          },
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 30
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "number",
+              "raw_api": {
+                "effectiveValue": {
+                  "numberValue": 30
+                },
+                "formattedValue": "30",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formatted": "30"
+          },
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 35
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "number",
+              "raw_api": {
+                "effectiveValue": {
+                  "numberValue": 35
+                },
+                "formattedValue": "35",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formatted": "35"
+          }
+        ]
+      ],
+      "extent": {
+        "rows": 2,
+        "cols": 3
+      }
+    },
+    "verdict": "confirmed",
+    "note": "gsheets SEQUENCE(2,3,10,5) spills row-major 10,15,20 / 25,30,35 — same start/step semantics as expected."
+  },
+  {
+    "id": "arrays-006",
+    "formula_used": "=INDEX(A1:B2, 2, 1)",
+    "outcome": {
+      "kind": "value",
+      "grid": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 20
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "number",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=INDEX(A1:B2, 2, 1)"
+                },
+                "effectiveValue": {
+                  "numberValue": 20
+                },
+                "formattedValue": "20",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "INDEX(A1:B2, 2, 1)",
+            "formatted": "20"
+          }
+        ]
+      ],
+      "extent": {
+        "rows": 1,
+        "cols": 1
+      }
+    },
+    "verdict": "confirmed",
+    "note": "gsheets INDEX(A1:B2,2,1)=20. Re-confirms the fixture; the LibreOffice blank-capture re-record ask is out-of-scope for gsheets."
+  },
+  {
+    "id": "dve-001",
+    "formula_used": "=SUM(A1:A3)",
+    "outcome": {
+      "kind": "value",
+      "grid": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 4
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "number",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=SUM(A1:A3)"
+                },
+                "effectiveValue": {
+                  "numberValue": 4
+                },
+                "formattedValue": "4",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "SUM(A1:A3)",
+            "formatted": "4"
+          }
+        ]
+      ],
+      "extent": {
+        "rows": 1,
+        "cols": 1
+      }
+    },
+    "verdict": "confirmed",
+    "note": "gsheets returns 4. Mechanism now pinned: the grid seed A2=\"=1/0\" is a plain string, so the driver classifies it as TEXT and writes it RAW — gsheets stores the literal text `=1/0`, never a live formula. SUM ignores the text cell → 1+3=4. This is exactly why the fixture shows 4 (not #DIV/0!)."
+  },
+  {
+    "id": "dve-002",
+    "formula_used": "=WEEKNUM(\"2023-01-01\", 21)",
+    "outcome": {
+      "kind": "value",
+      "grid": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 52
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "number",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=WEEKNUM(\"2023-01-01\", 21)"
+                },
+                "effectiveValue": {
+                  "numberValue": 52
+                },
+                "formattedValue": "52",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "WEEKNUM(\"2023-01-01\", 21)",
+            "formatted": "52"
+          }
+        ]
+      ],
+      "extent": {
+        "rows": 1,
+        "cols": 1
+      }
+    },
+    "verdict": "confirmed",
+    "note": "gsheets WEEKNUM(\"2023-01-01\",21)=52 — coerces the ISO-8601 text to a date serial and applies ISO week type 21."
+  },
+  {
+    "id": "dve-003",
+    "formula_used": "=YEARFRAC(\"2025-01-01\", \"2026-01-01\", 2)",
+    "outcome": {
+      "kind": "value",
+      "grid": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 1.0138888888888888
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "number",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=YEARFRAC(\"2025-01-01\", \"2026-01-01\", 2)"
+                },
+                "effectiveValue": {
+                  "numberValue": 1.0138888888888888
+                },
+                "formattedValue": "1.013888889",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "YEARFRAC(\"2025-01-01\", \"2026-01-01\", 2)",
+            "formatted": "1.013888889"
+          }
+        ]
+      ],
+      "extent": {
+        "rows": 1,
+        "cols": 1
+      }
+    },
+    "verdict": "confirmed",
+    "note": "gsheets YEARFRAC(text,text,2)=1.0138888888888888 (365/360 actual/360) — coerces both text-date args."
+  },
+  {
+    "id": "dve-004",
+    "formula_used": "=RANDARRAY(1, 3, 1, 10, TRUE)",
+    "outcome": {
+      "kind": "value",
+      "grid": [
+        [
+          {
+            "primitive": {
+              "kind": "error",
+              "sentinel": "#N/A"
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "error",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=RANDARRAY(1, 3, 1, 10, TRUE)"
+                },
+                "effectiveValue": {
+                  "errorValue": {
+                    "type": "N_A",
+                    "message": "Wrong number of arguments to RANDARRAY. Expected between 0 and 2 arguments, but got 5 arguments."
+                  }
+                },
+                "formattedValue": "#N/A",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "RANDARRAY(1, 3, 1, 10, TRUE)",
+            "formatted": "#N/A"
+          }
+        ]
+      ],
+      "extent": {
+        "rows": 1,
+        "cols": 1
+      }
+    },
+    "verdict": "confirmed",
+    "note": "gsheets genuinely rejects the 5-arg integer-mode RANDARRAY(1,3,1,10,TRUE) with #N/A — not a spill/harness artifact."
+  },
+  {
+    "id": "dve-005",
+    "formula_used": "=TIME(25,0,0)",
+    "outcome": {
+      "kind": "value",
+      "grid": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 0.04166666666666674
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "number",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=TIME(25,0,0)"
+                },
+                "effectiveValue": {
+                  "numberValue": 0.04166666666666674
+                },
+                "formattedValue": "1:00:00 AM",
+                "effectiveFormat": {
+                  "numberFormat": {
+                    "type": "TIME"
+                  },
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "TIME(25,0,0)",
+            "formatted": "1:00:00 AM",
+            "number_format": {
+              "type": "TIME"
+            }
+          }
+        ]
+      ],
+      "extent": {
+        "rows": 1,
+        "cols": 1
+      }
+    },
+    "verdict": "confirmed",
+    "note": "gsheets TIME(25,0,0)=0.041667 (25h reduced mod 24 → 1h). Matches Excel/hyperformula/ironcalc/formulas; lattice's 1.041667 is the sole outlier."
+  },
+  {
+    "id": "dve-006",
+    "formula_used": "=LAMBDA(x, x+1)(5)",
+    "outcome": {
+      "kind": "value",
+      "grid": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 6
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "number",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=LAMBDA(x, x+1)(5)"
+                },
+                "effectiveValue": {
+                  "numberValue": 6
+                },
+                "formattedValue": "6",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "LAMBDA(x, x+1)(5)",
+            "formatted": "6"
+          }
+        ]
+      ],
+      "extent": {
+        "rows": 1,
+        "cols": 1
+      }
+    },
+    "verdict": "confirmed",
+    "note": "gsheets LAMBDA(x,x+1)(5)=6 — defines and immediately invokes."
+  },
+  {
+    "id": "dve-007",
+    "formula_used": "=IFERROR(10/{1,0,2}, -1)",
+    "outcome": {
+      "kind": "value",
+      "grid": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 10
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "number",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=IFERROR(10/{1,0,2}, -1)"
+                },
+                "effectiveValue": {
+                  "numberValue": 10
+                },
+                "formattedValue": "10",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "IFERROR(10/{1,0,2}, -1)",
+            "formatted": "10"
+          }
+        ]
+      ],
+      "extent": {
+        "rows": 1,
+        "cols": 1
+      }
+    },
+    "verdict": "contradicted",
+    "note": "HEADLINE: hypothesis predicted gsheets broadcasts IFERROR element-wise and spills {10,-1,5}; gsheets actually returned a SINGLE scalar 10 (extent 1x1). Without ARRAYFORMULA, gsheets does NOT map IFERROR over the array 10/{1,0,2} — the error branch (-1) never surfaces and only the first element is returned. The spill/broadcast claim is false for gsheets."
+  },
+  {
+    "id": "engineering-001",
+    "formula_used": "=IMLOG(\"8\", 2)",
+    "outcome": {
+      "kind": "value",
+      "grid": [
+        [
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "3"
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "string",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=IMLOG(\"8\", 2)"
+                },
+                "effectiveValue": {
+                  "stringValue": "3"
+                },
+                "formattedValue": "3",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "IMLOG(\"8\", 2)",
+            "formatted": "3"
+          }
+        ]
+      ],
+      "extent": {
+        "rows": 1,
+        "cols": 1
+      }
+    },
+    "verdict": "confirmed",
+    "note": "gsheets IMLOG(\"8\",2)=\"3\" (string) — IMLOG(value,base) is a gsheets-native two-arg extension."
+  },
+  {
+    "id": "engineering-002",
+    "formula_used": "=IMDIV(\"1+2i\", \"0+0i\")",
+    "outcome": {
+      "kind": "value",
+      "grid": [
+        [
+          {
+            "primitive": {
+              "kind": "error",
+              "sentinel": "#DIV/0!"
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "error",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=IMDIV(\"1+2i\", \"0+0i\")"
+                },
+                "effectiveValue": {
+                  "errorValue": {
+                    "type": "DIVIDE_BY_ZERO",
+                    "message": "Function IMDIV parameter 2 cannot be zero."
+                  }
+                },
+                "formattedValue": "#DIV/0!",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "IMDIV(\"1+2i\", \"0+0i\")",
+            "formatted": "#DIV/0!"
+          }
+        ]
+      ],
+      "extent": {
+        "rows": 1,
+        "cols": 1
+      }
+    },
+    "verdict": "confirmed",
+    "note": "gsheets IMDIV(\"1+2i\",\"0+0i\")=#DIV/0! — zero-divisor error is a property of the divisor value, not its textual form."
+  },
+  {
+    "id": "engineering-003",
+    "formula_used": "=IMEXP(\"10+3i\")",
+    "outcome": {
+      "kind": "value",
+      "grid": [
+        [
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "-21806.035863485+3108.37503049351i"
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "string",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=IMEXP(\"10+3i\")"
+                },
+                "effectiveValue": {
+                  "stringValue": "-21806.035863485+3108.37503049351i"
+                },
+                "formattedValue": "-21806.035863485+3108.37503049351i",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "IMEXP(\"10+3i\")",
+            "formatted": "-21806.035863485+3108.37503049351i"
+          }
+        ]
+      ],
+      "extent": {
+        "rows": 1,
+        "cols": 1
+      }
+    },
+    "verdict": "confirmed",
+    "note": "gsheets IMEXP(\"10+3i\")=\"-21806.035863485+3108.37503049351i\" — components rendered at ~15 significant digits, confirming the cap holds at large magnitude. (Note: the hypothesis's approximate real part \"-21801\" was slightly off; the actual value is -21806.04.)"
+  },
+  {
+    "id": "engineering-004",
+    "formula_used": "=DEC2HEX(-1, 4)",
+    "outcome": {
+      "kind": "value",
+      "grid": [
+        [
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "FFFFFFFFFF"
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "string",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=DEC2HEX(-1, 4)"
+                },
+                "effectiveValue": {
+                  "stringValue": "FFFFFFFFFF"
+                },
+                "formattedValue": "FFFFFFFFFF",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "DEC2HEX(-1, 4)",
+            "formatted": "FFFFFFFFFF"
+          }
+        ]
+      ],
+      "extent": {
+        "rows": 1,
+        "cols": 1
+      }
+    },
+    "verdict": "confirmed",
+    "note": "gsheets DEC2HEX(-1,4)=\"FFFFFFFFFF\" (10 chars) — the places argument is ignored for negative results; two's-complement already fills all 40 bits."
+  },
+  {
+    "id": "engineering-005",
+    "formula_used": "=ERF.PRECISE(-0.5)",
+    "outcome": {
+      "kind": "value",
+      "grid": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": -0.5204998778130466
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "number",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=ERF.PRECISE(-0.5)"
+                },
+                "effectiveValue": {
+                  "numberValue": -0.5204998778130466
+                },
+                "formattedValue": "-0.5204998778",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "ERF.PRECISE(-0.5)",
+            "formatted": "-0.5204998778"
+          }
+        ]
+      ],
+      "extent": {
+        "rows": 1,
+        "cols": 1
+      }
+    },
+    "verdict": "confirmed",
+    "note": "gsheets ERF.PRECISE(-0.5)=-0.5204998778130466 (ERF is odd). Agrees with IronCalc/formulas/Lattice to float precision."
+  },
+  {
+    "id": "engineering-006",
+    "formula_used": "=IMTANH(\"0\")",
+    "outcome": {
+      "kind": "value",
+      "grid": [
+        [
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "0"
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "string",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=IMTANH(\"0\")"
+                },
+                "effectiveValue": {
+                  "stringValue": "0"
+                },
+                "formattedValue": "0",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "IMTANH(\"0\")",
+            "formatted": "0"
+          }
+        ]
+      ],
+      "extent": {
+        "rows": 1,
+        "cols": 1
+      }
+    },
+    "verdict": "confirmed",
+    "note": "gsheets IMTANH(\"0\")=\"0\" (string) — IMTANH is a gsheets extension (Excel-absent)."
+  },
+  {
+    "id": "financial-001",
+    "formula_used": "=XNPV(0.1, A1:A2, B1:B2)",
+    "outcome": {
+      "kind": "value",
+      "grid": [
+        [
+          {
+            "primitive": {
+              "kind": "error",
+              "sentinel": "#VALUE!"
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "error",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=XNPV(0.1, A1:A2, B1:B2)"
+                },
+                "effectiveValue": {
+                  "errorValue": {
+                    "type": "VALUE",
+                    "message": "XNPV expects number values. But '2020-01-01' is a text and cannot be coerced to a number."
+                  }
+                },
+                "formattedValue": "#VALUE!",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "XNPV(0.1, A1:A2, B1:B2)",
+            "formatted": "#VALUE!"
+          }
+        ]
+      ],
+      "extent": {
+        "rows": 1,
+        "cols": 1
+      }
+    },
+    "verdict": "confirmed",
+    "note": "gsheets XNPV with ISO-TEXT date args returns #VALUE! — it rejects text dates. (The numeric-serial re-run sub-request was not executed; the primary text-date claim is confirmed.)"
+  },
+  {
+    "id": "financial-002",
+    "formula_used": "=XIRR(A1:A3, B1:B3, 0.1)",
+    "outcome": {
+      "kind": "value",
+      "grid": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 0.06382316999801713
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "number",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=XIRR(A1:A3, B1:B3, 0.1)"
+                },
+                "effectiveValue": {
+                  "numberValue": 0.06382316999801713
+                },
+                "formattedValue": "0.06382317",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "XIRR(A1:A3, B1:B3, 0.1)",
+            "formatted": "0.06382317"
+          }
+        ]
+      ],
+      "extent": {
+        "rows": 1,
+        "cols": 1
+      }
+    },
+    "verdict": "confirmed",
+    "note": "gsheets XIRR with ISO-TEXT date args COMPUTES 0.06382316999801713 (~0.0638) rather than erroring. Confirms the internal asymmetry: XIRR coerces text dates that XNPV rejects."
+  },
+  {
+    "id": "financial-003",
+    "formula_used": "=RRI(0, 1000, 2000)",
+    "outcome": {
+      "kind": "value",
+      "grid": [
+        [
+          {
+            "primitive": {
+              "kind": "error",
+              "sentinel": "#DIV/0!"
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "error",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=RRI(0, 1000, 2000)"
+                },
+                "effectiveValue": {
+                  "errorValue": {
+                    "type": "DIVIDE_BY_ZERO",
+                    "message": "Function RRI parameter 1 cannot be zero."
+                  }
+                },
+                "formattedValue": "#DIV/0!",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "RRI(0, 1000, 2000)",
+            "formatted": "#DIV/0!"
+          }
+        ]
+      ],
+      "extent": {
+        "rows": 1,
+        "cols": 1
+      }
+    },
+    "verdict": "confirmed",
+    "note": "gsheets RRI(0,1000,2000)=#DIV/0! — gsheets alone maps the nper=0 invalid-period failure to #DIV/0! (others return #NUM!)."
+  },
+  {
+    "id": "financial-004",
+    "formula_used": "=ACCRINT(DATE(2008,3,1), DATE(2008,8,31), DATE(2011,2,15), 0.1, 1000, 2, 0)",
+    "outcome": {
+      "kind": "value",
+      "grid": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 295.55555555555554
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "number",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=ACCRINT(DATE(2008,3,1), DATE(2008,8,31), DATE(2011,2,15), 0.1, 1000, 2, 0)"
+                },
+                "effectiveValue": {
+                  "numberValue": 295.55555555555554
+                },
+                "formattedValue": "295.5555556",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "ACCRINT(DATE(2008,3,1), DATE(2008,8,31), DATE(2011,2,15), 0.1, 1000, 2, 0)",
+            "formatted": "295.5555556"
+          }
+        ]
+      ],
+      "extent": {
+        "rows": 1,
+        "cols": 1
+      }
+    },
+    "verdict": "confirmed",
+    "note": "gsheets ACCRINT(...)=295.55555555555554, matching the predicted 295.5555.. branch (diverges from Excel's expected 295.8333 on 30/360 handling of the 31st-of-month issue date)."
+  },
+  {
+    "id": "financial-005",
+    "formula_used": "=IPMT(0.05/12, 360, 360, -200000)",
+    "outcome": {
+      "kind": "value",
+      "grid": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 4.454951228316519
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "number",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=IPMT(0.05/12, 360, 360, -200000)"
+                },
+                "effectiveValue": {
+                  "numberValue": 4.454951228316519
+                },
+                "formattedValue": "$4.45",
+                "effectiveFormat": {
+                  "numberFormat": {
+                    "type": "CURRENCY",
+                    "pattern": "\"$\"#,##0.00"
+                  },
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "IPMT(0.05/12, 360, 360, -200000)",
+            "formatted": "$4.45",
+            "number_format": {
+              "type": "CURRENCY",
+              "pattern": "\"$\"#,##0.00"
+            }
+          }
+        ]
+      ],
+      "extent": {
+        "rows": 1,
+        "cols": 1
+      }
+    },
+    "verdict": "confirmed",
+    "note": "gsheets IPMT(0.05/12,360,360,-200000)=4.454951228316519 — small positive final-period interest, agreeing with hyperformula/ironcalc/lattice."
+  },
+  {
+    "id": "info-001",
+    "formula_used": "=CELL(\"format\", A1)",
+    "outcome": {
+      "kind": "value",
+      "grid": [
+        [
+          {
+            "primitive": {
+              "kind": "error",
+              "sentinel": "#VALUE!"
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "error",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=CELL(\"format\", A1)"
+                },
+                "effectiveValue": {
+                  "errorValue": {
+                    "type": "VALUE",
+                    "message": "Function CELL parameter 1 value is format.  It should be one of: 'ADDRESS', 'COL', 'COLOR', 'CONTENTS', 'PREFIX', 'ROW', 'TYPE', 'WIDTH', 'SHEET'."
+                  }
+                },
+                "formattedValue": "#VALUE!",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "CELL(\"format\", A1)",
+            "formatted": "#VALUE!"
+          }
+        ]
+      ],
+      "extent": {
+        "rows": 1,
+        "cols": 1
+      }
+    },
+    "verdict": "confirmed",
+    "note": "gsheets CELL(\"format\",A1)=#VALUE! — gsheets rejects the \"format\" info_type."
+  },
+  {
+    "id": "info-001b",
+    "formula_used": "=CELL(\"type\", A1)",
+    "outcome": {
+      "kind": "value",
+      "grid": [
+        [
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "v"
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "string",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=CELL(\"type\", A1)"
+                },
+                "effectiveValue": {
+                  "stringValue": "v"
+                },
+                "formattedValue": "v",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "CELL(\"type\", A1)",
+            "formatted": "v"
+          }
+        ]
+      ],
+      "extent": {
+        "rows": 1,
+        "cols": 1
+      }
+    },
+    "verdict": "confirmed",
+    "note": "gsheets CELL(\"type\",A1)=\"v\" — arg-rejection is per-info_type; CELL(\"type\") works even though CELL(\"format\") is rejected."
+  },
+  {
+    "id": "info-002",
+    "formula_used": "=ISBLANK(A1)",
+    "outcome": {
+      "kind": "value",
+      "grid": [
+        [
+          {
+            "primitive": {
+              "kind": "boolean",
+              "value": false
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "boolean",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=ISBLANK(A1)"
+                },
+                "effectiveValue": {
+                  "boolValue": false
+                },
+                "formattedValue": "FALSE",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "ISBLANK(A1)",
+            "formatted": "FALSE"
+          }
+        ]
+      ],
+      "extent": {
+        "rows": 1,
+        "cols": 1
+      }
+    },
+    "verdict": "confirmed",
+    "note": "gsheets ISBLANK(A1)=FALSE for A1=\"\" — gsheets stores a zero-length string as a genuine value, not a blank cell. Corroborated by stat-core-001 (COUNTA counts it)."
+  },
+  {
+    "id": "info-002b",
+    "formula_used": "=ISBLANK(A1)",
+    "outcome": {
+      "kind": "value",
+      "grid": [
+        [
+          {
+            "primitive": {
+              "kind": "boolean",
+              "value": false
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "boolean",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=ISBLANK(A1)"
+                },
+                "effectiveValue": {
+                  "boolValue": false
+                },
+                "formattedValue": "FALSE",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "ISBLANK(A1)",
+            "formatted": "FALSE"
+          }
+        ]
+      ],
+      "extent": {
+        "rows": 1,
+        "cols": 1
+      }
+    },
+    "verdict": "confirmed",
+    "note": "gsheets ISBLANK(A1)=FALSE for the `=\"\"` seed. CAVEAT: the seed `=\"\"` is a plain string, so the driver stored it as literal TEXT (RAW), NOT a live formula — so this does not cleanly isolate 'live formula yielding empty string' from 'typed empty string'; both are ISBLANK-false in gsheets, but the intended formula-vs-typed disambiguation was not exercised."
+  },
+  {
+    "id": "info-003",
+    "formula_used": "=ISDATE(\"2024-01-15\")",
+    "outcome": {
+      "kind": "value",
+      "grid": [
+        [
+          {
+            "primitive": {
+              "kind": "boolean",
+              "value": true
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "boolean",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=ISDATE(\"2024-01-15\")"
+                },
+                "effectiveValue": {
+                  "boolValue": true
+                },
+                "formattedValue": "TRUE",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "ISDATE(\"2024-01-15\")",
+            "formatted": "TRUE"
+          }
+        ]
+      ],
+      "extent": {
+        "rows": 1,
+        "cols": 1
+      }
+    },
+    "verdict": "confirmed",
+    "note": "gsheets ISDATE(\"2024-01-15\")=TRUE — parses the date string."
+  },
+  {
+    "id": "info-003b",
+    "formula_used": "=ISDATE(DATE(2024,1,15))",
+    "outcome": {
+      "kind": "value",
+      "grid": [
+        [
+          {
+            "primitive": {
+              "kind": "boolean",
+              "value": true
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "boolean",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=ISDATE(DATE(2024,1,15))"
+                },
+                "effectiveValue": {
+                  "boolValue": true
+                },
+                "formattedValue": "TRUE",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "ISDATE(DATE(2024,1,15))",
+            "formatted": "TRUE"
+          }
+        ]
+      ],
+      "extent": {
+        "rows": 1,
+        "cols": 1
+      }
+    },
+    "verdict": "confirmed",
+    "note": "gsheets ISDATE(DATE(2024,1,15))=TRUE — a real date serial is a date."
+  },
+  {
+    "id": "info-003c",
+    "formula_used": "=ISDATE(45000)",
+    "outcome": {
+      "kind": "value",
+      "grid": [
+        [
+          {
+            "primitive": {
+              "kind": "boolean",
+              "value": false
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "boolean",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=ISDATE(45000)"
+                },
+                "effectiveValue": {
+                  "boolValue": false
+                },
+                "formattedValue": "FALSE",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "ISDATE(45000)",
+            "formatted": "FALSE"
+          }
+        ]
+      ],
+      "extent": {
+        "rows": 1,
+        "cols": 1
+      }
+    },
+    "verdict": "confirmed",
+    "note": "gsheets ISDATE(45000)=FALSE — a bare number (even a valid date serial) is NOT a date. ISDATE keys on type/format, not on value-is-date-serial."
+  },
+  {
+    "id": "info-004",
+    "formula_used": "=SHEETS(A1)",
+    "outcome": {
+      "kind": "value",
+      "grid": [
+        [
+          {
+            "primitive": {
+              "kind": "error",
+              "sentinel": "#N/A"
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "error",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=SHEETS(A1)"
+                },
+                "effectiveValue": {
+                  "errorValue": {
+                    "type": "N_A",
+                    "message": "Wrong number of arguments to SHEETS. Expected 0 arguments, but got 1 arguments."
+                  }
+                },
+                "formattedValue": "#N/A",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "SHEETS(A1)",
+            "formatted": "#N/A"
+          }
+        ]
+      ],
+      "extent": {
+        "rows": 1,
+        "cols": 1
+      }
+    },
+    "verdict": "confirmed",
+    "note": "gsheets SHEETS(A1)=#N/A — rejects a single-cell reference argument."
+  },
+  {
+    "id": "info-004b",
+    "formula_used": "=SHEETS(A1:B2)",
+    "outcome": {
+      "kind": "value",
+      "grid": [
+        [
+          {
+            "primitive": {
+              "kind": "error",
+              "sentinel": "#N/A"
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "error",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=SHEETS(A1:B2)"
+                },
+                "effectiveValue": {
+                  "errorValue": {
+                    "type": "N_A",
+                    "message": "Wrong number of arguments to SHEETS. Expected 0 arguments, but got 1 arguments."
+                  }
+                },
+                "formattedValue": "#N/A",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "SHEETS(A1:B2)",
+            "formatted": "#N/A"
+          }
+        ]
+      ],
+      "extent": {
+        "rows": 1,
+        "cols": 1
+      }
+    },
+    "verdict": "confirmed",
+    "note": "gsheets SHEETS(A1:B2)=#N/A too. Resolves the ambiguity: gsheets SHEETS rejects ALL reference arguments (single-cell AND range) — effectively only the no-arg form is supported; the #N/A is not specific to a degenerate single-cell ref."
+  },
+  {
+    "id": "lambda-logical-coercion-001",
+    "formula_used": "=SORT({3;1;2}, 1, -1)",
+    "outcome": {
+      "kind": "value",
+      "grid": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 1
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "number",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=SORT({3;1;2}, 1, -1)"
+                },
+                "effectiveValue": {
+                  "numberValue": 1
+                },
+                "formattedValue": "1",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "SORT({3;1;2}, 1, -1)",
+            "formatted": "1"
+          }
+        ],
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 2
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "number",
+              "raw_api": {
+                "effectiveValue": {
+                  "numberValue": 2
+                },
+                "formattedValue": "2",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formatted": "2"
+          }
+        ],
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 3
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "number",
+              "raw_api": {
+                "effectiveValue": {
+                  "numberValue": 3
+                },
+                "formattedValue": "3",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formatted": "3"
+          }
+        ]
+      ],
+      "extent": {
+        "rows": 3,
+        "cols": 1
+      }
+    },
+    "verdict": "confirmed",
+    "note": "gsheets SORT({3;1;2},1,-1) returns ASCENDING [1;2;3] — the third arg is read as is_ascending (-1 coerces to truthy=ascending), unlike Excel's sort_order=-1=descending."
+  },
+  {
+    "id": "lambda-logical-coercion-002",
+    "formula_used": "=SORTBY({10;20;30}, {3;1;2})",
+    "outcome": {
+      "kind": "value",
+      "grid": [
+        [
+          {
+            "primitive": {
+              "kind": "error",
+              "sentinel": "#NAME?"
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "error",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=SORTBY({10;20;30}, {3;1;2})"
+                },
+                "effectiveValue": {
+                  "errorValue": {
+                    "type": "NAME",
+                    "message": "Unknown function: 'SORTBY'."
+                  }
+                },
+                "formattedValue": "#NAME?",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "SORTBY({10;20;30}, {3;1;2})",
+            "formatted": "#NAME?"
+          }
+        ]
+      ],
+      "extent": {
+        "rows": 1,
+        "cols": 1
+      }
+    },
+    "verdict": "confirmed",
+    "note": "gsheets SORTBY(...)=#NAME? — SORTBY is not exposed in Google Sheets (Excel-family-only at recording time)."
+  },
+  {
+    "id": "lambda-logical-coercion-003",
+    "formula_used": "=AND()",
+    "outcome": {
+      "kind": "value",
+      "grid": [
+        [
+          {
+            "primitive": {
+              "kind": "error",
+              "sentinel": "#N/A"
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "error",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=AND()"
+                },
+                "effectiveValue": {
+                  "errorValue": {
+                    "type": "N_A",
+                    "message": "Wrong number of arguments to AND. Expected at least 1 arguments, but got 0 arguments."
+                  }
+                },
+                "formattedValue": "#N/A",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "AND()",
+            "formatted": "#N/A"
+          }
+        ]
+      ],
+      "extent": {
+        "rows": 1,
+        "cols": 1
+      }
+    },
+    "verdict": "confirmed",
+    "note": "gsheets AND()=#N/A (too few arguments)."
+  },
+  {
+    "id": "lambda-logical-coercion-004",
+    "formula_used": "=CHOOSE(5, \"a\", \"b\", \"c\")",
+    "outcome": {
+      "kind": "value",
+      "grid": [
+        [
+          {
+            "primitive": {
+              "kind": "error",
+              "sentinel": "#NUM!"
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "error",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=CHOOSE(5, \"a\", \"b\", \"c\")"
+                },
+                "effectiveValue": {
+                  "errorValue": {
+                    "type": "NUM",
+                    "message": "Function CHOOSE parameter 1 value is 5. Valid values are between 1 and 3 inclusive."
+                  }
+                },
+                "formattedValue": "#NUM!",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "CHOOSE(5, \"a\", \"b\", \"c\")",
+            "formatted": "#NUM!"
+          }
+        ]
+      ],
+      "extent": {
+        "rows": 1,
+        "cols": 1
+      }
+    },
+    "verdict": "confirmed",
+    "note": "gsheets CHOOSE(5,\"a\",\"b\",\"c\")=#NUM! for the out-of-range index (Excel returns #VALUE!)."
+  },
+  {
+    "id": "lambda-logical-coercion-005",
+    "formula_used": "=T(TRUE)",
+    "outcome": {
+      "kind": "value",
+      "grid": [
+        [
+          {
+            "primitive": {
+              "kind": "string",
+              "value": ""
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "null",
+              "semantic_null": false,
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=T(TRUE)"
+                },
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "T(TRUE)"
+          }
+        ]
+      ],
+      "extent": {
+        "rows": 1,
+        "cols": 1
+      }
+    },
+    "verdict": "confirmed",
+    "note": "gsheets T(TRUE)=\"\" (empty string), whereas Excel returns a blank cell — the blank-vs-empty-string representation split."
+  },
+  {
+    "id": "lambda-logical-coercion-006",
+    "formula_used": "=PRODUCT({\"2\",\"3\",\"4\"})",
+    "outcome": {
+      "kind": "value",
+      "grid": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 0
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "number",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=PRODUCT({\"2\",\"3\",\"4\"})"
+                },
+                "effectiveValue": {
+                  "numberValue": 0
+                },
+                "formattedValue": "0",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "PRODUCT({\"2\",\"3\",\"4\"})",
+            "formatted": "0"
+          }
+        ]
+      ],
+      "extent": {
+        "rows": 1,
+        "cols": 1
+      }
+    },
+    "verdict": "confirmed",
+    "note": "gsheets PRODUCT({\"2\",\"3\",\"4\"})=0 — quoted-number strings inside an array literal are skipped (no factors)."
+  },
+  {
+    "id": "lambda-logical-coercion-007",
+    "formula_used": "=SUM(A1:A3)",
+    "outcome": {
+      "kind": "value",
+      "grid": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 0
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "number",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=SUM(A1:A3)"
+                },
+                "effectiveValue": {
+                  "numberValue": 0
+                },
+                "formattedValue": "0",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "SUM(A1:A3)",
+            "formatted": "0"
+          }
+        ]
+      ],
+      "extent": {
+        "rows": 1,
+        "cols": 1
+      }
+    },
+    "verdict": "confirmed",
+    "note": "gsheets SUM(A1:A3)=0 for text-typed cells \"1\",\"2\",\"3\" — numbers-stored-as-text in a range are ignored (not coerced)."
+  },
+  {
+    "id": "lambda-logical-coercion-008",
+    "formula_used": "=SUM({TRUE,FALSE,TRUE})",
+    "outcome": {
+      "kind": "value",
+      "grid": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 0
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "number",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=SUM({TRUE,FALSE,TRUE})"
+                },
+                "effectiveValue": {
+                  "numberValue": 0
+                },
+                "formattedValue": "0",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "SUM({TRUE,FALSE,TRUE})",
+            "formatted": "0"
+          }
+        ]
+      ],
+      "extent": {
+        "rows": 1,
+        "cols": 1
+      }
+    },
+    "verdict": "confirmed",
+    "note": "gsheets SUM({TRUE,FALSE,TRUE})=0 — booleans inside an array literal are not coerced (distinct from lattice's 2)."
+  },
+  {
+    "id": "lookup-001",
+    "formula_used": "=ADDRESS(1,1,1,TRUE,\"Sheet2\")",
+    "outcome": {
+      "kind": "value",
+      "grid": [
+        [
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "Sheet2!$A$1"
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "string",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=ADDRESS(1,1,1,TRUE,\"Sheet2\")"
+                },
+                "effectiveValue": {
+                  "stringValue": "Sheet2!$A$1"
+                },
+                "formattedValue": "Sheet2!$A$1",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "ADDRESS(1,1,1,TRUE,\"Sheet2\")",
+            "formatted": "Sheet2!$A$1"
+          }
+        ]
+      ],
+      "extent": {
+        "rows": 1,
+        "cols": 1
+      }
+    },
+    "verdict": "confirmed",
+    "note": "gsheets ADDRESS(1,1,1,TRUE,\"Sheet2\")=\"Sheet2!$A$1\" — a simple sheet name is NOT wrapped in single quotes (unlike the `formulas` engine's 'Sheet2'!$A$1)."
+  },
+  {
+    "id": "lookup-002",
+    "formula_used": "=FORMULATEXT(A1)",
+    "outcome": {
+      "kind": "value",
+      "grid": [
+        [
+          {
+            "primitive": {
+              "kind": "error",
+              "sentinel": "#N/A"
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "error",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=FORMULATEXT(A1)"
+                },
+                "effectiveValue": {
+                  "errorValue": {
+                    "type": "N_A",
+                    "message": "Invalid formula parse result."
+                  }
+                },
+                "formattedValue": "#N/A",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "FORMULATEXT(A1)",
+            "formatted": "#N/A"
+          }
+        ]
+      ],
+      "extent": {
+        "rows": 1,
+        "cols": 1
+      }
+    },
+    "verdict": "unclear",
+    "note": "gsheets FORMULATEXT(A1)=#N/A, BUT the probe seeded A1=42 (a number/value), so it only reconfirms that FORMULATEXT of a VALUE cell is #N/A. The hypothesis's real question — does gsheets return the formula text when A1 holds a LIVE formula — was not tested, because a numeric grid seed cannot create a live-formula cell. Needs a proper live-formula-in-A1 probe."
+  },
+  {
+    "id": "lookup-005",
+    "formula_used": "=INDEX(A1:A2, 5)",
+    "outcome": {
+      "kind": "value",
+      "grid": [
+        [
+          {
+            "primitive": {
+              "kind": "error",
+              "sentinel": "#NUM!"
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "error",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=INDEX(A1:A2, 5)"
+                },
+                "effectiveValue": {
+                  "errorValue": {
+                    "type": "NUM",
+                    "message": "Function INDEX parameter 2 value 5 is out of range."
+                  }
+                },
+                "formattedValue": "#NUM!",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "INDEX(A1:A2, 5)",
+            "formatted": "#NUM!"
+          }
+        ]
+      ],
+      "extent": {
+        "rows": 1,
+        "cols": 1
+      }
+    },
+    "verdict": "confirmed",
+    "note": "gsheets INDEX(A1:A2,5)=#NUM! for the out-of-bounds row (Excel returns #REF!). The INDEX(...,0)/(-1) follow-ups were not run separately."
+  },
+  {
+    "id": "lookup-007",
+    "formula_used": "=SHEET(\"NoSuchSheet\")",
+    "outcome": {
+      "kind": "value",
+      "grid": [
+        [
+          {
+            "primitive": {
+              "kind": "error",
+              "sentinel": "#REF!"
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "error",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=SHEET(\"NoSuchSheet\")"
+                },
+                "effectiveValue": {
+                  "errorValue": {
+                    "type": "REF",
+                    "message": "Unresolved sheet name 'NoSuchSheet'."
+                  }
+                },
+                "formattedValue": "#REF!",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "SHEET(\"NoSuchSheet\")",
+            "formatted": "#REF!"
+          }
+        ]
+      ],
+      "extent": {
+        "rows": 1,
+        "cols": 1
+      }
+    },
+    "verdict": "confirmed",
+    "note": "gsheets SHEET(\"NoSuchSheet\")=#REF! for an unresolvable sheet name. The SHEET()/SHEET(A1) baselines were not run separately."
+  },
+  {
+    "id": "math-core-001",
+    "formula_used": "=GT(TRUE,0)",
+    "outcome": {
+      "kind": "value",
+      "grid": [
+        [
+          {
+            "primitive": {
+              "kind": "boolean",
+              "value": true
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "boolean",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=GT(TRUE,0)"
+                },
+                "effectiveValue": {
+                  "boolValue": true
+                },
+                "formattedValue": "TRUE",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "GT(TRUE,0)",
+            "formatted": "TRUE"
+          }
+        ]
+      ],
+      "extent": {
+        "rows": 1,
+        "cols": 1
+      }
+    },
+    "verdict": "confirmed",
+    "note": "gsheets GT(TRUE,0)=TRUE — booleans rank above all numbers in gsheets cross-type comparison (number < text < boolean)."
+  },
+  {
+    "id": "math-core-001b",
+    "formula_used": "=GT(2,TRUE)",
+    "outcome": {
+      "kind": "value",
+      "grid": [
+        [
+          {
+            "primitive": {
+              "kind": "boolean",
+              "value": false
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "boolean",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=GT(2,TRUE)"
+                },
+                "effectiveValue": {
+                  "boolValue": false
+                },
+                "formattedValue": "FALSE",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "GT(2,TRUE)",
+            "formatted": "FALSE"
+          }
+        ]
+      ],
+      "extent": {
+        "rows": 1,
+        "cols": 1
+      }
+    },
+    "verdict": "confirmed",
+    "note": "gsheets GT(2,TRUE)=FALSE — confirms the boolean-above-number ranking from the opposite argument order."
+  },
+  {
+    "id": "math-core-002",
+    "formula_used": "=UNIQUE(A1:A3)",
+    "outcome": {
+      "kind": "value",
+      "grid": [
+        [
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "Apple"
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "string",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=UNIQUE(A1:A3)"
+                },
+                "effectiveValue": {
+                  "stringValue": "Apple"
+                },
+                "formattedValue": "Apple",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "UNIQUE(A1:A3)",
+            "formatted": "Apple"
+          }
+        ],
+        [
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "apple"
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "string",
+              "raw_api": {
+                "effectiveValue": {
+                  "stringValue": "apple"
+                },
+                "formattedValue": "apple",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formatted": "apple"
+          }
+        ],
+        [
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "APPLE"
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "string",
+              "raw_api": {
+                "effectiveValue": {
+                  "stringValue": "APPLE"
+                },
+                "formattedValue": "APPLE",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formatted": "APPLE"
+          }
+        ]
+      ],
+      "extent": {
+        "rows": 3,
+        "cols": 1
+      }
+    },
+    "verdict": "confirmed",
+    "note": "gsheets UNIQUE(\"Apple\",\"apple\",\"APPLE\") spills ALL THREE (case-SENSITIVE dedup), whereas Excel keeps only \"Apple\" (case-insensitive)."
+  },
+  {
+    "id": "math-core-004",
+    "formula_used": "=CONVERT(1,\"m\",\"ft\")",
+    "outcome": {
+      "kind": "value",
+      "grid": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 3.28083989501312
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "number",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=CONVERT(1,\"m\",\"ft\")"
+                },
+                "effectiveValue": {
+                  "numberValue": 3.28083989501312
+                },
+                "formattedValue": "3.280839895",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "CONVERT(1,\"m\",\"ft\")",
+            "formatted": "3.280839895"
+          }
+        ]
+      ],
+      "extent": {
+        "rows": 1,
+        "cols": 1
+      }
+    },
+    "verdict": "contradicted",
+    "note": "HEADLINE: hypothesis predicted gsheets rounds CONVERT to ~9 decimals (3.280839895); gsheets actually returned 3.28083989501312 — ~15 significant digits, diverging from Excel's 3.2808398950131235 only at the ~15th digit (gsheets' 15-sig-fig storage cap), NOT a 9-decimal rounding. If the recorded fixture showed 3.280839895 that was a read-serialization artifact, not gsheets' stored value."
+  },
+  {
+    "id": "math-longtail-acot-branch",
+    "formula_used": "=ACOT(-0.5)",
+    "outcome": {
+      "kind": "value",
+      "grid": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": -1.1071487177940904
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "number",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=ACOT(-0.5)"
+                },
+                "effectiveValue": {
+                  "numberValue": -1.1071487177940904
+                },
+                "formattedValue": "-1.107148718",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "ACOT(-0.5)",
+            "formatted": "-1.107148718"
+          }
+        ]
+      ],
+      "extent": {
+        "rows": 1,
+        "cols": 1
+      }
+    },
+    "verdict": "confirmed",
+    "note": "gsheets ACOT(-0.5)=-1.1071487177940904 = ATAN(1/-0.5)=ATAN(-2) — confirms gsheets uses the ATAN(1/x) branch (range (-π/2,π/2), negative for x<0), diverging from Excel's (0,π) convention. (The hypothesis's specific figure \"-0.4636\" was a slip — that is ATAN(-0.5), not ATAN(1/-0.5); the branch mechanism is confirmed.)"
+  },
+  {
+    "id": "math-longtail-acot-branch-large",
+    "formula_used": "=ACOT(-100)",
+    "outcome": {
+      "kind": "value",
+      "grid": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": -0.009999666686665238
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "number",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=ACOT(-100)"
+                },
+                "effectiveValue": {
+                  "numberValue": -0.009999666686665238
+                },
+                "formattedValue": "-0.009999666687",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "ACOT(-100)",
+            "formatted": "-0.009999666687"
+          }
+        ]
+      ],
+      "extent": {
+        "rows": 1,
+        "cols": 1
+      }
+    },
+    "verdict": "confirmed",
+    "note": "gsheets ACOT(-100)=-0.009999666686665238 = ATAN(1/-100), approaching 0 from below — confirms the ATAN(1/x) branch limit."
+  },
+  {
+    "id": "math-longtail-acot-zero",
+    "formula_used": "=ACOT(0)",
+    "outcome": {
+      "kind": "value",
+      "grid": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 1.5707963267948966
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "number",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=ACOT(0)"
+                },
+                "effectiveValue": {
+                  "numberValue": 1.5707963267948966
+                },
+                "formattedValue": "1.570796327",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "ACOT(0)",
+            "formatted": "1.570796327"
+          }
+        ]
+      ],
+      "extent": {
+        "rows": 1,
+        "cols": 1
+      }
+    },
+    "verdict": "confirmed",
+    "note": "gsheets ACOT(0)=1.5707963267948966 (π/2) — conventions agree at 0."
+  },
+  {
+    "id": "math-longtail-acoth-domain",
+    "formula_used": "=ACOTH(0.5)",
+    "outcome": {
+      "kind": "value",
+      "grid": [
+        [
+          {
+            "primitive": {
+              "kind": "error",
+              "sentinel": "#NUM!"
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "error",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=ACOTH(0.5)"
+                },
+                "effectiveValue": {
+                  "errorValue": {
+                    "type": "NUM",
+                    "message": "Function ACOTH parameter 1 value is 0.5. Valid values cannot be between -1 and 1 inclusive."
+                  }
+                },
+                "formattedValue": "#NUM!",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "ACOTH(0.5)",
+            "formatted": "#NUM!"
+          }
+        ]
+      ],
+      "extent": {
+        "rows": 1,
+        "cols": 1
+      }
+    },
+    "verdict": "confirmed",
+    "note": "gsheets ACOTH(0.5)=#NUM! — |x|<1 is outside the domain."
+  },
+  {
+    "id": "math-longtail-improper-complex-digits",
+    "formula_used": "=IMLN(\"2+3i\")",
+    "outcome": {
+      "kind": "value",
+      "grid": [
+        [
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "1.28247467873077+0.982793723247329i"
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "string",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=IMLN(\"2+3i\")"
+                },
+                "effectiveValue": {
+                  "stringValue": "1.28247467873077+0.982793723247329i"
+                },
+                "formattedValue": "1.28247467873077+0.982793723247329i",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "IMLN(\"2+3i\")",
+            "formatted": "1.28247467873077+0.982793723247329i"
+          }
+        ]
+      ],
+      "extent": {
+        "rows": 1,
+        "cols": 1
+      }
+    },
+    "verdict": "confirmed",
+    "note": "gsheets IMLN(\"2+3i\")=\"1.28247467873077+0.982793723247329i\" — ~15 significant digits per component (mantissa-precision rendering axis)."
+  },
+  {
+    "id": "math-longtail-improper-i-residue",
+    "formula_used": "=IMPOWER(\"i\", 2)",
+    "outcome": {
+      "kind": "value",
+      "grid": [
+        [
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "-1+1.22464679914735E-16i"
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "string",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=IMPOWER(\"i\", 2)"
+                },
+                "effectiveValue": {
+                  "stringValue": "-1+1.22464679914735E-16i"
+                },
+                "formattedValue": "-1+1.22464679914735E-16i",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "IMPOWER(\"i\", 2)",
+            "formatted": "-1+1.22464679914735E-16i"
+          }
+        ]
+      ],
+      "extent": {
+        "rows": 1,
+        "cols": 1
+      }
+    },
+    "verdict": "confirmed",
+    "note": "gsheets IMPOWER(\"i\",2)=\"-1+1.22464679914735E-16i\" — the uppercase-E imaginary residue is retained (not cleaned to \"-1\")."
+  },
+  {
+    "id": "math-longtail-munit-zero",
+    "formula_used": "=MUNIT(0)",
+    "outcome": {
+      "kind": "value",
+      "grid": [
+        [
+          {
+            "primitive": {
+              "kind": "error",
+              "sentinel": "#NUM!"
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "error",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=MUNIT(0)"
+                },
+                "effectiveValue": {
+                  "errorValue": {
+                    "type": "NUM",
+                    "message": "Function MUNIT parameter 1 value is 0. It should be greater than or equal to 1."
+                  }
+                },
+                "formattedValue": "#NUM!",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "MUNIT(0)",
+            "formatted": "#NUM!"
+          }
+        ]
+      ],
+      "extent": {
+        "rows": 1,
+        "cols": 1
+      }
+    },
+    "verdict": "confirmed",
+    "note": "gsheets MUNIT(0)=#NUM! (Excel returns #VALUE!) — the invalid 0x0 identity-matrix error-code split."
+  },
+  {
+    "id": "math-longtail-formulas-randbetween",
+    "formula_used": "=ISNUMBER(RANDBETWEEN(1,10))",
+    "outcome": {
+      "kind": "value",
+      "grid": [
+        [
+          {
+            "primitive": {
+              "kind": "boolean",
+              "value": true
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "boolean",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=ISNUMBER(RANDBETWEEN(1,10))"
+                },
+                "effectiveValue": {
+                  "boolValue": true
+                },
+                "formattedValue": "TRUE",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "ISNUMBER(RANDBETWEEN(1,10))",
+            "formatted": "TRUE"
+          }
+        ]
+      ],
+      "extent": {
+        "rows": 1,
+        "cols": 1
+      }
+    },
+    "verdict": "confirmed",
+    "note": "gsheets ISNUMBER(RANDBETWEEN(1,10))=TRUE — integer output contract holds (the `formulas` engine violates it by returning 3.535)."
+  },
+  {
+    "id": "math-longtail-libre-rerun",
+    "formula_used": "=SIN(0)",
+    "outcome": {
+      "kind": "value",
+      "grid": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 0
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "number",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=SIN(0)"
+                },
+                "effectiveValue": {
+                  "numberValue": 0
+                },
+                "formattedValue": "0",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "SIN(0)",
+            "formatted": "0"
+          }
+        ]
+      ],
+      "extent": {
+        "rows": 1,
+        "cols": 1
+      }
+    },
+    "verdict": "confirmed",
+    "note": "gsheets SIN(0)=0 (trivial). The actionable ask (LibreOffice blank-capture re-run) is out-of-scope for gsheets."
+  },
+  {
+    "id": "spill-broadcast-001",
+    "formula_used": "=INDEX(A1:A3*10)",
+    "outcome": {
+      "kind": "value",
+      "grid": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 10
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "number",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=INDEX(A1:A3*10)"
+                },
+                "effectiveValue": {
+                  "numberValue": 10
+                },
+                "formattedValue": "10",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "INDEX(A1:A3*10)",
+            "formatted": "10"
+          }
+        ],
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 20
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "number",
+              "raw_api": {
+                "effectiveValue": {
+                  "numberValue": 20
+                },
+                "formattedValue": "20",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formatted": "20"
+          }
+        ],
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 30
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "number",
+              "raw_api": {
+                "effectiveValue": {
+                  "numberValue": 30
+                },
+                "formattedValue": "30",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formatted": "30"
+          }
+        ]
+      ],
+      "extent": {
+        "rows": 3,
+        "cols": 1
+      }
+    },
+    "verdict": "confirmed",
+    "note": "gsheets INDEX(A1:A3*10) spills the full column [10;20;30]."
+  },
+  {
+    "id": "spill-broadcast-002",
+    "formula_used": "=INDEX({1,2,3}+{10;20;30})",
+    "outcome": {
+      "kind": "value",
+      "grid": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 11
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "number",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=INDEX({1,2,3}+{10;20;30})"
+                },
+                "effectiveValue": {
+                  "numberValue": 11
+                },
+                "formattedValue": "11",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "INDEX({1,2,3}+{10;20;30})",
+            "formatted": "11"
+          },
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 12
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "number",
+              "raw_api": {
+                "effectiveValue": {
+                  "numberValue": 12
+                },
+                "formattedValue": "12",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formatted": "12"
+          },
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 13
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "number",
+              "raw_api": {
+                "effectiveValue": {
+                  "numberValue": 13
+                },
+                "formattedValue": "13",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formatted": "13"
+          }
+        ],
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 21
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "number",
+              "raw_api": {
+                "effectiveValue": {
+                  "numberValue": 21
+                },
+                "formattedValue": "21",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formatted": "21"
+          },
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 22
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "number",
+              "raw_api": {
+                "effectiveValue": {
+                  "numberValue": 22
+                },
+                "formattedValue": "22",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formatted": "22"
+          },
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 23
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "number",
+              "raw_api": {
+                "effectiveValue": {
+                  "numberValue": 23
+                },
+                "formattedValue": "23",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formatted": "23"
+          }
+        ],
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 31
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "number",
+              "raw_api": {
+                "effectiveValue": {
+                  "numberValue": 31
+                },
+                "formattedValue": "31",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formatted": "31"
+          },
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 32
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "number",
+              "raw_api": {
+                "effectiveValue": {
+                  "numberValue": 32
+                },
+                "formattedValue": "32",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formatted": "32"
+          },
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 33
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "number",
+              "raw_api": {
+                "effectiveValue": {
+                  "numberValue": 33
+                },
+                "formattedValue": "33",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formatted": "33"
+          }
+        ]
+      ],
+      "extent": {
+        "rows": 3,
+        "cols": 3
+      }
+    },
+    "verdict": "confirmed",
+    "note": "gsheets INDEX({1,2,3}+{10;20;30}) spills the full 3x3 outer-product grid [11,12,13]/[21,22,23]/[31,32,33] — row-vector + column-vector broadcasts."
+  },
+  {
+    "id": "spill-broadcast-003",
+    "formula_used": "=LEN(B1:B3)*1",
+    "outcome": {
+      "kind": "value",
+      "grid": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 3
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "number",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=LEN(B1:B3)*1"
+                },
+                "effectiveValue": {
+                  "numberValue": 3
+                },
+                "formattedValue": "3",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "LEN(B1:B3)*1",
+            "formatted": "3"
+          }
+        ]
+      ],
+      "extent": {
+        "rows": 1,
+        "cols": 1
+      }
+    },
+    "verdict": "confirmed",
+    "note": "gsheets LEN(B1:B3)*1 returns a SINGLE scalar 3 (implicit intersection, no ARRAYFORMULA), whereas Excel auto-spills [3;3;3]."
+  },
+  {
+    "id": "spill-broadcast-004",
+    "formula_used": "={1,2,3}+{10,20}",
+    "outcome": {
+      "kind": "value",
+      "grid": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 11
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "number",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "={1,2,3}+{10,20}"
+                },
+                "effectiveValue": {
+                  "numberValue": 11
+                },
+                "formattedValue": "11",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "{1,2,3}+{10,20}",
+            "formatted": "11"
+          }
+        ]
+      ],
+      "extent": {
+        "rows": 1,
+        "cols": 1
+      }
+    },
+    "verdict": "contradicted",
+    "note": "HEADLINE: hypothesis predicted BOTH engines pad the non-overlapping cell with #N/A → [11,22,#N/A]; gsheets actually returned a SINGLE scalar 11 (extent 1x1). For two mismatched-length ROW vectors {1,2,3}+{10,20}, gsheets does NOT spill-with-#N/A-padding — it returns only the first element. (Contrast spill-broadcast-002 where row+COLUMN vectors DO broadcast to a 3x3 grid.)"
+  },
+  {
+    "id": "spill-broadcast-005",
+    "formula_used": "=SEQUENCE(3, 2)",
+    "outcome": {
+      "kind": "value",
+      "grid": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 1
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "number",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=SEQUENCE(3, 2)"
+                },
+                "effectiveValue": {
+                  "numberValue": 1
+                },
+                "formattedValue": "1",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "SEQUENCE(3, 2)",
+            "formatted": "1"
+          },
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 2
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "number",
+              "raw_api": {
+                "effectiveValue": {
+                  "numberValue": 2
+                },
+                "formattedValue": "2",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formatted": "2"
+          }
+        ],
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 3
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "number",
+              "raw_api": {
+                "effectiveValue": {
+                  "numberValue": 3
+                },
+                "formattedValue": "3",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formatted": "3"
+          },
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 4
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "number",
+              "raw_api": {
+                "effectiveValue": {
+                  "numberValue": 4
+                },
+                "formattedValue": "4",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formatted": "4"
+          }
+        ],
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 5
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "number",
+              "raw_api": {
+                "effectiveValue": {
+                  "numberValue": 5
+                },
+                "formattedValue": "5",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formatted": "5"
+          },
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 6
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "number",
+              "raw_api": {
+                "effectiveValue": {
+                  "numberValue": 6
+                },
+                "formattedValue": "6",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formatted": "6"
+          }
+        ]
+      ],
+      "extent": {
+        "rows": 3,
+        "cols": 2
+      }
+    },
+    "verdict": "confirmed",
+    "note": "gsheets SEQUENCE(3,2) spills [1,2]/[3,4]/[5,6]."
+  },
+  {
+    "id": "spill-broadcast-006",
+    "formula_used": "=SORT(SEQUENCE(5), 1, -1)",
+    "outcome": {
+      "kind": "value",
+      "grid": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 1
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "number",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=SORT(SEQUENCE(5), 1, -1)"
+                },
+                "effectiveValue": {
+                  "numberValue": 1
+                },
+                "formattedValue": "1",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "SORT(SEQUENCE(5), 1, -1)",
+            "formatted": "1"
+          }
+        ],
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 2
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "number",
+              "raw_api": {
+                "effectiveValue": {
+                  "numberValue": 2
+                },
+                "formattedValue": "2",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formatted": "2"
+          }
+        ],
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 3
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "number",
+              "raw_api": {
+                "effectiveValue": {
+                  "numberValue": 3
+                },
+                "formattedValue": "3",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formatted": "3"
+          }
+        ],
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 4
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "number",
+              "raw_api": {
+                "effectiveValue": {
+                  "numberValue": 4
+                },
+                "formattedValue": "4",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formatted": "4"
+          }
+        ],
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 5
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "number",
+              "raw_api": {
+                "effectiveValue": {
+                  "numberValue": 5
+                },
+                "formattedValue": "5",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formatted": "5"
+          }
+        ]
+      ],
+      "extent": {
+        "rows": 5,
+        "cols": 1
+      }
+    },
+    "verdict": "confirmed",
+    "note": "gsheets SORT(SEQUENCE(5),1,-1) returns ASCENDING [1;2;3;4;5] — reads -1 as is_ascending=truthy=TRUE. Core evidence for the SORT sort_order arg-semantics divergence."
+  },
+  {
+    "id": "spill-broadcast-007",
+    "formula_used": "=SUM(1, 2, 3)",
+    "outcome": {
+      "kind": "value",
+      "grid": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 6
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "number",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=SUM(1, 2, 3)"
+                },
+                "effectiveValue": {
+                  "numberValue": 6
+                },
+                "formattedValue": "6",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "SUM(1, 2, 3)",
+            "formatted": "6"
+          }
+        ]
+      ],
+      "extent": {
+        "rows": 1,
+        "cols": 1
+      }
+    },
+    "verdict": "confirmed",
+    "note": "gsheets SUM(1,2,3)=6 (trivial). LibreOffice re-run is the actionable ask."
+  },
+  {
+    "id": "spill-broadcast-008",
+    "formula_used": "=SORT({3;1;2}, 1, -1)",
+    "outcome": {
+      "kind": "value",
+      "grid": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 1
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "number",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=SORT({3;1;2}, 1, -1)"
+                },
+                "effectiveValue": {
+                  "numberValue": 1
+                },
+                "formattedValue": "1",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "SORT({3;1;2}, 1, -1)",
+            "formatted": "1"
+          }
+        ],
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 2
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "number",
+              "raw_api": {
+                "effectiveValue": {
+                  "numberValue": 2
+                },
+                "formattedValue": "2",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formatted": "2"
+          }
+        ],
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 3
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "number",
+              "raw_api": {
+                "effectiveValue": {
+                  "numberValue": 3
+                },
+                "formattedValue": "3",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formatted": "3"
+          }
+        ]
+      ],
+      "extent": {
+        "rows": 3,
+        "cols": 1
+      }
+    },
+    "verdict": "confirmed",
+    "note": "gsheets SORT({3;1;2},1,-1) returns ASCENDING [1;2;3] on a bare array literal — clean control confirming the sort_order divergence."
+  },
+  {
+    "id": "stat-analytics-001",
+    "formula_used": "=MARGINOFERROR(A1:A5, 0.05)",
+    "outcome": {
+      "kind": "value",
+      "grid": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 0.04718417110127355
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "number",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=MARGINOFERROR(A1:A5, 0.05)"
+                },
+                "effectiveValue": {
+                  "numberValue": 0.04718417110127355
+                },
+                "formattedValue": "0.0471841711",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "MARGINOFERROR(A1:A5, 0.05)",
+            "formatted": "0.0471841711"
+          }
+        ]
+      ],
+      "extent": {
+        "rows": 1,
+        "cols": 1
+      }
+    },
+    "verdict": "confirmed",
+    "note": "gsheets MARGINOFERROR(A1:A5,0.05)=0.04718417110127355 — a live gsheets function equal to CONFIDENCE.T(0.05,STDEV,COUNT). Not a recording artifact."
+  },
+  {
+    "id": "stat-analytics-002",
+    "formula_used": "=HYPERLINK(\"https://example.com\", \"click me\")",
+    "outcome": {
+      "kind": "value",
+      "grid": [
+        [
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "click me"
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "string",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=HYPERLINK(\"https://example.com\", \"click me\")"
+                },
+                "effectiveValue": {
+                  "stringValue": "click me"
+                },
+                "formattedValue": "click me",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {
+                      "red": 0.06666667,
+                      "green": 0.33333334,
+                      "blue": 0.8
+                    },
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": true,
+                    "foregroundColorStyle": {
+                      "rgbColor": {
+                        "red": 0.06666667,
+                        "green": 0.33333334,
+                        "blue": 0.8
+                      }
+                    },
+                    "link": {
+                      "uri": "https://example.com"
+                    }
+                  },
+                  "hyperlinkDisplayType": "LINKED"
+                },
+                "hyperlink": "https://example.com"
+              }
+            },
+            "formula": "HYPERLINK(\"https://example.com\", \"click me\")",
+            "formatted": "click me",
+            "hyperlink": "https://example.com"
+          }
+        ]
+      ],
+      "extent": {
+        "rows": 1,
+        "cols": 1
+      }
+    },
+    "verdict": "confirmed",
+    "note": "gsheets HYPERLINK(\"https://example.com\",\"click me\") has scalar value \"click me\" (the display label), joining the string class."
+  },
+  {
+    "id": "stat-analytics-003",
+    "formula_used": "=CONFIDENCE(0.05, 1, 100)",
+    "outcome": {
+      "kind": "value",
+      "grid": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 0.1959963986120195
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "number",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=CONFIDENCE(0.05, 1, 100)"
+                },
+                "effectiveValue": {
+                  "numberValue": 0.1959963986120195
+                },
+                "formattedValue": "0.1959963986",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "CONFIDENCE(0.05, 1, 100)",
+            "formatted": "0.1959963986"
+          }
+        ]
+      ],
+      "extent": {
+        "rows": 1,
+        "cols": 1
+      }
+    },
+    "verdict": "confirmed",
+    "note": "gsheets CONFIDENCE(0.05,1,100)=0.1959963986120195 vs Excel's 0.19599639845400538 — an ~8th-sig-fig difference from gsheets' NORM.S.INV approximation."
+  },
+  {
+    "id": "stat-core-001",
+    "formula_used": "=COUNTA(A1:A3)&\"|\"&COUNTBLANK(A1:A3)",
+    "outcome": {
+      "kind": "value",
+      "grid": [
+        [
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "3|1"
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "string",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=COUNTA(A1:A3)&\"|\"&COUNTBLANK(A1:A3)"
+                },
+                "effectiveValue": {
+                  "stringValue": "3|1"
+                },
+                "formattedValue": "3|1",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "COUNTA(A1:A3)&\"|\"&COUNTBLANK(A1:A3)",
+            "formatted": "3|1"
+          }
+        ]
+      ],
+      "extent": {
+        "rows": 1,
+        "cols": 1
+      }
+    },
+    "verdict": "confirmed",
+    "note": "gsheets returns \"3|1\": COUNTA counts the \"\" cell (=3, treats empty string as a value) AND COUNTBLANK also counts it (=1). Matches the predicted gsheets branch (contrast Excel's \"2|1\")."
+  },
+  {
+    "id": "stat-core-002",
+    "formula_used": "=PERCENTRANK.EXC(A1:A5, 1)&\"|\"&PERCENTRANK.EXC(A1:A5, 1, 6)",
+    "outcome": {
+      "kind": "value",
+      "grid": [
+        [
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "0.167|0.166667"
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "string",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=PERCENTRANK.EXC(A1:A5, 1)&\"|\"&PERCENTRANK.EXC(A1:A5, 1, 6)"
+                },
+                "effectiveValue": {
+                  "stringValue": "0.167|0.166667"
+                },
+                "formattedValue": "0.167|0.166667",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "PERCENTRANK.EXC(A1:A5, 1)&\"|\"&PERCENTRANK.EXC(A1:A5, 1, 6)",
+            "formatted": "0.167|0.166667"
+          }
+        ]
+      ],
+      "extent": {
+        "rows": 1,
+        "cols": 1
+      }
+    },
+    "verdict": "confirmed",
+    "note": "gsheets PERCENTRANK.EXC(A1:A5,1)=0.167 (3-sig-digit default) and with significance=6 gives 0.166667 — confirms the 0.166-vs-0.167 default-precision split resolves to the true 1/6 at higher precision."
+  },
+  {
+    "id": "stat-distributions-001",
+    "formula_used": "=CHISQ.TEST(A1:C1, A3:C3)",
+    "outcome": {
+      "kind": "value",
+      "grid": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 0.3678794411714419
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "number",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=CHISQ.TEST(A1:C1, A3:C3)"
+                },
+                "effectiveValue": {
+                  "numberValue": 0.3678794411714419
+                },
+                "formattedValue": "0.3678794412",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "CHISQ.TEST(A1:C1, A3:C3)",
+            "formatted": "0.3678794412"
+          }
+        ]
+      ],
+      "extent": {
+        "rows": 1,
+        "cols": 1
+      }
+    },
+    "verdict": "confirmed",
+    "note": "gsheets CHISQ.TEST(single-row)=0.3678794411714419 = CHISQ.DIST.RT(2,2)=1/e — consistent with a df=cols-1=2 fallback for the degenerate single-row table."
+  },
+  {
+    "id": "stat-distributions-002",
+    "formula_used": "=CHISQ.TEST(A1:C2, A4:B5)",
+    "outcome": {
+      "kind": "value",
+      "grid": [
+        [
+          {
+            "primitive": {
+              "kind": "error",
+              "sentinel": "#N/A"
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "error",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=CHISQ.TEST(A1:C2, A4:B5)"
+                },
+                "effectiveValue": {
+                  "errorValue": {
+                    "type": "N_A",
+                    "message": "Array arguments to CHITEST are of different size."
+                  }
+                },
+                "formattedValue": "#N/A",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "CHISQ.TEST(A1:C2, A4:B5)",
+            "formatted": "#N/A"
+          }
+        ]
+      ],
+      "extent": {
+        "rows": 1,
+        "cols": 1
+      }
+    },
+    "verdict": "confirmed",
+    "note": "gsheets CHISQ.TEST with a 2x3 observed vs 2x2 expected shape mismatch returns #N/A (ranges must match shape)."
+  },
+  {
+    "id": "stat-distributions-003",
+    "formula_used": "=BETA.DIST(1.5, 2, 2, TRUE, 0, 1)",
+    "outcome": {
+      "kind": "value",
+      "grid": [
+        [
+          {
+            "primitive": {
+              "kind": "error",
+              "sentinel": "#NUM!"
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "error",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=BETA.DIST(1.5, 2, 2, TRUE, 0, 1)"
+                },
+                "effectiveValue": {
+                  "errorValue": {
+                    "type": "NUM",
+                    "message": "Function BETA.DIST parameter 1 value is 1.5. It should be less than or equal to value of Function BETA.DIST parameter 6 with 1."
+                  }
+                },
+                "formattedValue": "#NUM!",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "BETA.DIST(1.5, 2, 2, TRUE, 0, 1)",
+            "formatted": "#NUM!"
+          }
+        ]
+      ],
+      "extent": {
+        "rows": 1,
+        "cols": 1
+      }
+    },
+    "verdict": "confirmed",
+    "note": "gsheets BETA.DIST(1.5,2,2,TRUE,0,1)=#NUM! — x=1.5 above the upper bound 1 is out of support."
+  },
+  {
+    "id": "stat-distributions-004",
+    "formula_used": "=NORM.S.INV(0.99)",
+    "outcome": {
+      "kind": "value",
+      "grid": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 2.326347874388028
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "number",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=NORM.S.INV(0.99)"
+                },
+                "effectiveValue": {
+                  "numberValue": 2.326347874388028
+                },
+                "formattedValue": "2.326347874",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "NORM.S.INV(0.99)",
+            "formatted": "2.326347874"
+          }
+        ]
+      ],
+      "extent": {
+        "rows": 1,
+        "cols": 1
+      }
+    },
+    "verdict": "confirmed",
+    "note": "gsheets NORM.S.INV(0.99)=2.326347874388028 vs the reference 2.3263478740408408 — differs at the ~9th-10th significant digit (~3.5e-10), reconfirming gsheets' inverse-normal quantile drift."
+  },
+  {
+    "id": "text-regex-001",
+    "formula_used": "=REGEXEXTRACT(\"2025-03-01\", \"(\\d{4})-(\\d{2})-(\\d{2})\")",
+    "outcome": {
+      "kind": "value",
+      "grid": [
+        [
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "2025"
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "string",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=REGEXEXTRACT(\"2025-03-01\", \"(\\d{4})-(\\d{2})-(\\d{2})\")"
+                },
+                "effectiveValue": {
+                  "stringValue": "2025"
+                },
+                "formattedValue": "2025",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "REGEXEXTRACT(\"2025-03-01\", \"(\\d{4})-(\\d{2})-(\\d{2})\")",
+            "formatted": "2025"
+          },
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "03"
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "string",
+              "raw_api": {
+                "effectiveValue": {
+                  "stringValue": "03"
+                },
+                "formattedValue": "03",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formatted": "03"
+          },
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "01"
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "string",
+              "raw_api": {
+                "effectiveValue": {
+                  "stringValue": "01"
+                },
+                "formattedValue": "01",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formatted": "01"
+          }
+        ]
+      ],
+      "extent": {
+        "rows": 1,
+        "cols": 3
+      }
+    },
+    "verdict": "confirmed",
+    "note": "gsheets REGEXEXTRACT(\"2025-03-01\",\"(\\d{4})-(\\d{2})-(\\d{2})\") returns the capture groups [\"2025\",\"03\",\"01\"] (spilled as a row) — gsheets returns capture groups by default, unlike Excel which returns the full match."
+  },
+  {
+    "id": "text-regex-003",
+    "formula_used": "=MIDB(\"あいう\", 3, 2)",
+    "outcome": {
+      "kind": "value",
+      "grid": [
+        [
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "う"
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "string",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=MIDB(\"あいう\", 3, 2)"
+                },
+                "effectiveValue": {
+                  "stringValue": "う"
+                },
+                "formattedValue": "う",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "MIDB(\"あいう\", 3, 2)",
+            "formatted": "う"
+          }
+        ]
+      ],
+      "extent": {
+        "rows": 1,
+        "cols": 1
+      }
+    },
+    "verdict": "confirmed",
+    "note": "gsheets MIDB(\"あいう\",3,2)=\"う\" — MIDB is character-based here. (The LENB/FINDB/REPLACEB byte-vs-char cross-checks in the note were not run as separate formulas.)"
+  },
+  {
+    "id": "text-regex-004",
+    "formula_used": "=CHAR(0)",
+    "outcome": {
+      "kind": "value",
+      "grid": [
+        [
+          {
+            "primitive": {
+              "kind": "error",
+              "sentinel": "#NUM!"
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "error",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=CHAR(0)"
+                },
+                "effectiveValue": {
+                  "errorValue": {
+                    "type": "NUM",
+                    "message": "Function CHAR parameter 1 value 0 is out of range."
+                  }
+                },
+                "formattedValue": "#NUM!",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "CHAR(0)",
+            "formatted": "#NUM!"
+          }
+        ]
+      ],
+      "extent": {
+        "rows": 1,
+        "cols": 1
+      }
+    },
+    "verdict": "confirmed",
+    "note": "gsheets CHAR(0)=#NUM! (code 0 out of 1..255), whereas Excel returns #VALUE! — error-code split."
+  },
+  {
+    "id": "text-regex-006",
+    "formula_used": "=DOLLAR(-1234.5, 2)",
+    "outcome": {
+      "kind": "value",
+      "grid": [
+        [
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "-$1,234.50"
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "string",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=DOLLAR(-1234.5, 2)"
+                },
+                "effectiveValue": {
+                  "stringValue": "-$1,234.50"
+                },
+                "formattedValue": "-$1,234.50",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "DOLLAR(-1234.5, 2)",
+            "formatted": "-$1,234.50"
+          }
+        ]
+      ],
+      "extent": {
+        "rows": 1,
+        "cols": 1
+      }
+    },
+    "verdict": "confirmed",
+    "note": "gsheets DOLLAR(-1234.5,2)=\"-$1,234.50\" (leading minus), whereas Excel renders accounting parentheses ($1,234.50)."
+  }
+]

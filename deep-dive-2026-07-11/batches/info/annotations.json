@@ -1,0 +1,183 @@
+[
+  {
+    "content": "For the entire `info` suite, the LibreOffice fixture (packages/assay/fixtures/info/libreoffice.json) records `[[null]]` (assay `blank`) for all 93 cases, including trivially-true results like `=ISNUMBER(42)`. This is a recording/harness artifact, not LibreOffice behavior: none of these predicates can legitimately return a blank cell. In every ref below the seven functioning engines (excel, formulas, gsheets, hyperformula, ironcalc, lattice, pycel) agree on the answer, and LibreOffice's lone `blank` class is the only thing making the case a fork. Needs a LibreOffice re-record of the info suite; until then treat the LibreOffice branch as absent, not as `blank`.",
+    "cause": "TODO",
+    "scope": [
+      {
+        "kind": "ref-set",
+        "refs": [
+          "ISBLANK/isblank-of-blank-cell",
+          "ISBLANK/isblank-of-literal-empty-string",
+          "ISBLANK/isblank-of-literal-number",
+          "ISBLANK/isblank-of-number-cell",
+          "ISBLANK/isblank-of-text-cell",
+          "ISERR/iserr-of-blank-cell",
+          "ISERR/iserr-of-na",
+          "ISERR/iserr-of-number",
+          "ISERR/iserr-of-text",
+          "ISERROR/iserror-of-blank-cell",
+          "ISERROR/iserror-of-na",
+          "ISERROR/iserror-of-number",
+          "ISERROR/iserror-of-text",
+          "ISLOGICAL/islogical-of-blank-cell",
+          "ISLOGICAL/islogical-of-number",
+          "ISLOGICAL/islogical-of-text",
+          "ISNA/isna-of-match-miss",
+          "ISNA/isna-of-na",
+          "ISNA/isna-of-number",
+          "ISNA/isna-of-text",
+          "ISNONTEXT/isnontext-of-blank-cell",
+          "ISNONTEXT/isnontext-of-boolean",
+          "ISNONTEXT/isnontext-of-number",
+          "ISNONTEXT/isnontext-of-text",
+          "ISNUMBER/isnumber-of-blank-cell",
+          "ISNUMBER/isnumber-of-decimal",
+          "ISNUMBER/isnumber-of-integer",
+          "ISNUMBER/isnumber-of-number-cell",
+          "ISNUMBER/isnumber-of-text",
+          "ISTEXT/istext-of-blank-cell",
+          "ISTEXT/istext-of-boolean",
+          "ISTEXT/istext-of-empty-string",
+          "ISTEXT/istext-of-number",
+          "ISTEXT/istext-of-text",
+          "ISTEXT/istext-of-text-cell",
+          "N/n-of-blank-cell",
+          "N/n-of-number-info",
+          "N/n-of-text",
+          "NA/na-nullary"
+        ]
+      }
+    ],
+    "_meta": {
+      "batch": "info",
+      "confidence": "high",
+      "evidence": "recorded fixtures: all 93 entries in fixtures/info/libreoffice.json are result [[null]]; the other engines' fixtures + live pure-engine probe agree on the real value",
+      "wants_probe": []
+    }
+  },
+  {
+    "content": "In these cases the seven non-pycel engines agree on the boolean answer (e.g. `=ISERR(1/0)` -> true, `=ISNUMBER(1/0)` -> false, `=NA()+1` -> #N/A), while pycel returns #NAME?. Live probe shows the root cause is upstream of the IS-predicate: pycel (via its formulas compiler in the assay harness) already returns #NAME? for the bare error-raising sub-expression itself -- `=1/0` -> #NAME?, `=\"a\"+1` -> #NAME?, `=NA()+1` -> #NAME?. Because the inner operator expression never evaluates to a real error value in pycel, every ISERR/ISERROR/ISNA/ISNUMBER/ISTEXT/ISNONTEXT/ISLOGICAL/N wrapper over it inherits the #NAME? rather than catching a #DIV/0!/#VALUE!/#N/A. pycel does handle error VALUES from functions correctly (e.g. `=ISERR(NA())` -> false, `=NA()` -> #N/A); the failure is specific to bare arithmetic/division operator sub-expressions. LibreOffice's `blank` branch here is the suite-wide recording artifact (see the TODO annotation).",
+    "cause": "error-code",
+    "scope": [
+      {
+        "kind": "ref-set",
+        "refs": [
+          "ISERR/iserr-of-div-0",
+          "ISERROR/iserror-of-div-0",
+          "ISERROR/iserror-of-value",
+          "ISLOGICAL/islogical-of-error",
+          "ISNA/isna-of-div-0",
+          "ISNONTEXT/isnontext-of-error",
+          "ISNUMBER/isnumber-of-error",
+          "ISTEXT/istext-of-error",
+          "N/n-of-error-info",
+          "NA/na-used-in-arithmetic"
+        ]
+      }
+    ],
+    "_meta": {
+      "batch": "info",
+      "confidence": "high",
+      "evidence": "live probe (pycel): =1/0, =\"a\"+1, =NA()+1 all return #NAME?; =NA() returns #N/A and =ISERR(NA()) returns false -- so the trigger is bare operator sub-expressions, not error values",
+      "wants_probe": []
+    }
+  },
+  {
+    "content": "`=CELL(\"format\", A1)` with A1=42 splits three ways by CELL support depth. Excel implements CELL fully and returns the format code \"G\" (General). Google Sheets and IronCalc recognize CELL but reject the \"format\" info_type argument, returning #VALUE! (the argument form is unsupported). formulas, HyperFormula, and pycel do not implement CELL at all and return #NAME? (live-probe confirmed: all three return #NAME? for CELL(\"format\"|\"type\"|\"width\", A1)). This extends DV-0033 (CELL missing in formulas/hyperformula/lattice/pycel for other CELL info-types) by adding the \"format\" info_type and the gsheets/ironcalc #VALUE! arg-rejection branch.",
+    "cause": "missing-arg-form",
+    "scope": [{ "kind": "ref-set", "refs": ["CELL/cell-format"] }],
+    "_meta": {
+      "batch": "info",
+      "confidence": "high",
+      "evidence": "recorded fixtures (excel \"G\"; gsheets/ironcalc #VALUE!) + live probe (formulas/hyperformula/pycel #NAME?; ironcalc #VALUE! for CELL(\"format\"), string \"v\" for CELL(\"type\"))",
+      "wants_probe": ["info-001"]
+    }
+  },
+  {
+    "content": "`=ISBLANK(A1)` where A1 was seeded with an empty string (\"\") splits on whether an empty string counts as blank. excel, formulas, lattice, and pycel return true (the cell reads as blank); gsheets, hyperformula, and ironcalc return false (the cell holds an empty-string value, which is not blank). Live probe confirms formulas=true and pycel=true vs hyperformula=false and ironcalc=false. Note this is partly an input-fidelity question: engines that store the seeded \"\" as a genuinely empty cell report blank, while engines that store it as a zero-length string value report non-blank. The neighbouring cases agree -- `=ISBLANK(\"\")` on a literal empty string is false everywhere, and ISBLANK of a truly empty cell is true everywhere -- so the divergence is specific to a cell seeded with an empty string. LibreOffice's `blank` branch is the suite-wide recording artifact.",
+    "cause": "arg-semantics",
+    "scope": [{ "kind": "ref-set", "refs": ["ISBLANK/isblank-of-empty-string-cell"] }],
+    "_meta": {
+      "batch": "info",
+      "confidence": "high",
+      "evidence": "recorded fixtures + live probe (grid A1=\"\"): formulas/pycel true, hyperformula/ironcalc false; literal =ISBLANK(\"\") false on all four pure engines",
+      "wants_probe": ["info-002"]
+    }
+  },
+  {
+    "content": "ISDATE is a Google-Sheets-native function with no Excel equivalent. For `=ISDATE(\"2024-01-15\")`: gsheets returns true (it parses the string as a date), lattice returns false (it implements ISDATE for gsheets compatibility but does not coerce a raw text argument to a date, so a string is 'not a date'), and excel, formulas, HyperFormula, IronCalc, and pycel all return #NAME? because they do not implement ISDATE (live-probe confirmed #NAME? on formulas/hyperformula/ironcalc/pycel). The genuine cross-engine split is gsheets-true vs lattice-false: the two ISDATE implementers disagree on whether a date-shaped string literal is a date. This extends DV-0024/DV-0019 (ISDATE unimplemented / #N/A elsewhere) with the string-coercion disagreement. LibreOffice's `blank` branch is the suite-wide recording artifact.",
+    "cause": "arg-semantics",
+    "scope": [{ "kind": "ref-set", "refs": ["ISDATE/isdate-of-date-string"] }],
+    "_meta": {
+      "batch": "info",
+      "confidence": "medium",
+      "evidence": "recorded fixtures (gsheets true, lattice false) + live probe (formulas/hyperformula/ironcalc/pycel #NAME?); gsheets string->date coercion rule not directly probeable here",
+      "wants_probe": ["info-003"]
+    }
+  },
+  {
+    "content": "For all three ISREF forms -- `=ISREF(A1)`, `=ISREF(A1:A3)`, `=ISREF(INDIRECT(\"A1\"))` -- excel, formulas, gsheets, ironcalc, and lattice return true, while HyperFormula returns false. Live probe confirms HyperFormula returns false for every ISREF reference form. The mechanism is that HyperFormula evaluates each argument to its scalar value before ISREF inspects it, so ISREF never sees a reference and always reports false; the other engines pass the reference-ness through to ISREF. pycel does not implement ISREF and returns #NAME? (consistent with DV-0001, which lists pycel missing ISREF for other tests). LibreOffice's `blank` branch is the suite-wide recording artifact.",
+    "cause": "arg-semantics",
+    "scope": [
+      {
+        "kind": "ref-set",
+        "refs": [
+          "ISREF/isref-of-single-cell",
+          "ISREF/isref-of-range",
+          "ISREF/isref-of-indirect-valid"
+        ]
+      }
+    ],
+    "_meta": {
+      "batch": "info",
+      "confidence": "high",
+      "evidence": "recorded fixtures + live probe: hyperformula ISREF(A1)/ISREF(A1:A3)/ISREF(INDIRECT(\"A1\")) all false; pycel all #NAME?",
+      "wants_probe": []
+    }
+  },
+  {
+    "content": "`=SHEETS()` with no argument returns the number of sheets in the host workbook, so its value is an artifact of each engine's test harness rather than a semantic divergence: excel's host workbook reported 25, gsheets' reported 52, and the single-sheet HyperFormula and IronCalc harnesses reported 1. formulas and pycel do not implement SHEETS and return #NAME?. Each implementing engine is behaving to spec (count the sheets in scope); the differing numbers reflect differing workbook contexts, not differing function semantics.",
+    "cause": "intentional-spec",
+    "scope": [{ "kind": "ref-set", "refs": ["SHEETS/sheets-no-arg"] }],
+    "_meta": {
+      "batch": "info",
+      "confidence": "high",
+      "evidence": "recorded fixtures (excel 25, gsheets 52, hyperformula/ironcalc 1, formulas/pycel #NAME?); live probe confirms hyperformula/ironcalc single-sheet harness returns 1 and formulas #NAME?",
+      "wants_probe": ["info-004"]
+    }
+  },
+  {
+    "content": "`=SHEETS(A1)` (SHEETS of a single-cell reference) diverges by support depth: excel and HyperFormula return 1 (the reference spans one sheet), Google Sheets returns #N/A, IronCalc returns #N/IMPL! (explicitly not implemented for the reference form), and formulas and pycel return #NAME? (SHEETS unimplemented). Live probe confirms hyperformula=1, ironcalc=#N/IMPL!, formulas=#NAME?, pycel=#NAME?. The gsheets #N/A is the notable branch -- gsheets accepts SHEETS() with no arg but returns #N/A for a single-cell reference argument.",
+    "cause": "missing-function",
+    "scope": [{ "kind": "ref-set", "refs": ["SHEETS/sheets-of-reference"] }],
+    "_meta": {
+      "batch": "info",
+      "confidence": "medium",
+      "evidence": "recorded fixtures (excel/hyperformula 1, gsheets #N/A, ironcalc #N/IMPL!, formulas/pycel #NAME?) + live probe (hyperformula 1, ironcalc #N/IMPL!, formulas/pycel #NAME?); gsheets #N/A cause not directly probeable",
+      "wants_probe": ["info-004"]
+    }
+  },
+  {
+    "content": "TYPE returns a numeric type code (1=number, 2=text, 4=boolean, 16=error, 64=array). excel, formulas, gsheets, ironcalc, and lattice agree on these codes across scalars. The divergent branches are all faithful-implementation gaps: HyperFormula does not implement TYPE and returns #NAME? for every form (live-probe confirmed); pycel does not implement the spreadsheet TYPE and instead leaks Python's type() -- returning the string reprs `<class 'int'>`, `<class 'str'>`, `<class 'bool'>`, `<class 'tuple'>`, `<class 'NoneType'>` instead of numeric codes (live-probe confirmed); IronCalc lacks the array form and returns #N/IMPL! for `=TYPE({1,2,3})` (live-probe confirmed) while agreeing on scalars; and lattice returns #N/A for TYPE of an empty cell (type-of-blank-cell) while the other core engines return 1. For type-of-error, HyperFormula and pycel both return #NAME? (HyperFormula missing TYPE; pycel additionally cannot evaluate the inner 1/0). LibreOffice's `blank` branch is the suite-wide recording artifact.",
+    "cause": "unimplemented-edge",
+    "scope": [
+      {
+        "kind": "ref-set",
+        "refs": [
+          "TYPE/type-of-number",
+          "TYPE/type-of-text",
+          "TYPE/type-of-boolean",
+          "TYPE/type-of-error",
+          "TYPE/type-of-array",
+          "TYPE/type-of-blank-cell"
+        ]
+      }
+    ],
+    "_meta": {
+      "batch": "info",
+      "confidence": "high",
+      "evidence": "recorded fixtures + live probe: hyperformula TYPE(*) all #NAME?; pycel returns Python class-repr strings; ironcalc #N/IMPL! for TYPE({1,2,3}), numeric codes for scalars",
+      "wants_probe": []
+    }
+  }
+]

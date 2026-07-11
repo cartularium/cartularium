@@ -1,0 +1,1409 @@
+[
+ {
+  "ref": "AVERAGE/average-with-one-error",
+  "suite": "error-handling",
+  "subject": "AVERAGE",
+  "name": "average-with-one-error",
+  "formula": "=AVERAGE(1, #VALUE!, 3)",
+  "tags": [
+   "error",
+   "aggregation"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#VALUE!"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "COUNT/count-ignores-errors",
+  "suite": "error-handling",
+  "subject": "COUNT",
+  "name": "count-ignores-errors",
+  "formula": "=COUNT(1, #N/A, 3, #DIV/0!)",
+  "tags": [
+   "error",
+   "aggregation"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 2
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "COUNTA/counta-counts-errors",
+  "suite": "error-handling",
+  "subject": "COUNTA",
+  "name": "counta-counts-errors",
+  "formula": "=COUNTA(1, #N/A, 3, #DIV/0!)",
+  "tags": [
+   "error",
+   "aggregation"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 4
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "IFERROR/iferror-catches-div-0",
+  "suite": "error-handling",
+  "subject": "IFERROR",
+  "name": "iferror-catches-div-0",
+  "formula": "=IFERROR(1/0, \"err\")",
+  "tags": [
+   "error"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "string",
+        "v": "err"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "IFERROR/iferror-catches-n-a",
+  "suite": "error-handling",
+  "subject": "IFERROR",
+  "name": "iferror-catches-n-a",
+  "formula": "=IFERROR(#N/A, \"fallback\")",
+  "tags": [
+   "error"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "string",
+        "v": "fallback"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "IFERROR/iferror-over-array-with-errors",
+  "suite": "error-handling",
+  "subject": "IFERROR",
+  "name": "iferror-over-array-with-errors",
+  "formula": "=IFERROR({1, #N/A, 3}, 0)",
+  "tags": [
+   "error",
+   "broadcast"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 1
+       },
+       {
+        "c": "number",
+        "v": 0
+       },
+       {
+        "c": "number",
+        "v": 3
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "ironcalc"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#N/IMPL!"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 0
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "IFERROR/iferror-over-division-with-zero",
+  "suite": "error-handling",
+  "subject": "IFERROR",
+  "name": "iferror-over-division-with-zero",
+  "formula": "=IFERROR(10/{1,0,2}, -1)",
+  "tags": [
+   "error",
+   "broadcast"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 10
+       },
+       {
+        "c": "number",
+        "v": -1
+       },
+       {
+        "c": "number",
+        "v": 5
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "ironcalc"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#N/IMPL!"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "IFERROR/iferror-passes-clean-value",
+  "suite": "error-handling",
+  "subject": "IFERROR",
+  "name": "iferror-passes-clean-value",
+  "formula": "=IFERROR(42, \"err\")",
+  "tags": [
+   "error"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 42
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "IFNA/ifna-catches-n-a-only",
+  "suite": "error-handling",
+  "subject": "IFNA",
+  "name": "ifna-catches-n-a-only",
+  "formula": "=IFNA(#N/A, \"caught\")",
+  "tags": [
+   "error"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "string",
+        "v": "caught"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "IFNA/ifna-does-not-catch-div-0",
+  "suite": "error-handling",
+  "subject": "IFNA",
+  "name": "ifna-does-not-catch-div-0",
+  "formula": "=IFNA(1/0, \"caught\")",
+  "tags": [
+   "error"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#DIV/0!"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "IFNA/ifna-passes-clean-value",
+  "suite": "error-handling",
+  "subject": "IFNA",
+  "name": "ifna-passes-clean-value",
+  "formula": "=IFNA(42, \"caught\")",
+  "tags": [
+   "error"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 42
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "ISERR/iserr-excludes-n-a",
+  "suite": "error-handling",
+  "subject": "ISERR",
+  "name": "iserr-excludes-n-a",
+  "formula": "=ISERR(#N/A)",
+  "tags": [
+   "error"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "boolean",
+        "v": false
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "ISERR/iserr-on-div-0",
+  "suite": "error-handling",
+  "subject": "ISERR",
+  "name": "iserr-on-div-0",
+  "formula": "=ISERR(1/0)",
+  "tags": [
+   "error"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "boolean",
+        "v": true
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "ISERROR/iserror-on-clean-value",
+  "suite": "error-handling",
+  "subject": "ISERROR",
+  "name": "iserror-on-clean-value",
+  "formula": "=ISERROR(42)",
+  "tags": [
+   "error"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "boolean",
+        "v": false
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "ISERROR/iserror-on-div-0",
+  "suite": "error-handling",
+  "subject": "ISERROR",
+  "name": "iserror-on-div-0",
+  "formula": "=ISERROR(1/0)",
+  "tags": [
+   "error"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "boolean",
+        "v": true
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "ISERROR/iserror-on-n-a",
+  "suite": "error-handling",
+  "subject": "ISERROR",
+  "name": "iserror-on-n-a",
+  "formula": "=ISERROR(#N/A)",
+  "tags": [
+   "error"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "boolean",
+        "v": true
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "ISNA/isna-on-div-0",
+  "suite": "error-handling",
+  "subject": "ISNA",
+  "name": "isna-on-div-0",
+  "formula": "=ISNA(1/0)",
+  "tags": [
+   "error"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "boolean",
+        "v": false
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "ISNA/isna-on-n-a",
+  "suite": "error-handling",
+  "subject": "ISNA",
+  "name": "isna-on-n-a",
+  "formula": "=ISNA(#N/A)",
+  "tags": [
+   "error"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "boolean",
+        "v": true
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "MAX/max-with-error",
+  "suite": "error-handling",
+  "subject": "MAX",
+  "name": "max-with-error",
+  "formula": "=MAX(1, #N/A, 3)",
+  "tags": [
+   "error",
+   "aggregation"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#N/A"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "MIN/min-with-error",
+  "suite": "error-handling",
+  "subject": "MIN",
+  "name": "min-with-error",
+  "formula": "=MIN(1, #VALUE!, 3)",
+  "tags": [
+   "error",
+   "aggregation"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#VALUE!"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "SQRT/num-error",
+  "suite": "error-handling",
+  "subject": "SQRT",
+  "name": "num-error",
+  "formula": "=SQRT(-1)",
+  "tags": [
+   "error",
+   "identity"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NUM!"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "SUM/sum-of-range-with-error-cell",
+  "suite": "error-handling",
+  "subject": "SUM",
+  "name": "sum-of-range-with-error-cell",
+  "formula": "=SUM(A1:A3)",
+  "tags": [
+   "error",
+   "aggregation"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "gsheets"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 4
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "formulas",
+     "hyperformula",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#DIV/0!"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "SUM/sum-with-one-div-0",
+  "suite": "error-handling",
+  "subject": "SUM",
+  "name": "sum-with-one-div-0",
+  "formula": "=SUM(1, 1/0, 3)",
+  "tags": [
+   "error",
+   "aggregation"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#DIV/0!"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "SUM/sum-with-one-n-a",
+  "suite": "error-handling",
+  "subject": "SUM",
+  "name": "sum-with-one-n-a",
+  "formula": "=SUM(1, #N/A, 3)",
+  "tags": [
+   "error",
+   "aggregation"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#N/A"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ }
+]

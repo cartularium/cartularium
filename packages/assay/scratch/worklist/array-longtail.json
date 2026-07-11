@@ -1,0 +1,3206 @@
+[
+ {
+  "ref": "FLATTEN/flatten-2x2-order",
+  "suite": "array-longtail",
+  "subject": "FLATTEN",
+  "name": "flatten-2x2-order",
+  "formula": "=FLATTEN({1,2;3,4})",
+  "tags": [
+   "array",
+   "spill",
+   "bare-formula"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "hyperformula",
+     "ironcalc",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "gsheets",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 1
+       }
+      ],
+      [
+       {
+        "c": "number",
+        "v": 2
+       }
+      ],
+      [
+       {
+        "c": "number",
+        "v": 3
+       }
+      ],
+      [
+       {
+        "c": "number",
+        "v": 4
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "FLATTEN/flatten-col",
+  "suite": "array-longtail",
+  "subject": "FLATTEN",
+  "name": "flatten-col",
+  "formula": "=FLATTEN({1;2;3})",
+  "tags": [
+   "array",
+   "spill",
+   "bare-formula"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "hyperformula",
+     "ironcalc",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "gsheets",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 1
+       }
+      ],
+      [
+       {
+        "c": "number",
+        "v": 2
+       }
+      ],
+      [
+       {
+        "c": "number",
+        "v": 3
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "FLATTEN/flatten-row",
+  "suite": "array-longtail",
+  "subject": "FLATTEN",
+  "name": "flatten-row",
+  "formula": "=FLATTEN({1,2,3})",
+  "tags": [
+   "array",
+   "spill",
+   "bare-formula"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "hyperformula",
+     "ironcalc",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "gsheets",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 1
+       }
+      ],
+      [
+       {
+        "c": "number",
+        "v": 2
+       }
+      ],
+      [
+       {
+        "c": "number",
+        "v": 3
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "FREQUENCY/frequency-inline",
+  "suite": "array-longtail",
+  "subject": "FREQUENCY",
+  "name": "frequency-inline",
+  "formula": "=FREQUENCY({1;2;3;4;5}, {2;4})",
+  "tags": [
+   "array",
+   "spill",
+   "bare-formula"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 2
+       }
+      ],
+      [
+       {
+        "c": "number",
+        "v": 2
+       }
+      ],
+      [
+       {
+        "c": "number",
+        "v": 1
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula",
+     "ironcalc",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "GROWTH/growth-exponential",
+  "suite": "array-longtail",
+  "subject": "GROWTH",
+  "name": "growth-exponential",
+  "formula": "=GROWTH({2,4,8,16}, {1,2,3,4}, {5})",
+  "tags": [
+   "array",
+   "spill",
+   "bare-formula"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 31.999999999999993
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 31.999999999999986
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 31.99999999999998
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula",
+     "ironcalc",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "GROWTH/growth-inferred-x",
+  "suite": "array-longtail",
+  "subject": "GROWTH",
+  "name": "growth-inferred-x",
+  "formula": "=GROWTH({2,4,8,16})",
+  "tags": [
+   "array",
+   "spill",
+   "bare-formula"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "gsheets",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 1.9999999999999996
+       },
+       {
+        "c": "number",
+        "v": 3.999999999999999
+       },
+       {
+        "c": "number",
+        "v": 7.9999999999999964
+       },
+       {
+        "c": "number",
+        "v": 15.999999999999995
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 2.0000000000000004
+       },
+       {
+        "c": "number",
+        "v": 4
+       },
+       {
+        "c": "number",
+        "v": 7.999999999999998
+       },
+       {
+        "c": "number",
+        "v": 15.999999999999993
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 1.9999999999999998
+       },
+       {
+        "c": "number",
+        "v": 3.999999999999999
+       },
+       {
+        "c": "number",
+        "v": 7.999999999999995
+       },
+       {
+        "c": "number",
+        "v": 15.999999999999991
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "formulas"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 1.9999999999999993
+       }
+      ],
+      [
+       {
+        "c": "number",
+        "v": 3.9999999999999982
+       }
+      ],
+      [
+       {
+        "c": "number",
+        "v": 7.999999999999995
+       }
+      ],
+      [
+       {
+        "c": "number",
+        "v": 15.999999999999991
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula",
+     "ironcalc",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "GROWTH/growth-new-x",
+  "suite": "array-longtail",
+  "subject": "GROWTH",
+  "name": "growth-new-x",
+  "formula": "=GROWTH({2,4,8,16}, {1,2,3,4}, {5;6})",
+  "tags": [
+   "array",
+   "spill",
+   "bare-formula"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "gsheets",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 31.999999999999993
+       }
+      ],
+      [
+       {
+        "c": "number",
+        "v": 63.999999999999964
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 31.99999999999998
+       }
+      ],
+      [
+       {
+        "c": "number",
+        "v": 63.99999999999994
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 31.999999999999986
+       }
+      ],
+      [
+       {
+        "c": "number",
+        "v": 63.99999999999992
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "formulas"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#REF!"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula",
+     "ironcalc",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "LINEST/linest-simple-line",
+  "suite": "array-longtail",
+  "subject": "LINEST",
+  "name": "linest-simple-line",
+  "formula": "=LINEST({1,2,3}, {1,2,3})",
+  "tags": [
+   "array",
+   "spill",
+   "bare-formula"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 1
+       },
+       {
+        "c": "number",
+        "v": 0
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 1.0000000000000002
+       },
+       {
+        "c": "number",
+        "v": -5.127900497022838e-16
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.9999999999999997
+       },
+       {
+        "c": "number",
+        "v": 7.691850745534256e-16
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula",
+     "ironcalc"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 1.0000000000000002
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "LINEST/linest-with-stats",
+  "suite": "array-longtail",
+  "subject": "LINEST",
+  "name": "linest-with-stats",
+  "formula": "=LINEST({1,2,3,4}, {1,2,3,4}, TRUE, TRUE)",
+  "tags": [
+   "array",
+   "spill",
+   "bare-formula"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 1
+       },
+       {
+        "c": "number",
+        "v": 0
+       }
+      ],
+      [
+       {
+        "c": "number",
+        "v": 0
+       },
+       {
+        "c": "number",
+        "v": 0
+       }
+      ],
+      [
+       {
+        "c": "number",
+        "v": 1
+       },
+       {
+        "c": "number",
+        "v": 0
+       }
+      ],
+      [
+       {
+        "c": "error",
+        "v": "#NUM!"
+       },
+       {
+        "c": "number",
+        "v": 2
+       }
+      ],
+      [
+       {
+        "c": "number",
+        "v": 5
+       },
+       {
+        "c": "number",
+        "v": 0
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "formulas"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.9999999999999997
+       },
+       {
+        "c": "number",
+        "v": 2.220446049250313e-16
+       }
+      ],
+      [
+       {
+        "c": "number",
+        "v": 1.1577768529788096e-15
+       },
+       {
+        "c": "number",
+        "v": 4.2276033262255756e-16
+       }
+      ],
+      [
+       {
+        "c": "number",
+        "v": 1
+       },
+       {
+        "c": "number",
+        "v": 9.453208419344607e-16
+       }
+      ],
+      [
+       {
+        "c": "number",
+        "v": 2.7975737384347114e+30
+       },
+       {
+        "c": "number",
+        "v": 2
+       }
+      ],
+      [
+       {
+        "c": "number",
+        "v": 4.9999999999999964
+       },
+       {
+        "c": "number",
+        "v": 1.787262988391355e-30
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "gsheets"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.9999999999999998
+       },
+       {
+        "c": "number",
+        "v": 4.440892098500626e-16
+       }
+      ],
+      [
+       {
+        "c": "number",
+        "v": 2.1065000811460205e-16
+       },
+       {
+        "c": "number",
+        "v": 5.768888059150692e-16
+       }
+      ],
+      [
+       {
+        "c": "number",
+        "v": 1
+       },
+       {
+        "c": "number",
+        "v": 4.710277376051325e-16
+       }
+      ],
+      [
+       {
+        "c": "number",
+        "v": 2.253601067072408e+31
+       },
+       {
+        "c": "number",
+        "v": 2
+       }
+      ],
+      [
+       {
+        "c": "number",
+        "v": 5
+       },
+       {
+        "c": "number",
+        "v": 4.437342591868191e-31
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula",
+     "ironcalc"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#N/A"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.9999999999999997
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "LINEST/linest-y-only",
+  "suite": "array-longtail",
+  "subject": "LINEST",
+  "name": "linest-y-only",
+  "formula": "=LINEST({2,4,6,8})",
+  "tags": [
+   "array",
+   "spill",
+   "bare-formula"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 2
+       },
+       {
+        "c": "number",
+        "v": 0
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 1.9999999999999993
+       },
+       {
+        "c": "number",
+        "v": 4.440892098500626e-16
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 1.9999999999999996
+       },
+       {
+        "c": "number",
+        "v": 8.881784197001252e-16
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula",
+     "ironcalc"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 1.9999999999999993
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "LOGEST/logest-exponential",
+  "suite": "array-longtail",
+  "subject": "LOGEST",
+  "name": "logest-exponential",
+  "formula": "=LOGEST({2,4,8,16}, {1,2,3,4})",
+  "tags": [
+   "array",
+   "spill",
+   "bare-formula"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 2
+       },
+       {
+        "c": "number",
+        "v": 0.9999999999999998
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 1.9999999999999998
+       },
+       {
+        "c": "number",
+        "v": 0.9999999999999998
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 1.9999999999999996
+       },
+       {
+        "c": "number",
+        "v": 1.0000000000000004
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 1.9999999999999998
+       },
+       {
+        "c": "number",
+        "v": 1
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula",
+     "ironcalc",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "LOGEST/logest-with-stats",
+  "suite": "array-longtail",
+  "subject": "LOGEST",
+  "name": "logest-with-stats",
+  "formula": "=LOGEST({2,4,8,16}, {1,2,3,4}, TRUE, TRUE)",
+  "tags": [
+   "array",
+   "spill",
+   "bare-formula"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 2
+       },
+       {
+        "c": "number",
+        "v": 0.9999999999999998
+       }
+      ],
+      [
+       {
+        "c": "number",
+        "v": 3.510833468576701e-17
+       },
+       {
+        "c": "number",
+        "v": 9.614813431917819e-17
+       }
+      ],
+      [
+       {
+        "c": "number",
+        "v": 1
+       },
+       {
+        "c": "number",
+        "v": 7.850462293418876e-17
+       }
+      ],
+      [
+       {
+        "c": "number",
+        "v": 3.8978979294391665e+32
+       },
+       {
+        "c": "number",
+        "v": 2
+       }
+      ],
+      [
+       {
+        "c": "number",
+        "v": 2.4022650695910066
+       },
+       {
+        "c": "number",
+        "v": 1.232595164407831e-32
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "formulas"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 1.9999999999999998
+       },
+       {
+        "c": "number",
+        "v": 0.9999999999999998
+       }
+      ],
+      [
+       {
+        "c": "number",
+        "v": 7.259024953699689e-16
+       },
+       {
+        "c": "number",
+        "v": 2.6506211417561425e-16
+       }
+      ],
+      [
+       {
+        "c": "number",
+        "v": 1
+       },
+       {
+        "c": "number",
+        "v": 5.926969055564841e-16
+       }
+      ],
+      [
+       {
+        "c": "number",
+        "v": 3.4192087100343565e+30
+       },
+       {
+        "c": "number",
+        "v": 2
+       }
+      ],
+      [
+       {
+        "c": "number",
+        "v": 2.4022650695910066
+       },
+       {
+        "c": "number",
+        "v": 7.025792437124636e-31
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "gsheets"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 1.9999999999999996
+       },
+       {
+        "c": "number",
+        "v": 1.0000000000000004
+       }
+      ],
+      [
+       {
+        "c": "number",
+        "v": 1.570092458683775e-16
+       },
+       {
+        "c": "number",
+        "v": 4.2998752849492583e-16
+       }
+      ],
+      [
+       {
+        "c": "number",
+        "v": 1
+       },
+       {
+        "c": "number",
+        "v": 3.510833468576701e-16
+       }
+      ],
+      [
+       {
+        "c": "number",
+        "v": 1.9489489647195833e+31
+       },
+       {
+        "c": "number",
+        "v": 2
+       }
+      ],
+      [
+       {
+        "c": "number",
+        "v": 2.4022650695910066
+       },
+       {
+        "c": "number",
+        "v": 2.465190328815662e-31
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula",
+     "ironcalc",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#N/A"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "LOGEST/logest-y-only",
+  "suite": "array-longtail",
+  "subject": "LOGEST",
+  "name": "logest-y-only",
+  "formula": "=LOGEST({2,4,8,16})",
+  "tags": [
+   "array",
+   "spill",
+   "bare-formula"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 2
+       },
+       {
+        "c": "number",
+        "v": 0.9999999999999998
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 1.9999999999999998
+       },
+       {
+        "c": "number",
+        "v": 0.9999999999999998
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 1.9999999999999996
+       },
+       {
+        "c": "number",
+        "v": 1.0000000000000004
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 1.9999999999999998
+       },
+       {
+        "c": "number",
+        "v": 1
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula",
+     "ironcalc",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "MINVERSE/minverse-singular-error",
+  "suite": "array-longtail",
+  "subject": "MINVERSE",
+  "name": "minverse-singular-error",
+  "formula": "=MINVERSE({1,2;2,4})",
+  "tags": [
+   "array",
+   "bare-formula"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NUM!"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula",
+     "ironcalc",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "TOCOL/tocol-2x2-scan-by-column",
+  "suite": "array-longtail",
+  "subject": "TOCOL",
+  "name": "tocol-2x2-scan-by-column",
+  "formula": "=TOCOL({1,2;3,4}, 0, TRUE)",
+  "tags": [
+   "array",
+   "spill",
+   "bare-formula"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 1
+       }
+      ],
+      [
+       {
+        "c": "number",
+        "v": 3
+       }
+      ],
+      [
+       {
+        "c": "number",
+        "v": 2
+       }
+      ],
+      [
+       {
+        "c": "number",
+        "v": 4
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula",
+     "ironcalc",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "TOCOL/tocol-2x2-scan-by-row",
+  "suite": "array-longtail",
+  "subject": "TOCOL",
+  "name": "tocol-2x2-scan-by-row",
+  "formula": "=TOCOL({1,2;3,4}, 0, FALSE)",
+  "tags": [
+   "array",
+   "spill",
+   "bare-formula"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 1
+       }
+      ],
+      [
+       {
+        "c": "number",
+        "v": 2
+       }
+      ],
+      [
+       {
+        "c": "number",
+        "v": 3
+       }
+      ],
+      [
+       {
+        "c": "number",
+        "v": 4
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula",
+     "ironcalc",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "TOCOL/tocol-ignore-blanks",
+  "suite": "array-longtail",
+  "subject": "TOCOL",
+  "name": "tocol-ignore-blanks",
+  "formula": "=TOCOL(A1:A3, 1)",
+  "tags": [
+   "array",
+   "spill"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 1
+       }
+      ],
+      [
+       {
+        "c": "number",
+        "v": 3
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula",
+     "ironcalc",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "TOCOL/tocol-row",
+  "suite": "array-longtail",
+  "subject": "TOCOL",
+  "name": "tocol-row",
+  "formula": "=TOCOL({1,2,3})",
+  "tags": [
+   "array",
+   "spill",
+   "bare-formula"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 1
+       }
+      ],
+      [
+       {
+        "c": "number",
+        "v": 2
+       }
+      ],
+      [
+       {
+        "c": "number",
+        "v": 3
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula",
+     "ironcalc",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "TOROW/torow-2x2-scan-by-column",
+  "suite": "array-longtail",
+  "subject": "TOROW",
+  "name": "torow-2x2-scan-by-column",
+  "formula": "=TOROW({1,2;3,4}, 0, TRUE)",
+  "tags": [
+   "array",
+   "spill",
+   "bare-formula"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 1
+       },
+       {
+        "c": "number",
+        "v": 3
+       },
+       {
+        "c": "number",
+        "v": 2
+       },
+       {
+        "c": "number",
+        "v": 4
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula",
+     "ironcalc",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "TOROW/torow-2x2-scan-by-row",
+  "suite": "array-longtail",
+  "subject": "TOROW",
+  "name": "torow-2x2-scan-by-row",
+  "formula": "=TOROW({1,2;3,4}, 0, FALSE)",
+  "tags": [
+   "array",
+   "spill",
+   "bare-formula"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 1
+       },
+       {
+        "c": "number",
+        "v": 2
+       },
+       {
+        "c": "number",
+        "v": 3
+       },
+       {
+        "c": "number",
+        "v": 4
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula",
+     "ironcalc",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "TOROW/torow-col",
+  "suite": "array-longtail",
+  "subject": "TOROW",
+  "name": "torow-col",
+  "formula": "=TOROW({1;2;3})",
+  "tags": [
+   "array",
+   "spill",
+   "bare-formula"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 1
+       },
+       {
+        "c": "number",
+        "v": 2
+       },
+       {
+        "c": "number",
+        "v": 3
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula",
+     "ironcalc",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "TOROW/torow-ignore-blanks",
+  "suite": "array-longtail",
+  "subject": "TOROW",
+  "name": "torow-ignore-blanks",
+  "formula": "=TOROW(A1:C1, 1)",
+  "tags": [
+   "array",
+   "spill"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 1
+       },
+       {
+        "c": "number",
+        "v": 3
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula",
+     "ironcalc",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "TREND/trend-inferred-x",
+  "suite": "array-longtail",
+  "subject": "TREND",
+  "name": "trend-inferred-x",
+  "formula": "=TREND({2,4,6,8})",
+  "tags": [
+   "array",
+   "spill",
+   "bare-formula"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "gsheets",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 2
+       },
+       {
+        "c": "number",
+        "v": 4
+       },
+       {
+        "c": "number",
+        "v": 6
+       },
+       {
+        "c": "number",
+        "v": 8
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 2.0000000000000004
+       },
+       {
+        "c": "number",
+        "v": 4
+       },
+       {
+        "c": "number",
+        "v": 5.999999999999999
+       },
+       {
+        "c": "number",
+        "v": 7.999999999999999
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "formulas"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 1.9999999999999998
+       }
+      ],
+      [
+       {
+        "c": "number",
+        "v": 3.999999999999999
+       }
+      ],
+      [
+       {
+        "c": "number",
+        "v": 5.999999999999998
+       }
+      ],
+      [
+       {
+        "c": "number",
+        "v": 7.999999999999998
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula",
+     "ironcalc"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 1.9999999999999998
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "TREND/trend-new-x",
+  "suite": "array-longtail",
+  "subject": "TREND",
+  "name": "trend-new-x",
+  "formula": "=TREND({1,2,3,4}, {1,2,3,4}, {5;6;7})",
+  "tags": [
+   "array",
+   "spill",
+   "bare-formula"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "gsheets",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 5
+       }
+      ],
+      [
+       {
+        "c": "number",
+        "v": 6
+       }
+      ],
+      [
+       {
+        "c": "number",
+        "v": 7
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 5
+       }
+      ],
+      [
+       {
+        "c": "number",
+        "v": 5.999999999999998
+       }
+      ],
+      [
+       {
+        "c": "number",
+        "v": 6.999999999999998
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "formulas"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#REF!"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula",
+     "ironcalc"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 4.999999999999998
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "TREND/trend-simple",
+  "suite": "array-longtail",
+  "subject": "TREND",
+  "name": "trend-simple",
+  "formula": "=TREND({1,2,3}, {1,2,3}, {4,5})",
+  "tags": [
+   "array",
+   "spill",
+   "bare-formula"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "gsheets",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 4
+       },
+       {
+        "c": "number",
+        "v": 5
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 3.9999999999999996
+       },
+       {
+        "c": "number",
+        "v": 4.999999999999999
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "formulas"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 4
+       }
+      ],
+      [
+       {
+        "c": "number",
+        "v": 5
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula",
+     "ironcalc"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 4
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "WRAPCOLS/wrapcols-basic",
+  "suite": "array-longtail",
+  "subject": "WRAPCOLS",
+  "name": "wrapcols-basic",
+  "formula": "=WRAPCOLS({1,2,3,4}, 2)",
+  "tags": [
+   "array",
+   "spill",
+   "bare-formula"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 1
+       },
+       {
+        "c": "number",
+        "v": 3
+       }
+      ],
+      [
+       {
+        "c": "number",
+        "v": 2
+       },
+       {
+        "c": "number",
+        "v": 4
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula",
+     "ironcalc",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "WRAPCOLS/wrapcols-exact-fit",
+  "suite": "array-longtail",
+  "subject": "WRAPCOLS",
+  "name": "wrapcols-exact-fit",
+  "formula": "=WRAPCOLS({1,2,3,4,5,6}, 3)",
+  "tags": [
+   "array",
+   "spill",
+   "bare-formula"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 1
+       },
+       {
+        "c": "number",
+        "v": 4
+       }
+      ],
+      [
+       {
+        "c": "number",
+        "v": 2
+       },
+       {
+        "c": "number",
+        "v": 5
+       }
+      ],
+      [
+       {
+        "c": "number",
+        "v": 3
+       },
+       {
+        "c": "number",
+        "v": 6
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula",
+     "ironcalc",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "WRAPCOLS/wrapcols-single-col",
+  "suite": "array-longtail",
+  "subject": "WRAPCOLS",
+  "name": "wrapcols-single-col",
+  "formula": "=WRAPCOLS({1,2,3}, 3)",
+  "tags": [
+   "array",
+   "spill",
+   "bare-formula"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 1
+       }
+      ],
+      [
+       {
+        "c": "number",
+        "v": 2
+       }
+      ],
+      [
+       {
+        "c": "number",
+        "v": 3
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula",
+     "ironcalc",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "WRAPCOLS/wrapcols-with-pad",
+  "suite": "array-longtail",
+  "subject": "WRAPCOLS",
+  "name": "wrapcols-with-pad",
+  "formula": "=WRAPCOLS({1,2,3}, 2, \"x\")",
+  "tags": [
+   "array",
+   "spill",
+   "bare-formula"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 1
+       },
+       {
+        "c": "number",
+        "v": 3
+       }
+      ],
+      [
+       {
+        "c": "number",
+        "v": 2
+       },
+       {
+        "c": "string",
+        "v": "x"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula",
+     "ironcalc",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "WRAPROWS/wraprows-basic",
+  "suite": "array-longtail",
+  "subject": "WRAPROWS",
+  "name": "wraprows-basic",
+  "formula": "=WRAPROWS({1,2,3,4}, 2)",
+  "tags": [
+   "array",
+   "spill",
+   "bare-formula"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 1
+       },
+       {
+        "c": "number",
+        "v": 2
+       }
+      ],
+      [
+       {
+        "c": "number",
+        "v": 3
+       },
+       {
+        "c": "number",
+        "v": 4
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula",
+     "ironcalc",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "WRAPROWS/wraprows-exact-fit",
+  "suite": "array-longtail",
+  "subject": "WRAPROWS",
+  "name": "wraprows-exact-fit",
+  "formula": "=WRAPROWS({1,2,3,4,5,6}, 3)",
+  "tags": [
+   "array",
+   "spill",
+   "bare-formula"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 1
+       },
+       {
+        "c": "number",
+        "v": 2
+       },
+       {
+        "c": "number",
+        "v": 3
+       }
+      ],
+      [
+       {
+        "c": "number",
+        "v": 4
+       },
+       {
+        "c": "number",
+        "v": 5
+       },
+       {
+        "c": "number",
+        "v": 6
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula",
+     "ironcalc",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "WRAPROWS/wraprows-single-row",
+  "suite": "array-longtail",
+  "subject": "WRAPROWS",
+  "name": "wraprows-single-row",
+  "formula": "=WRAPROWS({1,2,3}, 3)",
+  "tags": [
+   "array",
+   "spill",
+   "bare-formula"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 1
+       },
+       {
+        "c": "number",
+        "v": 2
+       },
+       {
+        "c": "number",
+        "v": 3
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula",
+     "ironcalc",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "WRAPROWS/wraprows-with-pad",
+  "suite": "array-longtail",
+  "subject": "WRAPROWS",
+  "name": "wraprows-with-pad",
+  "formula": "=WRAPROWS({1,2,3}, 2, \"x\")",
+  "tags": [
+   "array",
+   "spill",
+   "bare-formula"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 1
+       },
+       {
+        "c": "number",
+        "v": 2
+       }
+      ],
+      [
+       {
+        "c": "number",
+        "v": 3
+       },
+       {
+        "c": "string",
+        "v": "x"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula",
+     "ironcalc",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ }
+]

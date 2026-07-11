@@ -1,0 +1,601 @@
+[
+ {
+  "ref": "AND/and-empty",
+  "suite": "logical",
+  "subject": "AND",
+  "name": "and-empty",
+  "formula": "=AND()",
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "formulas",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#VALUE!"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "gsheets",
+     "hyperformula"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#N/A"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "ironcalc"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#ERROR!"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "boolean",
+        "v": true
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "AND/and-with-numbers",
+  "suite": "logical",
+  "subject": "AND",
+  "name": "and-with-numbers",
+  "formula": "=AND(1, 1, 0)",
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "boolean",
+        "v": false
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "CHOOSE/choose-first",
+  "suite": "logical",
+  "subject": "CHOOSE",
+  "name": "choose-first",
+  "formula": "=CHOOSE(1, \"a\", \"b\", \"c\")",
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "string",
+        "v": "a"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "CHOOSE/choose-out-of-range",
+  "suite": "logical",
+  "subject": "CHOOSE",
+  "name": "choose-out-of-range",
+  "formula": "=CHOOSE(5, \"a\", \"b\", \"c\")",
+  "tags": [
+   "error-type"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "ironcalc",
+     "lattice",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#VALUE!"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "gsheets",
+     "hyperformula"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NUM!"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "CHOOSE/choose-third",
+  "suite": "logical",
+  "subject": "CHOOSE",
+  "name": "choose-third",
+  "formula": "=CHOOSE(3, \"a\", \"b\", \"c\")",
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "string",
+        "v": "c"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "IF/if-nested",
+  "suite": "logical",
+  "subject": "IF",
+  "name": "if-nested",
+  "formula": "=IF(1>2, \"a\", IF(3>2, \"b\", \"c\"))",
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "string",
+        "v": "b"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "IF/if-two-args-false",
+  "suite": "logical",
+  "subject": "IF",
+  "name": "if-two-args-false",
+  "formula": "=IF(2>3, TRUE)",
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "boolean",
+        "v": false
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "lattice",
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "IFERROR/iferror-nested",
+  "suite": "logical",
+  "subject": "IFERROR",
+  "name": "iferror-nested",
+  "formula": "=IFERROR(IFERROR(1/0, 1/0), \"both failed\")",
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "string",
+        "v": "both failed"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "IFERROR/iferror-no-error",
+  "suite": "logical",
+  "subject": "IFERROR",
+  "name": "iferror-no-error",
+  "formula": "=IFERROR(1, \"error\")",
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 1
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "IFERROR/iferror-with-error",
+  "suite": "logical",
+  "subject": "IFERROR",
+  "name": "iferror-with-error",
+  "formula": "=IFERROR(1/0, \"error\")",
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "string",
+        "v": "error"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "OR/or-with-numbers",
+  "suite": "logical",
+  "subject": "OR",
+  "name": "or-with-numbers",
+  "formula": "=OR(0, 0, 1)",
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "boolean",
+        "v": true
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ }
+]

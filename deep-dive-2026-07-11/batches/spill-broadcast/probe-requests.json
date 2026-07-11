@@ -1,0 +1,60 @@
+[
+  {
+    "id": "spill-broadcast-001",
+    "engines": ["excel", "gsheets"],
+    "formula": "=INDEX(A1:A3*10)",
+    "grid": { "A1": 1, "A2": 2, "A3": 3 },
+    "hypothesis": "gsheets spills the full array [10;20;30]; Excel's recorded result is blank, but modern dynamic-array Excel may spill the whole array or return #VALUE!. Confirm what Excel actually returns for INDEX with row_num and column_num both omitted over an array.",
+    "note": "Consumes annotation INDEX-wraps-array (arg-semantics). The recorded excel=blank is the uncertain point."
+  },
+  {
+    "id": "spill-broadcast-002",
+    "engines": ["excel", "gsheets"],
+    "formula": "=INDEX({1,2,3}+{10;20;30})",
+    "hypothesis": "gsheets spills the full 3x3 outer-product array; confirm Excel returns blank vs the full array vs an error.",
+    "note": "Consumes annotation INDEX-wraps-array. Same idiom, array-literal source instead of range."
+  },
+  {
+    "id": "spill-broadcast-003",
+    "engines": ["excel", "gsheets"],
+    "formula": "=LEN(B1:B3)*1",
+    "grid": { "B1": 100, "B2": 200, "B3": 300 },
+    "hypothesis": "Excel auto-spills to [3;3;3]; gsheets applies implicit intersection and returns a single 3 (no ARRAYFORMULA). Confirm the Excel spill vs Sheets single-scalar split.",
+    "note": "Consumes annotation LEN-spill-vs-implicit-intersection (the headline Excel-vs-Sheets auto-spill note)."
+  },
+  {
+    "id": "spill-broadcast-004",
+    "engines": ["excel", "gsheets"],
+    "formula": "={1,2,3}+{10,20}",
+    "hypothesis": "Both pad the non-overlapping cell with #N/A -> [11, 22, #N/A] (matches HyperFormula). Confirms Excel/Sheets broadcast-with-#N/A-padding vs the formulas library's hard BroadcastError.",
+    "note": "Consumes annotation mismatched-shape-broadcast."
+  },
+  {
+    "id": "spill-broadcast-005",
+    "engines": ["excel", "gsheets"],
+    "formula": "=SEQUENCE(3, 2)",
+    "hypothesis": "Both spill the 3x2 grid [[1,2],[3,4],[5,6]]. Low-uncertainty confirmation; primarily wanted to re-confirm Lattice's absence from the recorded SEQUENCE(3,2)/SEQUENCE(1,3) partitions is a Lattice recording gap, not an Excel/Sheets issue.",
+    "note": "Consumes annotation SEQUENCE-composed. NOTE: the real open question is Lattice (cannot be probe-requested here) — flagged for a human."
+  },
+  {
+    "id": "spill-broadcast-006",
+    "engines": ["excel", "gsheets"],
+    "formula": "=SORT(SEQUENCE(5), 1, -1)",
+    "hypothesis": "Excel returns descending [5;4;3;2;1]; gsheets returns ascending [1;2;3;4;5] because it reads the -1 sort_order as truthy=is_ascending=TRUE. This is the core evidence for the SORT sort_order arg-semantics divergence.",
+    "note": "Consumes annotation SORT-direction (arg-semantics). Pair with a flag=1 control to show they agree ascending."
+  },
+  {
+    "id": "spill-broadcast-007",
+    "engines": ["excel", "gsheets"],
+    "formula": "=SUM(1, 2, 3)",
+    "hypothesis": "Both return 6. Only needed to demonstrate that LibreOffice's blank recording on this trivial non-array formula is a harness gap; if a live LibreOffice recording is available it should show 6, confirming the blank is not semantic.",
+    "note": "Consumes annotation libreoffice-recording-gap. Ideally re-record on LibreOffice specifically (out of excel/gsheets scope)."
+  },
+  {
+    "id": "spill-broadcast-008",
+    "engines": ["excel", "gsheets"],
+    "formula": "=SORT({3;1;2}, 1, -1)",
+    "hypothesis": "Isolates the SORT sort_order semantics on a bare array literal (no SEQUENCE): Excel -> [3;2;1] descending, gsheets -> [1;2;3] ascending. Cleaner control than the SEQUENCE/UNIQUE-composed cases.",
+    "note": "Supports annotation SORT-direction with a minimal reproduction."
+  }
+]

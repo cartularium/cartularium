@@ -1,0 +1,463 @@
+[
+ {
+  "ref": "HSTACK/hstack",
+  "suite": "arrays",
+  "subject": "HSTACK",
+  "name": "hstack",
+  "formula": "=HSTACK(1, 2, 3)",
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 1
+       },
+       {
+        "c": "number",
+        "v": 2
+       },
+       {
+        "c": "number",
+        "v": 3
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula",
+     "ironcalc",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "INDEX/index-into-grid",
+  "suite": "arrays",
+  "subject": "INDEX",
+  "name": "index-into-grid",
+  "formula": "=INDEX(A1:B2, 2, 1)",
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 20
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "SEQUENCE/sequence-2d",
+  "suite": "arrays",
+  "subject": "SEQUENCE",
+  "name": "sequence-2d",
+  "formula": "=SEQUENCE(2, 3)",
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "gsheets",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 1
+       },
+       {
+        "c": "number",
+        "v": 2
+       },
+       {
+        "c": "number",
+        "v": 3
+       }
+      ],
+      [
+       {
+        "c": "number",
+        "v": 4
+       },
+       {
+        "c": "number",
+        "v": 5
+       },
+       {
+        "c": "number",
+        "v": 6
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "formulas",
+     "hyperformula",
+     "ironcalc",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "SEQUENCE/sequence-column",
+  "suite": "arrays",
+  "subject": "SEQUENCE",
+  "name": "sequence-column",
+  "formula": "=SEQUENCE(3)",
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "gsheets",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 1
+       }
+      ],
+      [
+       {
+        "c": "number",
+        "v": 2
+       }
+      ],
+      [
+       {
+        "c": "number",
+        "v": 3
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "formulas",
+     "hyperformula",
+     "ironcalc",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "SEQUENCE/sequence-scalar",
+  "suite": "arrays",
+  "subject": "SEQUENCE",
+  "name": "sequence-scalar",
+  "formula": "=SEQUENCE(1)",
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "gsheets",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 1
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "formulas",
+     "hyperformula",
+     "ironcalc",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "SORT/sort-array",
+  "suite": "arrays",
+  "subject": "SORT",
+  "name": "sort-array",
+  "formula": "=SORT({3;1;2})",
+  "tags": [
+   "bare-formula"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 1
+       }
+      ],
+      [
+       {
+        "c": "number",
+        "v": 2
+       }
+      ],
+      [
+       {
+        "c": "number",
+        "v": 3
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula",
+     "ironcalc",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "VSTACK/vstack",
+  "suite": "arrays",
+  "subject": "VSTACK",
+  "name": "vstack",
+  "formula": "=VSTACK(1, 2, 3)",
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 1
+       }
+      ],
+      [
+       {
+        "c": "number",
+        "v": 2
+       }
+      ],
+      [
+       {
+        "c": "number",
+        "v": 3
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula",
+     "ironcalc",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ }
+]

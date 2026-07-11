@@ -1,0 +1,236 @@
+[
+  {
+    "content": "These forks are manufactured entirely by the LibreOffice recording, not by a real semantic divergence. All seven of the other engines (excel, formulas, gsheets, hyperformula, ironcalc, lattice, pycel) agree on the correct result for each of these mainstream text functions (e.g. CONCATENATE('Hello',' my ','World','!')='Hello my World!', LEN('Phoenix, AZ')=11, LEFT('Sweden')='S', MID('Romain',3,4)='main', SUBSTITUTE('abcabc','a','x')='xbcxbc', UPPER('total')='TOTAL', VALUE('3.14')=3.14, and FIND('B','Miriam McGovern')=#VALUE! / VALUE('hello')=#VALUE! where an error is expected). The libreoffice branch records a blank cell ([[null]]) for every one of them. The libreoffice fixture for the text, text-longtail and regex suites contains [[null]] for its entire result set — including trivially-supported formulas such as =CONCAT('hello',' world') — which means the libreoffice recording captured no formula results at all for these suites (a harness/recording artifact, not LibreOffice Calc behavior; real LibreOffice implements every one of these functions). The libreoffice branch here should be discarded and re-recorded.",
+    "cause": "TODO",
+    "scope": [
+      {
+        "kind": "ref-set",
+        "refs": [
+          "CONCATENATE/concatenate-with-grid",
+          "FIND/find-case-sensitive",
+          "FIND/find-lowercase",
+          "FIND/find-not-found",
+          "FIND/find-with-start",
+          "LEFT/left-default",
+          "LEFT/left-with-count",
+          "LEN/len-basic",
+          "LEN/len-empty",
+          "LEN/len-with-spaces",
+          "LOWER/lower",
+          "MID/mid-basic",
+          "MID/mid-beyond-end",
+          "MID/mid-from-start",
+          "RIGHT/right-default",
+          "RIGHT/right-with-count",
+          "SUBSTITUTE/substitute-basic",
+          "SUBSTITUTE/substitute-multiple-occurrences",
+          "SUBSTITUTE/substitute-specific-instance",
+          "UPPER/upper",
+          "UPPER/upper-mixed",
+          "VALUE/value-decimal-string",
+          "VALUE/value-integer-string",
+          "VALUE/value-negative",
+          "VALUE/value-non-numeric"
+        ]
+      }
+    ],
+    "_meta": {
+      "batch": "text-regex",
+      "confidence": "high",
+      "evidence": "recorded fixtures (libreoffice.json is [[null]] for all 37 text / 104 text-longtail / 21 regex entries, including =CONCAT('hello',' world')); live probe confirmed the seven non-libreoffice engines' values on hyperformula/ironcalc/formulas/pycel",
+      "wants_probe": ["text-regex-005"]
+    }
+  },
+  {
+    "content": "MID('Romain',1,-1) has a negative length argument, which is out of range. Excel, formulas, gsheets, hyperformula, ironcalc and lattice all raise #VALUE! (confirmed live for hyperformula, ironcalc and formulas). pycel instead returns #NAME?. pycel does implement MID (MID('Romain',3,4)='main' agrees with the others), so this is not a missing-function case: pycel surfaces its generic #NAME? sentinel on the internal argument-validation error path rather than the #VALUE! that the negative-count edge should yield. libreoffice records blank (the whole-suite recording artifact).",
+    "cause": "error-attribution",
+    "scope": [{ "kind": "ref-set", "refs": ["MID/mid-negative-count"] }],
+    "_meta": {
+      "batch": "text-regex",
+      "confidence": "high",
+      "evidence": "live probe (hyperformula/ironcalc/formulas => #VALUE!, pycel => #NAME?; pycel MID('Romain',...) otherwise works)",
+      "wants_probe": []
+    }
+  },
+  {
+    "content": "These cases all produce the empty string as their natural result, and engines split on whether that surfaces as an explicit empty-string value or as a blank cell — plus a missing-function tail. For REPT('ha',0), ASC('') and REGEXREPLACE('','\\d+','x'): Excel and formulas return a value that renders as a blank cell (formulas emits [[null]], confirmed live), whereas gsheets and lattice return an explicit empty string ''. For REPT('ha',0), hyperformula and ironcalc also return '' (confirmed live). The missing-function tail differs per case: pycel does not implement REPT (=> #NAME?, confirmed live); hyperformula, ironcalc and pycel do not implement ASC (=> #NAME?, confirmed live); and hyperformula, ironcalc and pycel do not implement REGEXREPLACE (=> #NAME?, confirmed live). libreoffice records blank throughout (whole-suite recording artifact), which here coincides with the Excel/formulas blank class. The underlying value ('' vs blank) is semantically the same empty text; the divergence is whether the engine materializes an empty string or an empty cell.",
+    "cause": "null-vs-zero",
+    "scope": [
+      {
+        "kind": "ref-set",
+        "refs": ["REPT/rept-zero", "ASC/asc-empty", "REGEXREPLACE/replace-empty-text-unchanged"]
+      }
+    ],
+    "_meta": {
+      "batch": "text-regex",
+      "confidence": "high",
+      "evidence": "live probe (hyperformula/ironcalc REPT('ha',0)=''; formulas REPT/ASC/REGEXREPLACE-empty => [[null]]; pycel REPT/ASC => #NAME?; hyperformula/ironcalc/pycel ASC/REGEXREPLACE => #NAME?)",
+      "wants_probe": []
+    }
+  },
+  {
+    "content": "ROMAN(0) sits at the edge of ROMAN's domain and every family handles it differently. Excel and formulas return an empty string that renders as a blank cell (formulas emits [[null]], confirmed live). ironcalc and lattice return an explicit empty string ''. gsheets rejects 0 as out of range with #VALUE!. hyperformula rejects it with #NUM! (confirmed live). pycel does not implement ROMAN and returns #NAME? (confirmed live; pycel's missing-function set includes ROMAN). libreoffice records blank (whole-suite recording artifact, coincident with the Excel blank class). The split is a disagreement over whether 0 is inside ROMAN's valid input range and, among those that treat it as valid, whether the empty result is an empty string or a blank cell.",
+    "cause": "unimplemented-edge",
+    "scope": [{ "kind": "ref-set", "refs": ["ROMAN/roman-zero"] }],
+    "_meta": {
+      "batch": "text-regex",
+      "confidence": "high",
+      "evidence": "recorded fixtures (gsheets #VALUE!, lattice ''); live probe (hyperformula #NUM!, ironcalc '', formulas [[null]], pycel #NAME?)",
+      "wants_probe": []
+    }
+  },
+  {
+    "content": "CHAR(0) requests character code 0, which is outside CHAR's documented valid range (1..255). Engines that implement CHAR disagree on the error code: Excel, formulas and hyperformula raise #VALUE! (confirmed live for formulas and hyperformula), while gsheets raises #NUM!. lattice does not reject it and returns the actual NUL character U+0000. ironcalc and pycel do not implement CHAR and return #NAME? (confirmed live; assay's ironcalc/pycel missing-function set includes CHAR). libreoffice records blank (whole-suite recording artifact). So this fork is a mix of error-code divergence (#VALUE! vs #NUM!), a lenient engine returning the control character (lattice), and two engines lacking the function.",
+    "cause": "error-code",
+    "scope": [{ "kind": "ref-set", "refs": ["CHAR/char-out-of-range"] }],
+    "_meta": {
+      "batch": "text-regex",
+      "confidence": "high",
+      "evidence": "recorded fixtures (gsheets #NUM!, lattice '\\u0000'); live probe (hyperformula/formulas #VALUE!, ironcalc/pycel #NAME?)",
+      "wants_probe": ["text-regex-004"]
+    }
+  },
+  {
+    "content": "ARABIC('hello') and UNICODE('') both feed invalid input to an implemented function, and the engines that implement the function agree it is an error: excel, formulas, gsheets, hyperformula, ironcalc and lattice all return #VALUE! (ARABIC of a non-Roman-numeral string; UNICODE of an empty string has no first code point). Confirmed live for hyperformula, ironcalc and formulas. pycel is the sole divergence: it does not implement ARABIC or UNICODE and returns its generic #NAME? sentinel (confirmed live). libreoffice records blank (whole-suite recording artifact). The fork is therefore driven only by pycel's missing function plus the libreoffice artifact — the six implementing engines are fully aligned on the #VALUE! result.",
+    "cause": "missing-function",
+    "scope": [{ "kind": "ref-set", "refs": ["ARABIC/arabic-invalid", "UNICODE/unicode-empty"] }],
+    "_meta": {
+      "batch": "text-regex",
+      "confidence": "high",
+      "evidence": "recorded fixtures + live probe (hyperformula/ironcalc/formulas => #VALUE!, pycel => #NAME?)",
+      "wants_probe": []
+    }
+  },
+  {
+    "content": "The byte-oriented DBCS text functions (FINDB, LEFTB, LENB, MIDB, REPLACEB, RIGHTB, SEARCHB) count double-byte (CJK) characters as either 1 unit or 2 units depending on the engine's locale model, producing a three-way split. Excel and formulas treat each character as a single byte — i.e. the *B functions behave like their non-B counterparts — because these functions only count a CJK character as 2 bytes when the host system is in a DBCS (Japanese/Chinese/Korean) locale, and the recording environment is a Western locale: LENB('あ')=1, LEFTB('あいう',2)='あい', FINDB('い','あいう')=2, SEARCHB('い','あいう')=2, RIGHTB('あいう',2)='いう', MIDB('あいう',3,2)='う', REPLACEB('あいう',3,2,'X')='あいX' (all confirmed live for formulas, which mirrors Excel). lattice always treats a CJK character as 2 bytes (DBCS-style), giving the byte-based answers: LENB('あ')=2, LEFTB('あいう',2)='あ', FINDB=3, SEARCHB=3, RIGHTB='う', MIDB='い', REPLACEB='あXう'. gsheets is inconsistent across the family: it matches lattice's 2-byte model for the counting/positional functions (LENB=2, LEFTB='あ', FINDB=3, SEARCHB=3, RIGHTB='う') but matches Excel's 1-unit model for the extraction/replacement functions (MIDB='う', REPLACEB='あいX'). hyperformula, ironcalc and pycel implement none of the *B functions and return #NAME? (confirmed live). libreoffice records blank (whole-suite recording artifact). The excel-vs-lattice axis is a locale/DBCS-width difference; the gsheets inconsistency between counting and extraction is an engine-internal quirk.",
+    "cause": "locale",
+    "scope": [
+      {
+        "kind": "ref-set",
+        "refs": [
+          "FINDB/findb-dbcs",
+          "LEFTB/leftb-dbcs",
+          "LENB/lenb-dbcs",
+          "MIDB/midb-dbcs",
+          "REPLACEB/replaceb-dbcs",
+          "RIGHTB/rightb-dbcs",
+          "SEARCHB/searchb-dbcs"
+        ]
+      }
+    ],
+    "_meta": {
+      "batch": "text-regex",
+      "confidence": "medium",
+      "evidence": "recorded fixtures (excel/gsheets/lattice); live probe confirmed formulas mirrors Excel's 1-unit model and hyperformula/ironcalc/pycel => #NAME?",
+      "wants_probe": ["text-regex-002", "text-regex-003"]
+    }
+  },
+  {
+    "content": "DOLLAR(-1234.5, 2) formats a negative currency amount, and the engines that implement DOLLAR disagree on how a negative value is styled. Excel uses accounting-style parentheses: '($1,234.50)'. gsheets uses a leading minus sign: '-$1,234.50'. lattice places the minus after the currency symbol: '$-1,234.50'. formulas, hyperformula, ironcalc and pycel do not implement DOLLAR and return #NAME? (confirmed live). libreoffice records blank (whole-suite recording artifact). The numeric magnitude and thousands/decimal formatting agree across the three implementers; only the negative-sign convention differs, a pure text-format-rendering divergence.",
+    "cause": "format-rendering",
+    "scope": [{ "kind": "ref-set", "refs": ["DOLLAR/dollar-negative"] }],
+    "_meta": {
+      "batch": "text-regex",
+      "confidence": "high",
+      "evidence": "recorded fixtures (excel '($1,234.50)', gsheets '-$1,234.50', lattice '$-1,234.50'); live probe (formulas/hyperformula/ironcalc/pycel => #NAME?)",
+      "wants_probe": ["text-regex-006"]
+    }
+  },
+  {
+    "content": "FIXED(1234.567, -1) formats a number with a negative decimals argument, which rounds to the left of the decimal point (nearest 10 => 1230). Excel, formulas and gsheets render '1,230' with no fractional part (confirmed live for formulas). lattice renders '1,230.0', spuriously appending a single fractional digit even though decimals is negative. hyperformula, ironcalc and pycel do not implement FIXED and return #NAME? (confirmed live). libreoffice records blank (whole-suite recording artifact). The rounded value agrees across all implementers; the divergence is lattice emitting an extra '.0' in the formatted string.",
+    "cause": "format-rendering",
+    "scope": [{ "kind": "ref-set", "refs": ["FIXED/fixed-negative-decimals"] }],
+    "_meta": {
+      "batch": "text-regex",
+      "confidence": "high",
+      "evidence": "recorded fixtures (excel/gsheets '1,230', lattice '1,230.0'); live probe (formulas '1,230'; hyperformula/ironcalc/pycel => #NAME?)",
+      "wants_probe": []
+    }
+  },
+  {
+    "content": "When the REGEXEXTRACT pattern contains capture groups, Excel and Google Sheets disagree on what is returned. Excel's REGEXEXTRACT returns the full match and ignores the parentheses: REGEXEXTRACT('2025-03-01','(\\d{4})-(\\d{2})-(\\d{2})')='2025-03-01', REGEXEXTRACT('Price: $100','\\$(\\d+)')='$100', REGEXEXTRACT('foo bar baz','(\\w+)\\s+(\\w+)')='foo bar'. Google Sheets and lattice instead return the captured groups as a spilled horizontal array: ['2025','03','01'], ['100'] (single cell), and ['foo','bar']. formulas does not implement REGEXEXTRACT and returns a blank cell (confirmed live: [[null]]); libreoffice records blank (whole-suite recording artifact). hyperformula, ironcalc and pycel do not implement REGEXEXTRACT and return #NAME? (confirmed live). The Excel-vs-Google axis is a genuine argument-semantics difference in how capture groups drive the return value (full-match vs group-extraction); Excel exposes group extraction only via its optional return_mode argument, whereas Google returns groups by default.",
+    "cause": "arg-semantics",
+    "scope": [
+      {
+        "kind": "ref-set",
+        "refs": [
+          "REGEXEXTRACT/extract-capture-groups-when-multiple-groups-present",
+          "REGEXEXTRACT/extract-single-capture-group",
+          "REGEXEXTRACT/extract-two-word-groups"
+        ]
+      }
+    ],
+    "_meta": {
+      "batch": "text-regex",
+      "confidence": "high",
+      "evidence": "recorded fixtures (excel full-match, gsheets/lattice spilled groups); live probe (formulas => [[null]], hyperformula/ironcalc/pycel => #NAME?)",
+      "wants_probe": ["text-regex-001"]
+    }
+  },
+  {
+    "content": "These REGEXEXTRACT cases have no capture groups (or the group coincides with the full match), so the three engines that implement REGEXEXTRACT agree on the result: excel, gsheets and lattice all return the full match — 'Hello' for '(?i)(\\w+)', '1' for the first \\d+ in 'one 1 two 2 three 3', '$100' for '\\$\\d+', '123' for '\\d+', 'résumé' for the non-ASCII literal — and all three return #N/A when there is no match (empty text, or 'hello' against '\\d+'). The fork is produced entirely by the non-implementers: formulas does not implement REGEXEXTRACT and returns a blank cell (confirmed live: [[null]]); hyperformula, ironcalc and pycel return #NAME? (confirmed live); libreoffice records blank (whole-suite recording artifact). Note the inline (?i) case-insensitivity flag and non-ASCII literals are handled uniformly by the three implementers.",
+    "cause": "missing-function",
+    "scope": [
+      {
+        "kind": "ref-set",
+        "refs": [
+          "REGEXEXTRACT/extract-case-insensitive-via-inline-flag",
+          "REGEXEXTRACT/extract-first-of-multiple-full-matches",
+          "REGEXEXTRACT/extract-full-match-no-groups-with-dollar-sign",
+          "REGEXEXTRACT/extract-full-match-when-no-capture-groups",
+          "REGEXEXTRACT/extract-non-ascii-literal",
+          "REGEXEXTRACT/extract-no-match-on-empty-text",
+          "REGEXEXTRACT/extract-no-match-returns-na"
+        ]
+      }
+    ],
+    "_meta": {
+      "batch": "text-regex",
+      "confidence": "high",
+      "evidence": "recorded fixtures (excel/gsheets/lattice agree); live probe (formulas => [[null]], hyperformula/ironcalc/pycel => #NAME?)",
+      "wants_probe": []
+    }
+  },
+  {
+    "content": "These REGEXREPLACE cases use replacement strings without backreferences, so all four implementing engines agree: excel, formulas, gsheets and lattice return 'axbxcx' for replacing \\d, 'hi WORLD hi' for the (?i)hello case-insensitive replacement, 'xbbx' for the greedy 'a+', 'hello' unchanged when '\\d+' does not match, and 'hello-world' for collapsing '\\s+'. Confirmed live for formulas (which implements REGEXREPLACE, unlike REGEXEXTRACT). The fork is produced entirely by hyperformula, ironcalc and pycel, which do not implement REGEXREPLACE and return #NAME? (confirmed live), plus libreoffice recording blank (whole-suite recording artifact). Global replacement of all matches and the inline (?i) flag are handled uniformly by the four implementers.",
+    "cause": "missing-function",
+    "scope": [
+      {
+        "kind": "ref-set",
+        "refs": [
+          "REGEXREPLACE/replace-all-digits",
+          "REGEXREPLACE/replace-case-insensitive-via-inline-flag",
+          "REGEXREPLACE/replace-greedy-pattern-all-occurrences",
+          "REGEXREPLACE/replace-no-match-unchanged",
+          "REGEXREPLACE/replace-whitespace-all"
+        ]
+      }
+    ],
+    "_meta": {
+      "batch": "text-regex",
+      "confidence": "high",
+      "evidence": "recorded fixtures + live probe (formulas returns the same values; hyperformula/ironcalc/pycel => #NAME?)",
+      "wants_probe": []
+    }
+  },
+  {
+    "content": "When the REGEXREPLACE replacement string contains $N backreferences, the formulas library diverges from the others. Excel, gsheets and lattice expand the backreferences: REGEXREPLACE('2025-03-01','(\\d+)-(\\d+)-(\\d+)','$3/$2/$1')='01/03/2025', REGEXREPLACE('John Smith','(\\w+) (\\w+)','$2, $1')='Smith, John', REGEXREPLACE('hello world','(\\w+)','[$1]')='[hello] [world]'. formulas performs the pattern match and global replacement but does NOT expand backreferences — it inserts the replacement string literally: '$3/$2/$1', '$2, $1', and '[$1] [$1]' respectively (confirmed live). The '[$1] [$1]' output shows formulas correctly finds both word matches and applies the template twice, only failing to substitute the captured group. hyperformula, ironcalc and pycel do not implement REGEXREPLACE and return #NAME? (confirmed live); libreoffice records blank (whole-suite recording artifact). This is an argument-semantics gap in formulas' replacement-string handling, distinct from the missing-function engines.",
+    "cause": "arg-semantics",
+    "scope": [
+      {
+        "kind": "ref-set",
+        "refs": [
+          "REGEXREPLACE/replace-date-reformat-three-groups",
+          "REGEXREPLACE/replace-swap-first-and-last-name",
+          "REGEXREPLACE/replace-with-single-backreference"
+        ]
+      }
+    ],
+    "_meta": {
+      "batch": "text-regex",
+      "confidence": "high",
+      "evidence": "live probe (formulas returns literal '$3/$2/$1', '$2, $1', '[$1] [$1]'; excel/gsheets/lattice expand per recorded fixtures; hyperformula/ironcalc/pycel => #NAME?)",
+      "wants_probe": []
+    }
+  }
+]

@@ -1,0 +1,3480 @@
+[
+ {
+  "ref": "CELL/cell-format",
+  "suite": "info",
+  "subject": "CELL",
+  "name": "cell-format",
+  "formula": "=CELL(\"format\", A1)",
+  "tags": [
+   "info"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "string",
+        "v": "G"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "formulas",
+     "hyperformula",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "gsheets",
+     "ironcalc"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#VALUE!"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "ISBLANK/isblank-of-blank-cell",
+  "suite": "info",
+  "subject": "ISBLANK",
+  "name": "isblank-of-blank-cell",
+  "formula": "=ISBLANK(A1)",
+  "tags": [
+   "info"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "boolean",
+        "v": true
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "ISBLANK/isblank-of-empty-string-cell",
+  "suite": "info",
+  "subject": "ISBLANK",
+  "name": "isblank-of-empty-string-cell",
+  "formula": "=ISBLANK(A1)",
+  "tags": [
+   "info"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "lattice",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "boolean",
+        "v": true
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "gsheets",
+     "hyperformula",
+     "ironcalc"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "boolean",
+        "v": false
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "ISBLANK/isblank-of-literal-empty-string",
+  "suite": "info",
+  "subject": "ISBLANK",
+  "name": "isblank-of-literal-empty-string",
+  "formula": "=ISBLANK(\"\")",
+  "tags": [
+   "info"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "boolean",
+        "v": false
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "ISBLANK/isblank-of-literal-number",
+  "suite": "info",
+  "subject": "ISBLANK",
+  "name": "isblank-of-literal-number",
+  "formula": "=ISBLANK(42)",
+  "tags": [
+   "info"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "boolean",
+        "v": false
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "ISBLANK/isblank-of-number-cell",
+  "suite": "info",
+  "subject": "ISBLANK",
+  "name": "isblank-of-number-cell",
+  "formula": "=ISBLANK(A1)",
+  "tags": [
+   "info"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "boolean",
+        "v": false
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "ISBLANK/isblank-of-text-cell",
+  "suite": "info",
+  "subject": "ISBLANK",
+  "name": "isblank-of-text-cell",
+  "formula": "=ISBLANK(A1)",
+  "tags": [
+   "info"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "boolean",
+        "v": false
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "ISDATE/isdate-of-date-string",
+  "suite": "info",
+  "subject": "ISDATE",
+  "name": "isdate-of-date-string",
+  "formula": "=ISDATE(\"2024-01-15\")",
+  "tags": [
+   "info"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "hyperformula",
+     "ironcalc",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "gsheets"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "boolean",
+        "v": true
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "boolean",
+        "v": false
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "ISERR/iserr-of-blank-cell",
+  "suite": "info",
+  "subject": "ISERR",
+  "name": "iserr-of-blank-cell",
+  "formula": "=ISERR(A1)",
+  "tags": [
+   "info"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "boolean",
+        "v": false
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "ISERR/iserr-of-div-0",
+  "suite": "info",
+  "subject": "ISERR",
+  "name": "iserr-of-div-0",
+  "formula": "=ISERR(1/0)",
+  "tags": [
+   "info"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "boolean",
+        "v": true
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "ISERR/iserr-of-na",
+  "suite": "info",
+  "subject": "ISERR",
+  "name": "iserr-of-na",
+  "formula": "=ISERR(NA())",
+  "tags": [
+   "info"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "boolean",
+        "v": false
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "ISERR/iserr-of-number",
+  "suite": "info",
+  "subject": "ISERR",
+  "name": "iserr-of-number",
+  "formula": "=ISERR(42)",
+  "tags": [
+   "info"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "boolean",
+        "v": false
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "ISERR/iserr-of-text",
+  "suite": "info",
+  "subject": "ISERR",
+  "name": "iserr-of-text",
+  "formula": "=ISERR(\"hello\")",
+  "tags": [
+   "info"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "boolean",
+        "v": false
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "ISERROR/iserror-of-blank-cell",
+  "suite": "info",
+  "subject": "ISERROR",
+  "name": "iserror-of-blank-cell",
+  "formula": "=ISERROR(A1)",
+  "tags": [
+   "info"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "boolean",
+        "v": false
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "ISERROR/iserror-of-div-0",
+  "suite": "info",
+  "subject": "ISERROR",
+  "name": "iserror-of-div-0",
+  "formula": "=ISERROR(1/0)",
+  "tags": [
+   "info"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "boolean",
+        "v": true
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "ISERROR/iserror-of-na",
+  "suite": "info",
+  "subject": "ISERROR",
+  "name": "iserror-of-na",
+  "formula": "=ISERROR(NA())",
+  "tags": [
+   "info"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "boolean",
+        "v": true
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "ISERROR/iserror-of-number",
+  "suite": "info",
+  "subject": "ISERROR",
+  "name": "iserror-of-number",
+  "formula": "=ISERROR(42)",
+  "tags": [
+   "info"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "boolean",
+        "v": false
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "ISERROR/iserror-of-text",
+  "suite": "info",
+  "subject": "ISERROR",
+  "name": "iserror-of-text",
+  "formula": "=ISERROR(\"hello\")",
+  "tags": [
+   "info"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "boolean",
+        "v": false
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "ISERROR/iserror-of-value",
+  "suite": "info",
+  "subject": "ISERROR",
+  "name": "iserror-of-value",
+  "formula": "=ISERROR(\"a\"+1)",
+  "tags": [
+   "info"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "boolean",
+        "v": true
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "ISLOGICAL/islogical-of-blank-cell",
+  "suite": "info",
+  "subject": "ISLOGICAL",
+  "name": "islogical-of-blank-cell",
+  "formula": "=ISLOGICAL(A1)",
+  "tags": [
+   "info"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "boolean",
+        "v": false
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "ISLOGICAL/islogical-of-error",
+  "suite": "info",
+  "subject": "ISLOGICAL",
+  "name": "islogical-of-error",
+  "formula": "=ISLOGICAL(1/0)",
+  "tags": [
+   "info"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "boolean",
+        "v": false
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "ISLOGICAL/islogical-of-number",
+  "suite": "info",
+  "subject": "ISLOGICAL",
+  "name": "islogical-of-number",
+  "formula": "=ISLOGICAL(1)",
+  "tags": [
+   "info"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "boolean",
+        "v": false
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "ISLOGICAL/islogical-of-text",
+  "suite": "info",
+  "subject": "ISLOGICAL",
+  "name": "islogical-of-text",
+  "formula": "=ISLOGICAL(\"TRUE\")",
+  "tags": [
+   "info"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "boolean",
+        "v": false
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "ISNA/isna-of-div-0",
+  "suite": "info",
+  "subject": "ISNA",
+  "name": "isna-of-div-0",
+  "formula": "=ISNA(1/0)",
+  "tags": [
+   "info"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "boolean",
+        "v": false
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "ISNA/isna-of-match-miss",
+  "suite": "info",
+  "subject": "ISNA",
+  "name": "isna-of-match-miss",
+  "formula": "=ISNA(MATCH(99, {1,2,3}, 0))",
+  "tags": [
+   "info",
+   "bare-formula"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "boolean",
+        "v": true
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "ISNA/isna-of-na",
+  "suite": "info",
+  "subject": "ISNA",
+  "name": "isna-of-na",
+  "formula": "=ISNA(NA())",
+  "tags": [
+   "info"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "boolean",
+        "v": true
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "ISNA/isna-of-number",
+  "suite": "info",
+  "subject": "ISNA",
+  "name": "isna-of-number",
+  "formula": "=ISNA(42)",
+  "tags": [
+   "info"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "boolean",
+        "v": false
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "ISNA/isna-of-text",
+  "suite": "info",
+  "subject": "ISNA",
+  "name": "isna-of-text",
+  "formula": "=ISNA(\"hello\")",
+  "tags": [
+   "info"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "boolean",
+        "v": false
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "ISNONTEXT/isnontext-of-blank-cell",
+  "suite": "info",
+  "subject": "ISNONTEXT",
+  "name": "isnontext-of-blank-cell",
+  "formula": "=ISNONTEXT(A1)",
+  "tags": [
+   "info"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "boolean",
+        "v": true
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "ISNONTEXT/isnontext-of-boolean",
+  "suite": "info",
+  "subject": "ISNONTEXT",
+  "name": "isnontext-of-boolean",
+  "formula": "=ISNONTEXT(TRUE)",
+  "tags": [
+   "info"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "boolean",
+        "v": true
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "ISNONTEXT/isnontext-of-error",
+  "suite": "info",
+  "subject": "ISNONTEXT",
+  "name": "isnontext-of-error",
+  "formula": "=ISNONTEXT(1/0)",
+  "tags": [
+   "info"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "boolean",
+        "v": true
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "ISNONTEXT/isnontext-of-number",
+  "suite": "info",
+  "subject": "ISNONTEXT",
+  "name": "isnontext-of-number",
+  "formula": "=ISNONTEXT(42)",
+  "tags": [
+   "info"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "boolean",
+        "v": true
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "ISNONTEXT/isnontext-of-text",
+  "suite": "info",
+  "subject": "ISNONTEXT",
+  "name": "isnontext-of-text",
+  "formula": "=ISNONTEXT(\"hello\")",
+  "tags": [
+   "info"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "boolean",
+        "v": false
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "ISNUMBER/isnumber-of-blank-cell",
+  "suite": "info",
+  "subject": "ISNUMBER",
+  "name": "isnumber-of-blank-cell",
+  "formula": "=ISNUMBER(A1)",
+  "tags": [
+   "info"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "boolean",
+        "v": false
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "ISNUMBER/isnumber-of-decimal",
+  "suite": "info",
+  "subject": "ISNUMBER",
+  "name": "isnumber-of-decimal",
+  "formula": "=ISNUMBER(3.14)",
+  "tags": [
+   "info"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "boolean",
+        "v": true
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "ISNUMBER/isnumber-of-error",
+  "suite": "info",
+  "subject": "ISNUMBER",
+  "name": "isnumber-of-error",
+  "formula": "=ISNUMBER(1/0)",
+  "tags": [
+   "info"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "boolean",
+        "v": false
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "ISNUMBER/isnumber-of-integer",
+  "suite": "info",
+  "subject": "ISNUMBER",
+  "name": "isnumber-of-integer",
+  "formula": "=ISNUMBER(42)",
+  "tags": [
+   "info"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "boolean",
+        "v": true
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "ISNUMBER/isnumber-of-number-cell",
+  "suite": "info",
+  "subject": "ISNUMBER",
+  "name": "isnumber-of-number-cell",
+  "formula": "=ISNUMBER(A1)",
+  "tags": [
+   "info"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "boolean",
+        "v": true
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "ISNUMBER/isnumber-of-text",
+  "suite": "info",
+  "subject": "ISNUMBER",
+  "name": "isnumber-of-text",
+  "formula": "=ISNUMBER(\"hello\")",
+  "tags": [
+   "info"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "boolean",
+        "v": false
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "ISREF/isref-of-indirect-valid",
+  "suite": "info",
+  "subject": "ISREF",
+  "name": "isref-of-indirect-valid",
+  "formula": "=ISREF(INDIRECT(\"A1\"))",
+  "tags": [
+   "info"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "boolean",
+        "v": true
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "boolean",
+        "v": false
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "ISREF/isref-of-range",
+  "suite": "info",
+  "subject": "ISREF",
+  "name": "isref-of-range",
+  "formula": "=ISREF(A1:A3)",
+  "tags": [
+   "info"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "boolean",
+        "v": true
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "boolean",
+        "v": false
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "ISREF/isref-of-single-cell",
+  "suite": "info",
+  "subject": "ISREF",
+  "name": "isref-of-single-cell",
+  "formula": "=ISREF(A1)",
+  "tags": [
+   "info"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "boolean",
+        "v": true
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "boolean",
+        "v": false
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "ISTEXT/istext-of-blank-cell",
+  "suite": "info",
+  "subject": "ISTEXT",
+  "name": "istext-of-blank-cell",
+  "formula": "=ISTEXT(A1)",
+  "tags": [
+   "info"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "boolean",
+        "v": false
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "ISTEXT/istext-of-boolean",
+  "suite": "info",
+  "subject": "ISTEXT",
+  "name": "istext-of-boolean",
+  "formula": "=ISTEXT(TRUE)",
+  "tags": [
+   "info"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "boolean",
+        "v": false
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "ISTEXT/istext-of-empty-string",
+  "suite": "info",
+  "subject": "ISTEXT",
+  "name": "istext-of-empty-string",
+  "formula": "=ISTEXT(\"\")",
+  "tags": [
+   "info"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "boolean",
+        "v": true
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "ISTEXT/istext-of-error",
+  "suite": "info",
+  "subject": "ISTEXT",
+  "name": "istext-of-error",
+  "formula": "=ISTEXT(1/0)",
+  "tags": [
+   "info"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "boolean",
+        "v": false
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "ISTEXT/istext-of-number",
+  "suite": "info",
+  "subject": "ISTEXT",
+  "name": "istext-of-number",
+  "formula": "=ISTEXT(42)",
+  "tags": [
+   "info"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "boolean",
+        "v": false
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "ISTEXT/istext-of-text",
+  "suite": "info",
+  "subject": "ISTEXT",
+  "name": "istext-of-text",
+  "formula": "=ISTEXT(\"hello\")",
+  "tags": [
+   "info"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "boolean",
+        "v": true
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "ISTEXT/istext-of-text-cell",
+  "suite": "info",
+  "subject": "ISTEXT",
+  "name": "istext-of-text-cell",
+  "formula": "=ISTEXT(A1)",
+  "tags": [
+   "info"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "boolean",
+        "v": true
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "N/n-of-blank-cell",
+  "suite": "info",
+  "subject": "N",
+  "name": "n-of-blank-cell",
+  "formula": "=N(A1)",
+  "tags": [
+   "info"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 0
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "N/n-of-error-info",
+  "suite": "info",
+  "subject": "N",
+  "name": "n-of-error-info",
+  "formula": "=N(1/0)",
+  "tags": [
+   "info"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#DIV/0!"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "N/n-of-number-info",
+  "suite": "info",
+  "subject": "N",
+  "name": "n-of-number-info",
+  "formula": "=N(42)",
+  "tags": [
+   "info"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 42
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "N/n-of-text",
+  "suite": "info",
+  "subject": "N",
+  "name": "n-of-text",
+  "formula": "=N(\"hello\")",
+  "tags": [
+   "info"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 0
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "NA/na-nullary",
+  "suite": "info",
+  "subject": "NA",
+  "name": "na-nullary",
+  "formula": "=NA()",
+  "tags": [
+   "info"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#N/A"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "NA/na-used-in-arithmetic",
+  "suite": "info",
+  "subject": "NA",
+  "name": "na-used-in-arithmetic",
+  "formula": "=NA()+1",
+  "tags": [
+   "info"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#N/A"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "SHEETS/sheets-no-arg",
+  "suite": "info",
+  "subject": "SHEETS",
+  "name": "sheets-no-arg",
+  "formula": "=SHEETS()",
+  "tags": [
+   "info"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 25
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "formulas",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "gsheets"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 52
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula",
+     "ironcalc"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 1
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "SHEETS/sheets-of-reference",
+  "suite": "info",
+  "subject": "SHEETS",
+  "name": "sheets-of-reference",
+  "formula": "=SHEETS(A1)",
+  "tags": [
+   "info"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "hyperformula"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 1
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "formulas",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "gsheets"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#N/A"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "ironcalc"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#N/IMPL!"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "TYPE/type-of-array",
+  "suite": "info",
+  "subject": "TYPE",
+  "name": "type-of-array",
+  "formula": "=TYPE({1,2,3})",
+  "tags": [
+   "info",
+   "bare-formula"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 64
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "ironcalc"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#N/IMPL!"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "string",
+        "v": "<class 'tuple'>"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "TYPE/type-of-blank-cell",
+  "suite": "info",
+  "subject": "TYPE",
+  "name": "type-of-blank-cell",
+  "formula": "=TYPE(A1)",
+  "tags": [
+   "info"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "ironcalc"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 1
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#N/A"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "string",
+        "v": "<class 'NoneType'>"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "TYPE/type-of-boolean",
+  "suite": "info",
+  "subject": "TYPE",
+  "name": "type-of-boolean",
+  "formula": "=TYPE(TRUE)",
+  "tags": [
+   "info"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 4
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "string",
+        "v": "<class 'bool'>"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "TYPE/type-of-error",
+  "suite": "info",
+  "subject": "TYPE",
+  "name": "type-of-error",
+  "formula": "=TYPE(1/0)",
+  "tags": [
+   "info"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 16
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "TYPE/type-of-number",
+  "suite": "info",
+  "subject": "TYPE",
+  "name": "type-of-number",
+  "formula": "=TYPE(42)",
+  "tags": [
+   "info"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 1
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "string",
+        "v": "<class 'int'>"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "TYPE/type-of-text",
+  "suite": "info",
+  "subject": "TYPE",
+  "name": "type-of-text",
+  "formula": "=TYPE(\"hello\")",
+  "tags": [
+   "info"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 2
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "string",
+        "v": "<class 'str'>"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ }
+]

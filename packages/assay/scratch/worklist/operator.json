@@ -1,0 +1,746 @@
+[
+ {
+  "ref": "ADD/add-non-numeric-string",
+  "suite": "operator",
+  "subject": "ADD",
+  "name": "add-non-numeric-string",
+  "formula": "=ADD(\"abc\", 1)",
+  "tags": [
+   "operator"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "hyperformula",
+     "ironcalc",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "gsheets",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#VALUE!"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "GT/gt-boolean-vs-number",
+  "suite": "operator",
+  "subject": "GT",
+  "name": "gt-boolean-vs-number",
+  "formula": "=GT(TRUE, 0)",
+  "tags": [
+   "operator"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "hyperformula",
+     "ironcalc",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "gsheets"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "boolean",
+        "v": true
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "boolean",
+        "v": false
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "GTE/gte-boolean",
+  "suite": "operator",
+  "subject": "GTE",
+  "name": "gte-boolean",
+  "formula": "=GTE(TRUE, 1)",
+  "tags": [
+   "operator"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "hyperformula",
+     "ironcalc",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "gsheets"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "boolean",
+        "v": true
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "boolean",
+        "v": false
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "LTE/lte-boolean",
+  "suite": "operator",
+  "subject": "LTE",
+  "name": "lte-boolean",
+  "formula": "=LTE(FALSE, 0)",
+  "tags": [
+   "operator"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "hyperformula",
+     "ironcalc",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "gsheets"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "boolean",
+        "v": false
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "boolean",
+        "v": true
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "UNIQUE/unique-1d-column",
+  "suite": "operator",
+  "subject": "UNIQUE",
+  "name": "unique-1d-column",
+  "formula": "=UNIQUE(A1:A5)",
+  "tags": [
+   "operator",
+   "spill"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 1
+       }
+      ],
+      [
+       {
+        "c": "number",
+        "v": 2
+       }
+      ],
+      [
+       {
+        "c": "number",
+        "v": 3
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula",
+     "ironcalc",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "UNIQUE/unique-1d-strings",
+  "suite": "operator",
+  "subject": "UNIQUE",
+  "name": "unique-1d-strings",
+  "formula": "=UNIQUE(A1:A4)",
+  "tags": [
+   "operator",
+   "spill"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "string",
+        "v": "apple"
+       }
+      ],
+      [
+       {
+        "c": "string",
+        "v": "banana"
+       }
+      ],
+      [
+       {
+        "c": "string",
+        "v": "cherry"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula",
+     "ironcalc",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "UNIQUE/unique-2d-rows",
+  "suite": "operator",
+  "subject": "UNIQUE",
+  "name": "unique-2d-rows",
+  "formula": "=UNIQUE(A1:B4)",
+  "tags": [
+   "operator",
+   "spill"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 1
+       },
+       {
+        "c": "string",
+        "v": "a"
+       }
+      ],
+      [
+       {
+        "c": "number",
+        "v": 2
+       },
+       {
+        "c": "string",
+        "v": "b"
+       }
+      ],
+      [
+       {
+        "c": "number",
+        "v": 3
+       },
+       {
+        "c": "string",
+        "v": "c"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula",
+     "ironcalc",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "UNIQUE/unique-all-identical",
+  "suite": "operator",
+  "subject": "UNIQUE",
+  "name": "unique-all-identical",
+  "formula": "=UNIQUE(A1:A3)",
+  "tags": [
+   "operator",
+   "spill"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 5
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula",
+     "ironcalc",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "UNIQUE/unique-mixed-types-case",
+  "suite": "operator",
+  "subject": "UNIQUE",
+  "name": "unique-mixed-types-case",
+  "formula": "=UNIQUE(A1:A3)",
+  "tags": [
+   "operator",
+   "spill"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "string",
+        "v": "Apple"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "formulas",
+     "gsheets",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "string",
+        "v": "Apple"
+       }
+      ],
+      [
+       {
+        "c": "string",
+        "v": "apple"
+       }
+      ],
+      [
+       {
+        "c": "string",
+        "v": "APPLE"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula",
+     "ironcalc",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "UNIQUE/unique-no-duplicates",
+  "suite": "operator",
+  "subject": "UNIQUE",
+  "name": "unique-no-duplicates",
+  "formula": "=UNIQUE(A1:A3)",
+  "tags": [
+   "operator",
+   "spill"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 1
+       }
+      ],
+      [
+       {
+        "c": "number",
+        "v": 2
+       }
+      ],
+      [
+       {
+        "c": "number",
+        "v": 3
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula",
+     "ironcalc",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ }
+]

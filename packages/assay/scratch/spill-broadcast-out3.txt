@@ -1,0 +1,8 @@
+=TRUE()	=> {"kind":"value","grid":[[{"primitive":{"kind":"boolean","value":true},"engine":{"platform":"hyperformula"}}]],"extent":{"rows":1,"cols":1}}
+=FALSE()	=> {"kind":"value","grid":[[{"primitive":{"kind":"boolean","value":false},"engine":{"platform":"hyperformula"}}]],"extent":{"rows":1,"cols":1}}
+=IF(TRUE(), 5, 6)	=> {"kind":"value","grid":[[{"primitive":{"kind":"number","value":5},"engine":{"platform":"hyperformula"}}]],"extent":{"rows":1,"cols":1}}
+=AND(TRUE(), TRUE())	=> {"kind":"value","grid":[[{"primitive":{"kind":"boolean","value":true},"engine":{"platform":"hyperformula"}}]],"extent":{"rows":1,"cols":1}}
+=NOT(FALSE())	=> {"kind":"value","grid":[[{"primitive":{"kind":"boolean","value":true},"engine":{"platform":"hyperformula"}}]],"extent":{"rows":1,"cols":1}}
+=IF(2>1, {1,2,3}, {10,20,30})	=> {"kind":"value","grid":[[{"primitive":{"kind":"number","value":1},"engine":{"platform":"hyperformula"}},{"primitive":{"kind":"number","value":2},"engine":{"platform":"hyperformula"}},{"primitive":{"kind":"number","value":3},"engine":{"platform":"hyperformula"}}]],"extent":{"rows":1,"cols":3}}
+(node:48942) [DEP0205] DeprecationWarning: `module.register()` is deprecated. Use `module.registerHooks()` instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)

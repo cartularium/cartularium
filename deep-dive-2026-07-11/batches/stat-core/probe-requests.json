@@ -1,0 +1,20 @@
+[
+  {
+    "id": "stat-core-001",
+    "engines": ["excel", "gsheets"],
+    "formula": "=COUNTA(A1:A3)&\"|\"&COUNTBLANK(A1:A3)",
+    "formula_excel": "=COUNTA(A1:A3)&\"|\"&COUNTBLANK(A1:A3)",
+    "formula_gsheets": "=COUNTA(A1:A3)&\"|\"&COUNTBLANK(A1:A3)",
+    "grid": { "A1": 1, "A2": "", "A3": 3 },
+    "hypothesis": "A2 holds a zero-length string \"\". Recorded fixtures put excel in the COUNTA=2 (\"\" is blank) branch and gsheets in the COUNTA=3 (\"\" is a value) branch. Expect excel -> \"2|1\" (\"\" excluded from COUNTA, counted by COUNTBLANK) and gsheets -> \"3|1\". Confirms whether the split is a genuine COUNTA/COUNTBLANK semantic difference or an artifact of how each harness materializes an empty-string seed (a cell literally containing \"\" vs a cleared cell).",
+    "note": "Consumes into the empty-string-cell classification annotation (COUNTA/counta-non-empty, COUNTA/counta-empty-string-cell, COUNTBLANK/countblank) and the COUNTA-COUNTBLANK note."
+  },
+  {
+    "id": "stat-core-002",
+    "engines": ["excel", "gsheets"],
+    "formula": "=PERCENTRANK.EXC(A1:A5, 1)&\"|\"&PERCENTRANK.EXC(A1:A5, 1, 6)",
+    "grid": { "A1": 1, "A2": 2, "A3": 3, "A4": 4, "A5": 5 },
+    "hypothesis": "True value is 1/6 = 0.166666.... Recorded fixtures show excel=0.166 and gsheets=0.167 at the default 3-significant-digit precision. Expect the second (6-digit) call to return 0.166667 on both, confirming the 0.166 vs 0.167 split is purely a truncate-vs-round convention on the 3-sig-digit default, not a computation difference.",
+    "note": "Consumes into the PERCENTRANK.EXC precision annotation and note (confidence currently medium)."
+  }
+]

@@ -1,0 +1,31 @@
+[
+  {
+    "id": "stat-analytics-001",
+    "engines": ["gsheets"],
+    "formula": "=MARGINOFERROR(A1:A5, 0.05)",
+    "grid": { "A1": 1, "A2": 2, "A3": 3, "A4": 4, "A5": 5 },
+    "hypothesis": "gsheets returns 0.04718417110127355, equal to CONFIDENCE.T(1-0.05, STDEV(A1:A5), COUNT(A1:A5)). Confirms MARGINOFERROR is a live Google Sheets function (not a recording artifact) and pins the CONFIDENCE.T identity. Also run =CONFIDENCE.T(0.95, STDEV(A1:A5), COUNT(A1:A5)) on gsheets to show they are equal on-engine.",
+    "note": "Consumes annotation MARGINOFERROR (already high-confidence via wiki doc + pure-engine identity check; this closes the loop on gsheets ground truth)."
+  },
+  {
+    "id": "stat-analytics-002",
+    "engines": ["excel", "gsheets"],
+    "formula": "=HYPERLINK(\"https://example.com\", \"click me\")",
+    "hypothesis": "The cell's scalar value is the display label 'click me' (and 'https://example.com' for the url-only form). Excel is absent from the recorded partition; expected to join the gsheets/hyperformula string class. Determine whether Excel exposes a plain string or an opaque rich-link value to the harness.",
+    "note": "Consumes annotation HYPERLINK — resolves why excel/lattice/libreoffice are missing from the partition."
+  },
+  {
+    "id": "stat-analytics-003",
+    "engines": ["excel", "gsheets"],
+    "formula": "=CONFIDENCE(0.05, 1, 100)",
+    "hypothesis": "excel returns 0.19599639845400538 (consensus) while gsheets returns 0.1959963986120195 — an ~8th-sig-fig difference from gsheets's inverse-normal (NORM.S.INV) approximation. Confirms the gsheets normal-inverse divergence is stable, not a one-off recording.",
+    "note": "Consumes annotation CONFIDENCE — characterizes the gsheets NORM.S.INV precision branch."
+  },
+  {
+    "id": "stat-analytics-004",
+    "engines": ["libreoffice"],
+    "formula": "=TRUE()",
+    "hypothesis": "LibreOffice actually returns boolean TRUE (and returns real numbers for CORREL/SLOPE/T.TEST etc.). If so it proves the suite-wide libreoffice 'blank' recordings are an ingestion/recording gap, not genuine behavior — the entire statistical-analytics/database/external libreoffice lane needs re-recording. Also spot-check =CORREL(A1:A5,B1:B5) and =SLOPE(B1:B5,A1:A5) on real LibreOffice.",
+    "note": "Consumes the TRUE/FALSE annotation and the cross-cutting libreoffice-blank note; single highest-leverage request in the batch (touches all 41 refs' libreoffice branch)."
+  }
+]

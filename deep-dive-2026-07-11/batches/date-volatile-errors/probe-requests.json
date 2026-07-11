@@ -1,0 +1,53 @@
+[
+  {
+    "id": "dve-001",
+    "engines": ["excel", "gsheets"],
+    "formula": "=SUM(A1:A3)",
+    "grid": { "A1": 1, "A2": "=1/0", "A3": 3 },
+    "hypothesis": "The pure engines return #DIV/0! (they evaluate the formula-valued seed A2==1/0 into a live error and propagate). excel/gsheets recorded 4, implying A2 did NOT become a live #DIV/0! in the range. Confirm what excel/gsheets actually seed into A2: is it a live #DIV/0! error cell (then SUM should be #DIV/0!) or text / an un-recalculated value (then SUM = 1+3 = 4)? This decides whether the fork is a real error-propagation divergence or a grid-seeding fidelity artifact.",
+    "note": "Consumes annotation ANN SUM/sum-of-range-with-error-cell (cause TODO, medium confidence). Also a general test of formula-valued grid-seed ingestion in the excel/gsheets lanes."
+  },
+  {
+    "id": "dve-002",
+    "engines": ["excel", "gsheets"],
+    "formula": "=WEEKNUM(\"2023-01-01\", 21)",
+    "hypothesis": "Both return 52 (ISO week type 21) by coercing the ISO-8601 text \"2023-01-01\" to a date serial. Confirms the WEEKNUM/YEARFRAC coercion annotation: excel/gsheets coerce text dates whereas hyperformula does not (#VALUE!).",
+    "note": "Grounds ANN WEEKNUM/weeknum-iso-system text-date coercion split."
+  },
+  {
+    "id": "dve-003",
+    "engines": ["excel", "gsheets"],
+    "formula": "=YEARFRAC(\"2025-01-01\", \"2026-01-01\", 2)",
+    "hypothesis": "Both return ~1.013889 (365/360 for actual/360 basis) by coercing the text date arguments. hyperformula and pycel return #VALUE! on the same text-arg form but 1.013889 with DATE()/serial args (confirmed live).",
+    "note": "Grounds ANN YEARFRAC/yearfrac-actual-360 text-date coercion split."
+  },
+  {
+    "id": "dve-004",
+    "engines": ["excel", "gsheets"],
+    "formula": "=RANDARRAY(1, 3, 1, 10, TRUE)",
+    "hypothesis": "excel spills a 1x3 array of random integers in [1,10]. gsheets recorded #N/A here; confirm whether gsheets genuinely rejects the 5-arg integer-mode RANDARRAY (or whether the #N/A is a spill/harness artifact). The four pure engines all return #NAME? (RANDARRAY unimplemented, confirmed live).",
+    "note": "Grounds ANN RANDARRAY/randarray-integer-mode; clarifies the excel-spill vs gsheets-#N/A branch."
+  },
+  {
+    "id": "dve-005",
+    "engines": ["excel", "gsheets"],
+    "formula": "=TIME(25, 0, 0)",
+    "formula_gsheets": "=TIME(25,0,0)",
+    "hypothesis": "Both return 0.041667 (hours reduced modulo 24, so 25h -> 1h). Confirms lattice (recorded 1.041667, no mod-24) is the sole outlier and that Excel/gsheets match hyperformula/ironcalc/formulas (all 0.041667 live).",
+    "note": "Grounds ANN TIME/time-overflow-rolls (lattice hour-overflow divergence)."
+  },
+  {
+    "id": "dve-006",
+    "engines": ["excel", "gsheets"],
+    "formula": "=LAMBDA(x, x+1)(5)",
+    "hypothesis": "Both return 6 (LAMBDA defined and immediately invoked). Confirms the LAMBDA support tier: excel/gsheets/lattice = 6; formulas #VALUE!; hyperformula #ERROR!; ironcalc/pycel #NAME?.",
+    "note": "Grounds ANN LAMBDA/lambda-named-function-inline-cost."
+  },
+  {
+    "id": "dve-007",
+    "engines": ["excel", "gsheets"],
+    "formula": "=IFERROR(10/{1,0,2}, -1)",
+    "hypothesis": "Both broadcast element-wise and spill {10,-1,5}. Confirms the array-form IFERROR broadcast branch that ironcalc rejects with #N/IMPL! and pycel does not broadcast.",
+    "note": "Grounds ANN IFERROR array-handling split (ironcalc #N/IMPL!)."
+  }
+]

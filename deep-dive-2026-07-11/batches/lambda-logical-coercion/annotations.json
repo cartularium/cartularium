@@ -1,0 +1,263 @@
+[
+  {
+    "content": "These modern dynamic-array / lambda-helper functions (LET, MAP, REDUCE, SCAN, BYROW, BYCOL, MAKEARRAY, SORT, UNIQUE) are implemented by the four modern engines (excel, gsheets, lattice, and the `formulas` npm engine), which all agree on the computed grid, but are not registered as function names in hyperformula, ironcalc, or pycel, which each return #NAME?. MAKEARRAY is the one exception in ironcalc: ironcalc recognizes the name and returns #ERROR! (an evaluation failure) rather than #NAME? (an unknown name). One `formulas` edge: `formulas` evaluates a single non-referencing LET binding (=LET(x,5,x+1) -> 6) but produces no clean value for sequential bindings where a later binding references an earlier one (LET/let-scoping, =LET(x,1,y,x+1,z,y+1,z)), so it falls outside the value-agreement class there. libreoffice reports blank for every case, which is the corpus-wide libreoffice recording gap (its fixtures are 0/~2000 non-null across all suites), not a computed result. Confirmed by live probe on hyperformula/ironcalc/pycel/formulas.",
+    "cause": "missing-function",
+    "scope": [
+      {
+        "kind": "ref-set",
+        "refs": [
+          "BYCOL/bycol-sum",
+          "BYROW/byrow-sum",
+          "MAP/map-over-column",
+          "MAP/map-over-row",
+          "MAP/map-two-arrays",
+          "REDUCE/reduce-product",
+          "REDUCE/reduce-string-concat",
+          "REDUCE/reduce-sum",
+          "SCAN/scan-cumulative-sum",
+          "SORT/sort-ascending",
+          "UNIQUE/unique-column",
+          "LET/let-basic",
+          "LET/let-multiple-bindings",
+          "LET/let-scoping",
+          "MAKEARRAY/makearray-multiplication-table"
+        ]
+      }
+    ],
+    "_meta": {
+      "batch": "lambda-logical-coercion",
+      "confidence": "high",
+      "evidence": "recorded fixtures + live probe (hyperformula/ironcalc/pycel/formulas reproduce #NAME?/#ERROR!/value branches exactly)",
+      "wants_probe": []
+    }
+  },
+  {
+    "content": "FILTER is supported by excel, gsheets, lattice, the `formulas` npm engine, AND hyperformula — all five compute the same filtered column (e.g. {1;3;5} from FILTER({1;2;3;4;5},{1;0;1;0;1})). This is the one dynamic-array function in this batch that hyperformula implements; it does NOT implement the sibling helpers (MAP/REDUCE/SORT/etc.), which is why FILTER splits from that cluster. ironcalc and pycel return #NAME? (FILTER not registered). libreoffice reports blank (corpus-wide recording gap). Confirmed by live probe: hyperformula FILTER({1;2;3},{1;0;1}) yields the filtered array, while hyperformula MAP/SORT/UNIQUE yield #NAME?.",
+    "cause": "missing-function",
+    "scope": [
+      {
+        "kind": "ref-set",
+        "refs": ["FILTER/filter-basic", "FILTER/filter-with-condition"]
+      }
+    ],
+    "_meta": {
+      "batch": "lambda-logical-coercion",
+      "confidence": "high",
+      "evidence": "recorded fixtures + live probe (hyperformula FILTER computes; MAP/SORT/UNIQUE #NAME?)",
+      "wants_probe": []
+    }
+  },
+  {
+    "content": "These cases invoke a LAMBDA immediately in place -- e.g. =LAMBDA(x,x+1)(5) -- and chained/curried forms like =LAMBDA(x,LAMBDA(y,x+y))(1)(2). Excel, gsheets, and lattice support calling a LAMBDA value directly with a trailing argument list and compute the result (6, 12, 3, 10 respectively). The other engines all reject the immediate-invocation syntax but with distinct signatures: the `formulas` npm engine returns #VALUE! for a single call and no clean value at all for the double-call curried form (LAMBDA/lambda-nested); hyperformula returns #ERROR! (it recognizes LAMBDA as a name but the trailing `(...)` after the closing paren is a parse error, distinct from an unknown-name #NAME?); ironcalc and pycel return #NAME? (LAMBDA not registered as a callable name at all). libreoffice reports blank (corpus-wide recording gap). Confirmed by live probe.",
+    "cause": "unimplemented-edge",
+    "scope": [
+      {
+        "kind": "ref-set",
+        "refs": [
+          "LAMBDA/lambda-basic-iife",
+          "LAMBDA/lambda-two-args",
+          "LAMBDA/lambda-nested",
+          "LAMBDA/lambda-as-higher-order"
+        ]
+      }
+    ],
+    "_meta": {
+      "batch": "lambda-logical-coercion",
+      "confidence": "high",
+      "evidence": "recorded fixtures + live probe (formulas #VALUE!/undefined, hyperformula #ERROR!, ironcalc/pycel #NAME?)",
+      "wants_probe": []
+    }
+  },
+  {
+    "content": "=SORT({3;1;2}, 1, -1) exposes a signature divergence in the third argument. In Excel (and the `formulas` npm engine and lattice, which mirror Excel), SORT's third argument is `sort_order`: 1 = ascending, -1 = descending, so the result is descending {3;2;1}. In Google Sheets, SORT's third argument is `is_ascending`, a boolean: any non-zero/non-FALSE value (including -1) is truthy and means ascending, so gsheets returns ascending {1;2;3}. The imported sheets.wiki SORT page documents the gsheets `is_ascending` signature, which would mislead an Excel author. hyperformula, ironcalc, and pycel return #NAME? (SORT unimplemented). libreoffice reports blank (corpus-wide recording gap). The excel/gsheets branches are from recorded fixtures (those engines cannot be probed live here).",
+    "cause": "arg-semantics",
+    "scope": [
+      {
+        "kind": "ref-set",
+        "refs": ["SORT/sort-descending"]
+      }
+    ],
+    "_meta": {
+      "batch": "lambda-logical-coercion",
+      "confidence": "high",
+      "evidence": "recorded fixtures + gsheets SORT signature documented in sheets.wiki SORT.md (is_ascending) vs Excel sort_order; live probe confirms formulas/lattice descending",
+      "wants_probe": ["lambda-logical-coercion-001"]
+    }
+  },
+  {
+    "content": "=SORTBY({10;20;30}, {3;1;2}) diverges four ways. Excel and the `formulas` npm engine reorder the values by the ascending rank of the by-array keys, yielding {20;30;10} (key 1->20, key 2->30, key 3->10). lattice recognizes SORTBY but returns the input array unchanged, {10;20;30} -- an unimplemented/no-op sort. gsheets, hyperformula, ironcalc, and pycel return #NAME?: SORTBY is an Excel-family function that Google Sheets did not expose at recording time, and the three pure engines do not implement it. libreoffice reports blank (corpus-wide recording gap). The excel/gsheets/lattice branches are from recorded fixtures; live probe confirms `formulas` yields {20;30;10} and hyperformula/ironcalc/pycel yield #NAME?.",
+    "cause": "missing-function",
+    "scope": [
+      {
+        "kind": "ref-set",
+        "refs": ["SORTBY/sortby-basic"]
+      }
+    ],
+    "_meta": {
+      "batch": "lambda-logical-coercion",
+      "confidence": "high",
+      "evidence": "recorded fixtures + live probe (formulas {20;30;10}); lattice no-op and gsheets #NAME? from fixtures",
+      "wants_probe": ["lambda-logical-coercion-002"]
+    }
+  },
+  {
+    "content": "=AND() with zero arguments is handled differently by every engine, because AND requires at least one logical argument and each engine resolves the empty call its own way. The `formulas` npm engine and pycel return #VALUE!; gsheets and hyperformula return #N/A; ironcalc returns #ERROR!; lattice returns the vacuous-truth identity boolean TRUE (AND over an empty set = TRUE). excel records blank, which most likely reflects that Excel rejects =AND() at formula entry (too few arguments) rather than a computed value. libreoffice reports blank (corpus-wide recording gap). Live probe confirms formulas #VALUE!, hyperformula #N/A, ironcalc #ERROR!, pycel #VALUE!.",
+    "cause": "argument-arity",
+    "scope": [
+      {
+        "kind": "ref-set",
+        "refs": ["AND/and-empty"]
+      }
+    ],
+    "_meta": {
+      "batch": "lambda-logical-coercion",
+      "confidence": "medium",
+      "evidence": "recorded fixtures + live probe for the four pure engines; excel-blank interpretation (entry rejection) is inferred, not directly observed",
+      "wants_probe": ["lambda-logical-coercion-003"]
+    }
+  },
+  {
+    "content": "For these cases the only divergence is libreoffice, which reports blank while every other engine agrees on the computed value: AND(1,1,0)=FALSE, CHOOSE(1,...)=\"a\", CHOOSE(3,...)=\"c\", IFERROR(1,\"error\")=1, OR(0,0,1)=TRUE, N(#VALUE!)=#VALUE!, N(42)=42, N(\"hello\")=0, VALUE(\"TRUE\")=#VALUE!, VALUE(\"abc\")=#VALUE!, VALUE(\"123.45\")=123.45. libreoffice's blank is the corpus-wide libreoffice recording gap: its fixtures contain 0 non-null results out of ~2000 cases across every suite (including trivially-correct formulas like =IF(TRUE,1,2)), so the libreoffice column is a placeholder/recording artifact, not computed behavior. These are effectively non-forks -- the real engines are unanimous. Confirmed by live probe on the pure engines (all match the value branch).",
+    "cause": "TODO",
+    "scope": [
+      {
+        "kind": "ref-set",
+        "refs": [
+          "AND/and-with-numbers",
+          "CHOOSE/choose-first",
+          "CHOOSE/choose-third",
+          "IFERROR/iferror-no-error",
+          "OR/or-with-numbers",
+          "N/n-of-error-type-coercion",
+          "N/n-of-number-type-coercion",
+          "N/n-of-string",
+          "VALUE/value-of-boolean-string",
+          "VALUE/value-of-non-numeric-string",
+          "VALUE/value-of-numeric-string"
+        ]
+      }
+    ],
+    "_meta": {
+      "batch": "lambda-logical-coercion",
+      "confidence": "high",
+      "evidence": "recorded fixtures (libreoffice 0/~2000 non-null across all suites) + live probe (pure engines match the value branch)",
+      "wants_probe": []
+    }
+  },
+  {
+    "content": "=CHOOSE(5,\"a\",\"b\",\"c\") passes an index beyond the number of choices. All engines treat it as an error, but the error code differs: excel, the `formulas` npm engine, ironcalc, lattice, and pycel return #VALUE!, whereas gsheets and hyperformula return #NUM!. Both are defensible readings of an out-of-range index (a value error vs a numeric-domain error); this is purely an error-code divergence, not a difference in whether the call fails. libreoffice reports blank (corpus-wide recording gap). Live probe confirms formulas/ironcalc/pycel #VALUE! and hyperformula #NUM!.",
+    "cause": "error-code",
+    "scope": [
+      {
+        "kind": "ref-set",
+        "refs": ["CHOOSE/choose-out-of-range"]
+      }
+    ],
+    "_meta": {
+      "batch": "lambda-logical-coercion",
+      "confidence": "high",
+      "evidence": "recorded fixtures + live probe (hyperformula #NUM!; formulas/ironcalc/pycel #VALUE!)",
+      "wants_probe": []
+    }
+  },
+  {
+    "content": "In these cases every engine except pycel computes the same value (IF/if-nested=\"b\", IFERROR(1/0,\"error\")=\"error\", nested IFERROR=\"both failed\"), and pycel alone returns #NAME?. Live probing localizes the pycel cause precisely: pycel's formula front-end returns #NAME? whenever a function argument is itself an operator expression -- a comparison like 1>2 or arithmetic like 1/0, 1+1, 1-2, A1>2 all reproduce #NAME? -- while the same functions evaluate correctly with literal arguments (=IF(TRUE,1,2)=1, =IFERROR(1,2)=1). Each of these three formulas contains an operator inside an argument (1>2, 3>2, 1/0), which trips that limitation. This is a pycel harness/compiler edge, not a missing IF/IFERROR function. libreoffice reports blank (corpus-wide recording gap).",
+    "cause": "unimplemented-edge",
+    "scope": [
+      {
+        "kind": "ref-set",
+        "refs": ["IF/if-nested", "IFERROR/iferror-with-error", "IFERROR/iferror-nested"]
+      }
+    ],
+    "_meta": {
+      "batch": "lambda-logical-coercion",
+      "confidence": "high",
+      "evidence": "live probe isolates pycel #NAME? to operator-expression arguments (1>2, 1/0, 1+1, 1-2 all #NAME?; literal args succeed)",
+      "wants_probe": []
+    }
+  },
+  {
+    "content": "=IF(2>3, TRUE) omits the value_if_false argument while the condition is false, and engines split on what an omitted false-branch yields. excel, the `formulas` npm engine, gsheets, hyperformula, and ironcalc return the boolean FALSE (Excel's documented behavior: an omitted value_if_false returns FALSE). lattice returns a blank/empty cell instead of FALSE. pycel returns #NAME? here for a separate reason -- the condition 2>3 is an operator expression used as an argument, which trips pycel's front-end limitation (see the IF/IFERROR operator-argument note). libreoffice reports blank (corpus-wide recording gap; distinct from lattice's genuine blank). The FALSE-vs-blank split is the substantive divergence. Live probe confirms formulas/hyperformula/ironcalc return FALSE and pycel returns #NAME?.",
+    "cause": "null-vs-zero",
+    "scope": [
+      {
+        "kind": "ref-set",
+        "refs": ["IF/if-two-args-false"]
+      }
+    ],
+    "_meta": {
+      "batch": "lambda-logical-coercion",
+      "confidence": "high",
+      "evidence": "recorded fixtures (lattice blank) + live probe (formulas/hyperformula/ironcalc FALSE, pycel #NAME? via operator-arg)",
+      "wants_probe": []
+    }
+  },
+  {
+    "content": "=T(\"hello\") returns the text \"hello\" in excel, the `formulas` npm engine, gsheets, hyperformula, ironcalc, and lattice (T passes text through unchanged). pycel returns #NAME?: pycel does not implement the T function (confirmed by live probe -- =T(\"x\") yields #NAME?, and unlike the IF/IFERROR cases there is no operator argument involved, so this is a genuine missing function, not the operator-argument limitation). libreoffice reports blank (corpus-wide recording gap).",
+    "cause": "missing-function",
+    "scope": [
+      {
+        "kind": "ref-set",
+        "refs": ["T/t-of-string"]
+      }
+    ],
+    "_meta": {
+      "batch": "lambda-logical-coercion",
+      "confidence": "high",
+      "evidence": "live probe (pycel =T(\"x\") -> #NAME?; hyperformula/ironcalc/formulas pass text through)",
+      "wants_probe": []
+    }
+  },
+  {
+    "content": "=T(TRUE) applies T to a non-text (boolean) value, whose semantic result is empty text, but engines represent that empty result two different ways. excel and the `formulas` npm engine surface it as a genuinely blank cell (null); gsheets, ironcalc, and lattice surface it as an empty string \"\". Semantically identical (empty text) but distinct in the value model: blank cell vs zero-length string. hyperformula and pycel return #NAME? because neither implements T (confirmed by live probe: hyperformula/pycel =T(...) -> #NAME?). libreoffice reports blank, which is the corpus-wide recording gap and here happens to coincide with the excel/formulas blank representation. The blank-vs-empty-string split is the substantive divergence.",
+    "cause": "null-vs-zero",
+    "scope": [
+      {
+        "kind": "ref-set",
+        "refs": ["T/t-of-boolean"]
+      }
+    ],
+    "_meta": {
+      "batch": "lambda-logical-coercion",
+      "confidence": "high",
+      "evidence": "recorded fixtures (excel/formulas blank vs gsheets/ironcalc/lattice empty-string) + live probe (formulas T(TRUE)=blank, ironcalc T(TRUE)=\"\", hyperformula/pycel #NAME?)",
+      "wants_probe": []
+    }
+  },
+  {
+    "content": "These aggregation cases contain non-number values (quoted-number strings, booleans) as literals inside an array constructor {...}, and engines disagree on whether such literals participate in the numeric aggregation. For =PRODUCT({\"2\",\"3\",\"4\"}): excel, gsheets, and ironcalc ignore the text literals, leaving no factors, and return 0; the `formulas` npm engine and lattice coerce the strings \"2\",\"3\",\"4\" to numbers and return 24; hyperformula ignores the text and returns 1 (the empty-product identity). For =SUM({TRUE,FALSE,TRUE}): excel, `formulas`, gsheets, ironcalc, and pycel ignore the booleans-in-an-array and return 0; lattice coerces TRUE->1 and returns 2; hyperformula returns #NAME? because its array-literal parser rejects boolean literals inside {...} (confirmed by live probe: =SUM({TRUE,FALSE}) -> #NAME? while =SUM({1,2,3}) -> 6). For =SUM({1,\"2\",TRUE}): excel, gsheets, ironcalc, pycel count only the bare number and return 1; `formulas` coerces the string and returns 3 (1+2); lattice coerces both string and boolean and returns 4 (1+2+1); hyperformula again returns #NAME? on the boolean literal. pycel returns #NAME? for PRODUCT (it does not implement PRODUCT) but computes the SUM cases. libreoffice reports blank (corpus-wide recording gap). The governing rule (matching Excel/gsheets): text and boolean *literals inside an array constructor* are NOT coerced and are skipped, unlike the same values passed as direct scalar arguments. All pure-engine branches confirmed by live probe.",
+    "cause": "arg-semantics",
+    "scope": [
+      {
+        "kind": "ref-set",
+        "refs": [
+          "PRODUCT/string-array-in-product",
+          "SUM/boolean-array-in-sum",
+          "SUM/mixed-array-in-sum"
+        ]
+      }
+    ],
+    "_meta": {
+      "batch": "lambda-logical-coercion",
+      "confidence": "high",
+      "evidence": "recorded fixtures + live probe (formulas 24/0/3, ironcalc 0/0/1, hyperformula 1/#NAME?/#NAME?, pycel #NAME?/0/1)",
+      "wants_probe": []
+    }
+  },
+  {
+    "content": "=SUM(A1:A3) with A1:A3 holding numbers stored as text (\"1\",\"2\",\"3\") splits on whether text in a *cell range* is coerced. excel, gsheets, and pycel follow the spreadsheet convention that text values inside a referenced range are ignored by SUM, returning 0. The `formulas` npm engine, hyperformula, ironcalc, and lattice coerce the text cells to numbers and return 6. This is the range-reference counterpart to the array-literal coercion split: the same skip-text rule that excel/gsheets apply to ranges, they also apply to array literals. libreoffice reports blank (corpus-wide recording gap). Live probe confirms formulas/hyperformula/ironcalc return 6 and pycel returns 0.",
+    "cause": "arg-semantics",
+    "scope": [
+      {
+        "kind": "ref-set",
+        "refs": ["SUM/sum-of-string-range"]
+      }
+    ],
+    "_meta": {
+      "batch": "lambda-logical-coercion",
+      "confidence": "high",
+      "evidence": "recorded fixtures + live probe with grid seeds A1:A3={\"1\",\"2\",\"3\"} (formulas/hyperformula/ironcalc=6, pycel=0)",
+      "wants_probe": []
+    }
+  }
+]

@@ -1,0 +1,230 @@
+[
+  {
+    "content": "Elementwise broadcasting of an arithmetic operator across array literals. Excel, Google Sheets, HyperFormula, Lattice, and the `formulas` Python library all evaluate these element-by-element and return a 2-D array of the broadcast shape (scalar+array, row+array, column+array, and column-cross-row outer products all resolve to the expected grid; live-confirmed on HyperFormula and `formulas`). IronCalc does not implement array/broadcast arithmetic and returns the sentinel `#N/IMPL!` (literally 'not implemented'; live-confirmed). pycel cannot parse a curly-brace `{...}` array literal inside an arithmetic expression and treats it as an unknown name, returning `#NAME?` (live-confirmed). LibreOffice records a blank/null for every case in this corpus — including trivial non-array formulas like `=SUM(1,2,3)` — so its blank is a recording-harness gap, not a computed value.",
+    "cause": "array-handling",
+    "scope": [
+      {
+        "kind": "ref-set",
+        "refs": [
+          "ADD/add-2d-same-shape",
+          "ADD/add-column-broadcast-across-2d",
+          "ADD/add-column-to-row-outer-product",
+          "ADD/add-column-vectors-same-length",
+          "ADD/add-row-broadcast-across-2d",
+          "ADD/add-row-to-column-outer-product",
+          "ADD/add-row-vectors-same-length",
+          "ADD/add-scalar-to-2d",
+          "ADD/add-scalar-to-column-vector",
+          "ADD/add-scalar-to-row-vector",
+          "DIVIDE/divide-row-by-scalar",
+          "DIVIDE/divide-scalar-by-row",
+          "MINUS/subtract-row-from-column-outer",
+          "MINUS/subtract-scalar-from-row",
+          "MULTIPLY/multiply-row-by-column-outer",
+          "MULTIPLY/multiply-scalar-by-row",
+          "POW/exponent-row-elementwise",
+          "POW/exponent-scalar-over-row"
+        ]
+      }
+    ],
+    "_meta": {
+      "batch": "spill-broadcast",
+      "confidence": "high",
+      "evidence": "recorded fixtures (excel/gsheets/lattice) + live probe (hyperformula, ironcalc, formulas, pycel reproduced exactly)",
+      "wants_probe": []
+    }
+  },
+  {
+    "content": "Broadcasting arithmetic where the two operands have incompatible non-scalar dimensions (e.g. a length-3 column against a length-2 column, or 2x2 against 2x3). Excel, Google Sheets, HyperFormula, and Lattice broadcast to the union of the two shapes and fill the non-overlapping cells with `#N/A` (live-confirmed on HyperFormula: `={1,2,3}+{10,20}` -> `[11, 22, #N/A]`). The `formulas` Python library instead refuses to broadcast incompatible shapes and raises a `BroadcastError` (\"Broadcast is not implemented!\"), which the assay harness records as an execution failure rather than a value — this is why `formulas` is absent from the agreement classes for these refs rather than appearing with a result (live-confirmed: DispatcherError on `+`). IronCalc returns `#N/IMPL!`, pycel `#NAME?`, and LibreOffice records blank (recording gap).",
+    "cause": "array-handling",
+    "scope": [
+      {
+        "kind": "ref-set",
+        "refs": [
+          "ADD/add-2d-incompatible-shape",
+          "ADD/add-column-vectors-mismatched-length",
+          "ADD/add-row-vectors-mismatched-length"
+        ]
+      }
+    ],
+    "_meta": {
+      "batch": "spill-broadcast",
+      "confidence": "high",
+      "evidence": "recorded fixtures + live probe (HyperFormula pads with #N/A; `formulas` raises BroadcastError -> non-value outcome)",
+      "wants_probe": ["spill-broadcast-004"]
+    }
+  },
+  {
+    "content": "A scalar function mapped over an array literal (ABS/SQRT over a numeric array, UPPER over a text column, ISNUMBER over a mixed row). Excel, Google Sheets, HyperFormula, Lattice, and `formulas` all map the function elementwise and return an array of the same shape (live-confirmed on HyperFormula and `formulas`). The laggards diverge by function: IronCalc returns `#N/IMPL!` for ABS/SQRT/UPPER but for ISNUMBER returns a single scalar `FALSE` (it evaluates over a collapsed non-number, not an array). pycel is internally inconsistent — for SQRT, UPPER, and ISNUMBER it collapses the `{...}` literal to its first (top-left) element and returns that single scalar (`SQRT({1,4,9,16})` -> `1`, `UPPER({\"a\";\"bc\";\"def\"})` -> `\"A\"`, `ISNUMBER({1,\"a\",TRUE,3})` -> `TRUE`), but for ABS the curly-brace literal fails to tokenize and it returns `#NAME?` (all live-confirmed; `SQRT({4,9})` -> `2` and `ABS({-5,-6})` -> `#NAME?` isolate the inconsistency). LibreOffice records blank (recording gap).",
+    "cause": "array-handling",
+    "scope": [
+      {
+        "kind": "ref-set",
+        "refs": [
+          "ABS/abs-over-signed-row",
+          "SQRT/sqrt-over-row",
+          "UPPER/upper-over-string-column",
+          "ISNUMBER/isnumber-over-mixed-row"
+        ]
+      }
+    ],
+    "_meta": {
+      "batch": "spill-broadcast",
+      "confidence": "high",
+      "evidence": "recorded fixtures + live probe (pycel first-element collapse vs #NAME? isolated on SQRT vs ABS; ironcalc ISNUMBER->false)",
+      "wants_probe": []
+    }
+  },
+  {
+    "content": "IF with array arguments (array condition, array branches, or a scalar condition selecting between array branches). Excel, Google Sheets, Lattice, and the `formulas` library broadcast IF elementwise and return the expected array (e.g. `IF({TRUE,FALSE,TRUE},{10,20,30},{-1,-2,-3})` -> `[10, -2, 30]`; live-confirmed on `formulas`). HyperFormula returns `#NAME?` broadcast over the array shape — but this is NOT an IF-broadcasting failure: HyperFormula does not recognize the bare boolean keywords `TRUE` and `FALSE` and treats them as unknown names, so any formula containing a literal `TRUE`/`FALSE` yields `#NAME?`. Live-confirmed: `=IF(TRUE,5,6)` -> `#NAME?` and `=TRUE` -> `#NAME?`, whereas `=IF(1>0,5,6)` -> `5`, `=TRUE()` -> `TRUE`, and `=IF(2>1,{1,2,3},{10,20,30})` -> `[1,2,3]` (HyperFormula broadcasts IF correctly once the condition is a computed boolean or `TRUE()`/`FALSE()` is used). IronCalc returns `#N/IMPL!`. pycel collapses to the first element / taken branch (`IF(TRUE,{1,2,3},...)` -> `1`, `IF({TRUE,FALSE,TRUE},1,2)` -> `1`) but returns `#NAME?` when both branches are array literals. LibreOffice records blank (recording gap).",
+    "cause": "array-handling",
+    "scope": [
+      {
+        "kind": "ref-set",
+        "refs": [
+          "IF/if-broadcasting-scalar-condition-to-array-branches",
+          "IF/if-with-array-condition",
+          "IF/if-with-array-condition-and-array-branches"
+        ]
+      }
+    ],
+    "_meta": {
+      "batch": "spill-broadcast",
+      "confidence": "high",
+      "evidence": "live probe isolated HyperFormula's bare TRUE/FALSE literal as #NAME? cause (TRUE()/computed-boolean works; IF broadcasts correctly then)",
+      "wants_probe": []
+    }
+  },
+  {
+    "content": "`INDEX(array)` with both the row_num and column_num arguments omitted, used as a spill/array-wrapper idiom (`INDEX(A1:A3*10)`, `INDEX({1,2,3}+{10;20;30})`). Only Google Sheets treats a bare single-array argument to INDEX as 'return the entire array', so it spills the full computed grid. No other engine treats INDEX-of-a-bare-array as an array wrapper: Excel and LibreOffice yield blank, HyperFormula and Lattice return `#N/A` (live-confirmed on HyperFormula: `INDEX({1,2,3}+{10;20;30})` -> `#N/A`, `INDEX({10;20;30})` -> `#N/A`), the `formulas` library returns `#VALUE!` (live-confirmed), IronCalc `#ERROR!` (live-confirmed), and pycel `#NAME?` (live-confirmed). Excel's recorded blank is suspicious and should be confirmed live (Excel's INDEX with omitted indices can return the whole array in a dynamic-array context).",
+    "cause": "arg-semantics",
+    "scope": [
+      {
+        "kind": "ref-set",
+        "refs": ["INDEX/index-wraps-multiplication-over-range", "INDEX/index-wraps-outer-product"]
+      }
+    ],
+    "_meta": {
+      "batch": "spill-broadcast",
+      "confidence": "medium",
+      "evidence": "recorded fixtures (gsheets full array; excel/libreoffice blank) + live probe (hyperformula/ironcalc/formulas/pycel error variants)",
+      "wants_probe": ["spill-broadcast-001", "spill-broadcast-002"]
+    }
+  },
+  {
+    "content": "A scalar/text function applied to a multi-cell range or array literal in a bare cell (`LEN(B1:B3)*1` over a 3-row range; `LEN({\"a\",\"bb\",\"ccc\"})` over a literal). This is the canonical Excel-vs-Sheets auto-spill difference. Excel, HyperFormula, Lattice, and `formulas` treat every function as array-native and spill the full result (`LEN(B1:B3)*1` -> `[3;3;3]`, `LEN({\"a\",\"bb\",\"ccc\"})` -> `[1,2,3]`; live-confirmed on HyperFormula and `formulas`). Google Sheets does NOT auto-spill a non-array-native function over its argument — without `ARRAYFORMULA` it applies implicit intersection and returns a single scalar (`LEN(B1:B3)*1` -> `3` at the formula row; `LEN({\"a\",\"bb\",\"ccc\"})` -> `1` top-left). pycel matches Sheets on the literal (`LEN({...})` -> `1`, first element) but returns `#NAME?` on the range form. IronCalc returns `#N/IMPL!`; LibreOffice records blank (recording gap). Note Sheets DOES auto-broadcast arithmetic operators over array literals — the implicit-intersection collapse is specific to non-array-native functions.",
+    "cause": "array-handling",
+    "scope": [
+      {
+        "kind": "ref-set",
+        "refs": [
+          "LEN/range-no-intersection-errors-column-at-off-row",
+          "LEN/virtual-array-top-left-via-implicit-intersection"
+        ]
+      }
+    ],
+    "_meta": {
+      "batch": "spill-broadcast",
+      "confidence": "high",
+      "evidence": "recorded fixtures (gsheets single scalar) + live probe (hyperformula/formulas spill full array); classic Excel dynamic-array vs Sheets ARRAYFORMULA behavior",
+      "wants_probe": ["spill-broadcast-003"]
+    }
+  },
+  {
+    "content": "Reshaping / set dynamic-array functions (HSTACK, VSTACK, MAP, SORT, UNIQUE) applied to ranges or array literals. Excel, the `formulas` library, Google Sheets, and Lattice all implement these and return the expected spilled array (live-confirmed on `formulas`: HSTACK/VSTACK/MAP/SORT/UNIQUE all compute). HyperFormula, IronCalc, and pycel do not implement these functions and return `#NAME?` (missing function; live-confirmed on all three). LibreOffice records blank across the corpus (recording-harness gap, not a computed value). SORT/UNIQUE over already-array-literal inputs behave identically to the range forms here.",
+    "cause": "missing-function",
+    "scope": [
+      {
+        "kind": "ref-set",
+        "refs": [
+          "HSTACK/hstack-arrays",
+          "HSTACK/hstack-scalars",
+          "MAP/map-spill",
+          "SORT/sort-spill",
+          "UNIQUE/unique-spill",
+          "VSTACK/vstack-arrays",
+          "VSTACK/vstack-scalars",
+          "SORT/sort-of-filter",
+          "UNIQUE/unique-of-repeated-column",
+          "UNIQUE/unique-on-single-value"
+        ]
+      }
+    ],
+    "_meta": {
+      "batch": "spill-broadcast",
+      "confidence": "high",
+      "evidence": "recorded fixtures + live probe (hyperformula/ironcalc/pycel all #NAME?; formulas computes all five function families)",
+      "wants_probe": []
+    }
+  },
+  {
+    "content": "FILTER over an array literal (`FILTER({1;2;3;4;5}, {1;0;1;0;1})` -> `[1;3;5]`). Unlike the other reshaping dynamic-array functions, HyperFormula DOES implement FILTER, so the computing set here is Excel, `formulas`, Google Sheets, HyperFormula, and Lattice (live-confirmed: HyperFormula and `formulas` both return `[1;3;5]`). Only IronCalc and pycel return `#NAME?` (missing function; live-confirmed). LibreOffice records blank (recording gap). This is worth flagging as a portability quirk: FILTER is more widely supported across engines than its sibling spill functions (HSTACK/VSTACK/SORT/UNIQUE/SEQUENCE), which HyperFormula lacks.",
+    "cause": "missing-function",
+    "scope": [{ "kind": "ref-set", "refs": ["FILTER/filter-spill"] }],
+    "_meta": {
+      "batch": "spill-broadcast",
+      "confidence": "high",
+      "evidence": "live probe: HyperFormula returns [1;3;5] for FILTER but #NAME? for HSTACK/VSTACK/SORT/UNIQUE",
+      "wants_probe": []
+    }
+  },
+  {
+    "content": "SEQUENCE and SEQUENCE-composed spills (FILTER/SORT/TOCOL/TRANSPOSE/INDEX/HSTACK/VSTACK over a SEQUENCE source). Excel, Google Sheets, and Lattice implement SEQUENCE and evaluate the composed expressions. The `formulas` library, HyperFormula, IronCalc, and pycel all lack SEQUENCE and return `#NAME?` (live-confirmed: `SEQUENCE(3)` -> `#NAME?` on all four). Because these are composed formulas, the `formulas` library surfaces SEQUENCE's failure in structurally different ways: a plain `#NAME?` for FILTER/SORT/TOCOL/TRANSPOSE-of-sequence; a shape-preserving pair of `#NAME?` cells for `HSTACK(SEQUENCE(3),...)` -> `[#NAME?, #NAME?]` and `VSTACK(SEQUENCE(1,3),...)` -> `[#NAME?; #NAME?]` (it runs the stack over the two failed arguments and preserves the stacked shape); and `#REF!` for `INDEX(SEQUENCE(5,5),3,4)` (the row/col index resolves against an empty source). LibreOffice records blank (recording gap). Note: Lattice is absent from the recorded partitions for the plain `SEQUENCE(3,2)` and `SEQUENCE(1,3)` forms although it computes SEQUENCE(2,3)/SEQUENCE(5,5) in the composed spill-edge cases — this is likely a Lattice recording gap for those two refs rather than a real capability boundary and needs re-confirmation.",
+    "cause": "missing-function",
+    "scope": [
+      {
+        "kind": "ref-set",
+        "refs": [
+          "SEQUENCE/sequence-2d-spill",
+          "SEQUENCE/sequence-column-spill",
+          "SEQUENCE/sequence-row-spill",
+          "FILTER/filter-of-sequence",
+          "SORT/sort-of-sequence-ascending",
+          "TOCOL/tocol-of-2d-sequence",
+          "TRANSPOSE/transpose-of-sequence",
+          "INDEX/index-into-sequence",
+          "HSTACK/hstack-two-sequences",
+          "VSTACK/vstack-two-sequences"
+        ]
+      }
+    ],
+    "_meta": {
+      "batch": "spill-broadcast",
+      "confidence": "high",
+      "evidence": "live probe (formulas/hyperformula/ironcalc/pycel all #NAME? on SEQUENCE; formulas structured variants #REF!/shape-preserving reproduced)",
+      "wants_probe": ["spill-broadcast-005"]
+    }
+  },
+  {
+    "content": "SORT with an explicit descending sort_order of -1 (`SORT(SEQUENCE(5),1,-1)`, `SORT(UNIQUE({...}),1,-1)`). Excel, Lattice, and the `formulas` library follow the Excel SORT spec where sort_order = -1 means descending and return the values largest-first (`[9,6,5,4,3,2,1]`, `[5,4,3,2,1]`). Google Sheets diverges: it returns the values in ASCENDING order (`[1,2,3,4,5,6,9]`, `[1,2,3,4,5]`). The mechanism is that Google Sheets' SORT third argument is boolean-valued (is_ascending), and it interprets the nonzero `-1` as truthy = TRUE = ascending, whereas Excel/Lattice read `-1` as the signed descending flag. The two engines agree when the flag is `1` (both ascending), so the divergence only appears with `-1`. HyperFormula, IronCalc, and pycel lack SORT (and SEQUENCE) and return `#NAME?`. LibreOffice records blank (recording gap).",
+    "cause": "arg-semantics",
+    "scope": [
+      {
+        "kind": "ref-set",
+        "refs": ["SORT/sort-descending-unique", "SORT/sort-of-sequence-descending"]
+      }
+    ],
+    "_meta": {
+      "batch": "spill-broadcast",
+      "confidence": "high",
+      "evidence": "recorded fixtures (gsheets ascending vs excel/lattice/formulas descending); the sort-of-sequence-ascending control shows agreement when flag=1",
+      "wants_probe": ["spill-broadcast-006"]
+    }
+  },
+  {
+    "content": "These two forks have exactly one divergent branch: LibreOffice records a blank/null while every other engine (Excel, Google Sheets, HyperFormula, IronCalc, Lattice, pycel, and `formulas`) agrees on the computed scalar (`INDEX(A1:A3,2)` -> `20`, `SUM(1,2,3)` -> `6`; the pure engines are live-confirmed). Neither formula involves arrays or spilling, so LibreOffice's blank is not a semantic result — it is the same systematic recording-harness gap that produces blank for LibreOffice on every case in the broadcasting/spill/spill-edge corpus. These 'forks' are artifacts of missing LibreOffice fixture data and should be dropped or re-recorded rather than explained as a computed divergence.",
+    "cause": "TODO",
+    "scope": [
+      {
+        "kind": "ref-set",
+        "refs": ["INDEX/index-from-spilled-source", "SUM/single-cell-result-no-spill"]
+      }
+    ],
+    "_meta": {
+      "batch": "spill-broadcast",
+      "confidence": "high",
+      "evidence": "recorded fixtures: libreoffice records null even for =SUM(1,2,3); all other engines agree (pure engines live-confirmed)",
+      "wants_probe": ["spill-broadcast-007"]
+    }
+  }
+]

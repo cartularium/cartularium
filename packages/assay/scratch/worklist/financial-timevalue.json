@@ -1,0 +1,2466 @@
+[
+ {
+  "ref": "CUMIPMT/cumipmt-first-year-mortgage",
+  "suite": "financial-timevalue",
+  "subject": "CUMIPMT",
+  "name": "cumipmt-first-year-mortgage",
+  "formula": "=CUMIPMT(0.05/12, 360, 100000, 1, 12, 0)",
+  "tags": [
+   "financial",
+   "timevalue"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": -4966.494130578189
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": -4966.4941305781895
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": -4966.4941306
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "ironcalc"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": -4966.49
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "CUMIPMT/cumipmt-last-year-mortgage",
+  "suite": "financial-timevalue",
+  "subject": "CUMIPMT",
+  "name": "cumipmt-last-year-mortgage",
+  "formula": "=CUMIPMT(0.05/12, 360, 100000, 349, 360, 0)",
+  "tags": [
+   "financial",
+   "timevalue"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": -171.12692103319478
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": -171.12692103319108
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": -171.12692103319392
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": -171.12692103
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": -171.1269210331911
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "ironcalc"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": -171.13
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "CUMPRINC/cumprinc-first-year-mortgage",
+  "suite": "financial-timevalue",
+  "subject": "CUMPRINC",
+  "name": "cumprinc-first-year-mortgage",
+  "formula": "=CUMPRINC(0.05/12, 360, 100000, 1, 12, 0)",
+  "tags": [
+   "financial",
+   "timevalue"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": -1475.3653455674798
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": -1475.3653455674898
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": -1475.3653455674894
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": -1475.3653456
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "ironcalc"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": -1475.37
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "CUMPRINC/cumprinc-full-life-equals-principal",
+  "suite": "financial-timevalue",
+  "subject": "CUMPRINC",
+  "name": "cumprinc-full-life-equals-principal",
+  "formula": "=CUMPRINC(0.05/12, 360, 100000, 1, 360, 0)",
+  "tags": [
+   "financial",
+   "timevalue"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": -100000
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": -100000.0000000004
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": -100000.00000000033
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "DB/db-partial-first-month",
+  "suite": "financial-timevalue",
+  "subject": "DB",
+  "name": "db-partial-first-month",
+  "formula": "=DB(1000000, 100000, 6, 1, 7)",
+  "tags": [
+   "financial",
+   "timevalue"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 186083.33333333334
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 186083.33333
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "ironcalc"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 186083.33
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "DDB/ddb-salvage-floor",
+  "suite": "financial-timevalue",
+  "subject": "DDB",
+  "name": "ddb-salvage-floor",
+  "formula": "=DDB(1000, 100, 10, 10)",
+  "tags": [
+   "financial",
+   "timevalue"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 26.843545600000024
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 26.843545599999985
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 26.84354560000001
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 26.8435456
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 26.843545600000013
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "ironcalc"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 26.84
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "IPMT/ipmt-last-period-mortgage",
+  "suite": "financial-timevalue",
+  "subject": "IPMT",
+  "name": "ipmt-last-period-mortgage",
+  "formula": "=IPMT(0.05/12, 360, 360, -200000)",
+  "tags": [
+   "financial",
+   "timevalue"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 4.454951228316506
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 4.454951228316519
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 4.4549512283
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 4.454951228
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 4.454951228316349
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "formulas"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NUM!"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "IRR/irr-growing-cashflows",
+  "suite": "financial-timevalue",
+  "subject": "IRR",
+  "name": "irr-growing-cashflows",
+  "formula": "=IRR(A1:A4)",
+  "tags": [
+   "financial",
+   "timevalue"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.16340560068898924
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.16340560068898932
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.16340560069
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.16340560068898916
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "ironcalc"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.16
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "IRR/irr-simple-project",
+  "suite": "financial-timevalue",
+  "subject": "IRR",
+  "name": "irr-simple-project",
+  "formula": "=IRR(A1:A6)",
+  "tags": [
+   "financial",
+   "timevalue"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 1.949995720451625e-12
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": -2.220446049250313e-16
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 1.283735069202045e-17
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 2.9338938223e-17
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 7.825659929048236e-18
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "ISPMT/ispmt-mid-loan",
+  "suite": "financial-timevalue",
+  "subject": "ISPMT",
+  "name": "ispmt-mid-loan",
+  "formula": "=ISPMT(0.1/12, 1, 36, 8000000)",
+  "tags": [
+   "financial",
+   "timevalue"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": -64814.81481481482
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": -64814.814815
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": -64814.814814815
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "MIRR/mirr-equal-rates",
+  "suite": "financial-timevalue",
+  "subject": "MIRR",
+  "name": "mirr-equal-rates",
+  "formula": "=MIRR(A1:A4, 0.1, 0.1)",
+  "tags": [
+   "financial",
+   "timevalue"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.18285814860293526
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.1828581486
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.18285814860293503
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "ironcalc"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.18
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "MIRR/mirr-standard",
+  "suite": "financial-timevalue",
+  "subject": "MIRR",
+  "name": "mirr-standard",
+  "formula": "=MIRR(A1:A6, 0.1, 0.12)",
+  "tags": [
+   "financial",
+   "timevalue"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.1260941303659051
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.12609413037
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "ironcalc"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.13
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "NPER/nper-mortgage-like",
+  "suite": "financial-timevalue",
+  "subject": "NPER",
+  "name": "nper-mortgage-like",
+  "formula": "=NPER(0.05/12, -1073.64, 200000)",
+  "tags": [
+   "financial",
+   "timevalue"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 360.00252148785387
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 360.0025214878538
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 360.00252149
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "ironcalc"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 360
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "NPV/npv-five-year-annuity",
+  "suite": "financial-timevalue",
+  "subject": "NPV",
+  "name": "npv-five-year-annuity",
+  "formula": "=NPV(0.1, -1000, 300, 300, 300, 300, 300)",
+  "tags": [
+   "financial",
+   "timevalue"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 124.76002802048566
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 124.76002802048572
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 124.76002802
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "ironcalc"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 124.76
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "NPV/npv-zero-rate",
+  "suite": "financial-timevalue",
+  "subject": "NPV",
+  "name": "npv-zero-rate",
+  "formula": "=NPV(0, 100, 200, 300)",
+  "tags": [
+   "financial",
+   "timevalue"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 600
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "PMT/pmt-savings-goal",
+  "suite": "financial-timevalue",
+  "subject": "PMT",
+  "name": "pmt-savings-goal",
+  "formula": "=PMT(0.06/12, 360, 0, 1000000)",
+  "tags": [
+   "financial",
+   "timevalue"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": -995.505251527523
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": -995.5052515275695
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": -995.50525153
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "ironcalc"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": -995.51
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "PPMT/ppmt-first-period-mortgage",
+  "suite": "financial-timevalue",
+  "subject": "PPMT",
+  "name": "ppmt-first-period-mortgage",
+  "formula": "=PPMT(0.05/12, 1, 360, -200000)",
+  "tags": [
+   "financial",
+   "timevalue"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 240.30991269094474
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 240.30991269094636
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 240.30991269094628
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 240.30991269
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 240.309912691
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "PV/pv-zero-rate",
+  "suite": "financial-timevalue",
+  "subject": "PV",
+  "name": "pv-zero-rate",
+  "formula": "=PV(0, 10, -100)",
+  "tags": [
+   "financial",
+   "timevalue"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 1000
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "RATE/rate-mortgage-implied",
+  "suite": "financial-timevalue",
+  "subject": "RATE",
+  "name": "rate-mortgage-implied",
+  "formula": "=RATE(360, -1073.64, 200000)",
+  "tags": [
+   "financial",
+   "timevalue"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.004166644536345589
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.004166644536359948
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.004166644536337786
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.0041666445363
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.004166645
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.00416664453636018
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "RATE/rate-unreachable",
+  "suite": "financial-timevalue",
+  "subject": "RATE",
+  "name": "rate-unreachable",
+  "formula": "=RATE(10, 100, 100)",
+  "tags": [
+   "financial",
+   "timevalue"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NUM!"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "RATE/rate-zero-payment",
+  "suite": "financial-timevalue",
+  "subject": "RATE",
+  "name": "rate-zero-payment",
+  "formula": "=RATE(10, 0, -500, 1000)",
+  "tags": [
+   "financial",
+   "timevalue"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.07177346253644194
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.07177346253629324
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.07177346253628002
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.071773462536
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.071773463
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.07177346253629334
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "RRI/rri-invalid-periods",
+  "suite": "financial-timevalue",
+  "subject": "RRI",
+  "name": "rri-invalid-periods",
+  "formula": "=RRI(0, 1000, 2000)",
+  "tags": [
+   "financial",
+   "timevalue"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "hyperformula",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NUM!"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "gsheets"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#DIV/0!"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "VDB/vdb-first-day",
+  "suite": "financial-timevalue",
+  "subject": "VDB",
+  "name": "vdb-first-day",
+  "formula": "=VDB(2400, 300, 10*365, 0, 1)",
+  "tags": [
+   "financial",
+   "timevalue"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 1.3150684931506849
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 1.3150684931506476
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula",
+     "ironcalc",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "VDB/vdb-no-switch",
+  "suite": "financial-timevalue",
+  "subject": "VDB",
+  "name": "vdb-no-switch",
+  "formula": "=VDB(2400, 300, 10, 0, 10, 2, TRUE)",
+  "tags": [
+   "financial",
+   "timevalue"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 2100.000000000001
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 2100
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula",
+     "ironcalc",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "XIRR/xirr-simple-project",
+  "suite": "financial-timevalue",
+  "subject": "XIRR",
+  "name": "xirr-simple-project",
+  "formula": "=XIRR(A1:A5, B1:B5)",
+  "tags": [
+   "financial",
+   "timevalue"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.3733625352382659
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "formulas",
+     "gsheets",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.37336253350955556
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.3733625335188316
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.373362534
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.3733625335095561
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "XIRR/xirr-with-guess",
+  "suite": "financial-timevalue",
+  "subject": "XIRR",
+  "name": "xirr-with-guess",
+  "formula": "=XIRR(A1:A3, B1:B3, 0.1)",
+  "tags": [
+   "financial",
+   "timevalue"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.0638231724500656
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "formulas",
+     "gsheets",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.06382316998229104
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.06382316999801713
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.06382317
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.06382316998229119
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "XNPV/xnpv-single-future-flow",
+  "suite": "financial-timevalue",
+  "subject": "XNPV",
+  "name": "xnpv-single-future-flow",
+  "formula": "=XNPV(0.1, A1:A2, B1:B2)",
+  "tags": [
+   "financial",
+   "timevalue"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "gsheets",
+     "hyperformula"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#VALUE!"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "formulas",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 908.8535548268738
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 908.853554827
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "XNPV/xnpv-standard",
+  "suite": "financial-timevalue",
+  "subject": "XNPV",
+  "name": "xnpv-standard",
+  "formula": "=XNPV(0.09, A1:A5, B1:B5)",
+  "tags": [
+   "financial",
+   "timevalue"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "gsheets",
+     "hyperformula"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#VALUE!"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "formulas",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 2086.647602031535
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 2086.647602032
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ }
+]

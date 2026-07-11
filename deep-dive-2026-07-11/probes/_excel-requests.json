@@ -1,0 +1,682 @@
+[
+  {
+    "id": "arrays-001",
+    "engines": ["excel"],
+    "formula": "=FLATTEN({1,2;3,4})",
+    "hypothesis": "Excel returns #NAME? because FLATTEN is a Google-Sheets-proprietary function that Excel has never added. The recorded arrays-longtail excel fixture already shows #NAME?; this probe just re-confirms the portability claim (workbooks using FLATTEN cannot open correctly in Excel).",
+    "note": "Consumes into the FLATTEN annotation / notes/FLATTEN.md wiki caveat.",
+    "_batch": "arrays"
+  },
+  {
+    "id": "arrays-002",
+    "engines": ["excel", "gsheets"],
+    "formula": "=LINEST({1,2,3,4}, {1,2,3,4}, TRUE, TRUE)",
+    "hypothesis": "For a perfect-fit line the residual degrees of freedom are 0, so the F-statistic cell is 0/0. Excel returns #NUM! in that cell while Google Sheets returns a finite very-large number (~2.25e31). Confirm the exact recorded values and that Excel is the only engine emitting #NUM! there.",
+    "note": "Consumes into the LINEST/LOGEST with-stats annotation and notes/LINEST-LOGEST-TREND-GROWTH.md.",
+    "_batch": "arrays"
+  },
+  {
+    "id": "arrays-003",
+    "engines": ["excel", "gsheets"],
+    "formula": "=TREND({1,2,3,4}, {1,2,3,4}, {5;6;7})",
+    "hypothesis": "Excel and Google Sheets both accept a new_x array whose orientation differs from x and return the 3 projected values (5,6,7) as a column, whereas the `formulas` library returns #REF!. Confirm Excel/gsheets do NOT error here.",
+    "note": "Confirms the TREND annotation branch where formulas alone returns #REF!.",
+    "_batch": "arrays"
+  },
+  {
+    "id": "arrays-004",
+    "engines": ["excel", "gsheets"],
+    "formula": "=WRAPROWS({1,2,3}, 2)",
+    "hypothesis": "With no pad_with argument, the trailing empty slot is filled with #N/A. Confirmed on the `formulas` library live; confirm Excel and Google Sheets also default-pad with #N/A (not blank, not 0).",
+    "note": "Wiki caveat for notes/WRAPROWS-WRAPCOLS.md (default pad = #N/A).",
+    "_batch": "arrays"
+  },
+  {
+    "id": "arrays-005",
+    "engines": ["excel", "gsheets"],
+    "formula": "=SEQUENCE(2, 3, 10, 5)",
+    "hypothesis": "Edge beyond the corpus: SEQUENCE with start=10, step=5 spills 10,15,20 / 25,30,35 row-major. Confirm Excel and Google Sheets agree on start/step semantics (row-major fill). No pure engine implements SEQUENCE, so this needs live Excel/gsheets.",
+    "note": "Enriches notes/SEQUENCE.md beyond the 1-step corpus cases.",
+    "_batch": "arrays"
+  },
+  {
+    "id": "dve-001",
+    "engines": ["excel", "gsheets"],
+    "formula": "=SUM(A1:A3)",
+    "grid": {
+      "A1": 1,
+      "A2": "=1/0",
+      "A3": 3
+    },
+    "hypothesis": "The pure engines return #DIV/0! (they evaluate the formula-valued seed A2==1/0 into a live error and propagate). excel/gsheets recorded 4, implying A2 did NOT become a live #DIV/0! in the range. Confirm what excel/gsheets actually seed into A2: is it a live #DIV/0! error cell (then SUM should be #DIV/0!) or text / an un-recalculated value (then SUM = 1+3 = 4)? This decides whether the fork is a real error-propagation divergence or a grid-seeding fidelity artifact.",
+    "note": "Consumes annotation ANN SUM/sum-of-range-with-error-cell (cause TODO, medium confidence). Also a general test of formula-valued grid-seed ingestion in the excel/gsheets lanes.",
+    "_batch": "date-volatile-errors"
+  },
+  {
+    "id": "dve-002",
+    "engines": ["excel", "gsheets"],
+    "formula": "=WEEKNUM(\"2023-01-01\", 21)",
+    "hypothesis": "Both return 52 (ISO week type 21) by coercing the ISO-8601 text \"2023-01-01\" to a date serial. Confirms the WEEKNUM/YEARFRAC coercion annotation: excel/gsheets coerce text dates whereas hyperformula does not (#VALUE!).",
+    "note": "Grounds ANN WEEKNUM/weeknum-iso-system text-date coercion split.",
+    "_batch": "date-volatile-errors"
+  },
+  {
+    "id": "dve-003",
+    "engines": ["excel", "gsheets"],
+    "formula": "=YEARFRAC(\"2025-01-01\", \"2026-01-01\", 2)",
+    "hypothesis": "Both return ~1.013889 (365/360 for actual/360 basis) by coercing the text date arguments. hyperformula and pycel return #VALUE! on the same text-arg form but 1.013889 with DATE()/serial args (confirmed live).",
+    "note": "Grounds ANN YEARFRAC/yearfrac-actual-360 text-date coercion split.",
+    "_batch": "date-volatile-errors"
+  },
+  {
+    "id": "dve-004",
+    "engines": ["excel", "gsheets"],
+    "formula": "=RANDARRAY(1, 3, 1, 10, TRUE)",
+    "hypothesis": "excel spills a 1x3 array of random integers in [1,10]. gsheets recorded #N/A here; confirm whether gsheets genuinely rejects the 5-arg integer-mode RANDARRAY (or whether the #N/A is a spill/harness artifact). The four pure engines all return #NAME? (RANDARRAY unimplemented, confirmed live).",
+    "note": "Grounds ANN RANDARRAY/randarray-integer-mode; clarifies the excel-spill vs gsheets-#N/A branch.",
+    "_batch": "date-volatile-errors"
+  },
+  {
+    "id": "dve-005",
+    "engines": ["excel", "gsheets"],
+    "formula": "=TIME(25, 0, 0)",
+    "formula_gsheets": "=TIME(25,0,0)",
+    "hypothesis": "Both return 0.041667 (hours reduced modulo 24, so 25h -> 1h). Confirms lattice (recorded 1.041667, no mod-24) is the sole outlier and that Excel/gsheets match hyperformula/ironcalc/formulas (all 0.041667 live).",
+    "note": "Grounds ANN TIME/time-overflow-rolls (lattice hour-overflow divergence).",
+    "_batch": "date-volatile-errors"
+  },
+  {
+    "id": "dve-006",
+    "engines": ["excel", "gsheets"],
+    "formula": "=LAMBDA(x, x+1)(5)",
+    "hypothesis": "Both return 6 (LAMBDA defined and immediately invoked). Confirms the LAMBDA support tier: excel/gsheets/lattice = 6; formulas #VALUE!; hyperformula #ERROR!; ironcalc/pycel #NAME?.",
+    "note": "Grounds ANN LAMBDA/lambda-named-function-inline-cost.",
+    "_batch": "date-volatile-errors"
+  },
+  {
+    "id": "dve-007",
+    "engines": ["excel", "gsheets"],
+    "formula": "=IFERROR(10/{1,0,2}, -1)",
+    "hypothesis": "Both broadcast element-wise and spill {10,-1,5}. Confirms the array-form IFERROR broadcast branch that ironcalc rejects with #N/IMPL! and pycel does not broadcast.",
+    "note": "Grounds ANN IFERROR array-handling split (ironcalc #N/IMPL!).",
+    "_batch": "date-volatile-errors"
+  },
+  {
+    "id": "engineering-001",
+    "engines": ["excel", "gsheets"],
+    "formula": "=IMLOG(\"8\", 2)",
+    "hypothesis": "Google Sheets returns \"3\" (IMLOG(value, base) is a gsheets-native two-argument form). Excel returns #NAME? because Excel has no IMLOG function. Confirms IMLOG is a Google Sheets extension, not Excel, and documents its optional-base signature.",
+    "note": "Consumed by annotation 'IMLOG/IMCOTH/IMTANH Excel-absent' and notes/IMLOG-IMCOTH-IMTANH.md. Corpus only has single-arg IMLOG; the base argument is untested.",
+    "_batch": "engineering"
+  },
+  {
+    "id": "engineering-002",
+    "engines": ["excel", "gsheets"],
+    "formula": "=IMDIV(\"1+2i\", \"0+0i\")",
+    "hypothesis": "Excel returns #NUM! and Google Sheets returns #DIV/0!, matching the split observed for IMDIV(\"1+2i\",\"0\"). Confirms the error-code family is a property of IMDIV's zero-divisor handling and not specific to how the zero divisor is spelled.",
+    "note": "Consumed by annotation 'IMDIV divide-by-zero error-code' and notes/IMDIV-IMARGUMENT.md.",
+    "_batch": "engineering"
+  },
+  {
+    "id": "engineering-003",
+    "engines": ["excel", "gsheets"],
+    "formula": "=IMEXP(\"10+3i\")",
+    "hypothesis": "Excel and Google Sheets both render each complex component to 15 significant digits (e.g. real part around -21801.0... printed at 15 sig figs), confirming the 15-digit cap holds at larger magnitudes and is not just an artifact of small operands. Full-precision engines (formulas/HyperFormula/Lattice) would print more digits.",
+    "note": "Sharpens the precision claim in notes/IM-TRANSCENDENTAL.md that Excel/gsheets/IronCalc cap complex-string rendering at 15 significant digits.",
+    "_batch": "engineering"
+  },
+  {
+    "id": "engineering-004",
+    "engines": ["excel", "gsheets"],
+    "formula": "=DEC2HEX(-1, 4)",
+    "hypothesis": "Both return \"FFFFFFFFFF\" (10 chars), i.e. the places argument is ignored for negative results because the two's-complement form already fills all 40 bits. Documents that the padding argument only applies to non-negative values.",
+    "note": "Wiki portability note for DEC2* padding in notes/BASE-CONVERSIONS.md.",
+    "_batch": "engineering"
+  },
+  {
+    "id": "engineering-005",
+    "engines": ["excel", "gsheets"],
+    "formula": "=ERF.PRECISE(-0.5)",
+    "hypothesis": "Both return approximately -0.5204998778130465 (ERF is odd). Confirms Excel/gsheets agree with IronCalc/formulas/Lattice on ERF.PRECISE and that the only non-computing engines are HyperFormula and pycel (#NAME?).",
+    "note": "Backs annotation 'ERF.PRECISE missing in HyperFormula & pycel' in notes/ERF.md. Already recorded in fixtures; low priority re-confirmation.",
+    "_batch": "engineering"
+  },
+  {
+    "id": "engineering-006",
+    "engines": ["excel", "gsheets"],
+    "formula": "=IMTANH(\"0\")",
+    "hypothesis": "Excel returns #NAME? (no IMTANH function); Google Sheets returns \"0\". Confirms IMTANH is Google Sheets-only and Excel-absent (Lattice matches gsheets in the corpus).",
+    "note": "Backs annotation 'IMLOG/IMCOTH/IMTANH Excel-absent'. Already recorded in fixtures; confirmation of the Excel #NAME? branch.",
+    "_batch": "engineering"
+  },
+  {
+    "id": "financial-001",
+    "engines": ["excel", "gsheets"],
+    "formula": "=XNPV(0.1, A1:A2, B1:B2)",
+    "grid": {
+      "A1": 0,
+      "A2": 1000,
+      "B1": "2020-01-01",
+      "B2": "2021-01-01"
+    },
+    "hypothesis": "With B1:B2 seeded as ISO TEXT, Excel and Google Sheets XNPV return #VALUE! (they reject text dates). Re-run with B1=43831, B2=44197 (numeric serials): both should then return 908.8535548268738. This isolates the recorded #VALUE! to text-date seeding, matching the live HyperFormula result (number on serials, #VALUE! on strings).",
+    "note": "Consumes the XNPV arg-semantics annotation and notes/XNPV-XIRR.md \u2014 confirms the strict text-date rejection is Excel/gsheets behavior, not only HyperFormula.",
+    "_batch": "financial"
+  },
+  {
+    "id": "financial-002",
+    "engines": ["excel", "gsheets"],
+    "formula": "=XIRR(A1:A3, B1:B3, 0.1)",
+    "grid": {
+      "A1": -1000,
+      "A2": 500,
+      "A3": 600,
+      "B1": "2020-01-01",
+      "B2": "2021-01-01",
+      "B3": "2022-01-01"
+    },
+    "hypothesis": "With B1:B3 seeded as ISO TEXT, Excel and Google Sheets XIRR should still COMPUTE a number (~0.0638), unlike XNPV which errors on the same text dates. If confirmed, Excel/gsheets have an internal asymmetry: XIRR coerces text dates but XNPV does not. This explains why the corpus records Excel/gsheets XIRR as a value but Excel/gsheets XNPV as #VALUE! from the same date column.",
+    "note": "Consumes the XIRR annotation and notes/XNPV-XIRR.md \u2014 resolves the XIRR-vs-XNPV asymmetry open question.",
+    "_batch": "financial"
+  },
+  {
+    "id": "financial-003",
+    "engines": ["excel", "gsheets"],
+    "formula": "=RRI(0, 1000, 2000)",
+    "hypothesis": "Excel returns #NUM! and Google Sheets returns #DIV/0! for RRI with nper=0. HyperFormula, IronCalc, and the formulas library all return #NUM! live, so this confirms gsheets alone maps the invalid-period failure to #DIV/0!.",
+    "note": "Consumes the RRI error-code annotation and notes/RRI.md.",
+    "_batch": "financial"
+  },
+  {
+    "id": "financial-004",
+    "engines": ["excel", "gsheets"],
+    "formula": "=ACCRINT(DATE(2008,3,1), DATE(2008,8,31), DATE(2011,2,15), 0.1, 1000, 2, 0)",
+    "hypothesis": "Excel should return 295.8333333333333 and Google Sheets 295.5555555555555 (they diverge on 30/360 day-count of the 31st-of-month issue date and first-coupon accrual). The formulas library returns 295.2777777777778 live. Confirming Excel != gsheets here establishes ACCRINT day-count as a genuine, stable cross-engine divergence rather than a recording fluke.",
+    "note": "Consumes the ACCRINT arg-semantics annotation and notes/ACCRINT.md.",
+    "_batch": "financial"
+  },
+  {
+    "id": "financial-005",
+    "engines": ["excel", "gsheets"],
+    "formula": "=IPMT(0.05/12, 360, 360, -200000)",
+    "hypothesis": "Excel and Google Sheets return the small positive final-period interest ~4.4549512283, agreeing with HyperFormula/IronCalc/Lattice. Only the formulas Python library returns #NUM! here (confirmed live). Confirms IPMT last-period is a formulas-library-only error, not a shared edge.",
+    "note": "Consumes the IPMT error-attribution annotation and notes/IPMT.md.",
+    "_batch": "financial"
+  },
+  {
+    "id": "info-001",
+    "engines": ["excel", "gsheets"],
+    "formula": "=CELL(\"format\", A1)",
+    "grid": {
+      "A1": 42
+    },
+    "hypothesis": "excel returns \"G\" (General format code, already in corpus); gsheets returns #VALUE! (already in corpus). Confirming, and want to know which CELL info_types gsheets DOES accept.",
+    "note": "Consumed by annotation CELL/cell-format (cause missing-arg-form) and notes/CELL.md. Establishes which CELL info_types are portable to gsheets.",
+    "_batch": "info"
+  },
+  {
+    "id": "info-002",
+    "engines": ["excel", "gsheets"],
+    "formula": "=ISBLANK(A1)",
+    "grid": {
+      "A1": ""
+    },
+    "hypothesis": "excel true, gsheets false (both in corpus). Want to confirm this is a stored-value (input-fidelity) split: excel stores a typed empty string as a genuinely empty cell (ISBLANK true), gsheets stores it as a zero-length string value (ISBLANK false).",
+    "note": "Consumed by annotation ISBLANK/isblank-of-empty-string-cell (cause arg-semantics) and notes/ISBLANK.md.",
+    "_batch": "info"
+  },
+  {
+    "id": "info-002b",
+    "engines": ["excel", "gsheets"],
+    "formula": "=ISBLANK(A1)",
+    "grid": {
+      "A1": "=\"\""
+    },
+    "hypothesis": "A cell holding a FORMULA that yields an empty string. Expect ISBLANK false on both excel and gsheets (a formula result is never blank), unlike a typed empty string. Disambiguates seed-fidelity vs semantics for the empty-string-cell fork.",
+    "note": "Consumed by notes/ISBLANK.md \u2014 separates typed-empty-string from formula-empty-string.",
+    "_batch": "info"
+  },
+  {
+    "id": "info-004",
+    "engines": ["excel", "gsheets"],
+    "formula": "=SHEETS(A1)",
+    "grid": {
+      "A1": 1
+    },
+    "hypothesis": "excel returns 1 (in corpus); gsheets returns #N/A (in corpus). Want to confirm gsheets #N/A for a single-cell reference and see whether gsheets SHEETS accepts any reference argument or only no-arg.",
+    "note": "Consumed by annotations SHEETS/sheets-no-arg and SHEETS/sheets-of-reference; notes/SHEETS.md. The no-arg counts differ (excel 25 / gsheets 52) purely because each host workbook has a different sheet count.",
+    "_batch": "info"
+  },
+  {
+    "id": "info-005",
+    "engines": ["excel"],
+    "formula": "=TYPE(A1)",
+    "hypothesis": "TYPE of a truly empty cell -> 1 (number), per corpus (excel/formulas/gsheets/ironcalc all 1). Contrast with lattice's #N/A for the same case. Confirms the excel baseline for the TYPE-of-blank-cell fork.",
+    "note": "Consumed by annotation TYPE/* and notes/TYPE.md.",
+    "_batch": "info"
+  },
+  {
+    "id": "lambda-logical-coercion-001",
+    "engines": ["excel", "gsheets"],
+    "formula": "=SORT({3;1;2}, 1, -1)",
+    "hypothesis": "excel returns descending {3;2;1} (third arg = sort_order, -1=descending); gsheets returns ascending {1;2;3} (third arg = is_ascending, -1 coerces to truthy=ascending). Confirms the SORT third-argument signature divergence.",
+    "note": "consumes annotation SORT/sort-descending (A4); the sheets.wiki SORT.md documents the gsheets is_ascending signature and would mislead an Excel author.",
+    "_batch": "lambda-logical-coercion"
+  },
+  {
+    "id": "lambda-logical-coercion-002",
+    "engines": ["excel", "gsheets"],
+    "formula": "=SORTBY({10;20;30}, {3;1;2})",
+    "hypothesis": "excel returns {20;30;10} (reorder by ascending rank of by-array keys); gsheets returns #NAME? (SORTBY not exposed in Google Sheets at recording time). Confirms SORTBY is Excel-family-only.",
+    "note": "consumes annotation SORTBY/sortby-basic (A5); also verify whether current gsheets has since added SORTBY.",
+    "_batch": "lambda-logical-coercion"
+  },
+  {
+    "id": "lambda-logical-coercion-003",
+    "engines": ["excel", "gsheets"],
+    "formula": "=AND()",
+    "hypothesis": "excel rejects =AND() at entry as too few arguments (recorded as blank/non-value); gsheets returns #N/A. Confirms whether excel's recorded blank is an entry-rejection artifact rather than a computed value.",
+    "note": "consumes annotation AND/and-empty (A6); the medium-confidence claim is the excel-blank=entry-rejection interpretation.",
+    "_batch": "lambda-logical-coercion"
+  },
+  {
+    "id": "lambda-logical-coercion-004",
+    "engines": ["excel", "gsheets"],
+    "formula": "=CHOOSE(5, \"a\", \"b\", \"c\")",
+    "hypothesis": "excel returns #VALUE!; gsheets returns #NUM!. Confirms the out-of-range CHOOSE error-code split observed in fixtures.",
+    "note": "consumes annotation CHOOSE/choose-out-of-range (A8).",
+    "_batch": "lambda-logical-coercion"
+  },
+  {
+    "id": "lambda-logical-coercion-005",
+    "engines": ["excel", "gsheets"],
+    "formula": "=T(TRUE)",
+    "hypothesis": "excel returns a blank cell (null); gsheets returns an empty string \"\". Confirms the blank-vs-empty-string representation split for T of a non-text value.",
+    "note": "consumes annotation T/t-of-boolean (A12). Distinguishing blank from empty-string is a value-model question the reconciler cares about.",
+    "_batch": "lambda-logical-coercion"
+  },
+  {
+    "id": "lambda-logical-coercion-006",
+    "engines": ["excel", "gsheets"],
+    "formula": "=PRODUCT({\"2\",\"3\",\"4\"})",
+    "hypothesis": "excel and gsheets ignore the quoted-number string literals inside the array constructor (no factors) and return 0, unlike direct scalar args PRODUCT(\"2\",\"3\",\"4\") which would coerce. Confirms the array-literal skip-text rule.",
+    "note": "consumes annotation A13 (array-literal coercion). Compare with PRODUCT(\"2\",\"3\",\"4\") scalar form if a second probe slot is cheap.",
+    "_batch": "lambda-logical-coercion"
+  },
+  {
+    "id": "lambda-logical-coercion-007",
+    "engines": ["excel", "gsheets"],
+    "formula": "=SUM(A1:A3)",
+    "grid": {
+      "A1": "1",
+      "A2": "2",
+      "A3": "3"
+    },
+    "hypothesis": "excel and gsheets ignore numbers-stored-as-text in a range and return 0 (vs formulas/hyperformula/ironcalc/lattice which coerce and return 6). Confirms the range skip-text rule with text-typed cells.",
+    "note": "consumes annotation SUM/sum-of-string-range (A15). Requires the three cells to be seeded as TEXT, not numbers (the divergence vanishes if they are numeric).",
+    "_batch": "lambda-logical-coercion"
+  },
+  {
+    "id": "lambda-logical-coercion-008",
+    "engines": ["excel", "gsheets"],
+    "formula": "=SUM({TRUE,FALSE,TRUE})",
+    "hypothesis": "excel and gsheets return 0 (booleans inside an array constructor are not coerced), distinct from lattice's 2. Confirms the boolean-array-literal skip rule for excel/gsheets.",
+    "note": "consumes annotation A13. Contrast with SUM(TRUE,FALSE,TRUE) as scalar args, which Excel coerces to 2.",
+    "_batch": "lambda-logical-coercion"
+  },
+  {
+    "id": "lookup-001",
+    "engines": ["excel", "gsheets"],
+    "formula": "=ADDRESS(1,1,1,TRUE,\"Sheet2\")",
+    "hypothesis": "excel and gsheets return \"Sheet2!$A$1\" (sheet name unquoted because it needs no quoting). Confirm they do NOT wrap a simple sheet name in single quotes the way the 'formulas' engine does ('Sheet2'!$A$1). A follow-up =ADDRESS(1,1,1,TRUE,\"My Sheet\") should show excel/gsheets quoting only when the name has a space -> 'My Sheet'!$A$1.",
+    "note": "Grounds annotation E (ADDRESS/address-with-sheet, cause format-rendering): confirms formulas over-quotes vs excel/gsheets conditional quoting.",
+    "_batch": "lookup"
+  },
+  {
+    "id": "lookup-003",
+    "engines": ["excel"],
+    "formula": "=FORMULATEXT(A1)",
+    "grid": {
+      "A1": 42
+    },
+    "hypothesis": "Excel has no recorded value for FORMULATEXT in the corpus. With A1 = a live formula =1+2, Excel returns \"=1+2\"; with A1 = a plain value, Excel returns #N/A. Confirms hyperformula/ironcalc match Excel's formula-vs-value distinction.",
+    "note": "Grounds annotation H (FORMULATEXT): establishes the Excel reference the pure engines are being compared against.",
+    "_batch": "lookup"
+  },
+  {
+    "id": "lookup-004",
+    "engines": ["excel"],
+    "formula": "=GETPIVOTDATA(\"Sales\", A1)",
+    "hypothesis": "With no pivot table anchored at A1, Excel returns #REF! (matching gsheets), not #NAME?. Confirms GETPIVOTDATA is a recognized function in Excel and the four pure engines' #NAME? is missing-function.",
+    "note": "Grounds annotation I (GETPIVOTDATA).",
+    "_batch": "lookup"
+  },
+  {
+    "id": "lookup-005",
+    "engines": ["excel", "gsheets"],
+    "formula": "=INDEX(A1:A2, 5)",
+    "grid": {
+      "A1": 1,
+      "A2": 2
+    },
+    "hypothesis": "excel returns #REF! (already recorded) and gsheets returns #NUM! (already recorded). Re-confirm to lock the error-code split; also try =INDEX(A1:A2, 0) and =INDEX(A1:A2, -1) to see whether the #REF!/#NUM! divide holds for zero and negative indices.",
+    "note": "Grounds annotation C (INDEX/index-out-of-bounds, error-code) and probes the boundary at index 0 / negative.",
+    "_batch": "lookup"
+  },
+  {
+    "id": "lookup-006",
+    "engines": ["excel"],
+    "formula": "=LOOKUP(2, {1,2,3;\"a\",\"b\",\"c\"})",
+    "hypothesis": "Excel returns \"b\" via array-form horizontal orientation (search first row, return last row). Re-confirm the reference. Also =LOOKUP(2, {1,2;3,4}) on a square array to see whether Excel returns the result-axis value or the key (pycel returns the key 2 for square arrays).",
+    "note": "Grounds annotation J (LOOKUP/lookup-array-form): confirms the Excel reference and the square-array ambiguity edge.",
+    "_batch": "lookup"
+  },
+  {
+    "id": "math-core-002",
+    "engines": ["excel", "gsheets"],
+    "formula": "=UNIQUE(A1:A3)",
+    "grid": {
+      "A1": "Apple",
+      "A2": "apple",
+      "A3": "APPLE"
+    },
+    "hypothesis": "excel spills a single value \"Apple\" (case-insensitive dedup, keeps first occurrence); gsheets spills all three \"Apple\",\"apple\",\"APPLE\" (case-sensitive). Confirms the Excel-vs-Sheets UNIQUE case-sensitivity difference and that Excel keeps the first-seen casing.",
+    "note": "consumes annotation unique-case-sensitivity and notes/UNIQUE.md",
+    "_batch": "math-core"
+  },
+  {
+    "id": "math-core-003",
+    "engines": ["excel"],
+    "formula": "=SUM()",
+    "grid": {},
+    "hypothesis": "Excel rejects =SUM() as a malformed formula at entry (SUM requires >= 1 argument), so no value is stored \u2014 which is why the recording shows blank rather than a computed result or an error code. Confirm whether Excel yields blank, an error, or refuses the entry.",
+    "note": "consumes annotation sum-no-args and notes/SUM.md (excel=blank interpretation)",
+    "_batch": "math-core"
+  },
+  {
+    "id": "math-core-004",
+    "engines": ["excel", "gsheets"],
+    "formula": "=CONVERT(1,\"m\",\"ft\")",
+    "grid": {},
+    "hypothesis": "excel returns the full-precision double 3.2808398950131235; gsheets returns a value rounded to ~9 decimals (3.280839895). Confirms that the CONVERT supporter class diverges only on precision-of-record, not on the conversion factor.",
+    "note": "consumes annotation convert-missing-and-precision and notes/CONVERT.md",
+    "_batch": "math-core"
+  },
+  {
+    "id": "math-longtail-acot-branch",
+    "engines": ["excel", "gsheets"],
+    "formula": "=ACOT(-0.5)",
+    "hypothesis": "Excel returns ~2.6779 (pi - 0.4636, range (0,pi)); Google Sheets returns ~-0.4636 (ATAN(1/x) branch, range (-pi/2,pi/2)). Confirms the two ACOT range conventions diverge for all negative arguments, not just -1.",
+    "note": "Consumes the acot-branch-cut annotation and the ACOT.md wiki note (the page claims range 0..pi but its own sample table shows ACOT(-4)=-0.245).",
+    "_batch": "math-longtail"
+  },
+  {
+    "id": "math-longtail-acot-branch-large",
+    "engines": ["excel", "gsheets"],
+    "formula": "=ACOT(-100)",
+    "hypothesis": "Excel ~3.1316 (approaches pi from below as x -> -inf); Google Sheets ~-0.0100 (approaches 0). Pins down the limiting behaviour of the two conventions.",
+    "note": "Consumes the acot-branch-cut annotation.",
+    "_batch": "math-longtail"
+  },
+  {
+    "id": "math-longtail-acot-zero",
+    "engines": ["excel", "gsheets"],
+    "formula": "=ACOT(0)",
+    "hypothesis": "Both return pi/2 (1.5707963). Confirms the conventions agree at 0 and for x>=0 (baseline for the divergence claim).",
+    "note": "Baseline control for acot-branch-cut.",
+    "_batch": "math-longtail"
+  },
+  {
+    "id": "math-longtail-acoth-domain",
+    "engines": ["excel", "gsheets"],
+    "formula": "=ACOTH(0.5)",
+    "hypothesis": "ACOTH is only defined for |x|>1; both should return #NUM!. Extends the corpus, which only has ACOTH(2)/ACOTH(-2). Confirms whether excel/gsheets agree on the domain-error code.",
+    "note": "Edge beyond corpus; informs ACOTH wiki note.",
+    "_batch": "math-longtail"
+  },
+  {
+    "id": "math-longtail-improper-complex-digits",
+    "engines": ["excel", "gsheets"],
+    "formula": "=IMLN(\"2+3i\")",
+    "hypothesis": "Excel and Google Sheets render the complex result at ~15 significant digits (e.g. \"1.28247467873077+0.982793723247329i\") rather than full float64. Confirms the mantissa-precision rendering axis for the IM-family.",
+    "note": "Consumes the complex-rendering annotation; grounds the IMLN/IMPOWER/IMSQRT wiki note on digit counts.",
+    "_batch": "math-longtail"
+  },
+  {
+    "id": "math-longtail-improper-i-residue",
+    "engines": ["excel", "gsheets"],
+    "formula": "=IMPOWER(\"i\", 2)",
+    "hypothesis": "Excel and Google Sheets return \"-1+1.22464679914735E-16i\" (uppercase-E residue), NOT clean \"-1\". Reconfirms the recorded value and the residue-formatting axis vs formulas/lattice which drop the residue.",
+    "note": "Consumes the complex-rendering annotation.",
+    "_batch": "math-longtail"
+  },
+  {
+    "id": "math-longtail-munit-zero",
+    "engines": ["excel", "gsheets"],
+    "formula": "=MUNIT(0)",
+    "hypothesis": "Excel returns #VALUE!, Google Sheets returns #NUM!. Reconfirms the recorded error-code split for an invalid 0x0 identity matrix.",
+    "note": "Consumes the munit-error-codes annotation.",
+    "_batch": "math-longtail"
+  },
+  {
+    "id": "math-longtail-formulas-randbetween",
+    "engines": ["excel", "gsheets"],
+    "formula": "=ISNUMBER(RANDBETWEEN(1,10))",
+    "hypothesis": "Both TRUE and the value is always an integer. Establishes the reference contract (integer output) that the pure engine 'formulas' violates by returning 3.535.",
+    "note": "Supports the rand-nondeterminism annotation's claim that formulas' non-integer RANDBETWEEN is a bug.",
+    "_batch": "math-longtail"
+  },
+  {
+    "id": "math-longtail-libre-rerun",
+    "engines": ["excel", "gsheets"],
+    "formula": "=SIN(0)",
+    "hypothesis": "Trivially 0 on both. This is a stand-in flag: the LibreOffice fixture records BLANK for =SIN(0) and every other math-longtail case, which cannot be real LibreOffice behaviour. The actionable request is a LibreOffice re-record of the math-longtail (and arithmetic, date) suites, which the pure-engine/excel/gsheets lanes cannot perform.",
+    "note": "Flags the libreoffice-blank recording artifact (cause TODO) for a human/harness re-run; NOT answerable by excel/gsheets.",
+    "_batch": "math-longtail"
+  },
+  {
+    "id": "spill-broadcast-001",
+    "engines": ["excel", "gsheets"],
+    "formula": "=INDEX(A1:A3*10)",
+    "grid": {
+      "A1": 1,
+      "A2": 2,
+      "A3": 3
+    },
+    "hypothesis": "gsheets spills the full array [10;20;30]; Excel's recorded result is blank, but modern dynamic-array Excel may spill the whole array or return #VALUE!. Confirm what Excel actually returns for INDEX with row_num and column_num both omitted over an array.",
+    "note": "Consumes annotation INDEX-wraps-array (arg-semantics). The recorded excel=blank is the uncertain point.",
+    "_batch": "spill-broadcast"
+  },
+  {
+    "id": "spill-broadcast-002",
+    "engines": ["excel", "gsheets"],
+    "formula": "=INDEX({1,2,3}+{10;20;30})",
+    "hypothesis": "gsheets spills the full 3x3 outer-product array; confirm Excel returns blank vs the full array vs an error.",
+    "note": "Consumes annotation INDEX-wraps-array. Same idiom, array-literal source instead of range.",
+    "_batch": "spill-broadcast"
+  },
+  {
+    "id": "spill-broadcast-003",
+    "engines": ["excel", "gsheets"],
+    "formula": "=LEN(B1:B3)*1",
+    "grid": {
+      "B1": 100,
+      "B2": 200,
+      "B3": 300
+    },
+    "hypothesis": "Excel auto-spills to [3;3;3]; gsheets applies implicit intersection and returns a single 3 (no ARRAYFORMULA). Confirm the Excel spill vs Sheets single-scalar split.",
+    "note": "Consumes annotation LEN-spill-vs-implicit-intersection (the headline Excel-vs-Sheets auto-spill note).",
+    "_batch": "spill-broadcast"
+  },
+  {
+    "id": "spill-broadcast-004",
+    "engines": ["excel", "gsheets"],
+    "formula": "={1,2,3}+{10,20}",
+    "hypothesis": "Both pad the non-overlapping cell with #N/A -> [11, 22, #N/A] (matches HyperFormula). Confirms Excel/Sheets broadcast-with-#N/A-padding vs the formulas library's hard BroadcastError.",
+    "note": "Consumes annotation mismatched-shape-broadcast.",
+    "_batch": "spill-broadcast"
+  },
+  {
+    "id": "spill-broadcast-005",
+    "engines": ["excel", "gsheets"],
+    "formula": "=SEQUENCE(3, 2)",
+    "hypothesis": "Both spill the 3x2 grid [[1,2],[3,4],[5,6]]. Low-uncertainty confirmation; primarily wanted to re-confirm Lattice's absence from the recorded SEQUENCE(3,2)/SEQUENCE(1,3) partitions is a Lattice recording gap, not an Excel/Sheets issue.",
+    "note": "Consumes annotation SEQUENCE-composed. NOTE: the real open question is Lattice (cannot be probe-requested here) \u2014 flagged for a human.",
+    "_batch": "spill-broadcast"
+  },
+  {
+    "id": "spill-broadcast-006",
+    "engines": ["excel", "gsheets"],
+    "formula": "=SORT(SEQUENCE(5), 1, -1)",
+    "hypothesis": "Excel returns descending [5;4;3;2;1]; gsheets returns ascending [1;2;3;4;5] because it reads the -1 sort_order as truthy=is_ascending=TRUE. This is the core evidence for the SORT sort_order arg-semantics divergence.",
+    "note": "Consumes annotation SORT-direction (arg-semantics). Pair with a flag=1 control to show they agree ascending.",
+    "_batch": "spill-broadcast"
+  },
+  {
+    "id": "spill-broadcast-007",
+    "engines": ["excel", "gsheets"],
+    "formula": "=SUM(1, 2, 3)",
+    "hypothesis": "Both return 6. Only needed to demonstrate that LibreOffice's blank recording on this trivial non-array formula is a harness gap; if a live LibreOffice recording is available it should show 6, confirming the blank is not semantic.",
+    "note": "Consumes annotation libreoffice-recording-gap. Ideally re-record on LibreOffice specifically (out of excel/gsheets scope).",
+    "_batch": "spill-broadcast"
+  },
+  {
+    "id": "spill-broadcast-008",
+    "engines": ["excel", "gsheets"],
+    "formula": "=SORT({3;1;2}, 1, -1)",
+    "hypothesis": "Isolates the SORT sort_order semantics on a bare array literal (no SEQUENCE): Excel -> [3;2;1] descending, gsheets -> [1;2;3] ascending. Cleaner control than the SEQUENCE/UNIQUE-composed cases.",
+    "note": "Supports annotation SORT-direction with a minimal reproduction.",
+    "_batch": "spill-broadcast"
+  },
+  {
+    "id": "stat-analytics-002",
+    "engines": ["excel", "gsheets"],
+    "formula": "=HYPERLINK(\"https://example.com\", \"click me\")",
+    "hypothesis": "The cell's scalar value is the display label 'click me' (and 'https://example.com' for the url-only form). Excel is absent from the recorded partition; expected to join the gsheets/hyperformula string class. Determine whether Excel exposes a plain string or an opaque rich-link value to the harness.",
+    "note": "Consumes annotation HYPERLINK \u2014 resolves why excel/lattice/libreoffice are missing from the partition.",
+    "_batch": "stat-analytics"
+  },
+  {
+    "id": "stat-analytics-003",
+    "engines": ["excel", "gsheets"],
+    "formula": "=CONFIDENCE(0.05, 1, 100)",
+    "hypothesis": "excel returns 0.19599639845400538 (consensus) while gsheets returns 0.1959963986120195 \u2014 an ~8th-sig-fig difference from gsheets's inverse-normal (NORM.S.INV) approximation. Confirms the gsheets normal-inverse divergence is stable, not a one-off recording.",
+    "note": "Consumes annotation CONFIDENCE \u2014 characterizes the gsheets NORM.S.INV precision branch.",
+    "_batch": "stat-analytics"
+  },
+  {
+    "id": "stat-core-001",
+    "engines": ["excel", "gsheets"],
+    "formula": "=COUNTA(A1:A3)&\"|\"&COUNTBLANK(A1:A3)",
+    "formula_excel": "=COUNTA(A1:A3)&\"|\"&COUNTBLANK(A1:A3)",
+    "formula_gsheets": "=COUNTA(A1:A3)&\"|\"&COUNTBLANK(A1:A3)",
+    "grid": {
+      "A1": 1,
+      "A2": "",
+      "A3": 3
+    },
+    "hypothesis": "A2 holds a zero-length string \"\". Recorded fixtures put excel in the COUNTA=2 (\"\" is blank) branch and gsheets in the COUNTA=3 (\"\" is a value) branch. Expect excel -> \"2|1\" (\"\" excluded from COUNTA, counted by COUNTBLANK) and gsheets -> \"3|1\". Confirms whether the split is a genuine COUNTA/COUNTBLANK semantic difference or an artifact of how each harness materializes an empty-string seed (a cell literally containing \"\" vs a cleared cell).",
+    "note": "Consumes into the empty-string-cell classification annotation (COUNTA/counta-non-empty, COUNTA/counta-empty-string-cell, COUNTBLANK/countblank) and the COUNTA-COUNTBLANK note.",
+    "_batch": "stat-core"
+  },
+  {
+    "id": "stat-core-002",
+    "engines": ["excel", "gsheets"],
+    "formula": "=PERCENTRANK.EXC(A1:A5, 1)&\"|\"&PERCENTRANK.EXC(A1:A5, 1, 6)",
+    "grid": {
+      "A1": 1,
+      "A2": 2,
+      "A3": 3,
+      "A4": 4,
+      "A5": 5
+    },
+    "hypothesis": "True value is 1/6 = 0.166666.... Recorded fixtures show excel=0.166 and gsheets=0.167 at the default 3-significant-digit precision. Expect the second (6-digit) call to return 0.166667 on both, confirming the 0.166 vs 0.167 split is purely a truncate-vs-round convention on the 3-sig-digit default, not a computation difference.",
+    "note": "Consumes into the PERCENTRANK.EXC precision annotation and note (confidence currently medium).",
+    "_batch": "stat-core"
+  },
+  {
+    "id": "stat-distributions-001",
+    "engines": ["excel", "gsheets"],
+    "formula": "=CHISQ.TEST(A1:C1, A3:C3)",
+    "grid": {
+      "A1": 20,
+      "B1": 30,
+      "C1": 25,
+      "A3": 25,
+      "B3": 25,
+      "C3": 25
+    },
+    "hypothesis": "For a degenerate single-row table Excel should fall back to df = cols - 1 = 2, giving p ~= CHISQ.DIST.RT(chi2, 2). This pins the df rule at the boundary the corpus never exercises. Confirms whether lattice's flat 'cells-1' rule (= 2 here) coincides with Excel only in the degenerate case.",
+    "note": "Consumes the open question in notes/CHISQ.TEST-CHITEST.md \u2014 establishes Excel's df at the 1xN boundary.",
+    "_batch": "stat-distributions"
+  },
+  {
+    "id": "stat-distributions-002",
+    "engines": ["excel", "gsheets"],
+    "formula": "=CHISQ.TEST(A1:C2, A4:B5)",
+    "grid": {
+      "A1": 58,
+      "B1": 11,
+      "C1": 10,
+      "A2": 35,
+      "B2": 25,
+      "C2": 23,
+      "A4": 45,
+      "B4": 18,
+      "A5": 48,
+      "B5": 18
+    },
+    "hypothesis": "Observed range is 2x3 but expected range is 2x2 (shape mismatch). Expect Excel/gsheets to return #N/A (ranges must be the same shape). Documents the error behavior for malformed CHISQ.TEST input \u2014 relevant because lattice's flat-list df interpretation might tolerate a mismatch that Excel rejects.",
+    "note": "Edge for the CHISQ.TEST/CHITEST note \u2014 malformed-input behavior not in the corpus.",
+    "_batch": "stat-distributions"
+  },
+  {
+    "id": "stat-distributions-003",
+    "engines": ["excel", "gsheets"],
+    "formula": "=BETA.DIST(1.5, 2, 2, TRUE, 0, 1)",
+    "hypothesis": "x = 1.5 is above the upper bound 1, i.e. outside the distribution support. Expect Excel/gsheets to return #NUM!. This is the Excel baseline for the out-of-support rejection that hyperformula produces (#NUM!) for the bounded legacy form =BETADIST(5,2,3,0,10). Confirms whether the #NUM! is a shared spec behavior or hyperformula-specific.",
+    "note": "Consumes cluster E in annotations.json \u2014 grounds the #NUM! comparison with an Excel reference.",
+    "_batch": "stat-distributions"
+  },
+  {
+    "id": "stat-distributions-004",
+    "engines": ["excel", "gsheets"],
+    "formula": "=NORM.S.INV(0.99)",
+    "hypothesis": "Excel/formulas reference is 2.3263478740408408. Expect gsheets to differ at the ~9th significant digit (its inverse-normal approximation offset, ~1e-9), reconfirming the gsheets quantile drift observed at p=0.975/0.95 is stable and not argument-specific.",
+    "note": "Consumes the open question in notes/inverse-precision-and-GAMMA.md \u2014 confirms the gsheets inverse-normal offset is systematic.",
+    "_batch": "stat-distributions"
+  },
+  {
+    "id": "text-regex-001",
+    "engines": ["excel", "gsheets"],
+    "formula": "=REGEXEXTRACT(\"2025-03-01\", \"(\\d{4})-(\\d{2})-(\\d{2})\")",
+    "hypothesis": "Excel returns the full match \"2025-03-01\" by default (ignoring capture groups); with return_mode=2 (=REGEXEXTRACT(\"2025-03-01\",\"(\\d{4})-(\\d{2})-(\\d{2})\",2)) Excel returns the capture groups [\"2025\",\"03\",\"01\"]. gsheets returns the capture groups [\"2025\",\"03\",\"01\"] by default. This nails the arg-semantics behind the Excel-vs-Google capture-group split.",
+    "note": "consumes annotation regexextract-capture-groups (arg-semantics) and notes/REGEXEXTRACT-REGEXREPLACE.md \u00a71. Also please run =REGEXEXTRACT(\"2025-03-01\",\"(\\d{4})-(\\d{2})-(\\d{2})\",2) on Excel.",
+    "_batch": "text-regex"
+  },
+  {
+    "id": "text-regex-002",
+    "engines": ["excel"],
+    "formula": "=LENB(\"\u3042\")",
+    "formula_excel": "=LENB(\"\u3042\")",
+    "hypothesis": "On a Western-locale Excel, LENB(\"\u3042\")=1, MIDB(\"\u3042\u3044\u3046\",3,2)=\"\u3046\", FINDB(\"\u3044\",\"\u3042\u3044\u3046\")=2, LEFTB(\"\u3042\u3044\u3046\",2)=\"\u3042\u3044\" \u2014 i.e. the *B functions collapse to single-unit (character) counting because the host locale is not DBCS. Confirms the recording environment locale assumption. Please also run =MIDB(\"\u3042\u3044\u3046\",3,2), =FINDB(\"\u3044\",\"\u3042\u3044\u3046\"), =LEFTB(\"\u3042\u3044\u3046\",2).",
+    "note": "consumes annotation dbcs-byte-functions (locale) and notes/DBCS-BYTE-FUNCTIONS.md",
+    "_batch": "text-regex"
+  },
+  {
+    "id": "text-regex-004",
+    "engines": ["excel", "gsheets"],
+    "formula": "=CHAR(0)",
+    "hypothesis": "Excel returns #VALUE! (code 0 out of the 1..255 range); gsheets returns #NUM!. Confirms the error-code split for CHAR(0).",
+    "note": "consumes annotation char-zero-out-of-range (error-code) and notes/EMPTY-AND-ZERO-EDGES.md",
+    "_batch": "text-regex"
+  },
+  {
+    "id": "text-regex-006",
+    "engines": ["excel", "gsheets"],
+    "formula": "=DOLLAR(-1234.5, 2)",
+    "hypothesis": "Excel renders negative currency with accounting parentheses \"($1,234.50)\"; gsheets renders a leading minus \"-$1,234.50\". Confirm and note whether Excel's parenthesis style is locale/currency-format dependent.",
+    "note": "consumes annotation dollar-negative-format (format-rendering) and notes/DOLLAR-FIXED.md",
+    "_batch": "text-regex"
+  }
+]

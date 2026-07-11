@@ -1,0 +1,357 @@
+[
+ {
+  "ref": "CONVERT/convert-invalid-unit-pair",
+  "suite": "parser",
+  "subject": "CONVERT",
+  "name": "convert-invalid-unit-pair",
+  "formula": "=CONVERT(1, \"ft\", \"kg\")",
+  "tags": [
+   "parser",
+   "error-type"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#N/A"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "CONVERT/convert-kilograms-to-pounds",
+  "suite": "parser",
+  "subject": "CONVERT",
+  "name": "convert-kilograms-to-pounds",
+  "formula": "=CONVERT(1, \"kg\", \"lbm\")",
+  "tags": [
+   "parser"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 2.2046226218487757
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 2.20462262184878
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 2.204622622
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "CONVERT/convert-kilometers-to-miles",
+  "suite": "parser",
+  "subject": "CONVERT",
+  "name": "convert-kilometers-to-miles",
+  "formula": "=CONVERT(1, \"km\", \"mi\")",
+  "tags": [
+   "parser"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.621371192237334
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.621371192
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "CONVERT/convert-meters-to-feet",
+  "suite": "parser",
+  "subject": "CONVERT",
+  "name": "convert-meters-to-feet",
+  "formula": "=CONVERT(1, \"m\", \"ft\")",
+  "tags": [
+   "parser"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 3.2808398950131235
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 3.280839895013123
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 3.28083989501312
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 3.280839895
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "CONVERT/convert-unknown-unit",
+  "suite": "parser",
+  "subject": "CONVERT",
+  "name": "convert-unknown-unit",
+  "formula": "=CONVERT(1, \"xyz\", \"in\")",
+  "tags": [
+   "parser",
+   "error-type"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#N/A"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ }
+]

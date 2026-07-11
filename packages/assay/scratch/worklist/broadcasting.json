@@ -1,0 +1,3053 @@
+[
+ {
+  "ref": "ABS/abs-over-signed-row",
+  "suite": "broadcasting",
+  "subject": "ABS",
+  "name": "abs-over-signed-row",
+  "formula": "=ABS({-1, 2, -3})",
+  "tags": [
+   "broadcast"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 1
+       },
+       {
+        "c": "number",
+        "v": 2
+       },
+       {
+        "c": "number",
+        "v": 3
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "ironcalc"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#N/IMPL!"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "ADD/add-2d-incompatible-shape",
+  "suite": "broadcasting",
+  "subject": "ADD",
+  "name": "add-2d-incompatible-shape",
+  "formula": "={1,2;3,4}+{1,2,3;4,5,6}",
+  "tags": [
+   "broadcast",
+   "operator"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "gsheets",
+     "hyperformula",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 2
+       },
+       {
+        "c": "number",
+        "v": 4
+       },
+       {
+        "c": "error",
+        "v": "#N/A"
+       }
+      ],
+      [
+       {
+        "c": "number",
+        "v": 7
+       },
+       {
+        "c": "number",
+        "v": 9
+       },
+       {
+        "c": "error",
+        "v": "#N/A"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "ironcalc"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#N/IMPL!"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "ADD/add-2d-same-shape",
+  "suite": "broadcasting",
+  "subject": "ADD",
+  "name": "add-2d-same-shape",
+  "formula": "={1,2;3,4}+{10,20;30,40}",
+  "tags": [
+   "broadcast",
+   "operator"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 11
+       },
+       {
+        "c": "number",
+        "v": 22
+       }
+      ],
+      [
+       {
+        "c": "number",
+        "v": 33
+       },
+       {
+        "c": "number",
+        "v": 44
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "ironcalc"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#N/IMPL!"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "ADD/add-column-broadcast-across-2d",
+  "suite": "broadcasting",
+  "subject": "ADD",
+  "name": "add-column-broadcast-across-2d",
+  "formula": "={1;2}+{10,20,30;40,50,60}",
+  "tags": [
+   "broadcast",
+   "operator"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 11
+       },
+       {
+        "c": "number",
+        "v": 21
+       },
+       {
+        "c": "number",
+        "v": 31
+       }
+      ],
+      [
+       {
+        "c": "number",
+        "v": 42
+       },
+       {
+        "c": "number",
+        "v": 52
+       },
+       {
+        "c": "number",
+        "v": 62
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "ironcalc"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#N/IMPL!"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "ADD/add-column-to-row-outer-product",
+  "suite": "broadcasting",
+  "subject": "ADD",
+  "name": "add-column-to-row-outer-product",
+  "formula": "={1;2;3}+{10,20,30}",
+  "tags": [
+   "broadcast",
+   "operator",
+   "outer-product"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 11
+       },
+       {
+        "c": "number",
+        "v": 21
+       },
+       {
+        "c": "number",
+        "v": 31
+       }
+      ],
+      [
+       {
+        "c": "number",
+        "v": 12
+       },
+       {
+        "c": "number",
+        "v": 22
+       },
+       {
+        "c": "number",
+        "v": 32
+       }
+      ],
+      [
+       {
+        "c": "number",
+        "v": 13
+       },
+       {
+        "c": "number",
+        "v": 23
+       },
+       {
+        "c": "number",
+        "v": 33
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "ironcalc"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#N/IMPL!"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "ADD/add-column-vectors-mismatched-length",
+  "suite": "broadcasting",
+  "subject": "ADD",
+  "name": "add-column-vectors-mismatched-length",
+  "formula": "={1;2;3}+{10;20}",
+  "tags": [
+   "broadcast",
+   "operator"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "gsheets",
+     "hyperformula",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 11
+       }
+      ],
+      [
+       {
+        "c": "number",
+        "v": 22
+       }
+      ],
+      [
+       {
+        "c": "error",
+        "v": "#N/A"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "ironcalc"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#N/IMPL!"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "ADD/add-column-vectors-same-length",
+  "suite": "broadcasting",
+  "subject": "ADD",
+  "name": "add-column-vectors-same-length",
+  "formula": "={1;2;3}+{10;20;30}",
+  "tags": [
+   "broadcast",
+   "operator"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 11
+       }
+      ],
+      [
+       {
+        "c": "number",
+        "v": 22
+       }
+      ],
+      [
+       {
+        "c": "number",
+        "v": 33
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "ironcalc"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#N/IMPL!"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "ADD/add-row-broadcast-across-2d",
+  "suite": "broadcasting",
+  "subject": "ADD",
+  "name": "add-row-broadcast-across-2d",
+  "formula": "={1,2,3}+{10,20,30;40,50,60}",
+  "tags": [
+   "broadcast",
+   "operator"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 11
+       },
+       {
+        "c": "number",
+        "v": 22
+       },
+       {
+        "c": "number",
+        "v": 33
+       }
+      ],
+      [
+       {
+        "c": "number",
+        "v": 41
+       },
+       {
+        "c": "number",
+        "v": 52
+       },
+       {
+        "c": "number",
+        "v": 63
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "ironcalc"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#N/IMPL!"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "ADD/add-row-to-column-outer-product",
+  "suite": "broadcasting",
+  "subject": "ADD",
+  "name": "add-row-to-column-outer-product",
+  "formula": "={1,2,3}+{10;20;30}",
+  "tags": [
+   "broadcast",
+   "operator",
+   "outer-product"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 11
+       },
+       {
+        "c": "number",
+        "v": 12
+       },
+       {
+        "c": "number",
+        "v": 13
+       }
+      ],
+      [
+       {
+        "c": "number",
+        "v": 21
+       },
+       {
+        "c": "number",
+        "v": 22
+       },
+       {
+        "c": "number",
+        "v": 23
+       }
+      ],
+      [
+       {
+        "c": "number",
+        "v": 31
+       },
+       {
+        "c": "number",
+        "v": 32
+       },
+       {
+        "c": "number",
+        "v": 33
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "ironcalc"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#N/IMPL!"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "ADD/add-row-vectors-mismatched-length",
+  "suite": "broadcasting",
+  "subject": "ADD",
+  "name": "add-row-vectors-mismatched-length",
+  "formula": "={1,2,3}+{10,20}",
+  "tags": [
+   "broadcast",
+   "operator"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "gsheets",
+     "hyperformula",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 11
+       },
+       {
+        "c": "number",
+        "v": 22
+       },
+       {
+        "c": "error",
+        "v": "#N/A"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "ironcalc"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#N/IMPL!"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "ADD/add-row-vectors-same-length",
+  "suite": "broadcasting",
+  "subject": "ADD",
+  "name": "add-row-vectors-same-length",
+  "formula": "={1,2,3}+{10,20,30}",
+  "tags": [
+   "broadcast",
+   "operator"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 11
+       },
+       {
+        "c": "number",
+        "v": 22
+       },
+       {
+        "c": "number",
+        "v": 33
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "ironcalc"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#N/IMPL!"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "ADD/add-scalar-to-2d",
+  "suite": "broadcasting",
+  "subject": "ADD",
+  "name": "add-scalar-to-2d",
+  "formula": "=1+{10,20;30,40}",
+  "tags": [
+   "broadcast",
+   "operator"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 11
+       },
+       {
+        "c": "number",
+        "v": 21
+       }
+      ],
+      [
+       {
+        "c": "number",
+        "v": 31
+       },
+       {
+        "c": "number",
+        "v": 41
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "ironcalc"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#N/IMPL!"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "ADD/add-scalar-to-column-vector",
+  "suite": "broadcasting",
+  "subject": "ADD",
+  "name": "add-scalar-to-column-vector",
+  "formula": "=1+{10;20;30}",
+  "tags": [
+   "broadcast",
+   "operator"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 11
+       }
+      ],
+      [
+       {
+        "c": "number",
+        "v": 21
+       }
+      ],
+      [
+       {
+        "c": "number",
+        "v": 31
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "ironcalc"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#N/IMPL!"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "ADD/add-scalar-to-row-vector",
+  "suite": "broadcasting",
+  "subject": "ADD",
+  "name": "add-scalar-to-row-vector",
+  "formula": "=1+{10,20,30}",
+  "tags": [
+   "broadcast",
+   "operator"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 11
+       },
+       {
+        "c": "number",
+        "v": 21
+       },
+       {
+        "c": "number",
+        "v": 31
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "ironcalc"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#N/IMPL!"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "DIVIDE/divide-row-by-scalar",
+  "suite": "broadcasting",
+  "subject": "DIVIDE",
+  "name": "divide-row-by-scalar",
+  "formula": "={10,20,30}/10",
+  "tags": [
+   "broadcast",
+   "operator"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 1
+       },
+       {
+        "c": "number",
+        "v": 2
+       },
+       {
+        "c": "number",
+        "v": 3
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "ironcalc"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#N/IMPL!"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "DIVIDE/divide-scalar-by-row",
+  "suite": "broadcasting",
+  "subject": "DIVIDE",
+  "name": "divide-scalar-by-row",
+  "formula": "=60/{1,2,3}",
+  "tags": [
+   "broadcast",
+   "operator"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 60
+       },
+       {
+        "c": "number",
+        "v": 30
+       },
+       {
+        "c": "number",
+        "v": 20
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "ironcalc"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#N/IMPL!"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "IF/if-broadcasting-scalar-condition-to-array-branches",
+  "suite": "broadcasting",
+  "subject": "IF",
+  "name": "if-broadcasting-scalar-condition-to-array-branches",
+  "formula": "=IF(TRUE, {1,2,3}, {10,20,30})",
+  "tags": [
+   "broadcast"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 1
+       },
+       {
+        "c": "number",
+        "v": 2
+       },
+       {
+        "c": "number",
+        "v": 3
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       },
+       {
+        "c": "error",
+        "v": "#NAME?"
+       },
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "ironcalc"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#N/IMPL!"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 1
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "IF/if-with-array-condition",
+  "suite": "broadcasting",
+  "subject": "IF",
+  "name": "if-with-array-condition",
+  "formula": "=IF({TRUE,FALSE,TRUE}, 1, 2)",
+  "tags": [
+   "broadcast"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 1
+       },
+       {
+        "c": "number",
+        "v": 2
+       },
+       {
+        "c": "number",
+        "v": 1
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       },
+       {
+        "c": "error",
+        "v": "#NAME?"
+       },
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "ironcalc"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#N/IMPL!"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 1
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "IF/if-with-array-condition-and-array-branches",
+  "suite": "broadcasting",
+  "subject": "IF",
+  "name": "if-with-array-condition-and-array-branches",
+  "formula": "=IF({TRUE,FALSE,TRUE}, {10,20,30}, {-1,-2,-3})",
+  "tags": [
+   "broadcast"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 10
+       },
+       {
+        "c": "number",
+        "v": -2
+       },
+       {
+        "c": "number",
+        "v": 30
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       },
+       {
+        "c": "error",
+        "v": "#NAME?"
+       },
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "ironcalc"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#N/IMPL!"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "INDEX/index-wraps-multiplication-over-range",
+  "suite": "broadcasting",
+  "subject": "INDEX",
+  "name": "index-wraps-multiplication-over-range",
+  "formula": "=INDEX(A1:A3*10)",
+  "tags": [
+   "broadcast",
+   "gsheets-idiom"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "formulas"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#VALUE!"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "gsheets"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 10
+       }
+      ],
+      [
+       {
+        "c": "number",
+        "v": 20
+       }
+      ],
+      [
+       {
+        "c": "number",
+        "v": 30
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#N/A"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "ironcalc"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#ERROR!"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "INDEX/index-wraps-outer-product",
+  "suite": "broadcasting",
+  "subject": "INDEX",
+  "name": "index-wraps-outer-product",
+  "formula": "=INDEX({1,2,3}+{10;20;30})",
+  "tags": [
+   "broadcast",
+   "outer-product",
+   "gsheets-idiom",
+   "bare-formula"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "formulas"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#VALUE!"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "gsheets"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 11
+       },
+       {
+        "c": "number",
+        "v": 12
+       },
+       {
+        "c": "number",
+        "v": 13
+       }
+      ],
+      [
+       {
+        "c": "number",
+        "v": 21
+       },
+       {
+        "c": "number",
+        "v": 22
+       },
+       {
+        "c": "number",
+        "v": 23
+       }
+      ],
+      [
+       {
+        "c": "number",
+        "v": 31
+       },
+       {
+        "c": "number",
+        "v": 32
+       },
+       {
+        "c": "number",
+        "v": 33
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#N/A"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "ironcalc"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#ERROR!"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "ISNUMBER/isnumber-over-mixed-row",
+  "suite": "broadcasting",
+  "subject": "ISNUMBER",
+  "name": "isnumber-over-mixed-row",
+  "formula": "=ISNUMBER({1,\"a\",TRUE,3})",
+  "tags": [
+   "broadcast"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "boolean",
+        "v": true
+       },
+       {
+        "c": "boolean",
+        "v": false
+       },
+       {
+        "c": "boolean",
+        "v": false
+       },
+       {
+        "c": "boolean",
+        "v": true
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "ironcalc"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "boolean",
+        "v": false
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "boolean",
+        "v": true
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "LEN/range-no-intersection-errors-column-at-off-row",
+  "suite": "broadcasting",
+  "subject": "LEN",
+  "name": "range-no-intersection-errors-column-at-off-row",
+  "formula": "=LEN(B1:B3)*1",
+  "tags": [
+   "implicit-intersection",
+   "range"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "hyperformula",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 3
+       }
+      ],
+      [
+       {
+        "c": "number",
+        "v": 3
+       }
+      ],
+      [
+       {
+        "c": "number",
+        "v": 3
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "gsheets"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 3
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "ironcalc"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#N/IMPL!"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "LEN/virtual-array-top-left-via-implicit-intersection",
+  "suite": "broadcasting",
+  "subject": "LEN",
+  "name": "virtual-array-top-left-via-implicit-intersection",
+  "formula": "=LEN({\"a\",\"bb\",\"ccc\"})",
+  "tags": [
+   "implicit-intersection",
+   "virtual-array",
+   "bare-formula"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "hyperformula",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 1
+       },
+       {
+        "c": "number",
+        "v": 2
+       },
+       {
+        "c": "number",
+        "v": 3
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "gsheets",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 1
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "ironcalc"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#N/IMPL!"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "MINUS/subtract-row-from-column-outer",
+  "suite": "broadcasting",
+  "subject": "MINUS",
+  "name": "subtract-row-from-column-outer",
+  "formula": "={10;20;30}-{1,2,3}",
+  "tags": [
+   "broadcast",
+   "operator",
+   "outer-product"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 9
+       },
+       {
+        "c": "number",
+        "v": 8
+       },
+       {
+        "c": "number",
+        "v": 7
+       }
+      ],
+      [
+       {
+        "c": "number",
+        "v": 19
+       },
+       {
+        "c": "number",
+        "v": 18
+       },
+       {
+        "c": "number",
+        "v": 17
+       }
+      ],
+      [
+       {
+        "c": "number",
+        "v": 29
+       },
+       {
+        "c": "number",
+        "v": 28
+       },
+       {
+        "c": "number",
+        "v": 27
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "ironcalc"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#N/IMPL!"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "MINUS/subtract-scalar-from-row",
+  "suite": "broadcasting",
+  "subject": "MINUS",
+  "name": "subtract-scalar-from-row",
+  "formula": "={10,20,30}-1",
+  "tags": [
+   "broadcast",
+   "operator"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 9
+       },
+       {
+        "c": "number",
+        "v": 19
+       },
+       {
+        "c": "number",
+        "v": 29
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "ironcalc"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#N/IMPL!"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "MULTIPLY/multiply-row-by-column-outer",
+  "suite": "broadcasting",
+  "subject": "MULTIPLY",
+  "name": "multiply-row-by-column-outer",
+  "formula": "={1,2,3}*{1;2;3}",
+  "tags": [
+   "broadcast",
+   "operator",
+   "outer-product"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 1
+       },
+       {
+        "c": "number",
+        "v": 2
+       },
+       {
+        "c": "number",
+        "v": 3
+       }
+      ],
+      [
+       {
+        "c": "number",
+        "v": 2
+       },
+       {
+        "c": "number",
+        "v": 4
+       },
+       {
+        "c": "number",
+        "v": 6
+       }
+      ],
+      [
+       {
+        "c": "number",
+        "v": 3
+       },
+       {
+        "c": "number",
+        "v": 6
+       },
+       {
+        "c": "number",
+        "v": 9
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "ironcalc"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#N/IMPL!"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "MULTIPLY/multiply-scalar-by-row",
+  "suite": "broadcasting",
+  "subject": "MULTIPLY",
+  "name": "multiply-scalar-by-row",
+  "formula": "=3*{1,2,3}",
+  "tags": [
+   "broadcast",
+   "operator"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 3
+       },
+       {
+        "c": "number",
+        "v": 6
+       },
+       {
+        "c": "number",
+        "v": 9
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "ironcalc"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#N/IMPL!"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "POW/exponent-row-elementwise",
+  "suite": "broadcasting",
+  "subject": "POW",
+  "name": "exponent-row-elementwise",
+  "formula": "={1,2,3}^2",
+  "tags": [
+   "broadcast",
+   "operator"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 1
+       },
+       {
+        "c": "number",
+        "v": 4
+       },
+       {
+        "c": "number",
+        "v": 9
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "ironcalc"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#N/IMPL!"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "POW/exponent-scalar-over-row",
+  "suite": "broadcasting",
+  "subject": "POW",
+  "name": "exponent-scalar-over-row",
+  "formula": "=2^{0,1,2,3}",
+  "tags": [
+   "broadcast",
+   "operator"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 1
+       },
+       {
+        "c": "number",
+        "v": 2
+       },
+       {
+        "c": "number",
+        "v": 4
+       },
+       {
+        "c": "number",
+        "v": 8
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "ironcalc"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#N/IMPL!"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "SQRT/sqrt-over-row",
+  "suite": "broadcasting",
+  "subject": "SQRT",
+  "name": "sqrt-over-row",
+  "formula": "=SQRT({1, 4, 9, 16})",
+  "tags": [
+   "broadcast"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 1
+       },
+       {
+        "c": "number",
+        "v": 2
+       },
+       {
+        "c": "number",
+        "v": 3
+       },
+       {
+        "c": "number",
+        "v": 4
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "ironcalc"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#N/IMPL!"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 1
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "UPPER/upper-over-string-column",
+  "suite": "broadcasting",
+  "subject": "UPPER",
+  "name": "upper-over-string-column",
+  "formula": "=UPPER({\"a\";\"bc\";\"def\"})",
+  "tags": [
+   "broadcast"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "string",
+        "v": "A"
+       }
+      ],
+      [
+       {
+        "c": "string",
+        "v": "BC"
+       }
+      ],
+      [
+       {
+        "c": "string",
+        "v": "DEF"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "ironcalc"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#N/IMPL!"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "string",
+        "v": "A"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ }
+]

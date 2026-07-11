@@ -1,0 +1,42 @@
+[
+  {
+    "id": "math-core-001",
+    "engines": ["gsheets"],
+    "formula": "=GT(TRUE,0)",
+    "grid": {},
+    "hypothesis": "gsheets returns TRUE. Google Sheets ranks booleans above all numbers in cross-type comparison (number < text < boolean), so TRUE > 0 is TRUE. Confirming this, plus =GTE(TRUE,1)=>TRUE and =LTE(FALSE,0)=>FALSE, nails down that gsheets does NOT coerce booleans to 1/0 but type-ranks them above numbers. (lattice, the divergent partner returning FALSE/FALSE/TRUE, is a single-owner engine — recorded fixtures show it ranks booleans below numbers; note for whoever owns lattice.)",
+    "note": "consumes annotation comparison-operator-fns (GT/GTE/LTE) and notes/ADD-GT-GTE-LTE.md"
+  },
+  {
+    "id": "math-core-001b",
+    "engines": ["gsheets"],
+    "formula": "=GT(2,TRUE)",
+    "grid": {},
+    "hypothesis": "gsheets returns FALSE (2 is a number, TRUE is a boolean; boolean outranks number, so 2 > TRUE is FALSE). A cross-check on the boolean-above-number ranking from the opposite argument order.",
+    "note": "corroborates the boolean-ranking model in notes/ADD-GT-GTE-LTE.md"
+  },
+  {
+    "id": "math-core-002",
+    "engines": ["excel", "gsheets"],
+    "formula": "=UNIQUE(A1:A3)",
+    "grid": { "A1": "Apple", "A2": "apple", "A3": "APPLE" },
+    "hypothesis": "excel spills a single value \"Apple\" (case-insensitive dedup, keeps first occurrence); gsheets spills all three \"Apple\",\"apple\",\"APPLE\" (case-sensitive). Confirms the Excel-vs-Sheets UNIQUE case-sensitivity difference and that Excel keeps the first-seen casing.",
+    "note": "consumes annotation unique-case-sensitivity and notes/UNIQUE.md"
+  },
+  {
+    "id": "math-core-003",
+    "engines": ["excel"],
+    "formula": "=SUM()",
+    "grid": {},
+    "hypothesis": "Excel rejects =SUM() as a malformed formula at entry (SUM requires >= 1 argument), so no value is stored — which is why the recording shows blank rather than a computed result or an error code. Confirm whether Excel yields blank, an error, or refuses the entry.",
+    "note": "consumes annotation sum-no-args and notes/SUM.md (excel=blank interpretation)"
+  },
+  {
+    "id": "math-core-004",
+    "engines": ["excel", "gsheets"],
+    "formula": "=CONVERT(1,\"m\",\"ft\")",
+    "grid": {},
+    "hypothesis": "excel returns the full-precision double 3.2808398950131235; gsheets returns a value rounded to ~9 decimals (3.280839895). Confirms that the CONVERT supporter class diverges only on precision-of-record, not on the conversion factor.",
+    "note": "consumes annotation convert-missing-and-precision and notes/CONVERT.md"
+  }
+]

@@ -1,0 +1,168 @@
+[
+  {
+    "content": "These forks are not semantic divergences: every engine that actually evaluated the case agrees (INDEX returns the indexed value, MATCH returns the position, ROW/COLUMN return the row/column number). The only dissenting branch is libreoffice, which is recorded as blank. The libreoffice recording for the whole lookup and lookup-longtail suites (generated 2026-05-11) returns [[null]] for all 17 + 55 cases, including trivially-correct ones like =INDEX(A1:B2,2,1) (should be 3) and =ROW(A1) (should be 1). LibreOffice implements all of these functions, so the blank is a capture/ingestion artifact of that recording run, not behavior. These refs should be re-recorded on libreoffice; until then the fork is spurious.",
+    "cause": "TODO",
+    "scope": [
+      {
+        "kind": "ref-set",
+        "refs": [
+          "INDEX/index-row-and-column",
+          "INDEX/index-single-column",
+          "MATCH/match-approximate",
+          "MATCH/match-exact",
+          "MATCH/match-not-found",
+          "COLUMN/column-a1",
+          "COLUMN/column-c1",
+          "COLUMN/column-z1",
+          "ROW/row-a1",
+          "ROW/row-a5",
+          "ROW/row-c10",
+          "ROW/row-no-arg"
+        ]
+      }
+    ],
+    "_meta": {
+      "batch": "lookup",
+      "confidence": "high",
+      "evidence": "recorded fixtures (fixtures/lookup*/libreoffice.json = [[null]] for every case) + live pure-engine probe reproducing the unanimous non-blank value",
+      "wants_probe": []
+    }
+  },
+  {
+    "content": "CHOOSECOLS and CHOOSEROWS are Excel array-shaping functions added in 2022. excel, gsheets, lattice, and the JS 'formulas' engine implement them and return the selected sub-grid (=CHOOSECOLS({1,2,3;4,5,6},1,3) -> [[1,3],[4,6]]; =CHOOSEROWS({1,2;3,4;5,6},1,3) -> [[1,2],[5,6]]). hyperformula, ironcalc, and pycel do not implement the function name at all and return #NAME?. libreoffice is recorded blank (the suite-wide libreoffice capture artifact, not a real result). Live-probe confirmed: formulas produces the sub-grid; hyperformula/ironcalc/pycel each return #NAME?.",
+    "cause": "missing-function",
+    "scope": [{ "kind": "ref-set", "refs": ["CHOOSECOLS/choosecols", "CHOOSEROWS/chooserows"] }],
+    "_meta": {
+      "batch": "lookup",
+      "confidence": "high",
+      "evidence": "live pure-engine probe (formulas computes; hyperformula/ironcalc/pycel #NAME?) + recorded fixtures for excel/gsheets/lattice",
+      "wants_probe": []
+    }
+  },
+  {
+    "content": "=INDEX(A1:A2, 5) asks for the 5th row of a 2-row range — an out-of-bounds index. excel, the 'formulas' engine, ironcalc, lattice, and pycel report #REF! (the classic Excel error for an index outside the array). gsheets and hyperformula instead report #NUM! (treating the out-of-range index as an invalid numeric argument). This is a pure error-code divergence — all engines agree the call is invalid, they disagree on which sentinel to raise. Live-probe confirmed hyperformula=#NUM! and ironcalc/formulas/pycel=#REF!. libreoffice is recorded blank (suite-wide capture artifact).",
+    "cause": "error-code",
+    "scope": [{ "kind": "ref-set", "refs": ["INDEX/index-out-of-bounds"] }],
+    "_meta": {
+      "batch": "lookup",
+      "confidence": "high",
+      "evidence": "live pure-engine probe (hyperformula #NUM!, ironcalc/formulas/pycel #REF!) + recorded fixtures (excel/lattice #REF!, gsheets #NUM!)",
+      "wants_probe": ["lookup-005"]
+    }
+  },
+  {
+    "content": "XMATCH (Excel dynamic-array lookup, 2020) is implemented by excel, gsheets, lattice, and the 'formulas' engine: for a value not present, =XMATCH(99,{1,2,3}) returns the not-found sentinel #N/A. hyperformula, ironcalc, and pycel do not implement XMATCH and return #NAME? (unknown function name) regardless of whether the value exists. So the split is missing-function, not a disagreement about lookup semantics: the four implementers all agree on #N/A. Live-probe confirmed formulas=#N/A and hyperformula/ironcalc/pycel=#NAME? (also confirmed on the in-range case =XMATCH(20,A1:A3): formulas=2, the other three #NAME?). libreoffice recorded blank (suite-wide capture artifact).",
+    "cause": "missing-function",
+    "scope": [{ "kind": "ref-set", "refs": ["XMATCH/xmatch-not-found"] }],
+    "_meta": {
+      "batch": "lookup",
+      "confidence": "high",
+      "evidence": "live pure-engine probe (formulas #N/A; hyperformula/ironcalc/pycel #NAME?) + recorded fixtures",
+      "wants_probe": []
+    }
+  },
+  {
+    "content": "=ADDRESS(1,1,1,TRUE,\"Sheet2\") exercises the 5-argument form with a sheet-name argument. Three distinct behaviors: (1) excel, gsheets, and lattice return the reference with the sheet name unquoted because it needs no quoting -> \"Sheet2!$A$1\". (2) The 'formulas' engine always wraps the sheet name in single quotes -> \"'Sheet2'!$A$1\"; live-probe showed it quotes unconditionally (both \"Sheet2\" and \"My Sheet\" come back quoted), a format-rendering difference from Excel, which only adds quotes when the name contains spaces or special characters. (3) hyperformula, ironcalc, and pycel return #NAME?. Probing shows the reason differs by engine: hyperformula supports ADDRESS(1,1) and ADDRESS(1,1,4) but rejects the 5-argument sheet_text form (missing arg-form), whereas ironcalc and pycel do not implement ADDRESS at all (they return #NAME? even for ADDRESS(1,1)). libreoffice recorded blank (suite-wide capture artifact).",
+    "cause": "format-rendering",
+    "scope": [{ "kind": "ref-set", "refs": ["ADDRESS/address-with-sheet"] }],
+    "_meta": {
+      "batch": "lookup",
+      "confidence": "high",
+      "evidence": "live pure-engine probe (formulas quotes always; hyperformula supports 2/4-arg but not 5-arg; ironcalc/pycel miss ADDRESS entirely) + recorded fixtures for excel/gsheets/lattice",
+      "wants_probe": ["lookup-001"]
+    }
+  },
+  {
+    "content": "=COLUMN(D2:F4) and =ROW(B7:D9) pass a multi-cell range to COLUMN/ROW. In modern dynamic-array engines (excel, the 'formulas' engine, lattice) these spill: COLUMN over D2:F4 returns the row array [4,5,6] and ROW over B7:D9 returns the column array [7;8;9]. Legacy-evaluation engines (gsheets, hyperformula, ironcalc, pycel) return only the first scalar (4 and 7 respectively), collapsing the range to its top-left column/row. This is a shape/spill divergence driven by whether the engine implements implicit array spilling for these reference functions. Live-probe confirmed formulas spills the full array while hyperformula/ironcalc/pycel each return the single scalar. libreoffice recorded blank (suite-wide capture artifact). (Related to DV-0249, which recorded the same hyperformula scalar-collapse under different test names row/column-over-range-returns-array.)",
+    "cause": "shape",
+    "scope": [
+      { "kind": "ref-set", "refs": ["COLUMN/column-range-first-col", "ROW/row-range-first-row"] }
+    ],
+    "_meta": {
+      "batch": "lookup",
+      "confidence": "high",
+      "evidence": "live pure-engine probe (formulas spills [4,5,6]/[7;8;9]; hyperformula/ironcalc/pycel scalar) + recorded fixtures (excel/lattice spill) + DV-0249",
+      "wants_probe": []
+    }
+  },
+  {
+    "content": "=COLUMN() with no argument returns the column of the cell that holds the formula, so the answer depends on where each driver writes the formula. All engines that actually reported a number returned 27 (they place the probe formula in column AA = column 27) except lattice, which returned 26 (it writes to column Z). Live-probe confirmed hyperformula/ironcalc/formulas/pycel all return 27. This is a test-harness cell-placement artifact, not a semantic divergence: every engine correctly returns its own formula cell's 1-indexed column; they simply sit in different columns. libreoffice recorded blank (suite-wide capture artifact).",
+    "cause": "TODO",
+    "scope": [{ "kind": "ref-set", "refs": ["COLUMN/column-no-arg"] }],
+    "_meta": {
+      "batch": "lookup",
+      "confidence": "high",
+      "evidence": "live pure-engine probe (all return 27) + recorded fixtures (lattice 26) + tests/lookup-longtail.yaml note on driver cell placement",
+      "wants_probe": []
+    }
+  },
+  {
+    "content": "FORMULATEXT returns the source formula text of a referenced cell. Two layers of divergence. (1) The 'formulas' engine and pycel do not implement FORMULATEXT and return #NAME? in every case. (2) Among the implementers the result depends on whether the referenced cell actually holds a live formula in that engine's harness: hyperformula and ironcalc return the formula text when the cell was seeded with a formula (=1+2 -> \"=1+2\"; =SUM(A1:A2) -> \"=SUM(A1:A2)\") and #N/A when the cell holds a plain value or is empty; gsheets returns #N/A across all four assay cases because the assay harness seeds cell VALUES rather than live formulas, so from gsheets' view the referenced cell has no formula. The observed gsheets-vs-hyperformula/ironcalc split on the formula-cell case is therefore partly a seeding artifact (external-io: FORMULATEXT reads workbook state the value-seeding harness does not reproduce identically across engines). No libreoffice branch (feature external-io, skipped on libreoffice).",
+    "cause": "missing-function",
+    "scope": [
+      {
+        "kind": "ref-set",
+        "refs": [
+          "FORMULATEXT/formulatext-of-empty",
+          "FORMULATEXT/formulatext-of-formula-cell",
+          "FORMULATEXT/formulatext-of-value-cell",
+          "FORMULATEXT/formulatext-sum-formula"
+        ]
+      }
+    ],
+    "_meta": {
+      "batch": "lookup",
+      "confidence": "medium",
+      "evidence": "recorded fixtures (formulas/pycel #NAME?, gsheets #N/A, hyperformula/ironcalc formula-text on formula-seed) + live probe confirming formulas/pycel miss the function; gsheets true behavior needs live formula-cell confirmation",
+      "wants_probe": ["lookup-002", "lookup-003"]
+    }
+  },
+  {
+    "content": "GETPIVOTDATA extracts a value from a pivot table. No pivot table exists in the assay harness, so the case is really 'how does the engine react to a GETPIVOTDATA call it cannot resolve.' gsheets recognizes the function and, finding no pivot table anchored at the referenced cell, returns #REF!. The 'formulas' engine, hyperformula, ironcalc, and pycel do not implement GETPIVOTDATA and return #NAME? (unknown function name). So the divergence is missing-function (four engines) versus implemented-but-no-target (gsheets #REF!). Live-probe confirmed formulas/hyperformula/ironcalc/pycel all return #NAME?. No libreoffice branch (feature external-io, skipped on libreoffice).",
+    "cause": "missing-function",
+    "scope": [
+      {
+        "kind": "ref-set",
+        "refs": ["GETPIVOTDATA/getpivotdata-smoke", "GETPIVOTDATA/getpivotdata-with-field"]
+      }
+    ],
+    "_meta": {
+      "batch": "lookup",
+      "confidence": "high",
+      "evidence": "live pure-engine probe (formulas/hyperformula/ironcalc/pycel #NAME?) + recorded gsheets fixture (#REF!)",
+      "wants_probe": ["lookup-004"]
+    }
+  },
+  {
+    "content": "=LOOKUP(2, {1,2,3;\"a\",\"b\",\"c\"}) is the array form of LOOKUP. Because the array is wider than tall (3 columns x 2 rows) it is treated as horizontal: search the first row {1,2,3} for the largest value <= 2 (position 2), then return the corresponding cell of the LAST row {\"a\",\"b\",\"c\"} -> \"b\". excel, gsheets, and lattice implement this and return \"b\". pycel also returns \"b\" for non-square arrays but returns the search key 2 for a square array where orientation is ambiguous. The 'formulas' engine mis-implements the array form: it returns the matched key 2 (the search-axis value) instead of the result-row value, for horizontal, vertical, and square arrays alike. hyperformula does not implement LOOKUP at all (#NAME?). ironcalc implements LOOKUP but fails the array form, returning #N/A for every orientation. libreoffice recorded blank (suite-wide capture artifact). Live-probe reproduced all five branches and the pycel square-array edge.",
+    "cause": "array-orientation",
+    "scope": [{ "kind": "ref-set", "refs": ["LOOKUP/lookup-array-form"] }],
+    "_meta": {
+      "batch": "lookup",
+      "confidence": "high",
+      "evidence": "live pure-engine probe across horizontal/vertical/square arrays (pycel \"b\"; formulas 2; hyperformula #NAME?; ironcalc #N/A) + recorded fixtures (excel/gsheets/lattice \"b\")",
+      "wants_probe": ["lookup-006"]
+    }
+  },
+  {
+    "content": "SHEET returns the 1-based index of a sheet within the workbook — an introspection function whose value depends on workbook structure the harness supplies differently per engine. Branches: (1) the 'formulas' engine and pycel do not implement SHEET and return #NAME? in all four cases. (2) hyperformula and ironcalc implement it in a single-sheet context: SHEET() and SHEET(A1) return 1 (ironcalc returns #N/A for SHEET(A1)), SHEET(\"Sheet1\") returns 1 on ironcalc but #N/A on hyperformula (its name resolution differs), and SHEET(\"NoSuchSheet\") returns #N/A. (3) gsheets runs in the assay harness's many-sheet workbook, so it returns real positional indices that reflect where the formula and its argument land: SHEET() -> 4, SHEET(A1) -> 35, SHEET(\"Sheet1\") -> 1, and SHEET(\"NoSuchSheet\") -> #REF! (unresolvable name). The numeric gsheets values (4, 35) are environment/harness-context dependent, not a claim about SHEET's algorithm. Live-probe confirmed the formulas/pycel #NAME?, hyperformula 1 / #N/A, and ironcalc 1 / #N/A branches. No libreoffice branch (feature external-io, skipped on libreoffice).",
+    "cause": "arg-semantics",
+    "scope": [
+      {
+        "kind": "ref-set",
+        "refs": [
+          "SHEET/sheet-by-name-string",
+          "SHEET/sheet-invalid-name",
+          "SHEET/sheet-no-arg",
+          "SHEET/sheet-self-ref"
+        ]
+      }
+    ],
+    "_meta": {
+      "batch": "lookup",
+      "confidence": "medium",
+      "evidence": "live pure-engine probe (formulas/pycel #NAME?; hyperformula/ironcalc single-sheet 1/#N/A) + recorded gsheets fixture (context-dependent 4/35/1/#REF!)",
+      "wants_probe": ["lookup-007"]
+    }
+  }
+]

@@ -1,0 +1,221 @@
+[
+  {
+    "content": "In these forks every functional engine agrees on the result; the only outlier is libreoffice, which records a blank cell. This is not a semantic divergence: the entire libreoffice fixture for the date, volatile, error-handling and divergences suites is uniformly [[null]] (0 of 89 date + 22 volatile + 45 error-handling entries carry a value), so the libreoffice recording is an empty/failed capture rather than a real evaluation. Treat the libreoffice branch as a missing recording, not a behavior. Example: =DATE(2025,3,15) gives 45731 on excel/gsheets/hyperformula/ironcalc/lattice/formulas/pycel and blank only on libreoffice.",
+    "cause": "TODO",
+    "scope": [
+      {
+        "kind": "ref-set",
+        "refs": [
+          "DATE/date-basic",
+          "DATE/date-leap-day",
+          "DATEVALUE/datevalue-invalid",
+          "DAY/day-from-date",
+          "MONTH/month-from-date",
+          "YEAR/year-from-date",
+          "TIMEVALUE/timevalue-basic",
+          "TIMEVALUE/timevalue-midnight",
+          "TIMEVALUE/timevalue-noon",
+          "COLUMN/column-of-explicit-ref",
+          "ROW/row-of-explicit-ref",
+          "ROW/row-of-target-cell",
+          "AVERAGE/average-with-one-error",
+          "COUNT/count-ignores-errors",
+          "ISERR/iserr-excludes-n-a",
+          "ISERROR/iserror-on-clean-value",
+          "ISERROR/iserror-on-n-a",
+          "ISNA/isna-on-n-a",
+          "MAX/max-with-error",
+          "MIN/min-with-error",
+          "SUM/sum-with-one-n-a"
+        ]
+      }
+    ],
+    "_meta": {
+      "batch": "date-volatile-errors",
+      "confidence": "high",
+      "evidence": "recorded fixtures: libreoffice.json is 100% [[null]] across all four suites",
+      "wants_probe": []
+    }
+  },
+  {
+    "content": "The pycel #NAME? in these forks is a driver-integration artifact, not a statement about the pycel library's function coverage. The assay pycel driver returns #NAME? for ANY formula that contains a binary or unary operator (+, -, *, /, ^, &, >, >=, <, <=, =, <>, or a leading unary minus), while formulas built only from function calls, cell references and literals evaluate normally. Confirmed live: =1+1, =2*3, =5>3, =ABS(-5) all return #NAME?, whereas =SUM(1,2,3), =ISNUMBER(5) and =CONCATENATE(\"a\",\"b\") evaluate. In every ref here the functional engines agree on the real answer; pycel #NAME? arises purely because the formula carries an operator (e.g. the >= in =NOW()>=TODAY(), the division in =IFERROR(1/0,\"err\"), or the unary minus in =SQRT(-1)). libreoffice is additionally blank (empty recording).",
+    "cause": "unimplemented-edge",
+    "scope": [
+      {
+        "kind": "ref-set",
+        "refs": [
+          "NOW/now-ge-today",
+          "NOW/now-gt-zero",
+          "TODAY/today-gt-zero",
+          "IFERROR/iferror-catches-div-0",
+          "IFNA/ifna-does-not-catch-div-0",
+          "ISERR/iserr-on-div-0",
+          "ISERROR/iserror-on-div-0",
+          "ISNA/isna-on-div-0",
+          "SQRT/num-error",
+          "SUM/sum-with-one-div-0"
+        ]
+      }
+    ],
+    "_meta": {
+      "batch": "date-volatile-errors",
+      "confidence": "high",
+      "evidence": "live probe (date-volatile-errors-probe2/probe4): pycel #NAME? on every operator-bearing formula incl =1+1; corpus pycel matches (=1+1, =10/3 -> #NAME?)",
+      "wants_probe": []
+    }
+  },
+  {
+    "content": "pycel does not implement these functions, so it returns #NAME? where the other engines compute a value. TIME, COUNTA, RAND, RANDBETWEEN are absent from the pycel build (TIME and COUNTA are already catalogued as pycel-missing in DV-0001; RAND and RANDBETWEEN confirmed live: =RANDBETWEEN(5,5) and =ISNUMBER(RAND()) return #NAME? with no operator present to confound). Note that for the comparison/aggregate-wrapped RAND and RANDBETWEEN refs (e.g. =RAND()>=0, =AND(RANDBETWEEN(-10,-5)>=-10,...)) the pycel driver's operator limitation would independently produce #NAME? even if the function existed. libreoffice is additionally blank.",
+    "cause": "missing-function",
+    "scope": [
+      {
+        "kind": "ref-set",
+        "refs": [
+          "TIME/time-basic",
+          "COUNTA/counta-counts-errors",
+          "RAND/rand-ge-zero",
+          "RAND/rand-lt-one",
+          "RAND/rand-returns-number",
+          "RANDBETWEEN/randbetween-bounds-low",
+          "RANDBETWEEN/randbetween-negative-range"
+        ]
+      }
+    ],
+    "_meta": {
+      "batch": "date-volatile-errors",
+      "confidence": "high",
+      "evidence": "live probe: pycel =RANDBETWEEN(5,5)/=ISNUMBER(RAND()) -> #NAME?; NOW()/TODAY() work standalone; DV-0001 lists TIME, COUNTA as pycel-missing",
+      "wants_probe": []
+    }
+  },
+  {
+    "content": "The recorded pycel fixtures show #NAME? for these IFERROR/IFNA cases, but the currently-installed pycel evaluates them correctly, so this is version-skew between the corpus recording (generatedAt 2026-06-17) and the present pycel build. Confirmed live: =IFERROR(#N/A,\"fallback\") -> \"fallback\", =IFERROR(42,\"err\") -> 42, =IFNA(#N/A,\"caught\") -> \"caught\", =IFNA(42,\"caught\") -> 42 all now agree with the other engines. At recording time pycel lacked IFERROR/IFNA (returning #NAME?); the newer build implements them. (Cases where the IFERROR/IFNA argument is itself a computed error such as 1/0 remain #NAME? even on the current build, for the separate operator reason.) libreoffice is additionally blank.",
+    "cause": "version-skew",
+    "scope": [
+      {
+        "kind": "ref-set",
+        "refs": [
+          "IFERROR/iferror-catches-n-a",
+          "IFERROR/iferror-passes-clean-value",
+          "IFNA/ifna-catches-n-a-only",
+          "IFNA/ifna-passes-clean-value"
+        ]
+      }
+    ],
+    "_meta": {
+      "batch": "date-volatile-errors",
+      "confidence": "high",
+      "evidence": "live probe (date-volatile-errors-probe3): current pycel returns the caught/clean value; corpus fixture records #NAME?",
+      "wants_probe": []
+    }
+  },
+  {
+    "content": "TIME(hours, minutes, seconds) rolls oversized fields into the day fraction. For the hours field, excel/gsheets/hyperformula/ironcalc/formulas apply modulo 24, so =TIME(25,0,0) = 1/24 = 0.041667 and =TIME(48,0,0) = 0. lattice does NOT reduce the hours modulo 24: it returns 25/24 = 1.041667, carrying the extra day into the integer part. Minute and second overflow rolls the same way on all engines (=TIME(0,90,0) = 0.0625 everywhere). Confirmed live on hyperformula/ironcalc/formulas (all 0.041667); lattice value is from the recorded fixture. pycel returns #NAME? (TIME not implemented) and libreoffice is blank.",
+    "cause": "arg-semantics",
+    "scope": [{ "kind": "ref-set", "refs": ["TIME/time-overflow-rolls"] }],
+    "_meta": {
+      "batch": "date-volatile-errors",
+      "confidence": "high",
+      "evidence": "live probe: hyperformula/ironcalc/formulas TIME(25,0,0)=0.041667, TIME(48,0,0)=0; lattice=1.041667 recorded",
+      "wants_probe": ["dve-005"]
+    }
+  },
+  {
+    "content": "HyperFormula (and pycel) reject a TEXT date argument in these date functions, returning #VALUE!, whereas excel/gsheets/ironcalc/formulas/lattice coerce an ISO-8601 string like \"2023-01-01\" to a date serial and compute a value. The split is coercion, not the function/type: confirmed live that hyperformula returns #VALUE! for =WEEKNUM(\"2023-01-01\",21), =ISOWEEKNUM(\"2023-01-01\") and =YEARFRAC(\"2025-01-01\",\"2026-01-01\",b) for every basis, but returns the correct 52 / 1.013889 the moment the argument is a real date (=WEEKNUM(DATE(2023,1,1),21)=52, =WEEKNUM(44927,21)=52, =YEARFRAC(45658,46023,2)=1.013889). pycel behaves identically for YEARFRAC (#VALUE! on the string, 1.013889 with DATE() args), and additionally lacks WEEKNUM entirely (#NAME?). libreoffice is blank.",
+    "cause": "arg-semantics",
+    "scope": [
+      { "kind": "ref-set", "refs": ["WEEKNUM/weeknum-iso-system", "YEARFRAC/yearfrac-actual-360"] }
+    ],
+    "_meta": {
+      "batch": "date-volatile-errors",
+      "confidence": "high",
+      "evidence": "live probe (date-volatile-errors-probe1/probe5): hyperformula #VALUE! on text date, correct value on DATE()/serial; pycel same for YEARFRAC",
+      "wants_probe": ["dve-002", "dve-003"]
+    }
+  },
+  {
+    "content": "IFERROR applied to an array argument is where these engines split. excel/gsheets/hyperformula/formulas/lattice broadcast element-wise, replacing only the error positions: =IFERROR({1,#N/A,3},0) = {1,0,3} and =IFERROR(10/{1,0,2},-1) = {10,-1,5}. ironcalc does not implement the array form and returns its explicit unimplemented sentinel #N/IMPL!. pycel does not broadcast: for =IFERROR({1,#N/A,3},0) it collapses to the scalar fallback 0, and for =IFERROR(10/{1,0,2},-1) it returns #NAME? (the array division carries the driver's operator limitation). libreoffice is blank. Confirmed live: ironcalc #N/IMPL! on both; hyperformula/formulas broadcast correctly.",
+    "cause": "array-handling",
+    "scope": [
+      {
+        "kind": "ref-set",
+        "refs": [
+          "IFERROR/iferror-over-array-with-errors",
+          "IFERROR/iferror-over-division-with-zero"
+        ]
+      }
+    ],
+    "_meta": {
+      "batch": "date-volatile-errors",
+      "confidence": "high",
+      "evidence": "live probe: ironcalc #N/IMPL! for both array IFERRORs; hyperformula/formulas element-wise; pycel scalar 0 / #NAME?",
+      "wants_probe": ["dve-007"]
+    }
+  },
+  {
+    "content": "The formula is =SUM(A1:A3) over a seeded grid where A1=1, A2==1/0, A3=3. excel and gsheets return 4 (the A2 cell contributes nothing), while formulas/hyperformula/ironcalc/lattice evaluate A2 to a live #DIV/0! and propagate it, returning #DIV/0!. The most likely mechanism is seeding fidelity: the pure engines evaluate the formula-valued grid seed =1/0 into a real error inside the range, whereas the excel/gsheets recording does not produce a live error in A2 (a formula-valued seed that lands as text or an un-recalculated value would be skipped by SUM, giving 1+3=4). This needs live excel/gsheets confirmation of how a formula-valued grid seed is ingested. pycel returns #NAME? because the seed cell =1/0 trips its operator limitation; libreoffice is blank.",
+    "cause": "TODO",
+    "scope": [{ "kind": "ref-set", "refs": ["SUM/sum-of-range-with-error-cell"] }],
+    "_meta": {
+      "batch": "date-volatile-errors",
+      "confidence": "medium",
+      "evidence": "recorded fixtures (excel/gsheets=4, pure engines #DIV/0!) + live confirmation that pure engines evaluate the seed; excel/gsheets ingestion unverified",
+      "wants_probe": ["dve-001"]
+    }
+  },
+  {
+    "content": "RANDARRAY in 5-argument integer mode, =RANDARRAY(1,3,1,10,TRUE), is an Excel dynamic-array function. Only excel evaluates it, spilling a 1x3 array of random integers (recorded [3,9,2]). gsheets returns #N/A. formulas, hyperformula, ironcalc and pycel all return #NAME? because they do not implement RANDARRAY (confirmed live for all four pure engines). This makes RANDARRAY effectively Excel-only across the catalogue; portable code should avoid it. The excel-vs-gsheets distinction (spill vs #N/A) is worth live confirmation.",
+    "cause": "missing-function",
+    "scope": [{ "kind": "ref-set", "refs": ["RANDARRAY/randarray-integer-mode"] }],
+    "_meta": {
+      "batch": "date-volatile-errors",
+      "confidence": "high",
+      "evidence": "live probe: formulas/hyperformula/ironcalc/pycel all #NAME?; excel [3,9,2], gsheets #N/A from recorded fixtures",
+      "wants_probe": ["dve-004"]
+    }
+  },
+  {
+    "content": "The formula =INT(RANDBETWEEN(1,10))=RANDBETWEEN(1,10) calls RANDBETWEEN twice and compares the two independent draws. Because RANDBETWEEN always returns an integer, INT(x)=x reduces to whether the two draws happen to be equal, which is non-deterministic (probability ~1/10). The recorded fork (excel TRUE; formulas/gsheets/hyperformula/ironcalc FALSE) is therefore volatility noise, not a semantic divergence: a live hyperformula run of this exact formula returned TRUE, flipping its recorded FALSE. pycel returns #NAME? (RANDBETWEEN missing plus the comparison operator). This case cannot yield a stable cross-engine relationship and should be treated as inherently flaky.",
+    "cause": "recalc-semantics",
+    "scope": [{ "kind": "ref-set", "refs": ["RANDBETWEEN/randbetween-returns-integer"] }],
+    "_meta": {
+      "batch": "date-volatile-errors",
+      "confidence": "high",
+      "evidence": "live probe: hyperformula returned TRUE for this formula (recorded FALSE), demonstrating non-determinism",
+      "wants_probe": []
+    }
+  },
+  {
+    "content": "=NOW() is volatile: each engine samples its own machine/server clock at evaluation time, so every engine records a different serial and no two are expected to match. Beyond the sub-second sampling jitter there is a systematic ~0.30-day (~7 hour) offset: excel/formulas/hyperformula/pycel cluster around 46190.528 while gsheets (46190.834) and ironcalc (46190.819) sit ~0.30 higher, consistent with those two capturing the timestamp in a different (later / UTC vs local) timezone than the local-machine engines. This is expected volatile/timezone behavior, not a functional divergence. The related boolean probes =NOW()>=TODAY() and =NOW()>0 are TRUE on every engine that evaluates them.",
+    "cause": "recalc-semantics",
+    "scope": [{ "kind": "ref-set", "refs": ["NOW/now"] }],
+    "_meta": {
+      "batch": "date-volatile-errors",
+      "confidence": "high",
+      "evidence": "recorded fixtures: six distinct NOW() serials; gsheets/ironcalc ~0.30 higher (timezone) than excel/formulas/hyperformula/pycel",
+      "wants_probe": []
+    }
+  },
+  {
+    "content": "=COLUMN() with no argument returns the column index of the cell that holds the formula, so its value depends on where each driver stages the formula, not on engine semantics. Most engines placed it at column 27 (returning 27) while lattice staged it one column earlier and returned 26. The test itself documents this as cell-position-dependent (the portable COLUMN(<ref>) tests verify 1-indexing instead). This is a harness placement artifact; libreoffice is additionally blank.",
+    "cause": "TODO",
+    "scope": [{ "kind": "ref-set", "refs": ["COLUMN/column-of-target-cell"] }],
+    "_meta": {
+      "batch": "date-volatile-errors",
+      "confidence": "high",
+      "evidence": "recorded fixtures + tests/volatile.yaml inline comment: COLUMN() is cell-position-dependent by design",
+      "wants_probe": []
+    }
+  },
+  {
+    "content": "=LAMBDA(x, x+1)(5) defines an anonymous function and immediately invokes it with 5, expecting 6. Support is tiered: excel, gsheets and lattice implement LAMBDA with immediate invocation and return 6. formulas and hyperformula recognize the token but fail to evaluate the immediate-invocation form, returning parse/evaluation errors (#VALUE! and #ERROR! respectively). ironcalc and pycel do not implement LAMBDA at all and return #NAME?. libreoffice is blank. LAMBDA (and the LET/lambda-helper family) is therefore a modern-Excel / gsheets / lattice feature that is not portable to the calculation-library engines.",
+    "cause": "missing-function",
+    "scope": [{ "kind": "ref-set", "refs": ["LAMBDA/lambda-named-function-inline-cost"] }],
+    "_meta": {
+      "batch": "date-volatile-errors",
+      "confidence": "high",
+      "evidence": "recorded fixtures: excel/gsheets/lattice=6, formulas #VALUE!, hyperformula #ERROR!, ironcalc/pycel #NAME?",
+      "wants_probe": ["dve-006"]
+    }
+  }
+]

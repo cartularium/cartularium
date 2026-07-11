@@ -1,0 +1,186 @@
+[
+ {
+  "ref": "HYPERLINK/hyperlink-url-only",
+  "suite": "external",
+  "subject": "HYPERLINK",
+  "name": "hyperlink-url-only",
+  "formula": "=HYPERLINK(\"https://example.com\")",
+  "tags": [
+   "web"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "formulas",
+     "ironcalc",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "gsheets",
+     "hyperformula"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "string",
+        "v": "https://example.com"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "HYPERLINK/hyperlink-with-label",
+  "suite": "external",
+  "subject": "HYPERLINK",
+  "name": "hyperlink-with-label",
+  "formula": "=HYPERLINK(\"https://example.com\", \"click me\")",
+  "tags": [
+   "web"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "formulas",
+     "ironcalc",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "gsheets",
+     "hyperformula"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "string",
+        "v": "click me"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "lit:boolean/false-basic",
+  "suite": "external",
+  "subject": "FALSE",
+  "name": "false-basic",
+  "formula": "=FALSE()",
+  "tags": [
+   "logical"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "boolean",
+        "v": false
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "lit:boolean/true-basic",
+  "suite": "external",
+  "subject": "TRUE",
+  "name": "true-basic",
+  "formula": "=TRUE()",
+  "tags": [
+   "logical"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "boolean",
+        "v": true
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ }
+]

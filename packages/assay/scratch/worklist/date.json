@@ -1,0 +1,848 @@
+[
+ {
+  "ref": "DATE/date-basic",
+  "suite": "date",
+  "subject": "DATE",
+  "name": "date-basic",
+  "formula": "=DATE(2025, 3, 15)",
+  "tags": [
+   "date"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 45731
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "DATE/date-leap-day",
+  "suite": "date",
+  "subject": "DATE",
+  "name": "date-leap-day",
+  "formula": "=DATE(2024, 2, 29)",
+  "tags": [
+   "date"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 45351
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "DATEVALUE/datevalue-invalid",
+  "suite": "date",
+  "subject": "DATEVALUE",
+  "name": "datevalue-invalid",
+  "formula": "=DATEVALUE(\"not a date\")",
+  "tags": [
+   "date"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#VALUE!"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "DAY/day-from-date",
+  "suite": "date",
+  "subject": "DAY",
+  "name": "day-from-date",
+  "formula": "=DAY(DATE(2025, 3, 15))",
+  "tags": [
+   "date"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 15
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "MONTH/month-from-date",
+  "suite": "date",
+  "subject": "MONTH",
+  "name": "month-from-date",
+  "formula": "=MONTH(DATE(2025, 7, 4))",
+  "tags": [
+   "date"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 7
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "NOW/now",
+  "suite": "date",
+  "subject": "NOW",
+  "name": "now",
+  "formula": "=NOW()",
+  "tags": [
+   "date",
+   "volatile"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 46190.52933055555
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "formulas"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 46190.528078703705
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "gsheets"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 46190.83351994213
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 46190.527766
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "ironcalc"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 46190.819444444445
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 46190.52780092593
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "TIME/time-basic",
+  "suite": "date",
+  "subject": "TIME",
+  "name": "time-basic",
+  "formula": "=TIME(9, 30, 0)",
+  "tags": [
+   "date"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.3958333333333333
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.39583333333
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.395833333
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "TIME/time-overflow-rolls",
+  "suite": "date",
+  "subject": "TIME",
+  "name": "time-overflow-rolls",
+  "formula": "=TIME(25, 0, 0)",
+  "tags": [
+   "date"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.041666666666666664
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.04166666666666674
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.041666666667
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.041666667
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 1.0416666666666667
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "TIMEVALUE/timevalue-basic",
+  "suite": "date",
+  "subject": "TIMEVALUE",
+  "name": "timevalue-basic",
+  "formula": "=TIMEVALUE(\"13:30:00\")",
+  "tags": [
+   "date"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.5625
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "TIMEVALUE/timevalue-midnight",
+  "suite": "date",
+  "subject": "TIMEVALUE",
+  "name": "timevalue-midnight",
+  "formula": "=TIMEVALUE(\"00:00:00\")",
+  "tags": [
+   "date"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 0
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "TIMEVALUE/timevalue-noon",
+  "suite": "date",
+  "subject": "TIMEVALUE",
+  "name": "timevalue-noon",
+  "formula": "=TIMEVALUE(\"12:00:00\")",
+  "tags": [
+   "date"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 0.5
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "WEEKNUM/weeknum-iso-system",
+  "suite": "date",
+  "subject": "WEEKNUM",
+  "name": "weeknum-iso-system",
+  "formula": "=WEEKNUM(\"2023-01-01\", 21)",
+  "tags": [
+   "date"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 52
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#VALUE!"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#NAME?"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "YEAR/year-from-date",
+  "suite": "date",
+  "subject": "YEAR",
+  "name": "year-from-date",
+  "formula": "=YEAR(DATE(1999, 12, 31))",
+  "tags": [
+   "date"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "hyperformula",
+     "ironcalc",
+     "lattice",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 1999
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "ref": "YEARFRAC/yearfrac-actual-360",
+  "suite": "date",
+  "subject": "YEARFRAC",
+  "name": "yearfrac-actual-360",
+  "formula": "=YEARFRAC(\"2025-01-01\", \"2026-01-01\", 2)",
+  "tags": [
+   "date"
+  ],
+  "partition": [
+   {
+    "engines": [
+     "excel",
+     "formulas",
+     "gsheets",
+     "ironcalc",
+     "lattice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "number",
+        "v": 1.0138888888888888
+       }
+      ]
+     ],
+     [
+      [
+       {
+        "c": "number",
+        "v": 1.013888889
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "hyperformula",
+     "pycel"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "error",
+        "v": "#VALUE!"
+       }
+      ]
+     ]
+    ]
+   },
+   {
+    "engines": [
+     "libreoffice"
+    ],
+    "values": [
+     [
+      [
+       {
+        "c": "blank"
+       }
+      ]
+     ]
+    ]
+   }
+  ]
+ }
+]
