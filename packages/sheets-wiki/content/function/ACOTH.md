@@ -4,7 +4,9 @@ category: math
 syntax: ACOTH(value)
 status: imported
 description: The ACOTH function returns the inverse hyperbolic cotangent of a value in radians.
-tags: []
+tags:
+  - modified
+  - undocumented
 ---
 > [!INFO]
 > This page was originally generated from [official documentation](https://support.google.com/docs/answer/9084097?hl=en).
@@ -42,6 +44,20 @@ ACOTH(A1)
 | **2** | 4 | =ACOTH(A2) | 0.2554128119 |
 | **3** | -4 | =ACOTH(A3) | -0.2554128119 |
 | **4** |  | =ACOTH(10) | 0.1003353477 |
+
+### Engine compatibility
+
+Unlike [[ACOT]], ACOTH has no branch-cut ambiguity: it is defined only for |x| > 1, and every implementing engine agrees on both the values (`ACOTH(2)` = 0.5493061, `ACOTH(-2)` = -0.5493061) and the domain error. An argument with |x| < 1 (or exactly ±1) returns `#NUM!` — confirmed live on Excel for `ACOTH(0.5)` (probe, 2026-07-11). The only fork is pycel, which does not implement ACOTH.
+
+| Engine | Behavior |
+| --- | --- |
+| Google Sheets | Supported; `#NUM!` for \|x\| < 1. |
+| Excel | Supported; `ACOTH(0.5)` → `#NUM!` (live probe, 2026-07-11). |
+| HyperFormula | Supported (live probe, 2026-07-11). |
+| IronCalc | Supported (live probe, 2026-07-11). |
+| formulas | Supported (live probe, 2026-07-11). |
+| pycel | Not implemented; returns `#NAME?` (live probe, 2026-07-11). |
+| Lattice | Supported. |
 
 ### Related functions
 

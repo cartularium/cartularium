@@ -4,7 +4,9 @@ category: math
 syntax: MUNIT(dimension)
 status: imported
 description: The MUNIT function returns a unit matrix of size dimension x dimension.
-tags: []
+tags:
+  - modified
+  - undocumented
 ---
 > [!INFO]
 > This page was originally generated from [official documentation](https://support.google.com/docs/answer/9368156?hl=en).
@@ -55,6 +57,20 @@ Result for A1= `MUNIT(3)`
 | **1** | 1 | 0 | 0 |
 | **2** | 0 | 1 | 0 |
 | **3** | 0 | 0 | 1 |
+
+### Engine compatibility
+
+MUNIT is implemented by Excel, Google Sheets, `formulas`, and Lattice, but **not by HyperFormula, IronCalc, or pycel** (`#NAME?`). Where it exists, the **error code for an invalid size argument is not portable**: `MUNIT(0)` returns `#VALUE!` in Excel, `formulas`, and Lattice (rejecting the argument as the wrong type/shape) but `#NUM!` in Google Sheets (rejecting it as a number out of range). Do not branch on the specific error code across engines (assay: MUNIT/munit-zero-error; live probe, 2026-07-11).
+
+| Engine | Behavior |
+| --- | --- |
+| Google Sheets | Supported; `MUNIT(0)` → `#NUM!`. |
+| Excel | Supported; `MUNIT(0)` → `#VALUE!`. |
+| HyperFormula | Not implemented; returns `#NAME?` (live probe, 2026-07-11). |
+| IronCalc | Not implemented; returns `#NAME?` (live probe, 2026-07-11). |
+| formulas | Supported; `MUNIT(0)` → `#VALUE!` (live probe, 2026-07-11). |
+| pycel | Not implemented; returns `#NAME?` (live probe, 2026-07-11). |
+| Lattice | Supported; `MUNIT(0)` → `#VALUE!`. |
 
 ### Related functions
 

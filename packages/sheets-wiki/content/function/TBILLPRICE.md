@@ -4,7 +4,9 @@ category: financial
 syntax: TBILLPRICE(settlement, maturity, discount)
 status: imported
 description: Calculates the price of a US Treasury Bill based on discount rate.
-tags: []
+tags:
+  - modified
+  - undocumented
 ---
 > [!INFO]
 > This page was originally generated from [official documentation](https://support.google.com/docs/answer/3093251?hl=en).
@@ -34,6 +36,20 @@ TBILLPRICE(settlement, maturity, discount)
 - `TBILLPRICE` is equivalent to using `PRICEDISC` with US Treasury Bill conventions for the absent parameters.
 - `maturity` must be one year or less from the `settlement` date.
 - `discount` is a percentage and must be entered as a positive number from zero to one.
+
+### Engine compatibility
+
+The Treasury-bill functions are more widely supported than the coupon-bond analytics (PRICE, YIELD, and the like, which HyperFormula and IronCalc lack). TBILLPRICE is implemented by Excel, Google Sheets, HyperFormula, IronCalc, `formulas`, and Lattice; only **pycel** lacks it (`#NAME?`). The day-count is actual/360 by definition and the engines agree on it — the only cross-engine difference is precision: the full-precision engines agree to about `1e-12` (`TBILLPRICE` = 98.39305555555555 on the deep-dive case), while IronCalc returns the same value at a coarser display read-back (98.39). Compare TBILL results to a tolerance (assay: TBILL deep dive, 2026-07-11).
+
+| Engine | Behavior |
+| --- | --- |
+| Google Sheets | Supported. |
+| Excel | Supported. |
+| HyperFormula | Supported. |
+| IronCalc | Supported; reduced display precision. |
+| formulas | Supported. |
+| pycel | Not implemented; returns `#NAME?`. |
+| Lattice | Supported. |
 
 ### See Also
 

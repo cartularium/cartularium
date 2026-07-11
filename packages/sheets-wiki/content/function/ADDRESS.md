@@ -4,7 +4,7 @@ category: lookup
 syntax: ADDRESS(row, column, [absolute_relative_mode], [use_a1_notation], [sheet])
 status: imported
 description: Returns a cell reference as a string.
-tags: []
+tags: [modified, undocumented]
 ---
 > [!INFO]
 > This page was originally generated from [official documentation](https://support.google.com/docs/answer/3093308?hl=en).
@@ -34,6 +34,23 @@ ADDRESS(row, column, [absolute_relative_mode], [use_a1_notation], [sheet])
 ### Notes
 
 - When using optional parameters such as `sheet`, ensure that commas are inserted to indicate which parameter is being set.
+
+### Engine compatibility
+
+The four-argument forms (`ADDRESS(row, col)`, `ADDRESS(row, col, abs_num)`) are portable across Excel, Google Sheets, Lattice, HyperFormula, and formulas. The fifth `sheet` argument narrows portability, and the *quoting* of the sheet name is where behavior splits. Testing `=ADDRESS(1,1,1,TRUE,"Sheet2")`:
+
+| Engine | Behavior |
+| --- | --- |
+| Google Sheets | `Sheet2!$A$1` — quotes the sheet name only when it needs quoting. |
+| Excel | `Sheet2!$A$1` — conditional quoting. A space-containing name is quoted: `=ADDRESS(1,1,1,TRUE,"My Sheet")` gives `'My Sheet'!$A$1` (live Excel probe, 2026-07-11). |
+| Lattice | `Sheet2!$A$1` — conditional quoting. |
+| formulas | `'Sheet2'!$A$1` — *always* wraps the sheet name in single quotes, even when no quoting is needed (live probe, 2026-07-11). |
+| HyperFormula | `#NAME?` — implements the base `ADDRESS` (`ADDRESS(1,1)` → `$A$1`) but rejects the 5-argument `sheet` form specifically (live probe, 2026-07-11). |
+| IronCalc | `#NAME?` — `ADDRESS` not implemented at all (live probe, 2026-07-11). |
+| pycel | `#NAME?` — not implemented (live probe, 2026-07-11). |
+
+> [!INFO]
+> Round-tripping `ADDRESS` output back into a reference is safe either way (a quoted simple name is still valid), but a string comparison of `ADDRESS` output across engines will mismatch, because `formulas` quotes unconditionally where Excel/Sheets/Lattice do not.
 
 ### See Also
 

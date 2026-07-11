@@ -23,10 +23,27 @@ A common point of confusion is "numeric strings"—text that looks like a number
 - `="123"` is a string.
 - `123` is a number.
 
-Strings cannot be used in mathematical operations without [[Type coercion|coercion]].
+Strings cannot be used in mathematical operations without [[Type coercion|coercion]]. In an aggregate, whether a numeric string is coerced depends on **how it arrives**: passed as a direct scalar argument it coerces, but a numeric string sitting inside a range or an array literal is **skipped**, not coerced. `=SUM(A1:A3)` over text cells `"1"`, `"2"`, `"3"` returns `0` in Excel and Google Sheets, because text in a range does not participate (assay: SUM/sum-of-string-range). To sum numbers-stored-as-text, coerce explicitly with `VALUE()`, `--`, or `*1`.
+
+### The empty string
+
+The empty (zero-length) string `""` is a text value, but a *cell* holding `""` sits on a cross-engine fault line — the [[Blank#The empty-string boundary|empty-string boundary]]. Google Sheets, HyperFormula, and IronCalc treat such a cell as a text value; Excel and the LibreOffice family treat it as [[Blank|blank]]. This changes what `ISBLANK`, `COUNTA`, and `COUNTBLANK` report over columns that can contain `""` (very common in `=IF(cond, x, "")` helper columns and CSV imports). See [[Blank]].
+
+### Cross-type comparison
+
+In a comparison that mixes types, text ranks **between** numbers and [[Boolean|booleans]]: number < text < boolean. Any string outranks any number, and any boolean outranks any string.
+
+```gse
+"a" > 1      → TRUE    (text outranks every number)
+"a" > TRUE   → FALSE   (but boolean outranks text)
+```
+
+Text-versus-text comparison is lexicographic (`"apple" < "banana"` → `TRUE`). This ordering holds on Excel, Google Sheets, IronCalc, and the `formulas` engine (live probe, 2026-07-11).
 
 ### See Also
 - [[Data type]] — Overview of the Sheets type system.
+- [[Blank]] — the empty-string-versus-blank boundary.
 - [[Type coercion]] — How strings convert to other types.
+- [[Number]], [[Boolean]] — the other operands in cross-type comparison ordering.
 - [[TEXT]] — Function to format numbers into strings.
 - [[T]] — Function to verify if a value is a string.

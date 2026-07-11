@@ -44,6 +44,14 @@ Jagged arrays consist of rows or columns of varying lengths padded with null val
 In Google Sheets, jagged arrays behave similarly to regular arrays and are especially useful when combined with [[LAMBDA Helper Functions]].
 In Excel, however, they are generally considered [[Bad Practice|bad practice]] due to inconsistent behavior across functions.
 
+### Cross-engine behavior
+
+Array literals, virtual arrays, and ordinary [[INDEX]] access are portable — every tracked engine agrees on them. The behaviors that differ across engines fall into three areas, each with its own page:
+
+- **Combining arrays of different shapes.** A scalar against an array and a row vector against a column vector broadcast the same way everywhere, but mismatched shapes do not: Excel pads the overflow with `#N/A` while Google Sheets collapses to a single value. See [[Broadcasting]].
+- **Constructing variable-size arrays.** The [[Dynamic array|dynamic-array]] functions ([[SEQUENCE]], [[HSTACK]], [[VSTACK]], [[SORT]], [[UNIQUE]], [[FILTER]], [[FLATTEN]], and the reshape family) are fully available only in Excel, Google Sheets, and Lattice; HyperFormula, IronCalc, and pycel implement few or none of them and return `#NAME?`. [[FLATTEN]] is Google-Sheets-proprietary and absent from Excel entirely. See [[Dynamic array]].
+- **Formulas that never store.** Excel rejects some array formulas at entry — `=INDEX(A1:A3)` with `row_num` omitted, `=AND()`, `=SUM()` — leaving a genuinely empty cell rather than a value or an error. See [[Entry rejection]].
+
 ### Notes
 
 Non-vector arrays containing over **2,147,483,647** (2^31 - 1) elements will crash the sheet. Any array containing over **10,000,000** elements will output `#VALUE!`.

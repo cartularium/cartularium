@@ -4,7 +4,7 @@ category: filter
 syntax: SORT(range, sort_column, is_ascending, [sort_column2, is_ascending2, ...])
 status: imported
 description: Sorts the rows of a given array or range by the values in one or more columns.
-tags: []
+tags: [modified, undocumented]
 ---
 > [!INFO]
 > This page was originally generated from [official documentation](https://support.google.com/docs/answer/3093150?hl=en).
@@ -37,6 +37,23 @@ SORT(range, sort_column, is_ascending, [sort_column2, is_ascending2, ...])
 ### Notes
 
 - `range` is sorted *only* by the specified columns, other columns are returned in the order they originally appear.
+
+### Engine compatibility
+
+`SORT`'s third argument means different things in Google Sheets and Excel — a genuine product-signature difference, not a bug, and a portability landmine. Google Sheets uses `is_ascending` (a boolean), whereas Excel uses `sort_order` (`1` = ascending, `-1` = descending). The same literal `-1` therefore sorts *opposite* directions. Testing `=SORT({3;1;2}, 1, -1)`:
+
+| Engine | Behavior |
+| --- | --- |
+| Google Sheets | `{1;2;3}` (ascending) — `-1` is truthy, so `is_ascending` is true. |
+| Excel | `{3;2;1}` (descending) — `-1` is `sort_order` = descending. |
+| Lattice | `{3;2;1}` — follows the Excel `sort_order` signature. |
+| formulas | `{3;2;1}` — follows the Excel `sort_order` signature (live probe, 2026-07-11). |
+| HyperFormula | `#NAME?` — `SORT` not implemented (live probe, 2026-07-11). |
+| IronCalc | `#NAME?` — not implemented (live probe, 2026-07-11). |
+| pycel | `#NAME?` — not implemented (live probe, 2026-07-11). |
+
+> [!INFO]
+> The numeric third argument is the trap: this page documents Google Sheets' `is_ascending`, so an Excel author who copies `SORT(x, 1, -1)` expecting descending order will silently get ascending order in Sheets. Write the direction unambiguously — `FALSE` for descending in Google Sheets, `-1` for descending in Excel — rather than copying the numeric form across products. As a dynamic-array function, `SORT` is also entirely absent from HyperFormula, IronCalc, and pycel.
 
 ### See Also
 

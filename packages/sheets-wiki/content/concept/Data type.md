@@ -22,9 +22,11 @@ Sheets recognizes the following core types:
 | [[Array]]   | Two-dimensional collections of values that may spill across multiple cells.         |
 | [[Lambda]]  | Executable terms created using `LAMBDA` or related constructs.                      |
 | [[Error]]   | Runtime signals representing failed evaluation. Propagate through most expressions. |
-| [[Null]]    | Conceptual type for **blank cells** or expressions with no value.                   |
+| [[Null]]    | Conceptual type for the absence of a value in a formula expression.                 |
 
 Higher-level constructs such as [[LAMBDA data structures]] are derived from these base types.
+
+A [[Null|null]] (the absence of a value inside a formula) is distinct from a [[Blank|blank cell]] (an empty cell in the grid) and from the empty [[String|string]] `""`. All three display as nothing, but they behave differently — and the boundary between blank and empty string is not consistent across engines. See [[Blank]].
 
 ### Internal representation
 
@@ -88,13 +90,24 @@ Some expressions encapsulate multiple values or behaviors:
 - [[Lambda]] terms hold executable expressions.
 - [[LAMBDA data structures]] simulate user-defined structures.
 
-These may be considered compound types, though Sheets does not support type introspection.
+These may be considered compound types. Sheets offers only limited type introspection: [[TYPE]] returns a numeric code for a value's type (`1` number, `2` text, `4` boolean, `16` error, `64` array), and the `IS*` predicates ([[ISNUMBER]], [[ISTEXT]], [[ISLOGICAL]], and so on) test individual types, but there is no general facility for inspecting the internal structure of a compound value.
 
 ### Type errors
 
 If a value cannot be coerced into the expected type, evaluation produces an error such as `#VALUE!` or `#N/A`.
 
+### Cross-engine behavior
+
+The core value semantics of the type system are broadly portable: the same formula over the same typed inputs generally produces the same value across engines. The divergences cluster at a few boundaries, and other engines' type systems differ from Google Sheets' mainly in how they *ingest* and *classify* values rather than in the arithmetic itself.
+
+- **Blank versus empty string.** A cell holding a zero-length string `""` is treated as blank by Excel, the `formulas` engine, pycel, and Lattice, but as a text value by Google Sheets, HyperFormula, and IronCalc. This is the single sharpest type divergence; it is documented in [[Blank]].
+- **Cross-type comparison ordering.** When a comparison mixes types, Google Sheets ranks whole types rather than coercing: number < text < boolean. Excel, IronCalc, and the `formulas` engine agree; Lattice is the outlier, ranking booleans below numbers (assay: GT/gt-boolean-vs-number; live probe, 2026-07-11). See [[Boolean#Cross-type comparison]].
+- **Coercion in aggregates.** Numbers-stored-as-text and booleans are skipped inside ranges and array literals (Excel and Google Sheets behavior) but coerced as direct scalar arguments. Several engines disagree — `formulas`, HyperFormula, IronCalc, and Lattice each coerce text and/or booleans in some position where Sheets skips them (assay: SUM/sum-of-string-range, SUM/boolean-array-in-sum).
+- **Type introspection portability.** The [[TYPE]] codes (1/2/4/16/64) are portable across Excel, Google Sheets, IronCalc, and Lattice. HyperFormula does not implement `TYPE` at all (returns `#NAME?`), and pycel leaks Python's `type()` — returning class strings like `<class 'int'>` instead of a numeric code (assay: TYPE/type-of-number; live probe, 2026-07-11).
+- **Precision exposure.** Google Sheets and Excel store and render numbers to ~15 significant figures; the pure JavaScript/Python engines expose the full IEEE 754 double. The arithmetic agrees — only the trailing digits differ. See [[Number#Engine compatibility]].
+
 ### See Also
+- [[Blank]] — the blank / empty-string boundary across engines.
 - [[Type coercion]] — conversion rules between types.
 - [[Number]], [[String]], [[Boolean]], [[Null]], [[Array]], [[Lambda]], [[Error]] — type-specific behavior.
 - [[Datetime]], [[Date]], [[Time]] — date and time storage as serial numbers.

@@ -4,7 +4,9 @@ category: engineering
 syntax: DEC2OCT(decimal_number, [significant_digits])
 status: imported
 description: The DEC2OCT function converts a decimal number to signed octal format.
-tags: []
+tags:
+  - modified
+  - undocumented
 ---
 > [!INFO]
 > This page was originally generated from [official documentation](https://support.google.com/docs/answer/3093138?hl=en).
@@ -37,6 +39,20 @@ DEC2OCT(decimal_number, [significant_digits])
 
 - If the number of digits required is greater than the specified `significant_digits`, the `#NUM!` error is returned.
 - Ensure that any calculations using the result of DEC2OCT take into account that it is in octal. Results will be silently converted by Google Sheets; thus if cell `A2` contains `111`, the octal equivalent of the decimal value `73`, and `B2` contains a formula such as `=A2+9`, the result will be `120`, which is incorrect in octal calculation.
+
+### Engine compatibility
+
+The signed two's-complement convention is portable across every tracked engine: the operand is a fixed 10-digit octal field, the most significant bit is the sign bit, and the domain runs to `2^39 - 1` positive and `-2^39` negative. `DEC2OCT(8)` = "10" and `DEC2OCT(-1)` = "7777777777" agree across Excel, Google Sheets, HyperFormula, IronCalc, `formulas`, and Lattice (assay: BASE-CONVERSIONS deep dive, 2026-07-11). The only fork is pycel, which implements only the non-negative domain and returns `#NAME?` for a negative first argument — the reverse conversion [[OCT2DEC]] on a two's-complement string works there.
+
+| Engine | Behavior |
+| --- | --- |
+| Google Sheets | Full two's-complement support. |
+| Excel | Same values and range. |
+| HyperFormula | Supported, including negative two's-complement results (live probe, 2026-07-11). |
+| IronCalc | Supported, including negatives (live probe, 2026-07-11). |
+| formulas | Supported, including negatives (live probe, 2026-07-11). |
+| pycel | Non-negative arguments only; a negative `decimal_number` returns `#NAME?` (live probe, 2026-07-11). |
+| Lattice | Supported, including negatives. |
 
 ### See Also
 

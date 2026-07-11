@@ -14,7 +14,7 @@ Google Sheets recognizes the following error types:
 |-------|------|---------------|
 | `#ERROR!` | ERROR | Generic error or circular dependency detected |
 | `#NULL!` | NULL_VALUE | Invalid range intersection (using space operator incorrectly) |
-| `#DIV/0` | DIVIDE_BY_ZERO | Division by zero or empty cell |
+| `#DIV/0!` | DIVIDE_BY_ZERO | Division by zero or empty cell |
 | `#VALUE!` | VALUE | Wrong type of argument or incompatible operation |
 | `#REF!` | REF | Invalid cell reference (deleted cells, out of bounds) |
 | `#NAME?` | NAME | Unrecognized function or range name |
@@ -32,6 +32,12 @@ Exceptions:
 - [[ISERROR]], [[ISERR]], [[ISNA]] can test for errors without propagating them
 - Certain functions like [[SUBTOTAL]] can ignore error values
 
+#### Propagation through aggregation
+
+The math aggregates return the first error they encounter rather than skipping it: `=SUM(1, NA(), 3)` returns `#N/A`, `=SUM(1, 1/0, 3)` returns `#DIV/0!`, and [[AVERAGE]], [[MAX]], and [[MIN]] behave the same way. The counting functions split on whether they count errors: [[COUNT]] ignores them (`=COUNT(1, NA(), 3, 1/0)` is `2`), while [[COUNTA]] counts every non-empty argument including errors (`=COUNTA(1, NA(), 3, 1/0)` is `4`). This propagate-through-SUM, ignore-in-COUNT, count-in-COUNTA behavior is portable across every engine that implements these functions (assay: SUM/sum-with-one-n-a, SUM/sum-with-one-div-0, AVERAGE/average-with-one-error, MAX/max-with-error, COUNT/count-ignores-errors, COUNTA/counta-counts-errors; live probe, 2026-07-11).
+
+Whether an error inside a *range* propagates depends on the cell holding a live error, not text that merely looks like one: a cell containing the literal string `=1/0` is inert and is skipped by [[SUM]], so `=SUM(A1:A3)` over `1`, `"=1/0"`, `3` is `4`, not `#DIV/0!`. A genuinely error-valued cell does propagate.
+
 ### Common Causes
 
 #### `#ERROR!`
@@ -43,7 +49,7 @@ Exceptions:
 - Incorrect use of space as intersection operator
 - Example: `=SUM(A1:A10 B1:B10)` when ranges don't intersect
 
-#### `#DIV/0`
+#### `#DIV/0!`
 - Dividing by zero: `=1/0`
 - Dividing by empty cell: `=A1/B1` where B1 is blank
 - Mathematical operations resulting in division by zero
@@ -84,8 +90,13 @@ In the Google Sheets API, errors are represented as `ErrorValue` objects contain
 - `type` — the error type enum (see table above)
 - `message` — localized descriptive message
 
+### Cross-engine error codes
+
+The error codes above are Google Sheets' vocabulary. Other spreadsheet engines recognize the same families but do not always assign the same code to the same failure. The same divide-by-zero condition inside a function can surface as `#DIV/0!` in Google Sheets and `#NUM!` in Excel; an out-of-bounds [[INDEX]] is `#NUM!` in Google Sheets and `#REF!` in Excel. Because the codes diverge but the failures do not, error handling that keys on the *presence* of an error ([[IFERROR]], [[ISERROR]]) is portable, while dispatch that keys on the *specific* code is not. See [[Error code portability]] for the catalogue of these splits and the portability guidance.
+
 ### See Also
 - [[IFERROR]] — handle errors with fallback values
 - [[IFNA]] — handle `#N/A` specifically
 - [[ISERROR]], [[ISERR]], [[ISNA]] — test for errors
+- [[Error code portability]] — how error codes differ across engines
 - [[Data type]] — core data types in Google Sheets

@@ -4,7 +4,9 @@ category: statistical
 syntax: PERCENTRANK(data, value, [significant_digits])
 status: imported
 description: Returns the percentage rank (percentile) of a specified value in a dataset.
-tags: []
+tags:
+  - modified
+  - undocumented
 ---
 > [!INFO]
 > This page was originally generated from [official documentation](https://support.google.com/docs/answer/3094095?hl=en).
@@ -32,6 +34,17 @@ PERCENTRANK(data, value, [significant_digits])
 
 - If `data` does not contain `value` in any cell or element, `PERCENTRANK` will return the `#N/A` error.
 - If a number less than or equal to 0 is used for `significant_digits` then this value will be ignored and the default number of significant digits will be used instead.
+
+### Engine compatibility
+
+The legacy `PERCENTRANK` (Excel 2007 and earlier; equivalent to [[PERCENTRANK.INC]]) reduces its result to a default of 3 significant digits, and the two spreadsheet products apply that reduction by different rules: **Excel truncates, Google Sheets rounds**. This is the same convention measured directly on [[PERCENTRANK.EXC]] (Excel 0.166 vs Google Sheets 0.167 for 1/6; Excel live probe, 2026-07-11), so results can differ in the last digit even when the underlying rank is identical. Pass a larger `significant_digits` or apply an explicit [[ROUND]] if the exact digit matters.
+
+Open-engine coverage was probed directly only for `PERCENTRANK.EXC` (not implemented in HyperFormula, IronCalc, or pycel) in the 2026-07-11 deep dive; the legacy `PERCENTRANK` form's coverage in those engines was not separately measured.
+
+| Engine | Behavior |
+| --- | --- |
+| Google Sheets | Supported; **rounds** the default 3-sig-digit result. |
+| Excel | Supported; **truncates** the default 3-sig-digit result (live probe, 2026-07-11). |
 
 ### See Also
 

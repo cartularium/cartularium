@@ -4,7 +4,7 @@ category: uncategorized
 syntax: XMATCH(search_key, lookup_range, [match_mode], [search_mode])
 status: imported
 description: XMATCH returns the relative position of an item in an array or range that matches a specified value.
-tags: []
+tags: [modified, undocumented]
 ---
 > [!INFO]
 > This page was originally generated from [official documentation](https://support.google.com/docs/answer/12406049?hl=en).
@@ -61,6 +61,23 @@ Lookup table for all examples.
 `XMATCH` with `match_mode` = `1` and `match_mode` = `-1` and `search_mode` omitted.
 
 ![XMATCH with match_mode = 1 and match_mode = -1 and search_mode omitted.](https://storage.googleapis.com/support-kms-prod/zPfF7mcLwj5T3PGxFYCxP2IwY1gEwuS85s7x)
+
+### Engine compatibility
+
+`XMATCH` (Excel 2020) is the successor to [[MATCH]], with a not-found default of `#N/A`. Support is a presence/absence split; where implemented, engines agree. `=XMATCH(99, {1,2,3})` (not found) returns `#N/A`:
+
+| Engine | Behavior |
+| --- | --- |
+| Google Sheets | Implemented; `#N/A` when not found. |
+| Excel | Implemented; `#N/A` when not found. |
+| Lattice | Implemented; `#N/A` when not found. |
+| formulas | Implemented; `#N/A` not-found, `2` for an in-range match (live probe, 2026-07-11). |
+| HyperFormula | `#NAME?` — not implemented; the error is unconditional, not a data-dependent not-found (live probe, 2026-07-11). |
+| IronCalc | `#NAME?` — not implemented (live probe, 2026-07-11). |
+| pycel | `#NAME?` — not implemented (live probe, 2026-07-11). |
+
+> [!INFO]
+> Not portable to HyperFormula, IronCalc, or pycel — all three return `#NAME?` whether or not the value is found. A plain [[MATCH]] is the portable fallback (it is implemented on every evaluating engine).
 
 ### Related functions
 
