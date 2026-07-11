@@ -1,0 +1,13 @@
+id: DV-0383
+summary: "libreoffice: VALUE(\"TRUE\") coerces the boolean word to 1 where excel, formulas, gsheets, hyperformula, ironcalc, lattice, pycel yield #VALUE!"
+cause: arg-semantics
+category: value
+engines:
+  - libreoffice
+test-count: 1
+subjects:
+  - VALUE
+tests:
+  - VALUE/value-of-boolean-string
+seeded: 2026-07-11
+last-confirmed: 2026-07-11

@@ -1,0 +1,17 @@
+id: DV-0384
+summary: "formulas, hyperformula, ironcalc, libreoffice, pycel: function not implemented — SEQUENCE (spill-fit case surfaced once libreoffice fixtures computed)"
+cause: missing-function
+category: value
+engines:
+  - formulas
+  - hyperformula
+  - ironcalc
+  - libreoffice
+  - pycel
+test-count: 1
+subjects:
+  - feature:spill-blocking
+tests:
+  - feature:spill-blocking/no-block-when-result-fits
+seeded: 2026-07-11
+last-confirmed: 2026-07-11
