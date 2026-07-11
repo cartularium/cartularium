@@ -1,9 +1,8 @@
 id: DV-0344
-summary: "libreoffice, pycel: formulas surface without an evaluated result (libreoffice: blank cell, pycel: #NAME?) even on baseline operator inputs — op:+, op:& (+2 more)"
+summary: "pycel: formulas surface without an evaluated result (#NAME?) even on baseline operator inputs — op:+, op:& (+2 more)"
 cause: recalc-semantics
 category: value
 engines:
-  - libreoffice
   - pycel
 test-count: 5
 subjects:

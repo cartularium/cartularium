@@ -1,5 +1,5 @@
 id: DV-0335
-summary: "excel, libreoffice: ragged array literal yields a blank cell at entry; formulas rejects it; gsheets, lattice #VALUE!; hyperformula #REF!; ironcalc #ERROR!; pycel evaluates to the first element — lit:array"
+summary: "excel: ragged array literal yields a blank cell at entry; formulas rejects it; gsheets, lattice #VALUE!; hyperformula #REF!; ironcalc #ERROR!; pycel evaluates to the first element — lit:array"
 cause: error-code
 category: value
 engines:
@@ -9,7 +9,6 @@ engines:
   - hyperformula
   - ironcalc
   - lattice
-  - libreoffice
   - pycel
 test-count: 1
 subjects:

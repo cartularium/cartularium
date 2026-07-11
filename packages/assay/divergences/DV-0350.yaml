@@ -1,10 +1,9 @@
 id: DV-0350
-summary: "ironcalc: comparison over array operands returns a single boolean instead of the elementwise array produced by excel, formulas, gsheets, hyperformula, lattice (libreoffice a blank cell, pycel #NAME?) — op:=, op:> (+3 more)"
+summary: "ironcalc: comparison over array operands returns a single boolean instead of the elementwise array produced by excel, formulas, gsheets, hyperformula, lattice (pycel #NAME?) — op:=, op:> (+3 more)"
 cause: shape
 category: value
 engines:
   - ironcalc
-  - libreoffice
   - pycel
 test-count: 5
 subjects:

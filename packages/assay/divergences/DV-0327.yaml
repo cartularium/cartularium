@@ -1,10 +1,9 @@
 id: DV-0327
-summary: "ironcalc, libreoffice, pycel: operator broadcasting over arrays/ranges not evaluated (ironcalc #N/IMPL!, libreoffice a blank cell, pycel #NAME?) where excel, formulas, gsheets, hyperformula, lattice produce the elementwise result — op:+, op:* (+4 more)"
+summary: "ironcalc, pycel: operator broadcasting over arrays/ranges not evaluated (ironcalc #N/IMPL!, pycel #NAME?) where excel, formulas, gsheets, hyperformula, lattice produce the elementwise result — op:+, op:* (+4 more)"
 cause: array-handling
 category: value
 engines:
   - ironcalc
-  - libreoffice
   - pycel
 test-count: 13
 subjects:

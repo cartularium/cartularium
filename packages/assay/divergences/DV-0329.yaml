@@ -1,11 +1,10 @@
 id: DV-0329
-summary: "gsheets, pycel: array literal collapsed by implicit intersection to its top-left element where excel, formulas, hyperformula, lattice map elementwise (ironcalc #N/IMPL!, libreoffice blank) — LEN"
+summary: "gsheets, pycel: array literal collapsed by implicit intersection to its top-left element where excel, formulas, hyperformula, lattice map elementwise (ironcalc #N/IMPL!) — LEN"
 cause: array-handling
 category: value
 engines:
   - gsheets
   - ironcalc
-  - libreoffice
   - pycel
 test-count: 1
 subjects:

@@ -1,12 +1,11 @@
 id: DV-0302
-summary: "gsheets: range operands implicitly intersect to a scalar where excel, formulas, lattice spill the full array; hyperformula spills under an operator but returns #VALUE! for a bare range; pycel intersects a bare range but #NAME?s under an operator (ironcalc #N/IMPL!, libreoffice a blank cell) — feature:implicit-intersection"
+summary: "gsheets: range operands implicitly intersect to a scalar where excel, formulas, lattice spill the full array; hyperformula spills under an operator but returns #VALUE! for a bare range; pycel intersects a bare range but #NAME?s under an operator (ironcalc #N/IMPL!) — feature:implicit-intersection"
 cause: shape
 category: value
 engines:
   - gsheets
   - hyperformula
   - ironcalc
-  - libreoffice
   - pycel
 test-count: 2
 subjects:

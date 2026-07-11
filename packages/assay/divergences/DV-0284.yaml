@@ -1,11 +1,10 @@
 id: DV-0284
-summary: "formulas: broadcast with mismatched array shapes rejected where excel, gsheets, hyperformula, lattice pad the out-of-range cells with #N/A (ironcalc #N/IMPL!, libreoffice blank, pycel #NAME?) — ADD"
+summary: "formulas: broadcast with mismatched array shapes rejected where excel, gsheets, hyperformula, lattice pad the out-of-range cells with #N/A (ironcalc #N/IMPL!, pycel #NAME?) — ADD"
 cause: array-handling
 category: value
 engines:
   - formulas
   - ironcalc
-  - libreoffice
   - pycel
 test-count: 3
 subjects:

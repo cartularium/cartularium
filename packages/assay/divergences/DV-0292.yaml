@@ -1,10 +1,9 @@
 id: DV-0292
-summary: "lattice: zero-argument COLUMN() resolves the host cell to the adjacent column (26 vs 27 on the majority branch); libreoffice: cell left blank as elsewhere in this suite — COLUMN"
+summary: "lattice: zero-argument COLUMN() resolves the host cell to the adjacent column (26 vs 27 on the majority branch) — COLUMN"
 cause: arg-semantics
 category: value
 engines:
   - lattice
-  - libreoffice
 test-count: 1
 subjects:
   - COLUMN

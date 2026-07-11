@@ -1,12 +1,11 @@
 id: DV-0347
-summary: "excel, gsheets: surface #VALUE! for an error cell met during range broadcasting where formulas, hyperformula, lattice surface #DIV/0! in that position (ironcalc #N/IMPL!, libreoffice a blank cell, pycel #NAME?) — op:+"
+summary: "excel, gsheets: surface #VALUE! for an error cell met during range broadcasting where formulas, hyperformula, lattice surface #DIV/0! in that position (ironcalc #N/IMPL!, pycel #NAME?) — op:+"
 cause: error-code
 category: value
 engines:
   - excel
   - gsheets
   - ironcalc
-  - libreoffice
   - pycel
 test-count: 1
 subjects:

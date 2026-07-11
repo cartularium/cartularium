@@ -1,5 +1,5 @@
 id: DV-0367
-summary: "lattice: SORTBY returns rows in input order where excel, formulas return them ordered by the by-array; gsheets, hyperformula, ironcalc, pycel: function not implemented (#NAME?); libreoffice: no value produced (blank) — SORTBY"
+summary: "lattice: SORTBY returns rows in input order where excel, formulas return them ordered by the by-array; gsheets, hyperformula, ironcalc, pycel: function not implemented (#NAME?) — SORTBY"
 cause: arg-semantics
 category: value
 engines:
@@ -7,7 +7,6 @@ engines:
   - hyperformula
   - ironcalc
   - lattice
-  - libreoffice
   - pycel
 test-count: 1
 subjects:

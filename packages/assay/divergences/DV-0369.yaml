@@ -1,10 +1,9 @@
 id: DV-0369
-summary: "pycel: array literal collapsed to its first element instead of mapping elementwise (ironcalc #N/IMPL!, libreoffice blank) where excel, formulas, gsheets, hyperformula, lattice map elementwise — SQRT, UPPER"
+summary: "pycel: array literal collapsed to its first element instead of mapping elementwise (ironcalc #N/IMPL!) where excel, formulas, gsheets, hyperformula, lattice map elementwise — SQRT, UPPER"
 cause: array-handling
 category: value
 engines:
   - ironcalc
-  - libreoffice
   - pycel
 test-count: 2
 subjects:

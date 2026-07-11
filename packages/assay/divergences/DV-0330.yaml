@@ -1,12 +1,11 @@
 id: DV-0330
-summary: "formulas: LET with three binding pairs rejected where one- and two-pair forms are accepted; hyperformula, ironcalc, pycel: function not implemented (#NAME?); libreoffice: no value produced (blank) — LET"
+summary: "formulas: LET with three binding pairs rejected where one- and two-pair forms are accepted; hyperformula, ironcalc, pycel: function not implemented (#NAME?) — LET"
 cause: argument-arity
 category: value
 engines:
   - formulas
   - hyperformula
   - ironcalc
-  - libreoffice
   - pycel
 test-count: 1
 subjects:

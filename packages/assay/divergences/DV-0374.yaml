@@ -1,10 +1,9 @@
 id: DV-0374
-summary: "ironcalc: numeric precision differs (values rounded to fewer decimal places); pycel: function not implemented (#NAME?); libreoffice: returns blank — TBILLEQ, TBILLPRICE (+1 more)"
+summary: "ironcalc: numeric precision differs (values rounded to fewer decimal places); pycel: function not implemented (#NAME?) — TBILLEQ, TBILLPRICE (+1 more)"
 cause: precision
 category: value
 engines:
   - ironcalc
-  - libreoffice
   - pycel
 test-count: 5
 subjects:

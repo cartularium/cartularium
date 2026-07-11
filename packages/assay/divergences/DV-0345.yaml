@@ -1,5 +1,5 @@
 id: DV-0345
-summary: "formulas, lattice: omitted element inside an array constant treated as 0 in arithmetic; excel, libreoffice yield a blank cell at entry; gsheets, hyperformula, ironcalc #ERROR!; pycel #NAME? — op:+"
+summary: "formulas, lattice: omitted element inside an array constant treated as 0 in arithmetic; excel yields a blank cell at entry; gsheets, hyperformula, ironcalc #ERROR!; pycel #NAME? — op:+"
 cause: null-vs-zero
 category: value
 engines:
@@ -9,7 +9,6 @@ engines:
   - hyperformula
   - ironcalc
   - lattice
-  - libreoffice
   - pycel
 test-count: 1
 subjects:
