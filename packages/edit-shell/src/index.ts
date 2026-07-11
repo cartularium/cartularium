@@ -7,6 +7,7 @@ import { requestId } from "./middleware/request-id"
 import { requireSession } from "./middleware/session"
 import assetsRoutes from "./routes/assets"
 import assayForkAnnotationRoutes from "./routes/assay-fork-annotations"
+import assayPublicRoutes from "./routes/assay-public"
 import assayPreviewRoutes from "./routes/assay-preview"
 import assayRunnerRoutes from "./routes/assay-runner"
 import authRoutes from "./routes/auth"
@@ -22,6 +23,10 @@ app.use("*", requestId)
 app.onError(errorLogger)
 
 app.use("/api/edit/*", originCheck)
+
+// The public read lane — sessionless, published-only, CORS-open (store-delivery D-A1).
+// Deliberately OUTSIDE /api/edit/* so none of the authoring-shell middleware applies.
+app.route("/api/assay", assayPublicRoutes)
 
 app.get("/api/edit/health", (c) => c.json({ ok: true }))
 app.route("/api/edit/auth", authRoutes)

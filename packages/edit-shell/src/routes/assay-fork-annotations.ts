@@ -73,7 +73,7 @@ const VerifyBody = v.object({
 
 // === row <-> DTO ===
 
-interface ForkAnnotationRow {
+export interface ForkAnnotationRow {
   id: string
   author_id: string
   content: string
@@ -86,7 +86,9 @@ interface ForkAnnotationRow {
   updated_at: string
 }
 
-function rowToAnnotation(row: ForkAnnotationRow): AssayForkAnnotationV1 {
+// exported for the public read lane (routes/assay-public.ts), which serves published rows
+// through the same DTO mapping.
+export function rowToAnnotation(row: ForkAnnotationRow): AssayForkAnnotationV1 {
   const annotation: AssayForkAnnotationV1 = {
     id: row.id,
     author_id: row.author_id,
