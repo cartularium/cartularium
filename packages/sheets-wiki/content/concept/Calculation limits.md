@@ -4,6 +4,9 @@ tags:
   - terminology
 ---
 
+> [!INFO]
+> The function-call model below (sections on call counting, HOF overhead, and the stack limit) was verified live against Google Sheets on 2026-07-11 using the assay measurement driver; every boundary in the counting model reproduced to the exact element. The remaining limits — array size, string length, nesting depth, argument count, and numeric overflow — were measured in the same run and are collected under [[#Other calculation limits]].
+
 Google Sheets enforces two independent limits on each formula cell:
 
 1. **Function call limit** — `2,000,000` calls per cell
@@ -241,6 +244,44 @@ ROWS(1) + MAP(1) + SEQUENCE(1) + LAMBDA(1) + param_x(1) + call_overhead(2) = 7
 
 The stack limit is `10,000` calls, applying to LAMBDA recursion and iterative calculation. It is entirely separate from the function call limit. Church-encoded lists in Google Sheets may appear to circumvent this limit due to how closures are handled.
 
+The boundary is exact. A self-applying recursive lambda descends cleanly to depth `9,999` and returns; at depth `10,000` it outputs `#ERROR!`. Because the per-level body can be made cheap, the stack limit is reached long before the function call limit: a 10,000-deep recursion accrues only on the order of 70,000 calls, so the failure is unambiguously the stack limit and not the `2,000,000` call limit, even though both surface the same `#ERROR!` sentinel (live probe, 2026-07-11).
+
+---
+
+## Other calculation limits
+
+Beyond the function call limit and the stack limit, a formula cell is subject to several further limits. Each was measured live (live probe, 2026-07-11). Unlike the call and stack limits — both of which surface as `#ERROR!` — these fail in their own distinct ways.
+
+### Array size limit
+
+The largest array a single formula may build is `10,000,000` elements. The bound is inclusive: `=ROWS(MAP(SEQUENCE(10000000), LAMBDA(x,)))` returns `10000000`, while `=SEQUENCE(10000001)` returns `#VALUE!`. This is a third independent limit, and its error is `#VALUE!`, not the `#ERROR!` of the call and stack limits.
+
+The array limit is what binds when a lambda body has cost 0. With an empty body the call count never grows past the fixed HOF overhead, so a formula can iterate over far more than `2,000,000` elements — `=ROWS(MAP(SEQUENCE(3000000), LAMBDA(x,)))` returns `3000000` — right up to the `10,000,000` array ceiling.
+
+Spilling an array larger than the sheet's current grid does not itself produce `#REF!`: Google Sheets grows the grid to accommodate the spill (a `SEQUENCE(51)` written into a 50-row sheet expands it to 551 rows and fills all 51 cells). A spill `#REF!` arises only when the target cells already hold data. The effective ceiling on a spilled array is therefore the `10,000,000` array limit, not the sheet's starting dimensions.
+
+### String length limit
+
+A string _produced by a function_ is capped at `50,000` characters. `=CONCATENATE(REPT("a",25000), REPT("a",25000))` (50,000 characters) succeeds; one character more returns `#VALUE!`. `REPT` carries its own, lower cap and returns `#VALUE!` once its output would exceed roughly `32,000` characters.
+
+The `50,000`-character cap applies to computed results, not to string literals. A literal typed directly into a formula — `="aaaa…"` — is stored intact well past that length; a 500,000-character literal round-trips without error. Consequently the same length that fails when built with `REPT` or `CONCATENATE` succeeds when written as a literal.
+
+### Nesting depth
+
+Deeply nested function calls fail differently from every other limit on this page. A formula nested to roughly `280` levels — `=ABS(ABS(…ABS(1)…))` — still evaluates and returns; past that depth the evaluation crashes server-side and the API returns an HTTP `500` rather than any formula error. The exact cutoff drifts by a few levels between runs, consistent with a server call-stack limit rather than a fixed, declared bound. In the editor this surfaces as a formula that never resolves rather than one that returns an error value.
+
+### Argument count
+
+Google Sheets imposes no low per-function argument cap. `=SUM(1,1,…,1)` with `24,000` arguments returns `24000`; the only ceiling is the formula's overall text length. This differs from Excel, which caps most functions at 255 arguments.
+
+### Formula length
+
+The text of a single formula may be very long — cells accepting formulas well over `2,000,000` characters were written without rejection. Formula length is not a practically binding limit, and in particular is not governed by the `50,000`-character string cap described above, which applies to computed string _values_ rather than formula _text_.
+
+### Numeric overflow
+
+Arithmetic that exceeds the largest representable double-precision value (approximately `1.7977 × 10^308`) returns `#NUM!`; Google Sheets never yields infinity. `=POWER(10,308)` returns `1E+308`, `=POWER(10,309)` returns `#NUM!`; `=2^1023` succeeds, `=2^1024` returns `#NUM!`.
+
 ---
 
 ## Practical Implications
@@ -300,6 +341,22 @@ The stack limit is `10,000` calls, applying to LAMBDA recursion and iterative ca
 |SCAN|9|
 |BYROW / BYCOL|7 or 8 (depends on SEQUENCE args)|
 |MAKEARRAY|8|
+
+### Other limits
+
+|Limit|Value|Failure mode|
+|---|---|---|
+|Function calls per cell|2,000,000|`#ERROR!`|
+|Stack / recursion depth|10,000|`#ERROR!`|
+|Array size|10,000,000 elements|`#VALUE!`|
+|Computed string length|50,000 characters|`#VALUE!`|
+|`REPT` output length|~32,000 characters|`#VALUE!`|
+|Nesting depth|~280 levels|server error (HTTP 500)|
+|Argument count|none (bounded by formula length)|—|
+|Numeric magnitude|~1.7977 × 10^308|`#NUM!`|
+
+Literal string values and formula text length are not subject to practically binding caps.
+
 ### Further Reading
 
 - [Calculation Limits](https://docs.google.com/spreadsheets/d/160UfdYEOoplAaKzm4Cx4rF0NNWwd6b2KC3LH3xAr-jk/edit#gid=0)

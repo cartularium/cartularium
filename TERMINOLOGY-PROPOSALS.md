@@ -129,3 +129,39 @@ Coined or redefined terms, one line each. Maintainer reviews.
 - **`concept/Data type.md`** — added that the blank/empty-string boundary and cross-type comparison ordering are engine-dependent; the isolated-gsheets framing was sharpened to cross-engine truth. Evidence: assay COUNTA/counta-empty-string-cell, GT/gt-boolean-vs-number; live probe 2026-07-11.
 - **`concept/Number.md`** — "approximately 15 decimal digits of precision" clarified as the Google Sheets / Excel ~15-significant-figure storage-and-render cap, contrasted with pure JS/Python engines that expose full IEEE-754 doubles. Evidence: gsheets-lane-notes.md (CONVERT `3.28083989501312`, 15-sig-fig cap); live probe 2026-07-11 (formulas `=1/3` → `0.3333333333333333`).
 - **`concept/Boolean.md`** — added the aggregation arrival-path rule (booleans skipped inside ranges/array literals, coerced as direct scalar args) and the cross-type comparison ordering (booleans rank above all numbers/text); the `SUM(TRUE, TRUE, FALSE) → 2` example is the scalar-arg case and is left as-is. Evidence: assay SUM/boolean-array-in-sum, GT/gt-boolean-vs-number; deep-dive SUM-PRODUCT-coercion.md.
+
+---
+
+# Terminology proposals & corrections — calc-limits lane (2026-07-11)
+
+## Coined terms
+
+None. The additions to `concept/Calculation limits.md` reuse the page's existing descriptive
+vocabulary (function call limit, stack limit, HOF overhead, pass-through position). The one new
+distinction introduced — a string _produced by a function_ versus a string _literal_ — is stated in
+plain prose rather than as a coined term, so no [[Unofficial terminology]] WARNING was added.
+
+## Corrections
+
+The wiki's function-call / HOF / stack model needed **no correction** — all 28 boundary pairs tested
+reproduced live to the exact element. The changes below are additions and one refinement, not
+overturns.
+
+| Page                       | Was → Now                                                                                                                                                                                                                                            | Evidence                                                                                                |
+| -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
+| concept/Calculation limits | (implicit) all limits output `#ERROR!` → the array-size limit is a third independent limit that errors with `#VALUE!`, distinct from the `#ERROR!` of the call and stack limits                                                                      | live probe: `=SEQUENCE(10000001)` → `#VALUE!`; `=ROWS(MAP(SEQUENCE(10000000),LAMBDA(x,)))` → `10000000` |
+| concept/Calculation limits | (absent) → new section "Other calculation limits": array size 10,000,000 (`#VALUE!`), computed-string 50,000 / REPT ~32,000 (`#VALUE!`), nesting depth ~280 (HTTP 500), argument count uncapped, formula length >2,000,000, numeric overflow `#NUM!` | live probes 2026-07-11 (see deep-dive-2026-07-11/calc-limits/NOTES.md)                                  |
+| concept/Calculation limits | (absent) → stack-limit boundary stated exactly (9,999 ok / 10,000 `#ERROR!`) and shown to bind well before the call limit (~70k calls at depth 10,000)                                                                                               | live probe: self-applying recursive lambda, depth bisection                                             |
+
+## Cross-engine claims to verify
+
+- The new "Argument count" subsection states Excel "caps most functions at 255 arguments." This is a
+  widely-documented Excel limit but was **not** measured in this gsheets-only lane; the gsheets side
+  (no independent argument cap; `SUM` of 24,000 args returns 24000) **was** measured live. Flagging
+  for maintainer confirmation of the Excel half.
+
+## Notes on the machine-verified vs community-derived split
+
+An `> [!INFO]` provenance callout was added near the top recording that the call-counting model, HOF
+overhead, and stack limit were machine-verified live on 2026-07-11, and that the other limits were
+measured in the same run. No part of the pre-existing page was found to be community-derived-but-wrong.
