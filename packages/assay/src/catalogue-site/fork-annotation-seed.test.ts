@@ -40,6 +40,15 @@ describe("dvsToSeedRows", () => {
     });
   });
 
+  it("prefers an authored `scope` over the tests ref-set fallback (3f reclassify)", () => {
+    const scope = [
+      { kind: "predicate" as const, query: { tags: ["complex-number"], subjectIn: ["IMSUM"] } },
+      { kind: "ref-set" as const, refs: ["IMDIV/imdiv-basic"] },
+    ];
+    const { rows } = dvsToSeedRows([dv({ scope, tests: ["IMSUM/a"] })], NOW);
+    expect(rows[0].scope_json).toBe(JSON.stringify(scope)); // authored scope wins verbatim
+  });
+
   it("normalises the legacy `feature-absent` cause to missing-function with a warning", () => {
     const { rows, warnings } = dvsToSeedRows([dv({ id: "DV-0255", cause: "feature-absent" })], NOW);
     expect(rows[0].cause).toBe("missing-function");

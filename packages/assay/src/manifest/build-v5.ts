@@ -46,7 +46,13 @@ export const MANIFEST_V5_VERSION = 5 as const;
 // observation manifest, where tag-predicates resolve against them. A GATE re-applied every build
 // (not a one-time sweep), since new tags keep being authored; extend the set as new outcome-claim
 // tags surface.
-const OUTCOME_CLAIM_TAGS = new Set(["divergence", "coercion-divergence", "excel-only"]);
+const OUTCOME_CLAIM_TAGS = new Set([
+  "divergence",
+  "coercion-divergence",
+  "excel-only",
+  // asserts a cross-engine outcome; found published on 10 regex cases (3f audit, 2026-07-11)
+  "engine-divergence",
+]);
 
 function gateTags(tags: string[] | undefined): string[] | undefined {
   if (!tags) return undefined;
@@ -179,7 +185,12 @@ export function buildManifestV5(input: BuildManifestV5Input): ManifestV5 {
 
   const testsByFn = indexTestsByFunction(input.tests, fnSet);
 
-  // per-test entries (function-subject tests only, matching the manifest scope) + fork set
+  // per-test entries — EVERY corpus case, function-subject or not (op:* / lit:* / feature:* /
+  // legacy:*). The V4-era function-only gate silently dropped 88 observed cases (86 with live
+  // fixture outcomes, several fork-bearing) from the published relation layer — clipping truth,
+  // which the charter forbids (thresholds route cost, never truth). Widened 2026-07-11 (3f,
+  // reclassify-policy D-3f-4): the `functions` rollup below stays function-scoped (it iterates
+  // fnSet), so this only ADDS test entries; it cannot leak non-functions into the rollup.
   const tests: Record<string, ManifestV5TestEntry> = {};
   const aliases: Record<string, ManifestV5AliasEntry> = {};
   const hashes: Record<`sha256:${string}`, string> = {};
@@ -188,7 +199,6 @@ export function buildManifestV5(input: BuildManifestV5Input): ManifestV5 {
   const fnEngineObs = new Map<string, Map<Platform, EngineObservation[]>>();
 
   for (const [tid, t] of input.tests) {
-    if (!isFunctionName(t.subject)) continue;
     const ref = t.ref ?? tid;
     const byEngine = outcomesFor(input.outcomes, t, ref) ?? new Map<Platform, Outcome>();
     const entry = buildTestEntry(t, ref, byEngine);

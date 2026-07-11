@@ -17,6 +17,57 @@ describe("catalogue corpus links", () => {
 
     expect(unresolved).toEqual([]);
   });
+
+  it("resolves every authored scope ref-set ref and subjectIn subject in the current corpus", () => {
+    const tests = loadTests("tests");
+    const subjects = new Set([...tests.values()].map((t) => t.subject));
+    const problems = loadDvs("divergences").flatMap((dv) =>
+      (dv.scope ?? []).flatMap((clause) => {
+        if (clause.kind === "ref-set") {
+          return clause.refs.filter((r) => !tests.has(r)).map((r) => `${dv.id}: ref ${r}`);
+        }
+        return (clause.query.subjectIn ?? [])
+          .filter((s) => !subjects.has(s))
+          .map((s) => `${dv.id}: subject ${s}`);
+      }),
+    );
+    expect(problems).toEqual([]);
+  });
+});
+
+describe("DV scope parsing (yaml `scope:` sugar, 3f)", () => {
+  function loadOne(yaml: string): ReturnType<typeof loadDvs> {
+    const dir = mkdtempSync(join(tmpdir(), "assay-dv-"));
+    writeFileSync(join(dir, "DV-9999.yaml"), yaml);
+    return loadDvs(dir);
+  }
+  const base = "id: DV-9999\nsummary: s\ncause: precision\ncategory: value\ntests:\n  - A/a\n";
+
+  it("parses a ref-set clause and a predicate clause", () => {
+    const [dv] = loadOne(base + "scope:\n  - refs: [A/a, B/b]\n  - tags: [complex-number]\n    subjectIn: [IMSUM]\n");
+    expect(dv.scope).toEqual([
+      { kind: "ref-set", refs: ["A/a", "B/b"] },
+      { kind: "predicate", query: { tags: ["complex-number"], subjectIn: ["IMSUM"] } },
+    ]);
+  });
+
+  it("omits scope when the yaml has none (migration default applies downstream)", () => {
+    const [dv] = loadOne(base);
+    expect(dv.scope).toBeUndefined();
+  });
+
+  it("rejects a clause mixing refs with predicate keys", () => {
+    expect(() => loadOne(base + "scope:\n  - refs: [A/a]\n    tags: [x]\n")).toThrow(/refs XOR/);
+  });
+
+  it("rejects unknown clause keys (observed dims are not yaml-authorable)", () => {
+    expect(() => loadOne(base + "scope:\n  - enginesAlone: [pycel]\n")).toThrow(/unknown clause key/);
+  });
+
+  it("rejects an empty scope list and empty string tokens", () => {
+    expect(() => loadOne(base + "scope: []\n")).toThrow(/non-empty list of clauses/);
+    expect(() => loadOne(base + 'scope:\n  - refs: [""]\n')).toThrow(/non-empty strings/);
+  });
 });
 
 // minimal rich cell — isRichGrid needs both `primitive` and `engine` (see build-v5.test.ts)

@@ -3,6 +3,7 @@
 import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 import * as YAML from "yaml";
+import type { ScopeClause } from "@cartularium/contracts";
 import { loadTestSuite } from "../format/parse.js";
 import { caseKey } from "../identity/index.js";
 import { liftEntryToOutcome, type LegacyEntry } from "../fixtures.js";
@@ -18,8 +19,58 @@ export interface DvEntry {
   testCount: number;
   subjects: string[];
   tests: string[];
+  /** authored scope clauses (yaml `scope:`, 3f) — the seed exporter prefers this over the
+   * `tests` ref-set fallback. When present alongside a predicate clause, `tests` is the V4
+   * render substrate / materialized snapshot at reclassify time, not kept in sync. */
+  scope?: ScopeClause[];
   seeded: string;
   lastConfirmed: string;
+}
+
+// YAML `scope:` sugar (reclassify-policy-2026-07-11.md D-3f-2): a clause is `refs` XOR the
+// author-declared predicate dimensions (`tags` / `subjectIn`). Observed dimensions
+// (`enginesAlone`/`valueKind`/`sentinel`) are NOT yaml-authorable — they ride the deferred
+// fork-property matcher; the store schema admits them, the sugar just doesn't author them.
+// Malformed scope fails the load (fail fast, never a silent ref-set fallback).
+function parseDvScope(raw: unknown, id: string): ScopeClause[] | undefined {
+  if (raw === undefined || raw === null) return undefined;
+  if (!Array.isArray(raw) || raw.length === 0) {
+    throw new Error(`${id}: scope must be a non-empty list of clauses`);
+  }
+  return raw.map((clause, i) => {
+    const at = `${id}: scope[${i}]`;
+    if (typeof clause !== "object" || clause === null || Array.isArray(clause)) {
+      throw new Error(`${at}: a clause must be a mapping`);
+    }
+    const keys = Object.keys(clause as Record<string, unknown>);
+    const unknown = keys.filter((k) => !["refs", "tags", "subjectIn"].includes(k));
+    if (unknown.length > 0) {
+      throw new Error(`${at}: unknown clause key(s) ${unknown.join(", ")} (yaml-authorable: refs | tags/subjectIn)`);
+    }
+    const c = clause as { refs?: unknown; tags?: unknown; subjectIn?: unknown };
+    const strList = (v: unknown, field: string): string[] => {
+      if (!Array.isArray(v) || v.length === 0 || !v.every((s) => typeof s === "string" && s.trim().length > 0)) {
+        throw new Error(`${at}: ${field} must be a non-empty list of non-empty strings`);
+      }
+      return v as string[];
+    };
+    if (c.refs !== undefined) {
+      if (c.tags !== undefined || c.subjectIn !== undefined) {
+        throw new Error(`${at}: a clause is refs XOR a predicate (tags/subjectIn), not both`);
+      }
+      return { kind: "ref-set", refs: strList(c.refs, "refs") };
+    }
+    if (c.tags === undefined && c.subjectIn === undefined) {
+      throw new Error(`${at}: a clause needs refs or at least one of tags/subjectIn`);
+    }
+    return {
+      kind: "predicate",
+      query: {
+        ...(c.tags !== undefined ? { tags: strList(c.tags, "tags") } : {}),
+        ...(c.subjectIn !== undefined ? { subjectIn: strList(c.subjectIn, "subjectIn") } : {}),
+      },
+    };
+  });
 }
 
 export interface TestInfo {
@@ -64,6 +115,7 @@ export function loadDvs(dir: string): DvEntry[] {
       testCount: raw["test-count"] ?? raw.tests?.length ?? 0,
       subjects: raw.subjects ?? [],
       tests: raw.tests ?? [],
+      scope: parseDvScope(raw.scope, raw.id),
       seeded: raw.seeded ?? "",
       lastConfirmed: raw["last-confirmed"] ?? "",
     });

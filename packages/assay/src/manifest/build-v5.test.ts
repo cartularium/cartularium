@@ -131,4 +131,18 @@ describe("buildManifestV5 — verdict-free comparison output", () => {
     expect(e.partition).toHaveLength(1); // tolerance-merged → uniform
     expect(e.partition[0].values).toHaveLength(2); // but the spread is visible
   });
+
+  it("publishes non-function-subject cases (op:* etc.) in tests, never in functions (D-3f-4 widening)", () => {
+    const m = build([
+      [test("op:divide/division", "op:/", "sha256:opdiv"), { excel: num(10 / 3), gsheets: err("#DIV/0!") }],
+      [test("SUM/add", "SUM", "sha256:sum2"), { excel: num(3), gsheets: num(3) }],
+    ]);
+    // the operator case is a first-class relation-layer entry — observed truth is not clipped
+    const e = m.tests["op:divide/division"];
+    expect(e).toBeDefined();
+    expect(e.subject).toBe("op:/");
+    expect(e.partition.length).toBeGreaterThan(1); // its fork is visible
+    // the functions rollup stays function-scoped: no op:* key appears there
+    expect(Object.keys(m.functions)).toEqual(["SUM"]);
+  });
 });

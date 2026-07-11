@@ -64,8 +64,9 @@ export function dvsToSeedRows(dvs: DvEntry[], now: string): SeedResult {
     author_id: SEED_AUTHOR,
     content: dv.summary,
     cause: normaliseCause(dv, warnings),
-    // one ref-set clause holding the DV's case-refs (SUBJECT/name); the scope is a clause LIST
-    scope_json: JSON.stringify([{ kind: "ref-set", refs: dv.tests }]),
+    // an authored `scope:` (3f reclassify) wins; else the migration default — one ref-set clause
+    // holding the DV's case-refs (SUBJECT/name). The scope is a clause LIST either way.
+    scope_json: JSON.stringify(dv.scope ?? [{ kind: "ref-set", refs: dv.tests }]),
     status: "published",
     verified_by: null,
     verified_at: null,
