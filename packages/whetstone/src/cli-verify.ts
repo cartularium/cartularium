@@ -28,6 +28,17 @@ if (personal && created.spreadsheetId) {
   console.log(`personal reads judge's private sheet: ${cross.status} (want 403/404 — isolated)`);
 }
 
+// drive.file cleanup: delete the probe sheet we just created
+if (created.spreadsheetId) {
+  const del = await fetch(`https://www.googleapis.com/drive/v3/files/${created.spreadsheetId}`, {
+    method: "DELETE",
+    headers: { Authorization: `Bearer ${judge}` },
+  });
+  console.log(
+    `judge deletes its probe sheet: ${del.status} ${del.ok ? "(drive.file scope live — scratch cleanup works)" : "(delete unavailable — re-login for drive.file?)"}`,
+  );
+}
+
 const foreign = process.argv[2];
 if (foreign) {
   const id = parseSpreadsheetId(foreign);
