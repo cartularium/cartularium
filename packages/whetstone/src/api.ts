@@ -1,14 +1,24 @@
 import { getAccessToken } from "assay";
+import { getJudgeAccessToken } from "./auth.js";
 
 const SHEETS_BASE = "https://sheets.googleapis.com/v4/spreadsheets";
 
 let cachedToken: string | null = null;
 
+// prefer the judge service identity (~/.whetstonerc.json); fall back to the
+// developer's personal assay token for local hacking
 async function token(): Promise<string> {
-  cachedToken ??= await getAccessToken();
+  if (cachedToken) return cachedToken;
+  cachedToken = await getJudgeAccessToken();
+  if (cachedToken) return cachedToken;
+  cachedToken = await getAccessToken();
   if (!cachedToken) {
-    throw new Error("Not logged in. Run `assay login` (uses assay's OAuth client).");
+    throw new Error(
+      "No Google identity available. Run `pnpm --filter @cartularium/whetstone login` " +
+        "(judge identity) or `assay login` (personal fallback).",
+    );
   }
+  console.error("[whetstone] no judge identity — falling back to personal assay token");
   return cachedToken;
 }
 
