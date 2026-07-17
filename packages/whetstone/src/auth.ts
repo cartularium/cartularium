@@ -25,11 +25,19 @@ interface TokenData {
 }
 
 function loadClientCredentials(): ClientCredentials {
-  const envPath = process.env.WHETSTONE_GOOGLE_CREDENTIALS_PATH;
-  const assayPath = join(dirname(fileURLToPath(import.meta.url)), "..", "..", "assay", "credentials.json");
-  const path = envPath ?? assayPath;
-  if (!existsSync(path)) {
-    throw new Error(`OAuth client credentials not found at ${path} (set WHETSTONE_GOOGLE_CREDENTIALS_PATH)`);
+  const pkg = join(dirname(fileURLToPath(import.meta.url)), "..");
+  // whetstone's own OAuth client first; assay's published client as fallback
+  const candidates = [
+    process.env.WHETSTONE_GOOGLE_CREDENTIALS_PATH,
+    join(pkg, "credentials.json"),
+    join(pkg, "..", "assay", "credentials.json"),
+  ].filter((p): p is string => Boolean(p));
+  const path = candidates.find((p) => existsSync(p));
+  if (!path) {
+    throw new Error(
+      `OAuth client credentials not found (tried ${candidates.join(", ")}); ` +
+        "set WHETSTONE_GOOGLE_CREDENTIALS_PATH or place credentials.json in packages/whetstone/",
+    );
   }
   const raw = JSON.parse(readFileSync(path, "utf8"));
   const creds = raw.installed || raw.web;

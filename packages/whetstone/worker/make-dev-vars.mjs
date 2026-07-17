@@ -7,7 +7,11 @@ import { dirname, join } from "node:path"
 import { fileURLToPath } from "node:url"
 
 const PKG = join(dirname(fileURLToPath(import.meta.url)), "..")
-const credsPath = process.env.WHETSTONE_GOOGLE_CREDENTIALS_PATH ?? join(PKG, "..", "assay", "credentials.json")
+import { existsSync } from "node:fs"
+const credsPath =
+  [process.env.WHETSTONE_GOOGLE_CREDENTIALS_PATH, join(PKG, "credentials.json"), join(PKG, "..", "assay", "credentials.json")]
+    .filter(Boolean)
+    .find((p) => existsSync(p))
 const raw = JSON.parse(readFileSync(credsPath, "utf8"))
 const creds = raw.installed || raw.web
 const token = JSON.parse(readFileSync(join(homedir(), ".whetstonerc.json"), "utf8"))
