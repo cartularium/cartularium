@@ -12,7 +12,10 @@
     "login": "tsx src/cli-login.ts",
     "check": "tsc --noEmit",
     "build:site": "node site/build.mjs",
-    "serve:site": "node site/serve.mjs"
+    "serve:site": "node site/serve.mjs",
+    "build:worker-problems": "node worker/build-problems.mjs",
+    "check:worker": "node worker/build-problems.mjs && tsc -p worker",
+    "dev:worker": "node worker/build-problems.mjs && node worker/make-dev-vars.mjs && wrangler dev --local"
   },
   "dependencies": {
     "assay": "workspace:*",
@@ -24,6 +27,8 @@
     "@types/node": "^22.0.0",
     "tsx": "^4.19.0",
     "typescript": "^5.8.3",
-    "sass": "^1.83.0"
+    "sass": "^1.83.0",
+    "wrangler": "^4.0.0",
+    "@cloudflare/workers-types": "^4.20250701.0"
   }
 }

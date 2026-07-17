@@ -1,6 +1,6 @@
 // Grid comparison under a problem's declared policy. Shapes are compared after
 // trimming trailing blanks; row order canonicalizes when the policy allows it.
-import type { ComparePolicy } from "./problem.js";
+import type { ComparePolicy } from "./problem-types.js";
 import type { Scalar } from "./rect.js";
 
 export interface GridMismatch {

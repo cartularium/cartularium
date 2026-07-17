@@ -1,3 +1,5 @@
+import { useNodeAuth } from "../src/node-auth.js";
+useNodeAuth();
 import { mkdirSync, writeFileSync } from "node:fs";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";

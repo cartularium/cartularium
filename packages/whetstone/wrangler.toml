@@ -1,0 +1,18 @@
+# whetstone judge service (W7). Secrets (set via `wrangler secret put` in prod,
+# .dev.vars locally — see worker/make-dev-vars.mjs):
+#   GOOGLE_CLIENT_ID / GOOGLE_CLIENT_SECRET / GOOGLE_REFRESH_TOKEN
+# Before deploying: `wrangler d1 create whetstone` and paste the real
+# database_id below; `wrangler d1 migrations apply whetstone --remote`.
+name = "whetstone-judge"
+main = "worker/index.ts"
+compatibility_date = "2026-05-01"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "whetstone"
+database_id = "00000000-0000-0000-0000-000000000000" # placeholder; local dev ignores it
+migrations_dir = "worker/migrations"
+
+[vars]
+# tighten to the site origin at deploy time
+ALLOWED_ORIGIN = "*"

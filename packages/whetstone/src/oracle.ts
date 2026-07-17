@@ -2,7 +2,7 @@
 // against every case, and write the computed outputs back into the problem file
 // as `expected`. The corpus never hand-computes an answer.
 import { sleep } from "./api.js";
-import type { Problem } from "./problem.js";
+import type { Problem } from "./problem-types.js";
 import { loadSheetIds, readRect, writeRect, type Scalar } from "./rect.js";
 import { createFromTemplate } from "./template.js";
 

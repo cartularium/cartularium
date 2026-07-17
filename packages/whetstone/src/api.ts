@@ -1,25 +1,21 @@
-import { getAccessToken } from "assay";
-import { getJudgeAccessToken } from "./auth.js";
-
 const SHEETS_BASE = "https://sheets.googleapis.com/v4/spreadsheets";
 
-let cachedToken: string | null = null;
+// Runtime-agnostic auth seam: node CLIs install a provider via useNodeAuth()
+// (node-auth.ts); the Worker installs a refresh-token provider from its env.
+// Providers own their caching/refresh.
+let tokenProvider: (() => Promise<string>) | null = null;
 
-// prefer the judge service identity (~/.whetstonerc.json); fall back to the
-// developer's personal assay token for local hacking
+export function setTokenProvider(provider: () => Promise<string>): void {
+  tokenProvider = provider;
+}
+
 async function token(): Promise<string> {
-  if (cachedToken) return cachedToken;
-  cachedToken = await getJudgeAccessToken();
-  if (cachedToken) return cachedToken;
-  cachedToken = await getAccessToken();
-  if (!cachedToken) {
+  if (!tokenProvider) {
     throw new Error(
-      "No Google identity available. Run `pnpm --filter @cartularium/whetstone login` " +
-        "(judge identity) or `assay login` (personal fallback).",
+      "No token provider configured — CLIs call useNodeAuth(); the Worker calls setTokenProvider().",
     );
   }
-  console.error("[whetstone] no judge identity — falling back to personal assay token");
-  return cachedToken;
+  return tokenProvider();
 }
 
 // fetch with auth + backoff on 429/5xx; resolves to parsed JSON
@@ -51,6 +47,16 @@ export async function sheetsApi(
 
 export function sleep(ms: number): Promise<void> {
   return new Promise((r) => setTimeout(r, ms));
+}
+
+// Drive delete — works only for files this app created, and only when the
+// token carries the drive.file scope; false on 403/404 (caller decides).
+export async function deleteSpreadsheet(spreadsheetId: string): Promise<boolean> {
+  const res = await fetch(`https://www.googleapis.com/drive/v3/files/${spreadsheetId}`, {
+    method: "DELETE",
+    headers: { Authorization: `Bearer ${await token()}` },
+  });
+  return res.ok;
 }
 
 // accepts a bare id or a full docs.google.com URL

@@ -1,3 +1,5 @@
+import { useNodeAuth } from "./node-auth.js";
+useNodeAuth();
 import { parseSpreadsheetId } from "./api.js";
 import { judge } from "./judge.js";
 import { loadProblem } from "./problem.js";

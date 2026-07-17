@@ -164,3 +164,15 @@ table.grid {
 }
 
 .about p { line-height: 1.6; }
+
+.submit-stub.live { opacity: 1; }
+.submit-stub .verdict {
+  flex-basis: 100%;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  line-height: 1.55;
+  .ok { color: var(--accent); }
+  ul { margin: 0.4em 0 0; padding-left: 1.2em; }
+  .mm { opacity: 0.7; }
+}
+.submit-stub { flex-wrap: wrap; }

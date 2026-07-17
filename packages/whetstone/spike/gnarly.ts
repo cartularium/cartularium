@@ -2,6 +2,8 @@
 // Caveat: this fixture is API-authored, which biases toward round-trip success —
 // UI-authored and wild sheets are the stronger evidence. This is the floor, not
 // the test.
+import { useNodeAuth } from "../src/node-auth.js";
+useNodeAuth();
 import { rehydrate } from "../src/rehydrate.js";
 import type { CellSnap, SheetSnap, Snapshot } from "../src/snapshot.js";
 

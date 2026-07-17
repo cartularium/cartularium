@@ -9,7 +9,7 @@ import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const TOKEN_PATH = join(homedir(), ".whetstonerc.json");
-const SCOPES = ["https://www.googleapis.com/auth/spreadsheets"];
+const SCOPES = ["https://www.googleapis.com/auth/spreadsheets", "https://www.googleapis.com/auth/drive.file"];
 const REDIRECT_PORT = 8090; // must match the redirect URI registered on assay's client
 const REDIRECT_URI = `http://localhost:${REDIRECT_PORT}`;
 

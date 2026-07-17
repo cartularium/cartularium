@@ -1,7 +1,7 @@
 // Problem definition → template spreadsheet (the sheet users copy).
 // The same builder, minus sample data plus reference formula, feeds the oracle.
 import { parseRange, rangeCols, rangeRows } from "./a1.js";
-import type { Problem } from "./problem.js";
+import type { Problem } from "./problem-types.js";
 import { rehydrate } from "./rehydrate.js";
 import { scalarToExtended, type Scalar } from "./rect.js";
 import type { CellSnap, Snapshot } from "./snapshot.js";

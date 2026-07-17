@@ -3,7 +3,7 @@ import { sleep } from "./api.js";
 import { parseRange } from "./a1.js";
 import { compareGrids, type GridComparison } from "./compare.js";
 import { extractSnapshot } from "./extract.js";
-import type { Problem } from "./problem.js";
+import type { Problem } from "./problem-types.js";
 import { rehydrate } from "./rehydrate.js";
 import { loadSheetIds, readRect, writeRect } from "./rect.js";
 import type { Snapshot } from "./snapshot.js";

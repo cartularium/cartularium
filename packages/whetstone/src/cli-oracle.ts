@@ -1,3 +1,5 @@
+import { useNodeAuth } from "./node-auth.js";
+useNodeAuth();
 import { loadProblem, saveProblem } from "./problem.js";
 import { runOracle } from "./oracle.js";
 

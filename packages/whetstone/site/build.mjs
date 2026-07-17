@@ -23,6 +23,8 @@ export const OUT = join(PKG, "public")
 const PROBLEMS = join(PKG, "problems")
 const HOST = "whetstone.sheets.wiki"
 const ASSET_VERSION = process.env.CF_PAGES_COMMIT_SHA ?? process.env.GITHUB_SHA ?? "dev"
+// judge service base URL; unset → submit box renders as a disabled stub
+const SERVICE_URL = process.env.WHETSTONE_SERVICE_URL ?? null
 
 const require = createRequire(import.meta.url)
 const LAYOUT = readFileSync(join(SRC, "templates", "layout.html"), "utf8")
@@ -136,13 +138,26 @@ ${statementHtml(problem.statement)}
         the grader swaps <code>INPUT</code> for other datasets, so never put your own content
         inside <code>INPUT</code>.</li>
     <li>Check yourself against the expected sample output shown in your copy (and below).</li>
-    <li class="muted">Submit — the judging service is under construction. It will grade your sheet
-        against ${hiddenCount} hidden dataset${hiddenCount === 1 ? "" : "s"}, so hardcoded answers won't survive.</li>
+    ${
+      SERVICE_URL
+        ? `<li>Submit below — Share → "anyone with the link, Viewer", paste the link. Your sheet is
+        graded against ${hiddenCount} hidden dataset${hiddenCount === 1 ? "" : "s"}, so hardcoded answers won't survive.</li>`
+        : `<li class="muted">Submit — the judging service is under construction. It will grade your sheet
+        against ${hiddenCount} hidden dataset${hiddenCount === 1 ? "" : "s"}, so hardcoded answers won't survive.</li>`
+    }
   </ol>
-  <div class="submit-stub">
+  ${
+    SERVICE_URL
+      ? `<div class="submit-stub live" data-service="${esc(SERVICE_URL)}" data-problem="${esc(problem.id)}">
+    <input type="url" placeholder="paste your sheet's share link">
+    <button>Judge</button>
+    <div class="verdict"></div>
+  </div>`
+      : `<div class="submit-stub">
     <input type="url" placeholder="paste your sheet's share link (coming soon)" disabled>
     <button disabled>Judge</button>
-  </div>
+  </div>`
+  }
 </section>
 
 <section class="sample">
@@ -241,6 +256,7 @@ export function build() {
   writeFileSync(join(OUT, "styles.css"), css)
 
   cpSync(require.resolve("@cartularium/chrome/scripts/chrome.js"), join(OUT, "assets", "chrome.js"))
+  cpSync(join(SRC, "assets", "submit.js"), join(OUT, "assets", "submit.js"))
 
   return { counts: { problems: problems.length } }
 }
