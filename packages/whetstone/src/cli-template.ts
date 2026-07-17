@@ -1,4 +1,4 @@
-import { loadProblem } from "./problem.js";
+import { loadProblem, saveProblem } from "./problem.js";
 import { createFromTemplate } from "./template.js";
 
 const path = process.argv[2];
@@ -8,6 +8,8 @@ if (!path) {
 }
 const problem = loadProblem(path);
 const id = await createFromTemplate(problem, `whetstone-template-${problem.id}`, { sampleInput: true });
-console.log(`template for ${problem.id} — ${problem.title}`);
+problem.template.spreadsheetId = id;
+saveProblem(path, problem);
+console.log(`template for ${problem.id} — ${problem.title} (id saved to ${path})`);
 console.log(`  url:  https://docs.google.com/spreadsheets/d/${id}`);
 console.log(`  copy: https://docs.google.com/spreadsheets/d/${id}/copy`);

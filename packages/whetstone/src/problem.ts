@@ -28,6 +28,8 @@ export interface Problem {
     input: string; // e.g. Input!A1:L9 — becomes the INPUT named range
     output: string; // e.g. Answer!A2:D40 — becomes the OUTPUT named range
     answerHeaders?: string[]; // rendered just above OUTPUT
+    /** live judge-owned template spreadsheet; written back by cli-template */
+    spreadsheetId?: string;
   };
   reference: string; // reference solution formula, placed at OUTPUT's top-left by the oracle
   compare: ComparePolicy;
