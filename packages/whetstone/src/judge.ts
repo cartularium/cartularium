@@ -30,6 +30,10 @@ export interface JudgeResult {
 const BAN_PATTERNS: Record<string, RegExp> = {
   volatile: /\b(NOW|TODAY|RAND|RANDBETWEEN|RANDARRAY)\s*\(/i,
   import: /\bIMPORT(RANGE|DATA|XML|HTML|FEED)\s*\(/i,
+  // external fetch: exfiltration channel, and errors anyway in API-created
+  // scratch sheets that have never been opened in a browser (observed: IMAGE
+  // returns #REF! "use a desktop web browser to allow access")
+  external: /\b(IMAGE|GOOGLEFINANCE|GOOGLETRANSLATE|DETECTLANGUAGE)\s*\(/i,
 };
 
 export async function judge(problem: Problem, userSpreadsheetId: string): Promise<JudgeResult> {
