@@ -1,0 +1,23 @@
+{
+  "name": "@cartularium/whetstone",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "gnarly": "tsx spike/gnarly.ts",
+    "roundtrip": "tsx spike/roundtrip.ts",
+    "template": "tsx src/cli-template.ts",
+    "oracle": "tsx src/cli-oracle.ts",
+    "judge": "tsx src/cli-judge.ts",
+    "check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "assay": "workspace:*",
+    "yaml": "^2.7.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.8.3"
+  }
+}

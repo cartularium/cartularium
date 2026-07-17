@@ -1,0 +1,137 @@
+id: wp-0002
+title: Multiline Notes
+attribution: Adapted from "Multiline Notes" in the astral.cafe Community Practice Problems sheet.
+difficulty: 4
+tags:
+  - text
+  - split
+  - shape
+statement: |
+  You and some friends log activity in a notetaking app, but the export
+  crams each person's notes into one comma-separated cell.
+
+  Convert it to a one-note-per-line scheme: each note on its own row, with
+  the author named only on their first row and blank below. People appear
+  more than once — keep those entries separate, and keep everything in the
+  original order.
+challenges:
+  - oner
+  - lambdaless
+  - generalized
+  - golfed
+template:
+  sheets:
+    - title: About
+    - title: Input
+    - title: Answer
+  input: Input!A1:B11
+  output: Answer!A2:B40
+  answerHeaders:
+    - Author
+    - Note
+reference: =LET(d, FILTER(Input!A2:B11, Input!A2:A11<>""), REDUCE("!", SEQUENCE(ROWS(d)),
+  LAMBDA(acc, i, LET(ns, TRANSPOSE(SPLIT(INDEX(d,i,2), ", ", FALSE)), auth, MAP(SEQUENCE(ROWS(ns)),
+  LAMBDA(j, IF(j=1, INDEX(d,i,1), ""))), block, {auth, ns}, IF(AND(acc="!"), block, {acc;
+  block})))))
+compare:
+  numbers:
+    epsilon: 1e-9
+  rowOrder: exact
+lint:
+  ban:
+    - volatile
+    - import
+cases:
+  - kind: sample
+    input:
+      - - Author
+        - Note
+      - - Frank
+        - Found a hammer, Played with a pencil, Bought a new pencil
+      - - Alice
+        - Found a puzzle, Bought a new basket
+      - - Dave
+        - Borrowed a hammer, Showed off a puzzle, Borrowed a puzzle
+      - - Bob
+        - Showed off a toy
+      - - Dave
+        - Dropped off puzzle
+      - - Erin
+        - Dropped off basket, Borrowed a basket
+    expected:
+      - - Frank
+        - Found a hammer
+      - - null
+        - Played with a pencil
+      - - null
+        - Bought a new pencil
+      - - Alice
+        - Found a puzzle
+      - - null
+        - Bought a new basket
+      - - Dave
+        - Borrowed a hammer
+      - - null
+        - Showed off a puzzle
+      - - null
+        - Borrowed a puzzle
+      - - Bob
+        - Showed off a toy
+      - - Dave
+        - Dropped off puzzle
+      - - Erin
+        - Dropped off basket
+      - - null
+        - Borrowed a basket
+  - kind: hidden
+    input:
+      - - Author
+        - Note
+      - - Zoe
+        - One lonely note
+      - - Yuri
+        - First thing, Second thing, Third thing, Fourth thing
+    expected:
+      - - Zoe
+        - One lonely note
+      - - Yuri
+        - First thing
+      - - null
+        - Second thing
+      - - null
+        - Third thing
+      - - null
+        - Fourth thing
+  - kind: hidden
+    input:
+      - - Author
+        - Note
+      - - Bob
+        - Fed the cat, Fed the dog
+      - - Bob
+        - Fed the fish
+      - - Alice
+        - Watered plants, Read a book, Wrote a note
+      - - Bob
+        - Napped, Napped again
+      - - Carol
+        - Stretched
+    expected:
+      - - Bob
+        - Fed the cat
+      - - null
+        - Fed the dog
+      - - Bob
+        - Fed the fish
+      - - Alice
+        - Watered plants
+      - - null
+        - Read a book
+      - - null
+        - Wrote a note
+      - - Bob
+        - Napped
+      - - null
+        - Napped again
+      - - Carol
+        - Stretched

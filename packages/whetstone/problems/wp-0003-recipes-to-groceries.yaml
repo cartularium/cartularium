@@ -1,0 +1,116 @@
+id: wp-0003
+title: Recipes to Groceries
+attribution: Adapted from "Recipes to Groceries" in the astral.cafe Community Practice Problems sheet.
+difficulty: 4
+tags:
+  - text
+  - parsing
+  - aggregation
+statement: |
+  Your client works at a test kitchen. Each recipe lists its ingredients per
+  serving as text ("3 g Fennel, 5 cups Garlic, ...") plus how many servings
+  they'll make.
+
+  Produce the shopping list: each ingredient with the total amount to buy,
+  written as "amount unit" (per-serving amount times servings, summed across
+  recipes). Watch out for units — the same ingredient bought in different
+  units needs separate rows. Row order is up to you.
+challenges:
+  - oner
+  - lambdaless
+  - generalized
+  - golfed
+template:
+  sheets:
+    - title: About
+    - title: Input
+    - title: Answer
+  input: Input!A1:C17
+  output: Answer!A2:B40
+  answerHeaders:
+    - Ingredient
+    - Amount
+reference: =LET(d, FILTER(Input!A2:C17, Input!A2:A17<>""), rows, REDUCE("!", SEQUENCE(ROWS(d)),
+  LAMBDA(acc, i, LET(toks, TRANSPOSE(SPLIT(INDEX(d,i,2), ", ", FALSE)), q, MAP(toks, LAMBDA(t,
+  VALUE(INDEX(SPLIT(t," "),1,1))*INDEX(d,i,3))), u, MAP(toks, LAMBDA(t, INDEX(SPLIT(t," "),1,2))),
+  g, MAP(toks, LAMBDA(t, LET(s, SPLIT(t," "), JOIN(" ", CHOOSECOLS(s, SEQUENCE(1, COLUMNS(s)-2, 3,
+  1)))))), block, {g, u, q}, IF(AND(acc="!"), block, {acc; block})))), pairs,
+  SORT(UNIQUE(CHOOSECOLS(rows, 1, 2))), amt, MAP(CHOOSECOLS(pairs,1), CHOOSECOLS(pairs,2), LAMBDA(a,
+  b, SUM(FILTER(CHOOSECOLS(rows,3), (CHOOSECOLS(rows,1)=a)*(CHOOSECOLS(rows,2)=b))))),
+  {CHOOSECOLS(pairs,1), MAP(amt, CHOOSECOLS(pairs,2), LAMBDA(x, y, x&" "&y))})
+compare:
+  numbers:
+    epsilon: 1e-9
+  rowOrder: any
+lint:
+  ban:
+    - volatile
+    - import
+cases:
+  - kind: sample
+    input:
+      - - Recipe
+        - Ingredients Per Serving
+        - Servings Made
+      - - 1
+        - 3 g Fennel, 5 cups Garlic, 1 g Olive oil
+        - 3
+      - - 2
+        - 1 tsp Shrimp, 3 g Fennel, 2 lbs Onion
+        - 4
+      - - 3
+        - 2 cups Apple, 3 g Lamb, 1 cup Garlic
+        - 2
+      - - 4
+        - 2 g All purpose flour, 4 g Rice
+        - 1
+    expected:
+      - - All purpose flour
+        - 2 g
+      - - Apple
+        - 4 cups
+      - - Fennel
+        - 21 g
+      - - Garlic
+        - 2 cup
+      - - Garlic
+        - 15 cups
+      - - Lamb
+        - 6 g
+      - - Olive oil
+        - 3 g
+      - - Onion
+        - 8 lbs
+      - - Rice
+        - 4 g
+      - - Shrimp
+        - 4 tsp
+  - kind: hidden
+    input:
+      - - Recipe
+        - Ingredients Per Serving
+        - Servings Made
+      - - 1
+        - 2 g Corn, 3 tsp Corn
+        - 2
+      - - 2
+        - 1 tsp Corn, 4 g Corn
+        - 1
+    expected:
+      - - Corn
+        - 8 g
+      - - Corn
+        - 7 tsp
+  - kind: hidden
+    input:
+      - - Recipe
+        - Ingredients Per Serving
+        - Servings Made
+      - - 1
+        - 1 tbs Extra virgin olive oil, 2 g Salt
+        - 5
+    expected:
+      - - Extra virgin olive oil
+        - 5 tbs
+      - - Salt
+        - 10 g
