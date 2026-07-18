@@ -8,12 +8,12 @@ import { fileURLToPath } from "node:url"
 
 const PKG = join(dirname(fileURLToPath(import.meta.url)), "..")
 const credsPath = [
-  process.env.WHETSTONE_GOOGLE_CREDENTIALS_PATH,
+  process.env.LUDUS_GOOGLE_CREDENTIALS_PATH,
   join(PKG, "credentials.json"),
 ].filter(Boolean).find((p) => existsSync(p))
-if (!credsPath) throw new Error("no credentials.json — mint the whetstone OAuth client first")
+if (!credsPath) throw new Error("no credentials.json — mint the ludus OAuth client first")
 const creds = JSON.parse(readFileSync(credsPath, "utf8")).installed
-const token = JSON.parse(readFileSync(join(homedir(), ".whetstonerc.json"), "utf8"))
+const token = JSON.parse(readFileSync(join(homedir(), ".ludusrc.json"), "utf8"))
 
 for (const [name, value] of [
   ["GOOGLE_CLIENT_ID", creds.client_id],

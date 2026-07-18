@@ -5,11 +5,11 @@ import { createFromTemplate } from "./template.js";
 
 const path = process.argv[2];
 if (!path) {
-  console.error("usage: pnpm --filter @cartularium/whetstone template <problem.yaml>");
+  console.error("usage: pnpm --filter @cartularium/ludus template <problem.yaml>");
   process.exit(1);
 }
 const problem = loadProblem(path);
-const id = await createFromTemplate(problem, `whetstone-template-${problem.id}`, {
+const id = await createFromTemplate(problem, `ludus-template-${problem.id}`, {
   sampleInput: true,
   styled: true,
 });

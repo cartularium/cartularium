@@ -1,8 +1,8 @@
-# whetstone
+# ludus
 
 > Practice problems for spreadsheets, with automated judging. Working name; pre-alpha.
 
-Spec: `internal/specs/whetstone/product-and-judge.md` (DRAFT — nothing here is settled).
+Spec: `internal/specs/ludus/product-and-judge.md` (DRAFT — nothing here is settled).
 
 ## W0 spike: rehydration fidelity
 
@@ -15,10 +15,10 @@ doesn't survive.
 Requires assay's Google OAuth setup (`assay login`; token in `~/.assayrc.json`).
 
 ```
-pnpm --filter @cartularium/whetstone gnarly
+pnpm --filter @cartularium/ludus gnarly
 # creates a fixture spreadsheet of known-nasty cases, prints its id + URL
 
-pnpm --filter @cartularium/whetstone roundtrip <spreadsheet-id-or-url>
+pnpm --filter @cartularium/ludus roundtrip <spreadsheet-id-or-url>
 # extract → rehydrate → diff; human summary to stdout, full JSON to results/
 ```
 
@@ -29,13 +29,13 @@ judge. `problems/wp-0001-combine-skus.yaml` is the first problem, adapted from t
 astral.cafe Community Practice Problems sheet.
 
 ```
-pnpm --filter @cartularium/whetstone oracle   problems/wp-0001-combine-skus.yaml
+pnpm --filter @cartularium/ludus oracle   problems/wp-0001-combine-skus.yaml
 # runs the reference solution over every case, writes computed `expected` back
 
-pnpm --filter @cartularium/whetstone template problems/wp-0001-combine-skus.yaml
+pnpm --filter @cartularium/ludus template problems/wp-0001-combine-skus.yaml
 # creates the user-facing template (About/Input/Answer, INPUT+OUTPUT named ranges)
 
-pnpm --filter @cartularium/whetstone judge    problems/wp-0001-combine-skus.yaml <sheet-id-or-url>
+pnpm --filter @cartularium/ludus judge    problems/wp-0001-combine-skus.yaml <sheet-id-or-url>
 # extract → lint → rehydrate → hidden cases → verdict (exit 0 = accepted)
 ```
 

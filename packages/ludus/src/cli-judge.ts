@@ -6,7 +6,7 @@ import { loadProblem } from "./problem.js";
 
 const [path, sheet] = process.argv.slice(2);
 if (!path || !sheet) {
-  console.error("usage: pnpm --filter @cartularium/whetstone judge <problem.yaml> <sheet-id-or-url>");
+  console.error("usage: pnpm --filter @cartularium/ludus judge <problem.yaml> <sheet-id-or-url>");
   process.exit(1);
 }
 const problem = loadProblem(path);

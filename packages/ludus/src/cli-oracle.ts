@@ -5,7 +5,7 @@ import { runOracle } from "./oracle.js";
 
 const path = process.argv[2];
 if (!path) {
-  console.error("usage: pnpm --filter @cartularium/whetstone oracle <problem.yaml>");
+  console.error("usage: pnpm --filter @cartularium/ludus oracle <problem.yaml>");
   process.exit(1);
 }
 const problem = loadProblem(path);

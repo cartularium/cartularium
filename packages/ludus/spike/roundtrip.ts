@@ -11,7 +11,7 @@ import type { Snapshot } from "../src/snapshot.js";
 
 const input = process.argv[2];
 if (!input) {
-  console.error("usage: pnpm --filter @cartularium/whetstone roundtrip <spreadsheet-id-or-url>");
+  console.error("usage: pnpm --filter @cartularium/ludus roundtrip <spreadsheet-id-or-url>");
   process.exit(1);
 }
 
@@ -29,7 +29,7 @@ console.log(
 );
 
 console.log("rehydrating into a fresh spreadsheet ...");
-const rehydratedId = await rehydrate(original, `whetstone-spike-${originalId.slice(0, 8)}`);
+const rehydratedId = await rehydrate(original, `ludus-spike-${originalId.slice(0, 8)}`);
 console.log(`  https://docs.google.com/spreadsheets/d/${rehydratedId}`);
 
 // one settle read; retry if formulas haven't computed yet

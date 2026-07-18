@@ -15,7 +15,7 @@ if (!judge) process.exit(1);
 const create = await fetch("https://sheets.googleapis.com/v4/spreadsheets", {
   method: "POST",
   headers: { Authorization: `Bearer ${judge}`, "Content-Type": "application/json" },
-  body: JSON.stringify({ properties: { title: "whetstone-identity-probe" } }),
+  body: JSON.stringify({ properties: { title: "ludus-identity-probe" } }),
 });
 const created = (await create.json()) as { spreadsheetId?: string };
 console.log(`judge creates a sheet: ${create.status} ${created.spreadsheetId ?? ""}`);

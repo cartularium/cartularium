@@ -1,5 +1,5 @@
 // Node-side auth bootstrap for the CLIs: judge identity first
-// (~/.whetstonerc.json), personal assay token as a dev fallback.
+// (~/.ludusrc.json), personal assay token as a dev fallback.
 import { getAccessToken } from "assay";
 import { setTokenProvider } from "./api.js";
 import { getJudgeAccessToken } from "./auth.js";
@@ -13,11 +13,11 @@ export function useNodeAuth(): void {
     cached = await getAccessToken();
     if (!cached) {
       throw new Error(
-        "No Google identity available. Run `pnpm --filter @cartularium/whetstone run login` " +
+        "No Google identity available. Run `pnpm --filter @cartularium/ludus run login` " +
           "(judge identity) or `assay login` (personal fallback).",
       );
     }
-    console.error("[whetstone] no judge identity — falling back to personal assay token");
+    console.error("[ludus] no judge identity — falling back to personal assay token");
     return cached;
   });
 }

@@ -1,4 +1,4 @@
-// The whetstone judge service: a queue-less v0 Worker.
+// The ludus judge service: a queue-less v0 Worker.
 // POST /api/submit  {problemId, sheetUrl} → 202 {submissionId}; judging runs
 // in ctx.waitUntil (IO-bound, well under CPU limits). GET /api/submission/:id
 // polls the verdict. Scratch sheets are deleted after clean verdicts

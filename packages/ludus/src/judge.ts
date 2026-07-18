@@ -61,7 +61,7 @@ export async function judge(problem: Problem, userSpreadsheetId: string): Promis
   }
 
   // rehydrate the user's program into a judge-owned scratch sheet
-  const scratchId = await rehydrate(program, `whetstone-judge-${problem.id}`);
+  const scratchId = await rehydrate(program, `ludus-judge-${problem.id}`);
   const ids = await loadSheetIds(scratchId);
 
   const cases: CaseResult[] = [];

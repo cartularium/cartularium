@@ -1,14 +1,14 @@
-// Whetstone's own token store (~/.whetstonerc.json) so the judge service
+// Ludus's own token store (~/.ludusrc.json) so the judge service
 // identity stays separate from the developer's personal assay token.
 // Interim coupling: reuses assay's published OAuth client (same client id/secret,
-// same registered localhost redirect) until whetstone owns a client of its own.
+// same registered localhost redirect) until ludus owns a client of its own.
 import { existsSync, readFileSync, writeFileSync } from "node:fs";
 import { createServer } from "node:http";
 import { homedir } from "node:os";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
-const TOKEN_PATH = join(homedir(), ".whetstonerc.json");
+const TOKEN_PATH = join(homedir(), ".ludusrc.json");
 const SCOPES = ["https://www.googleapis.com/auth/spreadsheets", "https://www.googleapis.com/auth/drive.file"];
 const REDIRECT_PORT = 8090; // must match the redirect URI registered on assay's client
 const REDIRECT_URI = `http://localhost:${REDIRECT_PORT}`;
@@ -26,9 +26,9 @@ interface TokenData {
 
 function loadClientCredentials(): ClientCredentials {
   const pkg = join(dirname(fileURLToPath(import.meta.url)), "..");
-  // whetstone's own OAuth client first; assay's published client as fallback
+  // ludus's own OAuth client first; assay's published client as fallback
   const candidates = [
-    process.env.WHETSTONE_GOOGLE_CREDENTIALS_PATH,
+    process.env.LUDUS_GOOGLE_CREDENTIALS_PATH,
     join(pkg, "credentials.json"),
     join(pkg, "..", "assay", "credentials.json"),
   ].filter((p): p is string => Boolean(p));
@@ -36,7 +36,7 @@ function loadClientCredentials(): ClientCredentials {
   if (!path) {
     throw new Error(
       `OAuth client credentials not found (tried ${candidates.join(", ")}); ` +
-        "set WHETSTONE_GOOGLE_CREDENTIALS_PATH or place credentials.json in packages/whetstone/",
+        "set LUDUS_GOOGLE_CREDENTIALS_PATH or place credentials.json in packages/ludus/",
     );
   }
   const raw = JSON.parse(readFileSync(path, "utf8"));
@@ -47,7 +47,7 @@ function loadClientCredentials(): ClientCredentials {
 
 /** null when no judge-identity token exists (callers fall back to assay's token) */
 export async function getJudgeAccessToken(): Promise<string | null> {
-  const envToken = process.env.WHETSTONE_GOOGLE_TOKEN_JSON;
+  const envToken = process.env.LUDUS_GOOGLE_TOKEN_JSON;
   const data: TokenData | null = envToken
     ? (JSON.parse(envToken) as TokenData)
     : existsSync(TOKEN_PATH)
@@ -137,7 +137,7 @@ export async function loginAsJudge(): Promise<void> {
     ),
   );
   console.log(`Judge identity token saved to ${TOKEN_PATH}`);
-  console.log("Whetstone tools now act as the judge account. Your assay token is untouched.");
+  console.log("Ludus tools now act as the judge account. Your assay token is untouched.");
 }
 
 function waitForAuthCode(): Promise<string> {

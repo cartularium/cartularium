@@ -28,7 +28,7 @@ function sheet(sheetId: number, title: string, rows: Array<Array<CellSnap | null
 
 const fixture: Snapshot = {
   spreadsheetId: "",
-  title: `whetstone-gnarly-${new Date().toISOString().slice(0, 10)}`,
+  title: `ludus-gnarly-${new Date().toISOString().slice(0, 10)}`,
   locale: "en_US",
   timeZone: "America/Los_Angeles",
   namedRanges: [
@@ -89,4 +89,4 @@ console.log("creating gnarly fixture spreadsheet ...");
 const id = await rehydrate(fixture, fixture.title);
 console.log(`  id:  ${id}`);
 console.log(`  url: https://docs.google.com/spreadsheets/d/${id}`);
-console.log("\nnext: pnpm --filter @cartularium/whetstone roundtrip " + id);
+console.log("\nnext: pnpm --filter @cartularium/ludus roundtrip " + id);

@@ -1,4 +1,4 @@
-// Static site for whetstone: index + one page per problem, rendered from
+// Static site for ludus: index + one page per problem, rendered from
 // problems/*.yaml. Only sample cases are published — hidden cases never
 // reach the build output. Pattern cloned from cartularium-org.
 import { cpSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from "node:fs"
@@ -21,10 +21,10 @@ const REPO = join(PKG, "..", "..")
 export const SRC = join(PKG, "site")
 export const OUT = join(PKG, "public")
 const PROBLEMS = join(PKG, "problems")
-const HOST = "whetstone.sheets.wiki"
+const HOST = "ludus.sheets.wiki"
 const ASSET_VERSION = process.env.CF_PAGES_COMMIT_SHA ?? process.env.GITHUB_SHA ?? "dev"
 // judge service base URL; unset → submit box renders as a disabled stub
-const SERVICE_URL = process.env.WHETSTONE_SERVICE_URL ?? null
+const SERVICE_URL = process.env.LUDUS_SERVICE_URL ?? null
 
 const require = createRequire(import.meta.url)
 const LAYOUT = readFileSync(join(SRC, "templates", "layout.html"), "utf8")
@@ -48,7 +48,7 @@ function chromeParts(root) {
   }
   return {
     topbar: render(TOPBAR_TEMPLATE, {
-      wordmark: { href: `${root}/`, label: "whetstone" },
+      wordmark: { href: `${root}/`, label: "ludus" },
       nav,
       theme: { icon: "☾" },
       mobile: true,
@@ -191,7 +191,7 @@ function indexBody(problems) {
 
   return `
 <section class="masthead">
-  <h1>whetstone</h1>
+  <h1>ludus</h1>
   <div class="dek-block">
     <p class="dek">Practice problems for spreadsheet formulas, solved in real Google Sheets.</p>
     <p class="meta-line">
@@ -234,7 +234,7 @@ export function build() {
     join(OUT, "index.html"),
     page({
       root: ".",
-      title: "whetstone — spreadsheet practice problems",
+      title: "ludus — spreadsheet practice problems",
       description: "Practice problems for spreadsheet formulas, solved in real Google Sheets.",
       body: indexBody(problems),
     }),
@@ -247,7 +247,7 @@ export function build() {
       join(dir, "index.html"),
       page({
         root: "../..",
-        title: `${problem.title} — whetstone`,
+        title: `${problem.title} — ludus`,
         description: `${problem.title}: a difficulty-${problem.difficulty} spreadsheet practice problem.`,
         body: problemBody(problem),
       }),

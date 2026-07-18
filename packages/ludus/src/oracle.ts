@@ -7,7 +7,7 @@ import { loadSheetIds, readRect, writeRect, type Scalar } from "./rect.js";
 import { createFromTemplate } from "./template.js";
 
 export async function runOracle(problem: Problem): Promise<{ scratchId: string }> {
-  const scratchId = await createFromTemplate(problem, `whetstone-oracle-${problem.id}`, {
+  const scratchId = await createFromTemplate(problem, `ludus-oracle-${problem.id}`, {
     sampleInput: false,
     referenceFormula: problem.reference.trim(),
   });
