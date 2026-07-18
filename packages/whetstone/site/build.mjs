@@ -32,7 +32,11 @@ const LAYOUT = readFileSync(join(SRC, "templates", "layout.html"), "utf8")
 const esc = (s) =>
   String(s).replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll('"', "&quot;")
 
-const difficultyMeter = (d) => `${d} › ${"█".repeat(d)}${"░".repeat(10 - d)}`
+// banded display of the open-ended grade: blocks cap at ten, overflow marks
+const difficultyMeter = (d) => {
+  const blocks = Math.min(d, 10)
+  return `${d} › ${"█".repeat(blocks)}${"░".repeat(10 - blocks)}${d > 10 ? "⁺" : ""}`
+}
 
 function chromeParts(root) {
   const urls = crossPropertyUrls()
@@ -115,9 +119,10 @@ function problemBody(problem) {
 <header class="prob-head">
   <h1>${esc(problem.title)}</h1>
   <p class="meta-line">
-    <span class="meter" title="difficulty ${problem.difficulty}/10">${esc(difficultyMeter(problem.difficulty))}</span>
+    <span class="meter" title="difficulty ${problem.difficulty} (open scale, hand-graded)">${esc(difficultyMeter(problem.difficulty))}</span>
     <span class="sep">·</span>
     <span>${problem.tags.map(esc).join(", ")}</span>
+    ${problem.requires?.length ? `<span class="sep">·</span> <span>requires: ${problem.requires.map(esc).join(", ")}</span>` : ""}
     ${chips ? `<span class="sep">·</span> ${chips}` : ""}
   </p>
 </header>

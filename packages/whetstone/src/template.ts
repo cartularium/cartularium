@@ -25,6 +25,12 @@ interface AboutLine {
   formula?: string;
 }
 
+// banded display of the open-ended grade: blocks cap at ten, overflow marks
+export function difficultyMeter(d: number): string {
+  const blocks = Math.min(d, 10);
+  return `${d} › ${"█".repeat(blocks)}${"░".repeat(10 - blocks)}${d > 10 ? "⁺" : ""}`;
+}
+
 const CHALLENGE_NOTES: Record<string, string> = {
   oner: "Oner — solve it with a single formula in the output's top-left cell.",
   lambdaless: "LAMBDAless — no LAMBDA and no lambda helper functions.",
@@ -35,10 +41,9 @@ const CHALLENGE_NOTES: Record<string, string> = {
 function aboutLines(problem: Problem): AboutLine[] {
   const lines: AboutLine[] = [{ kind: "spacer" }];
   lines.push({ kind: "title", text: problem.title });
-  lines.push({
-    kind: "meta",
-    text: `${problem.difficulty} › ${"█".repeat(problem.difficulty)}${"░".repeat(10 - problem.difficulty)}   ${problem.tags.join(" · ")}`,
-  });
+  const meterParts = [difficultyMeter(problem.difficulty), problem.tags.join(" · ")];
+  if (problem.requires?.length) meterParts.push(`requires: ${problem.requires.join(", ")}`);
+  lines.push({ kind: "meta", text: meterParts.join("   ") });
   lines.push({ kind: "spacer" });
   for (const paragraph of problem.statement.trim().split(/\n\s*\n/)) {
     for (const line of paragraph.split("\n")) lines.push({ kind: "body", text: line.trim() });

@@ -19,7 +19,15 @@ export interface Problem {
   id: string;
   title: string;
   attribution?: string;
-  difficulty: number; // 1–10, community scale
+  /**
+   * Open-ended hand grade (no cap — climbing-grade model). This is the PRIOR:
+   * once solver identities exist, a Rasch fit over the attempt log becomes the
+   * display's source and this demotes to the cold-start value for new problems.
+   * Display is always banded (blocks cap at 10 with overflow marker).
+   */
+  difficulty: number;
+  /** prerequisite knowledge tiers (community ladder: arrays, query, lambda, recursion, algorithmic) */
+  requires?: string[];
   tags: string[];
   statement: string;
   challenges?: string[]; // informational constraint categories (oner, lambdaless, golfed…)
