@@ -9,7 +9,7 @@ tags:
 
 Two spreadsheet engines can compute the same [[Number|number]] and still disagree on the digits they hand back. The disagreement is almost never in the arithmetic; it is in how many significant figures the engine **stores**, **renders**, or **captures** on read-back. Because these differences land in the last few digits, they are invisible in ordinary use and fatal to any cross-engine comparison that tests for exact equality.
 
-### The significant-figure cap
+### Significant-figure limits
 
 Google Sheets stores a numeric result to at most **15 significant figures**. Excel does the same for the values it renders. The open engines split into two families:
 

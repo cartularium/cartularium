@@ -3,9 +3,6 @@ tags:
   - error
 ---
 
-> [!WARNING]
-> This article uses [[Unofficial terminology]].
-
 An **error-code split** is a failure that every engine agrees is a failure but that different engines label with different sentinels. `=IMDIV("1+2i", "0")` is an error everywhere, but the error is `#NUM!` in Excel and `#DIV/0!` in Google Sheets. The computation is the same; only the [[Error|error code]] differs. Error-code splits are distinct from coverage gaps — where an engine lacks the function entirely and returns `#NAME?` — and they matter because code that branches on the *specific* error type is not portable, even though the failure condition is identical.
 
 ### The #NUM! vs #DIV/0! family
