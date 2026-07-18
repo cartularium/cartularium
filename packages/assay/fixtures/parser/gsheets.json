@@ -1,8 +1,9 @@
 {
+  "schemaVersion": 2,
   "platform": "gsheets",
   "generatedAt": "2026-06-17T20:01:41.622Z",
   "results": {
-    "sha256:178c9f1ab35ea8f6bbb6155d9d2dab7edf9a80084c441f89912274563348e4b6": {
+    "CONVERT/convert-feet-to-inches": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -50,9 +51,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:0567bd2e1e986e6c888fd792d32947ab19742f0f6a94fcf58000408a710733f7",
+      "fingerprint": "sha256:71fa543d1bcc3371e40b4949ed83b5efa58addd2c5bc5dae879ecf535bd80c65",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=CONVERT(1, \"ft\", \"in\")"
     },
-    "sha256:9a609c8e8dcbb3f6c9b0b34bbd9769417e914549b5aa452cb055d2c88d32ccdc": {
+    "CONVERT/convert-meters-to-feet": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -100,9 +107,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:fd636689b2fa20e0c2ca76efdce2ab6ee8cf69ce986e0a0884797bea0527c0af",
+      "fingerprint": "sha256:39dec369566e3d06c64abb3338e5d51e7e501aa294e65ede5470eabb698024aa",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=CONVERT(1, \"m\", \"ft\")"
     },
-    "sha256:7dc93dec3706aed8a1d0050f33710f7fd51e70def38fa794eab3d0a392a18c3f": {
+    "CONVERT/convert-kilograms-to-pounds": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -150,9 +163,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:c550097dfb1d95bcb37d21f2e8103419e2c7ce53ccee63b2083b07091b57b62a",
+      "fingerprint": "sha256:f9728e3736452499e39cb6374de114f127f0f699cf88c6fc90d3185b5e4f515e",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=CONVERT(1, \"kg\", \"lbm\")"
     },
-    "sha256:67e6ea0aa23587fad0fac1d04d3ceecb35587ad448969a3e2eb8277d9e5e0fe2": {
+    "CONVERT/convert-celsius-to-fahrenheit": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -200,9 +219,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:60096b16a036aeff8d4d74988fd701a1dcc862aa5bcbec5e55c91d3dbe26f7b7",
+      "fingerprint": "sha256:d899ff3815c66171cfc01f331efcbc64681f699305680eb1008652af04c27354",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=CONVERT(100, \"C\", \"F\")"
     },
-    "sha256:c53c8b400d3d2d461462637e1ee5a8d19e0f1dea1b3c05251bcf991f0fe74c86": {
+    "CONVERT/convert-hours-to-seconds": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -250,9 +275,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:82a3e8cb97f019a2d9cb2c57b11ff4a0ab3053f2d342fa44d3a5bfa47cac108a",
+      "fingerprint": "sha256:b94a614d25f320a314141e8392fc0a7c853903bec488d4a8fca552667d2517c0",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=CONVERT(1, \"hr\", \"sec\")"
     },
-    "sha256:27a909385b0f732ed27b9e5b8e6667d71d60a86d324da6ed6c7ea9fd3b808f20": {
+    "CONVERT/convert-kilometers-to-miles": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -300,9 +331,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:23994116d875b836ffee03fa52aa83907a232d9320476504b89cc05815b796b2",
+      "fingerprint": "sha256:84fe891e52aba30847503cca88848e70a6206be2f9975fe272633fd7a9a0ddc3",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=CONVERT(1, \"km\", \"mi\")"
     },
-    "sha256:14dfe2730ab1be764cbbbf7637896e3c0e376154b0de0e72140907c3f9d8d59b": {
+    "CONVERT/convert-invalid-unit-pair": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -353,9 +390,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:a3220826fa34f766d9cf4379b1c92bd613e2c15275beeec5d1f66cdd7fc5c25f",
+      "fingerprint": "sha256:c98ddc95a4f5716ef17b94c5c73c9ede35dff1666986224ac03e53fce8c29367",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=CONVERT(1, \"ft\", \"kg\")"
     },
-    "sha256:63a533041344fe1620f62cd5f19605f03f0a4fe3a8a03af12a3096b752527339": {
+    "CONVERT/convert-unknown-unit": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -406,9 +449,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:0e41c911e09b7a5d8792f269fa767ef1dc664a44452cb646d7b25b37fe07f2a6",
+      "fingerprint": "sha256:c98ddc95a4f5716ef17b94c5c73c9ede35dff1666986224ac03e53fce8c29367",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=CONVERT(1, \"xyz\", \"in\")"
     },
-    "sha256:6780c88675e7ee5385abae98884bd5e106f32d5421b4bccd49eedc69b6e04993": {
+    "TO_DATE/to-date-from-serial": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -462,9 +511,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:2aa06d0b791f193d753c64c0835e1dd3ede2533fe084d56d9100a96e120ce763",
+      "fingerprint": "sha256:fc5b3fd029cce05e1c3380b268d697615c9202a453835e4f0dc5f139e23285af",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=TO_DATE(44000)"
     },
-    "sha256:aae487612d0937d0aaa140a98e01994f761f1ec38008f6336eaf830fb161ae0c": {
+    "TO_DATE/to-date-zero-serial": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -518,9 +573,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:01018d7d40ad6b4aad14f6f17cc41ff333d5142d79b025fac7e3343fd24de1cd",
+      "fingerprint": "sha256:c2c1197f53d7fead335c75f6de7376efaaa96cc32466c698b76d1afb524a3d9b",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=TO_DATE(0)"
     },
-    "sha256:dd2d5c39d0038f9ed3adb7a30c7a4c7a75612df63996bfad2c0ee594a2cec7d4": {
+    "TO_DATE/to-date-from-text": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -574,9 +635,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:6515949d032ff62fca4ccd245b3a724d7b8140827749030ea3be34d5cb631774",
+      "fingerprint": "sha256:821be3ce8edf1339ca4f1c32799942fe0c24393062d5cfc4058dc9e9c298a8e9",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=TO_DATE(\"2024-01-15\")"
     },
-    "sha256:137e5feb0086fad3ccf1fb426a67c77f34db3de3ff564e3c3276d587cb4dd290": {
+    "TO_DATE/to-date-from-boolean": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -630,9 +697,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:e0ace3cae40449d77440935487268f8e6c16f7d39be75d097b65fe8aba32ec18",
+      "fingerprint": "sha256:d5700d641c4a9b9a358b961db1d68db9a66ae895f49fcb67cf595f5e1fa51d9c",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=TO_DATE(TRUE)"
     },
-    "sha256:47dacb3c68c74f027a7bd64600c93ffdf110c439e9979b7abe5f78db71b4a3f1": {
+    "TO_DATE/to-date-from-invalid-text": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -686,9 +759,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:6d06fa569330cd90eedf78f7188bac5c15a38c8f77090f890a525e4308dcafcc",
+      "fingerprint": "sha256:f0da31052426528c20b521d1200e4c75b3c4f2d69a26ed3a5028a141bf6c9ea0",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=TO_DATE(\"not-a-date\")"
     },
-    "sha256:9bbac12e274f4fbed927622605d8185bc4a830eca21e0862e9f66407a46b1a50": {
+    "TO_DOLLARS/to-dollars-integer": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -744,9 +823,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:da4a79ed39edc3ad8586407f5b0e24db5ed1eea1f27dc0ae88f6d9c4bc19f13e",
+      "fingerprint": "sha256:b98cfb597d145a7064fc36baee85aaf9e7f4cc0a619b266cc4faba96e5d968ee",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=TO_DOLLARS(1234)"
     },
-    "sha256:f9859ba2a12aeadc7ef9d35ea4f30ed2b053cddb1e55685ea78c2f5586a0da29": {
+    "TO_DOLLARS/to-dollars-decimal": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -802,9 +887,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:4279622d817429f304ff6d51b067a40dce971d829f8f5eaaddc8dfb8b3f3ce33",
+      "fingerprint": "sha256:9d92bed4bd2db7653288d3a98f1b95ae96528c7fc9e3fe29bea28219a1174096",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=TO_DOLLARS(1234.567)"
     },
-    "sha256:f29f1bdcdf1a1a23517319900ae4fe3b9eec013ad9594389db1a31eefa0cd16c": {
+    "TO_DOLLARS/to-dollars-negative": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -860,9 +951,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:3737420408649d20659d42a3eef8cc17fe481e011471b39f462fcfce27361619",
+      "fingerprint": "sha256:dc86ee806a87e6d240be0faf6f72527a2bfed285e95fd427fd367f11ebef7b03",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=TO_DOLLARS(-42.5)"
     },
-    "sha256:b4daf5d7c990e377caa9f2d9d536c23aea35618d06c3294dea28bc90ce58641c": {
+    "TO_DOLLARS/to-dollars-from-text": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -918,9 +1015,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:86c3d3d705ebb58ad08cfb8bbaa5e7c82d8b914e642b0eb8829e8b14a9b3f897",
+      "fingerprint": "sha256:e94f012c91f6e7698ddd9257541ac66e6d5f6fbe97485a2c3ef60beb29c33665",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=TO_DOLLARS(\"99.99\")"
     },
-    "sha256:c2e0a1019c478342f2289c447bdd04b219766d8f996a49718dc56d0577bd979c": {
+    "TO_DOLLARS/to-dollars-from-boolean": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -976,9 +1079,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:7949071bc400005846a0fb78a90c8d74aedd96e4cd335f93dbaa705f7967428a",
+      "fingerprint": "sha256:d5700d641c4a9b9a358b961db1d68db9a66ae895f49fcb67cf595f5e1fa51d9c",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=TO_DOLLARS(TRUE)"
     },
-    "sha256:2359190e9b8ee9089350c4a9e044c34eab854124a61c32e73c50f87bf416e5b2": {
+    "TO_PERCENT/to-percent-decimal": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -1034,9 +1143,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:c4b245cefc0b767d938d7da69f72e55f215c45f2bae1b152b07e474acc99c6c6",
+      "fingerprint": "sha256:d637297a9379cbf45f1efce22ace95eed820d4090c11d781057f84df08631ef6",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=TO_PERCENT(0.25)"
     },
-    "sha256:8e38133c71c4d73fe80d1e7bc77473f3f9feb81363ffb55d7110b08c8a9ba59b": {
+    "TO_PERCENT/to-percent-whole-number": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -1092,9 +1207,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:12385b827372ccac6fb017e140f53e1f7733b813b130af2b854c7bf0145e5162",
+      "fingerprint": "sha256:43412a89a2157f2c4788feb0281c4a1151687dc9d65d9710c6a2e9db523e740d",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=TO_PERCENT(1)"
     },
-    "sha256:576ea3a9e94efa1d6bd8b85ee240fd604f03b57ead44f3031df24ada05a25e8c": {
+    "TO_PERCENT/to-percent-zero": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -1150,9 +1271,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:558b5a4fd12df321ed18e2cdb4f676c45f0d006508cab9b901c5a54fa04772dd",
+      "fingerprint": "sha256:c2c1197f53d7fead335c75f6de7376efaaa96cc32466c698b76d1afb524a3d9b",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=TO_PERCENT(0)"
     },
-    "sha256:805b846a0c689cce65db268cc57c42ee9c9e0c3d1d695a9c79b1da9140a13e16": {
+    "TO_PERCENT/to-percent-from-text": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -1208,9 +1335,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:21521564f8de122ff0a844fc8723a0bc2a578f93bc9cb7f24c38e4614eb7ade7",
+      "fingerprint": "sha256:f0e69188e0b8bc20f497b2f36b35923373fa43500928b6e27130435538d7e7d7",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=TO_PERCENT(\"0.5\")"
     },
-    "sha256:276b38b8fc04abc537c92aaaa5e7dffa4715714980ec1c3f9ee0ee69231d4ea8": {
+    "TO_PERCENT/to-percent-negative": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -1266,9 +1399,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:3ed2facccccf0201c10a1228f46b977a41f6365e54cb74878501ad3902f6c407",
+      "fingerprint": "sha256:a8940505b633a3c945c32e27402fe0c0209a1effe5d39902368abb2a1e467840",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=TO_PERCENT(-0.1)"
     },
-    "sha256:42bd6dfd6277c456e2efc0b0b532557184e90eed73fef1a1730f75a86dbb5c9b": {
+    "TO_PURE_NUMBER/to-pure-number-from-percent-literal": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -1316,9 +1455,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:9e75eb14736e86be750fc1a1ec993f62b737222e78ed1a5332ea41dac66a5baf",
+      "fingerprint": "sha256:d637297a9379cbf45f1efce22ace95eed820d4090c11d781057f84df08631ef6",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=TO_PURE_NUMBER(0.25)"
     },
-    "sha256:170c648e61e2c4c3e2cb773b989b964b0ec74690f88f13f4e69db510e42d2e48": {
+    "TO_PURE_NUMBER/to-pure-number-from-integer": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -1366,9 +1511,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:3586e2772c1a3f541571d7a20dbaa5654d081771e1ab2b92036794e06dad9749",
+      "fingerprint": "sha256:ed1ffc7b79de5f822f48947f693ad59d7083a6e03b174277d7d7de72fa7040da",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=TO_PURE_NUMBER(42)"
     },
-    "sha256:c32093ec24083ee9d1c5443d7231601f325af413a0209ace32e0024ce98425c3": {
+    "TO_PURE_NUMBER/to-pure-number-from-text": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -1416,9 +1567,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:d48eb445cc302f1688317b339396132b242ad227f50238e48a48676d17e159c1",
+      "fingerprint": "sha256:f7020ba8ffb2defcdcc2a2b7e34fc268cb8603d9e46908acda661764ed813fb9",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=TO_PURE_NUMBER(\"123.45\")"
     },
-    "sha256:30bac1d837ee9c35f9051b5122c4ae3a87726e71260ae4c86727dc4e9db96402": {
+    "TO_PURE_NUMBER/to-pure-number-from-boolean": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -1466,9 +1623,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:61b45d3bb90b36ae45f50267263b90880f3f5dfeb75e4fde90436a6f52aec33f",
+      "fingerprint": "sha256:d5700d641c4a9b9a358b961db1d68db9a66ae895f49fcb67cf595f5e1fa51d9c",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=TO_PURE_NUMBER(TRUE)"
     },
-    "sha256:2c3b5aa6a1527919e3276dfda8222f53bc3396815232fb95726188febdb8214e": {
+    "TO_PURE_NUMBER/to-pure-number-from-non-numeric-text": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -1516,9 +1679,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:e5b166808f51b0fa68ac42773c3210ea8451474512947c543d1f974894507bad",
+      "fingerprint": "sha256:9baae644abac0964babea30fa58fa0260aceaaf4127b6feeff00e6db5c3bd016",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=TO_PURE_NUMBER(\"hello\")"
     },
-    "sha256:fa6a0049c8f24eb0801c11c20a4056529acc1f826eeb87448670624e758de6b7": {
+    "TO_TEXT/to-text-integer": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -1566,9 +1735,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:de2d511b6e9c241f1d4610076f0b4ee5fb512dd16fc4c402444be148d54b85e6",
+      "fingerprint": "sha256:8cda9108dcf17f2f39dff28c43a0af7e6f0e48f14ae69de4df2fbc3bd3c8cb47",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=TO_TEXT(42)"
     },
-    "sha256:ae7282ddc8e72f5dea0f4e26fe6cd81a41c1cae8f0059a7e2569f5f1d1b25a6d": {
+    "TO_TEXT/to-text-decimal": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -1616,9 +1791,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:c6d25c70c748288ca9a6e933dfde266604e9d57f8da115209b73d092382abf18",
+      "fingerprint": "sha256:8062e3f4a0227c2d1d45ae01712afb69ca42e203f8fe67c9e8a7a60351952835",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=TO_TEXT(3.14159)"
     },
-    "sha256:17c86f208f02ee32b12b191dbb46ba373c1a37e4e7ed9da79c9150242a42f884": {
+    "TO_TEXT/to-text-boolean": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -1666,9 +1847,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:74b2bc5eec68003ca833556928e275908ee2d867ee9de9aa7b4e36e1039a2523",
+      "fingerprint": "sha256:523a8a31e613c6a21c572ae82f4ba86c2da288dc513c8f6b16c7fd31d98a37b7",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=TO_TEXT(TRUE)"
     },
-    "sha256:29a918a76cca83d964544e54477e4a7f96de8fc57d4e350f28ce3ae7e6cb7301": {
+    "TO_TEXT/to-text-already-text": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -1716,9 +1903,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:0506ca33715ae65442944e0f4efd60c024941fbe9a489e0d7c1983a9e06b474a",
+      "fingerprint": "sha256:9baae644abac0964babea30fa58fa0260aceaaf4127b6feeff00e6db5c3bd016",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=TO_TEXT(\"hello\")"
     },
-    "sha256:b296ab42bce8f8b5a6a93252f4fab1fba475fae3703c3a7381e22e34cc0e9d4c": {
+    "TO_TEXT/to-text-from-date-serial": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -1766,9 +1959,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:fcf74ec145867dcdeb49b2da45fbecadc7ade198b6bd209e4ef16fafac9d8555",
+      "fingerprint": "sha256:e6faf3befc3f1715f047e69b79e748b9bfcc3254a25c84083dfb5a629fb853a9",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=TO_TEXT(A1)"
     },
-    "sha256:39ca15be049515d82f9cd45d66a5314a12c986974e91f3740ce0db4f0d192286": {
+    "TO_TEXT/to-text-negative-number": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -1816,6 +2015,12 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:087db4cf6691577b9137df0fee97e9e113e3e83cfec9d04b813543e250353a71",
+      "fingerprint": "sha256:080bcf1c1118f37c8a8cb0064d5c3433b6f51f77ce01a90499d93c63921556d2",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=TO_TEXT(-1234.5)"
     }
   }

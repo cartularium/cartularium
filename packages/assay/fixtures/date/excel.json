@@ -1,8 +1,9 @@
 {
+  "schemaVersion": 2,
   "platform": "excel",
   "generatedAt": "2026-06-17T19:44:09.844Z",
   "results": {
-    "sha256:7dec3f34ab2dab20cc0df17c4671785c32bfe914cc4c3012f85e5ee5ef1b078b": {
+    "DATE/date-basic": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -33,9 +34,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:e6a838189a020aba37dfd89bdbb0811ed1f8c753e465a7ff1dce0574ecf33985",
+      "fingerprint": "sha256:7c8ccb5c94f337bfd3beb45898ea259319e6fc0ca1b16d84c4ff5c771009430e",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=DATE(2025, 3, 15)"
     },
-    "sha256:09911b1b40a5a4fa174c66caad0b57bfde5c5e036dd986707f02bcd9d83a3ad6": {
+    "DATE/date-leap-day": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -66,9 +73,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:d50b744d4e44e7a301ea41d82b8b83a777323a4c2cb344a2183892d4b80d1ec6",
+      "fingerprint": "sha256:1d6a7a417ca91b1a41291f63652d02a1dc89803657fdce4279ff14088aa90ec9",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=DATE(2024, 2, 29)"
     },
-    "sha256:90d2819607279f9e9e251651aa8ac8c252753d1d31bab2b693d5095250e829fd": {
+    "DATE/date-month-overflow": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -99,9 +112,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:959fd13bcdecb74d5ef92db7d38bf43c4ca405892be307198b0a030e8dba7715",
+      "fingerprint": "sha256:895f6968956ec19568ed4e5d4dacde5fd078b980b2ae93fec4392cce08dc91dc",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=DATE(2025, 13, 1)"
     },
-    "sha256:11ea749339bec1b5ef6574d023d96ebf6d09620fbd211cebbfaf318d736d3e56": {
+    "DATE/date-day-overflow": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -132,9 +151,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:b874e209c00f57cd99f97a1c9b48caa4b509f64a57544347fcaa75f21aa5738e",
+      "fingerprint": "sha256:35f7769ff9d0fdff2e67c3e2312cbd29d56bdfa3bc0f7f0de89eba86c1cf0da3",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=DATE(2025, 1, 32)"
     },
-    "sha256:9c81ec52ac3b04dbd31d2d6cd203308f6027b5f06a61547946dfce6cb857ac66": {
+    "DATE/date-negative-month": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -165,9 +190,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:838bc54ff6f51a95009743145d3ce927100ac45117553922f6b5ce1aa32f2b95",
+      "fingerprint": "sha256:8d43f19feb5a85c9e191f39ed149cb30e2c10ec2aa8380df5250e63321dfaffc",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=DATE(2025, -1, 15)"
     },
-    "sha256:898791d367c4b1dcb7a0883a604b302f1002cf5a37d02e8371a315754722dba6": {
+    "DATEDIF/datedif-years": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -193,9 +224,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:087fbf0b37c6ffd2f46af9ef7f928ed98e6f4fa5688fd812b47a0e630c05d774",
+      "fingerprint": "sha256:f638af852ce38aa91cc4de6d85980731ac33ca2a152365dda9104b78637f7380",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=DATEDIF(\"2020-01-15\", \"2025-03-20\", \"Y\")"
     },
-    "sha256:adaf4f249ba097488f8ca7721e86f04f3dd1f83adceaf70e32c2a784aa83c639": {
+    "DATEDIF/datedif-months": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -221,9 +258,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:b21c531d4be44a95414f5866bcd95fe4ecfb5c50ba68d1efb9f6baf67f1a6b84",
+      "fingerprint": "sha256:1c6274cf191e16a97b68e30d9e1576b9793c0ce97c29b475d61e7f9ed785e360",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=DATEDIF(\"2020-01-15\", \"2025-03-20\", \"M\")"
     },
-    "sha256:aedd5e51faa5757eb01b23168c65741156b7e8ff88fa1c84520354b24a7bb59f": {
+    "DATEDIF/datedif-days": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -249,9 +292,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:be1b00d51a498cce1106c76a4ee3fb91a925e01af112a206f7cfc4fb1cba588e",
+      "fingerprint": "sha256:21b6d48bc162f0d99b5f25c61ce17951ce99937959df3d1500bd53ae2d93db96",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=DATEDIF(\"2025-01-01\", \"2025-02-01\", \"D\")"
     },
-    "sha256:3f7908d6ceda839fb7c7a1552e31a8c47322dc129e42479b3b49f6ed25db93b1": {
+    "DATEDIF/datedif-md-day-only": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -277,9 +326,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:22f1d9773b55fe7626cdc9ca8900b292862c62310d78637194c072eec1428e11",
+      "fingerprint": "sha256:f638af852ce38aa91cc4de6d85980731ac33ca2a152365dda9104b78637f7380",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=DATEDIF(\"2020-01-15\", \"2025-03-20\", \"MD\")"
     },
-    "sha256:591b42dacf8de841daec9ef866742f8a7de1af2ca492f82c256871ff30852383": {
+    "DATEDIF/datedif-ym-month-only": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -305,9 +360,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:e7df0c95fe6a8b57845ae345d38dfdbd7c5f809a16c9193ef021838167ce7f75",
+      "fingerprint": "sha256:f13d9c9c73eeb80c34f97364b302cdc64049f75c43a0381299a3ccde79a6e234",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=DATEDIF(\"2020-01-15\", \"2025-03-20\", \"YM\")"
     },
-    "sha256:23b42083cd371dabb37d29560a904af5ca26851ae1d1e12d710c2aeed3b45729": {
+    "DATEVALUE/datevalue-iso": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -333,9 +394,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:980d716d296b8238d4f866ab5277a676258aa4b67e661a505009514e58184de5",
+      "fingerprint": "sha256:7c8ccb5c94f337bfd3beb45898ea259319e6fc0ca1b16d84c4ff5c771009430e",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=DATEVALUE(\"2025-03-15\")"
     },
-    "sha256:e9c29dc8250318c0d26f480e22c1ee2be49a422c84ea607d40bbd54ce516dc3d": {
+    "DATEVALUE/datevalue-long-form": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -361,9 +428,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:4985cf11b515e8f416e801bf2bf8bc2003328fae4eb0be5187e972617aa4c2bb",
+      "fingerprint": "sha256:7c8ccb5c94f337bfd3beb45898ea259319e6fc0ca1b16d84c4ff5c771009430e",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=DATEVALUE(\"March 15, 2025\")"
     },
-    "sha256:521441b2197282379bc53dea97b7e50da9d062cc12c3d506965e6d4ac7eb9d05": {
+    "DATEVALUE/datevalue-invalid": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -390,9 +463,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:8a12efaa2e71c2cc6e8017d4d24aa52a42ced5b4c040e121dbdde845fec76844",
+      "fingerprint": "sha256:53560b24dc39cb4e4cccc613e7b3e26488e6e25a7024d47e1d2f13ac74995070",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=DATEVALUE(\"not a date\")"
     },
-    "sha256:289fd1c93b39004f285a67c460a743ca203b8220da58484ac08af88f8c0e232e": {
+    "DAY/day-from-string": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -418,9 +497,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:9beb57cae21eeac2a2b027f3833fb3c59a171ffb8b8313527ad2dc4de848d3c0",
+      "fingerprint": "sha256:4b00ef90d78e06a355a462df1d7dfd674f085e98d42808b8dd8b5c8f2a36aa7d",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=DAY(\"2025-03-15\")"
     },
-    "sha256:4b41f8bc05d883bf0ecb224f885f725735d9fc5b588994588dd2ae36f2c71f07": {
+    "DAY/day-end-of-month": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -446,9 +531,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:0aa6c0664b3b3a2d4152ca368872b5d166efd8fabbd40933013e8ee8a50e787f",
+      "fingerprint": "sha256:21b6d48bc162f0d99b5f25c61ce17951ce99937959df3d1500bd53ae2d93db96",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=DAY(\"2025-01-31\")"
     },
-    "sha256:edfaa1d836da6f77940a0ff489126a175583f8aca3d0dfe4b56b703ed31dd87f": {
+    "DAY/day-leap-day": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -474,9 +565,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:a314a380e01e5fb54887e28ad653ab3b88c13c5d8fd52f0e36d4d3ee1a0d2af8",
+      "fingerprint": "sha256:5fd8fa8fdaa1b2c1265cf18fdec50e3f94c114a757d3e7747d54c1c143a3366c",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=DAY(\"2024-02-29\")"
     },
-    "sha256:29f5c5f45d09ce766cad4cec9e255e4c7f5f361415a25d60bb35bffcaa8d9511": {
+    "DAY/day-from-date": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -502,9 +599,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:87a85b4b86ad5c2c67431eb980ff0e1f1ec9b3a1f6ef89df6df9ad48750dcdf4",
+      "fingerprint": "sha256:4b00ef90d78e06a355a462df1d7dfd674f085e98d42808b8dd8b5c8f2a36aa7d",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=DAY(DATE(2025, 3, 15))"
     },
-    "sha256:a3f901534b770aeefb6ec9125b418dc392cf88c83a22ec82bef3084fd74e4da8": {
+    "DAYS/days-basic": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -533,9 +636,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:107f9d9ce7236772d6b0877d8b46d485cddf1146ab0d7bf41f685b106e9df1a5",
+      "fingerprint": "sha256:c72b0209340e2159df34fce42a9196394c9d1522e84870dca6182fe0229c0189",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=DAYS(\"2025-03-15\", \"2025-03-01\")"
     },
-    "sha256:ee1d1a33ce0e557e2768af2fbbeec3ac8bfbe4638636e6bf5a74e54c4c3f04d9": {
+    "DAYS/days-negative": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -564,9 +673,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:ddfde17afbda09007193def1151572812b0ac754116373258f897a6486dcb5d0",
+      "fingerprint": "sha256:de7e56a689289587157cc9d819293ebf2cb7c63605d2e89fbae572a253c8ff40",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=DAYS(\"2025-03-01\", \"2025-03-15\")"
     },
-    "sha256:cc9034b3e67ccade176d4ba030090b81a717efc49bfc441972facaa74d13923e": {
+    "DAYS/days-same-day": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -595,9 +710,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:8afbcedc75c8bc5fcd74d4e2a61c2dd680e795a7aa9534fc3a8558de4c07cc9f",
+      "fingerprint": "sha256:c2c1197f53d7fead335c75f6de7376efaaa96cc32466c698b76d1afb524a3d9b",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=DAYS(\"2025-03-15\", \"2025-03-15\")"
     },
-    "sha256:6513aaa903483b6a7a31043984df81f78deb6939f08884289843a8016a21d6b5": {
+    "DAYS/days-across-year": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -626,9 +747,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:5c2134d0143c11b619c6cdc45f385972dba3248bdb236574d272319e3a1fd6ee",
+      "fingerprint": "sha256:0d2fd47af4abb6a6c91a1a9e6c0dc119d6abe2346cdde231a1b675f7e2ca7df1",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=DAYS(\"2025-01-01\", \"2024-01-01\")"
     },
-    "sha256:58353ff844723ec42e3e12f910514db31952a6c90fb690fc148f8448ae057561": {
+    "DAYS360/days360-basic": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -654,9 +781,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:1fb86568f64cdd4e17b6035f4544a8207184840eb06dc0d4e81c65e0f20f6444",
+      "fingerprint": "sha256:f14f214456e55eae69a78e53617c499916d9c8a7dce74a641f7c83f76f5269d7",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=DAYS360(\"2025-01-15\", \"2025-03-15\")"
     },
-    "sha256:b55cc6dba2dea4f9ed1af257de8a97c33c503d2812548486168430f71cbbbf7e": {
+    "DAYS360/days360-full-year": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -682,9 +815,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:0f309e5f71f1e308fd1bd948eeb18d5eeab660b9bf9d1685252d9082bff55768",
+      "fingerprint": "sha256:eaffa4d2c82ea2d53a6d08f8cd2d95aaefd6d8eb1955930f28337912c9303fd6",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=DAYS360(\"2024-01-01\", \"2025-01-01\")"
     },
-    "sha256:2cd39bc42bc840db072500a3f1898d82bb1bff9aaf697b52a60ad8bdc141c1f8": {
+    "DAYS360/days360-european-method": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -710,9 +849,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:2dce161ca51e927bb009b003585443c1f43eb5598a5a8b2d2d119503d6e7ccc8",
+      "fingerprint": "sha256:f14f214456e55eae69a78e53617c499916d9c8a7dce74a641f7c83f76f5269d7",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=DAYS360(\"2025-01-31\", \"2025-03-31\", TRUE)"
     },
-    "sha256:34fe3102004c264b7c39c159a04057f32c9e4b405f6fc8739f1b4c64c6ed92dc": {
+    "EDATE/edate-forward": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -738,9 +883,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:9a9987c821ec35a78c99c4d6e6e1717be6f9920c52ed5853c40f2365601f8899",
+      "fingerprint": "sha256:7ebe7a556b9f1b7313300f7faedfccf7ff7bc8fd4bdaf98542bfcd0cf1bd659c",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=EDATE(\"2025-01-15\", 3)"
     },
-    "sha256:7de907c169a4885ea3e1cc9f7d054223b5ce7e60f04a65b5b5d5e50b57f11e95": {
+    "EDATE/edate-backward": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -766,9 +917,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:b5ef8fbfc81cca96245e6ba16350ae6d14f8491c33b1ae74aabe0a312c63c679",
+      "fingerprint": "sha256:3a7139f372593dbd20fc9641cb3355dcbedf2760f3797f497d452d9ca2d4e027",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=EDATE(\"2025-01-15\", -3)"
     },
-    "sha256:4b1087ecd37b5184038e7ea2512438b961deeff9ee396fe10ea20516d7ed5ce8": {
+    "EDATE/edate-month-end-clamp": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -794,9 +951,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:b45257fc0eabb5c779bd878649f3823d144fc88898e043f1b1a938ab8539629b",
+      "fingerprint": "sha256:56277bfffbb0a2070672ad09615495b0ddc9a559c35970bb3271934051cc1f0f",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=EDATE(\"2025-01-31\", 1)"
     },
-    "sha256:2d29b573758eab627a4b48e5cd6bc07a2cd4ad2adf89dfd6815211acc97bd132": {
+    "EDATE/edate-zero": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -822,9 +985,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:3862d6efe4e2a3cd417312cc7ddc309d95ae8703d5a79e563fde415d25623bb9",
+      "fingerprint": "sha256:7c8ccb5c94f337bfd3beb45898ea259319e6fc0ca1b16d84c4ff5c771009430e",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=EDATE(\"2025-03-15\", 0)"
     },
-    "sha256:fbd1d97e2182a25b45107d59e44127628f2146924c23fa552ab1057560773e98": {
+    "EOMONTH/eomonth-current-month": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -850,9 +1019,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:683787246a584eb857616c5cea938e3503d4f90fe0a911b47f049ff16519db5b",
+      "fingerprint": "sha256:6658074ee96b559de7129fa66bb547d8f0b00621dd0e0517391df95796e3e927",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=EOMONTH(\"2025-03-15\", 0)"
     },
-    "sha256:4f85a9099322087809beac39c7a92d7500311e5f67aed8d9bd79777f8b9f84a5": {
+    "EOMONTH/eomonth-forward-by-2": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -878,9 +1053,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:3bd23fff6d4a7ab89db85a822c461b92a3809b7c534a364560cbd168b7672c21",
+      "fingerprint": "sha256:212384f9893aefe19116119d69a6dd7a49e2ecbd1ed474dc62cc8cd8f39c0f3d",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=EOMONTH(\"2025-03-15\", 2)"
     },
-    "sha256:1fd5348b44b74695d2fdf7f3f058acbc76d7ca8267f6ef1bca59927d504ffc27": {
+    "EOMONTH/eomonth-backward": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -906,9 +1087,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:069240361bc23e87c5d4a6f544b7b98ef68c795d981a54b4e816157c1880c9b5",
+      "fingerprint": "sha256:56277bfffbb0a2070672ad09615495b0ddc9a559c35970bb3271934051cc1f0f",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=EOMONTH(\"2025-03-15\", -1)"
     },
-    "sha256:fd4c5182c3072fb294f4a00c67cee1f0f47a3f8cb25756d3eef3195cb7bca729": {
+    "EOMONTH/eomonth-leap-february": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -934,9 +1121,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:e7cd70db8a0700c6b0d24d72d510ffc6029a565f2a8fff10e280688ba182d143",
+      "fingerprint": "sha256:1d6a7a417ca91b1a41291f63652d02a1dc89803657fdce4279ff14088aa90ec9",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=EOMONTH(\"2024-02-10\", 0)"
     },
-    "sha256:a2bc83a1494d1f4f45a6bc7cbbba433dee25f8a973081de0c783309a05400131": {
+    "EPOCHTODATE/epochtodate-seconds": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -967,9 +1160,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:9511233259dd5e6550234fc6a203005cba17303ca8fc5a46ffa0f8a1f313e103",
+      "fingerprint": "sha256:18c466c30752b33549fe679095342ebb61a84ea50a4a9611bedacf4cfff74ffd",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=EPOCHTODATE(1700000000, 1)"
     },
-    "sha256:c0b852a79f91eaee50574dce2e8acf79441b782e967370633bec59475b5ed599": {
+    "EPOCHTODATE/epochtodate-millis": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -1000,9 +1199,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:27c613ffac66b2b832d0316cbf98c6ee3b2a32749c9cef5c3427c15eadcd181e",
+      "fingerprint": "sha256:18c466c30752b33549fe679095342ebb61a84ea50a4a9611bedacf4cfff74ffd",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=EPOCHTODATE(1700000000000, 2)"
     },
-    "sha256:3ee29066a1f5e3029519894d70c57be13286664d0ab359c90ab8cbc568620430": {
+    "EPOCHTODATE/epochtodate-default-unit": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -1033,9 +1238,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:0f66bac7875a11c459eb43f146452b15acb8db957d075739363357c3266be012",
+      "fingerprint": "sha256:18c466c30752b33549fe679095342ebb61a84ea50a4a9611bedacf4cfff74ffd",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=EPOCHTODATE(1700000000)"
     },
-    "sha256:313910aad0b622255413b1d5a9b8539bc1f9cd609ab7b6971c60c8acdaeffbde": {
+    "HOUR/hour-from-string": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -1061,9 +1272,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:bbc4be7618af1c94ba3d9fb01d4de3db2cea22667b013b3826ac214d30fbdadd",
+      "fingerprint": "sha256:ab62a1242bab63f6a07251046f677da679468f7226d30b9031d3ee2107261e34",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=HOUR(\"13:30:45\")"
     },
-    "sha256:33d9f957f89e04db1e7556df313ff8905d1af011cf1c94b1a5ab86bacacc4995": {
+    "HOUR/hour-midnight": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -1089,9 +1306,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:a69df68b1d4c1115c53dad32fb87068d46becc9b72b12cec9b7f9a08cd90ede9",
+      "fingerprint": "sha256:c2c1197f53d7fead335c75f6de7376efaaa96cc32466c698b76d1afb524a3d9b",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=HOUR(\"00:00:00\")"
     },
-    "sha256:122393a5cd6976b6a72c20529a5d4383e7fb5e8d027211970b725b79ea86423f": {
+    "HOUR/hour-from-time": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -1117,9 +1340,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:b24166098ae815c2960d8c96b365250da9a9d4bed8396b42a3657fe3a81a38ac",
+      "fingerprint": "sha256:a5a5e046af0581abdc744260b046513d30ecea3b48f553b2bcd7c6e61b30f91e",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=HOUR(TIME(9, 15, 30))"
     },
-    "sha256:006b90c831b9a8d09b57d83f9dfde78f10905cb85bb0cac28e77644f24d8c979": {
+    "ISOWEEKNUM/isoweeknum-mid-year": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -1148,9 +1377,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:900d3df3fb0e9b0e24c9318da8b4d55ad9645b26e3eebdb5f82af3e9775e4398",
+      "fingerprint": "sha256:999c8599fc0645066518ceba9eac55f2d8bcc5496a05fd1dcb2b6a2b3f9fff16",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=ISOWEEKNUM(\"2025-06-15\")"
     },
-    "sha256:66e2fa7f05890ae0d6b2d97a3af4676fa59c8c131ddeba36f8f1b0d7fb551c45": {
+    "ISOWEEKNUM/isoweeknum-jan-1-belongs-to-prev-year": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -1179,9 +1414,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:d663e9c0ec124954eae3f1c13f4c241133f2a8df493e0e32c2df56f4a5f89e2a",
+      "fingerprint": "sha256:f3a91e9386de862df8a0ce27945d2475d0ea0fe0a4d4201c4028b2f1a71aca34",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=ISOWEEKNUM(\"2023-01-01\")"
     },
-    "sha256:594310ba114f819c61dc984ce33c55c5e5557893c48d7a73f47e45e46a0b59a4": {
+    "ISOWEEKNUM/isoweeknum-first-week": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -1210,9 +1451,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:fd3cb606de90cc58bc059928e15a6a7fec0637b022ac30a79721133991d72c55",
+      "fingerprint": "sha256:43412a89a2157f2c4788feb0281c4a1151687dc9d65d9710c6a2e9db523e740d",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=ISOWEEKNUM(\"2024-01-01\")"
     },
-    "sha256:b3bf3311aae127ccca2aff306f3ccebb16da52a94651d757527d71f62b1261c5": {
+    "MINUTE/minute-basic": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -1238,9 +1485,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:070d0dbb38f61c6e3dd609b8bac4e1e998bde513e32c8b6ee5c72d23e8df11d2",
+      "fingerprint": "sha256:5a85d253282419d6ce4f0c5eca82057777b032ee5efa7bbd6cf5872c93035d74",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=MINUTE(\"13:30:45\")"
     },
-    "sha256:fdb2736fe3ee72e3626742259e33e8b1c8e2ecfda0075dab69bbc67b7eef070e": {
+    "MINUTE/minute-zero": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -1266,9 +1519,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:e27a37e0479abb2204ca4aecd1175f4a424d97a7e019be5299d684d97ec47aa1",
+      "fingerprint": "sha256:c2c1197f53d7fead335c75f6de7376efaaa96cc32466c698b76d1afb524a3d9b",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=MINUTE(\"13:00:00\")"
     },
-    "sha256:4ce0af27ff7856e45bb91caee7a824612fa190b74dc361657ed3d5f98dae2710": {
+    "MINUTE/minute-from-time": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -1294,9 +1553,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:2470a395a054a93194c2fac55d6ce3a7f0b2fa0e488218548f9f81154e90e22f",
+      "fingerprint": "sha256:4b00ef90d78e06a355a462df1d7dfd674f085e98d42808b8dd8b5c8f2a36aa7d",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=MINUTE(TIME(9, 15, 30))"
     },
-    "sha256:05798c8847ff60230640f0acb42f1805ba8b67902ad252630797dbd1f3045623": {
+    "MONTH/month-from-string": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -1322,9 +1587,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:37e0a6d1c20f736504bba7ad5bffce5768a7ddb29ca33cd22758b2c7a0f1cecc",
+      "fingerprint": "sha256:735bc6630739e4c1cea02fea78a0cab118ad5125fb310f593bf78167645d13ed",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=MONTH(\"2025-03-15\")"
     },
-    "sha256:73065eb6b190ad400af1be2114db690c55e103798f5ecf3b4a45d10df721c71c": {
+    "MONTH/month-december": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -1350,9 +1621,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:3d2c55e18871044b489888d55b3f18ce720fced4d43d0a11aad0457c732a6f39",
+      "fingerprint": "sha256:71fa543d1bcc3371e40b4949ed83b5efa58addd2c5bc5dae879ecf535bd80c65",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=MONTH(\"2025-12-31\")"
     },
-    "sha256:0aebc4a60d3cf4b4bc5b21e7c7a901b4f000220f75209f8f76ca03545f08f7e7": {
+    "MONTH/month-from-date": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -1378,9 +1655,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:ebf1a686b0c2690523ce73a481a19f796751e338080289d77f1e0dff4533a8e1",
+      "fingerprint": "sha256:d5bad171a9236ee0acf4383c27a24be796f866d2725e3093dd0206f133a1b7ed",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=MONTH(DATE(2025, 7, 4))"
     },
-    "sha256:edd71c8be53a3c7297b5000182fd1f917fcbe5be4de70b752388cb899362ab06": {
+    "NETWORKDAYS/networkdays-basic-week": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -1406,9 +1689,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:ea7319c74c89159c098f627e2e35af6af779c1b75d8631ae76152d260f4ee5d0",
+      "fingerprint": "sha256:f638af852ce38aa91cc4de6d85980731ac33ca2a152365dda9104b78637f7380",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=NETWORKDAYS(\"2025-03-03\", \"2025-03-07\")"
     },
-    "sha256:bf65ded667a88742962d27d59a3c5983a892647188e17ebd38740adac942f0ce": {
+    "NETWORKDAYS/networkdays-across-weekend": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -1434,9 +1723,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:5f432847a0a03e0e6dc48dfd352e38c99dc528287c27005302bee6d2f0f64f99",
+      "fingerprint": "sha256:f13d9c9c73eeb80c34f97364b302cdc64049f75c43a0381299a3ccde79a6e234",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=NETWORKDAYS(\"2025-03-07\", \"2025-03-10\")"
     },
-    "sha256:1a28c5261996c2fe1f4ffd9be1373b7a9a996447c352dcbd3c3f4868f1ecf458": {
+    "NETWORKDAYS/networkdays-with-holiday": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -1462,9 +1757,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:ee093082247ead4c9ce8759efd9a87105f5dae8f02b2bdcc1422edb966ac0de8",
+      "fingerprint": "sha256:669d643132b4430cc68e613fdae30972321483db9558d121ed2fa2762974c9b8",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=NETWORKDAYS(\"2025-03-03\", \"2025-03-07\", \"2025-03-05\")"
     },
-    "sha256:4632d9c7fcaab3f09d963893796a7c56ee9fe7f211c2c90def0fe2abbb41a085": {
+    "NETWORKDAYS/networkdays-reversed": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -1490,9 +1791,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:1ab168341b74489905276d5f1264c3a75e23413b7d80bea0da64b519c91add68",
+      "fingerprint": "sha256:152906558acb9af463ba20d03dfed0c4324ef0ae2e8942acbc0b6f6c370af829",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=NETWORKDAYS(\"2025-03-07\", \"2025-03-03\")"
     },
-    "sha256:d5bd96be820a898001ecc58018e10238d9267bf6c67f7c9baf79f96f80069d96": {
+    "NETWORKDAYS.INTL/networkdays-intl-default-weekend": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -1518,9 +1825,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:45ffbe262a947e8eb9c1a55fef8b6722fff73a975b9556c488fe37991db1f90b",
+      "fingerprint": "sha256:f638af852ce38aa91cc4de6d85980731ac33ca2a152365dda9104b78637f7380",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=NETWORKDAYS.INTL(\"2025-03-03\", \"2025-03-07\", 1)"
     },
-    "sha256:2f9c5c29a1346b4de199cc197eebb0e30530ba33608048e2bae07acc0d6e2590": {
+    "NETWORKDAYS.INTL/networkdays-intl-numeric-weekend-sun-only": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -1546,9 +1859,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:ea9cb9e55ae421c8aa3439a800fc89757bc520726d30292aec5190da4526936a",
+      "fingerprint": "sha256:19380e17325c5661a8669b14f9a7f5f1edd57ac6d5d29f72c656315efae76671",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=NETWORKDAYS.INTL(\"2025-03-03\", \"2025-03-09\", 11)"
     },
-    "sha256:0aab2233f22705f266e45b31e57d72066ec87a313d701c73e85c310225723a44": {
+    "NETWORKDAYS.INTL/networkdays-intl-string-weekend-fri-sat": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -1574,9 +1893,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:c1dea4771c966b64383ee5444b562fe7e0bc340c472ece1ea9e3a1c952d5cfc8",
+      "fingerprint": "sha256:f638af852ce38aa91cc4de6d85980731ac33ca2a152365dda9104b78637f7380",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=NETWORKDAYS.INTL(\"2025-03-03\", \"2025-03-09\", \"0000011\")"
     },
-    "sha256:46ac1d2c62c061fbe5712c752fefe9b2f5039db1236f3a6ee76c554c3d22f24b": {
+    "NETWORKDAYS.INTL/networkdays-intl-string-weekend-custom": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -1602,9 +1927,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:de2c7e6b2770ee4245eea4195fdb8470bad3c75bd919d8983255ab5ab1ffafb5",
+      "fingerprint": "sha256:19380e17325c5661a8669b14f9a7f5f1edd57ac6d5d29f72c656315efae76671",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=NETWORKDAYS.INTL(\"2025-03-03\", \"2025-03-09\", \"0000001\")"
     },
-    "sha256:a68465321c067b7d3f5afa3a7a00f2130b5c58cf91f46c75c5c6957454345359": {
+    "NOW/now": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -1635,9 +1966,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:dac83c50f807be6acff51fb7f2e6be4d7f0a12e658c798fcb494e56ee08961e8",
+      "fingerprint": "sha256:2f573675c11003cdf71848b9dbcab7d70ba95367c8a1c1a88eb03daee016b914",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=NOW()"
     },
-    "sha256:4bc6d193634ddf2c28a5f72271958eb2f6cd0dcf55f0e19d7ba6ba6ca0267bee": {
+    "SECOND/second-basic": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -1663,9 +2000,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:615cd1616dfe7bcda1c1c0894b435238870fc3eb1a29d6a7a58626774bba9f43",
+      "fingerprint": "sha256:91bab30b6ebb8ab91ed707a61be924f4eaee12350cebb94bda642bfc0376337e",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=SECOND(\"13:30:45\")"
     },
-    "sha256:19188e39a579d9b637529c0b46e17cc11bb34e0e15d9122a0d31453eacda151f": {
+    "SECOND/second-zero": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -1691,9 +2034,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:6ae90716b7a91395cc17eb45cfab78659137b79b63e84819d1f0d6ab933af9bd",
+      "fingerprint": "sha256:c2c1197f53d7fead335c75f6de7376efaaa96cc32466c698b76d1afb524a3d9b",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=SECOND(\"13:30:00\")"
     },
-    "sha256:ede8a4feefed29007d9b8299ddf63191c02284d36bca46dc0ce400a5c03b1f84": {
+    "SECOND/second-from-time": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -1719,9 +2068,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:77250f85f5c54473d4a22350cf60cc9adb2a722d056e170b50a35e0ea643788a",
+      "fingerprint": "sha256:5a85d253282419d6ce4f0c5eca82057777b032ee5efa7bbd6cf5872c93035d74",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=SECOND(TIME(9, 15, 30))"
     },
-    "sha256:44ec8ab8c33c53981c714c3a21b5d5331b3522e4304a8dc782c3d8d36f16078e": {
+    "TIME/time-basic": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -1752,9 +2107,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:e4edac93831d1500d3a30d7b4910641abcd7daa28579b37d420026c3791bf938",
+      "fingerprint": "sha256:201122bd2f0fa55a826bc49d3b349c3f53f57c4e00d5e4d8869a29ab865de61d",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=TIME(9, 30, 0)"
     },
-    "sha256:746153f2f34346f23a274473dd2a4c48905310ae58f90e60a7b1f3c1c075a5cc": {
+    "TIME/time-midnight": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -1785,9 +2146,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:9e747015123159d38d917d30827e55071fe2a4a46405d0856d7093f36a85ce76",
+      "fingerprint": "sha256:c2c1197f53d7fead335c75f6de7376efaaa96cc32466c698b76d1afb524a3d9b",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=TIME(0, 0, 0)"
     },
-    "sha256:5d9c457741d57cbdc88d276d1d16b071a3b5efd55eea677d7df96a68dbb8fb16": {
+    "TIME/time-overflow-rolls": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -1818,9 +2185,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:f7de1ecdcde48e2616dae639fb19ff52cae22cd19853618ec13c76ea7f7b33d7",
+      "fingerprint": "sha256:0711ff5ee89a5691869b3f3edd5b2745dbc0a38cbfda5fbd551f009465c9d8dd",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=TIME(25, 0, 0)"
     },
-    "sha256:52caed0fb021f8a6d296dd889b0187f571b6046cf4307f2d36dfdb9bc52200fd": {
+    "TIMEVALUE/timevalue-basic": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -1846,9 +2219,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:50f650ea28f4e683b8a77d2b638f0ca7a2500bc794ad665f5ee7aa68e176889e",
+      "fingerprint": "sha256:954ea7915bac420ddacc97ef8083696afa4701bbf69bed751754a87a2eebd742",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=TIMEVALUE(\"13:30:00\")"
     },
-    "sha256:0a080c8775a3419f44eab54ef05c2e363148523f234795340ff7234f19507c20": {
+    "TIMEVALUE/timevalue-noon": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -1874,9 +2253,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:8b97aa100f07d02dba980e9a6ec90648e94a48302e1cce498dae8f018a780ea4",
+      "fingerprint": "sha256:67630ce8e16b69c014a66c3c89ba65097be619267816636e0dec775bdc3f2fdf",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=TIMEVALUE(\"12:00:00\")"
     },
-    "sha256:069b0ac41beb76df48b2ee0747baab3139f3c49de533290755c6868f55088654": {
+    "TIMEVALUE/timevalue-midnight": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -1902,9 +2287,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:eed0ae0ec80948813ff4dcf5b986adae4ce5e6377c2e61584737dae188bda3b8",
+      "fingerprint": "sha256:c2c1197f53d7fead335c75f6de7376efaaa96cc32466c698b76d1afb524a3d9b",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=TIMEVALUE(\"00:00:00\")"
     },
-    "sha256:2f416e395cc7d2bd675348367010cc8ab8b5b9d6eb842dc502cca39455da3824": {
+    "TODAY/today": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -1935,9 +2326,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:eb57d98b9ff8ef2e0dff742fc240555c180c30bbd99b156eca43c34c4ca3e24a",
+      "fingerprint": "sha256:3a07753cbe6e0db1bd6b25939049d3db737dc8d167e46ceb8e5c8984943a2018",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=TODAY()"
     },
-    "sha256:a4aa1b5607158ee6a3e49583af15601ede38c26db971ab456e93d06509744782": {
+    "WEEKDAY/weekday-default-sunday-1": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -1963,9 +2360,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:193ee78946b240bbfd02e8d6f80c0846aa7ac963a5a13cd690f985dc691ed26d",
+      "fingerprint": "sha256:43412a89a2157f2c4788feb0281c4a1151687dc9d65d9710c6a2e9db523e740d",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=WEEKDAY(\"2025-03-16\")"
     },
-    "sha256:12c46dcfcf0eefad77fc9028927ff35157cbf6d121f38f0e741ae25fac95491d": {
+    "WEEKDAY/weekday-sunday-1-convention": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -1991,9 +2394,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:c71a663ebe532dabccbba19025f9b1f57f1a3af564ea2aec77c397a672e235f8",
+      "fingerprint": "sha256:f13d9c9c73eeb80c34f97364b302cdc64049f75c43a0381299a3ccde79a6e234",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=WEEKDAY(\"2025-03-17\", 1)"
     },
-    "sha256:091d2f076b02a1863e9d422b4e73fed80df629635112cfe598acbf29e2d55970": {
+    "WEEKDAY/weekday-monday-1-convention": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -2019,9 +2428,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:947aaeb1013c02679cba14bcee55cf0604d02f7f8158e0d82c847a368c3cd155",
+      "fingerprint": "sha256:43412a89a2157f2c4788feb0281c4a1151687dc9d65d9710c6a2e9db523e740d",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=WEEKDAY(\"2025-03-17\", 2)"
     },
-    "sha256:3e4562ec6557a0cd12e9265ce4ac0097a0dc02c74779d09d84f08f94103b9fbd": {
+    "WEEKDAY/weekday-monday-0-convention": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -2047,9 +2462,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:7017dfab55e906c6d2156eb55386c2f068a57caaffdfc8bc8578effd930be639",
+      "fingerprint": "sha256:c2c1197f53d7fead335c75f6de7376efaaa96cc32466c698b76d1afb524a3d9b",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=WEEKDAY(\"2025-03-17\", 3)"
     },
-    "sha256:d06a0c784cb30f4f63921bcd418a03b092375b7963ea7d0898ed597dc71fb0ad": {
+    "WEEKNUM/weeknum-default": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -2075,9 +2496,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:92c273dc06b8ef07fae8e3b6152dad4cf628ea3c33f1c11209a4b44d29e3866f",
+      "fingerprint": "sha256:f13d9c9c73eeb80c34f97364b302cdc64049f75c43a0381299a3ccde79a6e234",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=WEEKNUM(\"2025-01-05\")"
     },
-    "sha256:d0496cc3305a2ef4c759f765ef47552d3ba193b93f72ea0bbcc821eb39e1e562": {
+    "WEEKNUM/weeknum-monday-start": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -2103,9 +2530,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:faf63a9b1b0433a9ef97d22f81172181b83d90f4e78ad01df3de76a16a4f4d5c",
+      "fingerprint": "sha256:43412a89a2157f2c4788feb0281c4a1151687dc9d65d9710c6a2e9db523e740d",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=WEEKNUM(\"2025-01-05\", 2)"
     },
-    "sha256:f5a61c2890a50f14f3c2c53ccaf43e747d96f8899246c906b3e14d3b6f498d3d": {
+    "WEEKNUM/weeknum-iso-system": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -2131,9 +2564,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:c5810ea0bf075e2073a09354df71845e7120de57a28d84d3d62e220f6e8c049a",
+      "fingerprint": "sha256:f3a91e9386de862df8a0ce27945d2475d0ea0fe0a4d4201c4028b2f1a71aca34",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=WEEKNUM(\"2023-01-01\", 21)"
     },
-    "sha256:6c82a83e57b6f680287560142f1c3eedd5212015ddec8e2e79d7e4928d981ed2": {
+    "WORKDAY/workday-forward": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -2159,9 +2598,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:e0378fd9bcdd4c251021978a36a31bdcc5e9a57d28da2ab83ffb18dfe51f89d0",
+      "fingerprint": "sha256:9555f60846feeb3f897ac4706781db5264a1c23d32929a75d98d4ff80e22a4c4",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=WORKDAY(\"2025-03-03\", 5)"
     },
-    "sha256:e4cee50f3f269547eb6d25af2aaa5097d756cc8c146380f34d3edc9fc98b3a83": {
+    "WORKDAY/workday-backward": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -2187,9 +2632,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:227dfa8b8b3d5ac3f7122655bc0df02f70198946a32bff8091b1c6a3b10812db",
+      "fingerprint": "sha256:1a45efdb4c6f79a3ca449760a1482e559aea72ef6975518cfb0098e0f1722490",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=WORKDAY(\"2025-03-10\", -5)"
     },
-    "sha256:6001064e112278c0fa4b3cd111732a3a0773936d2e437b240f0892ee613f894a": {
+    "WORKDAY/workday-with-holiday": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -2215,9 +2666,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:4cc965951bac6a7b024ee55d1f3f01e46024a484028283a7aca2e75bab620d3a",
+      "fingerprint": "sha256:614df92d87cadc528283e368e3af0cf878b18bafe5c3c24948ae81b509a3c77e",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=WORKDAY(\"2025-03-03\", 5, \"2025-03-05\")"
     },
-    "sha256:499ac28532fc45429e1211d4a1377367ccf8bb75dfdc5229fd06b3afdb1b797f": {
+    "WORKDAY/workday-zero-offset": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -2243,9 +2700,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:dda8e462c081fff8b14b9f9f140ea10b758352a7516e1d0ce0f69f293ed4c30e",
+      "fingerprint": "sha256:1a45efdb4c6f79a3ca449760a1482e559aea72ef6975518cfb0098e0f1722490",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=WORKDAY(\"2025-03-03\", 0)"
     },
-    "sha256:b45c91708d59c3dec4f5d8a060f1a13f825146371604999288815cc1577e5c9d": {
+    "WORKDAY.INTL/workday-intl-default-weekend": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -2271,9 +2734,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:5a08f88171d26becc1c5c7a550c56588cca3306e8bb972cd8ad95cb9725401f2",
+      "fingerprint": "sha256:9555f60846feeb3f897ac4706781db5264a1c23d32929a75d98d4ff80e22a4c4",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=WORKDAY.INTL(\"2025-03-03\", 5, 1)"
     },
-    "sha256:5e333c808c31e19a94813102e3ac362351dc8fe1c4f59237ad75578bd87e6d32": {
+    "WORKDAY.INTL/workday-intl-numeric-weekend-fri-sat": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -2299,9 +2768,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:95dc0819aec469303dc293a5fb7704720d98cb5a797aa9830257c668865c2070",
+      "fingerprint": "sha256:9555f60846feeb3f897ac4706781db5264a1c23d32929a75d98d4ff80e22a4c4",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=WORKDAY.INTL(\"2025-03-03\", 5, 7)"
     },
-    "sha256:30d7d414545da04c36aec85fa1c161a387db1ff389b7ae156f2b2453cb8f4f57": {
+    "WORKDAY.INTL/workday-intl-string-weekend": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -2327,9 +2802,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:4b8d5037246e4630232ef36c0993fc9ad7afbfd9e49f75f1c11e85ba072bed90",
+      "fingerprint": "sha256:9555f60846feeb3f897ac4706781db5264a1c23d32929a75d98d4ff80e22a4c4",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=WORKDAY.INTL(\"2025-03-03\", 5, \"0000011\")"
     },
-    "sha256:b9d4162d878112b6d841c0b169175c535b1533cd519f3e10790fdd23b2a1fbc1": {
+    "WORKDAY.INTL/workday-intl-sunday-only-string": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -2355,9 +2836,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:fe65e3b2e2f827edb894a6b2a29f94bdf20f3dd9d1ad787f1d090a62a2d62bf4",
+      "fingerprint": "sha256:44a5d0e2cffedab1afc3f45601b4537b11d5f8552762b5169ec167dfd9d989d0",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=WORKDAY.INTL(\"2025-03-03\", 5, \"0000001\")"
     },
-    "sha256:438450eec661566803e35b71f0ca351411d59a9b273ea48400dae7efa88ef8d5": {
+    "YEAR/year-from-string": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -2383,9 +2870,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:9684556664b83d52694160f708359b81c3341f4852f92dbe973c868a9ff0cc71",
+      "fingerprint": "sha256:90f094d583c4c0c854bfa80b29093c1ff02813cead7b0f4fa86ad9d6f015d352",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=YEAR(\"2025-03-15\")"
     },
-    "sha256:b526186b23e75fb3960bcf65a0d9862bf54894d6446557af7ea0dd2990564817": {
+    "YEAR/year-from-date": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -2411,9 +2904,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:6eb61243014b23168e9cae40323fe001dcd1351a9969b5ebab9292d562ee6c80",
+      "fingerprint": "sha256:5e311216be2c15562cc907e110067a0e570ae0c6ece75c758a12dd658d3c02b0",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=YEAR(DATE(1999, 12, 31))"
     },
-    "sha256:663e246e4aeec91cdf84545ccfd74feba61cf1740030b355f9f12e7158e4da3d": {
+    "YEAR/year-millennium": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -2439,9 +2938,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:fee5f357ffdfb930d1a6a1f9c5ab8fe938e2521438895b4b4b70c13cf6652d7c",
+      "fingerprint": "sha256:c3546ada1439f4f3f59dbbeb992c2a6753855146a5c715233399f44be74f1597",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=YEAR(\"2000-01-01\")"
     },
-    "sha256:da9a0a100ddd4b4da35ee700ce6ddf546bb4ca36a603cc8e24bd87d4ef39a411": {
+    "YEARFRAC/yearfrac-half-year-default": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -2467,9 +2972,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:4b9a3985063f7aa1e2cb91471ee5fe52090c78c60c15921b76f3661b5027e8e7",
+      "fingerprint": "sha256:67630ce8e16b69c014a66c3c89ba65097be619267816636e0dec775bdc3f2fdf",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=YEARFRAC(\"2025-01-01\", \"2025-07-01\")"
     },
-    "sha256:9238e9f930a94c0cccf527fb9b63efa3fd197bea7e2f6768d8e1df41267e7333": {
+    "YEARFRAC/yearfrac-us-30-360": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -2495,9 +3006,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:485e44c103d6bebbdf46c5239331907c1bef30d0f3e7c94f340c18e848528449",
+      "fingerprint": "sha256:43412a89a2157f2c4788feb0281c4a1151687dc9d65d9710c6a2e9db523e740d",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=YEARFRAC(\"2025-01-01\", \"2026-01-01\", 0)"
     },
-    "sha256:20eac8e720315dc791b6cd3ec492668ba78bef32f81a1904fc5fc86d1962c2f1": {
+    "YEARFRAC/yearfrac-actual-actual": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -2523,9 +3040,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:20cf46dfb7786526201518b0343e81fc81941cecfa6cf42443e72c560f0875cf",
+      "fingerprint": "sha256:43412a89a2157f2c4788feb0281c4a1151687dc9d65d9710c6a2e9db523e740d",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=YEARFRAC(\"2025-01-01\", \"2026-01-01\", 1)"
     },
-    "sha256:a623ccf3b0dbfc325ef5b00e151ed634bddd38a6e218e46b8e1e54a204c77931": {
+    "YEARFRAC/yearfrac-actual-360": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -2551,9 +3074,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:f6a97f58a41457b3cbfa72246ace0690df5843bc75f12f52f14fd528f792249c",
+      "fingerprint": "sha256:7cbe58fce4a885dbee502bdf81cd5cdc958671aceed12df52b270fb6922b9fe2",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=YEARFRAC(\"2025-01-01\", \"2026-01-01\", 2)"
     },
-    "sha256:07475096d54f7656af720cc96c0812bf4ad0fd41353857698c41162e457f07bb": {
+    "YEARFRAC/yearfrac-same-date": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -2579,6 +3108,12 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:4d8ec87789791eab6e47a39997b1e50df3038bda600844fcd4a580246e877ca9",
+      "fingerprint": "sha256:c2c1197f53d7fead335c75f6de7376efaaa96cc32466c698b76d1afb524a3d9b",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=YEARFRAC(\"2025-03-15\", \"2025-03-15\")"
     }
   }

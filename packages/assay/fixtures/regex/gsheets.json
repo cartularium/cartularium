@@ -1,8 +1,9 @@
 {
+  "schemaVersion": 2,
   "platform": "gsheets",
   "generatedAt": "2026-06-17T20:01:41.623Z",
   "results": {
-    "sha256:abd926a9de6826e815d41e3df05de857862a00614103c9c6b20ac57a45c4183c": {
+    "REGEXMATCH/match-basic-substring": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -50,9 +51,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:6a73be63d8e56d0b36d798d631e7f13235066fbfdbe5ffa98e474c42955db5d5",
+      "fingerprint": "sha256:d5700d641c4a9b9a358b961db1d68db9a66ae895f49fcb67cf595f5e1fa51d9c",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=REGEXMATCH(\"hello world\", \"world\")"
     },
-    "sha256:a961606de1d08dbd79f97c83a0517d692080e37609e01c236ca05fad8d152a8f": {
+    "REGEXMATCH/match-returns-false-when-no-match": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -100,9 +107,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:1c2c5f951d75dfb3b75de5847339848fae85b18d8cf02cef5f7f1d9ecbb45b40",
+      "fingerprint": "sha256:a1b538e19620f97d545382bbb58c4ab9ed43811e9f00defb0e3f2a8a27492f94",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=REGEXMATCH(\"hello\", \"xyz\")"
     },
-    "sha256:3cee7253af54635ceff14954d85b7b42e840f253e58f0692fb7f1e747deeebf4": {
+    "REGEXMATCH/match-anchors-start-and-end": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -150,9 +163,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:d075c5af0e6f22c0bb66fa10dd73e0aee1cfca55bb7ad16a4c0b413af33e268d",
+      "fingerprint": "sha256:d5700d641c4a9b9a358b961db1d68db9a66ae895f49fcb67cf595f5e1fa51d9c",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=REGEXMATCH(\"hello\", \"^hello$\")"
     },
-    "sha256:caaedd8e166cce8c68a96ad1776a8ef685d07f528872294ab060a29721e9975c": {
+    "REGEXMATCH/match-anchors-fail-on-partial-string": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -200,9 +219,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:d4fb43ac345b3ce2bcd39c9365792f5dd11d58ed545d6a24e745e7416348b22e",
+      "fingerprint": "sha256:a1b538e19620f97d545382bbb58c4ab9ed43811e9f00defb0e3f2a8a27492f94",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=REGEXMATCH(\"hello world\", \"^hello$\")"
     },
-    "sha256:c470d2fe5c7c5aaefca0c7e997df95f7afd62963e52ea0c8205a0a37a1022671": {
+    "REGEXMATCH/match-start-anchor-only": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -250,9 +275,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:ac153a5032f79a299798f85be518007757fa7c132c6d2a0fdd273637b84b29bc",
+      "fingerprint": "sha256:d5700d641c4a9b9a358b961db1d68db9a66ae895f49fcb67cf595f5e1fa51d9c",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=REGEXMATCH(\"hello\", \"^hel\")"
     },
-    "sha256:e3dd31c27af932428dd9e6cbbeeeaf1264d7ac2864586746304af1b0df97935f": {
+    "REGEXMATCH/match-end-anchor-only": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -300,9 +331,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:ad04b2762fd646e91e5a09c125012810dceefcbdd7e0dea64ee6c82eec14bae8",
+      "fingerprint": "sha256:d5700d641c4a9b9a358b961db1d68db9a66ae895f49fcb67cf595f5e1fa51d9c",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=REGEXMATCH(\"hello\", \"llo$\")"
     },
-    "sha256:4131320fc59e6cd8f2fe56f673182b253ae16fcbd731b7186d2be9dde1f559a7": {
+    "REGEXMATCH/match-digit-class": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -350,9 +387,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:bfd1384dedf2efa66fa57fed33da2920b752a8a0c9d867b8865940cfd5c0e321",
+      "fingerprint": "sha256:d5700d641c4a9b9a358b961db1d68db9a66ae895f49fcb67cf595f5e1fa51d9c",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=REGEXMATCH(\"abc 123\", \"\\d+\")"
     },
-    "sha256:c64e8b67437f2e0af9bcbfbaa0449bfb40499eafa17c9253f057410f3a0e46db": {
+    "REGEXMATCH/match-digit-class-no-digits": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -400,9 +443,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:e11da4eb5a8f03465ed6d24d662f8fa1fdceb9c035c1961bcd12e6c472a836a3",
+      "fingerprint": "sha256:a1b538e19620f97d545382bbb58c4ab9ed43811e9f00defb0e3f2a8a27492f94",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=REGEXMATCH(\"abc\", \"\\d+\")"
     },
-    "sha256:2a1ab5c7aff1a43e375ac05a70a74578e72bb9ba60cc049c7cf9036194dcf919": {
+    "REGEXMATCH/match-word-class": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -450,9 +499,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:cdc8606cba965674eaa28d9a116ad2d59c8439f5ee005a87367f86bbcfd4a48d",
+      "fingerprint": "sha256:d5700d641c4a9b9a358b961db1d68db9a66ae895f49fcb67cf595f5e1fa51d9c",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=REGEXMATCH(\"hello_world\", \"\\w+\")"
     },
-    "sha256:5630c24b48411a18da4187263f9656f5ffcc964cf05774177159e3572cc1604e": {
+    "REGEXMATCH/match-lowercase-range": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -500,9 +555,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:99aca91fe0f78457b8969140944d35db3b0a617db2ad6e98952fdfb5c7a04160",
+      "fingerprint": "sha256:d5700d641c4a9b9a358b961db1d68db9a66ae895f49fcb67cf595f5e1fa51d9c",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=REGEXMATCH(\"hello\", \"[a-z]+\")"
     },
-    "sha256:06db09b46f675797eff6cf109abd6b02603f5c3b212230ea6beb4295cd4c645f": {
+    "REGEXMATCH/match-lowercase-range-rejects-uppercase": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -550,9 +611,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:504745b91448044a7e9f7279545054d2a38d7f4a5ec8de7d5e66ca41f060bb1e",
+      "fingerprint": "sha256:a1b538e19620f97d545382bbb58c4ab9ed43811e9f00defb0e3f2a8a27492f94",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=REGEXMATCH(\"HELLO\", \"[a-z]+\")"
     },
-    "sha256:da29535437402fe8c8611d1a3b366eecf305fd5e635db90af4a25ce223b6b402": {
+    "REGEXMATCH/match-exact-count-quantifier": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -600,9 +667,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:d8217ce27c243a66366da85918a4fc42c3743f649611bc51b5de5c05943029b0",
+      "fingerprint": "sha256:d5700d641c4a9b9a358b961db1d68db9a66ae895f49fcb67cf595f5e1fa51d9c",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=REGEXMATCH(\"abc123\", \"[a-z]{3}\\d{3}\")"
     },
-    "sha256:8b181aff58be0eab765c0b72e062b8ce3b6b306e04cc72076450d8fb591dcc50": {
+    "REGEXMATCH/match-range-quantifier-within-bounds": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -650,9 +723,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:2dbf2fd2e53d434a0f7bc5a41544775d0d72415c6b7eb17356baafe1e662d03e",
+      "fingerprint": "sha256:d5700d641c4a9b9a358b961db1d68db9a66ae895f49fcb67cf595f5e1fa51d9c",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=REGEXMATCH(\"aab\", \"a{2,3}b\")"
     },
-    "sha256:124b3d1331316addcbae50fd03ff74fdfef9e5262fede9f7f55c77b3df865c3a": {
+    "REGEXMATCH/match-range-quantifier-below-minimum": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -700,9 +779,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:bdb14a3139ef3c49bf05a47179ad470c9ed8d624b84607f79664028e50e8fb70",
+      "fingerprint": "sha256:a1b538e19620f97d545382bbb58c4ab9ed43811e9f00defb0e3f2a8a27492f94",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=REGEXMATCH(\"ab\", \"a{2,3}b\")"
     },
-    "sha256:2c96270449e595d06e44d8f81c9f634b3079288730ed6ccb63a6b2081b1afa9c": {
+    "REGEXMATCH/match-alternation-first-branch": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -750,9 +835,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:5cd78f661064171583bca61f0a5ae8a8f6577c12897ae35e8a0e56dee5683a07",
+      "fingerprint": "sha256:d5700d641c4a9b9a358b961db1d68db9a66ae895f49fcb67cf595f5e1fa51d9c",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=REGEXMATCH(\"cat\", \"cat|dog\")"
     },
-    "sha256:20c95997bbfbf32fadf8863ad6f63a39b9a942bcee34404b194e9a2536115af4": {
+    "REGEXMATCH/match-alternation-second-branch": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -800,9 +891,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:6f1e35c9bec006d7f63cd428adae056233ed4199300a3dc6c14702176ccf3a10",
+      "fingerprint": "sha256:d5700d641c4a9b9a358b961db1d68db9a66ae895f49fcb67cf595f5e1fa51d9c",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=REGEXMATCH(\"dog\", \"cat|dog\")"
     },
-    "sha256:2a5bfbd6a5fcbca6443f24d3feac4d0fb6d9b1e3f4871379f9c4c318233ae163": {
+    "REGEXMATCH/match-alternation-neither-branch": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -850,9 +947,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:89401c0e6bf18c899fe7f67cd177839722740969cdfdcec0da758d694dd3636a",
+      "fingerprint": "sha256:a1b538e19620f97d545382bbb58c4ab9ed43811e9f00defb0e3f2a8a27492f94",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=REGEXMATCH(\"fish\", \"cat|dog\")"
     },
-    "sha256:ed8da47cb57e6a2bbc6d80774c3ff31e887bdcf743a9b490791cded577ae5db6": {
+    "REGEXMATCH/match-word-boundary-hit": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -900,9 +1003,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:2307c78504f2407aed642df2a99ba71ac5042041ebc3b4eceea1c0d4be1c54c2",
+      "fingerprint": "sha256:d5700d641c4a9b9a358b961db1d68db9a66ae895f49fcb67cf595f5e1fa51d9c",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=REGEXMATCH(\"hello world\", \"\\bworld\\b\")"
     },
-    "sha256:38f376a2ad2b5282668773a623f2d7fb7c26e36333fd050d783a623ba118eed6": {
+    "REGEXMATCH/match-word-boundary-miss": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -950,9 +1059,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:d5bf1e64314780063ce7ebfbf167c8a13c0c61d6eeff3f0ebbdd98ac27f7f9ae",
+      "fingerprint": "sha256:a1b538e19620f97d545382bbb58c4ab9ed43811e9f00defb0e3f2a8a27492f94",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=REGEXMATCH(\"helloworld\", \"\\bworld\\b\")"
     },
-    "sha256:cf7f639448ea861d8f6de728702021571a55d6013e1bbdb2fd8aea5b84e5e7e7": {
+    "REGEXMATCH/match-case-sensitive-by-default": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -1000,9 +1115,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:8f3e5c1cbf7cd6dd90e2e0eb382f757d55e34acf28388a575f6950f7d2acc7cc",
+      "fingerprint": "sha256:a1b538e19620f97d545382bbb58c4ab9ed43811e9f00defb0e3f2a8a27492f94",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=REGEXMATCH(\"HELLO\", \"hello\")"
     },
-    "sha256:483ca755d387eabe14c7f42649bc2ab4b7547f15a7a9741ac5477e26f4af5b6e": {
+    "REGEXMATCH/match-case-insensitive-via-inline-flag": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -1050,168 +1171,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:813590c9523c7fafa95f49b039027bc906ca2b93013658572c8955238185d5da",
+      "fingerprint": "sha256:d5700d641c4a9b9a358b961db1d68db9a66ae895f49fcb67cf595f5e1fa51d9c",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=REGEXMATCH(\"HELLO\", \"(?i)hello\")"
     },
-    "sha256:f67c69a29195941e55b5f2ddef4405d56dd4155bac9617d8233d02586e359692": {
-      "outcome": {
-        "kind": "value",
-        "grid": [
-          [
-            {
-              "primitive": {
-                "kind": "error",
-                "sentinel": "#REF!"
-              },
-              "engine": {
-                "platform": "gsheets",
-                "wire_kind": "error",
-                "raw_api": {
-                  "userEnteredValue": {
-                    "formulaValue": "=REGEXMATCH(\"café\", \"\\p{L}+\")"
-                  },
-                  "effectiveValue": {
-                    "errorValue": {
-                      "type": "REF",
-                      "message": "Function REGEXMATCH parameter 2 value \"\\p{L}+\" is not a valid regular expression."
-                    }
-                  },
-                  "formattedValue": "#REF!",
-                  "effectiveFormat": {
-                    "textFormat": {
-                      "foregroundColor": {},
-                      "fontFamily": "Arial",
-                      "fontSize": 10,
-                      "bold": false,
-                      "italic": false,
-                      "strikethrough": false,
-                      "underline": false,
-                      "foregroundColorStyle": {
-                        "rgbColor": {}
-                      }
-                    },
-                    "hyperlinkDisplayType": "PLAIN_TEXT"
-                  }
-                }
-              },
-              "formula": "REGEXMATCH(\"café\", \"\\p{L}+\")",
-              "formatted": "#REF!"
-            }
-          ]
-        ],
-        "extent": {
-          "rows": 1,
-          "cols": 1
-        }
-      },
-      "formula-as-evaluated": "=REGEXMATCH(\"café\", \"\\p{L}+\")"
-    },
-    "sha256:8284edcb98a1dc3962ace7645833449c5560f08b778d5ba2a3d5ff69ec14b46d": {
-      "outcome": {
-        "kind": "value",
-        "grid": [
-          [
-            {
-              "primitive": {
-                "kind": "error",
-                "sentinel": "#REF!"
-              },
-              "engine": {
-                "platform": "gsheets",
-                "wire_kind": "error",
-                "raw_api": {
-                  "userEnteredValue": {
-                    "formulaValue": "=REGEXMATCH(\"123\", \"\\p{L}\")"
-                  },
-                  "effectiveValue": {
-                    "errorValue": {
-                      "type": "REF",
-                      "message": "Function REGEXMATCH parameter 2 value \"\\p{L}\" is not a valid regular expression."
-                    }
-                  },
-                  "formattedValue": "#REF!",
-                  "effectiveFormat": {
-                    "textFormat": {
-                      "foregroundColor": {},
-                      "fontFamily": "Arial",
-                      "fontSize": 10,
-                      "bold": false,
-                      "italic": false,
-                      "strikethrough": false,
-                      "underline": false,
-                      "foregroundColorStyle": {
-                        "rgbColor": {}
-                      }
-                    },
-                    "hyperlinkDisplayType": "PLAIN_TEXT"
-                  }
-                }
-              },
-              "formula": "REGEXMATCH(\"123\", \"\\p{L}\")",
-              "formatted": "#REF!"
-            }
-          ]
-        ],
-        "extent": {
-          "rows": 1,
-          "cols": 1
-        }
-      },
-      "formula-as-evaluated": "=REGEXMATCH(\"123\", \"\\p{L}\")"
-    },
-    "sha256:9f541380d0f01827d2af1efb92ae86d04271816d011591f08469d9ab7b1d1e5f": {
-      "outcome": {
-        "kind": "value",
-        "grid": [
-          [
-            {
-              "primitive": {
-                "kind": "error",
-                "sentinel": "#REF!"
-              },
-              "engine": {
-                "platform": "gsheets",
-                "wire_kind": "error",
-                "raw_api": {
-                  "userEnteredValue": {
-                    "formulaValue": "=REGEXMATCH(\"你好世界\", \"\\p{L}+\")"
-                  },
-                  "effectiveValue": {
-                    "errorValue": {
-                      "type": "REF",
-                      "message": "Function REGEXMATCH parameter 2 value \"\\p{L}+\" is not a valid regular expression."
-                    }
-                  },
-                  "formattedValue": "#REF!",
-                  "effectiveFormat": {
-                    "textFormat": {
-                      "foregroundColor": {},
-                      "fontFamily": "Arial",
-                      "fontSize": 10,
-                      "bold": false,
-                      "italic": false,
-                      "strikethrough": false,
-                      "underline": false,
-                      "foregroundColorStyle": {
-                        "rgbColor": {}
-                      }
-                    },
-                    "hyperlinkDisplayType": "PLAIN_TEXT"
-                  }
-                }
-              },
-              "formula": "REGEXMATCH(\"你好世界\", \"\\p{L}+\")",
-              "formatted": "#REF!"
-            }
-          ]
-        ],
-        "extent": {
-          "rows": 1,
-          "cols": 1
-        }
-      },
-      "formula-as-evaluated": "=REGEXMATCH(\"你好世界\", \"\\p{L}+\")"
-    },
-    "sha256:ef9c852ce19c876731a1cf683afdc325804dc6d1f2ce4b1d99cfa061dfd8bae4": {
+    "REGEXMATCH/match-non-ascii-literal": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -1259,9 +1227,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:b164d5f8adb3b895657f52cf2f54702747aa97229422992530ff5bcca2a9b4a0",
+      "fingerprint": "sha256:d5700d641c4a9b9a358b961db1d68db9a66ae895f49fcb67cf595f5e1fa51d9c",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=REGEXMATCH(\"Ångström\", \"Å\")"
     },
-    "sha256:eeee1885d74edb993739879eefd724fdb43e7478d721f06640734b48e460b7c5": {
+    "REGEXEXTRACT/extract-non-ascii-literal": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -1309,9 +1283,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:9f85a9177a8d75436b43e5de1a0de8ac9d3c26c6f52d56601c8b1d46af88f82f",
+      "fingerprint": "sha256:b9f5605c09d3e7100369692a0b4bf3df786417e399bf6b8b6cdc3585ab200860",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=REGEXEXTRACT(\"résumé template\", \"résumé\")"
     },
-    "sha256:39358130d0634993d41630acd8c9eb569f6cd4ecb06191fb07118424878bdb9a": {
+    "REGEXMATCH/match-non-ascii-case-insensitive-via-inline-flag": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -1359,9 +1339,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:a67ab8e61ec746f394c99854ecbb136948ab4650d1c4373482c8066457984b05",
+      "fingerprint": "sha256:d5700d641c4a9b9a358b961db1d68db9a66ae895f49fcb67cf595f5e1fa51d9c",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=REGEXMATCH(\"CAFÉ\", \"(?i)café\")"
     },
-    "sha256:3542d886b41dcfa26e31dfd29b3f0ef1f95a22ba541dc75a61dc8eaac61dfe1f": {
+    "REGEXEXTRACT/extract-full-match-when-no-capture-groups": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -1409,9 +1395,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:68a14294359903e9b0e7a5a541489ccdc438ad51def6b9553fbf31c11cab6ed4",
+      "fingerprint": "sha256:9bbba5c5dfe27274b7c4f8e084bcff6c5cfef527264e664d2935fbc733672b98",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=REGEXEXTRACT(\"abc 123 def\", \"\\d+\")"
     },
-    "sha256:b144a121a4fd76bdf40e340d89af64a262c531f89ea3359802a2ebf0ebc308da": {
+    "REGEXEXTRACT/extract-full-match-no-groups-with-dollar-sign": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -1459,9 +1451,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:151bc0abbe09f8e99b1798d62d546771a5e0a5f231b3ae7ae9a5137de2d2631a",
+      "fingerprint": "sha256:a43b13695f0ed362bb2b49b55ca6b166197dd4e35ba94809ddc3ed6cf0e46792",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=REGEXEXTRACT(\"Price: $100\", \"\\$\\d+\")"
     },
-    "sha256:8c4b1fdf8d1b19f09856d7fc8ea9c5ec5975681a1710b912a58563bbdc3152b1": {
+    "REGEXEXTRACT/extract-first-of-multiple-full-matches": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -1509,9 +1507,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:689b132646fe01cc4269c175f8e7e8125a4410c0aec1a1d713aec44d8191185f",
+      "fingerprint": "sha256:8a544c314eed9ed92fbae179cbffc554ecc92ac4a37ad74cb8870a0cb45e0b40",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=REGEXEXTRACT(\"one 1 two 2 three 3\", \"\\d+\")"
     },
-    "sha256:7810364991ac166eb12ac781f6a645470b2e0427c2b3e058ff9ee55678f087d9": {
+    "REGEXEXTRACT/extract-single-capture-group": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -1559,9 +1563,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:f3477053a348f583b46acb6f053b051de57a03ffb5753b20a3f4b0cc37ae6c92",
+      "fingerprint": "sha256:d4757d493d62de163e37a4d0fa78bb96f3d56d4347234769a67eec5677296fd4",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=REGEXEXTRACT(\"Price: $100\", \"\\$(\\d+)\")"
     },
-    "sha256:25f62ecb6eaf18e49bcd061abf8549d9ab751dec7a947ad5d00a1345bd81738d": {
+    "REGEXEXTRACT/extract-capture-groups-when-multiple-groups-present": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -1673,9 +1683,15 @@
           "cols": 3
         }
       },
+      "stimulus": "sha256:938dd7a2ee3a527d693798a3c99c157a51962702f657327e7902a1b2a702d61e",
+      "fingerprint": "sha256:11fd10292c02973f5b2b8058798c95d0a432a1f588675234ed081c1c8113efbb",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=REGEXEXTRACT(\"2025-03-01\", \"(\\d{4})-(\\d{2})-(\\d{2})\")"
     },
-    "sha256:cbcad7ec6c4d61d453ee416477aaa987dab0cf3e5765ba131f0c169d98beac73": {
+    "REGEXEXTRACT/extract-two-word-groups": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -1755,9 +1771,15 @@
           "cols": 2
         }
       },
+      "stimulus": "sha256:cdd649bb2fc5a3323036b15f97189e92c08bfadedeb847ded0e45980b1d30b84",
+      "fingerprint": "sha256:a5457599d096af051f2e468f9f39bef2dfd90bb7f2b30220e4cee8fac2659f86",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=REGEXEXTRACT(\"foo bar baz\", \"(\\w+)\\s+(\\w+)\")"
     },
-    "sha256:21570510a86ad6b6a1b6ddae3b09035bc6cdce7b35b940a361556f2b3a2b944a": {
+    "REGEXEXTRACT/extract-no-match-returns-na": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -1808,9 +1830,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:7aaa23adbae6c177d12e9c6526396eb84e64f5aa624f82bd68c412584726d759",
+      "fingerprint": "sha256:c98ddc95a4f5716ef17b94c5c73c9ede35dff1666986224ac03e53fce8c29367",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=REGEXEXTRACT(\"hello\", \"\\d+\")"
     },
-    "sha256:6bce9a409481d83a8aa370addc4274523c6de514dfea40a0998ad7e2861850ab": {
+    "REGEXEXTRACT/extract-no-match-on-empty-text": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -1861,9 +1889,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:05442241e92c689f3a6c7d7f36bc00fce0873531eb22192c0fa24cb132fd3f1e",
+      "fingerprint": "sha256:c98ddc95a4f5716ef17b94c5c73c9ede35dff1666986224ac03e53fce8c29367",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=REGEXEXTRACT(\"\", \"\\d+\")"
     },
-    "sha256:7fd8bfccbf6ccfc63ce617912c96bb0ae799ff6a43373e9179c40821f8665644": {
+    "REGEXEXTRACT/extract-case-insensitive-via-inline-flag": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -1911,9 +1945,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:80e5c160cf3fa8e02c9b1063bafccc7efe857682f8eb210b03e5a1f5a7407e63",
+      "fingerprint": "sha256:ee05fb1f878f001d82eb2cd6404c6ce57ec862ae84c4e4efd75f8adcdbd7e689",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=REGEXEXTRACT(\"Hello World\", \"(?i)(\\w+)\")"
     },
-    "sha256:62bae751885b7678fd6768baa2353f8ee7f70c612826d32c6276a8e939e93918": {
+    "REGEXEXTRACT/extract-return-mode-1-all-matches-row-vector": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -1964,9 +2004,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:9e716aa9e2e3123c7b2cfc4bd7dcc72cda41d1423642ea3b3474cec821bb7cf9",
+      "fingerprint": "sha256:c98ddc95a4f5716ef17b94c5c73c9ede35dff1666986224ac03e53fce8c29367",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=REGEXEXTRACT(\"a1 b2 c3\", \"\\d+\", 1)"
     },
-    "sha256:89bcf7a8f6a8ba93cb0eead24d5d2a77dd6df35a1c811af4be76fcca77970599": {
+    "REGEXEXTRACT/extract-return-mode-2-capture-groups-from-first-match": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -2017,9 +2063,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:103ee11f74c5e14ad72d75e167dbbdf000185a94d4b8843d6d0480df14c6ec9b",
+      "fingerprint": "sha256:c98ddc95a4f5716ef17b94c5c73c9ede35dff1666986224ac03e53fce8c29367",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=REGEXEXTRACT(\"2025-03-01\", \"(\\d{4})-(\\d{2})-(\\d{2})\", 2)"
     },
-    "sha256:5f7151b7bf5f8436ec92579979013c86a6b289030bd7620de20d7e77f1f7bc9a": {
+    "REGEXREPLACE/replace-all-digits": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -2067,9 +2119,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:61dc9f337dd2987d21200ec18c4f971fcec7315c43cc436c380602647b97a3e2",
+      "fingerprint": "sha256:ceec42d8e11045a8fa671835f84ffeebf0e87a82ad98928a7450f9a93f3ebe6b",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=REGEXREPLACE(\"a1b2c3\", \"\\d\", \"x\")"
     },
-    "sha256:4b81b1820ac18e9dc7452e42ab8e42ebf49c5ff9068184a61a080bb1bd4872ef": {
+    "REGEXREPLACE/replace-greedy-pattern-all-occurrences": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -2117,9 +2175,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:e6595a53dadd231b9a2e130574ed8efb0db1144b9160fdfd6a3a8d12bef5a7a2",
+      "fingerprint": "sha256:dfcb79ddf2a2a3eaed2f7abfb6c378f170cbe00b13a6a111ec5bf048cc1b9536",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=REGEXREPLACE(\"aabbaa\", \"a+\", \"x\")"
     },
-    "sha256:835e95cd90769eaff12995eea7f001c7906e3e8815e979e2ac2d6a416a518d17": {
+    "REGEXREPLACE/replace-whitespace-all": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -2167,9 +2231,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:982d0478887747098dcac2be91ee0c19078c942845db342abfe094e477016221",
+      "fingerprint": "sha256:552e918de0ea7705395da10ad8b3e2ddb5ecc02c74082fca0911e4fbfe0b380e",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=REGEXREPLACE(\"hello world\", \"\\s+\", \"-\")"
     },
-    "sha256:69898b44e4f177a5517baebd7f3ef39dd99c982892be0c41b891b6274d1fa05a": {
+    "REGEXREPLACE/replace-no-match-unchanged": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -2217,9 +2287,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:820eaf584fbaf79363d528d3f3dc2a9330df6996f7ce98b211ac7a1a3ef36b77",
+      "fingerprint": "sha256:9baae644abac0964babea30fa58fa0260aceaaf4127b6feeff00e6db5c3bd016",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=REGEXREPLACE(\"hello\", \"\\d+\", \"x\")"
     },
-    "sha256:b81c735dab6ec326d9ef763a7c9650aaf8fe2fbc6fdeda889ed655d94db459c8": {
+    "REGEXREPLACE/replace-empty-text-unchanged": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -2263,9 +2339,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:b2633de45bc352b5a793f280557a6a7ea7f21c7748755fcbc52e028249ccf110",
+      "fingerprint": "sha256:2795dacdf07458184e028719fca7455dd2703f9fb570f596392edab6492cb505",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=REGEXREPLACE(\"\", \"\\d+\", \"x\")"
     },
-    "sha256:4aaca2abb4a0f9efb241c2cd82f9e7a4a4389fe0d27d708ad19da9aef4dbe578": {
+    "REGEXREPLACE/replace-with-single-backreference": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -2313,9 +2395,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:228eaa28bd63c1705b14a4b4db23d5209c54a7857460c8873dbd79abef06a1fc",
+      "fingerprint": "sha256:ae1e15dc2b7e6128f310c6cf09a153f6d713e73a41fdef828d657e5ed5e0d59a",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=REGEXREPLACE(\"hello world\", \"(\\w+)\", \"[$1]\")"
     },
-    "sha256:3f28158d9c1c3efc010e2e7d69a0e65bd96e2a44537ff419efc867a48e07c842": {
+    "REGEXREPLACE/replace-swap-first-and-last-name": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -2363,9 +2451,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:380b9023c4405ea2dfd42861f43fd8edf974be5937c10aa6689ada81a38f1c31",
+      "fingerprint": "sha256:ea5b2e36998bcc7e1ad19295833139cefbdd9ce37db5c8c79e55f0bab874c4a4",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=REGEXREPLACE(\"John Smith\", \"(\\w+) (\\w+)\", \"$2, $1\")"
     },
-    "sha256:becc645d13fafdb09622e8b52d7a9973c2204ecc04cf6cc7f56d0ff34c813123": {
+    "REGEXREPLACE/replace-date-reformat-three-groups": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -2413,9 +2507,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:da5f28a6ba1c4e33de0b47361e72b27bcfd1e162d969a9b40e70a518f0f85b19",
+      "fingerprint": "sha256:52b1c25237e8031003025074650e907485d033209f49cbdedc6faa3e453439b6",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=REGEXREPLACE(\"2025-03-01\", \"(\\d+)-(\\d+)-(\\d+)\", \"$3/$2/$1\")"
     },
-    "sha256:2a484724be4727f9502a9662d3b94b7c01e06e4641ba48f4066a7863d0cfeb37": {
+    "REGEXREPLACE/replace-case-insensitive-via-inline-flag": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -2463,166 +2563,13 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:46a12adb68ef016d7fa6e895cfd49f8379e371153d760b777aeda7a2317da4f1",
+      "fingerprint": "sha256:3bc6ace052cfe93b9b507006f65349da33de86d502815bd86418ab493762db37",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=REGEXREPLACE(\"Hello WORLD hello\", \"(?i)hello\", \"hi\")"
-    },
-    "sha256:8851c990dcacf828d5b768414ac9d27cdeb1c94de41c019cef15486e0966c061": {
-      "outcome": {
-        "kind": "value",
-        "grid": [
-          [
-            {
-              "primitive": {
-                "kind": "error",
-                "sentinel": "#REF!"
-              },
-              "engine": {
-                "platform": "gsheets",
-                "wire_kind": "error",
-                "raw_api": {
-                  "userEnteredValue": {
-                    "formulaValue": "=REGEXMATCH(\"hello\", \"(?<=hel)lo\")"
-                  },
-                  "effectiveValue": {
-                    "errorValue": {
-                      "type": "REF",
-                      "message": "Function REGEXMATCH parameter 2 value \"(?&lt;=hel)lo\" is not a valid regular expression."
-                    }
-                  },
-                  "formattedValue": "#REF!",
-                  "effectiveFormat": {
-                    "textFormat": {
-                      "foregroundColor": {},
-                      "fontFamily": "Arial",
-                      "fontSize": 10,
-                      "bold": false,
-                      "italic": false,
-                      "strikethrough": false,
-                      "underline": false,
-                      "foregroundColorStyle": {
-                        "rgbColor": {}
-                      }
-                    },
-                    "hyperlinkDisplayType": "PLAIN_TEXT"
-                  }
-                }
-              },
-              "formula": "REGEXMATCH(\"hello\", \"(?<=hel)lo\")",
-              "formatted": "#REF!"
-            }
-          ]
-        ],
-        "extent": {
-          "rows": 1,
-          "cols": 1
-        }
-      },
-      "formula-as-evaluated": "=REGEXMATCH(\"hello\", \"(?<=hel)lo\")"
-    },
-    "sha256:506526333a305da1b9ade7b78775a666390b0e929bae5ef7b4bcc3845cae8a1f": {
-      "outcome": {
-        "kind": "value",
-        "grid": [
-          [
-            {
-              "primitive": {
-                "kind": "error",
-                "sentinel": "#REF!"
-              },
-              "engine": {
-                "platform": "gsheets",
-                "wire_kind": "error",
-                "raw_api": {
-                  "userEnteredValue": {
-                    "formulaValue": "=REGEXMATCH(\"foobar\", \"foo(?=bar)\")"
-                  },
-                  "effectiveValue": {
-                    "errorValue": {
-                      "type": "REF",
-                      "message": "Function REGEXMATCH parameter 2 value \"foo(?=bar)\" is not a valid regular expression."
-                    }
-                  },
-                  "formattedValue": "#REF!",
-                  "effectiveFormat": {
-                    "textFormat": {
-                      "foregroundColor": {},
-                      "fontFamily": "Arial",
-                      "fontSize": 10,
-                      "bold": false,
-                      "italic": false,
-                      "strikethrough": false,
-                      "underline": false,
-                      "foregroundColorStyle": {
-                        "rgbColor": {}
-                      }
-                    },
-                    "hyperlinkDisplayType": "PLAIN_TEXT"
-                  }
-                }
-              },
-              "formula": "REGEXMATCH(\"foobar\", \"foo(?=bar)\")",
-              "formatted": "#REF!"
-            }
-          ]
-        ],
-        "extent": {
-          "rows": 1,
-          "cols": 1
-        }
-      },
-      "formula-as-evaluated": "=REGEXMATCH(\"foobar\", \"foo(?=bar)\")"
-    },
-    "sha256:24a10fad3caafe4cb64c41ebabd3dee6cfd63fa5f797e03709e51a040d105799": {
-      "outcome": {
-        "kind": "value",
-        "grid": [
-          [
-            {
-              "primitive": {
-                "kind": "error",
-                "sentinel": "#REF!"
-              },
-              "engine": {
-                "platform": "gsheets",
-                "wire_kind": "error",
-                "raw_api": {
-                  "userEnteredValue": {
-                    "formulaValue": "=REGEXMATCH(\"foobar\", \"foo(?!baz)\")"
-                  },
-                  "effectiveValue": {
-                    "errorValue": {
-                      "type": "REF",
-                      "message": "Function REGEXMATCH parameter 2 value \"foo(?!baz)\" is not a valid regular expression."
-                    }
-                  },
-                  "formattedValue": "#REF!",
-                  "effectiveFormat": {
-                    "textFormat": {
-                      "foregroundColor": {},
-                      "fontFamily": "Arial",
-                      "fontSize": 10,
-                      "bold": false,
-                      "italic": false,
-                      "strikethrough": false,
-                      "underline": false,
-                      "foregroundColorStyle": {
-                        "rgbColor": {}
-                      }
-                    },
-                    "hyperlinkDisplayType": "PLAIN_TEXT"
-                  }
-                }
-              },
-              "formula": "REGEXMATCH(\"foobar\", \"foo(?!baz)\")",
-              "formatted": "#REF!"
-            }
-          ]
-        ],
-        "extent": {
-          "rows": 1,
-          "cols": 1
-        }
-      },
-      "formula-as-evaluated": "=REGEXMATCH(\"foobar\", \"foo(?!baz)\")"
     }
   }
 }

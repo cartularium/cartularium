@@ -1,8 +1,9 @@
 {
+  "schemaVersion": 2,
   "platform": "gsheets",
   "generatedAt": "2026-06-17T20:01:41.610Z",
   "results": {
-    "sha256:6fc729b544754b432b17823cc649287f026faaffcfef8994530a463b22cbc0ca": {
+    "lit:boolean/true-basic": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -50,9 +51,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:9785338e101599728377429ce4967220fedb0170f042533cb13dbeac8ee7db8a",
+      "fingerprint": "sha256:d5700d641c4a9b9a358b961db1d68db9a66ae895f49fcb67cf595f5e1fa51d9c",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=TRUE()"
     },
-    "sha256:c46886599e97ef3f303b9d3c8ab19f23d70cf7fb7e37ac81805b27e52fe2c83c": {
+    "lit:boolean/false-basic": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -100,9 +107,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:498d32ebb45c0687caec9152ec550960f2a7fdae4531ef3444574e9dc58ce5f0",
+      "fingerprint": "sha256:a1b538e19620f97d545382bbb58c4ab9ed43811e9f00defb0e3f2a8a27492f94",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=FALSE()"
     },
-    "sha256:281829100dfe0b633f5b6a619a8fefd0e26c6a2924f211f2dc45759634ece2c8": {
+    "SORTN/sortn-top-3": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -218,9 +231,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:d185bcdcd1e38882969080349235aed4535dbd9885eecd01c69261eeec203725",
+      "fingerprint": "sha256:2aff5015b28ab48224b904541029c8b87b723d5e2e287a21955b002c6182b0e2",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=SORTN({5;2;8;1;4}, 3)"
     },
-    "sha256:fe0dac6bf05b9d2e7004ee081a77fb2978cff39fdbfea169578ed5c4d3cd6ecf": {
+    "SORTN/sortn-top-3-ascending": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -336,9 +355,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:1f85cb7c09c79c47b0bd39f1e5e189ba5c3db8698f30de65ef7d762a4b8d7ad9",
+      "fingerprint": "sha256:2aff5015b28ab48224b904541029c8b87b723d5e2e287a21955b002c6182b0e2",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=SORTN({5;2;8;1;4}, 3, 0, 1, TRUE)"
     },
-    "sha256:9c1c99889a9bc72f8910eef7a06bd91d0cead9d19002b9b75c96dc4522f2ddbd": {
+    "ENCODEURL/encodeurl-space": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -386,9 +411,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:3ffeefe213efc41fb5e47e044cdcb82017543eb78b0590b982e29c5a46aeafa1",
+      "fingerprint": "sha256:1ac0cd2d7e37c374d4c02efce97a36296ceb30e2f55c78d3d9f8fbc103f61c84",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=ENCODEURL(\"a b\")"
     },
-    "sha256:714a9ff8741ad69173160c8b78a53f4a050a2f7585f7fd04cd1dce2115fe571b": {
+    "ENCODEURL/encodeurl-special-chars": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -436,9 +467,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:301fff941c0615c381576062fc078b083c1ae79d8bb7d282e554359211b0ad53",
+      "fingerprint": "sha256:1d09272fb9153b251a9cbe50d3c1def5163ef4a5d34a441bce9911b55fee7897",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=ENCODEURL(\"hello world/?&=\")"
     },
-    "sha256:0e50fdfcb1a0ca1cdf4bcc2398f89eb13d8c054539acd9eaf5bef234d0b1a665": {
+    "ISURL/isurl-https": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -486,9 +523,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:43e6365a4ddf9d9a871f4074a1a99278213841c77b05a4901e113e839de969a8",
+      "fingerprint": "sha256:d5700d641c4a9b9a358b961db1d68db9a66ae895f49fcb67cf595f5e1fa51d9c",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=ISURL(\"https://example.com\")"
     },
-    "sha256:f57db941de8acb0ba81281aaf63c2cd9f3d7465852da60fd71c378aa3c998ddf": {
+    "ISURL/isurl-not-a-url": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -536,9 +579,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:6b047e517e9558d181ea1c91169cb5e3f11fc3df09aec183bbcfc044a0b7d234",
+      "fingerprint": "sha256:a1b538e19620f97d545382bbb58c4ab9ed43811e9f00defb0e3f2a8a27492f94",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=ISURL(\"not a url\")"
     },
-    "sha256:cc9f4356912d2c21af323634271b79efa55bb8af573a187923a159f6d62bbe0d": {
+    "HYPERLINK/hyperlink-with-label": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -599,9 +648,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:f3e2ddac11c6ea2bc26acd956a6a26738e9d6fec0cca7e727ccc442fea576f84",
+      "fingerprint": "sha256:c4d198f5a44a2d9882fc1839cfcb78bc99bbb71d7ec4c5612edeef906dba4002",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=HYPERLINK(\"https://example.com\", \"click me\")"
     },
-    "sha256:a81e031351f080949c4ead4f95c8f5b3bfd532a048d50b34a7fd54096749e0a7": {
+    "HYPERLINK/hyperlink-url-only": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -662,274 +717,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:131fc01ab568db36c244c1153da155dbab2df91ada3726c47f691d3568b4e056",
+      "fingerprint": "sha256:8a10b0d7cc7bc6fe9f9a5cfef51caa5c307019175bcbb7a6167a5ba01d7a05a0",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=HYPERLINK(\"https://example.com\")"
     },
-    "sha256:f735a8c3e3774c803ead2e312bcee99cab4cc7e8614ae8fc8f2e5bf63aba0bd4": {
-      "outcome": {
-        "kind": "value",
-        "grid": [
-          [
-            {
-              "primitive": {
-                "kind": "error",
-                "sentinel": "#REF!"
-              },
-              "engine": {
-                "platform": "gsheets",
-                "wire_kind": "error",
-                "raw_api": {
-                  "userEnteredValue": {
-                    "formulaValue": "=IMPORTDATA(\"https://example.com/data.csv\")"
-                  },
-                  "effectiveValue": {
-                    "errorValue": {
-                      "type": "REF",
-                      "message": "Please use a desktop web browser to allow access to fetch data from external urls."
-                    }
-                  },
-                  "formattedValue": "#REF!",
-                  "effectiveFormat": {
-                    "textFormat": {
-                      "foregroundColor": {},
-                      "fontFamily": "Arial",
-                      "fontSize": 10,
-                      "bold": false,
-                      "italic": false,
-                      "strikethrough": false,
-                      "underline": false,
-                      "foregroundColorStyle": {
-                        "rgbColor": {}
-                      }
-                    },
-                    "hyperlinkDisplayType": "PLAIN_TEXT"
-                  }
-                }
-              },
-              "formula": "IMPORTDATA(\"https://example.com/data.csv\")",
-              "formatted": "#REF!"
-            }
-          ]
-        ],
-        "extent": {
-          "rows": 1,
-          "cols": 1
-        }
-      },
-      "formula-as-evaluated": "=IMPORTDATA(\"https://example.com/data.csv\")"
-    },
-    "sha256:5f564b005934b52615ea73c1f8c751885462b0a787bd76ee87acf2ed75c6a70b": {
-      "outcome": {
-        "kind": "value",
-        "grid": [
-          [
-            {
-              "primitive": {
-                "kind": "error",
-                "sentinel": "#REF!"
-              },
-              "engine": {
-                "platform": "gsheets",
-                "wire_kind": "error",
-                "raw_api": {
-                  "userEnteredValue": {
-                    "formulaValue": "=IMPORTFEED(\"https://example.com/feed.xml\")"
-                  },
-                  "effectiveValue": {
-                    "errorValue": {
-                      "type": "REF",
-                      "message": "Please use a desktop web browser to allow access to fetch data from external urls."
-                    }
-                  },
-                  "formattedValue": "#REF!",
-                  "effectiveFormat": {
-                    "textFormat": {
-                      "foregroundColor": {},
-                      "fontFamily": "Arial",
-                      "fontSize": 10,
-                      "bold": false,
-                      "italic": false,
-                      "strikethrough": false,
-                      "underline": false,
-                      "foregroundColorStyle": {
-                        "rgbColor": {}
-                      }
-                    },
-                    "hyperlinkDisplayType": "PLAIN_TEXT"
-                  }
-                }
-              },
-              "formula": "IMPORTFEED(\"https://example.com/feed.xml\")",
-              "formatted": "#REF!"
-            }
-          ]
-        ],
-        "extent": {
-          "rows": 1,
-          "cols": 1
-        }
-      },
-      "formula-as-evaluated": "=IMPORTFEED(\"https://example.com/feed.xml\")"
-    },
-    "sha256:11617992062d1d0e9a73626df829d9050652a2a205c79b342231e1058507f030": {
-      "outcome": {
-        "kind": "value",
-        "grid": [
-          [
-            {
-              "primitive": {
-                "kind": "error",
-                "sentinel": "#REF!"
-              },
-              "engine": {
-                "platform": "gsheets",
-                "wire_kind": "error",
-                "raw_api": {
-                  "userEnteredValue": {
-                    "formulaValue": "=IMPORTHTML(\"https://example.com/page.html\", \"table\", 1)"
-                  },
-                  "effectiveValue": {
-                    "errorValue": {
-                      "type": "REF",
-                      "message": "Please use a desktop web browser to allow access to fetch data from external urls."
-                    }
-                  },
-                  "formattedValue": "#REF!",
-                  "effectiveFormat": {
-                    "textFormat": {
-                      "foregroundColor": {},
-                      "fontFamily": "Arial",
-                      "fontSize": 10,
-                      "bold": false,
-                      "italic": false,
-                      "strikethrough": false,
-                      "underline": false,
-                      "foregroundColorStyle": {
-                        "rgbColor": {}
-                      }
-                    },
-                    "hyperlinkDisplayType": "PLAIN_TEXT"
-                  }
-                }
-              },
-              "formula": "IMPORTHTML(\"https://example.com/page.html\", \"table\", 1)",
-              "formatted": "#REF!"
-            }
-          ]
-        ],
-        "extent": {
-          "rows": 1,
-          "cols": 1
-        }
-      },
-      "formula-as-evaluated": "=IMPORTHTML(\"https://example.com/page.html\", \"table\", 1)"
-    },
-    "sha256:0f4a7200673752fff7e0f4462084e4fd2022264a7da6864caf5c594238b8dfd0": {
-      "outcome": {
-        "kind": "value",
-        "grid": [
-          [
-            {
-              "primitive": {
-                "kind": "error",
-                "sentinel": "#REF!"
-              },
-              "engine": {
-                "platform": "gsheets",
-                "wire_kind": "error",
-                "raw_api": {
-                  "userEnteredValue": {
-                    "formulaValue": "=IMPORTXML(\"https://example.com/data.xml\", \"//title\")"
-                  },
-                  "effectiveValue": {
-                    "errorValue": {
-                      "type": "REF",
-                      "message": "Please use a desktop web browser to allow access to fetch data from external urls."
-                    }
-                  },
-                  "formattedValue": "#REF!",
-                  "effectiveFormat": {
-                    "textFormat": {
-                      "foregroundColor": {},
-                      "fontFamily": "Arial",
-                      "fontSize": 10,
-                      "bold": false,
-                      "italic": false,
-                      "strikethrough": false,
-                      "underline": false,
-                      "foregroundColorStyle": {
-                        "rgbColor": {}
-                      }
-                    },
-                    "hyperlinkDisplayType": "PLAIN_TEXT"
-                  }
-                }
-              },
-              "formula": "IMPORTXML(\"https://example.com/data.xml\", \"//title\")",
-              "formatted": "#REF!"
-            }
-          ]
-        ],
-        "extent": {
-          "rows": 1,
-          "cols": 1
-        }
-      },
-      "formula-as-evaluated": "=IMPORTXML(\"https://example.com/data.xml\", \"//title\")"
-    },
-    "sha256:800e2d291a23109b0328276058ea8c8285cbbe3827caae420bd08b2732e25594": {
-      "outcome": {
-        "kind": "value",
-        "grid": [
-          [
-            {
-              "primitive": {
-                "kind": "error",
-                "sentinel": "#REF!"
-              },
-              "engine": {
-                "platform": "gsheets",
-                "wire_kind": "error",
-                "raw_api": {
-                  "userEnteredValue": {
-                    "formulaValue": "=IMPORTRANGE(\"https://docs.google.com/spreadsheets/d/abc123\", \"Sheet1!A1:B2\")"
-                  },
-                  "effectiveValue": {
-                    "errorValue": {
-                      "type": "REF",
-                      "message": "Spreadsheet cannot be found."
-                    }
-                  },
-                  "formattedValue": "#REF!",
-                  "effectiveFormat": {
-                    "textFormat": {
-                      "foregroundColor": {},
-                      "fontFamily": "Arial",
-                      "fontSize": 10,
-                      "bold": false,
-                      "italic": false,
-                      "strikethrough": false,
-                      "underline": false,
-                      "foregroundColorStyle": {
-                        "rgbColor": {}
-                      }
-                    },
-                    "hyperlinkDisplayType": "PLAIN_TEXT"
-                  }
-                }
-              },
-              "formula": "IMPORTRANGE(\"https://docs.google.com/spreadsheets/d/abc123\", \"Sheet1!A1:B2\")",
-              "formatted": "#REF!"
-            }
-          ]
-        ],
-        "extent": {
-          "rows": 1,
-          "cols": 1
-        }
-      },
-      "formula-as-evaluated": "=IMPORTRANGE(\"https://docs.google.com/spreadsheets/d/abc123\", \"Sheet1!A1:B2\")"
-    },
-    "sha256:65601270148f71176390a57a2da27970d03269a8a7b69554c2b200ba08f52038": {
+    "ARRAYFORMULA/arrayformula-multiply-range": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -1045,9 +841,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:69039e4ef0b97139e8b2294d21b3b87549530841f301f06d7736b20c622e534b",
+      "fingerprint": "sha256:fd06c2013a252a414da54fbf49eba29d397821a29de02a05cee01de14a5f415f",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=ARRAYFORMULA({1;2;3} * 2)"
     },
-    "sha256:a13cc48d99716efa41847bbd323f1ab49757330faf7f42c629250deac72a6487": {
+    "ARRAYFORMULA/arrayformula-text-concat": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -1129,9 +931,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:4abc2dadc5670ccd7bb6bbe78337cbf7d013ba6dc57269ef1cece3b0843df5d1",
+      "fingerprint": "sha256:21eb010b0e080e6216001c61a56722f09b34b8f98cde065f2e7c231f7300600c",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=ARRAYFORMULA({\"a\";\"b\"} & \"!\")"
     },
-    "sha256:e2635effec84fce2c4746bb55360ffa8ffa198a950b3514e3fb36a95b86a676d": {
+    "QUERY/query-select-all": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -1343,9 +1151,15 @@
           "cols": 2
         }
       },
+      "stimulus": "sha256:6f63969af015a93728ed5d7c7abb761d72873e4d99600e575cd5148aee7f8ecb",
+      "fingerprint": "sha256:11c181d459be89864792ac304681cc64c4e3f224a009e803bfb847bbf1f8ef93",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=QUERY({1,\"a\";2,\"b\";3,\"c\"}, \"select *\")"
     },
-    "sha256:bb2673516a8ea993fe7d813bce7913bad9fe2a9478cb4aade3b7712ace6ba3eb": {
+    "QUERY/query-select-col": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -1461,9 +1275,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:cae6b254fc964166120d1b5e5458768f43914fab43cdbb0458da32df27dfc8b4",
+      "fingerprint": "sha256:84976c435007c410a8afcc673b841259210f100665cf9f9445b0b352f35f9505",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=QUERY({1,\"a\";2,\"b\";3,\"c\"}, \"select Col2\")"
     },
-    "sha256:822437e638c7f0cd7efd5bce4e1460f4e8d7b7a7630822e5dc35987e9ed26992": {
+    "QUERY/query-offset-1": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -1609,9 +1429,15 @@
           "cols": 2
         }
       },
+      "stimulus": "sha256:3935ad90dc04b91d18a155363eba09aa39df3dd41b69308e71c58eb707996563",
+      "fingerprint": "sha256:6dcb4323a5e68a929474537db5a989f402dd8466e302c03a47a4b2690bef2183",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=QUERY({0,0;1,2;3,4}, \"offset 1\")"
     },
-    "sha256:623ed255e70767d9cfd358d9b55ecfa700ec96e696c2e09e60c44989be73e817": {
+    "GOOGLEFINANCE/googlefinance-price-smoke": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -1659,9 +1485,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:ba93d10c6a562d03bd434f9406010d9f291e8b959a031c1dd0f9f69d2789d494",
+      "fingerprint": "sha256:aa4888b877627643a66b1a56f9141913ffb3065eef275581b621b6c2dfba222b",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=GOOGLEFINANCE(\"GOOG\", \"price\")"
     },
-    "sha256:c462f11bace6e3b9bd9ad52b9e8cf962a5108794e719ae8bb79cd235ad1647c9": {
+    "GOOGLETRANSLATE/googletranslate-en-to-es": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -1709,112 +1541,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:55ebe053c511aaf0d4aa44923872f3796d71c6ba136b83c9f04ca8b803d09715",
+      "fingerprint": "sha256:ffc3d3d0c66602bd45b17e21e489ff20981abbde51e5a2fc6dd00f14c4f3cad6",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=GOOGLETRANSLATE(\"hello\", \"en\", \"es\")"
     },
-    "sha256:be3123c364618c52fa4486250dba671a0492ef00fec4d90b4524bd3b8d7bfa5e": {
-      "outcome": {
-        "kind": "value",
-        "grid": [
-          [
-            {
-              "primitive": {
-                "kind": "string",
-                "value": "en"
-              },
-              "engine": {
-                "platform": "gsheets",
-                "wire_kind": "string",
-                "raw_api": {
-                  "userEnteredValue": {
-                    "formulaValue": "=DETECTLANGUAGE(\"hello world\")"
-                  },
-                  "effectiveValue": {
-                    "stringValue": "en"
-                  },
-                  "formattedValue": "en",
-                  "effectiveFormat": {
-                    "textFormat": {
-                      "foregroundColor": {},
-                      "fontFamily": "Arial",
-                      "fontSize": 10,
-                      "bold": false,
-                      "italic": false,
-                      "strikethrough": false,
-                      "underline": false,
-                      "foregroundColorStyle": {
-                        "rgbColor": {}
-                      }
-                    },
-                    "hyperlinkDisplayType": "PLAIN_TEXT"
-                  }
-                }
-              },
-              "formula": "DETECTLANGUAGE(\"hello world\")",
-              "formatted": "en"
-            }
-          ]
-        ],
-        "extent": {
-          "rows": 1,
-          "cols": 1
-        }
-      },
-      "formula-as-evaluated": "=DETECTLANGUAGE(\"hello world\")"
-    },
-    "sha256:ba3ba9112226d8b03a0efe8043846e7d05a2e3cc4e431f8a95c1f03343ca7b9b": {
-      "outcome": {
-        "kind": "value",
-        "grid": [
-          [
-            {
-              "primitive": {
-                "kind": "error",
-                "sentinel": "#REF!"
-              },
-              "engine": {
-                "platform": "gsheets",
-                "wire_kind": "error",
-                "raw_api": {
-                  "userEnteredValue": {
-                    "formulaValue": "=IMAGE(\"https://example.com/pic.png\")"
-                  },
-                  "effectiveValue": {
-                    "errorValue": {
-                      "type": "REF",
-                      "message": "Please use a desktop web browser to allow access to fetch data from external urls."
-                    }
-                  },
-                  "formattedValue": "#REF!",
-                  "effectiveFormat": {
-                    "textFormat": {
-                      "foregroundColor": {},
-                      "fontFamily": "Arial",
-                      "fontSize": 10,
-                      "bold": false,
-                      "italic": false,
-                      "strikethrough": false,
-                      "underline": false,
-                      "foregroundColorStyle": {
-                        "rgbColor": {}
-                      }
-                    },
-                    "hyperlinkDisplayType": "PLAIN_TEXT"
-                  }
-                }
-              },
-              "formula": "IMAGE(\"https://example.com/pic.png\")",
-              "formatted": "#REF!"
-            }
-          ]
-        ],
-        "extent": {
-          "rows": 1,
-          "cols": 1
-        }
-      },
-      "formula-as-evaluated": "=IMAGE(\"https://example.com/pic.png\")"
-    },
-    "sha256:918cfd114f57b36d1232eb38a78c7caefc766748038bc0631124cbb951885105": {
+    "SPARKLINE/sparkline-inline-chart": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -1858,6 +1593,12 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:3da4136538e00f9909f5d73604442a8c750a3edf15c36c68659dd7281d52ed0d",
+      "fingerprint": "sha256:2795dacdf07458184e028719fca7455dd2703f9fb570f596392edab6492cb505",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=SPARKLINE({1;2;3;4;5})"
     }
   }

@@ -1,8 +1,9 @@
 {
+  "schemaVersion": 2,
   "platform": "excel",
   "generatedAt": "2026-06-17T19:44:09.844Z",
   "results": {
-    "sha256:44fd0254407a85ee6a7f8a82ed1f97e0cdc2f3a02063dc953b0ea74dbcbf8dcc": {
+    "DSUM/dsum-apples-total": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -28,9 +29,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:7fe87ad22811595b030857caaee7a6cf6648ce2122e4da438228ef3561d75333",
+      "fingerprint": "sha256:bcaa02ace3c9b2156cf147c97ad9a57c2c174d05e0ef7b72c889ab451bde9b49",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=DSUM(A1:D5, \"Price\", F1:F2)"
     },
-    "sha256:44e0e59210c570d7508daa9c9af7543e32a11231ac2268d42a0dc841d8a6463f": {
+    "DSUM/dsum-field-by-index": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -56,9 +63,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:5eb214d7097b4108e068c2fab72e66a96b40e55a51851839362b6a9fb68a68ca",
+      "fingerprint": "sha256:71fa543d1bcc3371e40b4949ed83b5efa58addd2c5bc5dae879ecf535bd80c65",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=DSUM(A1:D5, 4, F1:F2)"
     },
-    "sha256:5fc72e2d4172ec14fb91df3a3cd31b7a47713cbaa75871dd2953d05930d418a5": {
+    "DSUM/dsum-comparator-criteria": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -84,9 +97,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:7cdaae903332404459a5c333cc71737b91ed4303867e9aa648852e88632452d1",
+      "fingerprint": "sha256:7d2d8a5b779778e8b5c0b24e3bf06cdce590654ebed8eb82bcf39b758116ffb6",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=DSUM(A1:D5, \"Units\", H1:H2)"
     },
-    "sha256:e212abb8ec8b4e17082c63308f922dd7fb0a3c55f0f676f1d0f723bf3bcb6407": {
+    "DSUM/dsum-empty-result": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -112,9 +131,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:794a7e5128e4fb41e94a3b27f6540e5698e95b075d059e4344e1ad3eb238c7c6",
+      "fingerprint": "sha256:c2c1197f53d7fead335c75f6de7376efaaa96cc32466c698b76d1afb524a3d9b",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=DSUM(A1:D5, \"Price\", F1:F2)"
     },
-    "sha256:6547c32cda5f25a1943c395d6306fc26d0b5de6c179de6f18595e2f6c460a3e5": {
+    "DCOUNT/dcount-apples": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -140,9 +165,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:78dcaf1fa944acf95d44e1ba0a8231ef9ceaa424ed51d7682b2ee65fe7bf6610",
+      "fingerprint": "sha256:f13d9c9c73eeb80c34f97364b302cdc64049f75c43a0381299a3ccde79a6e234",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=DCOUNT(A1:D5, \"Price\", F1:F2)"
     },
-    "sha256:a3e399bb4a63fe5f61643c3582105fc4a625f6697a6c5892ab6d072032b9bf63": {
+    "DCOUNT/dcount-field-by-index": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -168,9 +199,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:b0998f8716fb54300bcd1b2cc0521b66bd3fad0b17d5f39dc1532959a1865e65",
+      "fingerprint": "sha256:f13d9c9c73eeb80c34f97364b302cdc64049f75c43a0381299a3ccde79a6e234",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=DCOUNT(A1:D5, 3, H1:H2)"
     },
-    "sha256:c1ac2e04f4a3dab59ec36229ba3247cdbb1006caacf88678cc93d43f846b4922": {
+    "DCOUNT/dcount-ignores-text-in-numeric-field": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -196,9 +233,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:6e3369bd69610ff14a3286396030eae22d91dcaed734973106f9d2519c9484d2",
+      "fingerprint": "sha256:c2c1197f53d7fead335c75f6de7376efaaa96cc32466c698b76d1afb524a3d9b",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=DCOUNT(A1:D5, \"Product\", F1:F2)"
     },
-    "sha256:935b0feabd1e35f39d5bd30efa5a60c492b27f961d7311d0ff4f992c0b2bbf75": {
+    "DCOUNT/dcount-empty-result": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -224,9 +267,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:0589dfef5d4b93c5f4bf0cf34853bc0d78075357153b63a76577557a7d29d95f",
+      "fingerprint": "sha256:c2c1197f53d7fead335c75f6de7376efaaa96cc32466c698b76d1afb524a3d9b",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=DCOUNT(A1:D5, \"Price\", F1:F2)"
     },
-    "sha256:beb53a4be80f443c24f136c2ded32a4f230a6ea1654dea989dc5830cc9a6ed2a": {
+    "DCOUNTA/dcounta-apples": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -252,9 +301,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:00bbd4b6e74b875095c8801094102e7a81a1d71f000033c395dbe3689e646fff",
+      "fingerprint": "sha256:f13d9c9c73eeb80c34f97364b302cdc64049f75c43a0381299a3ccde79a6e234",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=DCOUNTA(A1:D5, \"Product\", F1:F2)"
     },
-    "sha256:a608717d102e7376845e353945c259db50d9358f7d9f9b7d509b34a4b0ba6f9a": {
+    "DCOUNTA/dcounta-field-by-index": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -280,9 +335,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:f0cdafae2358fb219dda7b11806b32c7cb5d3384a4c8d70be06321f1526eba01",
+      "fingerprint": "sha256:f13d9c9c73eeb80c34f97364b302cdc64049f75c43a0381299a3ccde79a6e234",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=DCOUNTA(A1:D5, 1, G1:G2)"
     },
-    "sha256:1533b295d3a7cb628bb098728edf9f65b011f7ccf2073aacefb33575fe6b29bb": {
+    "DCOUNTA/dcounta-empty-result": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -308,9 +369,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:ff37b0c77719e6e66babf59fcaa42d95044a56af78ebb93d38ebffeb855ed7f4",
+      "fingerprint": "sha256:c2c1197f53d7fead335c75f6de7376efaaa96cc32466c698b76d1afb524a3d9b",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=DCOUNTA(A1:D5, \"Product\", F1:F2)"
     },
-    "sha256:a31be14d91eee3730856a62000b7580821e96d193cb4f37bc8d1c553b4c9f5b5": {
+    "DGET/dget-single-match": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -336,9 +403,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:b6c0c0916e2c5b58285db5f26e8bb312c4f0081ea3272f6aa3046b2954cdd03f",
+      "fingerprint": "sha256:e2c4a97971b997a2a4e6377e62f4cf4203037725ce092a5a5ba61f8cc7dea387",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=DGET(A1:D5, \"Price\", F1:G2)"
     },
-    "sha256:74671be3919ddaafc3c04b6b16b14221a310af0e025f5fe15cf8413d67c92af4": {
+    "DGET/dget-field-by-index": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -364,9 +437,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:a8bd7b20bd2be9f504e7fad7c58e581fcda571dff3cd00990feb97f58525f16b",
+      "fingerprint": "sha256:669d643132b4430cc68e613fdae30972321483db9558d121ed2fa2762974c9b8",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=DGET(A1:D5, 4, F1:G2)"
     },
-    "sha256:54eb50da4a3f9489e14df100d1743e2b5869c4ea868559d3b594f7f71538e892": {
+    "DGET/dget-multiple-matches-error": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -393,9 +472,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:03c931e932241b8334b82867b27468aa2a5ff98181f52a1c6de721bbe5d56ab4",
+      "fingerprint": "sha256:f3a7c5ef3dc55973380ab8685af4886919ca174f93d2e56814d91074798899a6",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=DGET(A1:D5, \"Price\", F1:F2)"
     },
-    "sha256:4d8262dd5a5489c77bd85fc0e670ed980245634e24e7e2b62ead5083044c6fee": {
+    "DGET/dget-no-match-error": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -422,9 +507,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:240606c0202247496d24740db3e8d111ddbcc03e8e745b67617eab368a2d6fb6",
+      "fingerprint": "sha256:53560b24dc39cb4e4cccc613e7b3e26488e6e25a7024d47e1d2f13ac74995070",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=DGET(A1:D5, \"Price\", F1:F2)"
     },
-    "sha256:8e659e8e0e2f7526745bbd3b869f0819f664b13bbe3b5e4301bab2069229b068": {
+    "DMAX/dmax-apples": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -450,9 +541,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:06048b01707503d8272aeb6166bcf97ecb425e3167c1bc3a4a07cb17743b81f0",
+      "fingerprint": "sha256:71fa543d1bcc3371e40b4949ed83b5efa58addd2c5bc5dae879ecf535bd80c65",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=DMAX(A1:D5, \"Price\", F1:F2)"
     },
-    "sha256:b028ced2d9e2382a355872d203d183d44bc9e13baaf67a734896e9b2c58a3a79": {
+    "DMAX/dmax-field-by-index": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -478,9 +575,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:0632648ad140c3189923e625f49ee93913b77135ba7503735b5d48e4e1941681",
+      "fingerprint": "sha256:7d2d8a5b779778e8b5c0b24e3bf06cdce590654ebed8eb82bcf39b758116ffb6",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=DMAX(A1:D5, 4, G1:G2)"
     },
-    "sha256:f5128d057b3344eda33f74df751e4082e1842a3020b4d999484d4a6d7dcda3a8": {
+    "DMAX/dmax-comparator-criteria": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -506,9 +609,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:c0524a57ca7755d6cc5b386a471a18a2cf0f5c318bba371e190ba63a2eeef131",
+      "fingerprint": "sha256:7d2d8a5b779778e8b5c0b24e3bf06cdce590654ebed8eb82bcf39b758116ffb6",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=DMAX(A1:D5, \"Units\", H1:H2)"
     },
-    "sha256:4d0e8643e7f4fe1605e36bb5daf25534af4a10fd4931bd9434c91a5dd07d4f7e": {
+    "DMIN/dmin-apples": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -534,9 +643,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:dcfb84592a9bcc06d36220e9723810add80526441038b26adb08006d7b80f86d",
+      "fingerprint": "sha256:e2c4a97971b997a2a4e6377e62f4cf4203037725ce092a5a5ba61f8cc7dea387",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=DMIN(A1:D5, \"Price\", F1:F2)"
     },
-    "sha256:e747e07cbdbcd64f354e042b74744d7d75c2b330ef97fe2d74f4098960e3d0f2": {
+    "DMIN/dmin-field-by-index": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -562,9 +677,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:7b305e42dbacf3ca8c3dbb950da562ad3ed5c3338b920da5e560affb986a2e14",
+      "fingerprint": "sha256:f638af852ce38aa91cc4de6d85980731ac33ca2a152365dda9104b78637f7380",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=DMIN(A1:D5, 3, G1:G2)"
     },
-    "sha256:3b63cc5d15c0c04acc1754fbb5a922f96b2f9682d82aa71e469ca604f7339697": {
+    "DMIN/dmin-all-rows": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -590,9 +711,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:9266fc44b3514314ba981e7056d9e635df35c0ece684341a577cd80a75569910",
+      "fingerprint": "sha256:735bc6630739e4c1cea02fea78a0cab118ad5125fb310f593bf78167645d13ed",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=DMIN(A1:D5, \"Units\", H1:H2)"
     },
-    "sha256:150e9ae75355de13e7201b93f427682895cc7c00fbbd5ff441dfd755f138aa12": {
+    "DPRODUCT/dproduct-apples-price": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -618,9 +745,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:d649bc6f6c106e0c020f66e22e38f3b17f62a6e1ba7a8e2274cce25d014711e6",
+      "fingerprint": "sha256:8539cd827e1dc6e0c7728a1376ca2ba4ab8c4d39e5087e47d9d5c115a2108b56",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=DPRODUCT(A1:D5, \"Price\", F1:F2)"
     },
-    "sha256:65c3efa1883f95130b8024e6a125d9fbc7dd33c789bb3418eae35eb69f2399a4": {
+    "DPRODUCT/dproduct-field-by-index": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -646,9 +779,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:7f94cc3da74c0187da6fa09054687519f5e11014b74c15c68431119e60513bd5",
+      "fingerprint": "sha256:58e1a8b27ce8c7f3f556b44f1955965a03df8df969be12c46e27fb457ff8f787",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=DPRODUCT(A1:D5, 4, G1:G2)"
     },
-    "sha256:9757e01da8715645a39630256ca6e7aabad8d2a26555c03e3650b5cc4fd9ab1b": {
+    "DPRODUCT/dproduct-empty-result": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -674,9 +813,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:2b259c243b1b28c4b67a052ed84a64bdf3d65a9d546c52dc22dc8b8b42fd68ae",
+      "fingerprint": "sha256:c2c1197f53d7fead335c75f6de7376efaaa96cc32466c698b76d1afb524a3d9b",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=DPRODUCT(A1:D5, \"Price\", F1:F2)"
     },
-    "sha256:b23c8576ed22958a88de0e6429695fb021e9a1aa23776dfbc51b3dfee465669f": {
+    "DAVERAGE/daverage-apples": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -702,9 +847,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:f1f9a60e8f634073e0ebaa59c63eeb2833eb87a757ab413ea710c43eae16542e",
+      "fingerprint": "sha256:4fd553458f09de1062ee69a73d58083e9c68ec237edc26d7e21731b3749d87fb",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=DAVERAGE(A1:D5, \"Price\", F1:F2)"
     },
-    "sha256:c64b8e87e77abd02fe86cd9eb6d6e4338395fa6781b21e876b21ada2eeedff74": {
+    "DAVERAGE/daverage-field-by-index": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -730,9 +881,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:bde47e618fd8c94f366f3cb35056c74285acfe46367ac2e81414a3f2fba2fbf2",
+      "fingerprint": "sha256:95cae6ec42b9cebbefbaed49bdd6b766cf99b31b6c9da18b9aac5985a8f2081f",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=DAVERAGE(A1:D5, 3, G1:G2)"
     },
-    "sha256:3b679a17558e44500b2ad00ccebb53f0ff000ea15d0a5d655dc2db38f4b90e9e": {
+    "DAVERAGE/daverage-comparator-criteria": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -758,9 +915,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:522f57b8e791a13511f45cd498c5a0c430bdf05078c0ec2950465ac3f1ce8153",
+      "fingerprint": "sha256:669d643132b4430cc68e613fdae30972321483db9558d121ed2fa2762974c9b8",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=DAVERAGE(A1:D5, \"Units\", H1:H2)"
     },
-    "sha256:2188c974c41abb2a0e89254d075afacc32e404ae2c605af993021d64dfb4f7a5": {
+    "DSTDEV/dstdev-apples-price": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -786,9 +949,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:3ff2e65ce8f30d5f1f78d0028e4728ba4cac61efd7d46fe6e4a17681f45a7e44",
+      "fingerprint": "sha256:7c306a502cba14179d7331709f0dd2d761647c9a3d52222f059ac85c4ad43a85",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=DSTDEV(A1:D5, \"Price\", F1:F2)"
     },
-    "sha256:6b3d67a5edc904d48fce7e41067895f9de9563af44605b1416bf833a89d2865e": {
+    "DSTDEV/dstdev-field-by-index": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -814,9 +983,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:e3fa53d53a49171f61fff7456c1a40949412fbfb5e25ec54a958d5d6d044b688",
+      "fingerprint": "sha256:a5d5ecbed03e5d8abeffd813b5ac075f49bf35117ba244d8867c3cba4a3ff6a3",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=DSTDEV(A1:D5, 4, F1:F2)"
     },
-    "sha256:fff64e766a7627ee136f2c32e6fe07f662115babc1b50f285e96446fac6d9d0a": {
+    "DSTDEVP/dstdevp-bananas-units": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -842,9 +1017,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:80c1529c7c33ef2c447f6f3a7fa2428c06c5080bb131a36ad5154f748e4ec9d1",
+      "fingerprint": "sha256:f13d9c9c73eeb80c34f97364b302cdc64049f75c43a0381299a3ccde79a6e234",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=DSTDEVP(A1:D5, \"Units\", F1:F2)"
     },
-    "sha256:8fe2ad8adc56b361fc39d30b13686bfe1749105c67d629a075ca80f087e79fc6": {
+    "DSTDEVP/dstdevp-apples-price": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -870,9 +1051,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:3909572b9a9b53ff2fd8c47447e83de75daddafe22bf60580953405c70514d3d",
+      "fingerprint": "sha256:43412a89a2157f2c4788feb0281c4a1151687dc9d65d9710c6a2e9db523e740d",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=DSTDEVP(A1:D5, 3, F1:F2)"
     },
-    "sha256:984df621fa7248f24cfec8893cd6aa8eff6ff6ff558d2cb7c1fbe5ab9ab303ad": {
+    "DSTDEVP/dstdevp-field-by-index": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -898,9 +1085,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:2598289b7463ec715a5809212c739d62b53f564e8d3d8fbc76d3b568a6708ea7",
+      "fingerprint": "sha256:f13d9c9c73eeb80c34f97364b302cdc64049f75c43a0381299a3ccde79a6e234",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=DSTDEVP(A1:D5, 4, F1:F2)"
     },
-    "sha256:ec999b728da13c85143119ca4f205e1803f99f0e114647b5a3e8b3104fa66d13": {
+    "DVAR/dvar-apples-price": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -926,9 +1119,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:e8b742e162e7365a695cfeb2a3dac2f36fc5456b26b0a0952d55f9b85bdac497",
+      "fingerprint": "sha256:f13d9c9c73eeb80c34f97364b302cdc64049f75c43a0381299a3ccde79a6e234",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=DVAR(A1:D5, \"Price\", F1:F2)"
     },
-    "sha256:1f67abedae933b0f3838ca0ef2cc5b88e1eda050a962384a8bbae68f793f4cff": {
+    "DVAR/dvar-bananas-units": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -954,9 +1153,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:23a41ae0cc1012651969ff0af5a5eae0f660e111a8bb51af79f09972142bc8dc",
+      "fingerprint": "sha256:7d2d8a5b779778e8b5c0b24e3bf06cdce590654ebed8eb82bcf39b758116ffb6",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=DVAR(A1:D5, 4, F1:F2)"
     },
-    "sha256:65279efd9e2a7db083fd2088bf6fd4402db6d81827e0faab2f624bae0ca0bb72": {
+    "DVAR/dvar-field-by-index": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -982,9 +1187,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:14ff3b310dbb5aeaf534f8ba5cb483f98129783d05dc73dacfa40c0f55f7b61e",
+      "fingerprint": "sha256:f13d9c9c73eeb80c34f97364b302cdc64049f75c43a0381299a3ccde79a6e234",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=DVAR(A1:D5, 3, F1:F2)"
     },
-    "sha256:b2567f15a5394671d9600891da4ab704515788a10c9e3d24706d8fbd1a223a29": {
+    "DVARP/dvarp-apples-price": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -1010,9 +1221,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:8f1b68b5a3d51d92650c8215e0cda4bf30c73fb4c1d7e9a6518d90a2b33b00ea",
+      "fingerprint": "sha256:43412a89a2157f2c4788feb0281c4a1151687dc9d65d9710c6a2e9db523e740d",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=DVARP(A1:D5, \"Price\", F1:F2)"
     },
-    "sha256:39b31c7e8b2524a42bf648ca971fea83c7192399cf4bf23a240397f48b142b71": {
+    "DVARP/dvarp-bananas-units": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -1038,9 +1255,15 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:2ba11c8e94188aca2e20bdc51f7af7a18f4cf363572fd2a04c89ce24d22094ad",
+      "fingerprint": "sha256:669d643132b4430cc68e613fdae30972321483db9558d121ed2fa2762974c9b8",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=DVARP(A1:D5, 4, F1:F2)"
     },
-    "sha256:dff1368a2a65478386c07f0c9773c1371b2c41611240ab3bfd6212ecd76f3068": {
+    "DVARP/dvarp-field-by-index": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -1066,6 +1289,12 @@
           "cols": 1
         }
       },
+      "stimulus": "sha256:f501157c104b7d2d31d045b2759190b8bf475859c9e1d7792fba0dafa92ed62f",
+      "fingerprint": "sha256:43412a89a2157f2c4788feb0281c4a1151687dc9d65d9710c6a2e9db523e740d",
+      "fpv": 1,
+      "run_id": null,
+      "at": null,
+      "preLedger": true,
       "formula-as-evaluated": "=DVARP(A1:D5, 3, F1:F2)"
     }
   }
