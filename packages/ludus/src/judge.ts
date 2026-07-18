@@ -116,6 +116,14 @@ function checkStructure(problem: Problem, program: Snapshot): string[] {
   return errors;
 }
 
+// a window of the formula around the offending match — a blind prefix slice
+// once hid the banned call entirely when it sat past the cut
+function excerptAround(formula: string, at: number, matchLen: number): string {
+  const start = Math.max(0, at - 20);
+  const end = Math.min(formula.length, at + matchLen + 30);
+  return (start > 0 ? "…" : "") + formula.slice(start, end) + (end < formula.length ? "…" : "");
+}
+
 function lint(problem: Problem, program: Snapshot): string[] {
   const errors: string[] = [];
   const banned = (problem.lint?.ban ?? []).map((name) => {
@@ -131,8 +139,11 @@ function lint(problem: Problem, program: Snapshot): string[] {
         const formula = cell?.ue?.formulaValue;
         if (!formula) return;
         for (const ban of banned) {
-          if (ban.pattern.test(formula)) {
-            errors.push(`${sheet.title}!R${r + 1}C${c + 1}: banned function class "${ban.name}" in ${formula.slice(0, 40)}`);
+          const hit = formula.match(ban.pattern);
+          if (hit) {
+            errors.push(
+              `${sheet.title}!R${r + 1}C${c + 1}: banned function class "${ban.name}" — ${excerptAround(formula, hit.index ?? 0, hit[0].length)}`,
+            );
           }
         }
         const inInput =
