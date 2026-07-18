@@ -9,7 +9,6 @@ import type { EngineRunInfo } from "./types.js";
 const ENGINE: EngineRunInfo = {
   driver: "@cartularium/drivers@0.1.0+abc123",
   engine_version: null,
-  observed: { from: "2026-07-18T14:00:00Z", to: "2026-07-18T14:05:00Z" },
   capabilities: `sha256:${"0".repeat(64)}`,
   conditions: { locale: "en-US", calc: { epoch: "1899-12-30", iterative: false, precision: "full" } },
   capacity_events: [],
@@ -46,9 +45,12 @@ describe("ledger", () => {
       engine: "gsheets", at: "2026-07-18T14:00:01Z", outcome: "value",
       fingerprint: `sha256:${"2".repeat(64)}`, fpv: 1,
     }]);
-    w.complete(run.run_id, "2026-07-18T14:05:00Z", {
-      gsheets: { selected: 1, attempted: 1, recorded: 1, outcomes: { value: 1 } },
-    });
+    w.complete(
+      run.run_id,
+      "2026-07-18T14:05:00Z",
+      { gsheets: { from: "2026-07-18T14:00:00Z", to: "2026-07-18T14:05:00Z" } },
+      { gsheets: { selected: 1, attempted: 1, recorded: 1, outcomes: { value: 1 } } },
+    );
     w.appendEvidence({ run_id: run.run_id, commit: "cafe", files: { "fixtures/arithmetic/gsheets.json": `sha256:${"3".repeat(64)}` } });
     w.release();
 

@@ -33,9 +33,12 @@ export class LedgerWriter {
     return max + 1;
   }
 
-  openRun(row: Omit<RunRow, "row" | "run_id" | "seq"> & { start: Date }): RunRow {
-    const { start, ...rest } = row;
-    const run: RunRow = { row: "run", run_id: newRunId(start), seq: this.nextSeq(), ...rest };
+  /** run_id may be pre-generated (newRunId) so sweep artifacts can reference
+   * it before the row lands — rows are order-insensitive, so the run row
+   * legally arrives after the sweep with its real observation windows */
+  openRun(row: Omit<RunRow, "row" | "run_id" | "seq"> & { start: Date; run_id?: RunId }): RunRow {
+    const { start, run_id, ...rest } = row;
+    const run: RunRow = { row: "run", run_id: run_id ?? newRunId(start), seq: this.nextSeq(), ...rest };
     appendRows(this.runsPath, [run]);
     this.open.add(run.run_id);
     return run;
@@ -52,9 +55,22 @@ export class LedgerWriter {
     return full;
   }
 
-  complete(run_id: RunId, at: string, counts: CompletionRow["counts"]): CompletionRow {
+  complete(
+    run_id: RunId,
+    at: string,
+    observed: CompletionRow["observed"],
+    counts: CompletionRow["counts"],
+    selection?: string[],
+  ): CompletionRow {
     if (!this.open.has(run_id)) throw new Error(`ledger: run ${run_id} is not open in this writer`);
-    const row: CompletionRow = { row: "complete", run_id, at, counts };
+    const row: CompletionRow = {
+      row: "complete",
+      run_id,
+      at,
+      observed,
+      ...(selection ? { selection } : {}),
+      counts,
+    };
     appendRows(this.runsPath, [row]);
     this.open.delete(run_id);
     return row;

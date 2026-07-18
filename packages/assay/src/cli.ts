@@ -30,6 +30,7 @@ async function main() {
     case "preview-status": return (await import("./commands/preview-status.js")).previewStatus();
     case "preview-worker": return (await import("./commands/preview-worker.js")).previewWorker();
     case "history":      return (await import("./commands/history.js")).history();
+    case "ledger":       return (await import("./commands/ledger.js")).ledger();
     case "scaffold":     return (await import("./commands/scaffold.js")).scaffold(rest);
     case "coverage":     return (await import("./commands/coverage.js")).coverage();
     case "measure":      return (await import("./commands/measure.js")).measure(rest);

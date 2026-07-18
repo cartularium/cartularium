@@ -23,8 +23,6 @@ export interface EngineRunInfo {
   driver: string;
   /** null when the engine exposes no version string (gsheets) */
   engine_version: string | null;
-  /** the sweep window for this engine; per-result instants live on rows */
-  observed: { from: string; to: string };
   /** content-addressed snapshot under history/capabilities/<sha>.json */
   capabilities: `sha256:${string}`;
   /** the closed D-row set (decision point 5): locale + calc settings */
@@ -42,7 +40,9 @@ export interface RunRow {
   /** human-facing sequence label; no row references it, renumberable */
   seq: number;
   trigger: "manual" | "ci";
-  scope: { kind: "full" } | { kind: "subset"; selection: string[] };
+  /** intent; a subset run's realized selection lands on the completion row
+   * (it is discovered during the sweep, and rows are immutable) */
+  scope: { kind: "full" } | { kind: "subset" };
   /** git sha of the corpus as run — recording requires a clean tree */
   corpus_commit: string;
   engines: Partial<Record<Platform, EngineRunInfo>>;
@@ -67,11 +67,17 @@ export interface ResultRow {
   fpv: number;
 }
 
-/** closes a run; a run without one is visibly incomplete */
+/** closes a run; a run without one is visibly incomplete. The run row is
+ * appended BEFORE the sweep (so a crash leaves an incomplete run, never
+ * fixture entries referencing an unknown run); the observation windows,
+ * unknowable at open, land here. Per-result instants live on result rows. */
 export interface CompletionRow {
   row: "complete";
   run_id: RunId;
   at: string;
+  observed: Partial<Record<Platform, { from: string; to: string }>>;
+  /** subset runs: the case ids that were selected (union across engines) */
+  selection?: string[];
   counts: Partial<
     Record<
       Platform,
