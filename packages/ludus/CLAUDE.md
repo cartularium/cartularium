@@ -1,14 +1,23 @@
 # ludus
 
-Practice problems for spreadsheets with automated judging ("LeetCode for spreadsheets").
-Working name, pre-alpha. Spec: `internal/specs/ludus/product-and-judge.md` (DRAFT —
-decisions there are pending maintainer approval; don't treat them as settled).
+"LeetCode for spreadsheets": practice problems with automated judging, in real Google
+Sheets. Live: https://ludus.sheets.wiki (Pages project `ludus`) + judge Worker
+`ludus-judge` (D1 `ludus`). Spec: `internal/specs/ludus/product-and-judge.md`.
+Authoring guide: `docs/authoring.md` — read it before touching `problems/`.
 
-Currently only the W0 rehydration-fidelity spike exists (`spike/`): extract a sheet's
-entered values, rehydrate into a fresh spreadsheet, diff computed outputs. See README.
-
-- Uses assay's exported `getAccessToken` (per assay's boundary rule: ad-hoc probes use
-  exported surfaces). Requires `assay login` / `~/.assayrc.json`.
-- Run: `pnpm --filter @cartularium/ludus gnarly | roundtrip <id-or-url>`.
-- Typecheck: `pnpm --filter @cartularium/ludus check`.
-- `results/` is gitignored evidence output.
+- One YAML per problem in `problems/` is the single source: site pages, template
+  sheets, the worker bundle, and `expected` outputs are all generated from it.
+  `problems/drafts/` holds unaccepted candidates; builds read `problems/`
+  non-recursively, so drafts ship nowhere.
+- CLIs run as judge@cartularium.org. Login: `pnpm --filter @cartularium/ludus run
+  login` — `run` is required; bare `pnpm login` collides with pnpm's builtin. Token
+  `~/.ludusrc.json`, OAuth client `credentials.json` (both untracked).
+- Commands: `oracle [--check]`, `template`, `judge <yaml> <sheet>`, `build:site`,
+  `dev:worker`, `check`, `check:worker`.
+- Regenerating a template mints a new spreadsheet id, so the deployed site's copy
+  links and the worker's problem bundle go stale together — always redeploy both
+  (authoring guide, loop step 5).
+- Hidden cases are public in this repo by design (open-solutions posture). They are
+  redacted from the site build and the API boundary; keep it that way.
+- `results/` is gitignored evidence output. `spike/` is the historical W0
+  rehydration-fidelity spike.
