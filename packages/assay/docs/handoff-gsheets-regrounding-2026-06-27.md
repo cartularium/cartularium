@@ -27,7 +27,7 @@ Uncommitted diff: `tests/external.yaml`, `tests/regex.yaml` (both parse; tests u
 
 Isolated live probe — kills tiling-artifact confusion (one formula per call, no co-tenancy):
 
-- creds: `ASSAY_GOOGLE_CREDENTIALS_PATH=/Users/jaegun/personal/cartularium/packages/assay/credentials.json`
+- creds: `ASSAY_GOOGLE_CREDENTIALS_PATH=~/personal/cartularium/packages/assay/credentials.json`
   (installed-app OAuth; the worktree lacks the file). Token in `~/.assayrc.json` (auto-refreshes).
 - run a vitest probe gated on `RUN_LIVE_GSHEETS=1`, `ASSAY_TILE_FACTOR=1`; `new GSheetsDriver({spreadsheetId, accessToken})`,
   one task per `evaluateBatch([task])`. Self-provisions a scratch sheet (trash after).
