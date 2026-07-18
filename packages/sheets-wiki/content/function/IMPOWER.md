@@ -47,22 +47,6 @@ IMPOWER("2j",-7)
 | 3 | `=IMPOWER("-1-j", -1)` | -0.5+0.5j |
 | 4 | `=IMPOWER("0.732-5.349i", -0.138)` | 0.776914096672106+0.155872432042838i |
 
-### Engine compatibility
-
-IMPOWER is implemented by every tracked engine except pycel (`#NAME?`). Integer-coefficient results are uniform (`IMPOWER("2+3i", 2)` = "-5+12i", `IMPOWER("2+3i", 0)` = "1"), but the text rendering of non-exact results is not portable. Excel, Google Sheets, and IronCalc cap components at ~15 significant digits; `formulas`, HyperFormula, and Lattice emit full IEEE-754 double.
-
-A vivid case is `IMPOWER("i", 2)`, mathematically exactly -1. Computed via polar form it leaves a tiny imaginary residue (~1.22e-16), and the engines render it five different ways: Excel and Google Sheets show `-1+1.22464679914735E-16i` (uppercase `E`, ~15 digits); HyperFormula `-1+1.2246467991473532e-16i` (lowercase `e`); IronCalc `-1+0.000000000000000122464679914735i` (fixed notation); while `formulas` and Lattice snap the near-zero part to zero and print a clean `-1` (assay: IMPOWER/impower-of-i-squared; IMLN-IMPOWER-IMSQRT deep dive, 2026-07-11). So Excel and Google Sheets show a visible residue here, not a clean `-1`. Use [[IMREAL]] and [[IMAGINARY]] rather than parsing the rendered string.
-
-| Engine | Behavior |
-| --- | --- |
-| Google Sheets | Supported; ~15-digit rendering; keeps the `i^2` residue (`-1+1.22...E-16i`). |
-| Excel | Supported; ~15-digit rendering; keeps the residue. |
-| HyperFormula | Supported; full-double, lowercase-`e` exponent (live probe, 2026-07-11). |
-| IronCalc | Supported; fixed-notation rendering of tiny residues (live probe, 2026-07-11). |
-| formulas | Supported; snaps near-zero components to zero → clean `-1` (live probe, 2026-07-11). |
-| pycel | Not implemented; returns `#NAME?` (live probe, 2026-07-11). |
-| Lattice | Supported; snaps near-zero components to zero → clean `-1`. |
-
 ### Related functions
 
 [[COMPLEX]]: The COMPLEX function creates a complex number, given real and imaginary coefficients.

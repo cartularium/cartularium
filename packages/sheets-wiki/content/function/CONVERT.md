@@ -51,22 +51,6 @@ CONVERT(value, start_unit, end_unit)
   + Speed - m/hr, mph, kn, admkn, m/s
 - The use of `CONVERT` between two different categories of `start_unit` and  `end_unit` will result in an error. For example, `CONVERT(13.2,"ft","C")` would result in an error as a result of an attempted conversion from distance units to temperature units.
 
-### Engine compatibility
-
-CONVERT is implemented by Excel, Google Sheets, IronCalc, `formulas`, and Lattice, but **not by HyperFormula or pycel**, which return `#NAME?` (assay: CONVERT deep dive; live probe, 2026-07-11). The conversion factor is identical everywhere; the only cross-engine difference is a last-digit one. Google Sheets stores about 15 significant digits, so `CONVERT(1,"m","ft")` returns `3.28083989501312` on Google Sheets versus `3.2808398950131235` on Excel — the two diverge only at the ~15th digit, not by a decimal-place rounding (live probe, 2026-07-11). A `3.280839895` display is a formatting read-back, not the stored value. Downstream exact-equality comparisons across engines can still fail on that trailing digit.
-
-Error handling is portable among the implementers but should not be confused with absence: an incompatible or unknown unit yields `#N/A` in Excel, Google Sheets, IronCalc, `formulas`, and Lattice (the function rejecting its argument), whereas HyperFormula and pycel emit `#NAME?` regardless of the units (the function being absent). Treat a `#NAME?` from CONVERT as "this engine lacks the function," not "bad units."
-
-| Engine | Behavior |
-| --- | --- |
-| Google Sheets | Supported; ~15 significant digits; bad units → `#N/A`. |
-| Excel | Supported; full IEEE-754 double; bad units → `#N/A`. |
-| HyperFormula | Not implemented; returns `#NAME?` for any arguments (live probe, 2026-07-11). |
-| IronCalc | Supported; ~9-digit read-back; bad units → `#N/A` (live probe, 2026-07-11). |
-| formulas | Supported; full double (live probe, 2026-07-11). |
-| pycel | Not implemented; returns `#NAME?` for any arguments (live probe, 2026-07-11). |
-| Lattice | Supported. |
-
 ### See Also
 
 [[DATE]]: Converts a year, month, and day into a date.

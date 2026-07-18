@@ -40,22 +40,6 @@ GETPIVOTDATA(value_name, any_pivot_table_cell, [original_column, ...], [pivot_it
 - While any cell in the pivot table may be chosen for `any_pivot_table_cell`, it's best to choose the cell in the top corner.  If the pivot table decreases in size as data is modified, and the chosen cell is no longer in the pivot table, then `GETPIVOTDATA` will result in an error.
 - A value must appear in the pivot table itself in order for it to be returned by GETPIVOTDATA.
 
-### Engine compatibility
-
-`GETPIVOTDATA` depends on a pivot table, which only the full applications provide. In the corpus it is available on Google Sheets and Excel only; the pure calculation engines do not implement it.
-
-| Engine | Behavior |
-| --- | --- |
-| Google Sheets | Implemented. Against a cell with no pivot table anchored to it, returns `#REF!`. |
-| Excel | Implemented (recognizes the function; a missing pivot yields a reference error). |
-| formulas | `#NAME?` — not implemented (live probe, 2026-07-11). |
-| HyperFormula | `#NAME?` — not implemented (live probe, 2026-07-11). |
-| IronCalc | `#NAME?` — not implemented (live probe, 2026-07-11). |
-| pycel | `#NAME?` — not implemented (live probe, 2026-07-11). |
-
-> [!INFO]
-> The error distinguishes two failures: a `#REF!` means the function exists but found no pivot table; a `#NAME?` means the engine has no `GETPIVOTDATA` at all.
-
 ### See Also
 
 [[QUERY]] - Runs a Google Visualization API Query Language query across data.

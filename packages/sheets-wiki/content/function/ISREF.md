@@ -33,22 +33,6 @@ ISREF(value)
 
 - This function is most often used in conjunction with `IF` in conditional statements.
 
-### Engine compatibility
-
-`ISREF` returning `TRUE` for a cell reference, a range, and `INDIRECT("A1")` is portable across Excel, Google Sheets, IronCalc, and Lattice (assay: ISREF/isref-of-single-cell, ISREF/isref-of-range, ISREF/isref-of-indirect-valid). Two engines break it.
-
-| Engine | Behavior |
-| --- | --- |
-| Google Sheets | `TRUE` for all reference forms, including `INDIRECT(...)`. |
-| Excel | `TRUE` for all reference forms. |
-| IronCalc | `TRUE` for all reference forms (live probe, 2026-07-11). |
-| Lattice | `TRUE` for all reference forms. |
-| HyperFormula | `FALSE` for *every* reference form — it evaluates each argument to its scalar value before `ISREF` inspects it, so `ISREF` never sees a reference (live probe, 2026-07-11). |
-| pycel | `#NAME?` — `ISREF` not implemented (live probe, 2026-07-11). |
-
-> [!INFO]
-> HyperFormula's `ISREF` is effectively always `FALSE`. Do not use `ISREF` as a reference-versus-value discriminator when targeting HyperFormula, and expect `#NAME?` under pycel.
-
 ### See Also
 
 [[ISTEXT]]: Checks whether a value is text.

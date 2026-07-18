@@ -58,22 +58,6 @@ This example shows the inverse cotangent of numbers converted to degrees:
 
 
 
-### Engine compatibility
-
-For non-negative arguments every engine agrees (`ACOT(0)` = π/2, `ACOT(1)` = π/4). For **negative** arguments there are two standard-but-incompatible definitions of arccotangent, and the choice is not portable between Excel and Google Sheets. Excel, IronCalc, `formulas`, and Lattice place ACOT on the principal range (0, π), so `ACOT(-1)` = 3π/4 ≈ 2.356194490192345 and `ACOT(-0.5)` = π + ATAN(-2) ≈ 2.0344439357957027 (Excel live probe, 2026-07-11). Google Sheets and HyperFormula instead compute `ATAN(1/x)`, range (-π/2, π/2), so `ACOT(-1)` = -π/4 ≈ -0.7853981633974483. The two conventions agree for x ≥ 0 and differ by exactly π for x < 0. Any sheet that relies on the sign or range of ACOT for negative inputs is not portable between the two products.
-
-| Engine | Behavior |
-| --- | --- |
-| Google Sheets | `ATAN(1/x)` branch, range (-π/2, π/2); `ACOT(-1)` = -0.7853981633974483. |
-| Excel | Principal branch (0, π); `ACOT(-1)` = 2.356194490192345, `ACOT(-0.5)` = 2.0344439357957027 (live probe, 2026-07-11). |
-| HyperFormula | `ATAN(1/x)` branch, matches Google Sheets (live probe, 2026-07-11). |
-| IronCalc | Principal branch (0, π), matches Excel (live probe, 2026-07-11). |
-| formulas | Principal branch (0, π), matches Excel (live probe, 2026-07-11). |
-| pycel | Not implemented; returns `#NAME?` for the whole ACOT/ACOTH family (live probe, 2026-07-11). |
-| Lattice | Principal branch (0, π), matches Excel (recorded fixture). |
-
-The Google Sheets value in the table is from recorded fixtures reproduced on HyperFormula; a live gsheets re-confirmation of `ACOT(-0.5)` is still open.
-
 ### Related functions
 
 - [[ACOTH]]: The ACOTH function returns the inverse hyperbolic cotangent of a value in radians.

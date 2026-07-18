@@ -38,22 +38,6 @@ XIRR(cashflow_amounts, cashflow_dates, [rate_guess])
 - Each cell in `cashflow_amounts` should be positive if it represents income from the perspective of the owner of the investment (e.g. coupons) or negative if it represents payments (e.g. loan repayment).
 - `XNPV` will return zero if `discount` is set to the result of `XIRR` using the same cash flow amounts and schedule.
 
-### Engine compatibility
-
-XIRR is an iterative solver, so where it is implemented the root differs from Excel by roughly `1e-8` — Excel converges to 0.3733625352…, while `formulas`, Google Sheets, and Lattice land on 0.3733625335…, and IronCalc reports a reduced-precision read-back (assay: XIRR/xirr-simple-project; live probe, 2026-07-11). Compare XIRR to a tolerance, never for exact cross-engine equality. **HyperFormula and pycel do not implement XIRR** and return `#NAME?` — notable because HyperFormula *does* have [[XNPV]].
-
-Unlike XNPV, Excel and Google Sheets **coerce** text (ISO string) dates for XIRR rather than rejecting them — an internal asymmetry within the same product, confirmed live on both (2026-07-11). Even so, authoring dates as real serials (or via [[DATE]]) remains the portable choice.
-
-| Engine | Behavior |
-| --- | --- |
-| Google Sheets | Supported; solver root ≈ 0.3733625335; coerces text dates. |
-| Excel | Supported; solver root ≈ 0.3733625352; coerces text dates (live probe, 2026-07-11). |
-| HyperFormula | Not implemented; returns `#NAME?` regardless of date type (live probe, 2026-07-11). |
-| IronCalc | Supported; reduced-precision read-back (live probe, 2026-07-11). |
-| formulas | Supported; solver root ≈ 0.3733625335 (live probe, 2026-07-11). |
-| pycel | Not implemented; returns `#NAME?`. |
-| Lattice | Supported; solver root ≈ 0.3733625335. |
-
 ### See Also
 
 [[XNPV]]: Calculates the net present value of an investment based on a specified series of potentially irregularly spaced cash flows and a discount rate.

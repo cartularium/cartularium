@@ -75,10 +75,13 @@ const config: QuartzConfig = {
     transformers: [
       Plugin.SheetsWikiSlugs(),
       Plugin.FrontMatter(),
-      Plugin.CartulariumData(cartulariumPaths),
-      Plugin.AssayRefs({
-        manifestPath: cartulariumPaths.manifestPath,
-      }),
+      // Assay feed disconnected per the surface-pull decision
+      // (internal decisions/2026-07-18-assay-pull-compatibility-surfaces.md):
+      // V4 verdict data does not reach the wiki; lattice reference TSVs
+      // (function existence) still load. Compatibility sections return when
+      // the re-founded, verdict-free data exists.
+      Plugin.CartulariumData({ latticePath: cartulariumPaths.latticePath }),
+      Plugin.AssayRefs({ mode: "degraded" }),
       Plugin.CreatedModifiedDate({
         priority: ["frontmatter", "git", "filesystem"],
       }),

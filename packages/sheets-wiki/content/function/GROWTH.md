@@ -38,20 +38,6 @@ GROWTH(known_data_y, [known_data_x], [new_data_x], [b])
   + The default behavior is to return the ideal curve fit values for the same `x` inputs as the existing data for comparison of known `y` values and their corresponding curve fit estimates.
 - `b` - **[** OPTIONAL - `TRUE` by default **]** - Given a general exponential form of `y = b*m^x` for a curve fit, calculates `b` if `TRUE` or forces `b` to be `1` and only calculates the `m` values if `FALSE`.
 
-### Engine compatibility
-
-GROWTH, the exponential-model counterpart of [[TREND]], is implemented by Excel, Google Sheets, and Lattice, with the same orientation caveat as TREND on `formulas`. **HyperFormula, IronCalc, and pycel do not implement GROWTH** (`#NAME?`) — pycel's partial regression support covers only [[LINEST]] and TREND, not GROWTH or [[LOGEST]]. The `formulas` library returns the projected vector in **column orientation** where Excel and Google Sheets give a row, and returns `#REF!` when `new_data_x` is a separately-shaped array it cannot reconcile (assay: LINEST-LOGEST-TREND-GROWTH deep dive; live probe, 2026-07-11). See [[Array-enabled functions]].
-
-| Engine | Behavior |
-| --- | --- |
-| Google Sheets | Full row of fitted/projected values. |
-| Excel | Full row of fitted/projected values. |
-| HyperFormula | Not implemented; returns `#NAME?` (live probe, 2026-07-11). |
-| IronCalc | Not implemented; returns `#NAME?` (live probe, 2026-07-11). |
-| formulas | Returns the vector transposed to a **column**; separately-oriented `new_data_x` → `#REF!` (live probe, 2026-07-11). |
-| pycel | Not implemented; returns `#NAME?` (live probe, 2026-07-11). |
-| Lattice | Matches Excel and Google Sheets. |
-
 ### See Also
 
 [[TREND]]: Given partial data about a linear trend, fits an ideal linear trend using the least squares method and/or predicts further values.

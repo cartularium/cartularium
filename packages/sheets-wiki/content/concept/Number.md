@@ -31,21 +31,6 @@ While [[Boolean|Booleans]] and [[Error|Errors]] often behave like distinct types
 
 In a comparison that mixes types, a number is the **lowest-ranked** operand: the ordering is number < text < [[Boolean|boolean]]. So `"a" > 1` is `TRUE` (any text outranks any number) and `TRUE > 0` is `TRUE` (any boolean outranks any number). Numbers are not coerced up to text or booleans; the whole types are ranked. See [[Boolean#Cross-type comparison]].
 
-### Engine compatibility
-
-Arithmetic on numbers is portable — every engine treats numbers as IEEE 754 doubles. The visible divergence is in **how many digits are exposed**:
-
-| Engine | Behavior |
-| --- | --- |
-| Google Sheets | Stores and renders to ~15 significant figures |
-| Excel | Stores and renders to ~15 significant figures |
-| formulas | Exposes the full IEEE 754 double (`=1/3` → `0.3333333333333333`) |
-| pycel | Exposes the full double |
-| HyperFormula | Applies its own display rounding (`=1/3` → `0.33333333333`) |
-| IronCalc | Applies its own display rounding (`=1/3` → `0.333333333`) |
-
-Digits beyond the ~15th are where Google Sheets and Excel results diverge from the pure JavaScript/Python engines; the arithmetic itself agrees (live probe, 2026-07-11).
-
 ### See Also
 - [[Data type]] — Overview of the Sheets type system.
 - [[Number Format Patterns]] — How numbers are displayed.

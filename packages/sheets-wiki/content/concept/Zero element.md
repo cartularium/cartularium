@@ -19,22 +19,6 @@ Zero elements are a type of [[Array|array]] with zero width or zero height.
 
 The `TOCOL`/`TOROW` forms rely on the ignore-blanks argument (`1`): an empty first argument is a single blank, and ignoring blanks leaves an array with no elements (assay: TOCOL/tocol-ignore-blanks, TOROW/torow-ignore-blanks).
 
-### Engine compatibility
-
-Zero elements only exist where the constructing functions do, and those functions are not portable. [[TOCOL]] and [[TOROW]] are implemented by Google Sheets, Excel (365), and Lattice, plus the `formulas` JavaScript library — but they are **absent from HyperFormula, IronCalc, and pycel**, where any call returns `#NAME?` (assay: TOCOL/tocol-row, TOROW/torow-col; live probe, 2026-07-11). [[ARRAY_CONSTRAIN]] is a Google Sheets function with no Excel equivalent, narrower still.
-
-| Engine        | `TOCOL` / `TOROW` | `ARRAY_CONSTRAIN` |
-| ------------- | ----------------- | ----------------- |
-| Google Sheets | available         | available         |
-| Excel         | available (365)   | not available     |
-| Lattice       | available         | —                 |
-| formulas      | available         | —                 |
-| HyperFormula  | `#NAME?`          | `#NAME?`          |
-| IronCalc      | `#NAME?`          | `#NAME?`          |
-| pycel         | `#NAME?`          | `#NAME?`          |
-
-So the zero-element trick is a Google Sheets and Excel construct: on the open-source engines that lack `TOCOL`/`TOROW`, there is no zero-width or zero-height array to produce.
-
 ### Notes
 
 - Zero elements can be used in [[REDUCE]] or [[LAMBDA recursion]] formulae to effectively skip the initial value when using [[VSTACK]] or [[Array#Array literals|array literals]] on the accumulator.

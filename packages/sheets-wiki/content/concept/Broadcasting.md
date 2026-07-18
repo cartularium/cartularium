@@ -55,20 +55,6 @@ An [[Array-enabled functions|array-enabled]] wrapper such as [[IFERROR]] broadca
 
 `10/{1,0,2}` produces `{10, #DIV/0!, 5}`; Excel maps `IFERROR` across it and replaces the error with `-1` (Excel probe, 2026-07-11). Google Sheets evaluates only the first element and never reaches the error branch (gsheets probe dve-007, 2026-07-11). To force the mapping in Sheets, wrap the expression: `=ARRAYFORMULA(IFERROR(10/{1,0,2}, -1))`. This is the same [[Array-enabled functions#Implicit intersection|implicit intersection]] behavior that collapses `LEN` over a range.
 
-### Engine compatibility
-
-Element-wise scalar-and-outer-product broadcasting is portable across Excel, Google Sheets, HyperFormula, Lattice, and the `formulas` library. The portable core ends at mismatched shapes: Excel and HyperFormula pad with `#N/A`, Google Sheets collapses to a scalar, and `formulas` errors.
-
-| Engine        | Behavior                                                                                          |
-| ------------- | ------------------------------------------------------------------------------------------------- |
-| Google Sheets | Broadcasts scalar and row×column forms. Same-orientation unequal-length operands collapse to the first element (no `#N/A` padding). Array-enabled functions require [[ARRAYFORMULA]] to map. |
-| Excel         | Broadcasts all forms; pads mismatched shapes with `#N/A`. Array-enabled functions auto-map over arrays. |
-| HyperFormula  | Broadcasts arithmetic including `#N/A` padding on mismatched shapes.                               |
-| Lattice       | Matches Excel/Sheets on the agreeing cases (recorded fixtures); pads mismatched shapes with `#N/A`. |
-| formulas      | Broadcasts scalar and outer-product forms; raises a broadcast error on mismatched shapes.          |
-| IronCalc      | Broadcast arithmetic not implemented — `#N/IMPL!`.                                                 |
-| pycel         | No array engine — `#NAME?`, or silent collapse to the first element (see [[Dynamic array]]).        |
-
 ### See Also
 
 [[Array-enabled functions]]

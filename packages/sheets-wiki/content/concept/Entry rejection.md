@@ -31,13 +31,6 @@ Google Sheets accepts `=INDEX(array)` with both indices omitted and treats it as
 
 An entry-rejected cell reads back as blank, which is easy to misread as a computed result. It is not `0`, not an empty string, and not a [[Null|null]] value — the formula was never stored. When comparing engines, an Excel blank for one of these formulas is a rejection, not a value: it should not be reconciled against another engine's `0`, spilled array, or error code as though the two engines computed different answers. Only one of them computed anything at all.
 
-### Engine compatibility
-
-| Engine        | Behavior                                                                                     |
-| ------------- | -------------------------------------------------------------------------------------------- |
-| Excel         | Rejects `=INDEX(range)` (row_num omitted), `=AND()`, `=SUM()` at entry, leaving an empty cell. |
-| Google Sheets | Accepts and evaluates `=INDEX(array)` as an array wrapper; evaluates the aggregates.            |
-
 ### See Also
 
 [[Null]]

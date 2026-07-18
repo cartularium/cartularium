@@ -42,20 +42,6 @@ YEARFRAC(start_date, end_date, [day_count_convention])
 - Ensure that the inputs to the function are either references to cells containing dates, functions which return date objects such as [[DATE]], [[DATEVALUE]] or [[TO_DATE]], or date serial numbers of the type returned by the [[N]] function.
 - `YEARFRAC` does not autoconvert number formats in the same way that Google Sheets does upon direct entry into cells. Therefore, `YEARFRAC(10/10/2000,10/10/2001)` is interpreted as `YEARFRAC(0.005,0.00499750124938)`, the quotients of 10 divided by 10 divided by 2000 and 2001, respectively.
 
-### Engine compatibility
-
-Like [[WEEKNUM]], YEARFRAC's portability turns on **text-date coercion**. Excel, Google Sheets, IronCalc, `formulas`, and Lattice coerce an ISO-8601 date string and compute (`YEARFRAC("2025-01-01","2026-01-01",2)` = 1.0138888…, basis actual/360). **HyperFormula and pycel do not coerce a text date** and return `#VALUE!` for the string form across every basis, while both compute correctly on real dates (`YEARFRAC(DATE(2025,1,1),DATE(2026,1,1),2)` = 1.0138888…). Note this is `#VALUE!`, not `#NAME?`: pycel *has* YEARFRAC and is rejecting the argument type, not missing the function. Wrap literals in [[DATE]] or [[DATEVALUE]] for portability (assay: YEARFRAC/yearfrac-actual-360; live probe, 2026-07-11).
-
-| Engine | Behavior |
-| --- | --- |
-| Google Sheets | Coerces text dates; computes. |
-| Excel | Coerces text dates; computes. |
-| HyperFormula | Text date → `#VALUE!`; computes on real dates (live probe, 2026-07-11). |
-| IronCalc | Coerces text dates; computes (live probe, 2026-07-11). |
-| formulas | Coerces text dates; computes (live probe, 2026-07-11). |
-| pycel | Implemented, but text date → `#VALUE!`; computes on real dates (live probe, 2026-07-11). |
-| Lattice | Coerces text dates; computes. |
-
 ### See Also
 
 [[TO_DATE]]: Converts a provided number to a date.

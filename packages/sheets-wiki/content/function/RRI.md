@@ -37,20 +37,6 @@ RRI(number_of_periods, present_value, future_value)
 | 0.2599210499 | `=RRI(3, 2, 4)` |
 | -1 | `=RRI(1, 10, 0)` |
 
-### Engine compatibility
-
-RRI's values are portable, but its **error code for an invalid period count is not**. `RRI(0, 1000, 2000)` has an undefined `1/nper` exponent; Excel, `formulas`, HyperFormula, IronCalc, and Lattice classify a zero period count as an out-of-domain argument and return `#NUM!`, while Google Sheets surfaces the literal `1/0` and returns `#DIV/0!` (assay: RRI/rri-invalid-periods; live probe, 2026-07-11). A model that branches on the specific error code will not be portable — guard `nper` before the call. pycel does not implement RRI.
-
-| Engine | Behavior |
-| --- | --- |
-| Google Sheets | `RRI(0, …)` → `#DIV/0!`. |
-| Excel | `RRI(0, …)` → `#NUM!`. |
-| HyperFormula | `RRI(0, …)` → `#NUM!` (live probe, 2026-07-11). |
-| IronCalc | `RRI(0, …)` → `#NUM!` (live probe, 2026-07-11). |
-| formulas | `RRI(0, …)` → `#NUM!` (live probe, 2026-07-11). |
-| pycel | Not implemented; returns `#NAME?`. |
-| Lattice | `RRI(0, …)` → `#NUM!`. |
-
 ### Related functions
 
 - [[PDURATION]]: The PDURATION function returns the number of periods for an investment to reach a specific value at a given rate.

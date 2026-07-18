@@ -33,23 +33,6 @@ AND(logical_expression1, [logical_expression2, ...])
 
 - The number 0 is logically false; all other numbers (including negative numbers) are logically true.
 
-### Engine compatibility
-
-`AND` with ordinary arguments is portable — `=AND(1,1,0)` is `FALSE` everywhere. The edge is a **zero-argument** call, `=AND()`, whose arity failure each engine resolves differently:
-
-| Engine | Behavior |
-| --- | --- |
-| Google Sheets | `#N/A`. |
-| Excel | Rejected at formula entry (too few arguments), leaving an empty cell — not a value, not an error (assay: lambda-logical-coercion, AND/and-empty). |
-| HyperFormula | `#N/A` (live probe, 2026-07-11). |
-| IronCalc | `#ERROR!` (live probe, 2026-07-11). |
-| formulas | `#VALUE!` (live probe, 2026-07-11). |
-| pycel | `#VALUE!` (live probe, 2026-07-11). |
-| Lattice | `TRUE` — the vacuous-truth identity (`AND` over an empty set is true). |
-
-> [!INFO]
-> Always pass `AND` at least one argument; the empty call is not portable. Separately, HyperFormula does not accept the bare keywords `TRUE`/`FALSE` as arguments — `=AND(TRUE, TRUE)` returns `#NAME?` there; write `=AND(TRUE(), TRUE())` or use a comparison. This affects `OR`, `NOT`, `IF`, and any formula with a literal boolean.
-
 ### See Also
 
 [[OR]]: The OR function returns true if any of the provided arguments are logically true, and false if all of the provided arguments are logically false.
