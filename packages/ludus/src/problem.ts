@@ -6,6 +6,22 @@ import type { Problem } from "./problem-types.js";
 export type { ComparePolicy, Problem, ProblemCase } from "./problem-types.js";
 
 /**
+ * Paren balance of a formula, ignoring parens inside double-quoted strings.
+ * Returns 0 for balanced; Sheets reports imbalance only at evaluation time
+ * as an unhelpful "Formula parse error", so we lint offline.
+ */
+export function parenImbalance(formula: string): number {
+  let depth = 0;
+  let inString = false;
+  for (const ch of formula) {
+    if (ch === '"') inString = !inString;
+    else if (!inString && ch === "(") depth++;
+    else if (!inString && ch === ")") depth--;
+  }
+  return depth;
+}
+
+/**
  * Fingerprint of the oracle surface — the fields that determine `expected`.
  * Compare policy and prose are deliberately excluded: changing them doesn't
  * stale the oracle run.

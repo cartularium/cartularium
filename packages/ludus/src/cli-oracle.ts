@@ -1,6 +1,6 @@
 import { useNodeAuth } from "./node-auth.js";
 useNodeAuth();
-import { loadProblem, oracleSurfaceHash, saveProblem } from "./problem.js";
+import { loadProblem, oracleSurfaceHash, parenImbalance, saveProblem } from "./problem.js";
 import { runOracle } from "./oracle.js";
 
 const args = process.argv.slice(2);
@@ -12,22 +12,33 @@ if (paths.length === 0) {
 }
 
 if (checkOnly) {
-  // staleness sweep: no API calls, just recompute the oracle-surface hash
-  let stale = 0;
+  // staleness sweep: no API calls — recompute the oracle-surface hash and
+  // lint the corpus formulas' paren balance
+  let bad = 0;
   for (const path of paths) {
     const problem = loadProblem(path);
     const hash = oracleSurfaceHash(problem);
+    for (const [name, formula] of [
+      ["reference", problem.reference],
+      ["selftest.alt", problem.selftest?.alt],
+    ] as const) {
+      const d = formula ? parenImbalance(formula) : 0;
+      if (d !== 0) {
+        console.log(`${problem.id}: ${name} paren imbalance ${d > 0 ? "+" : ""}${d}`);
+        bad++;
+      }
+    }
     if (!problem.verified) {
       console.log(`${problem.id}: NEVER VERIFIED`);
-      stale++;
+      bad++;
     } else if (problem.verified.hash !== hash) {
       console.log(`${problem.id}: STALE — surface changed since ${problem.verified.asOf} (re-run the oracle)`);
-      stale++;
+      bad++;
     } else {
       console.log(`${problem.id}: verified ${problem.verified.asOf}`);
     }
   }
-  process.exit(stale > 0 ? 1 : 0);
+  process.exit(bad > 0 ? 1 : 0);
 }
 
 for (const path of paths) {
