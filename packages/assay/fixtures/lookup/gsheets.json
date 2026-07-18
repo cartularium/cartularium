@@ -3,6 +3,1215 @@
   "platform": "gsheets",
   "generatedAt": "2026-07-18T22:06:37.179Z",
   "results": {
+    "INDEX/index-row-and-column": {
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 3
+              },
+              "engine": {
+                "platform": "gsheets",
+                "wire_kind": "number",
+                "raw_api": {
+                  "userEnteredValue": {
+                    "formulaValue": "=INDEX(A1:B2, 2, 1)"
+                  },
+                  "effectiveValue": {
+                    "numberValue": 3
+                  },
+                  "formattedValue": "3",
+                  "effectiveFormat": {
+                    "textFormat": {
+                      "foregroundColor": {},
+                      "fontFamily": "Arial",
+                      "fontSize": 10,
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "foregroundColorStyle": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "hyperlinkDisplayType": "PLAIN_TEXT"
+                  }
+                }
+              },
+              "formula": "INDEX(A1:B2, 2, 1)",
+              "formatted": "3"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
+      "formula-as-evaluated": "=INDEX(A1:B2, 2, 1)",
+      "stimulus": "sha256:69c3a65931fbd4536f60b2a8ab3fb0192884e5d0597a8f16348888da0b4b7348",
+      "fingerprint": "sha256:735bc6630739e4c1cea02fea78a0cab118ad5125fb310f593bf78167645d13ed",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
+    },
+    "INDEX/index-single-column": {
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 20
+              },
+              "engine": {
+                "platform": "gsheets",
+                "wire_kind": "number",
+                "raw_api": {
+                  "userEnteredValue": {
+                    "formulaValue": "=INDEX(A1:A3, 2)"
+                  },
+                  "effectiveValue": {
+                    "numberValue": 20
+                  },
+                  "formattedValue": "20",
+                  "effectiveFormat": {
+                    "textFormat": {
+                      "foregroundColor": {},
+                      "fontFamily": "Arial",
+                      "fontSize": 10,
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "foregroundColorStyle": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "hyperlinkDisplayType": "PLAIN_TEXT"
+                  }
+                }
+              },
+              "formula": "INDEX(A1:A3, 2)",
+              "formatted": "20"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
+      "formula-as-evaluated": "=INDEX(A1:A3, 2)",
+      "stimulus": "sha256:2794ee05766ed8110afa097793f1d8e686e560223f40bb2220a19bbd34f5a610",
+      "fingerprint": "sha256:f6fa89c1965271ba48aade800c96f5554914711fef2024baa945562a2770b888",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
+    },
+    "INDEX/index-out-of-bounds": {
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "error",
+                "sentinel": "#NUM!"
+              },
+              "engine": {
+                "platform": "gsheets",
+                "wire_kind": "error",
+                "raw_api": {
+                  "userEnteredValue": {
+                    "formulaValue": "=INDEX(A1:A2, 5)"
+                  },
+                  "effectiveValue": {
+                    "errorValue": {
+                      "type": "NUM",
+                      "message": "Function INDEX parameter 2 value 5 is out of range."
+                    }
+                  },
+                  "formattedValue": "#NUM!",
+                  "effectiveFormat": {
+                    "textFormat": {
+                      "foregroundColor": {},
+                      "fontFamily": "Arial",
+                      "fontSize": 10,
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "foregroundColorStyle": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "hyperlinkDisplayType": "PLAIN_TEXT"
+                  }
+                }
+              },
+              "formula": "INDEX(A1:A2, 5)",
+              "formatted": "#NUM!"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
+      "formula-as-evaluated": "=INDEX(A1:A2, 5)",
+      "stimulus": "sha256:67a14b28e00fe1d7293e0b54b92c4417fb740abd09f73524f223bf67ccbf2689",
+      "fingerprint": "sha256:f3a7c5ef3dc55973380ab8685af4886919ca174f93d2e56814d91074798899a6",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
+    },
+    "MATCH/match-exact": {
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 2
+              },
+              "engine": {
+                "platform": "gsheets",
+                "wire_kind": "number",
+                "raw_api": {
+                  "userEnteredValue": {
+                    "formulaValue": "=MATCH(20, A1:A3, 0)"
+                  },
+                  "effectiveValue": {
+                    "numberValue": 2
+                  },
+                  "formattedValue": "2",
+                  "effectiveFormat": {
+                    "textFormat": {
+                      "foregroundColor": {},
+                      "fontFamily": "Arial",
+                      "fontSize": 10,
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "foregroundColorStyle": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "hyperlinkDisplayType": "PLAIN_TEXT"
+                  }
+                }
+              },
+              "formula": "MATCH(20, A1:A3, 0)",
+              "formatted": "2"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
+      "formula-as-evaluated": "=MATCH(20, A1:A3, 0)",
+      "stimulus": "sha256:bcf0b5bc3d143dac462c7d79c603fcc7cb38dbb4f374d788a87317f6fd9f10f5",
+      "fingerprint": "sha256:f13d9c9c73eeb80c34f97364b302cdc64049f75c43a0381299a3ccde79a6e234",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
+    },
+    "MATCH/match-not-found": {
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "error",
+                "sentinel": "#N/A"
+              },
+              "engine": {
+                "platform": "gsheets",
+                "wire_kind": "error",
+                "raw_api": {
+                  "userEnteredValue": {
+                    "formulaValue": "=MATCH(99, {1,2,3}, 0)"
+                  },
+                  "effectiveValue": {
+                    "errorValue": {
+                      "type": "N_A",
+                      "message": "Did not find value '99' in MATCH evaluation."
+                    }
+                  },
+                  "formattedValue": "#N/A",
+                  "effectiveFormat": {
+                    "textFormat": {
+                      "foregroundColor": {},
+                      "fontFamily": "Arial",
+                      "fontSize": 10,
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "foregroundColorStyle": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "hyperlinkDisplayType": "PLAIN_TEXT"
+                  }
+                }
+              },
+              "formula": "MATCH(99, {1,2,3}, 0)",
+              "formatted": "#N/A"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
+      "formula-as-evaluated": "=MATCH(99, {1,2,3}, 0)",
+      "stimulus": "sha256:2f7797fca6e3a16193505008fb51ea0a87824df2e97264c999f0c6f704a2d6ca",
+      "fingerprint": "sha256:c98ddc95a4f5716ef17b94c5c73c9ede35dff1666986224ac03e53fce8c29367",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
+    },
+    "MATCH/match-approximate": {
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 2
+              },
+              "engine": {
+                "platform": "gsheets",
+                "wire_kind": "number",
+                "raw_api": {
+                  "userEnteredValue": {
+                    "formulaValue": "=MATCH(25, A1:A3, 1)"
+                  },
+                  "effectiveValue": {
+                    "numberValue": 2
+                  },
+                  "formattedValue": "2",
+                  "effectiveFormat": {
+                    "textFormat": {
+                      "foregroundColor": {},
+                      "fontFamily": "Arial",
+                      "fontSize": 10,
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "foregroundColorStyle": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "hyperlinkDisplayType": "PLAIN_TEXT"
+                  }
+                }
+              },
+              "formula": "MATCH(25, A1:A3, 1)",
+              "formatted": "2"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
+      "formula-as-evaluated": "=MATCH(25, A1:A3, 1)",
+      "stimulus": "sha256:49c0cf8fcb0b46efe05baf6b07d28c5396515729d789917d46df3a27765feb04",
+      "fingerprint": "sha256:f13d9c9c73eeb80c34f97364b302cdc64049f75c43a0381299a3ccde79a6e234",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
+    },
+    "VLOOKUP/vlookup-exact": {
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "string",
+                "value": "banana"
+              },
+              "engine": {
+                "platform": "gsheets",
+                "wire_kind": "string",
+                "raw_api": {
+                  "userEnteredValue": {
+                    "formulaValue": "=VLOOKUP(2, A1:B3, 2, FALSE)"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "banana"
+                  },
+                  "formattedValue": "banana",
+                  "effectiveFormat": {
+                    "textFormat": {
+                      "foregroundColor": {},
+                      "fontFamily": "Arial",
+                      "fontSize": 10,
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "foregroundColorStyle": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "hyperlinkDisplayType": "PLAIN_TEXT"
+                  }
+                }
+              },
+              "formula": "VLOOKUP(2, A1:B3, 2, FALSE)",
+              "formatted": "banana"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
+      "formula-as-evaluated": "=VLOOKUP(2, A1:B3, 2, FALSE)",
+      "stimulus": "sha256:fe8bbebdeeff37f5aadff315bc5776d7ac50477ef4d756646f354ad9dd311b6c",
+      "fingerprint": "sha256:626565794e5faca179549718df59feaf55d2c85cae459dec9cdb838d5dea23b9",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
+    },
+    "VLOOKUP/vlookup-not-found": {
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "error",
+                "sentinel": "#N/A"
+              },
+              "engine": {
+                "platform": "gsheets",
+                "wire_kind": "error",
+                "raw_api": {
+                  "userEnteredValue": {
+                    "formulaValue": "=VLOOKUP(99, A1:B2, 2, FALSE)"
+                  },
+                  "effectiveValue": {
+                    "errorValue": {
+                      "type": "N_A",
+                      "message": "Did not find value '99' in VLOOKUP evaluation."
+                    }
+                  },
+                  "formattedValue": "#N/A",
+                  "effectiveFormat": {
+                    "textFormat": {
+                      "foregroundColor": {},
+                      "fontFamily": "Arial",
+                      "fontSize": 10,
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "foregroundColorStyle": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "hyperlinkDisplayType": "PLAIN_TEXT"
+                  }
+                }
+              },
+              "formula": "VLOOKUP(99, A1:B2, 2, FALSE)",
+              "formatted": "#N/A"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
+      "formula-as-evaluated": "=VLOOKUP(99, A1:B2, 2, FALSE)",
+      "stimulus": "sha256:0617d3ae69f43b94ce88a45100e814c394cb2337dd306de596aa18b19f995812",
+      "fingerprint": "sha256:c98ddc95a4f5716ef17b94c5c73c9ede35dff1666986224ac03e53fce8c29367",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
+    },
+    "VLOOKUP/vlookup-array-col-index": {
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "string",
+                "value": "banana"
+              },
+              "engine": {
+                "platform": "gsheets",
+                "wire_kind": "string",
+                "raw_api": {
+                  "userEnteredValue": {
+                    "formulaValue": "=ARRAYFORMULA(VLOOKUP(2, A1:C3, {2,3}, FALSE))"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "banana"
+                  },
+                  "formattedValue": "banana",
+                  "effectiveFormat": {
+                    "textFormat": {
+                      "foregroundColor": {},
+                      "fontFamily": "Arial",
+                      "fontSize": 10,
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "foregroundColorStyle": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "hyperlinkDisplayType": "PLAIN_TEXT"
+                  }
+                }
+              },
+              "formula": "ARRAYFORMULA(VLOOKUP(2, A1:C3, {2,3}, FALSE))",
+              "formatted": "banana"
+            },
+            {
+              "primitive": {
+                "kind": "string",
+                "value": "yellow"
+              },
+              "engine": {
+                "platform": "gsheets",
+                "wire_kind": "string",
+                "raw_api": {
+                  "effectiveValue": {
+                    "stringValue": "yellow"
+                  },
+                  "formattedValue": "yellow",
+                  "effectiveFormat": {
+                    "textFormat": {
+                      "foregroundColor": {},
+                      "fontFamily": "Arial",
+                      "fontSize": 10,
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "foregroundColorStyle": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "hyperlinkDisplayType": "PLAIN_TEXT"
+                  }
+                }
+              },
+              "formatted": "yellow"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 2
+        }
+      },
+      "formula-as-evaluated": "=ARRAYFORMULA(VLOOKUP(2, A1:C3, {2,3}, FALSE))",
+      "stimulus": "sha256:ecd9d67c65b6f5e646aee59d3e8048456ff5b959a745dd204f2d5bb991ffe714",
+      "fingerprint": "sha256:b43a3a7d73ac4f879145fe8dc75f0969166651ef1027f3cb5f66c512acb280a1",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
+    },
+    "HLOOKUP/hlookup-exact": {
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "string",
+                "value": "banana"
+              },
+              "engine": {
+                "platform": "gsheets",
+                "wire_kind": "string",
+                "raw_api": {
+                  "userEnteredValue": {
+                    "formulaValue": "=HLOOKUP(2, A1:C2, 2, FALSE)"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "banana"
+                  },
+                  "formattedValue": "banana",
+                  "effectiveFormat": {
+                    "textFormat": {
+                      "foregroundColor": {},
+                      "fontFamily": "Arial",
+                      "fontSize": 10,
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "foregroundColorStyle": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "hyperlinkDisplayType": "PLAIN_TEXT"
+                  }
+                }
+              },
+              "formula": "HLOOKUP(2, A1:C2, 2, FALSE)",
+              "formatted": "banana"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
+      "formula-as-evaluated": "=HLOOKUP(2, A1:C2, 2, FALSE)",
+      "stimulus": "sha256:3e0fd88f3da3ab518eb6ff5ad8cd4f16ca17076951c329a1bde456acf76c3904",
+      "fingerprint": "sha256:626565794e5faca179549718df59feaf55d2c85cae459dec9cdb838d5dea23b9",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
+    },
+    "HLOOKUP/hlookup-array-row-index": {
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "string",
+                "value": "banana"
+              },
+              "engine": {
+                "platform": "gsheets",
+                "wire_kind": "string",
+                "raw_api": {
+                  "userEnteredValue": {
+                    "formulaValue": "=ARRAYFORMULA(HLOOKUP(2, A1:C3, {2;3}, FALSE))"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "banana"
+                  },
+                  "formattedValue": "banana",
+                  "effectiveFormat": {
+                    "textFormat": {
+                      "foregroundColor": {},
+                      "fontFamily": "Arial",
+                      "fontSize": 10,
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "foregroundColorStyle": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "hyperlinkDisplayType": "PLAIN_TEXT"
+                  }
+                }
+              },
+              "formula": "ARRAYFORMULA(HLOOKUP(2, A1:C3, {2;3}, FALSE))",
+              "formatted": "banana"
+            }
+          ],
+          [
+            {
+              "primitive": {
+                "kind": "string",
+                "value": "yellow"
+              },
+              "engine": {
+                "platform": "gsheets",
+                "wire_kind": "string",
+                "raw_api": {
+                  "effectiveValue": {
+                    "stringValue": "yellow"
+                  },
+                  "formattedValue": "yellow",
+                  "effectiveFormat": {
+                    "textFormat": {
+                      "foregroundColor": {},
+                      "fontFamily": "Arial",
+                      "fontSize": 10,
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "foregroundColorStyle": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "hyperlinkDisplayType": "PLAIN_TEXT"
+                  }
+                }
+              },
+              "formatted": "yellow"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 2,
+          "cols": 1
+        }
+      },
+      "formula-as-evaluated": "=ARRAYFORMULA(HLOOKUP(2, A1:C3, {2;3}, FALSE))",
+      "stimulus": "sha256:a7345ecc0aa3f581a522abd7639b0155508ec9e2cf72c890b7e8dd8dfd31840d",
+      "fingerprint": "sha256:bb71c0e726f68024f11a90e3b5780f90f59c4fbd1431558131c96484b0ffb94e",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
+    },
+    "XMATCH/xmatch-exact": {
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 2
+              },
+              "engine": {
+                "platform": "gsheets",
+                "wire_kind": "number",
+                "raw_api": {
+                  "userEnteredValue": {
+                    "formulaValue": "=XMATCH(20, A1:A3)"
+                  },
+                  "effectiveValue": {
+                    "numberValue": 2
+                  },
+                  "formattedValue": "2",
+                  "effectiveFormat": {
+                    "textFormat": {
+                      "foregroundColor": {},
+                      "fontFamily": "Arial",
+                      "fontSize": 10,
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "foregroundColorStyle": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "hyperlinkDisplayType": "PLAIN_TEXT"
+                  }
+                }
+              },
+              "formula": "XMATCH(20, A1:A3)",
+              "formatted": "2"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
+      "formula-as-evaluated": "=XMATCH(20, A1:A3)",
+      "stimulus": "sha256:e33de070eff1de254b53ebc341ef97ee3194a67f6c263f2e9eca9cb461a521d8",
+      "fingerprint": "sha256:f13d9c9c73eeb80c34f97364b302cdc64049f75c43a0381299a3ccde79a6e234",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
+    },
+    "XMATCH/xmatch-not-found": {
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "error",
+                "sentinel": "#N/A"
+              },
+              "engine": {
+                "platform": "gsheets",
+                "wire_kind": "error",
+                "raw_api": {
+                  "userEnteredValue": {
+                    "formulaValue": "=XMATCH(99, {1,2,3})"
+                  },
+                  "effectiveValue": {
+                    "errorValue": {
+                      "type": "N_A",
+                      "message": "Did not find value '99' in XMATCH evaluation."
+                    }
+                  },
+                  "formattedValue": "#N/A",
+                  "effectiveFormat": {
+                    "textFormat": {
+                      "foregroundColor": {},
+                      "fontFamily": "Arial",
+                      "fontSize": 10,
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "foregroundColorStyle": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "hyperlinkDisplayType": "PLAIN_TEXT"
+                  }
+                }
+              },
+              "formula": "XMATCH(99, {1,2,3})",
+              "formatted": "#N/A"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
+      "formula-as-evaluated": "=XMATCH(99, {1,2,3})",
+      "stimulus": "sha256:d896ea19ca7e15b9c54f5b1c23d945fd28fde8cd35c8767d654f5da068093d1a",
+      "fingerprint": "sha256:c98ddc95a4f5716ef17b94c5c73c9ede35dff1666986224ac03e53fce8c29367",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
+    },
+    "XLOOKUP/xlookup-basic": {
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "string",
+                "value": "banana"
+              },
+              "engine": {
+                "platform": "gsheets",
+                "wire_kind": "string",
+                "raw_api": {
+                  "userEnteredValue": {
+                    "formulaValue": "=XLOOKUP(2, A1:A3, B1:B3)"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "banana"
+                  },
+                  "formattedValue": "banana",
+                  "effectiveFormat": {
+                    "textFormat": {
+                      "foregroundColor": {},
+                      "fontFamily": "Arial",
+                      "fontSize": 10,
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "foregroundColorStyle": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "hyperlinkDisplayType": "PLAIN_TEXT"
+                  }
+                }
+              },
+              "formula": "XLOOKUP(2, A1:A3, B1:B3)",
+              "formatted": "banana"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
+      "formula-as-evaluated": "=XLOOKUP(2, A1:A3, B1:B3)",
+      "stimulus": "sha256:77a3a8f661d8f3a16d832b46916b85b1167089e83bc1e05ecf957e11fd0f3782",
+      "fingerprint": "sha256:626565794e5faca179549718df59feaf55d2c85cae459dec9cdb838d5dea23b9",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
+    },
+    "XLOOKUP/xlookup-not-found-with-default": {
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "string",
+                "value": "missing"
+              },
+              "engine": {
+                "platform": "gsheets",
+                "wire_kind": "string",
+                "raw_api": {
+                  "userEnteredValue": {
+                    "formulaValue": "=XLOOKUP(99, A1:A2, B1:B2, \"missing\")"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "missing"
+                  },
+                  "formattedValue": "missing",
+                  "effectiveFormat": {
+                    "textFormat": {
+                      "foregroundColor": {},
+                      "fontFamily": "Arial",
+                      "fontSize": 10,
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "foregroundColorStyle": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "hyperlinkDisplayType": "PLAIN_TEXT"
+                  }
+                }
+              },
+              "formula": "XLOOKUP(99, A1:A2, B1:B2, \"missing\")",
+              "formatted": "missing"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
+      "formula-as-evaluated": "=XLOOKUP(99, A1:A2, B1:B2, \"missing\")",
+      "stimulus": "sha256:69b38d605da9eb876ea4f9bed2dec2fa704cc4d8ce548c5d5601e19e69c8505b",
+      "fingerprint": "sha256:cac761fbc940bc8adc73331a23fc653a8ee74ef3859128dabbf178386eb81819",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
+    },
+    "CHOOSECOLS/choosecols": {
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 1
+              },
+              "engine": {
+                "platform": "gsheets",
+                "wire_kind": "number",
+                "raw_api": {
+                  "userEnteredValue": {
+                    "formulaValue": "=CHOOSECOLS({1,2,3;4,5,6}, 1, 3)"
+                  },
+                  "effectiveValue": {
+                    "numberValue": 1
+                  },
+                  "formattedValue": "1",
+                  "effectiveFormat": {
+                    "textFormat": {
+                      "foregroundColor": {},
+                      "fontFamily": "Arial",
+                      "fontSize": 10,
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "foregroundColorStyle": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "hyperlinkDisplayType": "PLAIN_TEXT"
+                  }
+                }
+              },
+              "formula": "CHOOSECOLS({1,2,3;4,5,6}, 1, 3)",
+              "formatted": "1"
+            },
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 3
+              },
+              "engine": {
+                "platform": "gsheets",
+                "wire_kind": "number",
+                "raw_api": {
+                  "effectiveValue": {
+                    "numberValue": 3
+                  },
+                  "formattedValue": "3",
+                  "effectiveFormat": {
+                    "textFormat": {
+                      "foregroundColor": {},
+                      "fontFamily": "Arial",
+                      "fontSize": 10,
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "foregroundColorStyle": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "hyperlinkDisplayType": "PLAIN_TEXT"
+                  }
+                }
+              },
+              "formatted": "3"
+            }
+          ],
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 4
+              },
+              "engine": {
+                "platform": "gsheets",
+                "wire_kind": "number",
+                "raw_api": {
+                  "effectiveValue": {
+                    "numberValue": 4
+                  },
+                  "formattedValue": "4",
+                  "effectiveFormat": {
+                    "textFormat": {
+                      "foregroundColor": {},
+                      "fontFamily": "Arial",
+                      "fontSize": 10,
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "foregroundColorStyle": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "hyperlinkDisplayType": "PLAIN_TEXT"
+                  }
+                }
+              },
+              "formatted": "4"
+            },
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 6
+              },
+              "engine": {
+                "platform": "gsheets",
+                "wire_kind": "number",
+                "raw_api": {
+                  "effectiveValue": {
+                    "numberValue": 6
+                  },
+                  "formattedValue": "6",
+                  "effectiveFormat": {
+                    "textFormat": {
+                      "foregroundColor": {},
+                      "fontFamily": "Arial",
+                      "fontSize": 10,
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "foregroundColorStyle": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "hyperlinkDisplayType": "PLAIN_TEXT"
+                  }
+                }
+              },
+              "formatted": "6"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 2,
+          "cols": 2
+        }
+      },
+      "formula-as-evaluated": "=CHOOSECOLS({1,2,3;4,5,6}, 1, 3)",
+      "stimulus": "sha256:6937a8b8c51495c268a28a434ba1b5453cc902ec3c748bda9daf4016a7b9508c",
+      "fingerprint": "sha256:bd5c045d523f6beeb8835bc78b14d77be21bd9a14b9ba921fbdcb3a3dd3d5fab",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
+    },
+    "CHOOSEROWS/chooserows": {
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 1
+              },
+              "engine": {
+                "platform": "gsheets",
+                "wire_kind": "number",
+                "raw_api": {
+                  "userEnteredValue": {
+                    "formulaValue": "=CHOOSEROWS({1,2;3,4;5,6}, 1, 3)"
+                  },
+                  "effectiveValue": {
+                    "numberValue": 1
+                  },
+                  "formattedValue": "1",
+                  "effectiveFormat": {
+                    "textFormat": {
+                      "foregroundColor": {},
+                      "fontFamily": "Arial",
+                      "fontSize": 10,
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "foregroundColorStyle": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "hyperlinkDisplayType": "PLAIN_TEXT"
+                  }
+                }
+              },
+              "formula": "CHOOSEROWS({1,2;3,4;5,6}, 1, 3)",
+              "formatted": "1"
+            },
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 2
+              },
+              "engine": {
+                "platform": "gsheets",
+                "wire_kind": "number",
+                "raw_api": {
+                  "effectiveValue": {
+                    "numberValue": 2
+                  },
+                  "formattedValue": "2",
+                  "effectiveFormat": {
+                    "textFormat": {
+                      "foregroundColor": {},
+                      "fontFamily": "Arial",
+                      "fontSize": 10,
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "foregroundColorStyle": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "hyperlinkDisplayType": "PLAIN_TEXT"
+                  }
+                }
+              },
+              "formatted": "2"
+            }
+          ],
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 5
+              },
+              "engine": {
+                "platform": "gsheets",
+                "wire_kind": "number",
+                "raw_api": {
+                  "effectiveValue": {
+                    "numberValue": 5
+                  },
+                  "formattedValue": "5",
+                  "effectiveFormat": {
+                    "textFormat": {
+                      "foregroundColor": {},
+                      "fontFamily": "Arial",
+                      "fontSize": 10,
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "foregroundColorStyle": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "hyperlinkDisplayType": "PLAIN_TEXT"
+                  }
+                }
+              },
+              "formatted": "5"
+            },
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 6
+              },
+              "engine": {
+                "platform": "gsheets",
+                "wire_kind": "number",
+                "raw_api": {
+                  "effectiveValue": {
+                    "numberValue": 6
+                  },
+                  "formattedValue": "6",
+                  "effectiveFormat": {
+                    "textFormat": {
+                      "foregroundColor": {},
+                      "fontFamily": "Arial",
+                      "fontSize": 10,
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "foregroundColorStyle": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "hyperlinkDisplayType": "PLAIN_TEXT"
+                  }
+                }
+              },
+              "formatted": "6"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 2,
+          "cols": 2
+        }
+      },
+      "formula-as-evaluated": "=CHOOSEROWS({1,2;3,4;5,6}, 1, 3)",
+      "stimulus": "sha256:c6778f478553481c7cb1d608f55cd4b6575b44c756b9d31470ed6272eb205c88",
+      "fingerprint": "sha256:7b4d71baf857b43ee35c04519e94a1bc1f7ac44c5f78e42edb5a8e8274d458d9",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
+    },
     "VLOOKUP/vlookup-column-index-out-of-range-miss": {
       "outcome": {
         "kind": "value",
