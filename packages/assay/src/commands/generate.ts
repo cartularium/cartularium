@@ -96,7 +96,8 @@ export async function generate(args: string[]): Promise<void> {
       start,
       run_id: runId,
       trigger: "manual",
-      scope: onlyMissing ? { kind: "subset" } : { kind: "full" },
+      // a file-limited generate is a subset run too — "full" means the corpus
+      scope: onlyMissing || args.length > 0 ? { kind: "subset" } : { kind: "full" },
       corpus_commit: corpusCommit,
       engines,
       note: (values.note as string | undefined) ?? undefined,

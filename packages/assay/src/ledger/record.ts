@@ -57,12 +57,16 @@ export function parseConditionsFile(
 }
 
 /** Recording requires clean committed inputs: the recorded sha must identify
- * what actually executed. */
+ * what actually executed — the corpus, drivers, and contracts. In-flight
+ * work elsewhere in the monorepo does not change what ran. */
 export function preflightCorpusCommit(repoRoot: string): string {
-  const dirty = execSync("git status --porcelain", { cwd: repoRoot, encoding: "utf8" }).trim();
+  const dirty = execSync(
+    "git status --porcelain -- packages/assay packages/drivers packages/contracts",
+    { cwd: repoRoot, encoding: "utf8" },
+  ).trim();
   if (dirty !== "") {
     throw new Error(
-      "--record requires a clean committed tree (the run record's corpus_commit must identify what ran):\n" + dirty,
+      "--record requires the assay/drivers/contracts trees to be committed (corpus_commit must identify what ran):\n" + dirty,
     );
   }
   return execSync("git rev-parse HEAD", { cwd: repoRoot, encoding: "utf8" }).trim();

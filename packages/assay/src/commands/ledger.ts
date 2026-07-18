@@ -64,9 +64,15 @@ function runEvidence(runId: string): void {
     console.error(`ledger: run ${runId} already has an evidence row`);
     process.exit(1);
   }
-  const dirty = execSync("git status --porcelain", { cwd: repoRoot, encoding: "utf8" }).trim();
+  // the evidence row claims content hashes for fixtures and ledger rows —
+  // those paths must match HEAD; unrelated in-flight work elsewhere in the
+  // monorepo is none of this record's business
+  const dirty = execSync(
+    "git status --porcelain -- packages/assay/fixtures packages/assay/history",
+    { cwd: repoRoot, encoding: "utf8" },
+  ).trim();
   if (dirty !== "") {
-    console.error("ledger: --evidence requires the fixture changes to be committed (clean tree). Dirty:\n" + dirty);
+    console.error("ledger: --evidence requires the run's fixture and ledger changes to be committed. Dirty:\n" + dirty);
     process.exit(1);
   }
   const commit = execSync("git rev-parse HEAD", { cwd: repoRoot, encoding: "utf8" }).trim();
