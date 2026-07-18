@@ -174,11 +174,17 @@ filter, so don't loosen bans casually.
 
 ## Dialect traps
 
-Found while authoring the first three problems; check reference formulas
+Found while authoring the first seven problems; check reference formulas
 against these before blaming the judge:
 
 - Array `/` (and other elementwise operators) don't broadcast without
   ARRAYFORMULA.
+- Scalar functions over array arguments (MID, LEFT, IF…) don't vectorize
+  inside FILTER conditions or LET bindings either — and can fail *silently*
+  with plausible-looking output rather than erroring (cost ld-0006 an oracle
+  run of wrong RLE encodings). Wrap the expression in ARRAYFORMULA.
+- LET rejects binding names that parse as cell references: `c1`, `A`, `B`,
+  `I`, `V` all fail with "not a valid name". Use words.
 - SUMIF/COUNTIF require real ranges; passing computed arrays errors.
 - `values.get` renders errors with an appended message; the judge
   prefix-matches, but anything string-comparing against error text must too.
