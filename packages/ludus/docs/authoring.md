@@ -194,11 +194,16 @@ against these before blaming the judge:
   inside FILTER conditions or LET bindings either — and can fail *silently*
   with plausible-looking output rather than erroring (cost ld-0006 an oracle
   run of wrong RLE encodings). Wrap the expression in ARRAYFORMULA.
-- LET rejects binding names that parse as cell references: `c1`, `A`, `B`,
-  `I`, `V` all fail with "not a valid name". Worse, names that merely *look*
-  ref-shaped — impossible refs like `d0`/`fr0` (row zero) or real addresses
-  like `nb1` — kill the whole formula with a bare "Formula parse error".
-  Use pure words, no trailing digits.
+- LET and LAMBDA reject binding/parameter names that parse as cell
+  references: `c1`, `a2`, `A`, `B`, `I`, `V` all fail with "not a valid
+  name". Worse, names that merely *look* ref-shaped — impossible refs like
+  `d0`/`fr0` (row zero) or real addresses like `nb1` — kill the whole
+  formula with a bare "Formula parse error". Use pure words, no trailing
+  digits.
+- SPLIT coerces its output tokens: a date-shaped token becomes a date
+  serial ("12/4/3" → 37959). When split pieces must stay text, prefix each
+  with a sentinel before splitting and strip it after
+  (`SPLIT("@" & SUBSTITUTE(s, "+", "+@"), "+")` … `MID(t, 2, 999)`).
 - An unbalanced paren also surfaces only at evaluation time, as the same
   unhelpful "Formula parse error" (one missing closer cost a six-probe
   hunt). `oracle --check` lints paren balance for `reference` and
