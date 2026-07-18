@@ -11,7 +11,21 @@ export async function history(): Promise<void> {
   const record = values["record"] as boolean | undefined;
   const inspect = values["inspect"] as string | undefined;
   const since = values["since"] as string | undefined;
-  const historyDir = (values["history-dir"] as string | undefined) ?? "history";
+  const explicitDir = values["history-dir"] as string | undefined;
+  // Retired 2026-07-18 (stability substrate): this command writes and reads
+  // the PRE-refounding row schemas, which live only in the fossil archive.
+  // history/ itself now belongs to the new ledger (`assay run --record`,
+  // implementation item 3). Fossil inspection stays possible by pointing at
+  // the archive explicitly.
+  if (explicitDir === undefined) {
+    console.error(
+      "history: retired — the pre-refounding ledger is archived. " +
+        "Inspect it with --history-dir history/archive-pre-refounding; " +
+        "new runs are recorded by the stability-substrate ledger.",
+    );
+    process.exit(2);
+  }
+  const historyDir = explicitDir;
 
   const modeCount = (record ? 1 : 0) + (inspect !== undefined ? 1 : 0) + (since !== undefined ? 1 : 0);
   if (modeCount === 0) {
