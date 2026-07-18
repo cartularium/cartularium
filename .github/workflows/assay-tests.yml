@@ -24,6 +24,9 @@ jobs:
     timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
+        with:
+          # identity classification diffs the lockfile against the PR base
+          fetch-depth: 0
       # version comes from package.json `packageManager`
       - uses: pnpm/action-setup@v4
       - uses: actions/setup-node@v4
@@ -39,6 +42,17 @@ jobs:
 
       - name: Unit tests
         run: pnpm --filter assay run test
+
+      - name: Identity check
+        working-directory: packages/assay
+        run: |
+          if [ -n "${{ github.event.pull_request.base.sha }}" ] &&
+             git show "${{ github.event.pull_request.base.sha }}:packages/assay/identity-lock.json" \
+               > /tmp/base-lock.json 2>/dev/null; then
+            node scripts/validate-identity.mjs --against /tmp/base-lock.json
+          else
+            node scripts/validate-identity.mjs
+          fi
 
       - name: Lint corpus
         run: node build/cli.js lint

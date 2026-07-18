@@ -2,6 +2,7 @@ schemaVersion: 3
 name: Engineering functions
 tests:
   - subject: BIN2DEC
+    subjectRef: BIN2DEC
     category: value
     formula: =BIN2DEC("1010")
     expect: 10
@@ -9,6 +10,7 @@ tests:
       - engineering
     name: bin2dec-positive
   - subject: BIN2DEC
+    subjectRef: BIN2DEC
     category: value
     formula: =BIN2DEC("0")
     expect: 0
@@ -16,6 +18,7 @@ tests:
       - engineering
     name: bin2dec-zero
   - subject: BIN2DEC
+    subjectRef: BIN2DEC
     category: value
     formula: =BIN2DEC("1111111111")
     expect: -1
@@ -23,6 +26,7 @@ tests:
       - engineering
     name: bin2dec-max-negative-two-s-complement
   - subject: BIN2DEC
+    subjectRef: BIN2DEC
     category: value
     formula: =BIN2DEC("1111111110")
     expect: -2
@@ -30,6 +34,7 @@ tests:
       - engineering
     name: bin2dec-negative-via-two-s-complement
   - subject: BIN2DEC
+    subjectRef: BIN2DEC
     formula: =BIN2DEC("11111111110")
     category: value
     expect:
@@ -43,6 +48,7 @@ tests:
       - engineering
     name: bin2dec-too-long
   - subject: BIN2HEX
+    subjectRef: BIN2HEX
     category: value
     formula: =BIN2HEX("1010")
     expect: A
@@ -50,6 +56,7 @@ tests:
       - engineering
     name: bin2hex-positive
   - subject: BIN2HEX
+    subjectRef: BIN2HEX
     category: value
     formula: =BIN2HEX("1010", 4)
     expect: 000A
@@ -57,6 +64,7 @@ tests:
       - engineering
     name: bin2hex-with-places-padding
   - subject: BIN2HEX
+    subjectRef: BIN2HEX
     category: value
     formula: =BIN2HEX("1111111111")
     expect: FFFFFFFFFF
@@ -64,6 +72,7 @@ tests:
       - engineering
     name: bin2hex-negative-two-s-complement
   - subject: BIN2HEX
+    subjectRef: BIN2HEX
     formula: =BIN2HEX("12")
     category: value
     expect:
@@ -77,6 +86,7 @@ tests:
       - engineering
     name: bin2hex-invalid
   - subject: BIN2OCT
+    subjectRef: BIN2OCT
     category: value
     formula: =BIN2OCT("1001")
     expect: "11"
@@ -84,6 +94,7 @@ tests:
       - engineering
     name: bin2oct-positive
   - subject: BIN2OCT
+    subjectRef: BIN2OCT
     category: value
     formula: =BIN2OCT("1001", 4)
     expect: "0011"
@@ -91,6 +102,7 @@ tests:
       - engineering
     name: bin2oct-with-places-padding
   - subject: BIN2OCT
+    subjectRef: BIN2OCT
     category: value
     formula: =BIN2OCT("1111111111")
     expect: "7777777777"
@@ -98,6 +110,7 @@ tests:
       - engineering
     name: bin2oct-negative-two-s-complement
   - subject: BIN2OCT
+    subjectRef: BIN2OCT
     formula: =BIN2OCT("11111111", 1)
     category: value
     expect:
@@ -111,6 +124,7 @@ tests:
       - engineering
     name: bin2oct-places-too-small
   - subject: DEC2BIN
+    subjectRef: DEC2BIN
     category: value
     formula: =DEC2BIN(10)
     expect: "1010"
@@ -118,6 +132,7 @@ tests:
       - engineering
     name: dec2bin-positive
   - subject: DEC2BIN
+    subjectRef: DEC2BIN
     category: value
     formula: =DEC2BIN(10, 8)
     expect: "00001010"
@@ -125,6 +140,7 @@ tests:
       - engineering
     name: dec2bin-with-places-padding
   - subject: DEC2BIN
+    subjectRef: DEC2BIN
     category: value
     formula: =DEC2BIN(-2)
     expect: "1111111110"
@@ -132,6 +148,7 @@ tests:
       - engineering
     name: dec2bin-negative
   - subject: DEC2BIN
+    subjectRef: DEC2BIN
     formula: =DEC2BIN(512)
     category: value
     expect:
@@ -145,6 +162,7 @@ tests:
       - engineering
     name: dec2bin-out-of-range
   - subject: DEC2HEX
+    subjectRef: DEC2HEX
     category: value
     formula: =DEC2HEX(255)
     expect: FF
@@ -152,6 +170,7 @@ tests:
       - engineering
     name: dec2hex-positive
   - subject: DEC2HEX
+    subjectRef: DEC2HEX
     category: value
     formula: =DEC2HEX(10, 4)
     expect: 000A
@@ -159,6 +178,7 @@ tests:
       - engineering
     name: dec2hex-with-places-padding
   - subject: DEC2HEX
+    subjectRef: DEC2HEX
     category: value
     formula: =DEC2HEX(-1)
     expect: FFFFFFFFFF
@@ -166,6 +186,7 @@ tests:
       - engineering
     name: dec2hex-negative
   - subject: DEC2HEX
+    subjectRef: DEC2HEX
     formula: =DEC2HEX(255, 1)
     category: value
     expect:
@@ -179,6 +200,7 @@ tests:
       - engineering
     name: dec2hex-places-too-small
   - subject: DEC2OCT
+    subjectRef: DEC2OCT
     category: value
     formula: =DEC2OCT(8)
     expect: "10"
@@ -186,6 +208,7 @@ tests:
       - engineering
     name: dec2oct-positive
   - subject: DEC2OCT
+    subjectRef: DEC2OCT
     category: value
     formula: =DEC2OCT(8, 4)
     expect: "0010"
@@ -193,6 +216,7 @@ tests:
       - engineering
     name: dec2oct-with-places-padding
   - subject: DEC2OCT
+    subjectRef: DEC2OCT
     category: value
     formula: =DEC2OCT(-1)
     expect: "7777777777"
@@ -200,6 +224,7 @@ tests:
       - engineering
     name: dec2oct-negative
   - subject: DEC2OCT
+    subjectRef: DEC2OCT
     formula: =DEC2OCT(536870912)
     category: value
     expect:
@@ -213,6 +238,7 @@ tests:
       - engineering
     name: dec2oct-out-of-range
   - subject: HEX2BIN
+    subjectRef: HEX2BIN
     category: value
     formula: =HEX2BIN("A")
     expect: "1010"
@@ -220,6 +246,7 @@ tests:
       - engineering
     name: hex2bin-positive
   - subject: HEX2BIN
+    subjectRef: HEX2BIN
     category: value
     formula: =HEX2BIN("A", 8)
     expect: "00001010"
@@ -227,6 +254,7 @@ tests:
       - engineering
     name: hex2bin-with-places-padding
   - subject: HEX2BIN
+    subjectRef: HEX2BIN
     category: value
     formula: =HEX2BIN("FFFFFFFFFF")
     expect: "1111111111"
@@ -234,6 +262,7 @@ tests:
       - engineering
     name: hex2bin-negative-two-s-complement
   - subject: HEX2BIN
+    subjectRef: HEX2BIN
     formula: =HEX2BIN("200")
     category: value
     expect:
@@ -247,6 +276,7 @@ tests:
       - engineering
     name: hex2bin-out-of-range
   - subject: HEX2DEC
+    subjectRef: HEX2DEC
     category: value
     formula: =HEX2DEC("FF")
     expect: 255
@@ -254,6 +284,7 @@ tests:
       - engineering
     name: hex2dec-two-letters
   - subject: HEX2DEC
+    subjectRef: HEX2DEC
     category: value
     formula: =HEX2DEC("0")
     expect: 0
@@ -261,6 +292,7 @@ tests:
       - engineering
     name: hex2dec-zero
   - subject: HEX2DEC
+    subjectRef: HEX2DEC
     category: value
     formula: =HEX2DEC("FFFFFFFFFF")
     expect: -1
@@ -268,6 +300,7 @@ tests:
       - engineering
     name: hex2dec-negative-two-s-complement
   - subject: HEX2DEC
+    subjectRef: HEX2DEC
     formula: =HEX2DEC("G")
     category: value
     expect:
@@ -281,6 +314,7 @@ tests:
       - engineering
     name: hex2dec-invalid
   - subject: HEX2OCT
+    subjectRef: HEX2OCT
     category: value
     formula: =HEX2OCT("F")
     expect: "17"
@@ -288,6 +322,7 @@ tests:
       - engineering
     name: hex2oct-positive
   - subject: HEX2OCT
+    subjectRef: HEX2OCT
     category: value
     formula: =HEX2OCT("F", 4)
     expect: "0017"
@@ -295,6 +330,7 @@ tests:
       - engineering
     name: hex2oct-with-places-padding
   - subject: HEX2OCT
+    subjectRef: HEX2OCT
     category: value
     formula: =HEX2OCT("FFFFFFFFFF")
     expect: "7777777777"
@@ -302,6 +338,7 @@ tests:
       - engineering
     name: hex2oct-negative-two-s-complement
   - subject: HEX2OCT
+    subjectRef: HEX2OCT
     formula: =HEX2OCT("40000000")
     category: value
     expect:
@@ -315,6 +352,7 @@ tests:
       - engineering
     name: hex2oct-out-of-range
   - subject: OCT2BIN
+    subjectRef: OCT2BIN
     category: value
     formula: =OCT2BIN("7")
     expect: "111"
@@ -322,6 +360,7 @@ tests:
       - engineering
     name: oct2bin-positive
   - subject: OCT2BIN
+    subjectRef: OCT2BIN
     category: value
     formula: =OCT2BIN("7", 8)
     expect: "00000111"
@@ -329,6 +368,7 @@ tests:
       - engineering
     name: oct2bin-with-places-padding
   - subject: OCT2BIN
+    subjectRef: OCT2BIN
     category: value
     formula: =OCT2BIN("7777777777")
     expect: "1111111111"
@@ -336,6 +376,7 @@ tests:
       - engineering
     name: oct2bin-negative-two-s-complement
   - subject: OCT2BIN
+    subjectRef: OCT2BIN
     formula: =OCT2BIN("1000")
     category: value
     expect:
@@ -349,6 +390,7 @@ tests:
       - engineering
     name: oct2bin-out-of-range
   - subject: OCT2DEC
+    subjectRef: OCT2DEC
     category: value
     formula: =OCT2DEC("17")
     expect: 15
@@ -356,6 +398,7 @@ tests:
       - engineering
     name: oct2dec-positive
   - subject: OCT2DEC
+    subjectRef: OCT2DEC
     category: value
     formula: =OCT2DEC("0")
     expect: 0
@@ -363,6 +406,7 @@ tests:
       - engineering
     name: oct2dec-zero
   - subject: OCT2DEC
+    subjectRef: OCT2DEC
     category: value
     formula: =OCT2DEC("7777777777")
     expect: -1
@@ -370,6 +414,7 @@ tests:
       - engineering
     name: oct2dec-negative-two-s-complement
   - subject: OCT2DEC
+    subjectRef: OCT2DEC
     formula: =OCT2DEC("8")
     category: value
     expect:
@@ -383,6 +428,7 @@ tests:
       - engineering
     name: oct2dec-invalid
   - subject: OCT2HEX
+    subjectRef: OCT2HEX
     category: value
     formula: =OCT2HEX("17")
     expect: F
@@ -390,6 +436,7 @@ tests:
       - engineering
     name: oct2hex-positive
   - subject: OCT2HEX
+    subjectRef: OCT2HEX
     category: value
     formula: =OCT2HEX("17", 4)
     expect: 000F
@@ -397,6 +444,7 @@ tests:
       - engineering
     name: oct2hex-with-places-padding
   - subject: OCT2HEX
+    subjectRef: OCT2HEX
     category: value
     formula: =OCT2HEX("7777777777")
     expect: FFFFFFFFFF
@@ -404,6 +452,7 @@ tests:
       - engineering
     name: oct2hex-negative-two-s-complement
   - subject: OCT2HEX
+    subjectRef: OCT2HEX
     formula: =OCT2HEX("9")
     category: value
     expect:
@@ -417,6 +466,7 @@ tests:
       - engineering
     name: oct2hex-invalid
   - subject: BITAND
+    subjectRef: BITAND
     formula: =BITAND(5, 3)
     category: value
     expect: 1
@@ -429,6 +479,7 @@ tests:
       - engineering
     name: bitand-basic
   - subject: BITAND
+    subjectRef: BITAND
     formula: =BITAND(12, 0)
     category: value
     expect: 0
@@ -441,6 +492,7 @@ tests:
       - engineering
     name: bitand-zero
   - subject: BITAND
+    subjectRef: BITAND
     formula: =BITAND(-1, 3)
     category: error-code
     expect:
@@ -454,6 +506,7 @@ tests:
       - engineering
     name: bitand-negative-error
   - subject: BITAND
+    subjectRef: BITAND
     formula: =BITAND(281474976710656, 1)
     category: value
     expect:
@@ -473,6 +526,7 @@ tests:
       - engineering
     name: bitand-exceeds-2-48
   - subject: BITOR
+    subjectRef: BITOR
     formula: =BITOR(5, 3)
     category: value
     expect: 7
@@ -485,6 +539,7 @@ tests:
       - engineering
     name: bitor-basic
   - subject: BITOR
+    subjectRef: BITOR
     formula: =BITOR(8, 4)
     category: value
     expect: 12
@@ -497,6 +552,7 @@ tests:
       - engineering
     name: bitor-disjoint
   - subject: BITOR
+    subjectRef: BITOR
     formula: =BITOR(-1, 3)
     category: error-code
     expect:
@@ -510,6 +566,7 @@ tests:
       - engineering
     name: bitor-negative-error
   - subject: BITXOR
+    subjectRef: BITXOR
     formula: =BITXOR(5, 3)
     category: value
     expect: 6
@@ -522,6 +579,7 @@ tests:
       - engineering
     name: bitxor-basic
   - subject: BITXOR
+    subjectRef: BITXOR
     formula: =BITXOR(7, 7)
     category: value
     expect: 0
@@ -534,6 +592,7 @@ tests:
       - engineering
     name: bitxor-self-zero
   - subject: BITXOR
+    subjectRef: BITXOR
     formula: =BITXOR(-1, 3)
     category: error-code
     expect:
@@ -547,6 +606,7 @@ tests:
       - engineering
     name: bitxor-negative-error
   - subject: BITLSHIFT
+    subjectRef: BITLSHIFT
     formula: =BITLSHIFT(1, 3)
     category: value
     expect: 8
@@ -559,6 +619,7 @@ tests:
       - engineering
     name: bitlshift-basic
   - subject: BITLSHIFT
+    subjectRef: BITLSHIFT
     formula: =BITLSHIFT(42, 0)
     category: value
     expect: 42
@@ -571,6 +632,7 @@ tests:
       - engineering
     name: bitlshift-zero-shift
   - subject: BITLSHIFT
+    subjectRef: BITLSHIFT
     formula: =BITLSHIFT(16, -2)
     category: value
     expect: 4
@@ -583,6 +645,7 @@ tests:
       - engineering
     name: bitlshift-negative-shift-acts-as-rshift
   - subject: BITLSHIFT
+    subjectRef: BITLSHIFT
     formula: =BITLSHIFT(-1, 2)
     category: error-code
     expect:
@@ -596,6 +659,7 @@ tests:
       - engineering
     name: bitlshift-negative-number-error
   - subject: BITRSHIFT
+    subjectRef: BITRSHIFT
     formula: =BITRSHIFT(16, 2)
     category: value
     expect: 4
@@ -608,6 +672,7 @@ tests:
       - engineering
     name: bitrshift-basic
   - subject: BITRSHIFT
+    subjectRef: BITRSHIFT
     formula: =BITRSHIFT(42, 0)
     category: value
     expect: 42
@@ -620,6 +685,7 @@ tests:
       - engineering
     name: bitrshift-zero-shift
   - subject: BITRSHIFT
+    subjectRef: BITRSHIFT
     formula: =BITRSHIFT(1, -3)
     category: value
     expect: 8
@@ -632,6 +698,7 @@ tests:
       - engineering
     name: bitrshift-negative-shift-acts-as-lshift
   - subject: BITRSHIFT
+    subjectRef: BITRSHIFT
     formula: =BITRSHIFT(-1, 2)
     category: error-code
     expect:
@@ -645,6 +712,7 @@ tests:
       - engineering
     name: bitrshift-negative-number-error
   - subject: DELTA
+    subjectRef: DELTA
     formula: =DELTA(5, 5)
     category: value
     expect: 1
@@ -657,6 +725,7 @@ tests:
       - engineering
     name: delta-equal
   - subject: DELTA
+    subjectRef: DELTA
     formula: =DELTA(5, 6)
     category: value
     expect: 0
@@ -669,6 +738,7 @@ tests:
       - engineering
     name: delta-not-equal
   - subject: DELTA
+    subjectRef: DELTA
     formula: =DELTA(0)
     category: value
     expect: 1
@@ -681,6 +751,7 @@ tests:
       - engineering
     name: delta-default-second-zero
   - subject: DELTA
+    subjectRef: DELTA
     formula: =DELTA(1)
     category: value
     expect: 0
@@ -693,6 +764,7 @@ tests:
       - engineering
     name: delta-default-second-nonzero
   - subject: GESTEP
+    subjectRef: GESTEP
     formula: =GESTEP(5, 3)
     category: value
     expect: 1
@@ -709,6 +781,7 @@ tests:
       - engineering
     name: gestep-greater
   - subject: GESTEP
+    subjectRef: GESTEP
     formula: =GESTEP(2, 3)
     category: value
     expect: 0
@@ -725,6 +798,7 @@ tests:
       - engineering
     name: gestep-less
   - subject: GESTEP
+    subjectRef: GESTEP
     formula: =GESTEP(3, 3)
     category: value
     expect: 1
@@ -741,6 +815,7 @@ tests:
       - engineering
     name: gestep-equal
   - subject: GESTEP
+    subjectRef: GESTEP
     formula: =GESTEP(-1)
     category: value
     expect: 0
@@ -757,6 +832,7 @@ tests:
       - engineering
     name: gestep-default-step-zero
   - subject: ERF
+    subjectRef: ERF
     category: value
     formula: =ERF(0)
     expect: 0
@@ -764,6 +840,7 @@ tests:
       - engineering
     name: erf-zero
   - subject: ERF
+    subjectRef: ERF
     category: value
     status: observed
     formula: =ERF(1)
@@ -771,6 +848,7 @@ tests:
       - engineering
     name: erf-one
   - subject: ERF
+    subjectRef: ERF
     category: value
     status: observed
     formula: =ERF(-1)
@@ -778,6 +856,7 @@ tests:
       - engineering
     name: erf-negative
   - subject: ERF
+    subjectRef: ERF
     category: value
     status: observed
     formula: =ERF(0, 1)
@@ -785,6 +864,7 @@ tests:
       - engineering
     name: erf-two-arg-lower-upper
   - subject: ERF.PRECISE
+    subjectRef: ERF.PRECISE
     formula: =ERF.PRECISE(0)
     category: value
     expect: 0
@@ -805,6 +885,7 @@ tests:
       - engineering
     name: erf-precise-zero
   - subject: ERF.PRECISE
+    subjectRef: ERF.PRECISE
     category: value
     status: observed
     formula: =ERF.PRECISE(1)
@@ -812,6 +893,7 @@ tests:
       - engineering
     name: erf-precise-one
   - subject: ERF.PRECISE
+    subjectRef: ERF.PRECISE
     category: value
     status: observed
     formula: =ERF.PRECISE(-0.5)
@@ -819,6 +901,7 @@ tests:
       - engineering
     name: erf-precise-negative
   - subject: COMPLEX
+    subjectRef: COMPLEX
     formula: =COMPLEX(3, 4)
     category: value
     expect: 3+4i
@@ -833,6 +916,7 @@ tests:
       - engineering
     name: complex-basic
   - subject: COMPLEX
+    subjectRef: COMPLEX
     formula: =COMPLEX(5, 0)
     category: value
     expect: "5"
@@ -847,6 +931,7 @@ tests:
       - engineering
     name: complex-real-only
   - subject: COMPLEX
+    subjectRef: COMPLEX
     formula: =COMPLEX(0, 1)
     category: value
     expect: i
@@ -861,6 +946,7 @@ tests:
       - engineering
     name: complex-imaginary-only
   - subject: COMPLEX
+    subjectRef: COMPLEX
     formula: =COMPLEX(3, -4)
     category: value
     expect: 3-4i
@@ -875,6 +961,7 @@ tests:
       - engineering
     name: complex-negative-imaginary
   - subject: COMPLEX
+    subjectRef: COMPLEX
     formula: =COMPLEX(3, 4, "j")
     category: value
     expect: 3+4j
@@ -890,6 +977,7 @@ tests:
       - engineering
     name: complex-j-suffix
   - subject: IMABS
+    subjectRef: IMABS
     formula: =IMABS("3+4i")
     category: value
     expect: 5
@@ -902,6 +990,7 @@ tests:
       - engineering
     name: imabs-3-4-5-triangle
   - subject: IMABS
+    subjectRef: IMABS
     formula: =IMABS("5")
     category: value
     expect: 5
@@ -914,6 +1003,7 @@ tests:
       - engineering
     name: imabs-real-only
   - subject: IMABS
+    subjectRef: IMABS
     formula: =IMABS("4i")
     category: value
     expect: 4
@@ -926,6 +1016,7 @@ tests:
       - engineering
     name: imabs-imaginary-only
   - subject: IMAGINARY
+    subjectRef: IMAGINARY
     formula: =IMAGINARY("3+4i")
     category: value
     expect: 4
@@ -938,6 +1029,7 @@ tests:
       - engineering
     name: imaginary-basic
   - subject: IMAGINARY
+    subjectRef: IMAGINARY
     formula: =IMAGINARY("5")
     category: value
     expect: 0
@@ -950,6 +1042,7 @@ tests:
       - engineering
     name: imaginary-real-only
   - subject: IMAGINARY
+    subjectRef: IMAGINARY
     formula: =IMAGINARY("3-4i")
     category: value
     expect: -4
@@ -962,6 +1055,7 @@ tests:
       - engineering
     name: imaginary-negative
   - subject: IMREAL
+    subjectRef: IMREAL
     formula: =IMREAL("3+4i")
     category: value
     expect: 3
@@ -974,6 +1068,7 @@ tests:
       - engineering
     name: imreal-basic
   - subject: IMREAL
+    subjectRef: IMREAL
     formula: =IMREAL("4i")
     category: value
     expect: 0
@@ -986,6 +1081,7 @@ tests:
       - engineering
     name: imreal-imaginary-only
   - subject: IMREAL
+    subjectRef: IMREAL
     formula: =IMREAL("-3+4i")
     category: value
     expect: -3
@@ -998,6 +1094,7 @@ tests:
       - engineering
     name: imreal-negative
   - subject: IMARGUMENT
+    subjectRef: IMARGUMENT
     category: value
     status: observed
     formula: =IMARGUMENT("3+4i")
@@ -1005,6 +1102,7 @@ tests:
       - engineering
     name: imargument-basic
   - subject: IMARGUMENT
+    subjectRef: IMARGUMENT
     formula: =IMARGUMENT("1")
     category: value
     expect: 0
@@ -1017,6 +1115,7 @@ tests:
       - engineering
     name: imargument-real-positive
   - subject: IMARGUMENT
+    subjectRef: IMARGUMENT
     category: value
     status: observed
     formula: =IMARGUMENT("i")
@@ -1024,6 +1123,7 @@ tests:
       - engineering
     name: imargument-pure-imaginary
   - subject: IMCONJUGATE
+    subjectRef: IMCONJUGATE
     formula: =IMCONJUGATE("3+4i")
     category: value
     expect: 3-4i
@@ -1039,6 +1139,7 @@ tests:
       - engineering
     name: imconjugate-basic
   - subject: IMCONJUGATE
+    subjectRef: IMCONJUGATE
     formula: =IMCONJUGATE("3-4i")
     category: value
     expect: 3+4i
@@ -1054,6 +1155,7 @@ tests:
       - engineering
     name: imconjugate-negative-imaginary
   - subject: IMCONJUGATE
+    subjectRef: IMCONJUGATE
     formula: =IMCONJUGATE("5")
     category: value
     expect: "5"
@@ -1069,6 +1171,7 @@ tests:
       - engineering
     name: imconjugate-real-only
   - subject: IMSUM
+    subjectRef: IMSUM
     formula: =IMSUM("1+2i", "3+4i")
     category: value
     expect: 4+6i
@@ -1084,6 +1187,7 @@ tests:
       - engineering
     name: imsum-basic
   - subject: IMSUM
+    subjectRef: IMSUM
     formula: =IMSUM("1+i", "2+2i", "3+3i")
     category: value
     expect: 6+6i
@@ -1103,6 +1207,7 @@ tests:
       - engineering
     name: imsum-three-args
   - subject: IMSUM
+    subjectRef: IMSUM
     formula: =IMSUM("1+2i", "1-2i")
     category: value
     expect: "2"
@@ -1118,6 +1223,7 @@ tests:
       - engineering
     name: imsum-cancel-imaginary
   - subject: IMSUB
+    subjectRef: IMSUB
     formula: =IMSUB("5+6i", "2+3i")
     category: value
     expect: 3+3i
@@ -1133,6 +1239,7 @@ tests:
       - engineering
     name: imsub-basic
   - subject: IMSUB
+    subjectRef: IMSUB
     formula: =IMSUB("3+4i", "3+4i")
     category: value
     expect: "0"
@@ -1148,6 +1255,7 @@ tests:
       - engineering
     name: imsub-to-zero
   - subject: IMSUB
+    subjectRef: IMSUB
     formula: =IMSUB("5", "2")
     category: value
     expect: "3"
@@ -1163,6 +1271,7 @@ tests:
       - engineering
     name: imsub-real-only
   - subject: IMPRODUCT
+    subjectRef: IMPRODUCT
     formula: =IMPRODUCT("1+2i", "3+4i")
     category: value
     expect: -5+10i
@@ -1178,6 +1287,7 @@ tests:
       - engineering
     name: improduct-basic
   - subject: IMPRODUCT
+    subjectRef: IMPRODUCT
     formula: =IMPRODUCT("3+4i", "2")
     category: value
     expect: 6+8i
@@ -1197,6 +1307,7 @@ tests:
       - engineering
     name: improduct-by-real
   - subject: IMPRODUCT
+    subjectRef: IMPRODUCT
     formula: =IMPRODUCT("i", "i")
     category: value
     expect: "-1"
@@ -1212,6 +1323,7 @@ tests:
       - engineering
     name: improduct-i-squared
   - subject: IMDIV
+    subjectRef: IMDIV
     formula: =IMDIV("-5+10i", "1+2i")
     category: value
     expect: 3+4i
@@ -1227,6 +1339,7 @@ tests:
       - engineering
     name: imdiv-basic
   - subject: IMDIV
+    subjectRef: IMDIV
     formula: =IMDIV("6+8i", "2")
     category: value
     expect: 3+4i
@@ -1246,6 +1359,7 @@ tests:
       - engineering
     name: imdiv-by-real
   - subject: IMDIV
+    subjectRef: IMDIV
     category: value
     status: observed
     formula: =IMDIV("1+2i", "0")
@@ -1253,6 +1367,7 @@ tests:
       - engineering
     name: imdiv-by-zero
   - subject: IMEXP
+    subjectRef: IMEXP
     category: value
     status: observed
     formula: =IMEXP("0")
@@ -1260,6 +1375,7 @@ tests:
       - engineering
     name: imexp-zero
   - subject: IMEXP
+    subjectRef: IMEXP
     category: value
     status: observed
     formula: =IMEXP("1")
@@ -1267,6 +1383,7 @@ tests:
       - engineering
     name: imexp-real
   - subject: IMEXP
+    subjectRef: IMEXP
     category: value
     status: observed
     formula: =IMEXP("1+1i")
@@ -1274,6 +1391,7 @@ tests:
       - engineering
     name: imexp-imaginary
   - subject: IMLOG
+    subjectRef: IMLOG
     category: value
     status: observed
     formula: =IMLOG("1")
@@ -1281,6 +1399,7 @@ tests:
       - engineering
     name: imlog-natural-of-1
   - subject: IMLOG
+    subjectRef: IMLOG
     category: value
     status: observed
     formula: =IMLOG("3+4i")
@@ -1288,6 +1407,7 @@ tests:
       - engineering
     name: imlog-complex
   - subject: IMLOG10
+    subjectRef: IMLOG10
     category: value
     status: observed
     formula: =IMLOG10("10")
@@ -1295,6 +1415,7 @@ tests:
       - engineering
     name: imlog10-of-10
   - subject: IMLOG10
+    subjectRef: IMLOG10
     category: value
     status: observed
     formula: =IMLOG10("3+4i")
@@ -1302,6 +1423,7 @@ tests:
       - engineering
     name: imlog10-complex
   - subject: IMLOG2
+    subjectRef: IMLOG2
     category: value
     status: observed
     formula: =IMLOG2("8")
@@ -1309,6 +1431,7 @@ tests:
       - engineering
     name: imlog2-of-8
   - subject: IMLOG2
+    subjectRef: IMLOG2
     category: value
     status: observed
     formula: =IMLOG2("3+4i")
@@ -1316,6 +1439,7 @@ tests:
       - engineering
     name: imlog2-complex
   - subject: IMCOS
+    subjectRef: IMCOS
     category: value
     status: observed
     formula: =IMCOS("0")
@@ -1323,6 +1447,7 @@ tests:
       - engineering
     name: imcos-zero
   - subject: IMCOS
+    subjectRef: IMCOS
     category: value
     status: observed
     formula: =IMCOS("1+1i")
@@ -1330,6 +1455,7 @@ tests:
       - engineering
     name: imcos-complex
   - subject: IMCOSH
+    subjectRef: IMCOSH
     category: value
     status: observed
     formula: =IMCOSH("0")
@@ -1337,6 +1463,7 @@ tests:
       - engineering
     name: imcosh-zero
   - subject: IMCOSH
+    subjectRef: IMCOSH
     category: value
     status: observed
     formula: =IMCOSH("1+1i")
@@ -1344,6 +1471,7 @@ tests:
       - engineering
     name: imcosh-complex
   - subject: IMCOT
+    subjectRef: IMCOT
     category: value
     status: observed
     formula: =IMCOT("1")
@@ -1351,6 +1479,7 @@ tests:
       - engineering
     name: imcot-real
   - subject: IMCOT
+    subjectRef: IMCOT
     category: value
     status: observed
     formula: =IMCOT("1+1i")
@@ -1358,6 +1487,7 @@ tests:
       - engineering
     name: imcot-complex
   - subject: IMCOTH
+    subjectRef: IMCOTH
     category: value
     status: observed
     formula: =IMCOTH("1")
@@ -1365,6 +1495,7 @@ tests:
       - engineering
     name: imcoth-real
   - subject: IMCOTH
+    subjectRef: IMCOTH
     category: value
     status: observed
     formula: =IMCOTH("1+1i")
@@ -1372,6 +1503,7 @@ tests:
       - engineering
     name: imcoth-complex
   - subject: IMCSC
+    subjectRef: IMCSC
     category: value
     status: observed
     formula: =IMCSC("1")
@@ -1379,6 +1511,7 @@ tests:
       - engineering
     name: imcsc-real
   - subject: IMCSC
+    subjectRef: IMCSC
     category: value
     status: observed
     formula: =IMCSC("1+1i")
@@ -1386,6 +1519,7 @@ tests:
       - engineering
     name: imcsc-complex
   - subject: IMCSCH
+    subjectRef: IMCSCH
     category: value
     status: observed
     formula: =IMCSCH("1")
@@ -1393,6 +1527,7 @@ tests:
       - engineering
     name: imcsch-real
   - subject: IMCSCH
+    subjectRef: IMCSCH
     category: value
     status: observed
     formula: =IMCSCH("1+1i")
@@ -1400,6 +1535,7 @@ tests:
       - engineering
     name: imcsch-complex
   - subject: IMSEC
+    subjectRef: IMSEC
     category: value
     status: observed
     formula: =IMSEC("0")
@@ -1407,6 +1543,7 @@ tests:
       - engineering
     name: imsec-zero
   - subject: IMSEC
+    subjectRef: IMSEC
     category: value
     status: observed
     formula: =IMSEC("1+1i")
@@ -1414,6 +1551,7 @@ tests:
       - engineering
     name: imsec-complex
   - subject: IMSECH
+    subjectRef: IMSECH
     category: value
     status: observed
     formula: =IMSECH("0")
@@ -1421,6 +1559,7 @@ tests:
       - engineering
     name: imsech-zero
   - subject: IMSECH
+    subjectRef: IMSECH
     category: value
     status: observed
     formula: =IMSECH("1+1i")
@@ -1428,6 +1567,7 @@ tests:
       - engineering
     name: imsech-complex
   - subject: IMSIN
+    subjectRef: IMSIN
     category: value
     status: observed
     formula: =IMSIN("0")
@@ -1435,6 +1575,7 @@ tests:
       - engineering
     name: imsin-zero
   - subject: IMSIN
+    subjectRef: IMSIN
     category: value
     status: observed
     formula: =IMSIN("1+1i")
@@ -1442,6 +1583,7 @@ tests:
       - engineering
     name: imsin-complex
   - subject: IMSINH
+    subjectRef: IMSINH
     category: value
     status: observed
     formula: =IMSINH("0")
@@ -1449,6 +1591,7 @@ tests:
       - engineering
     name: imsinh-zero
   - subject: IMSINH
+    subjectRef: IMSINH
     category: value
     status: observed
     formula: =IMSINH("1+1i")
@@ -1456,6 +1599,7 @@ tests:
       - engineering
     name: imsinh-complex
   - subject: IMTAN
+    subjectRef: IMTAN
     category: value
     status: observed
     formula: =IMTAN("0")
@@ -1463,6 +1607,7 @@ tests:
       - engineering
     name: imtan-zero
   - subject: IMTAN
+    subjectRef: IMTAN
     category: value
     status: observed
     formula: =IMTAN("1+1i")
@@ -1470,6 +1615,7 @@ tests:
       - engineering
     name: imtan-complex
   - subject: IMTANH
+    subjectRef: IMTANH
     category: value
     status: observed
     formula: =IMTANH("0")
@@ -1477,6 +1623,7 @@ tests:
       - engineering
     name: imtanh-zero
   - subject: IMTANH
+    subjectRef: IMTANH
     category: value
     status: observed
     formula: =IMTANH("1+1i")

@@ -2,6 +2,7 @@ schemaVersion: 3
 name: Type coercion
 tests:
   - subject: op:+
+    subjectRef: op:add
     category: value
     formula: =TRUE+0
     expect: 1
@@ -16,6 +17,7 @@ tests:
       - divergence
     name: true-plus-zero
   - subject: op:+
+    subjectRef: op:add
     category: value
     formula: =FALSE+0
     expect: 0
@@ -30,6 +32,7 @@ tests:
       - divergence
     name: false-plus-zero
   - subject: op:+
+    subjectRef: op:add
     category: value
     formula: =TRUE+1
     expect: 2
@@ -44,6 +47,7 @@ tests:
       - divergence
     name: true-plus-one
   - subject: op:*
+    subjectRef: op:multiply
     category: value
     formula: =TRUE*TRUE
     expect: 1
@@ -58,6 +62,7 @@ tests:
       - divergence
     name: true-times-true
   - subject: op:-
+    subjectRef: op:subtract
     category: value
     formula: =TRUE-FALSE
     expect: 1
@@ -72,6 +77,7 @@ tests:
       - divergence
     name: true-minus-false
   - subject: SUM
+    subjectRef: SUM
     category: value
     formula: =SUM(TRUE, FALSE, TRUE)
     expect: 2
@@ -89,6 +95,7 @@ tests:
       - divergence
     name: sum-with-booleans
   - subject: SUM
+    subjectRef: SUM
     formula: =SUM(A1:A3)
     category: value
     grid:
@@ -107,6 +114,7 @@ tests:
       - divergence
     name: sum-of-boolean-range
   - subject: AVERAGE
+    subjectRef: AVERAGE
     formula: =AVERAGE(TRUE, FALSE, TRUE)
     category: value
     expect: 0.6666666666666666
@@ -125,6 +133,7 @@ tests:
       - divergence
     name: average-with-booleans
   - subject: op:+
+    subjectRef: op:add
     category: value
     formula: ="1"+0
     expect: 1
@@ -134,6 +143,7 @@ tests:
       - divergence
     name: numeric-string-plus-zero
   - subject: op:+
+    subjectRef: op:add
     category: value
     formula: ="2"+"3"
     expect: 5
@@ -143,6 +153,7 @@ tests:
       - divergence
     name: numeric-string-plus-numeric-string
   - subject: op:*
+    subjectRef: op:multiply
     category: value
     formula: ="5"*2
     expect: 10
@@ -152,6 +163,7 @@ tests:
       - divergence
     name: numeric-string-times-number
   - subject: op:+
+    subjectRef: op:add
     formula: ="abc"+1
     category: value
     expect:
@@ -161,6 +173,7 @@ tests:
       - str-to-num
     name: non-numeric-string-plus-number
   - subject: op:+
+    subjectRef: op:add
     formula: =""+1
     category: value
     expect: 1
@@ -183,6 +196,7 @@ tests:
       - divergence
     name: empty-string-plus-number
   - subject: op:+
+    subjectRef: op:add
     category: value
     formula: =" "+1
     expect:
@@ -193,6 +207,7 @@ tests:
       - divergence
     name: whitespace-string-plus-number
   - subject: SUM
+    subjectRef: SUM
     formula: =SUM("1", "2", "3")
     category: value
     expect: 6
@@ -206,6 +221,7 @@ tests:
       - str-to-num
     name: sum-with-numeric-string
   - subject: SUM
+    subjectRef: SUM
     category: value
     status: observed
     formula: =SUM(A1:A3)
@@ -219,6 +235,7 @@ tests:
       - divergence
     name: sum-of-string-range
   - subject: op:&
+    subjectRef: op:concat
     category: value
     formula: =1&2
     expect: "12"
@@ -227,6 +244,7 @@ tests:
       - num-to-str
     name: number-concat-number
   - subject: op:&
+    subjectRef: op:concat
     category: value
     formula: =TRUE&"x"
     expect: TRUEx
@@ -241,6 +259,7 @@ tests:
       - divergence
     name: boolean-concat-string
   - subject: op:&
+    subjectRef: op:concat
     category: value
     formula: =1&TRUE
     expect: 1TRUE
@@ -256,6 +275,7 @@ tests:
       - divergence
     name: number-concat-boolean
   - subject: op:&
+    subjectRef: op:concat
     formula: =#N/A&"x"
     category: error-code
     expect:
@@ -265,6 +285,7 @@ tests:
       - error-concat
     name: error-concat-string-type-coercion
   - subject: op:+
+    subjectRef: op:add
     category: value
     formula: =A1+1
     grid:
@@ -275,6 +296,7 @@ tests:
       - blank
     name: blank-cell-plus-number
   - subject: op:*
+    subjectRef: op:multiply
     category: value
     formula: =A1*10
     grid:
@@ -285,6 +307,7 @@ tests:
       - blank
     name: blank-cell-in-arithmetic
   - subject: op:&
+    subjectRef: op:concat
     category: value
     formula: =A1&"x"
     grid:
@@ -295,6 +318,7 @@ tests:
       - blank
     name: blank-cell-in-concatenation
   - subject: op:=
+    subjectRef: op:eq
     category: value
     formula: =A1=0
     grid:
@@ -306,6 +330,7 @@ tests:
       - divergence
     name: blank-equals-zero
   - subject: op:=
+    subjectRef: op:eq
     category: value
     formula: =A1=""
     grid:
@@ -317,6 +342,7 @@ tests:
       - divergence
     name: blank-equals-empty-string
   - subject: op:=
+    subjectRef: op:eq
     category: value
     formula: =0=""
     expect: false
@@ -326,6 +352,7 @@ tests:
       - divergence
     name: zero-equals-empty-string
   - subject: op:<
+    subjectRef: op:lt
     category: value
     formula: =1<"a"
     expect: true
@@ -335,6 +362,7 @@ tests:
       - divergence
     name: number-less-than-string
   - subject: op:<
+    subjectRef: op:lt
     category: value
     formula: ="a"<1
     expect: false
@@ -344,6 +372,7 @@ tests:
       - divergence
     name: string-less-than-number
   - subject: op:=
+    subjectRef: op:eq
     category: value
     formula: =TRUE=1
     expect: false
@@ -358,6 +387,7 @@ tests:
       - divergence
     name: boolean-equals-number
   - subject: op:<
+    subjectRef: op:lt
     category: value
     status: observed
     formula: =TRUE<2
@@ -367,6 +397,7 @@ tests:
       - divergence
     name: boolean-less-than-number
   - subject: op:=
+    subjectRef: op:eq
     category: value
     formula: ="a"="A"
     expect: true
@@ -376,6 +407,7 @@ tests:
       - divergence
     name: string-comparison-case-sensitivity
   - subject: op:=
+    subjectRef: op:eq
     category: value
     formula: ="1"=1
     expect: false
@@ -385,6 +417,7 @@ tests:
       - divergence
     name: numeric-string-equals-number
   - subject: op:unary-
+    subjectRef: op:unary-
     category: value
     formula: =-TRUE
     expect: -1
@@ -400,6 +433,7 @@ tests:
       - divergence
     name: unary-minus-on-true
   - subject: op:unary-
+    subjectRef: op:unary-
     category: value
     formula: =-"5"
     expect: -5
@@ -410,6 +444,7 @@ tests:
       - divergence
     name: unary-minus-on-numeric-string
   - subject: op:unary-
+    subjectRef: op:unary-
     category: value
     formula: =--TRUE
     expect: 1
@@ -428,6 +463,7 @@ tests:
       - divergence
     name: double-unary-on-true
   - subject: op:unary-
+    subjectRef: op:unary-
     category: value
     formula: =--FALSE
     expect: 0
@@ -462,6 +498,7 @@ tests:
     subjectRef: legacy:6f703a756e6172792b
     name: unary-plus-on-string
   - subject: N
+    subjectRef: N
     formula: =N(TRUE)
     category: value
     expect: 1
@@ -474,6 +511,7 @@ tests:
       - coercion
     name: n-of-true-type-coercion
   - subject: N
+    subjectRef: N
     formula: =N(FALSE)
     category: value
     expect: 0
@@ -486,6 +524,7 @@ tests:
       - coercion
     name: n-of-false-type-coercion
   - subject: N
+    subjectRef: N
     category: value
     formula: =N("hello")
     expect: 0
@@ -493,6 +532,7 @@ tests:
       - coercion
     name: n-of-string
   - subject: N
+    subjectRef: N
     category: value
     formula: =N(42)
     expect: 42
@@ -500,6 +540,7 @@ tests:
       - coercion
     name: n-of-number-type-coercion
   - subject: N
+    subjectRef: N
     formula: =N(#VALUE!)
     category: error-code
     expect:
@@ -508,6 +549,7 @@ tests:
       - coercion
     name: n-of-error-type-coercion
   - subject: T
+    subjectRef: T
     category: value
     formula: =T("hello")
     expect: hello
@@ -515,6 +557,7 @@ tests:
       - coercion
     name: t-of-string
   - subject: T
+    subjectRef: T
     formula: =T(42)
     category: value
     expect: null
@@ -529,6 +572,7 @@ tests:
       - coercion
     name: t-of-number
   - subject: T
+    subjectRef: T
     category: value
     status: observed
     formula: =T(TRUE)
@@ -537,6 +581,7 @@ tests:
       - divergence
     name: t-of-boolean
   - subject: VALUE
+    subjectRef: VALUE
     category: value
     formula: =VALUE("123.45")
     expect: 123.45
@@ -544,6 +589,7 @@ tests:
       - coercion
     name: value-of-numeric-string
   - subject: VALUE
+    subjectRef: VALUE
     formula: =VALUE("abc")
     category: value
     expect:
@@ -552,6 +598,7 @@ tests:
       - coercion
     name: value-of-non-numeric-string
   - subject: VALUE
+    subjectRef: VALUE
     category: value
     formula: =VALUE("TRUE")
     expect:
@@ -561,6 +608,7 @@ tests:
       - divergence
     name: value-of-boolean-string
   - subject: TEXT
+    subjectRef: TEXT
     formula: =TEXT(1234.5, "#,##0.00")
     category: format
     expect: 1,234.50
@@ -573,6 +621,7 @@ tests:
       - divergence
     name: text-number-with-format
   - subject: SUM
+    subjectRef: SUM
     category: value
     status: observed
     formula: =SUM({TRUE,FALSE,TRUE})
@@ -583,6 +632,7 @@ tests:
       - bare-formula
     name: boolean-array-in-sum
   - subject: SUM
+    subjectRef: SUM
     category: value
     status: observed
     formula: =SUM({1,"2",TRUE})
@@ -592,6 +642,7 @@ tests:
       - bare-formula
     name: mixed-array-in-sum
   - subject: PRODUCT
+    subjectRef: PRODUCT
     category: value
     status: observed
     formula: =PRODUCT({"2","3","4"})
@@ -602,6 +653,7 @@ tests:
       - bare-formula
     name: string-array-in-product
   - subject: N
+    subjectRef: N
     formula: =N({TRUE,FALSE,TRUE})
     category: value
     features:

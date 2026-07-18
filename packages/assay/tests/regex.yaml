@@ -2,6 +2,7 @@ schemaVersion: 3
 name: Regex functions
 tests:
   - subject: REGEXMATCH
+    subjectRef: REGEXMATCH
     category: value
     features:
       - regex
@@ -12,6 +13,7 @@ tests:
     expect: true
     name: match-basic-substring
   - subject: REGEXMATCH
+    subjectRef: REGEXMATCH
     category: value
     features:
       - regex
@@ -22,6 +24,7 @@ tests:
     expect: false
     name: match-returns-false-when-no-match
   - subject: REGEXMATCH
+    subjectRef: REGEXMATCH
     category: value
     features:
       - regex
@@ -32,6 +35,7 @@ tests:
     expect: true
     name: match-anchors-start-and-end
   - subject: REGEXMATCH
+    subjectRef: REGEXMATCH
     category: value
     features:
       - regex
@@ -42,6 +46,7 @@ tests:
     expect: false
     name: match-anchors-fail-on-partial-string
   - subject: REGEXMATCH
+    subjectRef: REGEXMATCH
     category: value
     features:
       - regex
@@ -52,6 +57,7 @@ tests:
     expect: true
     name: match-start-anchor-only
   - subject: REGEXMATCH
+    subjectRef: REGEXMATCH
     category: value
     features:
       - regex
@@ -62,6 +68,7 @@ tests:
     expect: true
     name: match-end-anchor-only
   - subject: REGEXMATCH
+    subjectRef: REGEXMATCH
     category: value
     features:
       - regex
@@ -72,6 +79,7 @@ tests:
     expect: true
     name: match-digit-class
   - subject: REGEXMATCH
+    subjectRef: REGEXMATCH
     category: value
     features:
       - regex
@@ -82,6 +90,7 @@ tests:
     expect: false
     name: match-digit-class-no-digits
   - subject: REGEXMATCH
+    subjectRef: REGEXMATCH
     category: value
     features:
       - regex
@@ -92,6 +101,7 @@ tests:
     expect: true
     name: match-word-class
   - subject: REGEXMATCH
+    subjectRef: REGEXMATCH
     category: value
     features:
       - regex
@@ -102,6 +112,7 @@ tests:
     expect: true
     name: match-lowercase-range
   - subject: REGEXMATCH
+    subjectRef: REGEXMATCH
     category: value
     features:
       - regex
@@ -112,6 +123,7 @@ tests:
     expect: false
     name: match-lowercase-range-rejects-uppercase
   - subject: REGEXMATCH
+    subjectRef: REGEXMATCH
     category: value
     features:
       - regex
@@ -122,6 +134,7 @@ tests:
     expect: true
     name: match-exact-count-quantifier
   - subject: REGEXMATCH
+    subjectRef: REGEXMATCH
     category: value
     features:
       - regex
@@ -132,6 +145,7 @@ tests:
     expect: true
     name: match-range-quantifier-within-bounds
   - subject: REGEXMATCH
+    subjectRef: REGEXMATCH
     category: value
     features:
       - regex
@@ -142,6 +156,7 @@ tests:
     expect: false
     name: match-range-quantifier-below-minimum
   - subject: REGEXMATCH
+    subjectRef: REGEXMATCH
     category: value
     features:
       - regex
@@ -152,6 +167,7 @@ tests:
     expect: true
     name: match-alternation-first-branch
   - subject: REGEXMATCH
+    subjectRef: REGEXMATCH
     category: value
     features:
       - regex
@@ -162,6 +178,7 @@ tests:
     expect: true
     name: match-alternation-second-branch
   - subject: REGEXMATCH
+    subjectRef: REGEXMATCH
     category: value
     features:
       - regex
@@ -172,6 +189,7 @@ tests:
     expect: false
     name: match-alternation-neither-branch
   - subject: REGEXMATCH
+    subjectRef: REGEXMATCH
     category: value
     features:
       - regex
@@ -182,6 +200,7 @@ tests:
     expect: true
     name: match-word-boundary-hit
   - subject: REGEXMATCH
+    subjectRef: REGEXMATCH
     category: value
     features:
       - regex
@@ -192,6 +211,7 @@ tests:
     expect: false
     name: match-word-boundary-miss
   - subject: REGEXMATCH
+    subjectRef: REGEXMATCH
     category: value
     features:
       - regex
@@ -202,6 +222,7 @@ tests:
     expect: false
     name: match-case-sensitive-by-default
   - subject: REGEXMATCH
+    subjectRef: REGEXMATCH
     category: value
     features:
       - regex
@@ -212,6 +233,7 @@ tests:
     expect: true
     name: match-case-insensitive-via-inline-flag
   - subject: REGEXMATCH
+    subjectRef: REGEXMATCH
     formula:
       gsheets: =REGEXMATCH("café", "\p{L}+")
       excel: =REGEXTEST("café", "\p{L}+")
@@ -230,6 +252,7 @@ tests:
       - unicode-property
     name: match-unicode-property-class-on-non-ascii-letters
   - subject: REGEXMATCH
+    subjectRef: REGEXMATCH
     formula:
       gsheets: =REGEXMATCH("123", "\p{L}")
       excel: =REGEXTEST("123", "\p{L}")
@@ -248,6 +271,7 @@ tests:
       - unicode-property
     name: match-unicode-property-class-rejects-digits
   - subject: REGEXMATCH
+    subjectRef: REGEXMATCH
     formula:
       gsheets: =REGEXMATCH("你好世界", "\p{L}+")
       excel: =REGEXTEST("你好世界", "\p{L}+")
@@ -266,6 +290,7 @@ tests:
       - unicode-property
     name: match-unicode-property-class-on-cjk
   - subject: REGEXMATCH
+    subjectRef: REGEXMATCH
     category: value
     features:
       - regex
@@ -276,6 +301,7 @@ tests:
     expect: true
     name: match-non-ascii-literal
   - subject: REGEXEXTRACT
+    subjectRef: REGEXEXTRACT
     category: value
     features:
       - regex
@@ -283,6 +309,7 @@ tests:
     expect: résumé
     name: extract-non-ascii-literal
   - subject: REGEXMATCH
+    subjectRef: REGEXMATCH
     category: value
     features:
       - regex
@@ -293,6 +320,7 @@ tests:
     expect: true
     name: match-non-ascii-case-insensitive-via-inline-flag
   - subject: REGEXEXTRACT
+    subjectRef: REGEXEXTRACT
     category: value
     features:
       - regex
@@ -300,6 +328,7 @@ tests:
     expect: "123"
     name: extract-full-match-when-no-capture-groups
   - subject: REGEXEXTRACT
+    subjectRef: REGEXEXTRACT
     category: value
     features:
       - regex
@@ -307,6 +336,7 @@ tests:
     expect: $100
     name: extract-full-match-no-groups-with-dollar-sign
   - subject: REGEXEXTRACT
+    subjectRef: REGEXEXTRACT
     category: value
     features:
       - regex
@@ -314,6 +344,7 @@ tests:
     expect: "1"
     name: extract-first-of-multiple-full-matches
   - subject: REGEXEXTRACT
+    subjectRef: REGEXEXTRACT
     category: value
     features:
       - regex
@@ -324,6 +355,7 @@ tests:
       - capture-groups
     name: extract-single-capture-group
   - subject: REGEXEXTRACT
+    subjectRef: REGEXEXTRACT
     category: value
     features:
       - regex
@@ -334,6 +366,7 @@ tests:
       - capture-groups
     name: extract-capture-groups-when-multiple-groups-present
   - subject: REGEXEXTRACT
+    subjectRef: REGEXEXTRACT
     category: value
     features:
       - regex
@@ -344,6 +377,7 @@ tests:
       - capture-groups
     name: extract-two-word-groups
   - subject: REGEXEXTRACT
+    subjectRef: REGEXEXTRACT
     formula: =REGEXEXTRACT("hello", "\d+")
     category: value
     features:
@@ -352,6 +386,7 @@ tests:
       error: "#N/A"
     name: extract-no-match-returns-na
   - subject: REGEXEXTRACT
+    subjectRef: REGEXEXTRACT
     formula: =REGEXEXTRACT("", "\d+")
     category: value
     features:
@@ -360,6 +395,7 @@ tests:
       error: "#N/A"
     name: extract-no-match-on-empty-text
   - subject: REGEXEXTRACT
+    subjectRef: REGEXEXTRACT
     category: value
     features:
       - regex
@@ -367,6 +403,7 @@ tests:
     expect: Hello
     name: extract-case-insensitive-via-inline-flag
   - subject: REGEXEXTRACT
+    subjectRef: REGEXEXTRACT
     formula: =REGEXEXTRACT("a1 b2 c3", "\d+", 1)
     category: value
     features:
@@ -385,6 +422,7 @@ tests:
       - excel-undocumented
     name: extract-return-mode-1-all-matches-row-vector
   - subject: REGEXEXTRACT
+    subjectRef: REGEXEXTRACT
     formula: =REGEXEXTRACT("2025-03-01", "(\d{4})-(\d{2})-(\d{2})", 2)
     category: value
     features:
@@ -403,6 +441,7 @@ tests:
       - excel-undocumented
     name: extract-return-mode-2-capture-groups-from-first-match
   - subject: REGEXREPLACE
+    subjectRef: REGEXREPLACE
     category: value
     features:
       - regex
@@ -410,6 +449,7 @@ tests:
     expect: axbxcx
     name: replace-all-digits
   - subject: REGEXREPLACE
+    subjectRef: REGEXREPLACE
     category: value
     features:
       - regex
@@ -417,6 +457,7 @@ tests:
     expect: xbbx
     name: replace-greedy-pattern-all-occurrences
   - subject: REGEXREPLACE
+    subjectRef: REGEXREPLACE
     category: value
     features:
       - regex
@@ -424,6 +465,7 @@ tests:
     expect: hello-world
     name: replace-whitespace-all
   - subject: REGEXREPLACE
+    subjectRef: REGEXREPLACE
     category: value
     features:
       - regex
@@ -431,6 +473,7 @@ tests:
     expect: hello
     name: replace-no-match-unchanged
   - subject: REGEXREPLACE
+    subjectRef: REGEXREPLACE
     formula: =REGEXREPLACE("", "\d+", "x")
     category: value
     features:
@@ -445,6 +488,7 @@ tests:
       - empty-string
     name: replace-empty-text-unchanged
   - subject: REGEXREPLACE
+    subjectRef: REGEXREPLACE
     category: value
     features:
       - regex
@@ -452,6 +496,7 @@ tests:
     expect: "[hello] [world]"
     name: replace-with-single-backreference
   - subject: REGEXREPLACE
+    subjectRef: REGEXREPLACE
     category: value
     features:
       - regex
@@ -459,6 +504,7 @@ tests:
     expect: Smith, John
     name: replace-swap-first-and-last-name
   - subject: REGEXREPLACE
+    subjectRef: REGEXREPLACE
     category: value
     features:
       - regex
@@ -466,6 +512,7 @@ tests:
     expect: 01/03/2025
     name: replace-date-reformat-three-groups
   - subject: REGEXREPLACE
+    subjectRef: REGEXREPLACE
     category: value
     features:
       - regex
@@ -478,6 +525,7 @@ tests:
       - lattice
     name: replace-first-occurrence-only
   - subject: REGEXREPLACE
+    subjectRef: REGEXREPLACE
     category: value
     features:
       - regex
@@ -490,6 +538,7 @@ tests:
       - lattice
     name: replace-last-occurrence-only
   - subject: REGEXREPLACE
+    subjectRef: REGEXREPLACE
     category: value
     features:
       - regex
@@ -502,6 +551,7 @@ tests:
       - lattice
     name: replace-nth-occurrence
   - subject: REGEXREPLACE
+    subjectRef: REGEXREPLACE
     category: value
     features:
       - regex
@@ -514,6 +564,7 @@ tests:
       - lattice
     name: replace-case-insensitive-via-excel-param
   - subject: REGEXEXTRACT
+    subjectRef: REGEXEXTRACT
     formula:
       excel: '=REGEXEXTRACT("ITEM: ABC123", "item: ([A-Z]+\d+)", 0, 1)'
       lattice: '=REGEXEXTRACT("ITEM: ABC123", "item: ([A-Z]+\d+)", 0, 1)'
@@ -533,6 +584,7 @@ tests:
       - engine-divergence
     name: extract-case-insensitive-via-4th-arg
   - subject: REGEXREPLACE
+    subjectRef: REGEXREPLACE
     category: value
     features:
       - regex
@@ -540,6 +592,7 @@ tests:
     expect: hi WORLD hi
     name: replace-case-insensitive-via-inline-flag
   - subject: REGEXMATCH
+    subjectRef: REGEXMATCH
     formula:
       gsheets: =REGEXMATCH("hello", "(?<=hel)lo")
       excel: =REGEXTEST("hello", "(?<=hel)lo")
@@ -558,6 +611,7 @@ tests:
       - lookaround
     name: lookbehind-in-pattern
   - subject: REGEXMATCH
+    subjectRef: REGEXMATCH
     formula:
       gsheets: =REGEXMATCH("foobar", "foo(?=bar)")
       excel: =REGEXTEST("foobar", "foo(?=bar)")
@@ -576,6 +630,7 @@ tests:
       - lookaround
     name: lookahead-in-pattern
   - subject: REGEXMATCH
+    subjectRef: REGEXMATCH
     formula:
       gsheets: =REGEXMATCH("foobar", "foo(?!baz)")
       excel: =REGEXTEST("foobar", "foo(?!baz)")

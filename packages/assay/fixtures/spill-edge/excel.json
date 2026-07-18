@@ -1,8 +1,9 @@
 {
+  "schemaVersion": 2,
   "platform": "excel",
-  "generatedAt": "2026-06-17T19:44:09.851Z",
+  "generatedAt": "2026-07-18T20:49:21.605Z",
   "results": {
-    "sha256:c09a19a986251b0b000feadfafe4750895a3d7605457708f9d4ddf1e9daf0783": {
+    "feature:spill-blocking/spill-blocked-by-occupied-cell-column": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -61,9 +62,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=SEQUENCE(3)"
+      "formula-as-evaluated": "=SEQUENCE(3)",
+      "stimulus": "sha256:948536f5baf2ae852d367dd8f2d8b932230818ff4d00667e4f2f65a29cfda95e",
+      "fingerprint": "sha256:d2d3fc5622917d82f4cd9f5d3dc5ed6c96cf7a8ea309e6aef8dc40d48197dcba",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
-    "sha256:805e371b54b66827a3edb9bf95c90f0bb9ea5521b6a4470490eb39bdce403c43": {
+    "feature:spill-blocking/spill-blocked-by-occupied-cell-row": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -120,9 +126,14 @@
           "cols": 2
         }
       },
-      "formula-as-evaluated": "=SEQUENCE(1, 3)"
+      "formula-as-evaluated": "=SEQUENCE(1, 3)",
+      "stimulus": "sha256:a6a0051a01032cc0b128a45d036aa816d03504d319955804a99eb1a348328938",
+      "fingerprint": "sha256:2174c8ef3e2ca2d5971a3ab4743510ed459f0b5d5605f2c9edf45f4657fb1bd8",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
-    "sha256:d9e41591c20e37417a2d58eaaf4b2bcd79194fc34f3ee5db13220ba12e9cb187": {
+    "feature:spill-blocking/spill-blocked-by-occupied-cell-2d": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -183,9 +194,14 @@
           "cols": 2
         }
       },
-      "formula-as-evaluated": "=SEQUENCE(2, 2)"
+      "formula-as-evaluated": "=SEQUENCE(2, 2)",
+      "stimulus": "sha256:261630250448e11e494a9d8b5c4259ca40650085510f3636ee76a3993e2e9a64",
+      "fingerprint": "sha256:b6dfa447573260a1e78464f18e3765b9ab56d65a52690eae0ae965d6d0709b5c",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
-    "sha256:0afd2aa3cd9dea63e27b1b050f5ecdd19cb730dbffe1dbff1b5c3023e016f607": {
+    "feature:spill-blocking/spill-blocked-distant-cell": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -253,9 +269,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=SEQUENCE(10)"
+      "formula-as-evaluated": "=SEQUENCE(10)",
+      "stimulus": "sha256:8f78c5e82f754bf8fd5a86d852ef130497045e5beb2fa57bf7afa607ebdcfb55",
+      "fingerprint": "sha256:0032bafa5f57a035e19d8d9431a7465ba244b100b0d0140fb3238ed467df028e",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
-    "sha256:682596d9df6067d79db803d381f0b343e4e00ff5a953dbd65422deabeb0c35ea": {
+    "feature:spill-blocking/no-block-when-result-fits": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -272,7 +293,7 @@
                   "cm": 1,
                   "formula_text": "_xlfn.SEQUENCE(2)",
                   "formula_array_marker": "array",
-                  "formula_array_ref": "A41:A42",
+                  "formula_array_ref": "CC21:CC22",
                   "formula_namespaces": [
                     "_xlfn"
                   ]
@@ -300,9 +321,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=SEQUENCE(2)"
+      "formula-as-evaluated": "=SEQUENCE(2)",
+      "stimulus": "sha256:954e01804972c5dc4997ea9b5d8c2ee7aa3ea3ffc70ed8945dd293689ff3ef71",
+      "fingerprint": "sha256:9192733f3d986c3a1b8eecfc1b17d144245a369d212fa0d24b794150031ac2f6",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
-    "sha256:8a127ffd1599759d137785284233186a3da6676d438bac1aa2a63f877400e855": {
+    "SORT/sort-of-sequence-descending": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -319,7 +345,7 @@
                   "cm": 1,
                   "formula_text": "_xlfn._xlws.SORT(_xlfn.SEQUENCE(5), 1, -1)",
                   "formula_array_marker": "array",
-                  "formula_array_ref": "U41:U45",
+                  "formula_array_ref": "A41:A45",
                   "formula_namespaces": [
                     "_xlfn._xlws",
                     "_xlfn"
@@ -384,9 +410,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=SORT(SEQUENCE(5), 1, -1)"
+      "formula-as-evaluated": "=SORT(SEQUENCE(5), 1, -1)",
+      "stimulus": "sha256:2781d6ffeccd1710a0f5ebafbe173579d89c209f6602cda1b0842e9b87bbc795",
+      "fingerprint": "sha256:45ffefc844ff6a1f67e1347a6a5fd12d00315c35a02d673b780c8fe4454f60fd",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
-    "sha256:f9e364a49a766e661df43aea86d4284fcfc56d37803e441e3052656ee217531d": {
+    "SORT/sort-of-sequence-ascending": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -403,7 +434,7 @@
                   "cm": 1,
                   "formula_text": "_xlfn._xlws.SORT(_xlfn.SEQUENCE(5), 1, 1)",
                   "formula_array_marker": "array",
-                  "formula_array_ref": "AO41:AO45",
+                  "formula_array_ref": "U41:U45",
                   "formula_namespaces": [
                     "_xlfn._xlws",
                     "_xlfn"
@@ -468,9 +499,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=SORT(SEQUENCE(5), 1, 1)"
+      "formula-as-evaluated": "=SORT(SEQUENCE(5), 1, 1)",
+      "stimulus": "sha256:1e912350bfea093ebfa2ba57eb088f8b052d5adf5a0dce53a958aceb6a659124",
+      "fingerprint": "sha256:e4979e9a9921fb861a0f927b30077ec4c5c596a75f120aba9771b2e70f6672fc",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
-    "sha256:350c07ed9709baecdecb342d3dd7cae8b1597de7d2c50e1b9dbc70bdb72b0811": {
+    "FILTER/filter-of-sequence": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -487,7 +523,7 @@
                   "cm": 1,
                   "formula_text": "_xlfn._xlws.FILTER(_xlfn.SEQUENCE(5), _xlfn.SEQUENCE(5)>2)",
                   "formula_array_marker": "array",
-                  "formula_array_ref": "BI41:BI43",
+                  "formula_array_ref": "AO41:AO43",
                   "formula_namespaces": [
                     "_xlfn._xlws",
                     "_xlfn"
@@ -528,9 +564,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=FILTER(SEQUENCE(5), SEQUENCE(5)>2)"
+      "formula-as-evaluated": "=FILTER(SEQUENCE(5), SEQUENCE(5)>2)",
+      "stimulus": "sha256:9cfd9d371c731f4a027e412bcd0c81de5dd127d9ff86a09db98212248307929c",
+      "fingerprint": "sha256:7fe3496ed10f0f19c281067a771b1fbb1d9b52996d27dfe19817c39c13510700",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
-    "sha256:d5bfa77aada6af47382c118d4d8c4c49d7428033ad449b9039e91e47a29064a5": {
+    "UNIQUE/unique-of-repeated-column": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -547,7 +588,7 @@
                   "cm": 1,
                   "formula_text": "_xlfn.UNIQUE({1;2;1;3;2;3})",
                   "formula_array_marker": "array",
-                  "formula_array_ref": "CC41:CC43",
+                  "formula_array_ref": "BI41:BI43",
                   "formula_namespaces": [
                     "_xlfn"
                   ]
@@ -587,9 +628,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=UNIQUE({1;2;1;3;2;3})"
+      "formula-as-evaluated": "=UNIQUE({1;2;1;3;2;3})",
+      "stimulus": "sha256:79e16869957db27c221748562f89b1847a1cd7bdc3b2a365df2acb1187bc03e5",
+      "fingerprint": "sha256:f6d21c4495e91db0df071f1fd45fcaf58e75b9b98965e5cde8287cace5a9fbea",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
-    "sha256:ee56f6f292d9a474f69270f2c74a17049ae1a4f8063a70527a1167547587976d": {
+    "SORT/sort-of-filter": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -606,7 +652,7 @@
                   "cm": 1,
                   "formula_text": "_xlfn._xlws.SORT(_xlfn._xlws.FILTER({5;3;1;4;2}, {TRUE;TRUE;FALSE;TRUE;FALSE}))",
                   "formula_array_marker": "array",
-                  "formula_array_ref": "A61:A63",
+                  "formula_array_ref": "CC41:CC43",
                   "formula_namespaces": [
                     "_xlfn._xlws"
                   ]
@@ -646,9 +692,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=SORT(FILTER({5;3;1;4;2}, {TRUE;TRUE;FALSE;TRUE;FALSE}))"
+      "formula-as-evaluated": "=SORT(FILTER({5;3;1;4;2}, {TRUE;TRUE;FALSE;TRUE;FALSE}))",
+      "stimulus": "sha256:015e7923edd8d89b381cdb9228351d629e2f729851cf57c1d7ef7d083d8b008e",
+      "fingerprint": "sha256:7fe3496ed10f0f19c281067a771b1fbb1d9b52996d27dfe19817c39c13510700",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
-    "sha256:56011bd1b05bd7e2c223323222bb06e6485d24dc7f57c8a7d22622e320057f5e": {
+    "INDEX/index-into-sequence": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -677,9 +728,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=INDEX(SEQUENCE(5, 5), 3, 4)"
+      "formula-as-evaluated": "=INDEX(SEQUENCE(5, 5), 3, 4)",
+      "stimulus": "sha256:417d3d047ba3d5823c0e7ef4b2bd0761d1a1d266df5fc28558b04594a1baf973",
+      "fingerprint": "sha256:c72b0209340e2159df34fce42a9196394c9d1522e84870dca6182fe0229c0189",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
-    "sha256:d7aad458f374dd98fca4d20fbacc39243cec990ee261f22222bb765a077b82ce": {
+    "FILTER/filter-returns-no-rows": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -699,7 +755,7 @@
                   "vm": 2,
                   "formula_text": "_xlfn._xlws.FILTER({1;2;3}, {FALSE;FALSE;FALSE})",
                   "formula_array_marker": "array",
-                  "formula_array_ref": "AO61",
+                  "formula_array_ref": "U61",
                   "formula_namespaces": [
                     "_xlfn._xlws"
                   ]
@@ -719,9 +775,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=FILTER({1;2;3}, {FALSE;FALSE;FALSE})"
+      "formula-as-evaluated": "=FILTER({1;2;3}, {FALSE;FALSE;FALSE})",
+      "stimulus": "sha256:29ac3aa555b3abe4e84ed32b5df443b17f9590310fc6d5234cf4bb9b4bdfd449",
+      "fingerprint": "sha256:9eafd330fc8e6cf4c184f7c658a71d803eb3fce953ad62ee072228ba54ae0783",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
-    "sha256:78a82c6088ced186d5a849053c4bbea3f474af48897d6987bae8f83b77b3e831": {
+    "UNIQUE/unique-on-single-value": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -738,7 +799,7 @@
                   "cm": 1,
                   "formula_text": "_xlfn.UNIQUE({5;5;5})",
                   "formula_array_marker": "array",
-                  "formula_array_ref": "BI61",
+                  "formula_array_ref": "AO61",
                   "formula_namespaces": [
                     "_xlfn"
                   ]
@@ -754,9 +815,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=UNIQUE({5;5;5})"
+      "formula-as-evaluated": "=UNIQUE({5;5;5})",
+      "stimulus": "sha256:eae8948ccb499183604269c119d46ac2105414720eae67958dd5d559c39afc4c",
+      "fingerprint": "sha256:f638af852ce38aa91cc4de6d85980731ac33ca2a152365dda9104b78637f7380",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
-    "sha256:5bd6987a799e49a491bef9086abf5b799ca98db29afd9edb388de4f0ff60d2b7": {
+    "TRANSPOSE/transpose-of-sequence": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -773,7 +839,7 @@
                   "cm": 1,
                   "formula_text": "TRANSPOSE(_xlfn.SEQUENCE(3))",
                   "formula_array_marker": "array",
-                  "formula_array_ref": "CC61:CE61",
+                  "formula_array_ref": "BI61:BK61",
                   "formula_namespaces": [
                     "_xlfn"
                   ]
@@ -809,9 +875,14 @@
           "cols": 3
         }
       },
-      "formula-as-evaluated": "=TRANSPOSE(SEQUENCE(3))"
+      "formula-as-evaluated": "=TRANSPOSE(SEQUENCE(3))",
+      "stimulus": "sha256:e94e66373e9e85b4ebea15a53e5a8094e4aee14b8fee4333bcfc234f4546339f",
+      "fingerprint": "sha256:f6cf48ecb6441475f9ccefab99f429cd089274b9bb16b8f95386758c9cb00a97",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
-    "sha256:9fc0b89002e65d61a282294b973a94053afec8ff8d8b384e54690857cabe5482": {
+    "SORT/sort-descending-unique": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -828,7 +899,7 @@
                   "cm": 1,
                   "formula_text": "_xlfn._xlws.SORT(_xlfn.UNIQUE({3;1;4;1;5;9;2;6;5;3}), 1, -1)",
                   "formula_array_marker": "array",
-                  "formula_array_ref": "A81:A87",
+                  "formula_array_ref": "CC61:CC67",
                   "formula_namespaces": [
                     "_xlfn._xlws",
                     "_xlfn"
@@ -917,9 +988,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=SORT(UNIQUE({3;1;4;1;5;9;2;6;5;3}), 1, -1)"
+      "formula-as-evaluated": "=SORT(UNIQUE({3;1;4;1;5;9;2;6;5;3}), 1, -1)",
+      "stimulus": "sha256:f4e804b0983f5e50613b42ffef5661c3da818ddacb9bc1a4ad6509ea8f536cce",
+      "fingerprint": "sha256:c06357b832f51f8741dc0a311aa9d697392f281ce52754de13e4fe70d42b2e9d",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
-    "sha256:4566aaf6910250797ccbc3d90b717986c77938766d5b5d9c5c774b06b6dfa00e": {
+    "TOCOL/tocol-of-2d-sequence": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -936,7 +1012,7 @@
                   "cm": 1,
                   "formula_text": "_xlfn.TOCOL(_xlfn.SEQUENCE(2,3))",
                   "formula_array_marker": "array",
-                  "formula_array_ref": "U81:U86",
+                  "formula_array_ref": "A81:A86",
                   "formula_namespaces": [
                     "_xlfn"
                   ]
@@ -1012,9 +1088,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=TOCOL(SEQUENCE(2,3))"
+      "formula-as-evaluated": "=TOCOL(SEQUENCE(2,3))",
+      "stimulus": "sha256:3f10849e33cc591296a0771a74f43ab472f18cfe123edc8692a459a21a018666",
+      "fingerprint": "sha256:028e0ba0b81baaadd9914a8f94862e433c7aa4728fb94d2f3f7497a054ef7d12",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
-    "sha256:f797c74be4c095fc2e4302a4ea1c2cf27e1792c0185c2bd01fe88bad871734f6": {
+    "HSTACK/hstack-two-sequences": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -1031,7 +1112,7 @@
                   "cm": 1,
                   "formula_text": "_xlfn.HSTACK(_xlfn.SEQUENCE(3), _xlfn.SEQUENCE(3, 1, 10))",
                   "formula_array_marker": "array",
-                  "formula_array_ref": "AO81:AP83",
+                  "formula_array_ref": "U81:V83",
                   "formula_namespaces": [
                     "_xlfn"
                   ]
@@ -1101,9 +1182,14 @@
           "cols": 2
         }
       },
-      "formula-as-evaluated": "=HSTACK(SEQUENCE(3), SEQUENCE(3, 1, 10))"
+      "formula-as-evaluated": "=HSTACK(SEQUENCE(3), SEQUENCE(3, 1, 10))",
+      "stimulus": "sha256:6e132fe3f7fae9417f7f596c02e651604aad4bc29cbd7854e7f944f35e7d0baf",
+      "fingerprint": "sha256:93a65a36b7d0324e20e057347294dd86c11742be7ba198edea4881f3dbfb72a2",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
-    "sha256:bacd179c05a05b29531a1768e17b44ef623f634ef75099c5e3cc8a80846a9331": {
+    "VSTACK/vstack-two-sequences": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -1120,7 +1206,7 @@
                   "cm": 1,
                   "formula_text": "_xlfn.VSTACK(_xlfn.SEQUENCE(1, 3), _xlfn.SEQUENCE(1, 3, 10))",
                   "formula_array_marker": "array",
-                  "formula_array_ref": "BI81:BK82",
+                  "formula_array_ref": "AO81:AQ82",
                   "formula_namespaces": [
                     "_xlfn"
                   ]
@@ -1188,9 +1274,14 @@
           "cols": 3
         }
       },
-      "formula-as-evaluated": "=VSTACK(SEQUENCE(1, 3), SEQUENCE(1, 3, 10))"
+      "formula-as-evaluated": "=VSTACK(SEQUENCE(1, 3), SEQUENCE(1, 3, 10))",
+      "stimulus": "sha256:6c425928549f028b6619b8f05375d63c9c00a3de97bcb63b2dc24ce4d9a55687",
+      "fingerprint": "sha256:c6e39c8bf01eeb5c44560373d9e46fe551bbdac79ef0600dcdf8dec47b0b9118",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
-    "sha256:c78c1b75e6033a6e26223e1580fb0e311f17df89ef372d0bfeeb92c203606719": {
+    "op:add/sequence-plus-scalar": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -1207,7 +1298,7 @@
                   "cm": 1,
                   "formula_text": "_xlfn.SEQUENCE(3)+10",
                   "formula_array_marker": "array",
-                  "formula_array_ref": "CC81:CC83",
+                  "formula_array_ref": "BI81:BI83",
                   "formula_namespaces": [
                     "_xlfn"
                   ]
@@ -1247,9 +1338,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=SEQUENCE(3)+10"
+      "formula-as-evaluated": "=SEQUENCE(3)+10",
+      "stimulus": "sha256:11020bd24933e85e5e5928e27ac44cd90a8bd03353f76d365ec7bf6d3bdc596a",
+      "fingerprint": "sha256:8aeeb636cc7aee6bf009e510be2c0552f8e31c3658355881ccae0510db76492c",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
-    "sha256:f5ffdcdc05de207be91a63233d5dcd857b6c7adef41911e3d6cdab9d16cb27fc": {
+    "op:multiply/two-sequences-multiplied-elementwise": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -1266,7 +1362,7 @@
                   "cm": 1,
                   "formula_text": "_xlfn.SEQUENCE(3)*_xlfn.SEQUENCE(3)",
                   "formula_array_marker": "array",
-                  "formula_array_ref": "A1:A3",
+                  "formula_array_ref": "CC81:CC83",
                   "formula_namespaces": [
                     "_xlfn"
                   ]
@@ -1306,9 +1402,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=SEQUENCE(3)*SEQUENCE(3)"
+      "formula-as-evaluated": "=SEQUENCE(3)*SEQUENCE(3)",
+      "stimulus": "sha256:1a0307f6c9e3e44b53d5d1825ee32917c723e24053c1e5036df4abb4061e5f84",
+      "fingerprint": "sha256:cd3aad52aeb4a69eade0c21ebd1ee760c9620f4a2375cff60e12286155b7493b",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
-    "sha256:440393a51205cc70c24ea9c1f91eac7533dad8caf68523815b35ee7598e30d6e": {
+    "op:multiply/row-sequence-times-column-sequence-outer": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -1325,7 +1426,7 @@
                   "cm": 1,
                   "formula_text": "_xlfn.SEQUENCE(1,3)*_xlfn.SEQUENCE(3,1)",
                   "formula_array_marker": "array",
-                  "formula_array_ref": "U1:W3",
+                  "formula_array_ref": "A1:C3",
                   "formula_namespaces": [
                     "_xlfn"
                   ]
@@ -1425,7 +1526,12 @@
           "cols": 3
         }
       },
-      "formula-as-evaluated": "=SEQUENCE(1,3)*SEQUENCE(3,1)"
+      "formula-as-evaluated": "=SEQUENCE(1,3)*SEQUENCE(3,1)",
+      "stimulus": "sha256:b300090997552653b086cef6374da4fa1866cbcab6db877cf016fc755f7dd015",
+      "fingerprint": "sha256:164ec314eb10cacb42135a98fb681892d202e33020ca2f3f2830a3bd2a9a1dcd",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     }
   }
 }

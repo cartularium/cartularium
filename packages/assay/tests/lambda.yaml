@@ -2,6 +2,7 @@ schemaVersion: 3
 name: Lambda and higher-order functions
 tests:
   - subject: LAMBDA
+    subjectRef: LAMBDA
     category: value
     features:
       - lambda
@@ -9,6 +10,7 @@ tests:
     expect: 6
     name: lambda-basic-iife
   - subject: LAMBDA
+    subjectRef: LAMBDA
     category: value
     features:
       - lambda
@@ -16,6 +18,7 @@ tests:
     expect: 12
     name: lambda-two-args
   - subject: LAMBDA
+    subjectRef: LAMBDA
     category: value
     features:
       - lambda
@@ -23,6 +26,7 @@ tests:
     expect: 3
     name: lambda-nested
   - subject: LAMBDA
+    subjectRef: LAMBDA
     category: value
     features:
       - lambda
@@ -30,6 +34,7 @@ tests:
     expect: 10
     name: lambda-as-higher-order
   - subject: LET
+    subjectRef: LET
     category: value
     features:
       - let-bindings
@@ -37,6 +42,7 @@ tests:
     expect: 6
     name: let-basic
   - subject: LET
+    subjectRef: LET
     category: value
     features:
       - let-bindings
@@ -44,6 +50,7 @@ tests:
     expect: 7
     name: let-multiple-bindings
   - subject: LET
+    subjectRef: LET
     category: value
     features:
       - let-bindings
@@ -51,6 +58,7 @@ tests:
     expect: 3
     name: let-scoping
   - subject: MAP
+    subjectRef: MAP
     category: value
     formula: =MAP({1;2;3}, LAMBDA(x, x*2))
     expect:
@@ -65,6 +73,7 @@ tests:
       - higher-order-lambda
     name: map-over-column
   - subject: MAP
+    subjectRef: MAP
     category: value
     formula: =MAP({1,2,3}, LAMBDA(x, x*10))
     expect:
@@ -79,6 +88,7 @@ tests:
       - higher-order-lambda
     name: map-over-row
   - subject: MAP
+    subjectRef: MAP
     category: value
     formula: =MAP({1;2;3}, {10;20;30}, LAMBDA(a, b, a+b))
     expect:
@@ -93,6 +103,7 @@ tests:
       - higher-order-lambda
     name: map-two-arrays
   - subject: REDUCE
+    subjectRef: REDUCE
     category: value
     formula: =REDUCE(0, {1;2;3;4;5}, LAMBDA(acc, x, acc+x))
     expect: 15
@@ -104,6 +115,7 @@ tests:
       - higher-order-lambda
     name: reduce-sum
   - subject: REDUCE
+    subjectRef: REDUCE
     category: value
     formula: =REDUCE(1, {1,2,3,4,5}, LAMBDA(acc, x, acc*x))
     expect: 120
@@ -115,6 +127,7 @@ tests:
       - higher-order-lambda
     name: reduce-product
   - subject: REDUCE
+    subjectRef: REDUCE
     category: value
     formula: =REDUCE("", {"a";"b";"c"}, LAMBDA(acc, x, acc&x))
     expect: abc
@@ -126,6 +139,7 @@ tests:
       - higher-order-lambda
     name: reduce-string-concat
   - subject: SCAN
+    subjectRef: SCAN
     category: value
     formula: =SCAN(0, {1;2;3;4;5}, LAMBDA(acc, x, acc+x))
     expect:
@@ -142,6 +156,7 @@ tests:
       - higher-order-lambda
     name: scan-cumulative-sum
   - subject: FILTER
+    subjectRef: FILTER
     category: value
     formula: =FILTER({1;2;3;4;5}, {1;0;1;0;1})
     expect:
@@ -154,6 +169,7 @@ tests:
       - dynamic-arrays
     name: filter-basic
   - subject: FILTER
+    subjectRef: FILTER
     category: value
     features:
       - dynamic-arrays
@@ -168,6 +184,7 @@ tests:
       - - 30
     name: filter-with-condition
   - subject: FILTER
+    subjectRef: FILTER
     formula: =FILTER({1;2;3}, {0;0;0}, "none")
     category: value
     features:
@@ -187,6 +204,7 @@ tests:
       - bare-formula
     name: filter-no-results
   - subject: SORT
+    subjectRef: SORT
     category: value
     formula: =SORT({3;1;2})
     expect:
@@ -199,6 +217,7 @@ tests:
       - dynamic-arrays
     name: sort-ascending
   - subject: SORT
+    subjectRef: SORT
     category: value
     status: observed
     formula: =SORT({3;1;2}, 1, -1)
@@ -209,6 +228,7 @@ tests:
       - dynamic-arrays
     name: sort-descending
   - subject: SORTBY
+    subjectRef: SORTBY
     category: value
     features:
       - dynamic-arrays
@@ -219,6 +239,7 @@ tests:
       - bare-formula
     name: sortby-basic
   - subject: UNIQUE
+    subjectRef: UNIQUE
     category: value
     formula: =UNIQUE({1;2;1;3;2})
     expect:
@@ -231,6 +252,7 @@ tests:
       - dynamic-arrays
     name: unique-column
   - subject: MAKEARRAY
+    subjectRef: MAKEARRAY
     category: value
     features:
       - lambda
@@ -248,6 +270,7 @@ tests:
         - 9
     name: makearray-multiplication-table
   - subject: BYROW
+    subjectRef: BYROW
     category: value
     formula: =BYROW({1,2,3;4,5,6}, LAMBDA(row, SUM(row)))
     expect:
@@ -261,6 +284,7 @@ tests:
       - higher-order-lambda
     name: byrow-sum
   - subject: BYCOL
+    subjectRef: BYCOL
     category: value
     formula: =BYCOL({1,2,3;4,5,6}, LAMBDA(col, SUM(col)))
     expect:

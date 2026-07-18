@@ -2,6 +2,7 @@ schemaVersion: 3
 name: Statistical analytics (regression, tests, shape)
 tests:
   - subject: CORREL
+    subjectRef: CORREL
     category: value
     status: observed
     formula: =CORREL(A1:A5, B1:B5)
@@ -21,6 +22,7 @@ tests:
       - analytics
     name: correl-strong-positive
   - subject: CORREL
+    subjectRef: CORREL
     category: value
     formula: =CORREL(A1:A3, B1:B3)
     grid:
@@ -41,6 +43,7 @@ tests:
       - analytics
     name: correl-perfect-positive
   - subject: CORREL
+    subjectRef: CORREL
     category: value
     formula: =CORREL(A1:A3, B1:B3)
     grid:
@@ -61,6 +64,7 @@ tests:
       - analytics
     name: correl-perfect-negative
   - subject: COVAR
+    subjectRef: COVAR
     category: value
     status: observed
     formula: =COVAR(A1:A5, B1:B5)
@@ -80,6 +84,7 @@ tests:
       - analytics
     name: covar-canonical
   - subject: COVAR
+    subjectRef: COVAR
     category: value
     status: observed
     formula: =COVAR(A1:A3, B1:B3)
@@ -95,6 +100,7 @@ tests:
       - analytics
     name: covar-small-set
   - subject: COVARIANCE.P
+    subjectRef: COVARIANCE.P
     category: value
     status: observed
     formula: =COVARIANCE.P(A1:A5, B1:B5)
@@ -114,6 +120,7 @@ tests:
       - analytics
     name: covariance-p-canonical
   - subject: COVARIANCE.P
+    subjectRef: COVARIANCE.P
     category: value
     status: observed
     formula: =COVARIANCE.P(A1:A3, B1:B3)
@@ -129,6 +136,7 @@ tests:
       - analytics
     name: covariance-p-linear
   - subject: COVARIANCE.S
+    subjectRef: COVARIANCE.S
     formula: =COVARIANCE.S(A1:A5, B1:B5)
     category: value
     grid:
@@ -157,6 +165,7 @@ tests:
       - analytics
     name: covariance-s-canonical
   - subject: COVARIANCE.S
+    subjectRef: COVARIANCE.S
     formula: =COVARIANCE.S(A1:A3, B1:B3)
     category: value
     grid:
@@ -181,6 +190,7 @@ tests:
       - analytics
     name: covariance-s-linear
   - subject: FORECAST
+    subjectRef: FORECAST
     category: value
     status: observed
     formula: =FORECAST(6, B1:B5, A1:A5)
@@ -200,6 +210,7 @@ tests:
       - analytics
     name: forecast-linear-fit
   - subject: FORECAST
+    subjectRef: FORECAST
     formula: =FORECAST(4, B1:B3, A1:A3)
     category: value
     grid:
@@ -224,6 +235,7 @@ tests:
       - analytics
     name: forecast-exact-linear
   - subject: FORECAST.LINEAR
+    subjectRef: FORECAST.LINEAR
     category: value
     status: observed
     formula: =FORECAST.LINEAR(6, B1:B5, A1:A5)
@@ -243,6 +255,7 @@ tests:
       - analytics
     name: forecast-linear-canonical
   - subject: FORECAST.LINEAR
+    subjectRef: FORECAST.LINEAR
     formula: =FORECAST.LINEAR(4, B1:B3, A1:A3)
     category: value
     grid:
@@ -275,6 +288,7 @@ tests:
       - analytics
     name: forecast-linear-exact-linear
   - subject: INTERCEPT
+    subjectRef: INTERCEPT
     category: value
     status: observed
     formula: =INTERCEPT(B1:B5, A1:A5)
@@ -294,6 +308,7 @@ tests:
       - analytics
     name: intercept-canonical
   - subject: INTERCEPT
+    subjectRef: INTERCEPT
     formula: =INTERCEPT(B1:B3, A1:A3)
     category: value
     grid:
@@ -317,6 +332,7 @@ tests:
       - analytics
     name: intercept-exact-linear
   - subject: PEARSON
+    subjectRef: PEARSON
     category: value
     status: observed
     formula: =PEARSON(A1:A5, B1:B5)
@@ -336,6 +352,7 @@ tests:
       - analytics
     name: pearson-canonical
   - subject: PEARSON
+    subjectRef: PEARSON
     category: value
     formula: =PEARSON(A1:A3, B1:B3)
     grid:
@@ -356,6 +373,7 @@ tests:
       - analytics
     name: pearson-perfect-positive
   - subject: RSQ
+    subjectRef: RSQ
     category: value
     status: observed
     formula: =RSQ(B1:B5, A1:A5)
@@ -375,6 +393,7 @@ tests:
       - analytics
     name: rsq-canonical
   - subject: RSQ
+    subjectRef: RSQ
     category: value
     formula: =RSQ(B1:B3, A1:A3)
     grid:
@@ -395,6 +414,7 @@ tests:
       - analytics
     name: rsq-perfect-fit
   - subject: SLOPE
+    subjectRef: SLOPE
     category: value
     status: observed
     formula: =SLOPE(B1:B5, A1:A5)
@@ -414,6 +434,7 @@ tests:
       - analytics
     name: slope-linear-fit
   - subject: SLOPE
+    subjectRef: SLOPE
     formula: =SLOPE(B1:B3, A1:A3)
     category: value
     grid:
@@ -433,6 +454,7 @@ tests:
       - analytics
     name: slope-exact-integer
   - subject: STEYX
+    subjectRef: STEYX
     category: value
     status: observed
     formula: =STEYX(B1:B5, A1:A5)
@@ -452,6 +474,7 @@ tests:
       - analytics
     name: steyx-canonical
   - subject: STEYX
+    subjectRef: STEYX
     category: value
     formula: =STEYX(B1:B4, A1:A4)
     grid:
@@ -474,6 +497,7 @@ tests:
       - analytics
     name: steyx-perfect-fit
   - subject: CONFIDENCE
+    subjectRef: CONFIDENCE
     category: value
     status: observed
     formula: =CONFIDENCE(0.05, 1, 100)
@@ -482,6 +506,7 @@ tests:
       - analytics
     name: confidence-normal-95
   - subject: CONFIDENCE
+    subjectRef: CONFIDENCE
     category: value
     status: observed
     formula: =CONFIDENCE(0.01, 2.5, 50)
@@ -490,6 +515,7 @@ tests:
       - analytics
     name: confidence-normal-99
   - subject: CONFIDENCE.T
+    subjectRef: CONFIDENCE.T
     category: value
     status: observed
     formula: =CONFIDENCE.T(0.05, 1, 25)
@@ -498,6 +524,7 @@ tests:
       - analytics
     name: confidence-t-small-sample
   - subject: CONFIDENCE.T
+    subjectRef: CONFIDENCE.T
     category: value
     status: observed
     formula: =CONFIDENCE.T(0.05, 2.5, 50)
@@ -506,6 +533,7 @@ tests:
       - analytics
     name: confidence-t-medium-sample
   - subject: F.TEST
+    subjectRef: F.TEST
     category: value
     status: observed
     formula: =F.TEST(A1:A5, B1:B5)
@@ -525,6 +553,7 @@ tests:
       - analytics
     name: f-test-similar-variance
   - subject: F.TEST
+    subjectRef: F.TEST
     category: value
     status: observed
     formula: =F.TEST(A1:A4, B1:B4)
@@ -542,6 +571,7 @@ tests:
       - analytics
     name: f-test-different-variance
   - subject: FTEST
+    subjectRef: FTEST
     category: value
     status: observed
     formula: =FTEST(A1:A5, B1:B5)
@@ -561,6 +591,7 @@ tests:
       - analytics
     name: ftest-canonical
   - subject: FTEST
+    subjectRef: FTEST
     category: value
     status: observed
     formula: =FTEST(A1:A4, B1:B4)
@@ -578,6 +609,7 @@ tests:
       - analytics
     name: ftest-different-variance
   - subject: KURT
+    subjectRef: KURT
     category: value
     status: observed
     formula: =KURT(A1:A5)
@@ -592,6 +624,7 @@ tests:
       - analytics
     name: kurt-canonical
   - subject: KURT
+    subjectRef: KURT
     category: value
     status: observed
     formula: =KURT(A1:A5)
@@ -606,6 +639,7 @@ tests:
       - analytics
     name: kurt-peaked
   - subject: KURT
+    subjectRef: KURT
     category: value
     status: observed
     formula: =KURT(3, 4, 5, 2, 3, 4, 5, 6, 4, 7)
@@ -614,6 +648,7 @@ tests:
       - analytics
     name: kurt-inline
   - subject: MARGINOFERROR
+    subjectRef: MARGINOFERROR
     category: value
     status: observed
     formula: =MARGINOFERROR(A1:A5, 0.05)
@@ -628,6 +663,7 @@ tests:
       - analytics
     name: marginoferror-basic
   - subject: MARGINOFERROR
+    subjectRef: MARGINOFERROR
     category: value
     status: observed
     formula: =MARGINOFERROR(A1:A5, 0.01)
@@ -642,6 +678,7 @@ tests:
       - analytics
     name: marginoferror-wider-data
   - subject: PROB
+    subjectRef: PROB
     formula: =PROB(A1:A5, B1:B5, 2, 4)
     category: value
     grid:
@@ -686,6 +723,7 @@ tests:
       - analytics
     name: prob-uniform-bound
   - subject: PROB
+    subjectRef: PROB
     formula: =PROB(A1:A5, B1:B5, 3)
     category: value
     grid:
@@ -718,6 +756,7 @@ tests:
       - analytics
     name: prob-single-upper
   - subject: PROB
+    subjectRef: PROB
     formula: =PROB(A1:A3, B1:B3, 1, 3)
     category: value
     grid:
@@ -746,6 +785,7 @@ tests:
       - analytics
     name: prob-full-range
   - subject: SKEW
+    subjectRef: SKEW
     category: value
     formula: =SKEW(A1:A5)
     grid:
@@ -765,6 +805,7 @@ tests:
       - analytics
     name: skew-symmetric
   - subject: SKEW
+    subjectRef: SKEW
     category: value
     status: observed
     formula: =SKEW(A1:A5)
@@ -779,6 +820,7 @@ tests:
       - analytics
     name: skew-right-tail
   - subject: SKEW
+    subjectRef: SKEW
     category: value
     status: observed
     formula: =SKEW(3, 4, 5, 2, 3, 4, 5, 6, 4, 7)
@@ -787,6 +829,7 @@ tests:
       - analytics
     name: skew-inline
   - subject: SKEW.P
+    subjectRef: SKEW.P
     formula: =SKEW.P(A1:A5)
     category: value
     grid:
@@ -810,6 +853,7 @@ tests:
       - analytics
     name: skew-p-symmetric
   - subject: SKEW.P
+    subjectRef: SKEW.P
     category: value
     status: observed
     formula: =SKEW.P(A1:A5)
@@ -824,6 +868,7 @@ tests:
       - analytics
     name: skew-p-right-tail
   - subject: T.TEST
+    subjectRef: T.TEST
     category: value
     status: observed
     formula: =T.TEST(A1:A5, B1:B5, 2, 1)
@@ -843,6 +888,7 @@ tests:
       - analytics
     name: t-test-two-tail-paired
   - subject: T.TEST
+    subjectRef: T.TEST
     category: value
     status: observed
     formula: =T.TEST(A1:A5, B1:B5, 1, 2)
@@ -862,6 +908,7 @@ tests:
       - analytics
     name: t-test-one-tail-equal-var
   - subject: T.TEST
+    subjectRef: T.TEST
     category: value
     status: observed
     formula: =T.TEST(A1:A5, B1:B5, 2, 3)
@@ -881,6 +928,7 @@ tests:
       - analytics
     name: t-test-two-tail-unequal-var
   - subject: TTEST
+    subjectRef: TTEST
     category: value
     status: observed
     formula: =TTEST(A1:A5, B1:B5, 2, 1)
@@ -900,6 +948,7 @@ tests:
       - analytics
     name: ttest-two-tail-paired
   - subject: TTEST
+    subjectRef: TTEST
     category: value
     status: observed
     formula: =TTEST(A1:A5, B1:B5, 1, 2)
@@ -919,6 +968,7 @@ tests:
       - analytics
     name: ttest-one-tail-equal-var
   - subject: Z.TEST
+    subjectRef: Z.TEST
     formula: =Z.TEST(A1:A5, 3)
     category: value
     grid:
@@ -942,6 +992,7 @@ tests:
       - analytics
     name: z-test-canonical
   - subject: Z.TEST
+    subjectRef: Z.TEST
     category: value
     status: observed
     formula: =Z.TEST(A1:A5, 4, 1.5)
@@ -956,6 +1007,7 @@ tests:
       - analytics
     name: z-test-with-sigma
   - subject: ZTEST
+    subjectRef: ZTEST
     formula: =ZTEST(A1:A5, 3)
     category: value
     grid:
@@ -979,6 +1031,7 @@ tests:
       - analytics
     name: ztest-canonical
   - subject: ZTEST
+    subjectRef: ZTEST
     category: value
     status: observed
     formula: =ZTEST(A1:A5, 4, 1.5)

@@ -1,8 +1,9 @@
 {
+  "schemaVersion": 2,
   "platform": "gsheets",
-  "generatedAt": "2026-06-17T20:01:41.628Z",
+  "generatedAt": "2026-07-18T20:47:11.588Z",
   "results": {
-    "sha256:2008286be1bddd3d8a2c80d838eb60698e3401215599eaca017b158fbffd9415": {
+    "ARABIC/arabic-xiv": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -50,9 +51,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=ARABIC(\"XIV\")"
+      "formula-as-evaluated": "=ARABIC(\"XIV\")",
+      "stimulus": "sha256:34823f7e08a3aff2c62f7402f3bd7da191589713c414cc5681a0cc45779f55ed",
+      "fingerprint": "sha256:c72b0209340e2159df34fce42a9196394c9d1522e84870dca6182fe0229c0189",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
-    "sha256:d6507b411772ffcc9269cdade26aaeab8ddbcd4dffc907e10c45bbb9efa828aa": {
+    "ARABIC/arabic-mcmxciv": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -100,9 +106,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=ARABIC(\"MCMXCIV\")"
+      "formula-as-evaluated": "=ARABIC(\"MCMXCIV\")",
+      "stimulus": "sha256:35910d493a86b61cc1ae2c8ed805edc255299c9122db9db07870cca0604fbcf1",
+      "fingerprint": "sha256:f73a6371a9d8054e408e06ac341a5494757c4173d4c9cd9c9def2de15d88a48f",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
-    "sha256:0d2d204fd83e8fa05da3b190047d9d115813846442e5bef986d40d99d28c055a": {
+    "ARABIC/arabic-empty": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -150,9 +161,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=ARABIC(\"\")"
+      "formula-as-evaluated": "=ARABIC(\"\")",
+      "stimulus": "sha256:4aacf8abf166bf3ca8b43b840a3bc400fa035c36813216e63cb806a1aef3fa63",
+      "fingerprint": "sha256:c2c1197f53d7fead335c75f6de7376efaaa96cc32466c698b76d1afb524a3d9b",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
-    "sha256:e165605e90f540afd5b3e0048e14f6ca57005e46818cccfc207b3ecf3c11b354": {
+    "ARABIC/arabic-lowercase": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -200,9 +216,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=ARABIC(\"xiv\")"
+      "formula-as-evaluated": "=ARABIC(\"xiv\")",
+      "stimulus": "sha256:b6a4b099e68b63e23c34307a0b1db8a70d7f6f73c2e85a01c7f3931411eb3e0b",
+      "fingerprint": "sha256:c72b0209340e2159df34fce42a9196394c9d1522e84870dca6182fe0229c0189",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
-    "sha256:079d0dba45f50e082d0102b2ec9243d6f3de52e34e71a8256b22ec94cb2b99c6": {
+    "ARABIC/arabic-invalid": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -253,9 +274,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=ARABIC(\"hello\")"
+      "formula-as-evaluated": "=ARABIC(\"hello\")",
+      "stimulus": "sha256:58100404bf71ab472496abc0d02d8b632feabdc5ff8e896e206e2f6dbe9cf54a",
+      "fingerprint": "sha256:53560b24dc39cb4e4cccc613e7b3e26488e6e25a7024d47e1d2f13ac74995070",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
-    "sha256:aa8c48bf026e3c51d25a57a9da502f1afb4b656a2349f200cfff3da8024deaa9": {
+    "ASC/asc-fullwidth-alpha": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -303,9 +329,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=ASC(\"ABC\")"
+      "formula-as-evaluated": "=ASC(\"ABC\")",
+      "stimulus": "sha256:066d413ba9cb71b5cb53649d2aa8716a50d3c4bbbd088126f93728d0e3b921e9",
+      "fingerprint": "sha256:977f7f2bff957f4e33a329bd2f017eeef1f94d310e6843560272e9c30b9dedad",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
-    "sha256:47ea5cda13a52da10310e1482a9c6fc7abbaf027d9810a9e7fd90da60c54b70e": {
+    "ASC/asc-fullwidth-digits": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -353,9 +384,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=ASC(\"123\")"
+      "formula-as-evaluated": "=ASC(\"123\")",
+      "stimulus": "sha256:8925b1ab1c00aaeea4b7454dbc19383f44ab64b9d33a9eb3dc9d385fc262cab6",
+      "fingerprint": "sha256:9bbba5c5dfe27274b7c4f8e084bcff6c5cfef527264e664d2935fbc733672b98",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
-    "sha256:01e93cef43f5af5d1958f662669d52cc31c1421a4d551e127baabf91231bfc5a": {
+    "ASC/asc-ascii-passthrough": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -403,9 +439,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=ASC(\"hello\")"
+      "formula-as-evaluated": "=ASC(\"hello\")",
+      "stimulus": "sha256:16c24163cb64b45ea10924eec4fb0c58cdad3cdc5fe3e4982e537ebe4498212e",
+      "fingerprint": "sha256:9baae644abac0964babea30fa58fa0260aceaaf4127b6feeff00e6db5c3bd016",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
-    "sha256:99fafd317cd68cd2f554fc755d7898f9a0fd4266048120b3516bda50adcbf223": {
+    "ASC/asc-empty": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -449,9 +490,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=ASC(\"\")"
+      "formula-as-evaluated": "=ASC(\"\")",
+      "stimulus": "sha256:fc5f197ade5158c651c907585972760b96810e83cc9f7e07486216c46cd18a45",
+      "fingerprint": "sha256:2795dacdf07458184e028719fca7455dd2703f9fb570f596392edab6492cb505",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
-    "sha256:7e54016509393873e73799a7401e15eaa30e9853552c1194ff5ab4689b9d022f": {
+    "CHAR/char-uppercase-a": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -499,9 +545,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=CHAR(65)"
+      "formula-as-evaluated": "=CHAR(65)",
+      "stimulus": "sha256:f751bb4ddbc50f47dad547146299bb07e45382037148e7f0bd7abc68583faaba",
+      "fingerprint": "sha256:c72b3651a3f02e9328cb7378d56dbff082a281ad638383c329ff56b138a19931",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
-    "sha256:c652be6e9247a1703b7cf34ee0a1624f2c766813f9aa9f3dbd9444c7fb943fba": {
+    "CHAR/char-lowercase-a": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -549,9 +600,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=CHAR(97)"
+      "formula-as-evaluated": "=CHAR(97)",
+      "stimulus": "sha256:7501bf64930ed7136b7a2bd5f2c25b9c7678ba55beead4b73c5cd167caefc6eb",
+      "fingerprint": "sha256:12b20bc44b60b0e27044174c6aac244430dd784b8d206b8206df67672ca3b5a7",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
-    "sha256:4cdba77e6609726166f9232fa8ca66e236e995951717b9dccdf1a88447046d21": {
+    "CHAR/char-digit-0": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -599,9 +655,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=CHAR(48)"
+      "formula-as-evaluated": "=CHAR(48)",
+      "stimulus": "sha256:608b17773d931f4ffead9102a1870ebba176b602f218066d29e170addf521863",
+      "fingerprint": "sha256:9b92942189277e6ed65618e65b09c6aa61000167cbb1683bf741b339208a19c3",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
-    "sha256:79dd3ce1a008a51f78f641ceee36300517bf62b1e8512939eaa33e38a6939a2c": {
+    "CHAR/char-space": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -649,9 +710,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=CHAR(32)"
+      "formula-as-evaluated": "=CHAR(32)",
+      "stimulus": "sha256:ba54aeeb7ba75292a916d823218d0ab094a0e49716bd36165327278d3f45f8d6",
+      "fingerprint": "sha256:e4293a67daf71729e1d7df70c52acf8f74bbfab91ecc3ec4094d1afb411da41e",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
-    "sha256:72fcb714bd8382c4143c4eceae55e1a45c2f28313604c4730014cf4e3a9d644d": {
+    "CHAR/char-out-of-range": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -702,9 +768,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=CHAR(0)"
+      "formula-as-evaluated": "=CHAR(0)",
+      "stimulus": "sha256:136693af33c946ccc24dc81427ca60a62e7b05d008b835aecae56e2e2640f356",
+      "fingerprint": "sha256:f3a7c5ef3dc55973380ab8685af4886919ca174f93d2e56814d91074798899a6",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
-    "sha256:3e1b47f6d8957701dd8035d39d0a4511159a2512652a89c800acda9e99d7cd89": {
+    "CLEAN/clean-strips-tab": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -752,9 +823,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=CLEAN(\"hello\" & CHAR(9) & \"world\")"
+      "formula-as-evaluated": "=CLEAN(\"hello\" & CHAR(9) & \"world\")",
+      "stimulus": "sha256:cf6acbd19675e0ab6b89b26fb73e048871a0b975b608df23d95415ec6eb4725b",
+      "fingerprint": "sha256:266ab86bdcb1da9d9f2f92bca5b665320e60c78bb9db2488f90a6aa5721b1d67",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
-    "sha256:79a3a493bbd9b0fd20ead33ab0db68872bb59ff8e2eedd15966911f9698da0b8": {
+    "CLEAN/clean-strips-newline": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -802,9 +878,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=CLEAN(\"line1\" & CHAR(10) & \"line2\")"
+      "formula-as-evaluated": "=CLEAN(\"line1\" & CHAR(10) & \"line2\")",
+      "stimulus": "sha256:ce9c46b6bb36590f33833860dee692c8b36f0b2d1fc087536447a1d8fa39f07f",
+      "fingerprint": "sha256:882fe2949a088eba6bf174e12458b5c60f8f290ef69475530942ea6bfa18a92a",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
-    "sha256:dda132da58c36b67144b3e12a8a4e7effa4c01f98c3bf0f66baa362239f2173c": {
+    "CLEAN/clean-plain-passthrough": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -852,9 +933,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=CLEAN(\"hello world\")"
+      "formula-as-evaluated": "=CLEAN(\"hello world\")",
+      "stimulus": "sha256:54d32215c577c869da89f4678f87145edb7fe8722974904f959237de62ffe310",
+      "fingerprint": "sha256:9e32253e499354dbac42140697ebcf62f00e283fd26462807024964896dae1d6",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
-    "sha256:99a072c6e1d2c5253934198ce663bc88ce41cd6559a7280b9272c1286afb9d50": {
+    "CLEAN/clean-empty": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -898,9 +984,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=CLEAN(\"\")"
+      "formula-as-evaluated": "=CLEAN(\"\")",
+      "stimulus": "sha256:1c1f998eb8c4a977d021c2acf1142818c961efd6adea31729caa7915603b86e3",
+      "fingerprint": "sha256:2795dacdf07458184e028719fca7455dd2703f9fb570f596392edab6492cb505",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
-    "sha256:d99d0c13996f182459cfda577056c13af8e93572746d69041431e1e76879c9b6": {
+    "CODE/code-uppercase-a": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -948,9 +1039,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=CODE(\"A\")"
+      "formula-as-evaluated": "=CODE(\"A\")",
+      "stimulus": "sha256:55dc61a72a1954980c99e0142f4bcbdf72db24c4ee9aba12bf70b6a485c483b8",
+      "fingerprint": "sha256:567f1bd38bf0d486ec3d6ec3004426dabfa7725419afb8824de755ce838b27fa",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
-    "sha256:cdcb5e08d050534928a45eda853e0c31b3d7eb5fb487fe3c58fbb9149be4f2a6": {
+    "CODE/code-lowercase-a": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -998,9 +1094,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=CODE(\"a\")"
+      "formula-as-evaluated": "=CODE(\"a\")",
+      "stimulus": "sha256:3519fddb1935ac1ad1561c4674cc38150bf2d3f3e6b82c8f1ac91ee5098ceb59",
+      "fingerprint": "sha256:f5b78a42712460432abfc6ba7a767660a3b5f5f490edbd4a20fdd4f3c6a42951",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
-    "sha256:6ff00ea28d5266c500cb3d42976f82714733a3f6fecb986f863120cf2c64ff44": {
+    "CODE/code-first-char": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -1048,9 +1149,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=CODE(\"Alphabet\")"
+      "formula-as-evaluated": "=CODE(\"Alphabet\")",
+      "stimulus": "sha256:89212eaffc59964b2088f72bce4bb0b3691b4c0d216971dc5a8bda3c271db332",
+      "fingerprint": "sha256:567f1bd38bf0d486ec3d6ec3004426dabfa7725419afb8824de755ce838b27fa",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
-    "sha256:b1105008ad3007cbc6d0150ddf87bedea5b127a71c4b8eb7d2e847b6e27e0db7": {
+    "CODE/code-empty": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -1101,9 +1207,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=CODE(\"\")"
+      "formula-as-evaluated": "=CODE(\"\")",
+      "stimulus": "sha256:a7a3d683e2fa5267e4053b6570815576a15e6753d9cdf80e191cb7994464ff49",
+      "fingerprint": "sha256:53560b24dc39cb4e4cccc613e7b3e26488e6e25a7024d47e1d2f13ac74995070",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
-    "sha256:bbfc1ad97cbcfc5fb15c61968f9f1a8aa47ec3eb358a6a645011d64716059101": {
+    "DOLLAR/dollar-basic": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -1151,9 +1262,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=DOLLAR(1234.567)"
+      "formula-as-evaluated": "=DOLLAR(1234.567)",
+      "stimulus": "sha256:cd9b30cd929dcf6820a7c1a67f444f12fd366b7552e2de988ed49caef7827d2d",
+      "fingerprint": "sha256:84b5667fdc00ff22b1f7252cf3c97ba1a4159a01a740ec27183569349abcb05a",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
-    "sha256:6d447af2eed3870eeaa8e73d1d06043c77bf60a0cbc0179e1a1151e35697ea2f": {
+    "DOLLAR/dollar-2-decimals": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -1201,9 +1317,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=DOLLAR(1234.567, 2)"
+      "formula-as-evaluated": "=DOLLAR(1234.567, 2)",
+      "stimulus": "sha256:976112e2c7b851e593367224ef9fa653bf676d4441481e6a0141985d3b7633b2",
+      "fingerprint": "sha256:84b5667fdc00ff22b1f7252cf3c97ba1a4159a01a740ec27183569349abcb05a",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
-    "sha256:3b2787136c1716973b9c0e0338291b9c1e347da7ff514facb0c1415f1f4da3e7": {
+    "DOLLAR/dollar-zero-decimals": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -1251,9 +1372,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=DOLLAR(1234.567, 0)"
+      "formula-as-evaluated": "=DOLLAR(1234.567, 0)",
+      "stimulus": "sha256:a7bc8ffb4784a222e0bee2058b3dbfc34ded5926e4841aac9cf0ebb2b266faae",
+      "fingerprint": "sha256:fe7d4740960ed5fb7a8785ee6cea78591288236febf61a4de3492555d74d93bb",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
-    "sha256:97a073458f70e225ff8497365ae811ed0a7e399d9205258b916d49debdaa2c1a": {
+    "DOLLAR/dollar-negative": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -1301,9 +1427,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=DOLLAR(-1234.5, 2)"
+      "formula-as-evaluated": "=DOLLAR(-1234.5, 2)",
+      "stimulus": "sha256:6ebcdaa4371ccc404aebe45be11beff7ad791c7321267dff59bf4efdfd94844e",
+      "fingerprint": "sha256:09bad5244a03ae7896728701fcaf3894c1fdee4016658af542cbb48b4ed91881",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
-    "sha256:6db7abd58f58f088ab88c7ffa4e0f7969a05e9b36f829c37d89815f2a9eb2c4d": {
+    "FINDB/findb-ascii": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -1351,9 +1482,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=FINDB(\"world\", \"hello world\")"
+      "formula-as-evaluated": "=FINDB(\"world\", \"hello world\")",
+      "stimulus": "sha256:c2b5418b2fe2f63715ea89fe80f559b011aa84cb73d7c034cd60a7a216c60712",
+      "fingerprint": "sha256:d5bad171a9236ee0acf4383c27a24be796f866d2725e3093dd0206f133a1b7ed",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
-    "sha256:148640355307a26e48944d7dd5d942ab32fe4220df26d213c54ed1285831f116": {
+    "FINDB/findb-at-start": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -1401,9 +1537,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=FINDB(\"h\", \"hello\")"
+      "formula-as-evaluated": "=FINDB(\"h\", \"hello\")",
+      "stimulus": "sha256:204def37185bd9d0186648a5783c610592b1a576efb33727a4b0254a76b84475",
+      "fingerprint": "sha256:43412a89a2157f2c4788feb0281c4a1151687dc9d65d9710c6a2e9db523e740d",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
-    "sha256:43f356d9d99a03172f0c5f8fd91dd53cbc9c1a481acb172f8be48fdadc5fc8dc": {
+    "FINDB/findb-not-found": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -1454,9 +1595,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=FINDB(\"z\", \"hello\")"
+      "formula-as-evaluated": "=FINDB(\"z\", \"hello\")",
+      "stimulus": "sha256:15fad9893e0be0bad568b967156de721236cbda001942a963135bad0ea742ea7",
+      "fingerprint": "sha256:53560b24dc39cb4e4cccc613e7b3e26488e6e25a7024d47e1d2f13ac74995070",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
-    "sha256:f2ae7844e65286b18443cc1ca8c53390173b2e4b9ef85177bbdb099348380bf8": {
+    "FINDB/findb-dbcs": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -1504,9 +1650,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=FINDB(\"い\", \"あいう\")"
+      "formula-as-evaluated": "=FINDB(\"い\", \"あいう\")",
+      "stimulus": "sha256:a42e31235feddd98529c7502d2caa3fa127af989db98dbbd6262e6a1546b2d3c",
+      "fingerprint": "sha256:735bc6630739e4c1cea02fea78a0cab118ad5125fb310f593bf78167645d13ed",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
-    "sha256:5b9621e9d963fed0f72f84a97034ed1105de4825b8e97d81253689401bca824b": {
+    "FIXED/fixed-basic": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -1554,9 +1705,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=FIXED(1234.567, 1)"
+      "formula-as-evaluated": "=FIXED(1234.567, 1)",
+      "stimulus": "sha256:60557ce48204b8b7641a06a0df1256423290b96ceb5fc3a65c8f3eb5edbdea4f",
+      "fingerprint": "sha256:5a8e499806f95a6da3dc0b19d1acdc017c87efb0d744aed9e5e7db883e6c46a6",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
-    "sha256:9baacd4f3e9326b34143a179a90888c8ae34f3fca2264ca63b08839b103a83cd": {
+    "FIXED/fixed-no-commas": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -1604,9 +1760,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=FIXED(1234.567, 1, TRUE)"
+      "formula-as-evaluated": "=FIXED(1234.567, 1, TRUE)",
+      "stimulus": "sha256:a91ea1fe721c2b56ca09b3505e83c784d2792e9747456e4e29b49274815f0ca8",
+      "fingerprint": "sha256:4873d5e4e2c693eb9f893a7b88ff24f88559f2aa2f4da0276551efd99c90f70c",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
-    "sha256:c1c4da63ba9f0c30c48459682612d732195cd391aa8413ff8f74c209d04859f6": {
+    "FIXED/fixed-default": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -1654,9 +1815,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=FIXED(1234.567)"
+      "formula-as-evaluated": "=FIXED(1234.567)",
+      "stimulus": "sha256:1fceb4af772d09141f3aa8bd62c865345ae96fa0bf0613b27d34a5588f7a1e38",
+      "fingerprint": "sha256:3e8a85b7f0a3f5a06df2b5349352627a857f88acd75806686dc276219fab1646",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
-    "sha256:8b03dbd867d6150eff9603c25864079586a22f4e8ca1a8a3968fa333a7cc2954": {
+    "FIXED/fixed-negative-decimals": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -1704,9 +1870,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=FIXED(1234.567, -1)"
+      "formula-as-evaluated": "=FIXED(1234.567, -1)",
+      "stimulus": "sha256:be3fa63a9ff52196f8536f6775a2ed0391d1d759e93b6dfb48808e48f5b9ec89",
+      "fingerprint": "sha256:aeac6c0169bfbd56764054e74a8e4330a316d0181b3500b591574cd54cfc0491",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
-    "sha256:8f5082e63c32984319599219f676622d234b26bbd0d69973c176f67b19ad4f93": {
+    "JOIN/join-basic": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -1754,9 +1925,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=JOIN(\"-\", {\"a\",\"b\",\"c\"})"
+      "formula-as-evaluated": "=JOIN(\"-\", {\"a\",\"b\",\"c\"})",
+      "stimulus": "sha256:fd794dde2a5c14320b80080b799ba8c51c38da0e7174d5231ca298dce0dd9d7b",
+      "fingerprint": "sha256:f784c6bf40acef9333975c6e1da3cdbb5d9f7f10b55607ebcdd9d340b668f8ac",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
-    "sha256:a423d1055e8d7cd6e7b8496e50e2f90a2b3424d05c7ebc39afafd03aca2a93ef": {
+    "JOIN/join-with-numbers": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -1804,9 +1980,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=JOIN(\",\", {1,2,3})"
+      "formula-as-evaluated": "=JOIN(\",\", {1,2,3})",
+      "stimulus": "sha256:c2762bb86056e767fbdce52261659bc32fea1b055a37899b1f8a6c0753cb1431",
+      "fingerprint": "sha256:bd81b2fa3f09e2948b21aece51d48e4b861ea5d400fe8e0dfdfc98187b96b34a",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
-    "sha256:12ab6aef70ba3d5b0235b9efaf0fb69a8486d78923f1b7d039e072baf9859cf2": {
+    "JOIN/join-empty-delim": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -1854,9 +2035,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=JOIN(\"\", {\"a\",\"b\",\"c\"})"
+      "formula-as-evaluated": "=JOIN(\"\", {\"a\",\"b\",\"c\"})",
+      "stimulus": "sha256:6619316c89c3e925d6dd02f9795eb57ca26ae96832bf62ec7bd2daf0c826d075",
+      "fingerprint": "sha256:cf86b47fcca6181037d385008be26dfe402726b593dd85a50367c789dd709a0b",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
-    "sha256:4460e6f0f86e7014ac3ced599f50795a182e393cca49299039d8a29f70ee9d9d": {
+    "JOIN/join-single-element": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -1904,9 +2090,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=JOIN(\"-\", {\"solo\"})"
+      "formula-as-evaluated": "=JOIN(\"-\", {\"solo\"})",
+      "stimulus": "sha256:6f9629ebedf0fb17ea9532c5a8cb2385ca168df06299daa0708c28ee1fd5d08f",
+      "fingerprint": "sha256:cb81c7aada2b97f185bcc0d57591e55fa84011e655709dfbc16879b559ff99d2",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
-    "sha256:f72b9fd91430ab0b72f2e7d0c0e6627d516db634cc73030099336b842b0b8900": {
+    "LEFTB/leftb-ascii": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -1954,9 +2145,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=LEFTB(\"Sale Price\", 4)"
+      "formula-as-evaluated": "=LEFTB(\"Sale Price\", 4)",
+      "stimulus": "sha256:25c0db7bc35d981ad6450ec58709f38ee7fee1e04f4b5be2c5c21c2e8e92a2f3",
+      "fingerprint": "sha256:c192ed55ed83fe1619dc1bd312fd5ca5bae629d13cce57115fcabeac52314283",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
-    "sha256:a125d0612515b1efcb25446d03dd211fb388dd20a485bb27487a946f7dcf3edf": {
+    "LEFTB/leftb-default": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -2004,9 +2200,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=LEFTB(\"hello\")"
+      "formula-as-evaluated": "=LEFTB(\"hello\")",
+      "stimulus": "sha256:d0a76bd43f5987f378817f9a805263af12eea0189b15398d455d9d84ef758b8f",
+      "fingerprint": "sha256:a40aa4944db215a40927dba564710f2e7d508a0ee4ef936628070338fe5a8b0c",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
-    "sha256:9a477d5808703acaf7be2264db3aa1e942239096d002b450a614f4badde53e17": {
+    "LEFTB/leftb-zero": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -2050,9 +2251,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=LEFTB(\"hello\", 0)"
+      "formula-as-evaluated": "=LEFTB(\"hello\", 0)",
+      "stimulus": "sha256:94161b8b5be95df2fa185fdd096274111a2852cc39fe91e448e8a46746b0e08c",
+      "fingerprint": "sha256:2795dacdf07458184e028719fca7455dd2703f9fb570f596392edab6492cb505",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
-    "sha256:3fd3491b2ae83bea655ead1d7d091a641c0a8ecbd43e78b70f3cce7122345439": {
+    "LEFTB/leftb-dbcs": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -2100,9 +2306,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=LEFTB(\"あいう\", 2)"
+      "formula-as-evaluated": "=LEFTB(\"あいう\", 2)",
+      "stimulus": "sha256:569eb56ecb994e256899408766528e293eccd9dc3a28a86903d727c9eb18dd10",
+      "fingerprint": "sha256:d362306ad4467b557d0bfd60feb6bd7bf33a9b3ee68881cfb96dd133d09c545f",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
-    "sha256:13b4e1a5bcc1136458a150f3b3c98dedd8dccd7da08084ac1eb17e9252dc25a7": {
+    "LENB/lenb-ascii": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -2150,9 +2361,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=LENB(\"hello\")"
+      "formula-as-evaluated": "=LENB(\"hello\")",
+      "stimulus": "sha256:b5ac06f8e452a4647768e302d535925adab20ccdc8b82f49be45b6007727f9b4",
+      "fingerprint": "sha256:f638af852ce38aa91cc4de6d85980731ac33ca2a152365dda9104b78637f7380",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
-    "sha256:524bd6f842facf3695f4fe3bacf4c8f716dab68eefbe9952a05b03d3194e2f1c": {
+    "LENB/lenb-empty": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -2200,9 +2416,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=LENB(\"\")"
+      "formula-as-evaluated": "=LENB(\"\")",
+      "stimulus": "sha256:6bf00106ff9b97479559a02e4754d77adabbc07ff328e49c739ab95b4fad142f",
+      "fingerprint": "sha256:c2c1197f53d7fead335c75f6de7376efaaa96cc32466c698b76d1afb524a3d9b",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
-    "sha256:a72bbd1e793603afb8f4157e0e3d3ec67662e9c642e7e5cd8f7691e2e1f92fb3": {
+    "LENB/lenb-spaces": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -2250,9 +2471,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=LENB(\"   \")"
+      "formula-as-evaluated": "=LENB(\"   \")",
+      "stimulus": "sha256:66f626057c3f80522fb40a505bd506b9a65c73b7bc5bfddf3b80d8fb7f9b2f86",
+      "fingerprint": "sha256:735bc6630739e4c1cea02fea78a0cab118ad5125fb310f593bf78167645d13ed",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
-    "sha256:0b967d05a37c521708f286418c319593ea7f850cb8f4835f28be3def7aed2290": {
+    "LENB/lenb-dbcs": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -2300,9 +2526,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=LENB(\"あ\")"
+      "formula-as-evaluated": "=LENB(\"あ\")",
+      "stimulus": "sha256:76bffaa588b7d288062011dabf1e32ab30d737419b0bf3c04dedfa20fe5829a0",
+      "fingerprint": "sha256:f13d9c9c73eeb80c34f97364b302cdc64049f75c43a0381299a3ccde79a6e234",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
-    "sha256:7cc0495f3812483f63ea04596a4d6caaaf11a0ba6392d6314a5bd39a61c8a51d": {
+    "MIDB/midb-ascii": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -2350,9 +2581,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=MIDB(\"Romain\", 3, 4)"
+      "formula-as-evaluated": "=MIDB(\"Romain\", 3, 4)",
+      "stimulus": "sha256:fbaf353e89bf356c737add0ec0e242f5baf548ac65de693ec6e0ca2b96f5d040",
+      "fingerprint": "sha256:791b5c52f4e065d3529b013be2e82f5d224966589968ff0cd99d844171eb838c",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
-    "sha256:8a472614f5abcab4e5d02140ff2fd5c4e7be1d657756766a7f0db224fc7e29fe": {
+    "MIDB/midb-from-start": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -2400,9 +2636,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=MIDB(\"Romain\", 1, 2)"
+      "formula-as-evaluated": "=MIDB(\"Romain\", 1, 2)",
+      "stimulus": "sha256:ee35ce632b0d3a1467dcf3d726fb30176202f545b9030e9269099a5b3752ee6f",
+      "fingerprint": "sha256:a3ecb395917d18b073d79f20818d2a3148ce117f5eda7bafa5930f51f08c4eea",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
-    "sha256:55c5cd7868a24818753067c00bc72b2eb7cf22e8da17f2b847a07804cbfff2cc": {
+    "MIDB/midb-beyond-end": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -2450,9 +2691,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=MIDB(\"Romain\", 3, 100)"
+      "formula-as-evaluated": "=MIDB(\"Romain\", 3, 100)",
+      "stimulus": "sha256:f5efb797dc985ed54c1853a23bd1da83fa254ac1f219a639aacb4b2910f31ed1",
+      "fingerprint": "sha256:791b5c52f4e065d3529b013be2e82f5d224966589968ff0cd99d844171eb838c",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
-    "sha256:b8908b49f543154af91ddc6255c662eeb06c688cbbfa6d84d54201bce7ed1d06": {
+    "MIDB/midb-dbcs": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -2500,9 +2746,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=MIDB(\"あいう\", 3, 2)"
+      "formula-as-evaluated": "=MIDB(\"あいう\", 3, 2)",
+      "stimulus": "sha256:8eb56befe2f9fd4ce628bb5b5ecbe6d5e2d6f46a90bdc2dd59a9fe60543d7c99",
+      "fingerprint": "sha256:7d9a8258f56d5a0093de2930d2cc32c90731b3bf357f298340dc5bc61fff4ece",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
-    "sha256:19e95d530b29e67a4cac5e342781897d53ac054c2d867f0328006ffa5d7fdd6e": {
+    "PROPER/proper-hello-world": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -2550,9 +2801,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=PROPER(\"hello world\")"
+      "formula-as-evaluated": "=PROPER(\"hello world\")",
+      "stimulus": "sha256:f710bcd04e519ed779228e51dcb8424e9ff89ad3b3969455034d82b61a58a282",
+      "fingerprint": "sha256:cca4544ae980ed64a0486a0bddd03617d9fc5f2a5e3c642179f682c7b1b0f8e4",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
-    "sha256:3eaa15d8dead29206a0c2b4803525c412cd4c62007a5d6316f073fe08cb2018e": {
+    "PROPER/proper-all-caps": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -2600,9 +2856,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=PROPER(\"THIS IS A TITLE\")"
+      "formula-as-evaluated": "=PROPER(\"THIS IS A TITLE\")",
+      "stimulus": "sha256:4866b96a2fc6b6da85fe6957f99049d508a6cbda527d6d5417d7b615ad693c5e",
+      "fingerprint": "sha256:be8d1d6886751886fe496dbc44ab6ead41d4d27c972cb8b26b0b590421e71b09",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
-    "sha256:3f0a0ba3be430e5b3dfcf21bca98b0d4d83c2cd023d6be73ea085319fbd85f5a": {
+    "PROPER/proper-mixed": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -2650,9 +2911,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=PROPER(\"76BudGet\")"
+      "formula-as-evaluated": "=PROPER(\"76BudGet\")",
+      "stimulus": "sha256:c0a89a6331988ba99a97a6b17ac4cfb2b1b50f1bd8c4f5bf21d2b7ecbabf85f0",
+      "fingerprint": "sha256:84a1a212f2c804a6d761c2e8bb75aa75c1f1add7b2d0caaeed160d9099f98f11",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
-    "sha256:580b26035e147af7b5bc120317d4afadf4ced44a10fb9ef401988491ed8a0910": {
+    "PROPER/proper-apostrophe": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -2700,9 +2966,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=PROPER(\"o'brien\")"
+      "formula-as-evaluated": "=PROPER(\"o'brien\")",
+      "stimulus": "sha256:62e8d7bbd49a937df799bb31c3514e3f45e30dcff0b672f6c78c21fee6672ea5",
+      "fingerprint": "sha256:efdce9bb7d38ca36cc60ea9ae473e4ba7fd0e60abfe33f223d722a8259536f93",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
-    "sha256:795b93f9bd99e81ba45534c31cff3ea7bc2de26b5d7327706063bbb6cec3a35c": {
+    "REPLACEB/replaceb-ascii": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -2750,9 +3021,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=REPLACEB(\"abcdefghijk\", 6, 5, \"*\")"
+      "formula-as-evaluated": "=REPLACEB(\"abcdefghijk\", 6, 5, \"*\")",
+      "stimulus": "sha256:594fb33f214f3702a90f75686f64093d40819e1b81890b0809f2ea4d1afc1b13",
+      "fingerprint": "sha256:b636c3d620f7d5a0bd019d94f7e01adb0447c07d3e75f3896452cd41ce937806",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
-    "sha256:82517a7de109ce8be42dc284d6cc47435732e9dab31d858975e8b199ffa03434": {
+    "REPLACEB/replaceb-year": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -2800,9 +3076,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=REPLACEB(\"2009\", 3, 2, \"10\")"
+      "formula-as-evaluated": "=REPLACEB(\"2009\", 3, 2, \"10\")",
+      "stimulus": "sha256:6f9bed13db6d5384d01a3be92bef74f852f974fc59df6e3b8eed191ec82ebc91",
+      "fingerprint": "sha256:dcb65f9cd983a1e4dfe0476e0042a3eb5ac21a1be4eaa592363284dd02953813",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
-    "sha256:91272321a6d7b718529eb13645fa0e17ba001f6fd1889e1ec2756ca87efd2906": {
+    "REPLACEB/replaceb-empty-insert": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -2850,9 +3131,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=REPLACEB(\"hello\", 2, 3, \"\")"
+      "formula-as-evaluated": "=REPLACEB(\"hello\", 2, 3, \"\")",
+      "stimulus": "sha256:024478d3757e0f85792bb0109b3d4212367c5ec7930966fe422cfe2892098ab6",
+      "fingerprint": "sha256:48cd14bbee2570a7781c6543bd821596ad144eb861a774e0a7b31306df1e9d21",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
-    "sha256:7766261f12826c5fe9950c98224c3353ef34e627b2b2ad1bbe3317fb08cc2561": {
+    "REPLACEB/replaceb-dbcs": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -2900,9 +3186,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=REPLACEB(\"あいう\", 3, 2, \"X\")"
+      "formula-as-evaluated": "=REPLACEB(\"あいう\", 3, 2, \"X\")",
+      "stimulus": "sha256:58c77cc5a52604928b7b3613d4326468b97ee79e8c61efd3fb48eee2098035ec",
+      "fingerprint": "sha256:e287cc97b3ffaf07ee5df9fc4354def88c5e362549dd69684686e24a152c916d",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
-    "sha256:a51f89ca84170273e1853b3f8b0f746712f2ccbf601e175c01ea5133fce8c713": {
+    "RIGHTB/rightb-ascii": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -2950,9 +3241,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=RIGHTB(\"Sale Price\", 5)"
+      "formula-as-evaluated": "=RIGHTB(\"Sale Price\", 5)",
+      "stimulus": "sha256:d67005272357da74a2a76c299377dc52439254f51e2eb1170a2570c017e6ffc5",
+      "fingerprint": "sha256:3aeb4a11bce39588be07161b0a9d17d220663abaab01dff9996bd86b4d95df0a",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
-    "sha256:182fc5ba03925e17029c49874cf9e1fa4a9163efed934e3565f9076ee92d65a7": {
+    "RIGHTB/rightb-default": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -3000,9 +3296,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=RIGHTB(\"hello\")"
+      "formula-as-evaluated": "=RIGHTB(\"hello\")",
+      "stimulus": "sha256:e926d949d94aada1fc465f52f4caf2efa2aa247f0a15a5753ed27e87978d26fe",
+      "fingerprint": "sha256:38cc879014d9d39feb10b31e5c0289ff996254676040506c86d5f3b5019ad3af",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
-    "sha256:f679613ff91285feda9d39b82aacde7ff268a89f3366f04618e1743fab9d8684": {
+    "RIGHTB/rightb-zero": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -3046,9 +3347,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=RIGHTB(\"hello\", 0)"
+      "formula-as-evaluated": "=RIGHTB(\"hello\", 0)",
+      "stimulus": "sha256:431bfe351f8b199c844cb48bcc338d72ee82dd7632949facb275786609ed5a7a",
+      "fingerprint": "sha256:2795dacdf07458184e028719fca7455dd2703f9fb570f596392edab6492cb505",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
-    "sha256:df55c27801045d07a5c220c91e223e92f6db4e6003948899269d810b304277e8": {
+    "RIGHTB/rightb-dbcs": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -3096,9 +3402,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=RIGHTB(\"あいう\", 2)"
+      "formula-as-evaluated": "=RIGHTB(\"あいう\", 2)",
+      "stimulus": "sha256:39cc924c08561d6f91d6e1abd285b1a1292164c4975560ea36b21ab4b5dffe3c",
+      "fingerprint": "sha256:7d9a8258f56d5a0093de2930d2cc32c90731b3bf357f298340dc5bc61fff4ece",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
-    "sha256:088b41f81e39dff1cb31aa716cd48a44b93b24c58fb68382c82489b5597e8179": {
+    "ROMAN/roman-14-xiv": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -3146,9 +3457,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=ROMAN(14)"
+      "formula-as-evaluated": "=ROMAN(14)",
+      "stimulus": "sha256:4cea274354de4f20c4975ea7b2d68798879871a5224604568b9f27317d6cf77e",
+      "fingerprint": "sha256:80220f0c510416191eac7965d7ce4398c150d0026b4218b5a833092d52dd07b4",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
-    "sha256:cb69c05384e43af9083493403c0ea2a49debc0863f04142ade4d9ba43c15400e": {
+    "ROMAN/roman-1994": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -3196,9 +3512,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=ROMAN(1994)"
+      "formula-as-evaluated": "=ROMAN(1994)",
+      "stimulus": "sha256:fdfe0576f22215eb727a75e4788f9fa8217bd289ecc724e4075286616d6ab62e",
+      "fingerprint": "sha256:a553550a82520bbf4d6589a83b92c1a883470d3ccfb4f05736edb7b462cd6439",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
-    "sha256:0e4aa5fbbd7f80a85bcdbb9552a21484e96a3db191cc159f254c00d7859fe7aa": {
+    "ROMAN/roman-1": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -3246,9 +3567,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=ROMAN(1)"
+      "formula-as-evaluated": "=ROMAN(1)",
+      "stimulus": "sha256:044ca41e816a15b6e45e5b840dd4415ab4956c2b7eea64a8bf1e803be3f053ac",
+      "fingerprint": "sha256:b85315928a6769b66cbf9959dad80184db4e82465f12cfedbc38b7990c12e40f",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
-    "sha256:85c2973037d8f1f8fc1d3f51bf08ba0b03e78652b857970423585c6424a1a9ae": {
+    "ROMAN/roman-zero": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -3299,9 +3625,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=ROMAN(0)"
+      "formula-as-evaluated": "=ROMAN(0)",
+      "stimulus": "sha256:5ee7151c6afb57e6b91f6cd1c52262e7c5e5cc7fe58d141214123851c829cb84",
+      "fingerprint": "sha256:53560b24dc39cb4e4cccc613e7b3e26488e6e25a7024d47e1d2f13ac74995070",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
-    "sha256:b81200bc991dc85f1d25777c261841c79d363fc7a91a5bf9f88297d2fb741ed0": {
+    "ROMAN/roman-499-form0": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -3349,9 +3680,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=ROMAN(499, 0)"
+      "formula-as-evaluated": "=ROMAN(499, 0)",
+      "stimulus": "sha256:1635ad793d555d59f1669c8afc3cb11862872f7aa5f0a970c48b2dceb6998ac2",
+      "fingerprint": "sha256:0d18e5414defe62fdb5533d3b6d56e12f9189ebe22cfc427642fdeca424bca92",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
-    "sha256:1246f88707748395857145b52cd5f5b377118f3c79b0766ec956e764cd6795df": {
+    "SEARCH/search-case-insensitive": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -3399,9 +3735,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=SEARCH(\"m\", \"Miriam McGovern\")"
+      "formula-as-evaluated": "=SEARCH(\"m\", \"Miriam McGovern\")",
+      "stimulus": "sha256:a4d0ebb1a0176e702202468956b333d570cad9449f0e59b7c52c10c48302ed7e",
+      "fingerprint": "sha256:43412a89a2157f2c4788feb0281c4a1151687dc9d65d9710c6a2e9db523e740d",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
-    "sha256:bb4026a5d3c4704bf19ac17f456b27cdb1c6e41243f155517472d7427e1687c0": {
+    "SEARCH/search-with-start": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -3449,9 +3790,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=SEARCH(\"m\", \"Miriam McGovern\", 3)"
+      "formula-as-evaluated": "=SEARCH(\"m\", \"Miriam McGovern\", 3)",
+      "stimulus": "sha256:5cce70ae7e5cd7877e076f11e92d9d701cfd131931b21e5c9c561d0978fb8fad",
+      "fingerprint": "sha256:19380e17325c5661a8669b14f9a7f5f1edd57ac6d5d29f72c656315efae76671",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
-    "sha256:199aaedc74513e0f864b082ab8c57409a213b14902e30716577ad9171777fd71": {
+    "SEARCH/search-wildcard-question": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -3499,9 +3845,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=SEARCH(\"m?r\", \"Miriam McGovern\")"
+      "formula-as-evaluated": "=SEARCH(\"m?r\", \"Miriam McGovern\")",
+      "stimulus": "sha256:d0852258a55f85c303881c3e95784aa758075ec06a3619eed013a1be3600b581",
+      "fingerprint": "sha256:43412a89a2157f2c4788feb0281c4a1151687dc9d65d9710c6a2e9db523e740d",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
-    "sha256:bd3a2c25e30d606ccd27971bd1b486cc7e78a4d869563718b42e029e0dee9412": {
+    "SEARCH/search-wildcard-star": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -3549,9 +3900,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=SEARCH(\"M*n\", \"Miriam McGovern\")"
+      "formula-as-evaluated": "=SEARCH(\"M*n\", \"Miriam McGovern\")",
+      "stimulus": "sha256:7dc7c9a761ef3fe391dcb51c828bacf964283ee8c499521503490bd5790e3615",
+      "fingerprint": "sha256:43412a89a2157f2c4788feb0281c4a1151687dc9d65d9710c6a2e9db523e740d",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
-    "sha256:62fe95c081b11cf2d70e9e9c58f6a540e69a45a1a25c0039733d31a00d18cd83": {
+    "SEARCH/search-not-found": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -3602,9 +3958,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=SEARCH(\"z\", \"Miriam McGovern\")"
+      "formula-as-evaluated": "=SEARCH(\"z\", \"Miriam McGovern\")",
+      "stimulus": "sha256:d077dc6d8d27bbd63d52e488c1466628c395b7583bf13684ceaf78128483f049",
+      "fingerprint": "sha256:53560b24dc39cb4e4cccc613e7b3e26488e6e25a7024d47e1d2f13ac74995070",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
-    "sha256:966dc33dc30881d01767cf25d903736d7042f19cf3d014419ad3405d8662ed0e": {
+    "SEARCHB/searchb-ascii": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -3652,9 +4013,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=SEARCHB(\"m\", \"Miriam McGovern\")"
+      "formula-as-evaluated": "=SEARCHB(\"m\", \"Miriam McGovern\")",
+      "stimulus": "sha256:b16841e292d904af66e7437fcb3b20a8463d54ff1998252be403c7a12976ee68",
+      "fingerprint": "sha256:43412a89a2157f2c4788feb0281c4a1151687dc9d65d9710c6a2e9db523e740d",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
-    "sha256:bfbc753d148be326748232c2027d1a3e552246b1ae28f9d05a2088452c3f082d": {
+    "SEARCHB/searchb-with-start": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -3702,9 +4068,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=SEARCHB(\"M\", \"Miriam McGovern\", 3)"
+      "formula-as-evaluated": "=SEARCHB(\"M\", \"Miriam McGovern\", 3)",
+      "stimulus": "sha256:ba25c56d067098a00be2b6e4e2ff3104958b8f463782005f4ab34c91b6728356",
+      "fingerprint": "sha256:19380e17325c5661a8669b14f9a7f5f1edd57ac6d5d29f72c656315efae76671",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
-    "sha256:d5b1bf165d106055616fe78e0d2c9d3fda6625614b4f38d1959082705aa84f0f": {
+    "SEARCHB/searchb-not-found": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -3755,9 +4126,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=SEARCHB(\"z\", \"Miriam\")"
+      "formula-as-evaluated": "=SEARCHB(\"z\", \"Miriam\")",
+      "stimulus": "sha256:53740cb33c28eaeb5a0fc0c5770c42e8064da1f97e74357cf857865cbe34fb1d",
+      "fingerprint": "sha256:53560b24dc39cb4e4cccc613e7b3e26488e6e25a7024d47e1d2f13ac74995070",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
-    "sha256:415908d1f8b52ed88258ba74d00303332f9b85c060aed2984a91ccdb481d9add": {
+    "SEARCHB/searchb-dbcs": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -3805,9 +4181,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=SEARCHB(\"い\", \"あいう\")"
+      "formula-as-evaluated": "=SEARCHB(\"い\", \"あいう\")",
+      "stimulus": "sha256:5946cddd3147b1f19c4897a0ccbfbe9e0e4fa8874df06e255ba31939ce0e20f6",
+      "fingerprint": "sha256:735bc6630739e4c1cea02fea78a0cab118ad5125fb310f593bf78167645d13ed",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
-    "sha256:7b38bc997608d26725bed7c9a887d8c04f38a19d5bdd7c56a1462630739b9f5d": {
+    "SPLIT/split-comma": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -3919,9 +4300,14 @@
           "cols": 3
         }
       },
-      "formula-as-evaluated": "=SPLIT(\"a,b,c\", \",\")"
+      "formula-as-evaluated": "=SPLIT(\"a,b,c\", \",\")",
+      "stimulus": "sha256:101c6be0b0ab5c57b7d1fe685529dad707b102e2f9c5fa0cb00679fce97f5b19",
+      "fingerprint": "sha256:e41274a228b65748b3b062de21f0a9b28a7a5221d9bade11e97a96ae32d30aad",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
-    "sha256:09f4d57ba248d86627dfbc67f9e34de31929827c0f7d24fc9cf3f2c372b9685f": {
+    "SPLIT/split-multi-delim": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -4033,9 +4419,14 @@
           "cols": 3
         }
       },
-      "formula-as-evaluated": "=SPLIT(\"a-b_c\", \"-_\")"
+      "formula-as-evaluated": "=SPLIT(\"a-b_c\", \"-_\")",
+      "stimulus": "sha256:7fceef5f831f3c2a46143f045d67ef99962edd741d44711af5b87719ceb191eb",
+      "fingerprint": "sha256:e41274a228b65748b3b062de21f0a9b28a7a5221d9bade11e97a96ae32d30aad",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
-    "sha256:cc908e01e163c058c4518ef88f6151b134ce97873032bd2f8498d2c835b59481": {
+    "SPLIT/split-single-token": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -4083,9 +4474,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=SPLIT(\"hello\", \",\")"
+      "formula-as-evaluated": "=SPLIT(\"hello\", \",\")",
+      "stimulus": "sha256:cd38d5e063ebd0907d082ccbdcbfbcf79bdaf7846cf4e7b747f8139e850c66da",
+      "fingerprint": "sha256:9baae644abac0964babea30fa58fa0260aceaaf4127b6feeff00e6db5c3bd016",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
-    "sha256:d5ec2d7dfa9a1b7c9f5f9bbaf8d11c23e9fdb1bf24f22656a37a45935259f75c": {
+    "SPLIT/split-empty-tokens": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -4191,9 +4587,14 @@
           "cols": 3
         }
       },
-      "formula-as-evaluated": "=SPLIT(\"a,,b\", \",\", TRUE, FALSE)"
+      "formula-as-evaluated": "=SPLIT(\"a,,b\", \",\", TRUE, FALSE)",
+      "stimulus": "sha256:ddfc35c2dde93215f2c713c558bac1b13d482055541aaa46c71474cf7a01c3e5",
+      "fingerprint": "sha256:97d1651cdcb122a4b894a977f1ea07182bf3cba0ca8e5da4c6896e38194c68ec",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
-    "sha256:a9f58295591c92c46f24cac5dbc86b69e26ae8bd21fbd19e135b3ab5cfd57799": {
+    "T/t-text-passthrough": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -4241,9 +4642,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=T(\"hello\")"
+      "formula-as-evaluated": "=T(\"hello\")",
+      "stimulus": "sha256:0dfa87be2264cd5034f9e85738719e9c8779ff1723770e78fe166f54892dc6c2",
+      "fingerprint": "sha256:9baae644abac0964babea30fa58fa0260aceaaf4127b6feeff00e6db5c3bd016",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
-    "sha256:9adb0c49056a889543810de7db509df5393edeb290c1f8f5f05f9f14c30bc6ff": {
+    "T/t-numeric-string-literal": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -4291,9 +4697,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=T(\"42\")"
+      "formula-as-evaluated": "=T(\"42\")",
+      "stimulus": "sha256:adc69396fc9178d03f9c8d750d57f86a59daf850886313faa81c0e7404cf16d7",
+      "fingerprint": "sha256:8cda9108dcf17f2f39dff28c43a0af7e6f0e48f14ae69de4df2fbc3bd3c8cb47",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
-    "sha256:1af4cd7eb921e364d521e78fccacd25c3d1bb5869adebdaf054801262c556538": {
+    "T/t-number": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -4337,9 +4748,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=T(42)"
+      "formula-as-evaluated": "=T(42)",
+      "stimulus": "sha256:f46f7f6017cb2760f1f820d670c5810e30628faf5882e420abd4abd58841b7db",
+      "fingerprint": "sha256:2795dacdf07458184e028719fca7455dd2703f9fb570f596392edab6492cb505",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
-    "sha256:60d390ca85bea4d33cdbd87d66f8d764ee7d24f8063a108215a99d32f7be2d06": {
+    "T/t-boolean": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -4383,9 +4799,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=T(TRUE)"
+      "formula-as-evaluated": "=T(TRUE)",
+      "stimulus": "sha256:fa8f1caa6c0c3104e9efb4365b83ca1ef7eee9762e4704cf003f991ce4e4f3c1",
+      "fingerprint": "sha256:2795dacdf07458184e028719fca7455dd2703f9fb570f596392edab6492cb505",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
-    "sha256:6f5ec5a1b0ca35b51a085cefccc3807e4190dcbaf9ffc58ba9a2307a2ab5f24e": {
+    "T/t-empty": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -4429,9 +4850,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=T(\"\")"
+      "formula-as-evaluated": "=T(\"\")",
+      "stimulus": "sha256:efe6747ebcc4666bbf541f2b3e40063cf5087aee479e1359c4ab18df51c72eb3",
+      "fingerprint": "sha256:2795dacdf07458184e028719fca7455dd2703f9fb570f596392edab6492cb505",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
-    "sha256:9b7dd6bfee1a89b2ce3edff47ce653cebaba54d28b2dec824428a43eac688fc2": {
+    "TEXT/text-thousands": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -4479,9 +4905,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=TEXT(1234.5, \"#,##0.00\")"
+      "formula-as-evaluated": "=TEXT(1234.5, \"#,##0.00\")",
+      "stimulus": "sha256:162067b7dd1d92f60019740a35349e61a8609e10ef5912f258c35d8735906a47",
+      "fingerprint": "sha256:cc3b9fa7af7d209ffc2458f5c4f74d7bc11b19416206243c0670585896c0a373",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
-    "sha256:0a8393fa4ef6b52d57ee183dccb1a1519c8d7e31322f860778c7646e91ddbc28": {
+    "TEXT/text-integer": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -4529,9 +4960,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=TEXT(1234, \"0000000\")"
+      "formula-as-evaluated": "=TEXT(1234, \"0000000\")",
+      "stimulus": "sha256:8e50db18186ecf8e1b82545466042cad5352844c18f059fdfbc9883c359b25b0",
+      "fingerprint": "sha256:9b8d53f4748078e2f8b211bd7fb8c67b194dd3230eb1d95e9f4d9768321af9d6",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
-    "sha256:d98a7031feadc8b95c60bca4988dff9f3e36c4acba83f5c83468fdd69203e881": {
+    "TEXT/text-percent": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -4579,9 +5015,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=TEXT(0.25, \"0.0%\")"
+      "formula-as-evaluated": "=TEXT(0.25, \"0.0%\")",
+      "stimulus": "sha256:bed63076080b434c142e907f7901133562a4d153757758d8efb51d1df2a40f05",
+      "fingerprint": "sha256:0ee45315919cf144551c397291ebbe0a4c8b56ba00658ff0c5269e810e6cd290",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
-    "sha256:d6bbadea478d9fe7587f73fa546f440d1696422e5aacdd9add33560f1472418a": {
+    "TEXT/text-date": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -4629,9 +5070,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=TEXT(DATE(2024,1,15), \"yyyy-mm-dd\")"
+      "formula-as-evaluated": "=TEXT(DATE(2024,1,15), \"yyyy-mm-dd\")",
+      "stimulus": "sha256:da4b6961c992216006d40ac37ac85a03a03185a24ac89767f63964b3bfacd802",
+      "fingerprint": "sha256:821be3ce8edf1339ca4f1c32799942fe0c24393062d5cfc4058dc9e9c298a8e9",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
-    "sha256:dae29a9ba2f96a0261410e2e1319ea85c155e4b2da8755bbc90fee099b687445": {
+    "TEXT/text-currency": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -4679,9 +5125,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=TEXT(1234.5, \"$#,##0.00\")"
+      "formula-as-evaluated": "=TEXT(1234.5, \"$#,##0.00\")",
+      "stimulus": "sha256:afc9a8f27fec342849b9e9ec79a0e31bceb8429f11f8e87487ea26fd9b6a953a",
+      "fingerprint": "sha256:f6f8a73926356033eab03b5bb008282ba6af070ab9b3402211f386c63d0b3cb0",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
-    "sha256:794ea57ae9d9620f7675bcaca2ebd71ddd8497eb4dd9e5ce8565010ea37887be": {
+    "UNICHAR/unichar-uppercase-a": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -4729,9 +5180,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=UNICHAR(65)"
+      "formula-as-evaluated": "=UNICHAR(65)",
+      "stimulus": "sha256:449c32e01c7a60b85a7a51f3c1a1d39b0992ac61ca5715221e621af766862566",
+      "fingerprint": "sha256:c72b3651a3f02e9328cb7378d56dbff082a281ad638383c329ff56b138a19931",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
-    "sha256:4bb6484a08d524d05b6f02dcb0602d67970046c8024e4da656ab0bbe76efe767": {
+    "UNICHAR/unichar-snowman": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -4779,9 +5235,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=UNICHAR(9731)"
+      "formula-as-evaluated": "=UNICHAR(9731)",
+      "stimulus": "sha256:76f933909551cd6eadf57dd08ef2005a0efc22ea3556782ad81601d445ab021b",
+      "fingerprint": "sha256:cc3cd857125427d624ac7d5110918939a88dc4e573485e575d0df31296524745",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
-    "sha256:9435f387fab0e1eef21542c7bac87c669094f752ef0ae78da099a1bfb50359aa": {
+    "UNICHAR/unichar-emoji-bmp": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -4829,9 +5290,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=UNICHAR(9829)"
+      "formula-as-evaluated": "=UNICHAR(9829)",
+      "stimulus": "sha256:707bb7eb8a69e85633e002b0e60e128211d90a0dfcb037af693a12622acade3a",
+      "fingerprint": "sha256:764fa295852fc5422c3b60e5b919375de460ae33059738ae2423997020edcc68",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
-    "sha256:bbe72cf44f84559b0f4d309e59d7f851e7479f9f5317c2c4ecd4a7bf1037a3c3": {
+    "UNICHAR/unichar-zero": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -4882,9 +5348,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=UNICHAR(0)"
+      "formula-as-evaluated": "=UNICHAR(0)",
+      "stimulus": "sha256:5b469309276601d5ca87105fe9260ef4f6ff613bad3111c4175dbb6233c30b80",
+      "fingerprint": "sha256:53560b24dc39cb4e4cccc613e7b3e26488e6e25a7024d47e1d2f13ac74995070",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
-    "sha256:063b00f53a0e931158c26d3dc4727043b03650c38ff82081191a3a46e7058643": {
+    "UNICODE/unicode-uppercase-a": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -4932,9 +5403,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=UNICODE(\"A\")"
+      "formula-as-evaluated": "=UNICODE(\"A\")",
+      "stimulus": "sha256:8c84344720d76ee693f31509eb90db670d7345227178d5082fb118d15aaca3cf",
+      "fingerprint": "sha256:567f1bd38bf0d486ec3d6ec3004426dabfa7725419afb8824de755ce838b27fa",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
-    "sha256:ab8fea67cce15a67bb7ec5711e8b972cf47efdbf1907bce0bb374a9c02bfd039": {
+    "UNICODE/unicode-snowman": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -4982,9 +5458,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=UNICODE(\"☃\")"
+      "formula-as-evaluated": "=UNICODE(\"☃\")",
+      "stimulus": "sha256:2c2b152471b8073ec28f0652229317627c6425202b893e80db1a9d35bdd37b2f",
+      "fingerprint": "sha256:2c5e6153ed4a4094fe355199aed303d4e61b3c0561372fa2b5e76dc4ad8dc0c2",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
-    "sha256:65961e4c990cb1c340cd35faaf30cfa43ec19306b196f00c3d2273e7a50f0e1c": {
+    "UNICODE/unicode-heart": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -5032,9 +5513,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=UNICODE(\"♥\")"
+      "formula-as-evaluated": "=UNICODE(\"♥\")",
+      "stimulus": "sha256:f0d9e0f40fe2563648178553a41103209cb40f78ed6844e38a7ade234a53a738",
+      "fingerprint": "sha256:046eaa8fcbdff6f5682e174c51b361b493975f1f4e1a50d507dc44bc371dc945",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
-    "sha256:ae9d43c0c1310d853d8643ace22e92dd8bbcefd62d3816016a2564f8ae7ae661": {
+    "UNICODE/unicode-first-char": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -5082,9 +5568,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=UNICODE(\"Alphabet\")"
+      "formula-as-evaluated": "=UNICODE(\"Alphabet\")",
+      "stimulus": "sha256:1ff779f23d6c311035565e225595f89313ce90fb34536c0f41b69485ea402f49",
+      "fingerprint": "sha256:567f1bd38bf0d486ec3d6ec3004426dabfa7725419afb8824de755ce838b27fa",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
-    "sha256:0a66a217e6291a8108cacbc81e8e397c4620a259d1034c37e0db292504feb00a": {
+    "UNICODE/unicode-empty": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -5135,9 +5626,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=UNICODE(\"\")"
+      "formula-as-evaluated": "=UNICODE(\"\")",
+      "stimulus": "sha256:0411e6c62e32f6871f6f0e7233d1a83f14e3bd21ad0714df5622f7507351b299",
+      "fingerprint": "sha256:53560b24dc39cb4e4cccc613e7b3e26488e6e25a7024d47e1d2f13ac74995070",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
-    "sha256:86dc5e2d4c4a63e76e9e3a39f7f729a79113cfaf715c321378b870b800865389": {
+    "VALUE/value-integer-string": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -5185,9 +5681,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=VALUE(\"42\")"
+      "formula-as-evaluated": "=VALUE(\"42\")",
+      "stimulus": "sha256:4755108b78fede34b82e80988a47876f78549ba14a6cb498ea5106789c6a9e06",
+      "fingerprint": "sha256:ed1ffc7b79de5f822f48947f693ad59d7083a6e03b174277d7d7de72fa7040da",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
-    "sha256:d73563322eac105546bdad2a15ad9e6d435b74a6c08308bfe170edb814389561": {
+    "VALUE/value-decimal-string": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -5235,9 +5736,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=VALUE(\"3.14\")"
+      "formula-as-evaluated": "=VALUE(\"3.14\")",
+      "stimulus": "sha256:872b60ef02fdfbdde3979a26b81c5ec5f1f5b76c99ed0ec30cd8a782a8ecfa33",
+      "fingerprint": "sha256:1673ba5b243d0a3a1f92df92494eee1bcdddc092b9d77205c599a5828ac12023",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
-    "sha256:49511214a96735c6df92d3bfe830da29975836672337b66e53ecfc20e1406d22": {
+    "VALUE/value-negative": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -5285,9 +5791,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=VALUE(\"-100\")"
+      "formula-as-evaluated": "=VALUE(\"-100\")",
+      "stimulus": "sha256:07b5308e2805378d6d47debb512d7e1d179a7c3bb5044d3ce324c351ff6f7939",
+      "fingerprint": "sha256:d8b4c3457979c26e2450c3a4dc28979a5e6525d3948d52d11c74ee9bb5a72f7d",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
-    "sha256:c9b7d40ff5eed0b999be685a66eea5b160e35c92d5231a65c6b2c8f2d7385586": {
+    "VALUE/value-empty": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -5335,9 +5846,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=VALUE(\"\")"
+      "formula-as-evaluated": "=VALUE(\"\")",
+      "stimulus": "sha256:b92ed66802638fd1b5dc27717e8b45988a66b4c549765684ca3da3141dce0989",
+      "fingerprint": "sha256:c2c1197f53d7fead335c75f6de7376efaaa96cc32466c698b76d1afb524a3d9b",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
-    "sha256:bbcf27fbda60f0254822f5af0d9c9d6039a38f49959f45b97f8adf9a1a5a50eb": {
+    "VALUE/value-non-numeric": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -5388,7 +5904,12 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=VALUE(\"hello\")"
+      "formula-as-evaluated": "=VALUE(\"hello\")",
+      "stimulus": "sha256:6a910c21e0f2c0c465615e156d6a9d27d8f5c32a74e6d2f864f7210b4f7b484c",
+      "fingerprint": "sha256:53560b24dc39cb4e4cccc613e7b3e26488e6e25a7024d47e1d2f13ac74995070",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     }
   }
 }

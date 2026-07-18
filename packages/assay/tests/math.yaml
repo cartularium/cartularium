@@ -2,41 +2,49 @@ schemaVersion: 3
 name: Math functions
 tests:
   - subject: ABS
+    subjectRef: ABS
     category: value
     formula: =ABS(3)
     expect: 3
     name: abs-positive
   - subject: ABS
+    subjectRef: ABS
     category: value
     formula: =ABS(-3.4)
     expect: 3.4
     name: abs-negative
   - subject: ABS
+    subjectRef: ABS
     category: value
     formula: =ABS(0)
     expect: 0
     name: abs-zero
   - subject: CEILING
+    subjectRef: CEILING
     category: value
     formula: =CEILING(2.5, 1)
     expect: 3
     name: ceiling-round-up
   - subject: CEILING
+    subjectRef: CEILING
     category: value
     formula: =CEILING(-2.5, -2)
     expect: -4
     name: ceiling-negative-both
   - subject: CEILING
+    subjectRef: CEILING
     category: value
     formula: =CEILING(-2.5, 2)
     expect: -2
     name: ceiling-negative-num-positive-sig
   - subject: CEILING
+    subjectRef: CEILING
     category: value
     formula: =CEILING(0.234, 0.01)
     expect: 0.24
     name: ceiling-fractional-significance
   - subject: CEILING
+    subjectRef: CEILING
     formula: =CEILING(2, -2)
     category: value
     expect:
@@ -48,6 +56,7 @@ tests:
           error: "#VALUE!"
     name: ceiling-positive-num-negative-sig
   - subject: CEILING.MATH
+    subjectRef: CEILING.MATH
     formula: =CEILING.MATH(5.2)
     category: value
     expect: 6
@@ -58,6 +67,7 @@ tests:
           error: "#NAME?"
     name: ceiling-math-basic
   - subject: CEILING.MATH
+    subjectRef: CEILING.MATH
     formula: =CEILING.MATH(5.2, 2)
     category: value
     expect: 6
@@ -68,26 +78,31 @@ tests:
           error: "#NAME?"
     name: ceiling-math-with-significance
   - subject: FLOOR
+    subjectRef: FLOOR
     category: value
     formula: =FLOOR(3.7, 2)
     expect: 2
     name: floor-basic
   - subject: FLOOR
+    subjectRef: FLOOR
     category: value
     formula: =FLOOR(-2.5, -2)
     expect: -2
     name: floor-negative
   - subject: FLOOR
+    subjectRef: FLOOR
     category: value
     formula: =FLOOR(1.58, 0.1)
     expect: 1.5
     name: floor-fractional
   - subject: FLOOR
+    subjectRef: FLOOR
     category: value
     formula: =FLOOR(0.234, 0.01)
     expect: 0.23
     name: floor-precision
   - subject: FLOOR
+    subjectRef: FLOOR
     formula: =FLOOR(2, 0)
     category: value
     expect:
@@ -99,6 +114,7 @@ tests:
           error: "#VALUE!"
     name: floor-zero-significance
   - subject: FLOOR.MATH
+    subjectRef: FLOOR.MATH
     formula: =FLOOR.MATH(5.2)
     category: value
     expect: 5
@@ -109,6 +125,7 @@ tests:
           error: "#NAME?"
     name: floor-math-basic
   - subject: FLOOR.MATH
+    subjectRef: FLOOR.MATH
     formula: =FLOOR.MATH(5.2, 2)
     category: value
     expect: 4
@@ -119,11 +136,13 @@ tests:
           error: "#NAME?"
     name: floor-math-with-significance
   - subject: INT
+    subjectRef: INT
     category: value
     formula: =INT(8.9)
     expect: 8
     name: int-positive
   - subject: INT
+    subjectRef: INT
     formula: =INT(-8.9)
     category: value
     expect: -9
@@ -133,16 +152,19 @@ tests:
         recorded: -8
     name: int-negative-rounds-down
   - subject: MOD
+    subjectRef: MOD
     category: value
     formula: =MOD(5, 2)
     expect: 1
     name: mod-basic
   - subject: MOD
+    subjectRef: MOD
     category: value
     formula: =MOD(6, 3)
     expect: 0
     name: mod-no-remainder
   - subject: MOD
+    subjectRef: MOD
     formula: =MOD(-5, 2)
     category: value
     expect: 1
@@ -155,47 +177,56 @@ tests:
       - divergence
     name: mod-negative-dividend
   - subject: MOD
+    subjectRef: MOD
     formula: =MOD(5, 0)
     category: value
     expect:
       error: "#DIV/0!"
     name: mod-zero-divisor
   - subject: POWER
+    subjectRef: POWER
     category: value
     formula: =POWER(10, 2)
     expect: 100
     name: power-basic
   - subject: POWER
+    subjectRef: POWER
     category: value
     formula: =POWER(2.5, 2)
     expect: 6.25
     name: power-fractional
   - subject: POWER
+    subjectRef: POWER
     category: value
     formula: =POWER(2, -3)
     expect: 0.125
     name: power-negative-exponent
   - subject: ROUND
+    subjectRef: ROUND
     category: value
     formula: =ROUND(0.6, 0)
     expect: 1
     name: round-up
   - subject: ROUND
+    subjectRef: ROUND
     category: value
     formula: =ROUND(1.3, 0)
     expect: 1
     name: round-down
   - subject: ROUND
+    subjectRef: ROUND
     category: value
     formula: =ROUND(1.25, 1)
     expect: 1.3
     name: round-to-1-decimal
   - subject: ROUND
+    subjectRef: ROUND
     category: value
     formula: =ROUND(1234, -2)
     expect: 1200
     name: round-negative-decimals
   - subject: ROUND
+    subjectRef: ROUND
     formula: =ROUND(1.05*(0.0284+0.0046)-0.0284, 4)
     category: value
     expect: 0.0063
@@ -211,21 +242,25 @@ tests:
         recorded: 0.0062
     name: round-floating-point-edge
   - subject: ROUNDUP
+    subjectRef: ROUNDUP
     category: value
     formula: =ROUNDUP(1.24, 1)
     expect: 1.3
     name: roundup-basic
   - subject: ROUNDDOWN
+    subjectRef: ROUNDDOWN
     category: value
     formula: =ROUNDDOWN(1.26, 1)
     expect: 1.2
     name: rounddown-basic
   - subject: SQRT
+    subjectRef: SQRT
     category: value
     formula: =SQRT(4)
     expect: 2
     name: sqrt-perfect-square
   - subject: SQRT
+    subjectRef: SQRT
     formula: =SQRT(2)
     category: value
     expect: 1.4142135623730951
@@ -241,6 +276,7 @@ tests:
         recorded: 1.4142135623731
     name: sqrt-irrational
   - subject: SQRT
+    subjectRef: SQRT
     formula: =SQRT(-4)
     category: value
     expect:
@@ -252,11 +288,13 @@ tests:
           error: "#VALUE!"
     name: sqrt-negative
   - subject: SUM
+    subjectRef: SUM
     category: value
     formula: =SUM(1, 2, 3)
     expect: 6
     name: sum-scalars
   - subject: SUM
+    subjectRef: SUM
     category: value
     formula: =SUM({1, 2, 3})
     expect: 6
@@ -264,6 +302,7 @@ tests:
       - bare-formula
     name: sum-array-literal-row
   - subject: SUM
+    subjectRef: SUM
     category: value
     formula: =SUM({1; 2; 3})
     expect: 6
@@ -271,6 +310,7 @@ tests:
       - bare-formula
     name: sum-array-literal-column
   - subject: SUM
+    subjectRef: SUM
     category: value
     formula: =SUM({1, 2; 3, 4; 5, 6})
     expect: 21
@@ -278,6 +318,7 @@ tests:
       - bare-formula
     name: sum-2d-array
   - subject: SUM
+    subjectRef: SUM
     category: value
     formula: =SUM(A1:A3)
     grid:
@@ -287,6 +328,7 @@ tests:
     expect: 60
     name: sum-with-grid-range
   - subject: SUM
+    subjectRef: SUM
     category: value
     status: observed
     formula: =SUM()
@@ -294,6 +336,7 @@ tests:
       - divergence
     name: sum-no-args
   - subject: SUMPRODUCT
+    subjectRef: SUMPRODUCT
     formula: =SUMPRODUCT(A1:A3, B1:B3)
     category: value
     grid:
@@ -314,11 +357,13 @@ tests:
         recorded: "32"
     name: sumproduct-basic
   - subject: EXP
+    subjectRef: EXP
     category: value
     formula: =EXP(0)
     expect: 1
     name: exp-zero
   - subject: EXP
+    subjectRef: EXP
     formula: =EXP(1)
     category: value
     expect: 2.718281828459045
@@ -334,21 +379,25 @@ tests:
         recorded: 2.71828182845905
     name: exp-one
   - subject: SIGN
+    subjectRef: SIGN
     category: value
     formula: =SIGN(10)
     expect: 1
     name: sign-positive
   - subject: SIGN
+    subjectRef: SIGN
     category: value
     formula: =SIGN(0)
     expect: 0
     name: sign-zero
   - subject: SIGN
+    subjectRef: SIGN
     category: value
     formula: =SIGN(-10)
     expect: -1
     name: sign-negative
   - subject: MROUND
+    subjectRef: MROUND
     formula: =MROUND(10, 3)
     category: value
     expect: 9
@@ -359,16 +408,19 @@ tests:
           error: "#NAME?"
     name: mround-basic
   - subject: TRUNC
+    subjectRef: TRUNC
     category: value
     formula: =TRUNC(10)
     expect: 10
     name: trunc-integer-unchanged
   - subject: TRUNC
+    subjectRef: TRUNC
     category: value
     formula: =TRUNC(10.22, 1)
     expect: 10.2
     name: trunc-to-1-decimal
   - subject: SUMSQ
+    subjectRef: SUMSQ
     formula: =SUMSQ(2)
     category: value
     expect: 4
@@ -379,6 +431,7 @@ tests:
           error: "#NAME?"
     name: sumsq-single
   - subject: SUMSQ
+    subjectRef: SUMSQ
     formula: =SUMSQ(1, 2)
     category: value
     expect: 5
@@ -389,6 +442,7 @@ tests:
           error: "#NAME?"
     name: sumsq-two-values
   - subject: LN
+    subjectRef: LN
     formula: =LN(2.718281828459045)
     category: value
     expect: 1
@@ -401,31 +455,37 @@ tests:
         recorded: 0.9999999999999981
     name: ln-e
   - subject: LOG
+    subjectRef: LOG
     category: value
     formula: =LOG(10)
     expect: 1
     name: log-base-10
   - subject: LOG
+    subjectRef: LOG
     category: value
     formula: =LOG(8, 2)
     expect: 3
     name: log-base-2
   - subject: LOG10
+    subjectRef: LOG10
     category: value
     formula: =LOG10(100000)
     expect: 5
     name: log10
   - subject: FACT
+    subjectRef: FACT
     category: value
     formula: =FACT(5)
     expect: 120
     name: fact-5
   - subject: FACT
+    subjectRef: FACT
     category: value
     formula: =FACT(0)
     expect: 1
     name: fact-0
   - subject: FACT
+    subjectRef: FACT
     formula: =FACT(-1)
     category: value
     expect:
@@ -437,6 +497,7 @@ tests:
           error: "#VALUE!"
     name: fact-negative
   - subject: QUOTIENT
+    subjectRef: QUOTIENT
     formula: =QUOTIENT(5, 2)
     category: value
     expect: 2
@@ -451,21 +512,25 @@ tests:
           error: "#NAME?"
     name: quotient-basic
   - subject: EVEN
+    subjectRef: EVEN
     category: value
     formula: =EVEN(1.5)
     expect: 2
     name: even-1-5
   - subject: EVEN
+    subjectRef: EVEN
     category: value
     formula: =EVEN(3)
     expect: 4
     name: even-3
   - subject: EVEN
+    subjectRef: EVEN
     category: value
     formula: =EVEN(-1)
     expect: -2
     name: even-negative
   - subject: PI
+    subjectRef: PI
     formula: =PI()
     category: value
     expect: 3.141592653589793

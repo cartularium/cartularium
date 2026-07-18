@@ -1,0 +1,1551 @@
+{
+  "platform": "excel",
+  "generatedAt": "2026-06-17T19:44:09.851Z",
+  "results": {
+    "sha256:e646045cf799f7e81c25b874783c5132cdb4cc11d43a745fa6b75faadfde9188": {
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 0.7745966692414833
+              },
+              "engine": {
+                "platform": "excel",
+                "data_type": "n",
+                "raw_xml": {
+                  "formula_text": "CORREL(A1:A5, B1:B5)"
+                }
+              },
+              "formula": "CORREL(A1:A5, B1:B5)"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
+      "formula-as-evaluated": "=CORREL(A1:A5, B1:B5)"
+    },
+    "sha256:20f0d33c1b64cf5eab20a401164a8cff3c3e611ce7e1307c0fd1ced34dcde941": {
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 1
+              },
+              "engine": {
+                "platform": "excel",
+                "data_type": "n",
+                "raw_xml": {
+                  "formula_text": "CORREL(A1:A3, B1:B3)"
+                }
+              },
+              "formula": "CORREL(A1:A3, B1:B3)"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
+      "formula-as-evaluated": "=CORREL(A1:A3, B1:B3)"
+    },
+    "sha256:df450d94569a591f8723c046ff08cb4cb47bf27a4ee96d7d5922aa3a1d9dddae": {
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": -1
+              },
+              "engine": {
+                "platform": "excel",
+                "data_type": "n",
+                "raw_xml": {
+                  "formula_text": "CORREL(A1:A3, B1:B3)"
+                }
+              },
+              "formula": "CORREL(A1:A3, B1:B3)"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
+      "formula-as-evaluated": "=CORREL(A1:A3, B1:B3)"
+    },
+    "sha256:e5eb0fabdb9c17fe5a78f60e56475ebf70ae0f58df4802fcb1b354349162af1b": {
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 1.2
+              },
+              "engine": {
+                "platform": "excel",
+                "data_type": "n",
+                "raw_xml": {
+                  "formula_text": "COVAR(A1:A5, B1:B5)"
+                }
+              },
+              "formula": "COVAR(A1:A5, B1:B5)"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
+      "formula-as-evaluated": "=COVAR(A1:A5, B1:B5)"
+    },
+    "sha256:487677f548f9b4bf117216ac2ad92f16b7d599c7b013e2c9a7526948a6ee9a47": {
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 1.3333333333333333
+              },
+              "engine": {
+                "platform": "excel",
+                "data_type": "n",
+                "raw_xml": {
+                  "formula_text": "COVAR(A1:A3, B1:B3)"
+                }
+              },
+              "formula": "COVAR(A1:A3, B1:B3)"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
+      "formula-as-evaluated": "=COVAR(A1:A3, B1:B3)"
+    },
+    "sha256:d9f4fd6468e5b1c9a1d886f0b643a22a833bff8d74b6901fbc9a076d58f41cbf": {
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 1.2
+              },
+              "engine": {
+                "platform": "excel",
+                "data_type": "n",
+                "raw_xml": {
+                  "formula_text": "_xlfn.COVARIANCE.P(A1:A5, B1:B5)",
+                  "formula_namespaces": [
+                    "_xlfn"
+                  ]
+                }
+              },
+              "formula": "_xlfn.COVARIANCE.P(A1:A5, B1:B5)"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
+      "formula-as-evaluated": "=COVARIANCE.P(A1:A5, B1:B5)"
+    },
+    "sha256:433e33adc9034326932fd3bd327378c1e053460e500433d14b78aa5203314751": {
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 1.3333333333333333
+              },
+              "engine": {
+                "platform": "excel",
+                "data_type": "n",
+                "raw_xml": {
+                  "formula_text": "_xlfn.COVARIANCE.P(A1:A3, B1:B3)",
+                  "formula_namespaces": [
+                    "_xlfn"
+                  ]
+                }
+              },
+              "formula": "_xlfn.COVARIANCE.P(A1:A3, B1:B3)"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
+      "formula-as-evaluated": "=COVARIANCE.P(A1:A3, B1:B3)"
+    },
+    "sha256:f9e788fdf9d9a8d94ea393d42e4f05c0c38294fe16aafa4bf20ff27fbdb9f9ad": {
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 1.5
+              },
+              "engine": {
+                "platform": "excel",
+                "data_type": "n",
+                "raw_xml": {
+                  "formula_text": "_xlfn.COVARIANCE.S(A1:A5, B1:B5)",
+                  "formula_namespaces": [
+                    "_xlfn"
+                  ]
+                }
+              },
+              "formula": "_xlfn.COVARIANCE.S(A1:A5, B1:B5)"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
+      "formula-as-evaluated": "=COVARIANCE.S(A1:A5, B1:B5)"
+    },
+    "sha256:9cf528d749fc9f0cdeab2ed33641e142370be39bc91e0b47cd8a123a88441e09": {
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 2
+              },
+              "engine": {
+                "platform": "excel",
+                "data_type": "n",
+                "raw_xml": {
+                  "formula_text": "_xlfn.COVARIANCE.S(A1:A3, B1:B3)",
+                  "formula_namespaces": [
+                    "_xlfn"
+                  ]
+                }
+              },
+              "formula": "_xlfn.COVARIANCE.S(A1:A3, B1:B3)"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
+      "formula-as-evaluated": "=COVARIANCE.S(A1:A3, B1:B3)"
+    },
+    "sha256:9141d9c4e88f00f984f964d6154a47f7f83476759c6fbb3da2b28bbf138a6e4e": {
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 5.8
+              },
+              "engine": {
+                "platform": "excel",
+                "data_type": "n",
+                "raw_xml": {
+                  "formula_text": "FORECAST(6, B1:B5, A1:A5)"
+                }
+              },
+              "formula": "FORECAST(6, B1:B5, A1:A5)"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
+      "formula-as-evaluated": "=FORECAST(6, B1:B5, A1:A5)"
+    },
+    "sha256:d7ac02b9a578ec31bb31765ef4233d1173628c5d31ddf1c87cc324b4e56d9da9": {
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 8
+              },
+              "engine": {
+                "platform": "excel",
+                "data_type": "n",
+                "raw_xml": {
+                  "formula_text": "FORECAST(4, B1:B3, A1:A3)"
+                }
+              },
+              "formula": "FORECAST(4, B1:B3, A1:A3)"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
+      "formula-as-evaluated": "=FORECAST(4, B1:B3, A1:A3)"
+    },
+    "sha256:31d20fd90266b0f797c174232bfbeabae51a0d39990ffcb970c10183fca7a42b": {
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 5.8
+              },
+              "engine": {
+                "platform": "excel",
+                "data_type": "n",
+                "raw_xml": {
+                  "formula_text": "_xlfn.FORECAST.LINEAR(6, B1:B5, A1:A5)",
+                  "formula_namespaces": [
+                    "_xlfn"
+                  ]
+                }
+              },
+              "formula": "_xlfn.FORECAST.LINEAR(6, B1:B5, A1:A5)"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
+      "formula-as-evaluated": "=FORECAST.LINEAR(6, B1:B5, A1:A5)"
+    },
+    "sha256:25bb9c7019946fc7e9a58f8f2ae4790af7e2e6707fe80c3f219abb639639ba18": {
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 8
+              },
+              "engine": {
+                "platform": "excel",
+                "data_type": "n",
+                "raw_xml": {
+                  "formula_text": "_xlfn.FORECAST.LINEAR(4, B1:B3, A1:A3)",
+                  "formula_namespaces": [
+                    "_xlfn"
+                  ]
+                }
+              },
+              "formula": "_xlfn.FORECAST.LINEAR(4, B1:B3, A1:A3)"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
+      "formula-as-evaluated": "=FORECAST.LINEAR(4, B1:B3, A1:A3)"
+    },
+    "sha256:10031ab14fa3dc986070691b00ea8a830c6ec2fa42b2976edc1c7750aa1473f0": {
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 2.2
+              },
+              "engine": {
+                "platform": "excel",
+                "data_type": "n",
+                "raw_xml": {
+                  "formula_text": "INTERCEPT(B1:B5, A1:A5)"
+                }
+              },
+              "formula": "INTERCEPT(B1:B5, A1:A5)"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
+      "formula-as-evaluated": "=INTERCEPT(B1:B5, A1:A5)"
+    },
+    "sha256:eff5d792eb0bebf0b5c9b3ba8943f0c819f3748cdd71ca37402ebc8731590fd4": {
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 1
+              },
+              "engine": {
+                "platform": "excel",
+                "data_type": "n",
+                "raw_xml": {
+                  "formula_text": "INTERCEPT(B1:B3, A1:A3)"
+                }
+              },
+              "formula": "INTERCEPT(B1:B3, A1:A3)"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
+      "formula-as-evaluated": "=INTERCEPT(B1:B3, A1:A3)"
+    },
+    "sha256:4bf7eabc84024ff6a17dcbc34c9c3189167eba09d273f047898b8071a026808b": {
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 0.7745966692414833
+              },
+              "engine": {
+                "platform": "excel",
+                "data_type": "n",
+                "raw_xml": {
+                  "formula_text": "PEARSON(A1:A5, B1:B5)"
+                }
+              },
+              "formula": "PEARSON(A1:A5, B1:B5)"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
+      "formula-as-evaluated": "=PEARSON(A1:A5, B1:B5)"
+    },
+    "sha256:b54afc2aab2d9073b64c570a756695b403d3263c5811138ba335b3ad598d5930": {
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 1
+              },
+              "engine": {
+                "platform": "excel",
+                "data_type": "n",
+                "raw_xml": {
+                  "formula_text": "PEARSON(A1:A3, B1:B3)"
+                }
+              },
+              "formula": "PEARSON(A1:A3, B1:B3)"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
+      "formula-as-evaluated": "=PEARSON(A1:A3, B1:B3)"
+    },
+    "sha256:17d1d92aa967511109338172f801c6ab2b0695d93c081e2c89939eec7be1ede5": {
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 0.6000000000000001
+              },
+              "engine": {
+                "platform": "excel",
+                "data_type": "n",
+                "raw_xml": {
+                  "formula_text": "RSQ(B1:B5, A1:A5)"
+                }
+              },
+              "formula": "RSQ(B1:B5, A1:A5)"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
+      "formula-as-evaluated": "=RSQ(B1:B5, A1:A5)"
+    },
+    "sha256:29c82f0afede74c28d9d081defdfc9796dd03b3651af75534349499fc68ebf13": {
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 1
+              },
+              "engine": {
+                "platform": "excel",
+                "data_type": "n",
+                "raw_xml": {
+                  "formula_text": "RSQ(B1:B3, A1:A3)"
+                }
+              },
+              "formula": "RSQ(B1:B3, A1:A3)"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
+      "formula-as-evaluated": "=RSQ(B1:B3, A1:A3)"
+    },
+    "sha256:b6414f0c29e8eefd8e54dba2b357952ab73a2d859e2926c704ff9dac2d0e638d": {
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 0.6
+              },
+              "engine": {
+                "platform": "excel",
+                "data_type": "n",
+                "raw_xml": {
+                  "formula_text": "SLOPE(B1:B5, A1:A5)"
+                }
+              },
+              "formula": "SLOPE(B1:B5, A1:A5)"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
+      "formula-as-evaluated": "=SLOPE(B1:B5, A1:A5)"
+    },
+    "sha256:e7e56ddedfac94b7fbfbcad8d675b0f642962c6aa7db5f194b7fd50784f58cbf": {
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 2
+              },
+              "engine": {
+                "platform": "excel",
+                "data_type": "n",
+                "raw_xml": {
+                  "formula_text": "SLOPE(B1:B3, A1:A3)"
+                }
+              },
+              "formula": "SLOPE(B1:B3, A1:A3)"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
+      "formula-as-evaluated": "=SLOPE(B1:B3, A1:A3)"
+    },
+    "sha256:c7592ce8c1b2a589f9dd4e7c6f7b9f4c59f4b0b2942d8118f4a1ee27ed30145c": {
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 0.8944271909999159
+              },
+              "engine": {
+                "platform": "excel",
+                "data_type": "n",
+                "raw_xml": {
+                  "formula_text": "STEYX(B1:B5, A1:A5)"
+                }
+              },
+              "formula": "STEYX(B1:B5, A1:A5)"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
+      "formula-as-evaluated": "=STEYX(B1:B5, A1:A5)"
+    },
+    "sha256:b9d882fc6d7f9d98f0052176eb1ab299ed7e2ebc37ad235aeb5dab0c9fba9532": {
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 0
+              },
+              "engine": {
+                "platform": "excel",
+                "data_type": "n",
+                "raw_xml": {
+                  "formula_text": "STEYX(B1:B4, A1:A4)"
+                }
+              },
+              "formula": "STEYX(B1:B4, A1:A4)"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
+      "formula-as-evaluated": "=STEYX(B1:B4, A1:A4)"
+    },
+    "sha256:31af75b64e3819fd838c1310f74dca742d9e6ede28b3683f96cf18c5ec3ed13c": {
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 0.19599639845400538
+              },
+              "engine": {
+                "platform": "excel",
+                "data_type": "n",
+                "raw_xml": {
+                  "formula_text": "CONFIDENCE(0.05, 1, 100)"
+                }
+              },
+              "formula": "CONFIDENCE(0.05, 1, 100)"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
+      "formula-as-evaluated": "=CONFIDENCE(0.05, 1, 100)"
+    },
+    "sha256:a0e1d4334210e35897726aa1eca6d6db2338e58c4e67e531e1e5291071aa96c9": {
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 0.9106931838592245
+              },
+              "engine": {
+                "platform": "excel",
+                "data_type": "n",
+                "raw_xml": {
+                  "formula_text": "CONFIDENCE(0.01, 2.5, 50)"
+                }
+              },
+              "formula": "CONFIDENCE(0.01, 2.5, 50)"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
+      "formula-as-evaluated": "=CONFIDENCE(0.01, 2.5, 50)"
+    },
+    "sha256:539a5acff6fa968f01a2c8446e11e0a258257b74c4682d2df1fd7e167bc61def": {
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 0.4127797123256051
+              },
+              "engine": {
+                "platform": "excel",
+                "data_type": "n",
+                "raw_xml": {
+                  "formula_text": "_xlfn.CONFIDENCE.T(0.05, 1, 25)",
+                  "formula_namespaces": [
+                    "_xlfn"
+                  ]
+                }
+              },
+              "formula": "_xlfn.CONFIDENCE.T(0.05, 1, 25)"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
+      "formula-as-evaluated": "=CONFIDENCE.T(0.05, 1, 25)"
+    },
+    "sha256:be4ee279800aab2aaade913b472854ece9b03a852fa2ae70c9de541ba94752ef": {
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 0.7104921387393245
+              },
+              "engine": {
+                "platform": "excel",
+                "data_type": "n",
+                "raw_xml": {
+                  "formula_text": "_xlfn.CONFIDENCE.T(0.05, 2.5, 50)",
+                  "formula_namespaces": [
+                    "_xlfn"
+                  ]
+                }
+              },
+              "formula": "_xlfn.CONFIDENCE.T(0.05, 2.5, 50)"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
+      "formula-as-evaluated": "=CONFIDENCE.T(0.05, 2.5, 50)"
+    },
+    "sha256:4e5144492cc2d1c8d8a652996cfe089b6f081f871803f52e18ef0b16bc15b7b6": {
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 0.6328124999999998
+              },
+              "engine": {
+                "platform": "excel",
+                "data_type": "n",
+                "raw_xml": {
+                  "formula_text": "_xlfn.F.TEST(A1:A5, B1:B5)",
+                  "formula_namespaces": [
+                    "_xlfn"
+                  ]
+                }
+              },
+              "formula": "_xlfn.F.TEST(A1:A5, B1:B5)"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
+      "formula-as-evaluated": "=F.TEST(A1:A5, B1:B5)"
+    },
+    "sha256:bdf6c70f9e36bb2f4cd6503a25bdbe09a0977ecb2eef7dd5a8d6097a8fe1fbbc": {
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 0.0033350518526121726
+              },
+              "engine": {
+                "platform": "excel",
+                "data_type": "n",
+                "raw_xml": {
+                  "formula_text": "_xlfn.F.TEST(A1:A4, B1:B4)",
+                  "formula_namespaces": [
+                    "_xlfn"
+                  ]
+                }
+              },
+              "formula": "_xlfn.F.TEST(A1:A4, B1:B4)"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
+      "formula-as-evaluated": "=F.TEST(A1:A4, B1:B4)"
+    },
+    "sha256:3644b7c9884daa21fab601c29eff706b943f89c6634385ea15c91534c1a01fba": {
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 0.6328124999999998
+              },
+              "engine": {
+                "platform": "excel",
+                "data_type": "n",
+                "raw_xml": {
+                  "formula_text": "FTEST(A1:A5, B1:B5)"
+                }
+              },
+              "formula": "FTEST(A1:A5, B1:B5)"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
+      "formula-as-evaluated": "=FTEST(A1:A5, B1:B5)"
+    },
+    "sha256:7a747d4e8c1bc89eb088c241daca62358d5c3bede681ec51d821ea3d938ac3f3": {
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 0.0033350518526121726
+              },
+              "engine": {
+                "platform": "excel",
+                "data_type": "n",
+                "raw_xml": {
+                  "formula_text": "FTEST(A1:A4, B1:B4)"
+                }
+              },
+              "formula": "FTEST(A1:A4, B1:B4)"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
+      "formula-as-evaluated": "=FTEST(A1:A4, B1:B4)"
+    },
+    "sha256:93846e2ae18a43700d40446de51467d84e77a9650728d56bab525a83ba19c117": {
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": -1.1999999999999984
+              },
+              "engine": {
+                "platform": "excel",
+                "data_type": "n",
+                "raw_xml": {
+                  "formula_text": "KURT(A1:A5)"
+                }
+              },
+              "formula": "KURT(A1:A5)"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
+      "formula-as-evaluated": "=KURT(A1:A5)"
+    },
+    "sha256:88e02a170b799adbec363b81affd8d033f0842c491de8c3b1981d6db63af45b0": {
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 1.9999999999999964
+              },
+              "engine": {
+                "platform": "excel",
+                "data_type": "n",
+                "raw_xml": {
+                  "formula_text": "KURT(A1:A5)"
+                }
+              },
+              "formula": "KURT(A1:A5)"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
+      "formula-as-evaluated": "=KURT(A1:A5)"
+    },
+    "sha256:f94d1061e576875802417f162dac5bbce96ffa414516a5a7df98ebec9528a06b": {
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": -0.15179963720841627
+              },
+              "engine": {
+                "platform": "excel",
+                "data_type": "n",
+                "raw_xml": {
+                  "formula_text": "KURT(3, 4, 5, 2, 3, 4, 5, 6, 4, 7)"
+                }
+              },
+              "formula": "KURT(3, 4, 5, 2, 3, 4, 5, 6, 4, 7)"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
+      "formula-as-evaluated": "=KURT(3, 4, 5, 2, 3, 4, 5, 6, 4, 7)"
+    },
+    "sha256:786f7c4a11c0abb2f58c06e644c5be3934d9c8be796effec25a78ae74a0830f6": {
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "error",
+                "sentinel": "#NAME?"
+              },
+              "engine": {
+                "platform": "excel",
+                "data_type": "e",
+                "raw_xml": {
+                  "t": "e",
+                  "cm": 1,
+                  "formula_text": "MARGINOFERROR(A1:A5, 0.05)",
+                  "formula_array_marker": "array",
+                  "formula_array_ref": "AA1"
+                },
+                "saved_as_array": true
+              },
+              "formula": "MARGINOFERROR(A1:A5, 0.05)"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
+      "formula-as-evaluated": "=MARGINOFERROR(A1:A5, 0.05)"
+    },
+    "sha256:15d552cbad592548cc2cf0e5abba8a6ed46f14b201658ab88d965b97aaad8240": {
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "error",
+                "sentinel": "#NAME?"
+              },
+              "engine": {
+                "platform": "excel",
+                "data_type": "e",
+                "raw_xml": {
+                  "t": "e",
+                  "cm": 1,
+                  "formula_text": "MARGINOFERROR(A1:A5, 0.01)",
+                  "formula_array_marker": "array",
+                  "formula_array_ref": "AA1"
+                },
+                "saved_as_array": true
+              },
+              "formula": "MARGINOFERROR(A1:A5, 0.01)"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
+      "formula-as-evaluated": "=MARGINOFERROR(A1:A5, 0.01)"
+    },
+    "sha256:dffc12fbbb79a908a44a39ca7d275b06652685ff6a8750fcdaa1e1fbbbfcc6c4": {
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 0.6000000000000001
+              },
+              "engine": {
+                "platform": "excel",
+                "data_type": "n",
+                "raw_xml": {
+                  "formula_text": "PROB(A1:A5, B1:B5, 2, 4)"
+                }
+              },
+              "formula": "PROB(A1:A5, B1:B5, 2, 4)"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
+      "formula-as-evaluated": "=PROB(A1:A5, B1:B5, 2, 4)"
+    },
+    "sha256:cb694f0aa8a7f39aa27755f5eed2168496f67d799a059f84dfdd049129bb5acb": {
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 0.2
+              },
+              "engine": {
+                "platform": "excel",
+                "data_type": "n",
+                "raw_xml": {
+                  "formula_text": "PROB(A1:A5, B1:B5, 3)"
+                }
+              },
+              "formula": "PROB(A1:A5, B1:B5, 3)"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
+      "formula-as-evaluated": "=PROB(A1:A5, B1:B5, 3)"
+    },
+    "sha256:5e442dd92785c95c934c788185a5eb16ace7be753dfeb0380f2e988eb0c68405": {
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 1
+              },
+              "engine": {
+                "platform": "excel",
+                "data_type": "n",
+                "raw_xml": {
+                  "formula_text": "PROB(A1:A3, B1:B3, 1, 3)"
+                }
+              },
+              "formula": "PROB(A1:A3, B1:B3, 1, 3)"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
+      "formula-as-evaluated": "=PROB(A1:A3, B1:B3, 1, 3)"
+    },
+    "sha256:c9d0ee1ad075a9056af21779d791500ea49cab2163f6289df1f32c7bb3a9fea4": {
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 0
+              },
+              "engine": {
+                "platform": "excel",
+                "data_type": "n",
+                "raw_xml": {
+                  "formula_text": "SKEW(A1:A5)"
+                }
+              },
+              "formula": "SKEW(A1:A5)"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
+      "formula-as-evaluated": "=SKEW(A1:A5)"
+    },
+    "sha256:d2299b682f2e2e278237b3915d6e18840ce7a396182b6d38e9a9e0adf36a0e0c": {
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 1.9805481930337385
+              },
+              "engine": {
+                "platform": "excel",
+                "data_type": "n",
+                "raw_xml": {
+                  "formula_text": "SKEW(A1:A5)"
+                }
+              },
+              "formula": "SKEW(A1:A5)"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
+      "formula-as-evaluated": "=SKEW(A1:A5)"
+    },
+    "sha256:80f9a102708c5ad8fb14977be88f887bf5fe4166df6559000fa85c1ef0fe8d90": {
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 0.3595430714067974
+              },
+              "engine": {
+                "platform": "excel",
+                "data_type": "n",
+                "raw_xml": {
+                  "formula_text": "SKEW(3, 4, 5, 2, 3, 4, 5, 6, 4, 7)"
+                }
+              },
+              "formula": "SKEW(3, 4, 5, 2, 3, 4, 5, 6, 4, 7)"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
+      "formula-as-evaluated": "=SKEW(3, 4, 5, 2, 3, 4, 5, 6, 4, 7)"
+    },
+    "sha256:c4698d620437bdea131dd2bcb7e28b0f935a261f33631a6620c02b972a9899a3": {
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 0
+              },
+              "engine": {
+                "platform": "excel",
+                "data_type": "n",
+                "raw_xml": {
+                  "formula_text": "_xlfn.SKEW.P(A1:A5)",
+                  "formula_namespaces": [
+                    "_xlfn"
+                  ]
+                }
+              },
+              "formula": "_xlfn.SKEW.P(A1:A5)"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
+      "formula-as-evaluated": "=SKEW.P(A1:A5)"
+    },
+    "sha256:bb1bb8db6463a099fe0c60a472ca55bb1aac067bc5ac1f0f2137d0c9ad33568a": {
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 1.3285921177013438
+              },
+              "engine": {
+                "platform": "excel",
+                "data_type": "n",
+                "raw_xml": {
+                  "formula_text": "_xlfn.SKEW.P(A1:A5)",
+                  "formula_namespaces": [
+                    "_xlfn"
+                  ]
+                }
+              },
+              "formula": "_xlfn.SKEW.P(A1:A5)"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
+      "formula-as-evaluated": "=SKEW.P(A1:A5)"
+    },
+    "sha256:7c789fe5ad1006a1294b8527accd040c76d1ae8d0a0095bdfe5d9827e0e92551": {
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 0.08900934250008567
+              },
+              "engine": {
+                "platform": "excel",
+                "data_type": "n",
+                "raw_xml": {
+                  "formula_text": "_xlfn.T.TEST(A1:A5, B1:B5, 2, 1)",
+                  "formula_namespaces": [
+                    "_xlfn"
+                  ]
+                }
+              },
+              "formula": "_xlfn.T.TEST(A1:A5, B1:B5, 2, 1)"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
+      "formula-as-evaluated": "=T.TEST(A1:A5, B1:B5, 2, 1)"
+    },
+    "sha256:2f669f55e8c7eeabb1f28cedb8c3914a0994bbc333d771a319b79599c9f801b9": {
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 0.14799965245785146
+              },
+              "engine": {
+                "platform": "excel",
+                "data_type": "n",
+                "raw_xml": {
+                  "formula_text": "_xlfn.T.TEST(A1:A5, B1:B5, 1, 2)",
+                  "formula_namespaces": [
+                    "_xlfn"
+                  ]
+                }
+              },
+              "formula": "_xlfn.T.TEST(A1:A5, B1:B5, 1, 2)"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
+      "formula-as-evaluated": "=T.TEST(A1:A5, B1:B5, 1, 2)"
+    },
+    "sha256:55acefdf4a2d066b8d99830059643dbdd52090da64d2e02a05826eb2ecfcee3e": {
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 0.297951687866858
+              },
+              "engine": {
+                "platform": "excel",
+                "data_type": "n",
+                "raw_xml": {
+                  "formula_text": "_xlfn.T.TEST(A1:A5, B1:B5, 2, 3)",
+                  "formula_namespaces": [
+                    "_xlfn"
+                  ]
+                }
+              },
+              "formula": "_xlfn.T.TEST(A1:A5, B1:B5, 2, 3)"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
+      "formula-as-evaluated": "=T.TEST(A1:A5, B1:B5, 2, 3)"
+    },
+    "sha256:2e56eb9fb64f041ff947ffde79004371a649cce0a177d1d040c1c774636c828b": {
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 0.08900934250008567
+              },
+              "engine": {
+                "platform": "excel",
+                "data_type": "n",
+                "raw_xml": {
+                  "formula_text": "TTEST(A1:A5, B1:B5, 2, 1)"
+                }
+              },
+              "formula": "TTEST(A1:A5, B1:B5, 2, 1)"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
+      "formula-as-evaluated": "=TTEST(A1:A5, B1:B5, 2, 1)"
+    },
+    "sha256:7c721c200530277e05dcbd46c4b56394164e0451eac2f99a43098a23089de652": {
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 0.14799965245785146
+              },
+              "engine": {
+                "platform": "excel",
+                "data_type": "n",
+                "raw_xml": {
+                  "formula_text": "TTEST(A1:A5, B1:B5, 1, 2)"
+                }
+              },
+              "formula": "TTEST(A1:A5, B1:B5, 1, 2)"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
+      "formula-as-evaluated": "=TTEST(A1:A5, B1:B5, 1, 2)"
+    },
+    "sha256:7981c1a8c8ad596d8dede97f81ded6e64782c2884522bd50efa4c035599a6dda": {
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 0.5
+              },
+              "engine": {
+                "platform": "excel",
+                "data_type": "n",
+                "raw_xml": {
+                  "formula_text": "_xlfn.Z.TEST(A1:A5, 3)",
+                  "formula_namespaces": [
+                    "_xlfn"
+                  ]
+                }
+              },
+              "formula": "_xlfn.Z.TEST(A1:A5, 3)"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
+      "formula-as-evaluated": "=Z.TEST(A1:A5, 3)"
+    },
+    "sha256:8449a703b823114609f4763b9981eac6533fa24a35134656d3a97bfbbdebcc42": {
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 0.9319814359429281
+              },
+              "engine": {
+                "platform": "excel",
+                "data_type": "n",
+                "raw_xml": {
+                  "formula_text": "_xlfn.Z.TEST(A1:A5, 4, 1.5)",
+                  "formula_namespaces": [
+                    "_xlfn"
+                  ]
+                }
+              },
+              "formula": "_xlfn.Z.TEST(A1:A5, 4, 1.5)"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
+      "formula-as-evaluated": "=Z.TEST(A1:A5, 4, 1.5)"
+    },
+    "sha256:498ad442cafd44b9ce2410a29920ddf09ac19cdc0a17f66d3a12d8bf78f9de59": {
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 0.5
+              },
+              "engine": {
+                "platform": "excel",
+                "data_type": "n",
+                "raw_xml": {
+                  "formula_text": "ZTEST(A1:A5, 3)"
+                }
+              },
+              "formula": "ZTEST(A1:A5, 3)"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
+      "formula-as-evaluated": "=ZTEST(A1:A5, 3)"
+    },
+    "sha256:c4e375418ba3339f944506083c66ccef4fd691f92c8bd7919d622567cb882133": {
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 0.9319814359429281
+              },
+              "engine": {
+                "platform": "excel",
+                "data_type": "n",
+                "raw_xml": {
+                  "formula_text": "ZTEST(A1:A5, 4, 1.5)"
+                }
+              },
+              "formula": "ZTEST(A1:A5, 4, 1.5)"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
+      "formula-as-evaluated": "=ZTEST(A1:A5, 4, 1.5)"
+    }
+  }
+}

@@ -2,6 +2,7 @@ schemaVersion: 3
 name: Math long-tail functions
 tests:
   - subject: SIN
+    subjectRef: SIN
     category: value
     formula: =SIN(0)
     expect: 0
@@ -9,6 +10,7 @@ tests:
       - math
     name: sin-at-0
   - subject: SIN
+    subjectRef: SIN
     category: value
     formula: =SIN(PI()/2)
     expect: 1
@@ -16,6 +18,7 @@ tests:
       - math
     name: sin-at-pi-2
   - subject: SIN
+    subjectRef: SIN
     category: value
     status: observed
     formula: =SIN(PI())
@@ -23,6 +26,7 @@ tests:
       - math
     name: sin-at-pi
   - subject: SIN
+    subjectRef: SIN
     category: value
     status: observed
     formula: =SIN(1)
@@ -30,6 +34,7 @@ tests:
       - math
     name: sin-at-1-radian
   - subject: SIN
+    subjectRef: SIN
     category: value
     formula: =SIN(-PI()/2)
     expect: -1
@@ -37,6 +42,7 @@ tests:
       - math
     name: sin-negative
   - subject: COS
+    subjectRef: COS
     category: value
     formula: =COS(0)
     expect: 1
@@ -44,6 +50,7 @@ tests:
       - math
     name: cos-at-0
   - subject: COS
+    subjectRef: COS
     category: value
     status: observed
     formula: =COS(PI()/2)
@@ -51,6 +58,7 @@ tests:
       - math
     name: cos-at-pi-2
   - subject: COS
+    subjectRef: COS
     category: value
     formula: =COS(PI())
     expect: -1
@@ -58,6 +66,7 @@ tests:
       - math
     name: cos-at-pi
   - subject: COS
+    subjectRef: COS
     category: value
     status: observed
     formula: =COS(1)
@@ -65,6 +74,7 @@ tests:
       - math
     name: cos-at-1-radian
   - subject: COS
+    subjectRef: COS
     category: value
     formula: =COS(-PI())
     expect: -1
@@ -72,6 +82,7 @@ tests:
       - math
     name: cos-negative-symmetric
   - subject: TAN
+    subjectRef: TAN
     category: value
     formula: =TAN(0)
     expect: 0
@@ -79,6 +90,7 @@ tests:
       - math
     name: tan-at-0
   - subject: TAN
+    subjectRef: TAN
     category: value
     status: observed
     formula: =TAN(PI())
@@ -86,6 +98,7 @@ tests:
       - math
     name: tan-at-pi
   - subject: TAN
+    subjectRef: TAN
     category: value
     status: observed
     formula: =TAN(1)
@@ -93,6 +106,7 @@ tests:
       - math
     name: tan-at-1-radian
   - subject: TAN
+    subjectRef: TAN
     category: value
     status: observed
     formula: =TAN(-1)
@@ -100,6 +114,7 @@ tests:
       - math
     name: tan-negative
   - subject: SEC
+    subjectRef: SEC
     formula: =SEC(0)
     category: value
     expect: 1
@@ -116,6 +131,7 @@ tests:
       - math
     name: sec-at-0
   - subject: SEC
+    subjectRef: SEC
     formula: =SEC(PI())
     category: value
     expect: -1
@@ -132,6 +148,7 @@ tests:
       - math
     name: sec-at-pi
   - subject: SEC
+    subjectRef: SEC
     category: value
     status: observed
     formula: =SEC(1)
@@ -139,6 +156,7 @@ tests:
       - math
     name: sec-at-1-radian
   - subject: SEC
+    subjectRef: SEC
     formula: =SEC(-PI())
     category: value
     expect: -1
@@ -155,6 +173,7 @@ tests:
       - math
     name: sec-negative
   - subject: CSC
+    subjectRef: CSC
     formula: =CSC(PI()/2)
     category: value
     expect: 1
@@ -171,6 +190,7 @@ tests:
       - math
     name: csc-at-pi-2
   - subject: CSC
+    subjectRef: CSC
     category: value
     status: observed
     formula: =CSC(1)
@@ -178,6 +198,7 @@ tests:
       - math
     name: csc-at-1-radian
   - subject: CSC
+    subjectRef: CSC
     formula: =CSC(-PI()/2)
     category: value
     expect: -1
@@ -194,6 +215,7 @@ tests:
       - math
     name: csc-negative
   - subject: CSC
+    subjectRef: CSC
     category: error-code
     status: observed
     formula: =CSC(0)
@@ -201,6 +223,7 @@ tests:
       - math
     name: csc-at-0-error
   - subject: COT
+    subjectRef: COT
     category: value
     status: observed
     formula: =COT(PI()/2)
@@ -208,6 +231,7 @@ tests:
       - math
     name: cot-at-pi-2
   - subject: COT
+    subjectRef: COT
     category: value
     status: observed
     formula: =COT(1)
@@ -215,6 +239,7 @@ tests:
       - math
     name: cot-at-1-radian
   - subject: COT
+    subjectRef: COT
     category: value
     status: observed
     formula: =COT(-1)
@@ -222,6 +247,7 @@ tests:
       - math
     name: cot-negative
   - subject: COT
+    subjectRef: COT
     category: error-code
     status: observed
     formula: =COT(0)
@@ -229,6 +255,7 @@ tests:
       - math
     name: cot-at-0-error
   - subject: SINH
+    subjectRef: SINH
     category: value
     formula: =SINH(0)
     expect: 0
@@ -236,6 +263,7 @@ tests:
       - math
     name: sinh-at-0
   - subject: SINH
+    subjectRef: SINH
     category: value
     status: observed
     formula: =SINH(1)
@@ -243,6 +271,7 @@ tests:
       - math
     name: sinh-at-1
   - subject: SINH
+    subjectRef: SINH
     category: value
     status: observed
     formula: =SINH(-1)
@@ -250,6 +279,7 @@ tests:
       - math
     name: sinh-negative
   - subject: COSH
+    subjectRef: COSH
     category: value
     formula: =COSH(0)
     expect: 1
@@ -257,6 +287,7 @@ tests:
       - math
     name: cosh-at-0
   - subject: COSH
+    subjectRef: COSH
     category: value
     status: observed
     formula: =COSH(1)
@@ -264,6 +295,7 @@ tests:
       - math
     name: cosh-at-1
   - subject: COSH
+    subjectRef: COSH
     category: value
     status: observed
     formula: =COSH(-1)
@@ -271,6 +303,7 @@ tests:
       - math
     name: cosh-negative-symmetric
   - subject: TANH
+    subjectRef: TANH
     category: value
     formula: =TANH(0)
     expect: 0
@@ -278,6 +311,7 @@ tests:
       - math
     name: tanh-at-0
   - subject: TANH
+    subjectRef: TANH
     category: value
     status: observed
     formula: =TANH(1)
@@ -285,6 +319,7 @@ tests:
       - math
     name: tanh-at-1
   - subject: TANH
+    subjectRef: TANH
     category: value
     status: observed
     formula: =TANH(-1)
@@ -292,6 +327,7 @@ tests:
       - math
     name: tanh-negative
   - subject: SECH
+    subjectRef: SECH
     formula: =SECH(0)
     category: value
     expect: 1
@@ -308,6 +344,7 @@ tests:
       - math
     name: sech-at-0
   - subject: SECH
+    subjectRef: SECH
     category: value
     status: observed
     formula: =SECH(1)
@@ -315,6 +352,7 @@ tests:
       - math
     name: sech-at-1
   - subject: SECH
+    subjectRef: SECH
     category: value
     status: observed
     formula: =SECH(-1)
@@ -322,6 +360,7 @@ tests:
       - math
     name: sech-negative
   - subject: CSCH
+    subjectRef: CSCH
     category: value
     status: observed
     formula: =CSCH(1)
@@ -329,6 +368,7 @@ tests:
       - math
     name: csch-at-1
   - subject: CSCH
+    subjectRef: CSCH
     category: value
     status: observed
     formula: =CSCH(-1)
@@ -336,6 +376,7 @@ tests:
       - math
     name: csch-negative
   - subject: CSCH
+    subjectRef: CSCH
     category: error-code
     status: observed
     formula: =CSCH(0)
@@ -343,6 +384,7 @@ tests:
       - math
     name: csch-at-0-error
   - subject: COTH
+    subjectRef: COTH
     category: value
     status: observed
     formula: =COTH(1)
@@ -350,6 +392,7 @@ tests:
       - math
     name: coth-at-1
   - subject: COTH
+    subjectRef: COTH
     category: value
     status: observed
     formula: =COTH(-1)
@@ -357,6 +400,7 @@ tests:
       - math
     name: coth-negative
   - subject: COTH
+    subjectRef: COTH
     category: error-code
     status: observed
     formula: =COTH(0)
@@ -364,6 +408,7 @@ tests:
       - math
     name: coth-at-0-error
   - subject: ASIN
+    subjectRef: ASIN
     category: value
     formula: =ASIN(0)
     expect: 0
@@ -371,6 +416,7 @@ tests:
       - math
     name: asin-at-0
   - subject: ASIN
+    subjectRef: ASIN
     category: value
     status: observed
     formula: =ASIN(1)
@@ -378,6 +424,7 @@ tests:
       - math
     name: asin-at-1
   - subject: ASIN
+    subjectRef: ASIN
     category: value
     status: observed
     formula: =ASIN(-1)
@@ -385,6 +432,7 @@ tests:
       - math
     name: asin-negative
   - subject: ASIN
+    subjectRef: ASIN
     formula: =ASIN(2)
     category: value
     expect:
@@ -393,6 +441,7 @@ tests:
       - math
     name: asin-out-of-domain
   - subject: ACOS
+    subjectRef: ACOS
     category: value
     formula: =ACOS(1)
     expect: 0
@@ -400,6 +449,7 @@ tests:
       - math
     name: acos-at-1
   - subject: ACOS
+    subjectRef: ACOS
     category: value
     status: observed
     formula: =ACOS(0)
@@ -407,6 +457,7 @@ tests:
       - math
     name: acos-at-0
   - subject: ACOS
+    subjectRef: ACOS
     category: value
     status: observed
     formula: =ACOS(-1)
@@ -414,6 +465,7 @@ tests:
       - math
     name: acos-negative
   - subject: ACOS
+    subjectRef: ACOS
     formula: =ACOS(2)
     category: value
     expect:
@@ -422,6 +474,7 @@ tests:
       - math
     name: acos-out-of-domain
   - subject: ATAN
+    subjectRef: ATAN
     category: value
     formula: =ATAN(0)
     expect: 0
@@ -429,6 +482,7 @@ tests:
       - math
     name: atan-at-0
   - subject: ATAN
+    subjectRef: ATAN
     category: value
     status: observed
     formula: =ATAN(1)
@@ -436,6 +490,7 @@ tests:
       - math
     name: atan-at-1
   - subject: ATAN
+    subjectRef: ATAN
     category: value
     status: observed
     formula: =ATAN(-1)
@@ -443,6 +498,7 @@ tests:
       - math
     name: atan-negative
   - subject: ATAN2
+    subjectRef: ATAN2
     category: value
     formula: =ATAN2(1, 0)
     expect: 0
@@ -450,6 +506,7 @@ tests:
       - math
     name: atan2-on-x-axis
   - subject: ATAN2
+    subjectRef: ATAN2
     category: value
     status: observed
     formula: =ATAN2(0, 1)
@@ -457,6 +514,7 @@ tests:
       - math
     name: atan2-on-y-axis
   - subject: ATAN2
+    subjectRef: ATAN2
     category: value
     status: observed
     formula: =ATAN2(1, 1)
@@ -464,6 +522,7 @@ tests:
       - math
     name: atan2-diagonal
   - subject: ATAN2
+    subjectRef: ATAN2
     category: value
     status: observed
     formula: =ATAN2(-1, -1)
@@ -471,6 +530,7 @@ tests:
       - math
     name: atan2-negative
   - subject: ASINH
+    subjectRef: ASINH
     category: value
     formula: =ASINH(0)
     expect: 0
@@ -478,6 +538,7 @@ tests:
       - math
     name: asinh-at-0
   - subject: ASINH
+    subjectRef: ASINH
     category: value
     status: observed
     formula: =ASINH(1)
@@ -485,6 +546,7 @@ tests:
       - math
     name: asinh-at-1
   - subject: ASINH
+    subjectRef: ASINH
     category: value
     status: observed
     formula: =ASINH(-1)
@@ -492,6 +554,7 @@ tests:
       - math
     name: asinh-negative
   - subject: ACOSH
+    subjectRef: ACOSH
     category: value
     formula: =ACOSH(1)
     expect: 0
@@ -499,6 +562,7 @@ tests:
       - math
     name: acosh-at-1
   - subject: ACOSH
+    subjectRef: ACOSH
     category: value
     status: observed
     formula: =ACOSH(2)
@@ -506,6 +570,7 @@ tests:
       - math
     name: acosh-greater-than-1
   - subject: ACOSH
+    subjectRef: ACOSH
     formula: =ACOSH(0)
     category: value
     expect:
@@ -519,6 +584,7 @@ tests:
       - math
     name: acosh-out-of-domain
   - subject: ATANH
+    subjectRef: ATANH
     category: value
     formula: =ATANH(0)
     expect: 0
@@ -526,6 +592,7 @@ tests:
       - math
     name: atanh-at-0
   - subject: ATANH
+    subjectRef: ATANH
     category: value
     status: observed
     formula: =ATANH(0.5)
@@ -533,6 +600,7 @@ tests:
       - math
     name: atanh-positive
   - subject: ATANH
+    subjectRef: ATANH
     category: value
     status: observed
     formula: =ATANH(-0.5)
@@ -540,6 +608,7 @@ tests:
       - math
     name: atanh-negative
   - subject: ATANH
+    subjectRef: ATANH
     formula: =ATANH(1)
     category: value
     expect:
@@ -553,6 +622,7 @@ tests:
       - math
     name: atanh-out-of-domain
   - subject: ACOT
+    subjectRef: ACOT
     category: value
     status: observed
     formula: =ACOT(0)
@@ -560,6 +630,7 @@ tests:
       - math
     name: acot-at-0
   - subject: ACOT
+    subjectRef: ACOT
     category: value
     status: observed
     formula: =ACOT(1)
@@ -567,6 +638,7 @@ tests:
       - math
     name: acot-at-1
   - subject: ACOT
+    subjectRef: ACOT
     category: value
     status: observed
     formula: =ACOT(-1)
@@ -574,6 +646,7 @@ tests:
       - math
     name: acot-negative
   - subject: ACOTH
+    subjectRef: ACOTH
     category: value
     status: observed
     formula: =ACOTH(2)
@@ -581,6 +654,7 @@ tests:
       - math
     name: acoth-greater-than-1
   - subject: ACOTH
+    subjectRef: ACOTH
     category: value
     status: observed
     formula: =ACOTH(-2)
@@ -588,6 +662,7 @@ tests:
       - math
     name: acoth-less-than-1
   - subject: ACOTH
+    subjectRef: ACOTH
     formula: =ACOTH(1)
     category: value
     expect:
@@ -605,6 +680,7 @@ tests:
       - math
     name: acoth-out-of-domain
   - subject: RADIANS
+    subjectRef: RADIANS
     formula: =RADIANS(180)
     category: value
     expect: 3.141592653589793
@@ -622,6 +698,7 @@ tests:
       - math
     name: radians-of-180
   - subject: RADIANS
+    subjectRef: RADIANS
     category: value
     formula: =RADIANS(0)
     expect: 0
@@ -629,6 +706,7 @@ tests:
       - math
     name: radians-of-0
   - subject: RADIANS
+    subjectRef: RADIANS
     formula: =RADIANS(90)
     category: value
     expect: 1.5707963267948966
@@ -646,6 +724,7 @@ tests:
       - math
     name: radians-of-90
   - subject: RADIANS
+    subjectRef: RADIANS
     formula: =RADIANS(-180)
     category: value
     expect: -3.141592653589793
@@ -663,6 +742,7 @@ tests:
       - math
     name: radians-negative
   - subject: DEGREES
+    subjectRef: DEGREES
     category: value
     formula: =DEGREES(PI())
     expect: 180
@@ -670,6 +750,7 @@ tests:
       - math
     name: degrees-of-pi
   - subject: DEGREES
+    subjectRef: DEGREES
     category: value
     formula: =DEGREES(0)
     expect: 0
@@ -677,6 +758,7 @@ tests:
       - math
     name: degrees-of-0
   - subject: DEGREES
+    subjectRef: DEGREES
     category: value
     formula: =DEGREES(PI()/2)
     expect: 90
@@ -684,6 +766,7 @@ tests:
       - math
     name: degrees-of-pi-2
   - subject: DEGREES
+    subjectRef: DEGREES
     category: value
     formula: =DEGREES(-PI())
     expect: -180
@@ -691,6 +774,7 @@ tests:
       - math
     name: degrees-negative
   - subject: BASE
+    subjectRef: BASE
     formula: =BASE(10, 16)
     category: value
     expect: A
@@ -711,6 +795,7 @@ tests:
       - math
     name: base-to-hex
   - subject: BASE
+    subjectRef: BASE
     formula: =BASE(5, 2)
     category: value
     expect: "101"
@@ -731,6 +816,7 @@ tests:
       - math
     name: base-to-binary
   - subject: BASE
+    subjectRef: BASE
     formula: =BASE(0, 2)
     category: value
     expect: "0"
@@ -751,6 +837,7 @@ tests:
       - math
     name: base-zero
   - subject: BASE
+    subjectRef: BASE
     formula: =BASE(5, 2, 8)
     category: value
     expect: "00000101"
@@ -771,6 +858,7 @@ tests:
       - math
     name: base-with-min-length-padding
   - subject: DECIMAL
+    subjectRef: DECIMAL
     formula: =DECIMAL("A", 16)
     category: value
     expect: 10
@@ -787,6 +875,7 @@ tests:
       - math
     name: decimal-from-hex
   - subject: DECIMAL
+    subjectRef: DECIMAL
     formula: =DECIMAL("101", 2)
     category: value
     expect: 5
@@ -803,6 +892,7 @@ tests:
       - math
     name: decimal-from-binary
   - subject: DECIMAL
+    subjectRef: DECIMAL
     formula: =DECIMAL("FF", 16)
     category: value
     expect: 255
@@ -819,6 +909,7 @@ tests:
       - math
     name: decimal-from-hex-larger
   - subject: DECIMAL
+    subjectRef: DECIMAL
     formula: =DECIMAL("Z", 36)
     category: value
     expect: 35
@@ -835,6 +926,7 @@ tests:
       - math
     name: decimal-base-36
   - subject: CEILING.PRECISE
+    subjectRef: CEILING.PRECISE
     formula: =CEILING.PRECISE(4.3)
     category: value
     expect: 5
@@ -847,6 +939,7 @@ tests:
       - math
     name: ceiling-precise-positive
   - subject: CEILING.PRECISE
+    subjectRef: CEILING.PRECISE
     formula: =CEILING.PRECISE(-4.3)
     category: value
     expect: -4
@@ -862,6 +955,7 @@ tests:
       - math
     name: ceiling-precise-negative
   - subject: CEILING.PRECISE
+    subjectRef: CEILING.PRECISE
     formula: =CEILING.PRECISE(4.3, 2)
     category: value
     expect: 6
@@ -874,6 +968,7 @@ tests:
       - math
     name: ceiling-precise-with-significance
   - subject: CEILING.PRECISE
+    subjectRef: CEILING.PRECISE
     formula: =CEILING.PRECISE(-4.3, -2)
     category: value
     expect: -4
@@ -886,6 +981,7 @@ tests:
       - math
     name: ceiling-precise-negative-significance-ignored
   - subject: FLOOR.PRECISE
+    subjectRef: FLOOR.PRECISE
     formula: =FLOOR.PRECISE(4.8)
     category: value
     expect: 4
@@ -898,6 +994,7 @@ tests:
       - math
     name: floor-precise-positive
   - subject: FLOOR.PRECISE
+    subjectRef: FLOOR.PRECISE
     formula: =FLOOR.PRECISE(-4.3)
     category: value
     expect: -5
@@ -913,6 +1010,7 @@ tests:
       - math
     name: floor-precise-negative
   - subject: FLOOR.PRECISE
+    subjectRef: FLOOR.PRECISE
     formula: =FLOOR.PRECISE(4.8, 2)
     category: value
     expect: 4
@@ -925,6 +1023,7 @@ tests:
       - math
     name: floor-precise-with-significance
   - subject: FLOOR.PRECISE
+    subjectRef: FLOOR.PRECISE
     formula: =FLOOR.PRECISE(-4.3, -2)
     category: value
     expect: -6
@@ -937,6 +1036,7 @@ tests:
       - math
     name: floor-precise-negative-significance-ignored
   - subject: ISO.CEILING
+    subjectRef: ISO.CEILING
     formula: =ISO.CEILING(4.3)
     category: value
     expect: 5
@@ -949,6 +1049,7 @@ tests:
       - math
     name: iso-ceiling-positive
   - subject: ISO.CEILING
+    subjectRef: ISO.CEILING
     formula: =ISO.CEILING(-4.3)
     category: value
     expect: -4
@@ -964,6 +1065,7 @@ tests:
       - math
     name: iso-ceiling-negative
   - subject: ISO.CEILING
+    subjectRef: ISO.CEILING
     formula: =ISO.CEILING(4.3, 2)
     category: value
     expect: 6
@@ -976,6 +1078,7 @@ tests:
       - math
     name: iso-ceiling-with-significance
   - subject: ISO.CEILING
+    subjectRef: ISO.CEILING
     formula: =ISO.CEILING(-4.3, -2)
     category: value
     expect: -4
@@ -988,6 +1091,7 @@ tests:
       - math
     name: iso-ceiling-negative-significance-ignored
   - subject: COMBIN
+    subjectRef: COMBIN
     formula: =COMBIN(5, 2)
     category: value
     expect: 10
@@ -1004,6 +1108,7 @@ tests:
       - math
     name: combin-basic
   - subject: COMBIN
+    subjectRef: COMBIN
     formula: =COMBIN(8, 8)
     category: value
     expect: 1
@@ -1020,6 +1125,7 @@ tests:
       - math
     name: combin-n-equals-k
   - subject: COMBIN
+    subjectRef: COMBIN
     formula: =COMBIN(8, 0)
     category: value
     expect: 1
@@ -1036,6 +1142,7 @@ tests:
       - math
     name: combin-k-zero
   - subject: COMBIN
+    subjectRef: COMBIN
     formula: =COMBIN(3, 5)
     category: value
     expect:
@@ -1057,6 +1164,7 @@ tests:
       - math
     name: combin-k-greater-than-n
   - subject: COMBINA
+    subjectRef: COMBINA
     formula: =COMBINA(5, 2)
     category: value
     expect: 15
@@ -1077,6 +1185,7 @@ tests:
       - math
     name: combina-basic
   - subject: COMBINA
+    subjectRef: COMBINA
     formula: =COMBINA(8, 0)
     category: value
     expect: 1
@@ -1097,6 +1206,7 @@ tests:
       - math
     name: combina-k-zero
   - subject: COMBINA
+    subjectRef: COMBINA
     formula: =COMBINA(4, 3)
     category: value
     expect: 20
@@ -1117,6 +1227,7 @@ tests:
       - math
     name: combina-larger
   - subject: MULTINOMIAL
+    subjectRef: MULTINOMIAL
     formula: =MULTINOMIAL(2, 3)
     category: value
     expect: 10
@@ -1136,6 +1247,7 @@ tests:
       - math
     name: multinomial-two
   - subject: MULTINOMIAL
+    subjectRef: MULTINOMIAL
     formula: =MULTINOMIAL(2, 3, 4)
     category: value
     expect: 1260
@@ -1155,6 +1267,7 @@ tests:
       - math
     name: multinomial-three
   - subject: MULTINOMIAL
+    subjectRef: MULTINOMIAL
     formula: =MULTINOMIAL(5)
     category: value
     expect: 1
@@ -1174,6 +1287,7 @@ tests:
       - math
     name: multinomial-single
   - subject: GCD
+    subjectRef: GCD
     category: value
     formula: =GCD(12, 18)
     expect: 6
@@ -1181,6 +1295,7 @@ tests:
       - math
     name: gcd-basic
   - subject: GCD
+    subjectRef: GCD
     category: value
     formula: =GCD(7, 13)
     expect: 1
@@ -1188,6 +1303,7 @@ tests:
       - math
     name: gcd-coprime
   - subject: GCD
+    subjectRef: GCD
     category: value
     formula: =GCD(0, 8)
     expect: 8
@@ -1195,6 +1311,7 @@ tests:
       - math
     name: gcd-with-zero
   - subject: GCD
+    subjectRef: GCD
     category: value
     formula: =GCD(24, 36, 60)
     expect: 12
@@ -1202,6 +1319,7 @@ tests:
       - math
     name: gcd-multiple-args
   - subject: LCM
+    subjectRef: LCM
     category: value
     formula: =LCM(4, 6)
     expect: 12
@@ -1209,6 +1327,7 @@ tests:
       - math
     name: lcm-basic
   - subject: LCM
+    subjectRef: LCM
     category: value
     formula: =LCM(3, 5)
     expect: 15
@@ -1216,6 +1335,7 @@ tests:
       - math
     name: lcm-coprime
   - subject: LCM
+    subjectRef: LCM
     category: value
     formula: =LCM(1, 7)
     expect: 7
@@ -1223,6 +1343,7 @@ tests:
       - math
     name: lcm-with-one
   - subject: LCM
+    subjectRef: LCM
     category: value
     formula: =LCM(2, 3, 4)
     expect: 12
@@ -1230,6 +1351,7 @@ tests:
       - math
     name: lcm-multiple-args
   - subject: ISEVEN
+    subjectRef: ISEVEN
     category: value
     formula: =ISEVEN(4)
     expect: true
@@ -1237,6 +1359,7 @@ tests:
       - math
     name: iseven-even
   - subject: ISEVEN
+    subjectRef: ISEVEN
     category: value
     formula: =ISEVEN(3)
     expect: false
@@ -1244,6 +1367,7 @@ tests:
       - math
     name: iseven-odd
   - subject: ISEVEN
+    subjectRef: ISEVEN
     category: value
     formula: =ISEVEN(0)
     expect: true
@@ -1251,6 +1375,7 @@ tests:
       - math
     name: iseven-zero
   - subject: ISEVEN
+    subjectRef: ISEVEN
     category: value
     formula: =ISEVEN(-2)
     expect: true
@@ -1258,6 +1383,7 @@ tests:
       - math
     name: iseven-negative-even
   - subject: ISODD
+    subjectRef: ISODD
     category: value
     formula: =ISODD(3)
     expect: true
@@ -1265,6 +1391,7 @@ tests:
       - math
     name: isodd-odd
   - subject: ISODD
+    subjectRef: ISODD
     category: value
     formula: =ISODD(4)
     expect: false
@@ -1272,6 +1399,7 @@ tests:
       - math
     name: isodd-even
   - subject: ISODD
+    subjectRef: ISODD
     category: value
     formula: =ISODD(0)
     expect: false
@@ -1279,6 +1407,7 @@ tests:
       - math
     name: isodd-zero
   - subject: ISODD
+    subjectRef: ISODD
     formula: =ISODD(-3)
     category: value
     expect: true
@@ -1290,6 +1419,7 @@ tests:
       - math
     name: isodd-negative-odd
   - subject: ODD
+    subjectRef: ODD
     category: value
     formula: =ODD(3)
     expect: 3
@@ -1297,6 +1427,7 @@ tests:
       - math
     name: odd-positive-integer
   - subject: ODD
+    subjectRef: ODD
     category: value
     formula: =ODD(1.5)
     expect: 3
@@ -1304,6 +1435,7 @@ tests:
       - math
     name: odd-rounds-up
   - subject: ODD
+    subjectRef: ODD
     category: value
     formula: =ODD(2)
     expect: 3
@@ -1311,6 +1443,7 @@ tests:
       - math
     name: odd-of-2
   - subject: ODD
+    subjectRef: ODD
     category: value
     formula: =ODD(-1.5)
     expect: -3
@@ -1318,6 +1451,7 @@ tests:
       - math
     name: odd-negative
   - subject: FACTDOUBLE
+    subjectRef: FACTDOUBLE
     formula: =FACTDOUBLE(7)
     category: value
     expect: 105
@@ -1329,6 +1463,7 @@ tests:
       - math
     name: factdouble-of-7
   - subject: FACTDOUBLE
+    subjectRef: FACTDOUBLE
     formula: =FACTDOUBLE(6)
     category: value
     expect: 48
@@ -1340,6 +1475,7 @@ tests:
       - math
     name: factdouble-of-6
   - subject: FACTDOUBLE
+    subjectRef: FACTDOUBLE
     category: value
     formula: =FACTDOUBLE(0)
     expect: 1
@@ -1347,6 +1483,7 @@ tests:
       - math
     name: factdouble-of-0
   - subject: FACTDOUBLE
+    subjectRef: FACTDOUBLE
     formula: =FACTDOUBLE(-1)
     category: value
     expect: 1
@@ -1375,6 +1512,7 @@ tests:
       - math
     name: factdouble-negative
   - subject: ERFC
+    subjectRef: ERFC
     category: value
     formula: =ERFC(0)
     expect: 1
@@ -1382,6 +1520,7 @@ tests:
       - math
     name: erfc-at-0
   - subject: ERFC
+    subjectRef: ERFC
     category: value
     status: observed
     formula: =ERFC(1)
@@ -1389,6 +1528,7 @@ tests:
       - math
     name: erfc-at-1
   - subject: ERFC
+    subjectRef: ERFC
     category: value
     status: observed
     formula: =ERFC(-1)
@@ -1396,6 +1536,7 @@ tests:
       - math
     name: erfc-negative
   - subject: ERFC.PRECISE
+    subjectRef: ERFC.PRECISE
     formula: =ERFC.PRECISE(0)
     category: value
     expect: 1
@@ -1416,6 +1557,7 @@ tests:
       - math
     name: erfc-precise-at-0
   - subject: ERFC.PRECISE
+    subjectRef: ERFC.PRECISE
     category: value
     status: observed
     formula: =ERFC.PRECISE(1)
@@ -1423,6 +1565,7 @@ tests:
       - math
     name: erfc-precise-at-1
   - subject: ERFC.PRECISE
+    subjectRef: ERFC.PRECISE
     category: value
     status: observed
     formula: =ERFC.PRECISE(2)
@@ -1430,6 +1573,7 @@ tests:
       - math
     name: erfc-precise-at-2
   - subject: GAMMALN
+    subjectRef: GAMMALN
     formula: =GAMMALN(1)
     category: value
     expect: 0
@@ -1445,6 +1589,7 @@ tests:
       - math
     name: gammaln-at-1
   - subject: GAMMALN
+    subjectRef: GAMMALN
     formula: =GAMMALN(2)
     category: value
     expect: 0
@@ -1460,6 +1605,7 @@ tests:
       - math
     name: gammaln-at-2
   - subject: GAMMALN
+    subjectRef: GAMMALN
     category: value
     status: observed
     formula: =GAMMALN(5)
@@ -1467,6 +1613,7 @@ tests:
       - math
     name: gammaln-at-5
   - subject: GAMMALN
+    subjectRef: GAMMALN
     formula: =GAMMALN(0)
     category: value
     expect:
@@ -1484,6 +1631,7 @@ tests:
       - math
     name: gammaln-non-positive
   - subject: GAMMALN.PRECISE
+    subjectRef: GAMMALN.PRECISE
     formula: =GAMMALN.PRECISE(1)
     category: value
     expect: 0
@@ -1503,6 +1651,7 @@ tests:
       - math
     name: gammaln-precise-at-1
   - subject: GAMMALN.PRECISE
+    subjectRef: GAMMALN.PRECISE
     formula: =GAMMALN.PRECISE(2)
     category: value
     expect: 0
@@ -1522,6 +1671,7 @@ tests:
       - math
     name: gammaln-precise-at-2
   - subject: GAMMALN.PRECISE
+    subjectRef: GAMMALN.PRECISE
     category: value
     status: observed
     formula: =GAMMALN.PRECISE(5)
@@ -1529,6 +1679,7 @@ tests:
       - math
     name: gammaln-precise-at-5
   - subject: IMLN
+    subjectRef: IMLN
     category: value
     status: observed
     formula: =IMLN("1")
@@ -1536,6 +1687,7 @@ tests:
       - math
     name: imln-of-real
   - subject: IMLN
+    subjectRef: IMLN
     category: value
     status: observed
     formula: =IMLN("i")
@@ -1543,6 +1695,7 @@ tests:
       - math
     name: imln-of-i
   - subject: IMLN
+    subjectRef: IMLN
     category: value
     status: observed
     formula: =IMLN("3+4i")
@@ -1550,6 +1703,7 @@ tests:
       - math
     name: imln-of-complex
   - subject: IMPOWER
+    subjectRef: IMPOWER
     category: value
     status: observed
     formula: =IMPOWER("2+3i", 2)
@@ -1557,6 +1711,7 @@ tests:
       - math
     name: impower-squared
   - subject: IMPOWER
+    subjectRef: IMPOWER
     category: value
     status: observed
     formula: =IMPOWER("i", 2)
@@ -1564,6 +1719,7 @@ tests:
       - math
     name: impower-of-i-squared
   - subject: IMPOWER
+    subjectRef: IMPOWER
     category: value
     status: observed
     formula: =IMPOWER("2+3i", 0)
@@ -1571,6 +1727,7 @@ tests:
       - math
     name: impower-zeroth
   - subject: IMSQRT
+    subjectRef: IMSQRT
     category: value
     status: observed
     formula: =IMSQRT("4")
@@ -1578,6 +1735,7 @@ tests:
       - math
     name: imsqrt-of-real
   - subject: IMSQRT
+    subjectRef: IMSQRT
     category: value
     status: observed
     formula: =IMSQRT("i")
@@ -1585,6 +1743,7 @@ tests:
       - math
     name: imsqrt-of-i
   - subject: IMSQRT
+    subjectRef: IMSQRT
     category: value
     status: observed
     formula: =IMSQRT("3+4i")
@@ -1592,6 +1751,7 @@ tests:
       - math
     name: imsqrt-of-complex
   - subject: PRODUCT
+    subjectRef: PRODUCT
     formula: =PRODUCT(2, 3, 4)
     category: value
     expect: 24
@@ -1604,6 +1764,7 @@ tests:
       - math
     name: product-scalars
   - subject: PRODUCT
+    subjectRef: PRODUCT
     formula: =PRODUCT(5, 0, 3)
     category: value
     expect: 0
@@ -1616,6 +1777,7 @@ tests:
       - math
     name: product-with-zero
   - subject: PRODUCT
+    subjectRef: PRODUCT
     formula: =PRODUCT(7)
     category: value
     expect: 7
@@ -1628,6 +1790,7 @@ tests:
       - math
     name: product-single
   - subject: PRODUCT
+    subjectRef: PRODUCT
     formula: =PRODUCT(A1:A3)
     category: value
     grid:
@@ -1644,6 +1807,7 @@ tests:
       - math
     name: product-with-grid-range
   - subject: COUNTIFS
+    subjectRef: COUNTIFS
     category: value
     formula: =COUNTIFS(A1:A4, ">2")
     grid:
@@ -1656,6 +1820,7 @@ tests:
       - math
     name: countifs-single-criterion
   - subject: COUNTIFS
+    subjectRef: COUNTIFS
     category: value
     formula: =COUNTIFS(A1:A4, ">1", B1:B4, "x")
     grid:
@@ -1672,6 +1837,7 @@ tests:
       - math
     name: countifs-two-criteria
   - subject: COUNTIFS
+    subjectRef: COUNTIFS
     category: value
     formula: =COUNTIFS(A1:A3, 5)
     grid:
@@ -1683,6 +1849,7 @@ tests:
       - math
     name: countifs-exact-match
   - subject: COUNTIFS
+    subjectRef: COUNTIFS
     category: value
     formula: =COUNTIFS(A1:A2, ">10")
     grid:
@@ -1693,6 +1860,7 @@ tests:
       - math
     name: countifs-no-match
   - subject: COUNTUNIQUE
+    subjectRef: COUNTUNIQUE
     formula: =COUNTUNIQUE(A1:A3)
     category: value
     grid:
@@ -1725,6 +1893,7 @@ tests:
       - math
     name: countunique-distinct
   - subject: COUNTUNIQUE
+    subjectRef: COUNTUNIQUE
     formula: =COUNTUNIQUE(A1:A5)
     category: value
     grid:
@@ -1759,6 +1928,7 @@ tests:
       - math
     name: countunique-with-dupes
   - subject: COUNTUNIQUE
+    subjectRef: COUNTUNIQUE
     formula: =COUNTUNIQUE(A1:A3)
     category: value
     grid:
@@ -1791,6 +1961,7 @@ tests:
       - math
     name: countunique-text
   - subject: SUBTOTAL
+    subjectRef: SUBTOTAL
     formula: =SUBTOTAL(1, A1:A3)
     category: value
     grid:
@@ -1807,6 +1978,7 @@ tests:
       - math
     name: subtotal-average
   - subject: SUBTOTAL
+    subjectRef: SUBTOTAL
     formula: =SUBTOTAL(2, A1:A3)
     category: value
     grid:
@@ -1823,6 +1995,7 @@ tests:
       - math
     name: subtotal-count
   - subject: SUBTOTAL
+    subjectRef: SUBTOTAL
     formula: =SUBTOTAL(4, A1:A3)
     category: value
     grid:
@@ -1839,6 +2012,7 @@ tests:
       - math
     name: subtotal-max
   - subject: SUBTOTAL
+    subjectRef: SUBTOTAL
     formula: =SUBTOTAL(5, A1:A3)
     category: value
     grid:
@@ -1855,6 +2029,7 @@ tests:
       - math
     name: subtotal-min
   - subject: SUBTOTAL
+    subjectRef: SUBTOTAL
     formula: =SUBTOTAL(9, A1:A3)
     category: value
     grid:
@@ -1871,6 +2046,7 @@ tests:
       - math
     name: subtotal-sum
   - subject: SERIESSUM
+    subjectRef: SERIESSUM
     formula: =SERIESSUM(1, 0, 1, {1, 1, 1})
     category: value
     expect: 3
@@ -1892,6 +2068,7 @@ tests:
       - bare-formula
     name: seriessum-constant-coef
   - subject: SERIESSUM
+    subjectRef: SERIESSUM
     formula: =SERIESSUM(2, 0, 1, {1, 1, 1})
     category: value
     expect: 7
@@ -1913,6 +2090,7 @@ tests:
       - bare-formula
     name: seriessum-x-squared-series
   - subject: SERIESSUM
+    subjectRef: SERIESSUM
     formula: =SERIESSUM(1, 1, 1, {2, 3, 4})
     category: value
     expect: 9
@@ -1934,6 +2112,7 @@ tests:
       - bare-formula
     name: seriessum-x-equals-one
   - subject: SERIESSUM
+    subjectRef: SERIESSUM
     formula: =SERIESSUM(2, 0, 2, {1, 1})
     category: value
     expect: 5
@@ -1955,6 +2134,7 @@ tests:
       - bare-formula
     name: seriessum-small
   - subject: MUNIT
+    subjectRef: MUNIT
     formula: =MUNIT(2)
     category: value
     expect:
@@ -1986,6 +2166,7 @@ tests:
       - math
     name: munit-2x2
   - subject: MUNIT
+    subjectRef: MUNIT
     formula: =MUNIT(3)
     category: value
     expect:
@@ -2022,6 +2203,7 @@ tests:
       - math
     name: munit-3x3
   - subject: MUNIT
+    subjectRef: MUNIT
     formula: =MUNIT(1)
     category: value
     expect: 1
@@ -2046,6 +2228,7 @@ tests:
       - math
     name: munit-1x1
   - subject: MUNIT
+    subjectRef: MUNIT
     category: error-code
     status: observed
     formula: =MUNIT(0)
@@ -2053,6 +2236,7 @@ tests:
       - math
     name: munit-zero-error
   - subject: SQRTPI
+    subjectRef: SQRTPI
     category: value
     status: observed
     formula: =SQRTPI(1)
@@ -2060,6 +2244,7 @@ tests:
       - math
     name: sqrtpi-of-1
   - subject: SQRTPI
+    subjectRef: SQRTPI
     formula: =SQRTPI(0)
     category: value
     expect: 0
@@ -2072,6 +2257,7 @@ tests:
       - math
     name: sqrtpi-of-0
   - subject: SQRTPI
+    subjectRef: SQRTPI
     category: value
     status: observed
     formula: =SQRTPI(2)
@@ -2079,6 +2265,7 @@ tests:
       - math
     name: sqrtpi-of-2
   - subject: SQRTPI
+    subjectRef: SQRTPI
     formula: =SQRTPI(-1)
     category: value
     expect:
@@ -2096,6 +2283,7 @@ tests:
       - math
     name: sqrtpi-negative
   - subject: RAND
+    subjectRef: RAND
     category: volatile
     status: volatile
     formula: =RAND()
@@ -2109,6 +2297,7 @@ tests:
       - volatile
     name: rand-smoke
   - subject: RANDBETWEEN
+    subjectRef: RANDBETWEEN
     category: volatile
     status: volatile
     formula: =RANDBETWEEN(1, 10)
@@ -2119,6 +2308,7 @@ tests:
       - volatile
     name: randbetween-smoke
   - subject: RANDARRAY
+    subjectRef: RANDARRAY
     formula: =RANDARRAY(2, 2)
     category: volatile
     features:

@@ -1,8 +1,9 @@
 {
+  "schemaVersion": 2,
   "platform": "excel",
-  "generatedAt": "2026-06-17T19:44:09.853Z",
+  "generatedAt": "2026-07-18T20:49:21.609Z",
   "results": {
-    "sha256:63da71ddec8acd73cc62f67f1c0e3e64f4a7a55b6bbd85dbb4d5623dffd7b013": {
+    "CONCAT/concat-two-args": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -32,9 +33,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=CONCAT(\"hello\", \" world\")"
+      "formula-as-evaluated": "=CONCAT(\"hello\", \" world\")",
+      "stimulus": "sha256:9deafc415cf7c102bacc2d19bb7f932e95c16529d726699379b9c2a7b26f69ca",
+      "fingerprint": "sha256:9e32253e499354dbac42140697ebcf62f00e283fd26462807024964896dae1d6",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
-    "sha256:2ae1f8d21716f47a3b0c7de10c33c203c71b702356ee48b7a4e3b17d6b4fd42e": {
+    "CONCATENATE/concatenate-with-grid": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -61,9 +67,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=CONCATENATE(A1, A2, A3, \"!\")"
+      "formula-as-evaluated": "=CONCATENATE(A1, A2, A3, \"!\")",
+      "stimulus": "sha256:9f5b9c095136ef0ca2a20279d875154bfcefee5f57b8ef47a689851bb1adc4f4",
+      "fingerprint": "sha256:34abdce4925514affce950a71eaa64b9a120af35213405187fdfe34dc06d59cd",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
-    "sha256:8898ccfd2634b84e04d2e7b4b9050eb41c79161451b6a87891a5359187c8c83a": {
+    "CONCAT/concat-with-numbers": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -93,9 +104,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=CONCAT(\"value:\", 42)"
+      "formula-as-evaluated": "=CONCAT(\"value:\", 42)",
+      "stimulus": "sha256:49563a8fc5445a3b06e2df3f355a9d2fb6b8462d401eade75c5e30f84ae20f94",
+      "fingerprint": "sha256:98d701e6110fb70a74415d8a605abf8e74d2948996c56397f90f292c2474a0b3",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
-    "sha256:bbdace663702eaa7b9798136b39111a3681ed00905ef0762ba9e9709b3b3ea6b": {
+    "LEFT/left-with-count": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -122,9 +138,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=LEFT(\"Sale Price\", 4)"
+      "formula-as-evaluated": "=LEFT(\"Sale Price\", 4)",
+      "stimulus": "sha256:36e233b0539031762e3d306e4bddadce2b4ef882fd2b6d22b1cbbb0eec34719f",
+      "fingerprint": "sha256:c192ed55ed83fe1619dc1bd312fd5ca5bae629d13cce57115fcabeac52314283",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
-    "sha256:f3bc75466300ff421025fa9942e627fcd1ec5c51abe3eb1c02b3031b4be33cc8": {
+    "LEFT/left-default": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -151,9 +172,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=LEFT(\"Sweden\")"
+      "formula-as-evaluated": "=LEFT(\"Sweden\")",
+      "stimulus": "sha256:2149f8ccc500e95e8b286e2042cc8cfdd6c33a279b89f589a58048f38fb2a64c",
+      "fingerprint": "sha256:3c3eb7de783e5bc2b027d8ad492682dade5bd8fdbd79c12812573b10a5f88793",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
-    "sha256:4062ef9865389f276f59ea60b76ff7b333840dc2df798af151b91db1c6283eac": {
+    "RIGHT/right-with-count": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -180,9 +206,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=RIGHT(\"Sale Price\", 5)"
+      "formula-as-evaluated": "=RIGHT(\"Sale Price\", 5)",
+      "stimulus": "sha256:c02a62f099e37a3c1d4c9a2cec7a9d469dc1f2a94792133c47aa4d6e6ca96b98",
+      "fingerprint": "sha256:3aeb4a11bce39588be07161b0a9d17d220663abaab01dff9996bd86b4d95df0a",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
-    "sha256:49bc365d1f76444f717981a3ce076cf7c66089eb5c9d1899adf01395191bf7c2": {
+    "RIGHT/right-default": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -209,9 +240,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=RIGHT(\"Stock Number\")"
+      "formula-as-evaluated": "=RIGHT(\"Stock Number\")",
+      "stimulus": "sha256:89da09bc1754e92c8b1348f264a97411b4ad0fd24eb509fd33d38835f961a16e",
+      "fingerprint": "sha256:20a903f18994596a71032eb64ee7979f59832381311fdba75ea2aea6f9e3066b",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
-    "sha256:99e6d3fe41577c6950bb29e168b5c8e4967a85b521a7a7015dccda0109fbb434": {
+    "MID/mid-basic": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -238,9 +274,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=MID(\"Romain\", 3, 4)"
+      "formula-as-evaluated": "=MID(\"Romain\", 3, 4)",
+      "stimulus": "sha256:66b5926b1f3a52ef53da0b9d774f5c827b4a0d795e15d2a87a857b7a32d7936e",
+      "fingerprint": "sha256:791b5c52f4e065d3529b013be2e82f5d224966589968ff0cd99d844171eb838c",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
-    "sha256:fea12e2a54686cad82d9d5ae702d3f1f2099d402cc49535eeb271778ed85afdd": {
+    "MID/mid-from-start": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -267,9 +308,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=MID(\"Romain\", 1, 2)"
+      "formula-as-evaluated": "=MID(\"Romain\", 1, 2)",
+      "stimulus": "sha256:afbe3b55c745f692deb2f17e2598c136ce75bf7c3b1898f3fcc48ffc39f66f15",
+      "fingerprint": "sha256:a3ecb395917d18b073d79f20818d2a3148ce117f5eda7bafa5930f51f08c4eea",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
-    "sha256:67209a4f7cd2516a3925a9f0805dcab57be1533438ef0ebf54b271a2b0355acc": {
+    "MID/mid-beyond-end": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -296,9 +342,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=MID(\"Romain\", 3, 6)"
+      "formula-as-evaluated": "=MID(\"Romain\", 3, 6)",
+      "stimulus": "sha256:91b84d164b89dacb2f61f0b672556adc31a8b93c6ff3fe76fa7bf236f67ea9ea",
+      "fingerprint": "sha256:791b5c52f4e065d3529b013be2e82f5d224966589968ff0cd99d844171eb838c",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
-    "sha256:f484f95755ac23867726907b05d3e9463e94cbf4b8fd9f30d2933a76d6e2f6ec": {
+    "MID/mid-start-0": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -325,9 +376,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=MID(\"Romain\", 0, 3)"
+      "formula-as-evaluated": "=MID(\"Romain\", 0, 3)",
+      "stimulus": "sha256:75aca852fc8fa74cb0832626c0e18eb8c47cf6ee95e14efe7e8cc6addc382317",
+      "fingerprint": "sha256:53560b24dc39cb4e4cccc613e7b3e26488e6e25a7024d47e1d2f13ac74995070",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
-    "sha256:d6d4a5436b54b1439cc11f815ac4837a9fbd6ef01feda24eb66ac2d8ba875447": {
+    "MID/mid-negative-count": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -354,9 +410,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=MID(\"Romain\", 1, -1)"
+      "formula-as-evaluated": "=MID(\"Romain\", 1, -1)",
+      "stimulus": "sha256:4ccde42eb0c3f9283c64dc3f1b0917a0ea97fde49300fabd92c9a9893fe5aa82",
+      "fingerprint": "sha256:53560b24dc39cb4e4cccc613e7b3e26488e6e25a7024d47e1d2f13ac74995070",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
-    "sha256:a1cdfca6e0e25109d7cfd0137852671b7d40f655f66f61f3f6bfc9905b21fe45": {
+    "LEN/len-basic": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -382,9 +443,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=LEN(\"Phoenix, AZ\")"
+      "formula-as-evaluated": "=LEN(\"Phoenix, AZ\")",
+      "stimulus": "sha256:48271550f03ae5038c9ce22e8cdb4784636c2651de0d02ecb6a92e07a4271091",
+      "fingerprint": "sha256:4fd553458f09de1062ee69a73d58083e9c68ec237edc26d7e21731b3749d87fb",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
-    "sha256:e0c3a0af848387ae8a3513c0dfed2ae467dbdc852d6db24b5290975b81f0e90f": {
+    "LEN/len-empty": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -410,9 +476,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=LEN(\"\")"
+      "formula-as-evaluated": "=LEN(\"\")",
+      "stimulus": "sha256:05553bf7e90accf1299e24dd57e0caa555b7d365b24e63631fd699208679ad04",
+      "fingerprint": "sha256:c2c1197f53d7fead335c75f6de7376efaaa96cc32466c698b76d1afb524a3d9b",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
-    "sha256:5f204b61e9028fc4f431a2642406ea3666fe65837759fed575e13a818b5a4a66": {
+    "LEN/len-with-spaces": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -438,9 +509,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=LEN(\"        One\")"
+      "formula-as-evaluated": "=LEN(\"        One\")",
+      "stimulus": "sha256:9d1357dbd1f70a31603c9c8e0910d636721ef52e5f658dc4a6c0eaa7657879d9",
+      "fingerprint": "sha256:4fd553458f09de1062ee69a73d58083e9c68ec237edc26d7e21731b3749d87fb",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
-    "sha256:566b3f32e6a29bc3837e3651414a8bac2a2d59eb3e32a7133c7cbba607040ed3": {
+    "LOWER/lower": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -467,9 +543,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=LOWER(\"E. E. Cummings\")"
+      "formula-as-evaluated": "=LOWER(\"E. E. Cummings\")",
+      "stimulus": "sha256:af809101922e5c8f87bc308552c0d7893f59da52e2dde38dde2988412dff8e59",
+      "fingerprint": "sha256:8fa96a5f33ddd53c8d322431da4e99e0a0a79313a21644ddca0d8cefbc9a4353",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
-    "sha256:8058b9f105a1472efb2cff110b7b0c48d3c8435ba4f20d1865de57c542207952": {
+    "UPPER/upper": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -496,9 +577,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=UPPER(\"total\")"
+      "formula-as-evaluated": "=UPPER(\"total\")",
+      "stimulus": "sha256:b9e64128086c2028e1afeef991d1a690e5a0c9c9663068fab53a74a6e33753c0",
+      "fingerprint": "sha256:aabb3a069be5db592aad56e7707f720de0ada1856fd9b7b2bfb0b07f00f6ef14",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
-    "sha256:3f5be264566fe5d1e726b1b58b45206b0d5cc9d4489cf02d4c4c10aa23482145": {
+    "UPPER/upper-mixed": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -525,9 +611,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=UPPER(\"Yield\")"
+      "formula-as-evaluated": "=UPPER(\"Yield\")",
+      "stimulus": "sha256:29b9bb958a7eeed661a3e95f141e88adfcb064c5da5a6ad2c918e13c7368257f",
+      "fingerprint": "sha256:bde29aa631eb713295b7867581ddcc6e2536c187ae97a1c62f657ed34c250280",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
-    "sha256:69f8cbb74d06d4c0b003c47757e693984abbcc3e45f311f2ee95ad92e0ed0697": {
+    "TRIM/trim": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -554,9 +645,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=TRIM(\" First Quarter Earnings \")"
+      "formula-as-evaluated": "=TRIM(\" First Quarter Earnings \")",
+      "stimulus": "sha256:a80630d5298ff52991f03c96935ba01f7fbe3a751980e8689cf7c3f57232f411",
+      "fingerprint": "sha256:c919eba44941d4cadd56bfa7e1acad4ac41b04b41afeeb9338f8d1796c33b25f",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
-    "sha256:c935286d78ab871b647a5a71a24dd0484a1bc4e6a35282c7b086045f49cce5c8": {
+    "SUBSTITUTE/substitute-basic": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -583,9 +679,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=SUBSTITUTE(\"hello world\", \"world\", \"earth\")"
+      "formula-as-evaluated": "=SUBSTITUTE(\"hello world\", \"world\", \"earth\")",
+      "stimulus": "sha256:8c6cb27a4feaf2e0665be027aaaf2fb11f70a8b1e4d5d88c31f58094c268240d",
+      "fingerprint": "sha256:d7f6b1104513cd017f614a914d74eaf0c839031ebbc82fff0954466ba43fa0f6",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
-    "sha256:c4ec22d1041c0d277e00396c6c6a74739c4ee230fe07120ac2d50f7701335b4f": {
+    "SUBSTITUTE/substitute-multiple-occurrences": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -612,9 +713,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=SUBSTITUTE(\"abcabc\", \"a\", \"x\")"
+      "formula-as-evaluated": "=SUBSTITUTE(\"abcabc\", \"a\", \"x\")",
+      "stimulus": "sha256:33cd55cb2fa051d3d4cf3aff2567245cf02ef2e0348208a3f4bb13bb0b22ac71",
+      "fingerprint": "sha256:23440b7e3b9dd591cb8b909ffd638963080e49f15f852e631d25eb41ddf3a161",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
-    "sha256:c5ea79519c36863de8067b702a1f336265790a627414de9fcb6aca8f4f63c989": {
+    "SUBSTITUTE/substitute-specific-instance": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -641,9 +747,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=SUBSTITUTE(\"abcabc\", \"a\", \"x\", 2)"
+      "formula-as-evaluated": "=SUBSTITUTE(\"abcabc\", \"a\", \"x\", 2)",
+      "stimulus": "sha256:169cd6a8b7c6881b359191564f3f505c6a59e3dfad973e0db0c7f61b624b091e",
+      "fingerprint": "sha256:46b7e53249aae83f094165bae67db4953177581a47eeffb027e62f6e6f097407",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
-    "sha256:6d6e94fcceff35765cf5e8ee4b17d996bbf23e89aac3ca3c76f6dafd41d1972a": {
+    "FIND/find-case-sensitive": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -669,9 +780,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=FIND(\"M\", \"Miriam McGovern\")"
+      "formula-as-evaluated": "=FIND(\"M\", \"Miriam McGovern\")",
+      "stimulus": "sha256:fd206455fe0474152bcd80458c50c2361c93bdfa1da1de5c6d908fb6c0f6c6a0",
+      "fingerprint": "sha256:43412a89a2157f2c4788feb0281c4a1151687dc9d65d9710c6a2e9db523e740d",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
-    "sha256:ac6f6d7d481930220929c118a051d94b67bcd3ae63d13a63601d15fc26421a55": {
+    "FIND/find-lowercase": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -697,9 +813,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=FIND(\"m\", \"Miriam McGovern\")"
+      "formula-as-evaluated": "=FIND(\"m\", \"Miriam McGovern\")",
+      "stimulus": "sha256:d569f4a7e7041fbd14f0e7711cf8767be1284a0d9d2ef2f185d1e5936ade7ff0",
+      "fingerprint": "sha256:19380e17325c5661a8669b14f9a7f5f1edd57ac6d5d29f72c656315efae76671",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
-    "sha256:45c330c4a9f0e090722617a5674ba8ef35b69f6b767bf2a7fbba35b08634b6f0": {
+    "FIND/find-with-start": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -725,9 +846,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=FIND(\"M\", \"Miriam McGovern\", 3)"
+      "formula-as-evaluated": "=FIND(\"M\", \"Miriam McGovern\", 3)",
+      "stimulus": "sha256:283a5b2e3f5eb55b6ca8ac2085def0c810a6019bdc52bf17692f1c36456af44d",
+      "fingerprint": "sha256:7d2d8a5b779778e8b5c0b24e3bf06cdce590654ebed8eb82bcf39b758116ffb6",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
-    "sha256:2f12476ca0951e24d4143bc78d7d3620378f3bc3229e0afd2b7ffe1d825dfbb9": {
+    "FIND/find-not-found": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -754,9 +880,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=FIND(\"B\", \"Miriam McGovern\")"
+      "formula-as-evaluated": "=FIND(\"B\", \"Miriam McGovern\")",
+      "stimulus": "sha256:22e80789a9da5ded11f91c7423dbcdd3b9483ea7b189b7c5d01a44c2db0db5b2",
+      "fingerprint": "sha256:53560b24dc39cb4e4cccc613e7b3e26488e6e25a7024d47e1d2f13ac74995070",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
-    "sha256:ed3409186ebe38d949e5c9e38146ce5c84d7ff229d0d3e92f89cec1b9d7a6267": {
+    "EXACT/exact-match": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -783,9 +914,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=EXACT(\"word\", \"word\")"
+      "formula-as-evaluated": "=EXACT(\"word\", \"word\")",
+      "stimulus": "sha256:e435941c9c0f1b93c0c5368f49d8a2cd6bac6efc66aa2a9af1b716705dd7c6d4",
+      "fingerprint": "sha256:d5700d641c4a9b9a358b961db1d68db9a66ae895f49fcb67cf595f5e1fa51d9c",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
-    "sha256:97c0b139b26b7f51634d984a9c6e57b472aa28687463533cb2068897b8018d64": {
+    "EXACT/exact-case-differs": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -812,9 +948,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=EXACT(\"Word\", \"word\")"
+      "formula-as-evaluated": "=EXACT(\"Word\", \"word\")",
+      "stimulus": "sha256:701a841850cae296ad4808ef2b3c9753725d075d25d81471edf6c0f27948a6a3",
+      "fingerprint": "sha256:a1b538e19620f97d545382bbb58c4ab9ed43811e9f00defb0e3f2a8a27492f94",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
-    "sha256:02c3c069cf601a8ac590acabbdbe03e2f903300b04dff9645d0a887fee62ab10": {
+    "REPLACE/replace-basic": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -841,9 +982,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=REPLACE(\"abcdefghijk\", 6, 5, \"*\")"
+      "formula-as-evaluated": "=REPLACE(\"abcdefghijk\", 6, 5, \"*\")",
+      "stimulus": "sha256:c0f83dcf4da54e56b0662307da20ec79661b1ec0aa5ccaf88d2f8d7ea00061cd",
+      "fingerprint": "sha256:b636c3d620f7d5a0bd019d94f7e01adb0447c07d3e75f3896452cd41ce937806",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
-    "sha256:120d07910182623d71088e08589a459e0a8c93734ba8f152c801aeabc8f3befc": {
+    "REPLACE/replace-year": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -870,9 +1016,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=REPLACE(\"2009\", 3, 2, \"10\")"
+      "formula-as-evaluated": "=REPLACE(\"2009\", 3, 2, \"10\")",
+      "stimulus": "sha256:7ee7af1b432039fe07c7d27a49fdcfab9fada7ba3a7e9cb832fd37bf46d02290",
+      "fingerprint": "sha256:dcb65f9cd983a1e4dfe0476e0042a3eb5ac21a1be4eaa592363284dd02953813",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
-    "sha256:4e1c556294c41a62bcb9d06879855060b00adce2a2e587d0198d2fa0e5eef27d": {
+    "REPT/rept-basic": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -899,9 +1050,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=REPT(\"ha\", 3)"
+      "formula-as-evaluated": "=REPT(\"ha\", 3)",
+      "stimulus": "sha256:dec6a701b78a971f54cbc5cdc39cbab630abe65e5f1d908a714f14c527d27419",
+      "fingerprint": "sha256:c63a11b5c23c9dee7be496816cdb00dedeee72c532c45baea506b5c4c090b5aa",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
-    "sha256:c723cfb2d4acba92bdb8655a8dd2ba9938862b3707df89d86b608e089f0c6cdc": {
+    "REPT/rept-zero": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -928,9 +1084,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=REPT(\"ha\", 0)"
+      "formula-as-evaluated": "=REPT(\"ha\", 0)",
+      "stimulus": "sha256:230dc945e6c02a5f865aacd992f399f875e38d307291011141e7f3c445b601ea",
+      "fingerprint": "sha256:fad3fd153f46982f305d0fb83a795512940bfcd08e36f1a71f20f0fef41e6b1b",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
-    "sha256:10aa131eb8b82c8ed80bc1b359a4bfa7fb45691709a59806ae79b436f44ec366": {
+    "TEXTJOIN/textjoin-comma-separator": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -960,9 +1121,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=TEXTJOIN(\", \", TRUE, A1:A3)"
+      "formula-as-evaluated": "=TEXTJOIN(\", \", TRUE, A1:A3)",
+      "stimulus": "sha256:37fb9f7ae7df5400f490dfcb3c53d0fc43596bc43147e37b6ed7101112d035db",
+      "fingerprint": "sha256:8447f775a9d398f8df9fdd074209ac82ca851ab25496396bb2e9417a42e230bd",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
-    "sha256:32e78349a07dc8098ccd9021539a685d3539a4c1b4b3dc7ddc074dda9883ba5b": {
+    "TEXTBEFORE/textbefore-space": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -992,9 +1158,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=TEXTBEFORE(\"Brian Wiles\", \" \")"
+      "formula-as-evaluated": "=TEXTBEFORE(\"Brian Wiles\", \" \")",
+      "stimulus": "sha256:64a1a80ce860701fabe2259f84e3ce9f9458954725f9910ac7ffff5aaab93382",
+      "fingerprint": "sha256:83313c413fa229f1edd0eddbdbbd3e1bb99a0fab5ca44cb29317800145991ae0",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
-    "sha256:38eeec1255a433438cbe759746cf28aa01516058e53ccb8722ed0b51f1349c05": {
+    "TEXTBEFORE/textbefore-second-instance": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -1024,9 +1195,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=TEXTBEFORE(\"one,two,three\", \",\", 2)"
+      "formula-as-evaluated": "=TEXTBEFORE(\"one,two,three\", \",\", 2)",
+      "stimulus": "sha256:55eb14f3bc4cbdf9e109973ab1b4f35916eb48cb696d7aedc4c28d6f108060e6",
+      "fingerprint": "sha256:4513f44b2ec0b864ce23b18b998160e464d0cb8e5c198a2c3b43739ce3158d54",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
-    "sha256:353bc7923ee0b45829d10a84b52bec520a6f8d683feea12ac716934c1a94ab8f": {
+    "TEXTAFTER/textafter-space": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -1056,9 +1232,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=TEXTAFTER(\"Brian Wiles\", \" \")"
+      "formula-as-evaluated": "=TEXTAFTER(\"Brian Wiles\", \" \")",
+      "stimulus": "sha256:e814714de8482a9c7cc6a7535b71bbea990346367b9f14a2fdd7963ce4282a1f",
+      "fingerprint": "sha256:6ac739c98e55457f6943e9b95a4d7cc391d038a1d5a35195d2a79408dc6eb105",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
-    "sha256:04f152413b6208c8c4a8416b20538f4226e802b36047a4a670d5c3a369dcd322": {
+    "TEXTAFTER/textafter-second-instance": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -1088,7 +1269,12 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=TEXTAFTER(\"one,two,three\", \",\", 2)"
+      "formula-as-evaluated": "=TEXTAFTER(\"one,two,three\", \",\", 2)",
+      "stimulus": "sha256:ed9cde6702278cb58d70e664e0c68626714de879c654233c720fbe312089fa44",
+      "fingerprint": "sha256:81cebcdf8508f8877434569430a5b186b0893e46555d79f15b10fed8eb1ff75a",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     }
   }
 }

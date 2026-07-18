@@ -8,6 +8,7 @@ import {
   derivePublicRef,
   deriveSubjectRef,
   semanticHashForCase,
+  stimulusHashForCase,
 } from "../identity/index.js";
 
 // files lacking a supported schemaVersion are rejected — v1→v2 was a one-way cutover
@@ -38,6 +39,7 @@ export function loadTestSuite(path: string): TestSuite {
   if (schemaVersion === 3) {
     for (const test of tests) {
       test.semanticHash = semanticHashForCase(test as unknown as Record<string, unknown>);
+      test.stimulusHash = stimulusHashForCase(test);
     }
   }
 

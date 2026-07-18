@@ -2,6 +2,7 @@ schemaVersion: 3
 name: Database functions
 tests:
   - subject: DSUM
+    subjectRef: DSUM
     formula: =DSUM(A1:D5, "Price", F1:F2)
     category: value
     grid:
@@ -45,6 +46,7 @@ tests:
       - database
     name: dsum-apples-total
   - subject: DSUM
+    subjectRef: DSUM
     formula: =DSUM(A1:D5, 4, F1:F2)
     category: value
     grid:
@@ -88,6 +90,7 @@ tests:
       - database
     name: dsum-field-by-index
   - subject: DSUM
+    subjectRef: DSUM
     formula: =DSUM(A1:D5, "Units", H1:H2)
     category: value
     grid:
@@ -131,6 +134,7 @@ tests:
       - database
     name: dsum-comparator-criteria
   - subject: DSUM
+    subjectRef: DSUM
     formula: =DSUM(A1:D5, "Price", F1:F2)
     category: value
     grid:
@@ -174,6 +178,7 @@ tests:
       - database
     name: dsum-empty-result
   - subject: DCOUNT
+    subjectRef: DCOUNT
     formula: =DCOUNT(A1:D5, "Price", F1:F2)
     category: value
     grid:
@@ -217,6 +222,7 @@ tests:
       - database
     name: dcount-apples
   - subject: DCOUNT
+    subjectRef: DCOUNT
     formula: =DCOUNT(A1:D5, 3, H1:H2)
     category: value
     grid:
@@ -260,6 +266,7 @@ tests:
       - database
     name: dcount-field-by-index
   - subject: DCOUNT
+    subjectRef: DCOUNT
     formula: =DCOUNT(A1:D5, "Product", F1:F2)
     category: value
     grid:
@@ -303,6 +310,7 @@ tests:
       - database
     name: dcount-ignores-text-in-numeric-field
   - subject: DCOUNT
+    subjectRef: DCOUNT
     formula: =DCOUNT(A1:D5, "Price", F1:F2)
     category: value
     grid:
@@ -346,6 +354,7 @@ tests:
       - database
     name: dcount-empty-result
   - subject: DCOUNTA
+    subjectRef: DCOUNTA
     formula: =DCOUNTA(A1:D5, "Product", F1:F2)
     category: value
     grid:
@@ -389,6 +398,7 @@ tests:
       - database
     name: dcounta-apples
   - subject: DCOUNTA
+    subjectRef: DCOUNTA
     formula: =DCOUNTA(A1:D5, 1, G1:G2)
     category: value
     grid:
@@ -432,6 +442,7 @@ tests:
       - database
     name: dcounta-field-by-index
   - subject: DCOUNTA
+    subjectRef: DCOUNTA
     formula: =DCOUNTA(A1:D5, "Product", F1:F2)
     category: value
     grid:
@@ -475,6 +486,7 @@ tests:
       - database
     name: dcounta-empty-result
   - subject: DGET
+    subjectRef: DGET
     formula: =DGET(A1:D5, "Price", F1:G2)
     category: value
     grid:
@@ -520,6 +532,7 @@ tests:
       - database
     name: dget-single-match
   - subject: DGET
+    subjectRef: DGET
     formula: =DGET(A1:D5, 4, F1:G2)
     category: value
     grid:
@@ -565,6 +578,7 @@ tests:
       - database
     name: dget-field-by-index
   - subject: DGET
+    subjectRef: DGET
     formula: =DGET(A1:D5, "Price", F1:F2)
     category: error-code
     grid:
@@ -613,6 +627,7 @@ tests:
       - database
     name: dget-multiple-matches-error
   - subject: DGET
+    subjectRef: DGET
     formula: =DGET(A1:D5, "Price", F1:F2)
     category: error-code
     grid:
@@ -657,6 +672,7 @@ tests:
       - database
     name: dget-no-match-error
   - subject: DMAX
+    subjectRef: DMAX
     formula: =DMAX(A1:D5, "Price", F1:F2)
     category: value
     grid:
@@ -700,6 +716,7 @@ tests:
       - database
     name: dmax-apples
   - subject: DMAX
+    subjectRef: DMAX
     formula: =DMAX(A1:D5, 4, G1:G2)
     category: value
     grid:
@@ -743,6 +760,7 @@ tests:
       - database
     name: dmax-field-by-index
   - subject: DMAX
+    subjectRef: DMAX
     formula: =DMAX(A1:D5, "Units", H1:H2)
     category: value
     grid:
@@ -786,6 +804,7 @@ tests:
       - database
     name: dmax-comparator-criteria
   - subject: DMIN
+    subjectRef: DMIN
     formula: =DMIN(A1:D5, "Price", F1:F2)
     category: value
     grid:
@@ -829,6 +848,7 @@ tests:
       - database
     name: dmin-apples
   - subject: DMIN
+    subjectRef: DMIN
     formula: =DMIN(A1:D5, 3, G1:G2)
     category: value
     grid:
@@ -872,6 +892,7 @@ tests:
       - database
     name: dmin-field-by-index
   - subject: DMIN
+    subjectRef: DMIN
     formula: =DMIN(A1:D5, "Units", H1:H2)
     category: value
     grid:
@@ -915,6 +936,7 @@ tests:
       - database
     name: dmin-all-rows
   - subject: DPRODUCT
+    subjectRef: DPRODUCT
     formula: =DPRODUCT(A1:D5, "Price", F1:F2)
     category: value
     grid:
@@ -958,6 +980,7 @@ tests:
       - database
     name: dproduct-apples-price
   - subject: DPRODUCT
+    subjectRef: DPRODUCT
     formula: =DPRODUCT(A1:D5, 4, G1:G2)
     category: value
     grid:
@@ -1001,6 +1024,7 @@ tests:
       - database
     name: dproduct-field-by-index
   - subject: DPRODUCT
+    subjectRef: DPRODUCT
     formula: =DPRODUCT(A1:D5, "Price", F1:F2)
     category: value
     grid:
@@ -1044,6 +1068,7 @@ tests:
       - database
     name: dproduct-empty-result
   - subject: DAVERAGE
+    subjectRef: DAVERAGE
     formula: =DAVERAGE(A1:D5, "Price", F1:F2)
     category: value
     grid:
@@ -1087,6 +1112,7 @@ tests:
       - database
     name: daverage-apples
   - subject: DAVERAGE
+    subjectRef: DAVERAGE
     formula: =DAVERAGE(A1:D5, 3, G1:G2)
     category: value
     grid:
@@ -1130,6 +1156,7 @@ tests:
       - database
     name: daverage-field-by-index
   - subject: DAVERAGE
+    subjectRef: DAVERAGE
     formula: =DAVERAGE(A1:D5, "Units", H1:H2)
     category: value
     grid:
@@ -1173,6 +1200,7 @@ tests:
       - database
     name: daverage-comparator-criteria
   - subject: DSTDEV
+    subjectRef: DSTDEV
     category: value
     status: observed
     formula: =DSTDEV(A1:D5, "Price", F1:F2)
@@ -1203,6 +1231,7 @@ tests:
       - database
     name: dstdev-apples-price
   - subject: DSTDEV
+    subjectRef: DSTDEV
     category: value
     status: observed
     formula: =DSTDEV(A1:D5, 4, F1:F2)
@@ -1233,6 +1262,7 @@ tests:
       - database
     name: dstdev-field-by-index
   - subject: DSTDEVP
+    subjectRef: DSTDEVP
     formula: =DSTDEVP(A1:D5, "Units", F1:F2)
     category: value
     grid:
@@ -1276,6 +1306,7 @@ tests:
       - database
     name: dstdevp-bananas-units
   - subject: DSTDEVP
+    subjectRef: DSTDEVP
     formula: =DSTDEVP(A1:D5, 3, F1:F2)
     category: value
     grid:
@@ -1319,6 +1350,7 @@ tests:
       - database
     name: dstdevp-apples-price
   - subject: DSTDEVP
+    subjectRef: DSTDEVP
     formula: =DSTDEVP(A1:D5, 4, F1:F2)
     category: value
     grid:
@@ -1362,6 +1394,7 @@ tests:
       - database
     name: dstdevp-field-by-index
   - subject: DVAR
+    subjectRef: DVAR
     formula: =DVAR(A1:D5, "Price", F1:F2)
     category: value
     grid:
@@ -1405,6 +1438,7 @@ tests:
       - database
     name: dvar-apples-price
   - subject: DVAR
+    subjectRef: DVAR
     formula: =DVAR(A1:D5, 4, F1:F2)
     category: value
     grid:
@@ -1448,6 +1482,7 @@ tests:
       - database
     name: dvar-bananas-units
   - subject: DVAR
+    subjectRef: DVAR
     formula: =DVAR(A1:D5, 3, F1:F2)
     category: value
     grid:
@@ -1491,6 +1526,7 @@ tests:
       - database
     name: dvar-field-by-index
   - subject: DVARP
+    subjectRef: DVARP
     formula: =DVARP(A1:D5, "Price", F1:F2)
     category: value
     grid:
@@ -1534,6 +1570,7 @@ tests:
       - database
     name: dvarp-apples-price
   - subject: DVARP
+    subjectRef: DVARP
     formula: =DVARP(A1:D5, 4, F1:F2)
     category: value
     grid:
@@ -1577,6 +1614,7 @@ tests:
       - database
     name: dvarp-bananas-units
   - subject: DVARP
+    subjectRef: DVARP
     formula: =DVARP(A1:D5, 3, F1:F2)
     category: value
     grid:

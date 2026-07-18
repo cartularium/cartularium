@@ -2,6 +2,7 @@ schemaVersion: 3
 name: Logical functions
 tests:
   - subject: IF
+    subjectRef: IF
     formula: =IF(TRUE, 1, 2)
     category: value
     expect: 1
@@ -12,6 +13,7 @@ tests:
           error: "#NAME?"
     name: if-true-branch
   - subject: IF
+    subjectRef: IF
     formula: =IF(FALSE, 1, 2)
     category: value
     expect: 2
@@ -22,6 +24,7 @@ tests:
           error: "#NAME?"
     name: if-false-branch
   - subject: IF
+    subjectRef: IF
     category: value
     formula: =IF(2>3, TRUE, FALSE)
     expect: false
@@ -34,6 +37,7 @@ tests:
       - divergence
     name: if-with-comparison
   - subject: IF
+    subjectRef: IF
     category: value
     status: observed
     formula: =IF(2>3, TRUE)
@@ -41,11 +45,13 @@ tests:
       - divergence
     name: if-two-args-false
   - subject: IF
+    subjectRef: IF
     category: value
     formula: =IF(1>2, "a", IF(3>2, "b", "c"))
     expect: b
     name: if-nested
   - subject: AND
+    subjectRef: AND
     formula: =AND(TRUE, TRUE, TRUE)
     category: value
     expect: true
@@ -56,6 +62,7 @@ tests:
           error: "#NAME?"
     name: and-all-true
   - subject: AND
+    subjectRef: AND
     formula: =AND(TRUE, FALSE, TRUE)
     category: value
     expect: false
@@ -66,11 +73,13 @@ tests:
           error: "#NAME?"
     name: and-one-false
   - subject: AND
+    subjectRef: AND
     category: value
     formula: =AND(1, 1, 0)
     expect: false
     name: and-with-numbers
   - subject: AND
+    subjectRef: AND
     category: value
     status: observed
     formula: =AND()
@@ -78,6 +87,7 @@ tests:
       - divergence
     name: and-empty
   - subject: OR
+    subjectRef: OR
     formula: =OR(FALSE, TRUE, FALSE)
     category: value
     expect: true
@@ -88,6 +98,7 @@ tests:
           error: "#NAME?"
     name: or-one-true
   - subject: OR
+    subjectRef: OR
     formula: =OR(FALSE, FALSE, FALSE)
     category: value
     expect: false
@@ -98,11 +109,13 @@ tests:
           error: "#NAME?"
     name: or-all-false
   - subject: OR
+    subjectRef: OR
     category: value
     formula: =OR(0, 0, 1)
     expect: true
     name: or-with-numbers
   - subject: NOT
+    subjectRef: NOT
     formula: =NOT(TRUE)
     category: value
     expect: false
@@ -113,6 +126,7 @@ tests:
           error: "#NAME?"
     name: not-true
   - subject: NOT
+    subjectRef: NOT
     formula: =NOT(FALSE)
     category: value
     expect: true
@@ -123,6 +137,7 @@ tests:
           error: "#NAME?"
     name: not-false
   - subject: XOR
+    subjectRef: XOR
     formula: =XOR(TRUE, TRUE, TRUE)
     category: value
     expect: true
@@ -140,6 +155,7 @@ tests:
         recorded: 1
     name: xor-odd-trues
   - subject: XOR
+    subjectRef: XOR
     formula: =XOR(TRUE, TRUE)
     category: value
     expect: false
@@ -157,6 +173,7 @@ tests:
         recorded: 0
     name: xor-even-trues
   - subject: XOR
+    subjectRef: XOR
     formula: =XOR(FALSE, FALSE)
     category: value
     expect: false
@@ -174,21 +191,25 @@ tests:
         recorded: 0
     name: xor-all-false
   - subject: IFERROR
+    subjectRef: IFERROR
     category: error-code
     formula: =IFERROR(1, "error")
     expect: 1
     name: iferror-no-error
   - subject: IFERROR
+    subjectRef: IFERROR
     category: error-code
     formula: =IFERROR(1/0, "error")
     expect: error
     name: iferror-with-error
   - subject: IFERROR
+    subjectRef: IFERROR
     category: value
     formula: =IFERROR(IFERROR(1/0, 1/0), "both failed")
     expect: both failed
     name: iferror-nested
   - subject: IFNA
+    subjectRef: IFNA
     formula: =IFNA(1, "na")
     category: error-code
     expect: 1
@@ -199,6 +220,7 @@ tests:
           error: "#NAME?"
     name: ifna-no-error
   - subject: IFNA
+    subjectRef: IFNA
     formula: =IFNA(MATCH(99, {1,2,3}, 0), "not found")
     category: value
     expect: not found
@@ -211,6 +233,7 @@ tests:
       - bare-formula
     name: ifna-with-na
   - subject: SWITCH
+    subjectRef: SWITCH
     formula: =SWITCH(1, 1, "one", 2, "two")
     category: value
     expect: one
@@ -225,6 +248,7 @@ tests:
           error: "#NAME?"
     name: switch-match-first
   - subject: SWITCH
+    subjectRef: SWITCH
     formula: =SWITCH(2, 1, "one", 2, "two")
     category: value
     expect: two
@@ -239,6 +263,7 @@ tests:
           error: "#NAME?"
     name: switch-match-second
   - subject: SWITCH
+    subjectRef: SWITCH
     formula: =SWITCH(99, 1, "one", 2, "two", "other")
     category: value
     expect: other
@@ -253,6 +278,7 @@ tests:
           error: "#NAME?"
     name: switch-with-default
   - subject: SWITCH
+    subjectRef: SWITCH
     formula: =SWITCH(99, 1, "one", 2, "two")
     category: value
     expect:
@@ -268,6 +294,7 @@ tests:
           error: "#NAME?"
     name: switch-no-match-no-default
   - subject: IFS
+    subjectRef: IFS
     formula: =IFS(TRUE, "a", TRUE, "b")
     category: value
     expect: a
@@ -282,6 +309,7 @@ tests:
           error: "#NAME?"
     name: ifs-first-match
   - subject: IFS
+    subjectRef: IFS
     formula: =IFS(FALSE, "a", TRUE, "b")
     category: value
     expect: b
@@ -296,6 +324,7 @@ tests:
           error: "#NAME?"
     name: ifs-second-match
   - subject: IFS
+    subjectRef: IFS
     formula: =IFS(FALSE, "a", FALSE, "b")
     category: value
     expect:
@@ -311,16 +340,19 @@ tests:
           error: "#NAME?"
     name: ifs-no-match
   - subject: CHOOSE
+    subjectRef: CHOOSE
     category: value
     formula: =CHOOSE(1, "a", "b", "c")
     expect: a
     name: choose-first
   - subject: CHOOSE
+    subjectRef: CHOOSE
     category: value
     formula: =CHOOSE(3, "a", "b", "c")
     expect: c
     name: choose-third
   - subject: CHOOSE
+    subjectRef: CHOOSE
     category: value
     status: observed
     formula: =CHOOSE(5, "a", "b", "c")

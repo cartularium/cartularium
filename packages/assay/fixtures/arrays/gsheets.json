@@ -1,8 +1,9 @@
 {
+  "schemaVersion": 2,
   "platform": "gsheets",
-  "generatedAt": "2026-06-17T20:01:41.600Z",
+  "generatedAt": "2026-07-18T20:47:11.562Z",
   "results": {
-    "sha256:76a20c3d2b9c7a8460850758c96e07bc477d0c74d0248eadc1059f2dde8ff765": {
+    "SEQUENCE/sequence-scalar": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -50,9 +51,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=SEQUENCE(1)"
+      "formula-as-evaluated": "=SEQUENCE(1)",
+      "stimulus": "sha256:65faa32558cbcaa984250557b791ca747dc53c4ae6a402f69fedef0cfd50561a",
+      "fingerprint": "sha256:43412a89a2157f2c4788feb0281c4a1151687dc9d65d9710c6a2e9db523e740d",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
-    "sha256:1a0843ce8c6255a9a3b5765fd2ce5c056eb722fa38cf0b9a04d2a1ed08b0403a": {
+    "SEQUENCE/sequence-column": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -168,9 +174,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=SEQUENCE(3)"
+      "formula-as-evaluated": "=SEQUENCE(3)",
+      "stimulus": "sha256:f568259ff8b17e1ee4d8b2dabe7c7b6f3b28aa2ca572f99276bb4cd6ae6ef564",
+      "fingerprint": "sha256:f6d21c4495e91db0df071f1fd45fcaf58e75b9b98965e5cde8287cace5a9fbea",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
-    "sha256:bdc86a64a1b2e3aca9ae7d43f56fe07631529dd530426099301c054bcc819716": {
+    "SEQUENCE/sequence-2d": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -380,9 +391,14 @@
           "cols": 3
         }
       },
-      "formula-as-evaluated": "=SEQUENCE(2, 3)"
+      "formula-as-evaluated": "=SEQUENCE(2, 3)",
+      "stimulus": "sha256:277224464c6739efdd84551f1860cc75d588c8267eb1b768d4710363c026a997",
+      "fingerprint": "sha256:ac1d0f364af6dbb205fef3882a948b2d313932fa8d22722231751c630c747176",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
-    "sha256:e681e406935826e0a42c14b8d3c3c9cbd48092659283ce8c51173bef961bbf02": {
+    "HSTACK/hstack": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -494,9 +510,14 @@
           "cols": 3
         }
       },
-      "formula-as-evaluated": "=HSTACK(1, 2, 3)"
+      "formula-as-evaluated": "=HSTACK(1, 2, 3)",
+      "stimulus": "sha256:ef2af1aca6af07064596709d36d8f68d77bd596fe762ef03924bbbefb39bd5c8",
+      "fingerprint": "sha256:f6cf48ecb6441475f9ccefab99f429cd089274b9bb16b8f95386758c9cb00a97",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
-    "sha256:8671e2f5582e8941e3add533280c3abdf2209181f9dc58f50d0d1028ce85015a": {
+    "VSTACK/vstack": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -612,9 +633,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=VSTACK(1, 2, 3)"
+      "formula-as-evaluated": "=VSTACK(1, 2, 3)",
+      "stimulus": "sha256:c231bdc9c09cd37a3da8d7471e44b9e3007f4d51201164e359cd0b15f40a3e58",
+      "fingerprint": "sha256:f6d21c4495e91db0df071f1fd45fcaf58e75b9b98965e5cde8287cace5a9fbea",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
-    "sha256:5092c87ab108920d4e32ef7e46accbea6147d0ab44691e0761275e2c7b708ba9": {
+    "INDEX/index-into-grid": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -662,9 +688,14 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=INDEX(A1:B2, 2, 1)"
+      "formula-as-evaluated": "=INDEX(A1:B2, 2, 1)",
+      "stimulus": "sha256:e152fc181cb6d3476801b9efd28ddd48827f554ebd0a0fdd647172c70a09120b",
+      "fingerprint": "sha256:f6fa89c1965271ba48aade800c96f5554914711fef2024baa945562a2770b888",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
-    "sha256:6743cd99b2823a4ef19ef846d5e7b46e44db2460d2618b6f40e5eca1f8339910": {
+    "SORT/sort-array": {
       "outcome": {
         "kind": "value",
         "grid": [
@@ -780,7 +811,12 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=SORT({3;1;2})"
+      "formula-as-evaluated": "=SORT({3;1;2})",
+      "stimulus": "sha256:445064c810aeff7a041805819a36a269d4f10aa70a40d53c38d60460b68ca83b",
+      "fingerprint": "sha256:f6d21c4495e91db0df071f1fd45fcaf58e75b9b98965e5cde8287cace5a9fbea",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     }
   }
 }

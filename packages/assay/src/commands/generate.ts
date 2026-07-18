@@ -7,6 +7,13 @@ import { evaluateTasks } from "../runner.js";
 import type { TestSuite } from "../format/catalogue.js";
 import { isRetryable, loadFixture, saveFixture, type FixtureEntry } from "../fixtures.js";
 import { caseKey } from "../identity/index.js";
+import { FPV, fingerprintOutcome } from "../fingerprint/index.js";
+import { dirname as pathDirname, join as pathJoin } from "node:path";
+import { fileURLToPath } from "node:url";
+import { LedgerWriter } from "../ledger/writer.js";
+import { newRunId } from "../ledger/io.js";
+import { engineRunInfo, parseConditionsFile, preflightCorpusCommit } from "../ledger/record.js";
+import type { EngineRunInfo, ResultRow, RunId } from "../ledger/types.js";
 import { cleanupWorkbook, createWorkbook, type WorkbookResult } from "../workbook.js";
 import {
   buildDrivers,
@@ -33,6 +40,70 @@ export async function generate(args: string[]): Promise<void> {
   const onlyMissing = values.missing as boolean;
   const verbose = values.verbose as boolean;
   const quiet = values.quiet as boolean;
+
+  // --record: the recorded pipeline (stability substrate §3). The run row
+  // lands BEFORE the sweep so a crash leaves a visibly incomplete run;
+  // observation windows land in the completion row.
+  const record = values.record as boolean;
+  const pkgDir = pathJoin(pathDirname(fileURLToPath(import.meta.url)), "..", "..");
+  let recording: {
+    writer: LedgerWriter;
+    runId: RunId;
+    resultRows: Array<Omit<ResultRow, "row" | "row_id">>;
+    observed: Record<string, { from: string; to: string }>;
+    counts: Record<string, { selected: number; attempted: number; recorded: number; outcomes: Record<string, number> }>;
+    selection: Set<string>;
+  } | null = null;
+  if (record) {
+    const conditionsPath = values.conditions as string | undefined;
+    if (!conditionsPath) {
+      console.error("generate --record requires --conditions <file> (the declared D-row set per engine)");
+      process.exit(1);
+    }
+    const repoRoot = pathJoin(pkgDir, "..", "..");
+    const corpusCommit = preflightCorpusCommit(repoRoot);
+    const conditions = parseConditionsFile(conditionsPath, platforms as Platform[]);
+    const historyDir = pathJoin(pkgDir, "history");
+    const driversDir = pathJoin(pkgDir, "..", "drivers");
+    const writer = new LedgerWriter(historyDir);
+    const start = new Date();
+    const runId = newRunId(start);
+    recording = {
+      writer,
+      runId,
+      resultRows: [],
+      observed: {},
+      counts: {},
+      selection: new Set(),
+    };
+    // engines' static info is known before the sweep; probe versions now
+    const engines: Partial<Record<Platform, EngineRunInfo>> = {};
+    const probeDrivers = await buildDrivers(platforms, undefined);
+    try {
+      for (const d of probeDrivers) {
+        engines[d.platform as Platform] = engineRunInfo({
+          driversDir,
+          historyDir,
+          corpusCommit,
+          engineVersion: await d.versionString(),
+          conditions: conditions[d.platform],
+        });
+      }
+    } finally {
+      for (const d of probeDrivers) await d.destroy();
+    }
+    writer.openRun({
+      start,
+      run_id: runId,
+      trigger: "manual",
+      // a file-limited generate is a subset run too — "full" means the corpus
+      scope: onlyMissing || args.length > 0 ? { kind: "subset" } : { kind: "full" },
+      corpus_commit: corpusCommit,
+      engines,
+      note: (values.note as string | undefined) ?? undefined,
+    });
+    if (!quiet) console.log(`recording run ${runId}`);
+  }
 
   const suites: Array<{ file: string; suite: TestSuite }> = [];
   for (const file of files) suites.push({ file, suite: loadTestSuite(file) });
@@ -63,6 +134,7 @@ export async function generate(args: string[]): Promise<void> {
         tests: Array<{
           id: string;
           key: string;
+          stimulus?: `sha256:${string}`;
           formula: string;
           asEvaluated: string;
           grid?: Record<string, CellValue>;
@@ -78,13 +150,12 @@ export async function generate(args: string[]): Promise<void> {
         if (onlyMissing) {
           const existing = loadFixture(file, platform);
           if (existing) {
-            const retry = new Set<string>();
-            for (const [id, entry] of Object.entries(existing.results)) {
-              if (isRetryable(entry)) retry.add(id);
-            }
             tests = tests.filter((t) => {
               const key = caseKey(t);
-              return !(key in existing.results) || retry.has(key);
+              // v1 files key by semanticHash — transitional fallback until
+              // the hibernation item retires them
+              const entry = existing.results[key] ?? (t.semanticHash ? existing.results[t.semanticHash] : undefined);
+              return isRetryable(entry, t.stimulusHash);
             });
           }
         }
@@ -96,6 +167,7 @@ export async function generate(args: string[]): Promise<void> {
           resolved.push({
             id: t.id,
             key: caseKey(t),
+            stimulus: t.stimulusHash,
             formula: r.formula,
             asEvaluated: r.asEvaluated,
             grid: t.grid,
@@ -122,10 +194,24 @@ export async function generate(args: string[]): Promise<void> {
       // One generation layer over the execution contract (decision 1): batch-vs-single
       // is dispatched inside evaluateTasks, not branched here.
       if (!quiet) progress(`${platform}  running ${allTasks.length} task(s)...`);
+      // observation instants: per task for sequential drivers, per batch for
+      // batch drivers (all tasks in a batch complete at its instant) — the
+      // approved per-result-or-ordered-batch grain
+      const sweepFrom = new Date().toISOString();
+      const instants: string[] = [];
+      let lastCompleted = 0;
       const allOutcomes = await evaluateTasks(
         driver,
         allTasks.map((t) => ({ formula: t.formula, grid: t.grid, ...(t.skip ? { skip: t.skip } : {}) })),
+        (completed) => {
+          const now = new Date().toISOString();
+          for (let k = lastCompleted; k < completed; k++) instants[k] = now;
+          lastCompleted = completed;
+        },
       );
+      for (let k = lastCompleted; k < allTasks.length; k++) instants[k] = new Date().toISOString();
+      const sweepTo = new Date().toISOString();
+      if (recording) recording.observed[platform] = { from: sweepFrom, to: sweepTo };
       if (!quiet) clearProgress();
 
       let offset = 0;
@@ -133,8 +219,33 @@ export async function generate(args: string[]): Promise<void> {
         const entries: Record<string, FixtureEntry> = {};
         for (let i = 0; i < ft.tests.length; i++) {
           const r = allOutcomes[offset + i];
-          const { id, key, asEvaluated } = ft.tests[i];
-          entries[key] = { outcome: r.outcome, "formula-as-evaluated": asEvaluated };
+          const { id, key, stimulus, asEvaluated } = ft.tests[i];
+          const fingerprint = fingerprintOutcome(r.outcome);
+          const at = instants[offset + i];
+          // recorded runs carry real provenance; ad-hoc generates are
+          // visibly outside the ledger (preLedger, per the charter's
+          // recorded-pipeline commitment)
+          entries[key] = recording
+            ? { outcome: r.outcome, "formula-as-evaluated": asEvaluated, stimulus, fingerprint, fpv: FPV, run_id: recording.runId, at }
+            : { outcome: r.outcome, "formula-as-evaluated": asEvaluated, stimulus, fingerprint, fpv: FPV, run_id: null, at: null, preLedger: true };
+          if (recording && stimulus) {
+            recording.selection.add(key);
+            recording.resultRows.push({
+              run_id: recording.runId,
+              case: key,
+              stimulus,
+              engine: platform,
+              at,
+              outcome: r.outcome.kind,
+              fingerprint,
+              fpv: FPV,
+            });
+            const c = (recording.counts[platform] ??= { selected: 0, attempted: 0, recorded: 0, outcomes: {} });
+            c.selected += 1;
+            if (r.outcome.kind !== "skipped") c.attempted += 1;
+            c.recorded += 1;
+            c.outcomes[r.outcome.kind] = (c.outcomes[r.outcome.kind] ?? 0) + 1;
+          }
           // Surface non-value/non-skipped outcomes (rejected/crashed/infra/…) to the log.
           if (r.outcome.kind !== "value" && r.outcome.kind !== "skipped") {
             driverIssuesLog.push({
@@ -163,9 +274,34 @@ export async function generate(args: string[]): Promise<void> {
 
       if (!quiet) printPlatformSummary(platform, tallies[platform]);
     }
+  } catch (e) {
+    // a crashed recorded sweep leaves its run row with no completion —
+    // visibly incomplete, per the write protocol; release only the lock
+    recording?.writer.release();
+    throw e;
   } finally {
     for (const driver of drivers) await driver.destroy();
     if (workbook) cleanupWorkbook(workbook);
+  }
+
+  if (recording) {
+    recording.writer.appendResults(recording.resultRows);
+    recording.writer.complete(
+      recording.runId,
+      new Date().toISOString(),
+      recording.observed,
+      recording.counts,
+      // a subset run's realized selection is discovered during the sweep,
+      // so it rides the completion row (rows are immutable)
+      onlyMissing ? [...recording.selection].sort() : undefined,
+    );
+    recording.writer.release();
+    if (!quiet) {
+      console.log(
+        `run ${recording.runId} recorded (${recording.resultRows.length} results). ` +
+          `Commit the fixture changes, then run: assay ledger --evidence ${recording.runId}`,
+      );
+    }
   }
 
   if (driverIssuesLog.length > 0) {

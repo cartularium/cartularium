@@ -2,6 +2,7 @@ schemaVersion: 3
 name: Parser functions
 tests:
   - subject: CONVERT
+    subjectRef: CONVERT
     formula: =CONVERT(1, "ft", "in")
     category: value
     expect: 12
@@ -24,6 +25,7 @@ tests:
       - parser
     name: convert-feet-to-inches
   - subject: CONVERT
+    subjectRef: CONVERT
     category: value
     status: observed
     formula: =CONVERT(1, "m", "ft")
@@ -31,6 +33,7 @@ tests:
       - parser
     name: convert-meters-to-feet
   - subject: CONVERT
+    subjectRef: CONVERT
     category: value
     status: observed
     formula: =CONVERT(1, "kg", "lbm")
@@ -38,6 +41,7 @@ tests:
       - parser
     name: convert-kilograms-to-pounds
   - subject: CONVERT
+    subjectRef: CONVERT
     formula: =CONVERT(100, "C", "F")
     category: value
     expect: 212
@@ -57,6 +61,7 @@ tests:
       - parser
     name: convert-celsius-to-fahrenheit
   - subject: CONVERT
+    subjectRef: CONVERT
     formula: =CONVERT(1, "hr", "sec")
     category: value
     expect: 3600
@@ -73,6 +78,7 @@ tests:
       - parser
     name: convert-hours-to-seconds
   - subject: CONVERT
+    subjectRef: CONVERT
     category: value
     status: observed
     formula: =CONVERT(1, "km", "mi")
@@ -80,6 +86,7 @@ tests:
       - parser
     name: convert-kilometers-to-miles
   - subject: CONVERT
+    subjectRef: CONVERT
     category: value
     status: observed
     formula: =CONVERT(1, "ft", "kg")
@@ -88,6 +95,7 @@ tests:
       - error-type
     name: convert-invalid-unit-pair
   - subject: CONVERT
+    subjectRef: CONVERT
     category: value
     status: observed
     formula: =CONVERT(1, "xyz", "in")
@@ -96,6 +104,7 @@ tests:
       - error-type
     name: convert-unknown-unit
   - subject: TO_DATE
+    subjectRef: TO_DATE
     formula: =TO_DATE(44000)
     category: value
     expect: 44000
@@ -132,6 +141,7 @@ tests:
       - parser
     name: to-date-from-serial
   - subject: TO_DATE
+    subjectRef: TO_DATE
     formula: =TO_DATE(0)
     category: value
     expect: 0
@@ -168,6 +178,7 @@ tests:
       - parser
     name: to-date-zero-serial
   - subject: TO_DATE
+    subjectRef: TO_DATE
     formula: =TO_DATE("2024-01-15")
     category: value
     expect: 2024-01-15
@@ -204,6 +215,7 @@ tests:
       - parser
     name: to-date-from-text
   - subject: TO_DATE
+    subjectRef: TO_DATE
     formula: =TO_DATE(TRUE)
     category: value
     expect: true
@@ -240,6 +252,7 @@ tests:
       - parser
     name: to-date-from-boolean
   - subject: TO_DATE
+    subjectRef: TO_DATE
     formula: =TO_DATE("not-a-date")
     category: value
     expect: not-a-date
@@ -277,6 +290,7 @@ tests:
       - error-type
     name: to-date-from-invalid-text
   - subject: TO_DOLLARS
+    subjectRef: TO_DOLLARS
     formula: =TO_DOLLARS(1234)
     category: value
     expect: 1234
@@ -313,6 +327,7 @@ tests:
       - parser
     name: to-dollars-integer
   - subject: TO_DOLLARS
+    subjectRef: TO_DOLLARS
     formula: =TO_DOLLARS(1234.567)
     category: value
     expect: 1234.567
@@ -349,6 +364,7 @@ tests:
       - parser
     name: to-dollars-decimal
   - subject: TO_DOLLARS
+    subjectRef: TO_DOLLARS
     formula: =TO_DOLLARS(-42.5)
     category: value
     expect: -42.5
@@ -385,6 +401,7 @@ tests:
       - parser
     name: to-dollars-negative
   - subject: TO_DOLLARS
+    subjectRef: TO_DOLLARS
     formula: =TO_DOLLARS("99.99")
     category: value
     expect: "99.99"
@@ -421,6 +438,7 @@ tests:
       - parser
     name: to-dollars-from-text
   - subject: TO_DOLLARS
+    subjectRef: TO_DOLLARS
     formula: =TO_DOLLARS(TRUE)
     category: value
     expect: true
@@ -457,6 +475,7 @@ tests:
       - parser
     name: to-dollars-from-boolean
   - subject: TO_PERCENT
+    subjectRef: TO_PERCENT
     formula: =TO_PERCENT(0.25)
     category: value
     expect: 0.25
@@ -493,6 +512,7 @@ tests:
       - parser
     name: to-percent-decimal
   - subject: TO_PERCENT
+    subjectRef: TO_PERCENT
     formula: =TO_PERCENT(1)
     category: value
     expect: 1
@@ -529,6 +549,7 @@ tests:
       - parser
     name: to-percent-whole-number
   - subject: TO_PERCENT
+    subjectRef: TO_PERCENT
     formula: =TO_PERCENT(0)
     category: value
     expect: 0
@@ -565,6 +586,7 @@ tests:
       - parser
     name: to-percent-zero
   - subject: TO_PERCENT
+    subjectRef: TO_PERCENT
     formula: =TO_PERCENT("0.5")
     category: value
     expect: "0.5"
@@ -601,6 +623,7 @@ tests:
       - parser
     name: to-percent-from-text
   - subject: TO_PERCENT
+    subjectRef: TO_PERCENT
     formula: =TO_PERCENT(-0.1)
     category: value
     expect: -0.1
@@ -637,6 +660,7 @@ tests:
       - parser
     name: to-percent-negative
   - subject: TO_PURE_NUMBER
+    subjectRef: TO_PURE_NUMBER
     formula: =TO_PURE_NUMBER(0.25)
     category: value
     expect: 0.25
@@ -673,6 +697,7 @@ tests:
       - parser
     name: to-pure-number-from-percent-literal
   - subject: TO_PURE_NUMBER
+    subjectRef: TO_PURE_NUMBER
     formula: =TO_PURE_NUMBER(42)
     category: value
     expect: 42
@@ -709,6 +734,7 @@ tests:
       - parser
     name: to-pure-number-from-integer
   - subject: TO_PURE_NUMBER
+    subjectRef: TO_PURE_NUMBER
     formula: =TO_PURE_NUMBER("123.45")
     category: value
     expect: "123.45"
@@ -745,6 +771,7 @@ tests:
       - parser
     name: to-pure-number-from-text
   - subject: TO_PURE_NUMBER
+    subjectRef: TO_PURE_NUMBER
     formula: =TO_PURE_NUMBER(TRUE)
     category: value
     expect: true
@@ -781,6 +808,7 @@ tests:
       - parser
     name: to-pure-number-from-boolean
   - subject: TO_PURE_NUMBER
+    subjectRef: TO_PURE_NUMBER
     formula: =TO_PURE_NUMBER("hello")
     category: value
     expect: hello
@@ -818,6 +846,7 @@ tests:
       - error-type
     name: to-pure-number-from-non-numeric-text
   - subject: TO_TEXT
+    subjectRef: TO_TEXT
     formula: =TO_TEXT(42)
     category: value
     expect: "42"
@@ -854,6 +883,7 @@ tests:
       - parser
     name: to-text-integer
   - subject: TO_TEXT
+    subjectRef: TO_TEXT
     formula: =TO_TEXT(3.14159)
     category: value
     expect: "3.14159"
@@ -890,6 +920,7 @@ tests:
       - parser
     name: to-text-decimal
   - subject: TO_TEXT
+    subjectRef: TO_TEXT
     formula: =TO_TEXT(TRUE)
     category: value
     expect: "TRUE"
@@ -926,6 +957,7 @@ tests:
       - parser
     name: to-text-boolean
   - subject: TO_TEXT
+    subjectRef: TO_TEXT
     formula: =TO_TEXT("hello")
     category: value
     expect: hello
@@ -962,6 +994,7 @@ tests:
       - parser
     name: to-text-already-text
   - subject: TO_TEXT
+    subjectRef: TO_TEXT
     formula: =TO_TEXT(A1)
     category: value
     grid:
@@ -1000,6 +1033,7 @@ tests:
       - parser
     name: to-text-from-date-serial
   - subject: TO_TEXT
+    subjectRef: TO_TEXT
     formula: =TO_TEXT(-1234.5)
     category: value
     expect: "-1234.5"

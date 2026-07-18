@@ -2,11 +2,13 @@ schemaVersion: 3
 name: Statistical functions
 tests:
   - subject: AVERAGE
+    subjectRef: AVERAGE
     category: value
     formula: =AVERAGE(1, 2, 3, 4)
     expect: 2.5
     name: average-basic
   - subject: AVERAGE
+    subjectRef: AVERAGE
     category: value
     formula: =AVERAGE(B1:B3)
     grid:
@@ -16,6 +18,7 @@ tests:
     expect: 2
     name: average-with-grid
   - subject: COUNT
+    subjectRef: COUNT
     formula: =COUNT(B1:B3)
     category: value
     grid:
@@ -32,11 +35,13 @@ tests:
       - divergence
     name: count-numbers-only
   - subject: COUNT
+    subjectRef: COUNT
     category: value
     formula: =COUNT(1, 2, 3)
     expect: 3
     name: count-inline-statistical
   - subject: COUNTA
+    subjectRef: COUNTA
     category: value
     status: observed
     formula: =COUNTA(B1:B3)
@@ -48,6 +53,7 @@ tests:
       - divergence
     name: counta-non-empty
   - subject: COUNTBLANK
+    subjectRef: COUNTBLANK
     category: value
     status: observed
     formula: =COUNTBLANK(A1:A5)
@@ -59,6 +65,7 @@ tests:
       - divergence
     name: countblank
   - subject: COUNTIF
+    subjectRef: COUNTIF
     category: value
     formula: =COUNTIF(A1:A4, ">2")
     grid:
@@ -69,11 +76,13 @@ tests:
     expect: 2
     name: countif-greater-than
   - subject: MAX
+    subjectRef: MAX
     category: value
     formula: =MAX(1, 5, 3, 2, 4)
     expect: 5
     name: max-basic
   - subject: MAX
+    subjectRef: MAX
     category: value
     formula: =MAX(A1:A3)
     grid:
@@ -83,11 +92,13 @@ tests:
     expect: 30
     name: max-with-grid
   - subject: MIN
+    subjectRef: MIN
     category: value
     formula: =MIN(1, 5, 3, 2, 4)
     expect: 1
     name: min-basic
   - subject: MIN
+    subjectRef: MIN
     category: value
     formula: =MIN(A1:A3)
     grid:
@@ -97,6 +108,7 @@ tests:
     expect: 10
     name: min-with-grid
   - subject: LARGE
+    subjectRef: LARGE
     category: value
     formula: =LARGE({3,1,4,1,5,9}, 1)
     expect: 9
@@ -104,6 +116,7 @@ tests:
       - bare-formula
     name: large-1st-statistical
   - subject: LARGE
+    subjectRef: LARGE
     category: value
     formula: =LARGE({3,1,4,1,5,9}, 3)
     expect: 4
@@ -111,6 +124,7 @@ tests:
       - bare-formula
     name: large-3rd-statistical
   - subject: SMALL
+    subjectRef: SMALL
     category: value
     formula: =SMALL({3,1,4,1,5,9}, 1)
     expect: 1
@@ -118,6 +132,7 @@ tests:
       - bare-formula
     name: small-1st-statistical
   - subject: SMALL
+    subjectRef: SMALL
     category: value
     formula: =SMALL({3,1,4,1,5,9}, 2)
     expect: 1
@@ -125,6 +140,7 @@ tests:
       - bare-formula
     name: small-2nd
   - subject: MEDIAN
+    subjectRef: MEDIAN
     formula: =MEDIAN(1, 2, 3, 4, 5)
     category: value
     expect: 3
@@ -135,6 +151,7 @@ tests:
           error: "#NAME?"
     name: median-odd-count-statistical
   - subject: MEDIAN
+    subjectRef: MEDIAN
     formula: =MEDIAN(1, 2, 3, 4)
     category: value
     expect: 2.5
@@ -145,6 +162,7 @@ tests:
           error: "#NAME?"
     name: median-even-count-statistical
   - subject: SUMIF
+    subjectRef: SUMIF
     category: value
     formula: =SUMIF(A1:A3, ">1")
     grid:
@@ -154,6 +172,7 @@ tests:
     expect: 5
     name: sumif-greater-than
   - subject: SUMIFS
+    subjectRef: SUMIFS
     category: value
     formula: =SUMIFS(A1:A4, B1:B4, "=A*")
     grid:
@@ -168,6 +187,7 @@ tests:
     expect: 20
     name: sumifs-with-text-criteria
   - subject: MAXIFS
+    subjectRef: MAXIFS
     formula: =MAXIFS(A1:A4, B1:B4, "=A*")
     category: value
     grid:
@@ -187,6 +207,7 @@ tests:
           error: "#NAME?"
     name: maxifs-with-criteria
   - subject: MINIFS
+    subjectRef: MINIFS
     formula: =MINIFS(A1:A4, B1:B4, "=A*")
     category: value
     grid:

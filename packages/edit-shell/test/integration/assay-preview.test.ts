@@ -886,7 +886,7 @@ describe("assay preview jobs", () => {
     expect(proposalJson.proposal.yaml).not.toContain("features:")
     expect(proposalJson.proposal.prBody).toContain(`Submitted assay case: ${second.submittedCase.id}`)
     expect(proposalJson.proposal.prBody).toContain(`Accepted preview result: ${acceptedResult.resultId}`)
-    expect(proposalJson.proposal.prBody).toContain("Semantic hash:")
+    expect(proposalJson.proposal.prBody).toContain("Stimulus hash:")
     expect(proposalJson.proposal.prBody).toContain("schemaVersion: 3")
     expect(proposalJson.proposal.prBody).toContain("## Maintainer references")
     expect(proposalJson.proposal.prBody).toContain(`Submitted case D1: ${second.submittedCase.id}`)
@@ -1058,7 +1058,7 @@ describe("assay preview jobs", () => {
     expect(proposal.yaml).toContain("subject: EXPAND")
     expect(proposal.yaml).toContain("name: pad-value")
     expect(proposal.yaml).not.toContain("id:")
-    expect(proposal.prBody).toContain("Semantic hash:")
+    expect(proposal.prBody).toContain("Stimulus hash:")
     expect(proposal.prBody).toContain("Fixture files are intentionally omitted")
   })
 

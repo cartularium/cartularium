@@ -2,6 +2,7 @@ schemaVersion: 3
 name: Broadcasting
 tests:
   - subject: ADD
+    subjectRef: ADD
     category: value
     features:
       - broadcasting
@@ -15,6 +16,7 @@ tests:
       - operator
     name: add-scalar-to-row-vector
   - subject: ADD
+    subjectRef: ADD
     category: value
     features:
       - broadcasting
@@ -28,6 +30,7 @@ tests:
       - operator
     name: add-scalar-to-column-vector
   - subject: ADD
+    subjectRef: ADD
     category: value
     features:
       - broadcasting
@@ -42,6 +45,7 @@ tests:
       - operator
     name: add-scalar-to-2d
   - subject: ADD
+    subjectRef: ADD
     category: value
     features:
       - broadcasting
@@ -62,6 +66,7 @@ tests:
       - outer-product
     name: add-row-to-column-outer-product
   - subject: ADD
+    subjectRef: ADD
     category: value
     features:
       - broadcasting
@@ -82,6 +87,7 @@ tests:
       - outer-product
     name: add-column-to-row-outer-product
   - subject: ADD
+    subjectRef: ADD
     category: value
     features:
       - broadcasting
@@ -95,6 +101,7 @@ tests:
       - operator
     name: add-row-vectors-same-length
   - subject: ADD
+    subjectRef: ADD
     category: value
     features:
       - broadcasting
@@ -108,6 +115,7 @@ tests:
       - operator
     name: add-column-vectors-same-length
   - subject: ADD
+    subjectRef: ADD
     category: shape
     features:
       - broadcasting
@@ -122,6 +130,7 @@ tests:
       - operator
     name: add-2d-same-shape
   - subject: ADD
+    subjectRef: ADD
     category: value
     features:
       - broadcasting
@@ -138,6 +147,7 @@ tests:
       - operator
     name: add-row-broadcast-across-2d
   - subject: ADD
+    subjectRef: ADD
     category: value
     features:
       - broadcasting
@@ -154,6 +164,7 @@ tests:
       - operator
     name: add-column-broadcast-across-2d
   - subject: ADD
+    subjectRef: ADD
     category: value
     features:
       - broadcasting
@@ -165,6 +176,7 @@ tests:
       - divergence
     name: add-row-vectors-mismatched-length
   - subject: ADD
+    subjectRef: ADD
     category: value
     features:
       - broadcasting
@@ -176,6 +188,7 @@ tests:
       - divergence
     name: add-column-vectors-mismatched-length
   - subject: ADD
+    subjectRef: ADD
     category: shape
     features:
       - broadcasting
@@ -187,6 +200,7 @@ tests:
       - divergence
     name: add-2d-incompatible-shape
   - subject: MINUS
+    subjectRef: MINUS
     category: value
     features:
       - broadcasting
@@ -200,6 +214,7 @@ tests:
       - operator
     name: subtract-scalar-from-row
   - subject: MINUS
+    subjectRef: MINUS
     category: value
     features:
       - broadcasting
@@ -220,6 +235,7 @@ tests:
       - outer-product
     name: subtract-row-from-column-outer
   - subject: MULTIPLY
+    subjectRef: MULTIPLY
     category: value
     features:
       - broadcasting
@@ -233,6 +249,7 @@ tests:
       - operator
     name: multiply-scalar-by-row
   - subject: MULTIPLY
+    subjectRef: MULTIPLY
     category: value
     features:
       - broadcasting
@@ -253,6 +270,7 @@ tests:
       - outer-product
     name: multiply-row-by-column-outer
   - subject: DIVIDE
+    subjectRef: DIVIDE
     category: value
     features:
       - broadcasting
@@ -266,6 +284,7 @@ tests:
       - operator
     name: divide-row-by-scalar
   - subject: DIVIDE
+    subjectRef: DIVIDE
     category: value
     features:
       - broadcasting
@@ -279,6 +298,7 @@ tests:
       - operator
     name: divide-scalar-by-row
   - subject: POW
+    subjectRef: POW
     category: value
     features:
       - broadcasting
@@ -292,6 +312,7 @@ tests:
       - operator
     name: exponent-row-elementwise
   - subject: POW
+    subjectRef: POW
     category: value
     features:
       - broadcasting
@@ -306,6 +327,7 @@ tests:
       - operator
     name: exponent-scalar-over-row
   - subject: op:unary-
+    subjectRef: op:unary-
     category: value
     features:
       - broadcasting
@@ -320,6 +342,7 @@ tests:
       - unary
     name: unary-minus-on-row
   - subject: op:unary-
+    subjectRef: op:unary-
     category: value
     features:
       - broadcasting
@@ -350,6 +373,7 @@ tests:
     subjectRef: legacy:6f703a25
     name: percent-on-row
   - subject: op:=
+    subjectRef: op:eq
     category: value
     features:
       - broadcasting
@@ -364,6 +388,7 @@ tests:
       - comparison
     name: equals-scalar-against-row
   - subject: op:<
+    subjectRef: op:lt
     category: value
     features:
       - broadcasting
@@ -378,6 +403,7 @@ tests:
       - comparison
     name: less-than-scalar-against-row
   - subject: op:>=
+    subjectRef: op:gte
     category: value
     features:
       - broadcasting
@@ -392,6 +418,7 @@ tests:
       - comparison
     name: greater-equal-row-vs-row
   - subject: op:<>
+    subjectRef: op:ne
     category: value
     features:
       - broadcasting
@@ -413,6 +440,7 @@ tests:
       - outer-product
     name: not-equal-outer-product
   - subject: op:>
+    subjectRef: op:gt
     category: value
     features:
       - broadcasting
@@ -428,6 +456,7 @@ tests:
       - comparison
     name: comparison-2d-vs-scalar
   - subject: op:&
+    subjectRef: op:concat
     category: value
     features:
       - broadcasting
@@ -442,6 +471,7 @@ tests:
       - concat
     name: concat-scalar-to-row
   - subject: op:&
+    subjectRef: op:concat
     category: value
     features:
       - broadcasting
@@ -460,6 +490,7 @@ tests:
       - outer-product
     name: concat-row-and-column-outer
   - subject: op:&
+    subjectRef: op:concat
     formula: ="v"&{1,2,3}
     category: value
     features:
@@ -482,6 +513,7 @@ tests:
       - coercion
     name: concat-row-with-numbers-coerced
   - subject: op:+
+    subjectRef: op:add
     category: value
     features:
       - broadcasting
@@ -509,6 +541,7 @@ tests:
       - range
     name: range-column-plus-range-row-outer
   - subject: op:*
+    subjectRef: op:multiply
     category: value
     features:
       - broadcasting
@@ -527,6 +560,7 @@ tests:
       - range
     name: range-vs-scalar-broadcast
   - subject: op:*
+    subjectRef: op:multiply
     category: value
     features:
       - broadcasting
@@ -545,6 +579,7 @@ tests:
       - range
     name: range-times-range-elementwise
   - subject: LEN
+    subjectRef: LEN
     formula: =LEN({"a","bb","ccc"})
     category: value
     features:
@@ -557,6 +592,7 @@ tests:
       - broadcast
     name: len-over-string-row
   - subject: UPPER
+    subjectRef: UPPER
     category: value
     features:
       - broadcasting
@@ -569,6 +605,7 @@ tests:
       - broadcast
     name: upper-over-string-column
   - subject: ABS
+    subjectRef: ABS
     category: value
     features:
       - broadcasting
@@ -581,6 +618,7 @@ tests:
       - broadcast
     name: abs-over-signed-row
   - subject: SQRT
+    subjectRef: SQRT
     category: value
     features:
       - broadcasting
@@ -594,6 +632,7 @@ tests:
       - broadcast
     name: sqrt-over-row
   - subject: ISNUMBER
+    subjectRef: ISNUMBER
     category: value
     features:
       - broadcasting
@@ -607,6 +646,7 @@ tests:
       - broadcast
     name: isnumber-over-mixed-row
   - subject: IF
+    subjectRef: IF
     category: value
     features:
       - broadcasting
@@ -617,6 +657,7 @@ tests:
       - divergence
     name: if-with-array-condition
   - subject: IF
+    subjectRef: IF
     category: value
     features:
       - broadcasting
@@ -627,6 +668,7 @@ tests:
       - divergence
     name: if-with-array-condition-and-array-branches
   - subject: IF
+    subjectRef: IF
     category: value
     features:
       - broadcasting
@@ -637,6 +679,7 @@ tests:
       - divergence
     name: if-broadcasting-scalar-condition-to-array-branches
   - subject: op:+
+    subjectRef: op:add
     formula: ={1,2,3}+{10,#N/A,30}
     category: error-code
     features:
@@ -652,6 +695,7 @@ tests:
       - divergence
     name: error-in-row-vector-propagates-per-cell
   - subject: op:+
+    subjectRef: op:add
     formula: =1+#DIV/0!
     category: error-code
     expect:
@@ -662,6 +706,7 @@ tests:
       - error-propagation
     name: scalar-plus-error-value
   - subject: op:/
+    subjectRef: op:divide
     formula: =10/{1,0,2}
     category: value
     features:
@@ -676,6 +721,7 @@ tests:
       - error-propagation
     name: division-by-row-with-zero
   - subject: op:+
+    subjectRef: op:add
     formula: =A1:A2+B1:B2
     category: error-code
     features:
@@ -695,6 +741,7 @@ tests:
       - divergence
     name: error-in-2d-operand-range
   - subject: op:+
+    subjectRef: op:add
     category: value
     features:
       - broadcasting
@@ -713,6 +760,7 @@ tests:
       - blank
     name: blank-in-range-treated-as-zero
   - subject: op:+
+    subjectRef: op:add
     category: value
     features:
       - broadcasting
@@ -725,6 +773,7 @@ tests:
       - divergence
     name: blank-literal-inside-array
   - subject: op:&
+    subjectRef: op:concat
     category: value
     features:
       - broadcasting
@@ -744,6 +793,7 @@ tests:
       - concat
     name: concat-blank-coerces-to-empty-string
   - subject: op:+
+    subjectRef: op:add
     category: value
     features:
       - broadcasting
@@ -756,6 +806,7 @@ tests:
       - divergence
     name: boolean-array-coerced-in-arithmetic
   - subject: op:+
+    subjectRef: op:add
     formula: ={"1","2","3"}+0
     category: value
     features:
@@ -771,6 +822,7 @@ tests:
       - divergence
     name: numeric-strings-in-array-coerced
   - subject: op:+
+    subjectRef: op:add
     category: value
     features:
       - broadcasting
@@ -783,6 +835,7 @@ tests:
       - divergence
     name: mixed-type-array-plus-scalar
   - subject: lit:array
+    subjectRef: lit:array
     category: value
     status: observed
     formula: ={1,2;3}
@@ -793,6 +846,7 @@ tests:
       - bare-formula
     name: ragged-array-literal
   - subject: op:+
+    subjectRef: op:add
     formula: ={1,2;3}+10
     category: value
     features:
@@ -832,6 +886,7 @@ tests:
     subjectRef: legacy:6f703a40
     name: implicit-intersection-with
   - subject: feature:implicit-intersection
+    subjectRef: feature:implicit-intersection
     category: value
     status: observed
     formula: =A1:A3+1
@@ -844,6 +899,7 @@ tests:
       - divergence
     name: implicit-intersection-without
   - subject: LEN
+    subjectRef: LEN
     category: value
     status: observed
     formula: =LEN({"a","bb","ccc"})
@@ -854,6 +910,7 @@ tests:
       - bare-formula
     name: virtual-array-top-left-via-implicit-intersection
   - subject: feature:implicit-intersection
+    subjectRef: feature:implicit-intersection
     category: value
     status: observed
     formula: =A1:A3
@@ -867,6 +924,7 @@ tests:
       - divergence
     name: range-intersects-formula-row-aa1-vs-a1-a3
   - subject: LEN
+    subjectRef: LEN
     category: value
     status: observed
     formula: =LEN(B1:B3)*1
@@ -880,6 +938,7 @@ tests:
       - divergence
     name: range-no-intersection-errors-column-at-off-row
   - subject: SINGLE
+    subjectRef: SINGLE
     formula: =SINGLE({10,20,30})
     category: value
     expect: 10
@@ -910,6 +969,7 @@ tests:
       - bare-formula
     name: single-explicit-top-left
   - subject: INDEX
+    subjectRef: INDEX
     category: value
     status: observed
     formula: =INDEX(A1:A3*10)
@@ -923,6 +983,7 @@ tests:
       - divergence
     name: index-wraps-multiplication-over-range
   - subject: INDEX
+    subjectRef: INDEX
     category: value
     status: observed
     formula: =INDEX({1,2,3}+{10;20;30})
@@ -934,6 +995,7 @@ tests:
       - bare-formula
     name: index-wraps-outer-product
   - subject: SUMPRODUCT
+    subjectRef: SUMPRODUCT
     formula: =SUMPRODUCT(--({1,2,3}>1))
     category: value
     expect: 2
@@ -955,6 +1017,7 @@ tests:
       - bare-formula
     name: double-unary-coerces-boolean-row-to-numeric
   - subject: SUMPRODUCT
+    subjectRef: SUMPRODUCT
     formula: =SUMPRODUCT(A1:A3, B1:B3)
     category: value
     grid:
@@ -977,6 +1040,7 @@ tests:
       - broadcast
     name: sumproduct-with-two-ranges
   - subject: SUMPRODUCT
+    subjectRef: SUMPRODUCT
     formula: =SUMPRODUCT((A1:A3>1)*B1:B3)
     category: value
     grid:

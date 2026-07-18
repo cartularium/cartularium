@@ -2,6 +2,7 @@ schemaVersion: 3
 name: Statistical descriptive functions
 tests:
   - subject: AVEDEV
+    subjectRef: AVEDEV
     formula: =AVEDEV(A1:A5)
     category: value
     grid:
@@ -20,6 +21,7 @@ tests:
       - statistical
     name: avedev-whole-numbers
   - subject: AVEDEV
+    subjectRef: AVEDEV
     formula: =AVEDEV(1, 2, 3, 4, 5)
     category: value
     expect: 1.2
@@ -32,6 +34,7 @@ tests:
       - statistical
     name: avedev-inline
   - subject: AVEDEV
+    subjectRef: AVEDEV
     formula: =AVEDEV(7)
     category: value
     expect: 0
@@ -44,6 +47,7 @@ tests:
       - statistical
     name: avedev-single-value
   - subject: AVEDEV
+    subjectRef: AVEDEV
     formula: =AVEDEV(1, 3)
     category: value
     expect: 1
@@ -56,6 +60,7 @@ tests:
       - statistical
     name: avedev-two-values
   - subject: AVERAGE
+    subjectRef: AVERAGE
     category: value
     formula: =AVERAGE(A1:A5)
     grid:
@@ -69,6 +74,7 @@ tests:
       - statistical
     name: average-whole-numbers
   - subject: AVERAGE
+    subjectRef: AVERAGE
     category: value
     formula: =AVERAGE(2, 4, 6)
     expect: 4
@@ -76,6 +82,7 @@ tests:
       - statistical
     name: average-inline
   - subject: AVERAGE
+    subjectRef: AVERAGE
     category: value
     formula: =AVERAGE(A1:A3)
     grid:
@@ -87,6 +94,7 @@ tests:
       - statistical
     name: average-ignores-text-in-range
   - subject: AVERAGE
+    subjectRef: AVERAGE
     formula: =AVERAGE(A1:A3)
     category: value
     expect:
@@ -95,6 +103,7 @@ tests:
       - statistical
     name: average-empty-range
   - subject: AVERAGE.WEIGHTED
+    subjectRef: AVERAGE.WEIGHTED
     formula: =AVERAGE.WEIGHTED({1,2,3}, {1,1,1})
     category: value
     expect: 2
@@ -129,6 +138,7 @@ tests:
       - bare-formula
     name: average-weighted-basic
   - subject: AVERAGE.WEIGHTED
+    subjectRef: AVERAGE.WEIGHTED
     formula: =AVERAGE.WEIGHTED({1,2,3}, {1,2,3})
     category: value
     expect: 2.3333333333333335
@@ -163,6 +173,7 @@ tests:
       - bare-formula
     name: average-weighted-skewed
   - subject: AVERAGE.WEIGHTED
+    subjectRef: AVERAGE.WEIGHTED
     formula: =AVERAGE.WEIGHTED(A1:A3, B1:B3)
     category: value
     grid:
@@ -203,6 +214,7 @@ tests:
       - divergence
     name: average-weighted-grid
   - subject: AVERAGEA
+    subjectRef: AVERAGEA
     formula: =AVERAGEA(A1:A5)
     category: value
     grid:
@@ -221,6 +233,7 @@ tests:
       - statistical
     name: averagea-whole-numbers
   - subject: AVERAGEA
+    subjectRef: AVERAGEA
     category: value
     formula: =AVERAGEA(C1:C5)
     grid:
@@ -240,6 +253,7 @@ tests:
       - divergence
     name: averagea-mixed-types-coerce
   - subject: AVERAGEA
+    subjectRef: AVERAGEA
     category: value
     status: observed
     formula: =AVERAGEA(1, 2, TRUE)
@@ -248,6 +262,7 @@ tests:
       - divergence
     name: averagea-inline-booleans
   - subject: AVERAGEA
+    subjectRef: AVERAGEA
     formula: =AVERAGEA(1, "hello", 2)
     category: value
     expect: 1
@@ -281,6 +296,7 @@ tests:
       - divergence
     name: averagea-text-literal
   - subject: AVERAGEIF
+    subjectRef: AVERAGEIF
     category: value
     formula: =AVERAGEIF(D1:D5, "A", E1:E5)
     grid:
@@ -299,6 +315,7 @@ tests:
       - statistical
     name: averageif-label-a
   - subject: AVERAGEIF
+    subjectRef: AVERAGEIF
     category: value
     formula: =AVERAGEIF(A1:A5, ">2")
     grid:
@@ -312,6 +329,7 @@ tests:
       - statistical
     name: averageif-greater-than
   - subject: AVERAGEIF
+    subjectRef: AVERAGEIF
     formula: =AVERAGEIF(A1:A3, ">100")
     category: value
     grid:
@@ -324,6 +342,7 @@ tests:
       - statistical
     name: averageif-no-match
   - subject: AVERAGEIF
+    subjectRef: AVERAGEIF
     category: value
     formula: =AVERAGEIF(A1:A4, 2)
     grid:
@@ -336,6 +355,7 @@ tests:
       - statistical
     name: averageif-exact-value
   - subject: AVERAGEIFS
+    subjectRef: AVERAGEIFS
     formula: =AVERAGEIFS(E1:E5, D1:D5, "A")
     category: value
     grid:
@@ -359,6 +379,7 @@ tests:
       - statistical
     name: averageifs-single-criterion
   - subject: AVERAGEIFS
+    subjectRef: AVERAGEIFS
     formula: =AVERAGEIFS(E1:E5, D1:D5, "A", E1:E5, ">15")
     category: value
     grid:
@@ -382,6 +403,7 @@ tests:
       - statistical
     name: averageifs-two-criteria
   - subject: AVERAGEIFS
+    subjectRef: AVERAGEIFS
     formula: =AVERAGEIFS(A1:A3, B1:B3, "q")
     category: value
     grid:
@@ -402,6 +424,7 @@ tests:
       - statistical
     name: averageifs-no-match
   - subject: COUNT
+    subjectRef: COUNT
     category: value
     formula: =COUNT(1, 2, 3, 4, 5)
     expect: 5
@@ -409,6 +432,7 @@ tests:
       - statistical
     name: count-inline-statistical-descriptive
   - subject: COUNT
+    subjectRef: COUNT
     category: value
     formula: =COUNT(A1:A5)
     grid:
@@ -422,6 +446,7 @@ tests:
       - statistical
     name: count-ignores-text
   - subject: COUNT
+    subjectRef: COUNT
     formula: =COUNT(C1:C5)
     category: value
     grid:
@@ -439,6 +464,7 @@ tests:
       - statistical
     name: count-ignores-booleans-in-range
   - subject: COUNT
+    subjectRef: COUNT
     category: value
     formula: =COUNT(A1:A3)
     expect: 0
@@ -446,6 +472,7 @@ tests:
       - statistical
     name: count-empty-range
   - subject: COUNTA
+    subjectRef: COUNTA
     formula: =COUNTA(C1:C5)
     category: value
     grid:
@@ -464,6 +491,7 @@ tests:
       - statistical
     name: counta-all-non-empty
   - subject: COUNTA
+    subjectRef: COUNTA
     formula: =COUNTA(A1:A3)
     category: value
     grid:
@@ -479,6 +507,7 @@ tests:
       - statistical
     name: counta-with-empty-cell
   - subject: COUNTA
+    subjectRef: COUNTA
     formula: =COUNTA(1, "x", TRUE)
     category: value
     expect: 3
@@ -495,6 +524,7 @@ tests:
       - statistical
     name: counta-inline
   - subject: COUNTA
+    subjectRef: COUNTA
     category: value
     status: observed
     formula: =COUNTA(A1:A3)
@@ -507,6 +537,7 @@ tests:
       - divergence
     name: counta-empty-string-cell
   - subject: DEVSQ
+    subjectRef: DEVSQ
     formula: =DEVSQ(A1:A5)
     category: value
     grid:
@@ -525,6 +556,7 @@ tests:
       - statistical
     name: devsq-whole-numbers
   - subject: DEVSQ
+    subjectRef: DEVSQ
     formula: =DEVSQ(1, 2, 3, 4, 5)
     category: value
     expect: 10
@@ -537,6 +569,7 @@ tests:
       - statistical
     name: devsq-inline
   - subject: DEVSQ
+    subjectRef: DEVSQ
     formula: =DEVSQ(7)
     category: value
     expect: 0
@@ -549,6 +582,7 @@ tests:
       - statistical
     name: devsq-single-value
   - subject: DEVSQ
+    subjectRef: DEVSQ
     formula: =DEVSQ(2, 4)
     category: value
     expect: 2
@@ -561,6 +595,7 @@ tests:
       - statistical
     name: devsq-two-values
   - subject: GEOMEAN
+    subjectRef: GEOMEAN
     formula: =GEOMEAN(1, 1, 1)
     category: value
     expect: 1
@@ -573,6 +608,7 @@ tests:
       - statistical
     name: geomean-of-1
   - subject: GEOMEAN
+    subjectRef: GEOMEAN
     formula: =GEOMEAN(2, 8)
     category: value
     expect: 4
@@ -588,6 +624,7 @@ tests:
       - statistical
     name: geomean-perfect-square
   - subject: GEOMEAN
+    subjectRef: GEOMEAN
     category: value
     status: observed
     formula: =GEOMEAN(A1:A5)
@@ -601,6 +638,7 @@ tests:
       - statistical
     name: geomean-1-5
   - subject: GEOMEAN
+    subjectRef: GEOMEAN
     formula: =GEOMEAN(0, 2, 4)
     category: value
     expect:
@@ -620,6 +658,7 @@ tests:
       - statistical
     name: geomean-with-zero
   - subject: HARMEAN
+    subjectRef: HARMEAN
     formula: =HARMEAN(1, 1, 1)
     category: value
     expect: 1
@@ -632,6 +671,7 @@ tests:
       - statistical
     name: harmean-all-ones
   - subject: HARMEAN
+    subjectRef: HARMEAN
     formula: =HARMEAN(2, 6)
     category: value
     expect: 3
@@ -644,6 +684,7 @@ tests:
       - statistical
     name: harmean-two-values
   - subject: HARMEAN
+    subjectRef: HARMEAN
     category: value
     status: observed
     formula: =HARMEAN(A1:A5)
@@ -657,6 +698,7 @@ tests:
       - statistical
     name: harmean-1-5
   - subject: HARMEAN
+    subjectRef: HARMEAN
     formula: =HARMEAN(0, 2, 4)
     category: value
     expect:
@@ -674,6 +716,7 @@ tests:
       - statistical
     name: harmean-with-zero
   - subject: LARGE
+    subjectRef: LARGE
     category: value
     formula: =LARGE(A1:A5, 1)
     grid:
@@ -687,6 +730,7 @@ tests:
       - statistical
     name: large-1st-statistical-descriptive
   - subject: LARGE
+    subjectRef: LARGE
     category: value
     formula: =LARGE(A1:A5, 3)
     grid:
@@ -700,6 +744,7 @@ tests:
       - statistical
     name: large-3rd-statistical-descriptive
   - subject: LARGE
+    subjectRef: LARGE
     formula: =LARGE({1,2,3}, 5)
     category: value
     expect:
@@ -714,6 +759,7 @@ tests:
       - bare-formula
     name: large-k-too-big
   - subject: LARGE
+    subjectRef: LARGE
     formula: =LARGE({1,2,3}, 0)
     category: value
     expect:
@@ -728,6 +774,7 @@ tests:
       - bare-formula
     name: large-k-zero
   - subject: MAX
+    subjectRef: MAX
     category: value
     formula: =MAX(A1:A5)
     grid:
@@ -741,6 +788,7 @@ tests:
       - statistical
     name: max-whole-numbers
   - subject: MAX
+    subjectRef: MAX
     category: value
     formula: =MAX(-3, -1, -7)
     expect: -1
@@ -748,6 +796,7 @@ tests:
       - statistical
     name: max-inline-negatives
   - subject: MAX
+    subjectRef: MAX
     category: value
     formula: =MAX(A1:A3)
     grid:
@@ -759,6 +808,7 @@ tests:
       - statistical
     name: max-ignores-text
   - subject: MAX
+    subjectRef: MAX
     category: value
     formula: =MAX(A1:A3)
     expect: 0
@@ -766,6 +816,7 @@ tests:
       - statistical
     name: max-empty-range
   - subject: MIN
+    subjectRef: MIN
     category: value
     formula: =MIN(A1:A5)
     grid:
@@ -779,6 +830,7 @@ tests:
       - statistical
     name: min-whole-numbers
   - subject: MIN
+    subjectRef: MIN
     category: value
     formula: =MIN(-3, -1, -7)
     expect: -7
@@ -786,6 +838,7 @@ tests:
       - statistical
     name: min-inline-negatives
   - subject: MIN
+    subjectRef: MIN
     category: value
     formula: =MIN(A1:A3)
     grid:
@@ -797,6 +850,7 @@ tests:
       - statistical
     name: min-ignores-text
   - subject: MIN
+    subjectRef: MIN
     category: value
     formula: =MIN(A1:A3)
     expect: 0
@@ -804,6 +858,7 @@ tests:
       - statistical
     name: min-empty-range
   - subject: MAXA
+    subjectRef: MAXA
     formula: =MAXA(A1:A5)
     category: value
     grid:
@@ -822,6 +877,7 @@ tests:
       - statistical
     name: maxa-whole-numbers
   - subject: MAXA
+    subjectRef: MAXA
     category: value
     formula: =MAXA(C1:C5)
     grid:
@@ -841,6 +897,7 @@ tests:
       - divergence
     name: maxa-mixed-types
   - subject: MAXA
+    subjectRef: MAXA
     category: value
     formula: =MAXA(A1:A3)
     grid:
@@ -858,6 +915,7 @@ tests:
       - divergence
     name: maxa-negatives-with-text
   - subject: MAXA
+    subjectRef: MAXA
     formula: =MAXA(-2, -1, TRUE)
     category: value
     expect: 1
@@ -875,6 +933,7 @@ tests:
       - divergence
     name: maxa-inline-boolean
   - subject: MINA
+    subjectRef: MINA
     formula: =MINA(A1:A5)
     category: value
     grid:
@@ -893,6 +952,7 @@ tests:
       - statistical
     name: mina-whole-numbers
   - subject: MINA
+    subjectRef: MINA
     category: value
     formula: =MINA(C1:C5)
     grid:
@@ -912,6 +972,7 @@ tests:
       - divergence
     name: mina-mixed-types
   - subject: MINA
+    subjectRef: MINA
     category: value
     formula: =MINA(A1:A3)
     grid:
@@ -929,6 +990,7 @@ tests:
       - divergence
     name: mina-positives-with-text
   - subject: MINA
+    subjectRef: MINA
     formula: =MINA(2, 3, FALSE)
     category: value
     expect: 0
@@ -946,6 +1008,7 @@ tests:
       - divergence
     name: mina-inline-boolean-false
   - subject: MAXIFS
+    subjectRef: MAXIFS
     formula: =MAXIFS(E1:E5, D1:D5, "A")
     category: value
     grid:
@@ -969,6 +1032,7 @@ tests:
       - statistical
     name: maxifs-single-criterion
   - subject: MAXIFS
+    subjectRef: MAXIFS
     formula: =MAXIFS(A1:A5, A1:A5, "<4")
     category: value
     grid:
@@ -987,6 +1051,7 @@ tests:
       - statistical
     name: maxifs-comparator
   - subject: MAXIFS
+    subjectRef: MAXIFS
     formula: =MAXIFS(A1:A3, A1:A3, ">100")
     category: value
     grid:
@@ -1003,6 +1068,7 @@ tests:
       - statistical
     name: maxifs-no-match
   - subject: MINIFS
+    subjectRef: MINIFS
     formula: =MINIFS(E1:E5, D1:D5, "A")
     category: value
     grid:
@@ -1026,6 +1092,7 @@ tests:
       - statistical
     name: minifs-single-criterion
   - subject: MINIFS
+    subjectRef: MINIFS
     formula: =MINIFS(A1:A5, A1:A5, ">2")
     category: value
     grid:
@@ -1044,6 +1111,7 @@ tests:
       - statistical
     name: minifs-comparator
   - subject: MINIFS
+    subjectRef: MINIFS
     formula: =MINIFS(A1:A3, A1:A3, ">100")
     category: value
     grid:
@@ -1060,6 +1128,7 @@ tests:
       - statistical
     name: minifs-no-match
   - subject: MEDIAN
+    subjectRef: MEDIAN
     formula: =MEDIAN(A1:A5)
     category: value
     grid:
@@ -1078,6 +1147,7 @@ tests:
       - statistical
     name: median-odd-count-statistical-descriptive
   - subject: MEDIAN
+    subjectRef: MEDIAN
     formula: =MEDIAN(1, 2, 3, 4)
     category: value
     expect: 2.5
@@ -1090,6 +1160,7 @@ tests:
       - statistical
     name: median-even-count-statistical-descriptive
   - subject: MEDIAN
+    subjectRef: MEDIAN
     formula: =MEDIAN(7)
     category: value
     expect: 7
@@ -1102,6 +1173,7 @@ tests:
       - statistical
     name: median-single-value
   - subject: MEDIAN
+    subjectRef: MEDIAN
     formula: =MEDIAN(5, 1, 3, 2, 4)
     category: value
     expect: 3
@@ -1114,6 +1186,7 @@ tests:
       - statistical
     name: median-unsorted
   - subject: MODE
+    subjectRef: MODE
     formula: =MODE(B1:B5)
     category: value
     grid:
@@ -1141,6 +1214,7 @@ tests:
       - divergence
     name: mode-tied-dataset
   - subject: MODE
+    subjectRef: MODE
     formula: =MODE(1, 2, 2, 3, 4)
     category: value
     expect: 2
@@ -1161,6 +1235,7 @@ tests:
       - statistical
     name: mode-clear-winner
   - subject: MODE
+    subjectRef: MODE
     formula: =MODE(1, 2, 3, 4, 5)
     category: value
     expect:
@@ -1186,6 +1261,7 @@ tests:
       - statistical
     name: mode-no-repeats
   - subject: MODE.SNGL
+    subjectRef: MODE.SNGL
     formula: =MODE.SNGL(1, 2, 2, 3, 4)
     category: value
     expect: 2
@@ -1210,6 +1286,7 @@ tests:
       - statistical
     name: mode-sngl-clear-winner
   - subject: MODE.SNGL
+    subjectRef: MODE.SNGL
     formula: =MODE.SNGL(B1:B5)
     category: value
     grid:
@@ -1241,6 +1318,7 @@ tests:
       - divergence
     name: mode-sngl-tied-dataset
   - subject: MODE.SNGL
+    subjectRef: MODE.SNGL
     formula: =MODE.SNGL(1, 2, 3)
     category: value
     expect:
@@ -1266,6 +1344,7 @@ tests:
       - statistical
     name: mode-sngl-no-repeats
   - subject: MODE.MULT
+    subjectRef: MODE.MULT
     category: value
     status: observed
     formula: =MODE.MULT(B1:B5)
@@ -1279,6 +1358,7 @@ tests:
       - statistical
     name: mode-mult-tied-dataset
   - subject: MODE.MULT
+    subjectRef: MODE.MULT
     category: value
     status: observed
     formula: =MODE.MULT(1, 2, 2, 3, 4)
@@ -1286,6 +1366,7 @@ tests:
       - statistical
     name: mode-mult-single-mode
   - subject: MODE.MULT
+    subjectRef: MODE.MULT
     category: value
     status: observed
     formula: =MODE.MULT(1, 2, 3)
@@ -1294,6 +1375,7 @@ tests:
       - divergence
     name: mode-mult-no-repeats
   - subject: PERCENTILE
+    subjectRef: PERCENTILE
     formula: =PERCENTILE(A1:A5, 0.25)
     category: value
     grid:
@@ -1320,6 +1402,7 @@ tests:
       - statistical
     name: percentile-25th-on-1-5
   - subject: PERCENTILE
+    subjectRef: PERCENTILE
     formula: =PERCENTILE(A1:A5, 0.5)
     category: value
     grid:
@@ -1346,6 +1429,7 @@ tests:
       - statistical
     name: percentile-50th-on-1-5
   - subject: PERCENTILE
+    subjectRef: PERCENTILE
     formula: =PERCENTILE({1,2,3,4,5}, 0)
     category: value
     expect: 1
@@ -1367,6 +1451,7 @@ tests:
       - bare-formula
     name: percentile-0th
   - subject: PERCENTILE
+    subjectRef: PERCENTILE
     formula: =PERCENTILE({1,2,3,4,5}, 1)
     category: value
     expect: 5
@@ -1388,6 +1473,7 @@ tests:
       - bare-formula
     name: percentile-100th
   - subject: PERCENTILE.INC
+    subjectRef: PERCENTILE.INC
     formula: =PERCENTILE.INC(A1:A5, 0.25)
     category: value
     grid:
@@ -1418,6 +1504,7 @@ tests:
       - statistical
     name: percentile-inc-25th-on-1-5
   - subject: PERCENTILE.INC
+    subjectRef: PERCENTILE.INC
     formula: =PERCENTILE.INC(A1:A5, 0.5)
     category: value
     grid:
@@ -1448,6 +1535,7 @@ tests:
       - statistical
     name: percentile-inc-50th-on-1-5
   - subject: PERCENTILE.INC
+    subjectRef: PERCENTILE.INC
     formula: =PERCENTILE.INC(A1:A5, 0.75)
     category: value
     grid:
@@ -1478,6 +1566,7 @@ tests:
       - statistical
     name: percentile-inc-75th-on-1-5
   - subject: PERCENTILE.EXC
+    subjectRef: PERCENTILE.EXC
     formula: =PERCENTILE.EXC(A1:A5, 0.25)
     category: value
     grid:
@@ -1508,6 +1597,7 @@ tests:
       - statistical
     name: percentile-exc-25th-on-1-5
   - subject: PERCENTILE.EXC
+    subjectRef: PERCENTILE.EXC
     formula: =PERCENTILE.EXC(A1:A5, 0.5)
     category: value
     grid:
@@ -1538,6 +1628,7 @@ tests:
       - statistical
     name: percentile-exc-50th-on-1-5
   - subject: PERCENTILE.EXC
+    subjectRef: PERCENTILE.EXC
     formula: =PERCENTILE.EXC(A1:A5, 0.75)
     category: value
     grid:
@@ -1568,6 +1659,7 @@ tests:
       - statistical
     name: percentile-exc-75th-on-1-5
   - subject: PERCENTILE.EXC
+    subjectRef: PERCENTILE.EXC
     formula: =PERCENTILE.EXC({1,2,3,4,5}, 0)
     category: value
     expect:
@@ -1594,6 +1686,7 @@ tests:
       - bare-formula
     name: percentile-exc-0th-invalid
   - subject: PERCENTRANK
+    subjectRef: PERCENTRANK
     formula: =PERCENTRANK(A1:A5, 3)
     category: value
     grid:
@@ -1620,6 +1713,7 @@ tests:
       - statistical
     name: percentrank-midpoint
   - subject: PERCENTRANK
+    subjectRef: PERCENTRANK
     formula: =PERCENTRANK(A1:A5, 1)
     category: value
     grid:
@@ -1646,6 +1740,7 @@ tests:
       - statistical
     name: percentrank-minimum
   - subject: PERCENTRANK
+    subjectRef: PERCENTRANK
     formula: =PERCENTRANK(A1:A5, 5)
     category: value
     grid:
@@ -1672,6 +1767,7 @@ tests:
       - statistical
     name: percentrank-maximum
   - subject: PERCENTRANK.INC
+    subjectRef: PERCENTRANK.INC
     formula: =PERCENTRANK.INC(A1:A5, 3)
     category: value
     grid:
@@ -1702,6 +1798,7 @@ tests:
       - statistical
     name: percentrank-inc-midpoint
   - subject: PERCENTRANK.INC
+    subjectRef: PERCENTRANK.INC
     formula: =PERCENTRANK.INC(A1:A5, 1)
     category: value
     grid:
@@ -1732,6 +1829,7 @@ tests:
       - statistical
     name: percentrank-inc-minimum
   - subject: PERCENTRANK.INC
+    subjectRef: PERCENTRANK.INC
     formula: =PERCENTRANK.INC(A1:A5, 2)
     category: value
     grid:
@@ -1762,6 +1860,7 @@ tests:
       - statistical
     name: percentrank-inc-quarter
   - subject: PERCENTRANK.EXC
+    subjectRef: PERCENTRANK.EXC
     formula: =PERCENTRANK.EXC(A1:A5, 3)
     category: value
     grid:
@@ -1792,6 +1891,7 @@ tests:
       - statistical
     name: percentrank-exc-midpoint
   - subject: PERCENTRANK.EXC
+    subjectRef: PERCENTRANK.EXC
     category: value
     status: observed
     formula: =PERCENTRANK.EXC(A1:A5, 1)
@@ -1805,6 +1905,7 @@ tests:
       - statistical
     name: percentrank-exc-minimum-value
   - subject: PERCENTRANK.EXC
+    subjectRef: PERCENTRANK.EXC
     formula: =PERCENTRANK.EXC(A1:A5, 2)
     category: value
     grid:
@@ -1835,6 +1936,7 @@ tests:
       - statistical
     name: percentrank-exc-interior
   - subject: PERMUT
+    subjectRef: PERMUT
     formula: =PERMUT(5, 2)
     category: value
     expect: 20
@@ -1855,6 +1957,7 @@ tests:
       - statistical
     name: permut-basic
   - subject: PERMUT
+    subjectRef: PERMUT
     formula: =PERMUT(5, 5)
     category: value
     expect: 120
@@ -1875,6 +1978,7 @@ tests:
       - statistical
     name: permut-full
   - subject: PERMUT
+    subjectRef: PERMUT
     formula: =PERMUT(5, 0)
     category: value
     expect: 1
@@ -1895,6 +1999,7 @@ tests:
       - statistical
     name: permut-zero
   - subject: PERMUT
+    subjectRef: PERMUT
     formula: =PERMUT(3, 5)
     category: value
     expect:
@@ -1920,6 +2025,7 @@ tests:
       - statistical
     name: permut-invalid
   - subject: PERMUTATIONA
+    subjectRef: PERMUTATIONA
     formula: =PERMUTATIONA(5, 2)
     category: value
     expect: 25
@@ -1944,6 +2050,7 @@ tests:
       - statistical
     name: permutationa-basic
   - subject: PERMUTATIONA
+    subjectRef: PERMUTATIONA
     formula: =PERMUTATIONA(3, 3)
     category: value
     expect: 27
@@ -1968,6 +2075,7 @@ tests:
       - statistical
     name: permutationa-triple
   - subject: PERMUTATIONA
+    subjectRef: PERMUTATIONA
     formula: =PERMUTATIONA(5, 0)
     category: value
     expect: 1
@@ -1996,6 +2104,7 @@ tests:
       - statistical
     name: permutationa-zero-pick
   - subject: PERMUTATIONA
+    subjectRef: PERMUTATIONA
     formula: =PERMUTATIONA(-1, 2)
     category: value
     expect:
@@ -2021,6 +2130,7 @@ tests:
       - statistical
     name: permutationa-negative
   - subject: QUARTILE
+    subjectRef: QUARTILE
     formula: =QUARTILE(A1:A5, 1)
     category: value
     grid:
@@ -2047,6 +2157,7 @@ tests:
       - statistical
     name: quartile-q1-on-1-5
   - subject: QUARTILE
+    subjectRef: QUARTILE
     formula: =QUARTILE(A1:A5, 2)
     category: value
     grid:
@@ -2073,6 +2184,7 @@ tests:
       - statistical
     name: quartile-q2-on-1-5
   - subject: QUARTILE
+    subjectRef: QUARTILE
     formula: =QUARTILE(A1:A5, 3)
     category: value
     grid:
@@ -2099,6 +2211,7 @@ tests:
       - statistical
     name: quartile-q3-on-1-5
   - subject: QUARTILE
+    subjectRef: QUARTILE
     formula: =QUARTILE({1,2,3,4,5}, 5)
     category: value
     expect:
@@ -2125,6 +2238,7 @@ tests:
       - bare-formula
     name: quartile-invalid
   - subject: QUARTILE.INC
+    subjectRef: QUARTILE.INC
     formula: =QUARTILE.INC(A1:A5, 1)
     category: value
     grid:
@@ -2155,6 +2269,7 @@ tests:
       - statistical
     name: quartile-inc-q1-on-1-5
   - subject: QUARTILE.INC
+    subjectRef: QUARTILE.INC
     formula: =QUARTILE.INC(A1:A5, 2)
     category: value
     grid:
@@ -2185,6 +2300,7 @@ tests:
       - statistical
     name: quartile-inc-q2-on-1-5
   - subject: QUARTILE.INC
+    subjectRef: QUARTILE.INC
     formula: =QUARTILE.INC(A1:A5, 3)
     category: value
     grid:
@@ -2215,6 +2331,7 @@ tests:
       - statistical
     name: quartile-inc-q3-on-1-5
   - subject: QUARTILE.EXC
+    subjectRef: QUARTILE.EXC
     formula: =QUARTILE.EXC(A1:A5, 1)
     category: value
     grid:
@@ -2245,6 +2362,7 @@ tests:
       - statistical
     name: quartile-exc-q1-on-1-5
   - subject: QUARTILE.EXC
+    subjectRef: QUARTILE.EXC
     formula: =QUARTILE.EXC(A1:A5, 2)
     category: value
     grid:
@@ -2275,6 +2393,7 @@ tests:
       - statistical
     name: quartile-exc-q2-on-1-5
   - subject: QUARTILE.EXC
+    subjectRef: QUARTILE.EXC
     formula: =QUARTILE.EXC(A1:A5, 3)
     category: value
     grid:
@@ -2305,6 +2424,7 @@ tests:
       - statistical
     name: quartile-exc-q3-on-1-5
   - subject: QUARTILE.EXC
+    subjectRef: QUARTILE.EXC
     formula: =QUARTILE.EXC({1,2,3,4,5}, 0)
     category: value
     expect:
@@ -2331,6 +2451,7 @@ tests:
       - bare-formula
     name: quartile-exc-q0-invalid
   - subject: RANK
+    subjectRef: RANK
     formula: =RANK(20, A1:A4)
     category: value
     grid:
@@ -2356,6 +2477,7 @@ tests:
       - statistical
     name: rank-descending
   - subject: RANK
+    subjectRef: RANK
     formula: =RANK(20, A1:A4, 1)
     category: value
     grid:
@@ -2381,6 +2503,7 @@ tests:
       - statistical
     name: rank-ascending
   - subject: RANK
+    subjectRef: RANK
     formula: =RANK(5, A1:A5)
     category: value
     grid:
@@ -2407,6 +2530,7 @@ tests:
       - statistical
     name: rank-top-value
   - subject: RANK
+    subjectRef: RANK
     formula: =RANK(5, A1:A3)
     category: value
     grid:
@@ -2432,6 +2556,7 @@ tests:
       - statistical
     name: rank-missing-value
   - subject: RANK.EQ
+    subjectRef: RANK.EQ
     formula: =RANK.EQ(20, A1:A4)
     category: value
     grid:
@@ -2457,6 +2582,7 @@ tests:
       - statistical
     name: rank-eq-descending-with-tie
   - subject: RANK.EQ
+    subjectRef: RANK.EQ
     formula: =RANK.EQ(3, A1:A5, 1)
     category: value
     grid:
@@ -2483,6 +2609,7 @@ tests:
       - statistical
     name: rank-eq-ascending
   - subject: RANK.EQ
+    subjectRef: RANK.EQ
     formula: =RANK.EQ(5, A1:A5)
     category: value
     grid:
@@ -2509,6 +2636,7 @@ tests:
       - statistical
     name: rank-eq-top
   - subject: RANK.AVG
+    subjectRef: RANK.AVG
     formula: =RANK.AVG(20, A1:A4)
     category: value
     grid:
@@ -2534,6 +2662,7 @@ tests:
       - statistical
     name: rank-avg-descending-with-tie
   - subject: RANK.AVG
+    subjectRef: RANK.AVG
     formula: =RANK.AVG(3, A1:A5)
     category: value
     grid:
@@ -2560,6 +2689,7 @@ tests:
       - statistical
     name: rank-avg-no-tie
   - subject: RANK.AVG
+    subjectRef: RANK.AVG
     formula: =RANK.AVG(20, A1:A5)
     category: value
     grid:
@@ -2586,6 +2716,7 @@ tests:
       - statistical
     name: rank-avg-triple-tie
   - subject: SMALL
+    subjectRef: SMALL
     category: value
     formula: =SMALL(A1:A5, 1)
     grid:
@@ -2599,6 +2730,7 @@ tests:
       - statistical
     name: small-1st-statistical-descriptive
   - subject: SMALL
+    subjectRef: SMALL
     category: value
     formula: =SMALL(A1:A5, 3)
     grid:
@@ -2612,6 +2744,7 @@ tests:
       - statistical
     name: small-3rd
   - subject: SMALL
+    subjectRef: SMALL
     formula: =SMALL({1,2,3}, 5)
     category: value
     expect:
@@ -2626,6 +2759,7 @@ tests:
       - bare-formula
     name: small-k-too-big
   - subject: SMALL
+    subjectRef: SMALL
     formula: =SMALL({1,2,3}, 0)
     category: value
     expect:
@@ -2640,6 +2774,7 @@ tests:
       - bare-formula
     name: small-k-zero
   - subject: STANDARDIZE
+    subjectRef: STANDARDIZE
     formula: =STANDARDIZE(10, 10, 2)
     category: value
     expect: 0
@@ -2652,6 +2787,7 @@ tests:
       - statistical
     name: standardize-at-mean
   - subject: STANDARDIZE
+    subjectRef: STANDARDIZE
     formula: =STANDARDIZE(12, 10, 2)
     category: value
     expect: 1
@@ -2664,6 +2800,7 @@ tests:
       - statistical
     name: standardize-one-stdev-above
   - subject: STANDARDIZE
+    subjectRef: STANDARDIZE
     formula: =STANDARDIZE(6, 10, 2)
     category: value
     expect: -2
@@ -2676,6 +2813,7 @@ tests:
       - statistical
     name: standardize-two-stdev-below
   - subject: STANDARDIZE
+    subjectRef: STANDARDIZE
     formula: =STANDARDIZE(5, 10, 0)
     category: value
     expect:
@@ -2693,6 +2831,7 @@ tests:
       - statistical
     name: standardize-zero-stdev
   - subject: STDEV
+    subjectRef: STDEV
     category: value
     status: observed
     formula: =STDEV(A1:A5)
@@ -2706,6 +2845,7 @@ tests:
       - statistical
     name: stdev-sample-1-5
   - subject: STDEV
+    subjectRef: STDEV
     category: value
     status: observed
     formula: =STDEV(1, 3)
@@ -2713,6 +2853,7 @@ tests:
       - statistical
     name: stdev-two-values
   - subject: STDEV
+    subjectRef: STDEV
     formula: =STDEV(5, 5, 5)
     category: value
     expect: 0
@@ -2729,6 +2870,7 @@ tests:
       - statistical
     name: stdev-identical-values
   - subject: STDEV
+    subjectRef: STDEV
     formula: =STDEV(5)
     category: value
     expect:
@@ -2746,6 +2888,7 @@ tests:
       - statistical
     name: stdev-single-value
   - subject: STDEV.S
+    subjectRef: STDEV.S
     category: value
     status: observed
     formula: =STDEV.S(A1:A5)
@@ -2759,6 +2902,7 @@ tests:
       - statistical
     name: stdev-s-sample-1-5
   - subject: STDEV.S
+    subjectRef: STDEV.S
     formula: =STDEV.S(5, 5, 5)
     category: value
     expect: 0
@@ -2775,6 +2919,7 @@ tests:
       - statistical
     name: stdev-s-identical
   - subject: STDEV.S
+    subjectRef: STDEV.S
     formula: =STDEV.S(5)
     category: value
     expect:
@@ -2792,6 +2937,7 @@ tests:
       - statistical
     name: stdev-s-single-value
   - subject: STDEV.P
+    subjectRef: STDEV.P
     category: value
     status: observed
     formula: =STDEV.P(A1:A5)
@@ -2805,6 +2951,7 @@ tests:
       - statistical
     name: stdev-p-population-1-5
   - subject: STDEV.P
+    subjectRef: STDEV.P
     formula: =STDEV.P(2, 6)
     category: value
     expect: 2
@@ -2821,6 +2968,7 @@ tests:
       - statistical
     name: stdev-p-two-values
   - subject: STDEV.P
+    subjectRef: STDEV.P
     formula: =STDEV.P(5, 5, 5)
     category: value
     expect: 0
@@ -2837,6 +2985,7 @@ tests:
       - statistical
     name: stdev-p-identical
   - subject: STDEVP
+    subjectRef: STDEVP
     category: value
     status: observed
     formula: =STDEVP(A1:A5)
@@ -2850,6 +2999,7 @@ tests:
       - statistical
     name: stdevp-population-1-5
   - subject: STDEVP
+    subjectRef: STDEVP
     formula: =STDEVP(2, 6)
     category: value
     expect: 2
@@ -2866,6 +3016,7 @@ tests:
       - statistical
     name: stdevp-two-values
   - subject: STDEVP
+    subjectRef: STDEVP
     formula: =STDEVP(5, 5, 5)
     category: value
     expect: 0
@@ -2882,6 +3033,7 @@ tests:
       - statistical
     name: stdevp-identical
   - subject: STDEVA
+    subjectRef: STDEVA
     category: value
     status: observed
     formula: =STDEVA(A1:A5)
@@ -2895,6 +3047,7 @@ tests:
       - statistical
     name: stdeva-numeric-only
   - subject: STDEVA
+    subjectRef: STDEVA
     category: value
     status: observed
     formula: =STDEVA(C1:C5)
@@ -2909,6 +3062,7 @@ tests:
       - divergence
     name: stdeva-mixed-types
   - subject: STDEVA
+    subjectRef: STDEVA
     category: value
     status: observed
     formula: =STDEVA(1, 2, TRUE)
@@ -2917,6 +3071,7 @@ tests:
       - divergence
     name: stdeva-inline-boolean
   - subject: STDEVPA
+    subjectRef: STDEVPA
     category: value
     status: observed
     formula: =STDEVPA(A1:A5)
@@ -2930,6 +3085,7 @@ tests:
       - statistical
     name: stdevpa-numeric-only
   - subject: STDEVPA
+    subjectRef: STDEVPA
     category: value
     status: observed
     formula: =STDEVPA(C1:C5)
@@ -2944,6 +3100,7 @@ tests:
       - divergence
     name: stdevpa-mixed-types
   - subject: STDEVPA
+    subjectRef: STDEVPA
     category: value
     status: observed
     formula: =STDEVPA(1, 2, TRUE)
@@ -2952,6 +3109,7 @@ tests:
       - divergence
     name: stdevpa-inline-boolean
   - subject: TRIMMEAN
+    subjectRef: TRIMMEAN
     formula: =TRIMMEAN(A1:A5, 0.4)
     category: value
     grid:
@@ -2978,6 +3136,7 @@ tests:
       - statistical
     name: trimmean-40pct-on-1-5
   - subject: TRIMMEAN
+    subjectRef: TRIMMEAN
     formula: =TRIMMEAN(A1:A5, 0)
     category: value
     grid:
@@ -3004,6 +3163,7 @@ tests:
       - statistical
     name: trimmean-zero-percent
   - subject: TRIMMEAN
+    subjectRef: TRIMMEAN
     formula: =TRIMMEAN({1,2,3,4,100}, 0.4)
     category: value
     expect: 3
@@ -3025,6 +3185,7 @@ tests:
       - bare-formula
     name: trimmean-skewed-dataset
   - subject: TRIMMEAN
+    subjectRef: TRIMMEAN
     formula: =TRIMMEAN({1,2,3}, 1)
     category: value
     expect:
@@ -3051,6 +3212,7 @@ tests:
       - bare-formula
     name: trimmean-invalid-percent
   - subject: VAR
+    subjectRef: VAR
     formula: =VAR(A1:A5)
     category: value
     grid:
@@ -3073,6 +3235,7 @@ tests:
       - statistical
     name: var-sample-1-5
   - subject: VAR
+    subjectRef: VAR
     formula: =VAR(1, 3)
     category: value
     expect: 2
@@ -3089,6 +3252,7 @@ tests:
       - statistical
     name: var-two-values
   - subject: VAR
+    subjectRef: VAR
     formula: =VAR(5, 5, 5)
     category: value
     expect: 0
@@ -3105,6 +3269,7 @@ tests:
       - statistical
     name: var-identical
   - subject: VAR
+    subjectRef: VAR
     formula: =VAR(5)
     category: value
     expect:
@@ -3122,6 +3287,7 @@ tests:
       - statistical
     name: var-single-value
   - subject: VAR.S
+    subjectRef: VAR.S
     formula: =VAR.S(A1:A5)
     category: value
     grid:
@@ -3144,6 +3310,7 @@ tests:
       - statistical
     name: var-s-sample-1-5
   - subject: VAR.S
+    subjectRef: VAR.S
     formula: =VAR.S(5, 5, 5)
     category: value
     expect: 0
@@ -3160,6 +3327,7 @@ tests:
       - statistical
     name: var-s-identical
   - subject: VAR.S
+    subjectRef: VAR.S
     formula: =VAR.S(5)
     category: value
     expect:
@@ -3177,6 +3345,7 @@ tests:
       - statistical
     name: var-s-single-value
   - subject: VAR.P
+    subjectRef: VAR.P
     formula: =VAR.P(A1:A5)
     category: value
     grid:
@@ -3199,6 +3368,7 @@ tests:
       - statistical
     name: var-p-population-1-5
   - subject: VAR.P
+    subjectRef: VAR.P
     formula: =VAR.P(2, 6)
     category: value
     expect: 4
@@ -3215,6 +3385,7 @@ tests:
       - statistical
     name: var-p-two-values
   - subject: VAR.P
+    subjectRef: VAR.P
     formula: =VAR.P(5, 5, 5)
     category: value
     expect: 0
@@ -3231,6 +3402,7 @@ tests:
       - statistical
     name: var-p-identical
   - subject: VARP
+    subjectRef: VARP
     formula: =VARP(A1:A5)
     category: value
     grid:
@@ -3253,6 +3425,7 @@ tests:
       - statistical
     name: varp-population-1-5
   - subject: VARP
+    subjectRef: VARP
     formula: =VARP(2, 6)
     category: value
     expect: 4
@@ -3269,6 +3442,7 @@ tests:
       - statistical
     name: varp-two-values
   - subject: VARP
+    subjectRef: VARP
     formula: =VARP(5, 5, 5)
     category: value
     expect: 0
@@ -3285,6 +3459,7 @@ tests:
       - statistical
     name: varp-identical
   - subject: VARA
+    subjectRef: VARA
     formula: =VARA(A1:A5)
     category: value
     grid:
@@ -3303,6 +3478,7 @@ tests:
       - statistical
     name: vara-numeric-only
   - subject: VARA
+    subjectRef: VARA
     category: value
     status: observed
     formula: =VARA(C1:C5)
@@ -3317,6 +3493,7 @@ tests:
       - divergence
     name: vara-mixed-types
   - subject: VARA
+    subjectRef: VARA
     category: value
     status: observed
     formula: =VARA(1, 2, TRUE)
@@ -3325,6 +3502,7 @@ tests:
       - divergence
     name: vara-inline-boolean
   - subject: VARPA
+    subjectRef: VARPA
     formula: =VARPA(A1:A5)
     category: value
     grid:
@@ -3343,6 +3521,7 @@ tests:
       - statistical
     name: varpa-numeric-only
   - subject: VARPA
+    subjectRef: VARPA
     category: value
     status: observed
     formula: =VARPA(C1:C5)
@@ -3357,6 +3536,7 @@ tests:
       - divergence
     name: varpa-mixed-types
   - subject: VARPA
+    subjectRef: VARPA
     category: value
     status: observed
     formula: =VARPA(1, 2, TRUE)

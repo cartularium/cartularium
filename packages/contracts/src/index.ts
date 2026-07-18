@@ -311,6 +311,10 @@ export type {
 
 // fork-annotation coverage — derived read (manifest × annotations); see fork-coverage.ts
 export { computeForkCoverage } from "./fork-coverage.js"
+
+// stability substrate: the shared assay-stimulus-v1 payload (hashed by
+// assay with node:crypto and by edit-shell with WebCrypto)
+export { canonicalJson, coerceStimulusGrid, stimulusPayload } from "./stimulus-hash.js"
 export type { AnnotationCoverage, ForkCoverageReport } from "./fork-coverage.js"
 
 // edit-wiki page index — see edit-index.ts

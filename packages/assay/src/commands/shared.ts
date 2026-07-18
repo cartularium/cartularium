@@ -20,6 +20,11 @@ const parsed = parseArgs({
     quiet: { type: "boolean", short: "q", default: false },
     "allow-missing": { type: "boolean", default: false },
     help: { type: "boolean", short: "h", default: false },
+    // generate --record / ledger (stability substrate; `record` and `note`
+    // are shared with the retired history command above)
+    conditions: { type: "string" },
+    evidence: { type: "string" },
+    list: { type: "boolean", default: false },
     // benchmark
     authority: { type: "string", default: "gsheets,excel" },
     target: { type: "string" },

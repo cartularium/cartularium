@@ -7,9 +7,9 @@ import { valueOutcome } from "./format/values.js";
 import { runFromFixtures } from "./runner.js";
 
 describe("caseKey", () => {
-  it("uses v3 semantic hashes and falls back to v2 ids", () => {
+  it("is the declared id (stability substrate); semanticHash no longer keys", () => {
     expect(caseKey({ id: "math/abc123" })).toBe("math/abc123");
-    expect(caseKey({ id: "SUM/basic", semanticHash: "sha256:deadbeef" })).toBe("sha256:deadbeef");
+    expect(caseKey({ id: "SUM/basic", semanticHash: "sha256:deadbeef" })).toBe("SUM/basic");
   });
 
   it("reads fixture results by semantic hash while reporting public ids", () => {

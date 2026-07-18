@@ -2,6 +2,7 @@ schemaVersion: 3
 name: Text long-tail functions
 tests:
   - subject: ARABIC
+    subjectRef: ARABIC
     formula: =ARABIC("XIV")
     category: value
     expect: 14
@@ -18,6 +19,7 @@ tests:
       - text
     name: arabic-xiv
   - subject: ARABIC
+    subjectRef: ARABIC
     formula: =ARABIC("MCMXCIV")
     category: value
     expect: 1994
@@ -34,6 +36,7 @@ tests:
       - text
     name: arabic-mcmxciv
   - subject: ARABIC
+    subjectRef: ARABIC
     formula: =ARABIC("")
     category: value
     expect: 0
@@ -50,6 +53,7 @@ tests:
       - text
     name: arabic-empty
   - subject: ARABIC
+    subjectRef: ARABIC
     formula: =ARABIC("xiv")
     category: value
     expect: 14
@@ -66,6 +70,7 @@ tests:
       - text
     name: arabic-lowercase
   - subject: ARABIC
+    subjectRef: ARABIC
     category: value
     status: observed
     formula: =ARABIC("hello")
@@ -74,6 +79,7 @@ tests:
       - divergence
     name: arabic-invalid
   - subject: ASC
+    subjectRef: ASC
     formula: =ASC("ABC")
     category: value
     expect: ABC
@@ -95,6 +101,7 @@ tests:
       - dbcs
     name: asc-fullwidth-alpha
   - subject: ASC
+    subjectRef: ASC
     formula: =ASC("123")
     category: value
     expect: "123"
@@ -116,6 +123,7 @@ tests:
       - dbcs
     name: asc-fullwidth-digits
   - subject: ASC
+    subjectRef: ASC
     formula: =ASC("hello")
     category: value
     expect: hello
@@ -137,6 +145,7 @@ tests:
       - dbcs
     name: asc-ascii-passthrough
   - subject: ASC
+    subjectRef: ASC
     category: value
     status: observed
     formula: =ASC("")
@@ -145,6 +154,7 @@ tests:
       - dbcs
     name: asc-empty
   - subject: CHAR
+    subjectRef: CHAR
     formula: =CHAR(65)
     category: value
     expect: A
@@ -161,6 +171,7 @@ tests:
       - text
     name: char-uppercase-a
   - subject: CHAR
+    subjectRef: CHAR
     formula: =CHAR(97)
     category: value
     expect: a
@@ -177,6 +188,7 @@ tests:
       - text
     name: char-lowercase-a
   - subject: CHAR
+    subjectRef: CHAR
     formula: =CHAR(48)
     category: value
     expect: "0"
@@ -193,6 +205,7 @@ tests:
       - text
     name: char-digit-0
   - subject: CHAR
+    subjectRef: CHAR
     formula: =CHAR(32)
     category: value
     expect: " "
@@ -209,6 +222,7 @@ tests:
       - text
     name: char-space
   - subject: CHAR
+    subjectRef: CHAR
     category: value
     status: observed
     formula: =CHAR(0)
@@ -217,6 +231,7 @@ tests:
       - divergence
     name: char-out-of-range
   - subject: CLEAN
+    subjectRef: CLEAN
     formula: =CLEAN("hello" & CHAR(9) & "world")
     category: value
     expect: helloworld
@@ -233,6 +248,7 @@ tests:
       - text
     name: clean-strips-tab
   - subject: CLEAN
+    subjectRef: CLEAN
     formula: =CLEAN("line1" & CHAR(10) & "line2")
     category: value
     expect: line1line2
@@ -249,6 +265,7 @@ tests:
       - text
     name: clean-strips-newline
   - subject: CLEAN
+    subjectRef: CLEAN
     formula: =CLEAN("hello world")
     category: value
     expect: hello world
@@ -265,6 +282,7 @@ tests:
       - text
     name: clean-plain-passthrough
   - subject: CLEAN
+    subjectRef: CLEAN
     formula: =CLEAN("")
     category: value
     expect: ""
@@ -290,6 +308,7 @@ tests:
       - text
     name: clean-empty
   - subject: CODE
+    subjectRef: CODE
     formula: =CODE("A")
     category: value
     expect: 65
@@ -306,6 +325,7 @@ tests:
       - text
     name: code-uppercase-a
   - subject: CODE
+    subjectRef: CODE
     formula: =CODE("a")
     category: value
     expect: 97
@@ -322,6 +342,7 @@ tests:
       - text
     name: code-lowercase-a
   - subject: CODE
+    subjectRef: CODE
     formula: =CODE("Alphabet")
     category: value
     expect: 65
@@ -338,6 +359,7 @@ tests:
       - text
     name: code-first-char
   - subject: CODE
+    subjectRef: CODE
     formula: =CODE("")
     category: value
     expect: 0
@@ -375,6 +397,7 @@ tests:
       - divergence
     name: code-empty
   - subject: DOLLAR
+    subjectRef: DOLLAR
     formula: =DOLLAR(1234.567)
     category: value
     expect: $1,234.57
@@ -400,6 +423,7 @@ tests:
       - locale
     name: dollar-basic
   - subject: DOLLAR
+    subjectRef: DOLLAR
     formula: =DOLLAR(1234.567, 2)
     category: value
     expect: $1,234.57
@@ -425,6 +449,7 @@ tests:
       - locale
     name: dollar-2-decimals
   - subject: DOLLAR
+    subjectRef: DOLLAR
     formula: =DOLLAR(1234.567, 0)
     category: value
     expect: $1,235
@@ -450,6 +475,7 @@ tests:
       - locale
     name: dollar-zero-decimals
   - subject: DOLLAR
+    subjectRef: DOLLAR
     category: value
     status: observed
     formula: =DOLLAR(-1234.5, 2)
@@ -458,6 +484,7 @@ tests:
       - locale
     name: dollar-negative
   - subject: FINDB
+    subjectRef: FINDB
     formula: =FINDB("world", "hello world")
     category: value
     expect: 7
@@ -478,6 +505,7 @@ tests:
       - text
     name: findb-ascii
   - subject: FINDB
+    subjectRef: FINDB
     formula: =FINDB("h", "hello")
     category: value
     expect: 1
@@ -498,6 +526,7 @@ tests:
       - text
     name: findb-at-start
   - subject: FINDB
+    subjectRef: FINDB
     formula: =FINDB("z", "hello")
     category: value
     expect:
@@ -519,6 +548,7 @@ tests:
       - text
     name: findb-not-found
   - subject: FINDB
+    subjectRef: FINDB
     category: value
     status: observed
     formula: =FINDB("い", "あいう")
@@ -527,6 +557,7 @@ tests:
       - dbcs
     name: findb-dbcs
   - subject: FIXED
+    subjectRef: FIXED
     formula: =FIXED(1234.567, 1)
     category: value
     expect: 1,234.6
@@ -548,6 +579,7 @@ tests:
       - locale
     name: fixed-basic
   - subject: FIXED
+    subjectRef: FIXED
     formula: =FIXED(1234.567, 1, TRUE)
     category: value
     expect: "1234.6"
@@ -569,6 +601,7 @@ tests:
       - locale
     name: fixed-no-commas
   - subject: FIXED
+    subjectRef: FIXED
     formula: =FIXED(1234.567)
     category: value
     expect: 1,234.57
@@ -590,6 +623,7 @@ tests:
       - locale
     name: fixed-default
   - subject: FIXED
+    subjectRef: FIXED
     category: value
     status: observed
     formula: =FIXED(1234.567, -1)
@@ -598,6 +632,7 @@ tests:
       - locale
     name: fixed-negative-decimals
   - subject: JOIN
+    subjectRef: JOIN
     formula: =JOIN("-", {"a","b","c"})
     category: value
     expect: a-b-c
@@ -631,6 +666,7 @@ tests:
       - bare-formula
     name: join-basic
   - subject: JOIN
+    subjectRef: JOIN
     formula: =JOIN(",", {1,2,3})
     category: value
     expect: 1,2,3
@@ -664,6 +700,7 @@ tests:
       - bare-formula
     name: join-with-numbers
   - subject: JOIN
+    subjectRef: JOIN
     formula: =JOIN("", {"a","b","c"})
     category: value
     expect: abc
@@ -697,6 +734,7 @@ tests:
       - bare-formula
     name: join-empty-delim
   - subject: JOIN
+    subjectRef: JOIN
     formula: =JOIN("-", {"solo"})
     category: value
     expect: solo
@@ -729,6 +767,7 @@ tests:
       - text
     name: join-single-element
   - subject: LEFTB
+    subjectRef: LEFTB
     formula: =LEFTB("Sale Price", 4)
     category: value
     expect: Sale
@@ -749,6 +788,7 @@ tests:
       - text
     name: leftb-ascii
   - subject: LEFTB
+    subjectRef: LEFTB
     formula: =LEFTB("hello")
     category: value
     expect: h
@@ -769,6 +809,7 @@ tests:
       - text
     name: leftb-default
   - subject: LEFTB
+    subjectRef: LEFTB
     formula: =LEFTB("hello", 0)
     category: value
     expect: ""
@@ -798,6 +839,7 @@ tests:
       - text
     name: leftb-zero
   - subject: LEFTB
+    subjectRef: LEFTB
     category: value
     status: observed
     formula: =LEFTB("あいう", 2)
@@ -806,6 +848,7 @@ tests:
       - dbcs
     name: leftb-dbcs
   - subject: LENB
+    subjectRef: LENB
     formula: =LENB("hello")
     category: value
     expect: 5
@@ -826,6 +869,7 @@ tests:
       - text
     name: lenb-ascii
   - subject: LENB
+    subjectRef: LENB
     formula: =LENB("")
     category: value
     expect: 0
@@ -846,6 +890,7 @@ tests:
       - text
     name: lenb-empty
   - subject: LENB
+    subjectRef: LENB
     formula: =LENB("   ")
     category: value
     expect: 3
@@ -866,6 +911,7 @@ tests:
       - text
     name: lenb-spaces
   - subject: LENB
+    subjectRef: LENB
     category: value
     status: observed
     formula: =LENB("あ")
@@ -874,6 +920,7 @@ tests:
       - dbcs
     name: lenb-dbcs
   - subject: MIDB
+    subjectRef: MIDB
     formula: =MIDB("Romain", 3, 4)
     category: value
     expect: main
@@ -894,6 +941,7 @@ tests:
       - text
     name: midb-ascii
   - subject: MIDB
+    subjectRef: MIDB
     formula: =MIDB("Romain", 1, 2)
     category: value
     expect: Ro
@@ -914,6 +962,7 @@ tests:
       - text
     name: midb-from-start
   - subject: MIDB
+    subjectRef: MIDB
     formula: =MIDB("Romain", 3, 100)
     category: value
     expect: main
@@ -934,6 +983,7 @@ tests:
       - text
     name: midb-beyond-end
   - subject: MIDB
+    subjectRef: MIDB
     category: value
     status: observed
     formula: =MIDB("あいう", 3, 2)
@@ -942,6 +992,7 @@ tests:
       - dbcs
     name: midb-dbcs
   - subject: PROPER
+    subjectRef: PROPER
     formula: =PROPER("hello world")
     category: value
     expect: Hello World
@@ -958,6 +1009,7 @@ tests:
       - text
     name: proper-hello-world
   - subject: PROPER
+    subjectRef: PROPER
     formula: =PROPER("THIS IS A TITLE")
     category: value
     expect: This Is A Title
@@ -974,6 +1026,7 @@ tests:
       - text
     name: proper-all-caps
   - subject: PROPER
+    subjectRef: PROPER
     formula: =PROPER("76BudGet")
     category: value
     expect: 76Budget
@@ -990,6 +1043,7 @@ tests:
       - text
     name: proper-mixed
   - subject: PROPER
+    subjectRef: PROPER
     formula: =PROPER("o'brien")
     category: value
     expect: O'Brien
@@ -1007,6 +1061,7 @@ tests:
       - divergence
     name: proper-apostrophe
   - subject: REPLACEB
+    subjectRef: REPLACEB
     formula: =REPLACEB("abcdefghijk", 6, 5, "*")
     category: value
     expect: abcde*k
@@ -1027,6 +1082,7 @@ tests:
       - text
     name: replaceb-ascii
   - subject: REPLACEB
+    subjectRef: REPLACEB
     formula: =REPLACEB("2009", 3, 2, "10")
     category: value
     expect: "2010"
@@ -1047,6 +1103,7 @@ tests:
       - text
     name: replaceb-year
   - subject: REPLACEB
+    subjectRef: REPLACEB
     formula: =REPLACEB("hello", 2, 3, "")
     category: value
     expect: ho
@@ -1067,6 +1124,7 @@ tests:
       - text
     name: replaceb-empty-insert
   - subject: REPLACEB
+    subjectRef: REPLACEB
     category: value
     status: observed
     formula: =REPLACEB("あいう", 3, 2, "X")
@@ -1075,6 +1133,7 @@ tests:
       - dbcs
     name: replaceb-dbcs
   - subject: RIGHTB
+    subjectRef: RIGHTB
     formula: =RIGHTB("Sale Price", 5)
     category: value
     expect: Price
@@ -1095,6 +1154,7 @@ tests:
       - text
     name: rightb-ascii
   - subject: RIGHTB
+    subjectRef: RIGHTB
     formula: =RIGHTB("hello")
     category: value
     expect: o
@@ -1115,6 +1175,7 @@ tests:
       - text
     name: rightb-default
   - subject: RIGHTB
+    subjectRef: RIGHTB
     formula: =RIGHTB("hello", 0)
     category: value
     expect: ""
@@ -1144,6 +1205,7 @@ tests:
       - text
     name: rightb-zero
   - subject: RIGHTB
+    subjectRef: RIGHTB
     category: value
     status: observed
     formula: =RIGHTB("あいう", 2)
@@ -1152,6 +1214,7 @@ tests:
       - dbcs
     name: rightb-dbcs
   - subject: ROMAN
+    subjectRef: ROMAN
     formula: =ROMAN(14)
     category: value
     expect: XIV
@@ -1164,6 +1227,7 @@ tests:
       - text
     name: roman-14-xiv
   - subject: ROMAN
+    subjectRef: ROMAN
     formula: =ROMAN(1994)
     category: value
     expect: MCMXCIV
@@ -1176,6 +1240,7 @@ tests:
       - text
     name: roman-1994
   - subject: ROMAN
+    subjectRef: ROMAN
     formula: =ROMAN(1)
     category: value
     expect: I
@@ -1188,6 +1253,7 @@ tests:
       - text
     name: roman-1
   - subject: ROMAN
+    subjectRef: ROMAN
     category: value
     status: observed
     formula: =ROMAN(0)
@@ -1195,6 +1261,7 @@ tests:
       - text
     name: roman-zero
   - subject: ROMAN
+    subjectRef: ROMAN
     formula: =ROMAN(499, 0)
     category: value
     expect: CDXCIX
@@ -1207,6 +1274,7 @@ tests:
       - text
     name: roman-499-form0
   - subject: SEARCH
+    subjectRef: SEARCH
     formula: =SEARCH("m", "Miriam McGovern")
     category: value
     expect: 1
@@ -1219,6 +1287,7 @@ tests:
       - text
     name: search-case-insensitive
   - subject: SEARCH
+    subjectRef: SEARCH
     formula: =SEARCH("m", "Miriam McGovern", 3)
     category: value
     expect: 5
@@ -1252,6 +1321,7 @@ tests:
       - text
     name: search-with-start
   - subject: SEARCH
+    subjectRef: SEARCH
     formula: =SEARCH("m?r", "Miriam McGovern")
     category: value
     expect: 4
@@ -1286,6 +1356,7 @@ tests:
       - text
     name: search-wildcard-question
   - subject: SEARCH
+    subjectRef: SEARCH
     formula: =SEARCH("M*n", "Miriam McGovern")
     category: value
     expect: 1
@@ -1302,6 +1373,7 @@ tests:
       - text
     name: search-wildcard-star
   - subject: SEARCH
+    subjectRef: SEARCH
     formula: =SEARCH("z", "Miriam McGovern")
     category: value
     expect:
@@ -1315,6 +1387,7 @@ tests:
       - text
     name: search-not-found
   - subject: SEARCHB
+    subjectRef: SEARCHB
     formula: =SEARCHB("m", "Miriam McGovern")
     category: value
     expect: 1
@@ -1335,6 +1408,7 @@ tests:
       - text
     name: searchb-ascii
   - subject: SEARCHB
+    subjectRef: SEARCHB
     formula: =SEARCHB("M", "Miriam McGovern", 3)
     category: value
     expect: 8
@@ -1370,6 +1444,7 @@ tests:
       - text
     name: searchb-with-start
   - subject: SEARCHB
+    subjectRef: SEARCHB
     formula: =SEARCHB("z", "Miriam")
     category: value
     expect:
@@ -1391,6 +1466,7 @@ tests:
       - text
     name: searchb-not-found
   - subject: SEARCHB
+    subjectRef: SEARCHB
     category: value
     status: observed
     formula: =SEARCHB("い", "あいう")
@@ -1399,6 +1475,7 @@ tests:
       - dbcs
     name: searchb-dbcs
   - subject: SPLIT
+    subjectRef: SPLIT
     formula: =SPLIT("a,b,c", ",")
     category: value
     expect:
@@ -1434,6 +1511,7 @@ tests:
       - text
     name: split-comma
   - subject: SPLIT
+    subjectRef: SPLIT
     formula: =SPLIT("a-b_c", "-_")
     category: value
     expect:
@@ -1469,6 +1547,7 @@ tests:
       - text
     name: split-multi-delim
   - subject: SPLIT
+    subjectRef: SPLIT
     formula: =SPLIT("hello", ",")
     category: value
     expect: hello
@@ -1501,6 +1580,7 @@ tests:
       - text
     name: split-single-token
   - subject: SPLIT
+    subjectRef: SPLIT
     formula: =SPLIT("a,,b", ",", TRUE, FALSE)
     category: value
     expect:
@@ -1547,6 +1627,7 @@ tests:
       - text
     name: split-empty-tokens
   - subject: T
+    subjectRef: T
     formula: =T("hello")
     category: value
     expect: hello
@@ -1559,6 +1640,7 @@ tests:
       - text
     name: t-text-passthrough
   - subject: T
+    subjectRef: T
     formula: =T("42")
     category: value
     expect: "42"
@@ -1571,6 +1653,7 @@ tests:
       - text
     name: t-numeric-string-literal
   - subject: T
+    subjectRef: T
     formula: =T(42)
     category: value
     expect: ""
@@ -1592,6 +1675,7 @@ tests:
       - text
     name: t-number
   - subject: T
+    subjectRef: T
     formula: =T(TRUE)
     category: value
     expect: ""
@@ -1617,6 +1701,7 @@ tests:
       - text
     name: t-boolean
   - subject: T
+    subjectRef: T
     formula: =T("")
     category: value
     expect: ""
@@ -1638,6 +1723,7 @@ tests:
       - text
     name: t-empty
   - subject: TEXT
+    subjectRef: TEXT
     formula: =TEXT(1234.5, "#,##0.00")
     category: value
     expect: 1,234.50
@@ -1650,6 +1736,7 @@ tests:
       - locale
     name: text-thousands
   - subject: TEXT
+    subjectRef: TEXT
     formula: =TEXT(1234, "0000000")
     category: value
     expect: "0001234"
@@ -1663,6 +1750,7 @@ tests:
       - locale
     name: text-integer
   - subject: TEXT
+    subjectRef: TEXT
     formula: =TEXT(0.25, "0.0%")
     category: value
     expect: 25.0%
@@ -1675,6 +1763,7 @@ tests:
       - locale
     name: text-percent
   - subject: TEXT
+    subjectRef: TEXT
     category: value
     formula: =TEXT(DATE(2024,1,15), "yyyy-mm-dd")
     expect: 2024-01-15
@@ -1688,6 +1777,7 @@ tests:
       - locale
     name: text-date
   - subject: TEXT
+    subjectRef: TEXT
     formula: =TEXT(1234.5, "$#,##0.00")
     category: value
     expect: $1,234.50
@@ -1700,6 +1790,7 @@ tests:
       - locale
     name: text-currency
   - subject: UNICHAR
+    subjectRef: UNICHAR
     formula: =UNICHAR(65)
     category: value
     expect: A
@@ -1720,6 +1811,7 @@ tests:
       - text
     name: unichar-uppercase-a
   - subject: UNICHAR
+    subjectRef: UNICHAR
     formula: =UNICHAR(9731)
     category: value
     expect: ☃
@@ -1740,6 +1832,7 @@ tests:
       - text
     name: unichar-snowman
   - subject: UNICHAR
+    subjectRef: UNICHAR
     formula: =UNICHAR(9829)
     category: value
     expect: ♥
@@ -1760,6 +1853,7 @@ tests:
       - text
     name: unichar-emoji-bmp
   - subject: UNICHAR
+    subjectRef: UNICHAR
     formula: =UNICHAR(0)
     category: value
     expect: "\0"
@@ -1797,6 +1891,7 @@ tests:
       - divergence
     name: unichar-zero
   - subject: UNICODE
+    subjectRef: UNICODE
     formula: =UNICODE("A")
     category: value
     expect: 65
@@ -1813,6 +1908,7 @@ tests:
       - text
     name: unicode-uppercase-a
   - subject: UNICODE
+    subjectRef: UNICODE
     formula: =UNICODE("☃")
     category: value
     expect: 9731
@@ -1829,6 +1925,7 @@ tests:
       - text
     name: unicode-snowman
   - subject: UNICODE
+    subjectRef: UNICODE
     formula: =UNICODE("♥")
     category: value
     expect: 9829
@@ -1845,6 +1942,7 @@ tests:
       - text
     name: unicode-heart
   - subject: UNICODE
+    subjectRef: UNICODE
     formula: =UNICODE("Alphabet")
     category: value
     expect: 65
@@ -1861,6 +1959,7 @@ tests:
       - text
     name: unicode-first-char
   - subject: UNICODE
+    subjectRef: UNICODE
     category: value
     status: observed
     formula: =UNICODE("")
@@ -1869,6 +1968,7 @@ tests:
       - divergence
     name: unicode-empty
   - subject: VALUE
+    subjectRef: VALUE
     category: value
     formula: =VALUE("42")
     expect: 42
@@ -1876,6 +1976,7 @@ tests:
       - text
     name: value-integer-string
   - subject: VALUE
+    subjectRef: VALUE
     category: value
     formula: =VALUE("3.14")
     expect: 3.14
@@ -1883,6 +1984,7 @@ tests:
       - text
     name: value-decimal-string
   - subject: VALUE
+    subjectRef: VALUE
     category: value
     formula: =VALUE("-100")
     expect: -100
@@ -1890,6 +1992,7 @@ tests:
       - text
     name: value-negative
   - subject: VALUE
+    subjectRef: VALUE
     formula: =VALUE("")
     category: value
     expect: 0
@@ -1927,6 +2030,7 @@ tests:
       - divergence
     name: value-empty
   - subject: VALUE
+    subjectRef: VALUE
     formula: =VALUE("hello")
     category: value
     expect:

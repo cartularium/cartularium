@@ -2,6 +2,7 @@ schemaVersion: 3
 name: Date functions
 tests:
   - subject: DATE
+    subjectRef: DATE
     category: value
     formula: =DATE(2025, 3, 15)
     expect: 45731
@@ -9,6 +10,7 @@ tests:
       - date
     name: date-basic
   - subject: DATE
+    subjectRef: DATE
     category: value
     formula: =DATE(2024, 2, 29)
     expect: 45351
@@ -16,6 +18,7 @@ tests:
       - date
     name: date-leap-day
   - subject: DATE
+    subjectRef: DATE
     category: value
     formula: =DATE(2025, 13, 1)
     expect: 46023
@@ -28,6 +31,7 @@ tests:
       - date
     name: date-month-overflow
   - subject: DATE
+    subjectRef: DATE
     category: value
     formula: =DATE(2025, 1, 32)
     expect: 45689
@@ -40,6 +44,7 @@ tests:
       - date
     name: date-day-overflow
   - subject: DATE
+    subjectRef: DATE
     category: value
     formula: =DATE(2025, -1, 15)
     expect: 45611
@@ -52,6 +57,7 @@ tests:
       - date
     name: date-negative-month
   - subject: DATEDIF
+    subjectRef: DATEDIF
     formula: =DATEDIF("2020-01-15", "2025-03-20", "Y")
     category: value
     expect: 5
@@ -68,6 +74,7 @@ tests:
       - date
     name: datedif-years
   - subject: DATEDIF
+    subjectRef: DATEDIF
     formula: =DATEDIF("2020-01-15", "2025-03-20", "M")
     category: value
     expect: 62
@@ -84,6 +91,7 @@ tests:
       - date
     name: datedif-months
   - subject: DATEDIF
+    subjectRef: DATEDIF
     formula: =DATEDIF("2025-01-01", "2025-02-01", "D")
     category: value
     expect: 31
@@ -100,6 +108,7 @@ tests:
       - date
     name: datedif-days
   - subject: DATEDIF
+    subjectRef: DATEDIF
     formula: =DATEDIF("2020-01-15", "2025-03-20", "MD")
     category: value
     expect: 5
@@ -116,6 +125,7 @@ tests:
       - date
     name: datedif-md-day-only
   - subject: DATEDIF
+    subjectRef: DATEDIF
     formula: =DATEDIF("2020-01-15", "2025-03-20", "YM")
     category: value
     expect: 2
@@ -132,6 +142,7 @@ tests:
       - date
     name: datedif-ym-month-only
   - subject: DATEVALUE
+    subjectRef: DATEVALUE
     category: value
     formula: =DATEVALUE("2025-03-15")
     expect: 45731
@@ -144,6 +155,7 @@ tests:
       - date
     name: datevalue-iso
   - subject: DATEVALUE
+    subjectRef: DATEVALUE
     formula: =DATEVALUE("March 15, 2025")
     category: value
     expect: 45731
@@ -160,6 +172,7 @@ tests:
       - date
     name: datevalue-long-form
   - subject: DATEVALUE
+    subjectRef: DATEVALUE
     formula: =DATEVALUE("not a date")
     category: value
     expect:
@@ -168,6 +181,7 @@ tests:
       - date
     name: datevalue-invalid
   - subject: DAY
+    subjectRef: DAY
     formula: =DAY("2025-03-15")
     category: value
     expect: 15
@@ -184,6 +198,7 @@ tests:
       - date
     name: day-from-string
   - subject: DAY
+    subjectRef: DAY
     formula: =DAY("2025-01-31")
     category: value
     expect: 31
@@ -200,6 +215,7 @@ tests:
       - date
     name: day-end-of-month
   - subject: DAY
+    subjectRef: DAY
     formula: =DAY("2024-02-29")
     category: value
     expect: 29
@@ -216,6 +232,7 @@ tests:
       - date
     name: day-leap-day
   - subject: DAY
+    subjectRef: DAY
     category: value
     formula: =DAY(DATE(2025, 3, 15))
     expect: 15
@@ -223,6 +240,7 @@ tests:
       - date
     name: day-from-date
   - subject: DAYS
+    subjectRef: DAYS
     formula: =DAYS("2025-03-15", "2025-03-01")
     category: value
     expect: 14
@@ -243,6 +261,7 @@ tests:
       - date
     name: days-basic
   - subject: DAYS
+    subjectRef: DAYS
     formula: =DAYS("2025-03-01", "2025-03-15")
     category: value
     expect: -14
@@ -263,6 +282,7 @@ tests:
       - date
     name: days-negative
   - subject: DAYS
+    subjectRef: DAYS
     formula: =DAYS("2025-03-15", "2025-03-15")
     category: value
     expect: 0
@@ -283,6 +303,7 @@ tests:
       - date
     name: days-same-day
   - subject: DAYS
+    subjectRef: DAYS
     formula: =DAYS("2025-01-01", "2024-01-01")
     category: value
     expect: 366
@@ -303,6 +324,7 @@ tests:
       - date
     name: days-across-year
   - subject: DAYS360
+    subjectRef: DAYS360
     formula: =DAYS360("2025-01-15", "2025-03-15")
     category: value
     expect: 60
@@ -319,6 +341,7 @@ tests:
       - date
     name: days360-basic
   - subject: DAYS360
+    subjectRef: DAYS360
     formula: =DAYS360("2024-01-01", "2025-01-01")
     category: value
     expect: 360
@@ -335,6 +358,7 @@ tests:
       - date
     name: days360-full-year
   - subject: DAYS360
+    subjectRef: DAYS360
     formula: =DAYS360("2025-01-31", "2025-03-31", TRUE)
     category: value
     expect: 60
@@ -351,6 +375,7 @@ tests:
       - date
     name: days360-european-method
   - subject: EDATE
+    subjectRef: EDATE
     formula: =EDATE("2025-01-15", 3)
     category: value
     expect: 45762
@@ -367,6 +392,7 @@ tests:
       - date
     name: edate-forward
   - subject: EDATE
+    subjectRef: EDATE
     formula: =EDATE("2025-01-15", -3)
     category: value
     expect: 45580
@@ -383,6 +409,7 @@ tests:
       - date
     name: edate-backward
   - subject: EDATE
+    subjectRef: EDATE
     formula: =EDATE("2025-01-31", 1)
     category: value
     expect: 45716
@@ -399,6 +426,7 @@ tests:
       - date
     name: edate-month-end-clamp
   - subject: EDATE
+    subjectRef: EDATE
     formula: =EDATE("2025-03-15", 0)
     category: value
     expect: 45731
@@ -415,6 +443,7 @@ tests:
       - date
     name: edate-zero
   - subject: EOMONTH
+    subjectRef: EOMONTH
     formula: =EOMONTH("2025-03-15", 0)
     category: value
     expect: 45747
@@ -431,6 +460,7 @@ tests:
       - date
     name: eomonth-current-month
   - subject: EOMONTH
+    subjectRef: EOMONTH
     formula: =EOMONTH("2025-03-15", 2)
     category: value
     expect: 45808
@@ -447,6 +477,7 @@ tests:
       - date
     name: eomonth-forward-by-2
   - subject: EOMONTH
+    subjectRef: EOMONTH
     formula: =EOMONTH("2025-03-15", -1)
     category: value
     expect: 45716
@@ -463,6 +494,7 @@ tests:
       - date
     name: eomonth-backward
   - subject: EOMONTH
+    subjectRef: EOMONTH
     formula: =EOMONTH("2024-02-10", 0)
     category: value
     expect: 45351
@@ -479,6 +511,7 @@ tests:
       - date
     name: eomonth-leap-february
   - subject: EPOCHTODATE
+    subjectRef: EPOCHTODATE
     formula: =EPOCHTODATE(1700000000, 1)
     category: value
     expect: 45244.92592592593
@@ -515,6 +548,7 @@ tests:
       - date
     name: epochtodate-seconds
   - subject: EPOCHTODATE
+    subjectRef: EPOCHTODATE
     formula: =EPOCHTODATE(1700000000000, 2)
     category: value
     expect: 45244.92592592593
@@ -551,6 +585,7 @@ tests:
       - date
     name: epochtodate-millis
   - subject: EPOCHTODATE
+    subjectRef: EPOCHTODATE
     formula: =EPOCHTODATE(1700000000)
     category: value
     expect: 45244.92592592593
@@ -587,6 +622,7 @@ tests:
       - date
     name: epochtodate-default-unit
   - subject: HOUR
+    subjectRef: HOUR
     formula: =HOUR("13:30:45")
     category: value
     expect: 13
@@ -599,6 +635,7 @@ tests:
       - date
     name: hour-from-string
   - subject: HOUR
+    subjectRef: HOUR
     formula: =HOUR("00:00:00")
     category: value
     expect: 0
@@ -611,6 +648,7 @@ tests:
       - date
     name: hour-midnight
   - subject: HOUR
+    subjectRef: HOUR
     formula: =HOUR(TIME(9, 15, 30))
     category: value
     expect: 9
@@ -623,6 +661,7 @@ tests:
       - date
     name: hour-from-time
   - subject: ISOWEEKNUM
+    subjectRef: ISOWEEKNUM
     formula: =ISOWEEKNUM("2025-06-15")
     category: value
     expect: 24
@@ -643,6 +682,7 @@ tests:
       - date
     name: isoweeknum-mid-year
   - subject: ISOWEEKNUM
+    subjectRef: ISOWEEKNUM
     formula: =ISOWEEKNUM("2023-01-01")
     category: value
     expect: 52
@@ -663,6 +703,7 @@ tests:
       - date
     name: isoweeknum-jan-1-belongs-to-prev-year
   - subject: ISOWEEKNUM
+    subjectRef: ISOWEEKNUM
     formula: =ISOWEEKNUM("2024-01-01")
     category: value
     expect: 1
@@ -683,6 +724,7 @@ tests:
       - date
     name: isoweeknum-first-week
   - subject: MINUTE
+    subjectRef: MINUTE
     formula: =MINUTE("13:30:45")
     category: value
     expect: 30
@@ -695,6 +737,7 @@ tests:
       - date
     name: minute-basic
   - subject: MINUTE
+    subjectRef: MINUTE
     formula: =MINUTE("13:00:00")
     category: value
     expect: 0
@@ -707,6 +750,7 @@ tests:
       - date
     name: minute-zero
   - subject: MINUTE
+    subjectRef: MINUTE
     formula: =MINUTE(TIME(9, 15, 30))
     category: value
     expect: 15
@@ -719,6 +763,7 @@ tests:
       - date
     name: minute-from-time
   - subject: MONTH
+    subjectRef: MONTH
     formula: =MONTH("2025-03-15")
     category: value
     expect: 3
@@ -735,6 +780,7 @@ tests:
       - date
     name: month-from-string
   - subject: MONTH
+    subjectRef: MONTH
     formula: =MONTH("2025-12-31")
     category: value
     expect: 12
@@ -751,6 +797,7 @@ tests:
       - date
     name: month-december
   - subject: MONTH
+    subjectRef: MONTH
     category: value
     formula: =MONTH(DATE(2025, 7, 4))
     expect: 7
@@ -758,6 +805,7 @@ tests:
       - date
     name: month-from-date
   - subject: NETWORKDAYS
+    subjectRef: NETWORKDAYS
     formula: =NETWORKDAYS("2025-03-03", "2025-03-07")
     category: value
     expect: 5
@@ -774,6 +822,7 @@ tests:
       - date
     name: networkdays-basic-week
   - subject: NETWORKDAYS
+    subjectRef: NETWORKDAYS
     formula: =NETWORKDAYS("2025-03-07", "2025-03-10")
     category: value
     expect: 2
@@ -790,6 +839,7 @@ tests:
       - date
     name: networkdays-across-weekend
   - subject: NETWORKDAYS
+    subjectRef: NETWORKDAYS
     formula: =NETWORKDAYS("2025-03-03", "2025-03-07", "2025-03-05")
     category: value
     expect: 4
@@ -818,6 +868,7 @@ tests:
       - date
     name: networkdays-with-holiday
   - subject: NETWORKDAYS
+    subjectRef: NETWORKDAYS
     formula: =NETWORKDAYS("2025-03-07", "2025-03-03")
     category: value
     expect: -5
@@ -834,6 +885,7 @@ tests:
       - date
     name: networkdays-reversed
   - subject: NETWORKDAYS.INTL
+    subjectRef: NETWORKDAYS.INTL
     formula: =NETWORKDAYS.INTL("2025-03-03", "2025-03-07", 1)
     category: value
     expect: 5
@@ -850,6 +902,7 @@ tests:
       - date
     name: networkdays-intl-default-weekend
   - subject: NETWORKDAYS.INTL
+    subjectRef: NETWORKDAYS.INTL
     formula: =NETWORKDAYS.INTL("2025-03-03", "2025-03-09", 11)
     category: value
     expect: 6
@@ -866,6 +919,7 @@ tests:
       - date
     name: networkdays-intl-numeric-weekend-sun-only
   - subject: NETWORKDAYS.INTL
+    subjectRef: NETWORKDAYS.INTL
     formula: =NETWORKDAYS.INTL("2025-03-03", "2025-03-09", "0000011")
     category: value
     expect: 5
@@ -882,6 +936,7 @@ tests:
       - date
     name: networkdays-intl-string-weekend-fri-sat
   - subject: NETWORKDAYS.INTL
+    subjectRef: NETWORKDAYS.INTL
     formula: =NETWORKDAYS.INTL("2025-03-03", "2025-03-09", "0000001")
     category: value
     expect: 6
@@ -898,6 +953,7 @@ tests:
       - date
     name: networkdays-intl-string-weekend-custom
   - subject: NOW
+    subjectRef: NOW
     category: volatile
     status: volatile
     formula: =NOW()
@@ -908,6 +964,7 @@ tests:
       - volatile
     name: now
   - subject: SECOND
+    subjectRef: SECOND
     formula: =SECOND("13:30:45")
     category: value
     expect: 45
@@ -920,6 +977,7 @@ tests:
       - date
     name: second-basic
   - subject: SECOND
+    subjectRef: SECOND
     formula: =SECOND("13:30:00")
     category: value
     expect: 0
@@ -932,6 +990,7 @@ tests:
       - date
     name: second-zero
   - subject: SECOND
+    subjectRef: SECOND
     formula: =SECOND(TIME(9, 15, 30))
     category: value
     expect: 30
@@ -944,6 +1003,7 @@ tests:
       - date
     name: second-from-time
   - subject: TIME
+    subjectRef: TIME
     category: value
     status: observed
     formula: =TIME(9, 30, 0)
@@ -951,6 +1011,7 @@ tests:
       - date
     name: time-basic
   - subject: TIME
+    subjectRef: TIME
     formula: =TIME(0, 0, 0)
     category: value
     expect: 0
@@ -963,6 +1024,7 @@ tests:
       - date
     name: time-midnight
   - subject: TIME
+    subjectRef: TIME
     category: value
     status: observed
     formula: =TIME(25, 0, 0)
@@ -970,6 +1032,7 @@ tests:
       - date
     name: time-overflow-rolls
   - subject: TIMEVALUE
+    subjectRef: TIMEVALUE
     category: value
     formula: =TIMEVALUE("13:30:00")
     expect: 0.5625
@@ -977,6 +1040,7 @@ tests:
       - date
     name: timevalue-basic
   - subject: TIMEVALUE
+    subjectRef: TIMEVALUE
     category: value
     formula: =TIMEVALUE("12:00:00")
     expect: 0.5
@@ -984,6 +1048,7 @@ tests:
       - date
     name: timevalue-noon
   - subject: TIMEVALUE
+    subjectRef: TIMEVALUE
     category: value
     formula: =TIMEVALUE("00:00:00")
     expect: 0
@@ -991,6 +1056,7 @@ tests:
       - date
     name: timevalue-midnight
   - subject: TODAY
+    subjectRef: TODAY
     category: volatile
     status: volatile
     formula: =TODAY()
@@ -1001,6 +1067,7 @@ tests:
       - volatile
     name: today
   - subject: WEEKDAY
+    subjectRef: WEEKDAY
     formula: =WEEKDAY("2025-03-16")
     category: value
     expect: 1
@@ -1017,6 +1084,7 @@ tests:
       - date
     name: weekday-default-sunday-1
   - subject: WEEKDAY
+    subjectRef: WEEKDAY
     formula: =WEEKDAY("2025-03-17", 1)
     category: value
     expect: 2
@@ -1033,6 +1101,7 @@ tests:
       - date
     name: weekday-sunday-1-convention
   - subject: WEEKDAY
+    subjectRef: WEEKDAY
     formula: =WEEKDAY("2025-03-17", 2)
     category: value
     expect: 1
@@ -1049,6 +1118,7 @@ tests:
       - date
     name: weekday-monday-1-convention
   - subject: WEEKDAY
+    subjectRef: WEEKDAY
     formula: =WEEKDAY("2025-03-17", 3)
     category: value
     expect: 0
@@ -1065,6 +1135,7 @@ tests:
       - date
     name: weekday-monday-0-convention
   - subject: WEEKNUM
+    subjectRef: WEEKNUM
     formula: =WEEKNUM("2025-01-05")
     category: value
     expect: 2
@@ -1081,6 +1152,7 @@ tests:
       - date
     name: weeknum-default
   - subject: WEEKNUM
+    subjectRef: WEEKNUM
     formula: =WEEKNUM("2025-01-05", 2)
     category: value
     expect: 1
@@ -1097,6 +1169,7 @@ tests:
       - date
     name: weeknum-monday-start
   - subject: WEEKNUM
+    subjectRef: WEEKNUM
     category: value
     status: observed
     formula: =WEEKNUM("2023-01-01", 21)
@@ -1104,6 +1177,7 @@ tests:
       - date
     name: weeknum-iso-system
   - subject: WORKDAY
+    subjectRef: WORKDAY
     formula: =WORKDAY("2025-03-03", 5)
     category: value
     expect: 45726
@@ -1120,6 +1194,7 @@ tests:
       - date
     name: workday-forward
   - subject: WORKDAY
+    subjectRef: WORKDAY
     formula: =WORKDAY("2025-03-10", -5)
     category: value
     expect: 45719
@@ -1136,6 +1211,7 @@ tests:
       - date
     name: workday-backward
   - subject: WORKDAY
+    subjectRef: WORKDAY
     formula: =WORKDAY("2025-03-03", 5, "2025-03-05")
     category: value
     expect: 45727
@@ -1160,6 +1236,7 @@ tests:
       - date
     name: workday-with-holiday
   - subject: WORKDAY
+    subjectRef: WORKDAY
     formula: =WORKDAY("2025-03-03", 0)
     category: value
     expect: 45719
@@ -1176,6 +1253,7 @@ tests:
       - date
     name: workday-zero-offset
   - subject: WORKDAY.INTL
+    subjectRef: WORKDAY.INTL
     formula: =WORKDAY.INTL("2025-03-03", 5, 1)
     category: value
     expect: 45726
@@ -1192,6 +1270,7 @@ tests:
       - date
     name: workday-intl-default-weekend
   - subject: WORKDAY.INTL
+    subjectRef: WORKDAY.INTL
     formula: =WORKDAY.INTL("2025-03-03", 5, 7)
     category: value
     expect: 45726
@@ -1208,6 +1287,7 @@ tests:
       - date
     name: workday-intl-numeric-weekend-fri-sat
   - subject: WORKDAY.INTL
+    subjectRef: WORKDAY.INTL
     formula: =WORKDAY.INTL("2025-03-03", 5, "0000011")
     category: value
     expect: 45726
@@ -1224,6 +1304,7 @@ tests:
       - date
     name: workday-intl-string-weekend
   - subject: WORKDAY.INTL
+    subjectRef: WORKDAY.INTL
     formula: =WORKDAY.INTL("2025-03-03", 5, "0000001")
     category: value
     expect: 45724
@@ -1240,6 +1321,7 @@ tests:
       - date
     name: workday-intl-sunday-only-string
   - subject: YEAR
+    subjectRef: YEAR
     formula: =YEAR("2025-03-15")
     category: value
     expect: 2025
@@ -1256,6 +1338,7 @@ tests:
       - date
     name: year-from-string
   - subject: YEAR
+    subjectRef: YEAR
     category: value
     formula: =YEAR(DATE(1999, 12, 31))
     expect: 1999
@@ -1263,6 +1346,7 @@ tests:
       - date
     name: year-from-date
   - subject: YEAR
+    subjectRef: YEAR
     formula: =YEAR("2000-01-01")
     category: value
     expect: 2000
@@ -1279,6 +1363,7 @@ tests:
       - date
     name: year-millennium
   - subject: YEARFRAC
+    subjectRef: YEARFRAC
     formula: =YEARFRAC("2025-01-01", "2025-07-01")
     category: value
     expect: 0.5
@@ -1295,6 +1380,7 @@ tests:
       - date
     name: yearfrac-half-year-default
   - subject: YEARFRAC
+    subjectRef: YEARFRAC
     formula: =YEARFRAC("2025-01-01", "2026-01-01", 0)
     category: value
     expect: 1
@@ -1311,6 +1397,7 @@ tests:
       - date
     name: yearfrac-us-30-360
   - subject: YEARFRAC
+    subjectRef: YEARFRAC
     formula: =YEARFRAC("2025-01-01", "2026-01-01", 1)
     category: value
     expect: 1
@@ -1327,6 +1414,7 @@ tests:
       - date
     name: yearfrac-actual-actual
   - subject: YEARFRAC
+    subjectRef: YEARFRAC
     category: value
     status: observed
     formula: =YEARFRAC("2025-01-01", "2026-01-01", 2)
@@ -1334,6 +1422,7 @@ tests:
       - date
     name: yearfrac-actual-360
   - subject: YEARFRAC
+    subjectRef: YEARFRAC
     formula: =YEARFRAC("2025-03-15", "2025-03-15")
     category: value
     expect: 0

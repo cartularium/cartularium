@@ -22,11 +22,14 @@
 
 import type { RichCellValue, RichGridValue, CirculatingCell } from "./values.js";
 import { canonicalizeCell } from "./values.js";
+import { normalizeCirculatingText } from "../fingerprint/normalize.js";
 
 /** Default relative numeric tolerance — mirrors match.ts cellsEqual. */
 export const DEFAULT_NUM_TOL = 1e-10;
 
-/** True iff two circulating cells are equal (numbers within relative tolerance). */
+/** True iff two circulating cells are equal (numbers within relative
+ * tolerance; text under the shared NFC normalization, so fingerprint
+ * equality always implies comparator equality — stability substrate §4). */
 export function canonicalEquals(
   a: CirculatingCell,
   b: CirculatingCell,
@@ -40,8 +43,12 @@ export function canonicalEquals(
     const mag = Math.max(Math.abs(a.v), Math.abs(b.v), 1);
     return diff / mag < tol;
   }
-  // Same class, non-number: blank/null carry no value (class match suffices);
-  // everything else compares its single payload exactly.
+  // text compares under the same normalization the fingerprint hashes
+  if ((a.c === "string" || a.c === "rich-text") && "v" in b) {
+    return normalizeCirculatingText(a.v as string) === normalizeCirculatingText(b.v as string);
+  }
+  // Same class, non-text: blank/null carry no value (class match suffices);
+  // error/opaque/boolean compare their single payload exactly.
   if ("v" in a && "v" in b) return a.v === b.v;
   return true;
 }

@@ -2,6 +2,7 @@ schemaVersion: 3
 name: Known divergences
 tests:
   - subject: CONCAT
+    subjectRef: CONCAT
     formula: =CONCAT("a", "b", "c")
     category: value
     expect: abc
@@ -23,6 +24,7 @@ tests:
       - divergence
     name: concat-vs-concatenate-arity
   - subject: lit:array
+    subjectRef: lit:array
     category: value
     status: observed
     formula: ={1;2;3}
@@ -32,6 +34,7 @@ tests:
       - bare-formula
     name: array-literal-semicolons
   - subject: LAMBDA
+    subjectRef: LAMBDA
     category: value
     features:
       - lambda
@@ -41,6 +44,7 @@ tests:
       - lambda
     name: lambda-named-function-inline-cost
   - subject: HSTACK
+    subjectRef: HSTACK
     formula: =HSTACK(A1, 1/0)
     category: error-code
     features:
@@ -65,6 +69,7 @@ tests:
       - error
     name: hstack-with-error-value
   - subject: SWITCH
+    subjectRef: SWITCH
     formula: =SWITCH(1, 1, "yes")
     category: value
     expect: yes
@@ -82,6 +87,7 @@ tests:
       - divergence
     name: switch-3-arg-form
   - subject: SWITCH
+    subjectRef: SWITCH
     formula: =SWITCH(99, 1, "one", "default")
     category: value
     expect: default
@@ -99,6 +105,7 @@ tests:
       - divergence
     name: switch-4-arg-with-no-match
   - subject: op:=
+    subjectRef: op:eq
     category: value
     formula: =0=""
     expect: false
@@ -107,6 +114,7 @@ tests:
       - divergence
     name: empty-string-vs-zero-comparison
   - subject: "TRUE"
+    subjectRef: lit:boolean
     category: value
     formula: =TRUE+1
     expect: 2

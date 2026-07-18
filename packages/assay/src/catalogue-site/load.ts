@@ -257,8 +257,14 @@ function fixtureKeyTargets(keep: Set<string> | Map<string, TestInfo>): Map<strin
 
   const out = new Map<string, Set<string>>();
   for (const test of keep.values()) {
-    const acceptedKeys = new Set([test.id, test.ref, caseKey(test)].filter(Boolean));
-    const outputKeys = new Set([test.id, test.ref, caseKey(test)].filter(Boolean));
+    // accepted: v2 rows key by declared id; v1 rows (hibernated engines,
+    // pre-lift fossils) still key by semanticHash — both resolve here
+    const acceptedKeys = new Set(
+      [test.id, test.ref, test.semanticHash].filter((k): k is string => Boolean(k)),
+    );
+    const outputKeys = new Set(
+      [test.id, test.ref, test.semanticHash].filter((k): k is string => Boolean(k)),
+    );
     for (const acceptedKey of acceptedKeys) {
       const targets = out.get(acceptedKey) ?? new Set<string>();
       for (const outputKey of outputKeys) targets.add(outputKey);

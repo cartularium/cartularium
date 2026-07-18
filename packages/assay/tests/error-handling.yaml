@@ -2,6 +2,7 @@ schemaVersion: 3
 name: Error handling
 tests:
   - subject: op:/
+    subjectRef: op:divide
     formula: =1/0
     category: value
     expect:
@@ -11,6 +12,7 @@ tests:
       - identity
     name: div-0-identity
   - subject: op:+
+    subjectRef: op:add
     formula: ="abc"+1
     category: error-code
     expect:
@@ -20,6 +22,7 @@ tests:
       - identity
     name: value-error
   - subject: INDIRECT
+    subjectRef: INDIRECT
     formula: =INDIRECT("ZZZ99999")
     category: error-code
     expect: null
@@ -38,6 +41,7 @@ tests:
       - divergence
     name: ref-error
   - subject: feature:name-error
+    subjectRef: feature:name-error
     formula: =NOTAFUNCTION()
     category: error-code
     expect:
@@ -47,6 +51,7 @@ tests:
       - identity
     name: name-error
   - subject: VLOOKUP
+    subjectRef: VLOOKUP
     formula: =VLOOKUP("missing", {1,2;3,4}, 2, FALSE)
     category: error-code
     expect:
@@ -62,6 +67,7 @@ tests:
       - bare-formula
     name: n-a-error
   - subject: SQRT
+    subjectRef: SQRT
     formula: =SQRT(-1)
     category: error-code
     expect:
@@ -71,6 +77,7 @@ tests:
       - identity
     name: num-error
   - subject: SUM
+    subjectRef: SUM
     formula: "=SUM(1, #N/A, 3)"
     category: value
     expect:
@@ -80,6 +87,7 @@ tests:
       - aggregation
     name: sum-with-one-n-a
   - subject: SUM
+    subjectRef: SUM
     formula: =SUM(1, 1/0, 3)
     category: value
     expect:
@@ -89,6 +97,7 @@ tests:
       - aggregation
     name: sum-with-one-div-0
   - subject: AVERAGE
+    subjectRef: AVERAGE
     formula: "=AVERAGE(1, #VALUE!, 3)"
     category: error-code
     expect:
@@ -98,6 +107,7 @@ tests:
       - aggregation
     name: average-with-one-error
   - subject: COUNT
+    subjectRef: COUNT
     category: value
     formula: "=COUNT(1, #N/A, 3, #DIV/0!)"
     expect: 2
@@ -106,6 +116,7 @@ tests:
       - aggregation
     name: count-ignores-errors
   - subject: COUNTA
+    subjectRef: COUNTA
     category: value
     formula: "=COUNTA(1, #N/A, 3, #DIV/0!)"
     expect: 4
@@ -115,6 +126,7 @@ tests:
       - divergence
     name: counta-counts-errors
   - subject: MAX
+    subjectRef: MAX
     formula: "=MAX(1, #N/A, 3)"
     category: error-code
     expect:
@@ -124,6 +136,7 @@ tests:
       - aggregation
     name: max-with-error
   - subject: MIN
+    subjectRef: MIN
     formula: "=MIN(1, #VALUE!, 3)"
     category: error-code
     expect:
@@ -133,6 +146,7 @@ tests:
       - aggregation
     name: min-with-error
   - subject: SUM
+    subjectRef: SUM
     formula: =SUM(A1:A3)
     category: error-code
     grid:
@@ -146,6 +160,7 @@ tests:
       - aggregation
     name: sum-of-range-with-error-cell
   - subject: AVERAGE
+    subjectRef: AVERAGE
     formula: =AVERAGE(A1:A3)
     category: error-code
     grid:
@@ -159,6 +174,7 @@ tests:
       - aggregation
     name: average-of-range-with-error-cell
   - subject: AGGREGATE
+    subjectRef: AGGREGATE
     formula: =AGGREGATE(9, 6, A1:A3)
     category: value
     grid:
@@ -188,6 +204,7 @@ tests:
       - divergence
     name: aggregate-sum-ignoring-errors
   - subject: IFERROR
+    subjectRef: IFERROR
     category: value
     formula: =IFERROR(1/0, "err")
     expect: err
@@ -195,6 +212,7 @@ tests:
       - error
     name: iferror-catches-div-0
   - subject: IFERROR
+    subjectRef: IFERROR
     category: value
     formula: =IFERROR(42, "err")
     expect: 42
@@ -202,6 +220,7 @@ tests:
       - error
     name: iferror-passes-clean-value
   - subject: IFERROR
+    subjectRef: IFERROR
     category: value
     formula: =IFERROR(#N/A, "fallback")
     expect: fallback
@@ -209,6 +228,7 @@ tests:
       - error
     name: iferror-catches-n-a
   - subject: IFNA
+    subjectRef: IFNA
     category: value
     formula: =IFNA(#N/A, "caught")
     expect: caught
@@ -216,6 +236,7 @@ tests:
       - error
     name: ifna-catches-n-a-only
   - subject: IFNA
+    subjectRef: IFNA
     formula: =IFNA(1/0, "caught")
     category: value
     expect:
@@ -224,6 +245,7 @@ tests:
       - error
     name: ifna-does-not-catch-div-0
   - subject: IFNA
+    subjectRef: IFNA
     category: value
     formula: =IFNA(42, "caught")
     expect: 42
@@ -231,6 +253,7 @@ tests:
       - error
     name: ifna-passes-clean-value
   - subject: IFERROR
+    subjectRef: IFERROR
     category: value
     features:
       - broadcasting
@@ -245,6 +268,7 @@ tests:
       - divergence
     name: iferror-over-array-with-errors
   - subject: IFERROR
+    subjectRef: IFERROR
     category: value
     features:
       - broadcasting
@@ -259,6 +283,7 @@ tests:
       - divergence
     name: iferror-over-division-with-zero
   - subject: op:+
+    subjectRef: op:add
     formula: =#N/A+1
     category: error-code
     expect:
@@ -268,6 +293,7 @@ tests:
       - propagation
     name: error-plus-number
   - subject: op:*
+    subjectRef: op:multiply
     formula: =#DIV/0!*5
     category: error-code
     expect:
@@ -277,6 +303,7 @@ tests:
       - propagation
     name: error-times-number
   - subject: op:&
+    subjectRef: op:concat
     formula: =#VALUE!&"x"
     category: error-code
     expect:
@@ -286,6 +313,7 @@ tests:
       - propagation
     name: error-concat-string-error-handling
   - subject: IF
+    subjectRef: IF
     formula: =IF(#N/A, "yes", "no")
     category: error-code
     expect:
@@ -295,6 +323,7 @@ tests:
       - propagation
     name: error-in-if-condition
   - subject: IF
+    subjectRef: IF
     formula: '=IF(FALSE, #N/A, "ok")'
     category: error-code
     expect: ok
@@ -308,6 +337,7 @@ tests:
       - propagation
     name: error-in-if-true-branch-not-taken
   - subject: IF
+    subjectRef: IF
     formula: '=IF(TRUE, #N/A, "ok")'
     category: error-code
     expect:
@@ -322,6 +352,7 @@ tests:
       - propagation
     name: error-in-if-true-branch-taken
   - subject: ISERROR
+    subjectRef: ISERROR
     category: value
     formula: =ISERROR(1/0)
     expect: true
@@ -329,6 +360,7 @@ tests:
       - error
     name: iserror-on-div-0
   - subject: ISERROR
+    subjectRef: ISERROR
     category: value
     formula: =ISERROR(42)
     expect: false
@@ -336,6 +368,7 @@ tests:
       - error
     name: iserror-on-clean-value
   - subject: ISERROR
+    subjectRef: ISERROR
     category: value
     formula: =ISERROR(#N/A)
     expect: true
@@ -343,6 +376,7 @@ tests:
       - error
     name: iserror-on-n-a
   - subject: ISERR
+    subjectRef: ISERR
     category: value
     formula: =ISERR(#N/A)
     expect: false
@@ -350,6 +384,7 @@ tests:
       - error
     name: iserr-excludes-n-a
   - subject: ISERR
+    subjectRef: ISERR
     category: value
     formula: =ISERR(1/0)
     expect: true
@@ -357,6 +392,7 @@ tests:
       - error
     name: iserr-on-div-0
   - subject: ISNA
+    subjectRef: ISNA
     category: value
     formula: =ISNA(#N/A)
     expect: true
@@ -364,6 +400,7 @@ tests:
       - error
     name: isna-on-n-a
   - subject: ISNA
+    subjectRef: ISNA
     category: value
     formula: =ISNA(1/0)
     expect: false
@@ -371,6 +408,7 @@ tests:
       - error
     name: isna-on-div-0
   - subject: ERROR.TYPE
+    subjectRef: ERROR.TYPE
     formula: =ERROR.TYPE(1/0)
     category: error-code
     expect: 2
@@ -383,6 +421,7 @@ tests:
       - error
     name: error-type-of-div-0-error-handling
   - subject: ERROR.TYPE
+    subjectRef: ERROR.TYPE
     formula: =ERROR.TYPE(#N/A)
     category: error-code
     expect: 7
@@ -395,6 +434,7 @@ tests:
       - error
     name: error-type-of-n-a
   - subject: ERROR.TYPE
+    subjectRef: ERROR.TYPE
     formula: =ERROR.TYPE("a"+1)
     category: error-code
     expect: 3
@@ -407,6 +447,7 @@ tests:
       - error
     name: error-type-of-value-error-handling
   - subject: ERROR.TYPE
+    subjectRef: ERROR.TYPE
     formula: =ERROR.TYPE(42)
     category: error-code
     expect:
@@ -420,6 +461,7 @@ tests:
       - error
     name: error-type-of-clean-value
   - subject: op:+
+    subjectRef: op:add
     category: value
     formula: =#N/A+1/0
     expect:
@@ -430,6 +472,7 @@ tests:
       - divergence
     name: n-a-plus-div-0-left-wins
   - subject: op:+
+    subjectRef: op:add
     category: value
     formula: =1/0+#N/A
     expect:
@@ -440,6 +483,7 @@ tests:
       - divergence
     name: div-0-plus-n-a-left-wins
   - subject: op:+
+    subjectRef: op:add
     category: value
     formula: =("a"+1)+NOTAFUNCTION()
     expect:
@@ -450,6 +494,7 @@ tests:
       - divergence
     name: value-plus-name
   - subject: SUM
+    subjectRef: SUM
     category: error-code
     formula: =SUM(#N/A, 1/0)
     expect:
