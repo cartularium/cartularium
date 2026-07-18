@@ -7,6 +7,7 @@ import {
   deriveSubjectRef,
   parseAssayRef,
   semanticHashForCase,
+  stimulusHashForCase,
 } from "./index.js";
 
 describe("assay v3 identity", () => {
@@ -15,10 +16,13 @@ describe("assay v3 identity", () => {
     expect(derivePublicRef({ subject: "EXPAND", name: "pad-value" })).toBe("EXPAND/pad-value");
   });
 
-  it("maps operator and literal subjects to path-safe refs", () => {
-    expect(deriveSubjectRef("op:+")).toBe("op:add");
-    expect(deriveSubjectRef("op:/")).toBe("op:divide");
-    expect(deriveSubjectRef("TRUE")).toBe("lit:boolean");
+  it("requires explicit refs for non-ref-safe subjects (map frozen 2026-07-18)", () => {
+    // operator subjects carry their ref explicitly since the migration;
+    // derivation no longer consults a mutable map
+    expect(() => deriveSubjectRef("op:+")).toThrow(/subjectRef/);
+    expect(deriveSubjectRef("op:+", "op:add")).toBe("op:add");
+    expect(deriveSubjectRef("op:/", "op:divide")).toBe("op:divide");
+    expect(deriveSubjectRef("TRUE", "lit:boolean")).toBe("lit:boolean");
   });
 
   it("requires explicit subjectRef for unknown non-path-safe subjects", () => {
@@ -113,6 +117,43 @@ describe("assay v3 identity", () => {
       semanticHash: "sha256:abc123",
     };
     expect(caseKey(test)).toBe("sha256:abc123");
+  });
+
+  it("stimulus hash covers exactly what the engine is asked", () => {
+    const base = {
+      formula: "=SUM(A1:A2)",
+      grid: { A1: 1, A2: 2 },
+    };
+    const hash = stimulusHashForCase(base);
+    expect(hash).toMatch(/^sha256:[0-9a-f]{64}$/);
+
+    // lens, classification, and capability fields are not stimulus
+    expect(
+      stimulusHashForCase({
+        ...base,
+        subject: "SUM",
+        name: "sum-two",
+        category: "value",
+        status: "observed",
+        supportLevel: "core",
+        expect: 3,
+        features: ["dynamic-arrays"],
+        overrides: { gsheets: { cause: "missing-function" } },
+      } as never),
+    ).toBe(hash);
+
+    // the stimulus itself is
+    expect(stimulusHashForCase({ ...base, formula: "=SUM(A1:A3)" })).not.toBe(hash);
+    expect(stimulusHashForCase({ ...base, grid: { A1: 1, A2: 3 } })).not.toBe(hash);
+    expect(
+      stimulusHashForCase({ ...base, environment: { merged: ["A1:B1"] } }),
+    ).not.toBe(hash);
+  });
+
+  it("stimulus hash distinguishes per-platform formula maps from strings", () => {
+    const asString = stimulusHashForCase({ formula: "=1+1" });
+    const asMap = stimulusHashForCase({ formula: { gsheets: "=1+1" } });
+    expect(asString).not.toBe(asMap);
   });
 
   it("orders canonical JSON object keys by code unit", () => {

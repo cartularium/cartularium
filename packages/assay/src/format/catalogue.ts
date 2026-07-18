@@ -125,8 +125,10 @@ export interface TestCase {
   subjectRef?: string;
   /** v3 slug describing the case within the subject */
   name?: string;
-  /** v3 canonical hash of semantic fields */
+  /** v3 canonical hash of semantic fields (retiring; fixture-v1 key only) */
   semanticHash?: `sha256:${string}`;
+  /** stability substrate: hash of the resolved stimulus (assay-stimulus-v1) — recorded attribute, never a key */
+  stimulusHash?: `sha256:${string}`;
   /** v3 retired public refs that still resolve to this case */
   aliases?: string[];
   /** drives report grouping (schema §3) */
