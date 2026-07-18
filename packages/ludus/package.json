@@ -1,0 +1,34 @@
+{
+  "name": "@cartularium/ludus",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "gnarly": "tsx spike/gnarly.ts",
+    "roundtrip": "tsx spike/roundtrip.ts",
+    "template": "tsx src/cli-template.ts",
+    "oracle": "tsx src/cli-oracle.ts",
+    "judge": "tsx src/cli-judge.ts",
+    "login": "tsx src/cli-login.ts",
+    "check": "tsc --noEmit",
+    "build:site": "node site/build.mjs",
+    "serve:site": "node site/serve.mjs",
+    "build:worker-problems": "node worker/build-problems.mjs",
+    "check:worker": "node worker/build-problems.mjs && tsc -p worker",
+    "dev:worker": "node worker/build-problems.mjs && node worker/make-dev-vars.mjs && wrangler dev --local"
+  },
+  "dependencies": {
+    "assay": "workspace:*",
+    "yaml": "^2.7.0",
+    "@cartularium/brand": "workspace:*",
+    "@cartularium/chrome": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.8.3",
+    "sass": "^1.83.0",
+    "wrangler": "^4.0.0",
+    "@cloudflare/workers-types": "^4.20250701.0"
+  }
+}

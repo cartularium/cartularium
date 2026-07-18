@@ -1,0 +1,46 @@
+name: whetstone-build
+
+# Path-filtered: runs only when whetstone sources, brand tokens, chrome
+# primitives, or the workflow itself change. Site-build smoke test only —
+# the judge/oracle CLIs need live Google credentials and are not CI-testable.
+
+on:
+  pull_request:
+    paths:
+      - "packages/whetstone/**"
+      - "packages/brand/**"
+      - "packages/chrome/**"
+      - "pnpm-lock.yaml"
+      - ".github/workflows/whetstone-build.yml"
+  push:
+    branches: [main]
+    paths:
+      - "packages/whetstone/**"
+      - "packages/brand/**"
+      - "packages/chrome/**"
+      - "pnpm-lock.yaml"
+
+concurrency:
+  group: whetstone-build-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      # version comes from package.json `packageManager`
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: pnpm
+
+      - name: pnpm install
+        run: pnpm install --frozen-lockfile
+
+      # no typecheck here: the judge/oracle TS imports assay's built types,
+      # which need a full assay+contracts build — out of scope for site smoke
+      - name: Build whetstone site
+        run: pnpm --filter @cartularium/whetstone run build:site

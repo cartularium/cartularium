@@ -1,0 +1,18 @@
+# ludus judge service (W7). Secrets (set via `wrangler secret put` in prod,
+# .dev.vars locally — see worker/make-dev-vars.mjs):
+#   GOOGLE_CLIENT_ID / GOOGLE_CLIENT_SECRET / GOOGLE_REFRESH_TOKEN
+# Before deploying: `wrangler d1 create ludus` and paste the real
+# database_id below; `wrangler d1 migrations apply ludus --remote`.
+name = "ludus-judge"
+main = "worker/index.ts"
+compatibility_date = "2026-05-01"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "ludus"
+database_id = "3bfcf40d-d9c1-4c5d-90a6-2305ab26661c"
+migrations_dir = "worker/migrations"
+
+[vars]
+# comma-separated allowlist; .dev.vars overrides to "*" for local dev
+ALLOWED_ORIGIN = "https://ludus.sheets.wiki,https://ludus-c4o.pages.dev"

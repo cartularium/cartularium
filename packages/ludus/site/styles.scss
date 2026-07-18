@@ -1,0 +1,178 @@
+@use "@cartularium/brand/tokens.scss";
+@use "@cartularium/chrome/styles/chrome.scss";
+
+main.ludus {
+  max-width: 52rem;
+  margin: 0 auto;
+  padding: 2rem var(--gutter, 1.25rem) 4rem;
+
+  h1 {
+    font-family: var(--font-display);
+    font-weight: 420;
+    font-size: 2.4rem;
+    margin: 0 0 0.5rem;
+  }
+  h2 {
+    font-family: var(--font-display);
+    font-weight: 480;
+    font-size: 1.35rem;
+    margin: 2.2rem 0 0.7rem;
+  }
+  h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 1.4rem 0 0.4rem;
+  }
+}
+
+.dek {
+  font-size: 1.15rem;
+  margin: 0 0 0.4rem;
+}
+
+.meta-line {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  opacity: 0.75;
+  .sep { margin: 0 0.4em; }
+}
+
+.meter {
+  font-family: var(--font-mono);
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+.chip {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+  padding: 0.1em 0.45em;
+  margin-right: 0.25em;
+}
+
+// problem list
+.prob-list .prob-card {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.15rem 1rem;
+  padding: 0.8rem 0.2rem;
+  border-bottom: 1px solid var(--hairline, var(--rule));
+  text-decoration: none;
+  color: inherit;
+
+  &:hover .prob-title { text-decoration: underline; }
+  .prob-title { font-weight: 600; }
+  .meter { font-size: 0.82rem; opacity: 0.8; align-self: center; }
+  .prob-tags {
+    grid-column: 1 / -1;
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    opacity: 0.65;
+  }
+}
+
+// problem page
+.crumb {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  margin-bottom: 1.4rem;
+  a { text-decoration: none; }
+  a:hover { text-decoration: underline; }
+}
+
+.statement p { line-height: 1.6; }
+
+.workflow {
+  ol { line-height: 1.65; padding-left: 1.3rem; }
+  li { margin-bottom: 0.45rem; }
+  .muted { opacity: 0.62; }
+}
+
+.button {
+  display: inline-block;
+  border: 1px solid var(--accent, currentColor);
+  border-radius: 4px;
+  padding: 0.25em 0.7em;
+  text-decoration: none;
+  font-weight: 600;
+  &:hover { background: var(--accent); color: var(--paper, #fff); }
+}
+
+.submit-stub {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  opacity: 0.55;
+
+  input {
+    flex: 1;
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    padding: 0.45em 0.6em;
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    background: transparent;
+    color: inherit;
+  }
+  button {
+    font-weight: 600;
+    padding: 0.45em 1.1em;
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    background: transparent;
+    color: inherit;
+  }
+}
+
+// sample grids
+.grid-scroll {
+  overflow-x: auto;
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+}
+
+table.grid {
+  border-collapse: collapse;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  width: 100%;
+
+  th, td {
+    border: 1px solid var(--hairline, var(--rule));
+    padding: 0.25em 0.55em;
+    white-space: nowrap;
+    text-align: left;
+  }
+  th { font-weight: 600; background: color-mix(in srgb, currentColor 6%, transparent); }
+  td.num { text-align: right; }
+}
+
+.sample .muted {
+  font-family: var(--font-mono);
+  font-weight: 400;
+  font-size: 0.78rem;
+  opacity: 0.6;
+}
+
+.attribution {
+  margin-top: 2.5rem;
+  font-size: 0.82rem;
+  opacity: 0.6;
+  font-style: italic;
+}
+
+.about p { line-height: 1.6; }
+
+.submit-stub.live { opacity: 1; }
+.submit-stub .verdict {
+  flex-basis: 100%;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  line-height: 1.55;
+  .ok { color: var(--accent); }
+  ul { margin: 0.4em 0 0; padding-left: 1.2em; }
+  .mm { opacity: 0.7; }
+}
+.submit-stub { flex-wrap: wrap; }

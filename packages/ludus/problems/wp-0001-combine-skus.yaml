@@ -1,0 +1,307 @@
+id: wp-0001
+title: Combine SKUs
+attribution: Adapted from "Combine SKUs" in the astral.cafe Community Practice Problems sheet.
+difficulty: 3
+requires:
+  - arrays
+tags:
+  - aggregation
+  - arrays
+statement: |
+  Your client receives monthly sales reports, and needs them combined into
+  a single yearly report. Each monthly table lists SKU, Quantity, Total Price,
+  and Average Price — with SKUs repeating within and across months.
+
+  Collate the tables: for every SKU that appears anywhere, produce one row with
+  the SKU, total Quantity, total Total Price, and the true Average Price
+  (total price divided by total quantity). Row order is up to you.
+challenges:
+  - oner
+  - lambdaless
+  - golfed
+template:
+  sheets:
+    - title: About
+    - title: Input
+    - title: Answer
+  input: Input!A1:L9
+  output: Answer!A2:D40
+  spreadsheetId: 1gXaLVePwj5bnHwFkQdfhZidAqhu4gi1K0qQ78WciCRY
+  answerHeaders:
+    - SKU
+    - Quantity
+    - Total Price
+    - Average Price
+reference: =LET(t, {Input!A2:D9; Input!E2:H9; Input!I2:L9}, d, FILTER(t, INDEX(t,,1)<>""), QUERY(d,
+  "select Col1, sum(Col2), sum(Col3), sum(Col3)/sum(Col2) group by Col1 label sum(Col2) '',
+  sum(Col3) '', sum(Col3)/sum(Col2) ''", 0))
+compare:
+  numbers:
+    epsilon: 1e-9
+  rowOrder: any
+lint:
+  ban:
+    - volatile
+    - import
+    - external
+cases:
+  - kind: sample
+    input:
+      - - SKU
+        - Quantity
+        - Total Price
+        - Average Price
+        - SKU
+        - Quantity
+        - Total Price
+        - Average Price
+        - SKU
+        - Quantity
+        - Total Price
+        - Average Price
+      - - Item 1
+        - 2
+        - 20
+        - 10
+        - Item 2
+        - 3
+        - 18
+        - 6
+        - Item 5
+        - 6
+        - 54
+        - 9
+      - - Item 2
+        - 1
+        - 5
+        - 5
+        - Item 3
+        - 2
+        - 14
+        - 7
+        - Item 6
+        - 2
+        - 22
+        - 11
+      - - Item 3
+        - 4
+        - 24
+        - 6
+        - Item 6
+        - 1
+        - 12
+        - 12
+        - Item 2
+        - 2
+        - 20
+        - 10
+      - - Item 1
+        - 3
+        - 24
+        - 8
+        - Item 1
+        - 4
+        - 36
+        - 9
+        - Item 7
+        - 1
+        - 15
+        - 15
+      - - Item 4
+        - 5
+        - 35
+        - 7
+        - Item 4
+        - 2
+        - 16
+        - 8
+      - - Item 5
+        - 2
+        - 18
+        - 9
+    expected:
+      - - Item 1
+        - 9
+        - 80
+        - 8.88888888888889
+      - - Item 2
+        - 6
+        - 43
+        - 7.166666666666667
+      - - Item 3
+        - 6
+        - 38
+        - 6.333333333333333
+      - - Item 4
+        - 7
+        - 51
+        - 7.285714285714286
+      - - Item 5
+        - 8
+        - 72
+        - 9
+      - - Item 6
+        - 3
+        - 34
+        - 11.333333333333334
+      - - Item 7
+        - 1
+        - 15
+        - 15
+  - kind: hidden
+    input:
+      - - SKU
+        - Quantity
+        - Total Price
+        - Average Price
+        - SKU
+        - Quantity
+        - Total Price
+        - Average Price
+        - SKU
+        - Quantity
+        - Total Price
+        - Average Price
+      - - Widget A
+        - 1
+        - 7
+        - 7
+        - Widget B
+        - 4
+        - 32
+        - 8
+        - Widget B
+        - 2
+        - 18
+        - 9
+      - - Widget B
+        - 5
+        - 45
+        - 9
+        - Widget D
+        - 1
+        - 25
+        - 25
+        - Widget A
+        - 1
+        - 9
+        - 9
+      - - Widget A
+        - 2
+        - 14
+        - 7
+        - Widget A
+        - 6
+        - 48
+        - 8
+      - - Widget C
+        - 3
+        - 33
+        - 11
+    expected:
+      - - Widget A
+        - 10
+        - 78
+        - 7.8
+      - - Widget B
+        - 11
+        - 95
+        - 8.636363636363637
+      - - Widget C
+        - 3
+        - 33
+        - 11
+      - - Widget D
+        - 1
+        - 25
+        - 25
+  - kind: hidden
+    input:
+      - - SKU
+        - Quantity
+        - Total Price
+        - Average Price
+        - SKU
+        - Quantity
+        - Total Price
+        - Average Price
+        - SKU
+        - Quantity
+        - Total Price
+        - Average Price
+      - - X
+        - 10
+        - 100
+        - 10
+        - Y
+        - 2
+        - 8
+        - 4
+        - X
+        - 3
+        - 21
+        - 7
+      - - Y
+        - 1
+        - 3
+        - 3
+        - Z
+        - 5
+        - 60
+        - 12
+        - Z
+        - 1
+        - 11
+        - 11
+    expected:
+      - - X
+        - 13
+        - 121
+        - 9.307692307692308
+      - - Y
+        - 3
+        - 11
+        - 3.6666666666666665
+      - - Z
+        - 6
+        - 71
+        - 11.833333333333334
+  - kind: hidden
+    input:
+      - - SKU
+        - Quantity
+        - Total Price
+        - Average Price
+        - SKU
+        - Quantity
+        - Total Price
+        - Average Price
+        - SKU
+        - Quantity
+        - Total Price
+        - Average Price
+      - - Item 42
+        - 100
+        - 1500
+        - 15
+        - Item 42
+        - 75
+        - 900
+        - 12
+        - Item 42
+        - 10
+        - 130
+        - 13
+      - - Item 42
+        - 50
+        - 600
+        - 12
+        - Item 42
+        - 25
+        - 500
+        - 20
+    expected:
+      - - Item 42
+        - 260
+        - 3630
+        - 13.961538461538462
