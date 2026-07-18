@@ -49,11 +49,14 @@ export async function rehydrate(snapshot: Snapshot, title: string): Promise<stri
   return newId;
 }
 
-// chunk a sheet's trimmed grid into updateCells requests by row bands
+// chunk a sheet's trimmed grid into updateCells requests by row bands.
+// NB: builder grids may be SPARSE (spacer rows are holes) — sparse .map
+// skips holes and Math.max over spread holes yields NaN, which silently
+// emitted zero requests. Every access must tolerate holes.
 function updateCellsRequests(sheetId: number, cells: Array<Array<CellSnap | null>>): unknown[] {
   const requests: unknown[] = [];
   if (cells.length === 0) return requests;
-  const cols = Math.max(...cells.map((r) => r.length), 1);
+  const cols = Math.max(1, ...Array.from(cells, (row) => row?.length ?? 0));
   const rowsPerChunk = Math.max(1, Math.floor(CELLS_PER_REQUEST / cols));
 
   for (let start = 0; start < cells.length; start += rowsPerChunk) {
@@ -61,8 +64,8 @@ function updateCellsRequests(sheetId: number, cells: Array<Array<CellSnap | null
     requests.push({
       updateCells: {
         start: { sheetId, rowIndex: start, columnIndex: 0 },
-        rows: band.map((row) => ({
-          values: Array.from({ length: cols }, (_, c) => toApiCell(row[c] ?? null)),
+        rows: Array.from(band, (row) => ({
+          values: Array.from({ length: cols }, (_, c) => toApiCell(row?.[c] ?? null)),
         })),
         fields: "userEnteredValue,userEnteredFormat.numberFormat",
       },
