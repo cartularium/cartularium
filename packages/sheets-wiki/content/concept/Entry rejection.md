@@ -4,7 +4,9 @@ tags:
 ---
 
 > [!WARNING]
-> This article uses [[Unofficial terminology]].
+> This article uses [[Unofficial terminology]]. The term "entry rejection" is provisional. It may overlap with an existing Excel-community name for this behavior that the wiki has not yet checked, so treat it as a working label rather than a settled coinage.
+
+<!-- TODO(editors): before treating "entry rejection" as a settled term, check for an existing Excel-community name for this behavior (Spreadsheets Discord, Stack Overflow, Excel MVP docs). Parked provisional per the 2026-07-17 provenance sign-off, item 5. -->
 
 Entry rejection is the refusal of a spreadsheet engine to store a formula at the moment it is entered, leaving the cell genuinely empty. The cell holds no formula, no value, and no [[Error|error]] — it is indistinguishable from a cell that was never touched. This is distinct from a formula that is stored and then evaluates to an error: an entry-rejected cell was never accepted in the first place.
 
