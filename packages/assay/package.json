@@ -21,6 +21,7 @@
     "build:manifest": "pnpm run build && mkdir -p build/site && node build/cli.js manifest --output build/site/manifest.json",
     "serve": "pnpm build && node build/cli.js catalogue --serve",
     "test": "vitest run",
+    "identity:lock": "node scripts/generate-identity-lock.mjs",
     "check": "pnpm --filter @cartularium/drivers run build && tsc --noEmit",
     "clean": "rm -rf build *.tsbuildinfo"
   },
