@@ -1,27 +1,29 @@
-name: whetstone-build
+name: ludus-build
 
-# Path-filtered: runs only when whetstone sources, brand tokens, chrome
-# primitives, or the workflow itself change. Site-build smoke test only —
-# the judge/oracle CLIs need live Google credentials and are not CI-testable.
+# Path-filtered: runs only when ludus sources, brand tokens, chrome
+# primitives, or the workflow itself change. Site-build smoke test plus the
+# offline corpus staleness sweep — the judge/oracle CLIs need live Google
+# credentials and are not CI-testable, but `oracle --check` only recomputes
+# the verified-stamp hashes.
 
 on:
   pull_request:
     paths:
-      - "packages/whetstone/**"
+      - "packages/ludus/**"
       - "packages/brand/**"
       - "packages/chrome/**"
       - "pnpm-lock.yaml"
-      - ".github/workflows/whetstone-build.yml"
+      - ".github/workflows/ludus-build.yml"
   push:
     branches: [main]
     paths:
-      - "packages/whetstone/**"
+      - "packages/ludus/**"
       - "packages/brand/**"
       - "packages/chrome/**"
       - "pnpm-lock.yaml"
 
 concurrency:
-  group: whetstone-build-${{ github.ref }}
+  group: ludus-build-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
@@ -42,5 +44,9 @@ jobs:
 
       # no typecheck here: the judge/oracle TS imports assay's built types,
       # which need a full assay+contracts build — out of scope for site smoke
-      - name: Build whetstone site
-        run: pnpm --filter @cartularium/whetstone run build:site
+      - name: Build ludus site
+        run: pnpm --filter @cartularium/ludus run build:site
+
+      - name: Corpus staleness sweep
+        working-directory: packages/ludus
+        run: pnpm run oracle --check problems/*.yaml
