@@ -36,20 +36,6 @@ TBILLYIELD(settlement, maturity, price)
 - `settlement` and `maturity` should be entered using `DATE`, `TO_DATE` or other date parsing functions rather than by entering text.
 - `TBILLYIELD` is equivalent to using `YIELDDISC` with US Treasury Bill conventions for the absent parameters.
 
-### Engine compatibility
-
-The Treasury-bill functions are more widely supported than the coupon-bond analytics. TBILLYIELD is implemented by Excel, Google Sheets, HyperFormula, IronCalc, `formulas`, and Lattice; only **pycel** lacks it (`#NAME?`). The full-precision engines agree to about `1e-12` (`TBILLYIELD` = 0.0615981292420008 on the deep-dive case), while IronCalc returns the same value at a coarser display read-back (0.0616). Compare TBILL results to a tolerance (assay: TBILL deep dive, 2026-07-11).
-
-| Engine | Behavior |
-| --- | --- |
-| Google Sheets | Supported. |
-| Excel | Supported. |
-| HyperFormula | Supported. |
-| IronCalc | Supported; reduced display precision. |
-| formulas | Supported. |
-| pycel | Not implemented; returns `#NAME?`. |
-| Lattice | Supported. |
-
 ### See Also
 
 [[YIELDDISC]]: Calculates the annual yield of a discount (non-interest-bearing) security, based on price.

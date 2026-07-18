@@ -40,23 +40,6 @@ LEFTB(string, num_of_bytes)
 | **4** | `熊本` | `=LEFTB(A4, 2)` | 熊 |
 | **5** | `熊本` | `=LEFT(A5,2)` | 熊本 |
 
-### Engine compatibility
-
-`LEFTB` takes bytes only under a double-byte (DBCS) locale; in a single-byte (Western) locale it collapses to plain `LEFT`. Testing `=LEFTB("あいう",2)` (take 2 bytes):
-
-| Engine | Behavior |
-| --- | --- |
-| Google Sheets | `"あ"` — 2 bytes is one CJK character (matching this page's `熊本` example). |
-| Excel | `"あい"` in a Western locale, where `LEFTB` collapses to `LEFT` (2 characters); `"あ"` in a DBCS locale (live Excel probe, 2026-07-11, Western locale). |
-| Lattice | `"あ"` — always DBCS (assay: LEFTB/leftb-dbcs). |
-| formulas | `"あい"` — mirrors Western-locale Excel (live probe, 2026-07-11). |
-| HyperFormula | `#NAME?` — not implemented (live probe, 2026-07-11). |
-| IronCalc | `#NAME?` — not implemented (live probe, 2026-07-11). |
-| pycel | `#NAME?` — not implemented (live probe, 2026-07-11). |
-
-> [!INFO]
-> `LEFTB` cutting a CJK string returns a different number of characters depending on the engine and locale, so it is not portable. The `*B` family is absent from HyperFormula, IronCalc, and pycel.
-
 ### Related functions
 
 - [[MIDB]]: ​The MIDB function returns a section of a string starting at a given character and up to a specified number of bytes.

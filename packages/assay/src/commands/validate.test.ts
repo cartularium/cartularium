@@ -13,10 +13,11 @@ function writeFixture(root: string): string {
   mkdirSync(join(root, "fixtures", "math"), { recursive: true });
   writeFileSync(testFile, "schemaVersion: 3\ntests: []\n");
   writeFileSync(
-    fixturePath(testFile, "hyperformula"),
+    fixturePath(testFile, "excel"),
     JSON.stringify(
       {
-        platform: "hyperformula",
+        platform: "excel",
+        schemaVersion: 2,
         generatedAt: "2026-05-10T00:00:00.000Z",
         results: {
           "sha256:case": {
@@ -36,8 +37,8 @@ describe("validate fixture reconciliation", () => {
   it("reports drift without writing fixture files during dry-run", () => {
     const root = mkdtempSync(join(tmpdir(), "assay-validate-"));
     const testFile = writeFixture(root);
-    const before = readFileSync(fixturePath(testFile, "hyperformula"), "utf8");
-    const existing = loadFixture(testFile, "hyperformula") as FixtureFile;
+    const before = readFileSync(fixturePath(testFile, "excel"), "utf8");
+    const existing = loadFixture(testFile, "excel") as FixtureFile;
     const fresh: Record<string, FixtureEntry> = {
       "sha256:case": {
         outcome: valueOutcome([[2]] as unknown as RichGridValue),
@@ -47,7 +48,7 @@ describe("validate fixture reconciliation", () => {
 
     const drifts = reconcileValidatedFixture({
       testFile,
-      platform: "hyperformula",
+      platform: "excel",
       existing,
       fresh,
       displayNames: new Map([["sha256:case", "SUM/basic"]]),
@@ -56,6 +57,6 @@ describe("validate fixture reconciliation", () => {
     });
 
     expect(drifts).toBe(1);
-    expect(readFileSync(fixturePath(testFile, "hyperformula"), "utf8")).toBe(before);
+    expect(readFileSync(fixturePath(testFile, "excel"), "utf8")).toBe(before);
   });
 });

@@ -42,20 +42,6 @@ If the lower or upper boundaries are non-numeric, ERF returns "`#VALUE!`."
 | **2** | ERF(-2.3, -0.7) | 0.3210556296 |
 | **3** | ERF(1) | 0.8427007929 |
 
-### Engine compatibility
-
-The numeric answer is portable within tolerance wherever a form is implemented — `ERF(1)` ≈ 0.8427007929497149, `ERF(0)` = 0 — so the forks are entirely about which of the three call forms each engine accepts. The single non-negative argument works everywhere. The **negative** single argument works everywhere except pycel. The two-argument `ERF(lower, upper)` form is the narrowest: Excel, Google Sheets, HyperFormula, IronCalc, and `formulas` accept it, but Lattice returns `#N/A` and pycel `#NAME?` (assay: ERF/erf-two-arg-lower-upper; live probe, 2026-07-11).
-
-| Engine | Behavior |
-| --- | --- |
-| Google Sheets | Single argument (including negatives) and the two-argument form. |
-| Excel | Same. |
-| HyperFormula | Single (including negatives) and two-argument forms; does **not** implement [[ERF.PRECISE]] (`#NAME?`). |
-| IronCalc | Single and two-argument forms; also implements ERF.PRECISE. |
-| formulas | Single and two-argument forms. |
-| pycel | Single **non-negative** argument only. `ERF(-1)` and the two-argument form return `#NAME?` (live probe, 2026-07-11). |
-| Lattice | Single argument (including negatives). The two-argument `ERF(lower, upper)` form returns `#N/A`. |
-
 ### Related functions
 
 - [[ERFC]]: The ERFC function returns the complementary Gauss error function of a value.

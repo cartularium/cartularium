@@ -62,23 +62,6 @@ Finally, running `UNIQUE` with `by_column` set to `false` but `exactly_once` set
 | Blue  | Magenta | Blue  |
 | Green | White   | Green |
 
-### Engine compatibility
-
-`UNIQUE` is a modern dynamic-array function. Two things vary across engines: whether it exists, and — where it does — whether it is case-sensitive.
-
-| Engine | Behavior |
-| --- | --- |
-| Google Sheets | **Case-sensitive**: `Apple`, `apple`, and `APPLE` are three distinct values and all spill (live gsheets context). |
-| Excel | **Case-insensitive**: it collapses `Apple`/`apple`/`APPLE` to one entry, keeping the first casing seen (live Excel probe, 2026-07-11). |
-| Lattice | Implemented; follows Google Sheets semantics. |
-| formulas | Implemented; computes `UNIQUE` (live probe, 2026-07-11). |
-| HyperFormula | `#NAME?` — not implemented (live probe, 2026-07-11). |
-| IronCalc | `#NAME?` — not implemented (live probe, 2026-07-11). |
-| pycel | `#NAME?` — not implemented (live probe, 2026-07-11). |
-
-> [!INFO]
-> The case-sensitivity difference silently changes results when a workbook moves between Google Sheets and Excel: a column of mixed-case text that yields three unique rows in Sheets can collapse to one in Excel. Normalize casing (`LOWER`/`UPPER`) first if the row count must be stable across products.
-
 ### Related functions
 
 - [[GT]]

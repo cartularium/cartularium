@@ -20,3 +20,13 @@ is held suspect in its entirety (refounding record, walkthrough stop 1).
 It includes 94 fixture keys that resolve to no current case — the fossil
 is their record. Read-only; the old `assay history` machinery that wrote
 it is retired and refuses to run against this directory.
+
+## archive-pre-refounding/fixtures-v1/
+
+The pre-substrate v1 fixture files: the 64 evidence-grade originals
+archived by the fixture-v2 lift, and — hibernation, executed 2026-07-18 —
+the six non-evidence-grade engines' files (lattice pending v4; ironcalc,
+hyperformula, libreoffice, formulas, pycel hibernated). Keyed by the
+retired semanticHash; readable via `readV1FossilFixture` (archaeology
+only). Waking an engine means a decision record and a recorded regen
+through the substrate, never restoring these files.

@@ -940,9 +940,15 @@ export function partitionSeeds(
 }
 
 // Map gsheets ErrorType enum to the #-prefixed sentinel used by CellValue.
-// gsheets's ErrorType is closed-set; this is a 1:1 mapping per the published
-// schema. ERROR / LOADING are runtime-observed additions; NULL_VALUE is
-// Excel-compat (never emitted by gsheets natively per the gsheets walk).
+// gsheets's ErrorType is closed-set; this is a 1:1 LOSSLESS mapping per the
+// published schema — Sheets-native types without a #-spelling take the
+// default `#<TYPE>` rule. LOADING previously merged into the Excel-shaped
+// #GETTING_DATA; that was measurably lossy (Sheets ERROR.TYPE=10 vs Excel's
+// documented 8 — loading-error-identity pickup, 2026-07-13) and is
+// preserved raw since the re-founding: cross-engine analogy is an opt-in
+// lens at read time, never the capture. ERROR / LOADING are
+// runtime-observed additions; NULL_VALUE is Excel-compat (never emitted by
+// gsheets natively per the gsheets walk).
 function errorTypeToSentinel(type: string | undefined): string {
   switch (type) {
     case "DIVIDE_BY_ZERO":
@@ -962,7 +968,7 @@ function errorTypeToSentinel(type: string | undefined): string {
     case "ERROR":
       return "#ERROR!";
     case "LOADING":
-      return "#GETTING_DATA";
+      return "#LOADING";
     default:
       return type ? `#${type}` : "#ERROR!";
   }
@@ -1068,7 +1074,7 @@ function buildRichCell(api: ApiCellData | undefined | null): RichCell | null {
 }
 
 // Classic Excel 7-error set. Non-classic gsheets errors (#ERROR!,
-// #GETTING_DATA, and anything from the errorTypeToSentinel default branch)
+// #LOADING, and anything from the errorTypeToSentinel default branch)
 // project to PrimitiveValue kind "extended-error" per D1.A.3 / coalescing doc.
 const CLASSIC_ERROR_SENTINELS = new Set([
   "#DIV/0!",

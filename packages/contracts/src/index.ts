@@ -4,7 +4,14 @@
 import type { Platform } from "./platform.js"
 import type { CirculatingGrid } from "./cell-value.js"
 
-export { ALL_PLATFORMS, isPlatform } from "./platform.js"
+export {
+  ALL_PLATFORMS,
+  EVIDENCE_GRADE_PLATFORMS,
+  HIBERNATED_PLATFORMS,
+  PENDING_PLATFORMS,
+  isPlatform,
+  isRunnablePlatform,
+} from "./platform.js"
 export type { Platform } from "./platform.js"
 
 // closed enum of override causes (assay schema §7)

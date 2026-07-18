@@ -50,22 +50,6 @@ This returns `TRUE` for a genuinely blank cell and for a `""` cell on every engi
 
 Some functions return "empty text" for degenerate inputs — `REPT("ha", 0)`, `ASC("")`, `ROMAN(0)`, `T(TRUE)`. Engines represent that empty result two ways: as a **blank cell** (Excel, the `formulas` engine) or as an **explicit empty string `""`** (Google Sheets, IronCalc, Lattice) (assay: REPT/rept-zero, T/t-of-boolean). A downstream `=IF(REPT(...)="", …)` behaves the same either way, but `=ISBLANK(REPT(...))` does not — it inherits the same blank-versus-empty-string split described above.
 
-### Engine compatibility
-
-The blank-versus-empty-string boundary is the portable core's main fault line for emptiness. A truly empty cell is blank everywhere; a `""`-valued cell is not.
-
-| Engine | Treats a `""` cell as |
-| --- | --- |
-| Google Sheets | Text value (not blank) |
-| Excel | Blank |
-| HyperFormula | Text value (not blank) |
-| IronCalc | Text value (not blank) |
-| formulas | Blank |
-| pycel | Blank |
-| Lattice | Blank |
-
-pycel does not implement `COUNTA` or `COUNTBLANK` (both return `#NAME?`), so the counting side of the split cannot be observed there (assay: COUNTA/counta-empty-string-cell). LibreOffice's recorded fixtures for these cases are a known blank-capture artifact and are omitted.
-
 ### See Also
 
 - [[Null]] — the absence of a value in a formula expression, distinct from a blank cell.

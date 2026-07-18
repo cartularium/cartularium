@@ -63,21 +63,6 @@ This ordering holds on Excel, Google Sheets, IronCalc, and the `formulas` engine
 
 By default, checkboxes correspond directly to Boolean values: checked is `TRUE`, unchecked is `FALSE`. Custom checkbox values can override this, storing arbitrary values for each state instead.
 
-### Engine compatibility
-
-Booleans stored in cells are coerced to `1`/`0` in numeric contexts by every engine that implements the surrounding function. The portability edges are around **literal** booleans and **aggregation**:
-
-| Engine | Behavior |
-| --- | --- |
-| Google Sheets | Coerces booleans; skips them inside ranges/array literals; ranks booleans above numbers in comparison |
-| Excel | Same as Google Sheets |
-| HyperFormula | Rejects a bare `TRUE`/`FALSE` literal in a function argument (`SUM(1,2,TRUE)` → `#NAME?`); pass `TRUE()`/`FALSE()` or a cell reference |
-| IronCalc | Coerces inline booleans for mean functions but ignores them in the `*A` variance/stdev family; ranks booleans above numbers |
-| formulas | Coerces booleans; ranks booleans above numbers |
-| Lattice | Coerces booleans inside array literals; ranks booleans **below** numbers |
-
-The HyperFormula bare-literal quirk is a parser trait, not a missing function — `AVERAGEA` and `SUM` themselves work; only a bare `TRUE`/`FALSE` argument trips it (assay: AVERAGEA/averagea-inline-booleans).
-
 ### See Also
 
 - [[Type coercion]] — full coercion rules across all types.

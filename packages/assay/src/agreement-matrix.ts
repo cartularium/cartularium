@@ -13,7 +13,7 @@
 //   3. fork-shapes — recurring partition signatures (DV candidates). Report-only:
 //      it surfaces shapes, it does NOT write DV files (cause is hand-authored now).
 //
-// The override-based divergence-matrix.ts (+ seedCatalogue + the history
+// The override-based fork-matrix.ts (+ seedCatalogue + the history
 // DV-lifecycle) stays on the authoring basis — quarantined, retires when the
 // authoring layer (overrides/expect/status) does and DV identity is re-founded
 // on observed forks (the next checkpoint).

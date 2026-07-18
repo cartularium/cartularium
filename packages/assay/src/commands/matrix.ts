@@ -2,7 +2,7 @@
 //
 // Default reporting is the verdict-free agreement matrix over OBSERVED Outcomes
 // (agreement-matrix.ts). `--seed-catalogue` stays on the quarantined,
-// override-based divergence-matrix (it feeds DV identity, re-founded on observed
+// override-based fork-matrix (it feeds DV identity, re-founded on observed
 // forks in the next checkpoint).
 
 import { basename } from "node:path";
@@ -13,7 +13,7 @@ import {
   AGREEMENT_VIEWS,
   type AgreementView,
 } from "../agreement-matrix.js";
-import { computeMatrix, seedCatalogue } from "../divergence-matrix.js";
+import { computeMatrix, seedCatalogue } from "../fork-matrix.js";
 import { loadFixtureOutcomes, loadTests, type TestInfo } from "../catalogue-site/load.js";
 import { resolveFiles, values } from "./shared.js";
 

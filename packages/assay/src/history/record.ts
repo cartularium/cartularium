@@ -3,7 +3,7 @@
 import { existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
 import { randomBytes } from "node:crypto";
 import { join } from "node:path";
-import { computeMatrix } from "../divergence-matrix.js";
+import { computeMatrix } from "../fork-matrix.js";
 import type { Platform } from "../format/values.js";
 import { applySeedActions, applyStatusActions, diffClusters } from "./dv-lifecycle.js";
 import { snapshotFixtures } from "./fixtures.js";

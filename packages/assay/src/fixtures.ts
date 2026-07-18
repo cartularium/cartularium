@@ -107,13 +107,27 @@ export function loadFixture(testFilePath: string, platform: Platform): FixtureFi
       results: raw.results as Record<string, FixtureEntry>,
     };
   }
-  if (raw.schemaVersion !== undefined) {
-    throw new Error(`${path}: unknown fixture schemaVersion ${raw.schemaVersion}`);
-  }
-  // v1 legacy path — the RETAINED read-only lift (stability substrate,
-  // decision point 8): hibernated engines' files stay v1 fossils, keyed by
-  // semanticHash, until the hibernation item lands. {result, error,
-  // driverIssue, skipped} and/or legacy scalar grids lift to §6.6 Outcomes.
+  // Hibernation executed (2026-07-18): fixtures/ holds only v2. v1 fossils
+  // live under history/archive-pre-refounding/fixtures-v1/ and are read
+  // ONLY through the explicit archive path below.
+  throw new Error(
+    `${path}: not a v2 fixture. Pre-substrate fossils are archived under ` +
+      `history/archive-pre-refounding/fixtures-v1/ and read via readV1FossilFixture.`,
+  );
+}
+
+/** The explicit fossil path: read an archived pre-substrate v1 fixture,
+ * lifted to §6.6 outcomes, keyed by its original semanticHash. For
+ * archaeology only — nothing live consumes this. */
+export function readV1FossilFixture(
+  path: string,
+  platform: Platform,
+): { platform: Platform; generatedAt: string; results: Record<string, FixtureEntry> } {
+  const raw = JSON.parse(readFileSync(path, "utf8")) as {
+    platform: Platform;
+    generatedAt: string;
+    results: Record<string, LegacyEntry>;
+  };
   const results: Record<string, FixtureEntry> = {};
   for (const [name, entry] of Object.entries(raw.results)) {
     results[name] = { outcome: liftEntryToOutcome(entry, platform) };

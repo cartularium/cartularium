@@ -34,20 +34,6 @@ TBILLEQ(settlement, maturity, discount)
 
 - `settlement` and `maturity` should be entered using `DATE`, `TO_DATE` or other date parsing functions rather than by entering text.
 
-### Engine compatibility
-
-The Treasury-bill functions are more widely supported than the coupon-bond analytics. TBILLEQ is implemented by Excel, Google Sheets, HyperFormula, IronCalc, `formulas`, and Lattice; only **pycel** lacks it (`#NAME?`). The five full-precision engines agree to about `1e-12` (`TBILLEQ(DATE(2011,2,15), DATE(2011,5,15), 0.065)` = 0.066979094617… on the deep-dive case), and IronCalc returns the same value at a coarser display read-back (0.067). Compare TBILL results to a tolerance, not exact equality (assay: TBILL deep dive, 2026-07-11).
-
-| Engine | Behavior |
-| --- | --- |
-| Google Sheets | Supported. |
-| Excel | Supported. |
-| HyperFormula | Supported. |
-| IronCalc | Supported; reduced display precision. |
-| formulas | Supported. |
-| pycel | Not implemented; returns `#NAME?`. |
-| Lattice | Supported. |
-
 ### See Also
 
 [[TBILLYIELD]]: Calculates the yield of a US Treasury Bill based on price.

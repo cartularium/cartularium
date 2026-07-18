@@ -78,23 +78,6 @@ CHOOSEROWS(array, row_num1, [row_num2])
 
 **[Make a Copy](https://docs.google.com/spreadsheets/d/1r_WASEs19y3Ybu_YEjz5FA782esbxbdDApbspIlBqSM/copy#gid=350337179)**
 
-### Engine compatibility
-
-`CHOOSEROWS` is a modern dynamic-array function (Excel added it in 2022), and support is a presence/absence split — where implemented, engines agree. `=CHOOSEROWS({1,2;3,4;5,6}, 1, 3)` gives `[[1,2],[5,6]]`:
-
-| Engine | Behavior |
-| --- | --- |
-| Google Sheets | Implemented; `[[1,2],[5,6]]`. |
-| Excel | Implemented; `[[1,2],[5,6]]`. |
-| Lattice | Implemented; `[[1,2],[5,6]]`. |
-| formulas | Implemented; `[[1,2],[5,6]]` (live probe, 2026-07-11). |
-| HyperFormula | `#NAME?` — not implemented (live probe, 2026-07-11). |
-| IronCalc | `#NAME?` — not implemented (live probe, 2026-07-11). |
-| pycel | `#NAME?` — not implemented (live probe, 2026-07-11). |
-
-> [!INFO]
-> Not portable to HyperFormula, IronCalc, or pycel. The same availability split applies to [[CHOOSECOLS]].
-
 ### Related functions
 
 - [[CHOOSECOLS]]

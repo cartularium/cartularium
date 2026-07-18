@@ -41,20 +41,6 @@ DEC2HEX(decimal_number, [significant_digits])
 
 - Ensure that any calculations using the result of `DEC2HEX` take into account that it is in hexadecimal. Results will be silently converted by Google Sheets; thus if cell `A2` contains `100`, the hexadecimal equivalent of the decimal value `256`, and `B2` contains a formula such as `=A2+20`, the result will be `120`, which is incorrect in hexadecimal calculation.
 
-### Engine compatibility
-
-The signed two's-complement convention is portable across every tracked engine: the operand is a fixed 10-digit hexadecimal field, the most significant bit is the sign bit, and the domain is `-2^39` to `2^39 - 1` (`-549755813888` to `549755813887`). `DEC2HEX(255)` = "FF" and `DEC2HEX(-1)` = "FFFFFFFFFF" agree across Excel, Google Sheets, HyperFormula, IronCalc, `formulas`, and Lattice (assay: BASE-CONVERSIONS deep dive, 2026-07-11). The only fork is pycel, which implements only the non-negative domain and returns `#NAME?` for a negative first argument — the reverse conversion [[HEX2DEC]] on a two's-complement string works there.
-
-| Engine | Behavior |
-| --- | --- |
-| Google Sheets | Full two's-complement support, `-2^39` to `2^39 - 1`. |
-| Excel | Same values and range. |
-| HyperFormula | Supported, including negative two's-complement results (live probe, 2026-07-11). |
-| IronCalc | Supported, including negatives (live probe, 2026-07-11). |
-| formulas | Supported, including negatives (live probe, 2026-07-11). |
-| pycel | Non-negative arguments only; a negative `decimal_number` returns `#NAME?` (live probe, 2026-07-11). |
-| Lattice | Supported, including negatives. |
-
 ### See Also
 
 [[OCT2HEX]]: The OCT2HEX function converts a signed octal number to signed hexadecimal format.

@@ -28,20 +28,6 @@ MINVERSE(square_matrix)
 
 - `square_matrix` - An array or range with an equal number of rows and columns representing a matrix whose multiplicative inverse will be calculated.
 
-### Engine compatibility
-
-MINVERSE is implemented by Excel, Google Sheets, Lattice, and `formulas`, but **not by HyperFormula, IronCalc, or pycel** (`#NAME?`). For a **singular** matrix (no inverse), the implementers correctly refuse with `#NUM!` — for example `MINVERSE({1,2;2,4})`, whose second row is twice the first. This is worth distinguishing from an absence error: a `#NUM!` means the engine has MINVERSE and rejected an un-invertible matrix, while a `#NAME?` means the engine lacks the function and never examined the matrix at all (assay: MINVERSE/minverse-singular-error; live probe, 2026-07-11).
-
-| Engine | Behavior |
-| --- | --- |
-| Google Sheets | Supported; singular matrix → `#NUM!`. |
-| Excel | Supported; singular matrix → `#NUM!`. |
-| HyperFormula | Not implemented; returns `#NAME?` (live probe, 2026-07-11). |
-| IronCalc | Not implemented; returns `#NAME?` (live probe, 2026-07-11). |
-| formulas | Supported; singular matrix → `#NUM!` (live probe, 2026-07-11). |
-| pycel | Not implemented; returns `#NAME?` (live probe, 2026-07-11). |
-| Lattice | Supported; singular matrix → `#NUM!`. |
-
 ### See Also
 
 [[TRANSPOSE]]: Transposes the rows and columns of an array or range of cells.

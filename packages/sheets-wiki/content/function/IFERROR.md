@@ -55,23 +55,6 @@ IFERROR(value, [value_if_error])
 
 - `IFERROR(exp1,exp2)` is logically equivalent to `IF(NOT(ISERROR(exp1)),exp1,exp2)`. Ensure that this is the desired behavior.
 
-### Engine compatibility
-
-The **scalar** behavior — catch any error and return the fallback, pass a clean value through — is fully portable: `=IFERROR(1/0, "err")` is `"err"` and `=IFERROR(42, "err")` is `42` on Excel, Google Sheets, HyperFormula, IronCalc, formulas, and Lattice (assay: IFERROR/iferror-catches-div-0, iferror-passes-clean-value). The divergence is over **array arguments**. Testing `=IFERROR(10/{1,0,2}, -1)`:
-
-| Engine | Behavior |
-| --- | --- |
-| Google Sheets | Scalar `10` — `IFERROR` does *not* map over the array argument without `ARRAYFORMULA`; it collapses to the first element and the error branch never surfaces (live gsheets probe, 2026-07-11). |
-| Excel | Spills `{10, -1, 5}` — broadcasts element-wise, replacing only the error position (live Excel probe, 2026-07-11). |
-| HyperFormula | Broadcasts element-wise, like Excel (live probe, 2026-07-11). |
-| formulas | Broadcasts element-wise (live probe, 2026-07-11). |
-| Lattice | Broadcasts element-wise. |
-| IronCalc | `#N/IMPL!` — `IFERROR` over an array argument is not implemented (live probe, 2026-07-11). |
-| pycel | Scalar `IFERROR` works, but a `/` (or any operator) inside an argument trips a front-end limitation and returns `#NAME?`, so `=IFERROR(1/0, "err")` fails there for a harness reason, not a missing function (live probe, 2026-07-11). |
-
-> [!INFO]
-> To catch errors across an array in Google Sheets, wrap the whole expression in `ARRAYFORMULA` — without it, `IFERROR` sees only the first element. This element-wise-versus-scalar difference is a silent correctness hazard when moving array formulas between Excel and Google Sheets.
-
 ### See Also
 
 [[ISNA]]: Checks whether a value is the error `#N/A`.

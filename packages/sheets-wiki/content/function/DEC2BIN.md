@@ -40,20 +40,6 @@ DEC2BIN(decimal_number, [significant_digits])
 - If the number of digits required is greater than the specified `significant_digits`, the `#NUM!` error is returned.
 - Ensure that any calculations using the result of DEC2BIN take into account that it is in binary. Results will be silently converted by Google Sheets; thus if cell `A2` contains `11111`, the binary equivalent of the decimal value `31`, and `B2` contains a formula such as `=A2+9`, the result will be `11120`, which is incorrect in binary calculation.
 
-### Engine compatibility
-
-The signed two's-complement convention is portable across every tracked engine: the operand is a fixed 10-digit binary field, the most significant bit is the sign bit, and the domain is `-512` to `511`. `DEC2BIN("1010")` = 10 and `DEC2BIN(-2)` = "1111111110" agree across Excel, Google Sheets, HyperFormula, IronCalc, `formulas`, and Lattice (assay: BASE-CONVERSIONS deep dive, 2026-07-11). The only fork is pycel, which implements only the non-negative domain and returns `#NAME?` for a negative first argument — the reverse conversion [[BIN2DEC]] on a two's-complement string works there. The `significant_digits` padding argument is portable for non-negative results.
-
-| Engine | Behavior |
-| --- | --- |
-| Google Sheets | Full two's-complement support, `-512` to `511`. |
-| Excel | Same values and range. |
-| HyperFormula | Supported, including negative two's-complement results (live probe, 2026-07-11). |
-| IronCalc | Supported, including negatives (live probe, 2026-07-11). |
-| formulas | Supported, including negatives (live probe, 2026-07-11). |
-| pycel | Non-negative arguments only; a negative `decimal_number` returns `#NAME?` (live probe, 2026-07-11). |
-| Lattice | Supported, including negatives. |
-
 ### See Also
 
 [[OCT2HEX]]: The OCT2HEX function converts a signed octal number to signed hexadecimal format.

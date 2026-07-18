@@ -29,7 +29,9 @@ export const ASSAY_CATEGORIES = [
   "interaction",
   "volatile",
 ] as const
-export const IMPLEMENTED_PREVIEW_PLATFORMS = ["gsheets", "excel", "hyperformula"] as const
+// hyperformula dropped per the hibernation decision (2026-07-18): preview
+// must not privilege a non-first-class engine
+export const IMPLEMENTED_PREVIEW_PLATFORMS = ["gsheets", "excel"] as const
 export const DEFAULT_REVIEW_PREVIEW_PLATFORMS = ["excel", "gsheets"] as const
 
 export const MAX_PREVIEW_INPUT_BYTES = 128 * 1024

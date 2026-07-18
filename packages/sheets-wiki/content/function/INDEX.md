@@ -91,26 +91,3 @@ INDEX and MATCH can be used together to perform more advanced and dynamic lookup
 ### Notes
 
 - If you set row or column to 0, `INDEX` returns the array of values for the entire column or row, respectively.
-
-### Engine compatibility
-
-Ordinary `INDEX(range, row, [column])` is among the most portable lookup forms: `=INDEX(A1:B2, 2, 1)` and `=INDEX(A1:A3, 2)` agree across every evaluating engine (assay: INDEX/index-row-and-column, INDEX/index-single-column; live probe, 2026-07-11). The edges diverge in three ways.
-
-**Out-of-bounds index — error code split.** Requesting a row past the end of the range errors everywhere, but on a different sentinel:
-
-| Engine | Behavior |
-| --- | --- |
-| Google Sheets | `#NUM!` — out-of-range index treated as an invalid numeric argument (assay: INDEX/index-out-of-bounds). |
-| Excel | `#REF!` — out-of-array index is a reference error. Excel's index progression: `INDEX(A1:A2, 0)` spills the whole column, `INDEX(A1:A2, -1)` is `#VALUE!`, `INDEX(A1:A2, 5)` is `#REF!` (live Excel probe, 2026-07-11). |
-| HyperFormula | `#NUM!` — same as Google Sheets (live probe, 2026-07-11). |
-| IronCalc | `#REF!` (live probe, 2026-07-11). |
-| formulas | `#REF!` (live probe, 2026-07-11). |
-| pycel | `#REF!` (live probe, 2026-07-11). |
-| Lattice | `#REF!`. |
-
-**Single-argument `INDEX` — Excel entry rejection.** `=INDEX(A1:A3)` with `row` omitted is *rejected at formula entry* in Excel, leaving an empty cell — not a value, not an error (live Excel probe, 2026-07-11). Google Sheets instead treats a bare single-array argument as the array-wrapper idiom below.
-
-**`INDEX(array_expression)` — the Google Sheets array-wrapper idiom.** `=INDEX(A1:A3*10)` (row and column both omitted) is a Google Sheets trick for forcing an array to materialize: Sheets returns the whole array. No other engine follows it — HyperFormula and Lattice return `#N/A`, formulas returns `#VALUE!`, IronCalc `#ERROR!`, pycel `#NAME?`, and Excel rejects it as a single-argument entry (assay: INDEX/index-wraps-multiplication-over-range; live probe, 2026-07-11). Use the array expression directly, or `ARRAYFORMULA` in Sheets.
-
-> [!INFO]
-> Code that branches on the *specific* out-of-bounds error (for example via `ERROR.TYPE`) is not portable — `IFERROR`, which catches any error, is fine. A `MATCH` miss, by contrast, is uniformly `#N/A` on every engine.

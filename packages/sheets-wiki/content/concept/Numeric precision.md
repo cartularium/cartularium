@@ -62,19 +62,6 @@ Iterative root-finders ([[IRR]], [[RATE]], [[MIRR]]) converge to slightly differ
 
 The rule that follows from all of the above: **compare parsed numbers with a tolerance, never compare the rendered strings.** A consumer that string-compares or hashes numeric — and especially complex-string — results will see spurious mismatches wherever two engines agree on the value but not on the formatting. The tolerance must be generous enough to absorb the coarsest capture in play, which for IronCalc's display read-back can be as wide as two decimal places, and for the algorithmic offsets is order 1e-9.
 
-### Engine compatibility
-
-The portable core is the arithmetic itself: every implementing engine computes the same value to about 15 significant figures. What is *not* portable is the exact digit string, which depends on the engine's storage cap, its formatter, and — for the `IM` family — the fact that the result is a string in the first place.
-
-| Engine | Behavior |
-| --- | --- |
-| Google Sheets | Stores numbers to 15 significant figures; caps complex-string components at 15; carries a distinct inverse-normal approximation (~1e-9). |
-| Excel | Renders numbers to 15 significant figures for display but exposes the full double for plain numbers; caps complex-string components at 15. |
-| HyperFormula | Full-double complex strings; coarser special/inverse-function approximations (GAMMA, inverse-normal good to ~8 significant figures). |
-| IronCalc | 15-significant-figure complex strings; captured at reduced display precision on read-back for many numeric results. |
-| formulas | Full-double rendering throughout; occasional last-ULP string artifacts (`IMLOG2("8")` → `2.9999999999999996`). |
-| Lattice | Full-double rendering family (per recorded fixtures). |
-
 ### See Also
 
 - [[Number]] — the numeric data type.

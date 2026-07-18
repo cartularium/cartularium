@@ -80,23 +80,6 @@ CHOOSECOLS(array, col_num1, [col_num2])
 
 [Make a Copy](https://docs.google.com/spreadsheets/d/1rBlIiOQJDThG1KvNix1xC5OuJWO-O3lbQp7FRXgauSw/copy#gid=907400634)
 
-### Engine compatibility
-
-`CHOOSECOLS` is a modern dynamic-array function (Excel added it in 2022). Support is purely a presence/absence split — where implemented, engines agree on the result. `=CHOOSECOLS({1,2,3;4,5,6}, 1, 3)` gives `[[1,3],[4,6]]`:
-
-| Engine | Behavior |
-| --- | --- |
-| Google Sheets | Implemented; `[[1,3],[4,6]]`. |
-| Excel | Implemented; `[[1,3],[4,6]]`. |
-| Lattice | Implemented; `[[1,3],[4,6]]`. |
-| formulas | Implemented; `[[1,3],[4,6]]` (live probe, 2026-07-11). |
-| HyperFormula | `#NAME?` — not implemented (live probe, 2026-07-11). |
-| IronCalc | `#NAME?` — not implemented (live probe, 2026-07-11). |
-| pycel | `#NAME?` — not implemented (live probe, 2026-07-11). |
-
-> [!INFO]
-> Not portable to HyperFormula, IronCalc, or pycel. For broad engine coverage, an `INDEX`-based column pick is the fallback. The same availability split applies to [[CHOOSEROWS]].
-
 ### Related functions
 
 - [[CHOOSEROWS]]

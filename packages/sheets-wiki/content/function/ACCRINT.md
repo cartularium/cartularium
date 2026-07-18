@@ -46,20 +46,6 @@ ACCRINT(issue, first_payment, settlement, rate, redemption, frequency, [day_coun
 
 - `issue`, `first_payment` and `settlement` should be entered using `DATE`, `TO_DATE` or other date parsing functions rather than by entering text.
 
-### Engine compatibility
-
-Only **Excel, Google Sheets, `formulas`, and Lattice** implement ACCRINT; HyperFormula, IronCalc, and pycel return `#NAME?` (assay: ACCRINT deep dive; live probe, 2026-07-11). More surprising: even among the engines that do implement it, the accrued amount is **not guaranteed identical**, because ACCRINT's answer depends entirely on the day-count `basis` and the engines disagree on the edge rules. With `basis 0` (US 30/360) and an issue or first-interest date on the 30th/31st, Excel returns 295.8333…, Google Sheets and Lattice return 295.5555…, and `formulas` returns 295.2777… for the same inputs — a ~0.2% spread, far larger than floating-point noise. Excel and Google Sheets disagreeing on a 30/360 ACCRINT is the headline. With `basis 1` (actual/actual) Excel and Google Sheets agree on the exact-one-year case (57.5) but Lattice and `formulas` compute a slightly smaller actual-day fraction. Reconcile ACCRINT across engines to a tolerance, not to the cent.
-
-| Engine | Behavior |
-| --- | --- |
-| Google Sheets | Supported; 30/360 basis-0 gives 295.5556 on the deep-dive case. |
-| Excel | Supported; 30/360 basis-0 gives 295.8333 on the same case. |
-| HyperFormula | Not implemented; returns `#NAME?` (live probe, 2026-07-11). |
-| IronCalc | Not implemented; returns `#NAME?` (live probe, 2026-07-11). |
-| formulas | Supported; day-count edges differ from Excel and Google Sheets (295.2778 on the same case) (live probe, 2026-07-11). |
-| pycel | Not implemented; returns `#NAME?` (live probe, 2026-07-11). |
-| Lattice | Supported; matches Google Sheets on the 30/360 case (295.5556). |
-
 ### See Also
 
 [[YIELDDISC]]: Calculates the annual yield of a discount (non-interest-bearing) security, based on price.

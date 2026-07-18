@@ -201,7 +201,8 @@ describe("assay preview jobs", () => {
         previewResult: { current: 1, supported: [1] },
       },
       platforms: {
-        previewRunnable: expect.arrayContaining(["gsheets", "excel", "hyperformula"]),
+        // hyperformula dropped per the hibernation decision (2026-07-18)
+        previewRunnable: ["gsheets", "excel"],
         defaultReview: ["excel", "gsheets"],
       },
       errorEnvelope: { shape: "versioned" },

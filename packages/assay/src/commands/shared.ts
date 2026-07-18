@@ -11,7 +11,7 @@ import { getAccessToken } from "../auth.js";
 const parsed = parseArgs({
   allowPositionals: true,
   options: {
-    platform: { type: "string", short: "p", default: "gsheets,excel,lattice,ironcalc,hyperformula" },
+    platform: { type: "string", short: "p", default: "gsheets,excel" },
     "spreadsheet-id": { type: "string", short: "s" },
     json: { type: "boolean", default: false },
     tags: { type: "string" },
@@ -94,7 +94,18 @@ export function resolveFiles(args: string[]): string[] {
 }
 
 export function parsePlatforms(): string[] {
-  return (values.platform as string).split(",").map((s) => s.trim());
+  const platforms = (values.platform as string).split(",").map((s) => s.trim());
+  // Hibernation (decisions/2026-07-18-assay-engines-and-scope.md): the
+  // hibernated five are unrun until deliberately woken BY DECISION — there
+  // is intentionally no override flag. Lattice is first-class pending v4.
+  const blocked = platforms.filter((p) => !["gsheets", "excel"].includes(p));
+  if (blocked.length > 0) {
+    throw new Error(
+      `platform(s) ${blocked.join(", ")} are not runnable: hibernated (or lattice, pending v4) ` +
+        "per decisions/2026-07-18-assay-engines-and-scope.md. Waking is a decision, then a recorded regen.",
+    );
+  }
+  return platforms;
 }
 
 export function parseTags(): string[] | undefined {
