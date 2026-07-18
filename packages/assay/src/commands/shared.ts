@@ -105,17 +105,18 @@ export async function buildDrivers(platforms: string[], workbookPath?: string): 
       process.exit(1);
     }
     if (platform === "gsheets") {
-      const DEFAULT_SPREADSHEET_ID = "1QCumjdFqQO8SYnXhKwI2AJevhnb_JsXqjMTLCoPnOmo";
       const spreadsheetId =
-        (values["spreadsheet-id"] as string) ||
+        (values["spreadsheet-id"] as string | undefined) ||
         process.env.ASSAY_SPREADSHEET_ID ||
-        DEFAULT_SPREADSHEET_ID;
+        undefined;
       const token = await getAccessToken();
       if (!token) {
         console.error("Not authenticated. Run: assay login");
         process.exit(1);
       }
-      drivers.push(createDriver("gsheets", { spreadsheetId, accessToken: token }));
+      drivers.push(
+        createDriver("gsheets", { spreadsheetId: spreadsheetId as string, accessToken: token }),
+      );
     } else if (platform === "excel") {
       drivers.push(createDriver("excel", { verbose: values.verbose as boolean, workbookPath: workbookPath ?? null }));
     } else {

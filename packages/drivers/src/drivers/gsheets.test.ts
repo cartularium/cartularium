@@ -1,5 +1,6 @@
-import { describe, expect, it } from "vitest";
+import { afterEach, describe, expect, it, vi } from "vitest";
 import {
+  GSheetsDriver,
   applyBlankVerdicts,
   collectProbeCandidates,
   colLetter,
@@ -8,6 +9,33 @@ import {
   type RichCell,
   type RichGrid,
 } from "./gsheets.js";
+
+const API_BASE = "https://sheets.googleapis.com/v4/spreadsheets";
+const DRIVE_FILE_URL = "https://www.googleapis.com/drive/v3/files/run-sheet";
+
+function mockGSheetsFetch(deleteStatus = 204) {
+  const fetchMock = vi.fn(async (input: RequestInfo | URL, init?: RequestInit) => {
+    const url = String(input);
+    const method = init?.method ?? "GET";
+    if (url === API_BASE && method === "POST") {
+      return new Response(JSON.stringify({ spreadsheetId: "run-sheet" }), { status: 200 });
+    }
+    if (url.startsWith(`${API_BASE}/`) && method === "GET") {
+      return new Response(JSON.stringify({ sheets: [] }), { status: 200 });
+    }
+    if (url === DRIVE_FILE_URL && method === "DELETE") {
+      return new Response(null, { status: deleteStatus });
+    }
+    throw new Error(`Unexpected fetch: ${method} ${url}`);
+  });
+  vi.stubGlobal("fetch", fetchMock);
+  return fetchMock;
+}
+
+afterEach(() => {
+  vi.restoreAllMocks();
+  vi.unstubAllGlobals();
+});
 
 function cell(kind: RichCell["kind"], scalar: RichCell["scalar"] = null): RichCell {
   return { scalar, kind };
@@ -136,5 +164,56 @@ describe("richCellToRichValue — D8.β primitive promotion", () => {
     const rv = richCellToRichValue(c);
     expect(rv.primitive).toEqual({ kind: "blank", reason: "untouched" });
     expect((rv.engine as { semantic_null?: boolean }).semantic_null).toBeUndefined();
+  });
+});
+
+describe("throwaway run workbooks", () => {
+  it("creates a run workbook when no id is supplied and deletes it on destroy", async () => {
+    const fetchMock = mockGSheetsFetch();
+    const driver = new GSheetsDriver({ accessToken: "token" });
+
+    await driver.init();
+    const createInit = fetchMock.mock.calls[0][1] as RequestInit;
+    const createBody = JSON.parse(String(createInit.body)) as { properties: { title: string } };
+    expect(createBody.properties.title).toMatch(/^assay-run-\d+-\d+$/);
+
+    await driver.destroy();
+    expect(fetchMock).toHaveBeenLastCalledWith(DRIVE_FILE_URL, {
+      method: "DELETE",
+      headers: { Authorization: "Bearer token" },
+    });
+  });
+
+  it("never deletes a caller-supplied workbook", async () => {
+    const fetchMock = mockGSheetsFetch();
+    const driver = new GSheetsDriver({ spreadsheetId: "caller-sheet", accessToken: "token" });
+
+    await driver.init();
+    await driver.destroy();
+
+    expect(fetchMock).toHaveBeenCalledTimes(2);
+    expect(fetchMock.mock.calls.some(([url]) => String(url).includes("drive/v3/files"))).toBe(false);
+  });
+
+  it("prints a login hint when deletion lacks drive.file", async () => {
+    mockGSheetsFetch(403);
+    const stderr = vi.spyOn(process.stderr, "write").mockImplementation(() => true);
+    const driver = new GSheetsDriver({ accessToken: "token" });
+
+    await driver.init();
+    await driver.destroy();
+
+    expect(stderr).toHaveBeenCalledWith(expect.stringContaining("drive.file"));
+    expect(stderr).toHaveBeenCalledWith(expect.stringContaining("assay login"));
+  });
+
+  it("tolerates a missing throwaway workbook silently", async () => {
+    mockGSheetsFetch(404);
+    const stderr = vi.spyOn(process.stderr, "write").mockImplementation(() => true);
+    const driver = new GSheetsDriver({ accessToken: "token" });
+
+    await driver.init();
+    await expect(driver.destroy()).resolves.toBeUndefined();
+    expect(stderr).not.toHaveBeenCalled();
   });
 });
