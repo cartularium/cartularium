@@ -168,11 +168,37 @@ table.grid {
 .submit-stub.live { opacity: 1; }
 .submit-stub .verdict {
   flex-basis: 100%;
-  font-family: var(--font-mono);
-  font-size: 0.82rem;
+  font-size: 0.85rem;
   line-height: 1.55;
   .ok { color: var(--accent); }
-  ul { margin: 0.4em 0 0; padding-left: 1.2em; }
-  .mm { opacity: 0.7; }
+
+  .vhead { margin: 0.4em 0 0; font-size: 0.95rem; }
+  .vsub { margin: 0.25em 0 0; opacity: 0.75; }
+  .vnote { margin: 0.4em 0 0; font-family: var(--font-mono); font-size: 0.78rem; opacity: 0.7; }
+
+  .case-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-top: 0.6em;
+  }
+  .vchip {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    padding: 0.2em 0.6em;
+    border: 1px solid var(--rule);
+    border-radius: 999px;
+    white-space: nowrap;
+    &.pass { color: var(--accent); border-color: var(--accent); }
+    &.fail { border-style: dashed; }
+  }
+
+  .vlint {
+    margin: 0.5em 0 0;
+    padding-left: 1.2em;
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+  }
+  .vdiff { margin-top: 0.6em; }
 }
 .submit-stub { flex-wrap: wrap; }
