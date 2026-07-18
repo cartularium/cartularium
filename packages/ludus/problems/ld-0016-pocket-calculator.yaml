@@ -1,0 +1,111 @@
+id: ld-0016
+slug: pocket-calculator
+title: Pocket Calculator
+difficulty: 9
+requires:
+  - arrays
+  - lambda
+  - algorithmic
+tags:
+  - text
+  - algorithms
+statement: |
+  Your client found a stack of arithmetic homework to check — as text. Each
+  input row is one expression: nonnegative whole numbers joined by +, -, *
+  and /, with no spaces and no parentheses.
+
+  Evaluate each expression with the usual rules: multiplication and division
+  first, then addition and subtraction; operators of equal rank apply left
+  to right (so 9/2*4 is 18, and 2-3-4 is -5). Results may be negative or
+  fractional. Produce the value for each expression, one row per input row.
+  The grader swaps in expression lists of different lengths, so cover the
+  whole OUTPUT range: empty input rows must produce empty output rows.
+challenges:
+  - oner
+  - golfed
+template:
+  sheets:
+    - title: About
+    - title: Input
+    - title: Answer
+  input: Input!B2:B18
+  output: Answer!B3:B18
+  answerHeaders:
+    - Result
+  spreadsheetId: 1m6QttK_4xbMwEqQDtRLSB4e_l_om1kBjxIfwvTmUXFA
+reference: =MAP(Input!B3:B18, LAMBDA(s, IF(s = "", "", LET(marked,
+  SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(s, "+", "◆+◆"), "-", "◆-◆"), "*", "◆*◆"), "/", "◆/◆"),
+  toks, SPLIT(marked, "◆"), n, COLUMNS(toks), IF(n = 1, INDEX(toks, 1, 1) * 1, LET(fin, REDUCE(0 &
+  "~" & INDEX(toks, 1, 1), SEQUENCE((n - 1) / 2), LAMBDA(acc, i, LET(sm, VALUE(REGEXEXTRACT(acc,
+  "^([^~]+)")), tm, VALUE(REGEXEXTRACT(acc, "~(.+)$")), op, INDEX(toks, 1, 2 * i), nm, INDEX(toks,
+  1, 2 * i + 1), IFS(op = "+", (sm + tm) & "~" & nm, op = "-", (sm + tm) & "~" & (0 - nm), op = "*",
+  sm & "~" & (tm * nm), op = "/", sm & "~" & (tm / nm))))), VALUE(REGEXEXTRACT(fin, "^([^~]+)")) +
+  VALUE(REGEXEXTRACT(fin, "~(.+)$"))))))))
+selftest:
+  alt: =MAP(Input!B3:B18, LAMBDA(s, IF(s = "", "", LET(terms, SPLIT("@" & SUBSTITUTE(SUBSTITUTE(s,
+    "-", "+-"), "+", "+@"), "+"), SUM(MAP(terms, LAMBDA(t, LET(tt, MID(t, 2, 999), sign, IF(LEFT(tt,
+    1) = "-", -1, 1), body, IF(sign = -1, MID(tt, 2, 999), tt), fm, SUBSTITUTE(SUBSTITUTE(body, "*",
+    "◆*◆"), "/", "◆/◆"), ft, SPLIT(fm, "◆"), fn, COLUMNS(ft), val, IF(fn = 1, INDEX(ft, 1, 1) * 1,
+    REDUCE(INDEX(ft, 1, 1), SEQUENCE((fn - 1) / 2), LAMBDA(accv, j, IF(INDEX(ft, 1, 2 * j) = "*",
+    accv * INDEX(ft, 1, 2 * j + 1), accv / INDEX(ft, 1, 2 * j + 1))))), sign * val))))))))
+compare:
+  numbers:
+    epsilon: 1e-9
+  rowOrder: exact
+lint:
+  ban:
+    - volatile
+    - import
+    - external
+cases:
+  - kind: sample
+    input:
+      - - Expression
+      - - 2+3*4
+      - - 10-2*3
+      - - 12/4/3
+      - - "7"
+      - - 100/8
+      - - 2*3+4*5
+    expected:
+      - - 14
+      - - 4
+      - - 1
+      - - 7
+      - - 12.5
+      - - 26
+  - kind: hidden
+    input:
+      - - Expression
+      - - 1+2*3-4/2+10*10
+      - - 9/2*4
+      - - 123+456
+      - - 50-60
+      - - 5/3
+      - - 0*99+1
+      - - 1000000*1000000
+    expected:
+      - - 105
+      - - 18
+      - - 579
+      - - -10
+      - - 1.66666666666667
+      - - 1
+      - - 1000000000000
+  - kind: hidden
+    input:
+      - - Expression
+      - - 8/5
+      - - 2-3-4
+      - - 6*7-84/2+1
+      - - "9"
+      - - 3*3*3*3
+    expected:
+      - - 1.6
+      - - -5
+      - - 1
+      - - 9
+      - - 81
+verified:
+  asOf: 2026-07-18
+  hash: f1ad81c4366eb4cc

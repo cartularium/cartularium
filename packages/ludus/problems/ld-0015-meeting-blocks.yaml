@@ -1,0 +1,139 @@
+id: ld-0015
+slug: meeting-blocks
+title: Meeting Blocks
+difficulty: 6
+requires:
+  - arrays
+  - lambda
+tags:
+  - arrays
+  - intervals
+statement: |
+  Your client manages a conference room. The booking list has one row per
+  booking with a start and end (numbers — hours on a 24-hour clock, halves
+  allowed). Bookings overlap freely and arrive in no particular order.
+
+  Produce the room's busy blocks: merge every group of bookings that overlap
+  or touch (one ending exactly when another starts counts as one block) into
+  a single start/end row, sorted by start time. Every booking ends after it
+  starts. The grader swaps in booking lists of different lengths, so cover
+  the whole OUTPUT range: empty input rows must produce empty output rows.
+challenges:
+  - oner
+  - golfed
+template:
+  sheets:
+    - title: About
+    - title: Input
+    - title: Answer
+  input: Input!B2:C22
+  output: Answer!B3:C22
+  answerHeaders:
+    - Start
+    - End
+  spreadsheetId: 1akSzvxEJJ-EqK11Ha3aveM5lUR8HsfdMU11aLransks
+reference: =LET(raw, FILTER(Input!B3:C22, Input!B3:B22 <> ""), srt, SORT(raw, 1, TRUE, 2, TRUE),
+  merged, REDUCE("", SEQUENCE(ROWS(srt)), LAMBDA(acc, i, LET(st, INDEX(srt, i, 1), en, INDEX(srt, i,
+  2), IF(acc = "", st & "~" & en, LET(le, VALUE(REGEXEXTRACT(acc, "([^~◆]+)$")), IF(st <= le, IF(en
+  > le, REGEXREPLACE(acc, "[^~◆]+$", "" & en), acc), acc & "◆" & st & "~" & en)))))), rows2,
+  TRANSPOSE(SPLIT(merged, "◆")), ARRAYFORMULA(SPLIT(rows2, "~")))
+selftest:
+  alt: =LET(raw, FILTER(Input!B3:C22, Input!B3:B22 <> ""), sts, INDEX(raw, , 1), ens, INDEX(raw, , 2),
+    bs, SORT(UNIQUE(FILTER(sts, MAP(sts, LAMBDA(x, SUMPRODUCT((sts < x) * (ens >= x)) = 0))))), be,
+    SORT(UNIQUE(FILTER(ens, MAP(ens, LAMBDA(x, SUMPRODUCT((sts <= x) * (ens > x)) = 0))))), {bs,
+    be})
+compare:
+  numbers:
+    epsilon: 1e-9
+  rowOrder: exact
+lint:
+  ban:
+    - volatile
+    - import
+    - external
+cases:
+  - kind: sample
+    input:
+      - - Start
+        - End
+      - - 9
+        - 10.5
+      - - 10
+        - 12
+      - - 13
+        - 14
+      - - 13.5
+        - 15
+      - - 16
+        - 17
+      - - 9.5
+        - 10
+      - - 14.75
+        - 15.25
+    expected:
+      - - 9
+        - 12
+      - - 13
+        - 15.25
+      - - 16
+        - 17
+  - kind: hidden
+    input:
+      - - Start
+        - End
+      - - 1
+        - 2
+      - - 2
+        - 3
+      - - 3
+        - 4
+      - - 5
+        - 6
+      - - 6
+        - 7
+      - - 10
+        - 11
+    expected:
+      - - 1
+        - 4
+      - - 5
+        - 7
+      - - 10
+        - 11
+  - kind: hidden
+    input:
+      - - Start
+        - End
+      - - 0
+        - 10
+      - - 2
+        - 3
+      - - 2
+        - 3
+      - - 4
+        - 8
+      - - 12
+        - 13
+      - - 11.5
+        - 12
+      - - 20
+        - 21
+    expected:
+      - - 0
+        - 10
+      - - 11.5
+        - 13
+      - - 20
+        - 21
+  - kind: hidden
+    input:
+      - - Start
+        - End
+      - - 14
+        - 15.5
+    expected:
+      - - 14
+        - 15.5
+verified:
+  asOf: 2026-07-18
+  hash: 736b33661c41d2a5

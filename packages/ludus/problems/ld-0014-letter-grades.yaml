@@ -1,0 +1,177 @@
+id: ld-0014
+slug: letter-grades
+title: Letter Grades
+difficulty: 2
+tags:
+  - lookup
+statement: |
+  Your client teaches a course and needs scores turned into grades. The
+  grading scheme is a boundary table: each row gives the minimum score for a
+  grade, sorted from lowest to highest. A score earns the grade on the last
+  row whose minimum is less than or equal to it. The lowest minimum is
+  always low enough to catch every score.
+
+  Produce the grade for each score, one row per score, aligned with the
+  input. The grader swaps in different schemes and score lists — different
+  cutoffs, different labels, different lengths — so read both tables and
+  cover the whole OUTPUT range: empty score rows must produce empty output
+  rows.
+template:
+  sheets:
+    - title: About
+    - title: Input
+    - title: Answer
+  input: Input!B2:E23
+  output: Answer!B3:B23
+  answerHeaders:
+    - Grade
+  spreadsheetId: 1X03RgsLx_G9phTRGrR_Zk54KzGsBzHVOHfS5Y_JUJ1g
+reference: =LET(bt, FILTER(Input!B3:C9, Input!B3:B9 <> ""), MAP(Input!E3:E23, LAMBDA(s, IF(s = "",
+  "", VLOOKUP(s, bt, 2, TRUE)))))
+selftest:
+  alt: =LET(mins, FILTER(Input!B3:B9, Input!B3:B9 <> ""), grades, FILTER(Input!C3:C9, Input!B3:B9 <>
+    ""), MAP(Input!E3:E23, LAMBDA(s, IF(s = "", "", INDEX(grades, SUMPRODUCT((mins <= s) * 1))))))
+compare:
+  numbers:
+    epsilon: 1e-9
+  rowOrder: exact
+lint:
+  ban:
+    - volatile
+    - import
+    - external
+cases:
+  - kind: sample
+    input:
+      - - Min Score
+        - Grade
+        - null
+        - Score
+      - - 0
+        - F
+        - null
+        - 84
+      - - 60
+        - D
+        - null
+        - 59
+      - - 70
+        - C
+        - null
+        - 90
+      - - 80
+        - B
+        - null
+        - 72.5
+      - - 90
+        - A
+        - null
+        - 100
+      - - null
+        - null
+        - null
+        - 66
+    expected:
+      - - B
+      - - F
+      - - A
+      - - C
+      - - A
+      - - D
+  - kind: hidden
+    input:
+      - - Min Score
+        - Grade
+        - null
+        - Score
+      - - 0
+        - Bronze
+        - null
+        - 50
+      - - 50
+        - Silver
+        - null
+        - 75
+      - - 75
+        - Gold
+        - null
+        - 95
+      - - 95
+        - Platinum
+        - null
+        - 49.99
+      - - null
+        - null
+        - null
+        - 94.5
+      - - null
+        - null
+        - null
+        - 0
+      - - null
+        - null
+        - null
+        - 100
+    expected:
+      - - Silver
+      - - Gold
+      - - Platinum
+      - - Bronze
+      - - Gold
+      - - Bronze
+      - - Platinum
+  - kind: hidden
+    input:
+      - - Min Score
+        - Grade
+        - null
+        - Score
+      - - 0
+        - F
+        - null
+        - 57.25
+      - - 55
+        - D-
+        - null
+        - 55
+      - - 60
+        - D
+        - null
+        - 92.8
+      - - 65
+        - C
+        - null
+        - 12
+      - - 78
+        - B
+        - null
+        - 78
+      - - 88
+        - A
+        - null
+        - 87.99
+      - - 97
+        - A+
+        - null
+        - 97
+      - - null
+        - null
+        - null
+        - 64.99
+      - - null
+        - null
+        - null
+        - 100
+    expected:
+      - - D-
+      - - D-
+      - - A
+      - - F
+      - - B
+      - - B
+      - - A+
+      - - D
+      - - A+
+verified:
+  asOf: 2026-07-18
+  hash: 6eab634c7fba6066
