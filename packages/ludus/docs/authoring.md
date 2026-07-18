@@ -195,7 +195,14 @@ against these before blaming the judge:
   with plausible-looking output rather than erroring (cost ld-0006 an oracle
   run of wrong RLE encodings). Wrap the expression in ARRAYFORMULA.
 - LET rejects binding names that parse as cell references: `c1`, `A`, `B`,
-  `I`, `V` all fail with "not a valid name". Use words.
+  `I`, `V` all fail with "not a valid name". Worse, names that merely *look*
+  ref-shaped — impossible refs like `d0`/`fr0` (row zero) or real addresses
+  like `nb1` — kill the whole formula with a bare "Formula parse error".
+  Use pure words, no trailing digits.
+- An unbalanced paren also surfaces only at evaluation time, as the same
+  unhelpful "Formula parse error" (one missing closer cost a six-probe
+  hunt). `oracle --check` lints paren balance for `reference` and
+  `selftest.alt` offline — run it before blaming anything else.
 - CHAR of a control code returns an *empty string* — `LEN(CHAR(30)) = 0` —
   so control characters can't be marker delimiters (SPLIT then errors with
   "parameter 2 value should be non-empty"). Use printable glyphs the data
