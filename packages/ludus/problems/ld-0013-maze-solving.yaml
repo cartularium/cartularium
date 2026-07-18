@@ -1,0 +1,1318 @@
+id: ld-0013
+slug: maze-solving
+title: Maze Solving
+attribution: Adapted from "Maze Solving" in the astral.cafe Community Practice Problems sheet.
+difficulty: 8
+requires:
+  - arrays
+  - lambda
+  - algorithmic
+tags:
+  - graphs
+  - algorithms
+statement: |
+  You find yourself stuck in a maze! You have to find the shortest way out.
+
+  INPUT is a 19-by-19 grid: a cell containing 1 is a wall, an empty cell is
+  open. You start at the top-left corner and must reach the bottom-right
+  corner, moving up, down, left, or right through open cells; you cannot
+  leave the grid.
+
+  Give your answer as a list of coordinates of the form
+  <row>|<column>, one per row of OUTPUT, from the start (1|1) to the exit
+  (19|19). Rows count from the top, columns from the left. The corners are
+  always open, and there is exactly one shortest path.
+challenges:
+  - oner
+  - generalized
+  - golfed
+template:
+  sheets:
+    - title: About
+    - title: Input
+    - title: Answer
+  input: Input!B2:T20
+  output: Answer!B3:B62
+  answerHeaders:
+    - Path
+  spreadsheetId: 16W65ltaZymUp7tQeHY1RIQ4QErxj9G02orpQdMYKkmc
+reference: =LET(g, Input!B2:T20, rn, 19, cn, 19, big, 99999, brow, ARRAYFORMULA(SEQUENCE(1, cn) * 0
+  + big), bcol, ARRAYFORMULA(SEQUENCE(rn) * 0 + big), init, MAKEARRAY(rn, cn, LAMBDA(r, c, IF(AND(r
+  = 1, c = 1), 0, big))), dist, REDUCE(init, SEQUENCE(64), LAMBDA(dd, k, LET(up, {CHOOSEROWS(dd,
+  SEQUENCE(rn - 1, 1, 2)); brow}, dn, {brow; CHOOSEROWS(dd, SEQUENCE(rn - 1))}, lf, {CHOOSECOLS(dd,
+  SEQUENCE(1, cn - 1, 2)), bcol}, rt, {bcol, CHOOSECOLS(dd, SEQUENCE(1, cn - 1))}, nbv,
+  ARRAYFORMULA(IF(up < dn, up, dn)), nbh, ARRAYFORMULA(IF(lf < rt, lf, rt)), cand,
+  ARRAYFORMULA(IF(nbv < nbh, nbv, nbh) + 1), ARRAYFORMULA(IF(g <> 1, IF(dd < cand, dd, cand),
+  big))))), walked, REDUCE(rn & "|" & cn, SEQUENCE(INDEX(dist, rn, cn)), LAMBDA(acc, k, LET(y,
+  VALUE(REGEXEXTRACT(acc, "^(\d+)")), x, VALUE(REGEXEXTRACT(acc, "^\d+\|(\d+)")), dv, INDEX(dist, y,
+  x), uu, IF(y = 1, big, INDEX(dist, y - 1, x)), ddn, IF(y = rn, big, INDEX(dist, y + 1, x)), ll,
+  IF(x = 1, big, INDEX(dist, y, x - 1)), IF(uu = dv - 1, (y - 1) & "|" & x, IF(ddn = dv - 1, (y + 1)
+  & "|" & x, IF(ll = dv - 1, y & "|" & (x - 1), y & "|" & (x + 1)))) & "◆" & acc))),
+  TRANSPOSE(SPLIT(walked, "◆")))
+selftest:
+  alt: =LET(g, Input!B2:T20, rn, 19, cn, 19, big, 99999, init, MAKEARRAY(rn, cn, LAMBDA(r, c, IF(AND(r
+    = rn, c = cn), 0, big))), dist, REDUCE(init, SEQUENCE(64), LAMBDA(dd, k, MAKEARRAY(rn, cn,
+    LAMBDA(r, c, IF(INDEX(g, r, c) = 1, big, LET(best, MIN(IF(r = 1, big, INDEX(dd, r - 1, c)), IF(r
+    = rn, big, INDEX(dd, r + 1, c)), IF(c = 1, big, INDEX(dd, r, c - 1)), IF(c = cn, big, INDEX(dd,
+    r, c + 1))) + 1, MIN(INDEX(dd, r, c), best))))))), walked, REDUCE("1|1", SEQUENCE(INDEX(dist, 1,
+    1)), LAMBDA(acc, k, LET(cur, REGEXEXTRACT(acc, "[^◆]+$"), y, VALUE(REGEXEXTRACT(cur, "^(\d+)")),
+    x, VALUE(REGEXEXTRACT(cur, "\|(\d+)$")), dv, INDEX(dist, y, x), uu, IF(y = 1, big, INDEX(dist, y
+    - 1, x)), ddn, IF(y = rn, big, INDEX(dist, y + 1, x)), ll, IF(x = 1, big, INDEX(dist, y, x -
+    1)), acc & "◆" & IF(uu = dv - 1, (y - 1) & "|" & x, IF(ddn = dv - 1, (y + 1) & "|" & x, IF(ll =
+    dv - 1, y & "|" & (x - 1), y & "|" & (x + 1))))))), TRANSPOSE(SPLIT(walked, "◆")))
+compare:
+  numbers:
+    epsilon: 1e-9
+  rowOrder: exact
+lint:
+  ban:
+    - volatile
+    - import
+    - external
+cases:
+  - kind: sample
+    input:
+      - - null
+        - 1
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - 1
+        - null
+        - null
+        - null
+        - null
+        - null
+      - - null
+        - 1
+        - 1
+        - 1
+        - 1
+        - 1
+        - 1
+        - 1
+        - 1
+        - 1
+        - null
+        - 1
+        - null
+        - 1
+        - null
+        - 1
+        - 1
+        - 1
+        - null
+      - - null
+        - null
+        - null
+        - 1
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - 1
+        - null
+        - 1
+        - null
+        - null
+        - null
+        - 1
+        - null
+      - - 1
+        - 1
+        - null
+        - 1
+        - null
+        - 1
+        - 1
+        - 1
+        - null
+        - 1
+        - 1
+        - 1
+        - 1
+        - 1
+        - 1
+        - 1
+        - null
+        - 1
+        - null
+      - - null
+        - 1
+        - null
+        - 1
+        - null
+        - null
+        - null
+        - 1
+        - null
+        - 1
+        - null
+        - null
+        - null
+        - null
+        - null
+        - 1
+        - null
+        - 1
+        - null
+      - - null
+        - 1
+        - null
+        - 1
+        - 1
+        - 1
+        - null
+        - 1
+        - 1
+        - 1
+        - null
+        - 1
+        - 1
+        - 1
+        - null
+        - 1
+        - null
+        - 1
+        - null
+      - - null
+        - 1
+        - null
+        - null
+        - null
+        - 1
+        - null
+        - null
+        - null
+        - 1
+        - null
+        - 1
+        - null
+        - 1
+        - null
+        - null
+        - null
+        - 1
+        - null
+      - - null
+        - 1
+        - 1
+        - 1
+        - null
+        - 1
+        - null
+        - 1
+        - null
+        - 1
+        - null
+        - 1
+        - null
+        - 1
+        - 1
+        - 1
+        - 1
+        - 1
+        - null
+      - - null
+        - null
+        - null
+        - 1
+        - null
+        - 1
+        - null
+        - 1
+        - null
+        - 1
+        - null
+        - 1
+        - null
+        - null
+        - null
+        - 1
+        - null
+        - null
+        - null
+      - - null
+        - 1
+        - null
+        - 1
+        - null
+        - 1
+        - null
+        - 1
+        - null
+        - 1
+        - null
+        - 1
+        - 1
+        - 1
+        - null
+        - 1
+        - null
+        - 1
+        - null
+      - - null
+        - 1
+        - null
+        - 1
+        - null
+        - 1
+        - null
+        - 1
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - 1
+        - null
+        - 1
+        - null
+      - - 1
+        - 1
+        - null
+        - 1
+        - null
+        - 1
+        - 1
+        - 1
+        - 1
+        - 1
+        - 1
+        - 1
+        - 1
+        - 1
+        - 1
+        - 1
+        - null
+        - 1
+        - 1
+      - - null
+        - null
+        - null
+        - 1
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - 1
+        - null
+        - null
+        - null
+      - - null
+        - 1
+        - 1
+        - 1
+        - 1
+        - 1
+        - 1
+        - 1
+        - 1
+        - 1
+        - 1
+        - 1
+        - 1
+        - 1
+        - null
+        - 1
+        - null
+        - 1
+        - null
+      - - null
+        - null
+        - null
+        - 1
+        - null
+        - null
+        - null
+        - 1
+        - null
+        - null
+        - null
+        - null
+        - null
+        - 1
+        - null
+        - 1
+        - null
+        - 1
+        - null
+      - - null
+        - 1
+        - null
+        - 1
+        - null
+        - 1
+        - null
+        - 1
+        - null
+        - 1
+        - null
+        - 1
+        - 1
+        - 1
+        - null
+        - 1
+        - 1
+        - 1
+        - null
+      - - null
+        - 1
+        - null
+        - 1
+        - null
+        - 1
+        - null
+        - 1
+        - null
+        - 1
+        - null
+        - 1
+        - null
+        - null
+        - null
+        - 1
+        - null
+        - null
+        - null
+      - - null
+        - 1
+        - null
+        - 1
+        - null
+        - 1
+        - null
+        - 1
+        - null
+        - 1
+        - null
+        - 1
+        - null
+        - 1
+        - 1
+        - 1
+        - null
+        - 1
+        - null
+      - - null
+        - 1
+        - null
+        - null
+        - null
+        - 1
+        - null
+        - null
+        - null
+        - 1
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - 1
+        - null
+    expected:
+      - - 1|1
+      - - 2|1
+      - - 3|1
+      - - 3|2
+      - - 3|3
+      - - 4|3
+      - - 5|3
+      - - 6|3
+      - - 7|3
+      - - 7|4
+      - - 7|5
+      - - 8|5
+      - - 9|5
+      - - 10|5
+      - - 11|5
+      - - 12|5
+      - - 13|5
+      - - 13|6
+      - - 13|7
+      - - 13|8
+      - - 13|9
+      - - 13|10
+      - - 13|11
+      - - 13|12
+      - - 13|13
+      - - 13|14
+      - - 13|15
+      - - 14|15
+      - - 15|15
+      - - 16|15
+      - - 17|15
+      - - 17|14
+      - - 17|13
+      - - 18|13
+      - - 19|13
+      - - 19|14
+      - - 19|15
+      - - 19|16
+      - - 19|17
+      - - 18|17
+      - - 17|17
+      - - 17|18
+      - - 17|19
+      - - 18|19
+      - - 19|19
+  - kind: hidden
+    input:
+      - - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - 1
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+      - - 1
+        - 1
+        - 1
+        - 1
+        - 1
+        - 1
+        - 1
+        - 1
+        - 1
+        - 1
+        - null
+        - 1
+        - 1
+        - 1
+        - null
+        - 1
+        - 1
+        - 1
+        - null
+      - - null
+        - null
+        - null
+        - 1
+        - null
+        - null
+        - null
+        - null
+        - null
+        - 1
+        - null
+        - null
+        - null
+        - 1
+        - null
+        - 1
+        - null
+        - null
+        - null
+      - - null
+        - 1
+        - null
+        - 1
+        - 1
+        - 1
+        - null
+        - 1
+        - null
+        - 1
+        - 1
+        - 1
+        - null
+        - 1
+        - null
+        - 1
+        - 1
+        - 1
+        - null
+      - - null
+        - 1
+        - null
+        - null
+        - null
+        - null
+        - null
+        - 1
+        - null
+        - null
+        - null
+        - 1
+        - null
+        - 1
+        - null
+        - null
+        - null
+        - 1
+        - null
+      - - null
+        - 1
+        - 1
+        - 1
+        - 1
+        - 1
+        - 1
+        - 1
+        - 1
+        - 1
+        - null
+        - 1
+        - null
+        - 1
+        - 1
+        - 1
+        - null
+        - 1
+        - null
+      - - null
+        - 1
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - 1
+        - null
+        - 1
+        - null
+        - null
+        - null
+        - null
+        - null
+        - 1
+        - null
+      - - null
+        - 1
+        - null
+        - 1
+        - 1
+        - 1
+        - 1
+        - 1
+        - null
+        - 1
+        - 1
+        - 1
+        - 1
+        - 1
+        - 1
+        - 1
+        - 1
+        - 1
+        - null
+      - - null
+        - 1
+        - null
+        - null
+        - null
+        - 1
+        - null
+        - 1
+        - null
+        - null
+        - null
+        - 1
+        - null
+        - null
+        - null
+        - null
+        - null
+        - 1
+        - null
+      - - null
+        - 1
+        - 1
+        - 1
+        - null
+        - 1
+        - null
+        - 1
+        - 1
+        - 1
+        - null
+        - 1
+        - null
+        - 1
+        - null
+        - 1
+        - null
+        - 1
+        - null
+      - - null
+        - null
+        - null
+        - 1
+        - null
+        - 1
+        - null
+        - null
+        - null
+        - 1
+        - null
+        - null
+        - null
+        - 1
+        - null
+        - 1
+        - null
+        - 1
+        - null
+      - - null
+        - 1
+        - 1
+        - 1
+        - null
+        - 1
+        - null
+        - 1
+        - null
+        - 1
+        - 1
+        - 1
+        - 1
+        - 1
+        - null
+        - 1
+        - null
+        - 1
+        - null
+      - - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - 1
+        - null
+        - 1
+        - null
+        - null
+        - null
+        - null
+        - null
+        - 1
+        - null
+        - 1
+        - null
+      - - null
+        - 1
+        - 1
+        - 1
+        - 1
+        - 1
+        - 1
+        - 1
+        - 1
+        - 1
+        - null
+        - 1
+        - 1
+        - 1
+        - 1
+        - 1
+        - null
+        - 1
+        - null
+      - - null
+        - null
+        - null
+        - null
+        - null
+        - 1
+        - null
+        - null
+        - null
+        - null
+        - null
+        - 1
+        - null
+        - null
+        - null
+        - 1
+        - null
+        - 1
+        - null
+      - - 1
+        - 1
+        - 1
+        - 1
+        - null
+        - 1
+        - null
+        - 1
+        - 1
+        - 1
+        - 1
+        - 1
+        - null
+        - 1
+        - null
+        - 1
+        - null
+        - 1
+        - null
+      - - null
+        - 1
+        - null
+        - null
+        - null
+        - 1
+        - null
+        - 1
+        - null
+        - null
+        - null
+        - 1
+        - null
+        - 1
+        - null
+        - 1
+        - null
+        - 1
+        - null
+      - - null
+        - 1
+        - null
+        - 1
+        - 1
+        - 1
+        - null
+        - 1
+        - null
+        - 1
+        - null
+        - 1
+        - null
+        - 1
+        - null
+        - 1
+        - 1
+        - 1
+        - null
+      - - null
+        - null
+        - null
+        - null
+        - null
+        - 1
+        - null
+        - null
+        - null
+        - 1
+        - null
+        - null
+        - null
+        - 1
+        - null
+        - null
+        - null
+        - null
+        - null
+    expected:
+      - - 1|1
+      - - 1|2
+      - - 1|3
+      - - 1|4
+      - - 1|5
+      - - 1|6
+      - - 1|7
+      - - 1|8
+      - - 1|9
+      - - 1|10
+      - - 1|11
+      - - 2|11
+      - - 3|11
+      - - 3|12
+      - - 3|13
+      - - 4|13
+      - - 5|13
+      - - 6|13
+      - - 7|13
+      - - 7|14
+      - - 7|15
+      - - 7|16
+      - - 7|17
+      - - 6|17
+      - - 5|17
+      - - 5|16
+      - - 5|15
+      - - 4|15
+      - - 3|15
+      - - 2|15
+      - - 1|15
+      - - 1|16
+      - - 1|17
+      - - 1|18
+      - - 1|19
+      - - 2|19
+      - - 3|19
+      - - 4|19
+      - - 5|19
+      - - 6|19
+      - - 7|19
+      - - 8|19
+      - - 9|19
+      - - 10|19
+      - - 11|19
+      - - 12|19
+      - - 13|19
+      - - 14|19
+      - - 15|19
+      - - 16|19
+      - - 17|19
+      - - 18|19
+      - - 19|19
+  - kind: hidden
+    input:
+      - - null
+        - 1
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - 1
+        - null
+        - null
+        - null
+      - - null
+        - 1
+        - 1
+        - 1
+        - 1
+        - 1
+        - 1
+        - 1
+        - 1
+        - 1
+        - null
+        - 1
+        - 1
+        - 1
+        - null
+        - 1
+        - null
+        - 1
+        - null
+      - - null
+        - null
+        - null
+        - null
+        - null
+        - 1
+        - null
+        - null
+        - null
+        - 1
+        - null
+        - null
+        - null
+        - 1
+        - null
+        - null
+        - null
+        - 1
+        - null
+      - - 1
+        - 1
+        - 1
+        - 1
+        - null
+        - 1
+        - null
+        - 1
+        - null
+        - 1
+        - 1
+        - 1
+        - null
+        - 1
+        - 1
+        - 1
+        - 1
+        - 1
+        - 1
+      - - null
+        - 1
+        - null
+        - null
+        - null
+        - 1
+        - null
+        - 1
+        - null
+        - null
+        - null
+        - null
+        - null
+        - 1
+        - null
+        - null
+        - null
+        - null
+        - null
+      - - null
+        - 1
+        - null
+        - 1
+        - 1
+        - 1
+        - null
+        - 1
+        - 1
+        - 1
+        - 1
+        - 1
+        - 1
+        - 1
+        - null
+        - 1
+        - 1
+        - 1
+        - null
+      - - null
+        - 1
+        - null
+        - 1
+        - null
+        - null
+        - null
+        - null
+        - null
+        - 1
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - 1
+        - null
+      - - null
+        - 1
+        - null
+        - 1
+        - 1
+        - 1
+        - null
+        - 1
+        - null
+        - 1
+        - null
+        - 1
+        - 1
+        - 1
+        - 1
+        - 1
+        - 1
+        - 1
+        - null
+      - - null
+        - 1
+        - null
+        - null
+        - null
+        - 1
+        - null
+        - 1
+        - null
+        - 1
+        - null
+        - 1
+        - null
+        - 1
+        - null
+        - null
+        - null
+        - 1
+        - null
+      - - null
+        - 1
+        - 1
+        - 1
+        - null
+        - 1
+        - 1
+        - 1
+        - null
+        - 1
+        - null
+        - 1
+        - null
+        - 1
+        - null
+        - 1
+        - null
+        - 1
+        - null
+      - - null
+        - null
+        - null
+        - 1
+        - null
+        - null
+        - null
+        - 1
+        - null
+        - null
+        - null
+        - 1
+        - null
+        - 1
+        - null
+        - 1
+        - null
+        - null
+        - null
+      - - null
+        - 1
+        - 1
+        - 1
+        - 1
+        - 1
+        - null
+        - 1
+        - 1
+        - 1
+        - null
+        - 1
+        - null
+        - 1
+        - null
+        - 1
+        - 1
+        - 1
+        - 1
+      - - null
+        - null
+        - null
+        - null
+        - null
+        - 1
+        - null
+        - null
+        - null
+        - 1
+        - null
+        - null
+        - null
+        - 1
+        - null
+        - 1
+        - null
+        - null
+        - null
+      - - 1
+        - 1
+        - null
+        - 1
+        - null
+        - 1
+        - 1
+        - 1
+        - null
+        - 1
+        - 1
+        - 1
+        - null
+        - 1
+        - null
+        - 1
+        - null
+        - 1
+        - null
+      - - null
+        - null
+        - null
+        - 1
+        - null
+        - null
+        - null
+        - 1
+        - null
+        - 1
+        - null
+        - null
+        - null
+        - 1
+        - null
+        - null
+        - null
+        - 1
+        - null
+      - - null
+        - 1
+        - 1
+        - 1
+        - 1
+        - 1
+        - 1
+        - 1
+        - null
+        - 1
+        - 1
+        - 1
+        - 1
+        - 1
+        - 1
+        - 1
+        - 1
+        - 1
+        - null
+      - - null
+        - null
+        - null
+        - 1
+        - null
+        - null
+        - null
+        - null
+        - null
+        - 1
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - 1
+        - null
+      - - null
+        - 1
+        - null
+        - 1
+        - null
+        - 1
+        - 1
+        - 1
+        - 1
+        - 1
+        - null
+        - 1
+        - 1
+        - 1
+        - 1
+        - 1
+        - null
+        - 1
+        - null
+      - - null
+        - 1
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - 1
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+    expected:
+      - - 1|1
+      - - 2|1
+      - - 3|1
+      - - 3|2
+      - - 3|3
+      - - 3|4
+      - - 3|5
+      - - 4|5
+      - - 5|5
+      - - 5|4
+      - - 5|3
+      - - 6|3
+      - - 7|3
+      - - 8|3
+      - - 9|3
+      - - 9|4
+      - - 9|5
+      - - 10|5
+      - - 11|5
+      - - 11|6
+      - - 11|7
+      - - 12|7
+      - - 13|7
+      - - 13|8
+      - - 13|9
+      - - 14|9
+      - - 15|9
+      - - 16|9
+      - - 17|9
+      - - 17|8
+      - - 17|7
+      - - 17|6
+      - - 17|5
+      - - 18|5
+      - - 19|5
+      - - 19|6
+      - - 19|7
+      - - 19|8
+      - - 19|9
+      - - 19|10
+      - - 19|11
+      - - 18|11
+      - - 17|11
+      - - 17|12
+      - - 17|13
+      - - 17|14
+      - - 17|15
+      - - 17|16
+      - - 17|17
+      - - 18|17
+      - - 19|17
+      - - 19|18
+      - - 19|19
+verified:
+  asOf: 2026-07-18
+  hash: 3f14f545e0a2f185

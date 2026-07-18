@@ -1,0 +1,236 @@
+id: ld-0012
+slug: cheapest-flights
+title: Cheapest Flights
+attribution: Adapted from "Cheapest Flights" in the astral.cafe Community Practice Problems sheet.
+difficulty: 8
+requires:
+  - arrays
+  - lambda
+  - algorithmic
+tags:
+  - graphs
+  - algorithms
+statement: |
+  You and a few friends are planning a holiday and want to spend as little
+  money on flights as possible. You've gathered data on every flight
+  available: where it departs, where it lands, and what it costs. Flights
+  are one-way — a listed flight cannot be flown in reverse. The same pair of
+  airports may be listed more than once at different prices.
+
+  Given the source and destination airports, produce the cheapest possible
+  route as a list of airports in visiting order, one per row, starting with
+  the source and ending with the destination. There is always exactly one
+  cheapest route.
+challenges:
+  - oner
+  - generalized
+  - golfed
+template:
+  sheets:
+    - title: About
+    - title: Input
+    - title: Answer
+  input: Input!B2:F22
+  output: Answer!B3:B22
+  answerHeaders:
+    - Route
+  spreadsheetId: 18YAPC-QSts5jOprDEcukx3XGH2ALs3vS9NcsjssE6eo
+reference: =LET(fcol, Input!B3:B22, fr, FILTER(fcol, fcol <> ""), e, ROWS(fr), tt,
+  ARRAY_CONSTRAIN(Input!C3:C22, e, 1), w, ARRAY_CONSTRAIN(Input!D3:D22, e, 1), src, Input!F3, dst,
+  Input!F5, nodes, UNIQUE({fr; tt}), m, ROWS(nodes), big, 9999999, dini, ARRAYFORMULA(IF(nodes =
+  src, 0, big)), pini, MAKEARRAY(m, 1, LAMBDA(rr, cc, "")), st, REDUCE({dini, pini}, SEQUENCE(m),
+  LAMBDA(stt, k, LET(dist, INDEX(stt, , 1), prd, INDEX(stt, , 2), ed, ARRAYFORMULA(VLOOKUP(fr,
+  {nodes, dist}, 2, FALSE) + w), nd, MAP(nodes, dist, LAMBDA(v, dv, MIN(dv, IFERROR(MIN(FILTER(ed,
+  tt = v)), big)))), np, MAP(nodes, dist, prd, LAMBDA(v, dv, pv, LET(cand, IFERROR(MIN(FILTER(ed, tt
+  = v)), big), IF(cand < dv, INDEX(fr, MATCH(1, ARRAYFORMULA((tt = v) * (ed = cand) * 1), 0)),
+  pv)))), {nd, np}))), dist, INDEX(st, , 1), prd, INDEX(st, , 2), walked, REDUCE(dst, SEQUENCE(m),
+  LAMBDA(acc, k, LET(cur, REGEXEXTRACT(acc, "^[^◆]+"), IF(cur = src, acc, VLOOKUP(cur, {nodes, prd},
+  2, FALSE) & "◆" & acc)))), TRANSPOSE(SPLIT(walked, "◆")))
+selftest:
+  alt: =LET(fcol, Input!B3:B22, fr, FILTER(fcol, fcol <> ""), e, ROWS(fr), tt,
+    ARRAY_CONSTRAIN(Input!C3:C22, e, 1), w, ARRAY_CONSTRAIN(Input!D3:D22, e, 1), src, Input!F3, dst,
+    Input!F5, nodes, UNIQUE({fr; tt}), m, ROWS(nodes), big, 9999999, wm, MAKEARRAY(m, m, LAMBDA(r,
+    c, IFERROR(MIN(FILTER(w, (fr = INDEX(nodes, r)) * (tt = INDEX(nodes, c)))), big))), dini,
+    ARRAYFORMULA(IF(nodes = src, 0, big)), dist, REDUCE(dini, SEQUENCE(m), LAMBDA(dv, k, LET(relax,
+    TRANSPOSE(BYCOL(ARRAYFORMULA(wm + dv), LAMBDA(col, MIN(col)))), ARRAYFORMULA(IF(dv < relax, dv,
+    relax))))), walked, REDUCE(dst, SEQUENCE(m), LAMBDA(acc, k, LET(cur, REGEXEXTRACT(acc,
+    "^[^◆]+"), IF(cur = src, acc, LET(ci, MATCH(cur, nodes, 0), dcur, INDEX(dist, ci), pidx,
+    MATCH(1, ARRAYFORMULA((ARRAYFORMULA(dist + INDEX(wm, , ci)) = dcur) * 1), 0), INDEX(nodes, pidx)
+    & "◆" & acc))))), TRANSPOSE(SPLIT(walked, "◆")))
+compare:
+  numbers:
+    epsilon: 1e-9
+  rowOrder: exact
+lint:
+  ban:
+    - volatile
+    - import
+    - external
+cases:
+  - kind: sample
+    input:
+      - - From
+        - To
+        - Cost
+        - null
+        - Source
+      - - HND
+        - SFO
+        - 450
+        - null
+        - HND
+      - - HND
+        - SEA
+        - 400
+        - null
+        - Destination
+      - - HND
+        - JFK
+        - 1400
+        - null
+        - JFK
+      - - SFO
+        - DEN
+        - 200
+      - - SEA
+        - DEN
+        - 300
+      - - SFO
+        - ORD
+        - 500
+      - - DEN
+        - ORD
+        - 150
+      - - ORD
+        - JFK
+        - 180
+      - - DEN
+        - JFK
+        - 400
+      - - SEA
+        - JFK
+        - 900
+    expected:
+      - - HND
+      - - SFO
+      - - DEN
+      - - ORD
+      - - JFK
+  - kind: hidden
+    input:
+      - - From
+        - To
+        - Cost
+        - null
+        - Source
+      - - AAA
+        - BBB
+        - 50
+        - null
+        - AAA
+      - - AAA
+        - CCC
+        - 120
+        - null
+        - Destination
+      - - BBB
+        - DDD
+        - 500
+        - null
+        - JJJ
+      - - CCC
+        - DDD
+        - 60
+      - - DDD
+        - EEE
+        - 40
+      - - EEE
+        - JJJ
+        - 100
+      - - CCC
+        - FFF
+        - 90
+      - - FFF
+        - GGG
+        - 80
+      - - GGG
+        - JJJ
+        - 150
+      - - AAA
+        - JJJ
+        - 999
+      - - DDD
+        - JJJ
+        - 300
+      - - BBB
+        - EEE
+        - 350
+    expected:
+      - - AAA
+      - - CCC
+      - - DDD
+      - - EEE
+      - - JJJ
+  - kind: hidden
+    input:
+      - - From
+        - To
+        - Cost
+        - null
+        - Source
+      - - KIX
+        - NGO
+        - 100
+        - null
+        - KIX
+      - - NGO
+        - CTS
+        - 100
+        - null
+        - Destination
+      - - KIX
+        - CTS
+        - 150
+        - null
+        - CTS
+      - - CTS
+        - KIX
+        - 10
+      - - NGO
+        - KIX
+        - 5
+    expected:
+      - - KIX
+      - - CTS
+  - kind: hidden
+    input:
+      - - From
+        - To
+        - Cost
+        - null
+        - Source
+      - - PAR
+        - LYS
+        - 80
+        - null
+        - PAR
+      - - PAR
+        - LYS
+        - 60
+        - null
+        - Destination
+      - - LYS
+        - NCE
+        - 70
+        - null
+        - NCE
+      - - PAR
+        - NCE
+        - 200
+    expected:
+      - - PAR
+      - - LYS
+      - - NCE
+verified:
+  asOf: 2026-07-18
+  hash: d493c970d36c4c97
