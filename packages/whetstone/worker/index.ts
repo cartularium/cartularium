@@ -4,9 +4,10 @@
 // polls the verdict. Scratch sheets are deleted after clean verdicts
 // (drive.file scope); failures keep theirs for debugging — natural quarantine.
 // Upgrade path when volume demands it: CF Queues consumer + scratch pool.
-import { deleteSpreadsheet, parseSpreadsheetId, setTokenProvider } from "../src/api.js";
+import { deleteSpreadsheet, parseSpreadsheetId, setTokenProvider, sheetsApi } from "../src/api.js";
 import { judge } from "../src/judge.js";
 import type { Problem } from "../src/problem-types.js";
+import type { Snapshot } from "../src/snapshot.js";
 import problemsJson from "./problems.gen.json";
 
 export interface Env {
@@ -19,6 +20,12 @@ export interface Env {
 
 const PROBLEMS = problemsJson as unknown as Record<string, Problem>;
 const RATE_LIMIT = { max: 10, windowMs: 10 * 60_000 };
+// free-tier CPU guard: bound the extraction payload by refusing huge grids
+// (capacity counts empty cells too — a fresh tab is 1000×26 = 26k)
+const MAX_GRID_CELLS = 250_000;
+// submissions running longer than this are considered stalled (waitUntil died)
+const STALL_MS = 3 * 60_000;
+const MAX_STORED_PROGRAM_BYTES = 900_000; // stay under D1 value limits
 
 let cachedToken: { value: string; expiresAt: number } | null = null;
 function tokenProviderFor(env: Env): () => Promise<string> {
@@ -112,6 +119,26 @@ async function submit(req: Request, env: Env, ctx: ExecutionContext): Promise<Re
 async function process(id: string, problem: Problem, sheetId: string, env: Env): Promise<void> {
   setTokenProvider(tokenProviderFor(env));
   try {
+    const oversize = await gridCellCount(sheetId).catch(() => null); // access errors fall through to judge()
+    if (oversize !== null && oversize > MAX_GRID_CELLS) {
+      await env.DB.prepare(
+        "UPDATE submissions SET status = 'done', verdict = 'lint-reject', detail = ?1, updated_at = ?2 WHERE id = ?3",
+      )
+        .bind(
+          JSON.stringify({
+            lintErrors: [
+              `sheet too large to judge (${oversize.toLocaleString()} grid cells; limit ${MAX_GRID_CELLS.toLocaleString()}). ` +
+                "Empty rows and columns count — trim unused rows/columns/tabs (a fresh tab alone is 26,000 cells).",
+            ],
+            cases: [],
+          }),
+          Date.now(),
+          id,
+        )
+        .run();
+      return;
+    }
+
     const result = await judge(problem, sheetId);
 
     // disclosure rule enforced at the API boundary: hidden cases expose only
@@ -131,9 +158,16 @@ async function process(id: string, problem: Problem, sheetId: string, env: Env):
     }
 
     await env.DB.prepare(
-      "UPDATE submissions SET status = 'done', verdict = ?1, detail = ?2, scratch_id = ?3, updated_at = ?4 WHERE id = ?5",
+      "UPDATE submissions SET status = 'done', verdict = ?1, detail = ?2, scratch_id = ?3, program = ?4, updated_at = ?5 WHERE id = ?6",
     )
-      .bind(result.verdict, JSON.stringify({ lintErrors: result.lintErrors, cases }), scratch, Date.now(), id)
+      .bind(
+        result.verdict,
+        JSON.stringify({ lintErrors: result.lintErrors, cases }),
+        scratch,
+        storableProgram(result.program),
+        Date.now(),
+        id,
+      )
       .run();
   } catch (err) {
     await env.DB.prepare(
@@ -146,17 +180,62 @@ async function process(id: string, problem: Problem, sheetId: string, env: Env):
 
 async function getSubmission(id: string, env: Env, req: Request): Promise<Response> {
   const row = await env.DB.prepare(
-    "SELECT problem_id, status, verdict, detail, created_at FROM submissions WHERE id = ?1",
+    "SELECT problem_id, status, verdict, detail, updated_at FROM submissions WHERE id = ?1",
   )
     .bind(id)
-    .first<{ problem_id: string; status: string; verdict: string | null; detail: string | null; created_at: number }>();
+    .first<{ problem_id: string; status: string; verdict: string | null; detail: string | null; updated_at: number }>();
   if (!row) return json(env, req, { error: "not found" }, 404);
+
+  // stale recovery: a submission stuck in 'running' means the judging
+  // waitUntil died (CPU cap, crash) — convert to a clear, retryable failure.
+  // A late-finishing judge overwriting this afterwards is harmless.
+  if (row.status === "running" && Date.now() - row.updated_at > STALL_MS) {
+    const detail = JSON.stringify({ message: "judging stalled — please resubmit" });
+    await env.DB.prepare(
+      "UPDATE submissions SET status = 'done', verdict = 'judge-error', detail = ?1, updated_at = ?2 WHERE id = ?3 AND status = 'running'",
+    )
+      .bind(detail, Date.now(), id)
+      .run();
+    return json(env, req, {
+      problemId: row.problem_id,
+      status: "done",
+      verdict: "judge-error",
+      detail: JSON.parse(detail),
+    });
+  }
+
   return json(env, req, {
     problemId: row.problem_id,
     status: row.status,
     verdict: row.verdict,
     detail: row.detail ? JSON.parse(row.detail) : null,
   });
+}
+
+async function gridCellCount(sheetId: string): Promise<number> {
+  const meta = (await sheetsApi(
+    `/${sheetId}?fields=${encodeURIComponent("sheets(properties(gridProperties(rowCount,columnCount)))")}`,
+  )) as { sheets?: Array<{ properties: { gridProperties?: { rowCount?: number; columnCount?: number } } }> };
+  return (meta.sheets ?? []).reduce(
+    (n, s) => n + (s.properties.gridProperties?.rowCount ?? 0) * (s.properties.gridProperties?.columnCount ?? 0),
+    0,
+  );
+}
+
+// store what powers future stats: entered values + number formats, computed
+// values stripped; null when oversized
+function storableProgram(program: Snapshot | undefined): string | null {
+  if (!program) return null;
+  const stripped = {
+    title: program.title,
+    namedRanges: program.namedRanges,
+    sheets: program.sheets.map((s) => ({
+      title: s.title,
+      cells: s.cells.map((row) => row.map((c) => (c ? { ue: c.ue, fmt: c.fmt } : null))),
+    })),
+  };
+  const jsonStr = JSON.stringify(stripped);
+  return jsonStr.length > MAX_STORED_PROGRAM_BYTES ? null : jsonStr;
 }
 
 async function sha256(s: string): Promise<string> {

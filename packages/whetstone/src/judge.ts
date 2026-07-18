@@ -25,6 +25,8 @@ export interface JudgeResult {
   lintErrors: string[];
   cases: CaseResult[];
   scratchId?: string;
+  /** the extracted program (absent only when the sheet was inaccessible) */
+  program?: Snapshot;
 }
 
 const BAN_PATTERNS: Record<string, RegExp> = {
@@ -50,12 +52,12 @@ export async function judge(problem: Problem, userSpreadsheetId: string): Promis
 
   const structural = checkStructure(problem, program);
   if (structural.length > 0) {
-    return { verdict: "template-damaged", lintErrors: structural, cases: [] };
+    return { verdict: "template-damaged", lintErrors: structural, cases: [], program };
   }
 
   const lintErrors = lint(problem, program);
   if (lintErrors.length > 0) {
-    return { verdict: "lint-reject", lintErrors, cases: [] };
+    return { verdict: "lint-reject", lintErrors, cases: [], program };
   }
 
   // rehydrate the user's program into a judge-owned scratch sheet
@@ -80,6 +82,7 @@ export async function judge(problem: Problem, userSpreadsheetId: string): Promis
     lintErrors: [],
     cases,
     scratchId,
+    program,
   };
 }
 
