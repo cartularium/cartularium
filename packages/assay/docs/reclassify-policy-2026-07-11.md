@@ -6,10 +6,15 @@ is the *policy* that annotation-store-design-2026-06-20.md §4 deferred ("the po
 future work"): the pass converting the provisional ref-set DV scopes into tag/predicate scopes,
 labelling tests, and writing annotation content.
 
-Read first: `annotation-store-design-2026-06-20.md` (ratified 3a; §4 scope model, §5 migration),
-`handoff-provenance-reclassify-2026-06-27.md` (the re-prioritization + the three provenance axes),
-`terminology.md` (binding vocabulary). Yardstick: the ratified end-state — no-verdict /
-multiplicity / two-layer cut / 5 authoring kinds / territory > anatomy > corpus.
+**Maintainer decision 2026-07-18 (provenance sign-off item 6): this policy is left PROVISIONAL.**
+It gets its real review alongside Assay's member charter and annotation model. The 124 annotations
+(DV-0258..0381) and 17 scope conversions authored under it stay marked provisional until then;
+nothing else blocks meanwhile.
+
+Read first: `annotation-store-design-2026-06-20.md` (the 3a design document; §4 scope model, §5
+migration), `handoff-provenance-reclassify-2026-06-27.md` (the re-prioritization + the three
+provenance axes), `terminology.md` (binding vocabulary). Yardstick: the 3a design end-state —
+no-verdict / multiplicity / two-layer cut / 5 authoring kinds / territory > anatomy > corpus.
 
 ---
 
