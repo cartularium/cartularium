@@ -1,7 +1,7 @@
 // Static site for ludus: index + one page per problem, rendered from
 // problems/*.yaml. Only sample cases are published — hidden cases never
 // reach the build output. Pattern cloned from cartularium-org.
-import { cpSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from "node:fs"
+import { cpSync, mkdirSync, readFileSync, readdirSync, rmSync, writeFileSync } from "node:fs"
 import { createRequire } from "node:module"
 import { dirname, join } from "node:path"
 import { fileURLToPath } from "node:url"
@@ -222,6 +222,8 @@ ${cards}
 }
 
 export function build() {
+  // stale pages from removed/renamed problems must not ship (bit us twice)
+  rmSync(OUT, { recursive: true, force: true })
   mkdirSync(OUT, { recursive: true })
   mkdirSync(join(OUT, "assets"), { recursive: true })
 
