@@ -1,16 +1,20 @@
 // Problem definition → template spreadsheet (the sheet users copy).
 // The same builder, minus sample data plus reference formula, feeds the oracle.
+import { sheetsApi } from "./api.js";
 import { parseRange, rangeCols, rangeRows } from "./a1.js";
 import type { Problem } from "./problem-types.js";
 import { rehydrate } from "./rehydrate.js";
-import { scalarToExtended, type Scalar } from "./rect.js";
+import { loadSheetIds, scalarToExtended, type Scalar } from "./rect.js";
 import type { CellSnap, Snapshot } from "./snapshot.js";
+import { buildStyleRequests } from "./template-style.js";
 
 export interface TemplateOptions {
   /** sample-case data in INPUT (user template) vs empty INPUT (oracle/judge scratch) */
   sampleInput: boolean;
   /** reference formula at OUTPUT's top-left (oracle only) */
   referenceFormula?: string;
+  /** apply the case design language (tab colors, washes, borders, protection) */
+  styled?: boolean;
 }
 
 export function buildTemplateSnapshot(problem: Problem, opts: TemplateOptions): Snapshot {
@@ -22,7 +26,11 @@ export function buildTemplateSnapshot(problem: Problem, opts: TemplateOptions): 
   // About sheet: statement + the one rule
   const about = grids.get(problem.template.sheets[0].title)!;
   put(about, 1, 1, { ue: { stringValue: problem.title } });
-  put(about, 2, 1, { ue: { stringValue: `difficulty ${problem.difficulty}/10` } });
+  put(about, 2, 1, {
+    ue: {
+      stringValue: `${problem.difficulty} › ${"█".repeat(problem.difficulty)}${"░".repeat(10 - problem.difficulty)}   ${problem.tags.join(" · ")}`,
+    },
+  });
   problem.statement
     .trimEnd()
     .split("\n")
@@ -48,6 +56,12 @@ export function buildTemplateSnapshot(problem: Problem, opts: TemplateOptions): 
   if (problem.attribution) {
     put(about, row + 2, 1, { ue: { stringValue: problem.attribution } });
   }
+  // provenance + link back to the problem page
+  put(about, row + 4, 1, {
+    ue: {
+      formulaValue: `=HYPERLINK("https://whetstone.sheets.wiki/problems/${problem.id}/", "${problem.id} — problem page, template v1")`,
+    },
+  });
 
   if (opts.sampleInput) {
     const sample = problem.cases.find((c) => c.kind === "sample");
@@ -55,6 +69,19 @@ export function buildTemplateSnapshot(problem: Problem, opts: TemplateOptions): 
     const inputGrid = grids.get(input.sheet);
     if (!inputGrid) throw new Error(`${problem.id}: input range sheet "${input.sheet}" not in template.sheets`);
     placeScalars(inputGrid, input.startRow, input.startCol, sample.input);
+
+    // expected-sample block: right of OUTPUT, rows aligned, so solvers can
+    // eyeball their answer against it (the judge never looks here)
+    if (sample.expected) {
+      const answerGridForSample = grids.get(output.sheet)!;
+      const gapCol = output.endCol + 2;
+      if (output.startRow > 0) {
+        put(answerGridForSample, output.startRow - 1, gapCol, {
+          ue: { stringValue: "Expected output for the sample input — check yourself:" },
+        });
+      }
+      placeScalars(answerGridForSample, output.startRow, gapCol, sample.expected);
+    }
   }
 
   const answerGrid = grids.get(output.sheet);
@@ -98,7 +125,18 @@ export async function createFromTemplate(
   title: string,
   opts: TemplateOptions,
 ): Promise<string> {
-  return rehydrate(buildTemplateSnapshot(problem, opts), title);
+  const id = await rehydrate(buildTemplateSnapshot(problem, opts), title);
+  if (opts.styled) {
+    const ids = await loadSheetIds(id);
+    const requests = buildStyleRequests(problem, ids.byTitle);
+    for (let i = 0; i < requests.length; i += 10) {
+      await sheetsApi(`/${id}:batchUpdate`, {
+        method: "POST",
+        body: JSON.stringify({ requests: requests.slice(i, i + 10) }),
+      });
+    }
+  }
+  return id;
 }
 
 function toGridRange(sheetId: number, r: ReturnType<typeof parseRange>) {

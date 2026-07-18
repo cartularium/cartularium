@@ -9,7 +9,10 @@ if (!path) {
   process.exit(1);
 }
 const problem = loadProblem(path);
-const id = await createFromTemplate(problem, `whetstone-template-${problem.id}`, { sampleInput: true });
+const id = await createFromTemplate(problem, `whetstone-template-${problem.id}`, {
+  sampleInput: true,
+  styled: true,
+});
 problem.template.spreadsheetId = id;
 saveProblem(path, problem);
 console.log(`template for ${problem.id} — ${problem.title} (id saved to ${path})`);
