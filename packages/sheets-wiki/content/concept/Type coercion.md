@@ -7,7 +7,7 @@ tags:
 > [!WARNING]
 > This article uses [[Unofficial terminology]].
 
-Google Sheets reconciles ordinarily incompatible [[Data type|data types]] through a process known as [type coercion](https://developer.mozilla.org/en-US/docs/Glossary/Type_coercion). These rules are not applied uniformly. Whether a value is coerced depends on two things: the operation, and the value's *arrival path* — whether it reaches the operation as a direct scalar argument or as an element of a [[Array#Range|range]] or [[Array#Array literals|array literal]].
+Google Sheets reconciles ordinarily incompatible [[Data type|data types]] through a process known as [type coercion](https://developer.mozilla.org/en-US/docs/Glossary/Type_coercion). These rules are not applied uniformly. Whether a value is coerced depends on two things: the operation, and the value's *shape*, meaning whether it reaches the operation as a scalar or as an element of a [[Array#Range|range]] or [[Array#Array literals|array literal]]. A scalar and a one-element array are distinct here, not interchangeable.
 
 ### Reference table
 
@@ -33,9 +33,9 @@ Below is a non-exhaustive list of values and how Google Sheets coerces each in c
 
 Every value above is passed directly to the operation, and coercion applies. The sections below cover the contexts where it does not — and where other engines disagree.
 
-### Arrival path
+### Scalars and arrays
 
-The same value can be coerced or ignored depending on how it reaches a function. Aggregation functions draw the sharpest line: `SUM`, `PRODUCT`, and `COUNT` coerce a number-looking string or a [[Boolean]] when it is passed as a **direct argument**, but ignore that same value when it sits inside a range or an array literal.
+The same value can be coerced or ignored depending on its shape. Aggregation functions draw the sharpest line: `SUM`, `PRODUCT`, and `COUNT` coerce a number-looking string or a [[Boolean]] when it is a **scalar argument**, but ignore that same value when it sits inside a range or an array literal.
 
 ```gse
 =SUM(TRUE,"2")        → 3    (coerced: TRUE→1, "2"→2)
@@ -43,7 +43,9 @@ The same value can be coerced or ignored depending on how it reaches a function.
 =SUM(A1:A3)           → 0    (A1:A3 hold the text "1","2","3")
 ```
 
-The rule is about the arrival path, not the value: the identical `"2"` is worth `2` as a scalar argument and worth nothing as an array element (assay: SUM/mixed-array-in-sum, SUM/sum-of-string-range; gsheets probe, 2026-07-11). [[PRODUCT]] follows the same rule — `=PRODUCT({"2","3","4"})` is `0`, not `24`, because none of the elements is a bare number, and `PRODUCT` over no numeric factors is `0` (assay: PRODUCT/string-array-in-product). [[COUNT]] likewise tallies only bare numbers, skipping text and booleans held in a range or literal; use [[COUNTA]] to count non-empty cells regardless of type.
+The rule keys on shape, not on the value: the identical `"2"` is worth `2` as a scalar and worth nothing as an array element (assay: SUM/mixed-array-in-sum, SUM/sum-of-string-range; gsheets probe, 2026-07-11).
+
+The line runs between a scalar and an array, not between "one value" and "many values". A one-element array is still an array. `=SUM("2")` coerces the scalar string and returns `2`, while `=SUM({"2"})` wraps the same string in a 1×1 array and returns `0`, even though both look like a single value (maintainer-reported from Lattice work, to verify with an assay case). [[PRODUCT]] follows the same rule — `=PRODUCT({"2","3","4"})` is `0`, not `24`, because none of the elements is a bare number, and `PRODUCT` over no numeric factors is `0` (assay: PRODUCT/string-array-in-product). [[COUNT]] likewise tallies only bare numbers, skipping text and booleans held in a range or literal; use [[COUNTA]] to count non-empty cells regardless of type.
 
 To coerce a range or array literal on purpose, force it element-wise — see [Explicit coercion](#explicit-coercion) below.
 
@@ -73,7 +75,7 @@ The gap is not global even within one engine. In Google Sheets, [[XIRR]] coerces
 
 ### Cross-engine coercion
 
-The arrival-path rule above is Google Sheets and Excel behavior. Open engines disagree, so a sum over text-typed cells can produce a genuinely different number — not just a different error code.
+The scalar-versus-array rule above is Google Sheets and Excel behavior. Open engines disagree, so a sum over text-typed cells can produce a genuinely different number — not just a different error code.
 
 `=SUM(A1:A3)` with `A1:A3` holding the text `"1"`, `"2"`, `"3"`:
 
@@ -96,7 +98,7 @@ The arrival-path rule above is Google Sheets and Excel behavior. Open engines di
 | Lattice                                | `4`      | text and boolean coerced            |
 | HyperFormula                           | `#NAME?` | rejects boolean literals inside `{}` |
 
-No engine's coercion policy is uniform across all arrival paths: IronCalc skips text in an array literal but coerces it in a range; HyperFormula coerces text in a range but rejects boolean literals in `{}` (assay: SUM/sum-of-string-range, SUM/mixed-array-in-sum, SUM/boolean-array-in-sum; live probe, 2026-07-11).
+No engine's coercion policy is uniform across scalar and array shapes: IronCalc skips text in an array literal but coerces it in a range; HyperFormula coerces text in a range but rejects boolean literals in `{}` (assay: SUM/sum-of-string-range, SUM/mixed-array-in-sum, SUM/boolean-array-in-sum; live probe, 2026-07-11).
 
 ### Explicit coercion
 
@@ -107,11 +109,11 @@ Because the auto-coercion rules differ across contexts and engines, the portable
 =SUMPRODUCT(A1:A3*1)
 ```
 
-Forcing coercion element-wise makes the intent explicit and gives the same result on every engine, sidestepping the arrival-path divergences above.
+Forcing coercion element-wise makes the intent explicit and gives the same result on every engine, sidestepping the scalar-versus-array divergences above.
 
 ### See Also
 
 - [[Data type]] — the type system these rules operate over.
 - [[Number]], [[String]], [[Boolean]], [[Null]], [[Error]] — the scalar types involved.
 - [[VALUE]], [[N]], [[T]] — explicit type-conversion functions.
-- [[SUM]], [[PRODUCT]], [[COUNT]] — aggregation and the arrival-path rule.
+- [[SUM]], [[PRODUCT]], [[COUNT]] — aggregation and the scalar-versus-array rule.
