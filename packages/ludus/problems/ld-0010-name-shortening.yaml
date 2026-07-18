@@ -1,0 +1,190 @@
+id: ld-0010
+slug: name-shortening
+title: Name Shortening
+attribution: Adapted from "Name Shortening" in the astral.cafe Community Practice Problems sheet.
+difficulty: 6
+requires:
+  - arrays
+  - lambda
+tags:
+  - text
+  - arrays
+statement: |
+  Your client has a list of first and last names. They want to shorten them
+  as much as possible, but keep enough characters that similar names stay
+  distinguishable.
+
+  The method: first names are never changed. A person's last name is compared
+  only against the last names of people who share their first name — keep the
+  shortest prefix of the last name that differs from every one of those other
+  last names' equal-length prefixes. If one character is enough (or the first
+  name is unique in the list), keep just the last initial followed by a
+  period.
+
+  For example — Emily Johnson, Emily Jones, Emily Doe, and John Jones become
+  Emily Joh, Emily Jon, Emily D., and John J.
+
+  No two people share both a first and a last name. Produce the shortened
+  full name for each person, one row per input row. The grader swaps in name
+  lists of different lengths, so cover the whole OUTPUT range: empty input
+  rows must produce empty output rows.
+challenges:
+  - oner
+  - lambdaless
+  - generalized
+  - golfed
+template:
+  sheets:
+    - title: About
+    - title: Input
+    - title: Answer
+  input: Input!B2:C34
+  output: Answer!B3:B34
+  answerHeaders:
+    - Shortened
+  spreadsheetId: 1iw2W8eVG4sZJmiGfPYtMHjugX1GDELw1qPHRs3B9VjU
+reference: =MAP(Input!B3:B34, Input!C3:C34, LAMBDA(f, l, IF(f = "", "", LET(ks, SEQUENCE(LEN(l)),
+  hits, ARRAYFORMULA(COUNTIFS(Input!B3:B34, f, Input!C3:C34, LEFT(l, ks) & "*")), needed,
+  IFERROR(MAX(FILTER(ks, hits > 1)) + 1, 1), f & " " & IF(needed <= 1, LEFT(l, 1) & ".", LEFT(l,
+  needed))))))
+selftest:
+  alt: =MAP(Input!B3:B34, Input!C3:C34, LAMBDA(f, l, IF(f = "", "", LET(needed,
+    IF(COUNTIF(Input!B3:B34, f) = 1, 1, MAX(MAP(FILTER(Input!C3:C34, Input!B3:B34 = f, Input!C3:C34
+    <> l), LAMBDA(o, LET(mn, MIN(LEN(l), LEN(o)), IF(mn = 0, 0, IFERROR(MATCH(FALSE,
+    ARRAYFORMULA(MID(l, SEQUENCE(mn), 1) = MID(o, SEQUENCE(mn), 1)), 0) - 1, mn)))))) + 1), f & " "
+    & IF(needed <= 1, LEFT(l, 1) & ".", LEFT(l, needed))))))
+compare:
+  numbers:
+    epsilon: 1e-9
+  rowOrder: exact
+lint:
+  ban:
+    - volatile
+    - import
+    - external
+cases:
+  - kind: sample
+    input:
+      - - First
+        - Last
+      - - Emily
+        - Johnson
+      - - Emily
+        - Jones
+      - - Emily
+        - Doe
+      - - John
+        - Jones
+      - - Maria
+        - Silva
+      - - Kenji
+        - Sato
+      - - Priya
+        - Patel
+      - - John
+        - Jackson
+    expected:
+      - - Emily Joh
+      - - Emily Jon
+      - - Emily D.
+      - - John Jo
+      - - Maria S.
+      - - Kenji S.
+      - - Priya P.
+      - - John Ja
+  - kind: hidden
+    input:
+      - - First
+        - Last
+      - - Alex
+        - Smith
+      - - Sam
+        - Rivera
+      - - Alex
+        - Smyth
+      - - Dana
+        - Anderson
+      - - Alex
+        - Stone
+      - - Dana
+        - Andersen
+      - - Sam
+        - Brooks
+      - - Lee
+        - Nguyen
+      - - Kim
+        - Nguyen
+      - - Lee
+        - Novak
+      - - Sam
+        - Reyes
+      - - Noor
+        - Haddad
+      - - Alex
+        - Grant
+      - - Dana
+        - Cho
+      - - Kim
+        - Park
+      - - Noor
+        - Hassan
+    expected:
+      - - Alex Smi
+      - - Sam Ri
+      - - Alex Smy
+      - - Dana Anderso
+      - - Alex St
+      - - Dana Anderse
+      - - Sam B.
+      - - Lee Ng
+      - - Kim N.
+      - - Lee No
+      - - Sam Re
+      - - Noor Had
+      - - Alex G.
+      - - Dana C.
+      - - Kim P.
+      - - Noor Has
+  - kind: hidden
+    input:
+      - - First
+        - Last
+      - - Wanda
+        - Maximoff
+      - - Viktor
+        - Petrov
+      - - Selin
+        - Demir
+      - - Tomas
+        - Herrera
+      - - Ingrid
+        - Larsen
+    expected:
+      - - Wanda M.
+      - - Viktor P.
+      - - Selin D.
+      - - Tomas H.
+      - - Ingrid L.
+  - kind: hidden
+    input:
+      - - First
+        - Last
+      - - Rosa
+        - Delgado
+      - - Rosa
+        - Delacroix
+      - - Rosa
+        - Delgadillo
+      - - Rosa
+        - Moreau
+      - - Ben
+        - Okafor
+    expected:
+      - - Rosa Delgado
+      - - Rosa Dela
+      - - Rosa Delgadi
+      - - Rosa M.
+      - - Ben O.
+verified:
+  asOf: 2026-07-18
+  hash: 7b0531ab942cfad6

@@ -1,0 +1,178 @@
+id: ld-0009
+slug: card-battle
+title: Card Battle
+attribution: Adapted from "Card Battle" in the astral.cafe Community Practice Problems sheet.
+difficulty: 5
+requires:
+  - arrays
+tags:
+  - arrays
+  - simulation
+statement: |
+  You're looking to make a deck for a card game. Not just any deck; the best
+  deck. To that end, you want to rank the cards by how they fare against each
+  other.
+
+  Cards have three stats, formatted "Attack/Health/Speed". Each card goes 1v1
+  against every other card. The card with the higher Speed acts first each
+  round; on its turn a card deals damage equal to its Attack to the other
+  card's Health. A card dies when its Health reaches zero or below, and the
+  survivor wins. If both cards have the same Speed they act simultaneously —
+  and if that kills both in the same round, the battle is a draw.
+
+  A win scores 1 point, a draw 0.5, a loss 0. Produce two columns — card name
+  and total score — sorted by score from highest to lowest. Cards with equal
+  scores keep their input order. The grader swaps in card lists of different
+  lengths, so cover the whole OUTPUT range with empty rows staying empty.
+challenges:
+  - oner
+  - lambdaless
+  - generalized
+  - golfed
+template:
+  sheets:
+    - title: About
+    - title: Input
+    - title: Answer
+  input: Input!B2:C22
+  output: Answer!B3:C22
+  answerHeaders:
+    - Name
+    - Score
+  spreadsheetId: 17kNcpaDibHENhgRZxA_qIeePJKpotOGcrp1Xk2Sq1SE
+reference: =LET(all, Input!B3:B22, names, FILTER(all, all <> ""), m, ROWS(names), parts,
+  ARRAYFORMULA(VALUE(SPLIT(ARRAY_CONSTRAIN(Input!C3:C22, m, 1), "/"))), atk, INDEX(parts, , 1), hp,
+  INDEX(parts, , 2), spd, INDEX(parts, , 3), turns, ARRAYFORMULA(CEILING(TRANSPOSE(hp) / atk)),
+  back, TRANSPOSE(turns), wins, ARRAYFORMULA(IF(spd > TRANSPOSE(spd), (turns <= back) * 1, (turns <
+  back) * 1)), draws, ARRAYFORMULA((spd = TRANSPOSE(spd)) * (turns = back) * 1), mask,
+  ARRAYFORMULA(1 - (SEQUENCE(m) = SEQUENCE(1, m)) * 1), score, MMULT(ARRAYFORMULA((wins + 0.5 *
+  draws) * mask), SEQUENCE(m, 1, 1, 0)), ARRAY_CONSTRAIN(SORT({names, score, SEQUENCE(m)}, 2, FALSE,
+  3, TRUE), m, 2))
+selftest:
+  alt: =LET(all, Input!B3:B22, names, FILTER(all, all <> ""), m, ROWS(names), parts,
+    ARRAYFORMULA(VALUE(SPLIT(ARRAY_CONSTRAIN(Input!C3:C22, m, 1), "/"))), atk, INDEX(parts, , 1),
+    hp, INDEX(parts, , 2), spd, INDEX(parts, , 3), score, MAP(SEQUENCE(m), LAMBDA(i, LET(ai,
+    INDEX(atk, i), hi, INDEX(hp, i), si, INDEX(spd, i), tme, ARRAYFORMULA(CEILING(hp / ai)), topp,
+    ARRAYFORMULA(CEILING(hi / atk)), SUMPRODUCT((SEQUENCE(m) <> i) * (IF(si > spd, (tme <= topp) *
+    1, (tme < topp) * 1) + 0.5 * (si = spd) * (tme = topp) * 1))))), ARRAY_CONSTRAIN(SORT({names,
+    score, SEQUENCE(m)}, 2, FALSE, 3, TRUE), m, 2))
+compare:
+  numbers:
+    epsilon: 1e-9
+  rowOrder: exact
+lint:
+  ban:
+    - volatile
+    - import
+    - external
+cases:
+  - kind: sample
+    input:
+      - - Name
+        - Stats
+      - - Bruiser
+        - 3/5/2
+      - - Flash
+        - 2/2/4
+      - - Tank
+        - 1/8/1
+      - - Mirror A
+        - 2/4/3
+      - - Mirror B
+        - 2/4/3
+    expected:
+      - - Bruiser
+        - 4
+      - - Mirror A
+        - 2.5
+      - - Mirror B
+        - 2.5
+      - - Tank
+        - 1
+      - - Flash
+        - 0
+  - kind: hidden
+    input:
+      - - Name
+        - Stats
+      - - Card 1
+        - 2/7/5
+      - - Card 2
+        - 3/5/3
+      - - Card 3
+        - 3/3/2
+      - - Card 4
+        - 1/6/2
+      - - Card 5
+        - 3/2/5
+      - - Card 6
+        - 3/5/5
+      - - Card 7
+        - 1/1/3
+      - - Card 8
+        - 1/1/3
+      - - Card 9
+        - 3/4/6
+      - - Card 10
+        - 1/2/7
+      - - Card 11
+        - 3/4/5
+      - - Card 12
+        - 8/3/1
+    expected:
+      - - Card 9
+        - 10
+      - - Card 1
+        - 9.5
+      - - Card 6
+        - 9
+      - - Card 11
+        - 8.5
+      - - Card 2
+        - 7
+      - - Card 5
+        - 6
+      - - Card 3
+        - 5
+      - - Card 12
+        - 5
+      - - Card 4
+        - 3
+      - - Card 10
+        - 2
+      - - Card 7
+        - 0.5
+      - - Card 8
+        - 0.5
+  - kind: hidden
+    input:
+      - - Name
+        - Stats
+      - - Ox
+        - 2/6/2
+      - - Asp
+        - 3/3/2
+      - - Elk
+        - 1/9/2
+      - - Wren
+        - 4/2/2
+      - - Eel
+        - 3/3/2
+      - - Boar
+        - 6/6/2
+    expected:
+      - - Boar
+        - 5
+      - - Ox
+        - 3
+      - - Asp
+        - 2
+      - - Elk
+        - 2
+      - - Eel
+        - 2
+      - - Wren
+        - 1
+verified:
+  asOf: 2026-07-18
+  hash: f62797eb2b00323d

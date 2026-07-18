@@ -1,0 +1,134 @@
+id: ld-0011
+slug: levenshtein-distance
+title: Levenshtein Distance
+attribution: Adapted from "Levenshtein Distance" in the astral.cafe Community Practice Problems sheet.
+difficulty: 8
+requires:
+  - arrays
+  - lambda
+  - algorithmic
+tags:
+  - text
+  - algorithms
+statement: |
+  Your client is a linguist with two lists of words, who wants to compare
+  them to see how different each entry is from its counterpart.
+
+  The metric is Levenshtein Distance: the minimum number of single-character
+  edits needed to turn one word into the other, where an edit removes a
+  character, adds a character, or replaces a character. For example, "kitten"
+  and "sitting" have a distance of 3: substitute k with s, substitute e with
+  i, add g.
+
+  Produce the distance for each word pair, one row per input row. Words are
+  lowercase and non-empty. The grader swaps in word lists of different
+  lengths, so cover the whole OUTPUT range: empty input rows must produce
+  empty output rows.
+challenges:
+  - oner
+  - generalized
+  - golfed
+template:
+  sheets:
+    - title: About
+    - title: Input
+    - title: Answer
+  input: Input!B2:C18
+  output: Answer!B3:B18
+  answerHeaders:
+    - Distance
+  spreadsheetId: 1nK_xgbGfDPELHLnDBfc2RrdcDUDVoDh0YuZm9Uynx2Y
+reference: =MAP(Input!B3:B18, Input!C3:C18, LAMBDA(wa, wb, IF(wa = "", "", LET(m, LEN(wa), n,
+  LEN(wb), fin, REDUCE(SEQUENCE(1, n + 1, 0), SEQUENCE(m), LAMBDA(prev, i, REDUCE(SEQUENCE(1, 1, i,
+  0), SEQUENCE(n), LAMBDA(cur, j, {cur, MIN(INDEX(prev, 1, j + 1) + 1, INDEX(cur, 1, j) + 1,
+  INDEX(prev, 1, j) + IF(MID(wa, i, 1) = MID(wb, j, 1), 0, 1))})))), INDEX(fin, 1, n + 1)))))
+selftest:
+  alt: =MAP(Input!B3:B18, Input!C3:C18, LAMBDA(wa, wb, IF(wa = "", "", LET(m, LEN(wb), n, LEN(wa),
+    fin, REDUCE(SEQUENCE(1, n + 1, 0), SEQUENCE(m), LAMBDA(prev, i, REDUCE(SEQUENCE(1, 1, i, 0),
+    SEQUENCE(n), LAMBDA(cur, j, {cur, MIN(INDEX(prev, 1, j + 1) + 1, INDEX(cur, 1, j) + 1,
+    INDEX(prev, 1, j) + IF(MID(wb, i, 1) = MID(wa, j, 1), 0, 1))})))), INDEX(fin, 1, n + 1)))))
+compare:
+  numbers:
+    epsilon: 1e-9
+  rowOrder: exact
+lint:
+  ban:
+    - volatile
+    - import
+    - external
+cases:
+  - kind: sample
+    input:
+      - - Word 1
+        - Word 2
+      - - kitten
+        - sitting
+      - - saturday
+        - sunday
+      - - flaw
+        - lawn
+      - - same
+        - same
+      - - abc
+        - xyz
+      - - book
+        - back
+    expected:
+      - - 3
+      - - 3
+      - - 2
+      - - 0
+      - - 3
+      - - 2
+  - kind: hidden
+    input:
+      - - Word 1
+        - Word 2
+      - - algorithm
+        - logarithm
+      - - spreadsheet
+        - sheet
+      - - a
+        - z
+      - - x
+        - xxxxx
+      - - ab
+        - ba
+      - - formula
+        - formulae
+      - - ludus
+        - ludic
+      - - grid
+        - grind
+    expected:
+      - - 3
+      - - 6
+      - - 1
+      - - 4
+      - - 2
+      - - 1
+      - - 2
+      - - 1
+  - kind: hidden
+    input:
+      - - Word 1
+        - Word 2
+      - - q
+        - qwertyuiop
+      - - mississippi
+        - misspelling
+      - - anagram
+        - grandma
+      - - cell
+        - sheet
+      - - reduce
+        - deduce
+    expected:
+      - - 9
+      - - 7
+      - - 6
+      - - 4
+      - - 1
+verified:
+  asOf: 2026-07-18
+  hash: 68885451c8f8858d

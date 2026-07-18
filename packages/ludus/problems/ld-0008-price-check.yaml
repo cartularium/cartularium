@@ -1,0 +1,134 @@
+id: ld-0008
+slug: price-check
+title: Price Check
+difficulty: 1
+tags:
+  - lookup
+statement: |
+  Your client runs a small shop with a price list: one row per item, with its
+  price. The list is in no particular order. Given the item named in the
+  Wanted item cell, produce its price — a single number.
+
+  The wanted item always appears in the list exactly once. Watch out: some
+  item names share their first word, and the list is not sorted, so your
+  lookup has to match the whole name exactly.
+template:
+  sheets:
+    - title: About
+    - title: Input
+    - title: Answer
+  input: Input!B2:E32
+  output: Answer!B3:B3
+  answerHeaders:
+    - Price
+  spreadsheetId: 1ZHvihkyM2jnUyZ4WEWCKv1ZCIkpq4cP_Oi9JkHRpHdY
+reference: =VLOOKUP(Input!E3, Input!B3:C32, 2, FALSE)
+selftest:
+  alt: =INDEX(Input!C3:C32, MATCH(Input!E3, Input!B3:B32, 0))
+compare:
+  numbers:
+    epsilon: 1e-9
+  rowOrder: exact
+lint:
+  ban:
+    - volatile
+    - import
+    - external
+cases:
+  - kind: sample
+    input:
+      - - Item
+        - Price
+        - null
+        - Wanted item
+      - - Lamp
+        - 34.5
+        - null
+        - Mirror
+      - - Desk
+        - 120
+      - - Chair
+        - 89.99
+      - - Rug
+        - 45
+      - - Shelf
+        - 60
+      - - Stool
+        - 25
+      - - Mirror
+        - 78
+      - - Vase
+        - 19.5
+    expected:
+      - - 78
+  - kind: hidden
+    input:
+      - - Item
+        - Price
+        - null
+        - Wanted item
+      - - Table
+        - 250
+        - null
+        - Table Runner
+      - - Tablecloth
+        - 32
+      - - Table Runner
+        - 18.75
+      - - Bench
+        - 140
+      - - Basket
+        - 22
+      - - Bed Frame
+        - 410
+      - - Bookcase
+        - 175
+      - - Blanket
+        - 48
+      - - Bar Stool
+        - 65
+      - - Bathmat
+        - 15.5
+      - - Bin
+        - 9
+      - - Bedside Table
+        - 95
+    expected:
+      - - 18.75
+  - kind: hidden
+    input:
+      - - Item
+        - Price
+        - null
+        - Wanted item
+      - - Zinc Planter
+        - 54
+        - null
+        - Apron
+      - - Yarn Basket
+        - 27
+      - - Wall Clock
+        - 61.25
+      - - Apron
+        - 13.99
+    expected:
+      - - 13.99
+  - kind: hidden
+    input:
+      - - Item
+        - Price
+        - null
+        - Wanted item
+      - - Candle
+        - 8.5
+        - null
+        - Candlestick
+      - - Candlestick
+        - 24
+      - - Candle Snuffer
+        - 11
+    expected:
+      - - 24
+verified:
+  asOf: 2026-07-18
+  hash: 550749025a27baa1
