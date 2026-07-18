@@ -14,5 +14,5 @@ database_id = "8cf5ab90-6e5d-46ac-bfaf-241909e81781"
 migrations_dir = "worker/migrations"
 
 [vars]
-# tighten to the site origin at deploy time
-ALLOWED_ORIGIN = "*"
+# comma-separated allowlist; .dev.vars overrides to "*" for local dev
+ALLOWED_ORIGIN = "https://whetstone.sheets.wiki,https://whetstone-36a.pages.dev"

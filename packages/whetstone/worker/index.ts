@@ -41,44 +41,51 @@ function tokenProviderFor(env: Env): () => Promise<string> {
   };
 }
 
-function corsHeaders(env: Env): Record<string, string> {
+// ALLOWED_ORIGIN: "*", or a comma-separated allowlist — the request's Origin
+// is echoed back when it matches (a single CORS header can't carry a list)
+function corsHeaders(env: Env, req: Request): Record<string, string> {
+  const allowed = (env.ALLOWED_ORIGIN ?? "*").split(",").map((s) => s.trim());
+  const origin = req.headers.get("origin");
+  const allow = allowed.includes("*") ? "*" : origin && allowed.includes(origin) ? origin : allowed[0];
   return {
-    "access-control-allow-origin": env.ALLOWED_ORIGIN ?? "*",
+    "access-control-allow-origin": allow,
     "access-control-allow-methods": "GET,POST,OPTIONS",
     "access-control-allow-headers": "content-type",
+    vary: "origin",
   };
 }
 
-function json(env: Env, data: unknown, status = 200): Response {
+function json(env: Env, req: Request, data: unknown, status = 200): Response {
   return new Response(JSON.stringify(data), {
     status,
-    headers: { "content-type": "application/json", ...corsHeaders(env) },
+    headers: { "content-type": "application/json", ...corsHeaders(env, req) },
   });
 }
 
 export default {
   async fetch(req: Request, env: Env, ctx: ExecutionContext): Promise<Response> {
     const url = new URL(req.url);
-    if (req.method === "OPTIONS") return new Response(null, { status: 204, headers: corsHeaders(env) });
+    if (req.method === "OPTIONS") return new Response(null, { status: 204, headers: corsHeaders(env, req) });
     if (req.method === "POST" && url.pathname === "/api/submit") return submit(req, env, ctx);
     const poll = url.pathname.match(/^\/api\/submission\/([0-9a-f-]{36})$/);
-    if (req.method === "GET" && poll) return getSubmission(poll[1], env);
+    if (req.method === "GET" && poll) return getSubmission(poll[1], env, req);
     if (req.method === "GET" && url.pathname === "/api/problems") {
       return json(
         env,
+        req,
         Object.values(PROBLEMS).map((p) => ({ id: p.id, title: p.title, difficulty: p.difficulty })),
       );
     }
-    return json(env, { error: "not found" }, 404);
+    return json(env, req, { error: "not found" }, 404);
   },
 };
 
 async function submit(req: Request, env: Env, ctx: ExecutionContext): Promise<Response> {
   const body = (await req.json().catch(() => null)) as { problemId?: string; sheetUrl?: string } | null;
   const problem = body?.problemId ? PROBLEMS[body.problemId] : undefined;
-  if (!problem) return json(env, { error: "unknown problemId" }, 400);
+  if (!problem) return json(env, req, { error: "unknown problemId" }, 400);
   const sheetId = body?.sheetUrl ? parseSpreadsheetId(body.sheetUrl) : "";
-  if (!/^[\w-]{20,}$/.test(sheetId)) return json(env, { error: "that doesn't look like a sheet link" }, 400);
+  if (!/^[\w-]{20,}$/.test(sheetId)) return json(env, req, { error: "that doesn't look like a sheet link" }, 400);
 
   const ipHash = await sha256(req.headers.get("cf-connecting-ip") ?? "unknown");
   const recent = await env.DB.prepare(
@@ -87,7 +94,7 @@ async function submit(req: Request, env: Env, ctx: ExecutionContext): Promise<Re
     .bind(ipHash, Date.now() - RATE_LIMIT.windowMs)
     .first<{ n: number }>();
   if ((recent?.n ?? 0) >= RATE_LIMIT.max) {
-    return json(env, { error: "rate limited — try again in a few minutes" }, 429);
+    return json(env, req, { error: "rate limited — try again in a few minutes" }, 429);
   }
 
   const id = crypto.randomUUID();
@@ -99,7 +106,7 @@ async function submit(req: Request, env: Env, ctx: ExecutionContext): Promise<Re
     .run();
 
   ctx.waitUntil(process(id, problem, sheetId, env));
-  return json(env, { submissionId: id }, 202);
+  return json(env, req, { submissionId: id }, 202);
 }
 
 async function process(id: string, problem: Problem, sheetId: string, env: Env): Promise<void> {
@@ -137,14 +144,14 @@ async function process(id: string, problem: Problem, sheetId: string, env: Env):
   }
 }
 
-async function getSubmission(id: string, env: Env): Promise<Response> {
+async function getSubmission(id: string, env: Env, req: Request): Promise<Response> {
   const row = await env.DB.prepare(
     "SELECT problem_id, status, verdict, detail, created_at FROM submissions WHERE id = ?1",
   )
     .bind(id)
     .first<{ problem_id: string; status: string; verdict: string | null; detail: string | null; created_at: number }>();
-  if (!row) return json(env, { error: "not found" }, 404);
-  return json(env, {
+  if (!row) return json(env, req, { error: "not found" }, 404);
+  return json(env, req, {
     problemId: row.problem_id,
     status: row.status,
     verdict: row.verdict,

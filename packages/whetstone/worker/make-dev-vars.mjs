@@ -22,6 +22,7 @@ writeFileSync(
     `GOOGLE_CLIENT_ID=${creds.client_id}`,
     `GOOGLE_CLIENT_SECRET=${creds.client_secret}`,
     `GOOGLE_REFRESH_TOKEN=${token.refresh_token}`,
+    `ALLOWED_ORIGIN=*`,
     "",
   ].join("\n"),
 )
