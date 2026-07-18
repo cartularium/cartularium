@@ -160,7 +160,8 @@ const GET_FIELD_MASK = [
 ].join("");
 
 export interface GSheetsDriverConfig {
-  spreadsheetId: string;
+  /** Existing spreadsheet to reuse. Omit to create a throwaway one per run. */
+  spreadsheetId?: string;
   accessToken: string;
 }
 
@@ -246,6 +247,7 @@ export type RichGrid = Array<Array<RichCell | null>>;
 export class GSheetsDriver implements Driver {
   readonly platform = "gsheets" as const;
   private config: GSheetsDriverConfig;
+  private createdSpreadsheet = false;
   private lastWriteRequestAt = 0;
 
   constructor(config: GSheetsDriverConfig) {
@@ -253,12 +255,40 @@ export class GSheetsDriver implements Driver {
   }
 
   async init(): Promise<void> {
-    const res = await this.apiFetch("", { method: "GET" });
-    if (!res.ok) {
-      throw new Error(`Failed to access spreadsheet: ${res.status} ${await res.text()}`);
+    if (!this.config.spreadsheetId) {
+      await this.createSpreadsheet();
+    } else {
+      const res = await this.apiFetch("", { method: "GET" });
+      if (!res.ok) {
+        throw new Error(`Failed to access spreadsheet: ${res.status} ${await res.text()}`);
+      }
     }
     // best-effort: clean orphans from a prior crashed run
     await this.cleanupOrphans().catch(() => {});
+  }
+
+  private async createSpreadsheet(): Promise<void> {
+    const title = `assay-run-${Date.now()}-${Math.floor(Math.random() * 1e6)}`;
+    const res = await fetch(API_BASE, {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${this.config.accessToken}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ properties: { title } }),
+    });
+    if (!res.ok) {
+      throw new Error(`Failed to create spreadsheet: ${res.status} ${await res.text()}`);
+    }
+    const data = (await res.json()) as { spreadsheetId?: string };
+    if (!data.spreadsheetId) throw new Error("Failed to create spreadsheet: missing spreadsheetId");
+    this.config.spreadsheetId = data.spreadsheetId;
+    this.createdSpreadsheet = true;
+  }
+
+  private get spreadsheetId(): string {
+    if (!this.config.spreadsheetId) throw new Error("Driver not initialized");
+    return this.config.spreadsheetId;
   }
 
   async evaluate(formula: string, grid?: Record<string, CellValue>): Promise<RichGridValue> {
@@ -346,6 +376,26 @@ export class GSheetsDriver implements Driver {
 
   async destroy(): Promise<void> {
     // chunk teardown deletes its own sheets; orphan sweep runs on next init()
+    if (!this.createdSpreadsheet || !this.config.spreadsheetId) return;
+    const spreadsheetId = this.config.spreadsheetId;
+    this.createdSpreadsheet = false;
+    this.config.spreadsheetId = undefined;
+    try {
+      const res = await fetch(
+        `https://www.googleapis.com/drive/v3/files/${encodeURIComponent(spreadsheetId)}`,
+        {
+          method: "DELETE",
+          headers: { Authorization: `Bearer ${this.config.accessToken}` },
+        },
+      );
+      if (res.status === 403) {
+        process.stderr.write(
+          "  [gsheets] token lacks drive.file; re-run `assay login` to delete run workbooks\n",
+        );
+      }
+    } catch {
+      // best-effort teardown
+    }
   }
 
   private async runChunk(
@@ -473,7 +523,7 @@ export class GSheetsDriver implements Driver {
    */
   private async clearFormulaCells(
     cells: Array<{ title: string; cell: string }>,
-    spreadsheetId: string = this.config.spreadsheetId,
+    spreadsheetId: string = this.spreadsheetId,
   ): Promise<void> {
     const data = cells.map(({ title, cell }) => ({ range: `'${title}'!${cell}`, values: [[""]] }));
     await this.valuesBatchUpdate(data, "RAW", spreadsheetId).catch(() => {});
@@ -501,7 +551,7 @@ export class GSheetsDriver implements Driver {
       }
     }
     for (const i of suspects) {
-      results[i] = await this.runOneIsolated(tasks[i], this.config.spreadsheetId);
+      results[i] = await this.runOneIsolated(tasks[i], this.spreadsheetId);
     }
   }
 
@@ -653,7 +703,7 @@ export class GSheetsDriver implements Driver {
   private async apiFetch(
     path: string,
     init: RequestInit,
-    spreadsheetId: string = this.config.spreadsheetId,
+    spreadsheetId: string = this.spreadsheetId,
   ): Promise<Response> {
     const url = `${API_BASE}/${spreadsheetId}${path}`;
     const headers = {
@@ -720,7 +770,7 @@ export class GSheetsDriver implements Driver {
 
   private async batchUpdate(
     requests: unknown[],
-    spreadsheetId: string = this.config.spreadsheetId,
+    spreadsheetId: string = this.spreadsheetId,
   ): Promise<Record<string, unknown>> {
     if (requests.length === 0) return { replies: [] };
     await this.throttleWriteRequest();
@@ -736,7 +786,7 @@ export class GSheetsDriver implements Driver {
   private async valuesBatchUpdate(
     data: Array<{ range: string; values: unknown[][] }>,
     valueInputOption: "RAW" | "USER_ENTERED" = "USER_ENTERED",
-    spreadsheetId: string = this.config.spreadsheetId,
+    spreadsheetId: string = this.spreadsheetId,
   ): Promise<void> {
     if (data.length === 0) return;
     await this.throttleWriteRequest();
@@ -759,7 +809,7 @@ export class GSheetsDriver implements Driver {
    */
   private async spreadsheetsGetRich(
     ranges: string[],
-    spreadsheetId: string = this.config.spreadsheetId,
+    spreadsheetId: string = this.spreadsheetId,
   ): Promise<RichGrid[]> {
     const qs = [
       ...ranges.map((r) => `ranges=${encodeURIComponent(r)}`),

@@ -1,5 +1,5 @@
 import { execSync } from "node:child_process";
-import { writeFileSync, readFileSync, mkdtempSync, rmSync } from "node:fs";
+import { writeFileSync, readFileSync, mkdtempSync, rmSync, unlinkSync } from "node:fs";
 import { join, dirname } from "node:path";
 import { tmpdir } from "node:os";
 import { fileURLToPath } from "node:url";
@@ -64,6 +64,66 @@ function placementPlan(tasks: DriverTask[]): Map<number, PlacedTask> {
 
 const PROJECT_ROOT = join(dirname(fileURLToPath(import.meta.url)), "..", "..");
 const PYTHON_SCRIPT = join(PROJECT_ROOT, "python", "excel_driver.py");
+const EXCEL_LOCK_PATH = join(tmpdir(), "assay-excel.lock");
+const EXCEL_LOCK_STALE_MS = 15 * 60 * 1000;
+
+function lockSleep(ms: number): Promise<void> {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+function staleLock(contents: string): boolean {
+  try {
+    const lock = JSON.parse(contents) as { pid?: number; timestamp?: string };
+    const timestamp = typeof lock.timestamp === "string" ? Date.parse(lock.timestamp) : NaN;
+    if (Number.isFinite(timestamp) && Date.now() - timestamp > EXCEL_LOCK_STALE_MS) return true;
+    const pid = lock.pid;
+    if (typeof pid !== "number" || !Number.isInteger(pid) || pid <= 0) return false;
+    try {
+      process.kill(pid, 0);
+      return false;
+    } catch (error) {
+      return (error as NodeJS.ErrnoException).code === "ESRCH";
+    }
+  } catch {
+    return false;
+  }
+}
+
+/** xlwings drives a single live Excel instance; concurrent runs corrupt each other. */
+export async function withExcelLock<T>(fn: () => T | Promise<T>): Promise<T> {
+  let contents: string;
+  for (;;) {
+    const candidate = JSON.stringify({ pid: process.pid, timestamp: new Date().toISOString() });
+    try {
+      writeFileSync(EXCEL_LOCK_PATH, candidate, { flag: "wx" });
+      contents = candidate;
+      break;
+    } catch (error) {
+      if ((error as NodeJS.ErrnoException).code !== "EEXIST") throw error;
+      try {
+        const existing = readFileSync(EXCEL_LOCK_PATH, "utf8");
+        if (staleLock(existing) && readFileSync(EXCEL_LOCK_PATH, "utf8") === existing) {
+          unlinkSync(EXCEL_LOCK_PATH);
+          continue;
+        }
+      } catch (readError) {
+        if ((readError as NodeJS.ErrnoException).code === "ENOENT") continue;
+        throw readError;
+      }
+      await lockSleep(250 + Math.floor(Math.random() * 250));
+    }
+  }
+
+  try {
+    return await fn();
+  } finally {
+    try {
+      if (readFileSync(EXCEL_LOCK_PATH, "utf8") === contents) unlinkSync(EXCEL_LOCK_PATH);
+    } catch (error) {
+      if ((error as NodeJS.ErrnoException).code !== "ENOENT") throw error;
+    }
+  }
+}
 
 export class ExcelDriver implements Driver {
   readonly platform = "excel" as const;
@@ -89,14 +149,16 @@ export class ExcelDriver implements Driver {
   }
 
   async init(): Promise<void> {
-    try {
-      execSync("uv run python -c 'import xlwings'", {
-        cwd: PROJECT_ROOT,
-        stdio: "pipe",
-      });
-    } catch {
-      throw new Error("xlwings not available. Run: assay setup");
-    }
+    await withExcelLock(() => {
+      try {
+        execSync("uv run python -c 'import xlwings'", {
+          cwd: PROJECT_ROOT,
+          stdio: "pipe",
+        });
+      } catch {
+        throw new Error("xlwings not available. Run: assay setup");
+      }
+    });
     this.tmpDir = mkdtempSync(join(tmpdir(), "assay-excel-"));
   }
 
@@ -108,21 +170,23 @@ export class ExcelDriver implements Driver {
 
     writeFileSync(taskFile, JSON.stringify({ formula, grid: grid || {} }));
 
-    try {
-      execSync(
-        `uv run python "${PYTHON_SCRIPT}" ${this.workbookFlag}"${taskFile}" "${resultFile}"`,
-        {
-          cwd: PROJECT_ROOT,
-          stdio: ["pipe", "pipe", this.stderr],
-          env: this.env,
-          timeout: 30000,
-        },
-      );
-    } catch (e: unknown) {
-      const err = e as { stderr?: Buffer };
-      const msg = err.stderr?.toString() || String(e);
-      throw new Error(`Excel evaluation failed: ${msg}`);
-    }
+    await withExcelLock(() => {
+      try {
+        execSync(
+          `uv run python "${PYTHON_SCRIPT}" ${this.workbookFlag}"${taskFile}" "${resultFile}"`,
+          {
+            cwd: PROJECT_ROOT,
+            stdio: ["pipe", "pipe", this.stderr],
+            env: this.env,
+            timeout: 30000,
+          },
+        );
+      } catch (e: unknown) {
+        const err = e as { stderr?: Buffer };
+        const msg = err.stderr?.toString() || String(e);
+        throw new Error(`Excel evaluation failed: ${msg}`);
+      }
+    });
 
     const raw = JSON.parse(readFileSync(resultFile, "utf8"));
     if (raw.error) throw new Error(`Excel error: ${raw.error}`);
@@ -163,28 +227,32 @@ export class ExcelDriver implements Driver {
       ),
     );
 
-    try {
-      execSync(
-        `uv run python "${PYTHON_SCRIPT}" ${this.workbookFlag}--batch "${tasksFile}" "${resultsFile}"`,
-        {
-          cwd: PROJECT_ROOT,
-          stdio: ["pipe", "pipe", this.stderr],
-          env: this.env,
-          timeout: 600000,
-        },
-      );
-    } catch (e: unknown) {
-      const err = e as { stderr?: Buffer; signal?: string; code?: string };
-      // A subprocess timeout (execSync sends killSignal on the 600s ceiling) is a
-      // HANG — engine-attributable as crashed{timeout}, NOT a driver failure (D3
-      // §6.2). We can't pin the hang on one formula without re-running, so the whole
-      // batch is marked crashed rather than thrown away (which would lose every
-      // sibling result). A bounded hang surfaces as data, not an exception.
-      if (err.signal === "SIGTERM" || err.code === "ETIMEDOUT") {
-        return tasks.map((): DriverTaskResult => ({ outcome: { kind: "crashed", channel: "timeout" } }));
+    const timedOut = await withExcelLock(() => {
+      try {
+        execSync(
+          `uv run python "${PYTHON_SCRIPT}" ${this.workbookFlag}--batch "${tasksFile}" "${resultsFile}"`,
+          {
+            cwd: PROJECT_ROOT,
+            stdio: ["pipe", "pipe", this.stderr],
+            env: this.env,
+            timeout: 600000,
+          },
+        );
+        return false;
+      } catch (e: unknown) {
+        const err = e as { stderr?: Buffer; signal?: string; code?: string };
+        // A subprocess timeout (execSync sends killSignal on the 600s ceiling) is a
+        // HANG — engine-attributable as crashed{timeout}, NOT a driver failure (D3
+        // §6.2). We can't pin the hang on one formula without re-running, so the whole
+        // batch is marked crashed rather than thrown away (which would lose every
+        // sibling result). A bounded hang surfaces as data, not an exception.
+        if (err.signal === "SIGTERM" || err.code === "ETIMEDOUT") return true;
+        const msg = err.stderr?.toString() || String(e);
+        throw new Error(`Excel batch evaluation failed: ${msg}`);
       }
-      const msg = err.stderr?.toString() || String(e);
-      throw new Error(`Excel batch evaluation failed: ${msg}`);
+    });
+    if (timedOut) {
+      return tasks.map((): DriverTaskResult => ({ outcome: { kind: "crashed", channel: "timeout" } }));
     }
 
     // Python emits rich JSON in the legacy {result,error,skipped} shape, plus the
@@ -209,7 +277,7 @@ export class ExcelDriver implements Driver {
 
   async versionString(): Promise<string | null> {
     // opens excel briefly (~3-5s) — only invoked from `assay history --record`
-    return probePythonVersion(PYTHON_SCRIPT, PROJECT_ROOT, 60000);
+    return withExcelLock(() => probePythonVersion(PYTHON_SCRIPT, PROJECT_ROOT, 60000));
   }
 
   async destroy(): Promise<void> {

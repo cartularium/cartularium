@@ -5,7 +5,12 @@ import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const TOKEN_PATH = join(homedir(), ".assayrc.json");
-const SCOPES = ["https://www.googleapis.com/auth/spreadsheets"];
+const SCOPES = [
+  "https://www.googleapis.com/auth/spreadsheets",
+  // Lets the gsheets driver delete its own run workbooks. Tokens minted before
+  // this scope was added cannot delete; re-run `assay login`.
+  "https://www.googleapis.com/auth/drive.file",
+];
 const REDIRECT_PORT = 8090;
 const REDIRECT_URI = `http://localhost:${REDIRECT_PORT}`;
 
