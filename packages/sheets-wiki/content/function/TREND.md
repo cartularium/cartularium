@@ -4,7 +4,9 @@ category: array
 syntax: TREND(known_data_y, [known_data_x], [new_data_x], [b])
 status: imported
 description: Given partial data about a linear trend, fits an ideal linear trend using the least squares method and/or predicts further values.
-tags: []
+tags:
+  - modified
+  - undocumented
 ---
 > [!INFO]
 > This page was originally generated from [official documentation](https://support.google.com/docs/answer/3094263?hl=en).
@@ -35,6 +37,20 @@ TREND(known_data_y, [known_data_x], [new_data_x], [b])
 
   + The default behavior is to return the ideal curve fit values for the same `x` inputs as the existing data for comparison of known `y` values and their corresponding curve fit estimates.
 - `b` - **[** OPTIONAL - `TRUE` by default **]** - Given a general exponential form of `y = m*x+b` for a curve fit, calculates `b` if `TRUE` or forces `b` to be `0` and only calculates the `m` values if `FALSE`, i.e. forces the curve fit to pass through the origin.
+
+### Engine compatibility
+
+TREND spills a row of fitted/projected values, and the open engines diverge on both availability and orientation. Excel, Google Sheets, and Lattice agree on shape and values. **HyperFormula and IronCalc do not implement TREND** (`#NAME?`). pycel implements it only degenerately — it returns the **first fitted value as a single scalar**, dropping the rest. The `formulas` library returns the projected vector in **column orientation** where Excel and Google Sheets give a row (`TREND({2,4,6,8})` = `[2,4,6,8]` as a row vs `[2;4;6;8]` as a column), and it returns `#REF!` when `new_data_x` is supplied as a separately-shaped array it cannot reconcile (assay: LINEST-LOGEST-TREND-GROWTH deep dive; live probe, 2026-07-11). See [[Array-enabled functions]].
+
+| Engine | Behavior |
+| --- | --- |
+| Google Sheets | Full row of fitted/projected values. |
+| Excel | Full row of fitted/projected values. |
+| HyperFormula | Not implemented; returns `#NAME?` (live probe, 2026-07-11). |
+| IronCalc | Not implemented; returns `#NAME?` (live probe, 2026-07-11). |
+| formulas | Returns the vector transposed to a **column**; separately-oriented `new_data_x` → `#REF!` (live probe, 2026-07-11). |
+| pycel | Degenerate: returns only the first fitted value as a scalar (live probe, 2026-07-11). |
+| Lattice | Matches Excel and Google Sheets. |
 
 ### See Also
 

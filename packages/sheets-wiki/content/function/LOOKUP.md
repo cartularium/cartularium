@@ -4,7 +4,7 @@ category: lookup
 syntax: LOOKUP(search_key, search_range|search_result_array, [result_range])
 status: imported
 description: Looks through a sorted row or column for a key and returns the value of the cell in a result range located in the same position as the search row or column.
-tags: []
+tags: [modified, undocumented]
 ---
 > [!INFO]
 > This page was originally generated from [official documentation](https://support.google.com/docs/answer/3256570?hl=en).
@@ -38,6 +38,25 @@ If `search_key` is not found, the item used in the lookup will be the value that
 In the `search_result_array` method, the last row or column in the provided range is returned. If a different row or column is desired, use `VLOOKUP` or `HLOOKUP` instead.
 
 When using the `search_result_array` method, if the range provided contains more columns than rows, then the search will be from left to right over the first row in the range. If the range contains an equal number of rows and columns or more rows than columns, then the search will be from top to bottom over the first column in the range.
+
+### Engine compatibility
+
+The **vector form** `LOOKUP(search_key, search_range, result_range)` is broadly portable — Excel, Google Sheets, Lattice, IronCalc, formulas, and pycel all evaluate it; only HyperFormula lacks `LOOKUP` entirely. The **array form** `LOOKUP(search_key, array)`, which infers orientation from the array's shape, is a portability trap. Testing the horizontal case `=LOOKUP(2, {1,2,3;"a","b","c"})` (a 3×2 array, so search the first row and return the last row → `"b"`):
+
+| Engine | Behavior |
+| --- | --- |
+| Google Sheets | `"b"` — correct array-form, horizontal orientation. |
+| Excel | `"b"` — correct. |
+| Lattice | `"b"` — correct. |
+| pycel | `"b"` for non-square arrays, but returns the *search key* `2` on a square array where orientation is ambiguous (live probe, 2026-07-11). |
+| formulas | `2` — mis-implements the array form: it returns the matched *key* instead of the result-row value, for every orientation. Treat its array-form `LOOKUP` output as unreliable (live probe, 2026-07-11). |
+| IronCalc | `#N/A` — implements `LOOKUP` but does not resolve this array form (live probe, 2026-07-11). |
+| HyperFormula | `#NAME?` — `LOOKUP` not implemented at all (live probe, 2026-07-11). |
+
+The square-array orientation is worth pinning down: `=LOOKUP(2, {1,2;3,4})` orients **vertically** in Excel — it searches the first column `{1;3}` and returns the last column of the matched row, giving `2` (live Excel probe, 2026-07-11).
+
+> [!INFO]
+> Prefer [[INDEX]]/[[MATCH]] or [[XLOOKUP]] over the array form of `LOOKUP`. Even among engines that implement it, a square array is ambiguous, and `formulas` returns the wrong axis entirely.
 
 ### Examples
 

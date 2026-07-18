@@ -4,7 +4,7 @@ category: statistical
 syntax: COUNTA(value1, [value2, ...])
 status: imported
 description: Returns the number of values in a dataset.
-tags: []
+tags: [modified, undocumented]
 ---
 > [!INFO]
 > This page was originally generated from [official documentation](https://support.google.com/docs/answer/3093991?hl=en).
@@ -31,6 +31,23 @@ COUNTA(value1, [value2, ...])
 
 - Although `COUNTA` is specified as taking a maximum of 30 arguments, Google Sheets supports an arbitrary number of arguments for this function.
 - `COUNTA` counts all values in a dataset, including those which appear more than once and text values (including zero-length strings and whitespace). To count unique values, use `COUNTUNIQUE`. To count only numeric values use `COUNT`.
+
+### Engine compatibility
+
+Engines agree on the easy cases — a genuinely empty cell is not counted; a number or non-empty text is. They split on exactly one boundary: **a cell holding a zero-length string `""`**. Counting a range like `A1="1"`, `A2=""`, `A3="3"`:
+
+| Engine | Behavior |
+| --- | --- |
+| Google Sheets | `3` — a `""` cell is a text value and is counted (assay: COUNTA/counta-empty-string-cell). |
+| Excel | `2` — a `""` cell is treated as blank and skipped (assay: COUNTA/counta-non-empty). |
+| HyperFormula | `3` — `""` is a real text value (live probe, 2026-07-11). |
+| IronCalc | `3` — counts the `""` cell (live probe, 2026-07-11). |
+| formulas | `2` — treats `""` as blank, like Excel (live probe, 2026-07-11). |
+| Lattice | `2` — treats `""` as blank. |
+| pycel | `#NAME?` — `COUNTA` is not implemented (live probe, 2026-07-11). |
+
+> [!INFO]
+> The empty-string boundary is a common source of cross-tool disagreement, because `""` cells appear constantly (helper columns built with `=IF(cond, x, "")`, CSV imports with empty quoted fields). A `COUNTA` total over such a column matches between Google Sheets / HyperFormula / IronCalc and between Excel / formulas / Lattice, but not across the two groups. `COUNTBLANK` mirrors this same decision — see [[COUNTBLANK]].
 
 ### See Also
 

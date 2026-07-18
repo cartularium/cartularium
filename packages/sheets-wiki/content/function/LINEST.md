@@ -4,7 +4,9 @@ category: array
 syntax: LINEST(known_data_y, [known_data_x], [calculate_b], [verbose])
 status: imported
 description: Given partial data about a linear trend, calculates various parameters about the ideal linear trend using the least-squares method.
-tags: []
+tags:
+  - modified
+  - undocumented
 ---
 > [!INFO]
 > This page was originally generated from [official documentation](https://support.google.com/docs/answer/3094249?hl=en).
@@ -45,6 +47,20 @@ LINEST(known_data_y, [known_data_x], [calculate_b], [verbose])
     - The degrees of freedom, useful in looking up F statistic values in a reference table to estimate a confidence level,
     - The regression sum of squares, and
     - The residual sum of squares.
+
+### Engine compatibility
+
+LINEST is a dynamic-array regression function and the open engines handle it unevenly. Excel, Google Sheets, and Lattice implement the full spilled output. **HyperFormula and IronCalc do not implement it at all** (`#NAME?`). pycel implements only a degenerate form: it returns the **first coefficient (the slope) as a single scalar** and drops the rest of the array — treat pycel's LINEST output as unusable for the coefficient block. Lattice supports the plain coefficient form but **not the `verbose` statistics block** (the 4th argument `TRUE`), returning `#N/A` there. Even among Excel, Google Sheets, and `formulas`, which all produce the 5-row stats block, a **perfect-fit** line is degenerate: the F-statistic cell is 0/0, and Excel returns `#NUM!` while Google Sheets and `formulas` return a meaningless finite huge number (~1e31, differing per engine). Do not rely on the F/df cells cross-engine when the fit is exact (assay: LINEST-LOGEST-TREND-GROWTH deep dive; live probe, 2026-07-11). The coefficient values themselves agree only to ~15 significant digits; compare with tolerance. See [[Array-enabled functions]] for how the spill is consumed.
+
+| Engine | Behavior |
+| --- | --- |
+| Google Sheets | Full coefficient and `verbose` stats block; perfect-fit F-statistic → a huge finite number. |
+| Excel | Full block; perfect-fit F-statistic → `#NUM!`. |
+| HyperFormula | Not implemented; returns `#NAME?` (live probe, 2026-07-11). |
+| IronCalc | Not implemented; returns `#NAME?` (live probe, 2026-07-11). |
+| formulas | Coefficient block matches Excel; perfect-fit F-statistic → a different huge finite number (live probe, 2026-07-11). |
+| pycel | Degenerate: returns only the first coefficient (slope) as a scalar (live probe, 2026-07-11). |
+| Lattice | Coefficient form supported; the `verbose` stats block returns `#N/A`. |
 
 ### See Also
 

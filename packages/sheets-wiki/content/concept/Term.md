@@ -26,6 +26,8 @@ All values originate from terms, but not all terms reduce to values. For instanc
 
 Lambda terms are [first-class](https://en.wikipedia.org/wiki/First-class_function). They can be passed as arguments to other functions, returned from other functions, and be assigned to variables.
 
+First-class lambda terms are not universally supported. Excel, Google Sheets, Lattice, and the `formulas` engine implement `LAMBDA` and its higher-order helpers (`MAP`, `REDUCE`, `SCAN`, and so on), while the legacy calculation cores HyperFormula, IronCalc, and pycel return `#NAME?` for the whole family (assay: LAMBDA/lambda-basic-iife). Immediate invocation of a lambda in place — `=LAMBDA(x, x+1)(5)` — is narrower still: it works only in Excel, Google Sheets, and Lattice (live probe, 2026-07-11).
+
 ### Primitive function
 
 Primitive functions are not first-class and comprise every default function. The only operation that can be performed on primitive functions is [application](https://en.wikipedia.org/wiki/Function_application) (e.g. applying them to lambda terms, such as `SUM(1, 2, 3)`).

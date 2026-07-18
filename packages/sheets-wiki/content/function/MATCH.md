@@ -4,7 +4,7 @@ category: lookup
 syntax: MATCH(search_key, range, [search_type])
 status: imported
 description: Returns the relative position of an item in a range that matches a specified value.
-tags: []
+tags: [modified, undocumented]
 ---
 > [!INFO]
 > This page was originally generated from [official documentation](https://support.google.com/docs/answer/3093378?hl=en).
@@ -37,6 +37,23 @@ MATCH(search_key, range, [search_type])
 ### Notes
 
 - `MATCH` returns the position in an array or range of a matched value rather than the value itself. To return the value itself or another value corresponding to the row or column the match is found in, use [[INDEX]], [[HLOOKUP]], or [[VLOOKUP]].
+
+### Engine compatibility
+
+`MATCH` is one of the most portable lookup functions. Exact match (`search_type` `0`), approximate match on sorted data (`1`), and the not-found case all agree across every evaluating engine: Excel, Google Sheets, HyperFormula, IronCalc, formulas, pycel, and Lattice (assay: MATCH/match-exact, MATCH/match-approximate, MATCH/match-not-found; live probe, 2026-07-11).
+
+| Engine | Behavior |
+| --- | --- |
+| Google Sheets | Portable; a not-found search is `#N/A`. |
+| Excel | Portable; not-found is `#N/A`. |
+| HyperFormula | Portable (live probe, 2026-07-11). |
+| IronCalc | Portable (live probe, 2026-07-11). |
+| formulas | Portable (live probe, 2026-07-11). |
+| pycel | Portable (live probe, 2026-07-11). |
+| Lattice | Portable. |
+
+> [!INFO]
+> A `MATCH` miss returns `#N/A` on every engine — safe to rely on. The error-code portability trap lives on the *result* side: an out-of-bounds `INDEX` index is `#REF!` on most engines but `#NUM!` in Google Sheets and HyperFormula. See [[INDEX]].
 
 ### See Also
 

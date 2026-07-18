@@ -4,7 +4,7 @@ category: array
 syntax: TOROW(array_or_range, [ignore], [scan_by_column])
 status: imported
 description: This function transforms an array or range of cells into a single row.
-tags: []
+tags: [modified, undocumented]
 ---
 > [!INFO]
 > This page was originally generated from [official documentation](https://support.google.com/docs/answer/13187459?hl=en).
@@ -99,6 +99,23 @@ TOROW(array_or_range, [ignore], [scan_by_column])
 | **1** | Ben | John | Agnes | Peter | Hillary | Harry | Mary | Jenny | Felicity |
 
 [Make a Copy](https://docs.google.com/spreadsheets/d/1km45-ev3eD7ZS_J3PeSA7PLykpV71_98CqXq58vnXt8/copy#gid=312714135)
+
+### Engine compatibility
+
+`TOROW` is a modern dynamic-array reshape function; support is a presence/absence split, and where implemented the flattened result and its order agree.
+
+| Engine | Behavior |
+| --- | --- |
+| Google Sheets | Implemented; default scan is by row, `scan_by_column` = `TRUE` switches to column-major. |
+| Excel | Implemented; same scan semantics. |
+| Lattice | Implemented; agrees on shape and order. |
+| formulas | Implemented; `=TOROW({1,2;3,4})` is `{1,2,3,4}` (row-major) (live probe, 2026-07-11). |
+| HyperFormula | `#NAME?` — not implemented (live probe, 2026-07-11). |
+| IronCalc | `#NAME?` — not implemented (live probe, 2026-07-11). |
+| pycel | `#NAME?` — not implemented (live probe, 2026-07-11). |
+
+> [!INFO]
+> Not portable to HyperFormula, IronCalc, or pycel. The default scan order is row-major; pass the third argument `TRUE` for column-major. The same availability split applies to [[TOCOL]].
 
 ### Related functions
 

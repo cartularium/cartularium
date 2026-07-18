@@ -4,7 +4,9 @@ category: math
 syntax: SEQUENCE(rows, columns, start, step)
 status: imported
 description: "The SEQUENCE function\_returns an array of sequential numbers, such as 1, 2, 3, 4."
-tags: []
+tags:
+  - modified
+  - undocumented
 ---
 > [!INFO]
 > This page was originally generated from [official documentation](https://support.google.com/docs/answer/9368244?hl=en).
@@ -66,6 +68,20 @@ Result for A1= `SEQUENCE(2, 3, 10, -1)`
 | **1** | 10 | 9 | 8 |
 | **2** | 7 | 6 | 5 |
 | **3** | 4 | 3 | 2 |
+
+### Engine compatibility
+
+SEQUENCE is available in Excel, Google Sheets, and Lattice, and **absent from HyperFormula, IronCalc, pycel, and the `formulas` library** — all four return `#NAME?` (assay: SEQUENCE forks; live probe, 2026-07-11). SEQUENCE is the one place where `formulas` sits on the unsupported side of the modern dynamic-array family (it does implement HSTACK, VSTACK, SORT, TOCOL, and the rest), so "the `formulas` library supports dynamic arrays" is not true for SEQUENCE. Like all spilling functions, SEQUENCE is unavailable in the non-spilling engines; see [[Array-enabled functions]] and [[Unsupported functions]].
+
+| Engine | Behavior |
+| --- | --- |
+| Google Sheets | Supported; spills the grid. |
+| Excel | Supported; spills the grid. |
+| HyperFormula | Not implemented; returns `#NAME?` (live probe, 2026-07-11). |
+| IronCalc | Not implemented; returns `#NAME?` (live probe, 2026-07-11). |
+| formulas | Not implemented; returns `#NAME?` (live probe, 2026-07-11). |
+| pycel | Not implemented; returns `#NAME?` (live probe, 2026-07-11). |
+| Lattice | Supported; spills the grid. |
 
 ### Related functions
 

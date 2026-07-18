@@ -4,7 +4,7 @@ category: text
 syntax: FINDB(search_for, text_to_search, [starting_at])
 status: imported
 description: Returns the byte position at which a string is first found within text.
-tags: []
+tags: [modified, undocumented]
 ---
 > [!INFO]
 > This page was originally generated from [official documentation](https://support.google.com/docs/answer/3296009?hl=en).
@@ -41,6 +41,23 @@ FINDB(search_for, text_to_search, [starting_at])
 - Ensure that `search_for` and `text_to_search` are not supplied in reverse order, or the `#VALUE!` error will likely be returned. The arguments are supplied in a different order than other text functions such as `SPLIT` and `SUBSTITUTE`.
 - It's recommended to use a function such as `IFERROR` to check for cases when there aren't matches to the search.
 - Use `FIND` for standard character sets, and `FINDB` for double-byte character sets such as Japanese, Chinese (Simplified), Chinese (Traditional), and Korean.
+
+### Engine compatibility
+
+`FINDB` reports a byte position only under a double-byte (DBCS) locale; in a single-byte (Western) locale it collapses to plain `FIND`. Testing `=FINDB("い","あいう")` (find the second hiragana character):
+
+| Engine | Behavior |
+| --- | --- |
+| Google Sheets | `3` — the byte position (each preceding CJK character is two bytes). |
+| Excel | `2` in a Western locale, where `FINDB` collapses to `FIND` (character position); the byte position `3` in a DBCS locale (live Excel probe, 2026-07-11, Western locale). |
+| Lattice | `3` — always DBCS, so the byte position (assay: FINDB/findb-dbcs). |
+| formulas | `2` — mirrors Western-locale Excel (live probe, 2026-07-11). |
+| HyperFormula | `#NAME?` — not implemented (live probe, 2026-07-11). |
+| IronCalc | `#NAME?` — not implemented (live probe, 2026-07-11). |
+| pycel | `#NAME?` — not implemented (live probe, 2026-07-11). |
+
+> [!INFO]
+> A common CJK idiom pairs `FINDB` (locate a byte) with `MIDB` (slice from that byte). Because engines and locales disagree on whether the offset is a byte or a character, the pair can use mismatched conventions on the same text — test on the target engine. The whole `*B` family is absent from HyperFormula, IronCalc, and pycel.
 
 ### See Also
 

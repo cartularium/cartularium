@@ -4,7 +4,9 @@ category: array
 syntax: '=FLATTEN(range1, [range2, …])'
 status: imported
 description: Flattens all the values from one or more ranges into a single column.
-tags: []
+tags:
+  - modified
+  - undocumented
 ---
 > [!INFO]
 > This page was originally generated from [official documentation](https://support.google.com/docs/answer/10307761?hl=en).
@@ -66,6 +68,20 @@ A more complex example, using the CONCAT (&) operator and SPLIT to do a simple *
 The `FLATTEN` function was originally #undocumented and was first discovered on March 15, 2020 by a user named Andy on the [Google Docs Editors Help Community forum](https://support.google.com/docs/thread/33715001). It has since been [officially recognized](https://support.google.com/docs/answer/10307761), although it has been mostly deprecated by [[TOCOL]].
 
 [[Matt King]]'s sheet, which was escalated to Google, can be found [here](https://docs.google.com/spreadsheets/d/196NDPUZ-p2sPiiiYlYsJeHD6F_eJq7CWO_hP7rFqGpc/edit?gid=0#gid=0).
+
+### Engine compatibility
+
+FLATTEN is a **Google Sheets proprietary** function — Microsoft Excel has never added it. In the tracked engines only Google Sheets and Lattice compute a value; Excel, `formulas`, HyperFormula, IronCalc, and pycel all return `#NAME?` (assay: FLATTEN forks; live probe, 2026-07-11). This is a sharper portability edge than the rest of the reshape family: because Excel itself lacks the name, a Google Sheets workbook using FLATTEN will not open cleanly in Excel at all, not merely in the open-source engines. To port to Excel 365, rewrite with [[TOCOL]] — but note TOCOL is itself unavailable in HyperFormula, IronCalc, and pycel. The row-major ordering (argument, then row, then column) is consistent on the two engines that support it.
+
+| Engine | Behavior |
+| --- | --- |
+| Google Sheets | Supported; row-major single-column output. |
+| Excel | Not implemented; returns `#NAME?`. |
+| HyperFormula | Not implemented; returns `#NAME?` (live probe, 2026-07-11). |
+| IronCalc | Not implemented; returns `#NAME?` (live probe, 2026-07-11). |
+| formulas | Not implemented; returns `#NAME?` (live probe, 2026-07-11). |
+| pycel | Not implemented; returns `#NAME?` (live probe, 2026-07-11). |
+| Lattice | Supported; row-major single-column output. |
 
 ### Related functions
 

@@ -4,7 +4,9 @@ category: date
 syntax: WEEKNUM(date, [type])
 status: imported
 description: Returns a number representing the week of the year where the provided date falls.
-tags: []
+tags:
+  - modified
+  - undocumented
 ---
 > [!INFO]
 > This page was originally generated from [official documentation](https://support.google.com/docs/answer/3294949?hl=en).
@@ -46,6 +48,20 @@ WEEKNUM(date, [type])
   | 16 | Saturday | Friday | 1 |
   | 17 | Sunday | Saturday | 1 |
   | 21 | Monday | Sunday | 2 |
+
+### Engine compatibility
+
+WEEKNUM's cross-engine behavior turns on whether a **text** date argument is coerced. The sample above uses text dates like `"12/09/1948"`; Excel, Google Sheets, IronCalc, `formulas`, and Lattice coerce an ISO-8601 (or locale) date string to a serial and compute — for instance `WEEKNUM("2023-01-01", 21)` = 52. **HyperFormula does not coerce a date string** and returns `#VALUE!` for the text form regardless of `type`, though it computes correctly the moment the argument is a real date (`WEEKNUM(DATE(2023,1,1), 21)` = 52). pycel does not implement WEEKNUM at all (`#NAME?`). Wrap literals in [[DATE]] (or reference a cell holding a real date) for portable formulas (assay: WEEKNUM/weeknum-iso-system; live probe, 2026-07-11).
+
+| Engine | Behavior |
+| --- | --- |
+| Google Sheets | Coerces text dates; computes. |
+| Excel | Coerces text dates; computes. |
+| HyperFormula | Text date → `#VALUE!`; computes on a real date (live probe, 2026-07-11). |
+| IronCalc | Coerces text dates; computes (live probe, 2026-07-11). |
+| formulas | Coerces text dates; computes (live probe, 2026-07-11). |
+| pycel | Not implemented; returns `#NAME?` (live probe, 2026-07-11). |
+| Lattice | Coerces text dates; computes. |
 
 ### See Also
 
