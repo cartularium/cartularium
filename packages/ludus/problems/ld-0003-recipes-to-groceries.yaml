@@ -122,3 +122,12 @@ cases:
 verified:
   asOf: 2026-07-18
   hash: cf2b29c45ddc5b10
+selftest:
+  alt: =LET(d, FILTER(Input!A2:C17, Input!A2:A17 <> ""), recs, ARRAYFORMULA(CHOOSECOLS(d, 3) & "◇" &
+    SUBSTITUTE(CHOOSECOLS(d, 2), ", ", "◆" & CHOOSECOLS(d, 3) & "◇")), toks,
+    TRANSPOSE(SPLIT(TEXTJOIN("◆", 1, recs), "◆")), sv, ARRAYFORMULA(VALUE(REGEXEXTRACT(toks,
+    "^(.+?)◇"))), rest, ARRAYFORMULA(REGEXEXTRACT(toks, "◇(.*)$")), qty,
+    ARRAYFORMULA(VALUE(REGEXEXTRACT(rest, "^(\S+)"))), unit, ARRAYFORMULA(REGEXEXTRACT(rest, "^\S+
+    (\S+)")), nm, ARRAYFORMULA(REGEXEXTRACT(rest, "^\S+ \S+ (.+)$")), amts, ARRAYFORMULA(sv * qty),
+    pairs, UNIQUE({nm, unit}), pn, INDEX(pairs, , 1), pu, INDEX(pairs, , 2), tots, MAP(pn, pu,
+    LAMBDA(a, b, SUMPRODUCT((nm = a) * (unit = b) * amts))), {pn, ARRAYFORMULA(tots & " " & pu)})

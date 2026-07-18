@@ -143,3 +143,7 @@ cases:
 verified:
   asOf: 2026-07-18
   hash: 7e60cf5c8ce0dc7e
+selftest:
+  alt: =LET(d, FILTER(Input!A2:B11, Input!A2:A11 <> ""), big, TEXTJOIN("◆", 1,
+    ARRAYFORMULA(CHOOSECOLS(d, 1) & "◇" & SUBSTITUTE(CHOOSECOLS(d, 2), ", ", "◆◇"))), recs,
+    TRANSPOSE(SPLIT(big, "◆", TRUE, FALSE)), ARRAYFORMULA(SPLIT(recs, "◇", TRUE, FALSE)))

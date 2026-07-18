@@ -309,3 +309,7 @@ cases:
 verified:
   asOf: 2026-07-18
   hash: 8eb6912f2db25bd6
+selftest:
+  alt: =LET(t, {Input!A2:D9; Input!E2:H9; Input!I2:L9}, skus, INDEX(t, , 1), qty, INDEX(t, , 2), tot,
+    INDEX(t, , 3), u, UNIQUE(FILTER(skus, skus <> "")), q, MAP(u, LAMBDA(s, SUM(FILTER(qty, skus =
+    s)))), p, MAP(u, LAMBDA(s, SUM(FILTER(tot, skus = s)))), {u, q, p, ARRAYFORMULA(p / q)})

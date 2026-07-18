@@ -196,6 +196,10 @@ against these before blaming the judge:
   run of wrong RLE encodings). Wrap the expression in ARRAYFORMULA.
 - LET rejects binding names that parse as cell references: `c1`, `A`, `B`,
   `I`, `V` all fail with "not a valid name". Use words.
+- CHAR of a control code returns an *empty string* — `LEN(CHAR(30)) = 0` —
+  so control characters can't be marker delimiters (SPLIT then errors with
+  "parameter 2 value should be non-empty"). Use printable glyphs the data
+  can't contain (`◆`, `◇`).
 - SUMIF/COUNTIF require real ranges; passing computed arrays errors.
 - `values.get` renders errors with an appended message; the judge
   prefix-matches, but anything string-comparing against error text must too.
