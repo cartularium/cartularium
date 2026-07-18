@@ -176,3 +176,11 @@ cases:
 verified:
   asOf: 2026-07-18
   hash: 3499bc82d8704dc7
+selftest:
+  alt: =LET(all, Input!B3:B20, names, FILTER(all, all <> ""), m, ROWS(names), compa,
+    ARRAY_CONSTRAIN(Input!C3:C20, m, 1), compb, ARRAY_CONSTRAIN(Input!D3:D20, m, 1), tn,
+    TRANSPOSE(names), adj, ARRAYFORMULA((compa = tn) * 1 + (compb = tn) * 1), prim,
+    ARRAYFORMULA((compa = {"Red", "Yellow", "Blue"}) * 1 + (compb = {"Red", "Yellow", "Blue"}) * 1),
+    vec, REDUCE(prim, SEQUENCE(m), LAMBDA(acc, k, ARRAYFORMULA(prim + MMULT(adj, acc)))),
+    ARRAYFORMULA(INDEX(vec, , 1) & " Red, " & INDEX(vec, , 2) & " Yellow, " & INDEX(vec, , 3) & "
+    Blue"))

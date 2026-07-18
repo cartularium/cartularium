@@ -53,14 +53,19 @@ surface so staleness detection is mechanical.
    `src/template-style.ts`) and writes its id back. Prints the `/copy` link.
    Open the template and read the About tab — statement rendering problems show
    up here first.
-4. **Judge your own solve.** Copy the template, solve it, then
-   `pnpm --filter @cartularium/ludus judge problems/<file>.yaml <sheet-url>`.
-   This is the acceptance test for the *problem*: it exercises statement
-   clarity, the compare policy, and lint. Two checks are mandatory:
-   - A legitimate solve with a different technique than `reference` must be
-     accepted (wp-0001: FILTER/MAP solve against a QUERY reference).
-   - A hardcoded copy of the sample answer must fail the hidden cases. If it
-     passes, the hidden cases are too close to the sample.
+4. **Self-test.** Store a legitimate solution using a *different technique*
+   than `reference` in `selftest.alt`, then
+   `pnpm --filter @cartularium/ludus selftest problems/<file>.yaml`.
+   It runs both mandatory acceptance checks through the real judge:
+   - The alt-technique solve must be accepted (ld-0004: SUMPRODUCT against a
+     SUMIF reference; ld-0007: fixpoint iteration against MINVERSE). This is
+     what proves the problem is solvable off the reference path and exercises
+     statement clarity, the compare policy, and lint.
+   - The sample answer hardcoded into OUTPUT must pass the sample and fail
+     the hidden cases. If it passes hidden, the hidden cases are too close to
+     the sample.
+   Failing sheets are kept and linked for inspection. Solving your own copy
+   by hand on top of this is encouraged, not required.
 5. **Redeploy both surfaces.** Template regeneration mints a new spreadsheet
    id, so the deployed site's copy links go stale until
    `LUDUS_SERVICE_URL=<worker-url> pnpm build:site` +
@@ -77,7 +82,13 @@ the page address.
 **verified.** Oracle-owned: `asOf` is the date the reference last ran against
 live Sheets; `hash` fingerprints reference + template ranges + case inputs.
 Compare policy and prose are deliberately outside the hash — changing them
-doesn't stale the oracle run.
+doesn't stale the oracle run. CI recomputes the hashes on every ludus change
+(the staleness sweep in `ludus-build.yml`).
+
+**selftest.** `alt` holds the alternative-technique solution that
+`pnpm selftest` submits. It is corpus material like `reference` — keep it
+working, and keep its technique genuinely distinct. Outside the oracle
+surface: editing it doesn't stale `verified`.
 
 **difficulty.** The hand-grade prior: an open-ended integer, no cap
 (climbing-grade model — recalibrate as the corpus ceiling rises). Users only

@@ -149,3 +149,5 @@ cases:
 verified:
   asOf: 2026-07-18
   hash: de26967a872b78e5
+selftest:
+  alt: =SUMPRODUCT((Input!B3:B32 = Input!E3) * Input!C3:C32)

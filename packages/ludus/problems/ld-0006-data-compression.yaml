@@ -93,3 +93,7 @@ cases:
 verified:
   asOf: 2026-07-18
   hash: bb340e8ca7174db9
+selftest:
+  alt: =MAP(Input!B3:B18, LAMBDA(s, IF(s = "", "", LET(idx, SEQUENCE(LEN(s)), marked, TEXTJOIN("", 1,
+    ARRAYFORMULA(IF(MID(s, idx, 1) <> MID(s, idx + 1, 1), MID(s, idx, 1) & "~", MID(s, idx, 1)))),
+    runs, SPLIT(marked, "~"), TEXTJOIN("", 1, ARRAYFORMULA(LEFT(runs, 1) & LEN(runs)))))))

@@ -95,3 +95,5 @@ cases:
 verified:
   asOf: 2026-07-18
   hash: 34c68d205d18cea7
+selftest:
+  alt: =ARRAYFORMULA(IF(Input!B3:B33 = "", "", REGEXREPLACE(Input!B3:B33, "^(\S+) (\S).*$", "$1 $2.")))

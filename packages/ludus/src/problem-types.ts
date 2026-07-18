@@ -56,6 +56,13 @@ export interface Problem {
    * A stored hash differing from the recomputed one means `expected` is stale.
    */
   verified?: { asOf: string; hash: string };
+  /**
+   * Acceptance-check material (docs/authoring.md, loop step 4): `alt` is a
+   * legitimate solution using a different technique than `reference`. Stored
+   * so cli-selftest can re-run the checks mechanically; outside the oracle
+   * surface, so editing it doesn't stale the verified stamp.
+   */
+  selftest?: { alt: string };
   compare: ComparePolicy;
   lint?: { ban?: string[] };
   cases: ProblemCase[];
