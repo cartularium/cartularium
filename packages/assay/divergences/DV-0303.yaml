@@ -1,0 +1,15 @@
+id: DV-0303
+summary: "excel, gsheets: different error code when a spill is blocked by an occupied cell (excel #SPILL!, gsheets #REF!) — feature:spill-blocking"
+cause: error-code
+category: value
+engines:
+  - excel
+  - gsheets
+test-count: 2
+subjects:
+  - "feature:spill-blocking"
+tests:
+  - "feature:spill-blocking/spill-blocked-by-occupied-cell-2d"
+  - "feature:spill-blocking/spill-blocked-by-occupied-cell-row"
+seeded: 2026-07-11
+last-confirmed: 2026-07-11

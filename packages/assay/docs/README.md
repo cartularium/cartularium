@@ -136,29 +136,24 @@ replacing the ad-hoc per-driver seeding and half-built isolation. Decisions D1�
 
 ## Where we are
 
-**Sequencing** (driver-contract §5; seeding §9):
+**The floor is DONE** (all four sequencing steps of driver-contract §5 / seeding §9, landed
+2026-06-15): contract modules + invariant gates, the D2 read model (O3/O4, amortization complete
+for tier-1), D3/D4 isolation grounded live, the generation-layer consolidation + `capabilities()`
++ `createDriver`, and the **`@cartularium/drivers` extraction** (`d2ada50b`). This section
+previously tracked that work; it is kept as the ledger of record below.
 
-1. **Ratify the design** — ✅ **DONE.** Driver contract (2026-06-04) + test-space charter
-   (§1–§10, closing the D2 gate, 2026-06-14).
-2. **Harden the floor to the ratified contract** ← **HERE.** Lay the contract modules + the two
-   invariant tests as acceptance gates, and implement the D2 read model. Concretely:
-   - graduate `contract/layout.ts` spill pieces **O1 → O3** (the one piece of code still shaped
-     by the rejected window model);
-   - implement **O4 two-phase** (composite probe + the lump screen: dense-pack only reference-free
-     ∧ position-insensitive formulas);
-   - write the **isolation clause** module + the **contamination** invariant test;
-   - wire `contract/seed.ts`'s oracle into the **type-fidelity** invariant test;
-   - add **opaque-reference (`INDIRECT`/`OFFSET`) → isolation routing** + declared-obstacle layout
-     support (the two charter-§8 sequencing items);
-   - then conform the cracked drivers (gsheets ingestion; Excel process-death recovery), gated by
-     the invariants.
-3. **Bring the contract up to the ratified shape** — consolidate the two loops; `capabilities()`
-   + relocate rewrite-adapters; add the result properties; `createDriver`.
-4. **Extract `@cartularium/drivers`** — mechanical; boundary drawn, name settled.
+**The current thread is the comparison initiative** (CP1–CP3, 2026-06-15→):
 
-**Code built so far** (`src/drivers/contract/`, 26 tests green): `seed.ts` (ingestion — D1/D6/B,
-type-fidelity oracle) and `layout.ts` (the `BatchLayout` coordinate contract + the §5 hardening
-rules). `layout.ts`'s spill pieces are still O1-shaped and flagged PROVISIONAL — step-2 item #1.
+- **CP1/CP2 ratified + built** — no-verdict / multiplicity frame (`terminology.md`), the
+  verdict-free **ManifestV5** output contract (`comparison-output-contract-2026-06-17.md`),
+  observation-only manifest (annotation layer exiled out-of-band, 2026-06-19).
+- **CP3 in flight** — the **fork-annotation store** (`annotation-store-design-2026-06-20.md`,
+  RATIFIED): 3a–3e DONE (contracts DTO + edit-shell D1 store + CRUD API + DV import + coverage
+  read + manifest tags with the R1 hygiene gate + verification-provenance axis). **3f (the
+  reclassify pass) is in flight** — policy at `reclassify-policy-2026-07-11.md`, latest state in the dated handoffs.
+- **Deferred behind #4 (store-as-read-source):** live coverage endpoint + manifest-into-Worker
+  delivery (design: `store-delivery-2026-07-11.md`), sheets-wiki V4→V5, retiring the in-repo
+  DV YAML / `history` / `seedCatalogue`.
 
 ---
 

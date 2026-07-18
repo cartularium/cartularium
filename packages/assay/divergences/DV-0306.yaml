@@ -1,0 +1,16 @@
+id: DV-0306
+summary: "formulas: return orientation differs (column vector where excel, gsheets, lattice return a row) — GROWTH, TREND"
+cause: array-orientation
+category: value
+engines:
+  - formulas
+test-count: 3
+subjects:
+  - GROWTH
+  - TREND
+tests:
+  - GROWTH/growth-inferred-x
+  - TREND/trend-inferred-x
+  - TREND/trend-simple
+seeded: 2026-07-11
+last-confirmed: 2026-07-11

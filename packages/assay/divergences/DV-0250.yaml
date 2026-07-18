@@ -16,3 +16,10 @@ tests:
   - AGGREGATE/aggregate-sum-ignoring-errors
 seeded: 2026-04-26
 last-confirmed: 2026-04-26
+
+# 3f reclassify (reclassify-policy-2026-07-11.md D-3f-3): function-level mechanism ->
+# subjectIn predicate; auto-covers same-subject forks. tests: above = the materialized
+# snapshot at reclassify time (V4 render substrate), not kept in sync.
+scope:
+  - subjectIn:
+      - AGGREGATE

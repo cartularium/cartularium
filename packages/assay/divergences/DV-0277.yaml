@@ -1,0 +1,18 @@
+id: DV-0277
+summary: "hyperformula, lattice, pycel: function not implemented — T.DIST.2T, T.INV.2T"
+cause: missing-function
+category: value
+engines:
+  - hyperformula
+  - lattice
+  - pycel
+test-count: 3
+subjects:
+  - T.DIST.2T
+  - T.INV.2T
+tests:
+  - T.DIST.2T/t-dist-2t-central
+  - T.DIST.2T/t-dist-2t-df-10
+  - T.INV.2T/t-inv-2t-95-df-10
+seeded: 2026-07-11
+last-confirmed: 2026-07-11

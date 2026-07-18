@@ -901,22 +901,22 @@ tests:
         recorded:
           error: "#NAME?"
       excel:
-        cause: arg-semantics
+        cause: precision
         recorded: 1073.6432460242781
       gsheets:
-        cause: arg-semantics
+        cause: precision
         recorded: 1073.6432460242795
       lattice:
-        cause: arg-semantics
+        cause: precision
         recorded: 1073.6432460242797
       ironcalc:
-        cause: arg-semantics
+        cause: precision
         recorded: 1073.643246024
       hyperformula:
-        cause: arg-semantics
+        cause: precision
         recorded: 1073.643246
       libreoffice:
-        cause: arg-semantics
+        cause: precision
         recorded: 1073.64324602428
     tags:
       - financial

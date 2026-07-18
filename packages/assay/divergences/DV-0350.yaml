@@ -1,0 +1,22 @@
+id: DV-0350
+summary: "ironcalc: comparison over array operands returns a single boolean instead of the elementwise array produced by excel, formulas, gsheets, hyperformula, lattice (pycel #NAME?) — op:=, op:> (+3 more)"
+cause: shape
+category: value
+engines:
+  - ironcalc
+  - pycel
+test-count: 5
+subjects:
+  - "op:<"
+  - "op:<>"
+  - "op:="
+  - "op:>"
+  - "op:>="
+tests:
+  - "op:eq/equals-scalar-against-row"
+  - "op:gt/comparison-2d-vs-scalar"
+  - "op:gte/greater-equal-row-vs-row"
+  - "op:lt/less-than-scalar-against-row"
+  - "op:ne/not-equal-outer-product"
+seeded: 2026-07-11
+last-confirmed: 2026-07-11

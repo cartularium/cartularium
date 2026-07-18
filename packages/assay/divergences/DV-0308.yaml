@@ -1,0 +1,19 @@
+id: DV-0308
+summary: "hyperformula: legacy alias bound to the newer form's argument count, returning #N/A at legacy arity (ironcalc, pycel treat the name as not implemented, #NAME?) — HYPGEOMDIST, LOGINV via nested LOGNORMDIST; gsheets additionally differs in the 10th decimal on the LOGINV roundtrip"
+cause: argument-arity
+category: value
+engines:
+  - gsheets
+  - hyperformula
+  - ironcalc
+  - pycel
+test-count: 3
+subjects:
+  - HYPGEOMDIST
+  - LOGINV
+tests:
+  - HYPGEOMDIST/hypgeomdist-basic
+  - HYPGEOMDIST/hypgeomdist-zero-successes
+  - LOGINV/loginv-roundtrip
+seeded: 2026-07-11
+last-confirmed: 2026-07-11

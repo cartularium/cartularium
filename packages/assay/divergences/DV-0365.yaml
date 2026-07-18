@@ -1,0 +1,16 @@
+id: DV-0365
+summary: "gsheets: SORT third argument -1 yields ascending order where excel, formulas, lattice yield descending (boolean is_ascending vs numeric sort_order reading); hyperformula, ironcalc, pycel: function not implemented (#NAME?) — SORT"
+cause: arg-semantics
+category: value
+engines:
+  - gsheets
+  - hyperformula
+  - ironcalc
+  - pycel
+test-count: 1
+subjects:
+  - SORT
+tests:
+  - SORT/sort-descending
+seeded: 2026-07-11
+last-confirmed: 2026-07-11

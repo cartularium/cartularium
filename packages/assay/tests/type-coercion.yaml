@@ -563,7 +563,6 @@ tests:
   - subject: TEXT
     formula: =TEXT(1234.5, "#,##0.00")
     category: format
-    semanticDomain: display
     expect: 1,234.50
     overrides:
       hyperformula:

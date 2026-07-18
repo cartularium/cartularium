@@ -1,0 +1,47 @@
+id: DV-0267
+summary: "formulas, hyperformula, ironcalc, pycel: function not implemented — DOLLAR, FILTER, GETPIVOTDATA (+10 more)"
+cause: missing-function
+category: value
+engines:
+  - formulas
+  - hyperformula
+  - ironcalc
+  - pycel
+test-count: 20
+subjects:
+  - DOLLAR
+  - FILTER
+  - GETPIVOTDATA
+  - HSTACK
+  - INDEX
+  - LAMBDA
+  - SEQUENCE
+  - SORT
+  - TOCOL
+  - TRANSPOSE
+  - VSTACK
+  - "op:*"
+  - "op:+"
+tests:
+  - DOLLAR/dollar-negative
+  - FILTER/filter-of-sequence
+  - GETPIVOTDATA/getpivotdata-smoke
+  - GETPIVOTDATA/getpivotdata-with-field
+  - HSTACK/hstack-two-sequences
+  - INDEX/index-into-sequence
+  - LAMBDA/lambda-named-function-inline-cost
+  - SEQUENCE/sequence-2d
+  - SEQUENCE/sequence-2d-spill
+  - SEQUENCE/sequence-column
+  - SEQUENCE/sequence-column-spill
+  - SEQUENCE/sequence-row-spill
+  - SEQUENCE/sequence-scalar
+  - SORT/sort-of-sequence-ascending
+  - TOCOL/tocol-of-2d-sequence
+  - TRANSPOSE/transpose-of-sequence
+  - VSTACK/vstack-two-sequences
+  - "op:add/sequence-plus-scalar"
+  - "op:multiply/row-sequence-times-column-sequence-outer"
+  - "op:multiply/two-sequences-multiplied-elementwise"
+seeded: 2026-07-11
+last-confirmed: 2026-07-11

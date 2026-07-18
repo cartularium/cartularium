@@ -1,0 +1,19 @@
+id: DV-0264
+summary: "formulas, gsheets, hyperformula, ironcalc, pycel: function not implemented — CELL, RANDARRAY"
+cause: missing-function
+category: value
+engines:
+  - formulas
+  - gsheets
+  - hyperformula
+  - ironcalc
+  - pycel
+test-count: 2
+subjects:
+  - CELL
+  - RANDARRAY
+tests:
+  - CELL/cell-format
+  - RANDARRAY/randarray-integer-mode
+seeded: 2026-07-11
+last-confirmed: 2026-07-11

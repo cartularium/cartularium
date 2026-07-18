@@ -1,0 +1,14 @@
+id: DV-0381
+summary: "hyperformula, pycel: YEARFRAC over text-date arguments with basis 2 returns #VALUE! where excel, formulas, gsheets, ironcalc, lattice return a numeric year fraction — YEARFRAC"
+cause: unimplemented-edge
+category: value
+engines:
+  - hyperformula
+  - pycel
+test-count: 1
+subjects:
+  - YEARFRAC
+tests:
+  - YEARFRAC/yearfrac-actual-360
+seeded: 2026-07-11
+last-confirmed: 2026-07-11

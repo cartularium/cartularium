@@ -1,0 +1,35 @@
+id: DV-0266
+summary: "hyperformula, pycel: function not implemented — CONVERT, F.DIST, F.INV (+4 more)"
+cause: missing-function
+category: value
+engines:
+  - hyperformula
+  - pycel
+test-count: 16
+subjects:
+  - CONVERT
+  - F.DIST
+  - F.INV
+  - GAMMA.DIST
+  - HYPGEOM.DIST
+  - LOGNORM.DIST
+  - LOGNORM.INV
+tests:
+  - CONVERT/convert-invalid-unit-pair
+  - CONVERT/convert-kilograms-to-pounds
+  - CONVERT/convert-kilometers-to-miles
+  - CONVERT/convert-meters-to-feet
+  - CONVERT/convert-unknown-unit
+  - F.DIST/f-dist-cdf
+  - F.DIST/f-dist-pdf
+  - F.INV/f-inv-roundtrip
+  - GAMMA.DIST/gamma-dist-cdf
+  - GAMMA.DIST/gamma-dist-pdf
+  - HYPGEOM.DIST/hypgeom-dist-at-0
+  - HYPGEOM.DIST/hypgeom-dist-cdf
+  - HYPGEOM.DIST/hypgeom-dist-pmf
+  - LOGNORM.DIST/lognorm-dist-cdf
+  - LOGNORM.DIST/lognorm-dist-pdf
+  - LOGNORM.INV/lognorm-inv-roundtrip
+seeded: 2026-07-11
+last-confirmed: 2026-07-11

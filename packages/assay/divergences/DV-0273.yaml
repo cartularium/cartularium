@@ -1,0 +1,22 @@
+id: DV-0273
+summary: "formulas, ironcalc, pycel: function not implemented — HYPERLINK"
+cause: missing-function
+category: value
+engines:
+  - formulas
+  - ironcalc
+  - pycel
+test-count: 2
+subjects:
+  - HYPERLINK
+tests:
+  - HYPERLINK/hyperlink-url-only
+  - HYPERLINK/hyperlink-with-label
+seeded: 2026-07-11
+last-confirmed: 2026-07-11
+
+# authored via the 3f pass (reclassify-policy-2026-07-11.md D-3f-6): function-level
+# mechanism covering every forked case of these subjects -> subjectIn predicate.
+scope:
+  - subjectIn:
+      - HYPERLINK

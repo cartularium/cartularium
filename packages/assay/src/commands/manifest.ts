@@ -1,10 +1,14 @@
 // emit the function manifest published at assay.sheets.wiki/manifest.json
+//
+// Publishes ManifestV5 — the verdict-free comparison output (CP3). The relation
+// layer (agreement partition + per-engine capability), no TestVerdict. Consumers
+// on the V4 shape (sheets-wiki) are reworked onto V5, not back-compat-bridged.
 
 import { writeFileSync } from "node:fs";
 import { dirname } from "node:path";
 import { mkdirSync } from "node:fs";
-import { buildManifest } from "../manifest/build.js";
-import { loadDvs, loadFixtures, loadTests } from "../catalogue-site/load.js";
+import { buildManifestV5 } from "../manifest/build-v5.js";
+import { loadDvs, loadFixtureOutcomes, loadTests } from "../catalogue-site/load.js";
 import { values } from "./shared.js";
 
 export function manifest(): void {
@@ -16,8 +20,8 @@ export function manifest(): void {
   try {
     const dvs = loadDvs(catalogueDir);
     const tests = loadTests(testsDir);
-    const fixtures = loadFixtures(fixturesDir, new Set(tests.keys()));
-    const m = buildManifest({ dvs, tests, fixtures, generatedAt: new Date().toISOString() });
+    const outcomes = loadFixtureOutcomes(fixturesDir, tests);
+    const m = buildManifestV5({ dvs, tests, outcomes, generatedAt: new Date().toISOString() });
     const json = JSON.stringify(m, null, 2);
 
     if (output) {

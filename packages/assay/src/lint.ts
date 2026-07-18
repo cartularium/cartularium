@@ -1,7 +1,6 @@
 // static checks for v2 test files
 //   missing-broadcasting-feature — array-literal tests must declare broadcasting intent (schema §4)
 //   bare-error-string — expect/override.expect/override.recorded must use {error: "..."} form
-//   semantic-domain-policy — tests that need non-value benchmark lanes must declare them
 //
 // bare-error-string lints the raw YAML because the parser auto-coerces on load —
 // bare strings work at runtime but trip up corpus-walking scripts that match {error: ...}
@@ -13,8 +12,7 @@ import type { TestCase } from "./format/catalogue.js";
 
 export type LintRule =
   | "missing-broadcasting-feature"
-  | "bare-error-string"
-  | "semantic-domain-policy";
+  | "bare-error-string";
 
 export interface LintIssue {
   file: string;
@@ -32,99 +30,11 @@ export function lintSuites(files: string[]): LintIssue[] {
     const suite = loadTestSuite(file);
     for (const test of suite.tests) {
       issues.push(...lintBroadcasting(test, file));
-      issues.push(...lintSemanticDomain(test, file));
     }
     // raw YAML — parser auto-coerces bare error-strings on load
     issues.push(...lintBareErrorStringsRaw(file));
   }
   return issues;
-}
-
-function lintSemanticDomain(test: TestCase, file: string): LintIssue[] {
-  const issues: LintIssue[] = [];
-  const domain = test.semanticDomain ?? "formula-value";
-  const support = test.supportLevel;
-
-  if (test.features?.includes("external-io") && domain === "formula-value") {
-    issues.push(makeSemanticIssue(
-      file,
-      test,
-      "features",
-      "features: [external-io]",
-      "external-io tests must declare a non-formula-value semanticDomain such as external-effect, display, metadata, or grid-context.",
-    ));
-  }
-
-  if ((test.category === "volatile" || test.status === "volatile" || isVolatileSubject(test.subject)) && domain !== "volatile") {
-    issues.push(makeSemanticIssue(
-      file,
-      test,
-      "semanticDomain",
-      `subject/category/status: ${test.subject}/${test.category}/${test.status ?? "verified"}`,
-      "volatile tests must declare semanticDomain: volatile so they are excluded from headline formula-value benchmarks.",
-    ));
-  }
-
-  if (test.category === "format" && domain !== "display") {
-    issues.push(makeSemanticIssue(
-      file,
-      test,
-      "semanticDomain",
-      "category: format",
-      "format tests must declare semanticDomain: display unless they are rewritten as pure formula-value tests.",
-    ));
-  }
-
-  if (test.category === "interaction" && domain !== "grid-context") {
-    issues.push(makeSemanticIssue(
-      file,
-      test,
-      "semanticDomain",
-      "category: interaction",
-      "interaction tests must declare semanticDomain: grid-context.",
-    ));
-  }
-
-  if (isMetadataSubject(test.subject) && !["metadata", "display", "grid-context"].includes(domain)) {
-    issues.push(makeSemanticIssue(
-      file,
-      test,
-      "semanticDomain",
-      `subject: ${test.subject}`,
-      "metadata subjects such as CELL, SHEET, and SHEETS must declare semanticDomain: metadata, display, or grid-context.",
-    ));
-  }
-
-  if (domain === "partial" && !["subset", "unsupported", "design-pending"].includes(support ?? "")) {
-    issues.push(makeSemanticIssue(
-      file,
-      test,
-      "supportLevel",
-      `semanticDomain: partial`,
-      "partial-domain tests must declare supportLevel: subset, unsupported, or design-pending.",
-    ));
-  }
-
-  return issues;
-}
-
-function isVolatileSubject(subject: string | undefined): boolean {
-  return subject === "RAND" || subject === "RANDBETWEEN" || subject === "RANDARRAY" || subject === "NOW" || subject === "TODAY";
-}
-
-function isMetadataSubject(subject: string | undefined): boolean {
-  return subject === "CELL" || subject === "SHEET" || subject === "SHEETS";
-}
-
-function makeSemanticIssue(file: string, test: TestCase, field: string, context: string, detail: string): LintIssue {
-  return {
-    file,
-    testId: test.id,
-    rule: "semantic-domain-policy",
-    field,
-    context,
-    detail,
-  };
 }
 
 function lintBroadcasting(test: TestCase, file: string): LintIssue[] {
@@ -272,13 +182,6 @@ export function printLintReport(issues: LintIssue[]): void {
       "Fix [bare-error-string]:\n" +
       "  replace `expect: \"#NAME?\"` with `expect: { error: \"#NAME?\" }`\n" +
       "  per schema §6 (matcher form). Same for override.expect / override.recorded.",
-    );
-  }
-  if (byRule.has("semantic-domain-policy")) {
-    console.log(
-      "Fix [semantic-domain-policy]:\n" +
-      "  add semanticDomain/supportLevel metadata so non-formula-value tests\n" +
-      "  are excluded from headline benchmark scoring.",
     );
   }
 }

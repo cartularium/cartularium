@@ -14,7 +14,7 @@ import {
   type TestSuite,
   type TestCase,
   type TestResult,
-  type Divergence,
+  type AgreementPartition,
 } from "./format/catalogue.js";
 import {
   resolveFormulaForPlatform,
@@ -22,7 +22,8 @@ import {
   featureSkipFor,
   effectiveExpect,
   evaluateMatcher,
-  gridsEqual,
+  partitionByAgreement,
+  isForked,
 } from "./format/index.js";
 import { toleranceFor } from "./format/tolerance.js";
 import { liftScalarGrid } from "@cartularium/drivers";
@@ -35,13 +36,13 @@ export interface RunOptions {
 
 export interface RunResult {
   results: TestResult[];
-  divergences: Divergence[];
+  forks: AgreementPartition[];
   summary: {
     total: number;
     passed: number;
     failed: number;
     recorded: number;
-    divergences: number;
+    forks: number;
   };
 }
 
@@ -152,7 +153,7 @@ export function runFromFixtures(
   const tests = filterTests(suite, options);
   const platforms = Object.keys(fixtures) as Platform[];
   const allResults: TestResult[] = [];
-  const divergences: Divergence[] = [];
+  const forks: AgreementPartition[] = [];
 
   for (const test of tests) {
     const testResults: Record<string, RichGridValue> = {};
@@ -160,7 +161,7 @@ export function runFromFixtures(
 
     for (const platform of platforms) {
       if (getFormulaForPlatform(test.formula, platform) === null) continue;
-      // feature absent: surface as recorded-only so divergence tallies stay
+      // feature absent: surface as recorded-only so fork tallies stay
       // honest without flagging it as a failure
       if (featureSkipFor(test, platform) !== null) {
         allResults.push({
@@ -215,21 +216,26 @@ export function runFromFixtures(
     }
 
     if (platforms.length > 1) {
-      const available = Object.keys(testResults);
-      if (available.length > 1) {
-        const first = available[0] as Platform;
-        if (
-          available.some(
-            (p) => !gridsEqual(testResults[p], testResults[first], toleranceFor(p, first)),
-          )
-        ) {
-          divergences.push({ test, results: testResults });
-        }
-      }
+      const p = partitionCase(test, testResults);
+      if (p && isForked(p.classes)) forks.push(p);
     }
   }
 
-  return buildResult(allResults, tests.length, divergences);
+  return buildResult(allResults, tests.length, forks);
+}
+
+/** The single partition path, shared by the fixture and live runners. Computes the
+ * symmetric agreement partition (no pivot engine) at the circulating rung — the
+ * relation only. Whether it counts as a fork is the caller's call (`isForked`); the
+ * judgment is never baked in here. Returns null only when fewer than two engines
+ * produced a value (nothing to partition). */
+function partitionCase(
+  test: TestCase,
+  results: Record<string, RichGridValue>,
+): AgreementPartition | null {
+  if (Object.keys(results).length < 2) return null;
+  const classes = partitionByAgreement(results);
+  return { test, results, rung: "circulating", classes };
 }
 
 // run live against drivers
@@ -240,7 +246,7 @@ export async function runSuite(
 ): Promise<RunResult> {
   const tests = filterTests(suite, options);
   const allResults: TestResult[] = [];
-  const divergences: Divergence[] = [];
+  const forks: AgreementPartition[] = [];
   const driverResults: Map<string, Map<string, RichGridValue>> = new Map();
 
   for (const driver of drivers) {
@@ -287,19 +293,12 @@ export async function runSuite(
         const val = driverResults.get(driver.platform)?.get(key);
         if (val) testResults[driver.platform] = val;
       }
-      const pkeys = Object.keys(testResults);
-      if (pkeys.length > 1) {
-        const first = pkeys[0];
-        if (
-          pkeys.some((p) => !gridsEqual(testResults[p], testResults[first], toleranceFor(p, first)))
-        ) {
-          divergences.push({ test, results: testResults });
-        }
-      }
+      const p = partitionCase(test, testResults);
+      if (p && isForked(p.classes)) forks.push(p);
     }
   }
 
-  return buildResult(allResults, tests.length, divergences);
+  return buildResult(allResults, tests.length, forks);
 }
 
 function filterTests(suite: TestSuite, options?: RunOptions): TestCase[] {
@@ -341,17 +340,17 @@ function matcherForDisplay(matcher: unknown): GridValue | undefined {
 function buildResult(
   allResults: TestResult[],
   total: number,
-  divergences: Divergence[],
+  forks: AgreementPartition[],
 ): RunResult {
   return {
     results: allResults,
-    divergences,
+    forks,
     summary: {
       total,
       passed: allResults.filter((r) => r.passed === true).length,
       failed: allResults.filter((r) => r.passed === false).length,
       recorded: allResults.filter((r) => r.passed === null).length,
-      divergences: divergences.length,
+      forks: forks.length,
     },
   };
 }

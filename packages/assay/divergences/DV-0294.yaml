@@ -1,0 +1,15 @@
+id: DV-0294
+summary: "hyperformula: numeric precision differs from the excel/formulas/gsheets/ironcalc/lattice value at ~1e-8 (t-quantile); pycel: function not implemented — CONFIDENCE.T"
+cause: precision
+category: value
+engines:
+  - hyperformula
+  - pycel
+test-count: 2
+subjects:
+  - CONFIDENCE.T
+tests:
+  - CONFIDENCE.T/confidence-t-medium-sample
+  - CONFIDENCE.T/confidence-t-small-sample
+seeded: 2026-07-11
+last-confirmed: 2026-07-11

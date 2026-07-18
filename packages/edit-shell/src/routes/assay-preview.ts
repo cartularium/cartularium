@@ -128,7 +128,7 @@ function assayMaintainers(env: Env): Set<string> {
   )
 }
 
-function isAssayMaintainer(env: Env, login: string): boolean {
+export function isAssayMaintainer(env: Env, login: string): boolean {
   return assayMaintainers(env).has(login.toLowerCase())
 }
 
@@ -534,7 +534,6 @@ function normalizeSubmittedCaseForSemanticHash(
     "expect",
     "overrides",
     "features",
-    "semanticDomain",
     "supportLevel",
     "status",
     "setup",

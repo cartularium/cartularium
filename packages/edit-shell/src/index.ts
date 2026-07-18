@@ -6,6 +6,8 @@ import { rateLimit } from "./middleware/rate-limit"
 import { requestId } from "./middleware/request-id"
 import { requireSession } from "./middleware/session"
 import assetsRoutes from "./routes/assets"
+import assayForkAnnotationRoutes from "./routes/assay-fork-annotations"
+import assayPublicRoutes from "./routes/assay-public"
 import assayPreviewRoutes from "./routes/assay-preview"
 import assayRunnerRoutes from "./routes/assay-runner"
 import authRoutes from "./routes/auth"
@@ -21,6 +23,10 @@ app.use("*", requestId)
 app.onError(errorLogger)
 
 app.use("/api/edit/*", originCheck)
+
+// The public read lane — sessionless, published-only, CORS-open (store-delivery D-A1).
+// Deliberately OUTSIDE /api/edit/* so none of the authoring-shell middleware applies.
+app.route("/api/assay", assayPublicRoutes)
 
 app.get("/api/edit/health", (c) => c.json({ ok: true }))
 app.route("/api/edit/auth", authRoutes)
@@ -42,6 +48,8 @@ app.use("/api/edit/assets/*", requireSession, rateLimit)
 app.route("/api/edit/assets", assetsRoutes)
 
 app.use("/api/edit/assay/*", requireSession, rateLimit)
+// More specific mount first: fork-annotations is a distinct sub-lane of the assay group.
+app.route("/api/edit/assay/fork-annotations", assayForkAnnotationRoutes)
 app.route("/api/edit/assay", assayPreviewRoutes)
 
 app.route("/api/edit/assay-runner", assayRunnerRoutes)

@@ -1,0 +1,21 @@
+id: DV-0370
+summary: "hyperformula, pycel: #NAME? when an inline boolean literal appears in the argument list (hyperformula computes these functions over ranges); ironcalc: boolean excluded from the sample rather than counted as 1 — STDEVA, STDEVPA (+2 more)"
+cause: arg-semantics
+category: value
+engines:
+  - hyperformula
+  - ironcalc
+  - pycel
+test-count: 4
+subjects:
+  - STDEVA
+  - STDEVPA
+  - VARA
+  - VARPA
+tests:
+  - STDEVA/stdeva-inline-boolean
+  - STDEVPA/stdevpa-inline-boolean
+  - VARA/vara-inline-boolean
+  - VARPA/varpa-inline-boolean
+seeded: 2026-07-11
+last-confirmed: 2026-07-11

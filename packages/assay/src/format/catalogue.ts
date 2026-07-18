@@ -9,6 +9,9 @@
 
 import type { CellValue, GridValue, RichGridValue, Platform } from "./values.js";
 import type { Cause, Category } from "@cartularium/contracts";
+// type-only — the agreement-class array embedded in an AgreementPartition. Type-only so the
+// catalogue → relations → match → catalogue cycle is erased (no runtime cycle).
+import type { AgreementClass } from "./relations.js";
 
 // re-exported from @cartularium/contracts (canonical manifest enum surface)
 export type { Cause, Category } from "@cartularium/contracts";
@@ -29,16 +32,6 @@ export interface PlatformFormula {
 
 /** v2 test status */
 export type Status = "verified" | "volatile" | "observed";
-
-/** semantic lane used by benchmark scoring policy */
-export type SemanticDomain =
-  | "formula-value"
-  | "display"
-  | "external-effect"
-  | "grid-context"
-  | "metadata"
-  | "volatile"
-  | "partial";
 
 /** declared maturity of the covered surface, not an engine result */
 export type SupportLevel =
@@ -140,8 +133,6 @@ export interface TestCase {
   category: Category;
   /** capability dependencies (schema §4) */
   features?: string[];
-  /** benchmark lane; defaults to formula-value */
-  semanticDomain?: SemanticDomain;
   /** surface maturity for this test/function slice */
   supportLevel?: SupportLevel;
   status?: Status;
@@ -184,8 +175,16 @@ export interface TestResult {
   timeMs: number;
 }
 
-/** divergence between platforms on the same test */
-export interface Divergence {
+/** The agreement partition for a case — how the platforms class up on the same test.
+ *
+ * `results` is symmetric evidence (no privileged engine). `classes` is the
+ * verdict-free agreement partition computed by `partitionByAgreement` — it flags
+ * no engine as correct; `classes.length > 1` is the only "fork" judgment.
+ * `rung` names which equality rung the partition was computed at (the
+ * capability/terminal projections of the same machinery come later — spec §6). */
+export interface AgreementPartition {
   test: TestCase;
   results: Record<string, RichGridValue>;
+  rung: "circulating";
+  classes: AgreementClass[];
 }

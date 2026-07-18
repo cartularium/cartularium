@@ -899,7 +899,6 @@ tests:
     name: networkdays-intl-string-weekend-custom
   - subject: NOW
     category: volatile
-    semanticDomain: volatile
     status: volatile
     formula: =NOW()
     expect:
@@ -993,7 +992,6 @@ tests:
     name: timevalue-midnight
   - subject: TODAY
     category: volatile
-    semanticDomain: volatile
     status: volatile
     formula: =TODAY()
     expect:

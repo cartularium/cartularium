@@ -217,6 +217,68 @@ export function projectScalarGrid(grid: RichGridValue): CellValue[][] {
   return grid.map((row) => row.map((rc) => (rc ? projectPrimitive(rc) : null)))
 }
 
+// === Circulating projection (the cross-engine comparison unit) ===
+// The circulating identity of a cell: the facets cross-engine equality depends on, with
+// engine extras + terminal facets (number_format/formatted) dropped. This is the unit the
+// agreement partition compares over AND the value published per agreement-class — one source
+// of truth, so the manifest never shows a value the engines weren't grouped on. It is NOT a
+// "correct"/canonical value: it carries no authority (named `Circulating`, not `Canonical`,
+// on purpose — the verb `canonicalize` is the normalization act, not a claim of correctness).
+
+/** Canonical circulating identity of a cell. Class `c` preserves the kind distinctions the
+ * scalar projection collapses (blank≠null, error-by-sentinel, opaque-by-type_tag). */
+export type CirculatingCell =
+  | { c: "number"; v: number }
+  | { c: "string"; v: string }
+  | { c: "boolean"; v: boolean }
+  // sentinel; classic `error` + `extended-error` unify by sentinel (disjoint per sentinel)
+  | { c: "error"; v: string }
+  | { c: "blank" } // untouched / decays through eval — DISTINCT from null
+  | { c: "null" } // propagatable runtime Null that survives eval
+  | { c: "rich-text"; v: string } // collapsed runs
+  | { c: "opaque"; v: string } // type_tag only — content is no-data
+
+/** A grid of circulating cells. Grid holes (no cell) canonicalize to `{c:"blank"}`, so a
+ * circulating grid has no null cells (unlike RichGridValue). */
+export type CirculatingGrid = CirculatingCell[][]
+
+/** Project a PrimitiveValue to its circulating identity (drops everything terminal). */
+export function canonicalizePrimitive(p: PrimitiveValue): CirculatingCell {
+  switch (p.kind) {
+    case "number":
+      return { c: "number", v: p.value }
+    case "string":
+      return { c: "string", v: p.value }
+    case "boolean":
+      return { c: "boolean", v: p.value }
+    case "error":
+    case "extended-error":
+      return { c: "error", v: p.sentinel }
+    case "blank":
+      return { c: "blank" }
+    case "null":
+      return { c: "null" }
+    case "rich-text":
+      return { c: "rich-text", v: p.collapsed }
+    case "opaque":
+      return { c: "opaque", v: p.type_tag }
+  }
+}
+
+/** Canonicalize a rich cell or a grid hole. A hole (no cell) is `blank` (untouched). */
+export function canonicalizeCell(cell: RichCellValue | null): CirculatingCell {
+  return cell ? canonicalizePrimitive(cell.primitive) : { c: "blank" }
+}
+
+/** Exact structural key for set-dedup of circulating values — NOT tolerance (that is
+ * `canonicalEquals`, which lives with the comparison predicates). `CirculatingCell` is a flat,
+ * canonically key-ordered record, so JSON.stringify is a sound exact-equality key: two
+ * structurally-equal cells always stringify identically. (A `number` cell never carries
+ * v:null, so the NaN→null stringification can't collide with the `{c:"null"}` discriminant.) */
+export function circulatingKey(cell: CirculatingCell): string {
+  return JSON.stringify(cell)
+}
+
 // === Shared value spine ===
 // The legacy scalar grid + the rich/scalar discriminators. These are the conservative
 // value vocabulary used by BOTH the drivers (driver I/O) and the catalogue/matcher; they

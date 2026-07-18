@@ -1,0 +1,14 @@
+id: DV-0333
+summary: "ironcalc, pycel: column array literal does not spill — ironcalc yields the #N/IMPL! sentinel, pycel yields the top-left scalar — lit:array"
+cause: shape
+category: value
+engines:
+  - ironcalc
+  - pycel
+test-count: 1
+subjects:
+  - "lit:array"
+tests:
+  - "lit:array/array-literal-column"
+seeded: 2026-07-11
+last-confirmed: 2026-07-11

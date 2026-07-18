@@ -17,7 +17,6 @@ tests:
     name: false-basic
   - subject: SORTN
     category: value
-    semanticDomain: partial
     supportLevel: unsupported
     formula: =SORTN({5;2;8;1;4}, 3)
     expect:
@@ -35,7 +34,6 @@ tests:
     name: sortn-top-3
   - subject: SORTN
     category: value
-    semanticDomain: partial
     supportLevel: unsupported
     formula: =SORTN({5;2;8;1;4}, 3, 0, 1, TRUE)
     expect:
@@ -198,7 +196,6 @@ tests:
   - subject: HYPERLINK
     formula: =HYPERLINK("https://example.com", "click me")
     category: value
-    semanticDomain: display
     supportLevel: design-pending
     features:
       - external-io
@@ -209,7 +206,6 @@ tests:
   - subject: HYPERLINK
     formula: =HYPERLINK("https://example.com")
     category: value
-    semanticDomain: display
     supportLevel: design-pending
     features:
       - external-io
@@ -219,90 +215,60 @@ tests:
     name: hyperlink-url-only
   - subject: IMPORTDATA
     category: value
-    semanticDomain: external-effect
     supportLevel: design-pending
     features:
       - external-io
     formula: =IMPORTDATA("https://example.com/data.csv")
     expect:
       error: "#NAME?"
-    overrides:
-      gsheets:
-        cause: missing-function
-        recorded:
-          error: "#REF!"
     tags:
       - external
       - skip-reason:network
     name: importdata-csv-smoke
   - subject: IMPORTFEED
     category: value
-    semanticDomain: external-effect
     supportLevel: design-pending
     features:
       - external-io
     formula: =IMPORTFEED("https://example.com/feed.xml")
     expect:
       error: "#NAME?"
-    overrides:
-      gsheets:
-        cause: missing-function
-        recorded:
-          error: "#REF!"
     tags:
       - external
       - skip-reason:network
     name: importfeed-rss-smoke
   - subject: IMPORTHTML
     category: value
-    semanticDomain: external-effect
     supportLevel: design-pending
     features:
       - external-io
     formula: =IMPORTHTML("https://example.com/page.html", "table", 1)
     expect:
       error: "#NAME?"
-    overrides:
-      gsheets:
-        cause: missing-function
-        recorded:
-          error: "#REF!"
     tags:
       - external
       - skip-reason:network
     name: importhtml-table-smoke
   - subject: IMPORTXML
     category: value
-    semanticDomain: external-effect
     supportLevel: design-pending
     features:
       - external-io
     formula: =IMPORTXML("https://example.com/data.xml", "//title")
     expect:
       error: "#NAME?"
-    overrides:
-      gsheets:
-        cause: missing-function
-        recorded:
-          error: "#REF!"
     tags:
       - external
       - skip-reason:network
     name: importxml-xpath-smoke
   - subject: IMPORTRANGE
     category: value
-    semanticDomain: external-effect
     supportLevel: design-pending
     features:
       - external-io
     formula: =IMPORTRANGE("https://docs.google.com/spreadsheets/d/abc123", "Sheet1!A1:B2")
     expect:
       error: "#NAME?"
-    overrides:
-      gsheets:
-        cause: missing-function
-        recorded:
-          error: "#REF!"
     tags:
       - external
       - skip-reason:network
@@ -381,7 +347,6 @@ tests:
   - subject: QUERY
     formula: =QUERY({1,"a";2,"b";3,"c"}, "select *")
     category: value
-    semanticDomain: partial
     supportLevel: subset
     expect:
       - [ 1, a ]
@@ -419,7 +384,6 @@ tests:
   - subject: QUERY
     formula: =QUERY({1,"a";2,"b";3,"c"}, "select Col2")
     category: value
-    semanticDomain: partial
     supportLevel: subset
     expect:
       - [ a ]
@@ -457,7 +421,6 @@ tests:
   - subject: QUERY
     formula: =QUERY({0,0;1,2;3,4}, "offset 1")
     category: value
-    semanticDomain: partial
     supportLevel: subset
     expect:
       - [ 1, 2 ]
@@ -495,7 +458,6 @@ tests:
   - subject: GOOGLEFINANCE
     formula: =GOOGLEFINANCE("GOOG", "price")
     category: value
-    semanticDomain: external-effect
     supportLevel: design-pending
     status: observed
     features:
@@ -537,7 +499,6 @@ tests:
   - subject: GOOGLETRANSLATE
     formula: =GOOGLETRANSLATE("hello", "en", "es")
     category: value
-    semanticDomain: external-effect
     supportLevel: design-pending
     features:
       - external-io
@@ -579,8 +540,9 @@ tests:
   - subject: DETECTLANGUAGE
     formula: =DETECTLANGUAGE("hello world")
     category: value
-    semanticDomain: external-effect
     supportLevel: design-pending
+    features:
+      - external-io
     expect: en
     overrides:
       excel:
@@ -618,18 +580,12 @@ tests:
     name: detectlanguage-english
   - subject: IMAGE
     category: value
-    semanticDomain: display
     supportLevel: design-pending
     features:
       - external-io
     formula: =IMAGE("https://example.com/pic.png")
     expect:
       error: "#NAME?"
-    overrides:
-      gsheets:
-        cause: missing-function
-        recorded:
-          error: "#REF!"
     tags:
       - google
       - skip-reason:network
@@ -637,7 +593,6 @@ tests:
   - subject: SPARKLINE
     formula: =SPARKLINE({1;2;3;4;5})
     category: value
-    semanticDomain: display
     supportLevel: design-pending
     features:
       - external-io

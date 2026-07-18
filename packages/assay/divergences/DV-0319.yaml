@@ -1,0 +1,13 @@
+id: DV-0319
+summary: "formulas: #NUM! on the final-period case (per = nper) where excel, gsheets, hyperformula, ironcalc, lattice produce a numeric result — IPMT"
+cause: unimplemented-edge
+category: value
+engines:
+  - formulas
+test-count: 1
+subjects:
+  - IPMT
+tests:
+  - IPMT/ipmt-last-period-mortgage
+seeded: 2026-07-11
+last-confirmed: 2026-07-11

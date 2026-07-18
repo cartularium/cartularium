@@ -1,7 +1,9 @@
 """libreoffice calc driver — `soffice --headless` recalcs an xlsx.
 
 openpyxl writes the input xlsx, soffice recalcs + re-saves, openpyxl reads
-cached values back via `data_only=True`.
+cached values back via `data_only=True`. Recalc-on-load is NOT on by default
+(headless treats the "prompt" default as never) so we pre-seed a fresh profile
+forcing it — see `_seed_recalc_profile`; without it every formula reads blank.
 
 requires soffice on PATH (or the standard macos location); install via
 `brew install --cask libreoffice` or `apt install libreoffice-calc`.
@@ -24,12 +26,43 @@ import subprocess
 import sys
 import tempfile
 from datetime import date, datetime, time
+from pathlib import Path
 from typing import Any
 
 from openpyxl import Workbook, load_workbook
 
 
 _DATE_EPOCH = datetime(1899, 12, 30)
+
+# openpyxl writes formula strings with no cached result. LibreOffice only fills
+# those results in if it recalculates while loading the xlsx — and the default
+# "Recalculation on File Load" mode for OOXML/ODF documents is "prompt", which in
+# headless mode is a silent no-op. Without this, every formula cell reads back as
+# an empty cached value (None) via data_only=True. Pre-seed a fresh user profile
+# forcing "always recalculate on load" (mode 0) so `--convert-to` computes results
+# before re-saving. Modes: 0=always, 1=never, 2=prompt.
+_RECALC_PROFILE_XCU = (
+    '<?xml version="1.0" encoding="UTF-8"?>\n'
+    '<oor:items '
+    'xmlns:oor="http://openoffice.org/2001/registry" '
+    'xmlns:xs="http://www.w3.org/2001/XMLSchema" '
+    'xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">\n'
+    ' <item oor:path="/org.openoffice.Office.Calc/Formula/Load">'
+    '<prop oor:name="ODFRecalcMode" oor:op="fuse"><value>0</value></prop></item>\n'
+    ' <item oor:path="/org.openoffice.Office.Calc/Formula/Load">'
+    '<prop oor:name="OOXMLRecalcMode" oor:op="fuse"><value>0</value></prop></item>\n'
+    '</oor:items>\n'
+)
+
+
+def _seed_recalc_profile(profile_dir: str) -> str:
+    """Create a LibreOffice user profile forcing recalc-on-load. Returns a
+    file:// UserInstallation URL usable as `-env:UserInstallation=`."""
+    user_dir = os.path.join(profile_dir, "user")
+    os.makedirs(user_dir, exist_ok=True)
+    with open(os.path.join(user_dir, "registrymodifications.xcu"), "w", encoding="utf8") as f:
+        f.write(_RECALC_PROFILE_XCU)
+    return Path(profile_dir).as_uri()
 
 
 def _dt_to_serial(v: Any) -> float:
@@ -107,8 +140,14 @@ def recalc_with_libreoffice(input_xlsx: str, out_dir: str) -> str:
     soffice = find_soffice()
     env = os.environ.copy()
     env["HOME"] = out_dir  # don't pollute the user's libreoffice profile
+    # Deterministic, platform-independent profile location (the HOME-based default
+    # path differs by OS). Seed it with the recalc-on-load setting so soffice
+    # computes formula results during --convert-to instead of shipping blanks.
+    profile_dir = os.path.join(out_dir, "lo-profile")
+    user_installation = _seed_recalc_profile(profile_dir)
     cmd = [
         soffice,
+        f"-env:UserInstallation={user_installation}",
         "--headless",
         "--calc",
         "--norestore",

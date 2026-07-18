@@ -1,0 +1,19 @@
+id: DV-0300
+summary: "pycel: negative arguments raise #NAME? while positive arguments of the same functions compute — DEC2BIN, DEC2HEX, DEC2OCT, ERF"
+cause: unimplemented-edge
+category: value
+engines:
+  - pycel
+test-count: 4
+subjects:
+  - DEC2BIN
+  - DEC2HEX
+  - DEC2OCT
+  - ERF
+tests:
+  - DEC2BIN/dec2bin-negative
+  - DEC2HEX/dec2hex-negative
+  - DEC2OCT/dec2oct-negative
+  - ERF/erf-negative
+seeded: 2026-07-11
+last-confirmed: 2026-07-11

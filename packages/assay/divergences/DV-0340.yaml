@@ -1,0 +1,16 @@
+id: DV-0340
+summary: "gsheets, hyperformula, ironcalc, pycel: different error code — MUNIT(0) yields #NUM! on gsheets and #NAME? on hyperformula, ironcalc, pycel where excel, formulas, lattice yield #VALUE! — MUNIT"
+cause: error-code
+category: value
+engines:
+  - gsheets
+  - hyperformula
+  - ironcalc
+  - pycel
+test-count: 1
+subjects:
+  - MUNIT
+tests:
+  - MUNIT/munit-zero-error
+seeded: 2026-07-11
+last-confirmed: 2026-07-11

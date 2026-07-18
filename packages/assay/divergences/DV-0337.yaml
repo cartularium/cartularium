@@ -1,0 +1,15 @@
+id: DV-0337
+summary: "pycel: inline negative number literals error where range and positive inline arguments evaluate — MAX, MIN"
+cause: unimplemented-edge
+category: value
+engines:
+  - pycel
+test-count: 2
+subjects:
+  - MAX
+  - MIN
+tests:
+  - MAX/max-inline-negatives
+  - MIN/min-inline-negatives
+seeded: 2026-07-11
+last-confirmed: 2026-07-11

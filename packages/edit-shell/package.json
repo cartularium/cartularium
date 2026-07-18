@@ -4,13 +4,15 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "wrangler dev",
-    "deploy": "wrangler deploy",
-    "test": "vitest run",
-    "test:watch": "vitest",
-    "typecheck": "tsc --noEmit"
+    "dev": "pnpm --filter @cartularium/contracts run build && wrangler dev",
+    "deploy": "pnpm --filter @cartularium/contracts run build && wrangler deploy",
+    "test": "pnpm --filter @cartularium/contracts run build && vitest run",
+    "test:watch": "pnpm --filter @cartularium/contracts run build && vitest",
+    "typecheck": "pnpm --filter @cartularium/contracts run build && tsc --noEmit",
+    "check": "pnpm run typecheck"
   },
   "dependencies": {
+    "@cartularium/contracts": "workspace:*",
     "hono": "^4.6.0",
     "@octokit/auth-app": "^7.1.0",
     "@octokit/rest": "^21.0.0",

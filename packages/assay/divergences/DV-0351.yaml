@@ -1,0 +1,13 @@
+id: DV-0351
+summary: "lattice: boolean compared against a number by numeric coercion (TRUE<2 gives TRUE); excel, formulas, gsheets, ironcalc order booleans above all numbers (FALSE) — op:<"
+cause: arg-semantics
+category: value
+engines:
+  - lattice
+test-count: 1
+subjects:
+  - "op:<"
+tests:
+  - "op:lt/boolean-less-than-number"
+seeded: 2026-07-11
+last-confirmed: 2026-07-11

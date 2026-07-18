@@ -1,0 +1,14 @@
+id: DV-0331
+summary: "pycel: return shape differs (single scalar coefficient where others spill the coefficient row) — LINEST"
+cause: shape
+category: value
+engines:
+  - pycel
+test-count: 2
+subjects:
+  - LINEST
+tests:
+  - LINEST/linest-simple-line
+  - LINEST/linest-y-only
+seeded: 2026-07-11
+last-confirmed: 2026-07-11

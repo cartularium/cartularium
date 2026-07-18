@@ -1,0 +1,14 @@
+id: DV-0317
+summary: "gsheets, hyperformula: different error code for out-of-bounds row index (#NUM! where excel, formulas, ironcalc, lattice, pycel return #REF!) — INDEX"
+cause: error-code
+category: value
+engines:
+  - gsheets
+  - hyperformula
+test-count: 1
+subjects:
+  - INDEX
+tests:
+  - INDEX/index-out-of-bounds
+seeded: 2026-07-11
+last-confirmed: 2026-07-11

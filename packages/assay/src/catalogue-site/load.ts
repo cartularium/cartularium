@@ -3,8 +3,11 @@
 import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 import * as YAML from "yaml";
+import type { ScopeClause } from "@cartularium/contracts";
 import { loadTestSuite } from "../format/parse.js";
 import { caseKey } from "../identity/index.js";
+import { liftEntryToOutcome, type LegacyEntry } from "../fixtures.js";
+import { isPlatform, type Outcome, type Platform } from "../format/values.js";
 
 export interface DvEntry {
   id: string;
@@ -16,8 +19,58 @@ export interface DvEntry {
   testCount: number;
   subjects: string[];
   tests: string[];
+  /** authored scope clauses (yaml `scope:`, 3f) — the seed exporter prefers this over the
+   * `tests` ref-set fallback. When present alongside a predicate clause, `tests` is the V4
+   * render substrate / materialized snapshot at reclassify time, not kept in sync. */
+  scope?: ScopeClause[];
   seeded: string;
   lastConfirmed: string;
+}
+
+// YAML `scope:` sugar (reclassify-policy-2026-07-11.md D-3f-2): a clause is `refs` XOR the
+// author-declared predicate dimensions (`tags` / `subjectIn`). Observed dimensions
+// (`enginesAlone`/`valueKind`/`sentinel`) are NOT yaml-authorable — they ride the deferred
+// fork-property matcher; the store schema admits them, the sugar just doesn't author them.
+// Malformed scope fails the load (fail fast, never a silent ref-set fallback).
+function parseDvScope(raw: unknown, id: string): ScopeClause[] | undefined {
+  if (raw === undefined || raw === null) return undefined;
+  if (!Array.isArray(raw) || raw.length === 0) {
+    throw new Error(`${id}: scope must be a non-empty list of clauses`);
+  }
+  return raw.map((clause, i) => {
+    const at = `${id}: scope[${i}]`;
+    if (typeof clause !== "object" || clause === null || Array.isArray(clause)) {
+      throw new Error(`${at}: a clause must be a mapping`);
+    }
+    const keys = Object.keys(clause as Record<string, unknown>);
+    const unknown = keys.filter((k) => !["refs", "tags", "subjectIn"].includes(k));
+    if (unknown.length > 0) {
+      throw new Error(`${at}: unknown clause key(s) ${unknown.join(", ")} (yaml-authorable: refs | tags/subjectIn)`);
+    }
+    const c = clause as { refs?: unknown; tags?: unknown; subjectIn?: unknown };
+    const strList = (v: unknown, field: string): string[] => {
+      if (!Array.isArray(v) || v.length === 0 || !v.every((s) => typeof s === "string" && s.trim().length > 0)) {
+        throw new Error(`${at}: ${field} must be a non-empty list of non-empty strings`);
+      }
+      return v as string[];
+    };
+    if (c.refs !== undefined) {
+      if (c.tags !== undefined || c.subjectIn !== undefined) {
+        throw new Error(`${at}: a clause is refs XOR a predicate (tags/subjectIn), not both`);
+      }
+      return { kind: "ref-set", refs: strList(c.refs, "refs") };
+    }
+    if (c.tags === undefined && c.subjectIn === undefined) {
+      throw new Error(`${at}: a clause needs refs or at least one of tags/subjectIn`);
+    }
+    return {
+      kind: "predicate",
+      query: {
+        ...(c.tags !== undefined ? { tags: strList(c.tags, "tags") } : {}),
+        ...(c.subjectIn !== undefined ? { subjectIn: strList(c.subjectIn, "subjectIn") } : {}),
+      },
+    };
+  });
 }
 
 export interface TestInfo {
@@ -32,6 +85,9 @@ export interface TestInfo {
   suite: string;
   expect: unknown;
   aliases?: string[];
+  /** author-declared case-property tags (yaml `tags:`); the manifest publishes these (through the
+   * R1 hygiene gate) so tag-predicate annotation scopes can resolve (3e). */
+  tags?: string[];
   // only fields the site actually renders — override.expect / .note not loaded
   overrides: Record<string, { cause: string; recorded?: unknown }>;
 }
@@ -59,6 +115,7 @@ export function loadDvs(dir: string): DvEntry[] {
       testCount: raw["test-count"] ?? raw.tests?.length ?? 0,
       subjects: raw.subjects ?? [],
       tests: raw.tests ?? [],
+      scope: parseDvScope(raw.scope, raw.id),
       seeded: raw.seeded ?? "",
       lastConfirmed: raw["last-confirmed"] ?? "",
     });
@@ -109,6 +166,7 @@ export function loadTests(dir: string): Map<string, TestInfo> {
         suite,
         expect: t.expect,
         aliases: Array.isArray(t.aliases) ? t.aliases : undefined,
+        tags: Array.isArray(t.tags) ? (t.tags as string[]).filter((x) => typeof x === "string") : undefined,
         overrides,
       });
     }
@@ -145,6 +203,46 @@ export function loadFixtures(
         for (const target of targets) {
           if (!out.has(target)) out.set(target, new Map());
           out.get(target)!.set(engine, entry?.result);
+        }
+      }
+    }
+  }
+  return out;
+}
+
+// test key → engine → the §6.6 Outcome, lifted on read (legacy fixtures stay
+// loadable until regenerated). The Outcome-aware sibling of loadFixtures — it
+// keeps the full attribution (value/rejected/crashed/skipped/…) the V5 manifest
+// partitions on, where loadFixtures discards everything but `.result`. Same key
+// resolution (semantic-hash rows re-exposed under public refs).
+export function loadFixtureOutcomes(
+  dir: string,
+  keep: Set<string> | Map<string, TestInfo>,
+): Map<string, Map<Platform, Outcome>> {
+  const out = new Map<string, Map<Platform, Outcome>>();
+  if (!existsSync(dir)) return out;
+  const keyTargets = fixtureKeyTargets(keep);
+  for (const suite of readdirSync(dir)) {
+    const suitePath = join(dir, suite);
+    let stat;
+    try { stat = readdirSync(suitePath); } catch { continue; }
+    for (const f of stat) {
+      if (!f.endsWith(".json")) continue;
+      const engine = f.replace(/\.json$/, "");
+      if (!isPlatform(engine)) continue;
+      let fx: { results?: Record<string, LegacyEntry> };
+      try {
+        fx = JSON.parse(readFileSync(join(suitePath, f), "utf8"));
+      } catch {
+        continue;
+      }
+      for (const [tid, entry] of Object.entries(fx.results ?? {})) {
+        const targets = keyTargets.get(tid) ?? (keep instanceof Set && isSemanticHash(tid) ? [tid] : undefined);
+        if (!targets) continue;
+        const outcome = liftEntryToOutcome(entry, engine);
+        for (const target of targets) {
+          if (!out.has(target)) out.set(target, new Map());
+          out.get(target)!.set(engine, outcome);
         }
       }
     }

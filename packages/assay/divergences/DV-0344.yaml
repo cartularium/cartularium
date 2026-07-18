@@ -1,0 +1,20 @@
+id: DV-0344
+summary: "pycel: formulas surface without an evaluated result (#NAME?) even on baseline operator inputs — op:+, op:& (+2 more)"
+cause: recalc-semantics
+category: value
+engines:
+  - pycel
+test-count: 5
+subjects:
+  - "op:&"
+  - "op:+"
+  - "op:/"
+  - "op:^"
+tests:
+  - "op:add/addition"
+  - "op:add/operator-precedence"
+  - "op:concat/concatenation"
+  - "op:divide/division-by-zero"
+  - "op:power/negative-exponent"
+seeded: 2026-07-11
+last-confirmed: 2026-07-11

@@ -1,73 +1,166 @@
 {
   "platform": "ironcalc",
-  "generatedAt": "2026-05-11T09:33:31.319Z",
+  "generatedAt": "2026-06-17T19:40:00.222Z",
   "results": {
     "sha256:76a20c3d2b9c7a8460850758c96e07bc477d0c74d0248eadc1059f2dde8ff765": {
-      "result": [
-        [
-          {
-            "error": "#NAME?"
-          }
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "error",
+                "sentinel": "#NAME?"
+              },
+              "engine": {
+                "platform": "ironcalc"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=SEQUENCE(1)"
     },
     "sha256:1a0843ce8c6255a9a3b5765fd2ce5c056eb722fa38cf0b9a04d2a1ed08b0403a": {
-      "result": [
-        [
-          {
-            "error": "#NAME?"
-          }
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "error",
+                "sentinel": "#NAME?"
+              },
+              "engine": {
+                "platform": "ironcalc"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=SEQUENCE(3)"
     },
     "sha256:bdc86a64a1b2e3aca9ae7d43f56fe07631529dd530426099301c054bcc819716": {
-      "result": [
-        [
-          {
-            "error": "#NAME?"
-          }
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "error",
+                "sentinel": "#NAME?"
+              },
+              "engine": {
+                "platform": "ironcalc"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=SEQUENCE(2, 3)"
     },
     "sha256:e681e406935826e0a42c14b8d3c3c9cbd48092659283ce8c51173bef961bbf02": {
-      "result": [
-        [
-          {
-            "error": "#NAME?"
-          }
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "error",
+                "sentinel": "#NAME?"
+              },
+              "engine": {
+                "platform": "ironcalc"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=HSTACK(1, 2, 3)"
     },
     "sha256:8671e2f5582e8941e3add533280c3abdf2209181f9dc58f50d0d1028ce85015a": {
-      "result": [
-        [
-          {
-            "error": "#NAME?"
-          }
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "error",
+                "sentinel": "#NAME?"
+              },
+              "engine": {
+                "platform": "ironcalc"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=VSTACK(1, 2, 3)"
     },
     "sha256:5092c87ab108920d4e32ef7e46accbea6147d0ab44691e0761275e2c7b708ba9": {
-      "result": [
-        [
-          20
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 20
+              },
+              "engine": {
+                "platform": "ironcalc"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=INDEX(A1:B2, 2, 1)"
     },
     "sha256:6743cd99b2823a4ef19ef846d5e7b46e44db2460d2618b6f40e5eca1f8339910": {
-      "result": [
-        [
-          {
-            "error": "#NAME?"
-          }
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "error",
+                "sentinel": "#NAME?"
+              },
+              "engine": {
+                "platform": "ironcalc"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=SORT({3;1;2})"
     }
   }

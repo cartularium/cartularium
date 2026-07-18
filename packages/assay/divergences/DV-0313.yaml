@@ -1,0 +1,13 @@
+id: DV-0313
+summary: "formulas: errors (#DIV/0!) on a pure-imaginary argument where other engines return pi/2 — IMARGUMENT"
+cause: unimplemented-edge
+category: value
+engines:
+  - formulas
+test-count: 1
+subjects:
+  - IMARGUMENT
+tests:
+  - IMARGUMENT/imargument-pure-imaginary
+seeded: 2026-07-11
+last-confirmed: 2026-07-11

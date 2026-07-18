@@ -1,0 +1,15 @@
+id: DV-0297
+summary: "gsheets, hyperformula, ironcalc: blank vs empty-text cell classification differs (count one more cell as non-empty than excel, formulas, lattice) — COUNTA"
+cause: null-vs-zero
+category: value
+engines:
+  - gsheets
+  - hyperformula
+  - ironcalc
+test-count: 1
+subjects:
+  - COUNTA
+tests:
+  - COUNTA/counta-non-empty
+seeded: 2026-07-11
+last-confirmed: 2026-07-11

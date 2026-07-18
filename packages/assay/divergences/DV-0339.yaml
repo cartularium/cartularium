@@ -1,0 +1,14 @@
+id: DV-0339
+summary: "formulas: return shape differs (modes rendered as a bracketed text list in one cell where excel, gsheets, lattice spill numeric values) — MODE.MULT"
+cause: shape
+category: value
+engines:
+  - formulas
+test-count: 2
+subjects:
+  - MODE.MULT
+tests:
+  - MODE.MULT/mode-mult-single-mode
+  - MODE.MULT/mode-mult-tied-dataset
+seeded: 2026-07-11
+last-confirmed: 2026-07-11

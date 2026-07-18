@@ -1,0 +1,14 @@
+id: DV-0312
+summary: "ironcalc: array argument form not implemented (#N/IMPL!) where excel, formulas, gsheets, hyperformula, lattice broadcast element-wise — IFERROR"
+cause: array-handling
+category: value
+engines:
+  - ironcalc
+test-count: 2
+subjects:
+  - IFERROR
+tests:
+  - IFERROR/iferror-over-array-with-errors
+  - IFERROR/iferror-over-division-with-zero
+seeded: 2026-07-11
+last-confirmed: 2026-07-11

@@ -1,0 +1,13 @@
+id: DV-0298
+summary: "hyperformula: blank vs empty-text cell classification differs (counts one fewer cell as blank than excel, formulas, gsheets, ironcalc, lattice) — COUNTBLANK"
+cause: null-vs-zero
+category: value
+engines:
+  - hyperformula
+test-count: 1
+subjects:
+  - COUNTBLANK
+tests:
+  - COUNTBLANK/countblank
+seeded: 2026-07-11
+last-confirmed: 2026-07-11

@@ -1,613 +1,1753 @@
 {
   "platform": "libreoffice",
-  "generatedAt": "2026-05-11T09:35:14.734Z",
+  "generatedAt": "2026-07-11T17:36:45.850Z",
   "results": {
     "sha256:19da1a15d858c4cbb0ae490067a519e8f49208ee645d8f664eed4e91ca7dcb68": {
-      "result": [
-        [
-          null
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": -4966.49413057819
+              },
+              "engine": {
+                "platform": "libreoffice"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=CUMIPMT(0.05/12, 360, 100000, 1, 12, 0)"
     },
     "sha256:5a07645a6294a6d155ba0c9c2bc7e3b8882e57ba9db1198f37e9dea7f34eaca7": {
-      "result": [
-        [
-          null
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": -171.126921033222
+              },
+              "engine": {
+                "platform": "libreoffice"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=CUMIPMT(0.05/12, 360, 100000, 349, 360, 0)"
     },
     "sha256:4ffea7e62a153ef33a40d8f9aad3641d5f244899d29385ae5455c03d9485c783": {
-      "result": [
-        [
-          null
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "error",
+                "sentinel": "#VALUE!"
+              },
+              "engine": {
+                "platform": "libreoffice"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=CUMIPMT(0.05/12, 360, 100000, 0, 12, 0)"
     },
     "sha256:dd3272633ac048d844170050bef105fe09fc0a030b9398d2a0dc2ce722854b65": {
-      "result": [
-        [
-          null
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": -1475.36534556748
+              },
+              "engine": {
+                "platform": "libreoffice"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=CUMPRINC(0.05/12, 360, 100000, 1, 12, 0)"
     },
     "sha256:38dd00977e9c2640ba942727284e3a15ec8a1c9c153c46c838e3934418ab15bf": {
-      "result": [
-        [
-          null
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": -99999.9999999998
+              },
+              "engine": {
+                "platform": "libreoffice"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=CUMPRINC(0.05/12, 360, 100000, 1, 360, 0)"
     },
     "sha256:f2a960a4b6e67b7163b9ca64db67b101ccffb34b65bf56913861cfb0157c6c95": {
-      "result": [
-        [
-          null
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "error",
+                "sentinel": "#VALUE!"
+              },
+              "engine": {
+                "platform": "libreoffice"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=CUMPRINC(0.05/12, 360, 100000, 1, 12, 2)"
     },
     "sha256:ea6d9a023b38d845cc5f0bbc1e6c6d46110fb4620df2a54470cbd5ceb6af334f": {
-      "result": [
-        [
-          null
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 319000
+              },
+              "engine": {
+                "platform": "libreoffice"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=DB(1000000, 100000, 6, 1, 12)"
     },
     "sha256:f4e27326a16cda1e1a2b739efba3208ee85ea70947726ef8b0c0eda68e135443": {
-      "result": [
-        [
-          null
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 217239
+              },
+              "engine": {
+                "platform": "libreoffice"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=DB(1000000, 100000, 6, 2, 12)"
     },
     "sha256:9fa4c450061237e9cd36f709fcc2faf5e5cb3119c5b6be5120932ac73120be17": {
-      "result": [
-        [
-          null
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 186083.333333333
+              },
+              "engine": {
+                "platform": "libreoffice"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=DB(1000000, 100000, 6, 1, 7)"
     },
     "sha256:e689d8cf4e1a5fb0df7f5d74be89886c15881c5dff20b2ba0eb264033172e963": {
-      "result": [
-        [
-          null
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 200
+              },
+              "engine": {
+                "platform": "libreoffice"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=DDB(1000, 100, 10, 1)"
     },
     "sha256:85f9a7a378733be25268cd280bcfa2de5f7cba712912c491d488dc149af52128": {
-      "result": [
-        [
-          null
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 160
+              },
+              "engine": {
+                "platform": "libreoffice"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=DDB(1000, 100, 10, 2)"
     },
     "sha256:48fd46b5feadeb85f50bd3954c6a3930525b7bcc2e6d6e06d76f297668878081": {
-      "result": [
-        [
-          null
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 360
+              },
+              "engine": {
+                "platform": "libreoffice"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=DDB(2400, 300, 10, 1, 1.5)"
     },
     "sha256:e403c5f6c164251bdc97be4b8513fcdb8a9bb327650be5810b6b5babd0ceb9d2": {
-      "result": [
-        [
-          null
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 26.8435456
+              },
+              "engine": {
+                "platform": "libreoffice"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=DDB(1000, 100, 10, 10)"
     },
     "sha256:65fda1e9a3a6f50167b2da3c3b46c83e61ebe60ce616a79f79ea0e126fbcc59a": {
-      "result": [
-        [
-          null
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 0.12682503013197
+              },
+              "engine": {
+                "platform": "libreoffice"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=EFFECT(0.12, 12)"
     },
     "sha256:acaac81c6abe9217a2b3d115f28a2ac952caf4f504c9852ba1452de62961ddc1": {
-      "result": [
-        [
-          null
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 0.05
+              },
+              "engine": {
+                "platform": "libreoffice"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=EFFECT(0.05, 1)"
     },
     "sha256:b6a18ea40a58833b8b106f9508c604b07df87be2d03026df7e1dff017624a115": {
-      "result": [
-        [
-          null
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "error",
+                "sentinel": "#VALUE!"
+              },
+              "engine": {
+                "platform": "libreoffice"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=EFFECT(0.05, 0)"
     },
     "sha256:95b18ec1f3b1b1278ab4c53abd510dd2e5302b57f8538c109a7027b2f0fc9d4a": {
-      "result": [
-        [
-          null
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 13180.7949423809
+              },
+              "engine": {
+                "platform": "libreoffice"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=FV(0.06, 10, -1000)"
     },
     "sha256:611438327260ebf343efb3fbb3a3cadb1f103bb7922dc8c5280b6b949b15f0c7": {
-      "result": [
-        [
-          null
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 26532.9770514442
+              },
+              "engine": {
+                "platform": "libreoffice"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=FV(0.05, 20, 0, -10000)"
     },
     "sha256:6afb8b03736939ca2cbc5307325757b61d20f65b83fc2a8e40edc5d76833a502": {
-      "result": [
-        [
-          null
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 1000
+              },
+              "engine": {
+                "platform": "libreoffice"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=FV(0, 10, -100)"
     },
     "sha256:62c96a74449aa06725054885c448537b4558359c7ab82c36e10a6f7968a3db01": {
-      "result": [
-        [
-          null
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 1190.91
+              },
+              "engine": {
+                "platform": "libreoffice"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=FVSCHEDULE(1000, {0.05, 0.06, 0.07})"
     },
     "sha256:58eaa07967f8904cd505ef2598879ff5403026c7d593f444497b72865381b712": {
-      "result": [
-        [
-          null
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 1210
+              },
+              "engine": {
+                "platform": "libreoffice"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=FVSCHEDULE(1000, {0.1, 0, 0.1})"
     },
     "sha256:4e32cf4726b240c71db97c1e540faf53180b3bbf7408037b99f80b68d2ad865c": {
-      "result": [
-        [
-          null
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 550
+              },
+              "engine": {
+                "platform": "libreoffice"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=FVSCHEDULE(500, {0.1})"
     },
     "sha256:ee45e27042353e281bafee42c07ba921a0db1fd9fe5047720e7759d36894c302": {
-      "result": [
-        [
-          null
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 833.333333333333
+              },
+              "engine": {
+                "platform": "libreoffice"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=IPMT(0.05/12, 1, 360, -200000)"
     },
     "sha256:bcc1890cd34d40c0671971b8205dd6fbccdba4da27552b3504257352aa83eb80": {
-      "result": [
-        [
-          null
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 4.45495122832146
+              },
+              "engine": {
+                "platform": "libreoffice"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=IPMT(0.05/12, 360, 360, -200000)"
     },
     "sha256:c256114e4f63afb5f5716c435b1bcb7c8326ec93c27a3077542312a24ecaa0cd": {
-      "result": [
-        [
-          null
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "error",
+                "sentinel": "#VALUE!"
+              },
+              "engine": {
+                "platform": "libreoffice"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=IPMT(0.05/12, 0, 360, -200000)"
     },
     "sha256:28efbad12ba0063083ed0ef2bf29975d98e2762054b64cfa05bcfe1411c7e445": {
-      "result": [
-        [
-          null
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 5.37205068174301e-18
+              },
+              "engine": {
+                "platform": "libreoffice"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=IRR(A1:A6)"
     },
     "sha256:e4a3db8f5049f3103fb40a1a454d4220ee8e8f9c623eae23bf4750ea5586cb80": {
-      "result": [
-        [
-          null
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 0.163405600688989
+              },
+              "engine": {
+                "platform": "libreoffice"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=IRR(A1:A4)"
     },
     "sha256:3bb75150a5f4d3e7baa7a5f5ef5fb4ff9f3503403a1aa23dfb3c4bfc4bb4e42d": {
-      "result": [
-        [
-          null
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "error",
+                "sentinel": "#N/A"
+              },
+              "engine": {
+                "platform": "libreoffice"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=IRR(A1:A3)"
     },
     "sha256:cac1c6726a6ac88e5091fe3e1eb8e43e44b732bd998368cbabfdd36c7ea4b17e": {
-      "result": [
-        [
-          null
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": -64814.8148148148
+              },
+              "engine": {
+                "platform": "libreoffice"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=ISPMT(0.1/12, 1, 36, 8000000)"
     },
     "sha256:ef762150c930dc4c13d580018cb6b8107a2200ba8539de5d631ae6a47706f62d": {
-      "result": [
-        [
-          null
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 50
+              },
+              "engine": {
+                "platform": "libreoffice"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=ISPMT(0.05, 0, 5, -1000)"
     },
     "sha256:c8b3bedc715e984f73e45d708a7e1a99780ad8bfbd4dd2cda4be0431b0b3fbf9": {
-      "result": [
-        [
-          null
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 0
+              },
+              "engine": {
+                "platform": "libreoffice"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=ISPMT(0.05, 5, 5, -1000)"
     },
     "sha256:96a82632ddb6839ec69fa1c8ee767c25b62d160fb71a6e4bef9a8b88729bf07c": {
-      "result": [
-        [
-          null
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 0.126094130365905
+              },
+              "engine": {
+                "platform": "libreoffice"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=MIRR(A1:A6, 0.1, 0.12)"
     },
     "sha256:1b6555830a63cec9555a6eb6e24d63f6ee73b42f611c69bde8eb13f7fcd76d31": {
-      "result": [
-        [
-          null
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 0.182858148602935
+              },
+              "engine": {
+                "platform": "libreoffice"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=MIRR(A1:A4, 0.1, 0.1)"
     },
     "sha256:af7eb4c10d330b829bcc14adb11344d2e31c791fb98b945a7cd3db2d94376c42": {
-      "result": [
-        [
-          null
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "error",
+                "sentinel": "#VALUE!"
+              },
+              "engine": {
+                "platform": "libreoffice"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=MIRR(A1:A3, 0.1, 0.12)"
     },
     "sha256:7c8ad7fc7e861c36531e311ed3f0cede91073230d09eb6a323811e6a558a7427": {
-      "result": [
-        [
-          null
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 0.12
+              },
+              "engine": {
+                "platform": "libreoffice"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=NOMINAL(0.126825030131969, 12)"
     },
     "sha256:f87b334b8ac08928aea2d71a213ad64b0530c554549e79179311cd472fa6aa98": {
-      "result": [
-        [
-          null
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 0.05
+              },
+              "engine": {
+                "platform": "libreoffice"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=NOMINAL(0.05, 1)"
     },
     "sha256:d737967a7d56d43df4ca0b1eb0217c82c67a885f6963a6cec560b6f8d20aed37": {
-      "result": [
-        [
-          null
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "error",
+                "sentinel": "#VALUE!"
+              },
+              "engine": {
+                "platform": "libreoffice"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=NOMINAL(-0.05, 4)"
     },
     "sha256:2ecadc48009902bf96c2552ea27eddeed77acb8a1fde8490d9d3e2a8351f2121": {
-      "result": [
-        [
-          null
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 360.002521487853
+              },
+              "engine": {
+                "platform": "libreoffice"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=NPER(0.05/12, -1073.64, 200000)"
     },
     "sha256:ad3360d4fab2f65e0bf91679c47882e2e7d4e83e570b001ce635e868f9372933": {
-      "result": [
-        [
-          null
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 10
+              },
+              "engine": {
+                "platform": "libreoffice"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=NPER(0, -100, 1000)"
     },
     "sha256:e8c62f4c4285c48dad52bf1590b86d27a378afa9d53905dbb8b127d684e80205": {
-      "result": [
-        [
-          null
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "error",
+                "sentinel": "#NUM!"
+              },
+              "engine": {
+                "platform": "libreoffice"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=NPER(0.1, -1, 10000)"
     },
     "sha256:d5205706a57b79bb9b93e805ef427b5cb31167431c9914db8a1761511ec218fd": {
-      "result": [
-        [
-          null
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 124.760028020486
+              },
+              "engine": {
+                "platform": "libreoffice"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=NPV(0.1, -1000, 300, 300, 300, 300, 300)"
     },
     "sha256:f3ef96a5f4e81793da68833826e7892c87cb81534861363af032885b5707c5fd": {
-      "result": [
-        [
-          null
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 90.9090909090909
+              },
+              "engine": {
+                "platform": "libreoffice"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=NPV(0.1, 100)"
     },
     "sha256:8c1ee87ffd16621219d5eb38a8c260c84062c04a62c31598f2e31cfe1e6af928": {
-      "result": [
-        [
-          null
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 600
+              },
+              "engine": {
+                "platform": "libreoffice"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=NPV(0, 100, 200, 300)"
     },
     "sha256:2030b12d4bbe8b3f5122fccfae871014fb923b524e61ec3c44409471419be495": {
-      "result": [
-        [
-          null
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "error",
+                "sentinel": "#NAME?"
+              },
+              "engine": {
+                "platform": "libreoffice"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=PDURATION(0.1, 1000, 2000)"
     },
     "sha256:1238e8f431a7142841b0816d067b0e5fc4e5d7d1c45d95524f32a375a698c718": {
-      "result": [
-        [
-          null
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "error",
+                "sentinel": "#NAME?"
+              },
+              "engine": {
+                "platform": "libreoffice"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=PDURATION(0.05, 1000, 1000)"
     },
     "sha256:55b69553c56c632a28a0f1806079f8b2345858a4498b284df7cb64598b3949ea": {
-      "result": [
-        [
-          null
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "error",
+                "sentinel": "#NAME?"
+              },
+              "engine": {
+                "platform": "libreoffice"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=PDURATION(0, 1000, 2000)"
     },
     "sha256:0134c2752cc27ee24c235b27df5ec96b2e19a43f255f4d9c4c907bfadccb49fa": {
-      "result": [
-        [
-          null
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 1073.64324602428
+              },
+              "engine": {
+                "platform": "libreoffice"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=PMT(0.05/12, 360, -200000)"
     },
     "sha256:98e872778631a44fa703946d5bc3edc45d926c5159f60d28b2a2e8c568edbac9": {
-      "result": [
-        [
-          null
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": -1000
+              },
+              "engine": {
+                "platform": "libreoffice"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=PMT(0, 12, 12000)"
     },
     "sha256:c56e5840a04c8df6819a89f96f15133564e94fd33b13f811625a5032f431d030": {
-      "result": [
-        [
-          null
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": -995.505251527524
+              },
+              "engine": {
+                "platform": "libreoffice"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=PMT(0.06/12, 360, 0, 1000000)"
     },
     "sha256:f3caf9e0360b5f9d1fe5c74715777d91a10f36340ed8c1b7c16d571d294768cc": {
-      "result": [
-        [
-          null
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 240.309912690945
+              },
+              "engine": {
+                "platform": "libreoffice"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=PPMT(0.05/12, 1, 360, -200000)"
     },
-    "sha256:fcdb8dc59e7b8ef62b675cc416cb5f983a985ed1813ff89558d9b6078b2f5fd3": {
-      "result": [
-        [
-          null
-        ]
-      ],
+    "sha256:33255efef7b687be1d9814dde0a6b73b80f5c155cc4051bbd6b6065669a3a63d": {
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 1073.64324602428
+              },
+              "engine": {
+                "platform": "libreoffice"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=PPMT(0.05/12, 5, 360, -200000) + IPMT(0.05/12, 5, 360, -200000)"
     },
     "sha256:b079bb63fc95ccdd701a6de64d2c0b06b8239c6865b2d48dea42a902ef53a289": {
-      "result": [
-        [
-          null
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "error",
+                "sentinel": "#VALUE!"
+              },
+              "engine": {
+                "platform": "libreoffice"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=PPMT(0.05/12, 361, 360, -200000)"
     },
     "sha256:8a4e2d1cced3294e8b8665fc8b7d9d68bd158605365516023cb362549533b709": {
-      "result": [
-        [
-          null
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 7360.0870514147
+              },
+              "engine": {
+                "platform": "libreoffice"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=PV(0.06, 10, -1000)"
     },
     "sha256:1dd3b77e66ed5a3811f90fe6b01048d32449a530a06c96069e3b98aca75f3495": {
-      "result": [
-        [
-          null
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 620.921323059155
+              },
+              "engine": {
+                "platform": "libreoffice"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=PV(0.1, 5, 0, -1000)"
     },
     "sha256:f172fee55f928f87cdda144d14b12674d80560daf7d7f82c218fff4f37ea2f78": {
-      "result": [
-        [
-          null
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 1000
+              },
+              "engine": {
+                "platform": "libreoffice"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=PV(0, 10, -100)"
     },
     "sha256:6e2417c6e4902d7565d0aed81227387d7e29d2903cb57c8f0fdc3dac277f938c": {
-      "result": [
-        [
-          null
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 0.00416664453635995
+              },
+              "engine": {
+                "platform": "libreoffice"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=RATE(360, -1073.64, 200000)"
     },
     "sha256:3775ad530f005c65ff8ac2338c4b07365bf16ca9027b8928739ff73b65842352": {
-      "result": [
-        [
-          null
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 0.0717734625362933
+              },
+              "engine": {
+                "platform": "libreoffice"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=RATE(10, 0, -500, 1000)"
     },
     "sha256:5cb974a81e1e0f1bdd7cc9221d32d21a00f3f885da7a3ca30657a0775bcc6670": {
-      "result": [
-        [
-          null
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "error",
+                "sentinel": "#N/A"
+              },
+              "engine": {
+                "platform": "libreoffice"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=RATE(10, 100, 100)"
     },
     "sha256:15fcf169773cce94bd568b76ee07c5bdcf925d6a3d8718433102911f6247526b": {
-      "result": [
-        [
-          null
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "error",
+                "sentinel": "#NAME?"
+              },
+              "engine": {
+                "platform": "libreoffice"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=RRI(8, 1, 2)"
     },
     "sha256:cd0d2eb03336b0da01ae71d5496b3e49d13077c38ab23f64fbca716bece72642": {
-      "result": [
-        [
-          null
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "error",
+                "sentinel": "#NAME?"
+              },
+              "engine": {
+                "platform": "libreoffice"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=RRI(5, 1000, 1000)"
     },
     "sha256:75a5550985af3b570da324a72f35c1c328dfcb3a566ab5eacdcf422fc5c4c0fc": {
-      "result": [
-        [
-          null
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "error",
+                "sentinel": "#NAME?"
+              },
+              "engine": {
+                "platform": "libreoffice"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=RRI(0, 1000, 2000)"
     },
     "sha256:8c6ff651ba1d6a5a059c1199dc6d0e1b0a63d94a919227a8ff6dcc9c40ff3acc": {
-      "result": [
-        [
-          null
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 90
+              },
+              "engine": {
+                "platform": "libreoffice"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=SLN(1000, 100, 10)"
     },
     "sha256:08ea9d12ee93a66db66f47103cb4c795d8d1f51f0766a76ab1ca9f648adb68a8": {
-      "result": [
-        [
-          null
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 1000
+              },
+              "engine": {
+                "platform": "libreoffice"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=SLN(5000, 0, 5)"
     },
     "sha256:a0cfa176cb1a2f79851bf98cd3f8151e0a4d703a5d1001c38adfbfe478c208ef": {
-      "result": [
-        [
-          null
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "error",
+                "sentinel": "#DIV/0!"
+              },
+              "engine": {
+                "platform": "libreoffice"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=SLN(1000, 100, 0)"
     },
     "sha256:8159eed9bde968a50c4e6b7bead592ae3a01195fda6fcd9ba845df701c16e0be": {
-      "result": [
-        [
-          null
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 163.636363636364
+              },
+              "engine": {
+                "platform": "libreoffice"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=SYD(1000, 100, 10, 1)"
     },
     "sha256:dab8f82892bd84cdbcf409d759d5d4bdbff27a6d460bec08b3b2c3584a088451": {
-      "result": [
-        [
-          null
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 16.3636363636364
+              },
+              "engine": {
+                "platform": "libreoffice"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=SYD(1000, 100, 10, 10)"
     },
     "sha256:5a53483bffc27d36508e8a18fb07a1228046c8fee85498a6c94a115b755d94b1": {
-      "result": [
-        [
-          null
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 0
+              },
+              "engine": {
+                "platform": "libreoffice"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=SYD(1000, 100, 10, 11)"
     },
     "sha256:70d43f035607ca8588f3d751041879c517f2b8c7a1e1d5530ae9891ecf29c6b5": {
-      "result": [
-        [
-          null
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 1.31506849315065
+              },
+              "engine": {
+                "platform": "libreoffice"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=VDB(2400, 300, 10*365, 0, 1)"
     },
     "sha256:47107ded1648f57c942ccf9def9b6a41fc7abdd51fcedcb3b564d0bc70c5c3a5": {
-      "result": [
-        [
-          null
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 480
+              },
+              "engine": {
+                "platform": "libreoffice"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=VDB(2400, 300, 10, 0, 1)"
     },
     "sha256:72541a9457fe6acbd72d43cde7f73e89a46a4802348ea3b95cb1d691fa4feafa": {
-      "result": [
-        [
-          null
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 2100
+              },
+              "engine": {
+                "platform": "libreoffice"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=VDB(2400, 300, 10, 0, 10, 2, TRUE)"
     },
     "sha256:4354c46abfb668501963601a06ec5ca7fc3ae3508935ccdb559f5421b6ac1b33": {
-      "result": [
-        [
-          null
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "error",
+                "sentinel": "#VALUE!"
+              },
+              "engine": {
+                "platform": "libreoffice"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=XIRR(A1:A5, B1:B5)"
     },
     "sha256:130a688425752bc53c8e8a66877f1208ee5ffe113d03a32a3e236542e75c860b": {
-      "result": [
-        [
-          null
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "error",
+                "sentinel": "#VALUE!"
+              },
+              "engine": {
+                "platform": "libreoffice"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=XIRR(A1:A3, B1:B3, 0.1)"
     },
     "sha256:7c596b11db3dd5c98de1b4715957cdf10c42a7ce2f51f2503b9c87851b2966cc": {
-      "result": [
-        [
-          null
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "error",
+                "sentinel": "#VALUE!"
+              },
+              "engine": {
+                "platform": "libreoffice"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=XIRR(A1:A2, B1:B2)"
     },
     "sha256:506da2df08178b5a8df812d2e581bc3e1cac096df693c408d26c71af8b165dc6": {
-      "result": [
-        [
-          null
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 3000
+              },
+              "engine": {
+                "platform": "libreoffice"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=XNPV(0.09, A1:A5, B1:B5)"
     },
     "sha256:1f9486ab2df8ebca35a0d0b66e0ada50b1683a329c41436dc960ff8be11c34a9": {
-      "result": [
-        [
-          null
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 1000
+              },
+              "engine": {
+                "platform": "libreoffice"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=XNPV(0.1, A1:A2, B1:B2)"
     },
     "sha256:ff463f5f20c0222c409d842649880f93c6f08f29b8da3c8107898ab70c67f88a": {
-      "result": [
-        [
-          null
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "error",
+                "sentinel": "#VALUE!"
+              },
+              "engine": {
+                "platform": "libreoffice"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=XNPV(0.1, A1:A3, B1:B2)"
     }
   }

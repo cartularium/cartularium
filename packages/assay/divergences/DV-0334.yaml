@@ -1,0 +1,14 @@
+id: DV-0334
+summary: "ironcalc, pycel: return shape differs on vertical array literal — pycel surfaces the top-left scalar, ironcalc reports #N/IMPL!, others spill 3x1 — lit:array"
+cause: shape
+category: value
+engines:
+  - ironcalc
+  - pycel
+test-count: 1
+subjects:
+  - "lit:array"
+tests:
+  - "lit:array/array-literal-semicolons"
+seeded: 2026-07-11
+last-confirmed: 2026-07-11

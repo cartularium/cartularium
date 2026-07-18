@@ -1,0 +1,15 @@
+id: DV-0285
+summary: "hyperformula, ironcalc, pycel: sheet-name argument form not accepted (#NAME?) — ADDRESS"
+cause: missing-arg-form
+category: value
+engines:
+  - hyperformula
+  - ironcalc
+  - pycel
+test-count: 1
+subjects:
+  - ADDRESS
+tests:
+  - ADDRESS/address-with-sheet
+seeded: 2026-07-11
+last-confirmed: 2026-07-11

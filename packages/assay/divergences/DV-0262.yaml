@@ -1,0 +1,71 @@
+id: DV-0262
+summary: "hyperformula, pycel: function not implemented — AVERAGEA, BETA.DIST, BETA.INV (+16 more)"
+cause: missing-function
+category: value
+engines:
+  - hyperformula
+  - pycel
+test-count: 40
+subjects:
+  - AVERAGEA
+  - BETA.DIST
+  - BETA.INV
+  - BINOM.DIST
+  - CHISQ.DIST
+  - CHISQ.INV
+  - ERF.PRECISE
+  - ERFC.PRECISE
+  - EXPON.DIST
+  - KURT
+  - NEGBINOM.DIST
+  - NORM.DIST
+  - NORM.INV
+  - NORM.S.DIST
+  - POISSON.DIST
+  - T.DIST
+  - T.INV
+  - TYPE
+  - WEIBULL.DIST
+tests:
+  - AVERAGEA/averagea-inline-booleans
+  - BETA.DIST/beta-dist-cdf-at-0-5
+  - BETA.DIST/beta-dist-pdf-at-0-5
+  - BETA.INV/beta-inv-roundtrip
+  - BINOM.DIST/binom-dist-pmf-at-0
+  - BINOM.DIST/binom-dist-pmf-at-k-5-n-10
+  - BINOM.DIST/binom-dist-tail-probability
+  - CHISQ.DIST/chisq-dist-cdf-df-4
+  - CHISQ.DIST/chisq-dist-pdf-df-4
+  - CHISQ.INV/chisq-inv-roundtrip
+  - ERF.PRECISE/erf-precise-negative
+  - ERF.PRECISE/erf-precise-one
+  - ERFC.PRECISE/erfc-precise-at-1
+  - ERFC.PRECISE/erfc-precise-at-2
+  - EXPON.DIST/expon-dist-cdf-at-mean
+  - EXPON.DIST/expon-dist-pdf-at-x-1
+  - KURT/kurt-canonical
+  - KURT/kurt-inline
+  - KURT/kurt-peaked
+  - NEGBINOM.DIST/negbinom-dist-at-0-failures
+  - NEGBINOM.DIST/negbinom-dist-cdf
+  - NEGBINOM.DIST/negbinom-dist-pmf
+  - NORM.DIST/norm-dist-at-1-sigma-cdf
+  - NORM.DIST/norm-dist-at-mean-pdf
+  - NORM.DIST/norm-dist-non-standard
+  - NORM.INV/norm-inv-roundtrip
+  - NORM.S.DIST/norm-s-dist-at-0-pdf
+  - NORM.S.DIST/norm-s-dist-at-1-96
+  - POISSON.DIST/poisson-dist-cdf
+  - POISSON.DIST/poisson-dist-pmf-at-0
+  - POISSON.DIST/poisson-dist-pmf-at-mean
+  - T.DIST/t-dist-pdf-at-0
+  - T.DIST/t-dist-tail
+  - T.INV/t-inv-roundtrip
+  - TYPE/type-of-boolean
+  - TYPE/type-of-error
+  - TYPE/type-of-number
+  - TYPE/type-of-text
+  - WEIBULL.DIST/weibull-dist-cdf
+  - WEIBULL.DIST/weibull-dist-pdf
+seeded: 2026-07-11
+last-confirmed: 2026-07-11

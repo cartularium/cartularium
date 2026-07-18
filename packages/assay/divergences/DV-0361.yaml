@@ -1,0 +1,15 @@
+id: DV-0361
+summary: "gsheets, hyperformula, pycel: error for zero where others return empty text — ROMAN"
+cause: unimplemented-edge
+category: value
+engines:
+  - gsheets
+  - hyperformula
+  - pycel
+test-count: 1
+subjects:
+  - ROMAN
+tests:
+  - ROMAN/roman-zero
+seeded: 2026-07-11
+last-confirmed: 2026-07-11

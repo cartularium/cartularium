@@ -1,0 +1,20 @@
+id: DV-0364
+summary: "pycel: #NAME? when the argument is an operator expression (unary minus, division) while plain-argument cases return a value — SIN, SINH, TAN (+1 more)"
+cause: unimplemented-edge
+category: value
+engines:
+  - pycel
+test-count: 5
+subjects:
+  - SIN
+  - SINH
+  - TAN
+  - TANH
+tests:
+  - SIN/sin-at-pi-2
+  - SIN/sin-negative
+  - SINH/sinh-negative
+  - TAN/tan-negative
+  - TANH/tanh-negative
+seeded: 2026-07-11
+last-confirmed: 2026-07-11

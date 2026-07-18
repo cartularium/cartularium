@@ -1,0 +1,14 @@
+id: DV-0271
+summary: "hyperformula, ironcalc: function not implemented — FORECAST"
+cause: missing-function
+category: value
+engines:
+  - hyperformula
+  - ironcalc
+test-count: 1
+subjects:
+  - FORECAST
+tests:
+  - FORECAST/forecast-linear-fit
+seeded: 2026-07-11
+last-confirmed: 2026-07-11

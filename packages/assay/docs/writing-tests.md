@@ -49,23 +49,25 @@ What kind of correctness is being asserted.
 
 When a test could fit two: pick the more specific. A spill-blocking test that asserts an error code is `error-code`, not `shape`.
 
-## semanticDomain and supportLevel
+## Benchmark lane and supportLevel
 
-`category` says what a test asserts. `semanticDomain` says which compatibility lane the result belongs to. The benchmark command scores only `formula-value` tests by default, because a scalar fixture comparison can otherwise create false confidence.
+`category` says what a test asserts. The **benchmark lane** says which compatibility lane the result belongs to: the `benchmark` command scores only pure formula-value tests by default, because a scalar fixture comparison can otherwise create false confidence.
 
-| semanticDomain | Use for | Benchmark default |
+The lane is **derived, not declared.** A test leaves the scored formula-value lane automatically when its existing signals place it elsewhere — you never author the lane directly:
+
+| Derived lane | Triggered by | Benchmark default |
 |---|---|---|
-| `formula-value` | Pure formula values: numbers, strings, booleans, blanks, errors, and arrays of those values | included |
-| `display` | Cell display metadata or contained visual values (`HYPERLINK`, `IMAGE`, `SPARKLINE`) | excluded |
-| `external-effect` | Network, file, service, or permissioned behavior (`GOOGLEFINANCE`, imports, translation) | excluded |
-| `grid-context` | Workbook/grid state that cannot be represented by a bare formula fixture | excluded |
-| `metadata` | Sheet/cell metadata (`SHEET`, `CELL`, document properties) | excluded |
-| `volatile` | Non-deterministic functions or time-sensitive values (`RAND`, `RANDARRAY`, `NOW`, `TODAY`) | excluded |
-| `partial` | Smoke tests for a function whose full semantic contract is not covered | excluded |
+| formula-value | none of the below | included |
+| volatile | `category: volatile`, `status: volatile`, or subject `RAND`/`RANDBETWEEN`/`RANDARRAY`/`NOW`/`TODAY` | excluded |
+| display | `category: format` | excluded |
+| grid-context | `category: interaction` | excluded |
+| metadata | subject `CELL`/`SHEET`/`SHEETS` | excluded |
+| external-effect | `features: [external-io]` | excluded |
+| partial | a non-`full` `supportLevel` (see below) | excluded |
 
-Omitting `semanticDomain` is equivalent to `semanticDomain: formula-value`.
+So to keep a non-value test out of headline scoring, set the underlying signal (the right `category`, `features: [external-io]`, or a `supportLevel`) — the benchmark derives the rest. (The old `semanticDomain` field was dissolved 2026-06-16; it merely duplicated these signals.)
 
-Use `supportLevel` to document maturity of the covered surface:
+Use `supportLevel` to document maturity of the covered surface — and it is what excludes a partially-covered subject from headline scoring:
 
 | supportLevel | Meaning |
 |---|---|
@@ -80,17 +82,15 @@ Examples:
 ```yaml
 - subject: SORTN
   name: top-three
-  semanticDomain: partial
-  supportLevel: unsupported
+  supportLevel: unsupported       # → derived lane "partial", excluded from scoring
   formula: =SORTN({5;2;8;1;4}, 3)
   category: value
   expect: { error: "#NAME?" }
 
 - subject: GOOGLEFINANCE
   name: current-price
-  semanticDomain: external-effect
   supportLevel: design-pending
-  features: [external-io]
+  features: [external-io]          # → derived lane "external-effect", excluded
   formula: =GOOGLEFINANCE("GOOG", "price")
   category: value
   expect: { type: number }

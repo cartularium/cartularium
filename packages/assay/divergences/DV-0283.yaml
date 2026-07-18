@@ -1,0 +1,14 @@
+id: DV-0283
+summary: "gsheets, hyperformula: different argument interpretation — ACOT (negative input maps to the (-pi/2, 0) principal value, where excel, formulas, ironcalc, lattice map it to (pi/2, pi))"
+cause: arg-semantics
+category: value
+engines:
+  - gsheets
+  - hyperformula
+test-count: 1
+subjects:
+  - ACOT
+tests:
+  - ACOT/acot-negative
+seeded: 2026-07-11
+last-confirmed: 2026-07-11

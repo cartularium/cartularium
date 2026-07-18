@@ -1,0 +1,39 @@
+id: DV-0263
+summary: "ironcalc, pycel: function not implemented — BETAINV, CHIDIST, CHIINV (+7 more)"
+cause: missing-function
+category: value
+engines:
+  - ironcalc
+  - pycel
+test-count: 17
+subjects:
+  - BETAINV
+  - CHIDIST
+  - CHIINV
+  - COVAR
+  - FILTER
+  - FTEST
+  - TDIST
+  - TINV
+  - TTEST
+  - ZTEST
+tests:
+  - BETAINV/betainv-at-0-5
+  - CHIDIST/chidist-at-mean-df-4
+  - CHIDIST/chidist-tail-df-10
+  - CHIINV/chiinv-0-05-df-10
+  - CHIINV/chiinv-roundtrip
+  - COVAR/covar-canonical
+  - COVAR/covar-small-set
+  - FILTER/filter-spill
+  - FTEST/ftest-canonical
+  - FTEST/ftest-different-variance
+  - TDIST/tdist-one-tailed
+  - TDIST/tdist-two-tailed
+  - TINV/tinv-95-df-10
+  - TINV/tinv-roundtrip
+  - TTEST/ttest-one-tail-equal-var
+  - TTEST/ttest-two-tail-paired
+  - ZTEST/ztest-with-sigma
+seeded: 2026-07-11
+last-confirmed: 2026-07-11

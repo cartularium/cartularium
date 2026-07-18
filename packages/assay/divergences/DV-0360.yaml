@@ -1,0 +1,14 @@
+id: DV-0360
+summary: "excel, formulas: zero-count result surfaces as blank, while gsheets, hyperformula, ironcalc, lattice return an empty string — REPT"
+cause: null-vs-zero
+category: value
+engines:
+  - excel
+  - formulas
+test-count: 1
+subjects:
+  - REPT
+tests:
+  - REPT/rept-zero
+seeded: 2026-07-11
+last-confirmed: 2026-07-11

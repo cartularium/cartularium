@@ -1,0 +1,15 @@
+id: DV-0332
+summary: "lattice: stats form not implemented (fourth argument TRUE yields #N/A where excel, formulas, gsheets return the 5x2 statistics array) — LINEST, LOGEST"
+cause: missing-arg-form
+category: value
+engines:
+  - lattice
+test-count: 2
+subjects:
+  - LINEST
+  - LOGEST
+tests:
+  - LINEST/linest-with-stats
+  - LOGEST/logest-with-stats
+seeded: 2026-07-11
+last-confirmed: 2026-07-11

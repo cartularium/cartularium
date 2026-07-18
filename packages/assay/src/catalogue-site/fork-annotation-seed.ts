@@ -1,0 +1,114 @@
+// Map the in-repo divergence YAML (DV-####) into fork-annotation store rows, and emit the
+// idempotent D1 seed SQL for the one-time import (CP3 increment #3, 3c).
+//
+// A one-time, additive, MAINTAINER-RUN bridge from the legacy catalogue (the DV YAML) into the
+// attributed annotation store. Each DV becomes one `published`, auto-seeded annotation scoping the
+// DV's case-refs (annotation-store-design-2026-06-20.md §5) — existing catalogue content, not a new
+// contribution, hence published-on-import. The store is the home of the contributed WHY; assay's
+// manifest stays observation-only and joins to it out of band by case-ref. `engines`/`category` are
+// NOT copied (derived from the manifest join at read time). The YAML / seedCatalogue / history are
+// NOT touched here — they retire with #4.
+
+import { isCause } from "@cartularium/contracts";
+import type { DvEntry } from "./load.js";
+
+const SEED_AUTHOR = "auto-seeded (provisional)";
+
+// Legacy DV `cause` strings that predate the current Cause vocabulary, normalised to the nearest
+// current term. `feature-absent` (DV-0255, signature "skip") is "the function is absent" =
+// missing-function. Add aliases here as legacy values surface; an unrecognised cause stays unset
+// (cause is an optional coarse facet, never identity — dropping it is safe).
+const CAUSE_ALIASES: Record<string, string> = {
+  "feature-absent": "missing-function",
+};
+
+export interface SeedRow {
+  id: string;
+  author_id: string;
+  content: string;
+  cause: string | null;
+  scope_json: string;
+  status: "published";
+  // auto-seeded rows are always UNVERIFIED — verification is a human act (the value signal), never
+  // something the bridge can claim on a contributor's behalf.
+  verified_by: null;
+  verified_at: null;
+  created_at: string;
+  updated_at: string;
+}
+
+export interface SeedResult {
+  rows: SeedRow[];
+  warnings: string[];
+}
+
+// Resolve a DV cause to a valid Cause: pass it through if in-vocabulary, else map a known legacy
+// alias, else drop it to null. Either reconciliation records a warning so the maintainer sees it.
+function normaliseCause(dv: DvEntry, warnings: string[]): string | null {
+  const raw = dv.cause;
+  if (!raw) return null;
+  if (isCause(raw)) return raw;
+  const aliased = CAUSE_ALIASES[raw];
+  if (aliased && isCause(aliased)) {
+    warnings.push(`${dv.id}: normalised legacy cause "${raw}" -> "${aliased}"`);
+    return aliased;
+  }
+  warnings.push(`${dv.id}: dropped unknown cause "${raw}" (not in the Cause vocabulary)`);
+  return null;
+}
+
+export function dvsToSeedRows(dvs: DvEntry[], now: string): SeedResult {
+  const warnings: string[] = [];
+  const rows: SeedRow[] = dvs.map((dv) => ({
+    id: dv.id,
+    author_id: SEED_AUTHOR,
+    content: dv.summary,
+    cause: normaliseCause(dv, warnings),
+    // an authored `scope:` (3f reclassify) wins; else the migration default — one ref-set clause
+    // holding the DV's case-refs (SUBJECT/name). The scope is a clause LIST either way.
+    scope_json: JSON.stringify(dv.scope ?? [{ kind: "ref-set", refs: dv.tests }]),
+    status: "published",
+    verified_by: null,
+    verified_at: null,
+    created_at: now,
+    updated_at: now,
+  }));
+  return { rows, warnings };
+}
+
+// SQLite string literal: wrap in single quotes, double any embedded single quote.
+function sqlStr(s: string): string {
+  return `'${s.replace(/'/g, "''")}'`;
+}
+
+function sqlVal(s: string | null): string {
+  return s === null ? "NULL" : sqlStr(s);
+}
+
+// One UPSERT per row. ON CONFLICT(id) DO UPDATE refreshes ONLY the YAML-derived fields; it
+// PRESERVES author_id, status, and created_at, so re-running after a later re-attribution or
+// moderation (3f) does not clobber human changes. Idempotent on `id`.
+//
+// Verification provenance is content-bound: a re-seed that CHANGES the claim (content/cause/scope)
+// invalidates any prior human verification (the same snapshot invariant the route enforces on
+// PATCH); a re-seed that leaves the claim identical preserves it. The CASE refs to bare columns are
+// the pre-update (existing) row values; `excluded.*` are the would-be-inserted YAML values, so the
+// guard reads "claim unchanged?" (`cause IS excluded.cause` is NULL-safe).
+export function buildSeedSql(rows: SeedRow[]): string {
+  const claimUnchanged = `content = excluded.content AND scope_json = excluded.scope_json AND cause IS excluded.cause`;
+  const stmts = rows.map(
+    (r) =>
+      `INSERT INTO assay_fork_annotations (id, author_id, content, cause, scope_json, status, verified_by, verified_at, created_at, updated_at)\n` +
+      `VALUES (${sqlStr(r.id)}, ${sqlStr(r.author_id)}, ${sqlStr(r.content)}, ${sqlVal(r.cause)}, ${sqlStr(r.scope_json)}, ${sqlStr(r.status)}, NULL, NULL, ${sqlStr(r.created_at)}, ${sqlStr(r.updated_at)})\n` +
+      `ON CONFLICT(id) DO UPDATE SET content = excluded.content, cause = excluded.cause, scope_json = excluded.scope_json, ` +
+      `verified_by = CASE WHEN ${claimUnchanged} THEN verified_by ELSE NULL END, ` +
+      `verified_at = CASE WHEN ${claimUnchanged} THEN verified_at ELSE NULL END, ` +
+      `updated_at = excluded.updated_at;`,
+  );
+  const header =
+    `-- Fork-annotation store seed — one-time DV import (CP3 increment #3, 3c).\n` +
+    `-- Generated by \`assay seed-fork-annotations\`; idempotent (ON CONFLICT(id) DO UPDATE).\n` +
+    `-- Apply: wrangler d1 execute cartularium-assay-preview --local|--remote --file=<this file>\n` +
+    `-- ${rows.length} rows.\n`;
+  return header + stmts.join("\n") + "\n";
+}

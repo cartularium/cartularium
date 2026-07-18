@@ -1,0 +1,13 @@
+id: DV-0375
+summary: "lattice: TIME hour overflow keeps the whole-day component (TIME(25,0,0) → 25/24) where excel, formulas, gsheets, hyperformula, ironcalc wrap to the fractional day (1/24) — TIME"
+cause: arg-semantics
+category: value
+engines:
+  - lattice
+test-count: 1
+subjects:
+  - TIME
+tests:
+  - TIME/time-overflow-rolls
+seeded: 2026-07-11
+last-confirmed: 2026-07-11

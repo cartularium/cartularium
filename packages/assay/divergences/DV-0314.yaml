@@ -1,0 +1,40 @@
+id: DV-0314
+summary: "formulas, hyperformula, lattice: numeric precision differs (17-digit rendering with last-ulp variation, vs 15-digit values on excel, gsheets, ironcalc) — IMCOS, IMCOSH (+9 more)"
+cause: precision
+category: value
+engines:
+  - formulas
+  - hyperformula
+  - lattice
+test-count: 16
+subjects:
+  - IMCOS
+  - IMCOSH
+  - IMCOT
+  - IMCSC
+  - IMCSCH
+  - IMEXP
+  - IMLOG10
+  - IMLOG2
+  - IMSEC
+  - IMSECH
+  - IMSIN
+tests:
+  - IMCOS/imcos-complex
+  - IMCOSH/imcosh-complex
+  - IMCOT/imcot-complex
+  - IMCOT/imcot-real
+  - IMCSC/imcsc-complex
+  - IMCSC/imcsc-real
+  - IMCSCH/imcsch-complex
+  - IMCSCH/imcsch-real
+  - IMEXP/imexp-imaginary
+  - IMEXP/imexp-real
+  - IMLOG10/imlog10-complex
+  - IMLOG2/imlog2-complex
+  - IMLOG2/imlog2-of-8
+  - IMSEC/imsec-complex
+  - IMSECH/imsech-complex
+  - IMSIN/imsin-complex
+seeded: 2026-07-11
+last-confirmed: 2026-07-11

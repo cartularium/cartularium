@@ -1,0 +1,15 @@
+id: DV-0328
+summary: "gsheets: range operand collapsed by implicit intersection to a single value where excel, formulas, hyperformula, lattice spill elementwise (ironcalc #N/IMPL!, pycel #NAME?) — LEN"
+cause: array-handling
+category: value
+engines:
+  - gsheets
+  - ironcalc
+  - pycel
+test-count: 1
+subjects:
+  - LEN
+tests:
+  - LEN/range-no-intersection-errors-column-at-off-row
+seeded: 2026-07-11
+last-confirmed: 2026-07-11

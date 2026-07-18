@@ -1,0 +1,14 @@
+id: DV-0301
+summary: "lattice, pycel: two-argument (lower_limit, upper_limit) form not accepted (lattice #N/A, pycel #NAME?) — ERF"
+cause: missing-arg-form
+category: value
+engines:
+  - lattice
+  - pycel
+test-count: 1
+subjects:
+  - ERF
+tests:
+  - ERF/erf-two-arg-lower-upper
+seeded: 2026-07-11
+last-confirmed: 2026-07-11

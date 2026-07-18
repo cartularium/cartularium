@@ -1,0 +1,29 @@
+id: DV-0299
+summary: "ironcalc: rendered with different format (result surfaced rounded to two decimals where excel, formulas, gsheets, hyperformula, lattice surface full precision) — CUMIPMT, MIRR, NPER (+5 more)"
+cause: format-rendering
+category: value
+engines:
+  - ironcalc
+test-count: 10
+subjects:
+  - CUMIPMT
+  - CUMPRINC
+  - DB
+  - DDB
+  - IRR
+  - MIRR
+  - NPER
+  - PMT
+tests:
+  - CUMIPMT/cumipmt-first-year-mortgage
+  - CUMIPMT/cumipmt-last-year-mortgage
+  - CUMPRINC/cumprinc-first-year-mortgage
+  - DB/db-partial-first-month
+  - DDB/ddb-salvage-floor
+  - IRR/irr-growing-cashflows
+  - MIRR/mirr-equal-rates
+  - MIRR/mirr-standard
+  - NPER/nper-mortgage-like
+  - PMT/pmt-savings-goal
+seeded: 2026-07-11
+last-confirmed: 2026-07-11

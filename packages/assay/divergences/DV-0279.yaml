@@ -1,0 +1,24 @@
+id: DV-0279
+summary: "pycel: #NAME? when an argument is a negative numeric literal — ABS, CEILING, EVEN (+3 more)"
+cause: unimplemented-edge
+category: value
+engines:
+  - pycel
+test-count: 7
+subjects:
+  - ABS
+  - CEILING
+  - EVEN
+  - FLOOR
+  - POWER
+  - ROUND
+tests:
+  - ABS/abs-negative
+  - CEILING/ceiling-negative-both
+  - CEILING/ceiling-negative-num-positive-sig
+  - EVEN/even-negative
+  - FLOOR/floor-negative
+  - POWER/power-negative-exponent
+  - ROUND/round-negative-decimals
+seeded: 2026-07-11
+last-confirmed: 2026-07-11

@@ -1,0 +1,15 @@
+id: DV-0336
+summary: "formulas, hyperformula, ironcalc: array/range argument handling differs (array form yields 2 / #NAME? / #N/A where excel, gsheets, lattice, pycel return the last-row value \"b\") — LOOKUP"
+cause: array-handling
+category: value
+engines:
+  - formulas
+  - hyperformula
+  - ironcalc
+test-count: 1
+subjects:
+  - LOOKUP
+tests:
+  - LOOKUP/lookup-array-form
+seeded: 2026-07-11
+last-confirmed: 2026-07-11

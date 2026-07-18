@@ -24,6 +24,8 @@ async function main() {
     case "matrix":       return (await import("./commands/matrix.js")).matrix(rest);
     case "catalogue":    return (await import("./commands/catalogue.js")).catalogue();
     case "manifest":     return (await import("./commands/manifest.js")).manifest();
+    case "seed-fork-annotations": return (await import("./commands/seed-fork-annotations.js")).seedForkAnnotations();
+    case "annotation-coverage": return (await import("./commands/annotation-coverage.js")).annotationCoverage();
     case "preview":      return (await import("./commands/preview.js")).preview(rest);
     case "preview-status": return (await import("./commands/preview-status.js")).previewStatus();
     case "preview-worker": return (await import("./commands/preview-worker.js")).previewWorker();

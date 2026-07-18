@@ -1,0 +1,22 @@
+id: DV-0269
+summary: "formulas, hyperformula, pycel: function not implemented — DSTDEV"
+cause: missing-function
+category: value
+engines:
+  - formulas
+  - hyperformula
+  - pycel
+test-count: 2
+subjects:
+  - DSTDEV
+tests:
+  - DSTDEV/dstdev-apples-price
+  - DSTDEV/dstdev-field-by-index
+seeded: 2026-07-11
+last-confirmed: 2026-07-11
+
+# authored via the 3f pass (reclassify-policy-2026-07-11.md D-3f-6): function-level
+# mechanism covering every forked case of these subjects -> subjectIn predicate.
+scope:
+  - subjectIn:
+      - DSTDEV

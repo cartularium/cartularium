@@ -679,7 +679,6 @@ tests:
   - subject: FORMULATEXT
     formula: =FORMULATEXT(A1)
     category: value
-    semanticDomain: metadata
     features:
       - external-io
     grid:
@@ -690,7 +689,6 @@ tests:
     name: formulatext-of-formula-cell
   - subject: FORMULATEXT
     category: value
-    semanticDomain: metadata
     features:
       - external-io
     status: observed
@@ -702,7 +700,6 @@ tests:
     name: formulatext-of-value-cell
   - subject: FORMULATEXT
     category: value
-    semanticDomain: metadata
     features:
       - external-io
     status: observed
@@ -713,7 +710,6 @@ tests:
   - subject: FORMULATEXT
     formula: =FORMULATEXT(B1)
     category: value
-    semanticDomain: metadata
     features:
       - external-io
     grid:
@@ -726,7 +722,6 @@ tests:
     name: formulatext-sum-formula
   - subject: GETPIVOTDATA
     category: value
-    semanticDomain: grid-context
     features:
       - external-io
     status: observed
@@ -736,7 +731,6 @@ tests:
     name: getpivotdata-smoke
   - subject: GETPIVOTDATA
     category: value
-    semanticDomain: grid-context
     features:
       - external-io
     status: observed
@@ -747,7 +741,6 @@ tests:
   - subject: SHEET
     formula: =SHEET()
     category: value
-    semanticDomain: metadata
     features:
       - external-io
     status: observed
@@ -757,7 +750,6 @@ tests:
   - subject: SHEET
     formula: =SHEET(A1)
     category: value
-    semanticDomain: metadata
     features:
       - external-io
     status: observed
@@ -769,7 +761,6 @@ tests:
   - subject: SHEET
     formula: =SHEET("Sheet1")
     category: value
-    semanticDomain: metadata
     features:
       - external-io
     expect: 1
@@ -778,7 +769,6 @@ tests:
     name: sheet-by-name-string
   - subject: SHEET
     category: value
-    semanticDomain: metadata
     features:
       - external-io
     status: observed

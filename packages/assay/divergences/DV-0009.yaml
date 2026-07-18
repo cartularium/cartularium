@@ -60,3 +60,20 @@ tests:
   - TO_TEXT/to-text-negative-number
 seeded: 2026-04-25
 last-confirmed: 2026-04-25
+
+# 3f reclassify (reclassify-policy-2026-07-11.md D-3f-3): function-level mechanism ->
+# subjectIn predicate; auto-covers same-subject forks. tests: above = the materialized
+# snapshot at reclassify time (V4 render substrate), not kept in sync.
+scope:
+  - subjectIn:
+      - DETECTLANGUAGE
+      - EPOCHTODATE
+      - GOOGLEFINANCE
+      - GOOGLETRANSLATE
+      - ISEMAIL
+      - SPARKLINE
+      - TO_DATE
+      - TO_DOLLARS
+      - TO_PERCENT
+      - TO_PURE_NUMBER
+      - TO_TEXT

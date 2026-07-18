@@ -1,0 +1,14 @@
+id: DV-0315
+summary: "gsheets, lattice: different error code (#DIV/0! vs #NUM! on excel, formulas, hyperformula, ironcalc) for division by complex zero — IMDIV"
+cause: error-code
+category: value
+engines:
+  - gsheets
+  - lattice
+test-count: 1
+subjects:
+  - IMDIV
+tests:
+  - IMDIV/imdiv-by-zero
+seeded: 2026-07-11
+last-confirmed: 2026-07-11

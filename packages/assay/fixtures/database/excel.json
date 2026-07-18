@@ -1,805 +1,1071 @@
 {
   "platform": "excel",
-  "generatedAt": "2026-05-24T07:11:24.126Z",
+  "generatedAt": "2026-06-17T19:44:09.844Z",
   "results": {
     "sha256:44fd0254407a85ee6a7f8a82ed1f97e0cdc2f3a02063dc953b0ea74dbcbf8dcc": {
-      "result": [
-        [
-          {
-            "primitive": {
-              "kind": "number",
-              "value": 22
-            },
-            "engine": {
-              "platform": "excel",
-              "data_type": "n",
-              "raw_xml": {
-                "formula_text": "DSUM(A1:D5, \"Price\", F1:F2)"
-              }
-            },
-            "formula": "DSUM(A1:D5, \"Price\", F1:F2)"
-          }
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 22
+              },
+              "engine": {
+                "platform": "excel",
+                "data_type": "n",
+                "raw_xml": {
+                  "formula_text": "DSUM(A1:D5, \"Price\", F1:F2)"
+                }
+              },
+              "formula": "DSUM(A1:D5, \"Price\", F1:F2)"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=DSUM(A1:D5, \"Price\", F1:F2)"
     },
     "sha256:44e0e59210c570d7508daa9c9af7543e32a11231ac2268d42a0dc841d8a6463f": {
-      "result": [
-        [
-          {
-            "primitive": {
-              "kind": "number",
-              "value": 12
-            },
-            "engine": {
-              "platform": "excel",
-              "data_type": "n",
-              "raw_xml": {
-                "formula_text": "DSUM(A1:D5, 4, F1:F2)"
-              }
-            },
-            "formula": "DSUM(A1:D5, 4, F1:F2)"
-          }
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 12
+              },
+              "engine": {
+                "platform": "excel",
+                "data_type": "n",
+                "raw_xml": {
+                  "formula_text": "DSUM(A1:D5, 4, F1:F2)"
+                }
+              },
+              "formula": "DSUM(A1:D5, 4, F1:F2)"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=DSUM(A1:D5, 4, F1:F2)"
     },
     "sha256:5fc72e2d4172ec14fb91df3a3cd31b7a47713cbaa75871dd2953d05930d418a5": {
-      "result": [
-        [
-          {
-            "primitive": {
-              "kind": "number",
-              "value": 8
-            },
-            "engine": {
-              "platform": "excel",
-              "data_type": "n",
-              "raw_xml": {
-                "formula_text": "DSUM(A1:D5, \"Units\", H1:H2)"
-              }
-            },
-            "formula": "DSUM(A1:D5, \"Units\", H1:H2)"
-          }
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 8
+              },
+              "engine": {
+                "platform": "excel",
+                "data_type": "n",
+                "raw_xml": {
+                  "formula_text": "DSUM(A1:D5, \"Units\", H1:H2)"
+                }
+              },
+              "formula": "DSUM(A1:D5, \"Units\", H1:H2)"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=DSUM(A1:D5, \"Units\", H1:H2)"
     },
     "sha256:e212abb8ec8b4e17082c63308f922dd7fb0a3c55f0f676f1d0f723bf3bcb6407": {
-      "result": [
-        [
-          {
-            "primitive": {
-              "kind": "number",
-              "value": 0
-            },
-            "engine": {
-              "platform": "excel",
-              "data_type": "n",
-              "raw_xml": {
-                "formula_text": "DSUM(A1:D5, \"Price\", F1:F2)"
-              }
-            },
-            "formula": "DSUM(A1:D5, \"Price\", F1:F2)"
-          }
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 0
+              },
+              "engine": {
+                "platform": "excel",
+                "data_type": "n",
+                "raw_xml": {
+                  "formula_text": "DSUM(A1:D5, \"Price\", F1:F2)"
+                }
+              },
+              "formula": "DSUM(A1:D5, \"Price\", F1:F2)"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=DSUM(A1:D5, \"Price\", F1:F2)"
     },
     "sha256:6547c32cda5f25a1943c395d6306fc26d0b5de6c179de6f18595e2f6c460a3e5": {
-      "result": [
-        [
-          {
-            "primitive": {
-              "kind": "number",
-              "value": 2
-            },
-            "engine": {
-              "platform": "excel",
-              "data_type": "n",
-              "raw_xml": {
-                "formula_text": "DCOUNT(A1:D5, \"Price\", F1:F2)"
-              }
-            },
-            "formula": "DCOUNT(A1:D5, \"Price\", F1:F2)"
-          }
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 2
+              },
+              "engine": {
+                "platform": "excel",
+                "data_type": "n",
+                "raw_xml": {
+                  "formula_text": "DCOUNT(A1:D5, \"Price\", F1:F2)"
+                }
+              },
+              "formula": "DCOUNT(A1:D5, \"Price\", F1:F2)"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=DCOUNT(A1:D5, \"Price\", F1:F2)"
     },
     "sha256:a3e399bb4a63fe5f61643c3582105fc4a625f6697a6c5892ab6d072032b9bf63": {
-      "result": [
-        [
-          {
-            "primitive": {
-              "kind": "number",
-              "value": 2
-            },
-            "engine": {
-              "platform": "excel",
-              "data_type": "n",
-              "raw_xml": {
-                "formula_text": "DCOUNT(A1:D5, 3, H1:H2)"
-              }
-            },
-            "formula": "DCOUNT(A1:D5, 3, H1:H2)"
-          }
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 2
+              },
+              "engine": {
+                "platform": "excel",
+                "data_type": "n",
+                "raw_xml": {
+                  "formula_text": "DCOUNT(A1:D5, 3, H1:H2)"
+                }
+              },
+              "formula": "DCOUNT(A1:D5, 3, H1:H2)"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=DCOUNT(A1:D5, 3, H1:H2)"
     },
     "sha256:c1ac2e04f4a3dab59ec36229ba3247cdbb1006caacf88678cc93d43f846b4922": {
-      "result": [
-        [
-          {
-            "primitive": {
-              "kind": "number",
-              "value": 0
-            },
-            "engine": {
-              "platform": "excel",
-              "data_type": "n",
-              "raw_xml": {
-                "formula_text": "DCOUNT(A1:D5, \"Product\", F1:F2)"
-              }
-            },
-            "formula": "DCOUNT(A1:D5, \"Product\", F1:F2)"
-          }
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 0
+              },
+              "engine": {
+                "platform": "excel",
+                "data_type": "n",
+                "raw_xml": {
+                  "formula_text": "DCOUNT(A1:D5, \"Product\", F1:F2)"
+                }
+              },
+              "formula": "DCOUNT(A1:D5, \"Product\", F1:F2)"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=DCOUNT(A1:D5, \"Product\", F1:F2)"
     },
     "sha256:935b0feabd1e35f39d5bd30efa5a60c492b27f961d7311d0ff4f992c0b2bbf75": {
-      "result": [
-        [
-          {
-            "primitive": {
-              "kind": "number",
-              "value": 0
-            },
-            "engine": {
-              "platform": "excel",
-              "data_type": "n",
-              "raw_xml": {
-                "formula_text": "DCOUNT(A1:D5, \"Price\", F1:F2)"
-              }
-            },
-            "formula": "DCOUNT(A1:D5, \"Price\", F1:F2)"
-          }
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 0
+              },
+              "engine": {
+                "platform": "excel",
+                "data_type": "n",
+                "raw_xml": {
+                  "formula_text": "DCOUNT(A1:D5, \"Price\", F1:F2)"
+                }
+              },
+              "formula": "DCOUNT(A1:D5, \"Price\", F1:F2)"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=DCOUNT(A1:D5, \"Price\", F1:F2)"
     },
     "sha256:beb53a4be80f443c24f136c2ded32a4f230a6ea1654dea989dc5830cc9a6ed2a": {
-      "result": [
-        [
-          {
-            "primitive": {
-              "kind": "number",
-              "value": 2
-            },
-            "engine": {
-              "platform": "excel",
-              "data_type": "n",
-              "raw_xml": {
-                "formula_text": "DCOUNTA(A1:D5, \"Product\", F1:F2)"
-              }
-            },
-            "formula": "DCOUNTA(A1:D5, \"Product\", F1:F2)"
-          }
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 2
+              },
+              "engine": {
+                "platform": "excel",
+                "data_type": "n",
+                "raw_xml": {
+                  "formula_text": "DCOUNTA(A1:D5, \"Product\", F1:F2)"
+                }
+              },
+              "formula": "DCOUNTA(A1:D5, \"Product\", F1:F2)"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=DCOUNTA(A1:D5, \"Product\", F1:F2)"
     },
     "sha256:a608717d102e7376845e353945c259db50d9358f7d9f9b7d509b34a4b0ba6f9a": {
-      "result": [
-        [
-          {
-            "primitive": {
-              "kind": "number",
-              "value": 2
-            },
-            "engine": {
-              "platform": "excel",
-              "data_type": "n",
-              "raw_xml": {
-                "formula_text": "DCOUNTA(A1:D5, 1, G1:G2)"
-              }
-            },
-            "formula": "DCOUNTA(A1:D5, 1, G1:G2)"
-          }
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 2
+              },
+              "engine": {
+                "platform": "excel",
+                "data_type": "n",
+                "raw_xml": {
+                  "formula_text": "DCOUNTA(A1:D5, 1, G1:G2)"
+                }
+              },
+              "formula": "DCOUNTA(A1:D5, 1, G1:G2)"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=DCOUNTA(A1:D5, 1, G1:G2)"
     },
     "sha256:1533b295d3a7cb628bb098728edf9f65b011f7ccf2073aacefb33575fe6b29bb": {
-      "result": [
-        [
-          {
-            "primitive": {
-              "kind": "number",
-              "value": 0
-            },
-            "engine": {
-              "platform": "excel",
-              "data_type": "n",
-              "raw_xml": {
-                "formula_text": "DCOUNTA(A1:D5, \"Product\", F1:F2)"
-              }
-            },
-            "formula": "DCOUNTA(A1:D5, \"Product\", F1:F2)"
-          }
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 0
+              },
+              "engine": {
+                "platform": "excel",
+                "data_type": "n",
+                "raw_xml": {
+                  "formula_text": "DCOUNTA(A1:D5, \"Product\", F1:F2)"
+                }
+              },
+              "formula": "DCOUNTA(A1:D5, \"Product\", F1:F2)"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=DCOUNTA(A1:D5, \"Product\", F1:F2)"
     },
     "sha256:a31be14d91eee3730856a62000b7580821e96d193cb4f37bc8d1c553b4c9f5b5": {
-      "result": [
-        [
-          {
-            "primitive": {
-              "kind": "number",
-              "value": 10
-            },
-            "engine": {
-              "platform": "excel",
-              "data_type": "n",
-              "raw_xml": {
-                "formula_text": "DGET(A1:D5, \"Price\", F1:G2)"
-              }
-            },
-            "formula": "DGET(A1:D5, \"Price\", F1:G2)"
-          }
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 10
+              },
+              "engine": {
+                "platform": "excel",
+                "data_type": "n",
+                "raw_xml": {
+                  "formula_text": "DGET(A1:D5, \"Price\", F1:G2)"
+                }
+              },
+              "formula": "DGET(A1:D5, \"Price\", F1:G2)"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=DGET(A1:D5, \"Price\", F1:G2)"
     },
     "sha256:74671be3919ddaafc3c04b6b16b14221a310af0e025f5fe15cf8413d67c92af4": {
-      "result": [
-        [
-          {
-            "primitive": {
-              "kind": "number",
-              "value": 4
-            },
-            "engine": {
-              "platform": "excel",
-              "data_type": "n",
-              "raw_xml": {
-                "formula_text": "DGET(A1:D5, 4, F1:G2)"
-              }
-            },
-            "formula": "DGET(A1:D5, 4, F1:G2)"
-          }
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 4
+              },
+              "engine": {
+                "platform": "excel",
+                "data_type": "n",
+                "raw_xml": {
+                  "formula_text": "DGET(A1:D5, 4, F1:G2)"
+                }
+              },
+              "formula": "DGET(A1:D5, 4, F1:G2)"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=DGET(A1:D5, 4, F1:G2)"
     },
     "sha256:54eb50da4a3f9489e14df100d1743e2b5869c4ea868559d3b594f7f71538e892": {
-      "result": [
-        [
-          {
-            "primitive": {
-              "kind": "error",
-              "sentinel": "#NUM!"
-            },
-            "engine": {
-              "platform": "excel",
-              "data_type": "e",
-              "raw_xml": {
-                "t": "e",
-                "formula_text": "DGET(A1:D5, \"Price\", F1:F2)"
-              }
-            },
-            "formula": "DGET(A1:D5, \"Price\", F1:F2)"
-          }
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "error",
+                "sentinel": "#NUM!"
+              },
+              "engine": {
+                "platform": "excel",
+                "data_type": "e",
+                "raw_xml": {
+                  "t": "e",
+                  "formula_text": "DGET(A1:D5, \"Price\", F1:F2)"
+                }
+              },
+              "formula": "DGET(A1:D5, \"Price\", F1:F2)"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=DGET(A1:D5, \"Price\", F1:F2)"
     },
     "sha256:4d8262dd5a5489c77bd85fc0e670ed980245634e24e7e2b62ead5083044c6fee": {
-      "result": [
-        [
-          {
-            "primitive": {
-              "kind": "error",
-              "sentinel": "#VALUE!"
-            },
-            "engine": {
-              "platform": "excel",
-              "data_type": "e",
-              "raw_xml": {
-                "t": "e",
-                "formula_text": "DGET(A1:D5, \"Price\", F1:F2)"
-              }
-            },
-            "formula": "DGET(A1:D5, \"Price\", F1:F2)"
-          }
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "error",
+                "sentinel": "#VALUE!"
+              },
+              "engine": {
+                "platform": "excel",
+                "data_type": "e",
+                "raw_xml": {
+                  "t": "e",
+                  "formula_text": "DGET(A1:D5, \"Price\", F1:F2)"
+                }
+              },
+              "formula": "DGET(A1:D5, \"Price\", F1:F2)"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=DGET(A1:D5, \"Price\", F1:F2)"
     },
     "sha256:8e659e8e0e2f7526745bbd3b869f0819f664b13bbe3b5e4301bab2069229b068": {
-      "result": [
-        [
-          {
-            "primitive": {
-              "kind": "number",
-              "value": 12
-            },
-            "engine": {
-              "platform": "excel",
-              "data_type": "n",
-              "raw_xml": {
-                "formula_text": "DMAX(A1:D5, \"Price\", F1:F2)"
-              }
-            },
-            "formula": "DMAX(A1:D5, \"Price\", F1:F2)"
-          }
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 12
+              },
+              "engine": {
+                "platform": "excel",
+                "data_type": "n",
+                "raw_xml": {
+                  "formula_text": "DMAX(A1:D5, \"Price\", F1:F2)"
+                }
+              },
+              "formula": "DMAX(A1:D5, \"Price\", F1:F2)"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=DMAX(A1:D5, \"Price\", F1:F2)"
     },
     "sha256:b028ced2d9e2382a355872d203d183d44bc9e13baaf67a734896e9b2c58a3a79": {
-      "result": [
-        [
-          {
-            "primitive": {
-              "kind": "number",
-              "value": 8
-            },
-            "engine": {
-              "platform": "excel",
-              "data_type": "n",
-              "raw_xml": {
-                "formula_text": "DMAX(A1:D5, 4, G1:G2)"
-              }
-            },
-            "formula": "DMAX(A1:D5, 4, G1:G2)"
-          }
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 8
+              },
+              "engine": {
+                "platform": "excel",
+                "data_type": "n",
+                "raw_xml": {
+                  "formula_text": "DMAX(A1:D5, 4, G1:G2)"
+                }
+              },
+              "formula": "DMAX(A1:D5, 4, G1:G2)"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=DMAX(A1:D5, 4, G1:G2)"
     },
     "sha256:f5128d057b3344eda33f74df751e4082e1842a3020b4d999484d4a6d7dcda3a8": {
-      "result": [
-        [
-          {
-            "primitive": {
-              "kind": "number",
-              "value": 8
-            },
-            "engine": {
-              "platform": "excel",
-              "data_type": "n",
-              "raw_xml": {
-                "formula_text": "DMAX(A1:D5, \"Units\", H1:H2)"
-              }
-            },
-            "formula": "DMAX(A1:D5, \"Units\", H1:H2)"
-          }
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 8
+              },
+              "engine": {
+                "platform": "excel",
+                "data_type": "n",
+                "raw_xml": {
+                  "formula_text": "DMAX(A1:D5, \"Units\", H1:H2)"
+                }
+              },
+              "formula": "DMAX(A1:D5, \"Units\", H1:H2)"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=DMAX(A1:D5, \"Units\", H1:H2)"
     },
     "sha256:4d0e8643e7f4fe1605e36bb5daf25534af4a10fd4931bd9434c91a5dd07d4f7e": {
-      "result": [
-        [
-          {
-            "primitive": {
-              "kind": "number",
-              "value": 10
-            },
-            "engine": {
-              "platform": "excel",
-              "data_type": "n",
-              "raw_xml": {
-                "formula_text": "DMIN(A1:D5, \"Price\", F1:F2)"
-              }
-            },
-            "formula": "DMIN(A1:D5, \"Price\", F1:F2)"
-          }
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 10
+              },
+              "engine": {
+                "platform": "excel",
+                "data_type": "n",
+                "raw_xml": {
+                  "formula_text": "DMIN(A1:D5, \"Price\", F1:F2)"
+                }
+              },
+              "formula": "DMIN(A1:D5, \"Price\", F1:F2)"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=DMIN(A1:D5, \"Price\", F1:F2)"
     },
     "sha256:e747e07cbdbcd64f354e042b74744d7d75c2b330ef97fe2d74f4098960e3d0f2": {
-      "result": [
-        [
-          {
-            "primitive": {
-              "kind": "number",
-              "value": 5
-            },
-            "engine": {
-              "platform": "excel",
-              "data_type": "n",
-              "raw_xml": {
-                "formula_text": "DMIN(A1:D5, 3, G1:G2)"
-              }
-            },
-            "formula": "DMIN(A1:D5, 3, G1:G2)"
-          }
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 5
+              },
+              "engine": {
+                "platform": "excel",
+                "data_type": "n",
+                "raw_xml": {
+                  "formula_text": "DMIN(A1:D5, 3, G1:G2)"
+                }
+              },
+              "formula": "DMIN(A1:D5, 3, G1:G2)"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=DMIN(A1:D5, 3, G1:G2)"
     },
     "sha256:3b63cc5d15c0c04acc1754fbb5a922f96b2f9682d82aa71e469ca604f7339697": {
-      "result": [
-        [
-          {
-            "primitive": {
-              "kind": "number",
-              "value": 3
-            },
-            "engine": {
-              "platform": "excel",
-              "data_type": "n",
-              "raw_xml": {
-                "formula_text": "DMIN(A1:D5, \"Units\", H1:H2)"
-              }
-            },
-            "formula": "DMIN(A1:D5, \"Units\", H1:H2)"
-          }
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 3
+              },
+              "engine": {
+                "platform": "excel",
+                "data_type": "n",
+                "raw_xml": {
+                  "formula_text": "DMIN(A1:D5, \"Units\", H1:H2)"
+                }
+              },
+              "formula": "DMIN(A1:D5, \"Units\", H1:H2)"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=DMIN(A1:D5, \"Units\", H1:H2)"
     },
     "sha256:150e9ae75355de13e7201b93f427682895cc7c00fbbd5ff441dfd755f138aa12": {
-      "result": [
-        [
-          {
-            "primitive": {
-              "kind": "number",
-              "value": 120
-            },
-            "engine": {
-              "platform": "excel",
-              "data_type": "n",
-              "raw_xml": {
-                "formula_text": "DPRODUCT(A1:D5, \"Price\", F1:F2)"
-              }
-            },
-            "formula": "DPRODUCT(A1:D5, \"Price\", F1:F2)"
-          }
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 120
+              },
+              "engine": {
+                "platform": "excel",
+                "data_type": "n",
+                "raw_xml": {
+                  "formula_text": "DPRODUCT(A1:D5, \"Price\", F1:F2)"
+                }
+              },
+              "formula": "DPRODUCT(A1:D5, \"Price\", F1:F2)"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=DPRODUCT(A1:D5, \"Price\", F1:F2)"
     },
     "sha256:65c3efa1883f95130b8024e6a125d9fbc7dd33c789bb3418eae35eb69f2399a4": {
-      "result": [
-        [
-          {
-            "primitive": {
-              "kind": "number",
-              "value": 40
-            },
-            "engine": {
-              "platform": "excel",
-              "data_type": "n",
-              "raw_xml": {
-                "formula_text": "DPRODUCT(A1:D5, 4, G1:G2)"
-              }
-            },
-            "formula": "DPRODUCT(A1:D5, 4, G1:G2)"
-          }
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 40
+              },
+              "engine": {
+                "platform": "excel",
+                "data_type": "n",
+                "raw_xml": {
+                  "formula_text": "DPRODUCT(A1:D5, 4, G1:G2)"
+                }
+              },
+              "formula": "DPRODUCT(A1:D5, 4, G1:G2)"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=DPRODUCT(A1:D5, 4, G1:G2)"
     },
     "sha256:9757e01da8715645a39630256ca6e7aabad8d2a26555c03e3650b5cc4fd9ab1b": {
-      "result": [
-        [
-          {
-            "primitive": {
-              "kind": "number",
-              "value": 0
-            },
-            "engine": {
-              "platform": "excel",
-              "data_type": "n",
-              "raw_xml": {
-                "formula_text": "DPRODUCT(A1:D5, \"Price\", F1:F2)"
-              }
-            },
-            "formula": "DPRODUCT(A1:D5, \"Price\", F1:F2)"
-          }
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 0
+              },
+              "engine": {
+                "platform": "excel",
+                "data_type": "n",
+                "raw_xml": {
+                  "formula_text": "DPRODUCT(A1:D5, \"Price\", F1:F2)"
+                }
+              },
+              "formula": "DPRODUCT(A1:D5, \"Price\", F1:F2)"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=DPRODUCT(A1:D5, \"Price\", F1:F2)"
     },
     "sha256:b23c8576ed22958a88de0e6429695fb021e9a1aa23776dfbc51b3dfee465669f": {
-      "result": [
-        [
-          {
-            "primitive": {
-              "kind": "number",
-              "value": 11
-            },
-            "engine": {
-              "platform": "excel",
-              "data_type": "n",
-              "raw_xml": {
-                "formula_text": "DAVERAGE(A1:D5, \"Price\", F1:F2)"
-              }
-            },
-            "formula": "DAVERAGE(A1:D5, \"Price\", F1:F2)"
-          }
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 11
+              },
+              "engine": {
+                "platform": "excel",
+                "data_type": "n",
+                "raw_xml": {
+                  "formula_text": "DAVERAGE(A1:D5, \"Price\", F1:F2)"
+                }
+              },
+              "formula": "DAVERAGE(A1:D5, \"Price\", F1:F2)"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=DAVERAGE(A1:D5, \"Price\", F1:F2)"
     },
     "sha256:c64b8e87e77abd02fe86cd9eb6d6e4338395fa6781b21e876b21ada2eeedff74": {
-      "result": [
-        [
-          {
-            "primitive": {
-              "kind": "number",
-              "value": 7.5
-            },
-            "engine": {
-              "platform": "excel",
-              "data_type": "n",
-              "raw_xml": {
-                "formula_text": "DAVERAGE(A1:D5, 3, G1:G2)"
-              }
-            },
-            "formula": "DAVERAGE(A1:D5, 3, G1:G2)"
-          }
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 7.5
+              },
+              "engine": {
+                "platform": "excel",
+                "data_type": "n",
+                "raw_xml": {
+                  "formula_text": "DAVERAGE(A1:D5, 3, G1:G2)"
+                }
+              },
+              "formula": "DAVERAGE(A1:D5, 3, G1:G2)"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=DAVERAGE(A1:D5, 3, G1:G2)"
     },
     "sha256:3b679a17558e44500b2ad00ccebb53f0ff000ea15d0a5d655dc2db38f4b90e9e": {
-      "result": [
-        [
-          {
-            "primitive": {
-              "kind": "number",
-              "value": 4
-            },
-            "engine": {
-              "platform": "excel",
-              "data_type": "n",
-              "raw_xml": {
-                "formula_text": "DAVERAGE(A1:D5, \"Units\", H1:H2)"
-              }
-            },
-            "formula": "DAVERAGE(A1:D5, \"Units\", H1:H2)"
-          }
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 4
+              },
+              "engine": {
+                "platform": "excel",
+                "data_type": "n",
+                "raw_xml": {
+                  "formula_text": "DAVERAGE(A1:D5, \"Units\", H1:H2)"
+                }
+              },
+              "formula": "DAVERAGE(A1:D5, \"Units\", H1:H2)"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=DAVERAGE(A1:D5, \"Units\", H1:H2)"
     },
     "sha256:2188c974c41abb2a0e89254d075afacc32e404ae2c605af993021d64dfb4f7a5": {
-      "result": [
-        [
-          {
-            "primitive": {
-              "kind": "number",
-              "value": 1.4142135623730951
-            },
-            "engine": {
-              "platform": "excel",
-              "data_type": "n",
-              "raw_xml": {
-                "formula_text": "DSTDEV(A1:D5, \"Price\", F1:F2)"
-              }
-            },
-            "formula": "DSTDEV(A1:D5, \"Price\", F1:F2)"
-          }
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 1.4142135623730951
+              },
+              "engine": {
+                "platform": "excel",
+                "data_type": "n",
+                "raw_xml": {
+                  "formula_text": "DSTDEV(A1:D5, \"Price\", F1:F2)"
+                }
+              },
+              "formula": "DSTDEV(A1:D5, \"Price\", F1:F2)"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=DSTDEV(A1:D5, \"Price\", F1:F2)"
     },
     "sha256:6b3d67a5edc904d48fce7e41067895f9de9563af44605b1416bf833a89d2865e": {
-      "result": [
-        [
-          {
-            "primitive": {
-              "kind": "number",
-              "value": 2.8284271247461903
-            },
-            "engine": {
-              "platform": "excel",
-              "data_type": "n",
-              "raw_xml": {
-                "formula_text": "DSTDEV(A1:D5, 4, F1:F2)"
-              }
-            },
-            "formula": "DSTDEV(A1:D5, 4, F1:F2)"
-          }
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 2.8284271247461903
+              },
+              "engine": {
+                "platform": "excel",
+                "data_type": "n",
+                "raw_xml": {
+                  "formula_text": "DSTDEV(A1:D5, 4, F1:F2)"
+                }
+              },
+              "formula": "DSTDEV(A1:D5, 4, F1:F2)"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=DSTDEV(A1:D5, 4, F1:F2)"
     },
     "sha256:fff64e766a7627ee136f2c32e6fe07f662115babc1b50f285e96446fac6d9d0a": {
-      "result": [
-        [
-          {
-            "primitive": {
-              "kind": "number",
-              "value": 2
-            },
-            "engine": {
-              "platform": "excel",
-              "data_type": "n",
-              "raw_xml": {
-                "formula_text": "DSTDEVP(A1:D5, \"Units\", F1:F2)"
-              }
-            },
-            "formula": "DSTDEVP(A1:D5, \"Units\", F1:F2)"
-          }
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 2
+              },
+              "engine": {
+                "platform": "excel",
+                "data_type": "n",
+                "raw_xml": {
+                  "formula_text": "DSTDEVP(A1:D5, \"Units\", F1:F2)"
+                }
+              },
+              "formula": "DSTDEVP(A1:D5, \"Units\", F1:F2)"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=DSTDEVP(A1:D5, \"Units\", F1:F2)"
     },
     "sha256:8fe2ad8adc56b361fc39d30b13686bfe1749105c67d629a075ca80f087e79fc6": {
-      "result": [
-        [
-          {
-            "primitive": {
-              "kind": "number",
-              "value": 1
-            },
-            "engine": {
-              "platform": "excel",
-              "data_type": "n",
-              "raw_xml": {
-                "formula_text": "DSTDEVP(A1:D5, 3, F1:F2)"
-              }
-            },
-            "formula": "DSTDEVP(A1:D5, 3, F1:F2)"
-          }
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 1
+              },
+              "engine": {
+                "platform": "excel",
+                "data_type": "n",
+                "raw_xml": {
+                  "formula_text": "DSTDEVP(A1:D5, 3, F1:F2)"
+                }
+              },
+              "formula": "DSTDEVP(A1:D5, 3, F1:F2)"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=DSTDEVP(A1:D5, 3, F1:F2)"
     },
     "sha256:984df621fa7248f24cfec8893cd6aa8eff6ff6ff558d2cb7c1fbe5ab9ab303ad": {
-      "result": [
-        [
-          {
-            "primitive": {
-              "kind": "number",
-              "value": 2
-            },
-            "engine": {
-              "platform": "excel",
-              "data_type": "n",
-              "raw_xml": {
-                "formula_text": "DSTDEVP(A1:D5, 4, F1:F2)"
-              }
-            },
-            "formula": "DSTDEVP(A1:D5, 4, F1:F2)"
-          }
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 2
+              },
+              "engine": {
+                "platform": "excel",
+                "data_type": "n",
+                "raw_xml": {
+                  "formula_text": "DSTDEVP(A1:D5, 4, F1:F2)"
+                }
+              },
+              "formula": "DSTDEVP(A1:D5, 4, F1:F2)"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=DSTDEVP(A1:D5, 4, F1:F2)"
     },
     "sha256:ec999b728da13c85143119ca4f205e1803f99f0e114647b5a3e8b3104fa66d13": {
-      "result": [
-        [
-          {
-            "primitive": {
-              "kind": "number",
-              "value": 2
-            },
-            "engine": {
-              "platform": "excel",
-              "data_type": "n",
-              "raw_xml": {
-                "formula_text": "DVAR(A1:D5, \"Price\", F1:F2)"
-              }
-            },
-            "formula": "DVAR(A1:D5, \"Price\", F1:F2)"
-          }
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 2
+              },
+              "engine": {
+                "platform": "excel",
+                "data_type": "n",
+                "raw_xml": {
+                  "formula_text": "DVAR(A1:D5, \"Price\", F1:F2)"
+                }
+              },
+              "formula": "DVAR(A1:D5, \"Price\", F1:F2)"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=DVAR(A1:D5, \"Price\", F1:F2)"
     },
     "sha256:1f67abedae933b0f3838ca0ef2cc5b88e1eda050a962384a8bbae68f793f4cff": {
-      "result": [
-        [
-          {
-            "primitive": {
-              "kind": "number",
-              "value": 8
-            },
-            "engine": {
-              "platform": "excel",
-              "data_type": "n",
-              "raw_xml": {
-                "formula_text": "DVAR(A1:D5, 4, F1:F2)"
-              }
-            },
-            "formula": "DVAR(A1:D5, 4, F1:F2)"
-          }
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 8
+              },
+              "engine": {
+                "platform": "excel",
+                "data_type": "n",
+                "raw_xml": {
+                  "formula_text": "DVAR(A1:D5, 4, F1:F2)"
+                }
+              },
+              "formula": "DVAR(A1:D5, 4, F1:F2)"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=DVAR(A1:D5, 4, F1:F2)"
     },
     "sha256:65279efd9e2a7db083fd2088bf6fd4402db6d81827e0faab2f624bae0ca0bb72": {
-      "result": [
-        [
-          {
-            "primitive": {
-              "kind": "number",
-              "value": 2
-            },
-            "engine": {
-              "platform": "excel",
-              "data_type": "n",
-              "raw_xml": {
-                "formula_text": "DVAR(A1:D5, 3, F1:F2)"
-              }
-            },
-            "formula": "DVAR(A1:D5, 3, F1:F2)"
-          }
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 2
+              },
+              "engine": {
+                "platform": "excel",
+                "data_type": "n",
+                "raw_xml": {
+                  "formula_text": "DVAR(A1:D5, 3, F1:F2)"
+                }
+              },
+              "formula": "DVAR(A1:D5, 3, F1:F2)"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=DVAR(A1:D5, 3, F1:F2)"
     },
     "sha256:b2567f15a5394671d9600891da4ab704515788a10c9e3d24706d8fbd1a223a29": {
-      "result": [
-        [
-          {
-            "primitive": {
-              "kind": "number",
-              "value": 1
-            },
-            "engine": {
-              "platform": "excel",
-              "data_type": "n",
-              "raw_xml": {
-                "formula_text": "DVARP(A1:D5, \"Price\", F1:F2)"
-              }
-            },
-            "formula": "DVARP(A1:D5, \"Price\", F1:F2)"
-          }
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 1
+              },
+              "engine": {
+                "platform": "excel",
+                "data_type": "n",
+                "raw_xml": {
+                  "formula_text": "DVARP(A1:D5, \"Price\", F1:F2)"
+                }
+              },
+              "formula": "DVARP(A1:D5, \"Price\", F1:F2)"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=DVARP(A1:D5, \"Price\", F1:F2)"
     },
     "sha256:39b31c7e8b2524a42bf648ca971fea83c7192399cf4bf23a240397f48b142b71": {
-      "result": [
-        [
-          {
-            "primitive": {
-              "kind": "number",
-              "value": 4
-            },
-            "engine": {
-              "platform": "excel",
-              "data_type": "n",
-              "raw_xml": {
-                "formula_text": "DVARP(A1:D5, 4, F1:F2)"
-              }
-            },
-            "formula": "DVARP(A1:D5, 4, F1:F2)"
-          }
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 4
+              },
+              "engine": {
+                "platform": "excel",
+                "data_type": "n",
+                "raw_xml": {
+                  "formula_text": "DVARP(A1:D5, 4, F1:F2)"
+                }
+              },
+              "formula": "DVARP(A1:D5, 4, F1:F2)"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=DVARP(A1:D5, 4, F1:F2)"
     },
     "sha256:dff1368a2a65478386c07f0c9773c1371b2c41611240ab3bfd6212ecd76f3068": {
-      "result": [
-        [
-          {
-            "primitive": {
-              "kind": "number",
-              "value": 1
-            },
-            "engine": {
-              "platform": "excel",
-              "data_type": "n",
-              "raw_xml": {
-                "formula_text": "DVARP(A1:D5, 3, F1:F2)"
-              }
-            },
-            "formula": "DVARP(A1:D5, 3, F1:F2)"
-          }
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 1
+              },
+              "engine": {
+                "platform": "excel",
+                "data_type": "n",
+                "raw_xml": {
+                  "formula_text": "DVARP(A1:D5, 3, F1:F2)"
+                }
+              },
+              "formula": "DVARP(A1:D5, 3, F1:F2)"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=DVARP(A1:D5, 3, F1:F2)"
     }
   }

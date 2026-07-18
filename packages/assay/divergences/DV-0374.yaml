@@ -1,0 +1,20 @@
+id: DV-0374
+summary: "ironcalc: numeric precision differs (values rounded to fewer decimal places); pycel: function not implemented (#NAME?) — TBILLEQ, TBILLPRICE (+1 more)"
+cause: precision
+category: value
+engines:
+  - ironcalc
+  - pycel
+test-count: 5
+subjects:
+  - TBILLEQ
+  - TBILLPRICE
+  - TBILLYIELD
+tests:
+  - TBILLEQ/tbilleq-short-maturity
+  - TBILLEQ/tbilleq-standard
+  - TBILLPRICE/tbillprice-short-maturity
+  - TBILLYIELD/tbillyield-short-maturity
+  - TBILLYIELD/tbillyield-standard
+seeded: 2026-07-11
+last-confirmed: 2026-07-11

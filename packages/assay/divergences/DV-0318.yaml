@@ -1,0 +1,20 @@
+id: DV-0318
+summary: "gsheets: single-argument INDEX evaluates and spills the wrapped array expression; excel yields blank; hyperformula, lattice #N/A; formulas #VALUE!; ironcalc #ERROR!; pycel #NAME? — INDEX"
+cause: argument-arity
+category: value
+engines:
+  - excel
+  - formulas
+  - gsheets
+  - hyperformula
+  - ironcalc
+  - lattice
+  - pycel
+test-count: 2
+subjects:
+  - INDEX
+tests:
+  - INDEX/index-wraps-multiplication-over-range
+  - INDEX/index-wraps-outer-product
+seeded: 2026-07-11
+last-confirmed: 2026-07-11

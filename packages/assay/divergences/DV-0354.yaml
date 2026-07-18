@@ -1,0 +1,17 @@
+id: DV-0354
+summary: "formulas, lattice: numeric-text (and, for lattice, boolean) elements of inline array literals are coerced to numbers by aggregates; excel, gsheets, ironcalc skip them — PRODUCT, SUM"
+cause: arg-semantics
+category: value
+engines:
+  - formulas
+  - lattice
+test-count: 3
+subjects:
+  - PRODUCT
+  - SUM
+tests:
+  - PRODUCT/string-array-in-product
+  - SUM/boolean-array-in-sum
+  - SUM/mixed-array-in-sum
+seeded: 2026-07-11
+last-confirmed: 2026-07-11

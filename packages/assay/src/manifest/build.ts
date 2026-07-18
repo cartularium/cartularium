@@ -37,7 +37,7 @@ export interface BuildManifestInput {
 // strip the tail at emit so every consumer renders the same clean text.
 const SUBJECT_LIST_TAIL = / — [A-Z][A-Z0-9_.]*(?:, [A-Z][A-Z0-9_.]*)*(?:\s*\(\+\d+ more\))?$/;
 
-function cleanSummary(s: string): string {
+export function cleanSummary(s: string): string {
   return s.replace(SUBJECT_LIST_TAIL, "");
 }
 
@@ -134,7 +134,7 @@ export function buildManifest(input: BuildManifestInput): ManifestV4 {
 }
 
 // each fn → DVs touching it, sorted by id ascending
-function indexDvsByFunction(dvs: DvEntry[], fnSet: Set<string>): Map<string, DvEntry[]> {
+export function indexDvsByFunction(dvs: DvEntry[], fnSet: Set<string>): Map<string, DvEntry[]> {
   const out = new Map<string, DvEntry[]>();
   const sorted = [...dvs].sort((a, b) => a.id.localeCompare(b.id));
   for (const dv of sorted) {
@@ -149,7 +149,7 @@ function indexDvsByFunction(dvs: DvEntry[], fnSet: Set<string>): Map<string, DvE
 }
 
 // each fn → tests with that subject, in (suite-asc, yaml-source) order
-function indexTestsByFunction(tests: Map<string, TestInfo>, fnSet: Set<string>): Map<string, TestInfo[]> {
+export function indexTestsByFunction(tests: Map<string, TestInfo>, fnSet: Set<string>): Map<string, TestInfo[]> {
   // re-bucket so order is independent of loadTests' readdir
   const bySuite = new Map<string, TestInfo[]>();
   for (const t of tests.values()) {
@@ -215,7 +215,7 @@ function isAllErrors(v: unknown): boolean {
   return true;
 }
 
-function manifestHash(test: TestInfo, ref: string): `sha256:${string}` {
+export function manifestHash(test: TestInfo, ref: string): `sha256:${string}` {
   return test.semanticHash ?? (`sha256:${ref}` as `sha256:${string}`);
 }
 

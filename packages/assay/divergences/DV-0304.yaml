@@ -1,0 +1,14 @@
+id: DV-0304
+summary: "gsheets: returns #N/A where hyperformula, ironcalc return the referenced cell's formula text — FORMULATEXT"
+cause: unimplemented-edge
+category: value
+engines:
+  - gsheets
+test-count: 2
+subjects:
+  - FORMULATEXT
+tests:
+  - FORMULATEXT/formulatext-of-formula-cell
+  - FORMULATEXT/formulatext-sum-formula
+seeded: 2026-07-11
+last-confirmed: 2026-07-11

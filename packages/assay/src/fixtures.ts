@@ -35,13 +35,31 @@ export interface FixtureFile {
 }
 
 // the legacy persisted shape (pre-§6.6), lifted on read
-interface LegacyEntry {
+export interface LegacyEntry {
   outcome?: Outcome;
   result?: RichGridValue;
   error?: string;
   driverIssue?: boolean;
   skipped?: string;
   "formula-as-evaluated"?: string;
+}
+
+// Lift one persisted fixture entry to its §6.6 Outcome. New fixtures already
+// carry `.outcome`; old ones carry {result, error, driverIssue, skipped} and/or
+// a legacy scalar grid (lifted to rich first). The single source for the
+// back-compat lift — shared by loadFixture and the manifest's outcome loader.
+export function liftEntryToOutcome(entry: LegacyEntry, platform: Platform): Outcome {
+  if (entry.outcome) return entry.outcome;
+  let grid = entry.result;
+  if (grid && !isRichGrid(grid)) {
+    grid = liftScalarGrid(grid as unknown as GridValue, platform);
+  }
+  return legacyToOutcome({
+    result: grid,
+    error: entry.error,
+    driverIssue: entry.driverIssue,
+    skipped: entry.skipped,
+  });
 }
 
 export function fixturePath(testFilePath: string, platform: Platform): string {
@@ -59,28 +77,11 @@ export function loadFixture(testFilePath: string, platform: Platform): FixtureFi
     results: Record<string, LegacyEntry>;
   };
   // Back-compat lift-on-read (§6.6): old fixtures carry {result, error,
-  // driverIssue, skipped} and/or a legacy scalar grid. Lift the grid to rich,
-  // then the whole entry to an Outcome. New fixtures already carry `.outcome`.
+  // driverIssue, skipped} and/or a legacy scalar grid; new ones already carry
+  // `.outcome`. liftEntryToOutcome handles both.
   const results: Record<string, FixtureEntry> = {};
   for (const [name, entry] of Object.entries(raw.results)) {
-    if (entry.outcome) {
-      results[name] = { outcome: entry.outcome };
-      if (entry["formula-as-evaluated"])
-        results[name]["formula-as-evaluated"] = entry["formula-as-evaluated"];
-      continue;
-    }
-    let grid = entry.result;
-    if (grid && !isRichGrid(grid)) {
-      grid = liftScalarGrid(grid as unknown as GridValue, platform);
-    }
-    results[name] = {
-      outcome: legacyToOutcome({
-        result: grid,
-        error: entry.error,
-        driverIssue: entry.driverIssue,
-        skipped: entry.skipped,
-      }),
-    };
+    results[name] = { outcome: liftEntryToOutcome(entry, platform) };
     if (entry["formula-as-evaluated"])
       results[name]["formula-as-evaluated"] = entry["formula-as-evaluated"];
   }

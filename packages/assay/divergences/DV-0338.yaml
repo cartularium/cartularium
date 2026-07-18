@@ -1,0 +1,13 @@
+id: DV-0338
+summary: "pycel: different error code (#NAME? where the majority branch raises #VALUE!) for a negative num_chars argument — MID"
+cause: error-code
+category: value
+engines:
+  - pycel
+test-count: 1
+subjects:
+  - MID
+tests:
+  - MID/mid-negative-count
+seeded: 2026-07-11
+last-confirmed: 2026-07-11

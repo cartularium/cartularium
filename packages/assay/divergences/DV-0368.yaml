@@ -1,0 +1,31 @@
+id: DV-0368
+summary: "pycel: evaluation faults and error operands surface as #NAME? in place of the specific error sentinel other engines report — op:+, op:/, op:& (+5 more)"
+cause: error-code
+category: value
+engines:
+  - pycel
+test-count: 12
+subjects:
+  - ISERR
+  - ISERROR
+  - ISNA
+  - SQRT
+  - SUM
+  - "op:&"
+  - "op:+"
+  - "op:/"
+tests:
+  - SQRT/num-error
+  - SUM/sum-with-one-div-0
+  - ISERR/iserr-on-div-0
+  - ISERROR/iserror-on-div-0
+  - ISNA/isna-on-div-0
+  - "op:add/div-0-plus-n-a-left-wins"
+  - "op:add/error-plus-number"
+  - "op:add/n-a-plus-div-0-left-wins"
+  - "op:add/value-error"
+  - "op:add/value-plus-name"
+  - "op:concat/error-concat-string-error-handling"
+  - "op:divide/div-0-identity"
+seeded: 2026-07-11
+last-confirmed: 2026-07-11

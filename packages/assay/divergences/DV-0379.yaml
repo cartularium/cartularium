@@ -1,0 +1,14 @@
+id: DV-0379
+summary: "excel: numeric precision differs (iterative rate solve converges to a value differing from formulas, gsheets, ironcalc, lattice at ~1e-9) — XIRR"
+cause: precision
+category: value
+engines:
+  - excel
+test-count: 2
+subjects:
+  - XIRR
+tests:
+  - XIRR/xirr-simple-project
+  - XIRR/xirr-with-guess
+seeded: 2026-07-11
+last-confirmed: 2026-07-11

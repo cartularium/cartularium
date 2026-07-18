@@ -3,7 +3,7 @@ import { formatGrid } from "./format/match.js";
 import type { RunResult } from "./runner.js";
 
 export function printReport(result: RunResult): void {
-  const { results, divergences, summary } = result;
+  const { results, forks, summary } = result;
 
   const byTest = new Map<string, TestResult[]>();
   for (const r of results) {
@@ -13,15 +13,15 @@ export function printReport(result: RunResult): void {
   }
 
   const failures: Array<{ name: string; details: string }> = [];
-  const divs: Array<{ name: string; details: string }> = [];
+  const forkRows: Array<{ name: string; details: string }> = [];
 
   for (const [name, testResults] of byTest) {
-    const isDivergence = divergences.some((d) => d.test.id === name);
+    const isForked = forks.some((p) => p.test.id === name);
     const anyFailed = testResults.some((r) => r.passed === false);
     const allRecorded = testResults.every((r) => r.passed === null);
 
     let icon: string;
-    if (isDivergence) icon = " △";
+    if (isForked) icon = " △";
     else if (anyFailed) icon = " ✗";
     else if (allRecorded) icon = " ○";
     else icon = " ✓";
@@ -33,7 +33,7 @@ export function printReport(result: RunResult): void {
       })
       .join("  ");
 
-    const suffix = isDivergence ? "  DIVERGENCE" : "";
+    const suffix = isForked ? "  FORKED" : "";
 
     console.log(
       `${icon} ${name.padEnd(40)} ${platformResults}${suffix}`,
@@ -52,12 +52,12 @@ export function printReport(result: RunResult): void {
       }
     }
 
-    if (isDivergence) {
+    if (isForked) {
       const parts = testResults.map((r) => {
         const val = r.error ? `ERROR` : formatGrid(r.actual);
         return `${r.platform}=${val}`;
       });
-      divs.push({ name, details: parts.join("  ") });
+      forkRows.push({ name, details: parts.join("  ") });
     }
   }
 
@@ -67,7 +67,7 @@ export function printReport(result: RunResult): void {
       `${summary.passed} passed, ` +
       `${summary.failed} failed, ` +
       `${summary.recorded} recorded, ` +
-      `${summary.divergences} divergences`,
+      `${summary.forks} forked`,
   );
 
   if (failures.length > 0) {
@@ -78,9 +78,9 @@ export function printReport(result: RunResult): void {
     }
   }
 
-  if (divs.length > 0) {
-    console.log(`\nDivergences:`);
-    for (const d of divs) {
+  if (forkRows.length > 0) {
+    console.log(`\nForks:`);
+    for (const d of forkRows) {
       console.log(`  △ ${d.name}`);
       console.log(`    ${d.details}`);
     }
@@ -91,10 +91,10 @@ export function jsonReport(result: RunResult): string {
   return JSON.stringify(
     {
       summary: result.summary,
-      divergences: result.divergences.map((d) => ({
-        name: d.test.id,
-        formula: d.test.formula,
-        results: d.results,
+      forks: result.forks.map((p) => ({
+        name: p.test.id,
+        formula: p.test.formula,
+        results: p.results,
       })),
       results: result.results.map((r) => ({
         name: r.test.id,

@@ -1,0 +1,13 @@
+id: DV-0382
+summary: "libreoffice: volatile TODAY() recorded on a later run date than the other engines' fixtures — run-time skew on a volatile stimulus, not an evaluation difference"
+cause: recalc-semantics
+category: value
+engines:
+  - libreoffice
+test-count: 1
+subjects:
+  - TODAY
+tests:
+  - TODAY/today
+seeded: 2026-07-11
+last-confirmed: 2026-07-11

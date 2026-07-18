@@ -2,30 +2,38 @@
 // and consumed by sheets-wiki at build time. see ASSAY-INTEGRATION.md for prose.
 
 import type { Platform } from "./platform.js"
+import type { CirculatingGrid } from "./cell-value.js"
 
 export { ALL_PLATFORMS, isPlatform } from "./platform.js"
 export type { Platform } from "./platform.js"
 
 // closed enum of override causes (assay schema §7)
-export type Cause =
-  | "missing-function"
-  | "missing-arg-form"
-  | "argument-arity"
-  | "arg-semantics"
-  | "precision"
-  | "format-rendering"
-  | "locale"
-  | "shape"
-  | "array-orientation"
-  | "error-code"
-  | "error-attribution"
-  | "null-vs-zero"
-  | "recalc-semantics"
-  | "array-handling"
-  | "unimplemented-edge"
-  | "version-skew"
-  | "intentional-spec"
-  | "TODO"
+export const ALL_CAUSES = [
+  "missing-function",
+  "missing-arg-form",
+  "argument-arity",
+  "arg-semantics",
+  "precision",
+  "format-rendering",
+  "locale",
+  "shape",
+  "array-orientation",
+  "error-code",
+  "error-attribution",
+  "null-vs-zero",
+  "recalc-semantics",
+  "array-handling",
+  "unimplemented-edge",
+  "version-skew",
+  "intentional-spec",
+  "TODO",
+] as const
+
+export type Cause = (typeof ALL_CAUSES)[number]
+
+export function isCause(value: string): value is Cause {
+  return (ALL_CAUSES as readonly string[]).includes(value)
+}
 
 // test category (assay schema §3)
 export const ALL_CATEGORIES = [
@@ -122,6 +130,92 @@ export interface ManifestV4 {
 
 export type Manifest = ManifestV3 | ManifestV4
 
+// === ManifestV5 — the verdict-free comparison-output contract (CP2, 2026-06-17) ===
+// Replaces the V4 `engines: Record<Platform, TestVerdict>` smush with two relation-layer
+// axes — the agreement PARTITION (which engines agree: uniform vs forked) and per-engine
+// CAPABILITY (did the engine produce a value). No canonical value, no reference engine, no
+// verdict. The manifest is OBSERVATION ONLY: every interpretive layer is out of band, joined
+// by case-ref — authored normative assertions ("oracles") in a self-check lens, and authored
+// descriptive annotations (cause/summary/clustering) in the contributed annotation layer
+// (the no-authority-over-meaning refinement, 2026-06-19). Neither is ever a field here.
+// Added alongside V4; buildManifest re-seats onto it + the version bumps in the CP3 output step.
+
+/** Per-engine capability + the join into the agreement partition. Only `value` engines carry
+ * a `class` and appear in a `ManifestClass`; the rest produced no value (capture ≠ circulation,
+ * so they are never folded into an agreement-class as if they agreed). `unsupported` is the one
+ * capability-relevant skip ("engine lacks this") — the absent/partial signal; the no-data causes
+ * are genuinely unknown, not a capability claim. (channel is the open CrashChannel vocabulary,
+ * typed `string` here to avoid a back-edge to @cartularium/drivers.) */
+export type EngineObservation =
+  | { capability: "value"; class: number }
+  | { capability: "rejected"; reason?: string; code?: string }
+  | { capability: "crashed"; channel: string }
+  | { capability: "unsupported" }
+  | {
+      capability: "no-data"
+      cause: "policy" | "seed-infidelity" | "environment-incompatible" | "infra" | "driver-error" | "unclassified"
+    }
+
+/** One agreement-class. `engines` is an unordered set (no privileged member). `values` is the
+ * SET of distinct circulating values in the class: length 1 for exact agreement, >1 when relative
+ * tolerance merged near-but-not-identical values (the spread is then visible — a class is a
+ * connected component under cohort tolerance, NOT a pairwise-equal set). No field encodes
+ * correctness or a reference — the no-verdict principle made structural. */
+export interface ManifestClass {
+  engines: Platform[]
+  values: CirculatingGrid[]
+}
+
+export interface ManifestV5TestEntry {
+  ref: string
+  subject: string
+  subjectRef: string
+  name: string
+  suite: string
+  hash: `sha256:${string}`
+  url: string
+  aliases?: string[]
+  category: Category
+  /** Author-declared case-property tags, published so tag-predicate annotation scopes can resolve
+   * against them (3e). Passed through the R1 publish-time HYGIENE GATE: only descriptive
+   * case-property tags reach the manifest — OUTCOME-CLAIM tags (e.g. `divergence`, `excel-only`,
+   * `coercion-divergence`) are dropped at this relation-layer boundary, so the observation manifest
+   * never carries a verdict-flavored claim. Omitted when the gated set is empty. */
+  tags?: string[]
+  engines: Partial<Record<Platform, EngineObservation>>
+  partition: ManifestClass[]
+}
+
+export interface ManifestV5FunctionEntry {
+  engines: Record<Platform, ManifestEngineEntry>
+  /** Observed forked case-refs only (the function's cases whose partition has >1 class). No
+   * authored ids: the interpretive annotation layer (cause/summary/clustering) lives OUT OF
+   * BAND, joined to forks by case-ref — the no-authority-over-meaning refinement (2026-06-19). */
+  forks: string[]
+  tests: string[]
+}
+
+export interface ManifestV5AliasEntry {
+  target: string
+  kind: "public-ref"
+}
+
+export interface ManifestV5TombstoneEntry {
+  reason: string
+}
+
+export interface ManifestV5 {
+  version: 5
+  generatedAt: string
+  engines: readonly Platform[]
+  rung: "circulating"
+  tests: Record<string, ManifestV5TestEntry>
+  functions: Record<string, ManifestV5FunctionEntry>
+  aliases: Record<string, ManifestV5AliasEntry>
+  tombstones: Record<string, ManifestV5TombstoneEntry>
+  hashes: Record<`sha256:${string}`, string>
+}
+
 export type FormulaCompatibilitySupport =
   | "native"
   | "absent"
@@ -203,6 +297,22 @@ export function assertSupportedFormulaCompatibilityManifestVersion(
   }
 }
 
+// assay fork-annotation store — see assay-fork-annotation.ts
+export { ASSAY_FORK_ANNOTATION_VERSION } from "./assay-fork-annotation.js"
+
+export type {
+  AnnotationScope,
+  AssayForkAnnotationInput,
+  AssayForkAnnotationStatus,
+  AssayForkAnnotationV1,
+  ForkPredicate,
+  ScopeClause,
+} from "./assay-fork-annotation.js"
+
+// fork-annotation coverage — derived read (manifest × annotations); see fork-coverage.ts
+export { computeForkCoverage } from "./fork-coverage.js"
+export type { AnnotationCoverage, ForkCoverageReport } from "./fork-coverage.js"
+
 // edit-wiki page index — see edit-index.ts
 export {
   EDIT_INDEX_VERSION,
@@ -259,12 +369,17 @@ export {
   isCellError,
   isRichGrid,
   toScalarGrid,
+  canonicalizePrimitive,
+  canonicalizeCell,
+  circulatingKey,
 } from "./cell-value.js"
 
 export type {
   CellError,
   CellValue,
   GridValue,
+  CirculatingCell,
+  CirculatingGrid,
   EngineExtras,
   ExcelExtras,
   FormulasExtras,

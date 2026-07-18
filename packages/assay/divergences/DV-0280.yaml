@@ -1,0 +1,37 @@
+id: DV-0280
+summary: "ironcalc, pycel: array-literal broadcasting not evaluated (ironcalc #N/IMPL!, pycel #NAME?) where excel, formulas, gsheets, hyperformula, lattice broadcast elementwise — ABS, ADD (+4 more)"
+cause: array-handling
+category: value
+engines:
+  - ironcalc
+  - pycel
+test-count: 19
+subjects:
+  - ABS
+  - ADD
+  - DIVIDE
+  - MINUS
+  - MULTIPLY
+  - POW
+tests:
+  - ABS/abs-over-signed-row
+  - ADD/add-2d-same-shape
+  - ADD/add-column-broadcast-across-2d
+  - ADD/add-column-to-row-outer-product
+  - ADD/add-column-vectors-same-length
+  - ADD/add-row-broadcast-across-2d
+  - ADD/add-row-to-column-outer-product
+  - ADD/add-row-vectors-same-length
+  - ADD/add-scalar-to-2d
+  - ADD/add-scalar-to-column-vector
+  - ADD/add-scalar-to-row-vector
+  - DIVIDE/divide-row-by-scalar
+  - DIVIDE/divide-scalar-by-row
+  - MINUS/subtract-row-from-column-outer
+  - MINUS/subtract-scalar-from-row
+  - MULTIPLY/multiply-row-by-column-outer
+  - MULTIPLY/multiply-scalar-by-row
+  - POW/exponent-row-elementwise
+  - POW/exponent-scalar-over-row
+seeded: 2026-07-11
+last-confirmed: 2026-07-11

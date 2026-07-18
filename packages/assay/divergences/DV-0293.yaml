@@ -1,0 +1,18 @@
+id: DV-0293
+summary: "gsheets, hyperformula, ironcalc, pycel: return shape differs (scalar first index for a range argument, where excel, formulas, lattice return a vector spanning the range) — COLUMN, ROW"
+cause: shape
+category: value
+engines:
+  - gsheets
+  - hyperformula
+  - ironcalc
+  - pycel
+test-count: 2
+subjects:
+  - COLUMN
+  - ROW
+tests:
+  - COLUMN/column-range-first-col
+  - ROW/row-range-first-row
+seeded: 2026-07-11
+last-confirmed: 2026-07-11

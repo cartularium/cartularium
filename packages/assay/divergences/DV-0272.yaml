@@ -1,0 +1,23 @@
+id: DV-0272
+summary: "formulas, pycel: function not implemented — FORMULATEXT, SHEET, SHEETS"
+cause: missing-function
+category: value
+engines:
+  - formulas
+  - pycel
+test-count: 8
+subjects:
+  - FORMULATEXT
+  - SHEET
+  - SHEETS
+tests:
+  - FORMULATEXT/formulatext-of-empty
+  - FORMULATEXT/formulatext-of-value-cell
+  - SHEET/sheet-by-name-string
+  - SHEET/sheet-invalid-name
+  - SHEET/sheet-no-arg
+  - SHEET/sheet-self-ref
+  - SHEETS/sheets-no-arg
+  - SHEETS/sheets-of-reference
+seeded: 2026-07-11
+last-confirmed: 2026-07-11

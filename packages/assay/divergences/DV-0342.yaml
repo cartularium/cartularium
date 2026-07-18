@@ -1,0 +1,18 @@
+id: DV-0342
+summary: "excel, formulas, gsheets, hyperformula, ironcalc, pycel: volatile function reflects each engine's own evaluation timestamp, so serial values differ per capture — NOW"
+cause: recalc-semantics
+category: value
+engines:
+  - excel
+  - formulas
+  - gsheets
+  - hyperformula
+  - ironcalc
+  - pycel
+test-count: 1
+subjects:
+  - NOW
+tests:
+  - NOW/now
+seeded: 2026-07-11
+last-confirmed: 2026-07-11

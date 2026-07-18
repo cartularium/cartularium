@@ -49,6 +49,10 @@ const parsed = parseArgs({
     port: { type: "string" },
     // manifest
     output: { type: "string" },
+    // seed-fork-annotations
+    now: { type: "string" },
+    // annotation-coverage
+    annotations: { type: "string" },
     // history
     record: { type: "boolean", default: false },
     inspect: { type: "string" },

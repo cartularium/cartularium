@@ -1,0 +1,20 @@
+id: DV-0295
+summary: "pycel: #NAME? when the argument is an operator-composed expression (-1, -PI(), PI()/2) while sibling plain-literal cases of the same functions evaluate — COS, COSH (+2 more)"
+cause: unimplemented-edge
+category: value
+engines:
+  - pycel
+test-count: 5
+subjects:
+  - COS
+  - COSH
+  - DEGREES
+  - ERFC
+tests:
+  - COS/cos-negative-symmetric
+  - COSH/cosh-negative-symmetric
+  - DEGREES/degrees-negative
+  - DEGREES/degrees-of-pi-2
+  - ERFC/erfc-negative
+seeded: 2026-07-11
+last-confirmed: 2026-07-11

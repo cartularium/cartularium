@@ -1,0 +1,13 @@
+id: DV-0363
+summary: "pycel: #NAME? on a negative argument while positive and zero arguments evaluate to a value — SIGN"
+cause: unimplemented-edge
+category: value
+engines:
+  - pycel
+test-count: 1
+subjects:
+  - SIGN
+tests:
+  - SIGN/sign-negative
+seeded: 2026-07-11
+last-confirmed: 2026-07-11

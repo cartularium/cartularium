@@ -1,0 +1,15 @@
+id: DV-0276
+summary: "gsheets, hyperformula, lattice: function not implemented — op:@"
+cause: missing-function
+category: value
+engines:
+  - gsheets
+  - hyperformula
+  - lattice
+test-count: 1
+subjects:
+  - "op:@"
+tests:
+  - "legacy:6f703a40/implicit-intersection-with"
+seeded: 2026-07-11
+last-confirmed: 2026-07-11

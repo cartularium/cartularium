@@ -1,0 +1,17 @@
+id: DV-0305
+summary: "hyperformula: numeric precision differs (agreement to ~9 significant digits with the excel/formulas/gsheets/ironcalc/lattice branch) — GAMMA, FINV; ironcalc, pycel treat FINV as not implemented (#NAME?)"
+cause: precision
+category: value
+engines:
+  - hyperformula
+  - ironcalc
+  - pycel
+test-count: 2
+subjects:
+  - FINV
+  - GAMMA
+tests:
+  - GAMMA/gamma-at-0-5
+  - FINV/finv-at-0-05
+seeded: 2026-07-11
+last-confirmed: 2026-07-11

@@ -1,0 +1,13 @@
+id: DV-0292
+summary: "lattice: zero-argument COLUMN() resolves the host cell to the adjacent column (26 vs 27 on the majority branch) — COLUMN"
+cause: arg-semantics
+category: value
+engines:
+  - lattice
+test-count: 1
+subjects:
+  - COLUMN
+tests:
+  - COLUMN/column-of-target-cell
+seeded: 2026-07-11
+last-confirmed: 2026-07-11

@@ -1,0 +1,13 @@
+id: DV-0356
+summary: "formulas: returns a non-integer draw where other value-producing engines return an integer — RANDBETWEEN"
+cause: arg-semantics
+category: value
+engines:
+  - formulas
+test-count: 1
+subjects:
+  - RANDBETWEEN
+tests:
+  - RANDBETWEEN/randbetween-smoke
+seeded: 2026-07-11
+last-confirmed: 2026-07-11

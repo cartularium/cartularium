@@ -1,0 +1,13 @@
+id: DV-0362
+summary: "gsheets: different error code (#DIV/0! where excel, formulas, hyperformula, ironcalc, lattice raise #NUM! for zero periods) — RRI"
+cause: error-code
+category: value
+engines:
+  - gsheets
+test-count: 1
+subjects:
+  - RRI
+tests:
+  - RRI/rri-invalid-periods
+seeded: 2026-07-11
+last-confirmed: 2026-07-11

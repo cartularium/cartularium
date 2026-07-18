@@ -1,0 +1,13 @@
+id: DV-0349
+summary: "pycel: number-vs-empty-string comparison raises #NAME? where value-producing engines evaluate to FALSE — op:="
+cause: unimplemented-edge
+category: value
+engines:
+  - pycel
+test-count: 1
+subjects:
+  - "op:="
+tests:
+  - "op:eq/empty-string-vs-zero-comparison"
+seeded: 2026-07-11
+last-confirmed: 2026-07-11

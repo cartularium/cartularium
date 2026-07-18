@@ -1,0 +1,16 @@
+id: DV-0287
+summary: "hyperformula: BETADIST is recognized but errors where others return a value (#N/A on the 3-arg form, #NUM! with explicit bounds); the BETAINV roundtrip inherits the inner #N/A — BETADIST, BETAINV"
+cause: unimplemented-edge
+category: value
+engines:
+  - hyperformula
+test-count: 3
+subjects:
+  - BETADIST
+  - BETAINV
+tests:
+  - BETADIST/betadist-central
+  - BETADIST/betadist-with-bounds
+  - BETAINV/betainv-roundtrip
+seeded: 2026-07-11
+last-confirmed: 2026-07-11

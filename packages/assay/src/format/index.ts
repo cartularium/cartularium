@@ -18,16 +18,22 @@ export {
   formatGrid,
   type MatchResult,
 } from "./match.js";
-// rich-aware divergence equality (B1) — the fingerprint/digest ride this
+// circulating projection — the comparison unit + published class value (contracts spine)
 export {
   canonicalizePrimitive,
   canonicalizeCell,
+  circulatingKey,
+  type CirculatingCell,
+} from "./values.js";
+// rich-aware divergence equality (B1) — the fingerprint/digest ride this
+export {
   canonicalEquals,
   richCellsEqual,
   richGridsEqual,
   DEFAULT_NUM_TOL,
-  type CanonicalCell,
 } from "./equality.js";
+// M3 relation layer — verdict-free cross-engine agreement partition
+export { partitionByAgreement, isForked, type AgreementClass } from "./relations.js";
 // capability DATA (moves to @cartularium/drivers) vs ADAPTERS (stay in assay)
 export {
   loadCapability,
@@ -82,5 +88,5 @@ export {
   type TestCase,
   type TestSuite,
   type TestResult,
-  type Divergence,
+  type AgreementPartition,
 } from "./catalogue.js";

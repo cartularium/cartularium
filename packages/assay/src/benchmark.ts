@@ -17,7 +17,7 @@ import {
   type RichGridValue,
 } from "./format/values.js";
 import { type TestCase } from "./format/catalogue.js";
-import { caseKey } from "./identity/index.js";
+import { caseKey, VOLATILE_SUBJECTS } from "./identity/index.js";
 
 export interface BenchmarkOptions {
   authority: Platform[];
@@ -35,7 +35,7 @@ export interface BenchmarkExclusion {
     | "authority-error"
     | "authority-driver-issue"
     | "authority-disagreement"
-    | "semantic-domain"
+    | "non-value-lane"
     | "no-formula-for-authority";
   detail?: string;
 }
@@ -126,12 +126,13 @@ export function runBenchmark(suiteFiles: string[], options: BenchmarkOptions): B
       totalTests++;
       const key = caseKey(test);
 
-      if (!isDefaultBenchmarkDomain(test)) {
+      const lane = nonValueLane(test);
+      if (lane !== null) {
         exclusions.push({
           suite: suiteName,
           test: test.id,
-          reason: "semantic-domain",
-          detail: `${test.semanticDomain ?? "formula-value"}${test.supportLevel ? `/${test.supportLevel}` : ""}`,
+          reason: "non-value-lane",
+          detail: `${lane}${test.supportLevel ? `/${test.supportLevel}` : ""}`,
         });
         continue;
       }
@@ -569,10 +570,24 @@ function isAnnotatedGap(test: TestCase): boolean {
   return false;
 }
 
-function isDefaultBenchmarkDomain(test: TestCase): boolean {
-  const domain = test.semanticDomain ?? "formula-value";
-  if (domain !== "formula-value") return false;
-  return true;
+// The headline benchmark scores only pure formula-value tests; everything else is
+// excluded so a scalar fixture comparison cannot manufacture false confidence.
+// This lane is *derived* from a test's existing signals — `semanticDomain` was
+// dissolved (2026-06-16) as a redundant author field. `null` = stays in the scored
+// lane. Verified lossless against the prior author declarations across the corpus.
+function nonValueLane(test: TestCase): string | null {
+  const subject = test.subject ?? "";
+  if (test.status === "volatile" || test.category === "volatile" || VOLATILE_SUBJECTS.has(subject)) return "volatile";
+  if (test.category === "format") return "display";
+  if (test.category === "interaction") return "grid-context";
+  if (isMetadataSubject(subject)) return "metadata";
+  if (test.features?.includes("external-io")) return "external-effect";
+  if (test.supportLevel && test.supportLevel !== "full") return "partial";
+  return null;
+}
+
+function isMetadataSubject(subject: string): boolean {
+  return subject === "CELL" || subject === "SHEET" || subject === "SHEETS";
 }
 
 export function gridsAgree(

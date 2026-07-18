@@ -1,0 +1,15 @@
+id: DV-0323
+summary: "pycel: negative argument yields #NAME? where other engines return a value — ISEVEN, ODD"
+cause: unimplemented-edge
+category: value
+engines:
+  - pycel
+test-count: 2
+subjects:
+  - ISEVEN
+  - ODD
+tests:
+  - ISEVEN/iseven-negative-even
+  - ODD/odd-negative
+seeded: 2026-07-11
+last-confirmed: 2026-07-11

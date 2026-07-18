@@ -1,0 +1,16 @@
+id: DV-0347
+summary: "excel, gsheets: surface #VALUE! for an error cell met during range broadcasting where formulas, hyperformula, lattice surface #DIV/0! in that position (ironcalc #N/IMPL!, pycel #NAME?) — op:+"
+cause: error-code
+category: value
+engines:
+  - excel
+  - gsheets
+  - ironcalc
+  - pycel
+test-count: 1
+subjects:
+  - "op:+"
+tests:
+  - "op:add/error-in-2d-operand-range"
+seeded: 2026-07-11
+last-confirmed: 2026-07-11

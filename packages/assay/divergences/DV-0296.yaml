@@ -1,0 +1,15 @@
+id: DV-0296
+summary: "gsheets, hyperformula, ironcalc: cell holding an empty string is counted, where excel, formulas, lattice leave it uncounted — COUNTA"
+cause: null-vs-zero
+category: value
+engines:
+  - gsheets
+  - hyperformula
+  - ironcalc
+test-count: 1
+subjects:
+  - COUNTA
+tests:
+  - COUNTA/counta-empty-string-cell
+seeded: 2026-07-11
+last-confirmed: 2026-07-11

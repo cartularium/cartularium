@@ -1,0 +1,13 @@
+id: DV-0355
+summary: "excel: two RANDBETWEEN draws within one formula compared equal in this sample; formulas, gsheets, hyperformula, ironcalc: the draws compared unequal (outcome is nondeterministic per run) — RANDBETWEEN"
+cause: recalc-semantics
+category: value
+engines:
+  - excel
+test-count: 1
+subjects:
+  - RANDBETWEEN
+tests:
+  - RANDBETWEEN/randbetween-returns-integer
+seeded: 2026-07-11
+last-confirmed: 2026-07-11

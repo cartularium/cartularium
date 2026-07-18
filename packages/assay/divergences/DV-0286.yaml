@@ -1,0 +1,13 @@
+id: DV-0286
+summary: "lattice: zero-argument =AND() evaluates to TRUE where formulas, pycel return #VALUE!, gsheets, hyperformula return #N/A, ironcalc returns #ERROR!, and excel surfaces a blank cell — AND"
+cause: argument-arity
+category: value
+engines:
+  - lattice
+test-count: 1
+subjects:
+  - AND
+tests:
+  - AND/and-empty
+seeded: 2026-07-11
+last-confirmed: 2026-07-11

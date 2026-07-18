@@ -1,0 +1,14 @@
+id: DV-0353
+summary: "excel, formulas: numeric precision differs (default three-significant-figure result truncated to 0.166 where gsheets, lattice round to 0.167) — PERCENTRANK.EXC"
+cause: precision
+category: value
+engines:
+  - excel
+  - formulas
+test-count: 1
+subjects:
+  - PERCENTRANK.EXC
+tests:
+  - PERCENTRANK.EXC/percentrank-exc-minimum-value
+seeded: 2026-07-11
+last-confirmed: 2026-07-11

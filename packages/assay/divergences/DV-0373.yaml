@@ -1,0 +1,16 @@
+id: DV-0373
+summary: "formulas, hyperformula, ironcalc, lattice: numeric text in referenced ranges is coerced and summed; excel, gsheets, pycel ignore text cells in ranges — SUM"
+cause: arg-semantics
+category: value
+engines:
+  - formulas
+  - hyperformula
+  - ironcalc
+  - lattice
+test-count: 1
+subjects:
+  - SUM
+tests:
+  - SUM/sum-of-string-range
+seeded: 2026-07-11
+last-confirmed: 2026-07-11

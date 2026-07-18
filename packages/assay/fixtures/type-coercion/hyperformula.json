@@ -1,481 +1,1224 @@
 {
   "platform": "hyperformula",
-  "generatedAt": "2026-05-11T09:33:31.875Z",
+  "generatedAt": "2026-06-17T19:39:59.977Z",
   "results": {
     "sha256:f9627af4a73959c572c2150044b08bb50f279aea4ae22f3689f1b0e30a169987": {
-      "result": [
-        [
-          {
-            "error": "#NAME?"
-          }
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "error",
+                "sentinel": "#NAME?"
+              },
+              "engine": {
+                "platform": "hyperformula"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=TRUE+0"
     },
     "sha256:2dfd45090de89a490cda7b725e81ddb203ad03ba5c28a80c6bdf5fac294f2c7e": {
-      "result": [
-        [
-          {
-            "error": "#NAME?"
-          }
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "error",
+                "sentinel": "#NAME?"
+              },
+              "engine": {
+                "platform": "hyperformula"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=FALSE+0"
     },
     "sha256:a19a7cfcbc859e5b15f9e06d3f764c6f428c1bb15908c72c5f6b244788bdd550": {
-      "result": [
-        [
-          {
-            "error": "#NAME?"
-          }
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "error",
+                "sentinel": "#NAME?"
+              },
+              "engine": {
+                "platform": "hyperformula"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=TRUE+1"
     },
     "sha256:30f8d8d8f4d6ec56c6f7e529cb52782e76ed4bb175987e49e134fcde5576b98d": {
-      "result": [
-        [
-          {
-            "error": "#NAME?"
-          }
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "error",
+                "sentinel": "#NAME?"
+              },
+              "engine": {
+                "platform": "hyperformula"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=TRUE*TRUE"
     },
     "sha256:331d27d800ec72a9e85796069653cac8123d804b21c6f6259f87661f78d7de25": {
-      "result": [
-        [
-          {
-            "error": "#NAME?"
-          }
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "error",
+                "sentinel": "#NAME?"
+              },
+              "engine": {
+                "platform": "hyperformula"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=TRUE-FALSE"
     },
     "sha256:a3f8ef8d5532ea7f0d7be04045ecb6204ff91fcfbf35be8ccaf91c53213279ac": {
-      "result": [
-        [
-          {
-            "error": "#NAME?"
-          }
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "error",
+                "sentinel": "#NAME?"
+              },
+              "engine": {
+                "platform": "hyperformula"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=SUM(TRUE, FALSE, TRUE)"
     },
     "sha256:b7a18c99c5c7ec6af9bd5f0a7c789ace198809dc21cf24d49df2c7dba5c52fa9": {
-      "result": [
-        [
-          0
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 0
+              },
+              "engine": {
+                "platform": "hyperformula"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=SUM(A1:A3)"
     },
     "sha256:83a2e7852f6f3fbd9ac79320e612871b7399c01a1b68e530c34b34bf89414768": {
-      "result": [
-        [
-          {
-            "error": "#NAME?"
-          }
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "error",
+                "sentinel": "#NAME?"
+              },
+              "engine": {
+                "platform": "hyperformula"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=AVERAGE(TRUE, FALSE, TRUE)"
     },
     "sha256:a9bb0867da2bb0eedd1e63266bb9e56e53bd954fe67f53fc7a309de6db3c34ac": {
-      "result": [
-        [
-          1
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 1
+              },
+              "engine": {
+                "platform": "hyperformula"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=\"1\"+0"
     },
     "sha256:d9f0d990bdc19c826c0b138422857a5b03031873df2ae4ca48b56ceec54d77ec": {
-      "result": [
-        [
-          5
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 5
+              },
+              "engine": {
+                "platform": "hyperformula"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=\"2\"+\"3\""
     },
     "sha256:bdba869486372728a291e8ebbf13564e6f6b4c261b501e73bd63b4dfef9be22a": {
-      "result": [
-        [
-          10
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 10
+              },
+              "engine": {
+                "platform": "hyperformula"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=\"5\"*2"
     },
     "sha256:eea18c10cae5542cd877a96c21f1d9545f7a73cf0850a16e4763a20aa63a2716": {
-      "result": [
-        [
-          {
-            "error": "#VALUE!"
-          }
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "error",
+                "sentinel": "#VALUE!"
+              },
+              "engine": {
+                "platform": "hyperformula"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=\"abc\"+1"
     },
     "sha256:54c99f272f54ce71459d71c103a7188fae0fb0481d0c4174bc6edce79dce0ef7": {
-      "result": [
-        [
-          1
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 1
+              },
+              "engine": {
+                "platform": "hyperformula"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=\"\"+1"
     },
     "sha256:ab46041f9e4e2ac6e5f87d6ba9ebbd262a92437fac7dc7fc1300b92d501906b7": {
-      "result": [
-        [
-          {
-            "error": "#VALUE!"
-          }
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "error",
+                "sentinel": "#VALUE!"
+              },
+              "engine": {
+                "platform": "hyperformula"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=\" \"+1"
     },
     "sha256:aadb700b4f1ab9631ad518ce8b822f4bd3b3aaa3936820c5570ec3f5c9951dec": {
-      "result": [
-        [
-          6
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 6
+              },
+              "engine": {
+                "platform": "hyperformula"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=SUM(\"1\", \"2\", \"3\")"
     },
     "sha256:de1ba6a1e4be2521518c11fc08aaf2ec6a0cf2168c51221faafcaa25632a858b": {
-      "result": [
-        [
-          6
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 6
+              },
+              "engine": {
+                "platform": "hyperformula"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=SUM(A1:A3)"
     },
     "sha256:52d5c7276ae994a46f99b6c03368e6922dc547ef656795eb27be9e42356d840e": {
-      "result": [
-        [
-          "12"
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "string",
+                "value": "12"
+              },
+              "engine": {
+                "platform": "hyperformula"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=1&2"
     },
     "sha256:73ff6584f6db2e7721770326680572fffad9b78f7cbfe0eca90cea24a34795ea": {
-      "result": [
-        [
-          {
-            "error": "#NAME?"
-          }
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "error",
+                "sentinel": "#NAME?"
+              },
+              "engine": {
+                "platform": "hyperformula"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=TRUE&\"x\""
     },
     "sha256:9b79617c0d9c6b044a19638c654a17e7db90837ccfd860dad7ed9fd196f8fb5f": {
-      "result": [
-        [
-          {
-            "error": "#NAME?"
-          }
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "error",
+                "sentinel": "#NAME?"
+              },
+              "engine": {
+                "platform": "hyperformula"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=1&TRUE"
     },
     "sha256:fb7add5cc00f5c5dcd80640b55ac2706c8f153a1e13374a356ec7f83d6c5db6b": {
-      "result": [
-        [
-          {
-            "error": "#N/A"
-          }
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "error",
+                "sentinel": "#N/A"
+              },
+              "engine": {
+                "platform": "hyperformula"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=#N/A&\"x\""
     },
     "sha256:f21b06a106d1e8b679294c620493d76580fd4b850953d391f370b72cef7bf551": {
-      "result": [
-        [
-          1
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 1
+              },
+              "engine": {
+                "platform": "hyperformula"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=A1+1"
     },
     "sha256:5046d4a70bd687312d23e895e45926da0fab924493a6914625400b221a6e3f7e": {
-      "result": [
-        [
-          0
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 0
+              },
+              "engine": {
+                "platform": "hyperformula"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=A1*10"
     },
     "sha256:91bac13674c70fe703ee57d51006d7c10b7d073755d5e9850484d1a6329ee33e": {
-      "result": [
-        [
-          "x"
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "string",
+                "value": "x"
+              },
+              "engine": {
+                "platform": "hyperformula"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=A1&\"x\""
     },
     "sha256:c7aaa770f2ee3f0fc521dfddc1f1208c37104133ba77a459f012d88aed3d8659": {
-      "result": [
-        [
-          true
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "boolean",
+                "value": true
+              },
+              "engine": {
+                "platform": "hyperformula"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=A1=0"
     },
     "sha256:d8ec0914b19de2852067cad0a9ce4cc6de91d0c799dd6c03e63c104cbf656d31": {
-      "result": [
-        [
-          true
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "boolean",
+                "value": true
+              },
+              "engine": {
+                "platform": "hyperformula"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=A1=\"\""
     },
     "sha256:8c80925ed0b5d9a28555f7a340e3720ba9d43f55ed00ef74da38f892ca66a96a": {
-      "result": [
-        [
-          false
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "boolean",
+                "value": false
+              },
+              "engine": {
+                "platform": "hyperformula"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=0=\"\""
     },
     "sha256:4025284c3fce668a85c61e09811fb285335bdc7f71f5e4c11af0255551401bd3": {
-      "result": [
-        [
-          true
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "boolean",
+                "value": true
+              },
+              "engine": {
+                "platform": "hyperformula"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=1<\"a\""
     },
     "sha256:1de7cd789d3cb7974f2bfe3a42bab2adabfbcf3e9b4ed84af7aaf68c6062e6b9": {
-      "result": [
-        [
-          false
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "boolean",
+                "value": false
+              },
+              "engine": {
+                "platform": "hyperformula"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=\"a\"<1"
     },
     "sha256:b29c4b952f07ad8c9968040ad96f8b17cc65b209429337b85884f665ad0a2635": {
-      "result": [
-        [
-          {
-            "error": "#NAME?"
-          }
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "error",
+                "sentinel": "#NAME?"
+              },
+              "engine": {
+                "platform": "hyperformula"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=TRUE=1"
     },
     "sha256:4573b860751430d48be27e0bb5ce394ede3192839dd61c426d3429778ebfe010": {
-      "result": [
-        [
-          {
-            "error": "#NAME?"
-          }
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "error",
+                "sentinel": "#NAME?"
+              },
+              "engine": {
+                "platform": "hyperformula"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=TRUE<2"
     },
     "sha256:3af5480e8aadb0ebc707ea3280b7caf399a530179fb6bbb3b57d6dcdff49a44f": {
-      "result": [
-        [
-          true
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "boolean",
+                "value": true
+              },
+              "engine": {
+                "platform": "hyperformula"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=\"a\"=\"A\""
     },
     "sha256:eb68fb98e21c664f18bc0382690f986fbcf059f7810af76c70ec7db0687a7de1": {
-      "result": [
-        [
-          false
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "boolean",
+                "value": false
+              },
+              "engine": {
+                "platform": "hyperformula"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=\"1\"=1"
     },
     "sha256:43b53e605805951f5a774f862dd1875aeb4b8f6d6493a6d838ca0660fc2a661e": {
-      "result": [
-        [
-          {
-            "error": "#NAME?"
-          }
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "error",
+                "sentinel": "#NAME?"
+              },
+              "engine": {
+                "platform": "hyperformula"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=-TRUE"
     },
     "sha256:7fe29c01425d6e563de83747406575ffa40dcef938d0a10c7452c3e18e05d687": {
-      "result": [
-        [
-          -5
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": -5
+              },
+              "engine": {
+                "platform": "hyperformula"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=-\"5\""
     },
     "sha256:c3e24041129a8b5e332b8860bbe8157d0de45ab97991273d8a6b0f68b4363270": {
-      "result": [
-        [
-          {
-            "error": "#NAME?"
-          }
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "error",
+                "sentinel": "#NAME?"
+              },
+              "engine": {
+                "platform": "hyperformula"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=--TRUE"
     },
     "sha256:bb08d50ae7619d425bfa0960fc70fc205287f02da36a6dd85febee112723f77f": {
-      "result": [
-        [
-          {
-            "error": "#NAME?"
-          }
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "error",
+                "sentinel": "#NAME?"
+              },
+              "engine": {
+                "platform": "hyperformula"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=--FALSE"
     },
     "sha256:fd5f31473144f831401958fb8ca47639d9b1135145c44173e0e6e56b14d5b4cc": {
-      "result": [
-        [
-          "5"
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "string",
+                "value": "5"
+              },
+              "engine": {
+                "platform": "hyperformula"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=+\"5\""
     },
     "sha256:8efea764273aac3572b5f704e6ee2576ba8d5c6040bdf496b5cbe28331c67cc4": {
-      "result": [
-        [
-          {
-            "error": "#NAME?"
-          }
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "error",
+                "sentinel": "#NAME?"
+              },
+              "engine": {
+                "platform": "hyperformula"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=N(TRUE)"
     },
     "sha256:3f261bae7328d2f9aeda4820897178d7b6b6d4a44f1b0c8eabf8b2c4872ee510": {
-      "result": [
-        [
-          {
-            "error": "#NAME?"
-          }
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "error",
+                "sentinel": "#NAME?"
+              },
+              "engine": {
+                "platform": "hyperformula"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=N(FALSE)"
     },
     "sha256:ebbc520f995dd027a09c6eecf384c4e7fd85b5bff0af28b048a47c745fba3f08": {
-      "result": [
-        [
-          0
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 0
+              },
+              "engine": {
+                "platform": "hyperformula"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=N(\"hello\")"
     },
     "sha256:220bd5a64f8f5f5bf60249a09ccf07fa2a45cd05a357eab2acc9f036ffa7cdc8": {
-      "result": [
-        [
-          42
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 42
+              },
+              "engine": {
+                "platform": "hyperformula"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=N(42)"
     },
     "sha256:2fac63c8c11aa20f3cb01c356f3dce015deb9c3b0983513d6503156f135c73ad": {
-      "result": [
-        [
-          {
-            "error": "#VALUE!"
-          }
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "error",
+                "sentinel": "#VALUE!"
+              },
+              "engine": {
+                "platform": "hyperformula"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=N(#VALUE!)"
     },
     "sha256:b9b787344b807ff43ecc037a4ba7bc8e668eedc20234266ec8be0598a829d4fc": {
-      "result": [
-        [
-          "hello"
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "string",
+                "value": "hello"
+              },
+              "engine": {
+                "platform": "hyperformula"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=T(\"hello\")"
     },
     "sha256:9a5dc448ac55511ec2fb52381157214b7cd12651ab6b4940307c3966058916ea": {
-      "result": [
-        [
-          ""
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "string",
+                "value": ""
+              },
+              "engine": {
+                "platform": "hyperformula"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=T(42)"
     },
     "sha256:642db3404246dc515e542d82372325b5e458405e84b4c39ff8664c0d7cc6daf7": {
-      "result": [
-        [
-          {
-            "error": "#NAME?"
-          }
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "error",
+                "sentinel": "#NAME?"
+              },
+              "engine": {
+                "platform": "hyperformula"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=T(TRUE)"
     },
     "sha256:f4193576c129570fdb4574a7d24fe9dd24b423b74ac88d8a4362465a51c328fb": {
-      "result": [
-        [
-          123.45
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 123.45
+              },
+              "engine": {
+                "platform": "hyperformula"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=VALUE(\"123.45\")"
     },
     "sha256:f8569f8ad01e93ad766d169f885f8eea09d9289507eaffa1831f57fe4fdb5a96": {
-      "result": [
-        [
-          {
-            "error": "#VALUE!"
-          }
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "error",
+                "sentinel": "#VALUE!"
+              },
+              "engine": {
+                "platform": "hyperformula"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=VALUE(\"abc\")"
     },
     "sha256:3d2ef435bf1245b2c1994edee15a947069bf5212c1bdc011234eed1e455e0745": {
-      "result": [
-        [
-          {
-            "error": "#VALUE!"
-          }
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "error",
+                "sentinel": "#VALUE!"
+              },
+              "engine": {
+                "platform": "hyperformula"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=VALUE(\"TRUE\")"
     },
-    "sha256:990de50f33d0babf003b894496e4c708eb47c3aeabf6175d751adc98071cd687": {
-      "result": [
-        [
-          "1235,##0.00"
-        ]
-      ],
+    "sha256:9b7dd6bfee1a89b2ce3edff47ce653cebaba54d28b2dec824428a43eac688fc2": {
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "string",
+                "value": "1235,##0.00"
+              },
+              "engine": {
+                "platform": "hyperformula"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=TEXT(1234.5, \"#,##0.00\")"
     },
     "sha256:167b032e84d585ecde806c6f909afb6192b62cf6cf6acc45ca083ef79afef484": {
-      "result": [
-        [
-          {
-            "error": "#NAME?"
-          }
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "error",
+                "sentinel": "#NAME?"
+              },
+              "engine": {
+                "platform": "hyperformula"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=SUM({TRUE,FALSE,TRUE})"
     },
     "sha256:9e9da71e44e9391322aeb5839a5ad6b97f6f072f61163d7d2f1c15daeb12ad2a": {
-      "result": [
-        [
-          {
-            "error": "#NAME?"
-          }
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "error",
+                "sentinel": "#NAME?"
+              },
+              "engine": {
+                "platform": "hyperformula"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=SUM({1,\"2\",TRUE})"
     },
     "sha256:6a0e854aa0d5c32e5e08748c5ce0494f70997c5182a84b9107466ecd6dcc8215": {
-      "result": [
-        [
-          1
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 1
+              },
+              "engine": {
+                "platform": "hyperformula"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=PRODUCT({\"2\",\"3\",\"4\"})"
     },
     "sha256:0c31bfdd458ae5e78748a2a4468243108f8f62ae187760dea3ddcbf08f9fe044": {
-      "result": [
-        [
-          {
-            "error": "#NAME?"
-          }
-        ]
-      ],
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "error",
+                "sentinel": "#NAME?"
+              },
+              "engine": {
+                "platform": "hyperformula"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
       "formula-as-evaluated": "=N({TRUE,FALSE,TRUE})"
     }
   }
