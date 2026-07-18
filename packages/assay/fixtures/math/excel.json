@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "platform": "excel",
-  "generatedAt": "2026-07-18T20:49:21.603Z",
+  "generatedAt": "2026-07-18T22:14:58.621Z",
   "results": {
     "ABS/abs-positive": {
       "outcome": {
@@ -2151,6 +2151,30 @@
       "fpv": 1,
       "run_id": "2026-07-18T20:45:36Z.c997",
       "at": "2026-07-18T20:49:21.593Z"
+    },
+    "POWER/power-zero-base-zero-exponent": {
+      "outcome": {
+        "kind": "rejected",
+        "reason": "excel rejected formula (would prompt AutoRecovery)"
+      },
+      "formula-as-evaluated": "=POWER(0, 0)",
+      "stimulus": "sha256:310929086ca8ae65bda80aaf656ff1b8081ceb8d4f030bef0d660341c4264bca",
+      "fingerprint": "sha256:03cd8606eea992d1087f4c5045a8d609a466e8548407440ba80d7d6a5783e347",
+      "fpv": 1,
+      "run_id": "2026-07-18T22:14:53Z.65ba",
+      "at": "2026-07-18T22:14:58.618Z"
+    },
+    "POWER/power-zero-base-negative-exponent": {
+      "outcome": {
+        "kind": "rejected",
+        "reason": "excel rejected formula (would prompt AutoRecovery)"
+      },
+      "formula-as-evaluated": "=POWER(0, -1)",
+      "stimulus": "sha256:1b6d32566d986081b71807499ec310a3a2edf9cc771bde80883b8930ccaca56d",
+      "fingerprint": "sha256:03cd8606eea992d1087f4c5045a8d609a466e8548407440ba80d7d6a5783e347",
+      "fpv": 1,
+      "run_id": "2026-07-18T22:14:53Z.65ba",
+      "at": "2026-07-18T22:14:58.618Z"
     }
   }
 }

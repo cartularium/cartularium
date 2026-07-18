@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "platform": "excel",
-  "generatedAt": "2026-07-18T20:49:21.605Z",
+  "generatedAt": "2026-07-18T22:14:58.622Z",
   "results": {
     "feature:spill-blocking/spill-blocked-by-occupied-cell-column": {
       "outcome": {
@@ -1532,6 +1532,30 @@
       "fpv": 1,
       "run_id": "2026-07-18T20:45:36Z.c997",
       "at": "2026-07-18T20:49:21.593Z"
+    },
+    "SORT/sort-third-arg-boolean-false": {
+      "outcome": {
+        "kind": "rejected",
+        "reason": "excel rejected formula (would prompt AutoRecovery)"
+      },
+      "formula-as-evaluated": "=SORT({3;1;2}, 1, FALSE)",
+      "stimulus": "sha256:aa95ffa4ee85939991e0fa867fc11968c7671917a8f7259191fd47cdd6c77ce9",
+      "fingerprint": "sha256:03cd8606eea992d1087f4c5045a8d609a466e8548407440ba80d7d6a5783e347",
+      "fpv": 1,
+      "run_id": "2026-07-18T22:14:53Z.65ba",
+      "at": "2026-07-18T22:14:58.618Z"
+    },
+    "SORT/sort-third-arg-boolean-true": {
+      "outcome": {
+        "kind": "rejected",
+        "reason": "excel rejected formula (would prompt AutoRecovery)"
+      },
+      "formula-as-evaluated": "=SORT({3;1;2}, 1, TRUE)",
+      "stimulus": "sha256:756a4fc610810b2565e9cd38c4f772f3f0a4afb72f71aacc33ea37ebe13a9ded",
+      "fingerprint": "sha256:03cd8606eea992d1087f4c5045a8d609a466e8548407440ba80d7d6a5783e347",
+      "fpv": 1,
+      "run_id": "2026-07-18T22:14:53Z.65ba",
+      "at": "2026-07-18T22:14:58.618Z"
     }
   }
 }

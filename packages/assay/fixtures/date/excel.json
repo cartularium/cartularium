@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "platform": "excel",
-  "generatedAt": "2026-07-18T20:49:21.596Z",
+  "generatedAt": "2026-07-18T22:14:58.618Z",
   "results": {
     "DATE/date-basic": {
       "outcome": {
@@ -3026,6 +3026,30 @@
       "fpv": 1,
       "run_id": "2026-07-18T20:45:36Z.c997",
       "at": "2026-07-18T20:49:21.593Z"
+    },
+    "DATE/date-1900-phantom-leap-day": {
+      "outcome": {
+        "kind": "rejected",
+        "reason": "excel rejected formula (would prompt AutoRecovery)"
+      },
+      "formula-as-evaluated": "=DATE(1900, 2, 29)",
+      "stimulus": "sha256:4d8d5515dfbfaeec8dd1ac5651e33151cf2ecbf5069bd9af37c9164aaacf7f2e",
+      "fingerprint": "sha256:03cd8606eea992d1087f4c5045a8d609a466e8548407440ba80d7d6a5783e347",
+      "fpv": 1,
+      "run_id": "2026-07-18T22:14:53Z.65ba",
+      "at": "2026-07-18T22:14:58.618Z"
+    },
+    "DATE/date-1900-march-first": {
+      "outcome": {
+        "kind": "rejected",
+        "reason": "excel rejected formula (would prompt AutoRecovery)"
+      },
+      "formula-as-evaluated": "=DATE(1900, 3, 1)",
+      "stimulus": "sha256:91754202c70e9d143a71a66b241522afc715094c8da1825d411c507040596e08",
+      "fingerprint": "sha256:03cd8606eea992d1087f4c5045a8d609a466e8548407440ba80d7d6a5783e347",
+      "fpv": 1,
+      "run_id": "2026-07-18T22:14:53Z.65ba",
+      "at": "2026-07-18T22:14:58.618Z"
     }
   }
 }

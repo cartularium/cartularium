@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "platform": "excel",
-  "generatedAt": "2026-07-18T20:49:21.601Z",
+  "generatedAt": "2026-07-18T22:14:58.619Z",
   "results": {
     "LAMBDA/lambda-basic-iife": {
       "outcome": {
@@ -1333,6 +1333,30 @@
       "fpv": 1,
       "run_id": "2026-07-18T20:45:36Z.c997",
       "at": "2026-07-18T20:49:21.593Z"
+    },
+    "MAP/map-hstack-of-lambdas": {
+      "outcome": {
+        "kind": "rejected",
+        "reason": "excel rejected formula (would prompt AutoRecovery)"
+      },
+      "formula-as-evaluated": "=MAP(HSTACK(LAMBDA(x,x+1),LAMBDA(x,x+2)), LAMBDA(x,x(1)))",
+      "stimulus": "sha256:93375d5c4fc4a268a203d51ac043e9c412d1e78f738295b26ddfeb310373de8e",
+      "fingerprint": "sha256:03cd8606eea992d1087f4c5045a8d609a466e8548407440ba80d7d6a5783e347",
+      "fpv": 1,
+      "run_id": "2026-07-18T22:14:53Z.65ba",
+      "at": "2026-07-18T22:14:58.618Z"
+    },
+    "MAP/map-vstack-of-lambdas": {
+      "outcome": {
+        "kind": "rejected",
+        "reason": "excel rejected formula (would prompt AutoRecovery)"
+      },
+      "formula-as-evaluated": "=MAP(VSTACK(LAMBDA(x,x*2),LAMBDA(x,x*3)), LAMBDA(x,x(5)))",
+      "stimulus": "sha256:65f663524487db917c0b828b97d756395e8aae8c30191d2212503aeb19a31742",
+      "fingerprint": "sha256:03cd8606eea992d1087f4c5045a8d609a466e8548407440ba80d7d6a5783e347",
+      "fpv": 1,
+      "run_id": "2026-07-18T22:14:53Z.65ba",
+      "at": "2026-07-18T22:14:58.618Z"
     }
   }
 }

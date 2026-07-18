@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "platform": "excel",
-  "generatedAt": "2026-07-18T20:49:21.602Z",
+  "generatedAt": "2026-07-18T22:14:58.619Z",
   "results": {
     "INDEX/index-row-and-column": {
       "outcome": {
@@ -699,6 +699,18 @@
       "fpv": 1,
       "run_id": "2026-07-18T20:45:36Z.c997",
       "at": "2026-07-18T20:49:21.593Z"
+    },
+    "VLOOKUP/vlookup-column-index-out-of-range-miss": {
+      "outcome": {
+        "kind": "rejected",
+        "reason": "excel rejected formula (would prompt AutoRecovery)"
+      },
+      "formula-as-evaluated": "=VLOOKUP(9, A1:C3, 5, FALSE)",
+      "stimulus": "sha256:fd96c30bfb58a131b640afcf7059505facb49ad66016c7cbbe745a3d9641f838",
+      "fingerprint": "sha256:03cd8606eea992d1087f4c5045a8d609a466e8548407440ba80d7d6a5783e347",
+      "fpv": 1,
+      "run_id": "2026-07-18T22:14:53Z.65ba",
+      "at": "2026-07-18T22:14:58.618Z"
     }
   }
 }

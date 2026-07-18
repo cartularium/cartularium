@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "platform": "excel",
-  "generatedAt": "2026-07-18T20:49:21.596Z",
+  "generatedAt": "2026-07-18T22:14:58.619Z",
   "results": {
     "CONCAT/concat-vs-concatenate-arity": {
       "outcome": {
@@ -331,6 +331,66 @@
       "fpv": 1,
       "run_id": "2026-07-18T20:45:36Z.c997",
       "at": "2026-07-18T20:49:21.593Z"
+    },
+    "feature:space-intersection/space-intersection-in-sum": {
+      "outcome": {
+        "kind": "rejected",
+        "reason": "excel rejected formula (would prompt AutoRecovery)"
+      },
+      "formula-as-evaluated": "=SUM(B1:B3 B2:B2)",
+      "stimulus": "sha256:65618d54bbd936fd8c2bd156c9367526fd479c11184d45650bf3c1c58413c960",
+      "fingerprint": "sha256:03cd8606eea992d1087f4c5045a8d609a466e8548407440ba80d7d6a5783e347",
+      "fpv": 1,
+      "run_id": "2026-07-18T22:14:53Z.65ba",
+      "at": "2026-07-18T22:14:58.618Z"
+    },
+    "feature:reference-union/union-in-sum": {
+      "outcome": {
+        "kind": "rejected",
+        "reason": "excel rejected formula (would prompt AutoRecovery)"
+      },
+      "formula-as-evaluated": "=SUM((B1:B1,B3:B3))",
+      "stimulus": "sha256:140ae7b4ccda64bcd47317fc36ae4a511d6ecba141d12af2a022953a873d6f5a",
+      "fingerprint": "sha256:03cd8606eea992d1087f4c5045a8d609a466e8548407440ba80d7d6a5783e347",
+      "fpv": 1,
+      "run_id": "2026-07-18T22:14:53Z.65ba",
+      "at": "2026-07-18T22:14:58.618Z"
+    },
+    "feature:implicit-intersection/at-inside-sum": {
+      "outcome": {
+        "kind": "rejected",
+        "reason": "excel rejected formula (would prompt AutoRecovery)"
+      },
+      "formula-as-evaluated": "=SUM(@B1:B3)",
+      "stimulus": "sha256:415891eb832b0739cf8dba74a88cdb149940d2b5e38880ae545160f8f2a760a1",
+      "fingerprint": "sha256:03cd8606eea992d1087f4c5045a8d609a466e8548407440ba80d7d6a5783e347",
+      "fpv": 1,
+      "run_id": "2026-07-18T22:14:53Z.65ba",
+      "at": "2026-07-18T22:14:58.618Z"
+    },
+    "REGEXMATCH/regexmatch-native-name-cross-engine": {
+      "outcome": {
+        "kind": "rejected",
+        "reason": "excel rejected formula (would prompt AutoRecovery)"
+      },
+      "formula-as-evaluated": "=REGEXTEST(\"abc123\", \"[0-9]+\")",
+      "stimulus": "sha256:6d96fbbd6da882a45ccde7f3821e852cce134e9aa14d8658581a72ea09d2b428",
+      "fingerprint": "sha256:03cd8606eea992d1087f4c5045a8d609a466e8548407440ba80d7d6a5783e347",
+      "fpv": 1,
+      "run_id": "2026-07-18T22:14:53Z.65ba",
+      "at": "2026-07-18T22:14:58.618Z"
+    },
+    "REGEXTEST/regextest-native-name-cross-engine": {
+      "outcome": {
+        "kind": "rejected",
+        "reason": "excel rejected formula (would prompt AutoRecovery)"
+      },
+      "formula-as-evaluated": "=REGEXTEST(\"abc123\", \"[0-9]+\")",
+      "stimulus": "sha256:50dd2b41204f80fb3f66af74c4f37676552332cb62912e481db8359b33514cd2",
+      "fingerprint": "sha256:03cd8606eea992d1087f4c5045a8d609a466e8548407440ba80d7d6a5783e347",
+      "fpv": 1,
+      "run_id": "2026-07-18T22:14:53Z.65ba",
+      "at": "2026-07-18T22:14:58.618Z"
     }
   }
 }
