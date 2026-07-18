@@ -1,4 +1,5 @@
-id: wp-0001
+id: ld-0001
+slug: combine-skus
 title: Combine SKUs
 attribution: Adapted from "Combine SKUs" in the astral.cafe Community Practice Problems sheet.
 difficulty: 3
@@ -26,7 +27,7 @@ template:
     - title: Answer
   input: Input!A1:L9
   output: Answer!A2:D40
-  spreadsheetId: 1gXaLVePwj5bnHwFkQdfhZidAqhu4gi1K0qQ78WciCRY
+  spreadsheetId: 172WYZVhRB85DPn_eNW09EL5z8oBFA7C-kztwbHemf6Y
   answerHeaders:
     - SKU
     - Quantity
@@ -305,3 +306,6 @@ cases:
         - 260
         - 3630
         - 13.961538461538462
+verified:
+  asOf: 2026-07-18
+  hash: 8eb6912f2db25bd6

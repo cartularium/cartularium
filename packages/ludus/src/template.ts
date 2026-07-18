@@ -66,7 +66,7 @@ function aboutLines(problem: Problem): AboutLine[] {
   if (problem.attribution) lines.push({ kind: "muted", text: problem.attribution });
   lines.push({
     kind: "link",
-    formula: `=HYPERLINK("https://ludus.sheets.wiki/problems/${problem.id}/", "${problem.id} — problem page")`,
+    formula: `=HYPERLINK("https://ludus.sheets.wiki/problems/${problem.slug}/", "${problem.id} — problem page")`,
   });
   return lines;
 }

@@ -16,7 +16,16 @@ export interface ProblemCase {
 }
 
 export interface Problem {
+  /**
+   * Public identity: `ld-NNNN`, monotonic, allocated when a problem is accepted
+   * into the corpus, never reused. Everything durable keys on it (submissions,
+   * stored programs, the future attempt log). Content-hash identity was
+   * rejected: problems are mutable documents (re-oracles rewrite `expected`,
+   * statements get reworded) and identity must survive edits.
+   */
   id: string;
+  /** URL path segment (site renders /problems/<slug>/); human-readable, from the title */
+  slug: string;
   title: string;
   attribution?: string;
   /**
@@ -40,6 +49,13 @@ export interface Problem {
     spreadsheetId?: string;
   };
   reference: string; // reference solution formula, placed at OUTPUT's top-left by the oracle
+  /**
+   * Drift-discipline stamp, written by the oracle: `hash` fingerprints the
+   * oracle surface (reference + template ranges + case inputs — what determines
+   * `expected`), `asOf` is the date the oracle last ran against live Sheets.
+   * A stored hash differing from the recomputed one means `expected` is stale.
+   */
+  verified?: { asOf: string; hash: string };
   compare: ComparePolicy;
   lint?: { ban?: string[] };
   cases: ProblemCase[];

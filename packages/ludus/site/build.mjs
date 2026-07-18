@@ -119,6 +119,8 @@ function problemBody(problem) {
 <header class="prob-head">
   <h1>${esc(problem.title)}</h1>
   <p class="meta-line">
+    <span class="muted">${esc(problem.id)}</span>
+    <span class="sep">·</span>
     <span class="meter" title="difficulty ${problem.difficulty} (open scale, hand-graded)">${esc(difficultyMeter(problem.difficulty))}</span>
     <span class="sep">·</span>
     <span>${problem.tags.map(esc).join(", ")}</span>
@@ -181,8 +183,8 @@ function indexBody(problems) {
   const cards = problems
     .map(
       (p) => `
-  <a class="prob-card" href="./problems/${esc(p.id)}/">
-    <span class="prob-title">${esc(p.title)}</span>
+  <a class="prob-card" href="./problems/${esc(p.slug)}/">
+    <span class="prob-title">${esc(p.title)} <span class="muted">${esc(p.id)}</span></span>
     <span class="meter">${esc(difficultyMeter(p.difficulty))}</span>
     <span class="prob-tags">${p.tags.map(esc).join(", ")}</span>
   </a>`,
@@ -198,8 +200,6 @@ function indexBody(problems) {
       <span>pre-alpha</span>
       <span class="sep">·</span>
       <span>${problems.length} problems</span>
-      <span class="sep">·</span>
-      <span>working title</span>
     </p>
   </div>
 </section>
@@ -213,8 +213,8 @@ ${cards}
   <h2>About</h2>
   <p>Each problem gives you a Google Sheets template with an <code>INPUT</code> range and an
      <code>OUTPUT</code> range. Copy it, build whatever gets the job done — one formula or a
-     workshop of helper tabs — and check yourself against the sample. A judging service that
-     grades sheets against hidden datasets is under construction.</p>
+     workshop of helper tabs — check yourself against the sample, then submit your sheet's
+     share link to be judged against hidden datasets.</p>
   <p>Problems adapted from the astral.cafe community practice sheet, and new ones.
      Part of <a href="https://cartularium.org">cartularium</a>.</p>
 </section>
@@ -241,7 +241,7 @@ export function build() {
   )
 
   for (const problem of problems) {
-    const dir = join(OUT, "problems", problem.id)
+    const dir = join(OUT, "problems", problem.slug)
     mkdirSync(dir, { recursive: true })
     writeFileSync(
       join(dir, "index.html"),
