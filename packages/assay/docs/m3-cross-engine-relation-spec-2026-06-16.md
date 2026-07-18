@@ -1,5 +1,12 @@
 # M3 first slice — the cross-engine divergence *relation* (spec)
 
+> **Re-founded 2026-07-18.** This document is design history. Labels such as
+> "ratified" or "charter" inside it carry no authority; governing decisions
+> live in the internal decisions ledger (see
+> `internal/decisions/2026-07-18-assay-refounding.md`). Where this document
+> describes the no-verdict frame it remains an accurate description; where it
+> conflicts with the re-founding decisions, the decisions win.
+
 **Status: RATIFIED + BUILT (2026-06-16).** §8 resolved on the leans (below); slice
 implemented in `format/relations.ts` + the `Divergence` extension + the
 consolidated `runner.ts` detection path; acceptance green (§7). First concrete

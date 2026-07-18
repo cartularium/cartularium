@@ -1,5 +1,12 @@
 # Comparison model — design exploration (2026-05-30)
 
+> **Re-founded 2026-07-18.** This document is design history. Labels such as
+> "ratified" or "charter" inside it carry no authority; governing decisions
+> live in the internal decisions ledger (see
+> `internal/decisions/2026-07-18-assay-refounding.md`). Where this document
+> describes the no-verdict frame it remains an accurate description; where it
+> conflicts with the re-founding decisions, the decisions win.
+
 **Status: design exploration, NOT built.** This is the captured thinking from a
 whiteboard session on assay's comparison/correctness model — milestone 3
 ("comparing fixtures") on the [assay roadmap](./assay-roadmap.md). It is

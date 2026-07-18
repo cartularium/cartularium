@@ -1,5 +1,12 @@
 # Test-space charter — 2026-06-11
 
+> **Re-founded 2026-07-18.** This document is design history. Labels such as
+> "ratified" or "charter" inside it carry no authority; governing decisions
+> live in the internal decisions ledger (see
+> `internal/decisions/2026-07-18-assay-refounding.md`). Where this document
+> describes the no-verdict frame it remains an accurate description; where it
+> conflicts with the re-founding decisions, the decisions win.
+
 **Status: RATIFIED §1–§10 (section-by-section, 2026-06-12 → 2026-06-14). Closes
 the D2 gate — D2 greenlit 2026-06-14.** A current-best, probe-grounded model
 (§9, Provisionality) of assay's test space — what the catalogue is *of* — read

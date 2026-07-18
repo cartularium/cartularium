@@ -1,6 +1,6 @@
 # assay
 
-The engine-divergence catalogue. Runs the same formulas across 8 spreadsheet engines (excel, formulas, gsheets, hyperformula, ironcalc, lattice, libreoffice, pycel) and records where they diverge. Evidence anchor for cartularium's compatibility data — other projects refer to assay for "what works on what."
+The engine-agreement record. Runs the same formulas across real spreadsheet engines and records raw observations of where they agree and fork — no verdicts, no authority over meaning (interpretation lives at Acta and sheets.wiki). Re-founded 2026-07-18: governing decisions in `internal/decisions/2026-07-18-assay-refounding.md`. Evidence-grade engines: gsheets, excel (lattice first-class pending v4; hyperformula, ironcalc, libreoffice, formulas, pycel hibernated). The pre-ledger corpus is held suspect; public compatibility surfaces are withdrawn pending a principled corpus. Destination role unchanged: other projects will query assay for compatibility evidence once the re-founded record exists — never hardcode compat tables in consumers.
 
 ## Build & test
 

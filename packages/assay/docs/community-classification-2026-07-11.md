@@ -1,5 +1,10 @@
 # Community classification — authority without unmarked influence (PROPOSED 2026-07-11)
 
+> **Reclassified 2026-07-18 as Acta design material** per
+> `internal/decisions/2026-07-18-assay-acta-boundary.md`. Its lens-governance
+> questions are Acta charter questions; ratification belongs to Acta's
+> workstream, not Assay's.
+
 **Status: PROPOSED — from a maintainer brainstorm session (2026-07-11), for ratification.**
 How classification (fork causes, attestations, and eventually case tags) should work once
 contributed by a community, given cartularium's community-driven positioning. The frame below

@@ -1,5 +1,12 @@
 # Seeding & Isolation design — 2026-06-07
 
+> **Re-founded 2026-07-18.** This document is design history. Labels such as
+> "ratified" or "charter" inside it carry no authority; governing decisions
+> live in the internal decisions ledger (see
+> `internal/decisions/2026-07-18-assay-refounding.md`). Where this document
+> describes the no-verdict frame it remains an accurate description; where it
+> conflicts with the re-founding decisions, the decisions win.
+
 **Status: D2 RATIFIED 2026-06-14 — design phase complete; implementation
 (sequencing step 2, §9) is next.** Replaces the ad-hoc, per-driver seeding and
 half-built isolation with one designed *batch execution model*. This is the

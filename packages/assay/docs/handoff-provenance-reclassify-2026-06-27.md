@@ -1,5 +1,12 @@
 # Handoff — DV provenance reclassify (2026-06-27)
 
+> **Re-founded 2026-07-18.** This document is design history. Labels such as
+> "ratified" or "charter" inside it carry no authority; governing decisions
+> live in the internal decisions ledger (see
+> `internal/decisions/2026-07-18-assay-refounding.md`). Where this document
+> describes the no-verdict frame it remains an accurate description; where it
+> conflicts with the re-founding decisions, the decisions win.
+
 A philosophy-alignment session that re-prioritized the DV→store migration and shipped the
 first piece: a **human-verification provenance axis** on fork annotations.
 

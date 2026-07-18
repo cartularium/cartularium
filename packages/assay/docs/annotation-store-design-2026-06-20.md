@@ -1,5 +1,12 @@
 # The fork-annotation store (design, 3a)
 
+> **Re-founded 2026-07-18.** This document is design history. Labels such as
+> "ratified" or "charter" inside it carry no authority; governing decisions
+> live in the internal decisions ledger (see
+> `internal/decisions/2026-07-18-assay-refounding.md`). Where this document
+> describes the no-verdict frame it remains an accurate description; where it
+> conflicts with the re-founding decisions, the decisions win.
+
 **Status: RATIFIED — 2026-06-26.** The build design for CP3 increment #3: an attributed store
 for fork annotations, living in edit-shell and joined to assay's observations out of band. It
 turns the annotation-layer principle (`annotation-layer-design-2026-06-19.md`) into a concrete

@@ -1,5 +1,10 @@
 # Parking note — 3f review deferred behind charter initiative (2026-07-17)
 
+> **Review completed 2026-07-18** via the re-founding walkthrough
+> (`internal/research/assay/design-grounding-2026-07-18.md` and the
+> `internal/decisions/2026-07-18-assay-*` records), which served as the
+> charter conformance check this parking anticipated.
+
 3f is COMPLETE and awaiting maintainer review; the review is deliberately parked until the
 larger cartularium charter initiative lands, so it can double as the first conformance check
 against the new charter. This note records the verified parked state and the review re-entry

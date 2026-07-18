@@ -1,5 +1,10 @@
 # Store→build delivery path (PROPOSED 2026-07-11)
 
+> **Split 2026-07-18** per `internal/decisions/2026-07-18-assay-tail-decisions.md`:
+> D-A1 (public read lane) is ratified, still experimental-marked; D-A2 and
+> D-B1 are deferred to the re-founded catalogue design (their consumer, the
+> sheets.wiki V4 render, is being pulled).
+
 **Status: PROPOSED — reference implementation this session; maintainer ratification pending.**
 
 **Public `/api/assay` lane is EXPERIMENTAL** (maintainer decision 2026-07-18, provenance sign-off

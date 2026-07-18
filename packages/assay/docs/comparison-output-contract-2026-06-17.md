@@ -1,5 +1,12 @@
 # Comparison-output contract — ManifestV5 + the authoring contract (CP2 design)
 
+> **Re-founded 2026-07-18.** This document is design history. Labels such as
+> "ratified" or "charter" inside it carry no authority; governing decisions
+> live in the internal decisions ledger (see
+> `internal/decisions/2026-07-18-assay-refounding.md`). Where this document
+> describes the no-verdict frame it remains an accurate description; where it
+> conflicts with the re-founding decisions, the decisions win.
+
 **Status: RATIFIED (2026-06-17).** Three adversarial review rounds (round-1 break-it, round-2
 break-it, round-3 sanity check → RATIFY-WITH-TRIVIAL-FIXES, all verified coherent + code-faithful);
 maintainer decisions P1/Q2/Q4 settled. Final fold-in: a distinct `unsupported` capability value

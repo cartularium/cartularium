@@ -1,5 +1,12 @@
 # Value-model foundations — 2026-05-30
 
+> **Re-founded 2026-07-18.** This document is design history. Labels such as
+> "ratified" or "charter" inside it carry no authority; governing decisions
+> live in the internal decisions ledger (see
+> `internal/decisions/2026-07-18-assay-refounding.md`). Where this document
+> describes the no-verdict frame it remains an accurate description; where it
+> conflicts with the re-founding decisions, the decisions win.
+
 **What *is* a spreadsheet value?** This is the M1 foundational companion to the
 [driver-contract design](./driver-contract-design-2026-05-30.md): where that doc
 asks "is the *driving* model right," this asks "is the *value* model right —

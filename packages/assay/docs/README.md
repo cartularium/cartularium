@@ -1,9 +1,20 @@
 # assay design — current state
 
-The distilled, ratified design of assay, in one place. assay is the **engine-divergence
-catalogue**: it runs the same formulas across 8 spreadsheet engines and records, with
-evidence, where they diverge — the compatibility ground truth the rest of cartularium
-stands on.
+> **Re-founded 2026-07-18.** Assay's governing decisions now live in the
+> internal decisions ledger (`internal/decisions/2026-07-18-assay-refounding.md`
+> and its sibling records), under the approved Assay charter. No label in
+> this directory ("ratified", "charter") carries authority of its own. The
+> dated docs, including everything in `archive/`, are design history: often
+> accurate, never authoritative. Headline re-founding facts: Assay is raw
+> data and evidence with no verdicts and no authority over meaning;
+> evidence-grade engines are gsheets and excel (lattice first-class pending
+> v4, the other five engines hibernated); the corpus predating the evidence
+> ledger's run #1 is held suspect; the public compatibility surfaces are
+> withdrawn until a principled corpus exists.
+
+The distilled design of assay, in one place. assay runs the same formulas
+across spreadsheet engines and records, with evidence, where they agree and
+where they fork.
 
 This doc is the **front door**. It states the settled conclusions and points to the
 detailed docs for provenance; the dated docs hold the full reasoning. If you read one

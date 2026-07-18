@@ -1,5 +1,12 @@
 # Handoff — gsheets divergence re-grounding (2026-06-27)
 
+> **Re-founded 2026-07-18.** This document is design history. Labels such as
+> "ratified" or "charter" inside it carry no authority; governing decisions
+> live in the internal decisions ledger (see
+> `internal/decisions/2026-07-18-assay-refounding.md`). Where this document
+> describes the no-verdict frame it remains an accurate description; where it
+> conflicts with the re-founding decisions, the decisions win.
+
 A gsheets-SME spot-check of the divergence catalogue against **live** Google Sheets.
 Branched off the CP3 thread; produces source-of-truth corpus fixes that the CP3
 re-founding (verdict-free agreement matrix) will regenerate from.

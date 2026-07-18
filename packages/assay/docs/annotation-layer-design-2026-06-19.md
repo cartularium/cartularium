@@ -1,5 +1,12 @@
 # The annotation layer — contributed, out-of-band, scoped (design)
 
+> **Re-founded 2026-07-18.** This document is design history. Labels such as
+> "ratified" or "charter" inside it carry no authority; governing decisions
+> live in the internal decisions ledger (see
+> `internal/decisions/2026-07-18-assay-refounding.md`). Where this document
+> describes the no-verdict frame it remains an accurate description; where it
+> conflicts with the re-founding decisions, the decisions win.
+
 **Status: RATIFIED (2026-06-19).** A design session on DV-identity that resolved into a
 re-placement of the whole annotation/cause layer. It **refines CP2**
 (`comparison-output-contract-2026-06-17.md`, where annotations were "load-bearing in the

@@ -1,5 +1,10 @@
 # 3f — the reclassification policy (PROPOSED 2026-07-11)
 
+> **Ratified 2026-07-18** as interim law for the fork-annotation store until
+> Acta takes the store, per `internal/decisions/2026-07-18-assay-tail-decisions.md`
+> and `-assay-acta-boundary.md`. The PROVISIONAL marks on the 3f annotations
+> and scope conversions are released.
+
 **Status: PROPOSED — built and executed on these terms this session; maintainer ratification
 pending.** Everything below is local and reversible (pre-alpha; push maintainer-gated). This doc
 is the *policy* that annotation-store-design-2026-06-20.md §4 deferred ("the policy itself is
