@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "platform": "excel",
-  "generatedAt": "2026-06-17T19:44:09.847Z",
+  "generatedAt": "2026-07-18T20:49:21.605Z",
   "results": {
     "REGEXMATCH/match-basic-substring": {
       "outcome": {
@@ -33,13 +33,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=REGEXTEST(\"hello world\", \"world\")",
       "stimulus": "sha256:6a73be63d8e56d0b36d798d631e7f13235066fbfdbe5ffa98e474c42955db5d5",
       "fingerprint": "sha256:d5700d641c4a9b9a358b961db1d68db9a66ae895f49fcb67cf595f5e1fa51d9c",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=REGEXTEST(\"hello world\", \"world\")"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
     "REGEXMATCH/match-returns-false-when-no-match": {
       "outcome": {
@@ -71,13 +70,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=REGEXTEST(\"hello\", \"xyz\")",
       "stimulus": "sha256:1c2c5f951d75dfb3b75de5847339848fae85b18d8cf02cef5f7f1d9ecbb45b40",
       "fingerprint": "sha256:a1b538e19620f97d545382bbb58c4ab9ed43811e9f00defb0e3f2a8a27492f94",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=REGEXTEST(\"hello\", \"xyz\")"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
     "REGEXMATCH/match-anchors-start-and-end": {
       "outcome": {
@@ -109,13 +107,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=REGEXTEST(\"hello\", \"^hello$\")",
       "stimulus": "sha256:d075c5af0e6f22c0bb66fa10dd73e0aee1cfca55bb7ad16a4c0b413af33e268d",
       "fingerprint": "sha256:d5700d641c4a9b9a358b961db1d68db9a66ae895f49fcb67cf595f5e1fa51d9c",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=REGEXTEST(\"hello\", \"^hello$\")"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
     "REGEXMATCH/match-anchors-fail-on-partial-string": {
       "outcome": {
@@ -147,13 +144,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=REGEXTEST(\"hello world\", \"^hello$\")",
       "stimulus": "sha256:d4fb43ac345b3ce2bcd39c9365792f5dd11d58ed545d6a24e745e7416348b22e",
       "fingerprint": "sha256:a1b538e19620f97d545382bbb58c4ab9ed43811e9f00defb0e3f2a8a27492f94",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=REGEXTEST(\"hello world\", \"^hello$\")"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
     "REGEXMATCH/match-start-anchor-only": {
       "outcome": {
@@ -185,13 +181,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=REGEXTEST(\"hello\", \"^hel\")",
       "stimulus": "sha256:ac153a5032f79a299798f85be518007757fa7c132c6d2a0fdd273637b84b29bc",
       "fingerprint": "sha256:d5700d641c4a9b9a358b961db1d68db9a66ae895f49fcb67cf595f5e1fa51d9c",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=REGEXTEST(\"hello\", \"^hel\")"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
     "REGEXMATCH/match-end-anchor-only": {
       "outcome": {
@@ -223,13 +218,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=REGEXTEST(\"hello\", \"llo$\")",
       "stimulus": "sha256:ad04b2762fd646e91e5a09c125012810dceefcbdd7e0dea64ee6c82eec14bae8",
       "fingerprint": "sha256:d5700d641c4a9b9a358b961db1d68db9a66ae895f49fcb67cf595f5e1fa51d9c",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=REGEXTEST(\"hello\", \"llo$\")"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
     "REGEXMATCH/match-digit-class": {
       "outcome": {
@@ -261,13 +255,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=REGEXTEST(\"abc 123\", \"\\d+\")",
       "stimulus": "sha256:bfd1384dedf2efa66fa57fed33da2920b752a8a0c9d867b8865940cfd5c0e321",
       "fingerprint": "sha256:d5700d641c4a9b9a358b961db1d68db9a66ae895f49fcb67cf595f5e1fa51d9c",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=REGEXTEST(\"abc 123\", \"\\d+\")"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
     "REGEXMATCH/match-digit-class-no-digits": {
       "outcome": {
@@ -299,13 +292,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=REGEXTEST(\"abc\", \"\\d+\")",
       "stimulus": "sha256:e11da4eb5a8f03465ed6d24d662f8fa1fdceb9c035c1961bcd12e6c472a836a3",
       "fingerprint": "sha256:a1b538e19620f97d545382bbb58c4ab9ed43811e9f00defb0e3f2a8a27492f94",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=REGEXTEST(\"abc\", \"\\d+\")"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
     "REGEXMATCH/match-word-class": {
       "outcome": {
@@ -337,13 +329,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=REGEXTEST(\"hello_world\", \"\\w+\")",
       "stimulus": "sha256:cdc8606cba965674eaa28d9a116ad2d59c8439f5ee005a87367f86bbcfd4a48d",
       "fingerprint": "sha256:d5700d641c4a9b9a358b961db1d68db9a66ae895f49fcb67cf595f5e1fa51d9c",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=REGEXTEST(\"hello_world\", \"\\w+\")"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
     "REGEXMATCH/match-lowercase-range": {
       "outcome": {
@@ -375,13 +366,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=REGEXTEST(\"hello\", \"[a-z]+\")",
       "stimulus": "sha256:99aca91fe0f78457b8969140944d35db3b0a617db2ad6e98952fdfb5c7a04160",
       "fingerprint": "sha256:d5700d641c4a9b9a358b961db1d68db9a66ae895f49fcb67cf595f5e1fa51d9c",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=REGEXTEST(\"hello\", \"[a-z]+\")"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
     "REGEXMATCH/match-lowercase-range-rejects-uppercase": {
       "outcome": {
@@ -413,13 +403,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=REGEXTEST(\"HELLO\", \"[a-z]+\")",
       "stimulus": "sha256:504745b91448044a7e9f7279545054d2a38d7f4a5ec8de7d5e66ca41f060bb1e",
       "fingerprint": "sha256:a1b538e19620f97d545382bbb58c4ab9ed43811e9f00defb0e3f2a8a27492f94",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=REGEXTEST(\"HELLO\", \"[a-z]+\")"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
     "REGEXMATCH/match-exact-count-quantifier": {
       "outcome": {
@@ -451,13 +440,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=REGEXTEST(\"abc123\", \"[a-z]{3}\\d{3}\")",
       "stimulus": "sha256:d8217ce27c243a66366da85918a4fc42c3743f649611bc51b5de5c05943029b0",
       "fingerprint": "sha256:d5700d641c4a9b9a358b961db1d68db9a66ae895f49fcb67cf595f5e1fa51d9c",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=REGEXTEST(\"abc123\", \"[a-z]{3}\\d{3}\")"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
     "REGEXMATCH/match-range-quantifier-within-bounds": {
       "outcome": {
@@ -489,13 +477,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=REGEXTEST(\"aab\", \"a{2,3}b\")",
       "stimulus": "sha256:2dbf2fd2e53d434a0f7bc5a41544775d0d72415c6b7eb17356baafe1e662d03e",
       "fingerprint": "sha256:d5700d641c4a9b9a358b961db1d68db9a66ae895f49fcb67cf595f5e1fa51d9c",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=REGEXTEST(\"aab\", \"a{2,3}b\")"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
     "REGEXMATCH/match-range-quantifier-below-minimum": {
       "outcome": {
@@ -527,13 +514,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=REGEXTEST(\"ab\", \"a{2,3}b\")",
       "stimulus": "sha256:bdb14a3139ef3c49bf05a47179ad470c9ed8d624b84607f79664028e50e8fb70",
       "fingerprint": "sha256:a1b538e19620f97d545382bbb58c4ab9ed43811e9f00defb0e3f2a8a27492f94",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=REGEXTEST(\"ab\", \"a{2,3}b\")"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
     "REGEXMATCH/match-alternation-first-branch": {
       "outcome": {
@@ -565,13 +551,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=REGEXTEST(\"cat\", \"cat|dog\")",
       "stimulus": "sha256:5cd78f661064171583bca61f0a5ae8a8f6577c12897ae35e8a0e56dee5683a07",
       "fingerprint": "sha256:d5700d641c4a9b9a358b961db1d68db9a66ae895f49fcb67cf595f5e1fa51d9c",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=REGEXTEST(\"cat\", \"cat|dog\")"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
     "REGEXMATCH/match-alternation-second-branch": {
       "outcome": {
@@ -603,13 +588,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=REGEXTEST(\"dog\", \"cat|dog\")",
       "stimulus": "sha256:6f1e35c9bec006d7f63cd428adae056233ed4199300a3dc6c14702176ccf3a10",
       "fingerprint": "sha256:d5700d641c4a9b9a358b961db1d68db9a66ae895f49fcb67cf595f5e1fa51d9c",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=REGEXTEST(\"dog\", \"cat|dog\")"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
     "REGEXMATCH/match-alternation-neither-branch": {
       "outcome": {
@@ -641,13 +625,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=REGEXTEST(\"fish\", \"cat|dog\")",
       "stimulus": "sha256:89401c0e6bf18c899fe7f67cd177839722740969cdfdcec0da758d694dd3636a",
       "fingerprint": "sha256:a1b538e19620f97d545382bbb58c4ab9ed43811e9f00defb0e3f2a8a27492f94",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=REGEXTEST(\"fish\", \"cat|dog\")"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
     "REGEXMATCH/match-word-boundary-hit": {
       "outcome": {
@@ -679,13 +662,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=REGEXTEST(\"hello world\", \"\\bworld\\b\")",
       "stimulus": "sha256:2307c78504f2407aed642df2a99ba71ac5042041ebc3b4eceea1c0d4be1c54c2",
       "fingerprint": "sha256:d5700d641c4a9b9a358b961db1d68db9a66ae895f49fcb67cf595f5e1fa51d9c",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=REGEXTEST(\"hello world\", \"\\bworld\\b\")"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
     "REGEXMATCH/match-word-boundary-miss": {
       "outcome": {
@@ -717,13 +699,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=REGEXTEST(\"helloworld\", \"\\bworld\\b\")",
       "stimulus": "sha256:d5bf1e64314780063ce7ebfbf167c8a13c0c61d6eeff3f0ebbdd98ac27f7f9ae",
       "fingerprint": "sha256:a1b538e19620f97d545382bbb58c4ab9ed43811e9f00defb0e3f2a8a27492f94",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=REGEXTEST(\"helloworld\", \"\\bworld\\b\")"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
     "REGEXMATCH/match-case-sensitive-by-default": {
       "outcome": {
@@ -755,13 +736,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=REGEXTEST(\"HELLO\", \"hello\")",
       "stimulus": "sha256:8f3e5c1cbf7cd6dd90e2e0eb382f757d55e34acf28388a575f6950f7d2acc7cc",
       "fingerprint": "sha256:a1b538e19620f97d545382bbb58c4ab9ed43811e9f00defb0e3f2a8a27492f94",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=REGEXTEST(\"HELLO\", \"hello\")"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
     "REGEXMATCH/match-case-insensitive-via-inline-flag": {
       "outcome": {
@@ -793,13 +773,123 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=REGEXTEST(\"HELLO\", \"(?i)hello\")",
       "stimulus": "sha256:813590c9523c7fafa95f49b039027bc906ca2b93013658572c8955238185d5da",
       "fingerprint": "sha256:d5700d641c4a9b9a358b961db1d68db9a66ae895f49fcb67cf595f5e1fa51d9c",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=REGEXTEST(\"HELLO\", \"(?i)hello\")"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
+    },
+    "REGEXMATCH/match-unicode-property-class-on-non-ascii-letters": {
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "boolean",
+                "value": true
+              },
+              "engine": {
+                "platform": "excel",
+                "data_type": "b",
+                "raw_xml": {
+                  "t": "b",
+                  "formula_text": "_xlfn.REGEXTEST(\"café\", \"\\p{L}+\")",
+                  "formula_namespaces": [
+                    "_xlfn"
+                  ]
+                }
+              },
+              "formula": "_xlfn.REGEXTEST(\"café\", \"\\p{L}+\")"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
+      "formula-as-evaluated": "=REGEXTEST(\"café\", \"\\p{L}+\")",
+      "stimulus": "sha256:5cf5b71a3c3a326bc3ae541026b71c296a55b808556521cf43584be0c910f9e3",
+      "fingerprint": "sha256:d5700d641c4a9b9a358b961db1d68db9a66ae895f49fcb67cf595f5e1fa51d9c",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
+    },
+    "REGEXMATCH/match-unicode-property-class-rejects-digits": {
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "boolean",
+                "value": false
+              },
+              "engine": {
+                "platform": "excel",
+                "data_type": "b",
+                "raw_xml": {
+                  "t": "b",
+                  "formula_text": "_xlfn.REGEXTEST(\"123\", \"\\p{L}\")",
+                  "formula_namespaces": [
+                    "_xlfn"
+                  ]
+                }
+              },
+              "formula": "_xlfn.REGEXTEST(\"123\", \"\\p{L}\")"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
+      "formula-as-evaluated": "=REGEXTEST(\"123\", \"\\p{L}\")",
+      "stimulus": "sha256:84effe5cca1293f39e13482e8132a82bd7f1c37b52861063e69e6d1995f7df7e",
+      "fingerprint": "sha256:a1b538e19620f97d545382bbb58c4ab9ed43811e9f00defb0e3f2a8a27492f94",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
+    },
+    "REGEXMATCH/match-unicode-property-class-on-cjk": {
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "boolean",
+                "value": true
+              },
+              "engine": {
+                "platform": "excel",
+                "data_type": "b",
+                "raw_xml": {
+                  "t": "b",
+                  "formula_text": "_xlfn.REGEXTEST(\"你好世界\", \"\\p{L}+\")",
+                  "formula_namespaces": [
+                    "_xlfn"
+                  ]
+                }
+              },
+              "formula": "_xlfn.REGEXTEST(\"你好世界\", \"\\p{L}+\")"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
+      "formula-as-evaluated": "=REGEXTEST(\"你好世界\", \"\\p{L}+\")",
+      "stimulus": "sha256:4a3813965df93ced47c987d0f797cfc9cb032b2b77b6bdef03bab62855283bb1",
+      "fingerprint": "sha256:d5700d641c4a9b9a358b961db1d68db9a66ae895f49fcb67cf595f5e1fa51d9c",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
     "REGEXMATCH/match-non-ascii-literal": {
       "outcome": {
@@ -831,13 +921,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=REGEXTEST(\"Ångström\", \"Å\")",
       "stimulus": "sha256:b164d5f8adb3b895657f52cf2f54702747aa97229422992530ff5bcca2a9b4a0",
       "fingerprint": "sha256:d5700d641c4a9b9a358b961db1d68db9a66ae895f49fcb67cf595f5e1fa51d9c",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=REGEXTEST(\"Ångström\", \"Å\")"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
     "REGEXEXTRACT/extract-non-ascii-literal": {
       "outcome": {
@@ -857,7 +946,7 @@
                   "cm": 1,
                   "formula_text": "_xlfn.REGEXEXTRACT(\"résumé template\", \"résumé\")",
                   "formula_array_marker": "array",
-                  "formula_array_ref": "A21",
+                  "formula_array_ref": "CC1",
                   "formula_namespaces": [
                     "_xlfn"
                   ]
@@ -873,13 +962,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=REGEXEXTRACT(\"résumé template\", \"résumé\")",
       "stimulus": "sha256:9f85a9177a8d75436b43e5de1a0de8ac9d3c26c6f52d56601c8b1d46af88f82f",
       "fingerprint": "sha256:b9f5605c09d3e7100369692a0b4bf3df786417e399bf6b8b6cdc3585ab200860",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=REGEXEXTRACT(\"résumé template\", \"résumé\")"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
     "REGEXMATCH/match-non-ascii-case-insensitive-via-inline-flag": {
       "outcome": {
@@ -911,13 +999,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=REGEXTEST(\"CAFÉ\", \"(?i)café\")",
       "stimulus": "sha256:a67ab8e61ec746f394c99854ecbb136948ab4650d1c4373482c8066457984b05",
       "fingerprint": "sha256:d5700d641c4a9b9a358b961db1d68db9a66ae895f49fcb67cf595f5e1fa51d9c",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=REGEXTEST(\"CAFÉ\", \"(?i)café\")"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
     "REGEXEXTRACT/extract-full-match-when-no-capture-groups": {
       "outcome": {
@@ -937,7 +1024,7 @@
                   "cm": 1,
                   "formula_text": "_xlfn.REGEXEXTRACT(\"abc 123 def\", \"\\d+\")",
                   "formula_array_marker": "array",
-                  "formula_array_ref": "AO21",
+                  "formula_array_ref": "U21",
                   "formula_namespaces": [
                     "_xlfn"
                   ]
@@ -953,13 +1040,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=REGEXEXTRACT(\"abc 123 def\", \"\\d+\")",
       "stimulus": "sha256:68a14294359903e9b0e7a5a541489ccdc438ad51def6b9553fbf31c11cab6ed4",
       "fingerprint": "sha256:9bbba5c5dfe27274b7c4f8e084bcff6c5cfef527264e664d2935fbc733672b98",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=REGEXEXTRACT(\"abc 123 def\", \"\\d+\")"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
     "REGEXEXTRACT/extract-full-match-no-groups-with-dollar-sign": {
       "outcome": {
@@ -979,7 +1065,7 @@
                   "cm": 1,
                   "formula_text": "_xlfn.REGEXEXTRACT(\"Price: $100\", \"\\$\\d+\")",
                   "formula_array_marker": "array",
-                  "formula_array_ref": "BI21",
+                  "formula_array_ref": "AO21",
                   "formula_namespaces": [
                     "_xlfn"
                   ]
@@ -995,13 +1081,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=REGEXEXTRACT(\"Price: $100\", \"\\$\\d+\")",
       "stimulus": "sha256:151bc0abbe09f8e99b1798d62d546771a5e0a5f231b3ae7ae9a5137de2d2631a",
       "fingerprint": "sha256:a43b13695f0ed362bb2b49b55ca6b166197dd4e35ba94809ddc3ed6cf0e46792",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=REGEXEXTRACT(\"Price: $100\", \"\\$\\d+\")"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
     "REGEXEXTRACT/extract-first-of-multiple-full-matches": {
       "outcome": {
@@ -1021,7 +1106,7 @@
                   "cm": 1,
                   "formula_text": "_xlfn.REGEXEXTRACT(\"one 1 two 2 three 3\", \"\\d+\")",
                   "formula_array_marker": "array",
-                  "formula_array_ref": "CC21",
+                  "formula_array_ref": "BI21",
                   "formula_namespaces": [
                     "_xlfn"
                   ]
@@ -1037,13 +1122,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=REGEXEXTRACT(\"one 1 two 2 three 3\", \"\\d+\")",
       "stimulus": "sha256:689b132646fe01cc4269c175f8e7e8125a4410c0aec1a1d713aec44d8191185f",
       "fingerprint": "sha256:8a544c314eed9ed92fbae179cbffc554ecc92ac4a37ad74cb8870a0cb45e0b40",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=REGEXEXTRACT(\"one 1 two 2 three 3\", \"\\d+\")"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
     "REGEXEXTRACT/extract-single-capture-group": {
       "outcome": {
@@ -1063,7 +1147,7 @@
                   "cm": 1,
                   "formula_text": "_xlfn.REGEXEXTRACT(\"Price: $100\", \"\\$(\\d+)\")",
                   "formula_array_marker": "array",
-                  "formula_array_ref": "A41",
+                  "formula_array_ref": "CC21",
                   "formula_namespaces": [
                     "_xlfn"
                   ]
@@ -1079,13 +1163,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=REGEXEXTRACT(\"Price: $100\", \"\\$(\\d+)\")",
       "stimulus": "sha256:f3477053a348f583b46acb6f053b051de57a03ffb5753b20a3f4b0cc37ae6c92",
       "fingerprint": "sha256:a43b13695f0ed362bb2b49b55ca6b166197dd4e35ba94809ddc3ed6cf0e46792",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=REGEXEXTRACT(\"Price: $100\", \"\\$(\\d+)\")"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
     "REGEXEXTRACT/extract-capture-groups-when-multiple-groups-present": {
       "outcome": {
@@ -1105,7 +1188,7 @@
                   "cm": 1,
                   "formula_text": "_xlfn.REGEXEXTRACT(\"2025-03-01\", \"(\\d{4})-(\\d{2})-(\\d{2})\")",
                   "formula_array_marker": "array",
-                  "formula_array_ref": "U41",
+                  "formula_array_ref": "A41",
                   "formula_namespaces": [
                     "_xlfn"
                   ]
@@ -1121,13 +1204,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=REGEXEXTRACT(\"2025-03-01\", \"(\\d{4})-(\\d{2})-(\\d{2})\")",
       "stimulus": "sha256:938dd7a2ee3a527d693798a3c99c157a51962702f657327e7902a1b2a702d61e",
       "fingerprint": "sha256:7e1543cf479c62f040e543137b4ac223b4d697794a8c17c1bf0eb381f014e67c",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=REGEXEXTRACT(\"2025-03-01\", \"(\\d{4})-(\\d{2})-(\\d{2})\")"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
     "REGEXEXTRACT/extract-two-word-groups": {
       "outcome": {
@@ -1147,7 +1229,7 @@
                   "cm": 1,
                   "formula_text": "_xlfn.REGEXEXTRACT(\"foo bar baz\", \"(\\w+)\\s+(\\w+)\")",
                   "formula_array_marker": "array",
-                  "formula_array_ref": "AO41",
+                  "formula_array_ref": "U41",
                   "formula_namespaces": [
                     "_xlfn"
                   ]
@@ -1163,13 +1245,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=REGEXEXTRACT(\"foo bar baz\", \"(\\w+)\\s+(\\w+)\")",
       "stimulus": "sha256:cdd649bb2fc5a3323036b15f97189e92c08bfadedeb847ded0e45980b1d30b84",
       "fingerprint": "sha256:a0c8629978767b1c9946b135bfe66b1aaf33ea7e96d264ef05e1a4b43ee21ce9",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=REGEXEXTRACT(\"foo bar baz\", \"(\\w+)\\s+(\\w+)\")"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
     "REGEXEXTRACT/extract-no-match-returns-na": {
       "outcome": {
@@ -1191,7 +1272,7 @@
                   "vm": 1,
                   "formula_text": "_xlfn.REGEXEXTRACT(\"hello\", \"\\d+\")",
                   "formula_array_marker": "array",
-                  "formula_array_ref": "BI41",
+                  "formula_array_ref": "AO41",
                   "formula_namespaces": [
                     "_xlfn"
                   ]
@@ -1211,13 +1292,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=REGEXEXTRACT(\"hello\", \"\\d+\")",
       "stimulus": "sha256:7aaa23adbae6c177d12e9c6526396eb84e64f5aa624f82bd68c412584726d759",
       "fingerprint": "sha256:c98ddc95a4f5716ef17b94c5c73c9ede35dff1666986224ac03e53fce8c29367",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=REGEXEXTRACT(\"hello\", \"\\d+\")"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
     "REGEXEXTRACT/extract-no-match-on-empty-text": {
       "outcome": {
@@ -1239,7 +1319,7 @@
                   "vm": 1,
                   "formula_text": "_xlfn.REGEXEXTRACT(\"\", \"\\d+\")",
                   "formula_array_marker": "array",
-                  "formula_array_ref": "CC41",
+                  "formula_array_ref": "BI41",
                   "formula_namespaces": [
                     "_xlfn"
                   ]
@@ -1259,13 +1339,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=REGEXEXTRACT(\"\", \"\\d+\")",
       "stimulus": "sha256:05442241e92c689f3a6c7d7f36bc00fce0873531eb22192c0fa24cb132fd3f1e",
       "fingerprint": "sha256:c98ddc95a4f5716ef17b94c5c73c9ede35dff1666986224ac03e53fce8c29367",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=REGEXEXTRACT(\"\", \"\\d+\")"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
     "REGEXEXTRACT/extract-case-insensitive-via-inline-flag": {
       "outcome": {
@@ -1285,7 +1364,7 @@
                   "cm": 1,
                   "formula_text": "_xlfn.REGEXEXTRACT(\"Hello World\", \"(?i)(\\w+)\")",
                   "formula_array_marker": "array",
-                  "formula_array_ref": "A61",
+                  "formula_array_ref": "CC41",
                   "formula_namespaces": [
                     "_xlfn"
                   ]
@@ -1301,13 +1380,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=REGEXEXTRACT(\"Hello World\", \"(?i)(\\w+)\")",
       "stimulus": "sha256:80e5c160cf3fa8e02c9b1063bafccc7efe857682f8eb210b03e5a1f5a7407e63",
       "fingerprint": "sha256:ee05fb1f878f001d82eb2cd6404c6ce57ec862ae84c4e4efd75f8adcdbd7e689",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=REGEXEXTRACT(\"Hello World\", \"(?i)(\\w+)\")"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
     "REGEXEXTRACT/extract-return-mode-1-all-matches-row-vector": {
       "outcome": {
@@ -1327,7 +1405,7 @@
                   "cm": 1,
                   "formula_text": "_xlfn.REGEXEXTRACT(\"a1 b2 c3\", \"\\d+\", 1)",
                   "formula_array_marker": "array",
-                  "formula_array_ref": "U61:W61",
+                  "formula_array_ref": "A61:C61",
                   "formula_namespaces": [
                     "_xlfn"
                   ]
@@ -1369,13 +1447,12 @@
           "cols": 3
         }
       },
+      "formula-as-evaluated": "=REGEXEXTRACT(\"a1 b2 c3\", \"\\d+\", 1)",
       "stimulus": "sha256:9e716aa9e2e3123c7b2cfc4bd7dcc72cda41d1423642ea3b3474cec821bb7cf9",
       "fingerprint": "sha256:a26b85fb7946728f40ba8ee34645ec2b5e249250ed498573d071494c2afe9286",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=REGEXEXTRACT(\"a1 b2 c3\", \"\\d+\", 1)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
     "REGEXEXTRACT/extract-return-mode-2-capture-groups-from-first-match": {
       "outcome": {
@@ -1395,7 +1472,7 @@
                   "cm": 1,
                   "formula_text": "_xlfn.REGEXEXTRACT(\"2025-03-01\", \"(\\d{4})-(\\d{2})-(\\d{2})\", 2)",
                   "formula_array_marker": "array",
-                  "formula_array_ref": "AO61:AQ61",
+                  "formula_array_ref": "U61:W61",
                   "formula_namespaces": [
                     "_xlfn"
                   ]
@@ -1437,13 +1514,12 @@
           "cols": 3
         }
       },
+      "formula-as-evaluated": "=REGEXEXTRACT(\"2025-03-01\", \"(\\d{4})-(\\d{2})-(\\d{2})\", 2)",
       "stimulus": "sha256:103ee11f74c5e14ad72d75e167dbbdf000185a94d4b8843d6d0480df14c6ec9b",
       "fingerprint": "sha256:11fd10292c02973f5b2b8058798c95d0a432a1f588675234ed081c1c8113efbb",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=REGEXEXTRACT(\"2025-03-01\", \"(\\d{4})-(\\d{2})-(\\d{2})\", 2)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
     "REGEXREPLACE/replace-all-digits": {
       "outcome": {
@@ -1475,13 +1551,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=REGEXREPLACE(\"a1b2c3\", \"\\d\", \"x\")",
       "stimulus": "sha256:61dc9f337dd2987d21200ec18c4f971fcec7315c43cc436c380602647b97a3e2",
       "fingerprint": "sha256:ceec42d8e11045a8fa671835f84ffeebf0e87a82ad98928a7450f9a93f3ebe6b",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=REGEXREPLACE(\"a1b2c3\", \"\\d\", \"x\")"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
     "REGEXREPLACE/replace-greedy-pattern-all-occurrences": {
       "outcome": {
@@ -1513,13 +1588,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=REGEXREPLACE(\"aabbaa\", \"a+\", \"x\")",
       "stimulus": "sha256:e6595a53dadd231b9a2e130574ed8efb0db1144b9160fdfd6a3a8d12bef5a7a2",
       "fingerprint": "sha256:dfcb79ddf2a2a3eaed2f7abfb6c378f170cbe00b13a6a111ec5bf048cc1b9536",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=REGEXREPLACE(\"aabbaa\", \"a+\", \"x\")"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
     "REGEXREPLACE/replace-whitespace-all": {
       "outcome": {
@@ -1551,13 +1625,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=REGEXREPLACE(\"hello world\", \"\\s+\", \"-\")",
       "stimulus": "sha256:982d0478887747098dcac2be91ee0c19078c942845db342abfe094e477016221",
       "fingerprint": "sha256:552e918de0ea7705395da10ad8b3e2ddb5ecc02c74082fca0911e4fbfe0b380e",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=REGEXREPLACE(\"hello world\", \"\\s+\", \"-\")"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
     "REGEXREPLACE/replace-no-match-unchanged": {
       "outcome": {
@@ -1589,13 +1662,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=REGEXREPLACE(\"hello\", \"\\d+\", \"x\")",
       "stimulus": "sha256:820eaf584fbaf79363d528d3f3dc2a9330df6996f7ce98b211ac7a1a3ef36b77",
       "fingerprint": "sha256:9baae644abac0964babea30fa58fa0260aceaaf4127b6feeff00e6db5c3bd016",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=REGEXREPLACE(\"hello\", \"\\d+\", \"x\")"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
     "REGEXREPLACE/replace-empty-text-unchanged": {
       "outcome": {
@@ -1627,13 +1699,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=REGEXREPLACE(\"\", \"\\d+\", \"x\")",
       "stimulus": "sha256:b2633de45bc352b5a793f280557a6a7ea7f21c7748755fcbc52e028249ccf110",
       "fingerprint": "sha256:fad3fd153f46982f305d0fb83a795512940bfcd08e36f1a71f20f0fef41e6b1b",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=REGEXREPLACE(\"\", \"\\d+\", \"x\")"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
     "REGEXREPLACE/replace-with-single-backreference": {
       "outcome": {
@@ -1665,13 +1736,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=REGEXREPLACE(\"hello world\", \"(\\w+)\", \"[$1]\")",
       "stimulus": "sha256:228eaa28bd63c1705b14a4b4db23d5209c54a7857460c8873dbd79abef06a1fc",
       "fingerprint": "sha256:ae1e15dc2b7e6128f310c6cf09a153f6d713e73a41fdef828d657e5ed5e0d59a",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=REGEXREPLACE(\"hello world\", \"(\\w+)\", \"[$1]\")"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
     "REGEXREPLACE/replace-swap-first-and-last-name": {
       "outcome": {
@@ -1703,13 +1773,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=REGEXREPLACE(\"John Smith\", \"(\\w+) (\\w+)\", \"$2, $1\")",
       "stimulus": "sha256:380b9023c4405ea2dfd42861f43fd8edf974be5937c10aa6689ada81a38f1c31",
       "fingerprint": "sha256:ea5b2e36998bcc7e1ad19295833139cefbdd9ce37db5c8c79e55f0bab874c4a4",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=REGEXREPLACE(\"John Smith\", \"(\\w+) (\\w+)\", \"$2, $1\")"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
     "REGEXREPLACE/replace-date-reformat-three-groups": {
       "outcome": {
@@ -1741,13 +1810,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=REGEXREPLACE(\"2025-03-01\", \"(\\d+)-(\\d+)-(\\d+)\", \"$3/$2/$1\")",
       "stimulus": "sha256:da5f28a6ba1c4e33de0b47361e72b27bcfd1e162d969a9b40e70a518f0f85b19",
       "fingerprint": "sha256:52b1c25237e8031003025074650e907485d033209f49cbdedc6faa3e453439b6",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=REGEXREPLACE(\"2025-03-01\", \"(\\d+)-(\\d+)-(\\d+)\", \"$3/$2/$1\")"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
     "REGEXREPLACE/replace-first-occurrence-only": {
       "outcome": {
@@ -1779,13 +1847,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=REGEXREPLACE(\"aabbaa\", \"a+\", \"x\", 1)",
       "stimulus": "sha256:c84865cae311e354f2197cbff4c7cf420bcb007d584869a73f00be3ed9bbbf26",
       "fingerprint": "sha256:086e045268d5510ac094e0df21a8ea3c7453ba8d55f39760e7791587bb74e41a",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=REGEXREPLACE(\"aabbaa\", \"a+\", \"x\", 1)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
     "REGEXREPLACE/replace-last-occurrence-only": {
       "outcome": {
@@ -1817,13 +1884,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=REGEXREPLACE(\"aabbaa\", \"a+\", \"x\", -1)",
       "stimulus": "sha256:948f46e30125f3cbeff3508c9b98884d89ac8b580c01ee2ce64ab6606661fc94",
       "fingerprint": "sha256:d6860d2ce3c2cc20047b9e5aa3425c36d75ba180bcd658ecc334d6f5612a5788",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=REGEXREPLACE(\"aabbaa\", \"a+\", \"x\", -1)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
     "REGEXREPLACE/replace-nth-occurrence": {
       "outcome": {
@@ -1855,13 +1921,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=REGEXREPLACE(\"a1 a2 a3\", \"a\\d\", \"x\", 2)",
       "stimulus": "sha256:da7c96555e95f8a7c11706c22f0d2fab425e19945180704bfebf6666df02d4c6",
       "fingerprint": "sha256:410c67ad45681cdd7fe18cf436eefdfaafb5609946ae350910e559f9c1a6a955",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=REGEXREPLACE(\"a1 a2 a3\", \"a\\d\", \"x\", 2)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
     "REGEXREPLACE/replace-case-insensitive-via-excel-param": {
       "outcome": {
@@ -1893,13 +1958,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=REGEXREPLACE(\"Hello WORLD hello\", \"hello\", \"hi\", 0, 1)",
       "stimulus": "sha256:8a9f330e120132c59d10854438583f344f0449d8528158449a2d3ce1ffc75a1d",
       "fingerprint": "sha256:3bc6ace052cfe93b9b507006f65349da33de86d502815bd86418ab493762db37",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=REGEXREPLACE(\"Hello WORLD hello\", \"hello\", \"hi\", 0, 1)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
     "REGEXEXTRACT/extract-case-insensitive-via-4th-arg": {
       "outcome": {
@@ -1919,7 +1983,7 @@
                   "cm": 1,
                   "formula_text": "_xlfn.REGEXEXTRACT(\"ITEM: ABC123\", \"item: ([A-Z]+\\d+)\", 0, 1)",
                   "formula_array_marker": "array",
-                  "formula_array_ref": "A21",
+                  "formula_array_ref": "CC1",
                   "formula_namespaces": [
                     "_xlfn"
                   ]
@@ -1935,13 +1999,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=REGEXEXTRACT(\"ITEM: ABC123\", \"item: ([A-Z]+\\d+)\", 0, 1)",
       "stimulus": "sha256:d378e314f32d37da8530fd26e12b4f560cf53bfb34f5b46bc87e2b76463921b5",
       "fingerprint": "sha256:07975578c7dacccc1bf7b260173efb4397c54ca6337f6273bd90c3ec96d24f5e",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=REGEXEXTRACT(\"ITEM: ABC123\", \"item: ([A-Z]+\\d+)\", 0, 1)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
     "REGEXREPLACE/replace-case-insensitive-via-inline-flag": {
       "outcome": {
@@ -1973,13 +2036,123 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=REGEXREPLACE(\"Hello WORLD hello\", \"(?i)hello\", \"hi\")",
       "stimulus": "sha256:46a12adb68ef016d7fa6e895cfd49f8379e371153d760b777aeda7a2317da4f1",
       "fingerprint": "sha256:3bc6ace052cfe93b9b507006f65349da33de86d502815bd86418ab493762db37",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=REGEXREPLACE(\"Hello WORLD hello\", \"(?i)hello\", \"hi\")"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
+    },
+    "REGEXMATCH/lookbehind-in-pattern": {
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "boolean",
+                "value": true
+              },
+              "engine": {
+                "platform": "excel",
+                "data_type": "b",
+                "raw_xml": {
+                  "t": "b",
+                  "formula_text": "_xlfn.REGEXTEST(\"hello\", \"(?<=hel)lo\")",
+                  "formula_namespaces": [
+                    "_xlfn"
+                  ]
+                }
+              },
+              "formula": "_xlfn.REGEXTEST(\"hello\", \"(?<=hel)lo\")"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
+      "formula-as-evaluated": "=REGEXTEST(\"hello\", \"(?<=hel)lo\")",
+      "stimulus": "sha256:11e08df5238bf9e4f6bec446dfd48806cb5109abfe91b9c6c6b59cd457350053",
+      "fingerprint": "sha256:d5700d641c4a9b9a358b961db1d68db9a66ae895f49fcb67cf595f5e1fa51d9c",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
+    },
+    "REGEXMATCH/lookahead-in-pattern": {
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "boolean",
+                "value": true
+              },
+              "engine": {
+                "platform": "excel",
+                "data_type": "b",
+                "raw_xml": {
+                  "t": "b",
+                  "formula_text": "_xlfn.REGEXTEST(\"foobar\", \"foo(?=bar)\")",
+                  "formula_namespaces": [
+                    "_xlfn"
+                  ]
+                }
+              },
+              "formula": "_xlfn.REGEXTEST(\"foobar\", \"foo(?=bar)\")"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
+      "formula-as-evaluated": "=REGEXTEST(\"foobar\", \"foo(?=bar)\")",
+      "stimulus": "sha256:f18d88049269e9921057f82e0fa1c516723ca602827abfb2515062e437eaae11",
+      "fingerprint": "sha256:d5700d641c4a9b9a358b961db1d68db9a66ae895f49fcb67cf595f5e1fa51d9c",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
+    },
+    "REGEXMATCH/negative-lookahead-in-pattern": {
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "boolean",
+                "value": true
+              },
+              "engine": {
+                "platform": "excel",
+                "data_type": "b",
+                "raw_xml": {
+                  "t": "b",
+                  "formula_text": "_xlfn.REGEXTEST(\"foobar\", \"foo(?!baz)\")",
+                  "formula_namespaces": [
+                    "_xlfn"
+                  ]
+                }
+              },
+              "formula": "_xlfn.REGEXTEST(\"foobar\", \"foo(?!baz)\")"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
+      "formula-as-evaluated": "=REGEXTEST(\"foobar\", \"foo(?!baz)\")",
+      "stimulus": "sha256:a48a03d3db8fa38c0f5593504fd21ca89344858f35f7ed8b73fa19f34747ad95",
+      "fingerprint": "sha256:d5700d641c4a9b9a358b961db1d68db9a66ae895f49fcb67cf595f5e1fa51d9c",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     }
   }
 }

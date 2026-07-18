@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "platform": "excel",
-  "generatedAt": "2026-06-17T19:44:09.845Z",
+  "generatedAt": "2026-07-18T20:49:21.600Z",
   "results": {
     "lit:boolean/true-basic": {
       "outcome": {
@@ -30,13 +30,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=TRUE()",
       "stimulus": "sha256:9785338e101599728377429ce4967220fedb0170f042533cb13dbeac8ee7db8a",
       "fingerprint": "sha256:d5700d641c4a9b9a358b961db1d68db9a66ae895f49fcb67cf595f5e1fa51d9c",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=TRUE()"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
     "lit:boolean/false-basic": {
       "outcome": {
@@ -65,13 +64,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=FALSE()",
       "stimulus": "sha256:498d32ebb45c0687caec9152ec550960f2a7fdae4531ef3444574e9dc58ce5f0",
       "fingerprint": "sha256:a1b538e19620f97d545382bbb58c4ab9ed43811e9f00defb0e3f2a8a27492f94",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=FALSE()"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
     "SORTN/sortn-top-3": {
       "outcome": {
@@ -104,13 +102,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=SORTN({5;2;8;1;4}, 3)",
       "stimulus": "sha256:d185bcdcd1e38882969080349235aed4535dbd9885eecd01c69261eeec203725",
       "fingerprint": "sha256:18c466c30752b33549fe679095342ebb61a84ea50a4a9611bedacf4cfff74ffd",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=SORTN({5;2;8;1;4}, 3)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
     "SORTN/sortn-top-3-ascending": {
       "outcome": {
@@ -143,13 +140,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=SORTN({5;2;8;1;4}, 3, 0, 1, TRUE)",
       "stimulus": "sha256:1f85cb7c09c79c47b0bd39f1e5e189ba5c3db8698f30de65ef7d762a4b8d7ad9",
       "fingerprint": "sha256:18c466c30752b33549fe679095342ebb61a84ea50a4a9611bedacf4cfff74ffd",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=SORTN({5;2;8;1;4}, 3, 0, 1, TRUE)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
     "ENCODEURL/encodeurl-space": {
       "outcome": {
@@ -182,13 +178,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=ENCODEURL(\"a b\")",
       "stimulus": "sha256:3ffeefe213efc41fb5e47e044cdcb82017543eb78b0590b982e29c5a46aeafa1",
       "fingerprint": "sha256:18c466c30752b33549fe679095342ebb61a84ea50a4a9611bedacf4cfff74ffd",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=ENCODEURL(\"a b\")"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
     "ENCODEURL/encodeurl-special-chars": {
       "outcome": {
@@ -221,13 +216,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=ENCODEURL(\"hello world/?&=\")",
       "stimulus": "sha256:301fff941c0615c381576062fc078b083c1ae79d8bb7d282e554359211b0ad53",
       "fingerprint": "sha256:18c466c30752b33549fe679095342ebb61a84ea50a4a9611bedacf4cfff74ffd",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=ENCODEURL(\"hello world/?&=\")"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
     "ISURL/isurl-https": {
       "outcome": {
@@ -260,13 +254,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=ISURL(\"https://example.com\")",
       "stimulus": "sha256:43e6365a4ddf9d9a871f4074a1a99278213841c77b05a4901e113e839de969a8",
       "fingerprint": "sha256:18c466c30752b33549fe679095342ebb61a84ea50a4a9611bedacf4cfff74ffd",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=ISURL(\"https://example.com\")"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
     "ISURL/isurl-not-a-url": {
       "outcome": {
@@ -299,13 +292,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=ISURL(\"not a url\")",
       "stimulus": "sha256:6b047e517e9558d181ea1c91169cb5e3f11fc3df09aec183bbcfc044a0b7d234",
       "fingerprint": "sha256:18c466c30752b33549fe679095342ebb61a84ea50a4a9611bedacf4cfff74ffd",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=ISURL(\"not a url\")"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
     "HYPERLINK/hyperlink-with-label": {
       "outcome": {
@@ -313,13 +305,12 @@
         "cause": "policy",
         "reason": "feature absent: external-io"
       },
+      "formula-as-evaluated": "=HYPERLINK(\"https://example.com\", \"click me\")",
       "stimulus": "sha256:f3e2ddac11c6ea2bc26acd956a6a26738e9d6fec0cca7e727ccc442fea576f84",
       "fingerprint": "sha256:8ecb9418227042cb92931e7e7cb13012fbbafd672079b36824c89ff3db7a7718",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=HYPERLINK(\"https://example.com\", \"click me\")"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
     "HYPERLINK/hyperlink-url-only": {
       "outcome": {
@@ -327,13 +318,77 @@
         "cause": "policy",
         "reason": "feature absent: external-io"
       },
+      "formula-as-evaluated": "=HYPERLINK(\"https://example.com\")",
       "stimulus": "sha256:131fc01ab568db36c244c1153da155dbab2df91ada3726c47f691d3568b4e056",
       "fingerprint": "sha256:8ecb9418227042cb92931e7e7cb13012fbbafd672079b36824c89ff3db7a7718",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=HYPERLINK(\"https://example.com\")"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
+    },
+    "IMPORTDATA/importdata-csv-smoke": {
+      "outcome": {
+        "kind": "skipped",
+        "cause": "policy",
+        "reason": "feature absent: external-io"
+      },
+      "formula-as-evaluated": "=IMPORTDATA(\"https://example.com/data.csv\")",
+      "stimulus": "sha256:da264b453305d183d794600955eadcfaf06cc7fd9ee8b4a4d9dd914c0583e962",
+      "fingerprint": "sha256:8ecb9418227042cb92931e7e7cb13012fbbafd672079b36824c89ff3db7a7718",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
+    },
+    "IMPORTFEED/importfeed-rss-smoke": {
+      "outcome": {
+        "kind": "skipped",
+        "cause": "policy",
+        "reason": "feature absent: external-io"
+      },
+      "formula-as-evaluated": "=IMPORTFEED(\"https://example.com/feed.xml\")",
+      "stimulus": "sha256:4f7f773c30af3d77aefcfc3d10f056be52ba92f63aebd7bbc7beb8a647246cf6",
+      "fingerprint": "sha256:8ecb9418227042cb92931e7e7cb13012fbbafd672079b36824c89ff3db7a7718",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
+    },
+    "IMPORTHTML/importhtml-table-smoke": {
+      "outcome": {
+        "kind": "skipped",
+        "cause": "policy",
+        "reason": "feature absent: external-io"
+      },
+      "formula-as-evaluated": "=IMPORTHTML(\"https://example.com/page.html\", \"table\", 1)",
+      "stimulus": "sha256:68876b4cff872d148d24a4085a2cff6142d4a71f7ece16dcaf1af86319aa411e",
+      "fingerprint": "sha256:8ecb9418227042cb92931e7e7cb13012fbbafd672079b36824c89ff3db7a7718",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
+    },
+    "IMPORTXML/importxml-xpath-smoke": {
+      "outcome": {
+        "kind": "skipped",
+        "cause": "policy",
+        "reason": "feature absent: external-io"
+      },
+      "formula-as-evaluated": "=IMPORTXML(\"https://example.com/data.xml\", \"//title\")",
+      "stimulus": "sha256:4adf3da7f69d1f240f14d79dcb8f8b2adae932171a7a0de438b8c28b6c24efe9",
+      "fingerprint": "sha256:8ecb9418227042cb92931e7e7cb13012fbbafd672079b36824c89ff3db7a7718",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
+    },
+    "IMPORTRANGE/importrange-cross-sheet-smoke": {
+      "outcome": {
+        "kind": "skipped",
+        "cause": "policy",
+        "reason": "feature absent: external-io"
+      },
+      "formula-as-evaluated": "=IMPORTRANGE(\"https://docs.google.com/spreadsheets/d/abc123\", \"Sheet1!A1:B2\")",
+      "stimulus": "sha256:8b803e5c544f02cc26de225ba29e594ee4870565922d88de72d6e6965ac0fc81",
+      "fingerprint": "sha256:8ecb9418227042cb92931e7e7cb13012fbbafd672079b36824c89ff3db7a7718",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
     "ARRAYFORMULA/arrayformula-multiply-range": {
       "outcome": {
@@ -366,13 +421,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=ARRAYFORMULA({1;2;3} * 2)",
       "stimulus": "sha256:69039e4ef0b97139e8b2294d21b3b87549530841f301f06d7736b20c622e534b",
       "fingerprint": "sha256:18c466c30752b33549fe679095342ebb61a84ea50a4a9611bedacf4cfff74ffd",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=ARRAYFORMULA({1;2;3} * 2)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
     "ARRAYFORMULA/arrayformula-text-concat": {
       "outcome": {
@@ -405,13 +459,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=ARRAYFORMULA({\"a\";\"b\"} & \"!\")",
       "stimulus": "sha256:4abc2dadc5670ccd7bb6bbe78337cbf7d013ba6dc57269ef1cece3b0843df5d1",
       "fingerprint": "sha256:18c466c30752b33549fe679095342ebb61a84ea50a4a9611bedacf4cfff74ffd",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=ARRAYFORMULA({\"a\";\"b\"} & \"!\")"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
     "QUERY/query-select-all": {
       "outcome": {
@@ -444,13 +497,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=QUERY({1,\"a\";2,\"b\";3,\"c\"}, \"select *\")",
       "stimulus": "sha256:6f63969af015a93728ed5d7c7abb761d72873e4d99600e575cd5148aee7f8ecb",
       "fingerprint": "sha256:18c466c30752b33549fe679095342ebb61a84ea50a4a9611bedacf4cfff74ffd",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=QUERY({1,\"a\";2,\"b\";3,\"c\"}, \"select *\")"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
     "QUERY/query-select-col": {
       "outcome": {
@@ -483,13 +535,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=QUERY({1,\"a\";2,\"b\";3,\"c\"}, \"select Col2\")",
       "stimulus": "sha256:cae6b254fc964166120d1b5e5458768f43914fab43cdbb0458da32df27dfc8b4",
       "fingerprint": "sha256:18c466c30752b33549fe679095342ebb61a84ea50a4a9611bedacf4cfff74ffd",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=QUERY({1,\"a\";2,\"b\";3,\"c\"}, \"select Col2\")"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
     "QUERY/query-offset-1": {
       "outcome": {
@@ -522,13 +573,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=QUERY({0,0;1,2;3,4}, \"offset 1\")",
       "stimulus": "sha256:3935ad90dc04b91d18a155363eba09aa39df3dd41b69308e71c58eb707996563",
       "fingerprint": "sha256:18c466c30752b33549fe679095342ebb61a84ea50a4a9611bedacf4cfff74ffd",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=QUERY({0,0;1,2;3,4}, \"offset 1\")"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
     "GOOGLEFINANCE/googlefinance-price-smoke": {
       "outcome": {
@@ -536,13 +586,12 @@
         "cause": "policy",
         "reason": "feature absent: external-io"
       },
+      "formula-as-evaluated": "=GOOGLEFINANCE(\"GOOG\", \"price\")",
       "stimulus": "sha256:ba93d10c6a562d03bd434f9406010d9f291e8b959a031c1dd0f9f69d2789d494",
       "fingerprint": "sha256:8ecb9418227042cb92931e7e7cb13012fbbafd672079b36824c89ff3db7a7718",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=GOOGLEFINANCE(\"GOOG\", \"price\")"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
     "GOOGLETRANSLATE/googletranslate-en-to-es": {
       "outcome": {
@@ -550,13 +599,38 @@
         "cause": "policy",
         "reason": "feature absent: external-io"
       },
+      "formula-as-evaluated": "=GOOGLETRANSLATE(\"hello\", \"en\", \"es\")",
       "stimulus": "sha256:55ebe053c511aaf0d4aa44923872f3796d71c6ba136b83c9f04ca8b803d09715",
       "fingerprint": "sha256:8ecb9418227042cb92931e7e7cb13012fbbafd672079b36824c89ff3db7a7718",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=GOOGLETRANSLATE(\"hello\", \"en\", \"es\")"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
+    },
+    "DETECTLANGUAGE/detectlanguage-english": {
+      "outcome": {
+        "kind": "skipped",
+        "cause": "policy",
+        "reason": "feature absent: external-io"
+      },
+      "formula-as-evaluated": "=DETECTLANGUAGE(\"hello world\")",
+      "stimulus": "sha256:fdcebf5608cb0683270b4b9f290e773b4af362142b0a7473f0eea07278bf0414",
+      "fingerprint": "sha256:8ecb9418227042cb92931e7e7cb13012fbbafd672079b36824c89ff3db7a7718",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
+    },
+    "IMAGE/image-url-smoke": {
+      "outcome": {
+        "kind": "skipped",
+        "cause": "policy",
+        "reason": "feature absent: external-io"
+      },
+      "formula-as-evaluated": "=IMAGE(\"https://example.com/pic.png\")",
+      "stimulus": "sha256:cebe8deee1fb9c1a66a9ef3eb06bd02396d0e6bd017e507eaa56ad31f1fed45d",
+      "fingerprint": "sha256:8ecb9418227042cb92931e7e7cb13012fbbafd672079b36824c89ff3db7a7718",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
     "SPARKLINE/sparkline-inline-chart": {
       "outcome": {
@@ -564,13 +638,12 @@
         "cause": "policy",
         "reason": "feature absent: external-io"
       },
+      "formula-as-evaluated": "=SPARKLINE({1;2;3;4;5})",
       "stimulus": "sha256:3da4136538e00f9909f5d73604442a8c750a3edf15c36c68659dd7281d52ed0d",
       "fingerprint": "sha256:8ecb9418227042cb92931e7e7cb13012fbbafd672079b36824c89ff3db7a7718",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=SPARKLINE({1;2;3;4;5})"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     }
   }
 }

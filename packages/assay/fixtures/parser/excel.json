@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "platform": "excel",
-  "generatedAt": "2026-06-17T19:44:09.847Z",
+  "generatedAt": "2026-07-18T20:49:21.605Z",
   "results": {
     "CONVERT/convert-feet-to-inches": {
       "outcome": {
@@ -29,13 +29,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=CONVERT(1, \"ft\", \"in\")",
       "stimulus": "sha256:0567bd2e1e986e6c888fd792d32947ab19742f0f6a94fcf58000408a710733f7",
       "fingerprint": "sha256:71fa543d1bcc3371e40b4949ed83b5efa58addd2c5bc5dae879ecf535bd80c65",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=CONVERT(1, \"ft\", \"in\")"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
     "CONVERT/convert-meters-to-feet": {
       "outcome": {
@@ -63,13 +62,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=CONVERT(1, \"m\", \"ft\")",
       "stimulus": "sha256:fd636689b2fa20e0c2ca76efdce2ab6ee8cf69ce986e0a0884797bea0527c0af",
       "fingerprint": "sha256:39dec369566e3d06c64abb3338e5d51e7e501aa294e65ede5470eabb698024aa",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=CONVERT(1, \"m\", \"ft\")"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
     "CONVERT/convert-kilograms-to-pounds": {
       "outcome": {
@@ -97,13 +95,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=CONVERT(1, \"kg\", \"lbm\")",
       "stimulus": "sha256:c550097dfb1d95bcb37d21f2e8103419e2c7ce53ccee63b2083b07091b57b62a",
       "fingerprint": "sha256:f9728e3736452499e39cb6374de114f127f0f699cf88c6fc90d3185b5e4f515e",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=CONVERT(1, \"kg\", \"lbm\")"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
     "CONVERT/convert-celsius-to-fahrenheit": {
       "outcome": {
@@ -131,13 +128,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=CONVERT(100, \"C\", \"F\")",
       "stimulus": "sha256:60096b16a036aeff8d4d74988fd701a1dcc862aa5bcbec5e55c91d3dbe26f7b7",
       "fingerprint": "sha256:d899ff3815c66171cfc01f331efcbc64681f699305680eb1008652af04c27354",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=CONVERT(100, \"C\", \"F\")"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
     "CONVERT/convert-hours-to-seconds": {
       "outcome": {
@@ -165,13 +161,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=CONVERT(1, \"hr\", \"sec\")",
       "stimulus": "sha256:82a3e8cb97f019a2d9cb2c57b11ff4a0ab3053f2d342fa44d3a5bfa47cac108a",
       "fingerprint": "sha256:b94a614d25f320a314141e8392fc0a7c853903bec488d4a8fca552667d2517c0",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=CONVERT(1, \"hr\", \"sec\")"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
     "CONVERT/convert-kilometers-to-miles": {
       "outcome": {
@@ -199,13 +194,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=CONVERT(1, \"km\", \"mi\")",
       "stimulus": "sha256:23994116d875b836ffee03fa52aa83907a232d9320476504b89cc05815b796b2",
       "fingerprint": "sha256:84fe891e52aba30847503cca88848e70a6206be2f9975fe272633fd7a9a0ddc3",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=CONVERT(1, \"km\", \"mi\")"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
     "CONVERT/convert-invalid-unit-pair": {
       "outcome": {
@@ -234,13 +228,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=CONVERT(1, \"ft\", \"kg\")",
       "stimulus": "sha256:a3220826fa34f766d9cf4379b1c92bd613e2c15275beeec5d1f66cdd7fc5c25f",
       "fingerprint": "sha256:c98ddc95a4f5716ef17b94c5c73c9ede35dff1666986224ac03e53fce8c29367",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=CONVERT(1, \"ft\", \"kg\")"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
     "CONVERT/convert-unknown-unit": {
       "outcome": {
@@ -269,13 +262,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=CONVERT(1, \"xyz\", \"in\")",
       "stimulus": "sha256:0e41c911e09b7a5d8792f269fa767ef1dc664a44452cb646d7b25b37fe07f2a6",
       "fingerprint": "sha256:c98ddc95a4f5716ef17b94c5c73c9ede35dff1666986224ac03e53fce8c29367",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=CONVERT(1, \"xyz\", \"in\")"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
     "TO_DATE/to-date-from-serial": {
       "outcome": {
@@ -295,7 +287,7 @@
                   "cm": 1,
                   "formula_text": "TO_DATE(44000)",
                   "formula_array_marker": "array",
-                  "formula_array_ref": "A21"
+                  "formula_array_ref": "CC1"
                 },
                 "saved_as_array": true
               },
@@ -308,13 +300,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=TO_DATE(44000)",
       "stimulus": "sha256:2aa06d0b791f193d753c64c0835e1dd3ede2533fe084d56d9100a96e120ce763",
       "fingerprint": "sha256:18c466c30752b33549fe679095342ebb61a84ea50a4a9611bedacf4cfff74ffd",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=TO_DATE(44000)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
     "TO_DATE/to-date-zero-serial": {
       "outcome": {
@@ -334,7 +325,7 @@
                   "cm": 1,
                   "formula_text": "TO_DATE(0)",
                   "formula_array_marker": "array",
-                  "formula_array_ref": "U21"
+                  "formula_array_ref": "A21"
                 },
                 "saved_as_array": true
               },
@@ -347,13 +338,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=TO_DATE(0)",
       "stimulus": "sha256:01018d7d40ad6b4aad14f6f17cc41ff333d5142d79b025fac7e3343fd24de1cd",
       "fingerprint": "sha256:18c466c30752b33549fe679095342ebb61a84ea50a4a9611bedacf4cfff74ffd",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=TO_DATE(0)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
     "TO_DATE/to-date-from-text": {
       "outcome": {
@@ -373,7 +363,7 @@
                   "cm": 1,
                   "formula_text": "TO_DATE(\"2024-01-15\")",
                   "formula_array_marker": "array",
-                  "formula_array_ref": "AO21"
+                  "formula_array_ref": "U21"
                 },
                 "saved_as_array": true
               },
@@ -386,13 +376,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=TO_DATE(\"2024-01-15\")",
       "stimulus": "sha256:6515949d032ff62fca4ccd245b3a724d7b8140827749030ea3be34d5cb631774",
       "fingerprint": "sha256:18c466c30752b33549fe679095342ebb61a84ea50a4a9611bedacf4cfff74ffd",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=TO_DATE(\"2024-01-15\")"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
     "TO_DATE/to-date-from-boolean": {
       "outcome": {
@@ -412,7 +401,7 @@
                   "cm": 1,
                   "formula_text": "TO_DATE(TRUE)",
                   "formula_array_marker": "array",
-                  "formula_array_ref": "BI21"
+                  "formula_array_ref": "AO21"
                 },
                 "saved_as_array": true
               },
@@ -425,13 +414,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=TO_DATE(TRUE)",
       "stimulus": "sha256:e0ace3cae40449d77440935487268f8e6c16f7d39be75d097b65fe8aba32ec18",
       "fingerprint": "sha256:18c466c30752b33549fe679095342ebb61a84ea50a4a9611bedacf4cfff74ffd",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=TO_DATE(TRUE)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
     "TO_DATE/to-date-from-invalid-text": {
       "outcome": {
@@ -451,7 +439,7 @@
                   "cm": 1,
                   "formula_text": "TO_DATE(\"not-a-date\")",
                   "formula_array_marker": "array",
-                  "formula_array_ref": "CC21"
+                  "formula_array_ref": "BI21"
                 },
                 "saved_as_array": true
               },
@@ -464,13 +452,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=TO_DATE(\"not-a-date\")",
       "stimulus": "sha256:6d06fa569330cd90eedf78f7188bac5c15a38c8f77090f890a525e4308dcafcc",
       "fingerprint": "sha256:18c466c30752b33549fe679095342ebb61a84ea50a4a9611bedacf4cfff74ffd",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=TO_DATE(\"not-a-date\")"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
     "TO_DOLLARS/to-dollars-integer": {
       "outcome": {
@@ -490,7 +477,7 @@
                   "cm": 1,
                   "formula_text": "TO_DOLLARS(1234)",
                   "formula_array_marker": "array",
-                  "formula_array_ref": "A41"
+                  "formula_array_ref": "CC21"
                 },
                 "saved_as_array": true
               },
@@ -503,13 +490,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=TO_DOLLARS(1234)",
       "stimulus": "sha256:da4a79ed39edc3ad8586407f5b0e24db5ed1eea1f27dc0ae88f6d9c4bc19f13e",
       "fingerprint": "sha256:18c466c30752b33549fe679095342ebb61a84ea50a4a9611bedacf4cfff74ffd",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=TO_DOLLARS(1234)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
     "TO_DOLLARS/to-dollars-decimal": {
       "outcome": {
@@ -529,7 +515,7 @@
                   "cm": 1,
                   "formula_text": "TO_DOLLARS(1234.567)",
                   "formula_array_marker": "array",
-                  "formula_array_ref": "U41"
+                  "formula_array_ref": "A41"
                 },
                 "saved_as_array": true
               },
@@ -542,13 +528,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=TO_DOLLARS(1234.567)",
       "stimulus": "sha256:4279622d817429f304ff6d51b067a40dce971d829f8f5eaaddc8dfb8b3f3ce33",
       "fingerprint": "sha256:18c466c30752b33549fe679095342ebb61a84ea50a4a9611bedacf4cfff74ffd",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=TO_DOLLARS(1234.567)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
     "TO_DOLLARS/to-dollars-negative": {
       "outcome": {
@@ -568,7 +553,7 @@
                   "cm": 1,
                   "formula_text": "TO_DOLLARS(-42.5)",
                   "formula_array_marker": "array",
-                  "formula_array_ref": "AO41"
+                  "formula_array_ref": "U41"
                 },
                 "saved_as_array": true
               },
@@ -581,13 +566,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=TO_DOLLARS(-42.5)",
       "stimulus": "sha256:3737420408649d20659d42a3eef8cc17fe481e011471b39f462fcfce27361619",
       "fingerprint": "sha256:18c466c30752b33549fe679095342ebb61a84ea50a4a9611bedacf4cfff74ffd",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=TO_DOLLARS(-42.5)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
     "TO_DOLLARS/to-dollars-from-text": {
       "outcome": {
@@ -607,7 +591,7 @@
                   "cm": 1,
                   "formula_text": "TO_DOLLARS(\"99.99\")",
                   "formula_array_marker": "array",
-                  "formula_array_ref": "BI41"
+                  "formula_array_ref": "AO41"
                 },
                 "saved_as_array": true
               },
@@ -620,13 +604,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=TO_DOLLARS(\"99.99\")",
       "stimulus": "sha256:86c3d3d705ebb58ad08cfb8bbaa5e7c82d8b914e642b0eb8829e8b14a9b3f897",
       "fingerprint": "sha256:18c466c30752b33549fe679095342ebb61a84ea50a4a9611bedacf4cfff74ffd",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=TO_DOLLARS(\"99.99\")"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
     "TO_DOLLARS/to-dollars-from-boolean": {
       "outcome": {
@@ -646,7 +629,7 @@
                   "cm": 1,
                   "formula_text": "TO_DOLLARS(TRUE)",
                   "formula_array_marker": "array",
-                  "formula_array_ref": "CC41"
+                  "formula_array_ref": "BI41"
                 },
                 "saved_as_array": true
               },
@@ -659,13 +642,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=TO_DOLLARS(TRUE)",
       "stimulus": "sha256:7949071bc400005846a0fb78a90c8d74aedd96e4cd335f93dbaa705f7967428a",
       "fingerprint": "sha256:18c466c30752b33549fe679095342ebb61a84ea50a4a9611bedacf4cfff74ffd",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=TO_DOLLARS(TRUE)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
     "TO_PERCENT/to-percent-decimal": {
       "outcome": {
@@ -685,7 +667,7 @@
                   "cm": 1,
                   "formula_text": "TO_PERCENT(0.25)",
                   "formula_array_marker": "array",
-                  "formula_array_ref": "A61"
+                  "formula_array_ref": "CC41"
                 },
                 "saved_as_array": true
               },
@@ -698,13 +680,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=TO_PERCENT(0.25)",
       "stimulus": "sha256:c4b245cefc0b767d938d7da69f72e55f215c45f2bae1b152b07e474acc99c6c6",
       "fingerprint": "sha256:18c466c30752b33549fe679095342ebb61a84ea50a4a9611bedacf4cfff74ffd",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=TO_PERCENT(0.25)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
     "TO_PERCENT/to-percent-whole-number": {
       "outcome": {
@@ -724,7 +705,7 @@
                   "cm": 1,
                   "formula_text": "TO_PERCENT(1)",
                   "formula_array_marker": "array",
-                  "formula_array_ref": "U61"
+                  "formula_array_ref": "A61"
                 },
                 "saved_as_array": true
               },
@@ -737,13 +718,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=TO_PERCENT(1)",
       "stimulus": "sha256:12385b827372ccac6fb017e140f53e1f7733b813b130af2b854c7bf0145e5162",
       "fingerprint": "sha256:18c466c30752b33549fe679095342ebb61a84ea50a4a9611bedacf4cfff74ffd",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=TO_PERCENT(1)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
     "TO_PERCENT/to-percent-zero": {
       "outcome": {
@@ -763,7 +743,7 @@
                   "cm": 1,
                   "formula_text": "TO_PERCENT(0)",
                   "formula_array_marker": "array",
-                  "formula_array_ref": "AO61"
+                  "formula_array_ref": "U61"
                 },
                 "saved_as_array": true
               },
@@ -776,13 +756,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=TO_PERCENT(0)",
       "stimulus": "sha256:558b5a4fd12df321ed18e2cdb4f676c45f0d006508cab9b901c5a54fa04772dd",
       "fingerprint": "sha256:18c466c30752b33549fe679095342ebb61a84ea50a4a9611bedacf4cfff74ffd",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=TO_PERCENT(0)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
     "TO_PERCENT/to-percent-from-text": {
       "outcome": {
@@ -802,7 +781,7 @@
                   "cm": 1,
                   "formula_text": "TO_PERCENT(\"0.5\")",
                   "formula_array_marker": "array",
-                  "formula_array_ref": "BI61"
+                  "formula_array_ref": "AO61"
                 },
                 "saved_as_array": true
               },
@@ -815,13 +794,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=TO_PERCENT(\"0.5\")",
       "stimulus": "sha256:21521564f8de122ff0a844fc8723a0bc2a578f93bc9cb7f24c38e4614eb7ade7",
       "fingerprint": "sha256:18c466c30752b33549fe679095342ebb61a84ea50a4a9611bedacf4cfff74ffd",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=TO_PERCENT(\"0.5\")"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
     "TO_PERCENT/to-percent-negative": {
       "outcome": {
@@ -841,7 +819,7 @@
                   "cm": 1,
                   "formula_text": "TO_PERCENT(-0.1)",
                   "formula_array_marker": "array",
-                  "formula_array_ref": "CC61"
+                  "formula_array_ref": "BI61"
                 },
                 "saved_as_array": true
               },
@@ -854,13 +832,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=TO_PERCENT(-0.1)",
       "stimulus": "sha256:3ed2facccccf0201c10a1228f46b977a41f6365e54cb74878501ad3902f6c407",
       "fingerprint": "sha256:18c466c30752b33549fe679095342ebb61a84ea50a4a9611bedacf4cfff74ffd",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=TO_PERCENT(-0.1)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
     "TO_PURE_NUMBER/to-pure-number-from-percent-literal": {
       "outcome": {
@@ -880,7 +857,7 @@
                   "cm": 1,
                   "formula_text": "TO_PURE_NUMBER(0.25)",
                   "formula_array_marker": "array",
-                  "formula_array_ref": "A81"
+                  "formula_array_ref": "CC61"
                 },
                 "saved_as_array": true
               },
@@ -893,13 +870,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=TO_PURE_NUMBER(0.25)",
       "stimulus": "sha256:9e75eb14736e86be750fc1a1ec993f62b737222e78ed1a5332ea41dac66a5baf",
       "fingerprint": "sha256:18c466c30752b33549fe679095342ebb61a84ea50a4a9611bedacf4cfff74ffd",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=TO_PURE_NUMBER(0.25)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
     "TO_PURE_NUMBER/to-pure-number-from-integer": {
       "outcome": {
@@ -919,7 +895,7 @@
                   "cm": 1,
                   "formula_text": "TO_PURE_NUMBER(42)",
                   "formula_array_marker": "array",
-                  "formula_array_ref": "U81"
+                  "formula_array_ref": "A81"
                 },
                 "saved_as_array": true
               },
@@ -932,13 +908,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=TO_PURE_NUMBER(42)",
       "stimulus": "sha256:3586e2772c1a3f541571d7a20dbaa5654d081771e1ab2b92036794e06dad9749",
       "fingerprint": "sha256:18c466c30752b33549fe679095342ebb61a84ea50a4a9611bedacf4cfff74ffd",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=TO_PURE_NUMBER(42)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
     "TO_PURE_NUMBER/to-pure-number-from-text": {
       "outcome": {
@@ -958,7 +933,7 @@
                   "cm": 1,
                   "formula_text": "TO_PURE_NUMBER(\"123.45\")",
                   "formula_array_marker": "array",
-                  "formula_array_ref": "AO81"
+                  "formula_array_ref": "U81"
                 },
                 "saved_as_array": true
               },
@@ -971,13 +946,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=TO_PURE_NUMBER(\"123.45\")",
       "stimulus": "sha256:d48eb445cc302f1688317b339396132b242ad227f50238e48a48676d17e159c1",
       "fingerprint": "sha256:18c466c30752b33549fe679095342ebb61a84ea50a4a9611bedacf4cfff74ffd",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=TO_PURE_NUMBER(\"123.45\")"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
     "TO_PURE_NUMBER/to-pure-number-from-boolean": {
       "outcome": {
@@ -997,7 +971,7 @@
                   "cm": 1,
                   "formula_text": "TO_PURE_NUMBER(TRUE)",
                   "formula_array_marker": "array",
-                  "formula_array_ref": "BI81"
+                  "formula_array_ref": "AO81"
                 },
                 "saved_as_array": true
               },
@@ -1010,13 +984,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=TO_PURE_NUMBER(TRUE)",
       "stimulus": "sha256:61b45d3bb90b36ae45f50267263b90880f3f5dfeb75e4fde90436a6f52aec33f",
       "fingerprint": "sha256:18c466c30752b33549fe679095342ebb61a84ea50a4a9611bedacf4cfff74ffd",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=TO_PURE_NUMBER(TRUE)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
     "TO_PURE_NUMBER/to-pure-number-from-non-numeric-text": {
       "outcome": {
@@ -1036,7 +1009,7 @@
                   "cm": 1,
                   "formula_text": "TO_PURE_NUMBER(\"hello\")",
                   "formula_array_marker": "array",
-                  "formula_array_ref": "CC81"
+                  "formula_array_ref": "BI81"
                 },
                 "saved_as_array": true
               },
@@ -1049,13 +1022,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=TO_PURE_NUMBER(\"hello\")",
       "stimulus": "sha256:e5b166808f51b0fa68ac42773c3210ea8451474512947c543d1f974894507bad",
       "fingerprint": "sha256:18c466c30752b33549fe679095342ebb61a84ea50a4a9611bedacf4cfff74ffd",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=TO_PURE_NUMBER(\"hello\")"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
     "TO_TEXT/to-text-integer": {
       "outcome": {
@@ -1075,7 +1047,7 @@
                   "cm": 1,
                   "formula_text": "TO_TEXT(42)",
                   "formula_array_marker": "array",
-                  "formula_array_ref": "A1"
+                  "formula_array_ref": "CC81"
                 },
                 "saved_as_array": true
               },
@@ -1088,13 +1060,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=TO_TEXT(42)",
       "stimulus": "sha256:de2d511b6e9c241f1d4610076f0b4ee5fb512dd16fc4c402444be148d54b85e6",
       "fingerprint": "sha256:18c466c30752b33549fe679095342ebb61a84ea50a4a9611bedacf4cfff74ffd",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=TO_TEXT(42)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
     "TO_TEXT/to-text-decimal": {
       "outcome": {
@@ -1114,7 +1085,7 @@
                   "cm": 1,
                   "formula_text": "TO_TEXT(3.14159)",
                   "formula_array_marker": "array",
-                  "formula_array_ref": "U1"
+                  "formula_array_ref": "A1"
                 },
                 "saved_as_array": true
               },
@@ -1127,13 +1098,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=TO_TEXT(3.14159)",
       "stimulus": "sha256:c6d25c70c748288ca9a6e933dfde266604e9d57f8da115209b73d092382abf18",
       "fingerprint": "sha256:18c466c30752b33549fe679095342ebb61a84ea50a4a9611bedacf4cfff74ffd",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=TO_TEXT(3.14159)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
     "TO_TEXT/to-text-boolean": {
       "outcome": {
@@ -1153,7 +1123,7 @@
                   "cm": 1,
                   "formula_text": "TO_TEXT(TRUE)",
                   "formula_array_marker": "array",
-                  "formula_array_ref": "AO1"
+                  "formula_array_ref": "U1"
                 },
                 "saved_as_array": true
               },
@@ -1166,13 +1136,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=TO_TEXT(TRUE)",
       "stimulus": "sha256:74b2bc5eec68003ca833556928e275908ee2d867ee9de9aa7b4e36e1039a2523",
       "fingerprint": "sha256:18c466c30752b33549fe679095342ebb61a84ea50a4a9611bedacf4cfff74ffd",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=TO_TEXT(TRUE)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
     "TO_TEXT/to-text-already-text": {
       "outcome": {
@@ -1192,7 +1161,7 @@
                   "cm": 1,
                   "formula_text": "TO_TEXT(\"hello\")",
                   "formula_array_marker": "array",
-                  "formula_array_ref": "BI1"
+                  "formula_array_ref": "AO1"
                 },
                 "saved_as_array": true
               },
@@ -1205,13 +1174,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=TO_TEXT(\"hello\")",
       "stimulus": "sha256:0506ca33715ae65442944e0f4efd60c024941fbe9a489e0d7c1983a9e06b474a",
       "fingerprint": "sha256:18c466c30752b33549fe679095342ebb61a84ea50a4a9611bedacf4cfff74ffd",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=TO_TEXT(\"hello\")"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
     "TO_TEXT/to-text-from-date-serial": {
       "outcome": {
@@ -1244,13 +1212,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=TO_TEXT(A1)",
       "stimulus": "sha256:fcf74ec145867dcdeb49b2da45fbecadc7ade198b6bd209e4ef16fafac9d8555",
       "fingerprint": "sha256:18c466c30752b33549fe679095342ebb61a84ea50a4a9611bedacf4cfff74ffd",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=TO_TEXT(A1)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     },
     "TO_TEXT/to-text-negative-number": {
       "outcome": {
@@ -1270,7 +1237,7 @@
                   "cm": 1,
                   "formula_text": "TO_TEXT(-1234.5)",
                   "formula_array_marker": "array",
-                  "formula_array_ref": "CC1"
+                  "formula_array_ref": "BI1"
                 },
                 "saved_as_array": true
               },
@@ -1283,13 +1250,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=TO_TEXT(-1234.5)",
       "stimulus": "sha256:087db4cf6691577b9137df0fee97e9e113e3e83cfec9d04b813543e250353a71",
       "fingerprint": "sha256:18c466c30752b33549fe679095342ebb61a84ea50a4a9611bedacf4cfff74ffd",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=TO_TEXT(-1234.5)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:49:21.593Z"
     }
   }
 }

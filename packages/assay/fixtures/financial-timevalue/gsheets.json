@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "platform": "gsheets",
-  "generatedAt": "2026-06-17T20:01:41.613Z",
+  "generatedAt": "2026-07-18T20:47:11.571Z",
   "results": {
     "CUMIPMT/cumipmt-first-year-mortgage": {
       "outcome": {
@@ -51,13 +51,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=CUMIPMT(0.05/12, 360, 100000, 1, 12, 0)",
       "stimulus": "sha256:c567d1f8f1c4d9ae9cd7560d85b73bbe5abc966426b91c9d736d3d7b0a3f0f9e",
       "fingerprint": "sha256:48ba0aabee13f4f1eeb9a6b90e87ab2445d20aca996f5b693aa797b0641dd097",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=CUMIPMT(0.05/12, 360, 100000, 1, 12, 0)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "CUMIPMT/cumipmt-last-year-mortgage": {
       "outcome": {
@@ -107,13 +106,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=CUMIPMT(0.05/12, 360, 100000, 349, 360, 0)",
       "stimulus": "sha256:89c2421707a623fd88125087c53a70ce587df42e5acbb15d7eefb5dedd515328",
       "fingerprint": "sha256:fbc7a1d8cf1a7e2f5410f6d6c9ee8997568db0e10329e09b0b8397fd722c1448",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=CUMIPMT(0.05/12, 360, 100000, 349, 360, 0)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "CUMIPMT/cumipmt-invalid-period": {
       "outcome": {
@@ -166,13 +164,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=CUMIPMT(0.05/12, 360, 100000, 0, 12, 0)",
       "stimulus": "sha256:9caa61b1d3ad08ecfa552141a72daedfe7e003baa9dedf1e0c0a248a152118a2",
       "fingerprint": "sha256:f3a7c5ef3dc55973380ab8685af4886919ca174f93d2e56814d91074798899a6",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=CUMIPMT(0.05/12, 360, 100000, 0, 12, 0)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "CUMPRINC/cumprinc-first-year-mortgage": {
       "outcome": {
@@ -222,13 +219,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=CUMPRINC(0.05/12, 360, 100000, 1, 12, 0)",
       "stimulus": "sha256:f5e50d161e643dbcc6c2364994281c0b7e4cb574264d3b78e45882c932f059d4",
       "fingerprint": "sha256:d29c10ec22bc7858d3484d2f659c922e62aa8d0af50238c9670262c44cf7d741",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=CUMPRINC(0.05/12, 360, 100000, 1, 12, 0)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "CUMPRINC/cumprinc-full-life-equals-principal": {
       "outcome": {
@@ -278,13 +274,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=CUMPRINC(0.05/12, 360, 100000, 1, 360, 0)",
       "stimulus": "sha256:c1856a27e2169e9f1316140cc8ae86e5ff577abf52ee692ea7782a490d9ff049",
       "fingerprint": "sha256:11faea2a5a763485a62fb826924a0354bc784bca1c2a575a022844519e6f5ab4",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=CUMPRINC(0.05/12, 360, 100000, 1, 360, 0)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "CUMPRINC/cumprinc-invalid-type": {
       "outcome": {
@@ -334,13 +329,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=CUMPRINC(0.05/12, 360, 100000, 1, 12, 2)",
       "stimulus": "sha256:7a8053f060ac361e66dc7f5976a6d51513b232cc0045fea95dc4f5e6edf029f1",
       "fingerprint": "sha256:7351a1106a9dc1f4eff682d664a2bc99217cd4a854cadd8d8654dfe3f7a43223",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=CUMPRINC(0.05/12, 360, 100000, 1, 12, 2)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "DB/db-first-period": {
       "outcome": {
@@ -398,13 +392,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=DB(1000000, 100000, 6, 1, 12)",
       "stimulus": "sha256:058a3b5e3ac291e93a489548aa9fcf052ef244215cb855367ed8c4dff6f0a6ea",
       "fingerprint": "sha256:25da25d6317b0dd786e4d01188d340a238a71b99ab260646df2b2d90fd9284c0",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=DB(1000000, 100000, 6, 1, 12)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "DB/db-second-period": {
       "outcome": {
@@ -462,13 +455,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=DB(1000000, 100000, 6, 2, 12)",
       "stimulus": "sha256:4ce5ed6649e4e81eea1b0670d82d36b13091bc0070bf8b7b3e0a5943d6b81c4f",
       "fingerprint": "sha256:43e05cdd7bb8b7f60b090c2b9fee43aebec1133ab3923e9e9985190d9fe032bc",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=DB(1000000, 100000, 6, 2, 12)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "DB/db-partial-first-month": {
       "outcome": {
@@ -526,13 +518,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=DB(1000000, 100000, 6, 1, 7)",
       "stimulus": "sha256:4c8d5a6bc9fe76c6ac06280d8033c5823bf6fbfc532cc914bd61f4f73b595ec8",
       "fingerprint": "sha256:b0aa70756ab354d4b45cbd6b1194325ca0f4070611c20e1c1ddf482e6abe2e70",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=DB(1000000, 100000, 6, 1, 7)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "DDB/ddb-period-1": {
       "outcome": {
@@ -590,13 +581,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=DDB(1000, 100, 10, 1)",
       "stimulus": "sha256:595d210e5d59239e17e76d4095862b7b8cd2c2841d683464184084850d664ed2",
       "fingerprint": "sha256:57af3b7491711bba952b6ff5c9d4dedaebd783accfbd3f9e9de966b3a8b348cd",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=DDB(1000, 100, 10, 1)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "DDB/ddb-period-2": {
       "outcome": {
@@ -654,13 +644,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=DDB(1000, 100, 10, 2)",
       "stimulus": "sha256:a4eec73352ff71285893d54249a992423c7e26db3e05265be7aed6db67f00dd5",
       "fingerprint": "sha256:5511ab214fd4a91dab23d7d851749cdfbe7e08f89540448796f1d2ff69ebf5ef",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=DDB(1000, 100, 10, 2)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "DDB/ddb-custom-factor": {
       "outcome": {
@@ -718,13 +707,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=DDB(2400, 300, 10, 1, 1.5)",
       "stimulus": "sha256:1b64de29edf84d6398ab8f35f45cd0a52e3b70cc3a71e9373cf55063bb8aed75",
       "fingerprint": "sha256:eaffa4d2c82ea2d53a6d08f8cd2d95aaefd6d8eb1955930f28337912c9303fd6",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=DDB(2400, 300, 10, 1, 1.5)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "DDB/ddb-salvage-floor": {
       "outcome": {
@@ -782,13 +770,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=DDB(1000, 100, 10, 10)",
       "stimulus": "sha256:06504ad07feed5af3caf44ca2515e5502f258808fdb11f09884434a471e5cccd",
       "fingerprint": "sha256:6226875ab5f4122d890f43b416e43530a91feb0cdba8c7c2a6e939894735bd92",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=DDB(1000, 100, 10, 10)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "EFFECT/effect-monthly-compounding": {
       "outcome": {
@@ -838,13 +825,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=EFFECT(0.12, 12)",
       "stimulus": "sha256:9ec48d7f3236c57af8f2670c0dfc27834df73d675213cc2edce079cc5a02e492",
       "fingerprint": "sha256:da14e9a374f97fc883d8e48ceef4203d6b269abd75ef1878150053094ecf6ac8",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=EFFECT(0.12, 12)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "EFFECT/effect-annual-compounding": {
       "outcome": {
@@ -894,13 +880,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=EFFECT(0.05, 1)",
       "stimulus": "sha256:f6337a85e1d02d5eaf0e081a0ad838d08b0105a25e2e05625d3a8e2919feffc9",
       "fingerprint": "sha256:42c3aba3b9f05e9e0b97a6f429132577b5789b8f6d90d8337ca1cb7cf088f158",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=EFFECT(0.05, 1)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "EFFECT/effect-invalid-periods": {
       "outcome": {
@@ -953,13 +938,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=EFFECT(0.05, 0)",
       "stimulus": "sha256:9cad0c539596e87af5a6dc53a183983ac7cc3c28357674e9573e65daa5fcb496",
       "fingerprint": "sha256:f3a7c5ef3dc55973380ab8685af4886919ca174f93d2e56814d91074798899a6",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=EFFECT(0.05, 0)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "FV/fv-annuity-10yr": {
       "outcome": {
@@ -1017,13 +1001,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=FV(0.06, 10, -1000)",
       "stimulus": "sha256:916cc141f842bc9707e8d1a64aac1c13f04d4c9f63d7237a3b29c7ca19ea234a",
       "fingerprint": "sha256:07a9c402df9f6ec5e2dd6daca162933198bc55e4dae4cdf54453d11218b8941c",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=FV(0.06, 10, -1000)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "FV/fv-lump-sum": {
       "outcome": {
@@ -1081,13 +1064,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=FV(0.05, 20, 0, -10000)",
       "stimulus": "sha256:3e20a1c7d4ef83a7980ffb03cd877470c2500b44818a374967337de722b43e46",
       "fingerprint": "sha256:92c99c7a0c9fde64a766fbc8e73e5531ea0a38989f5454c8e87d1e0130bab4dd",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=FV(0.05, 20, 0, -10000)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "FV/fv-zero-rate": {
       "outcome": {
@@ -1145,13 +1127,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=FV(0, 10, -100)",
       "stimulus": "sha256:a7e915e93bbb6c6f6f22e5d53342ad1f67677707f96f73cdcf611ad366624c80",
       "fingerprint": "sha256:de656f5ea99030c16e5555e9bd9179dc1e37f435575f139533617843c7f013e1",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=FV(0, 10, -100)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "FVSCHEDULE/fvschedule-three-rates": {
       "outcome": {
@@ -1201,13 +1182,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=FVSCHEDULE(1000, {0.05, 0.06, 0.07})",
       "stimulus": "sha256:bbbeacbe6fdd89d71926706d91c949bbde332915a4c5a685062924cac7b38236",
       "fingerprint": "sha256:826f2906f630bfd523dc099b304e0735fdc2b72d32cc3c4236c2f8a21b321dd6",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=FVSCHEDULE(1000, {0.05, 0.06, 0.07})"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "FVSCHEDULE/fvschedule-zero-rate-in-schedule": {
       "outcome": {
@@ -1257,13 +1237,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=FVSCHEDULE(1000, {0.1, 0, 0.1})",
       "stimulus": "sha256:f631ad1db4ff6a85be283468569667757d1fd30edaed303c84439815ccfe3ba7",
       "fingerprint": "sha256:668cccafde47c56cbb76d6ebf3fb399949b525112236a33319bc54e70373a7d7",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=FVSCHEDULE(1000, {0.1, 0, 0.1})"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "FVSCHEDULE/fvschedule-single-rate": {
       "outcome": {
@@ -1313,13 +1292,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=FVSCHEDULE(500, {0.1})",
       "stimulus": "sha256:d70dd30d951e9f2d39058044a706882fe5842f2b3ebd0162f515ea0d4b253caf",
       "fingerprint": "sha256:d34054e142be2db3ac9783b9111065c512250322ef387733f13ae925267eb751",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=FVSCHEDULE(500, {0.1})"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "IPMT/ipmt-first-period-mortgage": {
       "outcome": {
@@ -1377,13 +1355,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=IPMT(0.05/12, 1, 360, -200000)",
       "stimulus": "sha256:9c05c5614e3a0383038652e0603b3a7630ccf8c8834e6216cba4616443e4c18e",
       "fingerprint": "sha256:08150b7155420771b565eac6d15ce51d8f61b8932dadc5672ef14458007fc2b0",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=IPMT(0.05/12, 1, 360, -200000)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "IPMT/ipmt-last-period-mortgage": {
       "outcome": {
@@ -1441,13 +1418,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=IPMT(0.05/12, 360, 360, -200000)",
       "stimulus": "sha256:1ff017ad2a1d40e1c8339ef944aff65016669d65b20ed7e431663dfbe818b2d8",
       "fingerprint": "sha256:991728c942c3ef0165b40569f2417aa1ec428b25740d51467c0bd7bb71fd6577",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=IPMT(0.05/12, 360, 360, -200000)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "IPMT/ipmt-invalid-period": {
       "outcome": {
@@ -1500,13 +1476,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=IPMT(0.05/12, 0, 360, -200000)",
       "stimulus": "sha256:7653d8f6e8b50eb25d059e5b4eb00e6c4f4712469c74a0b956e47c7c7b45cdaf",
       "fingerprint": "sha256:f3a7c5ef3dc55973380ab8685af4886919ca174f93d2e56814d91074798899a6",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=IPMT(0.05/12, 0, 360, -200000)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "IRR/irr-simple-project": {
       "outcome": {
@@ -1564,13 +1539,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=IRR(A1:A6)",
       "stimulus": "sha256:e1f16f5572bc3c84ef6976faea855334a83171e071b65139c6a02d4c18fd914c",
       "fingerprint": "sha256:cf338aff97a7c59f231861792d1338f8309eca4c4f6b62c811b9fcc496cab629",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=IRR(A1:A6)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "IRR/irr-growing-cashflows": {
       "outcome": {
@@ -1628,13 +1602,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=IRR(A1:A4)",
       "stimulus": "sha256:1e1e0d92ce2659071cbe4e88c919eb9d95ae3672e49cfb90fbe1f56b64ed82fd",
       "fingerprint": "sha256:2685d59aa0b8373041f7a824ccc70cad00a99f09f8f24cd9d817f03d116e9984",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=IRR(A1:A4)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "IRR/irr-no-sign-change": {
       "outcome": {
@@ -1687,13 +1660,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=IRR(A1:A3)",
       "stimulus": "sha256:e59207b43d838034023a86af7b3080bd64b173b49983ba450e7bc35f043d63bd",
       "fingerprint": "sha256:f3a7c5ef3dc55973380ab8685af4886919ca174f93d2e56814d91074798899a6",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=IRR(A1:A3)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "ISPMT/ispmt-mid-loan": {
       "outcome": {
@@ -1743,13 +1715,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=ISPMT(0.1/12, 1, 36, 8000000)",
       "stimulus": "sha256:566abd755d91ba476d5723332aa40d2a3a52f09d0a58b82d40e28438c1ee634b",
       "fingerprint": "sha256:38557e178e1939938c21bfa184c0228ed2b50306adb799b0e23776d58584198e",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=ISPMT(0.1/12, 1, 36, 8000000)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "ISPMT/ispmt-first-period": {
       "outcome": {
@@ -1799,13 +1770,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=ISPMT(0.05, 0, 5, -1000)",
       "stimulus": "sha256:310b19ae8e0cd29fa1cf24bce7e98febbe572f1024749f565e1cf0b689fc5fc6",
       "fingerprint": "sha256:4e07bcf8598af8c23d16e693518b1b99ad0d359acd60f1d04548adb420e9ca4a",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=ISPMT(0.05, 0, 5, -1000)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "ISPMT/ispmt-last-period": {
       "outcome": {
@@ -1855,13 +1825,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=ISPMT(0.05, 5, 5, -1000)",
       "stimulus": "sha256:8d99d41a61b87549f34c99468a5f39fe2915c8b6f2e4f79df7b3463fb335b74d",
       "fingerprint": "sha256:c2c1197f53d7fead335c75f6de7376efaaa96cc32466c698b76d1afb524a3d9b",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=ISPMT(0.05, 5, 5, -1000)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "MIRR/mirr-standard": {
       "outcome": {
@@ -1919,13 +1888,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=MIRR(A1:A6, 0.1, 0.12)",
       "stimulus": "sha256:e28e80c725b7514a5b9ba779716ab389470ea81606b824fe50751347335b158b",
       "fingerprint": "sha256:6f402bac7f366e4a0ce73543f8b9aa4bc52368102cfea34349925a6b585f6711",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=MIRR(A1:A6, 0.1, 0.12)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "MIRR/mirr-equal-rates": {
       "outcome": {
@@ -1983,13 +1951,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=MIRR(A1:A4, 0.1, 0.1)",
       "stimulus": "sha256:95da750d690c373c2059a5fb26fb1b227044e535e82b183fe55d9e549098ed5a",
       "fingerprint": "sha256:db864ca1f6e18ddcdb1c43d88c44e0d111f467f0c104436d27e31bb0592c2ac1",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=MIRR(A1:A4, 0.1, 0.1)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "MIRR/mirr-no-sign-change": {
       "outcome": {
@@ -2042,13 +2009,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=MIRR(A1:A3, 0.1, 0.12)",
       "stimulus": "sha256:6b68cf65cf50e882047fc73d3a68265c20ad4286889cd9af73af346ee2b2a711",
       "fingerprint": "sha256:9e9c3c33922769ff43b5ee707235ee42da4c50fca21170ab577b0fd144aecc52",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=MIRR(A1:A3, 0.1, 0.12)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "NOMINAL/nominal-monthly": {
       "outcome": {
@@ -2098,13 +2064,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=NOMINAL(0.126825030131969, 12)",
       "stimulus": "sha256:56ffa8a43ea363bbeb5b58d34f644cd88af2f87f53c6877509da61f4f6aaf6d3",
       "fingerprint": "sha256:0bca587db720e8a24c5a4da7fabd4f43e29ae8bc64b32e424d1545a92425c625",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=NOMINAL(0.126825030131969, 12)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "NOMINAL/nominal-annual": {
       "outcome": {
@@ -2154,13 +2119,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=NOMINAL(0.05, 1)",
       "stimulus": "sha256:349390b29952367d2119b49e3a3daf35dd98a792fd84f74650110b6e47f0997c",
       "fingerprint": "sha256:42c3aba3b9f05e9e0b97a6f429132577b5789b8f6d90d8337ca1cb7cf088f158",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=NOMINAL(0.05, 1)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "NOMINAL/nominal-invalid-rate": {
       "outcome": {
@@ -2213,13 +2177,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=NOMINAL(-0.05, 4)",
       "stimulus": "sha256:c01b918d5434f501465909aa63c514d9dc263bab6e8c42bed31b90b4a1eb9ace",
       "fingerprint": "sha256:f3a7c5ef3dc55973380ab8685af4886919ca174f93d2e56814d91074798899a6",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=NOMINAL(-0.05, 4)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "NPER/nper-mortgage-like": {
       "outcome": {
@@ -2269,13 +2232,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=NPER(0.05/12, -1073.64, 200000)",
       "stimulus": "sha256:94a820d50b359afbbc56dd53e09df683a707a91ef92452e00ec65246355bdf0d",
       "fingerprint": "sha256:17b73eb77ee13b5c430ca0f96a0d05a511c14dc1a3c6e5b0e2ad2d99d6bbe18d",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=NPER(0.05/12, -1073.64, 200000)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "NPER/nper-zero-rate": {
       "outcome": {
@@ -2325,13 +2287,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=NPER(0, -100, 1000)",
       "stimulus": "sha256:b67704de49557bb0849f66de875ad200401cd986e44e895fcc50dc0732fece93",
       "fingerprint": "sha256:e2c4a97971b997a2a4e6377e62f4cf4203037725ce092a5a5ba61f8cc7dea387",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=NPER(0, -100, 1000)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "NPER/nper-impossible": {
       "outcome": {
@@ -2384,13 +2345,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=NPER(0.1, -1, 10000)",
       "stimulus": "sha256:99650a043d6bdcfb71fbf1746948c339ea0b83f940c42d2f045d66e49083fd14",
       "fingerprint": "sha256:f3a7c5ef3dc55973380ab8685af4886919ca174f93d2e56814d91074798899a6",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=NPER(0.1, -1, 10000)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "NPV/npv-five-year-annuity": {
       "outcome": {
@@ -2448,13 +2408,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=NPV(0.1, -1000, 300, 300, 300, 300, 300)",
       "stimulus": "sha256:888cd7a32106f388c9d2593497c4ee37b65c6e8c6a0d16a2e70a5e4843da901c",
       "fingerprint": "sha256:ff971f8cb739c334558236ba3898216aba2931c59cddab03b8c5a11fbc69b6c6",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=NPV(0.1, -1000, 300, 300, 300, 300, 300)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "NPV/npv-single-cashflow": {
       "outcome": {
@@ -2512,13 +2471,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=NPV(0.1, 100)",
       "stimulus": "sha256:dbf322e04dfbe363608b5c20c4831ac2c0372bec88eb91eb80ece8468f7b1c18",
       "fingerprint": "sha256:b2dbc10635f6e2dc75e12f2ed21f011832a044da3898444111d64fdce5aee399",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=NPV(0.1, 100)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "NPV/npv-zero-rate": {
       "outcome": {
@@ -2576,13 +2534,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=NPV(0, 100, 200, 300)",
       "stimulus": "sha256:d56b78d95c98cf8c73c0fbd1e0707a3251de2e8b83fa9ce156c1d077cb8f7e6d",
       "fingerprint": "sha256:4c7f53e555eeee83d189639138cd2d7025809ebab075ed8ade3acfa58ad69598",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=NPV(0, 100, 200, 300)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "PDURATION/pduration-double-money-10pct": {
       "outcome": {
@@ -2632,13 +2589,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=PDURATION(0.1, 1000, 2000)",
       "stimulus": "sha256:b1b9f63a5755a42d66b4a4d35514549d69116ec5247b6311a62e792bdf7f79b2",
       "fingerprint": "sha256:d1fdcf0ba529de56b0e6526c4cd8225ede5e149bb9bb16f2cac324b5e3117b19",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=PDURATION(0.1, 1000, 2000)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "PDURATION/pduration-no-growth-needed": {
       "outcome": {
@@ -2688,13 +2644,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=PDURATION(0.05, 1000, 1000)",
       "stimulus": "sha256:1586d56476fac6b8a83ede879fee2c682ecf040178890dd65cc4be3f9a7ac7c8",
       "fingerprint": "sha256:c2c1197f53d7fead335c75f6de7376efaaa96cc32466c698b76d1afb524a3d9b",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=PDURATION(0.05, 1000, 1000)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "PDURATION/pduration-invalid-rate": {
       "outcome": {
@@ -2747,13 +2702,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=PDURATION(0, 1000, 2000)",
       "stimulus": "sha256:7d8b3e4d8f4e7e5d4eafcaab388d31dea95ead9918d471c3f66fe43409bd4156",
       "fingerprint": "sha256:f3a7c5ef3dc55973380ab8685af4886919ca174f93d2e56814d91074798899a6",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=PDURATION(0, 1000, 2000)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "PMT/pmt-monthly-mortgage": {
       "outcome": {
@@ -2811,13 +2765,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=PMT(0.05/12, 360, -200000)",
       "stimulus": "sha256:f2e1171d8dc08aa0b2f4b61e0606776a818139a50b50d1f3afbff09c9e3306c8",
       "fingerprint": "sha256:d2b046a7dca4f665f46bc69522c6f1caf1a6d34e4ba922ffc18aca90cf6a8c2d",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=PMT(0.05/12, 360, -200000)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "PMT/pmt-zero-rate": {
       "outcome": {
@@ -2875,13 +2828,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=PMT(0, 12, 12000)",
       "stimulus": "sha256:1ecab973bb0bd3f6c5e2db7ed37877e4842b89f11ba7b624601623fa9e40f770",
       "fingerprint": "sha256:9fff4a5133f83e19bb5a2e76512b31f1c6b8b9ccebdbc4e0f09990d54eab7eb1",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=PMT(0, 12, 12000)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "PMT/pmt-savings-goal": {
       "outcome": {
@@ -2939,13 +2891,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=PMT(0.06/12, 360, 0, 1000000)",
       "stimulus": "sha256:7a73c9657a22a4a08826bc4b3fc049f6b8dc529fb1b56a32741d4a4613724324",
       "fingerprint": "sha256:ea2298bb398c051a702e63508fa8c66525e2e588915fe4fd7dad691d0251d647",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=PMT(0.06/12, 360, 0, 1000000)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "PPMT/ppmt-first-period-mortgage": {
       "outcome": {
@@ -3003,13 +2954,75 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=PPMT(0.05/12, 1, 360, -200000)",
       "stimulus": "sha256:155286390743403e7a1bda7b7c561b4dfc9242c395d1cde82be3fb300dc9b21e",
       "fingerprint": "sha256:b3acc50fd39fb9e55dad81fda17c978080a66ec90bc9dd2daf08f1106719431c",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=PPMT(0.05/12, 1, 360, -200000)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
+    },
+    "PPMT/ppmt-ipmt-plus-ppmt-equals-pmt": {
+      "outcome": {
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 1073.6432460242795
+              },
+              "engine": {
+                "platform": "gsheets",
+                "wire_kind": "number",
+                "raw_api": {
+                  "userEnteredValue": {
+                    "formulaValue": "=PPMT(0.05/12, 5, 360, -200000) + IPMT(0.05/12, 5, 360, -200000)"
+                  },
+                  "effectiveValue": {
+                    "numberValue": 1073.6432460242795
+                  },
+                  "formattedValue": "$1,073.64",
+                  "effectiveFormat": {
+                    "numberFormat": {
+                      "type": "CURRENCY",
+                      "pattern": "\"$\"#,##0.00"
+                    },
+                    "textFormat": {
+                      "foregroundColor": {},
+                      "fontFamily": "Arial",
+                      "fontSize": 10,
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "foregroundColorStyle": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "hyperlinkDisplayType": "PLAIN_TEXT"
+                  }
+                }
+              },
+              "formula": "PPMT(0.05/12, 5, 360, -200000) + IPMT(0.05/12, 5, 360, -200000)",
+              "formatted": "$1,073.64",
+              "number_format": {
+                "type": "CURRENCY",
+                "pattern": "\"$\"#,##0.00"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
+      },
+      "formula-as-evaluated": "=PPMT(0.05/12, 5, 360, -200000) + IPMT(0.05/12, 5, 360, -200000)",
+      "stimulus": "sha256:c28fc179479d503a8a2de272b3ee77a130ea2b86630a6eee3a973a5cc2f8ff9e",
+      "fingerprint": "sha256:d2b046a7dca4f665f46bc69522c6f1caf1a6d34e4ba922ffc18aca90cf6a8c2d",
+      "fpv": 1,
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "PPMT/ppmt-invalid-period": {
       "outcome": {
@@ -3062,13 +3075,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=PPMT(0.05/12, 361, 360, -200000)",
       "stimulus": "sha256:cb69bfa14f0a7e7eedeb352766293d636ce497791533bb8988084dc4eb0bbb29",
       "fingerprint": "sha256:f3a7c5ef3dc55973380ab8685af4886919ca174f93d2e56814d91074798899a6",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=PPMT(0.05/12, 361, 360, -200000)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "PV/pv-annuity-textbook": {
       "outcome": {
@@ -3126,13 +3138,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=PV(0.06, 10, -1000)",
       "stimulus": "sha256:891e7720636d381d29aff24919836327ccde072366a28087199b86198d0f9480",
       "fingerprint": "sha256:dfc3dd9f036da5f901641a4eba3930fc8770b5dac31dac25a35ab1fe38e195c9",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=PV(0.06, 10, -1000)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "PV/pv-lump-sum": {
       "outcome": {
@@ -3190,13 +3201,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=PV(0.1, 5, 0, -1000)",
       "stimulus": "sha256:6d3a5f2b08e91b0d1df7d7bd7f86599f742d53987ebb6d887807901949e67240",
       "fingerprint": "sha256:b6f84f453ed5a630b7598ecbd234cc87f77341a759c257485441f8836ab00468",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=PV(0.1, 5, 0, -1000)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "PV/pv-zero-rate": {
       "outcome": {
@@ -3254,13 +3264,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=PV(0, 10, -100)",
       "stimulus": "sha256:b64dde157839682c541fa27582249d16470535e9fff36dd2cda5d41724df0bf3",
       "fingerprint": "sha256:de656f5ea99030c16e5555e9bd9179dc1e37f435575f139533617843c7f013e1",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=PV(0, 10, -100)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "RATE/rate-mortgage-implied": {
       "outcome": {
@@ -3318,13 +3327,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=RATE(360, -1073.64, 200000)",
       "stimulus": "sha256:9b733ae335aa6bd8d3a35c8eec340777292c045f36f9f76f07bfc91a59418f07",
       "fingerprint": "sha256:95a929301a0e445d59d77da5a8717afa6a291a1b40fe727749235bc44b96f0f6",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=RATE(360, -1073.64, 200000)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "RATE/rate-zero-payment": {
       "outcome": {
@@ -3382,13 +3390,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=RATE(10, 0, -500, 1000)",
       "stimulus": "sha256:f85b15a85d965982d71c29450385d75ac20db27dc9f633619e055697bdacbee1",
       "fingerprint": "sha256:0865e115a514c4b0acd4221d30c28dd241b3eddf47add40aa9c0338902e82086",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=RATE(10, 0, -500, 1000)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "RATE/rate-unreachable": {
       "outcome": {
@@ -3441,13 +3448,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=RATE(10, 100, 100)",
       "stimulus": "sha256:ab6be9ccfb464897c27cdfa3c288f0afc287be0ba0fde1b8460b149b0a5d3453",
       "fingerprint": "sha256:f3a7c5ef3dc55973380ab8685af4886919ca174f93d2e56814d91074798899a6",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=RATE(10, 100, 100)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "RRI/rri-double-in-8-years": {
       "outcome": {
@@ -3497,13 +3503,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=RRI(8, 1, 2)",
       "stimulus": "sha256:65c285a0eb9b36331fa570ea2ad3a2a0f425b9ffc9062678b863462a9728c6e7",
       "fingerprint": "sha256:45aeb5262515fbb194305ece6675b193ba4d07e63da34654af8b3a11431b3519",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=RRI(8, 1, 2)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "RRI/rri-no-growth": {
       "outcome": {
@@ -3553,13 +3558,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=RRI(5, 1000, 1000)",
       "stimulus": "sha256:5531ff6313e7c1a0ecb580879786fa17debcca08622ffbdd76382cee93f772eb",
       "fingerprint": "sha256:c2c1197f53d7fead335c75f6de7376efaaa96cc32466c698b76d1afb524a3d9b",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=RRI(5, 1000, 1000)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "RRI/rri-invalid-periods": {
       "outcome": {
@@ -3612,13 +3616,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=RRI(0, 1000, 2000)",
       "stimulus": "sha256:2a340a13bcf988002d8698ab4e1ba75cb37c430286e81b4607269e1dd80faca6",
       "fingerprint": "sha256:9e9c3c33922769ff43b5ee707235ee42da4c50fca21170ab577b0fd144aecc52",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=RRI(0, 1000, 2000)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "SLN/sln-textbook": {
       "outcome": {
@@ -3676,13 +3679,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=SLN(1000, 100, 10)",
       "stimulus": "sha256:081fe1f5e96df0d4ac2cb8cbd1c563e6c5cab7cae702f1ef98723406ff7c9530",
       "fingerprint": "sha256:f1cb5f82b0774bfa347473302d49d43f2fced9ae3bfa0f03c5eababaefd12bd8",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=SLN(1000, 100, 10)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "SLN/sln-no-salvage": {
       "outcome": {
@@ -3740,13 +3742,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=SLN(5000, 0, 5)",
       "stimulus": "sha256:d96818f66190e82b2eb9c2daf8e4afdf150f2db3300dc0a657fe8bd754fee840",
       "fingerprint": "sha256:de656f5ea99030c16e5555e9bd9179dc1e37f435575f139533617843c7f013e1",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=SLN(5000, 0, 5)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "SLN/sln-zero-life": {
       "outcome": {
@@ -3799,13 +3800,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=SLN(1000, 100, 0)",
       "stimulus": "sha256:b2bc00840b94ba44673a979c8f0419296a8a6771180248e310b14862d3fb7088",
       "fingerprint": "sha256:9e9c3c33922769ff43b5ee707235ee42da4c50fca21170ab577b0fd144aecc52",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=SLN(1000, 100, 0)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "SYD/syd-period-1": {
       "outcome": {
@@ -3863,13 +3863,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=SYD(1000, 100, 10, 1)",
       "stimulus": "sha256:b17b4409b9b1e87e44ea12b410d75c3f60bbb7ca2f4e400b5c7fbf37c8afdbac",
       "fingerprint": "sha256:333f73a95066447f33fa03ce06761aee6387b6665852c2274656328d98202a5d",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=SYD(1000, 100, 10, 1)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "SYD/syd-last-period": {
       "outcome": {
@@ -3927,13 +3926,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=SYD(1000, 100, 10, 10)",
       "stimulus": "sha256:2dda1d9e3bc9cca7ede5ba59d65368b6ae4fca6f6c64ddbd9ab7a3b052198c14",
       "fingerprint": "sha256:fbf87499a12efcaaa12febd49239fb9483c3e5a7ecf0bbe908ee1837c0133e45",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=SYD(1000, 100, 10, 10)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "SYD/syd-invalid-period": {
       "outcome": {
@@ -3986,13 +3984,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=SYD(1000, 100, 10, 11)",
       "stimulus": "sha256:d6361fa0ef141c0f78c009805f6cf2e33ecf71dca9a5701bcb410f1c2a911d4c",
       "fingerprint": "sha256:f3a7c5ef3dc55973380ab8685af4886919ca174f93d2e56814d91074798899a6",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=SYD(1000, 100, 10, 11)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "VDB/vdb-first-day": {
       "outcome": {
@@ -4050,13 +4047,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=VDB(2400, 300, 10*365, 0, 1)",
       "stimulus": "sha256:1b3f0e1c13363f78fb88c3009ff5e30888403b2ca51d5e0347a6e9958619163c",
       "fingerprint": "sha256:e38e29aada4b3f9f1a483b328d36f94139c55b4316675bfce52c9ec68aef7ca8",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=VDB(2400, 300, 10*365, 0, 1)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "VDB/vdb-first-year": {
       "outcome": {
@@ -4114,13 +4110,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=VDB(2400, 300, 10, 0, 1)",
       "stimulus": "sha256:a5ad1de7ceff5454d5dafa1f5f5a91df9990b1b8a1ac40fcbd41139a28dbb7c4",
       "fingerprint": "sha256:5f7553b1b61c9d69397af4133887bcce8ffa0278a53ed0db455fd24bedad4d71",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=VDB(2400, 300, 10, 0, 1)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "VDB/vdb-no-switch": {
       "outcome": {
@@ -4178,13 +4173,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=VDB(2400, 300, 10, 0, 10, 2, TRUE)",
       "stimulus": "sha256:81c6232e411cad242e9103d422b4eae8fa46747bd11eb8448f98eeb5b70b06c3",
       "fingerprint": "sha256:df50928da12ccdcdbebbed3702ef1a2ce30682d481f2bcd471fe5d5288676dd5",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=VDB(2400, 300, 10, 0, 10, 2, TRUE)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "XIRR/xirr-simple-project": {
       "outcome": {
@@ -4234,13 +4228,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=XIRR(A1:A5, B1:B5)",
       "stimulus": "sha256:beb277c3fe0acfe02e22c0c20136905b0328982e15bed691d45f9d4fa45d4c32",
       "fingerprint": "sha256:4d46973ff5bf7552728de50625efd0ea98fe208e07b005cd10f9bff16325abc3",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=XIRR(A1:A5, B1:B5)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "XIRR/xirr-with-guess": {
       "outcome": {
@@ -4290,13 +4283,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=XIRR(A1:A3, B1:B3, 0.1)",
       "stimulus": "sha256:fe7c5b51531f0daa6cd486f04f73fb6e9601f9fda0c155238e04d4b806ced587",
       "fingerprint": "sha256:68d58f9926037490a40d1db054152eb9fa0fda97e3298f8fe096b5d930c89979",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=XIRR(A1:A3, B1:B3, 0.1)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "XIRR/xirr-no-sign-change": {
       "outcome": {
@@ -4349,13 +4341,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=XIRR(A1:A2, B1:B2)",
       "stimulus": "sha256:2ccacae3eca85298849b44aba074c56565dc8cf1823c41da512bcf84d3832864",
       "fingerprint": "sha256:f3a7c5ef3dc55973380ab8685af4886919ca174f93d2e56814d91074798899a6",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=XIRR(A1:A2, B1:B2)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "XNPV/xnpv-standard": {
       "outcome": {
@@ -4408,13 +4399,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=XNPV(0.09, A1:A5, B1:B5)",
       "stimulus": "sha256:cfbb083196ccf53e9202be25f2d62e15d562ea023c203ebfa7300610732377e7",
       "fingerprint": "sha256:53560b24dc39cb4e4cccc613e7b3e26488e6e25a7024d47e1d2f13ac74995070",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=XNPV(0.09, A1:A5, B1:B5)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "XNPV/xnpv-single-future-flow": {
       "outcome": {
@@ -4467,13 +4457,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=XNPV(0.1, A1:A2, B1:B2)",
       "stimulus": "sha256:574c7862e7ace29cb6f9e4f6f614e2403d6a5ba9bddb4fda0f897e85ddf7958d",
       "fingerprint": "sha256:53560b24dc39cb4e4cccc613e7b3e26488e6e25a7024d47e1d2f13ac74995070",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=XNPV(0.1, A1:A2, B1:B2)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "XNPV/xnpv-mismatched-lengths": {
       "outcome": {
@@ -4526,13 +4515,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=XNPV(0.1, A1:A3, B1:B2)",
       "stimulus": "sha256:3d529f8d493ea7a5c24a95cebc2a8f444288bdd7d1fea66d34cafed8f0579e6f",
       "fingerprint": "sha256:f3a7c5ef3dc55973380ab8685af4886919ca174f93d2e56814d91074798899a6",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=XNPV(0.1, A1:A3, B1:B2)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     }
   }
 }

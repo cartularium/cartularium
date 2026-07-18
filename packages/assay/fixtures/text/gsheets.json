@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "platform": "gsheets",
-  "generatedAt": "2026-06-17T20:01:41.629Z",
+  "generatedAt": "2026-07-18T20:47:11.590Z",
   "results": {
     "CONCAT/concat-two-args": {
       "outcome": {
@@ -51,13 +51,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=CONCAT(\"hello\", \" world\")",
       "stimulus": "sha256:9deafc415cf7c102bacc2d19bb7f932e95c16529d726699379b9c2a7b26f69ca",
       "fingerprint": "sha256:9e32253e499354dbac42140697ebcf62f00e283fd26462807024964896dae1d6",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=CONCAT(\"hello\", \" world\")"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "CONCATENATE/concatenate-with-grid": {
       "outcome": {
@@ -107,13 +106,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=CONCATENATE(A1, A2, A3, \"!\")",
       "stimulus": "sha256:9f5b9c095136ef0ca2a20279d875154bfcefee5f57b8ef47a689851bb1adc4f4",
       "fingerprint": "sha256:34abdce4925514affce950a71eaa64b9a120af35213405187fdfe34dc06d59cd",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=CONCATENATE(A1, A2, A3, \"!\")"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "CONCAT/concat-with-numbers": {
       "outcome": {
@@ -163,13 +161,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=CONCAT(\"value:\", 42)",
       "stimulus": "sha256:49563a8fc5445a3b06e2df3f355a9d2fb6b8462d401eade75c5e30f84ae20f94",
       "fingerprint": "sha256:98d701e6110fb70a74415d8a605abf8e74d2948996c56397f90f292c2474a0b3",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=CONCAT(\"value:\", 42)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "LEFT/left-with-count": {
       "outcome": {
@@ -219,13 +216,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=LEFT(\"Sale Price\", 4)",
       "stimulus": "sha256:36e233b0539031762e3d306e4bddadce2b4ef882fd2b6d22b1cbbb0eec34719f",
       "fingerprint": "sha256:c192ed55ed83fe1619dc1bd312fd5ca5bae629d13cce57115fcabeac52314283",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=LEFT(\"Sale Price\", 4)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "LEFT/left-default": {
       "outcome": {
@@ -275,13 +271,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=LEFT(\"Sweden\")",
       "stimulus": "sha256:2149f8ccc500e95e8b286e2042cc8cfdd6c33a279b89f589a58048f38fb2a64c",
       "fingerprint": "sha256:3c3eb7de783e5bc2b027d8ad492682dade5bd8fdbd79c12812573b10a5f88793",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=LEFT(\"Sweden\")"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "RIGHT/right-with-count": {
       "outcome": {
@@ -331,13 +326,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=RIGHT(\"Sale Price\", 5)",
       "stimulus": "sha256:c02a62f099e37a3c1d4c9a2cec7a9d469dc1f2a94792133c47aa4d6e6ca96b98",
       "fingerprint": "sha256:3aeb4a11bce39588be07161b0a9d17d220663abaab01dff9996bd86b4d95df0a",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=RIGHT(\"Sale Price\", 5)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "RIGHT/right-default": {
       "outcome": {
@@ -387,13 +381,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=RIGHT(\"Stock Number\")",
       "stimulus": "sha256:89da09bc1754e92c8b1348f264a97411b4ad0fd24eb509fd33d38835f961a16e",
       "fingerprint": "sha256:20a903f18994596a71032eb64ee7979f59832381311fdba75ea2aea6f9e3066b",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=RIGHT(\"Stock Number\")"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "MID/mid-basic": {
       "outcome": {
@@ -443,13 +436,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=MID(\"Romain\", 3, 4)",
       "stimulus": "sha256:66b5926b1f3a52ef53da0b9d774f5c827b4a0d795e15d2a87a857b7a32d7936e",
       "fingerprint": "sha256:791b5c52f4e065d3529b013be2e82f5d224966589968ff0cd99d844171eb838c",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=MID(\"Romain\", 3, 4)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "MID/mid-from-start": {
       "outcome": {
@@ -499,13 +491,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=MID(\"Romain\", 1, 2)",
       "stimulus": "sha256:afbe3b55c745f692deb2f17e2598c136ce75bf7c3b1898f3fcc48ffc39f66f15",
       "fingerprint": "sha256:a3ecb395917d18b073d79f20818d2a3148ce117f5eda7bafa5930f51f08c4eea",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=MID(\"Romain\", 1, 2)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "MID/mid-beyond-end": {
       "outcome": {
@@ -555,13 +546,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=MID(\"Romain\", 3, 6)",
       "stimulus": "sha256:91b84d164b89dacb2f61f0b672556adc31a8b93c6ff3fe76fa7bf236f67ea9ea",
       "fingerprint": "sha256:791b5c52f4e065d3529b013be2e82f5d224966589968ff0cd99d844171eb838c",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=MID(\"Romain\", 3, 6)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "MID/mid-start-0": {
       "outcome": {
@@ -614,13 +604,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=MID(\"Romain\", 0, 3)",
       "stimulus": "sha256:75aca852fc8fa74cb0832626c0e18eb8c47cf6ee95e14efe7e8cc6addc382317",
       "fingerprint": "sha256:f3a7c5ef3dc55973380ab8685af4886919ca174f93d2e56814d91074798899a6",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=MID(\"Romain\", 0, 3)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "MID/mid-negative-count": {
       "outcome": {
@@ -673,13 +662,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=MID(\"Romain\", 1, -1)",
       "stimulus": "sha256:4ccde42eb0c3f9283c64dc3f1b0917a0ea97fde49300fabd92c9a9893fe5aa82",
       "fingerprint": "sha256:53560b24dc39cb4e4cccc613e7b3e26488e6e25a7024d47e1d2f13ac74995070",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=MID(\"Romain\", 1, -1)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "LEN/len-basic": {
       "outcome": {
@@ -729,13 +717,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=LEN(\"Phoenix, AZ\")",
       "stimulus": "sha256:48271550f03ae5038c9ce22e8cdb4784636c2651de0d02ecb6a92e07a4271091",
       "fingerprint": "sha256:4fd553458f09de1062ee69a73d58083e9c68ec237edc26d7e21731b3749d87fb",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=LEN(\"Phoenix, AZ\")"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "LEN/len-empty": {
       "outcome": {
@@ -785,13 +772,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=LEN(\"\")",
       "stimulus": "sha256:05553bf7e90accf1299e24dd57e0caa555b7d365b24e63631fd699208679ad04",
       "fingerprint": "sha256:c2c1197f53d7fead335c75f6de7376efaaa96cc32466c698b76d1afb524a3d9b",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=LEN(\"\")"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "LEN/len-with-spaces": {
       "outcome": {
@@ -841,13 +827,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=LEN(\"        One\")",
       "stimulus": "sha256:9d1357dbd1f70a31603c9c8e0910d636721ef52e5f658dc4a6c0eaa7657879d9",
       "fingerprint": "sha256:4fd553458f09de1062ee69a73d58083e9c68ec237edc26d7e21731b3749d87fb",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=LEN(\"        One\")"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "LOWER/lower": {
       "outcome": {
@@ -897,13 +882,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=LOWER(\"E. E. Cummings\")",
       "stimulus": "sha256:af809101922e5c8f87bc308552c0d7893f59da52e2dde38dde2988412dff8e59",
       "fingerprint": "sha256:8fa96a5f33ddd53c8d322431da4e99e0a0a79313a21644ddca0d8cefbc9a4353",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=LOWER(\"E. E. Cummings\")"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "UPPER/upper": {
       "outcome": {
@@ -953,13 +937,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=UPPER(\"total\")",
       "stimulus": "sha256:b9e64128086c2028e1afeef991d1a690e5a0c9c9663068fab53a74a6e33753c0",
       "fingerprint": "sha256:aabb3a069be5db592aad56e7707f720de0ada1856fd9b7b2bfb0b07f00f6ef14",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=UPPER(\"total\")"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "UPPER/upper-mixed": {
       "outcome": {
@@ -1009,13 +992,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=UPPER(\"Yield\")",
       "stimulus": "sha256:29b9bb958a7eeed661a3e95f141e88adfcb064c5da5a6ad2c918e13c7368257f",
       "fingerprint": "sha256:bde29aa631eb713295b7867581ddcc6e2536c187ae97a1c62f657ed34c250280",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=UPPER(\"Yield\")"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "TRIM/trim": {
       "outcome": {
@@ -1065,13 +1047,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=TRIM(\" First Quarter Earnings \")",
       "stimulus": "sha256:a80630d5298ff52991f03c96935ba01f7fbe3a751980e8689cf7c3f57232f411",
       "fingerprint": "sha256:c919eba44941d4cadd56bfa7e1acad4ac41b04b41afeeb9338f8d1796c33b25f",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=TRIM(\" First Quarter Earnings \")"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "SUBSTITUTE/substitute-basic": {
       "outcome": {
@@ -1121,13 +1102,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=SUBSTITUTE(\"hello world\", \"world\", \"earth\")",
       "stimulus": "sha256:8c6cb27a4feaf2e0665be027aaaf2fb11f70a8b1e4d5d88c31f58094c268240d",
       "fingerprint": "sha256:d7f6b1104513cd017f614a914d74eaf0c839031ebbc82fff0954466ba43fa0f6",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=SUBSTITUTE(\"hello world\", \"world\", \"earth\")"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "SUBSTITUTE/substitute-multiple-occurrences": {
       "outcome": {
@@ -1177,13 +1157,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=SUBSTITUTE(\"abcabc\", \"a\", \"x\")",
       "stimulus": "sha256:33cd55cb2fa051d3d4cf3aff2567245cf02ef2e0348208a3f4bb13bb0b22ac71",
       "fingerprint": "sha256:23440b7e3b9dd591cb8b909ffd638963080e49f15f852e631d25eb41ddf3a161",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=SUBSTITUTE(\"abcabc\", \"a\", \"x\")"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "SUBSTITUTE/substitute-specific-instance": {
       "outcome": {
@@ -1233,13 +1212,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=SUBSTITUTE(\"abcabc\", \"a\", \"x\", 2)",
       "stimulus": "sha256:169cd6a8b7c6881b359191564f3f505c6a59e3dfad973e0db0c7f61b624b091e",
       "fingerprint": "sha256:46b7e53249aae83f094165bae67db4953177581a47eeffb027e62f6e6f097407",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=SUBSTITUTE(\"abcabc\", \"a\", \"x\", 2)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "FIND/find-case-sensitive": {
       "outcome": {
@@ -1289,13 +1267,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=FIND(\"M\", \"Miriam McGovern\")",
       "stimulus": "sha256:fd206455fe0474152bcd80458c50c2361c93bdfa1da1de5c6d908fb6c0f6c6a0",
       "fingerprint": "sha256:43412a89a2157f2c4788feb0281c4a1151687dc9d65d9710c6a2e9db523e740d",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=FIND(\"M\", \"Miriam McGovern\")"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "FIND/find-lowercase": {
       "outcome": {
@@ -1345,13 +1322,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=FIND(\"m\", \"Miriam McGovern\")",
       "stimulus": "sha256:d569f4a7e7041fbd14f0e7711cf8767be1284a0d9d2ef2f185d1e5936ade7ff0",
       "fingerprint": "sha256:19380e17325c5661a8669b14f9a7f5f1edd57ac6d5d29f72c656315efae76671",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=FIND(\"m\", \"Miriam McGovern\")"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "FIND/find-with-start": {
       "outcome": {
@@ -1401,13 +1377,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=FIND(\"M\", \"Miriam McGovern\", 3)",
       "stimulus": "sha256:283a5b2e3f5eb55b6ca8ac2085def0c810a6019bdc52bf17692f1c36456af44d",
       "fingerprint": "sha256:7d2d8a5b779778e8b5c0b24e3bf06cdce590654ebed8eb82bcf39b758116ffb6",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=FIND(\"M\", \"Miriam McGovern\", 3)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "FIND/find-not-found": {
       "outcome": {
@@ -1460,13 +1435,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=FIND(\"B\", \"Miriam McGovern\")",
       "stimulus": "sha256:22e80789a9da5ded11f91c7423dbcdd3b9483ea7b189b7c5d01a44c2db0db5b2",
       "fingerprint": "sha256:53560b24dc39cb4e4cccc613e7b3e26488e6e25a7024d47e1d2f13ac74995070",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=FIND(\"B\", \"Miriam McGovern\")"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "EXACT/exact-match": {
       "outcome": {
@@ -1516,13 +1490,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=EXACT(\"word\", \"word\")",
       "stimulus": "sha256:e435941c9c0f1b93c0c5368f49d8a2cd6bac6efc66aa2a9af1b716705dd7c6d4",
       "fingerprint": "sha256:d5700d641c4a9b9a358b961db1d68db9a66ae895f49fcb67cf595f5e1fa51d9c",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=EXACT(\"word\", \"word\")"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "EXACT/exact-case-differs": {
       "outcome": {
@@ -1572,13 +1545,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=EXACT(\"Word\", \"word\")",
       "stimulus": "sha256:701a841850cae296ad4808ef2b3c9753725d075d25d81471edf6c0f27948a6a3",
       "fingerprint": "sha256:a1b538e19620f97d545382bbb58c4ab9ed43811e9f00defb0e3f2a8a27492f94",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=EXACT(\"Word\", \"word\")"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "REPLACE/replace-basic": {
       "outcome": {
@@ -1628,13 +1600,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=REPLACE(\"abcdefghijk\", 6, 5, \"*\")",
       "stimulus": "sha256:c0f83dcf4da54e56b0662307da20ec79661b1ec0aa5ccaf88d2f8d7ea00061cd",
       "fingerprint": "sha256:b636c3d620f7d5a0bd019d94f7e01adb0447c07d3e75f3896452cd41ce937806",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=REPLACE(\"abcdefghijk\", 6, 5, \"*\")"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "REPLACE/replace-year": {
       "outcome": {
@@ -1684,13 +1655,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=REPLACE(\"2009\", 3, 2, \"10\")",
       "stimulus": "sha256:7ee7af1b432039fe07c7d27a49fdcfab9fada7ba3a7e9cb832fd37bf46d02290",
       "fingerprint": "sha256:dcb65f9cd983a1e4dfe0476e0042a3eb5ac21a1be4eaa592363284dd02953813",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=REPLACE(\"2009\", 3, 2, \"10\")"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "REPT/rept-basic": {
       "outcome": {
@@ -1740,13 +1710,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=REPT(\"ha\", 3)",
       "stimulus": "sha256:dec6a701b78a971f54cbc5cdc39cbab630abe65e5f1d908a714f14c527d27419",
       "fingerprint": "sha256:c63a11b5c23c9dee7be496816cdb00dedeee72c532c45baea506b5c4c090b5aa",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=REPT(\"ha\", 3)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "REPT/rept-zero": {
       "outcome": {
@@ -1792,13 +1761,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=REPT(\"ha\", 0)",
       "stimulus": "sha256:230dc945e6c02a5f865aacd992f399f875e38d307291011141e7f3c445b601ea",
       "fingerprint": "sha256:2795dacdf07458184e028719fca7455dd2703f9fb570f596392edab6492cb505",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=REPT(\"ha\", 0)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "TEXTJOIN/textjoin-comma-separator": {
       "outcome": {
@@ -1848,13 +1816,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=TEXTJOIN(\", \", TRUE, A1:A3)",
       "stimulus": "sha256:37fb9f7ae7df5400f490dfcb3c53d0fc43596bc43147e37b6ed7101112d035db",
       "fingerprint": "sha256:8447f775a9d398f8df9fdd074209ac82ca851ab25496396bb2e9417a42e230bd",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=TEXTJOIN(\", \", TRUE, A1:A3)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "TEXTBEFORE/textbefore-space": {
       "outcome": {
@@ -1907,13 +1874,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=TEXTBEFORE(\"Brian Wiles\", \" \")",
       "stimulus": "sha256:64a1a80ce860701fabe2259f84e3ce9f9458954725f9910ac7ffff5aaab93382",
       "fingerprint": "sha256:18c466c30752b33549fe679095342ebb61a84ea50a4a9611bedacf4cfff74ffd",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=TEXTBEFORE(\"Brian Wiles\", \" \")"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "TEXTBEFORE/textbefore-second-instance": {
       "outcome": {
@@ -1966,13 +1932,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=TEXTBEFORE(\"one,two,three\", \",\", 2)",
       "stimulus": "sha256:55eb14f3bc4cbdf9e109973ab1b4f35916eb48cb696d7aedc4c28d6f108060e6",
       "fingerprint": "sha256:18c466c30752b33549fe679095342ebb61a84ea50a4a9611bedacf4cfff74ffd",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=TEXTBEFORE(\"one,two,three\", \",\", 2)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "TEXTAFTER/textafter-space": {
       "outcome": {
@@ -2025,13 +1990,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=TEXTAFTER(\"Brian Wiles\", \" \")",
       "stimulus": "sha256:e814714de8482a9c7cc6a7535b71bbea990346367b9f14a2fdd7963ce4282a1f",
       "fingerprint": "sha256:18c466c30752b33549fe679095342ebb61a84ea50a4a9611bedacf4cfff74ffd",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=TEXTAFTER(\"Brian Wiles\", \" \")"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "TEXTAFTER/textafter-second-instance": {
       "outcome": {
@@ -2084,13 +2048,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=TEXTAFTER(\"one,two,three\", \",\", 2)",
       "stimulus": "sha256:ed9cde6702278cb58d70e664e0c68626714de879c654233c720fbe312089fa44",
       "fingerprint": "sha256:18c466c30752b33549fe679095342ebb61a84ea50a4a9611bedacf4cfff74ffd",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=TEXTAFTER(\"one,two,three\", \",\", 2)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     }
   }
 }

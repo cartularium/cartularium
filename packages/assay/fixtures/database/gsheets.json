@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "platform": "gsheets",
-  "generatedAt": "2026-06-17T20:01:41.604Z",
+  "generatedAt": "2026-07-18T20:47:11.565Z",
   "results": {
     "DSUM/dsum-apples-total": {
       "outcome": {
@@ -51,13 +51,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=DSUM(A1:D5, \"Price\", F1:F2)",
       "stimulus": "sha256:7fe87ad22811595b030857caaee7a6cf6648ce2122e4da438228ef3561d75333",
       "fingerprint": "sha256:bcaa02ace3c9b2156cf147c97ad9a57c2c174d05e0ef7b72c889ab451bde9b49",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=DSUM(A1:D5, \"Price\", F1:F2)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "DSUM/dsum-field-by-index": {
       "outcome": {
@@ -107,13 +106,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=DSUM(A1:D5, 4, F1:F2)",
       "stimulus": "sha256:5eb214d7097b4108e068c2fab72e66a96b40e55a51851839362b6a9fb68a68ca",
       "fingerprint": "sha256:71fa543d1bcc3371e40b4949ed83b5efa58addd2c5bc5dae879ecf535bd80c65",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=DSUM(A1:D5, 4, F1:F2)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "DSUM/dsum-comparator-criteria": {
       "outcome": {
@@ -163,13 +161,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=DSUM(A1:D5, \"Units\", H1:H2)",
       "stimulus": "sha256:7cdaae903332404459a5c333cc71737b91ed4303867e9aa648852e88632452d1",
       "fingerprint": "sha256:7d2d8a5b779778e8b5c0b24e3bf06cdce590654ebed8eb82bcf39b758116ffb6",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=DSUM(A1:D5, \"Units\", H1:H2)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "DSUM/dsum-empty-result": {
       "outcome": {
@@ -219,13 +216,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=DSUM(A1:D5, \"Price\", F1:F2)",
       "stimulus": "sha256:794a7e5128e4fb41e94a3b27f6540e5698e95b075d059e4344e1ad3eb238c7c6",
       "fingerprint": "sha256:c2c1197f53d7fead335c75f6de7376efaaa96cc32466c698b76d1afb524a3d9b",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=DSUM(A1:D5, \"Price\", F1:F2)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "DCOUNT/dcount-apples": {
       "outcome": {
@@ -275,13 +271,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=DCOUNT(A1:D5, \"Price\", F1:F2)",
       "stimulus": "sha256:78dcaf1fa944acf95d44e1ba0a8231ef9ceaa424ed51d7682b2ee65fe7bf6610",
       "fingerprint": "sha256:f13d9c9c73eeb80c34f97364b302cdc64049f75c43a0381299a3ccde79a6e234",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=DCOUNT(A1:D5, \"Price\", F1:F2)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "DCOUNT/dcount-field-by-index": {
       "outcome": {
@@ -331,13 +326,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=DCOUNT(A1:D5, 3, H1:H2)",
       "stimulus": "sha256:b0998f8716fb54300bcd1b2cc0521b66bd3fad0b17d5f39dc1532959a1865e65",
       "fingerprint": "sha256:f13d9c9c73eeb80c34f97364b302cdc64049f75c43a0381299a3ccde79a6e234",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=DCOUNT(A1:D5, 3, H1:H2)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "DCOUNT/dcount-ignores-text-in-numeric-field": {
       "outcome": {
@@ -387,13 +381,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=DCOUNT(A1:D5, \"Product\", F1:F2)",
       "stimulus": "sha256:6e3369bd69610ff14a3286396030eae22d91dcaed734973106f9d2519c9484d2",
       "fingerprint": "sha256:c2c1197f53d7fead335c75f6de7376efaaa96cc32466c698b76d1afb524a3d9b",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=DCOUNT(A1:D5, \"Product\", F1:F2)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "DCOUNT/dcount-empty-result": {
       "outcome": {
@@ -443,13 +436,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=DCOUNT(A1:D5, \"Price\", F1:F2)",
       "stimulus": "sha256:0589dfef5d4b93c5f4bf0cf34853bc0d78075357153b63a76577557a7d29d95f",
       "fingerprint": "sha256:c2c1197f53d7fead335c75f6de7376efaaa96cc32466c698b76d1afb524a3d9b",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=DCOUNT(A1:D5, \"Price\", F1:F2)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "DCOUNTA/dcounta-apples": {
       "outcome": {
@@ -499,13 +491,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=DCOUNTA(A1:D5, \"Product\", F1:F2)",
       "stimulus": "sha256:00bbd4b6e74b875095c8801094102e7a81a1d71f000033c395dbe3689e646fff",
       "fingerprint": "sha256:f13d9c9c73eeb80c34f97364b302cdc64049f75c43a0381299a3ccde79a6e234",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=DCOUNTA(A1:D5, \"Product\", F1:F2)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "DCOUNTA/dcounta-field-by-index": {
       "outcome": {
@@ -555,13 +546,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=DCOUNTA(A1:D5, 1, G1:G2)",
       "stimulus": "sha256:f0cdafae2358fb219dda7b11806b32c7cb5d3384a4c8d70be06321f1526eba01",
       "fingerprint": "sha256:f13d9c9c73eeb80c34f97364b302cdc64049f75c43a0381299a3ccde79a6e234",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=DCOUNTA(A1:D5, 1, G1:G2)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "DCOUNTA/dcounta-empty-result": {
       "outcome": {
@@ -611,13 +601,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=DCOUNTA(A1:D5, \"Product\", F1:F2)",
       "stimulus": "sha256:ff37b0c77719e6e66babf59fcaa42d95044a56af78ebb93d38ebffeb855ed7f4",
       "fingerprint": "sha256:c2c1197f53d7fead335c75f6de7376efaaa96cc32466c698b76d1afb524a3d9b",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=DCOUNTA(A1:D5, \"Product\", F1:F2)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "DGET/dget-single-match": {
       "outcome": {
@@ -667,13 +656,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=DGET(A1:D5, \"Price\", F1:G2)",
       "stimulus": "sha256:b6c0c0916e2c5b58285db5f26e8bb312c4f0081ea3272f6aa3046b2954cdd03f",
       "fingerprint": "sha256:e2c4a97971b997a2a4e6377e62f4cf4203037725ce092a5a5ba61f8cc7dea387",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=DGET(A1:D5, \"Price\", F1:G2)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "DGET/dget-field-by-index": {
       "outcome": {
@@ -723,13 +711,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=DGET(A1:D5, 4, F1:G2)",
       "stimulus": "sha256:a8bd7b20bd2be9f504e7fad7c58e581fcda571dff3cd00990feb97f58525f16b",
       "fingerprint": "sha256:669d643132b4430cc68e613fdae30972321483db9558d121ed2fa2762974c9b8",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=DGET(A1:D5, 4, F1:G2)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "DGET/dget-multiple-matches-error": {
       "outcome": {
@@ -782,13 +769,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=DGET(A1:D5, \"Price\", F1:F2)",
       "stimulus": "sha256:03c931e932241b8334b82867b27468aa2a5ff98181f52a1c6de721bbe5d56ab4",
       "fingerprint": "sha256:f3a7c5ef3dc55973380ab8685af4886919ca174f93d2e56814d91074798899a6",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=DGET(A1:D5, \"Price\", F1:F2)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "DGET/dget-no-match-error": {
       "outcome": {
@@ -841,13 +827,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=DGET(A1:D5, \"Price\", F1:F2)",
       "stimulus": "sha256:240606c0202247496d24740db3e8d111ddbcc03e8e745b67617eab368a2d6fb6",
       "fingerprint": "sha256:53560b24dc39cb4e4cccc613e7b3e26488e6e25a7024d47e1d2f13ac74995070",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=DGET(A1:D5, \"Price\", F1:F2)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "DMAX/dmax-apples": {
       "outcome": {
@@ -897,13 +882,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=DMAX(A1:D5, \"Price\", F1:F2)",
       "stimulus": "sha256:06048b01707503d8272aeb6166bcf97ecb425e3167c1bc3a4a07cb17743b81f0",
       "fingerprint": "sha256:71fa543d1bcc3371e40b4949ed83b5efa58addd2c5bc5dae879ecf535bd80c65",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=DMAX(A1:D5, \"Price\", F1:F2)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "DMAX/dmax-field-by-index": {
       "outcome": {
@@ -953,13 +937,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=DMAX(A1:D5, 4, G1:G2)",
       "stimulus": "sha256:0632648ad140c3189923e625f49ee93913b77135ba7503735b5d48e4e1941681",
       "fingerprint": "sha256:7d2d8a5b779778e8b5c0b24e3bf06cdce590654ebed8eb82bcf39b758116ffb6",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=DMAX(A1:D5, 4, G1:G2)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "DMAX/dmax-comparator-criteria": {
       "outcome": {
@@ -1009,13 +992,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=DMAX(A1:D5, \"Units\", H1:H2)",
       "stimulus": "sha256:c0524a57ca7755d6cc5b386a471a18a2cf0f5c318bba371e190ba63a2eeef131",
       "fingerprint": "sha256:7d2d8a5b779778e8b5c0b24e3bf06cdce590654ebed8eb82bcf39b758116ffb6",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=DMAX(A1:D5, \"Units\", H1:H2)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "DMIN/dmin-apples": {
       "outcome": {
@@ -1065,13 +1047,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=DMIN(A1:D5, \"Price\", F1:F2)",
       "stimulus": "sha256:dcfb84592a9bcc06d36220e9723810add80526441038b26adb08006d7b80f86d",
       "fingerprint": "sha256:e2c4a97971b997a2a4e6377e62f4cf4203037725ce092a5a5ba61f8cc7dea387",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=DMIN(A1:D5, \"Price\", F1:F2)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "DMIN/dmin-field-by-index": {
       "outcome": {
@@ -1121,13 +1102,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=DMIN(A1:D5, 3, G1:G2)",
       "stimulus": "sha256:7b305e42dbacf3ca8c3dbb950da562ad3ed5c3338b920da5e560affb986a2e14",
       "fingerprint": "sha256:f638af852ce38aa91cc4de6d85980731ac33ca2a152365dda9104b78637f7380",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=DMIN(A1:D5, 3, G1:G2)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "DMIN/dmin-all-rows": {
       "outcome": {
@@ -1177,13 +1157,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=DMIN(A1:D5, \"Units\", H1:H2)",
       "stimulus": "sha256:9266fc44b3514314ba981e7056d9e635df35c0ece684341a577cd80a75569910",
       "fingerprint": "sha256:735bc6630739e4c1cea02fea78a0cab118ad5125fb310f593bf78167645d13ed",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=DMIN(A1:D5, \"Units\", H1:H2)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "DPRODUCT/dproduct-apples-price": {
       "outcome": {
@@ -1233,13 +1212,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=DPRODUCT(A1:D5, \"Price\", F1:F2)",
       "stimulus": "sha256:d649bc6f6c106e0c020f66e22e38f3b17f62a6e1ba7a8e2274cce25d014711e6",
       "fingerprint": "sha256:8539cd827e1dc6e0c7728a1376ca2ba4ab8c4d39e5087e47d9d5c115a2108b56",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=DPRODUCT(A1:D5, \"Price\", F1:F2)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "DPRODUCT/dproduct-field-by-index": {
       "outcome": {
@@ -1289,13 +1267,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=DPRODUCT(A1:D5, 4, G1:G2)",
       "stimulus": "sha256:7f94cc3da74c0187da6fa09054687519f5e11014b74c15c68431119e60513bd5",
       "fingerprint": "sha256:58e1a8b27ce8c7f3f556b44f1955965a03df8df969be12c46e27fb457ff8f787",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=DPRODUCT(A1:D5, 4, G1:G2)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "DPRODUCT/dproduct-empty-result": {
       "outcome": {
@@ -1345,13 +1322,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=DPRODUCT(A1:D5, \"Price\", F1:F2)",
       "stimulus": "sha256:2b259c243b1b28c4b67a052ed84a64bdf3d65a9d546c52dc22dc8b8b42fd68ae",
       "fingerprint": "sha256:c2c1197f53d7fead335c75f6de7376efaaa96cc32466c698b76d1afb524a3d9b",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=DPRODUCT(A1:D5, \"Price\", F1:F2)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "DAVERAGE/daverage-apples": {
       "outcome": {
@@ -1401,13 +1377,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=DAVERAGE(A1:D5, \"Price\", F1:F2)",
       "stimulus": "sha256:f1f9a60e8f634073e0ebaa59c63eeb2833eb87a757ab413ea710c43eae16542e",
       "fingerprint": "sha256:4fd553458f09de1062ee69a73d58083e9c68ec237edc26d7e21731b3749d87fb",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=DAVERAGE(A1:D5, \"Price\", F1:F2)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "DAVERAGE/daverage-field-by-index": {
       "outcome": {
@@ -1457,13 +1432,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=DAVERAGE(A1:D5, 3, G1:G2)",
       "stimulus": "sha256:bde47e618fd8c94f366f3cb35056c74285acfe46367ac2e81414a3f2fba2fbf2",
       "fingerprint": "sha256:95cae6ec42b9cebbefbaed49bdd6b766cf99b31b6c9da18b9aac5985a8f2081f",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=DAVERAGE(A1:D5, 3, G1:G2)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "DAVERAGE/daverage-comparator-criteria": {
       "outcome": {
@@ -1513,13 +1487,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=DAVERAGE(A1:D5, \"Units\", H1:H2)",
       "stimulus": "sha256:522f57b8e791a13511f45cd498c5a0c430bdf05078c0ec2950465ac3f1ce8153",
       "fingerprint": "sha256:669d643132b4430cc68e613fdae30972321483db9558d121ed2fa2762974c9b8",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=DAVERAGE(A1:D5, \"Units\", H1:H2)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "DSTDEV/dstdev-apples-price": {
       "outcome": {
@@ -1569,13 +1542,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=DSTDEV(A1:D5, \"Price\", F1:F2)",
       "stimulus": "sha256:3ff2e65ce8f30d5f1f78d0028e4728ba4cac61efd7d46fe6e4a17681f45a7e44",
       "fingerprint": "sha256:7c306a502cba14179d7331709f0dd2d761647c9a3d52222f059ac85c4ad43a85",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=DSTDEV(A1:D5, \"Price\", F1:F2)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "DSTDEV/dstdev-field-by-index": {
       "outcome": {
@@ -1625,13 +1597,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=DSTDEV(A1:D5, 4, F1:F2)",
       "stimulus": "sha256:e3fa53d53a49171f61fff7456c1a40949412fbfb5e25ec54a958d5d6d044b688",
       "fingerprint": "sha256:a5d5ecbed03e5d8abeffd813b5ac075f49bf35117ba244d8867c3cba4a3ff6a3",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=DSTDEV(A1:D5, 4, F1:F2)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "DSTDEVP/dstdevp-bananas-units": {
       "outcome": {
@@ -1681,13 +1652,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=DSTDEVP(A1:D5, \"Units\", F1:F2)",
       "stimulus": "sha256:80c1529c7c33ef2c447f6f3a7fa2428c06c5080bb131a36ad5154f748e4ec9d1",
       "fingerprint": "sha256:f13d9c9c73eeb80c34f97364b302cdc64049f75c43a0381299a3ccde79a6e234",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=DSTDEVP(A1:D5, \"Units\", F1:F2)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "DSTDEVP/dstdevp-apples-price": {
       "outcome": {
@@ -1737,13 +1707,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=DSTDEVP(A1:D5, 3, F1:F2)",
       "stimulus": "sha256:3909572b9a9b53ff2fd8c47447e83de75daddafe22bf60580953405c70514d3d",
       "fingerprint": "sha256:43412a89a2157f2c4788feb0281c4a1151687dc9d65d9710c6a2e9db523e740d",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=DSTDEVP(A1:D5, 3, F1:F2)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "DSTDEVP/dstdevp-field-by-index": {
       "outcome": {
@@ -1793,13 +1762,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=DSTDEVP(A1:D5, 4, F1:F2)",
       "stimulus": "sha256:2598289b7463ec715a5809212c739d62b53f564e8d3d8fbc76d3b568a6708ea7",
       "fingerprint": "sha256:f13d9c9c73eeb80c34f97364b302cdc64049f75c43a0381299a3ccde79a6e234",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=DSTDEVP(A1:D5, 4, F1:F2)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "DVAR/dvar-apples-price": {
       "outcome": {
@@ -1849,13 +1817,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=DVAR(A1:D5, \"Price\", F1:F2)",
       "stimulus": "sha256:e8b742e162e7365a695cfeb2a3dac2f36fc5456b26b0a0952d55f9b85bdac497",
       "fingerprint": "sha256:f13d9c9c73eeb80c34f97364b302cdc64049f75c43a0381299a3ccde79a6e234",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=DVAR(A1:D5, \"Price\", F1:F2)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "DVAR/dvar-bananas-units": {
       "outcome": {
@@ -1905,13 +1872,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=DVAR(A1:D5, 4, F1:F2)",
       "stimulus": "sha256:23a41ae0cc1012651969ff0af5a5eae0f660e111a8bb51af79f09972142bc8dc",
       "fingerprint": "sha256:7d2d8a5b779778e8b5c0b24e3bf06cdce590654ebed8eb82bcf39b758116ffb6",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=DVAR(A1:D5, 4, F1:F2)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "DVAR/dvar-field-by-index": {
       "outcome": {
@@ -1961,13 +1927,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=DVAR(A1:D5, 3, F1:F2)",
       "stimulus": "sha256:14ff3b310dbb5aeaf534f8ba5cb483f98129783d05dc73dacfa40c0f55f7b61e",
       "fingerprint": "sha256:f13d9c9c73eeb80c34f97364b302cdc64049f75c43a0381299a3ccde79a6e234",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=DVAR(A1:D5, 3, F1:F2)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "DVARP/dvarp-apples-price": {
       "outcome": {
@@ -2017,13 +1982,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=DVARP(A1:D5, \"Price\", F1:F2)",
       "stimulus": "sha256:8f1b68b5a3d51d92650c8215e0cda4bf30c73fb4c1d7e9a6518d90a2b33b00ea",
       "fingerprint": "sha256:43412a89a2157f2c4788feb0281c4a1151687dc9d65d9710c6a2e9db523e740d",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=DVARP(A1:D5, \"Price\", F1:F2)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "DVARP/dvarp-bananas-units": {
       "outcome": {
@@ -2073,13 +2037,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=DVARP(A1:D5, 4, F1:F2)",
       "stimulus": "sha256:2ba11c8e94188aca2e20bdc51f7af7a18f4cf363572fd2a04c89ce24d22094ad",
       "fingerprint": "sha256:669d643132b4430cc68e613fdae30972321483db9558d121ed2fa2762974c9b8",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=DVARP(A1:D5, 4, F1:F2)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "DVARP/dvarp-field-by-index": {
       "outcome": {
@@ -2129,13 +2092,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=DVARP(A1:D5, 3, F1:F2)",
       "stimulus": "sha256:f501157c104b7d2d31d045b2759190b8bf475859c9e1d7792fba0dafa92ed62f",
       "fingerprint": "sha256:43412a89a2157f2c4788feb0281c4a1151687dc9d65d9710c6a2e9db523e740d",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=DVARP(A1:D5, 3, F1:F2)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     }
   }
 }

@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "platform": "gsheets",
-  "generatedAt": "2026-06-17T20:01:41.615Z",
+  "generatedAt": "2026-07-18T20:47:11.573Z",
   "results": {
     "LAMBDA/lambda-basic-iife": {
       "outcome": {
@@ -51,13 +51,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=LAMBDA(x, x+1)(5)",
       "stimulus": "sha256:42aceda850a7ccbac579d9f93a2418e272c9e0c8e21c74d097d2a9862dffcafa",
       "fingerprint": "sha256:19380e17325c5661a8669b14f9a7f5f1edd57ac6d5d29f72c656315efae76671",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=LAMBDA(x, x+1)(5)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "LAMBDA/lambda-two-args": {
       "outcome": {
@@ -107,13 +106,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=LAMBDA(x, y, x*y)(3, 4)",
       "stimulus": "sha256:5dd5be2d967bab4ac3ba1d4efbcb8796b4975a5bd8b34684bafb07f56f06c37b",
       "fingerprint": "sha256:71fa543d1bcc3371e40b4949ed83b5efa58addd2c5bc5dae879ecf535bd80c65",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=LAMBDA(x, y, x*y)(3, 4)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "LAMBDA/lambda-nested": {
       "outcome": {
@@ -163,13 +161,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=LAMBDA(x, LAMBDA(y, x+y))(1)(2)",
       "stimulus": "sha256:523ca32c732014968734ec592bad2226bd5e6c886d3d020fc88545148130eee5",
       "fingerprint": "sha256:735bc6630739e4c1cea02fea78a0cab118ad5125fb310f593bf78167645d13ed",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=LAMBDA(x, LAMBDA(y, x+y))(1)(2)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "LAMBDA/lambda-as-higher-order": {
       "outcome": {
@@ -219,13 +216,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=LAMBDA(f, f(5))(LAMBDA(x, x*2))",
       "stimulus": "sha256:1f93262ed409a6f59c37034438fc2762f30ef3c68726df11bb57628442af54bc",
       "fingerprint": "sha256:e2c4a97971b997a2a4e6377e62f4cf4203037725ce092a5a5ba61f8cc7dea387",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=LAMBDA(f, f(5))(LAMBDA(x, x*2))"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "LET/let-basic": {
       "outcome": {
@@ -275,13 +271,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=LET(x, 5, x+1)",
       "stimulus": "sha256:3124f92f324174548345c44a0a10d84101fae12e2c7ade0af8926b7848e24d36",
       "fingerprint": "sha256:19380e17325c5661a8669b14f9a7f5f1edd57ac6d5d29f72c656315efae76671",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=LET(x, 5, x+1)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "LET/let-multiple-bindings": {
       "outcome": {
@@ -331,13 +326,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=LET(x, 3, y, 4, x+y)",
       "stimulus": "sha256:0cf533fa526458c47343bf39849bb3f734d6cfd7fe94aedcb9e1d8f239153d07",
       "fingerprint": "sha256:d5bad171a9236ee0acf4383c27a24be796f866d2725e3093dd0206f133a1b7ed",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=LET(x, 3, y, 4, x+y)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "LET/let-scoping": {
       "outcome": {
@@ -387,13 +381,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=LET(x, 1, y, x+1, z, y+1, z)",
       "stimulus": "sha256:dff34331eccc61700400af69b2e0dbb7910f90686738a09fc685aa377d191121",
       "fingerprint": "sha256:735bc6630739e4c1cea02fea78a0cab118ad5125fb310f593bf78167645d13ed",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=LET(x, 1, y, x+1, z, y+1, z)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "MAP/map-over-column": {
       "outcome": {
@@ -511,13 +504,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=MAP({1;2;3}, LAMBDA(x, x*2))",
       "stimulus": "sha256:acbc973236d3f8ed9686d324447daffee132c9ea6925e200a982de3e278335ff",
       "fingerprint": "sha256:fd06c2013a252a414da54fbf49eba29d397821a29de02a05cee01de14a5f415f",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=MAP({1;2;3}, LAMBDA(x, x*2))"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "MAP/map-over-row": {
       "outcome": {
@@ -631,13 +623,12 @@
           "cols": 3
         }
       },
+      "formula-as-evaluated": "=MAP({1,2,3}, LAMBDA(x, x*10))",
       "stimulus": "sha256:25abadb91496df7fb0a32eeeb9a0948e01aa8ba1c7c2d2e7cfdadbef48851a40",
       "fingerprint": "sha256:8b600334a7b3a487eff010ac6450e3dd92593a4ccfc3c9c79ab36a62a4ed851a",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=MAP({1,2,3}, LAMBDA(x, x*10))"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "MAP/map-two-arrays": {
       "outcome": {
@@ -755,13 +746,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=MAP({1;2;3}, {10;20;30}, LAMBDA(a, b, a+b))",
       "stimulus": "sha256:228c47a651fac54c55a7605103af097af8056b46def782b920595d46fd8ed1bb",
       "fingerprint": "sha256:f8a3765958cc68cc9d0810199a78a6d9840e7f7e237ac74586f3d47655c2dd7f",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=MAP({1;2;3}, {10;20;30}, LAMBDA(a, b, a+b))"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "REDUCE/reduce-sum": {
       "outcome": {
@@ -811,13 +801,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=REDUCE(0, {1;2;3;4;5}, LAMBDA(acc, x, acc+x))",
       "stimulus": "sha256:4b04f6636cffa95b3cea758d7b7fdf7efa72d75ad5c0864c4ee8c2000eff221f",
       "fingerprint": "sha256:4b00ef90d78e06a355a462df1d7dfd674f085e98d42808b8dd8b5c8f2a36aa7d",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=REDUCE(0, {1;2;3;4;5}, LAMBDA(acc, x, acc+x))"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "REDUCE/reduce-product": {
       "outcome": {
@@ -867,13 +856,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=REDUCE(1, {1,2,3,4,5}, LAMBDA(acc, x, acc*x))",
       "stimulus": "sha256:e24d3e6347ba966d37f73c7931ea9d804e1653c329bfae8f27856048e800a46e",
       "fingerprint": "sha256:8539cd827e1dc6e0c7728a1376ca2ba4ab8c4d39e5087e47d9d5c115a2108b56",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=REDUCE(1, {1,2,3,4,5}, LAMBDA(acc, x, acc*x))"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "REDUCE/reduce-string-concat": {
       "outcome": {
@@ -923,13 +911,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=REDUCE(\"\", {\"a\";\"b\";\"c\"}, LAMBDA(acc, x, acc&x))",
       "stimulus": "sha256:290aecf5c7c608c58466ee2202a6e17b1520a79d589235c96cfbd3f341141b6a",
       "fingerprint": "sha256:cf86b47fcca6181037d385008be26dfe402726b593dd85a50367c789dd709a0b",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=REDUCE(\"\", {\"a\";\"b\";\"c\"}, LAMBDA(acc, x, acc&x))"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "SCAN/scan-cumulative-sum": {
       "outcome": {
@@ -1115,13 +1102,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=SCAN(0, {1;2;3;4;5}, LAMBDA(acc, x, acc+x))",
       "stimulus": "sha256:001e229a6753e9a79b22d2e7d97e255bd6bedf539f188f9f7acd4eb5dc0db348",
       "fingerprint": "sha256:43d8565342e180f28070df21e5ea44c7b7752cf763540c36aed6dd86ed2f9544",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=SCAN(0, {1;2;3;4;5}, LAMBDA(acc, x, acc+x))"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "FILTER/filter-basic": {
       "outcome": {
@@ -1239,13 +1225,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=FILTER({1;2;3;4;5}, {1;0;1;0;1})",
       "stimulus": "sha256:51ca2134448b4bcab191d600b134ff3da1f13421a37252c4349f85ac2e059f05",
       "fingerprint": "sha256:3d72bcf4d11061791171024f03b047506449193a06f1faa2a7b67b9375b90ba1",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=FILTER({1;2;3;4;5}, {1;0;1;0;1})"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "FILTER/filter-with-condition": {
       "outcome": {
@@ -1329,13 +1314,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=FILTER(A1:A4, A1:A4>10)",
       "stimulus": "sha256:178444717b52a9a4deb933668c038d3f3819688672fb96ddf0163b9ffb1aaa30",
       "fingerprint": "sha256:14a07612b573066cdeaabab40ac1ce4ab52abe8dff9c77af3a42da78aec4b5e0",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=FILTER(A1:A4, A1:A4>10)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "FILTER/filter-no-results": {
       "outcome": {
@@ -1388,13 +1372,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=FILTER({1;2;3}, {0;0;0}, \"none\")",
       "stimulus": "sha256:596163d2be498d5cc8f253a914d43b2b57c35c2a001264119bc6f96db1334852",
       "fingerprint": "sha256:c98ddc95a4f5716ef17b94c5c73c9ede35dff1666986224ac03e53fce8c29367",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=FILTER({1;2;3}, {0;0;0}, \"none\")"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "SORT/sort-ascending": {
       "outcome": {
@@ -1512,13 +1495,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=SORT({3;1;2})",
       "stimulus": "sha256:445064c810aeff7a041805819a36a269d4f10aa70a40d53c38d60460b68ca83b",
       "fingerprint": "sha256:f6d21c4495e91db0df071f1fd45fcaf58e75b9b98965e5cde8287cace5a9fbea",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=SORT({3;1;2})"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "SORT/sort-descending": {
       "outcome": {
@@ -1636,13 +1618,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=SORT({3;1;2}, 1, -1)",
       "stimulus": "sha256:7e552bbe7997c531e22ae93404fcf40e5db965f36c5ec5beaef4c9a4a2fa8852",
       "fingerprint": "sha256:f6d21c4495e91db0df071f1fd45fcaf58e75b9b98965e5cde8287cace5a9fbea",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=SORT({3;1;2}, 1, -1)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "SORTBY/sortby-basic": {
       "outcome": {
@@ -1695,13 +1676,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=SORTBY({10;20;30}, {3;1;2})",
       "stimulus": "sha256:7f0546e243f083d9a32dcd6cdc8b215b67760745d06029de6fa4138e39159f67",
       "fingerprint": "sha256:18c466c30752b33549fe679095342ebb61a84ea50a4a9611bedacf4cfff74ffd",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=SORTBY({10;20;30}, {3;1;2})"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "UNIQUE/unique-column": {
       "outcome": {
@@ -1819,13 +1799,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=UNIQUE({1;2;1;3;2})",
       "stimulus": "sha256:82fa3ef542502df25e50265648fce4cfda8c1f007d58dcef46f6ab123fdb9352",
       "fingerprint": "sha256:f6d21c4495e91db0df071f1fd45fcaf58e75b9b98965e5cde8287cace5a9fbea",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=UNIQUE({1;2;1;3;2})"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "MAKEARRAY/makearray-multiplication-table": {
       "outcome": {
@@ -2135,13 +2114,12 @@
           "cols": 3
         }
       },
+      "formula-as-evaluated": "=MAKEARRAY(3, 3, LAMBDA(r, c, r*c))",
       "stimulus": "sha256:3075fce0eed55fd9ea78d00f60d2c7895049b26dd7fc8321738097f3615114ce",
       "fingerprint": "sha256:164ec314eb10cacb42135a98fb681892d202e33020ca2f3f2830a3bd2a9a1dcd",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=MAKEARRAY(3, 3, LAMBDA(r, c, r*c))"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "BYROW/byrow-sum": {
       "outcome": {
@@ -2225,13 +2203,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=BYROW({1,2,3;4,5,6}, LAMBDA(row, SUM(row)))",
       "stimulus": "sha256:8ffb138ea08c2d4461dc11d72f657830ed57fc84cc5c9ac0952bc004737e71f5",
       "fingerprint": "sha256:3f5ec6a04d7e7e3b26f8a56f7c5bc75f0d54c0e8d0e8d734ee5c842221f04933",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=BYROW({1,2,3;4,5,6}, LAMBDA(row, SUM(row)))"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "BYCOL/bycol-sum": {
       "outcome": {
@@ -2345,13 +2322,12 @@
           "cols": 3
         }
       },
+      "formula-as-evaluated": "=BYCOL({1,2,3;4,5,6}, LAMBDA(col, SUM(col)))",
       "stimulus": "sha256:d30ba4fdb16294ee68aa0da300dd36ec1af20f75ca40c3a0c818ceec3e121542",
       "fingerprint": "sha256:0e03c44bca5ea9b14b4c72f4123e323f3d870e9bb71b3bff2a99f9c2248a4dd4",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=BYCOL({1,2,3;4,5,6}, LAMBDA(col, SUM(col)))"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     }
   }
 }

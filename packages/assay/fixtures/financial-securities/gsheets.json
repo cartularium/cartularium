@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "platform": "gsheets",
-  "generatedAt": "2026-06-17T20:01:41.612Z",
+  "generatedAt": "2026-07-18T20:47:11.570Z",
   "results": {
     "ACCRINT/accrint-semiannual": {
       "outcome": {
@@ -51,13 +51,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=ACCRINT(DATE(2008,3,1), DATE(2008,8,31), DATE(2011,2,15), 0.1, 1000, 2, 0)",
       "stimulus": "sha256:e29b28bbe7ea92674d069946a42500fab48397345ee759169e9ab87679c2223e",
       "fingerprint": "sha256:14f0404ba8014f626e9d0bbf61a37bb50bc7979037766c3c952cb31150779e69",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=ACCRINT(DATE(2008,3,1), DATE(2008,8,31), DATE(2011,2,15), 0.1, 1000, 2, 0)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "ACCRINT/accrint-annual-basis-1": {
       "outcome": {
@@ -107,13 +106,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=ACCRINT(DATE(2011,2,15), DATE(2011,8,15), DATE(2012,2,15), 0.0575, 1000, 1, 1)",
       "stimulus": "sha256:f0766873de76f5206a73a437bcf3ca52023cac03817e990a89737cea459e90c0",
       "fingerprint": "sha256:c2a6ead516be590bfc910c8c07d18ccaeedb63a953d9a1b60b3e8f8ec7fbb269",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=ACCRINT(DATE(2011,2,15), DATE(2011,8,15), DATE(2012,2,15), 0.0575, 1000, 1, 1)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "ACCRINT/accrint-quarterly": {
       "outcome": {
@@ -163,13 +161,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=ACCRINT(DATE(2011,2,15), DATE(2011,5,15), DATE(2012,2,15), 0.0575, 1000, 4, 0)",
       "stimulus": "sha256:f8c9efb4e9d5c7162e99ff1622aef8f0cd2c22023abb2a11b961fd8f4b3bc3d0",
       "fingerprint": "sha256:c2a6ead516be590bfc910c8c07d18ccaeedb63a953d9a1b60b3e8f8ec7fbb269",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=ACCRINT(DATE(2011,2,15), DATE(2011,5,15), DATE(2012,2,15), 0.0575, 1000, 4, 0)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "ACCRINTM/accrintm-standard": {
       "outcome": {
@@ -219,13 +216,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=ACCRINTM(DATE(2011,2,15), DATE(2011,11,15), 0.0575, 1000, 0)",
       "stimulus": "sha256:42b61d6feb77b3b65ff30fa6c51ea81df2b0321ca1bf661f8d160e374351793b",
       "fingerprint": "sha256:97cda70d5d6e0871f23d0060bb46c823f9fff118a562ec05bb7aa9aeba22efad",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=ACCRINTM(DATE(2011,2,15), DATE(2011,11,15), 0.0575, 1000, 0)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "ACCRINTM/accrintm-basis-1": {
       "outcome": {
@@ -275,13 +271,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=ACCRINTM(DATE(2011,2,15), DATE(2011,11,15), 0.0575, 1000, 1)",
       "stimulus": "sha256:dd02900e928e6388938513c183e68ec95e1708e1de04938363647b84a6e36640",
       "fingerprint": "sha256:f9474abfd7f3cec339c55a30b181960e1d61d6dcb60e977bda57ba94cb339b18",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=ACCRINTM(DATE(2011,2,15), DATE(2011,11,15), 0.0575, 1000, 1)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "ACCRINTM/accrintm-short-period": {
       "outcome": {
@@ -331,13 +326,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=ACCRINTM(DATE(2011,2,15), DATE(2011,5,15), 0.065, 1000, 0)",
       "stimulus": "sha256:23f39f0050a7a4ef2eeef57e3e99f0439bc3f4ecd41adf79e485d15e73f6ea3d",
       "fingerprint": "sha256:d524b2aeb6ecbe9aa75e0a7549543a3e74244a47da2b8b424eb844d0ac7d9219",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=ACCRINTM(DATE(2011,2,15), DATE(2011,5,15), 0.065, 1000, 0)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "AMORLINC/amorlinc-standard": {
       "outcome": {
@@ -387,13 +381,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=AMORLINC(2400, DATE(2008,8,19), DATE(2008,12,31), 300, 1, 0.15, 1)",
       "stimulus": "sha256:9f2ebe8acb1771c3a27962949e91c315104bcc346492588a09a7f39d788b0886",
       "fingerprint": "sha256:eaffa4d2c82ea2d53a6d08f8cd2d95aaefd6d8eb1955930f28337912c9303fd6",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=AMORLINC(2400, DATE(2008,8,19), DATE(2008,12,31), 300, 1, 0.15, 1)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "AMORLINC/amorlinc-basis-0": {
       "outcome": {
@@ -443,13 +436,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=AMORLINC(2400, DATE(2008,8,19), DATE(2008,12,31), 300, 1, 0.15, 0)",
       "stimulus": "sha256:0b314e7d6ee81f7c1ac3e54455e02efc530c8c765ac2d471e882cbd0632e122e",
       "fingerprint": "sha256:eaffa4d2c82ea2d53a6d08f8cd2d95aaefd6d8eb1955930f28337912c9303fd6",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=AMORLINC(2400, DATE(2008,8,19), DATE(2008,12,31), 300, 1, 0.15, 0)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "COUPDAYBS/coupdaybs-semiannual": {
       "outcome": {
@@ -499,13 +491,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=COUPDAYBS(DATE(2011,2,15), DATE(2021,11,15), 2, 0)",
       "stimulus": "sha256:7a125369e280e4fed18a4c5d175da227ee9fe50770c0f7822ba5e9dce6578aad",
       "fingerprint": "sha256:f1cb5f82b0774bfa347473302d49d43f2fced9ae3bfa0f03c5eababaefd12bd8",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=COUPDAYBS(DATE(2011,2,15), DATE(2021,11,15), 2, 0)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "COUPDAYBS/coupdaybs-annual-basis-1": {
       "outcome": {
@@ -555,13 +546,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=COUPDAYBS(DATE(2011,2,15), DATE(2021,11,15), 1, 1)",
       "stimulus": "sha256:83004c14c0b73a3eafc442bcc550ef8c21711cc5254c2bc83503b2f469b3ca04",
       "fingerprint": "sha256:e8080d2278321bdbb7297e8b3ab60937c8d7406090d0bde288df6c228a17baea",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=COUPDAYBS(DATE(2011,2,15), DATE(2021,11,15), 1, 1)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "COUPDAYBS/coupdaybs-quarterly": {
       "outcome": {
@@ -611,13 +601,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=COUPDAYBS(DATE(2011,2,15), DATE(2021,11,15), 4, 0)",
       "stimulus": "sha256:be106bfea629e8609dce27ee00afc4535ea84b19f5226df14e5a1bc92d48384c",
       "fingerprint": "sha256:c2c1197f53d7fead335c75f6de7376efaaa96cc32466c698b76d1afb524a3d9b",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=COUPDAYBS(DATE(2011,2,15), DATE(2021,11,15), 4, 0)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "COUPDAYS/coupdays-semiannual": {
       "outcome": {
@@ -667,13 +656,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=COUPDAYS(DATE(2011,2,15), DATE(2021,11,15), 2, 0)",
       "stimulus": "sha256:960eb44fcadf03f055c720cddd50997d6afdad96e44ffd77d200f32344950218",
       "fingerprint": "sha256:f7438370ed4ad51a9fd3733c2b76227d0ffcb8ea2b5492b5ebb8b5a93cb8c70b",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=COUPDAYS(DATE(2011,2,15), DATE(2021,11,15), 2, 0)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "COUPDAYS/coupdays-actual-basis-1": {
       "outcome": {
@@ -723,13 +711,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=COUPDAYS(DATE(2011,2,15), DATE(2021,11,15), 2, 1)",
       "stimulus": "sha256:c03f19ee55a9dac053a4d97360e66987d539ad1bde6a09ccfc42105dad18471a",
       "fingerprint": "sha256:d4ddbd0eb86145d4a4f4b793968feb307a7395cadd6ac7ca4883a8e7037f25ca",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=COUPDAYS(DATE(2011,2,15), DATE(2021,11,15), 2, 1)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "COUPDAYS/coupdays-annual": {
       "outcome": {
@@ -779,13 +766,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=COUPDAYS(DATE(2011,2,15), DATE(2021,11,15), 1, 0)",
       "stimulus": "sha256:56594aad4f72ca630897e3dd2b4c0a8ff6fe4fb0f5205693fe299441d977250d",
       "fingerprint": "sha256:eaffa4d2c82ea2d53a6d08f8cd2d95aaefd6d8eb1955930f28337912c9303fd6",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=COUPDAYS(DATE(2011,2,15), DATE(2021,11,15), 1, 0)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "COUPDAYSNC/coupdaysnc-semiannual": {
       "outcome": {
@@ -835,13 +821,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=COUPDAYSNC(DATE(2011,2,15), DATE(2021,11,15), 2, 0)",
       "stimulus": "sha256:a82ed3ceca502e45d013aab9ae94df4a8aa640a97410bec0b4c3cc9ccdd6f9f5",
       "fingerprint": "sha256:f1cb5f82b0774bfa347473302d49d43f2fced9ae3bfa0f03c5eababaefd12bd8",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=COUPDAYSNC(DATE(2011,2,15), DATE(2021,11,15), 2, 0)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "COUPDAYSNC/coupdaysnc-quarterly-basis-1": {
       "outcome": {
@@ -891,13 +876,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=COUPDAYSNC(DATE(2011,2,15), DATE(2021,11,15), 4, 1)",
       "stimulus": "sha256:b22e9e1ca8efc632d1c9d157a8ba95d67ca635d51f365efb3e60ad1738e9f8e6",
       "fingerprint": "sha256:7f313280e9718831af6c5d4b926f21c55bbc84be734b96fd8718549032edf31a",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=COUPDAYSNC(DATE(2011,2,15), DATE(2021,11,15), 4, 1)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "COUPNCD/coupncd-semiannual": {
       "outcome": {
@@ -953,13 +937,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=COUPNCD(DATE(2011,2,15), DATE(2021,11,15), 2, 0)",
       "stimulus": "sha256:37faacc0edb69c7635dba5fd6ee70a5c089511843c8d357491729075e841eb8b",
       "fingerprint": "sha256:b1e62e97e390597fe9777ae57a5bc87cbedca7cacf8e15b6513bdcc192ab469a",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=COUPNCD(DATE(2011,2,15), DATE(2021,11,15), 2, 0)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "COUPNCD/coupncd-quarterly": {
       "outcome": {
@@ -1015,13 +998,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=COUPNCD(DATE(2011,2,15), DATE(2021,11,15), 4, 0)",
       "stimulus": "sha256:3e8f76fa53161f00c38cf883669158dbf9e2598b3d9c052620fbacd30ded5dd3",
       "fingerprint": "sha256:b1e62e97e390597fe9777ae57a5bc87cbedca7cacf8e15b6513bdcc192ab469a",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=COUPNCD(DATE(2011,2,15), DATE(2021,11,15), 4, 0)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "COUPNCD/coupncd-annual-basis-1": {
       "outcome": {
@@ -1077,13 +1059,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=COUPNCD(DATE(2011,2,15), DATE(2021,11,15), 1, 1)",
       "stimulus": "sha256:5f720ea6e4499d09b49a6b6c9e680685e1f2325dc8e55846418351364b8cc5b4",
       "fingerprint": "sha256:58c041f687d008bbab01cae9d1310ef49911ded2649608f3bde11da85ded6711",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=COUPNCD(DATE(2011,2,15), DATE(2021,11,15), 1, 1)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "COUPNUM/coupnum-semiannual": {
       "outcome": {
@@ -1133,13 +1114,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=COUPNUM(DATE(2011,2,15), DATE(2021,11,15), 2, 0)",
       "stimulus": "sha256:a15093f5416e2a8af87d4d1aa75498a44518865f6dddb3908a7c996223822bc2",
       "fingerprint": "sha256:bcaa02ace3c9b2156cf147c97ad9a57c2c174d05e0ef7b72c889ab451bde9b49",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=COUPNUM(DATE(2011,2,15), DATE(2021,11,15), 2, 0)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "COUPNUM/coupnum-quarterly-basis-1": {
       "outcome": {
@@ -1189,13 +1169,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=COUPNUM(DATE(2011,2,15), DATE(2021,11,15), 4, 1)",
       "stimulus": "sha256:f0a599da39a8dbfa3cf57051485e0757da5757798570f2381752ae073dbb3b97",
       "fingerprint": "sha256:a5091caf99746060c416b52e4cd4d3db9d345a372ced1359bc986a320d71ff72",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=COUPNUM(DATE(2011,2,15), DATE(2021,11,15), 4, 1)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "COUPPCD/couppcd-semiannual": {
       "outcome": {
@@ -1251,13 +1230,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=COUPPCD(DATE(2011,2,15), DATE(2021,11,15), 2, 0)",
       "stimulus": "sha256:d53f2b15beafa8bf2ebfa2666d6801189baad641f22e2a21ad932fa3683bde37",
       "fingerprint": "sha256:b04a6265a3ff181bb7076f6c8da88c969570541dedef9ed32e5e05cf9b5c22f7",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=COUPPCD(DATE(2011,2,15), DATE(2021,11,15), 2, 0)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "COUPPCD/couppcd-quarterly": {
       "outcome": {
@@ -1313,13 +1291,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=COUPPCD(DATE(2011,2,15), DATE(2021,11,15), 4, 0)",
       "stimulus": "sha256:e9821ff8f1689d5d096885334d5e3fac1253a5c769269f463fac5b53eaa657a3",
       "fingerprint": "sha256:a048cc7076b628a929ac8923abd1b0827a20c9f9aceba2e0ec794205eb2b5b7c",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=COUPPCD(DATE(2011,2,15), DATE(2021,11,15), 4, 0)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "COUPPCD/couppcd-annual-basis-1": {
       "outcome": {
@@ -1375,13 +1352,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=COUPPCD(DATE(2011,2,15), DATE(2021,11,15), 1, 1)",
       "stimulus": "sha256:127c4323d6c44b4f39cf1684ce51e024ef7f5691d0cca703acad5a8ddcacbe2b",
       "fingerprint": "sha256:b04a6265a3ff181bb7076f6c8da88c969570541dedef9ed32e5e05cf9b5c22f7",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=COUPPCD(DATE(2011,2,15), DATE(2021,11,15), 1, 1)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "DISC/disc-standard": {
       "outcome": {
@@ -1431,13 +1407,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=DISC(DATE(2011,2,15), DATE(2011,11,15), 97.975, 100, 0)",
       "stimulus": "sha256:78b07091df0ae1d17fe0b9c01f729dd234569c372f1a68bb3fe39eeb4668d341",
       "fingerprint": "sha256:4f44e523e841d09d2f0fe6790365404a7cbc0772f61c22b0d36335fdb572f6ee",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=DISC(DATE(2011,2,15), DATE(2011,11,15), 97.975, 100, 0)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "DISC/disc-basis-1": {
       "outcome": {
@@ -1487,13 +1462,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=DISC(DATE(2011,2,15), DATE(2011,11,15), 97.975, 100, 1)",
       "stimulus": "sha256:5dd6175fd549aa94cb689a41f778b59e25d1f108dc4afbaed44a754bdbde485b",
       "fingerprint": "sha256:98d1fa6e921342d911b3a83e7dc05677fbd327a8101fd2b4c74268ac8118ce96",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=DISC(DATE(2011,2,15), DATE(2011,11,15), 97.975, 100, 1)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "DOLLARDE/dollarde-sixteenths": {
       "outcome": {
@@ -1543,13 +1517,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=DOLLARDE(1.02, 16)",
       "stimulus": "sha256:8a06f11d80eeb515963f11900915bd91d2eeba1506a19553823ee5619cf67731",
       "fingerprint": "sha256:4a19f0cfea2c90ec1380f47311f366e50d4426f79af229798699f5bca2121ddc",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=DOLLARDE(1.02, 16)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "DOLLARDE/dollarde-eighths": {
       "outcome": {
@@ -1599,13 +1572,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=DOLLARDE(1.1, 8)",
       "stimulus": "sha256:87b209a65049f652607f5cd6f38115c09b6ae7772b6d7621ecb1f0d33b364684",
       "fingerprint": "sha256:4a19f0cfea2c90ec1380f47311f366e50d4426f79af229798699f5bca2121ddc",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=DOLLARDE(1.1, 8)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "DOLLARDE/dollarde-thirty-twos": {
       "outcome": {
@@ -1655,13 +1627,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=DOLLARDE(1.16, 32)",
       "stimulus": "sha256:f66ff137ca743c09c3d9cdbc1ba1971dd38d4541383855bd80c8b50e0c039675",
       "fingerprint": "sha256:e56b9d2749e49dce752a6a5529ed5d2fb3e35e82d0b6af9f233bafd180b78d9b",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=DOLLARDE(1.16, 32)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "DOLLARFR/dollarfr-sixteenths": {
       "outcome": {
@@ -1711,13 +1682,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=DOLLARFR(1.125, 16)",
       "stimulus": "sha256:c2022a40a21177c505ae442499b170a348be1daf44cee9265ca68f80edbc9319",
       "fingerprint": "sha256:17234ea0ba72c8b72cb5757f6a947f6a5fe2c326dfb31df36fc89de6873161b0",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=DOLLARFR(1.125, 16)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "DOLLARFR/dollarfr-eighths": {
       "outcome": {
@@ -1767,13 +1737,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=DOLLARFR(1.125, 8)",
       "stimulus": "sha256:5c0e746faeb7eb6f8d36674f4c858245178439b5d8be03db73f1f82a5ac13bd0",
       "fingerprint": "sha256:71e0ab523614ed356bcebc222bcc1634dea39a6cef83dcc0b94681991d93fab0",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=DOLLARFR(1.125, 8)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "DOLLARFR/dollarfr-thirty-twos": {
       "outcome": {
@@ -1823,13 +1792,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=DOLLARFR(1.5, 32)",
       "stimulus": "sha256:4f6ac7044fbface9314e248b307af7471b6674531fa23dfc2e183ff426b78655",
       "fingerprint": "sha256:e6e96098d233e17e4e4b3f40c8cf31b4b5c5de32d9a5a7b002cdb76f7eb69300",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=DOLLARFR(1.5, 32)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "DURATION/duration-standard-bond": {
       "outcome": {
@@ -1879,13 +1847,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=DURATION(DATE(2011,2,15), DATE(2021,11,15), 0.0575, 0.065, 2, 0)",
       "stimulus": "sha256:9abc019448e95e7ad553d1307a81510d1f8c8fdb801a22914f37343b1e3f528d",
       "fingerprint": "sha256:61ff10f3b40f9ec553371515ee4cb05585b96bf1b7e695391c7153e5d2a44012",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=DURATION(DATE(2011,2,15), DATE(2021,11,15), 0.0575, 0.065, 2, 0)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "DURATION/duration-annual-basis-1": {
       "outcome": {
@@ -1935,13 +1902,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=DURATION(DATE(2011,2,15), DATE(2021,11,15), 0.0575, 0.065, 1, 1)",
       "stimulus": "sha256:4142c3730eae68e90394392ea7f3c56878ebb491bb6cc974040c8c07a98189a3",
       "fingerprint": "sha256:a5e2b44092083f8ee335b3c36b342d8d22dfb6b29d21f642e84abd952891c37c",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=DURATION(DATE(2011,2,15), DATE(2021,11,15), 0.0575, 0.065, 1, 1)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "INTRATE/intrate-standard": {
       "outcome": {
@@ -1991,13 +1957,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=INTRATE(DATE(2011,2,15), DATE(2011,11,15), 1000000, 1014420, 0)",
       "stimulus": "sha256:ddb86ce0ed005117c4e2790ff77c510cc3f49ccdf62a7e674b73311583e55541",
       "fingerprint": "sha256:3af59a6c70328d6ece963fb1658d9d77f86f46a40dd4795688570c75eba0da24",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=INTRATE(DATE(2011,2,15), DATE(2011,11,15), 1000000, 1014420, 0)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "INTRATE/intrate-basis-1": {
       "outcome": {
@@ -2047,13 +2012,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=INTRATE(DATE(2011,2,15), DATE(2011,11,15), 1000000, 1014420, 1)",
       "stimulus": "sha256:1469b5af4deb842e0d91b0a03078519ea10cfedd4b0e5b4f3e1982eec20986f6",
       "fingerprint": "sha256:5a38194d4c4c5fefabcd5917bd03e508e8079da8716e4cb29bc1e576e760a6b8",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=INTRATE(DATE(2011,2,15), DATE(2011,11,15), 1000000, 1014420, 1)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "MDURATION/mduration-standard-bond": {
       "outcome": {
@@ -2103,13 +2067,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=MDURATION(DATE(2011,2,15), DATE(2021,11,15), 0.0575, 0.065, 2, 0)",
       "stimulus": "sha256:fdb615f17978cd487bc8d977dfae27d607031ac6ecb30068ac071e67f77a9981",
       "fingerprint": "sha256:69b825d3493f853f208b2e2ed3430de461b605d5a5118058b616dbf8a348bffb",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=MDURATION(DATE(2011,2,15), DATE(2021,11,15), 0.0575, 0.065, 2, 0)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "MDURATION/mduration-annual-basis-1": {
       "outcome": {
@@ -2159,13 +2122,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=MDURATION(DATE(2011,2,15), DATE(2021,11,15), 0.0575, 0.065, 1, 1)",
       "stimulus": "sha256:c1be71a6ca02161133caca96a9759cf0938f206e1dda9fea6c15a607fbe9d661",
       "fingerprint": "sha256:195a429c490f9455fbd97f1ee4eef524ec73f6b60b240e9c7e9945a29f89d47d",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=MDURATION(DATE(2011,2,15), DATE(2021,11,15), 0.0575, 0.065, 1, 1)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "PRICE/price-standard-bond": {
       "outcome": {
@@ -2215,13 +2177,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=PRICE(DATE(2011,2,15), DATE(2021,11,15), 0.0575, 0.065, 100, 2, 0)",
       "stimulus": "sha256:172a104962820032bdada1eb2d1da5f645458927c04e2f26771a2c0d12f7f433",
       "fingerprint": "sha256:cdf53588acc0363eb6ecb474d01fca6dbeef810ee7b70ab6ab5eca3ee23b7722",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=PRICE(DATE(2011,2,15), DATE(2021,11,15), 0.0575, 0.065, 100, 2, 0)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "PRICE/price-annual-basis-1": {
       "outcome": {
@@ -2271,13 +2232,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=PRICE(DATE(2011,2,15), DATE(2021,11,15), 0.0575, 0.065, 100, 1, 1)",
       "stimulus": "sha256:b7163344fd95c887d30fa54489b6dedae4ba363aca921b3e1583abca89c98c5a",
       "fingerprint": "sha256:b3094d25030985a2211fa56b1b5786a5e97b0913a44ca26f620e562bf661431c",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=PRICE(DATE(2011,2,15), DATE(2021,11,15), 0.0575, 0.065, 100, 1, 1)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "PRICE/price-quarterly": {
       "outcome": {
@@ -2327,13 +2287,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=PRICE(DATE(2011,2,15), DATE(2021,11,15), 0.0575, 0.065, 100, 4, 0)",
       "stimulus": "sha256:c455732b670cbed1d78232889ae047e9db8db597bc8e2b074fc8f9075cbd6492",
       "fingerprint": "sha256:c4e65b6e039fe28e1020c1cd1eb4e0130792db3038733a4724368fac5c070b9d",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=PRICE(DATE(2011,2,15), DATE(2021,11,15), 0.0575, 0.065, 100, 4, 0)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "PRICEDISC/pricedisc-standard": {
       "outcome": {
@@ -2383,13 +2342,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=PRICEDISC(DATE(2011,2,15), DATE(2011,11,15), 0.0525, 100, 0)",
       "stimulus": "sha256:2cd6ea1a13c7b5ebde90dc572c4f80b48826452c32599db2141e79a3e83250a7",
       "fingerprint": "sha256:ecc7c1dac4b6fa7f2bcdb87080309fce88173af3fb8a477a4bfa21498744030c",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=PRICEDISC(DATE(2011,2,15), DATE(2011,11,15), 0.0525, 100, 0)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "PRICEDISC/pricedisc-basis-1": {
       "outcome": {
@@ -2439,13 +2397,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=PRICEDISC(DATE(2011,2,15), DATE(2011,11,15), 0.0525, 100, 1)",
       "stimulus": "sha256:98112f2954aabe9a06b143ddc796f9d994482ac18712ba1089352eb29f0ac6a4",
       "fingerprint": "sha256:62cc93d5531a6ce925c19b70499561e801cc0dd29eaf22ba4fed58b8468d6070",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=PRICEDISC(DATE(2011,2,15), DATE(2011,11,15), 0.0525, 100, 1)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "PRICEMAT/pricemat-standard": {
       "outcome": {
@@ -2495,13 +2452,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=PRICEMAT(DATE(2011,2,15), DATE(2011,11,15), DATE(2010,11,15), 0.0575, 0.065, 0)",
       "stimulus": "sha256:2d50904a995e1b22d50c71255a0a8d1e635d26cda8db6a538aa40d94c8b36d4b",
       "fingerprint": "sha256:6ec08d4870a252b4875122765e5259782e72ffafc4117f841215c5a404524fc0",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=PRICEMAT(DATE(2011,2,15), DATE(2011,11,15), DATE(2010,11,15), 0.0575, 0.065, 0)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "PRICEMAT/pricemat-basis-1": {
       "outcome": {
@@ -2551,13 +2507,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=PRICEMAT(DATE(2011,2,15), DATE(2011,11,15), DATE(2010,11,15), 0.0575, 0.065, 1)",
       "stimulus": "sha256:81b5d68d315f1f12aed98cb1cab382628e9deefa340694f2b82185588f447ec2",
       "fingerprint": "sha256:ebadd742a65baf93b81eb17e51efa9c0a51f7b24e8f777171c1ebbcc8415f459",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=PRICEMAT(DATE(2011,2,15), DATE(2011,11,15), DATE(2010,11,15), 0.0575, 0.065, 1)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "RECEIVED/received-standard": {
       "outcome": {
@@ -2607,13 +2562,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=RECEIVED(DATE(2011,2,15), DATE(2011,11,15), 1000000, 0.0575, 0)",
       "stimulus": "sha256:aadbe9e1739e256765e989e7be9052e8e07bfed833ee7c8d7f0d6c5a3440c46c",
       "fingerprint": "sha256:4a954698dacad7b8c722f2025bdf175e26655da5082b6a04f9183df8897feabd",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=RECEIVED(DATE(2011,2,15), DATE(2011,11,15), 1000000, 0.0575, 0)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "RECEIVED/received-basis-1": {
       "outcome": {
@@ -2663,13 +2617,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=RECEIVED(DATE(2011,2,15), DATE(2011,11,15), 1000000, 0.0575, 1)",
       "stimulus": "sha256:411f9960bbc1f16ea10782f56b585d457c7d862760ac280056e7b2198d9c5795",
       "fingerprint": "sha256:1e4d7208f05da4044a68fb76d4127cee04c1d6e1d3e1bab49e7a78a5af07ccc4",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=RECEIVED(DATE(2011,2,15), DATE(2011,11,15), 1000000, 0.0575, 1)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "TBILLEQ/tbilleq-standard": {
       "outcome": {
@@ -2719,13 +2672,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=TBILLEQ(DATE(2008,3,31), DATE(2008,6,1), 0.0914)",
       "stimulus": "sha256:1dcf1bd192959f319bd6de4df150fffec5c4b46eb24379f485dcc2ac805e1a68",
       "fingerprint": "sha256:9db9c66fb7094eb099bc2ab81487267fcd76d48f5b7169139c38bc108df4efab",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=TBILLEQ(DATE(2008,3,31), DATE(2008,6,1), 0.0914)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "TBILLEQ/tbilleq-short-maturity": {
       "outcome": {
@@ -2775,13 +2727,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=TBILLEQ(DATE(2011,2,15), DATE(2011,5,15), 0.065)",
       "stimulus": "sha256:7edb5e2c6b9eacc332ea666fb08f897c817e1646b2d0d371edac53077abd5aa5",
       "fingerprint": "sha256:1d8a803b6092025df3e0228de67c3dabe12a75ced6e07f52326bf63b0675a857",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=TBILLEQ(DATE(2011,2,15), DATE(2011,5,15), 0.065)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "TBILLPRICE/tbillprice-standard": {
       "outcome": {
@@ -2831,13 +2782,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=TBILLPRICE(DATE(2008,3,31), DATE(2008,6,1), 0.09)",
       "stimulus": "sha256:5f1bf3b3eaae3715bbb0389350eafb55f581c1059cc99a123c285a252352bf8e",
       "fingerprint": "sha256:0b16b58964150fe37e25ee48a0ffca6050397d1075b1ab0407cfdecc4ac7a444",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=TBILLPRICE(DATE(2008,3,31), DATE(2008,6,1), 0.09)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "TBILLPRICE/tbillprice-short-maturity": {
       "outcome": {
@@ -2887,13 +2837,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=TBILLPRICE(DATE(2011,2,15), DATE(2011,5,15), 0.065)",
       "stimulus": "sha256:5a3f331e0a2d542733aef2b2e6a817f61960698f52d653d09878657718e5ffc5",
       "fingerprint": "sha256:f2dc984b08bd28a108fb992232dc43cf5a37e43d25ba410e4c757adaf1b5d404",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=TBILLPRICE(DATE(2011,2,15), DATE(2011,5,15), 0.065)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "TBILLYIELD/tbillyield-standard": {
       "outcome": {
@@ -2943,13 +2892,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=TBILLYIELD(DATE(2008,3,31), DATE(2008,6,1), 98.45)",
       "stimulus": "sha256:555cfa8b4e9945dbaec0cdc157c77c4751123fccf6f7bf67029e61c5820098d1",
       "fingerprint": "sha256:0e17f64355f491bd33d0844cd66803b5718c2c33ade0c08325802f9cfbef5f0c",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=TBILLYIELD(DATE(2008,3,31), DATE(2008,6,1), 98.45)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "TBILLYIELD/tbillyield-short-maturity": {
       "outcome": {
@@ -2999,13 +2947,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=TBILLYIELD(DATE(2011,2,15), DATE(2011,5,15), 98.5)",
       "stimulus": "sha256:e5249777b3bc12ff56bab02d22c316910360363ee623b27159687edcb4ce780a",
       "fingerprint": "sha256:d275ed3a7a049f429ebba69097d8810191ea142510537d159d86dedbf3aa3dc9",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=TBILLYIELD(DATE(2011,2,15), DATE(2011,5,15), 98.5)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "YIELD/yield-standard-bond": {
       "outcome": {
@@ -3055,13 +3002,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=YIELD(DATE(2011,2,15), DATE(2021,11,15), 0.0575, 95.04287, 100, 2, 0)",
       "stimulus": "sha256:495ba370237433f400de70a31275a4b7bb15fd7bff305cb2f66efb007ab651b4",
       "fingerprint": "sha256:bd262f14d46ad287511ce6761ef9afb52dd8753a13e9ad481a0b0964bd23edb0",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=YIELD(DATE(2011,2,15), DATE(2021,11,15), 0.0575, 95.04287, 100, 2, 0)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "YIELD/yield-annual-basis-1": {
       "outcome": {
@@ -3111,13 +3057,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=YIELD(DATE(2011,2,15), DATE(2021,11,15), 0.0575, 95.04287, 100, 1, 1)",
       "stimulus": "sha256:d1f239274c0919dbef9509b8686eee463629a2bb78e02514b5a7625b04bacf33",
       "fingerprint": "sha256:8690c6608c3b414e182eb749f31c297a7a8549b6950143b7bb346fb463778633",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=YIELD(DATE(2011,2,15), DATE(2021,11,15), 0.0575, 95.04287, 100, 1, 1)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "YIELD/yield-quarterly": {
       "outcome": {
@@ -3167,13 +3112,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=YIELD(DATE(2011,2,15), DATE(2021,11,15), 0.0575, 95.04287, 100, 4, 0)",
       "stimulus": "sha256:c2c32a4a0ab542a34cf6bdcb68d014a581fdf1c2ee760ff0bd71dfddca26e3a9",
       "fingerprint": "sha256:3b4ed2f0f2040c9736ab15a0ba512df7dc50eaa9d21091d5aaef905e5c69544a",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=YIELD(DATE(2011,2,15), DATE(2021,11,15), 0.0575, 95.04287, 100, 4, 0)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "YIELDDISC/yielddisc-standard": {
       "outcome": {
@@ -3223,13 +3167,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=YIELDDISC(DATE(2011,2,15), DATE(2011,11,15), 94.5, 100, 0)",
       "stimulus": "sha256:4b6240b33182421bcc02e7813b845440a061dd2b2b89849a6f5e57a923ecc76c",
       "fingerprint": "sha256:8894c5d0ea7fa860a2f21f84827883ff4a8b18705ae24157e86420d0b6982f98",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=YIELDDISC(DATE(2011,2,15), DATE(2011,11,15), 94.5, 100, 0)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "YIELDDISC/yielddisc-basis-1": {
       "outcome": {
@@ -3279,13 +3222,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=YIELDDISC(DATE(2011,2,15), DATE(2011,11,15), 94.5, 100, 1)",
       "stimulus": "sha256:bee6f332753376d7cc994af66af5c8202b465b946fcc08abcde385df73f3c4cc",
       "fingerprint": "sha256:4f42e4a6231f618a97c98ddbc994b74315367103f4d0ab84140e0f027256d6b9",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=YIELDDISC(DATE(2011,2,15), DATE(2011,11,15), 94.5, 100, 1)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "YIELDMAT/yieldmat-standard": {
       "outcome": {
@@ -3335,13 +3277,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=YIELDMAT(DATE(2011,2,15), DATE(2011,11,15), DATE(2010,11,15), 0.0575, 99.2, 0)",
       "stimulus": "sha256:e81812be7cfb258694c0abc604d3f3ca08bb36af64c504bd6525e90ea4334362",
       "fingerprint": "sha256:f4f3496758ec0fe0f6800d235a8fbe25219ace605941c88bd43f1a7bc1cc4b09",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=YIELDMAT(DATE(2011,2,15), DATE(2011,11,15), DATE(2010,11,15), 0.0575, 99.2, 0)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     },
     "YIELDMAT/yieldmat-basis-1": {
       "outcome": {
@@ -3391,13 +3332,12 @@
           "cols": 1
         }
       },
+      "formula-as-evaluated": "=YIELDMAT(DATE(2011,2,15), DATE(2011,11,15), DATE(2010,11,15), 0.0575, 99.2, 1)",
       "stimulus": "sha256:321f0a039c6966492b94f0f73b4bba070fd974a6bc7c601884b7ee51fd074b51",
       "fingerprint": "sha256:eda0e11846297371332c38988bb6067df567d157b71c491e2cdee801b28eccd6",
       "fpv": 1,
-      "run_id": null,
-      "at": null,
-      "preLedger": true,
-      "formula-as-evaluated": "=YIELDMAT(DATE(2011,2,15), DATE(2011,11,15), DATE(2010,11,15), 0.0575, 99.2, 1)"
+      "run_id": "2026-07-18T20:45:36Z.c997",
+      "at": "2026-07-18T20:47:11.555Z"
     }
   }
 }
