@@ -1,0 +1,97 @@
+id: ld-0005
+slug: badge-names
+title: Badge Names
+difficulty: 2
+tags:
+  - text
+statement: |
+  Your client is printing conference badges. Privacy policy says badges show
+  the attendee's first name and only the initial of their last name, with a
+  period — so "Ada Lovelace" becomes "Ada L.".
+
+  Every name in the list is exactly two words: a first name, one space, a
+  last name. Produce the badge text for each attendee, one row per name,
+  aligned with the input.
+
+  The grader swaps in attendee lists of different lengths, so cover the whole
+  OUTPUT range: where the input row is empty, the output row must be empty
+  too.
+template:
+  sheets:
+    - title: About
+    - title: Input
+    - title: Answer
+  input: Input!B2:B33
+  output: Answer!B3:B33
+  answerHeaders:
+    - Badge
+  spreadsheetId: 1lHeZHk5-g1Udrn7ZGVcbF7uUdvcnN1qo2tudRhGl2_s
+reference: =MAP(Input!B3:B33, LAMBDA(nm, IF(nm = "", "", LEFT(nm, FIND(" ", nm)) & LEFT(MID(nm,
+  FIND(" ", nm) + 1, 99), 1) & ".")))
+compare:
+  numbers:
+    epsilon: 1e-9
+  rowOrder: exact
+lint:
+  ban:
+    - volatile
+    - import
+    - external
+cases:
+  - kind: sample
+    input:
+      - - Name
+      - - Ada Lovelace
+      - - Grace Hopper
+      - - Alan Turing
+      - - Katherine Johnson
+      - - Edsger Dijkstra
+      - - Barbara Liskov
+    expected:
+      - - Ada L.
+      - - Grace H.
+      - - Alan T.
+      - - Katherine J.
+      - - Edsger D.
+      - - Barbara L.
+  - kind: hidden
+    input:
+      - - Name
+      - - Yuki Tanaka
+      - - Omar Hassan
+      - - Priya Patel
+    expected:
+      - - Yuki T.
+      - - Omar H.
+      - - Priya P.
+  - kind: hidden
+    input:
+      - - Name
+      - - Conor O'Brien
+      - - Mei Y
+      - - Bartholomew Featherstonehaugh
+      - - Jo Kim
+      - - Anne-Sophie Mutter
+      - - Luis Garcia
+      - - Ingrid Bergman
+      - - Tycho Brahe
+      - - Nia Long
+      - - Max Planck
+      - - Sofia Kovalevskaya
+      - - Kip Thorne
+    expected:
+      - - Conor O.
+      - - Mei Y.
+      - - Bartholomew F.
+      - - Jo K.
+      - - Anne-Sophie M.
+      - - Luis G.
+      - - Ingrid B.
+      - - Tycho B.
+      - - Nia L.
+      - - Max P.
+      - - Sofia K.
+      - - Kip T.
+verified:
+  asOf: 2026-07-18
+  hash: 34c68d205d18cea7

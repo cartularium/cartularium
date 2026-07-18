@@ -1,0 +1,178 @@
+id: ld-0007
+slug: color-mixing
+title: Color Mixing
+attribution: Adapted from "Color Mixing" in the astral.cafe Community Practice Problems sheet.
+difficulty: 7
+requires:
+  - arrays
+tags:
+  - arrays
+  - graphs
+statement: |
+  Your client is an artist with a list of colors and their components. They
+  tell you that ultimately, all pigments break down into the primary colors:
+  Red, Yellow, and Blue.
+
+  Every color in the list is a mix of exactly two components. A component is
+  either a primary color or another color from the list (possibly the same
+  component twice). A color's breakdown is the sum of its two components'
+  breakdowns; a primary's breakdown is one unit of itself. Mixtures never
+  loop back on themselves.
+
+  Determine each color's breakdown into primaries, in the same row of OUTPUT
+  as the color, formatted exactly like "3 Red, 2 Yellow, 1 Blue" (counts are
+  not reduced). The grader swaps in color lists of different lengths, so
+  cover the whole OUTPUT range: empty input rows must produce empty output
+  rows.
+challenges:
+  - oner
+  - golfed
+  - generalized
+template:
+  sheets:
+    - title: About
+    - title: Input
+    - title: Answer
+  input: Input!B2:D20
+  output: Answer!B3:B20
+  answerHeaders:
+    - Breakdown
+  spreadsheetId: 1xp_N5fE2o-JvvGu6ZHMl88D9uzM2uawbLJotP-run84
+reference: =LET(all, Input!B3:B20, names, FILTER(all, all <> ""), m, ROWS(names), compa,
+  ARRAY_CONSTRAIN(Input!C3:C20, m, 1), compb, ARRAY_CONSTRAIN(Input!D3:D20, m, 1), tn,
+  TRANSPOSE(names), adj, ARRAYFORMULA((compa = tn) * 1 + (compb = tn) * 1), ident,
+  ARRAYFORMULA((SEQUENCE(m) = SEQUENCE(1, m)) * 1), prim, ARRAYFORMULA((compa = {"Red", "Yellow",
+  "Blue"}) * 1 + (compb = {"Red", "Yellow", "Blue"}) * 1), vec,
+  ARRAYFORMULA(ROUND(MMULT(MINVERSE(ident - adj), prim), 0)), ARRAYFORMULA(INDEX(vec, , 1) & " Red,
+  " & INDEX(vec, , 2) & " Yellow, " & INDEX(vec, , 3) & " Blue"))
+compare:
+  numbers:
+    epsilon: 1e-9
+  rowOrder: exact
+lint:
+  ban:
+    - volatile
+    - import
+    - external
+cases:
+  - kind: sample
+    input:
+      - - Name
+        - Component 1
+        - Component 2
+      - - Dusk
+        - Mint
+        - Coral
+      - - Peach
+        - Red
+        - Yellow
+      - - Ember
+        - Blush
+        - Storm
+      - - Mint
+        - Yellow
+        - Blue
+      - - Storm
+        - Dusk
+        - Sage
+      - - Coral
+        - Peach
+        - Red
+      - - Sage
+        - Mint
+        - Yellow
+      - - Blush
+        - Coral
+        - Peach
+    expected:
+      - - 2 Red, 2 Yellow, 1 Blue
+      - - 1 Red, 1 Yellow, 0 Blue
+      - - 5 Red, 6 Yellow, 2 Blue
+      - - 0 Red, 1 Yellow, 1 Blue
+      - - 2 Red, 4 Yellow, 2 Blue
+      - - 2 Red, 1 Yellow, 0 Blue
+      - - 0 Red, 2 Yellow, 1 Blue
+      - - 3 Red, 2 Yellow, 0 Blue
+  - kind: hidden
+    input:
+      - - Name
+        - Component 1
+        - Component 2
+      - - Color 7
+        - Color 6
+        - Color 5
+      - - Color 2
+        - Color 1
+        - Yellow
+      - - Color 12
+        - Color 11
+        - Color 8
+      - - Color 1
+        - Red
+        - Blue
+      - - Color 9
+        - Red
+        - Red
+      - - Color 4
+        - Color 3
+        - Color 2
+      - - Color 10
+        - Color 9
+        - Yellow
+      - - Color 3
+        - Color 2
+        - Color 1
+      - - Color 8
+        - Color 7
+        - Color 6
+      - - Color 5
+        - Color 4
+        - Color 3
+      - - Color 11
+        - Color 10
+        - Color 10
+      - - Color 6
+        - Color 5
+        - Color 4
+    expected:
+      - - 13 Red, 8 Yellow, 13 Blue
+      - - 1 Red, 1 Yellow, 1 Blue
+      - - 25 Red, 15 Yellow, 21 Blue
+      - - 1 Red, 0 Yellow, 1 Blue
+      - - 2 Red, 0 Yellow, 0 Blue
+      - - 3 Red, 2 Yellow, 3 Blue
+      - - 2 Red, 1 Yellow, 0 Blue
+      - - 2 Red, 1 Yellow, 2 Blue
+      - - 21 Red, 13 Yellow, 21 Blue
+      - - 5 Red, 3 Yellow, 5 Blue
+      - - 4 Red, 2 Yellow, 0 Blue
+      - - 8 Red, 5 Yellow, 8 Blue
+  - kind: hidden
+    input:
+      - - Name
+        - Component 1
+        - Component 2
+      - - Clay
+        - Plum
+        - Moss
+      - - Rust
+        - Red
+        - Yellow
+      - - Denim
+        - Blue
+        - Blue
+      - - Moss
+        - Rust
+        - Blue
+      - - Plum
+        - Red
+        - Denim
+    expected:
+      - - 2 Red, 1 Yellow, 3 Blue
+      - - 1 Red, 1 Yellow, 0 Blue
+      - - 0 Red, 0 Yellow, 2 Blue
+      - - 1 Red, 1 Yellow, 1 Blue
+      - - 1 Red, 0 Yellow, 2 Blue
+verified:
+  asOf: 2026-07-18
+  hash: 3499bc82d8704dc7

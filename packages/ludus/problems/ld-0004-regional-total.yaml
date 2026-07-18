@@ -1,0 +1,151 @@
+id: ld-0004
+slug: regional-total
+title: Regional Total
+difficulty: 1
+tags:
+  - aggregation
+statement: |
+  Your client keeps a running sales log: one row per sale, with the region it
+  came from and the amount. They want a single number — the total sales for
+  one particular region, named in the Target region cell.
+
+  Regions repeat throughout the log, and the log isn't sorted. Produce the
+  total for the target region.
+template:
+  sheets:
+    - title: About
+    - title: Input
+    - title: Answer
+  input: Input!B2:E32
+  output: Answer!B3:B3
+  answerHeaders:
+    - Total
+  spreadsheetId: 13UcrERV_U_uFvEXPcI8BJT_x5BWetx1G9ONC8HiXEaM
+reference: =SUMIF(Input!B3:B32, Input!E3, Input!C3:C32)
+compare:
+  numbers:
+    epsilon: 1e-9
+  rowOrder: exact
+lint:
+  ban:
+    - volatile
+    - import
+    - external
+cases:
+  - kind: sample
+    input:
+      - - Region
+        - Amount
+        - null
+        - Target region
+      - - North
+        - 120
+        - null
+        - West
+      - - South
+        - 85
+      - - West
+        - 40
+      - - North
+        - 60
+      - - West
+        - 155
+      - - South
+        - 20
+      - - West
+        - 5
+      - - North
+        - 310
+    expected:
+      - - 200
+  - kind: hidden
+    input:
+      - - Region
+        - Amount
+        - null
+        - Target region
+      - - Osaka
+        - 14
+        - null
+        - Nagoya
+      - - Nagoya
+        - 230
+      - - Sapporo
+        - 77
+      - - Nagoya
+        - 12
+      - - Tokyo
+        - 450
+      - - Sapporo
+        - 8
+      - - Nagoya
+        - 96
+      - - Osaka
+        - 51
+      - - Tokyo
+        - 33
+      - - Nagoya
+        - 4
+      - - Sapporo
+        - 190
+      - - Osaka
+        - 66
+      - - Nagoya
+        - 118
+      - - Tokyo
+        - 27
+      - - Sapporo
+        - 41
+      - - Osaka
+        - 300
+      - - Nagoya
+        - 9
+      - - Tokyo
+        - 75
+      - - Sapporo
+        - 62
+      - - Osaka
+        - 5
+    expected:
+      - - 469
+  - kind: hidden
+    input:
+      - - Region
+        - Amount
+        - null
+        - Target region
+      - - East
+        - 42.5
+        - null
+        - Solo
+      - - Solo
+        - 19.25
+      - - East
+        - 7
+      - - East
+        - 88
+    expected:
+      - - 19.25
+  - kind: hidden
+    input:
+      - - Region
+        - Amount
+        - null
+        - Target region
+      - - Returns
+        - -45.5
+        - null
+        - Returns
+      - - Sales
+        - 200
+      - - Returns
+        - -12.25
+      - - Sales
+        - 310
+      - - Returns
+        - -3
+    expected:
+      - - -60.75
+verified:
+  asOf: 2026-07-18
+  hash: de26967a872b78e5

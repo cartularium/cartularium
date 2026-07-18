@@ -1,0 +1,95 @@
+id: ld-0006
+slug: data-compression
+title: Data Compression
+attribution: Adapted from "Data Compression" in the astral.cafe Community Practice Problems sheet.
+difficulty: 3
+requires:
+  - arrays
+tags:
+  - text
+  - arrays
+statement: |
+  Your client regularly works with large files, but their system cannot store
+  them properly due to their size. Help reduce the space each file takes by
+  using Run Length Encoding.
+
+  Consider the string "aaaabbbccccc" — a sequence of four a's, three b's, and
+  five c's. Its encoding is each letter followed by how many there are in the
+  run: "a4b3c5". Runs of one still get their count: "abc" encodes to
+  "a1b1c1".
+
+  Each input row holds one file (lowercase letters only). Produce its
+  encoding in the same row of OUTPUT. The grader swaps in file lists of
+  different lengths, so cover the whole OUTPUT range: empty input rows must
+  produce empty output rows.
+challenges:
+  - oner
+  - lambdaless
+  - golfed
+template:
+  sheets:
+    - title: About
+    - title: Input
+    - title: Answer
+  input: Input!B2:B18
+  output: Answer!B3:B18
+  answerHeaders:
+    - Encoded
+  spreadsheetId: 1esbGgnl35Ku0UpEB9UuZYOw70Rz1pBpc4Gqf20SlZWo
+reference: =MAP(Input!B3:B18, LAMBDA(s, IF(s = "", "", LET(idx, SEQUENCE(LEN(s)), starts,
+  FILTER(idx, ARRAYFORMULA(MID(s, idx, 1) <> MID(" " & s, idx, 1))), ends, FILTER(idx,
+  ARRAYFORMULA(MID(s, idx, 1) <> MID(s, idx + 1, 1))), TEXTJOIN("", 1, ARRAYFORMULA(MID(s, starts,
+  1) & (ends - starts + 1)))))))
+compare:
+  numbers:
+    epsilon: 1e-9
+  rowOrder: exact
+lint:
+  ban:
+    - volatile
+    - import
+    - external
+cases:
+  - kind: sample
+    input:
+      - - Data
+      - - aaaabbbccccc
+      - - abc
+      - - z
+      - - aaaaaaaaaaaa
+      - - aabbaabb
+    expected:
+      - - a4b3c5
+      - - a1b1c1
+      - - z1
+      - - a12
+      - - a2b2a2b2
+  - kind: hidden
+    input:
+      - - Data
+      - - qqqqqqqqqqwwwwweeee
+      - - abcdefg
+      - - m
+      - - zzzzzzzzzzzzzzzzzzzzzzzzzz
+      - - aabbbaaab
+    expected:
+      - - q10w5e4
+      - - a1b1c1d1e1f1g1
+      - - m1
+      - - z26
+      - - a2b3a3b1
+  - kind: hidden
+    input:
+      - - Data
+      - - xyxyxyxyxy
+      - - aaabbbbbbbbbbbcc
+      - - qqq
+      - - ffffffffffhhhhhhhhhhhhj
+    expected:
+      - - x1y1x1y1x1y1x1y1x1y1
+      - - a3b11c2
+      - - q3
+      - - f10h12j1
+verified:
+  asOf: 2026-07-18
+  hash: bb340e8ca7174db9
