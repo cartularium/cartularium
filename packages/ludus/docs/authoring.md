@@ -178,8 +178,13 @@ speculatively.
 - `external` — IMAGE, GOOGLEFINANCE, GOOGLETRANSLATE, DETECTLANGUAGE. These
   are an exfiltration channel, and IMAGE errors `#REF!` in API-created sheets
   regardless.
+- `query` — QUERY. Per-problem only: its select clause evaluates arithmetic
+  with correct precedence, which guts evaluator problems (ld-0016). Where a
+  ban is load-bearing like this, say so in the statement — solvers should
+  learn it before submitting, not from the lint reject.
 
-Default all three on. An unknown class name throws at judge time, so typos
+Default the first three on; `query` only where QUERY is the solution rather
+than a tool. An unknown class name throws at judge time, so typos
 fail loudly. Lint rejects cost zero API writes — they are also the abuse
 filter, so don't loosen bans casually.
 

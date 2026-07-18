@@ -20,6 +20,10 @@ statement: |
   fractional. Produce the value for each expression, one row per input row.
   The grader swaps in expression lists of different lengths, so cover the
   whole OUTPUT range: empty input rows must produce empty output rows.
+
+  One restriction: QUERY is banned for this problem. Its select clause
+  evaluates arithmetic on its own, which would do the whole job for you —
+  build the evaluator yourself.
 challenges:
   - oner
   - golfed
@@ -32,7 +36,7 @@ template:
   output: Answer!B3:B18
   answerHeaders:
     - Result
-  spreadsheetId: 1m6QttK_4xbMwEqQDtRLSB4e_l_om1kBjxIfwvTmUXFA
+  spreadsheetId: 160aHLHCDhG_xTgNjwNDCoR8zYh2NNWjuttf3hbI0oQI
 reference: =MAP(Input!B3:B18, LAMBDA(s, IF(s = "", "", LET(marked,
   SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(s, "+", "◆+◆"), "-", "◆-◆"), "*", "◆*◆"), "/", "◆/◆"),
   toks, SPLIT(marked, "◆"), n, COLUMNS(toks), IF(n = 1, INDEX(toks, 1, 1) * 1, LET(fin, REDUCE(0 &
@@ -57,6 +61,7 @@ lint:
     - volatile
     - import
     - external
+    - query
 cases:
   - kind: sample
     input:

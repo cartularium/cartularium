@@ -36,6 +36,10 @@ const BAN_PATTERNS: Record<string, RegExp> = {
   // scratch sheets that have never been opened in a browser (observed: IMAGE
   // returns #REF! "use a desktop web browser to allow access")
   external: /\b(IMAGE|GOOGLEFINANCE|GOOGLETRANSLATE|DETECTLANGUAGE)\s*\(/i,
+  // per-problem: QUERY's select clause evaluates arithmetic with correct
+  // precedence, which guts evaluator problems (ld-0016) — banned only where
+  // QUERY is the solution rather than a tool
+  query: /\bQUERY\s*\(/i,
 };
 
 export async function judge(problem: Problem, userSpreadsheetId: string): Promise<JudgeResult> {
