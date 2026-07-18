@@ -251,7 +251,9 @@ export async function generate(args: string[]): Promise<void> {
           }
         }
         const { ok, driverIssue, skipped } = saveFixture(ft.file, platform, entries, {
-          prune: !onlyMissing,
+          // a tags-filtered run is a partial regeneration too — pruning here
+          // would drop every non-matching entry from the snapshot
+          prune: !onlyMissing && !tags,
         });
         (tallies[platform] ??= {})[ft.suiteName] = {
           ok,
