@@ -4,6 +4,7 @@
 // Hues are provisional pending the family design pass; the *language* is not.
 import { parseRange, type RangeRef } from "./a1.js";
 import type { Problem } from "./problem-types.js";
+import type { AboutKind } from "./template.js";
 
 interface Rgb {
   red: number;
@@ -18,7 +19,11 @@ const EXPECTED_WASH: Rgb = { red: 0.94, green: 0.94, blue: 0.94 };
 const MUTED_TEXT: Rgb = { red: 0.42, green: 0.42, blue: 0.42 };
 const NEUTRAL_TAB: Rgb = { red: 0.62, green: 0.62, blue: 0.62 };
 
-export function buildStyleRequests(problem: Problem, sheetIds: Map<string, number>): unknown[] {
+export function buildStyleRequests(
+  problem: Problem,
+  sheetIds: Map<string, number>,
+  aboutKinds?: Map<number, AboutKind>,
+): unknown[] {
   const input = parseRange(problem.template.input);
   const output = parseRange(problem.template.output);
   const aboutId = sheetIds.get(problem.template.sheets[0].title)!;
@@ -53,9 +58,15 @@ export function buildStyleRequests(problem: Problem, sheetIds: Map<string, numbe
   );
   if (input.startRow === 0) requests.push(freezeRows(inputId, 1));
 
-  // OUTPUT: border only (it's the solver's canvas), bold frozen headers above
+  // OUTPUT: border only (it's the solver's canvas); the pre-filled header row
+  // sits INSIDE the border but above the graded region — part of the frame,
+  // not part of the solution
   const outputRect = gridRange(outputId, output);
-  requests.push(borders(outputRect, OUTPUT_EDGE));
+  const framedRect =
+    problem.template.answerHeaders && output.startRow > 0
+      ? { ...outputRect, startRowIndex: output.startRow - 1 }
+      : outputRect;
+  requests.push(borders(framedRect, OUTPUT_EDGE));
   if (problem.template.answerHeaders && output.startRow > 0) {
     requests.push(
       {
@@ -115,13 +126,52 @@ export function buildStyleRequests(problem: Problem, sheetIds: Map<string, numbe
     }
   }
 
-  // About typography: display title, mono meter/provenance, everything else default
+  // About: a cover page — gridlines off, margin column, shaped prose width,
+  // per-kind typography
   requests.push(
-    styleCell(aboutId, 1, 1, { bold: true, fontSize: 18 }),
-    styleCell(aboutId, 2, 1, { fontFamily: "IBM Plex Mono", fontSize: 9 }),
+    {
+      updateSheetProperties: {
+        properties: { sheetId: aboutId, gridProperties: { hideGridlines: true } },
+        fields: "gridProperties.hideGridlines",
+      },
+    },
+    columnWidth(aboutId, 0, 1, 28),
+    columnWidth(aboutId, 1, 2, 660),
   );
+  const KIND_FORMAT: Record<AboutKind, Record<string, unknown>> = {
+    title: { bold: true, fontSize: 18 },
+    meta: { fontFamily: "IBM Plex Mono", fontSize: 9 },
+    section: { bold: true, fontSize: 11 },
+    body: { fontSize: 10 },
+    muted: { italic: true, fontSize: 9, foregroundColorStyle: { rgbColor: MUTED_TEXT } },
+    link: { fontSize: 9 },
+  };
+  for (const [row, kind] of aboutKinds ?? []) {
+    requests.push(styleCell(aboutId, row, 1, KIND_FORMAT[kind]));
+  }
+  // prose lines wrap within the shaped column instead of overflowing
+  if (aboutKinds && aboutKinds.size > 0) {
+    const lastRow = Math.max(...aboutKinds.keys());
+    requests.push({
+      repeatCell: {
+        range: { sheetId: aboutId, startRowIndex: 0, endRowIndex: lastRow + 1, startColumnIndex: 1, endColumnIndex: 2 },
+        cell: { userEnteredFormat: { wrapStrategy: "WRAP", verticalAlignment: "TOP" } },
+        fields: "userEnteredFormat.wrapStrategy,userEnteredFormat.verticalAlignment",
+      },
+    });
+  }
 
   return requests;
+}
+
+function columnWidth(sheetId: number, start: number, end: number, pixelSize: number): unknown {
+  return {
+    updateDimensionProperties: {
+      range: { sheetId, dimension: "COLUMNS", startIndex: start, endIndex: end },
+      properties: { pixelSize },
+      fields: "pixelSize",
+    },
+  };
 }
 
 function tabColor(sheetId: number, rgb: Rgb): unknown {

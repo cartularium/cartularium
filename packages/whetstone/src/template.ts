@@ -17,50 +17,71 @@ export interface TemplateOptions {
   styled?: boolean;
 }
 
-export function buildTemplateSnapshot(problem: Problem, opts: TemplateOptions): Snapshot {
+export type AboutKind = "title" | "meta" | "section" | "body" | "muted" | "link";
+
+interface AboutLine {
+  kind: AboutKind | "spacer";
+  text?: string;
+  formula?: string;
+}
+
+const CHALLENGE_NOTES: Record<string, string> = {
+  oner: "Oner — solve it with a single formula in the output's top-left cell.",
+  lambdaless: "LAMBDAless — no LAMBDA and no lambda helper functions.",
+  generalized: "Generalized — handle any amount of data, not just this dataset's shape.",
+  golfed: "Golfed — minimize total formula length.",
+};
+
+function aboutLines(problem: Problem): AboutLine[] {
+  const lines: AboutLine[] = [{ kind: "spacer" }];
+  lines.push({ kind: "title", text: problem.title });
+  lines.push({
+    kind: "meta",
+    text: `${problem.difficulty} › ${"█".repeat(problem.difficulty)}${"░".repeat(10 - problem.difficulty)}   ${problem.tags.join(" · ")}`,
+  });
+  lines.push({ kind: "spacer" });
+  for (const paragraph of problem.statement.trim().split(/\n\s*\n/)) {
+    for (const line of paragraph.split("\n")) lines.push({ kind: "body", text: line.trim() });
+    lines.push({ kind: "spacer" });
+  }
+  lines.push({ kind: "section", text: "How this works" });
+  lines.push({ kind: "body", text: "1.  This is your private copy — work however you like, on any tab." });
+  lines.push({ kind: "body", text: "2.  The Input tab (amber) holds the dataset. The grader replaces it with other datasets — never put your own work there." });
+  lines.push({ kind: "body", text: "3.  Build your solution so the result lands in the outlined region of the Answer tab (blue). Helper columns and extra tabs are fair game." });
+  lines.push({ kind: "body", text: "4.  Check yourself against the gray expected block beside the answer region." });
+  lines.push({ kind: "body", text: "5.  When it matches, share this sheet (anyone with the link, Viewer) and submit the link on the problem page." });
+  lines.push({ kind: "spacer" });
+  if (problem.challenges?.length) {
+    lines.push({ kind: "section", text: "Optional challenges" });
+    for (const c of problem.challenges) {
+      lines.push({ kind: "muted", text: CHALLENGE_NOTES[c] ?? c });
+    }
+    lines.push({ kind: "spacer" });
+  }
+  if (problem.attribution) lines.push({ kind: "muted", text: problem.attribution });
+  lines.push({
+    kind: "link",
+    formula: `=HYPERLINK("https://whetstone.sheets.wiki/problems/${problem.id}/", "${problem.id} — problem page")`,
+  });
+  return lines;
+}
+
+export function buildTemplate(
+  problem: Problem,
+  opts: TemplateOptions,
+): { snapshot: Snapshot; aboutKinds: Map<number, AboutKind> } {
   const input = parseRange(problem.template.input);
   const output = parseRange(problem.template.output);
   const grids = new Map<string, Array<Array<CellSnap | null>>>();
   for (const sheet of problem.template.sheets) grids.set(sheet.title, []);
 
-  // About sheet: statement + the one rule
+  // About: a cover page, not a grid — prose in column B, margin in column A
   const about = grids.get(problem.template.sheets[0].title)!;
-  put(about, 1, 1, { ue: { stringValue: problem.title } });
-  put(about, 2, 1, {
-    ue: {
-      stringValue: `${problem.difficulty} › ${"█".repeat(problem.difficulty)}${"░".repeat(10 - problem.difficulty)}   ${problem.tags.join(" · ")}`,
-    },
-  });
-  problem.statement
-    .trimEnd()
-    .split("\n")
-    .forEach((line, i) => put(about, 4 + i, 1, { ue: { stringValue: line } }));
-  let row = 5 + problem.statement.trimEnd().split("\n").length;
-  put(about, row++, 1, {
-    ue: {
-      stringValue:
-        `Inputs are in ${problem.template.input} (named range INPUT); your answer goes in ` +
-        `${problem.template.output} (named range OUTPUT).`,
-    },
-  });
-  put(about, row++, 1, {
-    ue: {
-      stringValue:
-        "The grader swaps INPUT for other datasets — everything must still work. " +
-        "Never put your own content inside INPUT.",
-    },
-  });
-  if (problem.challenges?.length) {
-    put(about, ++row, 1, { ue: { stringValue: `Optional challenges: ${problem.challenges.join(", ")}` } });
-  }
-  if (problem.attribution) {
-    put(about, row + 2, 1, { ue: { stringValue: problem.attribution } });
-  }
-  // provenance + link back to the problem page
-  put(about, row + 4, 1, {
-    ue: {
-      formulaValue: `=HYPERLINK("https://whetstone.sheets.wiki/problems/${problem.id}/", "${problem.id} — problem page, template v1")`,
-    },
+  const aboutKinds = new Map<number, AboutKind>();
+  aboutLines(problem).forEach((line, i) => {
+    if (line.kind === "spacer") return;
+    put(about, i, 1, { ue: line.formula ? { formulaValue: line.formula } : { stringValue: line.text! } });
+    aboutKinds.set(i, line.kind);
   });
 
   if (opts.sampleInput) {
@@ -98,7 +119,7 @@ export function buildTemplateSnapshot(problem: Problem, opts: TemplateOptions): 
   }
 
   const sheetIndex = new Map(problem.template.sheets.map((s, i) => [s.title, i]));
-  return {
+  const snapshot: Snapshot = {
     spreadsheetId: "",
     title: `whetstone-${problem.id}`,
     locale: "en_US",
@@ -118,6 +139,11 @@ export function buildTemplateSnapshot(problem: Problem, opts: TemplateOptions): 
       };
     }),
   };
+  return { snapshot, aboutKinds };
+}
+
+export function buildTemplateSnapshot(problem: Problem, opts: TemplateOptions): Snapshot {
+  return buildTemplate(problem, opts).snapshot;
 }
 
 export async function createFromTemplate(
@@ -125,10 +151,11 @@ export async function createFromTemplate(
   title: string,
   opts: TemplateOptions,
 ): Promise<string> {
-  const id = await rehydrate(buildTemplateSnapshot(problem, opts), title);
+  const { snapshot, aboutKinds } = buildTemplate(problem, opts);
+  const id = await rehydrate(snapshot, title);
   if (opts.styled) {
     const ids = await loadSheetIds(id);
-    const requests = buildStyleRequests(problem, ids.byTitle);
+    const requests = buildStyleRequests(problem, ids.byTitle, aboutKinds);
     for (let i = 0; i < requests.length; i += 10) {
       await sheetsApi(`/${id}:batchUpdate`, {
         method: "POST",
