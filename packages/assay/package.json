@@ -22,6 +22,7 @@
     "serve": "pnpm build && node build/cli.js catalogue --serve",
     "test": "vitest run",
     "identity:lock": "node scripts/generate-identity-lock.mjs",
+    "identity:check": "node scripts/validate-identity.mjs",
     "check": "pnpm --filter @cartularium/drivers run build && tsc --noEmit",
     "clean": "rm -rf build *.tsbuildinfo"
   },
