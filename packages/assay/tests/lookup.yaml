@@ -2,6 +2,7 @@ schemaVersion: 3
 name: Lookup functions
 tests:
   - subject: INDEX
+    subjectRef: INDEX
     category: value
     formula: =INDEX(A1:B2, 2, 1)
     grid:
@@ -12,6 +13,7 @@ tests:
     expect: 3
     name: index-row-and-column
   - subject: INDEX
+    subjectRef: INDEX
     category: value
     formula: =INDEX(A1:A3, 2)
     grid:
@@ -21,6 +23,7 @@ tests:
     expect: 20
     name: index-single-column
   - subject: INDEX
+    subjectRef: INDEX
     category: value
     status: observed
     formula: =INDEX(A1:A2, 5)
@@ -32,6 +35,7 @@ tests:
       - error-type
     name: index-out-of-bounds
   - subject: MATCH
+    subjectRef: MATCH
     category: value
     formula: =MATCH(20, A1:A3, 0)
     grid:
@@ -41,6 +45,7 @@ tests:
     expect: 2
     name: match-exact
   - subject: MATCH
+    subjectRef: MATCH
     formula: =MATCH(99, {1,2,3}, 0)
     category: value
     expect:
@@ -49,6 +54,7 @@ tests:
       - bare-formula
     name: match-not-found
   - subject: MATCH
+    subjectRef: MATCH
     category: value
     formula: =MATCH(25, A1:A3, 1)
     grid:
@@ -58,6 +64,7 @@ tests:
     expect: 2
     name: match-approximate
   - subject: VLOOKUP
+    subjectRef: VLOOKUP
     formula: =VLOOKUP(2, A1:B3, 2, FALSE)
     category: value
     grid:
@@ -75,6 +82,7 @@ tests:
           error: "#NAME?"
     name: vlookup-exact
   - subject: VLOOKUP
+    subjectRef: VLOOKUP
     formula: =VLOOKUP(99, A1:B2, 2, FALSE)
     category: value
     grid:
@@ -91,6 +99,7 @@ tests:
           error: "#NAME?"
     name: vlookup-not-found
   - subject: VLOOKUP
+    subjectRef: VLOOKUP
     formula: =VLOOKUP(2, A1:C3, {2,3}, FALSE)
     category: value
     grid:
@@ -128,6 +137,7 @@ tests:
       - gsheets-idiom
     name: vlookup-array-col-index
   - subject: HLOOKUP
+    subjectRef: HLOOKUP
     formula: =HLOOKUP(2, A1:C2, 2, FALSE)
     category: value
     grid:
@@ -145,6 +155,7 @@ tests:
           error: "#NAME?"
     name: hlookup-exact
   - subject: HLOOKUP
+    subjectRef: HLOOKUP
     formula: =HLOOKUP(2, A1:C3, {2;3}, FALSE)
     category: value
     grid:
@@ -183,6 +194,7 @@ tests:
       - gsheets-idiom
     name: hlookup-array-row-index
   - subject: XMATCH
+    subjectRef: XMATCH
     formula: =XMATCH(20, A1:A3)
     category: value
     grid:
@@ -209,6 +221,7 @@ tests:
           error: "#NAME?"
     name: xmatch-exact
   - subject: XMATCH
+    subjectRef: XMATCH
     formula: =XMATCH(99, {1,2,3})
     category: value
     features:
@@ -219,6 +232,7 @@ tests:
       - bare-formula
     name: xmatch-not-found
   - subject: XLOOKUP
+    subjectRef: XLOOKUP
     formula: =XLOOKUP(2, A1:A3, B1:B3)
     category: value
     grid:
@@ -240,6 +254,7 @@ tests:
           error: "#NAME?"
     name: xlookup-basic
   - subject: XLOOKUP
+    subjectRef: XLOOKUP
     formula: =XLOOKUP(99, A1:A2, B1:B2, "missing")
     category: value
     grid:
@@ -259,6 +274,7 @@ tests:
           error: "#NAME?"
     name: xlookup-not-found-with-default
   - subject: CHOOSECOLS
+    subjectRef: CHOOSECOLS
     category: value
     features:
       - dynamic-arrays
@@ -272,6 +288,7 @@ tests:
       - bare-formula
     name: choosecols
   - subject: CHOOSEROWS
+    subjectRef: CHOOSEROWS
     category: value
     features:
       - dynamic-arrays

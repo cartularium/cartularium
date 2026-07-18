@@ -2,6 +2,7 @@ schemaVersion: 3
 name: Statistical distributions
 tests:
   - subject: BETA.DIST
+    subjectRef: BETA.DIST
     category: value
     status: observed
     formula: =BETA.DIST(0.5, 2, 2, TRUE, 0, 1)
@@ -10,6 +11,7 @@ tests:
       - distributions
     name: beta-dist-cdf-at-0-5
   - subject: BETA.DIST
+    subjectRef: BETA.DIST
     category: value
     status: observed
     formula: =BETA.DIST(0.5, 2, 2, FALSE, 0, 1)
@@ -18,6 +20,7 @@ tests:
       - distributions
     name: beta-dist-pdf-at-0-5
   - subject: BETA.DIST
+    subjectRef: BETA.DIST
     formula: =BETA.DIST(1, 2, 5, TRUE, 0, 1)
     category: value
     expect: 1
@@ -39,6 +42,7 @@ tests:
       - distributions
     name: beta-dist-cdf-at-boundary
   - subject: BETA.INV
+    subjectRef: BETA.INV
     category: value
     status: observed
     formula: =BETA.INV(0.5, 2, 2, 0, 1)
@@ -47,6 +51,7 @@ tests:
       - distributions
     name: beta-inv-at-0-5
   - subject: BETA.INV
+    subjectRef: BETA.INV
     category: value
     status: observed
     formula: =BETA.INV(BETA.DIST(0.3, 2, 5, TRUE, 0, 1), 2, 5, 0, 1)
@@ -55,6 +60,7 @@ tests:
       - distributions
     name: beta-inv-roundtrip
   - subject: BETADIST
+    subjectRef: BETADIST
     category: value
     status: observed
     formula: =BETADIST(0.5, 2, 2)
@@ -63,6 +69,7 @@ tests:
       - distributions
     name: betadist-central
   - subject: BETADIST
+    subjectRef: BETADIST
     category: value
     status: observed
     formula: =BETADIST(5, 2, 3, 0, 10)
@@ -71,6 +78,7 @@ tests:
       - distributions
     name: betadist-with-bounds
   - subject: BETAINV
+    subjectRef: BETAINV
     category: value
     status: observed
     formula: =BETAINV(0.5, 2, 2)
@@ -79,6 +87,7 @@ tests:
       - distributions
     name: betainv-at-0-5
   - subject: BETAINV
+    subjectRef: BETAINV
     category: value
     status: observed
     formula: =BETAINV(BETADIST(0.4, 3, 2), 3, 2)
@@ -87,6 +96,7 @@ tests:
       - distributions
     name: betainv-roundtrip
   - subject: BINOM.DIST
+    subjectRef: BINOM.DIST
     category: value
     status: observed
     formula: =BINOM.DIST(0, 10, 0.5, FALSE)
@@ -95,6 +105,7 @@ tests:
       - distributions
     name: binom-dist-pmf-at-0
   - subject: BINOM.DIST
+    subjectRef: BINOM.DIST
     category: value
     status: observed
     formula: =BINOM.DIST(5, 10, 0.5, FALSE)
@@ -103,6 +114,7 @@ tests:
       - distributions
     name: binom-dist-pmf-at-k-5-n-10
   - subject: BINOM.DIST
+    subjectRef: BINOM.DIST
     formula: =BINOM.DIST(10, 10, 0.5, TRUE)
     category: value
     expect: 1
@@ -127,6 +139,7 @@ tests:
       - distributions
     name: binom-dist-cdf-at-n
   - subject: BINOM.DIST
+    subjectRef: BINOM.DIST
     category: value
     status: observed
     formula: =BINOM.DIST(3, 10, 0.25, TRUE)
@@ -135,6 +148,7 @@ tests:
       - distributions
     name: binom-dist-tail-probability
   - subject: BINOM.INV
+    subjectRef: BINOM.INV
     formula: =BINOM.INV(10, 0.5, 0.5)
     category: value
     expect: 5
@@ -152,6 +166,7 @@ tests:
       - distributions
     name: binom-inv-median
   - subject: BINOM.INV
+    subjectRef: BINOM.INV
     formula: =BINOM.INV(20, 0.3, 0.95)
     category: value
     expect: 9
@@ -169,6 +184,7 @@ tests:
       - distributions
     name: binom-inv-tail
   - subject: BINOMDIST
+    subjectRef: BINOMDIST
     formula: =BINOMDIST(2, 5, 0.5, FALSE)
     category: value
     expect: 0.3125
@@ -190,6 +206,7 @@ tests:
       - distributions
     name: binomdist-pmf
   - subject: BINOMDIST
+    subjectRef: BINOMDIST
     category: value
     status: observed
     formula: =BINOMDIST(2, 5, 0.5, TRUE)
@@ -198,6 +215,7 @@ tests:
       - distributions
     name: binomdist-cdf
   - subject: CHIDIST
+    subjectRef: CHIDIST
     category: value
     status: observed
     formula: =CHIDIST(4, 4)
@@ -206,6 +224,7 @@ tests:
       - distributions
     name: chidist-at-mean-df-4
   - subject: CHIDIST
+    subjectRef: CHIDIST
     category: value
     status: observed
     formula: =CHIDIST(18.307, 10)
@@ -214,6 +233,7 @@ tests:
       - distributions
     name: chidist-tail-df-10
   - subject: CHIINV
+    subjectRef: CHIINV
     category: value
     status: observed
     formula: =CHIINV(0.05, 10)
@@ -222,6 +242,7 @@ tests:
       - distributions
     name: chiinv-0-05-df-10
   - subject: CHIINV
+    subjectRef: CHIINV
     category: value
     status: observed
     formula: =CHIINV(CHIDIST(5, 4), 4)
@@ -230,6 +251,7 @@ tests:
       - distributions
     name: chiinv-roundtrip
   - subject: CHISQ.DIST
+    subjectRef: CHISQ.DIST
     category: value
     status: observed
     formula: =CHISQ.DIST(4, 4, TRUE)
@@ -238,6 +260,7 @@ tests:
       - distributions
     name: chisq-dist-cdf-df-4
   - subject: CHISQ.DIST
+    subjectRef: CHISQ.DIST
     category: value
     status: observed
     formula: =CHISQ.DIST(4, 4, FALSE)
@@ -246,6 +269,7 @@ tests:
       - distributions
     name: chisq-dist-pdf-df-4
   - subject: CHISQ.DIST.RT
+    subjectRef: CHISQ.DIST.RT
     category: value
     status: observed
     formula: =CHISQ.DIST.RT(18.307, 10)
@@ -254,6 +278,7 @@ tests:
       - distributions
     name: chisq-dist-rt-df-10
   - subject: CHISQ.DIST.RT
+    subjectRef: CHISQ.DIST.RT
     category: value
     status: observed
     formula: =CHISQ.DIST.RT(4, 4)
@@ -262,6 +287,7 @@ tests:
       - distributions
     name: chisq-dist-rt-median
   - subject: CHISQ.INV
+    subjectRef: CHISQ.INV
     category: value
     status: observed
     formula: =CHISQ.INV(0.5, 4)
@@ -270,6 +296,7 @@ tests:
       - distributions
     name: chisq-inv-at-0-5-df-4
   - subject: CHISQ.INV
+    subjectRef: CHISQ.INV
     category: value
     status: observed
     formula: =CHISQ.INV(CHISQ.DIST(5, 4, TRUE), 4)
@@ -278,6 +305,7 @@ tests:
       - distributions
     name: chisq-inv-roundtrip
   - subject: CHISQ.INV.RT
+    subjectRef: CHISQ.INV.RT
     category: value
     status: observed
     formula: =CHISQ.INV.RT(0.05, 10)
@@ -286,6 +314,7 @@ tests:
       - distributions
     name: chisq-inv-rt-at-0-05-df-10
   - subject: CHISQ.INV.RT
+    subjectRef: CHISQ.INV.RT
     category: value
     status: observed
     formula: =CHISQ.INV.RT(CHISQ.DIST.RT(5, 4), 4)
@@ -294,6 +323,7 @@ tests:
       - distributions
     name: chisq-inv-rt-roundtrip
   - subject: CHISQ.TEST
+    subjectRef: CHISQ.TEST
     category: value
     status: observed
     formula: =CHISQ.TEST(A1:C2, A4:C5)
@@ -315,6 +345,7 @@ tests:
       - distributions
     name: chisq-test-2x3-contingency
   - subject: CHISQ.TEST
+    subjectRef: CHISQ.TEST
     formula: =CHISQ.TEST(A1:B2, A4:B5)
     category: value
     grid:
@@ -341,6 +372,7 @@ tests:
       - distributions
     name: chisq-test-identical-ranges
   - subject: CHITEST
+    subjectRef: CHITEST
     category: value
     status: observed
     formula: =CHITEST(A1:C2, A4:C5)
@@ -362,6 +394,7 @@ tests:
       - distributions
     name: chitest-2x3-contingency
   - subject: CHITEST
+    subjectRef: CHITEST
     category: value
     status: observed
     formula: =CHITEST(A1:B2, A4:B5)
@@ -379,6 +412,7 @@ tests:
       - distributions
     name: chitest-small-table
   - subject: CONFIDENCE.NORM
+    subjectRef: CONFIDENCE.NORM
     category: value
     status: observed
     formula: =CONFIDENCE.NORM(0.05, 1, 100)
@@ -387,6 +421,7 @@ tests:
       - distributions
     name: confidence-norm-standard
   - subject: CONFIDENCE.NORM
+    subjectRef: CONFIDENCE.NORM
     category: value
     status: observed
     formula: =CONFIDENCE.NORM(0.01, 2.5, 50)
@@ -395,6 +430,7 @@ tests:
       - distributions
     name: confidence-norm-99-percent
   - subject: CRITBINOM
+    subjectRef: CRITBINOM
     formula: =CRITBINOM(10, 0.5, 0.5)
     category: value
     expect: 5
@@ -412,6 +448,7 @@ tests:
       - distributions
     name: critbinom-median
   - subject: CRITBINOM
+    subjectRef: CRITBINOM
     formula: =CRITBINOM(20, 0.3, 0.95)
     category: value
     expect: 9
@@ -429,6 +466,7 @@ tests:
       - distributions
     name: critbinom-tail
   - subject: EXPON.DIST
+    subjectRef: EXPON.DIST
     category: value
     status: observed
     formula: =EXPON.DIST(1, 1, TRUE)
@@ -437,6 +475,7 @@ tests:
       - distributions
     name: expon-dist-cdf-at-mean
   - subject: EXPON.DIST
+    subjectRef: EXPON.DIST
     formula: =EXPON.DIST(0, 2, FALSE)
     category: value
     expect: 2
@@ -458,6 +497,7 @@ tests:
       - distributions
     name: expon-dist-pdf-at-0
   - subject: EXPON.DIST
+    subjectRef: EXPON.DIST
     category: value
     status: observed
     formula: =EXPON.DIST(1, 2, FALSE)
@@ -466,6 +506,7 @@ tests:
       - distributions
     name: expon-dist-pdf-at-x-1
   - subject: EXPONDIST
+    subjectRef: EXPONDIST
     category: value
     status: observed
     formula: =EXPONDIST(2, 0.5, TRUE)
@@ -474,6 +515,7 @@ tests:
       - distributions
     name: expondist-cdf
   - subject: EXPONDIST
+    subjectRef: EXPONDIST
     category: value
     status: observed
     formula: =EXPONDIST(2, 0.5, FALSE)
@@ -482,6 +524,7 @@ tests:
       - distributions
     name: expondist-pdf
   - subject: F.DIST
+    subjectRef: F.DIST
     category: value
     status: observed
     formula: =F.DIST(1, 5, 10, TRUE)
@@ -490,6 +533,7 @@ tests:
       - distributions
     name: f-dist-cdf
   - subject: F.DIST
+    subjectRef: F.DIST
     category: value
     status: observed
     formula: =F.DIST(1, 5, 10, FALSE)
@@ -498,6 +542,7 @@ tests:
       - distributions
     name: f-dist-pdf
   - subject: F.DIST.RT
+    subjectRef: F.DIST.RT
     category: value
     status: observed
     formula: =F.DIST.RT(3.33, 5, 10)
@@ -506,6 +551,7 @@ tests:
       - distributions
     name: f-dist-rt-tail
   - subject: F.DIST.RT
+    subjectRef: F.DIST.RT
     category: value
     status: observed
     formula: =F.DIST.RT(1, 5, 10)
@@ -514,6 +560,7 @@ tests:
       - distributions
     name: f-dist-rt-central
   - subject: F.INV
+    subjectRef: F.INV
     category: value
     status: observed
     formula: =F.INV(0.5, 5, 10)
@@ -522,6 +569,7 @@ tests:
       - distributions
     name: f-inv-at-0-5
   - subject: F.INV
+    subjectRef: F.INV
     category: value
     status: observed
     formula: =F.INV(F.DIST(2, 5, 10, TRUE), 5, 10)
@@ -530,6 +578,7 @@ tests:
       - distributions
     name: f-inv-roundtrip
   - subject: F.INV.RT
+    subjectRef: F.INV.RT
     category: value
     status: observed
     formula: =F.INV.RT(0.05, 5, 10)
@@ -538,6 +587,7 @@ tests:
       - distributions
     name: f-inv-rt-at-0-05
   - subject: F.INV.RT
+    subjectRef: F.INV.RT
     category: value
     status: observed
     formula: =F.INV.RT(F.DIST.RT(2, 5, 10), 5, 10)
@@ -546,6 +596,7 @@ tests:
       - distributions
     name: f-inv-rt-roundtrip
   - subject: FDIST
+    subjectRef: FDIST
     category: value
     status: observed
     formula: =FDIST(3.33, 5, 10)
@@ -554,6 +605,7 @@ tests:
       - distributions
     name: fdist-tail
   - subject: FDIST
+    subjectRef: FDIST
     category: value
     status: observed
     formula: =FDIST(1, 5, 10)
@@ -562,6 +614,7 @@ tests:
       - distributions
     name: fdist-central
   - subject: FINV
+    subjectRef: FINV
     category: value
     status: observed
     formula: =FINV(0.05, 5, 10)
@@ -570,6 +623,7 @@ tests:
       - distributions
     name: finv-at-0-05
   - subject: FINV
+    subjectRef: FINV
     category: value
     status: observed
     formula: =FINV(FDIST(2, 5, 10), 5, 10)
@@ -578,6 +632,7 @@ tests:
       - distributions
     name: finv-roundtrip
   - subject: FISHER
+    subjectRef: FISHER
     formula: =FISHER(0)
     category: value
     expect: 0
@@ -591,6 +646,7 @@ tests:
       - distributions
     name: fisher-at-0
   - subject: FISHER
+    subjectRef: FISHER
     category: value
     status: observed
     formula: =FISHER(0.5)
@@ -599,6 +655,7 @@ tests:
       - distributions
     name: fisher-at-0-5
   - subject: FISHERINV
+    subjectRef: FISHERINV
     formula: =FISHERINV(0)
     category: value
     expect: 0
@@ -612,6 +669,7 @@ tests:
       - distributions
     name: fisherinv-at-0
   - subject: FISHERINV
+    subjectRef: FISHERINV
     category: value
     formula: =FISHERINV(FISHER(0.75))
     expect: 0.75
@@ -625,6 +683,7 @@ tests:
       - distributions
     name: fisherinv-roundtrip
   - subject: GAMMA
+    subjectRef: GAMMA
     formula: =GAMMA(1)
     category: value
     expect: 1
@@ -638,6 +697,7 @@ tests:
       - distributions
     name: gamma-at-1
   - subject: GAMMA
+    subjectRef: GAMMA
     formula: =GAMMA(5)
     category: value
     expect: 24
@@ -657,6 +717,7 @@ tests:
       - distributions
     name: gamma-at-5
   - subject: GAMMA
+    subjectRef: GAMMA
     category: value
     status: observed
     formula: =GAMMA(0.5)
@@ -665,6 +726,7 @@ tests:
       - distributions
     name: gamma-at-0-5
   - subject: GAMMA.DIST
+    subjectRef: GAMMA.DIST
     category: value
     status: observed
     formula: =GAMMA.DIST(2, 2, 1, TRUE)
@@ -673,6 +735,7 @@ tests:
       - distributions
     name: gamma-dist-cdf
   - subject: GAMMA.DIST
+    subjectRef: GAMMA.DIST
     category: value
     status: observed
     formula: =GAMMA.DIST(2, 2, 1, FALSE)
@@ -681,6 +744,7 @@ tests:
       - distributions
     name: gamma-dist-pdf
   - subject: GAMMA.INV
+    subjectRef: GAMMA.INV
     category: value
     status: observed
     formula: =GAMMA.INV(0.5, 2, 1)
@@ -689,6 +753,7 @@ tests:
       - distributions
     name: gamma-inv-at-0-5
   - subject: GAMMA.INV
+    subjectRef: GAMMA.INV
     formula: =GAMMA.INV(GAMMA.DIST(2, 2, 1, TRUE), 2, 1)
     category: value
     expect: 2
@@ -710,6 +775,7 @@ tests:
       - distributions
     name: gamma-inv-roundtrip
   - subject: GAMMADIST
+    subjectRef: GAMMADIST
     category: value
     status: observed
     formula: =GAMMADIST(2, 2, 1, TRUE)
@@ -718,6 +784,7 @@ tests:
       - distributions
     name: gammadist-cdf
   - subject: GAMMADIST
+    subjectRef: GAMMADIST
     category: value
     status: observed
     formula: =GAMMADIST(2, 2, 1, FALSE)
@@ -726,6 +793,7 @@ tests:
       - distributions
     name: gammadist-pdf
   - subject: GAMMAINV
+    subjectRef: GAMMAINV
     category: value
     status: observed
     formula: =GAMMAINV(0.5, 2, 1)
@@ -734,6 +802,7 @@ tests:
       - distributions
     name: gammainv-at-0-5
   - subject: GAMMAINV
+    subjectRef: GAMMAINV
     category: value
     status: observed
     formula: =GAMMAINV(GAMMADIST(3, 2, 1, TRUE), 2, 1)
@@ -742,6 +811,7 @@ tests:
       - distributions
     name: gammainv-roundtrip
   - subject: GAUSS
+    subjectRef: GAUSS
     formula: =GAUSS(0)
     category: value
     expect: 0
@@ -759,6 +829,7 @@ tests:
       - distributions
     name: gauss-at-0
   - subject: GAUSS
+    subjectRef: GAUSS
     category: value
     status: observed
     formula: =GAUSS(1)
@@ -767,6 +838,7 @@ tests:
       - distributions
     name: gauss-at-1
   - subject: HYPGEOM.DIST
+    subjectRef: HYPGEOM.DIST
     category: value
     status: observed
     formula: =HYPGEOM.DIST(1, 4, 8, 20, FALSE)
@@ -775,6 +847,7 @@ tests:
       - distributions
     name: hypgeom-dist-pmf
   - subject: HYPGEOM.DIST
+    subjectRef: HYPGEOM.DIST
     category: value
     status: observed
     formula: =HYPGEOM.DIST(1, 4, 8, 20, TRUE)
@@ -783,6 +856,7 @@ tests:
       - distributions
     name: hypgeom-dist-cdf
   - subject: HYPGEOM.DIST
+    subjectRef: HYPGEOM.DIST
     category: value
     status: observed
     formula: =HYPGEOM.DIST(0, 4, 8, 20, FALSE)
@@ -791,6 +865,7 @@ tests:
       - distributions
     name: hypgeom-dist-at-0
   - subject: HYPGEOMDIST
+    subjectRef: HYPGEOMDIST
     category: value
     status: observed
     formula: =HYPGEOMDIST(1, 4, 8, 20)
@@ -799,6 +874,7 @@ tests:
       - distributions
     name: hypgeomdist-basic
   - subject: HYPGEOMDIST
+    subjectRef: HYPGEOMDIST
     category: value
     status: observed
     formula: =HYPGEOMDIST(0, 4, 8, 20)
@@ -807,6 +883,7 @@ tests:
       - distributions
     name: hypgeomdist-zero-successes
   - subject: LOGINV
+    subjectRef: LOGINV
     formula: =LOGINV(0.5, 0, 1)
     category: value
     expect: 1
@@ -824,6 +901,7 @@ tests:
       - distributions
     name: loginv-at-0-5
   - subject: LOGINV
+    subjectRef: LOGINV
     category: value
     status: observed
     formula: =LOGINV(LOGNORMDIST(2, 0, 1), 0, 1)
@@ -832,6 +910,7 @@ tests:
       - distributions
     name: loginv-roundtrip
   - subject: LOGNORM.DIST
+    subjectRef: LOGNORM.DIST
     category: value
     status: observed
     formula: =LOGNORM.DIST(2, 0, 1, TRUE)
@@ -840,6 +919,7 @@ tests:
       - distributions
     name: lognorm-dist-cdf
   - subject: LOGNORM.DIST
+    subjectRef: LOGNORM.DIST
     category: value
     status: observed
     formula: =LOGNORM.DIST(2, 0, 1, FALSE)
@@ -848,6 +928,7 @@ tests:
       - distributions
     name: lognorm-dist-pdf
   - subject: LOGNORM.INV
+    subjectRef: LOGNORM.INV
     formula: =LOGNORM.INV(0.5, 0, 1)
     category: value
     expect: 1
@@ -865,6 +946,7 @@ tests:
       - distributions
     name: lognorm-inv-at-0-5
   - subject: LOGNORM.INV
+    subjectRef: LOGNORM.INV
     category: value
     status: observed
     formula: =LOGNORM.INV(LOGNORM.DIST(2, 0, 1, TRUE), 0, 1)
@@ -873,6 +955,7 @@ tests:
       - distributions
     name: lognorm-inv-roundtrip
   - subject: LOGNORMDIST
+    subjectRef: LOGNORMDIST
     formula: =LOGNORMDIST(1, 0, 1)
     category: value
     expect: 0.5
@@ -894,6 +977,7 @@ tests:
       - distributions
     name: lognormdist-at-1
   - subject: LOGNORMDIST
+    subjectRef: LOGNORMDIST
     category: value
     status: observed
     formula: =LOGNORMDIST(2, 0, 1)
@@ -902,6 +986,7 @@ tests:
       - distributions
     name: lognormdist-at-2
   - subject: NEGBINOM.DIST
+    subjectRef: NEGBINOM.DIST
     category: value
     status: observed
     formula: =NEGBINOM.DIST(10, 5, 0.25, FALSE)
@@ -910,6 +995,7 @@ tests:
       - distributions
     name: negbinom-dist-pmf
   - subject: NEGBINOM.DIST
+    subjectRef: NEGBINOM.DIST
     category: value
     status: observed
     formula: =NEGBINOM.DIST(10, 5, 0.25, TRUE)
@@ -918,6 +1004,7 @@ tests:
       - distributions
     name: negbinom-dist-cdf
   - subject: NEGBINOM.DIST
+    subjectRef: NEGBINOM.DIST
     category: value
     status: observed
     formula: =NEGBINOM.DIST(0, 5, 0.5, FALSE)
@@ -926,6 +1013,7 @@ tests:
       - distributions
     name: negbinom-dist-at-0-failures
   - subject: NEGBINOMDIST
+    subjectRef: NEGBINOMDIST
     category: value
     status: observed
     formula: =NEGBINOMDIST(10, 5, 0.25)
@@ -934,6 +1022,7 @@ tests:
       - distributions
     name: negbinomdist-basic
   - subject: NEGBINOMDIST
+    subjectRef: NEGBINOMDIST
     category: value
     status: observed
     formula: =NEGBINOMDIST(0, 5, 0.5)
@@ -942,6 +1031,7 @@ tests:
       - distributions
     name: negbinomdist-at-0
   - subject: NORM.DIST
+    subjectRef: NORM.DIST
     formula: =NORM.DIST(0, 0, 1, TRUE)
     category: value
     expect: 0.5
@@ -963,6 +1053,7 @@ tests:
       - distributions
     name: norm-dist-at-mean-cdf
   - subject: NORM.DIST
+    subjectRef: NORM.DIST
     category: value
     status: observed
     formula: =NORM.DIST(0, 0, 1, FALSE)
@@ -971,6 +1062,7 @@ tests:
       - distributions
     name: norm-dist-at-mean-pdf
   - subject: NORM.DIST
+    subjectRef: NORM.DIST
     category: value
     status: observed
     formula: =NORM.DIST(1, 0, 1, TRUE)
@@ -979,6 +1071,7 @@ tests:
       - distributions
     name: norm-dist-at-1-sigma-cdf
   - subject: NORM.DIST
+    subjectRef: NORM.DIST
     category: value
     status: observed
     formula: =NORM.DIST(42, 40, 1.5, TRUE)
@@ -987,6 +1080,7 @@ tests:
       - distributions
     name: norm-dist-non-standard
   - subject: NORM.INV
+    subjectRef: NORM.INV
     formula: =NORM.INV(0.5, 0, 1)
     category: value
     expect: 0
@@ -1007,6 +1101,7 @@ tests:
       - distributions
     name: norm-inv-at-0-5
   - subject: NORM.INV
+    subjectRef: NORM.INV
     category: value
     status: observed
     formula: =NORM.INV(0.975, 0, 1)
@@ -1015,6 +1110,7 @@ tests:
       - distributions
     name: norm-inv-at-0-975
   - subject: NORM.INV
+    subjectRef: NORM.INV
     category: value
     status: observed
     formula: =NORM.INV(NORM.DIST(1.5, 0, 1, TRUE), 0, 1)
@@ -1023,6 +1119,7 @@ tests:
       - distributions
     name: norm-inv-roundtrip
   - subject: NORM.S.DIST
+    subjectRef: NORM.S.DIST
     formula: =NORM.S.DIST(0, TRUE)
     category: value
     expect: 0.5
@@ -1048,6 +1145,7 @@ tests:
       - distributions
     name: norm-s-dist-at-0-cdf
   - subject: NORM.S.DIST
+    subjectRef: NORM.S.DIST
     category: value
     status: observed
     formula: =NORM.S.DIST(0, FALSE)
@@ -1056,6 +1154,7 @@ tests:
       - distributions
     name: norm-s-dist-at-0-pdf
   - subject: NORM.S.DIST
+    subjectRef: NORM.S.DIST
     category: value
     status: observed
     formula: =NORM.S.DIST(1.96, TRUE)
@@ -1064,6 +1163,7 @@ tests:
       - distributions
     name: norm-s-dist-at-1-96
   - subject: NORM.S.INV
+    subjectRef: NORM.S.INV
     formula: =NORM.S.INV(0.5)
     category: value
     expect: 0
@@ -1084,6 +1184,7 @@ tests:
       - distributions
     name: norm-s-inv-at-0-5
   - subject: NORM.S.INV
+    subjectRef: NORM.S.INV
     category: value
     status: observed
     formula: =NORM.S.INV(0.975)
@@ -1092,6 +1193,7 @@ tests:
       - distributions
     name: norm-s-inv-at-0-975
   - subject: NORMDIST
+    subjectRef: NORMDIST
     formula: =NORMDIST(0, 0, 1, TRUE)
     category: value
     expect: 0.5
@@ -1113,6 +1215,7 @@ tests:
       - distributions
     name: normdist-at-mean-cdf
   - subject: NORMDIST
+    subjectRef: NORMDIST
     category: value
     status: observed
     formula: =NORMDIST(0, 0, 1, FALSE)
@@ -1121,6 +1224,7 @@ tests:
       - distributions
     name: normdist-at-mean-pdf
   - subject: NORMINV
+    subjectRef: NORMINV
     formula: =NORMINV(0.5, 0, 1)
     category: value
     expect: 0
@@ -1141,6 +1245,7 @@ tests:
       - distributions
     name: norminv-at-0-5
   - subject: NORMINV
+    subjectRef: NORMINV
     category: value
     status: observed
     formula: =NORMINV(0.95, 0, 1)
@@ -1149,6 +1254,7 @@ tests:
       - distributions
     name: norminv-at-0-95
   - subject: NORMSDIST
+    subjectRef: NORMSDIST
     formula: =NORMSDIST(0)
     category: value
     expect: 0.5
@@ -1170,6 +1276,7 @@ tests:
       - distributions
     name: normsdist-at-0
   - subject: NORMSDIST
+    subjectRef: NORMSDIST
     category: value
     status: observed
     formula: =NORMSDIST(1.96)
@@ -1178,6 +1285,7 @@ tests:
       - distributions
     name: normsdist-at-1-96
   - subject: NORMSINV
+    subjectRef: NORMSINV
     formula: =NORMSINV(0.5)
     category: value
     expect: 0
@@ -1198,6 +1306,7 @@ tests:
       - distributions
     name: normsinv-at-0-5
   - subject: NORMSINV
+    subjectRef: NORMSINV
     category: value
     status: observed
     formula: =NORMSINV(0.025)
@@ -1206,6 +1315,7 @@ tests:
       - distributions
     name: normsinv-at-0-025
   - subject: PHI
+    subjectRef: PHI
     category: value
     status: observed
     formula: =PHI(0)
@@ -1214,6 +1324,7 @@ tests:
       - distributions
     name: phi-at-0
   - subject: PHI
+    subjectRef: PHI
     category: value
     status: observed
     formula: =PHI(1)
@@ -1222,6 +1333,7 @@ tests:
       - distributions
     name: phi-at-1
   - subject: POISSON
+    subjectRef: POISSON
     category: value
     status: observed
     formula: =POISSON(0, 3, FALSE)
@@ -1230,6 +1342,7 @@ tests:
       - distributions
     name: poisson-pmf-at-0
   - subject: POISSON
+    subjectRef: POISSON
     category: value
     status: observed
     formula: =POISSON(3, 3, FALSE)
@@ -1238,6 +1351,7 @@ tests:
       - distributions
     name: poisson-pmf-at-mean
   - subject: POISSON
+    subjectRef: POISSON
     category: value
     status: observed
     formula: =POISSON(5, 3, TRUE)
@@ -1246,6 +1360,7 @@ tests:
       - distributions
     name: poisson-cdf
   - subject: POISSON.DIST
+    subjectRef: POISSON.DIST
     category: value
     status: observed
     formula: =POISSON.DIST(0, 3, FALSE)
@@ -1254,6 +1369,7 @@ tests:
       - distributions
     name: poisson-dist-pmf-at-0
   - subject: POISSON.DIST
+    subjectRef: POISSON.DIST
     category: value
     status: observed
     formula: =POISSON.DIST(3, 3, FALSE)
@@ -1262,6 +1378,7 @@ tests:
       - distributions
     name: poisson-dist-pmf-at-mean
   - subject: POISSON.DIST
+    subjectRef: POISSON.DIST
     category: value
     status: observed
     formula: =POISSON.DIST(5, 3, TRUE)
@@ -1270,6 +1387,7 @@ tests:
       - distributions
     name: poisson-dist-cdf
   - subject: T.DIST
+    subjectRef: T.DIST
     formula: =T.DIST(0, 10, TRUE)
     category: value
     expect: 0.5
@@ -1291,6 +1409,7 @@ tests:
       - distributions
     name: t-dist-cdf-at-0
   - subject: T.DIST
+    subjectRef: T.DIST
     category: value
     status: observed
     formula: =T.DIST(0, 10, FALSE)
@@ -1299,6 +1418,7 @@ tests:
       - distributions
     name: t-dist-pdf-at-0
   - subject: T.DIST
+    subjectRef: T.DIST
     category: value
     status: observed
     formula: =T.DIST(1.812, 10, TRUE)
@@ -1307,6 +1427,7 @@ tests:
       - distributions
     name: t-dist-tail
   - subject: T.DIST.2T
+    subjectRef: T.DIST.2T
     category: value
     status: observed
     formula: =T.DIST.2T(1.812, 10)
@@ -1315,6 +1436,7 @@ tests:
       - distributions
     name: t-dist-2t-df-10
   - subject: T.DIST.2T
+    subjectRef: T.DIST.2T
     category: value
     status: observed
     formula: =T.DIST.2T(0.5, 10)
@@ -1323,6 +1445,7 @@ tests:
       - distributions
     name: t-dist-2t-central
   - subject: T.DIST.RT
+    subjectRef: T.DIST.RT
     category: value
     status: observed
     formula: =T.DIST.RT(1.812, 10)
@@ -1331,6 +1454,7 @@ tests:
       - distributions
     name: t-dist-rt-df-10
   - subject: T.DIST.RT
+    subjectRef: T.DIST.RT
     formula: =T.DIST.RT(0, 10)
     category: value
     expect: 0.5
@@ -1348,6 +1472,7 @@ tests:
       - distributions
     name: t-dist-rt-at-0
   - subject: T.INV
+    subjectRef: T.INV
     formula: =T.INV(0.5, 10)
     category: value
     expect: 0
@@ -1365,6 +1490,7 @@ tests:
       - distributions
     name: t-inv-at-0-5
   - subject: T.INV
+    subjectRef: T.INV
     category: value
     status: observed
     formula: =T.INV(T.DIST(1.5, 10, TRUE), 10)
@@ -1373,6 +1499,7 @@ tests:
       - distributions
     name: t-inv-roundtrip
   - subject: T.INV.2T
+    subjectRef: T.INV.2T
     category: value
     status: observed
     formula: =T.INV.2T(0.05, 10)
@@ -1381,6 +1508,7 @@ tests:
       - distributions
     name: t-inv-2t-95-df-10
   - subject: T.INV.2T
+    subjectRef: T.INV.2T
     category: value
     status: observed
     formula: =T.INV.2T(T.DIST.2T(1.5, 10), 10)
@@ -1389,6 +1517,7 @@ tests:
       - distributions
     name: t-inv-2t-roundtrip
   - subject: TDIST
+    subjectRef: TDIST
     category: value
     status: observed
     formula: =TDIST(1.812, 10, 1)
@@ -1397,6 +1526,7 @@ tests:
       - distributions
     name: tdist-one-tailed
   - subject: TDIST
+    subjectRef: TDIST
     category: value
     status: observed
     formula: =TDIST(1.812, 10, 2)
@@ -1405,6 +1535,7 @@ tests:
       - distributions
     name: tdist-two-tailed
   - subject: TINV
+    subjectRef: TINV
     category: value
     status: observed
     formula: =TINV(0.05, 10)
@@ -1413,6 +1544,7 @@ tests:
       - distributions
     name: tinv-95-df-10
   - subject: TINV
+    subjectRef: TINV
     category: value
     status: observed
     formula: =TINV(TDIST(1.5, 10, 2), 10)
@@ -1421,6 +1553,7 @@ tests:
       - distributions
     name: tinv-roundtrip
   - subject: WEIBULL
+    subjectRef: WEIBULL
     category: value
     status: observed
     formula: =WEIBULL(2, 2, 1, TRUE)
@@ -1429,6 +1562,7 @@ tests:
       - distributions
     name: weibull-cdf
   - subject: WEIBULL
+    subjectRef: WEIBULL
     category: value
     status: observed
     formula: =WEIBULL(2, 2, 1, FALSE)
@@ -1437,6 +1571,7 @@ tests:
       - distributions
     name: weibull-pdf
   - subject: WEIBULL.DIST
+    subjectRef: WEIBULL.DIST
     category: value
     status: observed
     formula: =WEIBULL.DIST(2, 2, 1, TRUE)
@@ -1445,6 +1580,7 @@ tests:
       - distributions
     name: weibull-dist-cdf
   - subject: WEIBULL.DIST
+    subjectRef: WEIBULL.DIST
     category: value
     status: observed
     formula: =WEIBULL.DIST(2, 2, 1, FALSE)
@@ -1453,6 +1589,7 @@ tests:
       - distributions
     name: weibull-dist-pdf
   - subject: WEIBULL.DIST
+    subjectRef: WEIBULL.DIST
     formula: =WEIBULL.DIST(0, 2, 1, TRUE)
     category: value
     expect: 0

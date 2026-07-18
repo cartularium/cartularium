@@ -2,6 +2,7 @@ schemaVersion: 3
 name: Lookup long-tail
 tests:
   - subject: ROW
+    subjectRef: ROW
     category: value
     formula: =ROW(A1)
     expect: 1
@@ -9,6 +10,7 @@ tests:
       - lookup
     name: row-a1
   - subject: ROW
+    subjectRef: ROW
     category: value
     formula: =ROW(A5)
     expect: 5
@@ -16,6 +18,7 @@ tests:
       - lookup
     name: row-a5
   - subject: ROW
+    subjectRef: ROW
     category: value
     formula: =ROW(C10)
     expect: 10
@@ -23,6 +26,7 @@ tests:
       - lookup
     name: row-c10
   - subject: ROW
+    subjectRef: ROW
     category: value
     status: observed
     formula: =ROW(B7:D9)
@@ -30,6 +34,7 @@ tests:
       - lookup
     name: row-range-first-row
   - subject: ROW
+    subjectRef: ROW
     category: value
     formula: =ROW()
     expect: 1
@@ -37,6 +42,7 @@ tests:
       - lookup
     name: row-no-arg
   - subject: COLUMN
+    subjectRef: COLUMN
     category: value
     formula: =COLUMN(A1)
     expect: 1
@@ -44,6 +50,7 @@ tests:
       - lookup
     name: column-a1
   - subject: COLUMN
+    subjectRef: COLUMN
     category: value
     formula: =COLUMN(C1)
     expect: 3
@@ -51,6 +58,7 @@ tests:
       - lookup
     name: column-c1
   - subject: COLUMN
+    subjectRef: COLUMN
     category: value
     formula: =COLUMN(Z1)
     expect: 26
@@ -58,6 +66,7 @@ tests:
       - lookup
     name: column-z1
   - subject: COLUMN
+    subjectRef: COLUMN
     category: value
     status: observed
     formula: =COLUMN(D2:F4)
@@ -65,6 +74,7 @@ tests:
       - lookup
     name: column-range-first-col
   - subject: COLUMN
+    subjectRef: COLUMN
     formula: =COLUMN()
     category: value
     # Cell-position-dependent: each driver picks a target cell. gsheets uses AA1
@@ -75,6 +85,7 @@ tests:
       - lookup
     name: column-no-arg
   - subject: ROWS
+    subjectRef: ROWS
     formula: =ROWS(A1:A3)
     category: value
     expect: 3
@@ -87,6 +98,7 @@ tests:
       - lookup
     name: rows-3-row-range
   - subject: ROWS
+    subjectRef: ROWS
     formula: =ROWS(A1)
     category: value
     expect: 1
@@ -99,6 +111,7 @@ tests:
       - lookup
     name: rows-single-cell
   - subject: ROWS
+    subjectRef: ROWS
     formula: =ROWS(B2:D10)
     category: value
     expect: 9
@@ -111,6 +124,7 @@ tests:
       - lookup
     name: rows-rectangular
   - subject: ROWS
+    subjectRef: ROWS
     formula: =ROWS({1;2;3;4})
     category: value
     expect: 4
@@ -132,6 +146,7 @@ tests:
       - bare-formula
     name: rows-array-literal
   - subject: ROWS
+    subjectRef: ROWS
     formula: =ROWS({1,2;3,4;5,6})
     category: value
     expect: 3
@@ -153,6 +168,7 @@ tests:
       - bare-formula
     name: rows-2d-array-literal
   - subject: COLUMNS
+    subjectRef: COLUMNS
     formula: =COLUMNS(A1:C1)
     category: value
     expect: 3
@@ -165,6 +181,7 @@ tests:
       - lookup
     name: columns-3-col-range
   - subject: COLUMNS
+    subjectRef: COLUMNS
     formula: =COLUMNS(A1)
     category: value
     expect: 1
@@ -177,6 +194,7 @@ tests:
       - lookup
     name: columns-single-cell
   - subject: COLUMNS
+    subjectRef: COLUMNS
     formula: =COLUMNS(B2:D10)
     category: value
     expect: 3
@@ -189,6 +207,7 @@ tests:
       - lookup
     name: columns-rectangular
   - subject: COLUMNS
+    subjectRef: COLUMNS
     formula: =COLUMNS({1,2,3,4,5})
     category: value
     expect: 5
@@ -210,6 +229,7 @@ tests:
       - bare-formula
     name: columns-array-literal
   - subject: COLUMNS
+    subjectRef: COLUMNS
     formula: =COLUMNS({1,2;3,4;5,6})
     category: value
     expect: 2
@@ -231,6 +251,7 @@ tests:
       - bare-formula
     name: columns-2d-array-literal
   - subject: ADDRESS
+    subjectRef: ADDRESS
     formula: =ADDRESS(1,1)
     category: value
     expect: $A$1
@@ -247,6 +268,7 @@ tests:
       - lookup
     name: address-absolute-a1
   - subject: ADDRESS
+    subjectRef: ADDRESS
     formula: =ADDRESS(1,1,4)
     category: value
     expect: A1
@@ -263,6 +285,7 @@ tests:
       - lookup
     name: address-relative
   - subject: ADDRESS
+    subjectRef: ADDRESS
     formula: =ADDRESS(2,3,2)
     category: value
     expect: C$2
@@ -279,6 +302,7 @@ tests:
       - lookup
     name: address-row-absolute
   - subject: ADDRESS
+    subjectRef: ADDRESS
     formula: =ADDRESS(2,3,3)
     category: value
     expect: $C2
@@ -295,6 +319,7 @@ tests:
       - lookup
     name: address-col-absolute
   - subject: ADDRESS
+    subjectRef: ADDRESS
     formula: =ADDRESS(5,26,4)
     category: value
     expect: Z5
@@ -311,6 +336,7 @@ tests:
       - lookup
     name: address-column-z
   - subject: ADDRESS
+    subjectRef: ADDRESS
     formula: =ADDRESS(1,27,4)
     category: value
     expect: AA1
@@ -327,6 +353,7 @@ tests:
       - lookup
     name: address-column-aa
   - subject: ADDRESS
+    subjectRef: ADDRESS
     category: value
     status: observed
     formula: =ADDRESS(1,1,1,TRUE,"Sheet2")
@@ -334,6 +361,7 @@ tests:
       - lookup
     name: address-with-sheet
   - subject: OFFSET
+    subjectRef: OFFSET
     formula: =OFFSET(A1,1,0)+0
     category: value
     grid:
@@ -358,6 +386,7 @@ tests:
       - lookup
     name: offset-down-one
   - subject: OFFSET
+    subjectRef: OFFSET
     formula: =OFFSET(A1,0,2)+0
     category: value
     grid:
@@ -382,6 +411,7 @@ tests:
       - lookup
     name: offset-right-one
   - subject: OFFSET
+    subjectRef: OFFSET
     formula: =OFFSET(A1,0,0)+0
     category: value
     grid:
@@ -404,6 +434,7 @@ tests:
       - lookup
     name: offset-zero
   - subject: OFFSET
+    subjectRef: OFFSET
     formula: =SUM(OFFSET(A1,0,0,2,2))
     category: value
     grid:
@@ -424,6 +455,7 @@ tests:
       - lookup
     name: offset-sum-height-width
   - subject: OFFSET
+    subjectRef: OFFSET
     formula: =SUM(OFFSET(A1,1,0,3,1))
     category: value
     grid:
@@ -444,6 +476,7 @@ tests:
       - lookup
     name: offset-sum-shifted-range
   - subject: OFFSET
+    subjectRef: OFFSET
     formula: =OFFSET(A3,-2,0)+0
     category: value
     grid:
@@ -468,6 +501,7 @@ tests:
       - lookup
     name: offset-negative-rows
   - subject: INDIRECT
+    subjectRef: INDIRECT
     formula: =INDIRECT("A1")
     category: value
     grid:
@@ -482,6 +516,7 @@ tests:
       - lookup
     name: indirect-a1-to-value
   - subject: INDIRECT
+    subjectRef: INDIRECT
     formula: =INDIRECT("B3")
     category: value
     grid:
@@ -496,6 +531,7 @@ tests:
       - lookup
     name: indirect-text-cell
   - subject: INDIRECT
+    subjectRef: INDIRECT
     formula: =SUM(INDIRECT("A1:A3"))
     category: value
     grid:
@@ -515,6 +551,7 @@ tests:
       - lookup
     name: indirect-sum-range
   - subject: INDIRECT
+    subjectRef: INDIRECT
     formula: =INDIRECT("A" & 5)
     category: value
     grid:
@@ -533,6 +570,7 @@ tests:
       - lookup
     name: indirect-concatenated
   - subject: INDIRECT
+    subjectRef: INDIRECT
     formula: =INDIRECT("not a ref")
     category: value
     expect:
@@ -550,6 +588,7 @@ tests:
       - lookup
     name: indirect-bad-ref
   - subject: INDIRECT
+    subjectRef: INDIRECT
     formula: =INDIRECT("R1C1", FALSE)
     category: value
     grid:
@@ -576,6 +615,7 @@ tests:
       - lookup
     name: indirect-r1c1-style
   - subject: LOOKUP
+    subjectRef: LOOKUP
     formula: =LOOKUP(2, A1:A3, B1:B3)
     category: value
     grid:
@@ -595,6 +635,7 @@ tests:
       - lookup
     name: lookup-exact-sorted
   - subject: LOOKUP
+    subjectRef: LOOKUP
     formula: =LOOKUP(4, A1:A3, B1:B3)
     category: value
     grid:
@@ -614,6 +655,7 @@ tests:
       - lookup
     name: lookup-approximate
   - subject: LOOKUP
+    subjectRef: LOOKUP
     formula: =LOOKUP(20, A1:A3)
     category: value
     grid:
@@ -630,6 +672,7 @@ tests:
       - lookup
     name: lookup-vector-form-no-result
   - subject: LOOKUP
+    subjectRef: LOOKUP
     formula: =LOOKUP(5, A1:A3, B1:B3)
     category: value
     grid:
@@ -650,6 +693,7 @@ tests:
       - lookup
     name: lookup-below-range
   - subject: LOOKUP
+    subjectRef: LOOKUP
     formula: =LOOKUP(99, A1:A3, B1:B3)
     category: value
     grid:
@@ -669,6 +713,7 @@ tests:
       - lookup
     name: lookup-above-range-picks-last
   - subject: LOOKUP
+    subjectRef: LOOKUP
     category: value
     status: observed
     formula: =LOOKUP(2, {1,2,3;"a","b","c"})
@@ -677,6 +722,7 @@ tests:
       - bare-formula
     name: lookup-array-form
   - subject: FORMULATEXT
+    subjectRef: FORMULATEXT
     formula: =FORMULATEXT(A1)
     category: value
     features:
@@ -688,6 +734,7 @@ tests:
       - lookup
     name: formulatext-of-formula-cell
   - subject: FORMULATEXT
+    subjectRef: FORMULATEXT
     category: value
     features:
       - external-io
@@ -699,6 +746,7 @@ tests:
       - lookup
     name: formulatext-of-value-cell
   - subject: FORMULATEXT
+    subjectRef: FORMULATEXT
     category: value
     features:
       - external-io
@@ -708,6 +756,7 @@ tests:
       - lookup
     name: formulatext-of-empty
   - subject: FORMULATEXT
+    subjectRef: FORMULATEXT
     formula: =FORMULATEXT(B1)
     category: value
     features:
@@ -721,6 +770,7 @@ tests:
       - lookup
     name: formulatext-sum-formula
   - subject: GETPIVOTDATA
+    subjectRef: GETPIVOTDATA
     category: value
     features:
       - external-io
@@ -730,6 +780,7 @@ tests:
       - lookup
     name: getpivotdata-smoke
   - subject: GETPIVOTDATA
+    subjectRef: GETPIVOTDATA
     category: value
     features:
       - external-io
@@ -739,6 +790,7 @@ tests:
       - lookup
     name: getpivotdata-with-field
   - subject: SHEET
+    subjectRef: SHEET
     formula: =SHEET()
     category: value
     features:
@@ -748,6 +800,7 @@ tests:
       - lookup
     name: sheet-no-arg
   - subject: SHEET
+    subjectRef: SHEET
     formula: =SHEET(A1)
     category: value
     features:
@@ -759,6 +812,7 @@ tests:
       - lookup
     name: sheet-self-ref
   - subject: SHEET
+    subjectRef: SHEET
     formula: =SHEET("Sheet1")
     category: value
     features:
@@ -768,6 +822,7 @@ tests:
       - lookup
     name: sheet-by-name-string
   - subject: SHEET
+    subjectRef: SHEET
     category: value
     features:
       - external-io

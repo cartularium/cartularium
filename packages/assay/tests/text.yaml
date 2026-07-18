@@ -2,6 +2,7 @@ schemaVersion: 3
 name: Text functions
 tests:
   - subject: CONCAT
+    subjectRef: CONCAT
     formula: =CONCAT("hello", " world")
     category: value
     expect: hello world
@@ -16,6 +17,7 @@ tests:
           error: "#NAME?"
     name: concat-two-args
   - subject: CONCATENATE
+    subjectRef: CONCATENATE
     category: value
     formula: =CONCATENATE(A1, A2, A3, "!")
     grid:
@@ -25,6 +27,7 @@ tests:
     expect: Hello my World!
     name: concatenate-with-grid
   - subject: CONCAT
+    subjectRef: CONCAT
     formula: =CONCAT("value:", 42)
     category: value
     expect: value:42
@@ -41,41 +44,49 @@ tests:
       - divergence
     name: concat-with-numbers
   - subject: LEFT
+    subjectRef: LEFT
     category: value
     formula: =LEFT("Sale Price", 4)
     expect: Sale
     name: left-with-count
   - subject: LEFT
+    subjectRef: LEFT
     category: value
     formula: =LEFT("Sweden")
     expect: S
     name: left-default
   - subject: RIGHT
+    subjectRef: RIGHT
     category: value
     formula: =RIGHT("Sale Price", 5)
     expect: Price
     name: right-with-count
   - subject: RIGHT
+    subjectRef: RIGHT
     category: value
     formula: =RIGHT("Stock Number")
     expect: r
     name: right-default
   - subject: MID
+    subjectRef: MID
     category: value
     formula: =MID("Romain", 3, 4)
     expect: main
     name: mid-basic
   - subject: MID
+    subjectRef: MID
     category: value
     formula: =MID("Romain", 1, 2)
     expect: Ro
     name: mid-from-start
   - subject: MID
+    subjectRef: MID
     category: value
     formula: =MID("Romain", 3, 6)
     expect: main
     name: mid-beyond-end
   - subject: MID
+    subjectRef: MID
     formula: =MID("Romain", 0, 3)
     category: value
     expect: ""
@@ -113,42 +124,50 @@ tests:
       - error-type
     name: mid-start-0
   - subject: MID
+    subjectRef: MID
     formula: =MID("Romain", 1, -1)
     category: value
     expect:
       error: "#VALUE!"
     name: mid-negative-count
   - subject: LEN
+    subjectRef: LEN
     category: value
     formula: =LEN("Phoenix, AZ")
     expect: 11
     name: len-basic
   - subject: LEN
+    subjectRef: LEN
     category: value
     formula: =LEN("")
     expect: 0
     name: len-empty
   - subject: LEN
+    subjectRef: LEN
     category: value
     formula: =LEN("        One")
     expect: 11
     name: len-with-spaces
   - subject: LOWER
+    subjectRef: LOWER
     category: value
     formula: =LOWER("E. E. Cummings")
     expect: e. e. cummings
     name: lower
   - subject: UPPER
+    subjectRef: UPPER
     category: value
     formula: =UPPER("total")
     expect: TOTAL
     name: upper
   - subject: UPPER
+    subjectRef: UPPER
     category: value
     formula: =UPPER("Yield")
     expect: YIELD
     name: upper-mixed
   - subject: TRIM
+    subjectRef: TRIM
     formula: =TRIM(" First Quarter Earnings ")
     category: value
     expect: First Quarter Earnings
@@ -158,42 +177,50 @@ tests:
         recorded: " First Quarter Earnings "
     name: trim
   - subject: SUBSTITUTE
+    subjectRef: SUBSTITUTE
     category: value
     formula: =SUBSTITUTE("hello world", "world", "earth")
     expect: hello earth
     name: substitute-basic
   - subject: SUBSTITUTE
+    subjectRef: SUBSTITUTE
     category: value
     formula: =SUBSTITUTE("abcabc", "a", "x")
     expect: xbcxbc
     name: substitute-multiple-occurrences
   - subject: SUBSTITUTE
+    subjectRef: SUBSTITUTE
     category: value
     formula: =SUBSTITUTE("abcabc", "a", "x", 2)
     expect: abcxbc
     name: substitute-specific-instance
   - subject: FIND
+    subjectRef: FIND
     category: value
     formula: =FIND("M", "Miriam McGovern")
     expect: 1
     name: find-case-sensitive
   - subject: FIND
+    subjectRef: FIND
     category: value
     formula: =FIND("m", "Miriam McGovern")
     expect: 6
     name: find-lowercase
   - subject: FIND
+    subjectRef: FIND
     category: value
     formula: =FIND("M", "Miriam McGovern", 3)
     expect: 8
     name: find-with-start
   - subject: FIND
+    subjectRef: FIND
     formula: =FIND("B", "Miriam McGovern")
     category: value
     expect:
       error: "#VALUE!"
     name: find-not-found
   - subject: EXACT
+    subjectRef: EXACT
     formula: =EXACT("word", "word")
     category: value
     expect: true
@@ -204,6 +231,7 @@ tests:
           error: "#NAME?"
     name: exact-match
   - subject: EXACT
+    subjectRef: EXACT
     formula: =EXACT("Word", "word")
     category: value
     expect: false
@@ -214,6 +242,7 @@ tests:
           error: "#NAME?"
     name: exact-case-differs
   - subject: REPLACE
+    subjectRef: REPLACE
     formula: =REPLACE("abcdefghijk", 6, 5, "*")
     category: value
     expect: abcde*k
@@ -224,6 +253,7 @@ tests:
           error: "#NAME?"
     name: replace-basic
   - subject: REPLACE
+    subjectRef: REPLACE
     formula: =REPLACE("2009", 3, 2, "10")
     category: value
     expect: "2010"
@@ -234,6 +264,7 @@ tests:
           error: "#NAME?"
     name: replace-year
   - subject: REPT
+    subjectRef: REPT
     formula: =REPT("ha", 3)
     category: value
     expect: hahaha
@@ -244,6 +275,7 @@ tests:
           error: "#NAME?"
     name: rept-basic
   - subject: REPT
+    subjectRef: REPT
     category: value
     status: observed
     formula: =REPT("ha", 0)
@@ -252,6 +284,7 @@ tests:
       - null-vs-empty
     name: rept-zero
   - subject: TEXTJOIN
+    subjectRef: TEXTJOIN
     formula: =TEXTJOIN(", ", TRUE, A1:A3)
     category: value
     grid:
@@ -274,6 +307,7 @@ tests:
           error: "#NAME?"
     name: textjoin-comma-separator
   - subject: TEXTBEFORE
+    subjectRef: TEXTBEFORE
     formula: =TEXTBEFORE("Brian Wiles", " ")
     category: value
     expect: Brian
@@ -299,6 +333,7 @@ tests:
       - excel-only
     name: textbefore-space
   - subject: TEXTBEFORE
+    subjectRef: TEXTBEFORE
     formula: =TEXTBEFORE("one,two,three", ",", 2)
     category: value
     expect: one,two
@@ -324,6 +359,7 @@ tests:
       - excel-only
     name: textbefore-second-instance
   - subject: TEXTAFTER
+    subjectRef: TEXTAFTER
     formula: =TEXTAFTER("Brian Wiles", " ")
     category: value
     expect: Wiles
@@ -349,6 +385,7 @@ tests:
       - excel-only
     name: textafter-space
   - subject: TEXTAFTER
+    subjectRef: TEXTAFTER
     formula: =TEXTAFTER("one,two,three", ",", 2)
     category: value
     expect: three

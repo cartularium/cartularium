@@ -2,6 +2,7 @@ schemaVersion: 3
 name: Info functions
 tests:
   - subject: ISNUMBER
+    subjectRef: ISNUMBER
     category: value
     formula: =ISNUMBER(42)
     expect: true
@@ -9,6 +10,7 @@ tests:
       - info
     name: isnumber-of-integer
   - subject: ISNUMBER
+    subjectRef: ISNUMBER
     category: value
     formula: =ISNUMBER(3.14)
     expect: true
@@ -16,6 +18,7 @@ tests:
       - info
     name: isnumber-of-decimal
   - subject: ISNUMBER
+    subjectRef: ISNUMBER
     category: value
     formula: =ISNUMBER("hello")
     expect: false
@@ -23,6 +26,7 @@ tests:
       - info
     name: isnumber-of-text
   - subject: ISNUMBER
+    subjectRef: ISNUMBER
     formula: =ISNUMBER("42")
     category: value
     expect: false
@@ -34,6 +38,7 @@ tests:
       - info
     name: isnumber-of-numeric-text
   - subject: ISNUMBER
+    subjectRef: ISNUMBER
     formula: =ISNUMBER(TRUE)
     category: value
     expect: false
@@ -45,6 +50,7 @@ tests:
       - info
     name: isnumber-of-boolean
   - subject: ISNUMBER
+    subjectRef: ISNUMBER
     category: value
     formula: =ISNUMBER(A1)
     grid:
@@ -54,6 +60,7 @@ tests:
       - info
     name: isnumber-of-blank-cell
   - subject: ISNUMBER
+    subjectRef: ISNUMBER
     category: value
     formula: =ISNUMBER(A1)
     grid:
@@ -63,6 +70,7 @@ tests:
       - info
     name: isnumber-of-number-cell
   - subject: ISNUMBER
+    subjectRef: ISNUMBER
     category: error-code
     formula: =ISNUMBER(1/0)
     expect: false
@@ -70,6 +78,7 @@ tests:
       - info
     name: isnumber-of-error
   - subject: ISTEXT
+    subjectRef: ISTEXT
     category: value
     formula: =ISTEXT("hello")
     expect: true
@@ -77,6 +86,7 @@ tests:
       - info
     name: istext-of-text
   - subject: ISTEXT
+    subjectRef: ISTEXT
     category: value
     formula: =ISTEXT("")
     expect: true
@@ -84,6 +94,7 @@ tests:
       - info
     name: istext-of-empty-string
   - subject: ISTEXT
+    subjectRef: ISTEXT
     category: value
     formula: =ISTEXT(42)
     expect: false
@@ -91,6 +102,7 @@ tests:
       - info
     name: istext-of-number
   - subject: ISTEXT
+    subjectRef: ISTEXT
     category: value
     formula: =ISTEXT(TRUE)
     expect: false
@@ -98,6 +110,7 @@ tests:
       - info
     name: istext-of-boolean
   - subject: ISTEXT
+    subjectRef: ISTEXT
     category: value
     formula: =ISTEXT(A1)
     grid:
@@ -107,6 +120,7 @@ tests:
       - info
     name: istext-of-blank-cell
   - subject: ISTEXT
+    subjectRef: ISTEXT
     category: value
     formula: =ISTEXT(A1)
     grid:
@@ -116,6 +130,7 @@ tests:
       - info
     name: istext-of-text-cell
   - subject: ISTEXT
+    subjectRef: ISTEXT
     category: error-code
     formula: =ISTEXT(1/0)
     expect: false
@@ -123,6 +138,7 @@ tests:
       - info
     name: istext-of-error
   - subject: ISNONTEXT
+    subjectRef: ISNONTEXT
     category: value
     formula: =ISNONTEXT(42)
     expect: true
@@ -130,6 +146,7 @@ tests:
       - info
     name: isnontext-of-number
   - subject: ISNONTEXT
+    subjectRef: ISNONTEXT
     category: value
     formula: =ISNONTEXT("hello")
     expect: false
@@ -137,6 +154,7 @@ tests:
       - info
     name: isnontext-of-text
   - subject: ISNONTEXT
+    subjectRef: ISNONTEXT
     category: value
     formula: =ISNONTEXT(TRUE)
     expect: true
@@ -144,6 +162,7 @@ tests:
       - info
     name: isnontext-of-boolean
   - subject: ISNONTEXT
+    subjectRef: ISNONTEXT
     category: value
     formula: =ISNONTEXT(A1)
     grid:
@@ -153,6 +172,7 @@ tests:
       - info
     name: isnontext-of-blank-cell
   - subject: ISNONTEXT
+    subjectRef: ISNONTEXT
     category: error-code
     formula: =ISNONTEXT(1/0)
     expect: true
@@ -161,6 +181,7 @@ tests:
       - divergence
     name: isnontext-of-error
   - subject: ISLOGICAL
+    subjectRef: ISLOGICAL
     formula: =ISLOGICAL(TRUE)
     category: value
     expect: true
@@ -172,6 +193,7 @@ tests:
       - info
     name: islogical-of-true
   - subject: ISLOGICAL
+    subjectRef: ISLOGICAL
     formula: =ISLOGICAL(FALSE)
     category: value
     expect: true
@@ -183,6 +205,7 @@ tests:
       - info
     name: islogical-of-false
   - subject: ISLOGICAL
+    subjectRef: ISLOGICAL
     category: value
     formula: =ISLOGICAL(1)
     expect: false
@@ -190,6 +213,7 @@ tests:
       - info
     name: islogical-of-number
   - subject: ISLOGICAL
+    subjectRef: ISLOGICAL
     category: value
     formula: =ISLOGICAL("TRUE")
     expect: false
@@ -197,6 +221,7 @@ tests:
       - info
     name: islogical-of-text
   - subject: ISLOGICAL
+    subjectRef: ISLOGICAL
     category: value
     formula: =ISLOGICAL(A1)
     grid:
@@ -206,6 +231,7 @@ tests:
       - info
     name: islogical-of-blank-cell
   - subject: ISLOGICAL
+    subjectRef: ISLOGICAL
     category: error-code
     formula: =ISLOGICAL(1/0)
     expect: false
@@ -213,6 +239,7 @@ tests:
       - info
     name: islogical-of-error
   - subject: ISBLANK
+    subjectRef: ISBLANK
     category: value
     formula: =ISBLANK(A1)
     grid:
@@ -222,6 +249,7 @@ tests:
       - info
     name: isblank-of-blank-cell
   - subject: ISBLANK
+    subjectRef: ISBLANK
     category: value
     formula: =ISBLANK(A1)
     grid:
@@ -231,6 +259,7 @@ tests:
       - info
     name: isblank-of-number-cell
   - subject: ISBLANK
+    subjectRef: ISBLANK
     category: value
     formula: =ISBLANK(A1)
     grid:
@@ -240,6 +269,7 @@ tests:
       - info
     name: isblank-of-text-cell
   - subject: ISBLANK
+    subjectRef: ISBLANK
     category: value
     status: observed
     formula: =ISBLANK(A1)
@@ -250,6 +280,7 @@ tests:
       - divergence
     name: isblank-of-empty-string-cell
   - subject: ISBLANK
+    subjectRef: ISBLANK
     category: value
     formula: =ISBLANK(42)
     expect: false
@@ -257,6 +288,7 @@ tests:
       - info
     name: isblank-of-literal-number
   - subject: ISBLANK
+    subjectRef: ISBLANK
     category: value
     formula: =ISBLANK("")
     expect: false
@@ -265,6 +297,7 @@ tests:
       - divergence
     name: isblank-of-literal-empty-string
   - subject: ISERR
+    subjectRef: ISERR
     category: value
     formula: =ISERR(1/0)
     expect: true
@@ -272,6 +305,7 @@ tests:
       - info
     name: iserr-of-div-0
   - subject: ISERR
+    subjectRef: ISERR
     category: value
     formula: =ISERR(NA())
     expect: false
@@ -279,6 +313,7 @@ tests:
       - info
     name: iserr-of-na
   - subject: ISERR
+    subjectRef: ISERR
     category: value
     formula: =ISERR(42)
     expect: false
@@ -286,6 +321,7 @@ tests:
       - info
     name: iserr-of-number
   - subject: ISERR
+    subjectRef: ISERR
     category: value
     formula: =ISERR("hello")
     expect: false
@@ -293,6 +329,7 @@ tests:
       - info
     name: iserr-of-text
   - subject: ISERR
+    subjectRef: ISERR
     category: value
     formula: =ISERR(A1)
     grid:
@@ -302,6 +339,7 @@ tests:
       - info
     name: iserr-of-blank-cell
   - subject: ISERROR
+    subjectRef: ISERROR
     category: value
     formula: =ISERROR(1/0)
     expect: true
@@ -309,6 +347,7 @@ tests:
       - info
     name: iserror-of-div-0
   - subject: ISERROR
+    subjectRef: ISERROR
     category: value
     formula: =ISERROR(NA())
     expect: true
@@ -316,6 +355,7 @@ tests:
       - info
     name: iserror-of-na
   - subject: ISERROR
+    subjectRef: ISERROR
     category: value
     formula: =ISERROR("a"+1)
     expect: true
@@ -323,6 +363,7 @@ tests:
       - info
     name: iserror-of-value
   - subject: ISERROR
+    subjectRef: ISERROR
     category: value
     formula: =ISERROR(42)
     expect: false
@@ -330,6 +371,7 @@ tests:
       - info
     name: iserror-of-number
   - subject: ISERROR
+    subjectRef: ISERROR
     category: value
     formula: =ISERROR("hello")
     expect: false
@@ -337,6 +379,7 @@ tests:
       - info
     name: iserror-of-text
   - subject: ISERROR
+    subjectRef: ISERROR
     category: value
     formula: =ISERROR(A1)
     grid:
@@ -346,6 +389,7 @@ tests:
       - info
     name: iserror-of-blank-cell
   - subject: ISNA
+    subjectRef: ISNA
     category: value
     formula: =ISNA(NA())
     expect: true
@@ -353,6 +397,7 @@ tests:
       - info
     name: isna-of-na
   - subject: ISNA
+    subjectRef: ISNA
     category: value
     formula: =ISNA(1/0)
     expect: false
@@ -360,6 +405,7 @@ tests:
       - info
     name: isna-of-div-0
   - subject: ISNA
+    subjectRef: ISNA
     category: value
     formula: =ISNA(42)
     expect: false
@@ -367,6 +413,7 @@ tests:
       - info
     name: isna-of-number
   - subject: ISNA
+    subjectRef: ISNA
     category: value
     formula: =ISNA("hello")
     expect: false
@@ -374,6 +421,7 @@ tests:
       - info
     name: isna-of-text
   - subject: ISNA
+    subjectRef: ISNA
     category: value
     formula: =ISNA(MATCH(99, {1,2,3}, 0))
     expect: true
@@ -382,6 +430,7 @@ tests:
       - bare-formula
     name: isna-of-match-miss
   - subject: ISFORMULA
+    subjectRef: ISFORMULA
     formula: =ISFORMULA(A1)
     category: value
     grid:
@@ -401,6 +450,7 @@ tests:
       - divergence
     name: isformula-of-formula-cell
   - subject: ISFORMULA
+    subjectRef: ISFORMULA
     formula: =ISFORMULA(A1)
     category: value
     grid:
@@ -420,6 +470,7 @@ tests:
       - divergence
     name: isformula-of-number-cell
   - subject: ISFORMULA
+    subjectRef: ISFORMULA
     formula: =ISFORMULA(A1)
     category: value
     grid:
@@ -439,6 +490,7 @@ tests:
       - divergence
     name: isformula-of-blank-cell
   - subject: ISFORMULA
+    subjectRef: ISFORMULA
     formula: =ISFORMULA(A1)
     category: value
     grid:
@@ -458,6 +510,7 @@ tests:
       - divergence
     name: isformula-of-text-cell
   - subject: ISREF
+    subjectRef: ISREF
     category: value
     status: observed
     formula: =ISREF(A1)
@@ -466,6 +519,7 @@ tests:
       - divergence
     name: isref-of-single-cell
   - subject: ISREF
+    subjectRef: ISREF
     category: value
     status: observed
     formula: =ISREF(A1:A3)
@@ -474,6 +528,7 @@ tests:
       - divergence
     name: isref-of-range
   - subject: ISREF
+    subjectRef: ISREF
     category: value
     formula: =ISREF(42)
     expect: false
@@ -487,6 +542,7 @@ tests:
       - divergence
     name: isref-of-literal-number
   - subject: ISREF
+    subjectRef: ISREF
     category: value
     formula: =ISREF("A1")
     expect: false
@@ -500,6 +556,7 @@ tests:
       - divergence
     name: isref-of-literal-text
   - subject: ISREF
+    subjectRef: ISREF
     category: value
     status: observed
     formula: =ISREF(INDIRECT("A1"))
@@ -508,6 +565,7 @@ tests:
       - divergence
     name: isref-of-indirect-valid
   - subject: ISDATE
+    subjectRef: ISDATE
     category: value
     status: observed
     formula: =ISDATE("2024-01-15")
@@ -516,6 +574,7 @@ tests:
       - divergence
     name: isdate-of-date-string
   - subject: ISDATE
+    subjectRef: ISDATE
     formula: =ISDATE(42)
     category: value
     expect: false
@@ -549,6 +608,7 @@ tests:
       - divergence
     name: isdate-of-number
   - subject: ISDATE
+    subjectRef: ISDATE
     formula: =ISDATE("hello")
     category: value
     expect: false
@@ -582,6 +642,7 @@ tests:
       - divergence
     name: isdate-of-text
   - subject: ISDATE
+    subjectRef: ISDATE
     formula: =ISDATE(DATE(2024,1,15))
     category: value
     expect: true
@@ -615,6 +676,7 @@ tests:
       - divergence
     name: isdate-of-date-call
   - subject: ISEMAIL
+    subjectRef: ISEMAIL
     formula: =ISEMAIL("user@example.com")
     category: value
     expect: true
@@ -652,6 +714,7 @@ tests:
       - divergence
     name: isemail-valid
   - subject: ISEMAIL
+    subjectRef: ISEMAIL
     formula: =ISEMAIL("not-an-email")
     category: value
     expect: false
@@ -689,6 +752,7 @@ tests:
       - divergence
     name: isemail-invalid
   - subject: ISEMAIL
+    subjectRef: ISEMAIL
     formula: =ISEMAIL(42)
     category: value
     expect: false
@@ -726,6 +790,7 @@ tests:
       - divergence
     name: isemail-of-number
   - subject: ISEMAIL
+    subjectRef: ISEMAIL
     formula: =ISEMAIL(A1)
     category: value
     grid:
@@ -765,6 +830,7 @@ tests:
       - divergence
     name: isemail-of-blank-cell
   - subject: N
+    subjectRef: N
     category: value
     formula: =N(42)
     expect: 42
@@ -772,6 +838,7 @@ tests:
       - info
     name: n-of-number-info
   - subject: N
+    subjectRef: N
     category: value
     formula: =N("hello")
     expect: 0
@@ -779,6 +846,7 @@ tests:
       - info
     name: n-of-text
   - subject: N
+    subjectRef: N
     formula: =N(TRUE)
     category: value
     expect: 1
@@ -794,6 +862,7 @@ tests:
       - info
     name: n-of-true-info
   - subject: N
+    subjectRef: N
     formula: =N(FALSE)
     category: value
     expect: 0
@@ -809,6 +878,7 @@ tests:
       - info
     name: n-of-false-info
   - subject: N
+    subjectRef: N
     category: value
     formula: =N(A1)
     grid:
@@ -818,6 +888,7 @@ tests:
       - info
     name: n-of-blank-cell
   - subject: N
+    subjectRef: N
     formula: =N(1/0)
     category: error-code
     expect:
@@ -826,6 +897,7 @@ tests:
       - info
     name: n-of-error-info
   - subject: NA
+    subjectRef: NA
     formula: =NA()
     category: value
     expect:
@@ -834,6 +906,7 @@ tests:
       - info
     name: na-nullary
   - subject: NA
+    subjectRef: NA
     formula: =NA()+1
     category: value
     expect:
@@ -842,6 +915,7 @@ tests:
       - info
     name: na-used-in-arithmetic
   - subject: TYPE
+    subjectRef: TYPE
     category: value
     status: observed
     formula: =TYPE(42)
@@ -850,6 +924,7 @@ tests:
       - divergence
     name: type-of-number
   - subject: TYPE
+    subjectRef: TYPE
     category: value
     status: observed
     formula: =TYPE("hello")
@@ -858,6 +933,7 @@ tests:
       - divergence
     name: type-of-text
   - subject: TYPE
+    subjectRef: TYPE
     category: value
     status: observed
     formula: =TYPE(TRUE)
@@ -866,6 +942,7 @@ tests:
       - divergence
     name: type-of-boolean
   - subject: TYPE
+    subjectRef: TYPE
     category: error-code
     status: observed
     formula: =TYPE(1/0)
@@ -874,6 +951,7 @@ tests:
       - divergence
     name: type-of-error
   - subject: TYPE
+    subjectRef: TYPE
     category: value
     status: observed
     formula: =TYPE({1,2,3})
@@ -883,6 +961,7 @@ tests:
       - bare-formula
     name: type-of-array
   - subject: TYPE
+    subjectRef: TYPE
     category: value
     status: observed
     formula: =TYPE(A1)
@@ -893,6 +972,7 @@ tests:
       - divergence
     name: type-of-blank-cell
   - subject: ERROR.TYPE
+    subjectRef: ERROR.TYPE
     formula: =ERROR.TYPE(1/0)
     category: error-code
     expect: 2
@@ -909,6 +989,7 @@ tests:
       - info
     name: error-type-of-div-0-info
   - subject: ERROR.TYPE
+    subjectRef: ERROR.TYPE
     formula: =ERROR.TYPE(NA())
     category: error-code
     expect: 7
@@ -925,6 +1006,7 @@ tests:
       - info
     name: error-type-of-na
   - subject: ERROR.TYPE
+    subjectRef: ERROR.TYPE
     formula: =ERROR.TYPE("a"+1)
     category: error-code
     expect: 3
@@ -941,6 +1023,7 @@ tests:
       - info
     name: error-type-of-value-info
   - subject: ERROR.TYPE
+    subjectRef: ERROR.TYPE
     formula: =ERROR.TYPE(42)
     category: error-code
     expect:
@@ -958,6 +1041,7 @@ tests:
       - info
     name: error-type-of-non-error-number
   - subject: ERROR.TYPE
+    subjectRef: ERROR.TYPE
     formula: =ERROR.TYPE("hello")
     category: error-code
     expect:
@@ -975,6 +1059,7 @@ tests:
       - info
     name: error-type-of-non-error-text
   - subject: ERROR.TYPE
+    subjectRef: ERROR.TYPE
     formula: =ERROR.TYPE(INDIRECT("ZZZZ99999999"))
     category: error-code
     expect: 4
@@ -996,6 +1081,7 @@ tests:
       - divergence
     name: error-type-of-ref-error
   - subject: CELL
+    subjectRef: CELL
     formula: =CELL("address", A1)
     category: value
     grid:
@@ -1023,6 +1109,7 @@ tests:
       - divergence
     name: cell-address
   - subject: CELL
+    subjectRef: CELL
     formula: =CELL("contents", A1)
     category: value
     grid:
@@ -1050,6 +1137,7 @@ tests:
       - divergence
     name: cell-contents
   - subject: CELL
+    subjectRef: CELL
     formula: =CELL("row", B3)
     category: value
     grid:
@@ -1077,6 +1165,7 @@ tests:
       - divergence
     name: cell-row
   - subject: CELL
+    subjectRef: CELL
     formula: =CELL("col", B3)
     category: value
     grid:
@@ -1104,6 +1193,7 @@ tests:
       - divergence
     name: cell-col
   - subject: CELL
+    subjectRef: CELL
     formula: =CELL("type", A1)
     category: value
     grid:
@@ -1131,6 +1221,7 @@ tests:
       - divergence
     name: cell-type-text
   - subject: CELL
+    subjectRef: CELL
     category: format
     status: observed
     formula: =CELL("format", A1)
@@ -1141,6 +1232,7 @@ tests:
       - divergence
     name: cell-format
   - subject: SHEETS
+    subjectRef: SHEETS
     category: value
     status: observed
     formula: =SHEETS()
@@ -1150,6 +1242,7 @@ tests:
       - excel-only
     name: sheets-no-arg
   - subject: SHEETS
+    subjectRef: SHEETS
     category: value
     status: observed
     formula: =SHEETS(A1)

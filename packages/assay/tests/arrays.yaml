@@ -2,6 +2,7 @@ schemaVersion: 3
 name: Array formulas
 tests:
   - subject: SEQUENCE
+    subjectRef: SEQUENCE
     category: value
     features:
       - dynamic-arrays
@@ -9,6 +10,7 @@ tests:
     expect: 1
     name: sequence-scalar
   - subject: SEQUENCE
+    subjectRef: SEQUENCE
     category: value
     features:
       - dynamic-arrays
@@ -19,6 +21,7 @@ tests:
       - - 3
     name: sequence-column
   - subject: SEQUENCE
+    subjectRef: SEQUENCE
     category: value
     features:
       - dynamic-arrays
@@ -32,6 +35,7 @@ tests:
         - 6
     name: sequence-2d
   - subject: HSTACK
+    subjectRef: HSTACK
     category: value
     features:
       - dynamic-arrays
@@ -42,6 +46,7 @@ tests:
         - 3
     name: hstack
   - subject: VSTACK
+    subjectRef: VSTACK
     category: value
     features:
       - dynamic-arrays
@@ -52,6 +57,7 @@ tests:
       - - 3
     name: vstack
   - subject: INDEX
+    subjectRef: INDEX
     category: value
     formula: =INDEX(A1:B2, 2, 1)
     grid:
@@ -62,6 +68,7 @@ tests:
     expect: 20
     name: index-into-grid
   - subject: SORT
+    subjectRef: SORT
     category: value
     formula: =SORT({3;1;2})
     expect:

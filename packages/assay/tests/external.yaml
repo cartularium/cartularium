@@ -2,6 +2,7 @@ schemaVersion: 3
 name: Google, Web, and external-I/O functions
 tests:
   - subject: "TRUE"
+    subjectRef: lit:boolean
     category: value
     formula: =TRUE()
     expect: true
@@ -9,6 +10,7 @@ tests:
       - logical
     name: true-basic
   - subject: "FALSE"
+    subjectRef: lit:boolean
     category: value
     formula: =FALSE()
     expect: false
@@ -16,6 +18,7 @@ tests:
       - logical
     name: false-basic
   - subject: SORTN
+    subjectRef: SORTN
     category: value
     supportLevel: unsupported
     formula: =SORTN({5;2;8;1;4}, 3)
@@ -33,6 +36,7 @@ tests:
       - bare-formula
     name: sortn-top-3
   - subject: SORTN
+    subjectRef: SORTN
     category: value
     supportLevel: unsupported
     formula: =SORTN({5;2;8;1;4}, 3, 0, 1, TRUE)
@@ -50,6 +54,7 @@ tests:
       - bare-formula
     name: sortn-top-3-ascending
   - subject: ENCODEURL
+    subjectRef: ENCODEURL
     formula: =ENCODEURL("a b")
     category: value
     expect: a%20b
@@ -86,6 +91,7 @@ tests:
       - web
     name: encodeurl-space
   - subject: ENCODEURL
+    subjectRef: ENCODEURL
     formula: =ENCODEURL("hello world/?&=")
     category: value
     expect: hello%20world%2F%3F%26%3D
@@ -122,6 +128,7 @@ tests:
       - web
     name: encodeurl-special-chars
   - subject: ISURL
+    subjectRef: ISURL
     formula: =ISURL("https://example.com")
     category: value
     expect: true
@@ -158,6 +165,7 @@ tests:
       - web
     name: isurl-https
   - subject: ISURL
+    subjectRef: ISURL
     formula: =ISURL("not a url")
     category: value
     expect: false
@@ -194,6 +202,7 @@ tests:
       - web
     name: isurl-not-a-url
   - subject: HYPERLINK
+    subjectRef: HYPERLINK
     formula: =HYPERLINK("https://example.com", "click me")
     category: value
     supportLevel: design-pending
@@ -204,6 +213,7 @@ tests:
       - web
     name: hyperlink-with-label
   - subject: HYPERLINK
+    subjectRef: HYPERLINK
     formula: =HYPERLINK("https://example.com")
     category: value
     supportLevel: design-pending
@@ -214,6 +224,7 @@ tests:
       - web
     name: hyperlink-url-only
   - subject: IMPORTDATA
+    subjectRef: IMPORTDATA
     category: value
     supportLevel: design-pending
     features:
@@ -226,6 +237,7 @@ tests:
       - skip-reason:network
     name: importdata-csv-smoke
   - subject: IMPORTFEED
+    subjectRef: IMPORTFEED
     category: value
     supportLevel: design-pending
     features:
@@ -238,6 +250,7 @@ tests:
       - skip-reason:network
     name: importfeed-rss-smoke
   - subject: IMPORTHTML
+    subjectRef: IMPORTHTML
     category: value
     supportLevel: design-pending
     features:
@@ -250,6 +263,7 @@ tests:
       - skip-reason:network
     name: importhtml-table-smoke
   - subject: IMPORTXML
+    subjectRef: IMPORTXML
     category: value
     supportLevel: design-pending
     features:
@@ -262,6 +276,7 @@ tests:
       - skip-reason:network
     name: importxml-xpath-smoke
   - subject: IMPORTRANGE
+    subjectRef: IMPORTRANGE
     category: value
     supportLevel: design-pending
     features:
@@ -274,6 +289,7 @@ tests:
       - skip-reason:network
     name: importrange-cross-sheet-smoke
   - subject: ARRAYFORMULA
+    subjectRef: ARRAYFORMULA
     formula: =ARRAYFORMULA({1;2;3} * 2)
     category: value
     expect:
@@ -310,6 +326,7 @@ tests:
       - bare-formula
     name: arrayformula-multiply-range
   - subject: ARRAYFORMULA
+    subjectRef: ARRAYFORMULA
     formula: =ARRAYFORMULA({"a";"b"} & "!")
     category: value
     expect:
@@ -345,6 +362,7 @@ tests:
       - bare-formula
     name: arrayformula-text-concat
   - subject: QUERY
+    subjectRef: QUERY
     formula: =QUERY({1,"a";2,"b";3,"c"}, "select *")
     category: value
     supportLevel: subset
@@ -382,6 +400,7 @@ tests:
       - bare-formula
     name: query-select-all
   - subject: QUERY
+    subjectRef: QUERY
     formula: =QUERY({1,"a";2,"b";3,"c"}, "select Col2")
     category: value
     supportLevel: subset
@@ -419,6 +438,7 @@ tests:
       - bare-formula
     name: query-select-col
   - subject: QUERY
+    subjectRef: QUERY
     formula: =QUERY({0,0;1,2;3,4}, "offset 1")
     category: value
     supportLevel: subset
@@ -456,6 +476,7 @@ tests:
       - array-argument
     name: query-offset-1
   - subject: GOOGLEFINANCE
+    subjectRef: GOOGLEFINANCE
     formula: =GOOGLEFINANCE("GOOG", "price")
     category: value
     supportLevel: design-pending
@@ -497,6 +518,7 @@ tests:
       - skip-reason:network
     name: googlefinance-price-smoke
   - subject: GOOGLETRANSLATE
+    subjectRef: GOOGLETRANSLATE
     formula: =GOOGLETRANSLATE("hello", "en", "es")
     category: value
     supportLevel: design-pending
@@ -538,6 +560,7 @@ tests:
       - skip-reason:network
     name: googletranslate-en-to-es
   - subject: DETECTLANGUAGE
+    subjectRef: DETECTLANGUAGE
     formula: =DETECTLANGUAGE("hello world")
     category: value
     supportLevel: design-pending
@@ -579,6 +602,7 @@ tests:
       - skip-reason:network
     name: detectlanguage-english
   - subject: IMAGE
+    subjectRef: IMAGE
     category: value
     supportLevel: design-pending
     features:
@@ -591,6 +615,7 @@ tests:
       - skip-reason:network
     name: image-url-smoke
   - subject: SPARKLINE
+    subjectRef: SPARKLINE
     formula: =SPARKLINE({1;2;3;4;5})
     category: value
     supportLevel: design-pending

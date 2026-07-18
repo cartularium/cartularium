@@ -2,6 +2,7 @@ schemaVersion: 3
 name: Volatile functions
 tests:
   - subject: RAND
+    subjectRef: RAND
     formula: =ISNUMBER(RAND())
     category: value
     expect: true
@@ -9,6 +10,7 @@ tests:
       - volatile
     name: rand-returns-number
   - subject: RAND
+    subjectRef: RAND
     formula: =RAND()>=0
     category: value
     expect: true
@@ -16,6 +18,7 @@ tests:
       - volatile
     name: rand-ge-zero
   - subject: RAND
+    subjectRef: RAND
     formula: =RAND()<1
     category: value
     expect: true
@@ -23,6 +26,7 @@ tests:
       - volatile
     name: rand-lt-one
   - subject: RAND
+    subjectRef: RAND
     formula: =ISNUMBER(RAND()+SEQUENCE(3))
     category: value
     features:
@@ -42,6 +46,7 @@ tests:
       - broadcast
     name: rand-in-array-context-returns-array
   - subject: RANDBETWEEN
+    subjectRef: RANDBETWEEN
     formula: =INT(RANDBETWEEN(1,10))=RANDBETWEEN(1,10)
     category: volatile
     status: volatile
@@ -52,6 +57,7 @@ tests:
       - divergence
     name: randbetween-returns-integer
   - subject: RANDBETWEEN
+    subjectRef: RANDBETWEEN
     category: volatile
     status: volatile
     formula: =RANDBETWEEN(5,5)
@@ -61,6 +67,7 @@ tests:
       - volatile
     name: randbetween-bounds-low
   - subject: RANDBETWEEN
+    subjectRef: RANDBETWEEN
     formula: =RANDBETWEEN(10,1)
     category: volatile
     status: volatile
@@ -78,6 +85,7 @@ tests:
       - divergence
     name: randbetween-reversed-bounds
   - subject: RANDBETWEEN
+    subjectRef: RANDBETWEEN
     formula: =AND(RANDBETWEEN(-10,-5)>=-10, RANDBETWEEN(-10,-5)<=-5)
     category: value
     expect: true
@@ -85,6 +93,7 @@ tests:
       - volatile
     name: randbetween-negative-range
   - subject: RANDARRAY
+    subjectRef: RANDARRAY
     formula: =ROWS(RANDARRAY(2,3))&"x"&COLUMNS(RANDARRAY(2,3))
     category: value
     features:
@@ -102,6 +111,7 @@ tests:
       - divergence
     name: randarray-2x3-shape
   - subject: RANDARRAY
+    subjectRef: RANDARRAY
     formula: =RANDARRAY(1, 3, 1, 10, TRUE)
     category: volatile
     features:
@@ -119,6 +129,7 @@ tests:
       - divergence
     name: randarray-integer-mode
   - subject: NOW
+    subjectRef: NOW
     formula: =ISNUMBER(NOW())
     category: value
     expect: true
@@ -131,6 +142,7 @@ tests:
       - volatile
     name: now-returns-number
   - subject: NOW
+    subjectRef: NOW
     formula: =NOW()>0
     category: value
     expect: true
@@ -138,6 +150,7 @@ tests:
       - volatile
     name: now-gt-zero
   - subject: TODAY
+    subjectRef: TODAY
     formula: =ISNUMBER(TODAY())
     category: value
     expect: true
@@ -150,6 +163,7 @@ tests:
       - volatile
     name: today-returns-number
   - subject: TODAY
+    subjectRef: TODAY
     formula: =TODAY()>0
     category: value
     expect: true
@@ -157,6 +171,7 @@ tests:
       - volatile
     name: today-gt-zero
   - subject: NOW
+    subjectRef: NOW
     formula: =NOW()>=TODAY()
     category: value
     expect: true
@@ -164,6 +179,7 @@ tests:
       - volatile
     name: now-ge-today
   - subject: NOW
+    subjectRef: NOW
     formula: =TODAY()=INT(NOW())
     category: value
     expect: true
@@ -176,6 +192,7 @@ tests:
       - volatile
     name: today-equals-int-of-now
   - subject: ROW
+    subjectRef: ROW
     category: value
     formula: =ROW()
     expect: 1
@@ -184,6 +201,7 @@ tests:
       - divergence
     name: row-of-target-cell
   - subject: COLUMN
+    subjectRef: COLUMN
     formula: =COLUMN()
     category: value
     # Cell-position-dependent: each driver picks a target cell, so the
@@ -194,6 +212,7 @@ tests:
       - volatile
     name: column-of-target-cell
   - subject: ROW
+    subjectRef: ROW
     category: value
     formula: =ROW(A5)
     grid:
@@ -203,6 +222,7 @@ tests:
       - volatile
     name: row-of-explicit-ref
   - subject: COLUMN
+    subjectRef: COLUMN
     category: value
     formula: =COLUMN(C1)
     grid:
@@ -212,6 +232,7 @@ tests:
       - volatile
     name: column-of-explicit-ref
   - subject: ROW
+    subjectRef: ROW
     formula: =ROW(A1:A3)
     category: value
     features:
@@ -233,6 +254,7 @@ tests:
       - broadcast
     name: row-over-range-returns-array
   - subject: COLUMN
+    subjectRef: COLUMN
     formula: =COLUMN(A1:C1)
     category: value
     features:
