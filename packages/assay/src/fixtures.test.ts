@@ -12,7 +12,7 @@ describe("caseKey", () => {
     expect(caseKey({ id: "SUM/basic", semanticHash: "sha256:deadbeef" })).toBe("SUM/basic");
   });
 
-  it("reads fixture results by semantic hash while reporting public ids", () => {
+  it("reads fixture results by declared id; the retired hash key no longer resolves", () => {
     const semanticHash = "sha256:deadbeef";
     const suite: TestSuite = {
       schemaVersion: 3,
@@ -29,18 +29,20 @@ describe("caseKey", () => {
         },
       ],
     };
-    const fixture: FixtureFile = {
+    const byId: FixtureFile = {
+      schemaVersion: 2,
       platform: "excel",
       generatedAt: "2026-05-10T00:00:00.000Z",
       results: {
-        [semanticHash]: { outcome: valueOutcome(liftScalarGrid([[2]], "excel")) },
+        "SUM/basic-renamed": { outcome: valueOutcome(liftScalarGrid([[2]], "excel")) },
       },
     };
+    const good = runFromFixtures(suite, { excel: byId });
+    expect(good.summary.failed).toBe(0);
+    expect(good.results[0].passed).toBe(true);
 
-    const result = runFromFixtures(suite, { excel: fixture });
-
-    expect(result.summary.failed).toBe(0);
-    expect(result.results[0].passed).toBe(true);
-    expect(result.results[0].test.id).toBe("SUM/basic-renamed");
+    const byHash: FixtureFile = { ...byId, results: { [semanticHash]: byId.results["SUM/basic-renamed"] } };
+    const stale = runFromFixtures(suite, { excel: byHash });
+    expect(stale.summary.failed).toBe(1); // hibernation retired the hash fallback
   });
 });

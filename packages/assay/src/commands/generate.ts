@@ -150,13 +150,7 @@ export async function generate(args: string[]): Promise<void> {
         if (onlyMissing) {
           const existing = loadFixture(file, platform);
           if (existing) {
-            tests = tests.filter((t) => {
-              const key = caseKey(t);
-              // v1 files key by semanticHash — transitional fallback until
-              // the hibernation item retires them
-              const entry = existing.results[key] ?? (t.semanticHash ? existing.results[t.semanticHash] : undefined);
-              return isRetryable(entry, t.stimulusHash);
-            });
+            tests = tests.filter((t) => isRetryable(existing.results[caseKey(t)], t.stimulusHash));
           }
         }
 
