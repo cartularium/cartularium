@@ -298,3 +298,31 @@ tests:
       - lambda
       - higher-order-lambda
     name: bycol-sum
+  - subject: MAP
+    subjectRef: MAP
+    category: value
+    status: observed
+    formula: =MAP(HSTACK(LAMBDA(x,x+1),LAMBDA(x,x+2)), LAMBDA(x,x(1)))
+    tags:
+      - divergence
+      - reconfirm-june
+      - bare-formula
+    features:
+      - dynamic-arrays
+      - lambda
+      - higher-order-lambda
+    name: map-hstack-of-lambdas
+  - subject: MAP
+    subjectRef: MAP
+    category: value
+    status: observed
+    formula: =MAP(VSTACK(LAMBDA(x,x*2),LAMBDA(x,x*3)), LAMBDA(x,x(5)))
+    tags:
+      - divergence
+      - reconfirm-june
+      - bare-formula
+    features:
+      - dynamic-arrays
+      - lambda
+      - higher-order-lambda
+    name: map-vstack-of-lambdas

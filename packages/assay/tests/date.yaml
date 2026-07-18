@@ -1438,3 +1438,22 @@ tests:
     tags:
       - date
     name: yearfrac-same-date
+  - subject: DATE
+    subjectRef: DATE
+    category: value
+    status: observed
+    formula: =DATE(1900, 2, 29)
+    tags:
+      - date
+      - divergence
+      - reconfirm-june
+    name: date-1900-phantom-leap-day
+  - subject: DATE
+    subjectRef: DATE
+    category: value
+    status: observed
+    formula: =DATE(1900, 3, 1)
+    tags:
+      - date
+      - reconfirm-june
+    name: date-1900-march-first

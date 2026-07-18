@@ -127,3 +127,68 @@ tests:
       - type-coercion
       - divergence
     name: true-1
+  - subject: feature:space-intersection
+    subjectRef: feature:space-intersection
+    category: value
+    status: observed
+    formula: =SUM(B1:B3 B2:B2)
+    grid:
+      B1: 1
+      B2: 2
+      B3: 3
+    tags:
+      - reference-operators
+      - divergence
+      - reconfirm-june
+    name: space-intersection-in-sum
+  - subject: feature:reference-union
+    subjectRef: feature:reference-union
+    category: value
+    status: observed
+    formula: =SUM((B1:B1,B3:B3))
+    grid:
+      B1: 1
+      B3: 3
+    tags:
+      - reference-operators
+      - divergence
+      - reconfirm-june
+    name: union-in-sum
+  - subject: feature:implicit-intersection
+    subjectRef: feature:implicit-intersection
+    category: value
+    status: observed
+    formula: =SUM(@B1:B3)
+    grid:
+      B1: 1
+      B2: 2
+      B3: 3
+    tags:
+      - implicit-intersection
+      - divergence
+      - reconfirm-june
+    name: at-inside-sum
+  - subject: REGEXMATCH
+    subjectRef: REGEXMATCH
+    category: value
+    status: observed
+    formula: =REGEXMATCH("abc123", "[0-9]+")
+    tags:
+      - regex
+      - divergence
+      - reconfirm-june
+    features:
+      - regex
+    name: regexmatch-native-name-cross-engine
+  - subject: REGEXTEST
+    subjectRef: REGEXTEST
+    category: value
+    status: observed
+    formula: =REGEXTEST("abc123", "[0-9]+")
+    tags:
+      - regex
+      - divergence
+      - reconfirm-june
+    features:
+      - regex
+    name: regextest-native-name-cross-engine

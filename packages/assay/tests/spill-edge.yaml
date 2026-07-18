@@ -345,3 +345,27 @@ tests:
       - broadcast
       - outer-product
     name: row-sequence-times-column-sequence-outer
+  - subject: SORT
+    subjectRef: SORT
+    category: value
+    status: observed
+    formula: =SORT({3;1;2}, 1, FALSE)
+    tags:
+      - divergence
+      - reconfirm-june
+      - bare-formula
+    features:
+      - dynamic-arrays
+    name: sort-third-arg-boolean-false
+  - subject: SORT
+    subjectRef: SORT
+    category: value
+    status: observed
+    formula: =SORT({3;1;2}, 1, TRUE)
+    tags:
+      - divergence
+      - reconfirm-june
+      - bare-formula
+    features:
+      - dynamic-arrays
+    name: sort-third-arg-boolean-true

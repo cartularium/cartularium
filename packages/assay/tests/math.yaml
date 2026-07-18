@@ -545,3 +545,21 @@ tests:
         cause: precision
         recorded: 3.14159265358979
     name: pi
+  - subject: POWER
+    subjectRef: POWER
+    category: value
+    status: observed
+    formula: =POWER(0, 0)
+    tags:
+      - divergence
+      - reconfirm-june
+    name: power-zero-base-zero-exponent
+  - subject: POWER
+    subjectRef: POWER
+    category: value
+    status: observed
+    formula: =POWER(0, -1)
+    tags:
+      - divergence
+      - reconfirm-june
+    name: power-zero-base-negative-exponent
