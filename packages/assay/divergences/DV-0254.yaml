@@ -1,0 +1,18 @@
+id: DV-0254
+summary: TODO auto-seeded — excel (error-code) — ARRAYFORMULA, QUERY
+cause: error-code
+category: value
+engines:
+  - excel
+behavior:
+  signature: '{"error":"#NAME?"}'
+test-count: 3
+subjects:
+  - ARRAYFORMULA
+  - QUERY
+tests:
+  - ARRAYFORMULA/arrayformula-multiply-range
+  - ARRAYFORMULA/arrayformula-text-concat
+  - QUERY/query-offset-1
+seeded: 2026-05-07
+last-confirmed: 2026-05-07

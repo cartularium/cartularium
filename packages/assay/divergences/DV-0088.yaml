@@ -1,0 +1,15 @@
+id: DV-0088
+summary: "hyperformula: function not implemented — op:+"
+cause: missing-function
+category: value
+engines:
+  - hyperformula
+behavior:
+  signature: '[[{"error":"#REF!"}],[{"error":"#REF!"}]]'
+test-count: 1
+subjects:
+  - op:+
+tests:
+  - op:add/ragged-literal-in-arithmetic
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

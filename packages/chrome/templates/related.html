@@ -1,0 +1,45 @@
+<aside class="related-drawer" aria-label="related content">
+  {{#mentioned.items.length}}
+  <section class="section">
+    <span class="eyebrow">mentioned in</span>
+    <ul class="mentioned-list">
+      {{#mentioned.items}}
+      <li><a href="{{href}}">{{label}}</a></li>
+      {{/mentioned.items}}
+    </ul>
+  </section>
+  {{/mentioned.items.length}}
+
+  {{#diverges.items.length}}
+  <section class="section">
+    <span class="eyebrow">diverges</span>
+    <ul>
+      {{#diverges.items}}
+      <li><a href="{{href}}">{{title}}{{#engines.length}}<span class="engines">{{#engines}}<span class="eng-mini eng-{{engine}}"><span class="label">{{engine}}</span></span>{{/engines}}</span>{{/engines.length}}<span class="cp-pill">{{imprint}}</span></a></li>
+      {{/diverges.items}}
+    </ul>
+  </section>
+  {{/diverges.items.length}}
+
+  {{#tested.items.length}}
+  <section class="section">
+    <span class="eyebrow">tested by</span>
+    <ul>
+      {{#tested.items}}
+      <li><a href="{{href}}">{{title}}{{#engines.length}}<span class="engines">{{#engines}}<span class="eng-mini eng-{{engine}}{{#failed}} fail{{/failed}}"><span class="glyph">{{#failed}}✗{{/failed}}{{^failed}}✓{{/failed}}</span><span class="label">{{engine}}</span></span>{{/engines}}</span>{{/engines.length}}<span class="cp-pill">{{imprint}}</span></a></li>
+      {{/tested.items}}
+    </ul>
+  </section>
+  {{/tested.items.length}}
+
+  {{#usedIn.items.length}}
+  <section class="section">
+    <span class="eyebrow">used in</span>
+    <ul>
+      {{#usedIn.items}}
+      <li><a href="{{href}}">{{title}}{{#detail}}<span class="sep">·</span><span class="verdict">{{detail}}</span>{{/detail}}</a></li>
+      {{/usedIn.items}}
+    </ul>
+  </section>
+  {{/usedIn.items.length}}
+</aside>

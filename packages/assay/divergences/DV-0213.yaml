@@ -1,0 +1,17 @@
+id: DV-0213
+summary: "excel: different error code — FILTER"
+cause: error-code
+category: value
+engines:
+  - excel
+behavior:
+  signature: '{"error":"#VALUE!"}'
+test-count: 1
+subjects:
+  - FILTER
+tests:
+  - FILTER/filter-returns-no-rows
+seeded: 2026-04-25
+last-confirmed: 2026-04-25
+status: vanished
+vanished-at: 2026-05-07

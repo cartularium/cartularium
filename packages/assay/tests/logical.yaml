@@ -1,0 +1,330 @@
+schemaVersion: 3
+name: Logical functions
+tests:
+  - subject: IF
+    formula: =IF(TRUE, 1, 2)
+    category: value
+    expect: 1
+    overrides:
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    name: if-true-branch
+  - subject: IF
+    formula: =IF(FALSE, 1, 2)
+    category: value
+    expect: 2
+    overrides:
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    name: if-false-branch
+  - subject: IF
+    category: value
+    formula: =IF(2>3, TRUE, FALSE)
+    expect: false
+    overrides:
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - divergence
+    name: if-with-comparison
+  - subject: IF
+    category: value
+    status: observed
+    formula: =IF(2>3, TRUE)
+    tags:
+      - divergence
+    name: if-two-args-false
+  - subject: IF
+    category: value
+    formula: =IF(1>2, "a", IF(3>2, "b", "c"))
+    expect: b
+    name: if-nested
+  - subject: AND
+    formula: =AND(TRUE, TRUE, TRUE)
+    category: value
+    expect: true
+    overrides:
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    name: and-all-true
+  - subject: AND
+    formula: =AND(TRUE, FALSE, TRUE)
+    category: value
+    expect: false
+    overrides:
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    name: and-one-false
+  - subject: AND
+    category: value
+    formula: =AND(1, 1, 0)
+    expect: false
+    name: and-with-numbers
+  - subject: AND
+    category: value
+    status: observed
+    formula: =AND()
+    tags:
+      - divergence
+    name: and-empty
+  - subject: OR
+    formula: =OR(FALSE, TRUE, FALSE)
+    category: value
+    expect: true
+    overrides:
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    name: or-one-true
+  - subject: OR
+    formula: =OR(FALSE, FALSE, FALSE)
+    category: value
+    expect: false
+    overrides:
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    name: or-all-false
+  - subject: OR
+    category: value
+    formula: =OR(0, 0, 1)
+    expect: true
+    name: or-with-numbers
+  - subject: NOT
+    formula: =NOT(TRUE)
+    category: value
+    expect: false
+    overrides:
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    name: not-true
+  - subject: NOT
+    formula: =NOT(FALSE)
+    category: value
+    expect: true
+    overrides:
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    name: not-false
+  - subject: XOR
+    formula: =XOR(TRUE, TRUE, TRUE)
+    category: value
+    expect: true
+    overrides:
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: arg-semantics
+        recorded: 1
+    name: xor-odd-trues
+  - subject: XOR
+    formula: =XOR(TRUE, TRUE)
+    category: value
+    expect: false
+    overrides:
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: arg-semantics
+        recorded: 0
+    name: xor-even-trues
+  - subject: XOR
+    formula: =XOR(FALSE, FALSE)
+    category: value
+    expect: false
+    overrides:
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: arg-semantics
+        recorded: 0
+    name: xor-all-false
+  - subject: IFERROR
+    category: error-code
+    formula: =IFERROR(1, "error")
+    expect: 1
+    name: iferror-no-error
+  - subject: IFERROR
+    category: error-code
+    formula: =IFERROR(1/0, "error")
+    expect: error
+    name: iferror-with-error
+  - subject: IFERROR
+    category: value
+    formula: =IFERROR(IFERROR(1/0, 1/0), "both failed")
+    expect: both failed
+    name: iferror-nested
+  - subject: IFNA
+    formula: =IFNA(1, "na")
+    category: error-code
+    expect: 1
+    overrides:
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    name: ifna-no-error
+  - subject: IFNA
+    formula: =IFNA(MATCH(99, {1,2,3}, 0), "not found")
+    category: value
+    expect: not found
+    overrides:
+      libreoffice:
+        cause: error-code
+        recorded:
+          error: "#N/A"
+    tags:
+      - bare-formula
+    name: ifna-with-na
+  - subject: SWITCH
+    formula: =SWITCH(1, 1, "one", 2, "two")
+    category: value
+    expect: one
+    overrides:
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    name: switch-match-first
+  - subject: SWITCH
+    formula: =SWITCH(2, 1, "one", 2, "two")
+    category: value
+    expect: two
+    overrides:
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    name: switch-match-second
+  - subject: SWITCH
+    formula: =SWITCH(99, 1, "one", 2, "two", "other")
+    category: value
+    expect: other
+    overrides:
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    name: switch-with-default
+  - subject: SWITCH
+    formula: =SWITCH(99, 1, "one", 2, "two")
+    category: value
+    expect:
+      error: "#N/A"
+    overrides:
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    name: switch-no-match-no-default
+  - subject: IFS
+    formula: =IFS(TRUE, "a", TRUE, "b")
+    category: value
+    expect: a
+    overrides:
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    name: ifs-first-match
+  - subject: IFS
+    formula: =IFS(FALSE, "a", TRUE, "b")
+    category: value
+    expect: b
+    overrides:
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    name: ifs-second-match
+  - subject: IFS
+    formula: =IFS(FALSE, "a", FALSE, "b")
+    category: value
+    expect:
+      error: "#N/A"
+    overrides:
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    name: ifs-no-match
+  - subject: CHOOSE
+    category: value
+    formula: =CHOOSE(1, "a", "b", "c")
+    expect: a
+    name: choose-first
+  - subject: CHOOSE
+    category: value
+    formula: =CHOOSE(3, "a", "b", "c")
+    expect: c
+    name: choose-third
+  - subject: CHOOSE
+    category: value
+    status: observed
+    formula: =CHOOSE(5, "a", "b", "c")
+    tags:
+      - divergence
+      - error-type
+    name: choose-out-of-range

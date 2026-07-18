@@ -1,0 +1,18 @@
+id: DV-0250
+summary: "gsheets, hyperformula, ironcalc, lattice: AGGREGATE function not implemented"
+cause: missing-function
+category: value
+engines:
+  - gsheets
+  - hyperformula
+  - ironcalc
+  - lattice
+behavior:
+  signature: '{"error":"#NAME?"}'
+test-count: 1
+subjects:
+  - AGGREGATE
+tests:
+  - AGGREGATE/aggregate-sum-ignoring-errors
+seeded: 2026-04-26
+last-confirmed: 2026-04-26

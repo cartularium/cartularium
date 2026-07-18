@@ -1,0 +1,15 @@
+id: DV-0081
+summary: "libreoffice: return shape differs — MINVERSE"
+cause: shape
+category: value
+engines:
+  - libreoffice
+behavior:
+  signature: "-2"
+test-count: 1
+subjects:
+  - MINVERSE
+tests:
+  - MINVERSE/minverse-2x2-generic
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

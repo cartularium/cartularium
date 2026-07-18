@@ -1,0 +1,15 @@
+id: DV-0217
+summary: "pycel: numeric precision differs — SLOPE"
+cause: precision
+category: value
+engines:
+  - pycel
+behavior:
+  signature: "2.000000000000001"
+test-count: 1
+subjects:
+  - SLOPE
+tests:
+  - SLOPE/slope-exact-integer
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

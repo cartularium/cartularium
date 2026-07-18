@@ -1,0 +1,17 @@
+id: DV-0072
+summary: "hyperformula: different error code — LOGNORMDIST, NORMSDIST"
+cause: error-code
+category: value
+engines:
+  - hyperformula
+behavior:
+  signature: '{"error":"#N/A"}'
+test-count: 2
+subjects:
+  - LOGNORMDIST
+  - NORMSDIST
+tests:
+  - LOGNORMDIST/lognormdist-at-1
+  - NORMSDIST/normsdist-at-0
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

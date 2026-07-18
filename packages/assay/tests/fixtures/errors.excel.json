@@ -1,0 +1,174 @@
+{
+  "platform": "excel",
+  "generatedAt": "2026-04-05T03:38:20.936Z",
+  "results": {
+    "ERR error probe": {
+      "result": [
+        [
+          "error"
+        ]
+      ]
+    },
+    "ERR show simple": {
+      "result": [
+        [
+          "Error: test"
+        ]
+      ]
+    },
+    "ERR ctx": {
+      "result": [
+        [
+          "oops"
+        ]
+      ]
+    },
+    "ERR absorbs messages": {
+      "result": [
+        [
+          "error"
+        ]
+      ]
+    },
+    "ERR push trace": {
+      "result": [
+        [
+          "Error: inner | outer"
+        ]
+      ]
+    },
+    "TRY catches div/0": {
+      "result": [
+        [
+          "Error: divide (#DIV/0!)"
+        ]
+      ]
+    },
+    "TRY passes through good value": {
+      "result": [
+        [
+          42
+        ]
+      ]
+    },
+    "GUARD wraps error": {
+      "result": [
+        [
+          "Error: ctx"
+        ]
+      ]
+    },
+    "GUARD passes through value": {
+      "result": [
+        [
+          42
+        ]
+      ]
+    },
+    "GUARD pushes trace on charter error": {
+      "result": [
+        [
+          "Error: inner | outer"
+        ]
+      ]
+    },
+    "EXPECT type match passes": {
+      "result": [
+        [
+          "Error: test: expected geo.point, got scalar"
+        ]
+      ]
+    },
+    "EXPECT predicate failure": {
+      "result": [
+        [
+          "Error: speed: must be positive"
+        ]
+      ]
+    },
+    "EXPECT predicate success": {
+      "result": [
+        [
+          5
+        ]
+      ]
+    },
+    "IS.NUM passes number": {
+      "result": [
+        [
+          42
+        ]
+      ]
+    },
+    "IS.NUM rejects string": {
+      "result": [
+        [
+          "Error: must be a number"
+        ]
+      ]
+    },
+    "IS.STR passes string": {
+      "result": [
+        [
+          "hello"
+        ]
+      ]
+    },
+    "IS.STR rejects number": {
+      "result": [
+        [
+          "Error: must be a string"
+        ]
+      ]
+    },
+    "IS.NUM with context": {
+      "result": [
+        [
+          "Error: qty: must be a number"
+        ]
+      ]
+    },
+    "IS.NUM catches platform error": {
+      "result": [
+        [
+          "Error: val: #DIV/0!"
+        ]
+      ]
+    },
+    "IS.NUM passes through charter error": {
+      "result": [
+        [
+          "error"
+        ]
+      ]
+    },
+    "OK chain short circuits on error": {
+      "result": [
+        [
+          "error"
+        ]
+      ]
+    },
+    "OK chain success": {
+      "result": [
+        [
+          12
+        ]
+      ]
+    },
+    "EXPECT passes through charter error": {
+      "result": [
+        [
+          "error"
+        ]
+      ]
+    },
+    "EXPECT catches platform error": {
+      "result": [
+        [
+          "Error: test: got error"
+        ]
+      ]
+    }
+  }
+}

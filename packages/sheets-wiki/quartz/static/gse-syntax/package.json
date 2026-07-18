@@ -1,0 +1,54 @@
+{
+  "name": "gse-syntax",
+  "displayName": "Google Sheets Syntax",
+  "description": "TextMate grammar and VSCode syntax highlighting for Google Sheets formulae (.gse)",
+  "version": "0.1.0",
+  "publisher": "astralcafe",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Astral1119/gse-syntax.git"
+  },
+  "keywords": [
+    "vscode",
+    "syntax",
+    "textmate",
+    "grammar",
+    "google-sheets",
+    "spreadsheet",
+    "formula",
+    "gse",
+    "shiki"
+  ],
+  "engines": {
+    "vscode": "^1.105.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "gse",
+        "aliases": ["Google Sheets Formula", "Sheets Formula", "GSE"],
+        "extensions": [".gse", ".formula", ".sheets"],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "gse",
+        "scopeName": "source.gse",
+        "path": "./syntaxes/gse.tmLanguage.json"
+      }
+    ]
+  },
+  "icon": "icon.png",
+  "scripts": {
+    "package": "vsce package",
+    "publish": "vsce publish"
+  },
+  "devDependencies": {
+    "vsce": "^3.0.0"
+  }
+}

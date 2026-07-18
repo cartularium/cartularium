@@ -1,0 +1,48 @@
+schemaVersion: 3
+name: "sweep: feature:spill"
+tests:
+  - subject: feature:spill
+    name: seq
+    formula: =SEQUENCE(2,3)
+    category: value
+    status: observed
+    tags:
+      - sweep:feature:spill
+      - ax:fn=seq
+  - subject: feature:spill
+    name: transpose
+    formula: =TRANSPOSE(D1:F1)
+    category: value
+    status: observed
+    tags:
+      - sweep:feature:spill
+      - ax:fn=transpose
+    grid:
+      D1: 1
+      E1: 2
+      F1: 3
+  - subject: feature:spill
+    name: sort
+    formula: =SORT(D1:D3)
+    category: value
+    status: observed
+    tags:
+      - sweep:feature:spill
+      - ax:fn=sort
+    grid:
+      D1: 3
+      D2: 1
+      D3: 2
+  - subject: feature:spill
+    name: unique
+    formula: =UNIQUE(D1:D4)
+    category: value
+    status: observed
+    tags:
+      - sweep:feature:spill
+      - ax:fn=unique
+    grid:
+      D1: 1
+      D2: 1
+      D3: 2
+      D4: 3

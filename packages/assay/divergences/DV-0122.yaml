@@ -1,0 +1,15 @@
+id: DV-0122
+summary: "formulas: numeric precision differs — DDB"
+cause: precision
+category: value
+engines:
+  - formulas
+behavior:
+  signature: "159.9999999999999"
+test-count: 1
+subjects:
+  - DDB
+tests:
+  - DDB/ddb-period-2
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

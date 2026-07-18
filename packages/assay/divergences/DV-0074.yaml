@@ -1,0 +1,17 @@
+id: DV-0074
+summary: "lattice: different argument interpretation — NOW, TODAY"
+cause: arg-semantics
+category: value
+engines:
+  - lattice
+behavior:
+  signature: "false"
+test-count: 2
+subjects:
+  - NOW
+  - TODAY
+tests:
+  - NOW/now-returns-number
+  - TODAY/today-returns-number
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

@@ -1,0 +1,19 @@
+id: DV-0227
+summary: "excel, formulas, gsheets, hyperformula, lattice: different error code — CODE"
+cause: error-code
+category: value
+engines:
+  - excel
+  - formulas
+  - gsheets
+  - hyperformula
+  - lattice
+behavior:
+  signature: '{"error":"#VALUE!"}'
+test-count: 1
+subjects:
+  - CODE
+tests:
+  - CODE/code-empty
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

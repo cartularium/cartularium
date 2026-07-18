@@ -1,0 +1,23 @@
+id: DV-0044
+summary: "gsheets, hyperformula, libreoffice, pycel: function not implemented —
+  TEXTAFTER, TEXTBEFORE"
+cause: missing-function
+category: value
+engines:
+  - gsheets
+  - hyperformula
+  - libreoffice
+  - pycel
+behavior:
+  signature: '{"error":"#NAME?"}'
+test-count: 4
+subjects:
+  - TEXTAFTER
+  - TEXTBEFORE
+tests:
+  - TEXTBEFORE/textbefore-space
+  - TEXTBEFORE/textbefore-second-instance
+  - TEXTAFTER/textafter-space
+  - TEXTAFTER/textafter-second-instance
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

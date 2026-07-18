@@ -1,0 +1,222 @@
+.toast-container {
+  position: fixed;
+  // lift above the status bar
+  bottom: calc(1.5rem + var(--editor-status-h));
+  right: 1.5rem;
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 0.5rem;
+  pointer-events: none;
+  z-index: 1000;
+}
+
+.toast {
+  position: relative;
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  padding: 0.6rem 2rem 0.6rem 0.9rem;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--ink);
+  pointer-events: auto;
+  max-width: 24rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+
+  &-error {
+    border-color: #c25450;
+    color: #6e3534;
+  }
+  &-success {
+    border-color: #4a7e4d;
+    color: #3a5b3c;
+  }
+}
+
+.toast-message {
+  white-space: pre-wrap;
+}
+
+.toast-detail {
+  margin-top: 0.2rem;
+  font-size: 0.75rem;
+  color: var(--ink-3);
+}
+
+.toast-dismiss {
+  position: absolute;
+  top: 0.3rem;
+  right: 0.4rem;
+  background: transparent;
+  border: none;
+  color: var(--ink-3);
+  cursor: pointer;
+  font-size: 1rem;
+  line-height: 1;
+  padding: 0.1rem 0.35rem;
+  &:hover { color: var(--ink); }
+}
+
+.status-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0 1rem;
+  height: var(--editor-status-h);
+  min-width: 0;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--ink-3);
+  border-top: 1px solid var(--hairline);
+  background: var(--paper-2);
+
+  &.status-idle { color: var(--ink-4); }
+  &.status-saving { color: var(--ink-3); }
+  &.status-saved { color: var(--ink-3); }
+  &.status-save-failed { color: #c25450; }
+}
+
+.status-action {
+  background: transparent;
+  border: 1px solid currentColor;
+  color: inherit;
+  font-family: inherit;
+  font-size: 0.7rem;
+  padding: 0.05rem 0.4rem;
+  cursor: pointer;
+  &:hover { background: currentColor; color: var(--paper); }
+}
+
+.lineage-strip {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0 1rem;
+  height: var(--editor-status-h);
+  min-width: 0;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--ink-3);
+  border-bottom: 1px solid var(--hairline);
+  background: var(--paper-2);
+}
+
+.lineage-file {
+  flex: 0 1 auto;
+  min-width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.lineage-mod {
+  color: var(--ink-4);
+  font-style: italic;
+  flex: 0 0 auto;
+}
+
+.lineage-back {
+  flex: 0 0 auto;
+  color: var(--ink-3);
+  text-decoration: none;
+  &:hover { color: var(--accent); }
+}
+
+.lineage-sep {
+  flex: 0 0 auto;
+  color: var(--ink-4);
+}
+
+.editor-host-cm {
+  flex: 1;
+  display: flex;
+  height: 100%;
+  min-height: 0;
+
+  .cm-editor {
+    width: 100%;
+    height: 100%;
+    background: var(--paper);
+  }
+  .cm-gutters {
+    background: var(--paper-2);
+    color: var(--ink-4);
+    border-right: 1px solid var(--hairline);
+  }
+  .cm-activeLineGutter,
+  .cm-activeLine {
+    background: var(--paper-3);
+  }
+  .cm-content {
+    color: var(--ink);
+    caret-color: var(--accent);
+  }
+  .cm-cursor {
+    border-left-color: var(--accent);
+  }
+  .cm-selectionBackground,
+  .cm-content ::selection {
+    background: var(--paper-3) !important;
+  }
+}
+
+[data-theme="dark"] .editor-host-cm {
+  .cm-editor { background: var(--paper); }
+  .cm-gutters { background: var(--paper-2); color: var(--ink-4); }
+}
+
+.editor-frame {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  height: 100%;
+  min-height: 0;
+}
+
+.editor-loading,
+.editor-error {
+  padding: 2rem;
+  font-family: var(--font-display);
+  color: var(--ink-3);
+}
+.editor-error code {
+  font-family: var(--font-mono);
+  background: var(--paper-2);
+  padding: 0.1rem 0.35rem;
+  border: 1px solid var(--hairline);
+}
+
+.cm-diff-gutter {
+  width: 0.6rem;
+}
+.cm-diff-changed {
+  display: inline-block;
+  color: var(--diff-changed);
+  font-size: 0.7rem;
+  line-height: 1;
+}
+
+// match brand chrome: paper bg, hairline, no shadow
+.cm-tooltip {
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  box-shadow: none;
+  font-family: var(--font-mono);
+  color: var(--ink);
+}
+
+.cm-tooltip-autocomplete {
+  > ul {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+
+    > li {
+      padding: 0.25rem 0.6rem;
+      color: var(--ink-2);
+
+      &[aria-selected] {
+        background: var(--paper-3);
+        color: var(--ink);
+      }
+    }
+  }
+}

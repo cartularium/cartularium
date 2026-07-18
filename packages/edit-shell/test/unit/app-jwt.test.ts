@@ -1,0 +1,60 @@
+import { describe, expect, it } from "vitest"
+import { generateAppJwt } from "../../src/auth/app-jwt"
+
+// A 2048-bit RSA private key generated only to exercise the JWT signer's
+// shape and lifetime claims. NOT registered with any GitHub App, never
+// uploaded to Cloudflare secrets, never used outside this test suite.
+// Safe to commit; rotating it has no security impact (would only require
+// regenerating the in-line PEM here and in `test/fixtures/test-app.pem`).
+const TEST_PRIVATE_KEY = `-----BEGIN PRIVATE KEY-----
+MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDq3m2o4mzOgHOs
+IZHwzYDSvuClvsiZXLyiSRcXxjb9Zktmw6CjSyT287qpDprS45O6v0H3qOK1AevH
+Fh7hFpFmUsw1ug/m3xlw1jBho6bkVAOMDBH4zFENoP6hgNocDMo5lJ0lsy5PMQEr
+8zL5maMyqSyHEUt8epy+DoWn/15FBk01ovzWaSJtyM+lkiq+/Cc4XfNh0G+KE2w1
+N8mh6zwnubnaK2MnLy7aQYD01gU2I+KpM6E/KM105fV6Mg5kyHijejBR0TegHJLK
+9HOBINQxjNVZEX2GiAC8rZkF6i2b0w4OHILaWgmyHvccSe4h4/l6dOGdWRBiXfaw
+u+jh8crLAgMBAAECggEACzKMjtswrc2w9hlpoE3j4OhJxI0qeilSMviCGdeQ4pbg
+bGdSPsbD3eQz14CDQB+qeOJKbljGajPLvmOfGEMfrn2vD7atsGedimQjzVvkhok8
+3A3tQ2vWR2yQBzoh6+luML2VmmkHAa6H7ET9fqnk/nLTVSMtcqNT2rnNhHtnzqmN
+WXDxKUjXcB7W7Oln3fo4hpeJKSIDT3Mi3pvvjbw0HLRxmakQP1id4+sdIxlBJTY2
+6s8VB6+ImcpnLD3TmkY3MTyYi+8QMyNKzXAiPsTOTOoh+v091LH5tbao6nblQYSk
+YI0bnPVlyRw+Xbi6zBBpHNzuetTgs7Xhh4HBzJDddQKBgQD/PhgTnNbn/OTNSZ+6
+7oMcDFpJEwmJ+qae992kF6fjJV3U9l974/otAdlvcjyIzL8fV5Dy22exueBox4yw
+MVU5L+aqrJQBQZX5RdeUh3PbfJhDeI0/zZpnKe1BQlK3FfoTqpZOVA8MLq/sER11
+xEjFp9TyhO/G7T45MwwZFdNfHQKBgQDrkNtHbe0dZhf99IUydL3Tg4OKymZX3Cjk
+23VAz0/F5+PWTBV8ok0y9htf3JypUFVj0u0Md8ghj+yvlulinfpmNbFyBSH/6IB1
+p8aUlohM/3qe+fBI3taLIzXIiObrh8gGySnaZIkd1dsn4w9CbfnSGFifwzZnWxp6
+EbdoCyclBwKBgGUZzGGgY0Oa2WozOnDJ3ubyQaTmRIYB4ZPgLEu+DwMbHvKm8CVb
+pRHExMKvJiktqJqajdCUdZthO/Fk8WYs9EvlnGGIYEurFeOZ9Y1gpdSPoqQ/EPvv
+zbQFWHPb+HWK3/aAQG8gPqGdsJM6KEgoioa4NtIlM/DAsj/n52fcTFBFAoGBAIkq
+axS3pJc2yIeepySPJ62O6byaSGemkcVZKHhZftj9QwSYfvZ4xz0CY0Q5gJtyZJZg
+zpkw8j7gwHAqDrHWzWRQpYeAB6EssAhSbmY9FRbIuIzzen/kCccw9HNVjCjfgpC4
+9/7sBY9y5E7gfxUuVoaImKpGkFo0iUFFKaeSvvNnAoGBAMV5RB8vIg8HV8OHNJaf
+0k1PTZ//9a3LgeDqudVaSVSoM5yx8mglPB7Kq7BRIpckKA4kCtmLGZ27G2gegxeE
+eH5lZTp9bcTTbMxS2kInEhz7g24qvTtv2VeFBEPBqvcmU2gim2Ak92fBkoq9/mr0
+/mZwr3LpxtnB0e3u5WQ674vd
+-----END PRIVATE KEY-----`
+
+describe("generateAppJwt", () => {
+  it("produces a 3-segment JWT", async () => {
+    const jwt = await generateAppJwt({ appId: "1234", privateKeyPem: TEST_PRIVATE_KEY })
+    expect(jwt.split(".").length).toBe(3)
+  })
+
+  it("decodes header to {alg:RS256, typ:JWT}", async () => {
+    const jwt = await generateAppJwt({ appId: "1234", privateKeyPem: TEST_PRIVATE_KEY })
+    const headerB64 = jwt.split(".")[0]!
+    const header = JSON.parse(atob(headerB64.replaceAll("-", "+").replaceAll("_", "/")))
+    expect(header).toEqual({ alg: "RS256", typ: "JWT" })
+  })
+
+  it("decodes payload with iss and exp ≤ 10 minutes from now", async () => {
+    const before = Math.floor(Date.now() / 1000)
+    const jwt = await generateAppJwt({ appId: "1234", privateKeyPem: TEST_PRIVATE_KEY })
+    const payloadB64 = jwt.split(".")[1]!
+    const payload = JSON.parse(atob(payloadB64.replaceAll("-", "+").replaceAll("_", "/")))
+    expect(payload.iss).toBe("1234")
+    expect(payload.exp - before).toBeLessThanOrEqual(600)
+    expect(payload.exp - before).toBeGreaterThan(540)
+  })
+})

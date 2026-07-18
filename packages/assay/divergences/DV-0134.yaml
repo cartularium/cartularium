@@ -1,0 +1,15 @@
+id: DV-0134
+summary: "libreoffice: numeric precision differs — FV"
+cause: precision
+category: value
+engines:
+  - libreoffice
+behavior:
+  signature: "26532.9770514442"
+test-count: 1
+subjects:
+  - FV
+tests:
+  - FV/fv-lump-sum
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

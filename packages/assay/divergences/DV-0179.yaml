@@ -1,0 +1,15 @@
+id: DV-0179
+summary: "pycel: different argument interpretation — XOR"
+cause: arg-semantics
+category: value
+engines:
+  - pycel
+behavior:
+  signature: "1"
+test-count: 1
+subjects:
+  - XOR
+tests:
+  - XOR/xor-odd-trues
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

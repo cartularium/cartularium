@@ -1,0 +1,15 @@
+id: DV-0090
+summary: "pycel: rendered with different format — SUMPRODUCT"
+cause: format-rendering
+category: value
+engines:
+  - pycel
+behavior:
+  signature: '"2"'
+test-count: 1
+subjects:
+  - SUMPRODUCT
+tests:
+  - SUMPRODUCT/double-unary-coerces-boolean-row-to-numeric
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

@@ -1,0 +1,15 @@
+id: DV-0184
+summary: "hyperformula: numeric precision differs — RADIANS"
+cause: precision
+category: value
+engines:
+  - hyperformula
+behavior:
+  signature: "-3.1415926536"
+test-count: 1
+subjects:
+  - RADIANS
+tests:
+  - RADIANS/radians-negative
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

@@ -1,0 +1,34 @@
+<nav class="breadcrumb"><a href="../../../">← all divergences</a></nav>
+
+<header>
+  <span class="eyebrow">test suite</span>
+  <h1><%= it.suite %></h1>
+  <p class="meta"><%= it.total %> test<%= it.total === 1 ? "" : "s" %><% if (it.divergent > 0) { %> · <%= it.divergent %> with documented divergences<% } %></p>
+</header>
+
+<section>
+  <div class="tests-table-wrap">
+    <table class="suite-tests">
+      <thead>
+        <tr>
+          <th>Test</th>
+          <th>Subject</th>
+          <th>Formula</th>
+          <th>Category</th>
+          <th class="num">DVs</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% it.rows.forEach(function(r) { %>
+          <tr>
+            <td class="test-id"><a href="<%= r.href %>"><code><%= r.idTail %></code></a></td>
+            <td><a class="subject-pill" href="<%= r.subjectHref %>"><%= r.subject %></a></td>
+            <td><code class="formula"><%= r.formula %></code></td>
+            <td><% if (r.category) { %><span class="chip category"><%= r.category %></span><% } %></td>
+            <td class="num"><%= r.divergenceCount > 0 ? r.divergenceCount : "" %></td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </div>
+</section>

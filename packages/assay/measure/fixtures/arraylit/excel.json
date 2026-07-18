@@ -1,0 +1,132 @@
+{
+  "platform": "excel",
+  "generatedAt": "2026-06-04T06:13:38.054Z",
+  "results": {
+    "sha256:5ee3b0238e596e7f3f858258451be4aaf4b9835527f31f452535794794bd4c79": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 1
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n",
+              "raw_xml": {
+                "cm": 1,
+                "formula_text": "{1,2,3}",
+                "formula_array_marker": "array",
+                "formula_array_ref": "AA1:AC1"
+              },
+              "saved_as_array": true
+            },
+            "formula": "{1,2,3}"
+          },
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 2
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          },
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 3
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          }
+        ]
+      ],
+      "formula-as-evaluated": "={1,2,3}"
+    },
+    "sha256:f9ec83580d5089cf915daeec4bf608e4d9fce26e572f8652a7dd841017340684": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 1
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n",
+              "raw_xml": {
+                "cm": 1,
+                "formula_text": "{1,2;3,4}",
+                "formula_array_marker": "array",
+                "formula_array_ref": "AA1:AB2"
+              },
+              "saved_as_array": true
+            },
+            "formula": "{1,2;3,4}"
+          },
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 2
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          }
+        ],
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 3
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          },
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 4
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          }
+        ]
+      ],
+      "formula-as-evaluated": "={1,2;3,4}"
+    },
+    "sha256:e0daeadc9a889e66c0da4e2391536744f9aa2baa18de7130c4e9d6cae5e97104": {
+      "result": [
+        [
+          null
+        ]
+      ],
+      "formula-as-evaluated": "={1,2,D1}"
+    },
+    "sha256:e3b6b86f42938435c1016dbafd90a66bc68ce58ba65cc1580d0d681d84b66370": {
+      "result": [
+        [
+          null
+        ]
+      ],
+      "formula-as-evaluated": "={1,2,SUM(D1:D2)}"
+    },
+    "sha256:308827a4420c03cfec8a038c10750227c100f5add792fdadeea19ab27ae8ef02": {
+      "result": [
+        [
+          null
+        ]
+      ],
+      "formula-as-evaluated": "={1,2,1+1}"
+    }
+  }
+}

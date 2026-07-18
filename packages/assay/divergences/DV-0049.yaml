@@ -1,0 +1,22 @@
+id: DV-0049
+summary: "excel, formulas, ironcalc, libreoffice, pycel: function not
+  implemented — COUNTUNIQUE"
+cause: missing-function
+category: value
+engines:
+  - excel
+  - formulas
+  - ironcalc
+  - libreoffice
+  - pycel
+behavior:
+  signature: '{"error":"#NAME?"}'
+test-count: 3
+subjects:
+  - COUNTUNIQUE
+tests:
+  - COUNTUNIQUE/countunique-distinct
+  - COUNTUNIQUE/countunique-with-dupes
+  - COUNTUNIQUE/countunique-text
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

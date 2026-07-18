@@ -1,0 +1,286 @@
+schemaVersion: 3
+name: Lookup functions
+tests:
+  - subject: INDEX
+    category: value
+    formula: =INDEX(A1:B2, 2, 1)
+    grid:
+      A1: 1
+      B1: 2
+      A2: 3
+      B2: 4
+    expect: 3
+    name: index-row-and-column
+  - subject: INDEX
+    category: value
+    formula: =INDEX(A1:A3, 2)
+    grid:
+      A1: 10
+      A2: 20
+      A3: 30
+    expect: 20
+    name: index-single-column
+  - subject: INDEX
+    category: value
+    status: observed
+    formula: =INDEX(A1:A2, 5)
+    grid:
+      A1: 1
+      A2: 2
+    tags:
+      - divergence
+      - error-type
+    name: index-out-of-bounds
+  - subject: MATCH
+    category: value
+    formula: =MATCH(20, A1:A3, 0)
+    grid:
+      A1: 10
+      A2: 20
+      A3: 30
+    expect: 2
+    name: match-exact
+  - subject: MATCH
+    formula: =MATCH(99, {1,2,3}, 0)
+    category: value
+    expect:
+      error: "#N/A"
+    tags:
+      - bare-formula
+    name: match-not-found
+  - subject: MATCH
+    category: value
+    formula: =MATCH(25, A1:A3, 1)
+    grid:
+      A1: 10
+      A2: 20
+      A3: 30
+    expect: 2
+    name: match-approximate
+  - subject: VLOOKUP
+    formula: =VLOOKUP(2, A1:B3, 2, FALSE)
+    category: value
+    grid:
+      A1: 1
+      B1: apple
+      A2: 2
+      B2: banana
+      A3: 3
+      B3: cherry
+    expect: banana
+    overrides:
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    name: vlookup-exact
+  - subject: VLOOKUP
+    formula: =VLOOKUP(99, A1:B2, 2, FALSE)
+    category: value
+    grid:
+      A1: 1
+      B1: apple
+      A2: 2
+      B2: banana
+    expect:
+      error: "#N/A"
+    overrides:
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    name: vlookup-not-found
+  - subject: VLOOKUP
+    formula: =VLOOKUP(2, A1:C3, {2,3}, FALSE)
+    category: value
+    grid:
+      A1: 1
+      B1: apple
+      C1: red
+      A2: 2
+      B2: banana
+      C2: yellow
+      A3: 3
+      B3: cherry
+      C3: red
+    features:
+      - broadcasting
+    expect:
+      - [ banana, yellow ]
+    overrides:
+      ironcalc:
+        cause: feature-absent
+        recorded: skip
+      hyperformula:
+        cause: missing-function
+        recorded:
+          - - error: "#NAME?"
+            - error: "#NAME?"
+      libreoffice:
+        cause: feature-absent
+        recorded: skip
+      pycel:
+        cause: feature-absent
+        recorded: skip
+    tags:
+      - lookup
+      - array-argument
+      - gsheets-idiom
+    name: vlookup-array-col-index
+  - subject: HLOOKUP
+    formula: =HLOOKUP(2, A1:C2, 2, FALSE)
+    category: value
+    grid:
+      A1: 1
+      B1: 2
+      C1: 3
+      A2: apple
+      B2: banana
+      C2: cherry
+    expect: banana
+    overrides:
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    name: hlookup-exact
+  - subject: HLOOKUP
+    formula: =HLOOKUP(2, A1:C3, {2;3}, FALSE)
+    category: value
+    grid:
+      A1: 1
+      B1: 2
+      C1: 3
+      A2: apple
+      B2: banana
+      C2: cherry
+      A3: red
+      B3: yellow
+      C3: red
+    features:
+      - broadcasting
+    expect:
+      - [ banana ]
+      - [ yellow ]
+    overrides:
+      ironcalc:
+        cause: feature-absent
+        recorded: skip
+      hyperformula:
+        cause: missing-function
+        recorded:
+          - - error: "#NAME?"
+          - - error: "#NAME?"
+      libreoffice:
+        cause: feature-absent
+        recorded: skip
+      pycel:
+        cause: feature-absent
+        recorded: skip
+    tags:
+      - lookup
+      - array-argument
+      - gsheets-idiom
+    name: hlookup-array-row-index
+  - subject: XMATCH
+    formula: =XMATCH(20, A1:A3)
+    category: value
+    grid:
+      A1: 10
+      A2: 20
+      A3: 30
+    expect: 2
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    name: xmatch-exact
+  - subject: XMATCH
+    formula: =XMATCH(99, {1,2,3})
+    category: value
+    features:
+      - dynamic-arrays
+    expect:
+      error: "#N/A"
+    tags:
+      - bare-formula
+    name: xmatch-not-found
+  - subject: XLOOKUP
+    formula: =XLOOKUP(2, A1:A3, B1:B3)
+    category: value
+    grid:
+      A1: 1
+      A2: 2
+      A3: 3
+      B1: apple
+      B2: banana
+      B3: cherry
+    expect: banana
+    overrides:
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    name: xlookup-basic
+  - subject: XLOOKUP
+    formula: =XLOOKUP(99, A1:A2, B1:B2, "missing")
+    category: value
+    grid:
+      A1: 1
+      A2: 2
+      B1: apple
+      B2: banana
+    expect: missing
+    overrides:
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    name: xlookup-not-found-with-default
+  - subject: CHOOSECOLS
+    category: value
+    features:
+      - dynamic-arrays
+    formula: =CHOOSECOLS({1,2,3;4,5,6}, 1, 3)
+    expect:
+      - - 1
+        - 3
+      - - 4
+        - 6
+    tags:
+      - bare-formula
+    name: choosecols
+  - subject: CHOOSEROWS
+    category: value
+    features:
+      - dynamic-arrays
+    formula: =CHOOSEROWS({1,2;3,4;5,6}, 1, 3)
+    expect:
+      - - 1
+        - 2
+      - - 5
+        - 6
+    tags:
+      - bare-formula
+    name: chooserows

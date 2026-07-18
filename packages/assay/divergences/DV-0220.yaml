@@ -1,0 +1,15 @@
+id: DV-0220
+summary: "libreoffice: different argument interpretation — COUNT"
+cause: arg-semantics
+category: value
+engines:
+  - libreoffice
+behavior:
+  signature: "4"
+test-count: 1
+subjects:
+  - COUNT
+tests:
+  - COUNT/count-ignores-booleans-in-range
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

@@ -1,0 +1,68 @@
+<nav class="breadcrumb"><a href="<%= it.suiteHref %>">← <%= it.test.suite %></a></nav>
+
+<header>
+  <span class="eyebrow"><a href="<%= it.suiteHref %>"><%= it.test.suite %></a></span>
+  <h1><code><%= it.idTail %></code></h1>
+</header>
+
+<section class="metadata">
+  <dl>
+    <dt>Subject</dt>
+    <dd><a class="subject-pill" href="<%= it.subject.href %>"><%= it.subject.name %></a></dd>
+    <dt>Category</dt><dd><span class="chip category"><%= it.test.category %></span></dd>
+    <dt>Formula</dt><dd><code class="formula"><%= it.test.formula %></code></dd>
+    <dt>Canonical</dt><dd class="canonical"><%= it.canonical %></dd>
+  </dl>
+</section>
+
+<% if (it.owningDvs.length > 0) { %>
+  <section>
+    <h2>Owning divergences (<%= it.owningDvs.length %>)</h2>
+    <ul class="owning-dvs">
+      <% it.owningDvs.forEach(function(dv) { %>
+        <li>
+          <a class="owning-dv-link" href="../../../dv/<%= dv.id %>/">
+            <code class="dv-id"><%= dv.id %></code>
+            <span class="owning-dv-summary"><%= dv.summary %></span>
+          </a>
+          <div class="owning-dv-chips">
+            <span class="chip cause cause-<%= dv.cause %>"><%= dv.cause %></span>
+            <% dv.engines.forEach(function(e) { %><span class="chip eng eng-<%= e %>"><%= e %></span><% }) %>
+          </div>
+        </li>
+      <% }) %>
+    </ul>
+  </section>
+<% } %>
+
+<section>
+  <div class="section-header">
+    <h2>Per-engine results</h2>
+    <p class="legend">
+      <span class="legend-item"><span class="swatch verdict-match"></span> matches canonical</span>
+      <span class="legend-item"><span class="swatch verdict-diverge"></span> diverges</span>
+      <span class="legend-item"><span class="swatch verdict-no-data"></span> no fixture</span>
+    </p>
+  </div>
+
+  <div class="tests-table-wrap">
+    <table class="tests-engines">
+      <thead>
+        <tr>
+          <th>Engine</th>
+          <th>Verdict</th>
+          <th>Value</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% it.cells.forEach(function(c) { %>
+          <tr class="test-row">
+            <td><span class="chip eng eng-<%= c.engine %>"><%= c.engine %></span></td>
+            <td class="engine-cell verdict-<%= c.verdict %>" title="<%= c.title %>"><%= c.verdict %></td>
+            <td class="canonical"><%= c.value %></td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </div>
+</section>

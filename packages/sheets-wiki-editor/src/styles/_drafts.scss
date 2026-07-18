@@ -1,0 +1,22 @@
+.drafts-host { max-width: 64rem; margin: 0 auto; padding: 2rem 1.25rem; }
+.drafts-host h1 { font-family: var(--font-display); font-size: 1.6rem; font-weight: 400; }
+.drafts-dek { font-size: 0.9rem; color: var(--ink-2); margin-bottom: 1rem; }
+.drafts-toolbar { display: flex; justify-content: flex-end; margin-bottom: 1rem; }
+.drafts-new { font-family: var(--font-mono); font-size: 0.84rem; color: var(--accent); border: 1px solid var(--accent); padding: 0.3rem 0.6rem; text-decoration: none; }
+.drafts-empty { padding: 2rem 1rem; border: 1px dashed var(--rule); color: var(--ink-3); text-align: center; }
+.drafts-empty p { margin: 0.5rem 0; }
+.drafts-loading { font-family: var(--font-mono); font-size: 0.84rem; color: var(--ink-3); }
+.draft-card { border: 1px solid var(--rule); margin-bottom: 1rem; }
+.draft-card .dc-head { display: flex; align-items: baseline; gap: 1rem; padding: 0.6rem 0.8rem; border-bottom: 1px solid var(--hairline); }
+.draft-card .dc-title { flex: 1; }
+.draft-card .dc-name { font-weight: 500; }
+.draft-card .file-count { font-family: var(--font-mono); font-size: 0.72rem; color: var(--ink-3); margin-left: 0.5rem; }
+.draft-card .dc-meta { font-family: var(--font-mono); font-size: 0.72rem; color: var(--ink-3); }
+.draft-card .dc-totals { font-family: var(--font-mono); font-size: 0.78rem; }
+.draft-card .added { color: var(--accent); }
+.draft-card .removed { color: var(--eng-ironcalc); margin-left: 0.4rem; }
+.draft-card .dc-actions a.primary { color: var(--accent); font-family: var(--font-mono); font-size: 0.84rem; text-decoration: none; padding: 0.3rem 0.6rem; border: 1px solid var(--accent); }
+.draft-card .dc-files { list-style: none; padding: 0; margin: 0; }
+.draft-card .dc-file { display: flex; align-items: baseline; gap: 1rem; padding: 0.5rem 0.8rem; border-top: 1px solid var(--hairline); }
+.draft-card .dc-fname { flex: 1; text-decoration: none; color: var(--ink-2); font-family: var(--font-mono); font-size: 0.84rem; }
+.draft-card .dc-fdiff { font-family: var(--font-mono); font-size: 0.74rem; }

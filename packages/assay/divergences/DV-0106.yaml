@@ -1,0 +1,15 @@
+id: DV-0106
+summary: "lattice: rendered with different format — IMSUM"
+cause: format-rendering
+category: value
+engines:
+  - lattice
+behavior:
+  signature: '"{__typeof: \"Complex\", real: 6, imaginary: 6, suffix: \"i\"}"'
+test-count: 1
+subjects:
+  - IMSUM
+tests:
+  - IMSUM/imsum-three-args
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

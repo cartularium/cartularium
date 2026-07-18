@@ -1,0 +1,18 @@
+{
+  "engine": "pycel",
+  "description": "pycel Python library. Lacks broadcasting; chunked at 32 to dodge cross-sheet contamination.",
+  "features": {
+    "broadcasting": { "support": "absent" },
+    "dynamic-arrays": { "support": "absent" },
+    "lambda": { "support": "absent" },
+    "higher-order-lambda": { "support": "absent" },
+    "regex": { "support": "absent" },
+    "external-io": { "support": "absent" },
+    "volatile": { "support": "absent" },
+    "iterative-calc": { "support": "absent" },
+    "structured-refs": { "support": "absent" },
+    "let-bindings": { "support": "absent" },
+    "implicit-intersection": { "support": "absent" },
+    "spill-blocking": { "support": "absent" }
+  }
+}

@@ -1,0 +1,20 @@
+id: DV-0036
+summary: "lattice: rendered with different format — COMPLEX, IMCONJUGATE, IMDIV"
+cause: format-rendering
+category: value
+engines:
+  - lattice
+behavior:
+  signature: '"{__typeof: \"Complex\", real: 3, imaginary: 4, suffix: \"i\"}"'
+test-count: 4
+subjects:
+  - COMPLEX
+  - IMCONJUGATE
+  - IMDIV
+tests:
+  - COMPLEX/complex-basic
+  - IMCONJUGATE/imconjugate-negative-imaginary
+  - IMDIV/imdiv-basic
+  - IMDIV/imdiv-by-real
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

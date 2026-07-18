@@ -1,0 +1,20 @@
+id: DV-0255
+summary: TODO auto-seeded — ironcalc, libreoffice, pycel (feature-absent) —
+  HLOOKUP, VLOOKUP
+cause: feature-absent
+category: value
+engines:
+  - ironcalc
+  - libreoffice
+  - pycel
+behavior:
+  signature: '"skip"'
+test-count: 2
+subjects:
+  - HLOOKUP
+  - VLOOKUP
+tests:
+  - VLOOKUP/vlookup-array-col-index
+  - HLOOKUP/hlookup-array-row-index
+seeded: 2026-05-07
+last-confirmed: 2026-05-07

@@ -1,0 +1,18 @@
+id: DV-0128
+summary: "excel, formulas, gsheets, lattice: numeric precision differs — FV"
+cause: precision
+category: value
+engines:
+  - excel
+  - formulas
+  - gsheets
+  - lattice
+behavior:
+  signature: "13180.79494238091"
+test-count: 1
+subjects:
+  - FV
+tests:
+  - FV/fv-annuity-10yr
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

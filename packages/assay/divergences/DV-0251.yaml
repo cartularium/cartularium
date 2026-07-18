@@ -1,0 +1,18 @@
+id: DV-0251
+summary: 'excel, ironcalc, lattice: empty-string addition (""+1) raises #VALUE!
+  instead of coercing to 0'
+cause: error-code
+category: value
+engines:
+  - excel
+  - ironcalc
+  - lattice
+behavior:
+  signature: '{"error":"#VALUE!"}'
+test-count: 1
+subjects:
+  - op:+
+tests:
+  - op:add/empty-string-plus-number
+seeded: 2026-04-26
+last-confirmed: 2026-04-26

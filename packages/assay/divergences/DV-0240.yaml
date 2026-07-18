@@ -1,0 +1,15 @@
+id: DV-0240
+summary: "lattice: different argument interpretation — SUM"
+cause: arg-semantics
+category: value
+engines:
+  - lattice
+behavior:
+  signature: "2"
+test-count: 1
+subjects:
+  - SUM
+tests:
+  - SUM/sum-of-boolean-range
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

@@ -1,0 +1,74 @@
+<header>
+  <span class="eyebrow">assay catalogue</span>
+  <h1>Divergence catalogue</h1>
+  <p class="meta"><%= it.dvCount %> entries · <%= it.totalTests.toLocaleString() %> test references · seeded <%= it.seeded %></p>
+</header>
+
+<section class="filters">
+  <input type="search" id="search" placeholder="Search summary, subjects, test-ids…" autocomplete="off">
+
+  <details>
+    <summary>Engines (<%= it.engineOptions.length %>)</summary>
+    <div class="filter-group" data-key="engine">
+      <% it.engineOptions.forEach(function(e) { %>
+        <label><input type="checkbox" value="<%= e %>"> <%= e %> <span class="count"><%= it.engineCounts[e] %></span></label>
+      <% }) %>
+    </div>
+  </details>
+
+  <details>
+    <summary>Causes (<%= it.causeOptions.length %>)</summary>
+    <div class="filter-group" data-key="cause">
+      <% it.causeOptions.forEach(function(c) { %>
+        <label><input type="checkbox" value="<%= c %>"> <%= c %> <span class="count"><%= it.causeCounts[c] %></span></label>
+      <% }) %>
+    </div>
+  </details>
+
+  <details>
+    <summary>Categories (<%= it.categoryOptions.length %>)</summary>
+    <div class="filter-group" data-key="category">
+      <% it.categoryOptions.forEach(function(c) { %>
+        <label><input type="checkbox" value="<%= c %>"> <%= c %> <span class="count"><%= it.categoryCounts[c] %></span></label>
+      <% }) %>
+    </div>
+  </details>
+
+  <button id="clear-filters" type="button">Clear</button>
+  <span id="result-count" class="result-count"></span>
+</section>
+
+<section class="table-wrap">
+  <table id="dv-table">
+    <thead>
+      <tr>
+        <th data-sort="id">ID</th>
+        <th data-sort="cause">Cause</th>
+        <th>Engines</th>
+        <th data-sort="category">Category</th>
+        <th data-sort="num" class="num">Tests</th>
+        <th>Subjects</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% it.dvs.forEach(function(d) { %>
+        <tr data-engines="<%= d.engines.join(',') %>" data-cause="<%= d.cause %>" data-category="<%= d.category %>" data-search="<%= d.searchBlob %>">
+          <td><a href="dv/<%= d.id %>"><%= d.id %></a></td>
+          <td><span class="chip cause cause-<%= d.cause %>"><%= d.cause %></span></td>
+          <td>
+            <% d.engines.forEach(function(e) { %><span class="chip eng eng-<%= e %>"><%= e %></span><% }) %>
+          </td>
+          <td><span class="chip category"><%= d.category %></span></td>
+          <td class="num"><%= d.testCount %></td>
+          <td>
+            <% if (d.subjects.length <= 3) { %>
+              <%= d.subjects.join(", ") %>
+            <% } else { %>
+              <%= d.subjects.slice(0, 3).join(", ") %> <span class="more">+<%= d.subjects.length - 3 %></span>
+            <% } %>
+          </td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+</section>

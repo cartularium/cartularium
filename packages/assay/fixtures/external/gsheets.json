@@ -1,0 +1,1688 @@
+{
+  "platform": "gsheets",
+  "generatedAt": "2026-05-24T07:13:35.754Z",
+  "results": {
+    "sha256:6fc729b544754b432b17823cc649287f026faaffcfef8994530a463b22cbc0ca": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "boolean",
+              "value": true
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "boolean",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=TRUE()"
+                },
+                "effectiveValue": {
+                  "boolValue": true
+                },
+                "formattedValue": "TRUE",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "TRUE()",
+            "formatted": "TRUE"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=TRUE()"
+    },
+    "sha256:c46886599e97ef3f303b9d3c8ab19f23d70cf7fb7e37ac81805b27e52fe2c83c": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "boolean",
+              "value": false
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "boolean",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=FALSE()"
+                },
+                "effectiveValue": {
+                  "boolValue": false
+                },
+                "formattedValue": "FALSE",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "FALSE()",
+            "formatted": "FALSE"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=FALSE()"
+    },
+    "sha256:c3f265df3e131763cf0985c0f95121a61711209bff7e1ec7bc1260a60660ebab": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 1
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "number",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=SORTN({5;2;8;1;4}, 3)"
+                },
+                "effectiveValue": {
+                  "numberValue": 1
+                },
+                "formattedValue": "1",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "SORTN({5;2;8;1;4}, 3)",
+            "formatted": "1"
+          }
+        ],
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 2
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "number",
+              "raw_api": {
+                "effectiveValue": {
+                  "numberValue": 2
+                },
+                "formattedValue": "2",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formatted": "2"
+          }
+        ],
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 4
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "number",
+              "raw_api": {
+                "effectiveValue": {
+                  "numberValue": 4
+                },
+                "formattedValue": "4",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formatted": "4"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=SORTN({5;2;8;1;4}, 3)"
+    },
+    "sha256:baf395102b0350c95e33399eaa22b369e2d059ec455f29e61def87df215516f4": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 1
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "number",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=SORTN({5;2;8;1;4}, 3, 0, 1, TRUE)"
+                },
+                "effectiveValue": {
+                  "numberValue": 1
+                },
+                "formattedValue": "1",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "SORTN({5;2;8;1;4}, 3, 0, 1, TRUE)",
+            "formatted": "1"
+          }
+        ],
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 2
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "number",
+              "raw_api": {
+                "effectiveValue": {
+                  "numberValue": 2
+                },
+                "formattedValue": "2",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formatted": "2"
+          }
+        ],
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 4
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "number",
+              "raw_api": {
+                "effectiveValue": {
+                  "numberValue": 4
+                },
+                "formattedValue": "4",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formatted": "4"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=SORTN({5;2;8;1;4}, 3, 0, 1, TRUE)"
+    },
+    "sha256:9c1c99889a9bc72f8910eef7a06bd91d0cead9d19002b9b75c96dc4522f2ddbd": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "a%20b"
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "string",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=ENCODEURL(\"a b\")"
+                },
+                "effectiveValue": {
+                  "stringValue": "a%20b"
+                },
+                "formattedValue": "a%20b",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "ENCODEURL(\"a b\")",
+            "formatted": "a%20b"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=ENCODEURL(\"a b\")"
+    },
+    "sha256:714a9ff8741ad69173160c8b78a53f4a050a2f7585f7fd04cd1dce2115fe571b": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "hello%20world%2F%3F%26%3D"
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "string",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=ENCODEURL(\"hello world/?&=\")"
+                },
+                "effectiveValue": {
+                  "stringValue": "hello%20world%2F%3F%26%3D"
+                },
+                "formattedValue": "hello%20world%2F%3F%26%3D",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "ENCODEURL(\"hello world/?&=\")",
+            "formatted": "hello%20world%2F%3F%26%3D"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=ENCODEURL(\"hello world/?&=\")"
+    },
+    "sha256:0e50fdfcb1a0ca1cdf4bcc2398f89eb13d8c054539acd9eaf5bef234d0b1a665": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "boolean",
+              "value": true
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "boolean",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=ISURL(\"https://example.com\")"
+                },
+                "effectiveValue": {
+                  "boolValue": true
+                },
+                "formattedValue": "TRUE",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "ISURL(\"https://example.com\")",
+            "formatted": "TRUE"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=ISURL(\"https://example.com\")"
+    },
+    "sha256:f57db941de8acb0ba81281aaf63c2cd9f3d7465852da60fd71c378aa3c998ddf": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "boolean",
+              "value": false
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "boolean",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=ISURL(\"not a url\")"
+                },
+                "effectiveValue": {
+                  "boolValue": false
+                },
+                "formattedValue": "FALSE",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "ISURL(\"not a url\")",
+            "formatted": "FALSE"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=ISURL(\"not a url\")"
+    },
+    "sha256:49ba6439289c77fc4d015a2db4f36ef89580dbb79795e816b71cc852e614acce": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "click me"
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "string",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=HYPERLINK(\"https://example.com\", \"click me\")"
+                },
+                "effectiveValue": {
+                  "stringValue": "click me"
+                },
+                "formattedValue": "click me",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {
+                      "red": 0.06666667,
+                      "green": 0.33333334,
+                      "blue": 0.8
+                    },
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": true,
+                    "foregroundColorStyle": {
+                      "rgbColor": {
+                        "red": 0.06666667,
+                        "green": 0.33333334,
+                        "blue": 0.8
+                      }
+                    },
+                    "link": {
+                      "uri": "https://example.com"
+                    }
+                  },
+                  "hyperlinkDisplayType": "LINKED"
+                },
+                "hyperlink": "https://example.com"
+              }
+            },
+            "formula": "HYPERLINK(\"https://example.com\", \"click me\")",
+            "formatted": "click me",
+            "hyperlink": "https://example.com"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=HYPERLINK(\"https://example.com\", \"click me\")"
+    },
+    "sha256:9a5f5b352f6e908c0c76a77ee98feb8bc30f9ce4d6efe9d30702027b031344eb": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "https://example.com"
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "string",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=HYPERLINK(\"https://example.com\")"
+                },
+                "effectiveValue": {
+                  "stringValue": "https://example.com"
+                },
+                "formattedValue": "https://example.com",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {
+                      "red": 0.06666667,
+                      "green": 0.33333334,
+                      "blue": 0.8
+                    },
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": true,
+                    "foregroundColorStyle": {
+                      "rgbColor": {
+                        "red": 0.06666667,
+                        "green": 0.33333334,
+                        "blue": 0.8
+                      }
+                    },
+                    "link": {
+                      "uri": "https://example.com"
+                    }
+                  },
+                  "hyperlinkDisplayType": "LINKED"
+                },
+                "hyperlink": "https://example.com"
+              }
+            },
+            "formula": "HYPERLINK(\"https://example.com\")",
+            "formatted": "https://example.com",
+            "hyperlink": "https://example.com"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=HYPERLINK(\"https://example.com\")"
+    },
+    "sha256:801560e2dc28e9fce58f163fd4e3f74eca2b737b7f5d13382fcc932f8074d696": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "error",
+              "sentinel": "#REF!"
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "error",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=IMPORTDATA(\"https://example.com/data.csv\")"
+                },
+                "effectiveValue": {
+                  "errorValue": {
+                    "type": "REF",
+                    "message": "Please use a desktop web browser to allow access to fetch data from external urls."
+                  }
+                },
+                "formattedValue": "#REF!",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "IMPORTDATA(\"https://example.com/data.csv\")",
+            "formatted": "#REF!"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=IMPORTDATA(\"https://example.com/data.csv\")"
+    },
+    "sha256:335bf191846e1d1025ffe854404a0289db3a4e937da938545434407fffd36a44": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "error",
+              "sentinel": "#REF!"
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "error",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=IMPORTFEED(\"https://example.com/feed.xml\")"
+                },
+                "effectiveValue": {
+                  "errorValue": {
+                    "type": "REF",
+                    "message": "Please use a desktop web browser to allow access to fetch data from external urls."
+                  }
+                },
+                "formattedValue": "#REF!",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "IMPORTFEED(\"https://example.com/feed.xml\")",
+            "formatted": "#REF!"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=IMPORTFEED(\"https://example.com/feed.xml\")"
+    },
+    "sha256:eb9ef8554d77c6555ba1e706f3aaf9a38e24b9e82ffbbb681d5fc82b2d784b14": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "error",
+              "sentinel": "#REF!"
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "error",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=IMPORTHTML(\"https://example.com/page.html\", \"table\", 1)"
+                },
+                "effectiveValue": {
+                  "errorValue": {
+                    "type": "REF",
+                    "message": "Please use a desktop web browser to allow access to fetch data from external urls."
+                  }
+                },
+                "formattedValue": "#REF!",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "IMPORTHTML(\"https://example.com/page.html\", \"table\", 1)",
+            "formatted": "#REF!"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=IMPORTHTML(\"https://example.com/page.html\", \"table\", 1)"
+    },
+    "sha256:efc0e128821c1733b704c6ce8558b28087abc515bc556e07afde72902b5dab6e": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "error",
+              "sentinel": "#REF!"
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "error",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=IMPORTXML(\"https://example.com/data.xml\", \"//title\")"
+                },
+                "effectiveValue": {
+                  "errorValue": {
+                    "type": "REF",
+                    "message": "Please use a desktop web browser to allow access to fetch data from external urls."
+                  }
+                },
+                "formattedValue": "#REF!",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "IMPORTXML(\"https://example.com/data.xml\", \"//title\")",
+            "formatted": "#REF!"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=IMPORTXML(\"https://example.com/data.xml\", \"//title\")"
+    },
+    "sha256:9afffa267b9f80a5eaba9614b9cdc8151d8aa5dc816b57ea2cdc06962ba9a3de": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "error",
+              "sentinel": "#REF!"
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "error",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=IMPORTRANGE(\"https://docs.google.com/spreadsheets/d/abc123\", \"Sheet1!A1:B2\")"
+                },
+                "effectiveValue": {
+                  "errorValue": {
+                    "type": "REF",
+                    "message": "Spreadsheet cannot be found."
+                  }
+                },
+                "formattedValue": "#REF!",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "IMPORTRANGE(\"https://docs.google.com/spreadsheets/d/abc123\", \"Sheet1!A1:B2\")",
+            "formatted": "#REF!"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=IMPORTRANGE(\"https://docs.google.com/spreadsheets/d/abc123\", \"Sheet1!A1:B2\")"
+    },
+    "sha256:65601270148f71176390a57a2da27970d03269a8a7b69554c2b200ba08f52038": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 2
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "number",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=ARRAYFORMULA({1;2;3} * 2)"
+                },
+                "effectiveValue": {
+                  "numberValue": 2
+                },
+                "formattedValue": "2",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "ARRAYFORMULA({1;2;3} * 2)",
+            "formatted": "2"
+          }
+        ],
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 4
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "number",
+              "raw_api": {
+                "effectiveValue": {
+                  "numberValue": 4
+                },
+                "formattedValue": "4",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formatted": "4"
+          }
+        ],
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 6
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "number",
+              "raw_api": {
+                "effectiveValue": {
+                  "numberValue": 6
+                },
+                "formattedValue": "6",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formatted": "6"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=ARRAYFORMULA({1;2;3} * 2)"
+    },
+    "sha256:a13cc48d99716efa41847bbd323f1ab49757330faf7f42c629250deac72a6487": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "a!"
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "string",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=ARRAYFORMULA({\"a\";\"b\"} & \"!\")"
+                },
+                "effectiveValue": {
+                  "stringValue": "a!"
+                },
+                "formattedValue": "a!",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "ARRAYFORMULA({\"a\";\"b\"} & \"!\")",
+            "formatted": "a!"
+          }
+        ],
+        [
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "b!"
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "string",
+              "raw_api": {
+                "effectiveValue": {
+                  "stringValue": "b!"
+                },
+                "formattedValue": "b!",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formatted": "b!"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=ARRAYFORMULA({\"a\";\"b\"} & \"!\")"
+    },
+    "sha256:d019ac02c6bd17a57dc8d68b994c68d346a14bdb112adac74a4bfb79b37b2d68": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 1
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "number",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=QUERY({1,\"a\";2,\"b\";3,\"c\"}, \"select *\")"
+                },
+                "effectiveValue": {
+                  "numberValue": 1
+                },
+                "formattedValue": "1",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "QUERY({1,\"a\";2,\"b\";3,\"c\"}, \"select *\")",
+            "formatted": "1"
+          },
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "a"
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "string",
+              "raw_api": {
+                "effectiveValue": {
+                  "stringValue": "a"
+                },
+                "formattedValue": "a",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formatted": "a"
+          }
+        ],
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 2
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "number",
+              "raw_api": {
+                "effectiveValue": {
+                  "numberValue": 2
+                },
+                "formattedValue": "2",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formatted": "2"
+          },
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "b"
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "string",
+              "raw_api": {
+                "effectiveValue": {
+                  "stringValue": "b"
+                },
+                "formattedValue": "b",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formatted": "b"
+          }
+        ],
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 3
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "number",
+              "raw_api": {
+                "effectiveValue": {
+                  "numberValue": 3
+                },
+                "formattedValue": "3",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formatted": "3"
+          },
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "c"
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "string",
+              "raw_api": {
+                "effectiveValue": {
+                  "stringValue": "c"
+                },
+                "formattedValue": "c",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formatted": "c"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=QUERY({1,\"a\";2,\"b\";3,\"c\"}, \"select *\")"
+    },
+    "sha256:886519f774beac6a29bb87c1d85fad445980e486038b447ec630276d683db3be": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "a"
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "string",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=QUERY({1,\"a\";2,\"b\";3,\"c\"}, \"select Col2\")"
+                },
+                "effectiveValue": {
+                  "stringValue": "a"
+                },
+                "formattedValue": "a",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "QUERY({1,\"a\";2,\"b\";3,\"c\"}, \"select Col2\")",
+            "formatted": "a"
+          }
+        ],
+        [
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "b"
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "string",
+              "raw_api": {
+                "effectiveValue": {
+                  "stringValue": "b"
+                },
+                "formattedValue": "b",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formatted": "b"
+          }
+        ],
+        [
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "c"
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "string",
+              "raw_api": {
+                "effectiveValue": {
+                  "stringValue": "c"
+                },
+                "formattedValue": "c",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formatted": "c"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=QUERY({1,\"a\";2,\"b\";3,\"c\"}, \"select Col2\")"
+    },
+    "sha256:770c5b8f2c5021dc46dc02d769a9157267e8f73ed0530045bf7435aad7191632": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 1
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "number",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=QUERY({0,0;1,2;3,4}, \"offset 1\")"
+                },
+                "effectiveValue": {
+                  "numberValue": 1
+                },
+                "formattedValue": "1",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "QUERY({0,0;1,2;3,4}, \"offset 1\")",
+            "formatted": "1"
+          },
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 2
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "number",
+              "raw_api": {
+                "effectiveValue": {
+                  "numberValue": 2
+                },
+                "formattedValue": "2",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formatted": "2"
+          }
+        ],
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 3
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "number",
+              "raw_api": {
+                "effectiveValue": {
+                  "numberValue": 3
+                },
+                "formattedValue": "3",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formatted": "3"
+          },
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 4
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "number",
+              "raw_api": {
+                "effectiveValue": {
+                  "numberValue": 4
+                },
+                "formattedValue": "4",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formatted": "4"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=QUERY({0,0;1,2;3,4}, \"offset 1\")"
+    },
+    "sha256:a39f168c3115c5cd990bc7cad78e4b699ca9496b046c3a37f6971a46d2782c49": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 379.38
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "number",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=GOOGLEFINANCE(\"GOOG\", \"price\")"
+                },
+                "effectiveValue": {
+                  "numberValue": 379.38
+                },
+                "formattedValue": "379.38",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "GOOGLEFINANCE(\"GOOG\", \"price\")",
+            "formatted": "379.38"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=GOOGLEFINANCE(\"GOOG\", \"price\")"
+    },
+    "sha256:1c4c60e372cc86eeb3d8d7bd4234d7fca05279ba9e126728daaa0aa413ae9129": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "Hola"
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "string",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=GOOGLETRANSLATE(\"hello\", \"en\", \"es\")"
+                },
+                "effectiveValue": {
+                  "stringValue": "Hola"
+                },
+                "formattedValue": "Hola",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "GOOGLETRANSLATE(\"hello\", \"en\", \"es\")",
+            "formatted": "Hola"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=GOOGLETRANSLATE(\"hello\", \"en\", \"es\")"
+    },
+    "sha256:400b637882f895442678edee0a7f0360fd9268d7677b0590daf480f4e17348e9": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "en"
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "string",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=DETECTLANGUAGE(\"hello world\")"
+                },
+                "effectiveValue": {
+                  "stringValue": "en"
+                },
+                "formattedValue": "en",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "DETECTLANGUAGE(\"hello world\")",
+            "formatted": "en"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=DETECTLANGUAGE(\"hello world\")"
+    },
+    "sha256:c64aa9b2eb34798a7462d97f72167e130a8d4349615ca6093fccfc4ceda2ee18": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "error",
+              "sentinel": "#REF!"
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "error",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=IMAGE(\"https://example.com/pic.png\")"
+                },
+                "effectiveValue": {
+                  "errorValue": {
+                    "type": "REF",
+                    "message": "Please use a desktop web browser to allow access to fetch data from external urls."
+                  }
+                },
+                "formattedValue": "#REF!",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "IMAGE(\"https://example.com/pic.png\")",
+            "formatted": "#REF!"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=IMAGE(\"https://example.com/pic.png\")"
+    },
+    "sha256:7cfa315619361306d6364caa3029523f12cfc13f357545e422d9c712bef65dbd": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "null",
+              "reason": "formula-returned-null"
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "null",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=SPARKLINE({1;2;3;4;5})"
+                },
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "SPARKLINE({1;2;3;4;5})"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=SPARKLINE({1;2;3;4;5})"
+    }
+  }
+}

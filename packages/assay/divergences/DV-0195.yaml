@@ -1,0 +1,17 @@
+id: DV-0195
+summary: "formulas, hyperformula, pycel: different argument interpretation — ROUND"
+cause: arg-semantics
+category: value
+engines:
+  - formulas
+  - hyperformula
+  - pycel
+behavior:
+  signature: "0.0062"
+test-count: 1
+subjects:
+  - ROUND
+tests:
+  - ROUND/round-floating-point-edge
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

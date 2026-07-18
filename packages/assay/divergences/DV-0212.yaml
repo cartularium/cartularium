@@ -1,0 +1,15 @@
+id: DV-0212
+summary: "gsheets: function not implemented — feature:spill-blocking"
+cause: missing-function
+category: interaction
+engines:
+  - gsheets
+behavior:
+  signature: '[[{"error":"#REF!"}],[null],[null],[null],["blocker"]]'
+test-count: 1
+subjects:
+  - feature:spill-blocking
+tests:
+  - feature:spill-blocking/spill-blocked-distant-cell
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

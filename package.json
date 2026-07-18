@@ -1,0 +1,39 @@
+{
+  "name": "cartularium",
+  "version": "0.0.0",
+  "private": true,
+  "description": "cartularium monorepo; spreadsheet tools and projects",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22",
+    "pnpm": ">=10"
+  },
+  "packageManager": "pnpm@10.33.0",
+  "scripts": {
+    "build": "pnpm -r --if-present run build",
+    "check": "pnpm -r --if-present run check",
+    "coord:prune": "bash scripts/coord-prune.sh",
+    "coord:status": "bash scripts/coord-status.sh",
+    "coord:status:brief": "bash scripts/coord-status.sh --brief",
+    "dev": "CARTULARIUM_HOME_URL=${CARTULARIUM_HOME_URL:-http://localhost:8080} CARTULARIUM_WIKI_URL=${CARTULARIUM_WIKI_URL:-http://localhost:8081} CARTULARIUM_ASSAY_URL=${CARTULARIUM_ASSAY_URL:-http://localhost:8082} CARTULARIUM_ASSAY_REF_MODE=${CARTULARIUM_ASSAY_REF_MODE:-degraded} concurrently --kill-others-on-fail --names 'home,wiki,assay,editor,shell' --prefix-colors 'magenta,blue,green,yellow,red' 'pnpm --filter @cartularium/cartularium-org serve' 'pnpm --filter sheets-wiki serve' 'pnpm --filter assay serve' 'pnpm --filter @cartularium/sheets-wiki-editor dev' 'pnpm --filter @cartularium/edit-shell dev'",
+    "dev:edit": "CARTULARIUM_ASSAY_REF_MODE=degraded concurrently --kill-others-on-fail --names 'editor,shell' --prefix-colors 'yellow,red' 'pnpm --filter @cartularium/sheets-wiki-editor dev' 'pnpm --filter @cartularium/edit-shell dev'",
+    "dev:runner": "pnpm --filter assay build && cd packages/assay && node build/cli.js preview-worker --base-url http://localhost:8083/api/edit --token \"$ASSAY_RUNNER_TOKEN\" --platform hyperformula --poll-ms 5000 --runner-id local-dev-runner",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "prepare": "lefthook install",
+    "predev": "bash scripts/coord-status.sh --brief 2>/dev/null || true ; pnpm --filter @cartularium/edit-shell exec wrangler d1 migrations apply cartularium-assay-preview --local",
+    "predev:edit": "pnpm run predev",
+    "setup:dev": "bash scripts/dev-setup.sh"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "lefthook": "^2.1.6",
+    "prettier": "^3.5.3",
+    "typescript": "^5.8.3"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "lefthook"
+    ]
+  }
+}

@@ -1,0 +1,18 @@
+id: DV-0040
+summary: "pycel: different error code — OFFSET"
+cause: error-code
+category: value
+engines:
+  - pycel
+behavior:
+  signature: '{"error":"#VALUE!"}'
+test-count: 4
+subjects:
+  - OFFSET
+tests:
+  - OFFSET/offset-down-one
+  - OFFSET/offset-right-one
+  - OFFSET/offset-zero
+  - OFFSET/offset-negative-rows
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

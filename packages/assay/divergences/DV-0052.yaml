@@ -1,0 +1,19 @@
+id: DV-0052
+summary: "lattice: different error code — BITLSHIFT, BITRSHIFT"
+cause: error-code
+category: value
+engines:
+  - lattice
+behavior:
+  signature: '{"error":"#NUM!"}'
+test-count: 2
+subjects:
+  - BITLSHIFT
+  - BITRSHIFT
+tests:
+  - BITLSHIFT/bitlshift-negative-shift-acts-as-rshift
+  - BITRSHIFT/bitrshift-negative-shift-acts-as-lshift
+seeded: 2026-04-25
+last-confirmed: 2026-04-25
+status: vanished
+vanished-at: 2026-04-26

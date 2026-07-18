@@ -1,0 +1,261 @@
+{
+  "platform": "hyperformula",
+  "generatedAt": "2026-05-11T09:33:31.868Z",
+  "results": {
+    "sha256:3046ebd56050c92e93193df989481da91fdf1d9af7690c0c540da23d030b4599": {
+      "result": [
+        [
+          {
+            "error": "#ERROR!"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=LAMBDA(x, x+1)(5)"
+    },
+    "sha256:491401464c36b64f69fe7f3197f0e6b8785bb9724463e4d30bd0d7b8670816e9": {
+      "result": [
+        [
+          {
+            "error": "#ERROR!"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=LAMBDA(x, y, x*y)(3, 4)"
+    },
+    "sha256:da1aabc5deac55963a84b6f7797344277932488a43b33faefdcf7c2f7d681f0a": {
+      "result": [
+        [
+          {
+            "error": "#ERROR!"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=LAMBDA(x, LAMBDA(y, x+y))(1)(2)"
+    },
+    "sha256:9a32a0697d7ae3caca90f36e532863a258fd1dc2892365acecdb1b8f82f23518": {
+      "result": [
+        [
+          {
+            "error": "#ERROR!"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=LAMBDA(f, f(5))(LAMBDA(x, x*2))"
+    },
+    "sha256:ea2fb6683671e033858f0385659b896f667534fd65a6213a01e681ba6d4fc6db": {
+      "result": [
+        [
+          {
+            "error": "#NAME?"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=LET(x, 5, x+1)"
+    },
+    "sha256:d4e70d1155e97f80b1b0d252ffc0c5e436b7596fdaa93f119abbd06bbc6272ea": {
+      "result": [
+        [
+          {
+            "error": "#NAME?"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=LET(x, 3, y, 4, x+y)"
+    },
+    "sha256:7c15193749648406736b14efc81ae01d222597889193dcda2eb3245e6a3a7e4d": {
+      "result": [
+        [
+          {
+            "error": "#NAME?"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=LET(x, 1, y, x+1, z, y+1, z)"
+    },
+    "sha256:ddd6327db963e5c278994092de6d64b70e044fb073b605dbb71dc3b3cb224a60": {
+      "result": [
+        [
+          {
+            "error": "#NAME?"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=MAP({1;2;3}, LAMBDA(x, x*2))"
+    },
+    "sha256:12023dc8b79062eb9d06edb40e818641f4b25bbc37c9ee8a17a0395dfbe95605": {
+      "result": [
+        [
+          {
+            "error": "#NAME?"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=MAP({1,2,3}, LAMBDA(x, x*10))"
+    },
+    "sha256:2c059b00a255cf802c27a5ab3f1d5c545247c84477fe67eed9ef8d880c178064": {
+      "result": [
+        [
+          {
+            "error": "#NAME?"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=MAP({1;2;3}, {10;20;30}, LAMBDA(a, b, a+b))"
+    },
+    "sha256:1f6da2cf72a07f64206628d083f435aa22d67e44662f7cc2a622db677558add5": {
+      "result": [
+        [
+          {
+            "error": "#NAME?"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=REDUCE(0, {1;2;3;4;5}, LAMBDA(acc, x, acc+x))"
+    },
+    "sha256:0965f6528f095372a33a7abcd9da30ae43b234b13e78fba252b4567148695d56": {
+      "result": [
+        [
+          {
+            "error": "#NAME?"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=REDUCE(1, {1,2,3,4,5}, LAMBDA(acc, x, acc*x))"
+    },
+    "sha256:22244eeda6d8eba44413edd79e9f4cdc711027164edfb6111344bbe23052922f": {
+      "result": [
+        [
+          {
+            "error": "#NAME?"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=REDUCE(\"\", {\"a\";\"b\";\"c\"}, LAMBDA(acc, x, acc&x))"
+    },
+    "sha256:08a237fa985bb86b9ba12b316ca52a4f0d802d9f25eb0fdcdcb1e4b22a883597": {
+      "result": [
+        [
+          {
+            "error": "#NAME?"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=SCAN(0, {1;2;3;4;5}, LAMBDA(acc, x, acc+x))"
+    },
+    "sha256:cf3fe51e9f1411a12ed8418d8cc3c940e57c8531802fc6e3aff9013867a0e7f2": {
+      "result": [
+        [
+          1
+        ],
+        [
+          3
+        ],
+        [
+          5
+        ]
+      ],
+      "formula-as-evaluated": "=FILTER({1;2;3;4;5}, {1;0;1;0;1})"
+    },
+    "sha256:1b5a10723f3eea3dd7beb7e8ede059aaa1c2d1c65a93cceec3bca9242ca4dac1": {
+      "result": [
+        [
+          20
+        ],
+        [
+          30
+        ]
+      ],
+      "formula-as-evaluated": "=FILTER(A1:A4, A1:A4>10)"
+    },
+    "sha256:ac6cccc4df44120009221cb48eeefcaa672940778ec0a2ea9b88c6f806e6080b": {
+      "result": [
+        [
+          {
+            "error": "#N/A"
+          }
+        ],
+        [
+          {
+            "error": "#N/A"
+          }
+        ],
+        [
+          {
+            "error": "#N/A"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=FILTER({1;2;3}, {0;0;0}, \"none\")"
+    },
+    "sha256:6743cd99b2823a4ef19ef846d5e7b46e44db2460d2618b6f40e5eca1f8339910": {
+      "result": [
+        [
+          {
+            "error": "#NAME?"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=SORT({3;1;2})"
+    },
+    "sha256:31e42104503d95b385914d1e302c2bd2405ca9bb0790e7bc8902604453f52fd1": {
+      "result": [
+        [
+          {
+            "error": "#NAME?"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=SORT({3;1;2}, 1, -1)"
+    },
+    "sha256:104e27cfa5fea5d71f659ac929c0dd70d275a67a3318e047bd6a3ff3906fc6f5": {
+      "result": [
+        [
+          {
+            "error": "#NAME?"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=SORTBY({10;20;30}, {3;1;2})"
+    },
+    "sha256:1e491ff1bda8d2eaf909453b792a475ffe154dc15e969912242c876050fa75d4": {
+      "result": [
+        [
+          {
+            "error": "#NAME?"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=UNIQUE({1;2;1;3;2})"
+    },
+    "sha256:89c0745da9a7fabed2d4e3e9eaa7c2337541b3c698eadbed7e35f12bc393afcb": {
+      "result": [
+        [
+          {
+            "error": "#NAME?"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=MAKEARRAY(3, 3, LAMBDA(r, c, r*c))"
+    },
+    "sha256:fcac175ad54375a9e6dbecc01fef55affeaf2d9d85ac929e52d579af4e41ea8c": {
+      "result": [
+        [
+          {
+            "error": "#NAME?"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=BYROW({1,2,3;4,5,6}, LAMBDA(row, SUM(row)))"
+    },
+    "sha256:4c3b01181b221342fa5b7b30ce251de3c2c3c7840e6659f551f8a9da8078665b": {
+      "result": [
+        [
+          {
+            "error": "#NAME?"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=BYCOL({1,2,3;4,5,6}, LAMBDA(col, SUM(col)))"
+    }
+  }
+}

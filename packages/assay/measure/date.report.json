@@ -1,0 +1,88 @@
+{
+  "subject": "DATE",
+  "pair": {
+    "a": "excel",
+    "b": "gsheets"
+  },
+  "numTolerance": 1e-10,
+  "engines": [
+    {
+      "platform": "excel",
+      "generatedAt": "2026-06-04T06:04:03.467Z"
+    },
+    {
+      "platform": "gsheets",
+      "generatedAt": "2026-06-04T06:04:25.480Z"
+    }
+  ],
+  "axisSpace": [
+    {
+      "name": "case",
+      "locus": "syntactic",
+      "cardinality": 6
+    }
+  ],
+  "tallies": {
+    "total": 6,
+    "ok": 6,
+    "incomplete": 0,
+    "agree": 5,
+    "differ": 1,
+    "unimplemented": 0,
+    "precision": 0
+  },
+  "analysis": {
+    "reducts": [
+      [
+        "case"
+      ]
+    ],
+    "core": [
+      "case"
+    ]
+  },
+  "verdict": {
+    "subject": "DATE",
+    "completeness": 1,
+    "provisional": false,
+    "pinnedAxes": [],
+    "surface": {
+      "okProbes": 6,
+      "divergentProbes": 1,
+      "divergentFraction": 0.167
+    },
+    "kind": "EXPLICIT_BRIDGE",
+    "discriminators": [
+      "case"
+    ],
+    "byLocus": {
+      "syntactic": [
+        "case"
+      ],
+      "environment": [],
+      "data-borne": []
+    },
+    "trigger": [
+      {
+        "where": {
+          "case": "feb291900"
+        },
+        "outcome": "differ"
+      }
+    ],
+    "fix": {
+      "rewriteOn": [
+        "case"
+      ]
+    }
+  },
+  "divergent": [
+    {
+      "name": "feb291900",
+      "assignment": {
+        "case": "feb291900"
+      },
+      "outcome": "differ"
+    }
+  ]
+}

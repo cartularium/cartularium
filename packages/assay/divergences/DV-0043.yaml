@@ -1,0 +1,20 @@
+id: DV-0043
+summary: "ironcalc, libreoffice, pycel: function not implemented — UNICHAR"
+cause: missing-function
+category: value
+engines:
+  - ironcalc
+  - libreoffice
+  - pycel
+behavior:
+  signature: '{"error":"#NAME?"}'
+test-count: 4
+subjects:
+  - UNICHAR
+tests:
+  - UNICHAR/unichar-uppercase-a
+  - UNICHAR/unichar-snowman
+  - UNICHAR/unichar-emoji-bmp
+  - UNICHAR/unichar-zero
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

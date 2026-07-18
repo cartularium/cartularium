@@ -1,0 +1,39 @@
+id: DV-0016
+summary: "hyperformula, pycel: function not implemented — CONVERT, ERROR.TYPE,
+  GESTEP (+4 more)"
+cause: missing-function
+category: value
+engines:
+  - hyperformula
+  - pycel
+behavior:
+  signature: '{"error":"#NAME?"}'
+test-count: 17
+subjects:
+  - CONVERT
+  - ERROR.TYPE
+  - GESTEP
+  - MAXA
+  - MINA
+  - T
+  - XIRR
+tests:
+  - GESTEP/gestep-greater
+  - GESTEP/gestep-less
+  - GESTEP/gestep-equal
+  - GESTEP/gestep-default-step-zero
+  - XIRR/xirr-no-sign-change
+  - ERROR.TYPE/error-type-of-div-0-info
+  - ERROR.TYPE/error-type-of-na
+  - ERROR.TYPE/error-type-of-value-info
+  - ERROR.TYPE/error-type-of-non-error-number
+  - ERROR.TYPE/error-type-of-non-error-text
+  - ERROR.TYPE/error-type-of-ref-error
+  - CONVERT/convert-feet-to-inches
+  - CONVERT/convert-celsius-to-fahrenheit
+  - CONVERT/convert-hours-to-seconds
+  - MAXA/maxa-inline-boolean
+  - MINA/mina-inline-boolean-false
+  - T/t-boolean
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

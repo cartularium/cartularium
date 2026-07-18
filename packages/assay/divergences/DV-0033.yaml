@@ -1,0 +1,22 @@
+id: DV-0033
+summary: "formulas, hyperformula, lattice, pycel: function not implemented — CELL"
+cause: missing-function
+category: value
+engines:
+  - formulas
+  - hyperformula
+  - lattice
+  - pycel
+behavior:
+  signature: '{"error":"#NAME?"}'
+test-count: 5
+subjects:
+  - CELL
+tests:
+  - CELL/cell-address
+  - CELL/cell-contents
+  - CELL/cell-row
+  - CELL/cell-col
+  - CELL/cell-type-text
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

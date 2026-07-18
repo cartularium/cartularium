@@ -1,0 +1,15 @@
+id: DV-0201
+summary: "hyperformula: numeric precision differs — EXP"
+cause: precision
+category: value
+engines:
+  - hyperformula
+behavior:
+  signature: "2.7182818285"
+test-count: 1
+subjects:
+  - EXP
+tests:
+  - EXP/exp-one
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

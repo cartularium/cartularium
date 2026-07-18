@@ -1,0 +1,12 @@
+<aside class="gutter-toc" data-toc-gutter aria-label="table of contents">
+  <div class="gutter-line">
+    <div class="rule"></div>
+    <div class="progress" data-toc-progress></div>
+    {{#entries}}
+    <a class="gutter-label" href="#{{id}}" data-toc-link="{{id}}">
+      <span class="tick"></span>
+      <span class="text">{{label}}</span>
+    </a>
+    {{/entries}}
+  </div>
+</aside>

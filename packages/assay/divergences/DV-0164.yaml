@@ -1,0 +1,15 @@
+id: DV-0164
+summary: "ironcalc: numeric precision differs — RRI"
+cause: precision
+category: value
+engines:
+  - ironcalc
+behavior:
+  signature: "0.090507733"
+test-count: 1
+subjects:
+  - RRI
+tests:
+  - RRI/rri-double-in-8-years
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

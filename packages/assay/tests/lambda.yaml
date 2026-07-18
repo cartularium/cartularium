@@ -1,0 +1,276 @@
+schemaVersion: 3
+name: Lambda and higher-order functions
+tests:
+  - subject: LAMBDA
+    category: value
+    features:
+      - lambda
+    formula: =LAMBDA(x, x+1)(5)
+    expect: 6
+    name: lambda-basic-iife
+  - subject: LAMBDA
+    category: value
+    features:
+      - lambda
+    formula: =LAMBDA(x, y, x*y)(3, 4)
+    expect: 12
+    name: lambda-two-args
+  - subject: LAMBDA
+    category: value
+    features:
+      - lambda
+    formula: =LAMBDA(x, LAMBDA(y, x+y))(1)(2)
+    expect: 3
+    name: lambda-nested
+  - subject: LAMBDA
+    category: value
+    features:
+      - lambda
+    formula: =LAMBDA(f, f(5))(LAMBDA(x, x*2))
+    expect: 10
+    name: lambda-as-higher-order
+  - subject: LET
+    category: value
+    features:
+      - let-bindings
+    formula: =LET(x, 5, x+1)
+    expect: 6
+    name: let-basic
+  - subject: LET
+    category: value
+    features:
+      - let-bindings
+    formula: =LET(x, 3, y, 4, x+y)
+    expect: 7
+    name: let-multiple-bindings
+  - subject: LET
+    category: value
+    features:
+      - let-bindings
+    formula: =LET(x, 1, y, x+1, z, y+1, z)
+    expect: 3
+    name: let-scoping
+  - subject: MAP
+    category: value
+    formula: =MAP({1;2;3}, LAMBDA(x, x*2))
+    expect:
+      - - 2
+      - - 4
+      - - 6
+    tags:
+      - bare-formula
+    features:
+      - dynamic-arrays
+      - lambda
+      - higher-order-lambda
+    name: map-over-column
+  - subject: MAP
+    category: value
+    formula: =MAP({1,2,3}, LAMBDA(x, x*10))
+    expect:
+      - - 10
+        - 20
+        - 30
+    tags:
+      - bare-formula
+    features:
+      - dynamic-arrays
+      - lambda
+      - higher-order-lambda
+    name: map-over-row
+  - subject: MAP
+    category: value
+    formula: =MAP({1;2;3}, {10;20;30}, LAMBDA(a, b, a+b))
+    expect:
+      - - 11
+      - - 22
+      - - 33
+    tags:
+      - bare-formula
+    features:
+      - dynamic-arrays
+      - lambda
+      - higher-order-lambda
+    name: map-two-arrays
+  - subject: REDUCE
+    category: value
+    formula: =REDUCE(0, {1;2;3;4;5}, LAMBDA(acc, x, acc+x))
+    expect: 15
+    tags:
+      - bare-formula
+    features:
+      - dynamic-arrays
+      - lambda
+      - higher-order-lambda
+    name: reduce-sum
+  - subject: REDUCE
+    category: value
+    formula: =REDUCE(1, {1,2,3,4,5}, LAMBDA(acc, x, acc*x))
+    expect: 120
+    tags:
+      - bare-formula
+    features:
+      - dynamic-arrays
+      - lambda
+      - higher-order-lambda
+    name: reduce-product
+  - subject: REDUCE
+    category: value
+    formula: =REDUCE("", {"a";"b";"c"}, LAMBDA(acc, x, acc&x))
+    expect: abc
+    tags:
+      - bare-formula
+    features:
+      - dynamic-arrays
+      - lambda
+      - higher-order-lambda
+    name: reduce-string-concat
+  - subject: SCAN
+    category: value
+    formula: =SCAN(0, {1;2;3;4;5}, LAMBDA(acc, x, acc+x))
+    expect:
+      - - 1
+      - - 3
+      - - 6
+      - - 10
+      - - 15
+    tags:
+      - bare-formula
+    features:
+      - dynamic-arrays
+      - lambda
+      - higher-order-lambda
+    name: scan-cumulative-sum
+  - subject: FILTER
+    category: value
+    formula: =FILTER({1;2;3;4;5}, {1;0;1;0;1})
+    expect:
+      - - 1
+      - - 3
+      - - 5
+    tags:
+      - bare-formula
+    features:
+      - dynamic-arrays
+    name: filter-basic
+  - subject: FILTER
+    category: value
+    features:
+      - dynamic-arrays
+    formula: =FILTER(A1:A4, A1:A4>10)
+    grid:
+      A1: 10
+      A2: 20
+      A3: 5
+      A4: 30
+    expect:
+      - - 20
+      - - 30
+    name: filter-with-condition
+  - subject: FILTER
+    formula: =FILTER({1;2;3}, {0;0;0}, "none")
+    category: value
+    features:
+      - dynamic-arrays
+    expect: none
+    overrides:
+      gsheets:
+        cause: error-code
+        recorded:
+          error: "#N/A"
+      lattice:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+    tags:
+      - divergence
+      - bare-formula
+    name: filter-no-results
+  - subject: SORT
+    category: value
+    formula: =SORT({3;1;2})
+    expect:
+      - - 1
+      - - 2
+      - - 3
+    tags:
+      - bare-formula
+    features:
+      - dynamic-arrays
+    name: sort-ascending
+  - subject: SORT
+    category: value
+    status: observed
+    formula: =SORT({3;1;2}, 1, -1)
+    tags:
+      - divergence
+      - bare-formula
+    features:
+      - dynamic-arrays
+    name: sort-descending
+  - subject: SORTBY
+    category: value
+    features:
+      - dynamic-arrays
+    status: observed
+    formula: =SORTBY({10;20;30}, {3;1;2})
+    tags:
+      - divergence
+      - bare-formula
+    name: sortby-basic
+  - subject: UNIQUE
+    category: value
+    formula: =UNIQUE({1;2;1;3;2})
+    expect:
+      - - 1
+      - - 2
+      - - 3
+    tags:
+      - bare-formula
+    features:
+      - dynamic-arrays
+    name: unique-column
+  - subject: MAKEARRAY
+    category: value
+    features:
+      - lambda
+      - higher-order-lambda
+    formula: =MAKEARRAY(3, 3, LAMBDA(r, c, r*c))
+    expect:
+      - - 1
+        - 2
+        - 3
+      - - 2
+        - 4
+        - 6
+      - - 3
+        - 6
+        - 9
+    name: makearray-multiplication-table
+  - subject: BYROW
+    category: value
+    formula: =BYROW({1,2,3;4,5,6}, LAMBDA(row, SUM(row)))
+    expect:
+      - - 6
+      - - 15
+    tags:
+      - bare-formula
+    features:
+      - dynamic-arrays
+      - lambda
+      - higher-order-lambda
+    name: byrow-sum
+  - subject: BYCOL
+    category: value
+    formula: =BYCOL({1,2,3;4,5,6}, LAMBDA(col, SUM(col)))
+    expect:
+      - - 5
+        - 7
+        - 9
+    tags:
+      - bare-formula
+    features:
+      - dynamic-arrays
+      - lambda
+      - higher-order-lambda
+    name: bycol-sum

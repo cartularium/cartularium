@@ -1,0 +1,15 @@
+id: DV-0098
+summary: "pycel: rendered with different format — COMPLEX"
+cause: format-rendering
+category: value
+engines:
+  - pycel
+behavior:
+  signature: '"(3+4j)"'
+test-count: 1
+subjects:
+  - COMPLEX
+tests:
+  - COMPLEX/complex-basic
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

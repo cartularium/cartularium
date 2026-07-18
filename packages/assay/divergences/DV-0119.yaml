@@ -1,0 +1,20 @@
+id: DV-0119
+summary: "excel, formulas, hyperformula, ironcalc, lattice: different error code
+  — CUMPRINC"
+cause: error-code
+category: value
+engines:
+  - excel
+  - formulas
+  - hyperformula
+  - ironcalc
+  - lattice
+behavior:
+  signature: '{"error":"#NUM!"}'
+test-count: 1
+subjects:
+  - CUMPRINC
+tests:
+  - CUMPRINC/cumprinc-invalid-type
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

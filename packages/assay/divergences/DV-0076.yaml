@@ -1,0 +1,19 @@
+id: DV-0076
+summary: "excel, formulas, gsheets, lattice, pycel: numeric precision differs — op:/"
+cause: precision
+category: value
+engines:
+  - excel
+  - formulas
+  - gsheets
+  - lattice
+  - pycel
+behavior:
+  signature: "3.3333333333333335"
+test-count: 1
+subjects:
+  - op:/
+tests:
+  - op:divide/division
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

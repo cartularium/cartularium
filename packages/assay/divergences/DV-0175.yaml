@@ -1,0 +1,16 @@
+id: DV-0175
+summary: "hyperformula, libreoffice: different error code — XNPV"
+cause: error-code
+category: value
+engines:
+  - hyperformula
+  - libreoffice
+behavior:
+  signature: '{"error":"#VALUE!"}'
+test-count: 1
+subjects:
+  - XNPV
+tests:
+  - XNPV/xnpv-mismatched-lengths
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

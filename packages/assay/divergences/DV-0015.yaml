@@ -1,0 +1,34 @@
+id: DV-0015
+summary: "hyperformula, libreoffice: function not implemented — CONCAT, IFS, XOR"
+cause: missing-function
+category: value
+engines:
+  - hyperformula
+  - libreoffice
+behavior:
+  signature: '{"error":"#NAME?"}'
+test-count: 17
+subjects:
+  - CONCAT
+  - IFS
+  - XOR
+tests:
+  - CONCAT/concat-vs-concatenate-arity
+  - XOR/xor-odd-trues
+  - XOR/xor-even-trues
+  - XOR/xor-all-false
+  - IFS/ifs-first-match
+  - IFS/ifs-second-match
+  - IFS/ifs-no-match
+  - CONCAT/concat-strings
+  - CONCAT/concat-two-strings
+  - CONCAT/concat-numbers-become-strings
+  - CONCAT/concat-mixed-types
+  - CONCAT/concat-booleans
+  - CONCAT/concat-float-formatting
+  - CONCAT/concat-empty-string
+  - CONCAT/concat-matches-ampersand-operator
+  - CONCAT/concat-two-args
+  - CONCAT/concat-with-numbers
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

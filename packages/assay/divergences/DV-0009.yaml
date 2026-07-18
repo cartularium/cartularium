@@ -1,0 +1,62 @@
+id: DV-0009
+summary: "excel: function not implemented — DETECTLANGUAGE, EPOCHTODATE,
+  GOOGLEFINANCE (+8 more)"
+cause: missing-function
+category: value
+engines:
+  - excel
+behavior:
+  signature: '{"error":"#N/A"}'
+test-count: 37
+subjects:
+  - DETECTLANGUAGE
+  - EPOCHTODATE
+  - GOOGLEFINANCE
+  - GOOGLETRANSLATE
+  - ISEMAIL
+  - SPARKLINE
+  - TO_DATE
+  - TO_DOLLARS
+  - TO_PERCENT
+  - TO_PURE_NUMBER
+  - TO_TEXT
+tests:
+  - EPOCHTODATE/epochtodate-seconds
+  - EPOCHTODATE/epochtodate-millis
+  - EPOCHTODATE/epochtodate-default-unit
+  - GOOGLEFINANCE/googlefinance-price-smoke
+  - GOOGLETRANSLATE/googletranslate-en-to-es
+  - DETECTLANGUAGE/detectlanguage-english
+  - SPARKLINE/sparkline-inline-chart
+  - ISEMAIL/isemail-valid
+  - ISEMAIL/isemail-invalid
+  - ISEMAIL/isemail-of-number
+  - ISEMAIL/isemail-of-blank-cell
+  - TO_DATE/to-date-from-serial
+  - TO_DATE/to-date-zero-serial
+  - TO_DATE/to-date-from-text
+  - TO_DATE/to-date-from-boolean
+  - TO_DATE/to-date-from-invalid-text
+  - TO_DOLLARS/to-dollars-integer
+  - TO_DOLLARS/to-dollars-decimal
+  - TO_DOLLARS/to-dollars-negative
+  - TO_DOLLARS/to-dollars-from-text
+  - TO_DOLLARS/to-dollars-from-boolean
+  - TO_PERCENT/to-percent-decimal
+  - TO_PERCENT/to-percent-whole-number
+  - TO_PERCENT/to-percent-zero
+  - TO_PERCENT/to-percent-from-text
+  - TO_PERCENT/to-percent-negative
+  - TO_PURE_NUMBER/to-pure-number-from-percent-literal
+  - TO_PURE_NUMBER/to-pure-number-from-integer
+  - TO_PURE_NUMBER/to-pure-number-from-text
+  - TO_PURE_NUMBER/to-pure-number-from-boolean
+  - TO_PURE_NUMBER/to-pure-number-from-non-numeric-text
+  - TO_TEXT/to-text-integer
+  - TO_TEXT/to-text-decimal
+  - TO_TEXT/to-text-boolean
+  - TO_TEXT/to-text-already-text
+  - TO_TEXT/to-text-from-date-serial
+  - TO_TEXT/to-text-negative-number
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

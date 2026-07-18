@@ -1,0 +1,17 @@
+id: DV-0060
+summary: "libreoffice: different argument interpretation — PMT, PPMT"
+cause: arg-semantics
+category: value
+engines:
+  - libreoffice
+behavior:
+  signature: "1073.64324602428"
+test-count: 2
+subjects:
+  - PMT
+  - PPMT
+tests:
+  - PMT/pmt-monthly-mortgage
+  - PPMT/ppmt-ipmt-plus-ppmt-equals-pmt
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

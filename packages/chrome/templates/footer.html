@@ -1,0 +1,11 @@
+<footer class="cartularium-footer">
+  <a class="attr" href="{{imprint.href}}">{{imprint.label}}</a>
+  {{#links}}
+  <span class="sep">·</span>
+  <a href="{{href}}">{{label}}</a>
+  {{/links}}
+  {{#editUrl}}
+  <span class="sep">·</span>
+  <a class="edit-link" href="{{editUrl}}" data-router-ignore>Edit ↗</a>
+  {{/editUrl}}
+</footer>

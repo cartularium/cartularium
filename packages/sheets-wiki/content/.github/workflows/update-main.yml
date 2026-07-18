@@ -1,0 +1,30 @@
+# .github/workflows/update-main.yml
+
+name: Update main repo submodule
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  update-main-repo:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout submodule repo
+        uses: actions/checkout@v3
+
+      - name: Clone main repo
+        run: |
+          git clone https://x-access-token:${{ secrets.MAIN_REPO_TOKEN }}@github.com/Astral1119/quartz-sheets-wiki.git
+          cd quartz-sheets-wiki
+
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+
+          git submodule update --init --recursive
+          git submodule update --remote --merge --recursive
+
+          git add content
+          git commit -m "Update submodule to latest commit" || echo "No changes"
+          git push

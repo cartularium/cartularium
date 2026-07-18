@@ -1,0 +1,140 @@
+{
+  "platform": "excel",
+  "generatedAt": "2026-06-04T06:30:27.221Z",
+  "results": {
+    "sha256:469aa3b68eeabd0f18e43a5c0b6cda2705e0efb0db694bbdba18e7edb32310ff": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 6
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n",
+              "raw_xml": {
+                "formula_text": "SUM(D1:D3)"
+              }
+            },
+            "formula": "SUM(D1:D3)"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=SUM(D1:D3)"
+    },
+    "sha256:675f333c3524a9605ba7a12435ceef3aeec388ae250758b974c0122e29ce5e87": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 2
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n",
+              "raw_xml": {
+                "formula_text": "SUM(D1:D3 D2:D2)"
+              }
+            },
+            "formula": "SUM(D1:D3 D2:D2)"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=SUM(D1:D3 D2:D2)"
+    },
+    "sha256:c7a3b79c71a0deecfe336a5008f453f2da4da90e26ecbb3f36a03899447e457c": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 4
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n",
+              "raw_xml": {
+                "formula_text": "SUM((D1:D1,D3:D3))"
+              }
+            },
+            "formula": "SUM((D1:D1,D3:D3))"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=SUM((D1:D1,D3:D3))"
+    },
+    "sha256:bb92b4cdc9d159bed327cca43d8cf5d7146698ad691e972b78b620f0abd19f39": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 2
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n",
+              "raw_xml": {
+                "cm": 1,
+                "formula_text": "INDIRECT(\"D2\")",
+                "formula_array_marker": "array",
+                "formula_array_ref": "AA1"
+              },
+              "saved_as_array": true
+            },
+            "formula": "INDIRECT(\"D2\")"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=INDIRECT(\"D2\")"
+    },
+    "sha256:a58f78467c152239023ccda26fe949703b9b1c86898cafe1ea87475631f3af4b": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 2
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n",
+              "raw_xml": {
+                "cm": 1,
+                "formula_text": "INDIRECT(\"R2C4\",FALSE)",
+                "formula_array_marker": "array",
+                "formula_array_ref": "AA1"
+              },
+              "saved_as_array": true
+            },
+            "formula": "INDIRECT(\"R2C4\",FALSE)"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=INDIRECT(\"R2C4\",FALSE)"
+    },
+    "sha256:01205e11e6e8ddc81c1201e1f68d7dbcc51b2826120fac551a31dda8b93c48c6": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 2
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n",
+              "raw_xml": {
+                "formula_text": "OFFSET(D1,1,0)"
+              }
+            },
+            "formula": "OFFSET(D1,1,0)"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=OFFSET(D1,1,0)"
+    }
+  }
+}

@@ -1,0 +1,15 @@
+id: DV-0105
+summary: "ironcalc: different error code — IMSUM"
+cause: error-code
+category: value
+engines:
+  - ironcalc
+behavior:
+  signature: '{"error":"#ERROR!"}'
+test-count: 1
+subjects:
+  - IMSUM
+tests:
+  - IMSUM/imsum-three-args
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

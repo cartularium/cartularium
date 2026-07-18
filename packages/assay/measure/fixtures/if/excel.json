@@ -1,0 +1,138 @@
+{
+  "platform": "excel",
+  "generatedAt": "2026-06-04T06:04:03.468Z",
+  "results": {
+    "sha256:7c398c136a5691040c06401b4b71f8b0576315c64d11f829055f299ba4aaf7d5": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "Y"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "s",
+              "raw_xml": {
+                "t": "str",
+                "formula_text": "IF(A1, \"Y\", \"N\")"
+              }
+            },
+            "formula": "IF(A1, \"Y\", \"N\")"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=IF(A1, \"Y\", \"N\")"
+    },
+    "sha256:a15e9d14d72505a4513ddd208e28196663d58698f7902d14744c8dad01d4c243": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "N"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "s",
+              "raw_xml": {
+                "t": "str",
+                "formula_text": "IF(A1, \"Y\", \"N\")"
+              }
+            },
+            "formula": "IF(A1, \"Y\", \"N\")"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=IF(A1, \"Y\", \"N\")"
+    },
+    "sha256:8385e8be059206f16335c943a71c06fc51be4d326b479d158275efa89ed01720": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "error",
+              "sentinel": "#VALUE!"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "e",
+              "raw_xml": {
+                "t": "e",
+                "formula_text": "IF(A1, \"Y\", \"N\")"
+              }
+            },
+            "formula": "IF(A1, \"Y\", \"N\")"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=IF(A1, \"Y\", \"N\")"
+    },
+    "sha256:f94ee69a8c51dae490ff69299e147427bee8fa22f2d22dc275f7015a33789ab7": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "error",
+              "sentinel": "#VALUE!"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "e",
+              "raw_xml": {
+                "t": "e",
+                "formula_text": "IF(A1, \"Y\", \"N\")"
+              }
+            },
+            "formula": "IF(A1, \"Y\", \"N\")"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=IF(A1, \"Y\", \"N\")"
+    },
+    "sha256:b4e258c511d3f3b6720226507bb5016312693bfc729223142bd3dda46675fb0d": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "N"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "s",
+              "raw_xml": {
+                "t": "str",
+                "formula_text": "IF(A1, \"Y\", \"N\")"
+              }
+            },
+            "formula": "IF(A1, \"Y\", \"N\")"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=IF(A1, \"Y\", \"N\")"
+    },
+    "sha256:8d1eb76861bc150068a52e9ae568366c53ef92ed8ac4f54d0a8b126035a1f56a": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "error",
+              "sentinel": "#N/A"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "e",
+              "raw_xml": {
+                "t": "e",
+                "formula_text": "IF(A1, \"Y\", \"N\")"
+              }
+            },
+            "formula": "IF(A1, \"Y\", \"N\")"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=IF(A1, \"Y\", \"N\")"
+    }
+  }
+}

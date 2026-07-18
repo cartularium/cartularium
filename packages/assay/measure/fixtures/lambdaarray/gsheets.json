@@ -1,0 +1,281 @@
+{
+  "platform": "gsheets",
+  "generatedAt": "2026-06-04T06:36:54.745Z",
+  "results": {
+    "sha256:33fc24a1d675d54fc070474e6868a73f282a642bd0506549a235ff93c4fcde67": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 2
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "number",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=MAP({1;2;3}, LAMBDA(x, x*2))"
+                },
+                "effectiveValue": {
+                  "numberValue": 2
+                },
+                "formattedValue": "2",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "MAP({1;2;3}, LAMBDA(x, x*2))",
+            "formatted": "2"
+          }
+        ],
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 4
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "number",
+              "raw_api": {
+                "effectiveValue": {
+                  "numberValue": 4
+                },
+                "formattedValue": "4",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formatted": "4"
+          }
+        ],
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 6
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "number",
+              "raw_api": {
+                "effectiveValue": {
+                  "numberValue": 6
+                },
+                "formattedValue": "6",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formatted": "6"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=MAP({1;2;3}, LAMBDA(x, x*2))"
+    },
+    "sha256:a40c33d7f2951f6889b2b121cab642ca2736b7d8aee277e6822eba6ad911ad09": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "error",
+              "sentinel": "#N/A"
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "error",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=MAP(HSTACK(LAMBDA(x, x+1), LAMBDA(x, x+2)), LAMBDA(x, x(1)))"
+                },
+                "effectiveValue": {
+                  "errorValue": {
+                    "type": "N_A",
+                    "message": "Invalid call to non-function: x"
+                  }
+                },
+                "formattedValue": "#N/A",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "MAP(HSTACK(LAMBDA(x, x+1), LAMBDA(x, x+2)), LAMBDA(x, x(1)))",
+            "formatted": "#N/A"
+          },
+          {
+            "primitive": {
+              "kind": "error",
+              "sentinel": "#N/A"
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "error",
+              "raw_api": {
+                "effectiveValue": {
+                  "errorValue": {
+                    "type": "N_A",
+                    "message": "Invalid call to non-function: x"
+                  }
+                },
+                "formattedValue": "#N/A",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formatted": "#N/A"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=MAP(HSTACK(LAMBDA(x, x+1), LAMBDA(x, x+2)), LAMBDA(x, x(1)))"
+    },
+    "sha256:523257bac7d5dcd94b11fc890ab57b6f75f4c68bb14879c924684429b4d6efc8": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "error",
+              "sentinel": "#N/A"
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "error",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=MAP(VSTACK(LAMBDA(x, x*2), LAMBDA(x, x*3)), LAMBDA(x, x(5)))"
+                },
+                "effectiveValue": {
+                  "errorValue": {
+                    "type": "N_A",
+                    "message": "Invalid call to non-function: x"
+                  }
+                },
+                "formattedValue": "#N/A",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "MAP(VSTACK(LAMBDA(x, x*2), LAMBDA(x, x*3)), LAMBDA(x, x(5)))",
+            "formatted": "#N/A"
+          }
+        ],
+        [
+          {
+            "primitive": {
+              "kind": "error",
+              "sentinel": "#N/A"
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "error",
+              "raw_api": {
+                "effectiveValue": {
+                  "errorValue": {
+                    "type": "N_A",
+                    "message": "Invalid call to non-function: x"
+                  }
+                },
+                "formattedValue": "#N/A",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formatted": "#N/A"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=MAP(VSTACK(LAMBDA(x, x*2), LAMBDA(x, x*3)), LAMBDA(x, x(5)))"
+    }
+  }
+}

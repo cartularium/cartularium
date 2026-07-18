@@ -1,0 +1,15 @@
+id: DV-0235
+summary: "hyperformula: rendered with different format — TEXT"
+cause: format-rendering
+category: value
+engines:
+  - hyperformula
+behavior:
+  signature: '"$1235,##0.00"'
+test-count: 1
+subjects:
+  - TEXT
+tests:
+  - TEXT/text-currency
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

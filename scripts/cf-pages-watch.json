@@ -1,0 +1,39 @@
+{
+  "_doc": "Desired Cloudflare Pages watch-path config, declarative. Edit + run scripts/cf-pages-sync-watch.sh. Keys are CF Pages project names (as shown in the dashboard / `--list`). Each value's `path_includes` is the full desired list of include-globs. Use `/**` (recursive) for package dirs — `/*` only matches direct children and silently skips deeper changes. Projects in CF Pages with `[\"*\"]` (catch-all) are intentionally omitted here.",
+  "sheets-wiki": {
+    "path_includes": [
+      "pnpm-lock.yaml",
+      "package.json",
+      "pnpm-workspace.yaml",
+      "packages/sheets-wiki/**",
+      "packages/sheets-wiki-editor/**",
+      "packages/assay/**",
+      "packages/contracts/**",
+      "packages/brand/**",
+      "packages/chrome/**"
+    ]
+  },
+  "assay-catalogue": {
+    "path_includes": [
+      "pnpm-lock.yaml",
+      "package.json",
+      "pnpm-workspace.yaml",
+      "packages/assay/**",
+      "packages/contracts/**",
+      "packages/brand/**",
+      "packages/chrome/**"
+    ]
+  },
+  "cartularium": {
+    "path_includes": [
+      "pnpm-lock.yaml",
+      "package.json",
+      "pnpm-workspace.yaml",
+      "packages/cartularium-org/**",
+      "packages/brand/**",
+      "packages/chrome/**",
+      "packages/sheets-wiki/content/function/**",
+      "packages/assay/divergences/**"
+    ]
+  }
+}

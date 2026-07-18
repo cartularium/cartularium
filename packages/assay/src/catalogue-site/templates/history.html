@@ -1,0 +1,71 @@
+<header>
+  <h1>Agreement over time</h1>
+  <p class="dek">Pick targets and a reference set; each target's supported percentage is plotted across <code>assay history --record</code> snapshots. Supported means the target matches consensus or, when references disagree, matches at least one selected reference. Percentages use comparable tests only and the same value comparison rules as <a href="../compare">compare</a>.</p>
+</header>
+
+<% if (it.runCount === 0) { %>
+<section>
+  <p class="empty">No history recorded yet. Run <code>assay history --record</code> to populate.</p>
+</section>
+<% } else if (it.runCount === 1) { %>
+<section>
+  <p class="empty"><strong>1 run on record.</strong> Lines need at least two points to draw — the chart will fill in as cron runs accumulate. Latest snapshot still classifies fine.</p>
+</section>
+<% } %>
+
+<section class="compare-config">
+  <div class="presets">
+    <span class="presets-label">Presets:</span>
+    <% it.presets.forEach(function(p) { %>
+      <button type="button" class="preset" data-target="<%= p.target %>" data-ref="<%= p.ref.join(',') %>"><%= p.label %></button>
+    <% }) %>
+  </div>
+
+  <div class="compare-pickers">
+    <fieldset class="ref-picker">
+      <legend>Targets:</legend>
+      <% it.allEngines.forEach(function(e) { %>
+        <label class="engine-pick">
+          <input type="checkbox" name="target" value="<%= e %>">
+          <span class="chip eng eng-<%= e %>"><%= e %></span>
+        </label>
+      <% }) %>
+    </fieldset>
+    <fieldset class="ref-picker">
+      <legend>Reference engines:</legend>
+      <% it.allEngines.forEach(function(e) { %>
+        <label class="engine-pick">
+          <input type="checkbox" name="ref" value="<%= e %>">
+          <span class="chip eng eng-<%= e %>"><%= e %></span>
+        </label>
+      <% }) %>
+    </fieldset>
+  </div>
+</section>
+
+<section id="summary" class="compare-summary"></section>
+
+<section class="history-chart-wrap">
+  <svg id="history-chart" class="history-chart" viewBox="0 0 900 420" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Agreement-over-time chart"></svg>
+  <div id="history-legend" class="history-legend"></div>
+</section>
+
+<section class="history-table-wrap">
+  <h2>Per-run breakdown</h2>
+  <table id="history-table">
+    <thead>
+      <tr>
+        <th>Run</th>
+        <th>Target</th>
+        <th>Comparable</th>
+        <th>Match</th>
+        <th>Some refs</th>
+        <th>Diverge</th>
+        <th>No data</th>
+      </tr>
+    </thead>
+    <tbody id="history-body"></tbody>
+  </table>
+</section>
+
+<script id="history-data" data-empty="<%= it.runCount === 0 ? 1 : 0 %>"></script>

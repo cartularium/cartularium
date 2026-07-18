@@ -1,0 +1,186 @@
+.fnpage {
+  .dek {
+    color: var(--ink-2);
+    font-size: 1.05rem;
+    line-height: 1.5;
+    max-width: 60ch;
+    margin: 0 0 0.75rem;
+  }
+  .data-meta {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    color: var(--ink-3);
+    text-transform: lowercase;
+    margin: 0 0 0.5rem;
+
+    a {
+      color: var(--ink-2);
+      &:hover {
+        color: var(--accent);
+      }
+    }
+  }
+  .legend {
+    margin: 0 0 1.5rem;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    text-transform: lowercase;
+    letter-spacing: 0.04em;
+    color: var(--ink-3);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.85rem;
+    align-items: center;
+
+    .legend-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+    // border-box keeps the outlined (state-missing/partial) dots the same
+    // visual size as solid dots — without it, the 1px border is added outside
+    // the 0.6rem box and outlined dots render ~2px larger
+    .dot {
+      width: 0.6rem;
+      height: 0.6rem;
+      border-radius: 50%;
+      display: inline-block;
+      box-sizing: border-box;
+      border: 1px solid transparent;
+    }
+    .dot.eng-gsheets {
+      background: var(--eng-gsheets);
+    }
+    .dot.eng-excel {
+      background: var(--eng-excel);
+    }
+    .dot.eng-lattice {
+      background: var(--eng-lattice);
+    }
+    .dot.state-missing {
+      background: transparent;
+      border-color: var(--ink-4, var(--ink-3));
+    }
+    .dot.state-partial {
+      background: linear-gradient(90deg, var(--ink-3) 50%, transparent 50%);
+      border-color: var(--ink-3);
+    }
+  }
+  .category-section {
+    margin: 2rem 0;
+    // sticky bar offset; prevents heading hiding under sticky chrome
+    scroll-margin-top: 5rem;
+
+    h2 {
+      font-family: var(--font-display);
+      font-variation-settings:
+        "opsz" 36,
+        "wght" 480,
+        "SOFT" 0;
+      font-weight: 480;
+      font-size: 1.4rem;
+      margin: 0 0 0.75rem;
+    }
+  }
+  table.fn-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+
+    th,
+    td {
+      text-align: left;
+      padding: 0.4rem 0.75rem 0.4rem 0;
+      vertical-align: top;
+      border-bottom: 1px solid var(--rule);
+    }
+    th {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      font-weight: 500;
+      text-transform: lowercase;
+      color: var(--ink-3);
+    }
+    .col-name {
+      width: 170px;
+    }
+    .col-engines {
+      width: 80px;
+    }
+    .fn-summary {
+      color: var(--ink-3);
+      font-size: 0.92rem;
+    }
+  }
+  .fn-name {
+    font-family: var(--font-mono);
+    font-weight: 500;
+    color: var(--ink);
+    text-decoration: none;
+    &:hover {
+      color: var(--accent);
+    }
+  }
+
+  // per-row engine dots; mirrors mockup at internal/chrome-mockup.html ~L1037
+  .fn-engines {
+    display: inline-flex;
+    gap: 0.35rem;
+    align-items: center;
+  }
+  // border-box + transparent border on solid dots so missing/partial variants
+  // (which add a colored border) render at the same visual size
+  .fn-engines .dot {
+    width: 0.6rem;
+    height: 0.6rem;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    border: 1px solid transparent;
+    cursor: help;
+  }
+  .fn-engines .dot.eng-gsheets {
+    background: var(--eng-gsheets);
+  }
+  .fn-engines .dot.eng-excel {
+    background: var(--eng-excel);
+  }
+  .fn-engines .dot.eng-lattice {
+    background: var(--eng-lattice);
+  }
+  .fn-engines .dot.missing {
+    background: transparent;
+    border-color: var(--ink-4, var(--ink-3));
+  }
+  .fn-engines .dot.missing.eng-gsheets {
+    border-color: var(--eng-gsheets);
+  }
+  .fn-engines .dot.missing.eng-excel {
+    border-color: var(--eng-excel);
+  }
+  .fn-engines .dot.missing.eng-lattice {
+    border-color: var(--eng-lattice);
+  }
+  .fn-engines .dot.partial.eng-gsheets {
+    background: linear-gradient(90deg, var(--eng-gsheets) 50%, transparent 50%);
+    border-color: var(--eng-gsheets);
+  }
+  .fn-engines .dot.partial.eng-excel {
+    background: linear-gradient(90deg, var(--eng-excel) 50%, transparent 50%);
+    border-color: var(--eng-excel);
+  }
+  .fn-engines .dot.partial.eng-lattice {
+    background: linear-gradient(90deg, var(--eng-lattice) 50%, transparent 50%);
+    border-color: var(--eng-lattice);
+  }
+
+  @media (max-width: 720px) {
+    table.fn-table {
+      table-layout: auto;
+    }
+    table.fn-table .col-name,
+    table.fn-table .col-engines {
+      width: auto;
+    }
+  }
+}

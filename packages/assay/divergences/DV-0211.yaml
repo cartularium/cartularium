@@ -1,0 +1,15 @@
+id: DV-0211
+summary: "excel: different error code — feature:spill-blocking"
+cause: error-code
+category: interaction
+engines:
+  - excel
+behavior:
+  signature: '[[{"error":"#VALUE!"}],[null],[null],[null],["blocker"]]'
+test-count: 1
+subjects:
+  - feature:spill-blocking
+tests:
+  - feature:spill-blocking/spill-blocked-distant-cell
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

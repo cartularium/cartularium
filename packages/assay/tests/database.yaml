@@ -1,0 +1,1621 @@
+schemaVersion: 3
+name: Database functions
+tests:
+  - subject: DSUM
+    formula: =DSUM(A1:D5, "Price", F1:F2)
+    category: value
+    grid:
+      A1: Product
+      B1: Region
+      C1: Price
+      D1: Units
+      A2: Apple
+      B2: East
+      C2: 10
+      D2: 5
+      A3: Apple
+      B3: West
+      C3: 12
+      D3: 3
+      A4: Banana
+      B4: East
+      C4: 5
+      D4: 8
+      A5: Banana
+      B5: West
+      C5: 6
+      D5: 4
+      F1: Product
+      F2: Apple
+    expect: 22
+    overrides:
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - database
+    name: dsum-apples-total
+  - subject: DSUM
+    formula: =DSUM(A1:D5, 4, F1:F2)
+    category: value
+    grid:
+      A1: Product
+      B1: Region
+      C1: Price
+      D1: Units
+      A2: Apple
+      B2: East
+      C2: 10
+      D2: 5
+      A3: Apple
+      B3: West
+      C3: 12
+      D3: 3
+      A4: Banana
+      B4: East
+      C4: 5
+      D4: 8
+      A5: Banana
+      B5: West
+      C5: 6
+      D5: 4
+      F1: Product
+      F2: Banana
+    expect: 12
+    overrides:
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - database
+    name: dsum-field-by-index
+  - subject: DSUM
+    formula: =DSUM(A1:D5, "Units", H1:H2)
+    category: value
+    grid:
+      A1: Product
+      B1: Region
+      C1: Price
+      D1: Units
+      A2: Apple
+      B2: East
+      C2: 10
+      D2: 5
+      A3: Apple
+      B3: West
+      C3: 12
+      D3: 3
+      A4: Banana
+      B4: East
+      C4: 5
+      D4: 8
+      A5: Banana
+      B5: West
+      C5: 6
+      D5: 4
+      H1: Price
+      H2: ">6"
+    expect: 8
+    overrides:
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - database
+    name: dsum-comparator-criteria
+  - subject: DSUM
+    formula: =DSUM(A1:D5, "Price", F1:F2)
+    category: value
+    grid:
+      A1: Product
+      B1: Region
+      C1: Price
+      D1: Units
+      A2: Apple
+      B2: East
+      C2: 10
+      D2: 5
+      A3: Apple
+      B3: West
+      C3: 12
+      D3: 3
+      A4: Banana
+      B4: East
+      C4: 5
+      D4: 8
+      A5: Banana
+      B5: West
+      C5: 6
+      D5: 4
+      F1: Product
+      F2: Cherry
+    expect: 0
+    overrides:
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - database
+    name: dsum-empty-result
+  - subject: DCOUNT
+    formula: =DCOUNT(A1:D5, "Price", F1:F2)
+    category: value
+    grid:
+      A1: Product
+      B1: Region
+      C1: Price
+      D1: Units
+      A2: Apple
+      B2: East
+      C2: 10
+      D2: 5
+      A3: Apple
+      B3: West
+      C3: 12
+      D3: 3
+      A4: Banana
+      B4: East
+      C4: 5
+      D4: 8
+      A5: Banana
+      B5: West
+      C5: 6
+      D5: 4
+      F1: Product
+      F2: Apple
+    expect: 2
+    overrides:
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - database
+    name: dcount-apples
+  - subject: DCOUNT
+    formula: =DCOUNT(A1:D5, 3, H1:H2)
+    category: value
+    grid:
+      A1: Product
+      B1: Region
+      C1: Price
+      D1: Units
+      A2: Apple
+      B2: East
+      C2: 10
+      D2: 5
+      A3: Apple
+      B3: West
+      C3: 12
+      D3: 3
+      A4: Banana
+      B4: East
+      C4: 5
+      D4: 8
+      A5: Banana
+      B5: West
+      C5: 6
+      D5: 4
+      H1: Price
+      H2: ">6"
+    expect: 2
+    overrides:
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - database
+    name: dcount-field-by-index
+  - subject: DCOUNT
+    formula: =DCOUNT(A1:D5, "Product", F1:F2)
+    category: value
+    grid:
+      A1: Product
+      B1: Region
+      C1: Price
+      D1: Units
+      A2: Apple
+      B2: East
+      C2: 10
+      D2: 5
+      A3: Apple
+      B3: West
+      C3: 12
+      D3: 3
+      A4: Banana
+      B4: East
+      C4: 5
+      D4: 8
+      A5: Banana
+      B5: West
+      C5: 6
+      D5: 4
+      F1: Product
+      F2: Apple
+    expect: 0
+    overrides:
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - database
+    name: dcount-ignores-text-in-numeric-field
+  - subject: DCOUNT
+    formula: =DCOUNT(A1:D5, "Price", F1:F2)
+    category: value
+    grid:
+      A1: Product
+      B1: Region
+      C1: Price
+      D1: Units
+      A2: Apple
+      B2: East
+      C2: 10
+      D2: 5
+      A3: Apple
+      B3: West
+      C3: 12
+      D3: 3
+      A4: Banana
+      B4: East
+      C4: 5
+      D4: 8
+      A5: Banana
+      B5: West
+      C5: 6
+      D5: 4
+      F1: Product
+      F2: Cherry
+    expect: 0
+    overrides:
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - database
+    name: dcount-empty-result
+  - subject: DCOUNTA
+    formula: =DCOUNTA(A1:D5, "Product", F1:F2)
+    category: value
+    grid:
+      A1: Product
+      B1: Region
+      C1: Price
+      D1: Units
+      A2: Apple
+      B2: East
+      C2: 10
+      D2: 5
+      A3: Apple
+      B3: West
+      C3: 12
+      D3: 3
+      A4: Banana
+      B4: East
+      C4: 5
+      D4: 8
+      A5: Banana
+      B5: West
+      C5: 6
+      D5: 4
+      F1: Product
+      F2: Apple
+    expect: 2
+    overrides:
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - database
+    name: dcounta-apples
+  - subject: DCOUNTA
+    formula: =DCOUNTA(A1:D5, 1, G1:G2)
+    category: value
+    grid:
+      A1: Product
+      B1: Region
+      C1: Price
+      D1: Units
+      A2: Apple
+      B2: East
+      C2: 10
+      D2: 5
+      A3: Apple
+      B3: West
+      C3: 12
+      D3: 3
+      A4: Banana
+      B4: East
+      C4: 5
+      D4: 8
+      A5: Banana
+      B5: West
+      C5: 6
+      D5: 4
+      G1: Region
+      G2: East
+    expect: 2
+    overrides:
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - database
+    name: dcounta-field-by-index
+  - subject: DCOUNTA
+    formula: =DCOUNTA(A1:D5, "Product", F1:F2)
+    category: value
+    grid:
+      A1: Product
+      B1: Region
+      C1: Price
+      D1: Units
+      A2: Apple
+      B2: East
+      C2: 10
+      D2: 5
+      A3: Apple
+      B3: West
+      C3: 12
+      D3: 3
+      A4: Banana
+      B4: East
+      C4: 5
+      D4: 8
+      A5: Banana
+      B5: West
+      C5: 6
+      D5: 4
+      F1: Product
+      F2: Cherry
+    expect: 0
+    overrides:
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - database
+    name: dcounta-empty-result
+  - subject: DGET
+    formula: =DGET(A1:D5, "Price", F1:G2)
+    category: value
+    grid:
+      A1: Product
+      B1: Region
+      C1: Price
+      D1: Units
+      A2: Apple
+      B2: East
+      C2: 10
+      D2: 5
+      A3: Apple
+      B3: West
+      C3: 12
+      D3: 3
+      A4: Banana
+      B4: East
+      C4: 5
+      D4: 8
+      A5: Banana
+      B5: West
+      C5: 6
+      D5: 4
+      F1: Product
+      G1: Region
+      F2: Apple
+      G2: East
+    expect: 10
+    overrides:
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - database
+    name: dget-single-match
+  - subject: DGET
+    formula: =DGET(A1:D5, 4, F1:G2)
+    category: value
+    grid:
+      A1: Product
+      B1: Region
+      C1: Price
+      D1: Units
+      A2: Apple
+      B2: East
+      C2: 10
+      D2: 5
+      A3: Apple
+      B3: West
+      C3: 12
+      D3: 3
+      A4: Banana
+      B4: East
+      C4: 5
+      D4: 8
+      A5: Banana
+      B5: West
+      C5: 6
+      D5: 4
+      F1: Product
+      G1: Region
+      F2: Banana
+      G2: West
+    expect: 4
+    overrides:
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - database
+    name: dget-field-by-index
+  - subject: DGET
+    formula: =DGET(A1:D5, "Price", F1:F2)
+    category: error-code
+    grid:
+      A1: Product
+      B1: Region
+      C1: Price
+      D1: Units
+      A2: Apple
+      B2: East
+      C2: 10
+      D2: 5
+      A3: Apple
+      B3: West
+      C3: 12
+      D3: 3
+      A4: Banana
+      B4: East
+      C4: 5
+      D4: 8
+      A5: Banana
+      B5: West
+      C5: 6
+      D5: 4
+      F1: Product
+      F2: Apple
+    expect:
+      error: "#NUM!"
+    overrides:
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      libreoffice:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - database
+    name: dget-multiple-matches-error
+  - subject: DGET
+    formula: =DGET(A1:D5, "Price", F1:F2)
+    category: error-code
+    grid:
+      A1: Product
+      B1: Region
+      C1: Price
+      D1: Units
+      A2: Apple
+      B2: East
+      C2: 10
+      D2: 5
+      A3: Apple
+      B3: West
+      C3: 12
+      D3: 3
+      A4: Banana
+      B4: East
+      C4: 5
+      D4: 8
+      A5: Banana
+      B5: West
+      C5: 6
+      D5: 4
+      F1: Product
+      F2: Cherry
+    expect:
+      error: "#VALUE!"
+    overrides:
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - database
+    name: dget-no-match-error
+  - subject: DMAX
+    formula: =DMAX(A1:D5, "Price", F1:F2)
+    category: value
+    grid:
+      A1: Product
+      B1: Region
+      C1: Price
+      D1: Units
+      A2: Apple
+      B2: East
+      C2: 10
+      D2: 5
+      A3: Apple
+      B3: West
+      C3: 12
+      D3: 3
+      A4: Banana
+      B4: East
+      C4: 5
+      D4: 8
+      A5: Banana
+      B5: West
+      C5: 6
+      D5: 4
+      F1: Product
+      F2: Apple
+    expect: 12
+    overrides:
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - database
+    name: dmax-apples
+  - subject: DMAX
+    formula: =DMAX(A1:D5, 4, G1:G2)
+    category: value
+    grid:
+      A1: Product
+      B1: Region
+      C1: Price
+      D1: Units
+      A2: Apple
+      B2: East
+      C2: 10
+      D2: 5
+      A3: Apple
+      B3: West
+      C3: 12
+      D3: 3
+      A4: Banana
+      B4: East
+      C4: 5
+      D4: 8
+      A5: Banana
+      B5: West
+      C5: 6
+      D5: 4
+      G1: Region
+      G2: East
+    expect: 8
+    overrides:
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - database
+    name: dmax-field-by-index
+  - subject: DMAX
+    formula: =DMAX(A1:D5, "Units", H1:H2)
+    category: value
+    grid:
+      A1: Product
+      B1: Region
+      C1: Price
+      D1: Units
+      A2: Apple
+      B2: East
+      C2: 10
+      D2: 5
+      A3: Apple
+      B3: West
+      C3: 12
+      D3: 3
+      A4: Banana
+      B4: East
+      C4: 5
+      D4: 8
+      A5: Banana
+      B5: West
+      C5: 6
+      D5: 4
+      H1: Price
+      H2: <10
+    expect: 8
+    overrides:
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - database
+    name: dmax-comparator-criteria
+  - subject: DMIN
+    formula: =DMIN(A1:D5, "Price", F1:F2)
+    category: value
+    grid:
+      A1: Product
+      B1: Region
+      C1: Price
+      D1: Units
+      A2: Apple
+      B2: East
+      C2: 10
+      D2: 5
+      A3: Apple
+      B3: West
+      C3: 12
+      D3: 3
+      A4: Banana
+      B4: East
+      C4: 5
+      D4: 8
+      A5: Banana
+      B5: West
+      C5: 6
+      D5: 4
+      F1: Product
+      F2: Apple
+    expect: 10
+    overrides:
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - database
+    name: dmin-apples
+  - subject: DMIN
+    formula: =DMIN(A1:D5, 3, G1:G2)
+    category: value
+    grid:
+      A1: Product
+      B1: Region
+      C1: Price
+      D1: Units
+      A2: Apple
+      B2: East
+      C2: 10
+      D2: 5
+      A3: Apple
+      B3: West
+      C3: 12
+      D3: 3
+      A4: Banana
+      B4: East
+      C4: 5
+      D4: 8
+      A5: Banana
+      B5: West
+      C5: 6
+      D5: 4
+      G1: Region
+      G2: East
+    expect: 5
+    overrides:
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - database
+    name: dmin-field-by-index
+  - subject: DMIN
+    formula: =DMIN(A1:D5, "Units", H1:H2)
+    category: value
+    grid:
+      A1: Product
+      B1: Region
+      C1: Price
+      D1: Units
+      A2: Apple
+      B2: East
+      C2: 10
+      D2: 5
+      A3: Apple
+      B3: West
+      C3: 12
+      D3: 3
+      A4: Banana
+      B4: East
+      C4: 5
+      D4: 8
+      A5: Banana
+      B5: West
+      C5: 6
+      D5: 4
+      H1: Price
+      H2: ">0"
+    expect: 3
+    overrides:
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - database
+    name: dmin-all-rows
+  - subject: DPRODUCT
+    formula: =DPRODUCT(A1:D5, "Price", F1:F2)
+    category: value
+    grid:
+      A1: Product
+      B1: Region
+      C1: Price
+      D1: Units
+      A2: Apple
+      B2: East
+      C2: 10
+      D2: 5
+      A3: Apple
+      B3: West
+      C3: 12
+      D3: 3
+      A4: Banana
+      B4: East
+      C4: 5
+      D4: 8
+      A5: Banana
+      B5: West
+      C5: 6
+      D5: 4
+      F1: Product
+      F2: Apple
+    expect: 120
+    overrides:
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - database
+    name: dproduct-apples-price
+  - subject: DPRODUCT
+    formula: =DPRODUCT(A1:D5, 4, G1:G2)
+    category: value
+    grid:
+      A1: Product
+      B1: Region
+      C1: Price
+      D1: Units
+      A2: Apple
+      B2: East
+      C2: 10
+      D2: 5
+      A3: Apple
+      B3: West
+      C3: 12
+      D3: 3
+      A4: Banana
+      B4: East
+      C4: 5
+      D4: 8
+      A5: Banana
+      B5: West
+      C5: 6
+      D5: 4
+      G1: Region
+      G2: East
+    expect: 40
+    overrides:
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - database
+    name: dproduct-field-by-index
+  - subject: DPRODUCT
+    formula: =DPRODUCT(A1:D5, "Price", F1:F2)
+    category: value
+    grid:
+      A1: Product
+      B1: Region
+      C1: Price
+      D1: Units
+      A2: Apple
+      B2: East
+      C2: 10
+      D2: 5
+      A3: Apple
+      B3: West
+      C3: 12
+      D3: 3
+      A4: Banana
+      B4: East
+      C4: 5
+      D4: 8
+      A5: Banana
+      B5: West
+      C5: 6
+      D5: 4
+      F1: Product
+      F2: Cherry
+    expect: 0
+    overrides:
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - database
+    name: dproduct-empty-result
+  - subject: DAVERAGE
+    formula: =DAVERAGE(A1:D5, "Price", F1:F2)
+    category: value
+    grid:
+      A1: Product
+      B1: Region
+      C1: Price
+      D1: Units
+      A2: Apple
+      B2: East
+      C2: 10
+      D2: 5
+      A3: Apple
+      B3: West
+      C3: 12
+      D3: 3
+      A4: Banana
+      B4: East
+      C4: 5
+      D4: 8
+      A5: Banana
+      B5: West
+      C5: 6
+      D5: 4
+      F1: Product
+      F2: Apple
+    expect: 11
+    overrides:
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - database
+    name: daverage-apples
+  - subject: DAVERAGE
+    formula: =DAVERAGE(A1:D5, 3, G1:G2)
+    category: value
+    grid:
+      A1: Product
+      B1: Region
+      C1: Price
+      D1: Units
+      A2: Apple
+      B2: East
+      C2: 10
+      D2: 5
+      A3: Apple
+      B3: West
+      C3: 12
+      D3: 3
+      A4: Banana
+      B4: East
+      C4: 5
+      D4: 8
+      A5: Banana
+      B5: West
+      C5: 6
+      D5: 4
+      G1: Region
+      G2: East
+    expect: 7.5
+    overrides:
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - database
+    name: daverage-field-by-index
+  - subject: DAVERAGE
+    formula: =DAVERAGE(A1:D5, "Units", H1:H2)
+    category: value
+    grid:
+      A1: Product
+      B1: Region
+      C1: Price
+      D1: Units
+      A2: Apple
+      B2: East
+      C2: 10
+      D2: 5
+      A3: Apple
+      B3: West
+      C3: 12
+      D3: 3
+      A4: Banana
+      B4: East
+      C4: 5
+      D4: 8
+      A5: Banana
+      B5: West
+      C5: 6
+      D5: 4
+      H1: Price
+      H2: ">=10"
+    expect: 4
+    overrides:
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - database
+    name: daverage-comparator-criteria
+  - subject: DSTDEV
+    category: value
+    status: observed
+    formula: =DSTDEV(A1:D5, "Price", F1:F2)
+    grid:
+      A1: Product
+      B1: Region
+      C1: Price
+      D1: Units
+      A2: Apple
+      B2: East
+      C2: 10
+      D2: 5
+      A3: Apple
+      B3: West
+      C3: 12
+      D3: 3
+      A4: Banana
+      B4: East
+      C4: 5
+      D4: 8
+      A5: Banana
+      B5: West
+      C5: 6
+      D5: 4
+      F1: Product
+      F2: Apple
+    tags:
+      - database
+    name: dstdev-apples-price
+  - subject: DSTDEV
+    category: value
+    status: observed
+    formula: =DSTDEV(A1:D5, 4, F1:F2)
+    grid:
+      A1: Product
+      B1: Region
+      C1: Price
+      D1: Units
+      A2: Apple
+      B2: East
+      C2: 10
+      D2: 5
+      A3: Apple
+      B3: West
+      C3: 12
+      D3: 3
+      A4: Banana
+      B4: East
+      C4: 5
+      D4: 8
+      A5: Banana
+      B5: West
+      C5: 6
+      D5: 4
+      F1: Product
+      F2: Banana
+    tags:
+      - database
+    name: dstdev-field-by-index
+  - subject: DSTDEVP
+    formula: =DSTDEVP(A1:D5, "Units", F1:F2)
+    category: value
+    grid:
+      A1: Product
+      B1: Region
+      C1: Price
+      D1: Units
+      A2: Apple
+      B2: East
+      C2: 10
+      D2: 5
+      A3: Apple
+      B3: West
+      C3: 12
+      D3: 3
+      A4: Banana
+      B4: East
+      C4: 5
+      D4: 8
+      A5: Banana
+      B5: West
+      C5: 6
+      D5: 4
+      F1: Product
+      F2: Banana
+    expect: 2
+    overrides:
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - database
+    name: dstdevp-bananas-units
+  - subject: DSTDEVP
+    formula: =DSTDEVP(A1:D5, 3, F1:F2)
+    category: value
+    grid:
+      A1: Product
+      B1: Region
+      C1: Price
+      D1: Units
+      A2: Apple
+      B2: East
+      C2: 10
+      D2: 5
+      A3: Apple
+      B3: West
+      C3: 12
+      D3: 3
+      A4: Banana
+      B4: East
+      C4: 5
+      D4: 8
+      A5: Banana
+      B5: West
+      C5: 6
+      D5: 4
+      F1: Product
+      F2: Apple
+    expect: 1
+    overrides:
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - database
+    name: dstdevp-apples-price
+  - subject: DSTDEVP
+    formula: =DSTDEVP(A1:D5, 4, F1:F2)
+    category: value
+    grid:
+      A1: Product
+      B1: Region
+      C1: Price
+      D1: Units
+      A2: Apple
+      B2: East
+      C2: 10
+      D2: 5
+      A3: Apple
+      B3: West
+      C3: 12
+      D3: 3
+      A4: Banana
+      B4: East
+      C4: 5
+      D4: 8
+      A5: Banana
+      B5: West
+      C5: 6
+      D5: 4
+      F1: Product
+      F2: Banana
+    expect: 2
+    overrides:
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - database
+    name: dstdevp-field-by-index
+  - subject: DVAR
+    formula: =DVAR(A1:D5, "Price", F1:F2)
+    category: value
+    grid:
+      A1: Product
+      B1: Region
+      C1: Price
+      D1: Units
+      A2: Apple
+      B2: East
+      C2: 10
+      D2: 5
+      A3: Apple
+      B3: West
+      C3: 12
+      D3: 3
+      A4: Banana
+      B4: East
+      C4: 5
+      D4: 8
+      A5: Banana
+      B5: West
+      C5: 6
+      D5: 4
+      F1: Product
+      F2: Apple
+    expect: 2
+    overrides:
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - database
+    name: dvar-apples-price
+  - subject: DVAR
+    formula: =DVAR(A1:D5, 4, F1:F2)
+    category: value
+    grid:
+      A1: Product
+      B1: Region
+      C1: Price
+      D1: Units
+      A2: Apple
+      B2: East
+      C2: 10
+      D2: 5
+      A3: Apple
+      B3: West
+      C3: 12
+      D3: 3
+      A4: Banana
+      B4: East
+      C4: 5
+      D4: 8
+      A5: Banana
+      B5: West
+      C5: 6
+      D5: 4
+      F1: Product
+      F2: Banana
+    expect: 8
+    overrides:
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - database
+    name: dvar-bananas-units
+  - subject: DVAR
+    formula: =DVAR(A1:D5, 3, F1:F2)
+    category: value
+    grid:
+      A1: Product
+      B1: Region
+      C1: Price
+      D1: Units
+      A2: Apple
+      B2: East
+      C2: 10
+      D2: 5
+      A3: Apple
+      B3: West
+      C3: 12
+      D3: 3
+      A4: Banana
+      B4: East
+      C4: 5
+      D4: 8
+      A5: Banana
+      B5: West
+      C5: 6
+      D5: 4
+      F1: Product
+      F2: Apple
+    expect: 2
+    overrides:
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - database
+    name: dvar-field-by-index
+  - subject: DVARP
+    formula: =DVARP(A1:D5, "Price", F1:F2)
+    category: value
+    grid:
+      A1: Product
+      B1: Region
+      C1: Price
+      D1: Units
+      A2: Apple
+      B2: East
+      C2: 10
+      D2: 5
+      A3: Apple
+      B3: West
+      C3: 12
+      D3: 3
+      A4: Banana
+      B4: East
+      C4: 5
+      D4: 8
+      A5: Banana
+      B5: West
+      C5: 6
+      D5: 4
+      F1: Product
+      F2: Apple
+    expect: 1
+    overrides:
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - database
+    name: dvarp-apples-price
+  - subject: DVARP
+    formula: =DVARP(A1:D5, 4, F1:F2)
+    category: value
+    grid:
+      A1: Product
+      B1: Region
+      C1: Price
+      D1: Units
+      A2: Apple
+      B2: East
+      C2: 10
+      D2: 5
+      A3: Apple
+      B3: West
+      C3: 12
+      D3: 3
+      A4: Banana
+      B4: East
+      C4: 5
+      D4: 8
+      A5: Banana
+      B5: West
+      C5: 6
+      D5: 4
+      F1: Product
+      F2: Banana
+    expect: 4
+    overrides:
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - database
+    name: dvarp-bananas-units
+  - subject: DVARP
+    formula: =DVARP(A1:D5, 3, F1:F2)
+    category: value
+    grid:
+      A1: Product
+      B1: Region
+      C1: Price
+      D1: Units
+      A2: Apple
+      B2: East
+      C2: 10
+      D2: 5
+      A3: Apple
+      B3: West
+      C3: 12
+      D3: 3
+      A4: Banana
+      B4: East
+      C4: 5
+      D4: 8
+      A5: Banana
+      B5: West
+      C5: 6
+      D5: 4
+      F1: Product
+      F2: Apple
+    expect: 1
+    overrides:
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - database
+    name: dvarp-field-by-index

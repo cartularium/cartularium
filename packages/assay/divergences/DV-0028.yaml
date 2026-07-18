@@ -1,0 +1,22 @@
+id: DV-0028
+summary: "ironcalc: different error code — HOUR, MINUTE, SECOND"
+cause: error-code
+category: value
+engines:
+  - ironcalc
+behavior:
+  signature: '{"error":"#VALUE!"}'
+test-count: 6
+subjects:
+  - HOUR
+  - MINUTE
+  - SECOND
+tests:
+  - HOUR/hour-from-string
+  - HOUR/hour-midnight
+  - MINUTE/minute-basic
+  - MINUTE/minute-zero
+  - SECOND/second-basic
+  - SECOND/second-zero
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

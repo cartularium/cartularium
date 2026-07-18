@@ -1,0 +1,15 @@
+id: DV-0232
+summary: "lattice: rendered with different format — TEXT"
+cause: format-rendering
+category: value
+engines:
+  - lattice
+behavior:
+  signature: '"1234"'
+test-count: 1
+subjects:
+  - TEXT
+tests:
+  - TEXT/text-integer
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

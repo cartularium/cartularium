@@ -1,0 +1,18 @@
+{
+  "engine": "ironcalc",
+  "description": "IronCalc Rust engine via Node FFI. Lacks broadcasting and dynamic arrays; en-US locale-locked formatting.",
+  "features": {
+    "broadcasting": { "support": "absent" },
+    "dynamic-arrays": { "support": "absent" },
+    "lambda": { "support": "absent" },
+    "higher-order-lambda": { "support": "absent" },
+    "regex": { "support": "absent" },
+    "external-io": { "support": "absent" },
+    "volatile": { "support": "native" },
+    "iterative-calc": { "support": "absent" },
+    "structured-refs": { "support": "absent" },
+    "let-bindings": { "support": "absent" },
+    "implicit-intersection": { "support": "absent" },
+    "spill-blocking": { "support": "absent" }
+  }
+}

@@ -1,0 +1,134 @@
+// cartularium brand kernel tokens. see BRAND.md for the full identity.
+// css custom properties only, so consumers can adopt without sass.
+
+:root {
+  // typography
+  --font-display: "Fraunces", "Iowan Old Style", Georgia, serif;
+  --font-body: "IBM Plex Sans", system-ui, -apple-system, sans-serif;
+  --font-mono: "IBM Plex Mono", "JetBrains Mono", "SF Mono", Menlo, monospace;
+
+  // paper-and-ink palette (light mode default)
+  --paper: #faf5e8;
+  --paper-2: #f4eee0;
+  --paper-3: #ebe2cc;
+  --ink: #1a1614;
+  --ink-2: #3d3530;
+  --ink-3: #6e655a;
+  --ink-4: #968b7c;
+  --rule: #d8cdb6;
+  --hairline: #e6dec9;
+  --accent: #1f4040;
+  --accent-2: #2d5959;
+  --accent-pale: #d4dcdc;
+  --accent-tint: color-mix(in oklch, var(--accent) 12%, var(--paper));
+
+  // diff state colors — used by the contributor editor's gutter markers.
+  // muted ochre is prior-art-aligned (Sublime, JetBrains, many editors use
+  // yellow-family for "modified line"). single token today; future passes
+  // can introduce --diff-added / --diff-removed for fuller diff UI.
+  --diff-changed: #9c8a35;
+
+  // semantic status colors — decoupled from engine palette
+  --status-pass: #3a7a4a;
+  --status-fail: #b5523a;
+  --status-error: #8a2b1a;
+  --status-warn: #9c8a35;
+  --status-info: #2d5959;
+  --status-missing: var(--ink-3);
+
+  // engine palette. invariant across cartularium properties.
+  // primary tier (sheets.wiki documents): gsheets, excel, lattice.
+  // gsheets and excel anchor to external brand colors. lattice shifted from
+  // teal to wine red so the three primary engines are visually distinct at
+  // small sizes; old teal blurred against gsheets-green.
+  --eng-gsheets: #2f7a3f;
+  --eng-excel: #1d4e8a;
+  --eng-lattice: #8a2840;
+  --eng-ironcalc: #a8451c;
+  --eng-hyperformula: #5d2a8a;
+  --eng-libreoffice: #1f3475;
+  --eng-formulas: #107075;
+  --eng-pycel: #8a5210;
+
+  // type rhythm
+  --gutter: 2rem;
+  --rule-w: 1px;
+}
+
+// dark via prefers-color-scheme by default, or explicitly via [data-theme="dark"]
+// or [saved-theme="dark"]. both attributes are supported so consumers can keep
+// their existing toggle plumbing (Quartz uses saved-theme; assay uses data-theme).
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]):not([saved-theme="light"]) {
+    color-scheme: dark;
+
+    --paper: #161310;
+    --paper-2: #1f1b16;
+    --paper-3: #2a241d;
+    --ink: #f0e9d8;
+    --ink-2: #c8c0ad;
+    --ink-3: #948b78;
+    --ink-4: #6d6557;
+    --rule: #3a322a;
+    --hairline: #2a241d;
+    --accent: #6ba0a0;
+    --accent-2: #4d8585;
+    --accent-pale: #2a3a3a;
+    --accent-tint: color-mix(in oklch, var(--accent) 18%, var(--paper));
+
+    --diff-changed: #c4a85a;
+
+    --status-pass: #7ac085;
+    --status-fail: #e0825f;
+    --status-error: #d96550;
+    --status-warn: #c4a85a;
+    --status-info: #5f8a8a;
+    --status-missing: var(--ink-3);
+
+    --eng-gsheets: #6ec57b;
+    --eng-excel: #6a9bd6;
+    --eng-lattice: #d87a92;
+    --eng-ironcalc: #e88c5e;
+    --eng-hyperformula: #b27ad8;
+    --eng-libreoffice: #6e8edd;
+    --eng-formulas: #5cb8bd;
+    --eng-pycel: #d8a06a;
+  }
+}
+
+:root[data-theme="dark"],
+:root[saved-theme="dark"] {
+  color-scheme: dark;
+
+  --paper: #161310;
+  --paper-2: #1f1b16;
+  --paper-3: #2a241d;
+  --ink: #f0e9d8;
+  --ink-2: #c8c0ad;
+  --ink-3: #948b78;
+  --ink-4: #6d6557;
+  --rule: #3a322a;
+  --hairline: #2a241d;
+  --accent: #6ba0a0;
+  --accent-2: #4d8585;
+  --accent-pale: #2a3a3a;
+  --accent-tint: color-mix(in oklch, var(--accent) 18%, var(--paper));
+
+  --diff-changed: #c4a85a;
+
+  --status-pass: #7ac085;
+  --status-fail: #e0825f;
+  --status-error: #d96550;
+  --status-warn: #c4a85a;
+  --status-info: #5f8a8a;
+  --status-missing: var(--ink-3);
+
+  --eng-gsheets: #6ec57b;
+  --eng-excel: #6a9bd6;
+  --eng-lattice: #5fc0c5;
+  --eng-ironcalc: #e88c5e;
+  --eng-hyperformula: #b27ad8;
+  --eng-libreoffice: #6e8edd;
+  --eng-formulas: #5cb8bd;
+  --eng-pycel: #d8a06a;
+}

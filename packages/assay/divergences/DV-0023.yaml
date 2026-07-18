@@ -1,0 +1,24 @@
+id: DV-0023
+summary: "gsheets: different error code — CONCAT, FILTER, NORM.S.DIST (+1 more)"
+cause: error-code
+category: value
+engines:
+  - gsheets
+behavior:
+  signature: '{"error":"#N/A"}'
+test-count: 7
+subjects:
+  - CONCAT
+  - FILTER
+  - NORM.S.DIST
+  - REGEXEXTRACT
+tests:
+  - CONCAT/concat-vs-concatenate-arity
+  - FILTER/filter-no-results
+  - CONCAT/concat-strings
+  - REGEXEXTRACT/extract-return-mode-1-all-matches-row-vector
+  - REGEXEXTRACT/extract-return-mode-2-capture-groups-from-first-match
+  - FILTER/filter-returns-no-rows
+  - NORM.S.DIST/norm-s-dist-at-0-cdf
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

@@ -1,0 +1,18 @@
+{
+  "engine": "hyperformula",
+  "description": "HyperFormula JS engine. Native broadcasting; lacks dynamic-array surfaces (SORT/FILTER) and several gsheets-only families.",
+  "features": {
+    "broadcasting": { "support": "native" },
+    "dynamic-arrays": { "support": "absent" },
+    "lambda": { "support": "absent" },
+    "higher-order-lambda": { "support": "absent" },
+    "regex": { "support": "absent" },
+    "external-io": { "support": "absent" },
+    "volatile": { "support": "native" },
+    "iterative-calc": { "support": "native" },
+    "structured-refs": { "support": "absent" },
+    "let-bindings": { "support": "absent" },
+    "implicit-intersection": { "support": "absent" },
+    "spill-blocking": { "support": "absent" }
+  }
+}

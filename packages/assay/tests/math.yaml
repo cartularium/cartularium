@@ -1,0 +1,482 @@
+schemaVersion: 3
+name: Math functions
+tests:
+  - subject: ABS
+    category: value
+    formula: =ABS(3)
+    expect: 3
+    name: abs-positive
+  - subject: ABS
+    category: value
+    formula: =ABS(-3.4)
+    expect: 3.4
+    name: abs-negative
+  - subject: ABS
+    category: value
+    formula: =ABS(0)
+    expect: 0
+    name: abs-zero
+  - subject: CEILING
+    category: value
+    formula: =CEILING(2.5, 1)
+    expect: 3
+    name: ceiling-round-up
+  - subject: CEILING
+    category: value
+    formula: =CEILING(-2.5, -2)
+    expect: -4
+    name: ceiling-negative-both
+  - subject: CEILING
+    category: value
+    formula: =CEILING(-2.5, 2)
+    expect: -2
+    name: ceiling-negative-num-positive-sig
+  - subject: CEILING
+    category: value
+    formula: =CEILING(0.234, 0.01)
+    expect: 0.24
+    name: ceiling-fractional-significance
+  - subject: CEILING
+    formula: =CEILING(2, -2)
+    category: value
+    expect:
+      error: "#NUM!"
+    overrides:
+      libreoffice:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+    name: ceiling-positive-num-negative-sig
+  - subject: CEILING.MATH
+    formula: =CEILING.MATH(5.2)
+    category: value
+    expect: 6
+    overrides:
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    name: ceiling-math-basic
+  - subject: CEILING.MATH
+    formula: =CEILING.MATH(5.2, 2)
+    category: value
+    expect: 6
+    overrides:
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    name: ceiling-math-with-significance
+  - subject: FLOOR
+    category: value
+    formula: =FLOOR(3.7, 2)
+    expect: 2
+    name: floor-basic
+  - subject: FLOOR
+    category: value
+    formula: =FLOOR(-2.5, -2)
+    expect: -2
+    name: floor-negative
+  - subject: FLOOR
+    category: value
+    formula: =FLOOR(1.58, 0.1)
+    expect: 1.5
+    name: floor-fractional
+  - subject: FLOOR
+    category: value
+    formula: =FLOOR(0.234, 0.01)
+    expect: 0.23
+    name: floor-precision
+  - subject: FLOOR
+    formula: =FLOOR(2, 0)
+    category: value
+    expect:
+      error: "#DIV/0!"
+    overrides:
+      libreoffice:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+    name: floor-zero-significance
+  - subject: FLOOR.MATH
+    formula: =FLOOR.MATH(5.2)
+    category: value
+    expect: 5
+    overrides:
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    name: floor-math-basic
+  - subject: FLOOR.MATH
+    formula: =FLOOR.MATH(5.2, 2)
+    category: value
+    expect: 4
+    overrides:
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    name: floor-math-with-significance
+  - subject: INT
+    category: value
+    formula: =INT(8.9)
+    expect: 8
+    name: int-positive
+  - subject: INT
+    formula: =INT(-8.9)
+    category: value
+    expect: -9
+    overrides:
+      hyperformula:
+        cause: arg-semantics
+        recorded: -8
+    name: int-negative-rounds-down
+  - subject: MOD
+    category: value
+    formula: =MOD(5, 2)
+    expect: 1
+    name: mod-basic
+  - subject: MOD
+    category: value
+    formula: =MOD(6, 3)
+    expect: 0
+    name: mod-no-remainder
+  - subject: MOD
+    formula: =MOD(-5, 2)
+    category: value
+    expect: 1
+    overrides:
+      hyperformula:
+        cause: arg-semantics
+        recorded: -1
+        note: hyperformula uses sign-of-dividend; gsheets/excel use sign-of-divisor
+    tags:
+      - divergence
+    name: mod-negative-dividend
+  - subject: MOD
+    formula: =MOD(5, 0)
+    category: value
+    expect:
+      error: "#DIV/0!"
+    name: mod-zero-divisor
+  - subject: POWER
+    category: value
+    formula: =POWER(10, 2)
+    expect: 100
+    name: power-basic
+  - subject: POWER
+    category: value
+    formula: =POWER(2.5, 2)
+    expect: 6.25
+    name: power-fractional
+  - subject: POWER
+    category: value
+    formula: =POWER(2, -3)
+    expect: 0.125
+    name: power-negative-exponent
+  - subject: ROUND
+    category: value
+    formula: =ROUND(0.6, 0)
+    expect: 1
+    name: round-up
+  - subject: ROUND
+    category: value
+    formula: =ROUND(1.3, 0)
+    expect: 1
+    name: round-down
+  - subject: ROUND
+    category: value
+    formula: =ROUND(1.25, 1)
+    expect: 1.3
+    name: round-to-1-decimal
+  - subject: ROUND
+    category: value
+    formula: =ROUND(1234, -2)
+    expect: 1200
+    name: round-negative-decimals
+  - subject: ROUND
+    formula: =ROUND(1.05*(0.0284+0.0046)-0.0284, 4)
+    category: value
+    expect: 0.0063
+    overrides:
+      hyperformula:
+        cause: arg-semantics
+        recorded: 0.0062
+      formulas:
+        cause: arg-semantics
+        recorded: 0.0062
+      pycel:
+        cause: arg-semantics
+        recorded: 0.0062
+    name: round-floating-point-edge
+  - subject: ROUNDUP
+    category: value
+    formula: =ROUNDUP(1.24, 1)
+    expect: 1.3
+    name: roundup-basic
+  - subject: ROUNDDOWN
+    category: value
+    formula: =ROUNDDOWN(1.26, 1)
+    expect: 1.2
+    name: rounddown-basic
+  - subject: SQRT
+    category: value
+    formula: =SQRT(4)
+    expect: 2
+    name: sqrt-perfect-square
+  - subject: SQRT
+    formula: =SQRT(2)
+    category: value
+    expect: 1.4142135623730951
+    overrides:
+      ironcalc:
+        cause: precision
+        recorded: 1.414213562
+      hyperformula:
+        cause: precision
+        recorded: 1.4142135624
+      libreoffice:
+        cause: precision
+        recorded: 1.4142135623731
+    name: sqrt-irrational
+  - subject: SQRT
+    formula: =SQRT(-4)
+    category: value
+    expect:
+      error: "#NUM!"
+    overrides:
+      libreoffice:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+    name: sqrt-negative
+  - subject: SUM
+    category: value
+    formula: =SUM(1, 2, 3)
+    expect: 6
+    name: sum-scalars
+  - subject: SUM
+    category: value
+    formula: =SUM({1, 2, 3})
+    expect: 6
+    tags:
+      - bare-formula
+    name: sum-array-literal-row
+  - subject: SUM
+    category: value
+    formula: =SUM({1; 2; 3})
+    expect: 6
+    tags:
+      - bare-formula
+    name: sum-array-literal-column
+  - subject: SUM
+    category: value
+    formula: =SUM({1, 2; 3, 4; 5, 6})
+    expect: 21
+    tags:
+      - bare-formula
+    name: sum-2d-array
+  - subject: SUM
+    category: value
+    formula: =SUM(A1:A3)
+    grid:
+      A1: 10
+      A2: 20
+      A3: 30
+    expect: 60
+    name: sum-with-grid-range
+  - subject: SUM
+    category: value
+    status: observed
+    formula: =SUM()
+    tags:
+      - divergence
+    name: sum-no-args
+  - subject: SUMPRODUCT
+    formula: =SUMPRODUCT(A1:A3, B1:B3)
+    category: value
+    grid:
+      A1: 1
+      A2: 2
+      A3: 3
+      B1: 4
+      B2: 5
+      B3: 6
+    expect: 32
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: format-rendering
+        recorded: "32"
+    name: sumproduct-basic
+  - subject: EXP
+    category: value
+    formula: =EXP(0)
+    expect: 1
+    name: exp-zero
+  - subject: EXP
+    formula: =EXP(1)
+    category: value
+    expect: 2.718281828459045
+    overrides:
+      ironcalc:
+        cause: precision
+        recorded: 2.718281828
+      hyperformula:
+        cause: precision
+        recorded: 2.7182818285
+      libreoffice:
+        cause: precision
+        recorded: 2.71828182845905
+    name: exp-one
+  - subject: SIGN
+    category: value
+    formula: =SIGN(10)
+    expect: 1
+    name: sign-positive
+  - subject: SIGN
+    category: value
+    formula: =SIGN(0)
+    expect: 0
+    name: sign-zero
+  - subject: SIGN
+    category: value
+    formula: =SIGN(-10)
+    expect: -1
+    name: sign-negative
+  - subject: MROUND
+    formula: =MROUND(10, 3)
+    category: value
+    expect: 9
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    name: mround-basic
+  - subject: TRUNC
+    category: value
+    formula: =TRUNC(10)
+    expect: 10
+    name: trunc-integer-unchanged
+  - subject: TRUNC
+    category: value
+    formula: =TRUNC(10.22, 1)
+    expect: 10.2
+    name: trunc-to-1-decimal
+  - subject: SUMSQ
+    formula: =SUMSQ(2)
+    category: value
+    expect: 4
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    name: sumsq-single
+  - subject: SUMSQ
+    formula: =SUMSQ(1, 2)
+    category: value
+    expect: 5
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    name: sumsq-two-values
+  - subject: LN
+    formula: =LN(2.718281828459045)
+    category: value
+    expect: 1
+    overrides:
+      excel:
+        cause: precision
+        recorded: 0.9999999999999981
+      gsheets:
+        cause: precision
+        recorded: 0.9999999999999981
+    name: ln-e
+  - subject: LOG
+    category: value
+    formula: =LOG(10)
+    expect: 1
+    name: log-base-10
+  - subject: LOG
+    category: value
+    formula: =LOG(8, 2)
+    expect: 3
+    name: log-base-2
+  - subject: LOG10
+    category: value
+    formula: =LOG10(100000)
+    expect: 5
+    name: log10
+  - subject: FACT
+    category: value
+    formula: =FACT(5)
+    expect: 120
+    name: fact-5
+  - subject: FACT
+    category: value
+    formula: =FACT(0)
+    expect: 1
+    name: fact-0
+  - subject: FACT
+    formula: =FACT(-1)
+    category: value
+    expect:
+      error: "#NUM!"
+    overrides:
+      libreoffice:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+    name: fact-negative
+  - subject: QUOTIENT
+    formula: =QUOTIENT(5, 2)
+    category: value
+    expect: 2
+    overrides:
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    name: quotient-basic
+  - subject: EVEN
+    category: value
+    formula: =EVEN(1.5)
+    expect: 2
+    name: even-1-5
+  - subject: EVEN
+    category: value
+    formula: =EVEN(3)
+    expect: 4
+    name: even-3
+  - subject: EVEN
+    category: value
+    formula: =EVEN(-1)
+    expect: -2
+    name: even-negative
+  - subject: PI
+    formula: =PI()
+    category: value
+    expect: 3.141592653589793
+    overrides:
+      ironcalc:
+        cause: precision
+        recorded: 3.141592654
+      hyperformula:
+        cause: precision
+        recorded: 3.1415926536
+      libreoffice:
+        cause: precision
+        recorded: 3.14159265358979
+    name: pi

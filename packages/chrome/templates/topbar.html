@@ -1,0 +1,34 @@
+<header class="cartularium-topbar" data-cartularium-topbar>
+  <a class="wordmark" href="{{wordmark.href}}">{{wordmark.label}}</a>
+  <span class="spacer"></span>
+  <nav class="topbar-nav">
+    {{#nav.items}}
+    <a href="{{href}}"{{#active}} class="active"{{/active}}>{{label}}</a>
+    {{^last}}<span class="sep">·</span>{{/last}}
+    {{/nav.items}}
+  </nav>
+  {{#search}}
+  <button class="search-btn" type="button" data-search-trigger aria-label="search">
+    {{label}}{{#key}} <span class="key">{{key}}</span>{{/key}}
+  </button>
+  {{/search}}
+  {{#theme}}
+  <button class="theme-btn" type="button" data-theme-toggle aria-label="toggle theme">{{icon}}</button>
+  {{/theme}}
+  {{#editor}}
+  <div class="account-chip" data-account-chip>
+    <span class="avatar">{{account.initials}}</span>
+    <span class="handle">{{account.handle}}</span>
+    <span class="caret">▾</span>
+  </div>
+  {{#submit.enabled}}
+  <button class="editor-submit-btn" type="button" data-editor-submit>submit ↗</button>
+  {{/submit.enabled}}
+  {{^submit.enabled}}
+  <button class="editor-submit-btn" type="button" data-editor-submit disabled aria-disabled="true" title="no changes to submit yet.">submit</button>
+  {{/submit.enabled}}
+  {{/editor}}
+  {{#mobile}}
+  <button class="hamburger" type="button" data-drawer-trigger aria-label="open menu" aria-expanded="false">☰</button>
+  {{/mobile}}
+</header>

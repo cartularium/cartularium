@@ -1,0 +1,88 @@
+id: DV-0006
+summary: "hyperformula: function not implemented — AND, AVERAGE, AVERAGEIFS (+19 more)"
+cause: missing-function
+category: value
+engines:
+  - hyperformula
+behavior:
+  signature: '{"error":"#NAME?"}'
+test-count: 53
+subjects:
+  - AND
+  - AVERAGE
+  - AVERAGEIFS
+  - ERROR.TYPE
+  - HLOOKUP
+  - IF
+  - INDIRECT
+  - INTERCEPT
+  - LOOKUP
+  - N
+  - NOT
+  - OR
+  - RANDARRAY
+  - SUM
+  - "TRUE"
+  - VLOOKUP
+  - op:&
+  - op:*
+  - op:+
+  - op:-
+  - op:=
+  - op:unary-
+tests:
+  - lit:boolean/true-1
+  - INDIRECT/ref-error
+  - VLOOKUP/n-a-error
+  - IF/error-in-if-true-branch-not-taken
+  - IF/error-in-if-true-branch-taken
+  - ERROR.TYPE/error-type-of-div-0-error-handling
+  - ERROR.TYPE/error-type-of-n-a
+  - ERROR.TYPE/error-type-of-value-error-handling
+  - ERROR.TYPE/error-type-of-clean-value
+  - N/n-of-true-info
+  - N/n-of-false-info
+  - IF/if-true-branch
+  - IF/if-false-branch
+  - IF/if-with-comparison
+  - AND/and-all-true
+  - AND/and-one-false
+  - OR/or-one-true
+  - OR/or-all-false
+  - NOT/not-true
+  - NOT/not-false
+  - INDIRECT/indirect-a1-to-value
+  - INDIRECT/indirect-text-cell
+  - INDIRECT/indirect-sum-range
+  - LOOKUP/lookup-exact-sorted
+  - LOOKUP/lookup-approximate
+  - LOOKUP/lookup-vector-form-no-result
+  - LOOKUP/lookup-below-range
+  - LOOKUP/lookup-above-range-picks-last
+  - VLOOKUP/vlookup-exact
+  - VLOOKUP/vlookup-not-found
+  - HLOOKUP/hlookup-exact
+  - RANDARRAY/randarray-smoke
+  - INTERCEPT/intercept-exact-linear
+  - AVERAGEIFS/averageifs-single-criterion
+  - AVERAGEIFS/averageifs-two-criteria
+  - AVERAGEIFS/averageifs-no-match
+  - op:add/true-plus-zero
+  - op:add/false-plus-zero
+  - op:add/true-plus-one
+  - op:multiply/true-times-true
+  - op:subtract/true-minus-false
+  - SUM/sum-with-booleans
+  - AVERAGE/average-with-booleans
+  - op:concat/boolean-concat-string
+  - op:concat/number-concat-boolean
+  - op:eq/boolean-equals-number
+  - op:unary-/unary-minus-on-true
+  - op:unary-/double-unary-on-true
+  - op:unary-/double-unary-on-false
+  - N/n-of-true-type-coercion
+  - N/n-of-false-type-coercion
+  - N/n-over-boolean-array
+  - RANDARRAY/randarray-2x3-shape
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

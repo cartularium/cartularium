@@ -1,0 +1,34 @@
+id: DV-0019
+summary: "excel: different error code — ARRAYFORMULA, ISDATE, JOIN (+3 more)"
+cause: error-code
+category: value
+engines:
+  - excel
+behavior:
+  signature: '{"error":"#N/A"}'
+test-count: 15
+subjects:
+  - ARRAYFORMULA
+  - ISDATE
+  - JOIN
+  - QUERY
+  - SINGLE
+  - SPLIT
+tests:
+  - SINGLE/single-explicit-top-left
+  - ARRAYFORMULA/arrayformula-multiply-range
+  - ARRAYFORMULA/arrayformula-text-concat
+  - QUERY/query-select-all
+  - QUERY/query-select-col
+  - ISDATE/isdate-of-number
+  - ISDATE/isdate-of-text
+  - ISDATE/isdate-of-date-call
+  - JOIN/join-basic
+  - JOIN/join-with-numbers
+  - JOIN/join-empty-delim
+  - JOIN/join-single-element
+  - SPLIT/split-comma
+  - SPLIT/split-multi-delim
+  - SPLIT/split-single-token
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

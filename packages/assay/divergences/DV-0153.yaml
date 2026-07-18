@@ -1,0 +1,15 @@
+id: DV-0153
+summary: "lattice: different argument interpretation — PPMT"
+cause: arg-semantics
+category: value
+engines:
+  - lattice
+behavior:
+  signature: "1073.6432460242797"
+test-count: 1
+subjects:
+  - PPMT
+tests:
+  - PPMT/ppmt-ipmt-plus-ppmt-equals-pmt
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

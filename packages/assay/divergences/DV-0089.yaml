@@ -1,0 +1,15 @@
+id: DV-0089
+summary: "formulas: different argument interpretation — SUMPRODUCT"
+cause: arg-semantics
+category: value
+engines:
+  - formulas
+behavior:
+  signature: "0"
+test-count: 1
+subjects:
+  - SUMPRODUCT
+tests:
+  - SUMPRODUCT/double-unary-coerces-boolean-row-to-numeric
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

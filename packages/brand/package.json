@@ -1,0 +1,17 @@
+{
+  "name": "@cartularium/brand",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Cartularium brand kernel: typography, color tokens, layout grammar shared across properties.",
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    "./tokens.scss": "./tokens.scss",
+    "./tokens.css": "./tokens.css",
+    "./fonts.css": "./fonts.css",
+    "./BRAND.md": "./BRAND.md",
+    "./data/engines.json": "./data/engines.json",
+    "./data/properties.json": "./data/properties.json"
+  },
+  "files": ["tokens.scss", "tokens.css", "fonts.css", "BRAND.md", "README.md", "data/"]
+}

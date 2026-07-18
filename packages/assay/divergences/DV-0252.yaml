@@ -1,0 +1,16 @@
+id: DV-0252
+summary: "ironcalc: --TRUE returns boolean true instead of coercing through
+  unary-minus to 1"
+cause: arg-semantics
+category: value
+engines:
+  - ironcalc
+behavior:
+  signature: "true"
+test-count: 1
+subjects:
+  - op:unary-
+tests:
+  - op:unary-/double-unary-on-true
+seeded: 2026-04-26
+last-confirmed: 2026-04-26

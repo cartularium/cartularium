@@ -1,0 +1,106 @@
+name: assay-excel-history
+
+# Manual Excel fixture/history refresh. This cannot run on GitHub-hosted
+# runners because the Excel driver needs desktop Microsoft Excel through
+# xlwings. Attach a self-hosted runner with labels: self-hosted, assay-excel.
+
+on:
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Compute deltas but write nothing (no PR)"
+        type: boolean
+        default: false
+      note:
+        description: "Free-form note attached to the run row"
+        type: string
+        default: "excel refresh"
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: assay-excel-history
+  cancel-in-progress: false
+
+jobs:
+  record:
+    runs-on: [self-hosted, assay-excel]
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: pnpm/action-setup@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: pnpm
+
+      - name: pnpm install
+        run: pnpm install --frozen-lockfile
+
+      - uses: astral-sh/setup-uv@v3
+        with:
+          enable-cache: true
+
+      - name: uv sync (python deps)
+        run: uv sync --frozen
+        working-directory: packages/assay
+
+      - name: Build assay
+        run: pnpm --filter assay run build
+
+      - name: Compute run-stamp
+        id: stamp
+        run: echo "date=$(date -u +%Y-%m-%d)" >> "$GITHUB_OUTPUT"
+
+      - name: Regenerate Excel fixtures
+        run: node build/cli.js generate -p excel
+        working-directory: packages/assay
+
+      - name: Record history
+        working-directory: packages/assay
+        run: |
+          NOTE="${{ inputs.note }}"
+          NOTE="${NOTE:-excel refresh}"
+          DRY_RUN=""
+          if [ "${{ inputs.dry_run }}" = "true" ]; then DRY_RUN="--dry-run"; fi
+          node build/cli.js history --record --trigger=manual --note "$NOTE" $DRY_RUN
+
+      - name: Capture summary for PR body
+        id: summary
+        if: ${{ inputs.dry_run != 'true' }}
+        working-directory: packages/assay
+        run: |
+          {
+            echo 'body<<EOF'
+            echo '## Excel history snapshot'
+            echo ''
+            echo '```'
+            node build/cli.js history --inspect latest
+            echo '```'
+            echo ''
+            echo '_PR opened by `.github/workflows/assay-excel-history.yml` from a self-hosted Office-capable runner._'
+            echo EOF
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Open PR
+        if: ${{ inputs.dry_run != 'true' }}
+        continue-on-error: true
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.ASSAY_PR_TOKEN || github.token }}
+          title: "assay excel history: ${{ steps.stamp.outputs.date }}"
+          body: ${{ steps.summary.outputs.body }}
+          branch: assay/excel-history-${{ steps.stamp.outputs.date }}
+          delete-branch: true
+          commit-message: |
+            assay: excel history ${{ steps.stamp.outputs.date }}
+          add-paths: |
+            packages/assay/history/
+            packages/assay/divergences/
+            packages/assay/fixtures/

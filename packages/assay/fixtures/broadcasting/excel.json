@@ -1,0 +1,3406 @@
+{
+  "platform": "excel",
+  "generatedAt": "2026-05-24T07:11:24.125Z",
+  "results": {
+    "sha256:16ecbe1ea64bb27e1634b3fe49f9631248ebcd0455a8f205f51092e5b6261a18": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 11
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n",
+              "raw_xml": {
+                "cm": 1,
+                "formula_text": "1+{10,20,30}",
+                "formula_array_marker": "array",
+                "formula_array_ref": "AA1:AC1"
+              },
+              "saved_as_array": true
+            },
+            "formula": "1+{10,20,30}"
+          },
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 21
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          },
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 31
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=1+{10,20,30}"
+    },
+    "sha256:e3bad26ac5cd11138adb7857ac533792d7725b2ddf24756f1ca28b0465ed6f8d": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 11
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n",
+              "raw_xml": {
+                "cm": 1,
+                "formula_text": "1+{10;20;30}",
+                "formula_array_marker": "array",
+                "formula_array_ref": "AA1:AA3"
+              },
+              "saved_as_array": true
+            },
+            "formula": "1+{10;20;30}"
+          }
+        ],
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 21
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          }
+        ],
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 31
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=1+{10;20;30}"
+    },
+    "sha256:d8152a1b394e21bc82f9542b4751d5fe03ced98a16d69840ac1f8351c7b95556": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 11
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n",
+              "raw_xml": {
+                "cm": 1,
+                "formula_text": "1+{10,20;30,40}",
+                "formula_array_marker": "array",
+                "formula_array_ref": "AA1:AB2"
+              },
+              "saved_as_array": true
+            },
+            "formula": "1+{10,20;30,40}"
+          },
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 21
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          }
+        ],
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 31
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          },
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 41
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=1+{10,20;30,40}"
+    },
+    "sha256:090ef8590ce44f747f09b994e1760a26abb1702e336576b089c0fa6011016ba5": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 11
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n",
+              "raw_xml": {
+                "cm": 1,
+                "formula_text": "{1,2,3}+{10;20;30}",
+                "formula_array_marker": "array",
+                "formula_array_ref": "AA1:AC3"
+              },
+              "saved_as_array": true
+            },
+            "formula": "{1,2,3}+{10;20;30}"
+          },
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 12
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          },
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 13
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          }
+        ],
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 21
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          },
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 22
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          },
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 23
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          }
+        ],
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 31
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          },
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 32
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          },
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 33
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          }
+        ]
+      ],
+      "formula-as-evaluated": "={1,2,3}+{10;20;30}"
+    },
+    "sha256:33c0c1d68acc62544b484dc230fc405dea7294d9d4bd31cebb9b98c9c06b9a36": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 11
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n",
+              "raw_xml": {
+                "cm": 1,
+                "formula_text": "{1;2;3}+{10,20,30}",
+                "formula_array_marker": "array",
+                "formula_array_ref": "AA1:AC3"
+              },
+              "saved_as_array": true
+            },
+            "formula": "{1;2;3}+{10,20,30}"
+          },
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 21
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          },
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 31
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          }
+        ],
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 12
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          },
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 22
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          },
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 32
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          }
+        ],
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 13
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          },
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 23
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          },
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 33
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          }
+        ]
+      ],
+      "formula-as-evaluated": "={1;2;3}+{10,20,30}"
+    },
+    "sha256:2f417843fd568596212ae9181782842257281ea47da7303d5185e84037a79c4b": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 11
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n",
+              "raw_xml": {
+                "cm": 1,
+                "formula_text": "{1,2,3}+{10,20,30}",
+                "formula_array_marker": "array",
+                "formula_array_ref": "AA1:AC1"
+              },
+              "saved_as_array": true
+            },
+            "formula": "{1,2,3}+{10,20,30}"
+          },
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 22
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          },
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 33
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          }
+        ]
+      ],
+      "formula-as-evaluated": "={1,2,3}+{10,20,30}"
+    },
+    "sha256:afb07025ad0cbc4cc7348e698e5d600737e87d844f57eb23b1438c9dcd45048f": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 11
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n",
+              "raw_xml": {
+                "cm": 1,
+                "formula_text": "{1;2;3}+{10;20;30}",
+                "formula_array_marker": "array",
+                "formula_array_ref": "AA1:AA3"
+              },
+              "saved_as_array": true
+            },
+            "formula": "{1;2;3}+{10;20;30}"
+          }
+        ],
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 22
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          }
+        ],
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 33
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          }
+        ]
+      ],
+      "formula-as-evaluated": "={1;2;3}+{10;20;30}"
+    },
+    "sha256:533248ae585a08a408b50df017e7a972e8fb26061d2e13fca73a8d8b913abf82": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 11
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n",
+              "raw_xml": {
+                "cm": 1,
+                "formula_text": "{1,2;3,4}+{10,20;30,40}",
+                "formula_array_marker": "array",
+                "formula_array_ref": "AA1:AB2"
+              },
+              "saved_as_array": true
+            },
+            "formula": "{1,2;3,4}+{10,20;30,40}"
+          },
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 22
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          }
+        ],
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 33
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          },
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 44
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          }
+        ]
+      ],
+      "formula-as-evaluated": "={1,2;3,4}+{10,20;30,40}"
+    },
+    "sha256:04ad9f3fa5b71b463542a608f72e260aaad261d1891de8386d9c1659608d79c6": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 11
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n",
+              "raw_xml": {
+                "cm": 1,
+                "formula_text": "{1,2,3}+{10,20,30;40,50,60}",
+                "formula_array_marker": "array",
+                "formula_array_ref": "AA1:AC2"
+              },
+              "saved_as_array": true
+            },
+            "formula": "{1,2,3}+{10,20,30;40,50,60}"
+          },
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 22
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          },
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 33
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          }
+        ],
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 41
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          },
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 52
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          },
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 63
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          }
+        ]
+      ],
+      "formula-as-evaluated": "={1,2,3}+{10,20,30;40,50,60}"
+    },
+    "sha256:85bd301ca98b5669af225f33d4be480bd593d528534834b94f3abd508b04f5c5": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 11
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n",
+              "raw_xml": {
+                "cm": 1,
+                "formula_text": "{1;2}+{10,20,30;40,50,60}",
+                "formula_array_marker": "array",
+                "formula_array_ref": "AA1:AC2"
+              },
+              "saved_as_array": true
+            },
+            "formula": "{1;2}+{10,20,30;40,50,60}"
+          },
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 21
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          },
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 31
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          }
+        ],
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 42
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          },
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 52
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          },
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 62
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          }
+        ]
+      ],
+      "formula-as-evaluated": "={1;2}+{10,20,30;40,50,60}"
+    },
+    "sha256:55b36daf29b34152f42ae5ddc621abc24e6bb09c89d0d3e230d533447e2806fb": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 11
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n",
+              "raw_xml": {
+                "cm": 1,
+                "formula_text": "{1,2,3}+{10,20}",
+                "formula_array_marker": "array",
+                "formula_array_ref": "AA1:AC1"
+              },
+              "saved_as_array": true
+            },
+            "formula": "{1,2,3}+{10,20}"
+          },
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 22
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          },
+          {
+            "primitive": {
+              "kind": "error",
+              "sentinel": "#N/A"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "e",
+              "raw_xml": {
+                "t": "e"
+              }
+            }
+          }
+        ]
+      ],
+      "formula-as-evaluated": "={1,2,3}+{10,20}"
+    },
+    "sha256:537820b17096bdc60a6b3fbd6d854b6f6a7efebfbf1de1c8a04d9b28d7d07bab": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 11
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n",
+              "raw_xml": {
+                "cm": 1,
+                "formula_text": "{1;2;3}+{10;20}",
+                "formula_array_marker": "array",
+                "formula_array_ref": "AA1:AA3"
+              },
+              "saved_as_array": true
+            },
+            "formula": "{1;2;3}+{10;20}"
+          }
+        ],
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 22
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          }
+        ],
+        [
+          {
+            "primitive": {
+              "kind": "error",
+              "sentinel": "#N/A"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "e",
+              "raw_xml": {
+                "t": "e"
+              }
+            }
+          }
+        ]
+      ],
+      "formula-as-evaluated": "={1;2;3}+{10;20}"
+    },
+    "sha256:445f74c4fbf5f88fa88da2826f5e4fb48b3683bfd5abf85f2597a82dbc94cc6f": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 2
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n",
+              "raw_xml": {
+                "cm": 1,
+                "formula_text": "{1,2;3,4}+{1,2,3;4,5,6}",
+                "formula_array_marker": "array",
+                "formula_array_ref": "AA1:AC2"
+              },
+              "saved_as_array": true
+            },
+            "formula": "{1,2;3,4}+{1,2,3;4,5,6}"
+          },
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 4
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          },
+          {
+            "primitive": {
+              "kind": "error",
+              "sentinel": "#N/A"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "e",
+              "raw_xml": {
+                "t": "e"
+              }
+            }
+          }
+        ],
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 7
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          },
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 9
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          },
+          {
+            "primitive": {
+              "kind": "error",
+              "sentinel": "#N/A"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "e",
+              "raw_xml": {
+                "t": "e"
+              }
+            }
+          }
+        ]
+      ],
+      "formula-as-evaluated": "={1,2;3,4}+{1,2,3;4,5,6}"
+    },
+    "sha256:be204c04e79df208ed48817ca19bbade01065b33ca3e2d6b75cfa50fc121b1dc": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 9
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n",
+              "raw_xml": {
+                "cm": 1,
+                "formula_text": "{10,20,30}-1",
+                "formula_array_marker": "array",
+                "formula_array_ref": "AA1:AC1"
+              },
+              "saved_as_array": true
+            },
+            "formula": "{10,20,30}-1"
+          },
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 19
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          },
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 29
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          }
+        ]
+      ],
+      "formula-as-evaluated": "={10,20,30}-1"
+    },
+    "sha256:dcda9489a1c3f61db479de49b939a3dddc8010ca393371aa0519c6bbb3a9d0eb": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 9
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n",
+              "raw_xml": {
+                "cm": 1,
+                "formula_text": "{10;20;30}-{1,2,3}",
+                "formula_array_marker": "array",
+                "formula_array_ref": "AA1:AC3"
+              },
+              "saved_as_array": true
+            },
+            "formula": "{10;20;30}-{1,2,3}"
+          },
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 8
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          },
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 7
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          }
+        ],
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 19
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          },
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 18
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          },
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 17
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          }
+        ],
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 29
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          },
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 28
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          },
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 27
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          }
+        ]
+      ],
+      "formula-as-evaluated": "={10;20;30}-{1,2,3}"
+    },
+    "sha256:5daa5dc11d381a952ef31424ea7e066674b066d816d33688289195393ebf1d7c": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 3
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n",
+              "raw_xml": {
+                "cm": 1,
+                "formula_text": "3*{1,2,3}",
+                "formula_array_marker": "array",
+                "formula_array_ref": "AA1:AC1"
+              },
+              "saved_as_array": true
+            },
+            "formula": "3*{1,2,3}"
+          },
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 6
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          },
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 9
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=3*{1,2,3}"
+    },
+    "sha256:1cb2966591437a7150fb971de2d3923dbcb10e0fc3325d547c91726ce41de9ca": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 1
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n",
+              "raw_xml": {
+                "cm": 1,
+                "formula_text": "{1,2,3}*{1;2;3}",
+                "formula_array_marker": "array",
+                "formula_array_ref": "AA1:AC3"
+              },
+              "saved_as_array": true
+            },
+            "formula": "{1,2,3}*{1;2;3}"
+          },
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 2
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          },
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 3
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          }
+        ],
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 2
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          },
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 4
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          },
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 6
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          }
+        ],
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 3
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          },
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 6
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          },
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 9
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          }
+        ]
+      ],
+      "formula-as-evaluated": "={1,2,3}*{1;2;3}"
+    },
+    "sha256:33f41424f4a86fc60f4b9bc3c3c0bbaf111e03537e45b56e207210848bd88bfd": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 1
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n",
+              "raw_xml": {
+                "cm": 1,
+                "formula_text": "{10,20,30}/10",
+                "formula_array_marker": "array",
+                "formula_array_ref": "AA1:AC1"
+              },
+              "saved_as_array": true
+            },
+            "formula": "{10,20,30}/10"
+          },
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 2
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          },
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 3
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          }
+        ]
+      ],
+      "formula-as-evaluated": "={10,20,30}/10"
+    },
+    "sha256:f41bb1fb9720205752805602bfb37406234da39dded259fe5f6168f7404a8f54": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 60
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n",
+              "raw_xml": {
+                "cm": 1,
+                "formula_text": "60/{1,2,3}",
+                "formula_array_marker": "array",
+                "formula_array_ref": "AA1:AC1"
+              },
+              "saved_as_array": true
+            },
+            "formula": "60/{1,2,3}"
+          },
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 30
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          },
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 20
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=60/{1,2,3}"
+    },
+    "sha256:23d264f167fee9247ff48f3e69c378f46c42f38de8b07358e13747df1a4073de": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 1
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n",
+              "raw_xml": {
+                "cm": 1,
+                "formula_text": "{1,2,3}^2",
+                "formula_array_marker": "array",
+                "formula_array_ref": "AA1:AC1"
+              },
+              "saved_as_array": true
+            },
+            "formula": "{1,2,3}^2"
+          },
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 4
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          },
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 9
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          }
+        ]
+      ],
+      "formula-as-evaluated": "={1,2,3}^2"
+    },
+    "sha256:55bbd855d5b587371d89463e9c3be322cae1058e7652d9f28585520ca235bd8c": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 1
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n",
+              "raw_xml": {
+                "cm": 1,
+                "formula_text": "2^{0,1,2,3}",
+                "formula_array_marker": "array",
+                "formula_array_ref": "AA1:AD1"
+              },
+              "saved_as_array": true
+            },
+            "formula": "2^{0,1,2,3}"
+          },
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 2
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          },
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 4
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          },
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 8
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=2^{0,1,2,3}"
+    },
+    "sha256:3c4f553410ad21f0022e114aab6a2924dc7a6217a181ce28befe9f210d167915": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": -1
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n",
+              "raw_xml": {
+                "cm": 1,
+                "formula_text": "-{1,-2,3}",
+                "formula_array_marker": "array",
+                "formula_array_ref": "AA1:AC1"
+              },
+              "saved_as_array": true
+            },
+            "formula": "-{1,-2,3}"
+          },
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 2
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          },
+          {
+            "primitive": {
+              "kind": "number",
+              "value": -3
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=-{1,-2,3}"
+    },
+    "sha256:eb72e9316207990a2499909c79d4ef097d27d7d62c335567a577b3d29528c676": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": -1
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n",
+              "raw_xml": {
+                "cm": 1,
+                "formula_text": "-{1,2;3,4}",
+                "formula_array_marker": "array",
+                "formula_array_ref": "AA1:AB2"
+              },
+              "saved_as_array": true
+            },
+            "formula": "-{1,2;3,4}"
+          },
+          {
+            "primitive": {
+              "kind": "number",
+              "value": -2
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          }
+        ],
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": -3
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          },
+          {
+            "primitive": {
+              "kind": "number",
+              "value": -4
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=-{1,2;3,4}"
+    },
+    "sha256:50d3a04db3e138fa74e71ecd0aece65dfba9c6a92c9159353f7f98020b51428b": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 0.5
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n",
+              "raw_xml": {
+                "cm": 1,
+                "formula_text": "{50,100,200}%",
+                "formula_array_marker": "array",
+                "formula_array_ref": "AA1:AC1"
+              },
+              "saved_as_array": true
+            },
+            "formula": "{50,100,200}%"
+          },
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 1
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          },
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 2
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          }
+        ]
+      ],
+      "formula-as-evaluated": "={50,100,200}%"
+    },
+    "sha256:439bf19afcd0356e7d3f6daab9b4d1bf7983b0b226bd79cfeb1a537f210a10e6": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "boolean",
+              "value": false
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "b",
+              "raw_xml": {
+                "t": "b",
+                "cm": 1,
+                "formula_text": "{1,2,3}=2",
+                "formula_array_marker": "array",
+                "formula_array_ref": "AA1:AC1"
+              },
+              "saved_as_array": true
+            },
+            "formula": "{1,2,3}=2"
+          },
+          {
+            "primitive": {
+              "kind": "boolean",
+              "value": true
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "b",
+              "raw_xml": {
+                "t": "b"
+              }
+            }
+          },
+          {
+            "primitive": {
+              "kind": "boolean",
+              "value": false
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "b",
+              "raw_xml": {
+                "t": "b"
+              }
+            }
+          }
+        ]
+      ],
+      "formula-as-evaluated": "={1,2,3}=2"
+    },
+    "sha256:7a08b82b087f54898a8b234867ad8a431b8559deed7b21a897ef4e8b86f83e4f": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "boolean",
+              "value": true
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "b",
+              "raw_xml": {
+                "t": "b",
+                "cm": 1,
+                "formula_text": "{1,2,3}<2",
+                "formula_array_marker": "array",
+                "formula_array_ref": "AA1:AC1"
+              },
+              "saved_as_array": true
+            },
+            "formula": "{1,2,3}<2"
+          },
+          {
+            "primitive": {
+              "kind": "boolean",
+              "value": false
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "b",
+              "raw_xml": {
+                "t": "b"
+              }
+            }
+          },
+          {
+            "primitive": {
+              "kind": "boolean",
+              "value": false
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "b",
+              "raw_xml": {
+                "t": "b"
+              }
+            }
+          }
+        ]
+      ],
+      "formula-as-evaluated": "={1,2,3}<2"
+    },
+    "sha256:5c4f05b97ae53beb89d0ffb0f00ffe39c8508081f04a89de075fb73931dd0fe3": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "boolean",
+              "value": false
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "b",
+              "raw_xml": {
+                "t": "b",
+                "cm": 1,
+                "formula_text": "{1,2,3}>={2,2,2}",
+                "formula_array_marker": "array",
+                "formula_array_ref": "AA1:AC1"
+              },
+              "saved_as_array": true
+            },
+            "formula": "{1,2,3}>={2,2,2}"
+          },
+          {
+            "primitive": {
+              "kind": "boolean",
+              "value": true
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "b",
+              "raw_xml": {
+                "t": "b"
+              }
+            }
+          },
+          {
+            "primitive": {
+              "kind": "boolean",
+              "value": true
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "b",
+              "raw_xml": {
+                "t": "b"
+              }
+            }
+          }
+        ]
+      ],
+      "formula-as-evaluated": "={1,2,3}>={2,2,2}"
+    },
+    "sha256:174d9e74d1d5d9a8416226d0783cf2327e77f6ec3d4aa210564ce90d36c1c364": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "boolean",
+              "value": false
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "b",
+              "raw_xml": {
+                "t": "b",
+                "cm": 1,
+                "formula_text": "{1,2,3}<>{1;2;3}",
+                "formula_array_marker": "array",
+                "formula_array_ref": "AA1:AC3"
+              },
+              "saved_as_array": true
+            },
+            "formula": "{1,2,3}<>{1;2;3}"
+          },
+          {
+            "primitive": {
+              "kind": "boolean",
+              "value": true
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "b",
+              "raw_xml": {
+                "t": "b"
+              }
+            }
+          },
+          {
+            "primitive": {
+              "kind": "boolean",
+              "value": true
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "b",
+              "raw_xml": {
+                "t": "b"
+              }
+            }
+          }
+        ],
+        [
+          {
+            "primitive": {
+              "kind": "boolean",
+              "value": true
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "b",
+              "raw_xml": {
+                "t": "b"
+              }
+            }
+          },
+          {
+            "primitive": {
+              "kind": "boolean",
+              "value": false
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "b",
+              "raw_xml": {
+                "t": "b"
+              }
+            }
+          },
+          {
+            "primitive": {
+              "kind": "boolean",
+              "value": true
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "b",
+              "raw_xml": {
+                "t": "b"
+              }
+            }
+          }
+        ],
+        [
+          {
+            "primitive": {
+              "kind": "boolean",
+              "value": true
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "b",
+              "raw_xml": {
+                "t": "b"
+              }
+            }
+          },
+          {
+            "primitive": {
+              "kind": "boolean",
+              "value": true
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "b",
+              "raw_xml": {
+                "t": "b"
+              }
+            }
+          },
+          {
+            "primitive": {
+              "kind": "boolean",
+              "value": false
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "b",
+              "raw_xml": {
+                "t": "b"
+              }
+            }
+          }
+        ]
+      ],
+      "formula-as-evaluated": "={1,2,3}<>{1;2;3}"
+    },
+    "sha256:9b6aa47a749731c84ca26dac5a3bcda4e12d1495898fe3f1796850e2de11d209": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "boolean",
+              "value": false
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "b",
+              "raw_xml": {
+                "t": "b",
+                "cm": 1,
+                "formula_text": "{1,2;3,4}>2",
+                "formula_array_marker": "array",
+                "formula_array_ref": "AA1:AB2"
+              },
+              "saved_as_array": true
+            },
+            "formula": "{1,2;3,4}>2"
+          },
+          {
+            "primitive": {
+              "kind": "boolean",
+              "value": false
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "b",
+              "raw_xml": {
+                "t": "b"
+              }
+            }
+          }
+        ],
+        [
+          {
+            "primitive": {
+              "kind": "boolean",
+              "value": true
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "b",
+              "raw_xml": {
+                "t": "b"
+              }
+            }
+          },
+          {
+            "primitive": {
+              "kind": "boolean",
+              "value": true
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "b",
+              "raw_xml": {
+                "t": "b"
+              }
+            }
+          }
+        ]
+      ],
+      "formula-as-evaluated": "={1,2;3,4}>2"
+    },
+    "sha256:0c0ae69068931083e32feae4c73eb42aa1c9b77367e12e5a26c0a6372d8ea6ad": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "xa"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "s",
+              "raw_xml": {
+                "t": "str",
+                "cm": 1,
+                "formula_text": "\"x\"&{\"a\",\"b\",\"c\"}",
+                "formula_array_marker": "array",
+                "formula_array_ref": "AA1:AC1"
+              },
+              "saved_as_array": true
+            },
+            "formula": "\"x\"&{\"a\",\"b\",\"c\"}"
+          },
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "xb"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "s",
+              "raw_xml": {
+                "t": "str"
+              }
+            }
+          },
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "xc"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "s",
+              "raw_xml": {
+                "t": "str"
+              }
+            }
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=\"x\"&{\"a\",\"b\",\"c\"}"
+    },
+    "sha256:f94a50c88f86a29ad779fecc30d5e2df02ece40952fc598c86dcf1be90d48084": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "a1"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "s",
+              "raw_xml": {
+                "t": "str",
+                "cm": 1,
+                "formula_text": "{\"a\",\"b\"}&{\"1\";\"2\";\"3\"}",
+                "formula_array_marker": "array",
+                "formula_array_ref": "AA1:AB3"
+              },
+              "saved_as_array": true
+            },
+            "formula": "{\"a\",\"b\"}&{\"1\";\"2\";\"3\"}"
+          },
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "b1"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "s",
+              "raw_xml": {
+                "t": "str"
+              }
+            }
+          }
+        ],
+        [
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "a2"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "s",
+              "raw_xml": {
+                "t": "str"
+              }
+            }
+          },
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "b2"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "s",
+              "raw_xml": {
+                "t": "str"
+              }
+            }
+          }
+        ],
+        [
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "a3"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "s",
+              "raw_xml": {
+                "t": "str"
+              }
+            }
+          },
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "b3"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "s",
+              "raw_xml": {
+                "t": "str"
+              }
+            }
+          }
+        ]
+      ],
+      "formula-as-evaluated": "={\"a\",\"b\"}&{\"1\";\"2\";\"3\"}"
+    },
+    "sha256:0e8337c25eb394382558ba7d02d5d33ccf9b1a2d12f1b9d2e64d150f9fa90e17": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "v1"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "s",
+              "raw_xml": {
+                "t": "str",
+                "cm": 1,
+                "formula_text": "\"v\"&{1,2,3}",
+                "formula_array_marker": "array",
+                "formula_array_ref": "AA1:AC1"
+              },
+              "saved_as_array": true
+            },
+            "formula": "\"v\"&{1,2,3}"
+          },
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "v2"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "s",
+              "raw_xml": {
+                "t": "str"
+              }
+            }
+          },
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "v3"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "s",
+              "raw_xml": {
+                "t": "str"
+              }
+            }
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=\"v\"&{1,2,3}"
+    },
+    "sha256:4d11f016be29bb768870758edcb76151895ae61a1b9447f9d2e88595107fa575": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 11
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n",
+              "raw_xml": {
+                "cm": 1,
+                "formula_text": "A1:A3+C1:E1",
+                "formula_array_marker": "array",
+                "formula_array_ref": "AA1:AC3"
+              },
+              "saved_as_array": true
+            },
+            "formula": "A1:A3+C1:E1"
+          },
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 21
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          },
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 31
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          }
+        ],
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 12
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          },
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 22
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          },
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 32
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          }
+        ],
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 13
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          },
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 23
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          },
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 33
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=A1:A3+C1:E1"
+    },
+    "sha256:0e079e43b22d42657f633f404ad76aef67f077a1378a0b5fb55138a5daaf86ba": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 10
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n",
+              "raw_xml": {
+                "cm": 1,
+                "formula_text": "A1:A3*10",
+                "formula_array_marker": "array",
+                "formula_array_ref": "AA1:AA3"
+              },
+              "saved_as_array": true
+            },
+            "formula": "A1:A3*10"
+          }
+        ],
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 20
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          }
+        ],
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 30
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=A1:A3*10"
+    },
+    "sha256:23e5df063b0ec34ab17e17236c8ab49c85e681a86296d5a9c3044f3639f758a4": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 10
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n",
+              "raw_xml": {
+                "cm": 1,
+                "formula_text": "A1:A2*B1:B2",
+                "formula_array_marker": "array",
+                "formula_array_ref": "AA1:AA2"
+              },
+              "saved_as_array": true
+            },
+            "formula": "A1:A2*B1:B2"
+          }
+        ],
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 40
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=A1:A2*B1:B2"
+    },
+    "sha256:587ee174650b730dbbc8226bb5fd7cf93c4ffc5ae19a0f1d342aa1b4b7afb0f8": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 1
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n",
+              "raw_xml": {
+                "cm": 1,
+                "formula_text": "LEN({\"a\",\"bb\",\"ccc\"})",
+                "formula_array_marker": "array",
+                "formula_array_ref": "AA1:AC1"
+              },
+              "saved_as_array": true
+            },
+            "formula": "LEN({\"a\",\"bb\",\"ccc\"})"
+          },
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 2
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          },
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 3
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=LEN({\"a\",\"bb\",\"ccc\"})"
+    },
+    "sha256:662adddc66c04559ffbd5e5fd1ecd6f5f50a8466dc270e8175ecef9f6a684c20": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "A"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "s",
+              "raw_xml": {
+                "t": "str",
+                "cm": 1,
+                "formula_text": "UPPER({\"a\";\"bc\";\"def\"})",
+                "formula_array_marker": "array",
+                "formula_array_ref": "AA1:AA3"
+              },
+              "saved_as_array": true
+            },
+            "formula": "UPPER({\"a\";\"bc\";\"def\"})"
+          }
+        ],
+        [
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "BC"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "s",
+              "raw_xml": {
+                "t": "str"
+              }
+            }
+          }
+        ],
+        [
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "DEF"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "s",
+              "raw_xml": {
+                "t": "str"
+              }
+            }
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=UPPER({\"a\";\"bc\";\"def\"})"
+    },
+    "sha256:d9ef8f26d326108a38ffd9c549998ec8f14fee01d992b99d2f8b07189b9af67c": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 1
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n",
+              "raw_xml": {
+                "cm": 1,
+                "formula_text": "ABS({-1,2,-3})",
+                "formula_array_marker": "array",
+                "formula_array_ref": "AA1:AC1"
+              },
+              "saved_as_array": true
+            },
+            "formula": "ABS({-1,2,-3})"
+          },
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 2
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          },
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 3
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=ABS({-1, 2, -3})"
+    },
+    "sha256:3c7a016675723fb34cc56ee694bb5d0c9913777b29d5fce63f24256ba29cb8b5": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 1
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n",
+              "raw_xml": {
+                "cm": 1,
+                "formula_text": "SQRT({1,4,9,16})",
+                "formula_array_marker": "array",
+                "formula_array_ref": "AA1:AD1"
+              },
+              "saved_as_array": true
+            },
+            "formula": "SQRT({1,4,9,16})"
+          },
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 2
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          },
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 3
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          },
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 4
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=SQRT({1, 4, 9, 16})"
+    },
+    "sha256:54b963996d5080e21fa54ce3f0642347dca43f23ec051d227d7cd36c66259753": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "boolean",
+              "value": true
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "b",
+              "raw_xml": {
+                "t": "b",
+                "cm": 1,
+                "formula_text": "ISNUMBER({1,\"a\",TRUE,3})",
+                "formula_array_marker": "array",
+                "formula_array_ref": "AA1:AD1"
+              },
+              "saved_as_array": true
+            },
+            "formula": "ISNUMBER({1,\"a\",TRUE,3})"
+          },
+          {
+            "primitive": {
+              "kind": "boolean",
+              "value": false
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "b",
+              "raw_xml": {
+                "t": "b"
+              }
+            }
+          },
+          {
+            "primitive": {
+              "kind": "boolean",
+              "value": false
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "b",
+              "raw_xml": {
+                "t": "b"
+              }
+            }
+          },
+          {
+            "primitive": {
+              "kind": "boolean",
+              "value": true
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "b",
+              "raw_xml": {
+                "t": "b"
+              }
+            }
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=ISNUMBER({1,\"a\",TRUE,3})"
+    },
+    "sha256:bff7c16f9741a38e5db3223da380eed94a529eb9c42051ab8c23a6da570b7f79": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 1
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n",
+              "raw_xml": {
+                "cm": 1,
+                "formula_text": "IF({TRUE,FALSE,TRUE}, 1, 2)",
+                "formula_array_marker": "array",
+                "formula_array_ref": "AA1:AC1"
+              },
+              "saved_as_array": true
+            },
+            "formula": "IF({TRUE,FALSE,TRUE}, 1, 2)"
+          },
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 2
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          },
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 1
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=IF({TRUE,FALSE,TRUE}, 1, 2)"
+    },
+    "sha256:3818ab08a42ab2b706d7f77a758dbac056298ba4e253f8596f00885a56f4f461": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 10
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n",
+              "raw_xml": {
+                "cm": 1,
+                "formula_text": "IF({TRUE,FALSE,TRUE}, {10,20,30}, {-1,-2,-3})",
+                "formula_array_marker": "array",
+                "formula_array_ref": "AA1:AC1"
+              },
+              "saved_as_array": true
+            },
+            "formula": "IF({TRUE,FALSE,TRUE}, {10,20,30}, {-1,-2,-3})"
+          },
+          {
+            "primitive": {
+              "kind": "number",
+              "value": -2
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          },
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 30
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=IF({TRUE,FALSE,TRUE}, {10,20,30}, {-1,-2,-3})"
+    },
+    "sha256:fc7a861e272e379860c02aaf54ba5c26d8f82c14dacddede49c21f2b82725247": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 1
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n",
+              "raw_xml": {
+                "cm": 1,
+                "formula_text": "IF(TRUE, {1,2,3}, {10,20,30})",
+                "formula_array_marker": "array",
+                "formula_array_ref": "AA1:AC1"
+              },
+              "saved_as_array": true
+            },
+            "formula": "IF(TRUE, {1,2,3}, {10,20,30})"
+          },
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 2
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          },
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 3
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=IF(TRUE, {1,2,3}, {10,20,30})"
+    },
+    "sha256:281c795c331276bbea862291f301f82c73b43e0d08d50f2704ee00f7e9977943": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 11
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n",
+              "raw_xml": {
+                "cm": 1,
+                "formula_text": "{1,2,3}+{10,#N/A,30}",
+                "formula_array_marker": "array",
+                "formula_array_ref": "AA1:AC1"
+              },
+              "saved_as_array": true
+            },
+            "formula": "{1,2,3}+{10,#N/A,30}"
+          },
+          {
+            "primitive": {
+              "kind": "error",
+              "sentinel": "#N/A"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "e",
+              "raw_xml": {
+                "t": "e"
+              }
+            }
+          },
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 33
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          }
+        ]
+      ],
+      "formula-as-evaluated": "={1,2,3}+{10,#N/A,30}"
+    },
+    "sha256:9b3dceebafdc79668c84b7de716a85d8899dae16f22e2da02cf0bd86f92594a8": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "error",
+              "sentinel": "#DIV/0!"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "e",
+              "raw_xml": {
+                "t": "e",
+                "formula_text": "1+#DIV/0!"
+              }
+            },
+            "formula": "1+#DIV/0!"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=1+#DIV/0!"
+    },
+    "sha256:e5a95e259c440c5bbffa8037f3d4d2655d0167e2cfdb1e48aa91a3ba7c0d0129": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 10
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n",
+              "raw_xml": {
+                "cm": 1,
+                "formula_text": "10/{1,0,2}",
+                "formula_array_marker": "array",
+                "formula_array_ref": "AA1:AC1"
+              },
+              "saved_as_array": true
+            },
+            "formula": "10/{1,0,2}"
+          },
+          {
+            "primitive": {
+              "kind": "error",
+              "sentinel": "#DIV/0!"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "e",
+              "raw_xml": {
+                "t": "e"
+              }
+            }
+          },
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 5
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=10/{1,0,2}"
+    },
+    "sha256:b7b9044ebd49ca5140a360af44b27b9597e00d2be3836422e80b767d97a58a81": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 11
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n",
+              "raw_xml": {
+                "cm": 1,
+                "formula_text": "A1:A2+B1:B2",
+                "formula_array_marker": "array",
+                "formula_array_ref": "AA1:AA2"
+              },
+              "saved_as_array": true
+            },
+            "formula": "A1:A2+B1:B2"
+          }
+        ],
+        [
+          {
+            "primitive": {
+              "kind": "error",
+              "sentinel": "#DIV/0!"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "e",
+              "raw_xml": {
+                "t": "e"
+              }
+            }
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=A1:A2+B1:B2"
+    },
+    "sha256:8fafa6dcc2724398977f9653439600a658a90458c8f188aed92e8e7ebfc290b4": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 11
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n",
+              "raw_xml": {
+                "cm": 1,
+                "formula_text": "A1:A3+10",
+                "formula_array_marker": "array",
+                "formula_array_ref": "AA1:AA3"
+              },
+              "saved_as_array": true
+            },
+            "formula": "A1:A3+10"
+          }
+        ],
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 10
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          }
+        ],
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 13
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=A1:A3+10"
+    },
+    "sha256:b4399e70dca6704ddd9116ff8b857a2e27c8c3007887df4c3b6ba78408c86bf8": {
+      "result": [
+        [
+          null
+        ]
+      ],
+      "formula-as-evaluated": "={1,,3}+10"
+    },
+    "sha256:3f27603ca1fbceaca4b0685fe59fbe8ea7d0c0c4fd351bfcda8c122580353a4b": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "x!"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "s",
+              "raw_xml": {
+                "t": "str",
+                "cm": 1,
+                "formula_text": "A1:A3&\"!\"",
+                "formula_array_marker": "array",
+                "formula_array_ref": "AA1:AA3"
+              },
+              "saved_as_array": true
+            },
+            "formula": "A1:A3&\"!\""
+          }
+        ],
+        [
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "!"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "s",
+              "raw_xml": {
+                "t": "str"
+              }
+            }
+          }
+        ],
+        [
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "z!"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "s",
+              "raw_xml": {
+                "t": "str"
+              }
+            }
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=A1:A3&\"!\""
+    },
+    "sha256:dbdd8028f28625b79d2a8f6bf4452b0a4331ae447c7af1f6af8c99b31e21981a": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 1
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n",
+              "raw_xml": {
+                "cm": 1,
+                "formula_text": "{TRUE,FALSE,TRUE}+0",
+                "formula_array_marker": "array",
+                "formula_array_ref": "AA1:AC1"
+              },
+              "saved_as_array": true
+            },
+            "formula": "{TRUE,FALSE,TRUE}+0"
+          },
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 0
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          },
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 1
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          }
+        ]
+      ],
+      "formula-as-evaluated": "={TRUE,FALSE,TRUE}+0"
+    },
+    "sha256:e4907409081e59f2389d0586aa6e21b0ac8c1f903c1a53e4c7895ae95e7f51ef": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 1
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n",
+              "raw_xml": {
+                "cm": 1,
+                "formula_text": "{\"1\",\"2\",\"3\"}+0",
+                "formula_array_marker": "array",
+                "formula_array_ref": "AA1:AC1"
+              },
+              "saved_as_array": true
+            },
+            "formula": "{\"1\",\"2\",\"3\"}+0"
+          },
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 2
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          },
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 3
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          }
+        ]
+      ],
+      "formula-as-evaluated": "={\"1\",\"2\",\"3\"}+0"
+    },
+    "sha256:af66b000cb3fc31ef17c8e2b475414be65e644be686990d2e7b242ff8156322d": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 1
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n",
+              "raw_xml": {
+                "cm": 1,
+                "formula_text": "{1,\"a\",TRUE}+0",
+                "formula_array_marker": "array",
+                "formula_array_ref": "AA1:AC1"
+              },
+              "saved_as_array": true
+            },
+            "formula": "{1,\"a\",TRUE}+0"
+          },
+          {
+            "primitive": {
+              "kind": "error",
+              "sentinel": "#VALUE!"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "e",
+              "raw_xml": {
+                "t": "e"
+              }
+            }
+          },
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 1
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          }
+        ]
+      ],
+      "formula-as-evaluated": "={1,\"a\",TRUE}+0"
+    },
+    "sha256:d74722a2c22a85c32093f2c7da38f5450c6e913a7de7948e8fa6c1fb120a6bf5": {
+      "result": [
+        [
+          null
+        ]
+      ],
+      "formula-as-evaluated": "={1,2;3}"
+    },
+    "sha256:abcdb2a4e9b8188f231c4f198ba6252eb0d9207f0514b2c91cfd7b75c630d47c": {
+      "result": [
+        [
+          null
+        ]
+      ],
+      "formula-as-evaluated": "={1,2;3}+10"
+    },
+    "sha256:19f2e6799906b4e0336b91ecd2eb15c231f5e1258c2e9927d725af04d62914bc": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 11
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n",
+              "raw_xml": {
+                "formula_text": "A1:A3+1"
+              }
+            },
+            "formula": "A1:A3+1"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=@A1:A3+1"
+    },
+    "sha256:4862862a66dbfaa969ec65f44900d2130bd57b2acd5e6004656fd2ca93ef1aed": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 11
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n",
+              "raw_xml": {
+                "cm": 1,
+                "formula_text": "A1:A3+1",
+                "formula_array_marker": "array",
+                "formula_array_ref": "AA1:AA3"
+              },
+              "saved_as_array": true
+            },
+            "formula": "A1:A3+1"
+          }
+        ],
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 21
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          }
+        ],
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 31
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=A1:A3+1"
+    },
+    "sha256:b0d42d672cf2b08c5b3532b0f26a0fab72e220635e2f04ab941053902343e7fb": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 1
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n",
+              "raw_xml": {
+                "cm": 1,
+                "formula_text": "LEN({\"a\",\"bb\",\"ccc\"})",
+                "formula_array_marker": "array",
+                "formula_array_ref": "AA1:AC1"
+              },
+              "saved_as_array": true
+            },
+            "formula": "LEN({\"a\",\"bb\",\"ccc\"})"
+          },
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 2
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          },
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 3
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=LEN({\"a\",\"bb\",\"ccc\"})"
+    },
+    "sha256:3d8467058afef4384998976f2cff238a8636c1cad111b1319eaa050cf8e5f783": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 100
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n",
+              "raw_xml": {
+                "cm": 1,
+                "formula_text": "A1:A3",
+                "formula_array_marker": "array",
+                "formula_array_ref": "AA1:AA3"
+              },
+              "saved_as_array": true
+            },
+            "formula": "A1:A3"
+          }
+        ],
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 200
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          }
+        ],
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 300
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=A1:A3"
+    },
+    "sha256:82689f498c0826b3d140732862c1a638c96240950a3c0ca749eab9d21b86d293": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 3
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n",
+              "raw_xml": {
+                "cm": 1,
+                "formula_text": "LEN(B1:B3)*1",
+                "formula_array_marker": "array",
+                "formula_array_ref": "AA1:AA3"
+              },
+              "saved_as_array": true
+            },
+            "formula": "LEN(B1:B3)*1"
+          }
+        ],
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 3
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          }
+        ],
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 3
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=LEN(B1:B3)*1"
+    },
+    "sha256:6aaacf0fa4a99f823bb40e7df3a7fe02bc867be129194b95230176ec022cf134": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 10
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n",
+              "raw_xml": {
+                "formula_text": "{10,20,30}"
+              }
+            },
+            "formula": "{10,20,30}"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=SINGLE({10,20,30})"
+    },
+    "sha256:0c0c29e1953b034d4601b6e8a348f92c34a0270c14c5b2fbbf5384693a7c24aa": {
+      "result": [
+        [
+          null
+        ]
+      ],
+      "formula-as-evaluated": "=INDEX(A1:A3*10)"
+    },
+    "sha256:af57a83927eda7091287e86c38ffe2b8a7e504e3fac95f5b64682cd4ea48a12e": {
+      "result": [
+        [
+          null
+        ]
+      ],
+      "formula-as-evaluated": "=INDEX({1,2,3}+{10;20;30})"
+    },
+    "sha256:059d86a7b47702a680601671d29ca71fda61e03d218e1ad0fc72c47a5d86221e": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 2
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n",
+              "raw_xml": {
+                "cm": 1,
+                "formula_text": "SUMPRODUCT(--({1,2,3}>1))",
+                "formula_array_marker": "array",
+                "formula_array_ref": "AA1"
+              },
+              "saved_as_array": true
+            },
+            "formula": "SUMPRODUCT(--({1,2,3}>1))"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=SUMPRODUCT(--({1,2,3}>1))"
+    },
+    "sha256:d478d6d7c49f13c8b084c9e1f5c04195e7d7899d7d624c421dd18851db3fc463": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 140
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n",
+              "raw_xml": {
+                "formula_text": "SUMPRODUCT(A1:A3, B1:B3)"
+              }
+            },
+            "formula": "SUMPRODUCT(A1:A3, B1:B3)"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=SUMPRODUCT(A1:A3, B1:B3)"
+    },
+    "sha256:b3f9f5706338c75ac4df53abf492b72d289690389ccfe6c227c0f2700056f516": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 50
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n",
+              "raw_xml": {
+                "cm": 1,
+                "formula_text": "SUMPRODUCT((A1:A3>1)*B1:B3)",
+                "formula_array_marker": "array",
+                "formula_array_ref": "AA1"
+              },
+              "saved_as_array": true
+            },
+            "formula": "SUMPRODUCT((A1:A3>1)*B1:B3)"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=SUMPRODUCT((A1:A3>1)*B1:B3)"
+    }
+  }
+}

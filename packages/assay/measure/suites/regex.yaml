@@ -1,0 +1,43 @@
+schemaVersion: 3
+name: "sweep: feature:regex"
+tests:
+  - subject: feature:regex
+    name: match
+    formula: =REGEXMATCH("abc123", "[0-9]+")
+    category: value
+    status: observed
+    tags:
+      - sweep:feature:regex
+      - ax:form=match
+  - subject: feature:regex
+    name: test
+    formula: =REGEXTEST("abc123", "[0-9]+")
+    category: value
+    status: observed
+    tags:
+      - sweep:feature:regex
+      - ax:form=test
+  - subject: feature:regex
+    name: extract
+    formula: =REGEXEXTRACT("abc123", "[0-9]+")
+    category: value
+    status: observed
+    tags:
+      - sweep:feature:regex
+      - ax:form=extract
+  - subject: feature:regex
+    name: capture
+    formula: =REGEXEXTRACT("2024-01", "([0-9]+)-([0-9]+)")
+    category: value
+    status: observed
+    tags:
+      - sweep:feature:regex
+      - ax:form=capture
+  - subject: feature:regex
+    name: replace
+    formula: =REGEXREPLACE("abc123", "[0-9]+", "#")
+    category: value
+    status: observed
+    tags:
+      - sweep:feature:regex
+      - ax:form=replace

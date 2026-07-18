@@ -1,0 +1,17 @@
+# Workspace-root prettier only formats root-level files. Each package owns
+# its own .prettierrc + .prettierignore (or doesn't lint at all). This keeps
+# the workspace-wide lint job from rewriting everyone's files when their
+# style differs from the kernel default.
+packages/
+
+# Common excludes (also covers anything outside packages/)
+node_modules/
+**/node_modules/
+**/.obsidian/
+**/dist/
+**/build/
+**/public/
+**/.quartz-cache/
+**/.cache/
+*.lock
+pnpm-lock.yaml

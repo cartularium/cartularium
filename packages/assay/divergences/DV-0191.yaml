@@ -1,0 +1,15 @@
+id: DV-0191
+summary: "pycel: rendered with different format — FACTDOUBLE"
+cause: format-rendering
+category: value
+engines:
+  - pycel
+behavior:
+  signature: '"48"'
+test-count: 1
+subjects:
+  - FACTDOUBLE
+tests:
+  - FACTDOUBLE/factdouble-of-6
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

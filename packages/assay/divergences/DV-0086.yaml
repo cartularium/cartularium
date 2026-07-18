@@ -1,0 +1,17 @@
+id: DV-0086
+summary: "lattice: return shape differs — LEN"
+cause: shape
+category: value
+engines:
+  - lattice
+behavior:
+  signature: "3"
+test-count: 1
+subjects:
+  - LEN
+tests:
+  - LEN/len-over-string-row
+seeded: 2026-04-25
+last-confirmed: 2026-04-25
+status: vanished
+vanished-at: 2026-04-26

@@ -1,0 +1,77 @@
+{
+  "subject": "MATCH",
+  "pair": {
+    "a": "excel",
+    "b": "gsheets"
+  },
+  "numTolerance": 1e-10,
+  "engines": [
+    {
+      "platform": "excel",
+      "generatedAt": "2026-06-04T06:04:03.468Z"
+    },
+    {
+      "platform": "gsheets",
+      "generatedAt": "2026-06-04T06:04:25.482Z"
+    }
+  ],
+  "axisSpace": [
+    {
+      "name": "match_type",
+      "locus": "syntactic",
+      "cardinality": 3
+    },
+    {
+      "name": "key_encoding",
+      "locus": "syntactic",
+      "cardinality": 2
+    },
+    {
+      "name": "key_type",
+      "locus": "data-borne",
+      "runtimeCheckable": true,
+      "cardinality": 2
+    },
+    {
+      "name": "key_present",
+      "locus": "data-borne",
+      "runtimeCheckable": false,
+      "cardinality": 2
+    },
+    {
+      "name": "range_sorted",
+      "locus": "data-borne",
+      "runtimeCheckable": false,
+      "cardinality": 2
+    }
+  ],
+  "tallies": {
+    "total": 30,
+    "ok": 30,
+    "incomplete": 0,
+    "agree": 30,
+    "differ": 0,
+    "unimplemented": 0,
+    "precision": 0
+  },
+  "analysis": {
+    "reducts": [
+      []
+    ],
+    "core": []
+  },
+  "verdict": {
+    "subject": "MATCH",
+    "completeness": 1,
+    "provisional": false,
+    "pinnedAxes": [],
+    "surface": {
+      "okProbes": 30,
+      "divergentProbes": 0,
+      "divergentFraction": 0
+    },
+    "kind": "AGREES_EVERYWHERE",
+    "discriminators": []
+  },
+  "divergent": []
+}

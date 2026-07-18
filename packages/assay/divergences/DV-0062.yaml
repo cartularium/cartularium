@@ -1,0 +1,17 @@
+id: DV-0062
+summary: "lattice: different error code — ERROR.TYPE, INDIRECT"
+cause: error-code
+category: error-code
+engines:
+  - lattice
+behavior:
+  signature: '{"error":"#N/A"}'
+test-count: 2
+subjects:
+  - ERROR.TYPE
+  - INDIRECT
+tests:
+  - ERROR.TYPE/error-type-of-ref-error
+  - INDIRECT/indirect-r1c1-style
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

@@ -1,0 +1,16 @@
+id: DV-0056
+summary: "gsheets: return shape differs — SORTN"
+cause: shape
+category: value
+engines:
+  - gsheets
+behavior:
+  signature: "[[1],[2],[4]]"
+test-count: 2
+subjects:
+  - SORTN
+tests:
+  - SORTN/sortn-top-3
+  - SORTN/sortn-top-3-ascending
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

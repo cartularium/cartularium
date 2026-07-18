@@ -1,0 +1,65 @@
+// hairline-bordered toggle, mono character icon. matches the cartularium brand kernel.
+.darkmode {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  border: 1px solid var(--rule);
+  color: var(--ink-2);
+  cursor: pointer;
+  font-family: var(--font-mono);
+  font-size: 1.05rem;
+  line-height: 1;
+  flex-shrink: 0;
+  transition:
+    border-color 160ms ease,
+    color 160ms ease;
+
+  &:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+}
+
+// default (no saved-theme): show moon, "click to go dark"
+.darkmode .sun {
+  display: none;
+}
+.darkmode .moon {
+  display: inline;
+}
+
+// system dark unless user explicitly chose light
+@media (prefers-color-scheme: dark) {
+  :root:not([saved-theme="light"]) .darkmode .moon {
+    display: none;
+  }
+  :root:not([saved-theme="light"]) .darkmode .sun {
+    display: inline;
+  }
+}
+
+// explicit light or dark override the system
+:root[saved-theme="dark"] .darkmode .moon {
+  display: none;
+}
+:root[saved-theme="dark"] .darkmode .sun {
+  display: inline;
+}
+:root[saved-theme="light"] .darkmode .sun {
+  display: none;
+}
+:root[saved-theme="light"] .darkmode .moon {
+  display: inline;
+}
+
+:root[saved-theme="dark"] {
+  color-scheme: dark;
+}
+:root[saved-theme="light"] {
+  color-scheme: light;
+}

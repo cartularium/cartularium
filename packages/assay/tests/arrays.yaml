@@ -1,0 +1,75 @@
+schemaVersion: 3
+name: Array formulas
+tests:
+  - subject: SEQUENCE
+    category: value
+    features:
+      - dynamic-arrays
+    formula: =SEQUENCE(1)
+    expect: 1
+    name: sequence-scalar
+  - subject: SEQUENCE
+    category: value
+    features:
+      - dynamic-arrays
+    formula: =SEQUENCE(3)
+    expect:
+      - - 1
+      - - 2
+      - - 3
+    name: sequence-column
+  - subject: SEQUENCE
+    category: value
+    features:
+      - dynamic-arrays
+    formula: =SEQUENCE(2, 3)
+    expect:
+      - - 1
+        - 2
+        - 3
+      - - 4
+        - 5
+        - 6
+    name: sequence-2d
+  - subject: HSTACK
+    category: value
+    features:
+      - dynamic-arrays
+    formula: =HSTACK(1, 2, 3)
+    expect:
+      - - 1
+        - 2
+        - 3
+    name: hstack
+  - subject: VSTACK
+    category: value
+    features:
+      - dynamic-arrays
+    formula: =VSTACK(1, 2, 3)
+    expect:
+      - - 1
+      - - 2
+      - - 3
+    name: vstack
+  - subject: INDEX
+    category: value
+    formula: =INDEX(A1:B2, 2, 1)
+    grid:
+      A1: 10
+      A2: 20
+      B1: 30
+      B2: 40
+    expect: 20
+    name: index-into-grid
+  - subject: SORT
+    category: value
+    formula: =SORT({3;1;2})
+    expect:
+      - - 1
+      - - 2
+      - - 3
+    tags:
+      - bare-formula
+    features:
+      - dynamic-arrays
+    name: sort-array

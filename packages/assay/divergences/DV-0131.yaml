@@ -1,0 +1,15 @@
+id: DV-0131
+summary: "excel: numeric precision differs — FV"
+cause: precision
+category: value
+engines:
+  - excel
+behavior:
+  signature: "26532.97705144421"
+test-count: 1
+subjects:
+  - FV
+tests:
+  - FV/fv-lump-sum
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

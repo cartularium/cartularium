@@ -1,0 +1,28 @@
+// pulls in the chrome layer SCSS via Sass package resolution.
+// chrome.scss in turn @use's @cartularium/brand tokens.
+
+@use "@cartularium/chrome/styles/chrome.scss";
+
+// chrome topbar is the only visible content in Quartz's outer page-header
+// flex; the host wrapper falls out of the flex tree via display: contents
+.topbar-host {
+  display: contents;
+}
+// transparent so the body's kernel.scss vignette + grain show through;
+// flat var(--paper) (chrome.scss default) would paint over them
+.cartularium-topbar {
+  flex: 1;
+  background: transparent !important;
+}
+
+// Quartz's Search component stays mounted for its overlay (.search-container,
+// position: fixed); the standalone trigger button is hidden because the chrome
+// topbar's [data-search-trigger] bridges to it. !important needed because
+// Quartz's search.scss `.search > .search-button { display: flex }` ships
+// later in the cascade.
+.search {
+  display: contents;
+  & > .search-button {
+    display: none !important;
+  }
+}

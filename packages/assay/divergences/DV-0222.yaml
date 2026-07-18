@@ -1,0 +1,16 @@
+id: DV-0222
+summary: "ironcalc, libreoffice: different argument interpretation — GEOMEAN"
+cause: arg-semantics
+category: value
+engines:
+  - ironcalc
+  - libreoffice
+behavior:
+  signature: "0"
+test-count: 1
+subjects:
+  - GEOMEAN
+tests:
+  - GEOMEAN/geomean-with-zero
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

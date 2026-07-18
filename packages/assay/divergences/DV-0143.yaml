@@ -1,0 +1,18 @@
+id: DV-0143
+summary: "excel, formulas, gsheets, lattice: numeric precision differs — NOMINAL"
+cause: precision
+category: value
+engines:
+  - excel
+  - formulas
+  - gsheets
+  - lattice
+behavior:
+  signature: "0.1200000000000001"
+test-count: 1
+subjects:
+  - NOMINAL
+tests:
+  - NOMINAL/nominal-monthly
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

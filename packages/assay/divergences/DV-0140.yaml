@@ -1,0 +1,15 @@
+id: DV-0140
+summary: "hyperformula: numeric precision differs — IPMT"
+cause: precision
+category: value
+engines:
+  - hyperformula
+behavior:
+  signature: "833.33333333"
+test-count: 1
+subjects:
+  - IPMT
+tests:
+  - IPMT/ipmt-first-period-mortgage
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

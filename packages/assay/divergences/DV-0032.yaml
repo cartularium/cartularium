@@ -1,0 +1,20 @@
+id: DV-0032
+summary: "excel: function not implemented — ARRAY_CONSTRAIN, FLATTEN"
+cause: missing-function
+category: value
+engines:
+  - excel
+behavior:
+  signature: '{"error":"#NAME?"}'
+test-count: 5
+subjects:
+  - ARRAY_CONSTRAIN
+  - FLATTEN
+tests:
+  - FLATTEN/flatten-multiple-args
+  - ARRAY_CONSTRAIN/array-constrain-clip-rows
+  - ARRAY_CONSTRAIN/array-constrain-clip-cols
+  - ARRAY_CONSTRAIN/array-constrain-identity
+  - ARRAY_CONSTRAIN/array-constrain-to-scalar
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

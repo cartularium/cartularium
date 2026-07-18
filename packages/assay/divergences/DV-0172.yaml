@@ -1,0 +1,15 @@
+id: DV-0172
+summary: "hyperformula: numeric precision differs — SYD"
+cause: precision
+category: value
+engines:
+  - hyperformula
+behavior:
+  signature: "16.363636364"
+test-count: 1
+subjects:
+  - SYD
+tests:
+  - SYD/syd-last-period
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

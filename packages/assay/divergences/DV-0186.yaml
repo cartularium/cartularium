@@ -1,0 +1,15 @@
+id: DV-0186
+summary: "formulas: different argument interpretation — FLOOR.PRECISE"
+cause: arg-semantics
+category: value
+engines:
+  - formulas
+behavior:
+  signature: "4"
+test-count: 1
+subjects:
+  - FLOOR.PRECISE
+tests:
+  - FLOOR.PRECISE/floor-precise-negative
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

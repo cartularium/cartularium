@@ -1,0 +1,15 @@
+id: DV-0245
+summary: "hyperformula: broadcasting / array rules differ — RAND"
+cause: array-handling
+category: value
+engines:
+  - hyperformula
+behavior:
+  signature: "false"
+test-count: 1
+subjects:
+  - RAND
+tests:
+  - RAND/rand-in-array-context-returns-array
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

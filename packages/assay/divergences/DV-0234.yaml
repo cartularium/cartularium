@@ -1,0 +1,15 @@
+id: DV-0234
+summary: "lattice: different error code — TEXT"
+cause: error-code
+category: value
+engines:
+  - lattice
+behavior:
+  signature: '{"error":"#TYPE!"}'
+test-count: 1
+subjects:
+  - TEXT
+tests:
+  - TEXT/text-date
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

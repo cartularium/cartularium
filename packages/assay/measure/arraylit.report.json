@@ -1,0 +1,114 @@
+{
+  "subject": "lit:array",
+  "pair": {
+    "a": "excel",
+    "b": "gsheets"
+  },
+  "numTolerance": 1e-10,
+  "engines": [
+    {
+      "platform": "excel",
+      "generatedAt": "2026-06-04T06:13:38.054Z"
+    },
+    {
+      "platform": "gsheets",
+      "generatedAt": "2026-06-04T06:13:47.167Z"
+    }
+  ],
+  "axisSpace": [
+    {
+      "name": "content",
+      "locus": "syntactic",
+      "cardinality": 5
+    }
+  ],
+  "tallies": {
+    "total": 5,
+    "ok": 5,
+    "incomplete": 0,
+    "agree": 2,
+    "differ": 3,
+    "unimplemented": 0,
+    "precision": 0
+  },
+  "analysis": {
+    "reducts": [
+      [
+        "content"
+      ]
+    ],
+    "core": [
+      "content"
+    ]
+  },
+  "verdict": {
+    "subject": "lit:array",
+    "completeness": 1,
+    "provisional": false,
+    "pinnedAxes": [],
+    "surface": {
+      "okProbes": 5,
+      "divergentProbes": 3,
+      "divergentFraction": 0.6
+    },
+    "kind": "EXPLICIT_BRIDGE",
+    "discriminators": [
+      "content"
+    ],
+    "byLocus": {
+      "syntactic": [
+        "content"
+      ],
+      "environment": [],
+      "data-borne": []
+    },
+    "trigger": [
+      {
+        "where": {
+          "content": "withref"
+        },
+        "outcome": "differ"
+      },
+      {
+        "where": {
+          "content": "withfn"
+        },
+        "outcome": "differ"
+      },
+      {
+        "where": {
+          "content": "withop"
+        },
+        "outcome": "differ"
+      }
+    ],
+    "fix": {
+      "rewriteOn": [
+        "content"
+      ]
+    }
+  },
+  "divergent": [
+    {
+      "name": "withref",
+      "assignment": {
+        "content": "withref"
+      },
+      "outcome": "differ"
+    },
+    {
+      "name": "withfn",
+      "assignment": {
+        "content": "withfn"
+      },
+      "outcome": "differ"
+    },
+    {
+      "name": "withop",
+      "assignment": {
+        "content": "withop"
+      },
+      "outcome": "differ"
+    }
+  ]
+}

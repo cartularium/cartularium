@@ -1,0 +1,27 @@
+schemaVersion: 3
+name: "sweep: feature:lambda-array"
+tests:
+  - subject: feature:lambda-array
+    name: map-over-lit
+    formula: =MAP({1;2;3}, LAMBDA(x, x*2))
+    category: value
+    status: observed
+    tags:
+      - sweep:feature:lambda-array
+      - ax:form=map-over-lit
+  - subject: feature:lambda-array
+    name: hstack-call
+    formula: =MAP(HSTACK(LAMBDA(x, x+1), LAMBDA(x, x+2)), LAMBDA(x, x(1)))
+    category: value
+    status: observed
+    tags:
+      - sweep:feature:lambda-array
+      - ax:form=hstack-call
+  - subject: feature:lambda-array
+    name: vstack-call
+    formula: =MAP(VSTACK(LAMBDA(x, x*2), LAMBDA(x, x*3)), LAMBDA(x, x(5)))
+    category: value
+    status: observed
+    tags:
+      - sweep:feature:lambda-array
+      - ax:form=vstack-call

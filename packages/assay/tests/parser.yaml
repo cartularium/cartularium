@@ -1,0 +1,1037 @@
+schemaVersion: 3
+name: Parser functions
+tests:
+  - subject: CONVERT
+    formula: =CONVERT(1, "ft", "in")
+    category: value
+    expect: 12
+    overrides:
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      lattice:
+        cause: precision
+        recorded: 12.000000000000002
+      formulas:
+        cause: precision
+        recorded: 12.000000000000002
+    tags:
+      - parser
+    name: convert-feet-to-inches
+  - subject: CONVERT
+    category: value
+    status: observed
+    formula: =CONVERT(1, "m", "ft")
+    tags:
+      - parser
+    name: convert-meters-to-feet
+  - subject: CONVERT
+    category: value
+    status: observed
+    formula: =CONVERT(1, "kg", "lbm")
+    tags:
+      - parser
+    name: convert-kilograms-to-pounds
+  - subject: CONVERT
+    formula: =CONVERT(100, "C", "F")
+    category: value
+    expect: 212
+    overrides:
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      formulas:
+        cause: precision
+        recorded: 211.99999999999994
+    tags:
+      - parser
+    name: convert-celsius-to-fahrenheit
+  - subject: CONVERT
+    formula: =CONVERT(1, "hr", "sec")
+    category: value
+    expect: 3600
+    overrides:
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - parser
+    name: convert-hours-to-seconds
+  - subject: CONVERT
+    category: value
+    status: observed
+    formula: =CONVERT(1, "km", "mi")
+    tags:
+      - parser
+    name: convert-kilometers-to-miles
+  - subject: CONVERT
+    category: value
+    status: observed
+    formula: =CONVERT(1, "ft", "kg")
+    tags:
+      - parser
+      - error-type
+    name: convert-invalid-unit-pair
+  - subject: CONVERT
+    category: value
+    status: observed
+    formula: =CONVERT(1, "xyz", "in")
+    tags:
+      - parser
+      - error-type
+    name: convert-unknown-unit
+  - subject: TO_DATE
+    formula: =TO_DATE(44000)
+    category: value
+    expect: 44000
+    overrides:
+      excel:
+        cause: missing-function
+        recorded:
+          error: "#N/A"
+      lattice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - parser
+    name: to-date-from-serial
+  - subject: TO_DATE
+    formula: =TO_DATE(0)
+    category: value
+    expect: 0
+    overrides:
+      excel:
+        cause: missing-function
+        recorded:
+          error: "#N/A"
+      lattice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - parser
+    name: to-date-zero-serial
+  - subject: TO_DATE
+    formula: =TO_DATE("2024-01-15")
+    category: value
+    expect: 2024-01-15
+    overrides:
+      excel:
+        cause: missing-function
+        recorded:
+          error: "#N/A"
+      lattice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - parser
+    name: to-date-from-text
+  - subject: TO_DATE
+    formula: =TO_DATE(TRUE)
+    category: value
+    expect: true
+    overrides:
+      excel:
+        cause: missing-function
+        recorded:
+          error: "#N/A"
+      lattice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - parser
+    name: to-date-from-boolean
+  - subject: TO_DATE
+    formula: =TO_DATE("not-a-date")
+    category: value
+    expect: not-a-date
+    overrides:
+      excel:
+        cause: missing-function
+        recorded:
+          error: "#N/A"
+      lattice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - parser
+      - error-type
+    name: to-date-from-invalid-text
+  - subject: TO_DOLLARS
+    formula: =TO_DOLLARS(1234)
+    category: value
+    expect: 1234
+    overrides:
+      excel:
+        cause: missing-function
+        recorded:
+          error: "#N/A"
+      lattice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - parser
+    name: to-dollars-integer
+  - subject: TO_DOLLARS
+    formula: =TO_DOLLARS(1234.567)
+    category: value
+    expect: 1234.567
+    overrides:
+      excel:
+        cause: missing-function
+        recorded:
+          error: "#N/A"
+      lattice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - parser
+    name: to-dollars-decimal
+  - subject: TO_DOLLARS
+    formula: =TO_DOLLARS(-42.5)
+    category: value
+    expect: -42.5
+    overrides:
+      excel:
+        cause: missing-function
+        recorded:
+          error: "#N/A"
+      lattice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - parser
+    name: to-dollars-negative
+  - subject: TO_DOLLARS
+    formula: =TO_DOLLARS("99.99")
+    category: value
+    expect: "99.99"
+    overrides:
+      excel:
+        cause: missing-function
+        recorded:
+          error: "#N/A"
+      lattice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - parser
+    name: to-dollars-from-text
+  - subject: TO_DOLLARS
+    formula: =TO_DOLLARS(TRUE)
+    category: value
+    expect: true
+    overrides:
+      excel:
+        cause: missing-function
+        recorded:
+          error: "#N/A"
+      lattice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - parser
+    name: to-dollars-from-boolean
+  - subject: TO_PERCENT
+    formula: =TO_PERCENT(0.25)
+    category: value
+    expect: 0.25
+    overrides:
+      excel:
+        cause: missing-function
+        recorded:
+          error: "#N/A"
+      lattice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - parser
+    name: to-percent-decimal
+  - subject: TO_PERCENT
+    formula: =TO_PERCENT(1)
+    category: value
+    expect: 1
+    overrides:
+      excel:
+        cause: missing-function
+        recorded:
+          error: "#N/A"
+      lattice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - parser
+    name: to-percent-whole-number
+  - subject: TO_PERCENT
+    formula: =TO_PERCENT(0)
+    category: value
+    expect: 0
+    overrides:
+      excel:
+        cause: missing-function
+        recorded:
+          error: "#N/A"
+      lattice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - parser
+    name: to-percent-zero
+  - subject: TO_PERCENT
+    formula: =TO_PERCENT("0.5")
+    category: value
+    expect: "0.5"
+    overrides:
+      excel:
+        cause: missing-function
+        recorded:
+          error: "#N/A"
+      lattice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - parser
+    name: to-percent-from-text
+  - subject: TO_PERCENT
+    formula: =TO_PERCENT(-0.1)
+    category: value
+    expect: -0.1
+    overrides:
+      excel:
+        cause: missing-function
+        recorded:
+          error: "#N/A"
+      lattice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - parser
+    name: to-percent-negative
+  - subject: TO_PURE_NUMBER
+    formula: =TO_PURE_NUMBER(0.25)
+    category: value
+    expect: 0.25
+    overrides:
+      excel:
+        cause: missing-function
+        recorded:
+          error: "#N/A"
+      lattice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - parser
+    name: to-pure-number-from-percent-literal
+  - subject: TO_PURE_NUMBER
+    formula: =TO_PURE_NUMBER(42)
+    category: value
+    expect: 42
+    overrides:
+      excel:
+        cause: missing-function
+        recorded:
+          error: "#N/A"
+      lattice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - parser
+    name: to-pure-number-from-integer
+  - subject: TO_PURE_NUMBER
+    formula: =TO_PURE_NUMBER("123.45")
+    category: value
+    expect: "123.45"
+    overrides:
+      excel:
+        cause: missing-function
+        recorded:
+          error: "#N/A"
+      lattice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - parser
+    name: to-pure-number-from-text
+  - subject: TO_PURE_NUMBER
+    formula: =TO_PURE_NUMBER(TRUE)
+    category: value
+    expect: true
+    overrides:
+      excel:
+        cause: missing-function
+        recorded:
+          error: "#N/A"
+      lattice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - parser
+    name: to-pure-number-from-boolean
+  - subject: TO_PURE_NUMBER
+    formula: =TO_PURE_NUMBER("hello")
+    category: value
+    expect: hello
+    overrides:
+      excel:
+        cause: missing-function
+        recorded:
+          error: "#N/A"
+      lattice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - parser
+      - error-type
+    name: to-pure-number-from-non-numeric-text
+  - subject: TO_TEXT
+    formula: =TO_TEXT(42)
+    category: value
+    expect: "42"
+    overrides:
+      excel:
+        cause: missing-function
+        recorded:
+          error: "#N/A"
+      lattice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - parser
+    name: to-text-integer
+  - subject: TO_TEXT
+    formula: =TO_TEXT(3.14159)
+    category: value
+    expect: "3.14159"
+    overrides:
+      excel:
+        cause: missing-function
+        recorded:
+          error: "#N/A"
+      lattice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - parser
+    name: to-text-decimal
+  - subject: TO_TEXT
+    formula: =TO_TEXT(TRUE)
+    category: value
+    expect: "TRUE"
+    overrides:
+      excel:
+        cause: missing-function
+        recorded:
+          error: "#N/A"
+      lattice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - parser
+    name: to-text-boolean
+  - subject: TO_TEXT
+    formula: =TO_TEXT("hello")
+    category: value
+    expect: hello
+    overrides:
+      excel:
+        cause: missing-function
+        recorded:
+          error: "#N/A"
+      lattice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - parser
+    name: to-text-already-text
+  - subject: TO_TEXT
+    formula: =TO_TEXT(A1)
+    category: value
+    grid:
+      A1: =DATE(2024, 1, 15)
+    expect: 1/15/2024
+    overrides:
+      excel:
+        cause: missing-function
+        recorded:
+          error: "#N/A"
+      lattice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - parser
+    name: to-text-from-date-serial
+  - subject: TO_TEXT
+    formula: =TO_TEXT(-1234.5)
+    category: value
+    expect: "-1234.5"
+    overrides:
+      excel:
+        cause: missing-function
+        recorded:
+          error: "#N/A"
+      lattice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - parser
+    name: to-text-negative-number

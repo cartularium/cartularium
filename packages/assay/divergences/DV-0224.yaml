@@ -1,0 +1,15 @@
+id: DV-0224
+summary: "lattice: numeric precision differs — BINOM.DIST"
+cause: precision
+category: value
+engines:
+  - lattice
+behavior:
+  signature: "1.0000000000000033"
+test-count: 1
+subjects:
+  - BINOM.DIST
+tests:
+  - BINOM.DIST/binom-dist-cdf-at-n
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

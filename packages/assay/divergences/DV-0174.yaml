@@ -1,0 +1,15 @@
+id: DV-0174
+summary: "libreoffice: different argument interpretation — SYD"
+cause: arg-semantics
+category: value
+engines:
+  - libreoffice
+behavior:
+  signature: "0"
+test-count: 1
+subjects:
+  - SYD
+tests:
+  - SYD/syd-invalid-period
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

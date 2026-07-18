@@ -1,0 +1,22 @@
+id: DV-0237
+summary: "excel, formulas, hyperformula, ironcalc, lattice, libreoffice, pycel:
+  different error code — VALUE"
+cause: error-code
+category: value
+engines:
+  - excel
+  - formulas
+  - hyperformula
+  - ironcalc
+  - lattice
+  - libreoffice
+  - pycel
+behavior:
+  signature: '{"error":"#VALUE!"}'
+test-count: 1
+subjects:
+  - VALUE
+tests:
+  - VALUE/value-empty
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

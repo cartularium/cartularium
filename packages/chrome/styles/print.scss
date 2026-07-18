@@ -1,0 +1,59 @@
+// @cartularium/chrome — print stylesheet companion.
+// suppress sticky/fixed chrome that doesn't make sense on paper. inline
+// sidenotes as footnotes at the end of the article.
+
+@media print {
+  // suppress non-content chrome
+  .cartularium-topbar,
+  .cartularium-drawer,
+  .cartularium-toc-fab,
+  .gutter-toc,
+  .rail-toc { display: none !important; }
+
+  // sidenotes flow inline below the citation, not as floats
+  .sidenote {
+    display: block !important;
+    float: none !important;
+    width: auto !important;
+    margin: 0.25rem 0 !important;
+    border-top: none !important;
+    border-bottom: 1px solid #ccc;
+    padding: 0.25rem 0;
+    background: transparent !important;
+    color: inherit !important;
+    page-break-inside: avoid;
+  }
+  .sidenote-anchor { background: transparent !important; }
+
+  // related drawer prints as a plain section
+  .related-drawer {
+    page-break-before: auto;
+    border-top: 1px solid #ccc;
+  }
+
+  // footer is fine as-is, slimmed
+  .cartularium-footer {
+    border-top: 1px solid #ccc;
+    color: #666;
+    a { color: #666; text-decoration: none; }
+  }
+
+  // typography settings for print readability
+  body {
+    font-size: 11pt;
+    line-height: 1.4;
+    color: #000;
+    background: #fff;
+  }
+
+  // print URLs after external links
+  a[href^="http"]:not(.cp-link)::after {
+    content: " (" attr(href) ")";
+    font-size: 0.85em;
+    color: #666;
+  }
+
+  // page breaks
+  h1, h2, h3 { page-break-after: avoid; }
+  pre, blockquote, table { page-break-inside: avoid; }
+}

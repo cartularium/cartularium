@@ -1,0 +1,1102 @@
+{
+  "platform": "formulas",
+  "generatedAt": "2026-05-11T09:33:51.187Z",
+  "results": {
+    "sha256:1996121572c88fcd6e4ad64c26bdc14e6fe50baa4a240f2a7e5e195a42637cfa": {
+      "result": [
+        [
+          0.5
+        ]
+      ],
+      "formula-as-evaluated": "=BETA.DIST(0.5, 2, 2, TRUE, 0, 1)"
+    },
+    "sha256:1873c49f98f4ea037436b64262bf9c94ba11a421d85046b4e29ae9535340163e": {
+      "result": [
+        [
+          1.5000000000000007
+        ]
+      ],
+      "formula-as-evaluated": "=BETA.DIST(0.5, 2, 2, FALSE, 0, 1)"
+    },
+    "sha256:4a1c54d623142baa0f105a4f081197fbd96fbc6fb89260453800e2813e206a22": {
+      "result": [
+        [
+          1
+        ]
+      ],
+      "formula-as-evaluated": "=BETA.DIST(1, 2, 5, TRUE, 0, 1)"
+    },
+    "sha256:63bf3a5cfb3365bfce460c8f3029e3994841ebb9cdf62e634990a0b8de15055f": {
+      "result": [
+        [
+          0.5
+        ]
+      ],
+      "formula-as-evaluated": "=BETA.INV(0.5, 2, 2, 0, 1)"
+    },
+    "sha256:c597499a01121e5ae529935bb5d650d5f66e2f1da20a1d07cfa513d88089f846": {
+      "result": [
+        [
+          0.3000000000000002
+        ]
+      ],
+      "formula-as-evaluated": "=BETA.INV(BETA.DIST(0.3, 2, 5, TRUE, 0, 1), 2, 5, 0, 1)"
+    },
+    "sha256:0e6049ac2dd7f509bb1fc30142f69bac8af1b4673e8a3b44cfdf0d0437d4f187": {
+      "result": [
+        [
+          0.5
+        ]
+      ],
+      "formula-as-evaluated": "=BETADIST(0.5, 2, 2)"
+    },
+    "sha256:0b8610cf3d0d30bd7141fe4b058a2f88330e9730bf28f5fff385cb6ebab73ea6": {
+      "result": [
+        [
+          0.6875
+        ]
+      ],
+      "formula-as-evaluated": "=BETADIST(5, 2, 3, 0, 10)"
+    },
+    "sha256:f68a122926c40182a6ab50380153c9d63971a7c8d752d1cd647a80f5faeb7400": {
+      "result": [
+        [
+          0.5
+        ]
+      ],
+      "formula-as-evaluated": "=BETAINV(0.5, 2, 2)"
+    },
+    "sha256:88ade9b57fa0252b3aa94ef49618a1c11bba3ce520392ed1ff629bab056659a1": {
+      "result": [
+        [
+          0.4
+        ]
+      ],
+      "formula-as-evaluated": "=BETAINV(BETADIST(0.4, 3, 2), 3, 2)"
+    },
+    "sha256:fcf8d0b5e491a6a603b721a9bb3852f812553b37e624b37ab2b5b7d91c6f0528": {
+      "result": [
+        [
+          0.0009765624999999989
+        ]
+      ],
+      "formula-as-evaluated": "=BINOM.DIST(0, 10, 0.5, FALSE)"
+    },
+    "sha256:a931b38053b02ce62bfdfa77aae899573930e0de6e3fc944c998e25f5624e7b0": {
+      "result": [
+        [
+          0.24609375000000003
+        ]
+      ],
+      "formula-as-evaluated": "=BINOM.DIST(5, 10, 0.5, FALSE)"
+    },
+    "sha256:951de8ef3367deb3fb4d6ae8a38a65154029e86d30943b22f69fc424a88fc6fa": {
+      "result": [
+        [
+          1
+        ]
+      ],
+      "formula-as-evaluated": "=BINOM.DIST(10, 10, 0.5, TRUE)"
+    },
+    "sha256:75166feb4ab7af8cb815311dd6fdc9acda38e346705fe62eab22022d2d21b9ec": {
+      "result": [
+        [
+          0.7758750915527344
+        ]
+      ],
+      "formula-as-evaluated": "=BINOM.DIST(3, 10, 0.25, TRUE)"
+    },
+    "sha256:e401ff1b0435f4700deac5cab3956a9096c721e5f1ab76227168525c2a89d28a": {
+      "result": [
+        [
+          5
+        ]
+      ],
+      "formula-as-evaluated": "=BINOM.INV(10, 0.5, 0.5)"
+    },
+    "sha256:4401c0018d001e2f41db6ad361e698837c014e9fdf516ab16efbbac0efa37d22": {
+      "result": [
+        [
+          9
+        ]
+      ],
+      "formula-as-evaluated": "=BINOM.INV(20, 0.3, 0.95)"
+    },
+    "sha256:0c7df4125f9752380400084ff6a0577fa4dd43dd327265c06ddf9d3658a2c813": {
+      "result": [
+        [
+          0.31249999999999983
+        ]
+      ],
+      "formula-as-evaluated": "=BINOMDIST(2, 5, 0.5, FALSE)"
+    },
+    "sha256:6c4aa79430fe3fed39e30c2c0aa1f68811b5f8dd4c04ef6e32d5c627f4ff8f24": {
+      "result": [
+        [
+          0.5
+        ]
+      ],
+      "formula-as-evaluated": "=BINOMDIST(2, 5, 0.5, TRUE)"
+    },
+    "sha256:fc8c46a2dee9cf46d1598797e201e49e4f2375b874c03e4abd5e8329708090c6": {
+      "result": [
+        [
+          0.40600584970983794
+        ]
+      ],
+      "formula-as-evaluated": "=CHIDIST(4, 4)"
+    },
+    "sha256:7ec10bcbb0c081ced245ccb37eb5269658f0ffae32dfc4b780bf584f5f03afc8": {
+      "result": [
+        [
+          0.05000058909139812
+        ]
+      ],
+      "formula-as-evaluated": "=CHIDIST(18.307, 10)"
+    },
+    "sha256:95fab28c712479202f6868067d276f3ef6adc848375a98b7b30e3d6165597417": {
+      "result": [
+        [
+          18.30703805327515
+        ]
+      ],
+      "formula-as-evaluated": "=CHIINV(0.05, 10)"
+    },
+    "sha256:ea031296e26227a61f0db2a7e66bf0c3b74d503352e695e003a77f8255a57b1a": {
+      "result": [
+        [
+          5
+        ]
+      ],
+      "formula-as-evaluated": "=CHIINV(CHIDIST(5, 4), 4)"
+    },
+    "sha256:faf1d4050838aa345ceed976a6d1e4f0b88f5a81853973dd408f1157fdd2c942": {
+      "result": [
+        [
+          0.5939941502901616
+        ]
+      ],
+      "formula-as-evaluated": "=CHISQ.DIST(4, 4, TRUE)"
+    },
+    "sha256:8c463ac4f84968b68b79e3993888ab657cdf32548f7e377c8e012bac81092ba7": {
+      "result": [
+        [
+          0.1353352832366127
+        ]
+      ],
+      "formula-as-evaluated": "=CHISQ.DIST(4, 4, FALSE)"
+    },
+    "sha256:2ffc3750beb6722dbab96ba583d67912d605200d939de1b6426e9b07fb2ba3dd": {
+      "result": [
+        [
+          0.05000058909139812
+        ]
+      ],
+      "formula-as-evaluated": "=CHISQ.DIST.RT(18.307, 10)"
+    },
+    "sha256:c5da5d3564e6e0a160338b3524954ccfbed15c0b2ade7bf0050d94f2c635783a": {
+      "result": [
+        [
+          0.40600584970983794
+        ]
+      ],
+      "formula-as-evaluated": "=CHISQ.DIST.RT(4, 4)"
+    },
+    "sha256:4eb384a098b6d553015cf2cb257370907fb939a5c71521910d6b12193dc827a8": {
+      "result": [
+        [
+          3.3566939800333224
+        ]
+      ],
+      "formula-as-evaluated": "=CHISQ.INV(0.5, 4)"
+    },
+    "sha256:56a02557359b589c29be4469505c1d3b1623b2040610b42d54005a87eadb91cd": {
+      "result": [
+        [
+          4.999999999999999
+        ]
+      ],
+      "formula-as-evaluated": "=CHISQ.INV(CHISQ.DIST(5, 4, TRUE), 4)"
+    },
+    "sha256:d98cbc583bdefd07948153811c807348d44605426b29d0a2890f69655ab09a78": {
+      "result": [
+        [
+          18.30703805327515
+        ]
+      ],
+      "formula-as-evaluated": "=CHISQ.INV.RT(0.05, 10)"
+    },
+    "sha256:74324a2c734790bb84f51229678860d68e011119ea23fbe13caf4cf7b04274c8": {
+      "result": [
+        [
+          5
+        ]
+      ],
+      "formula-as-evaluated": "=CHISQ.INV.RT(CHISQ.DIST.RT(5, 4), 4)"
+    },
+    "sha256:c4d78c5c68056b46208b9f1fcd8f1c9b51f4a5d4e1dbe74e7adad9c83a639ea8": {
+      "result": [
+        [
+          0.0003081920170083095
+        ]
+      ],
+      "formula-as-evaluated": "=CHISQ.TEST(A1:C2, A4:C5)"
+    },
+    "sha256:8e8e44a3cff1511617e26a94c762119dde2fce718aff0f3916428624404db0d8": {
+      "result": [
+        [
+          1
+        ]
+      ],
+      "formula-as-evaluated": "=CHISQ.TEST(A1:B2, A4:B5)"
+    },
+    "sha256:94e51c8fde5a9dab64876cb42fb09344e13fb72e4ab67850307759ee53b4fbb8": {
+      "result": [
+        [
+          0.0003081920170083095
+        ]
+      ],
+      "formula-as-evaluated": "=CHITEST(A1:C2, A4:C5)"
+    },
+    "sha256:a99f1d93f4636bb0d10213d7a8d1e822c77e74d68b6eab4c4130f32bebd29f22": {
+      "result": [
+        [
+          0.3148786413364169
+        ]
+      ],
+      "formula-as-evaluated": "=CHITEST(A1:B2, A4:B5)"
+    },
+    "sha256:bc58eee2da100e1955610c732a43cbaede467bbf4f05a317f7faf74d71a3c111": {
+      "result": [
+        [
+          0.19599639845400535
+        ]
+      ],
+      "formula-as-evaluated": "=CONFIDENCE.NORM(0.05, 1, 100)"
+    },
+    "sha256:0515df0d5af3a5d59ac44970df769689f5fd587dccf75776ba7cf002b7693b6b": {
+      "result": [
+        [
+          0.9106931838592246
+        ]
+      ],
+      "formula-as-evaluated": "=CONFIDENCE.NORM(0.01, 2.5, 50)"
+    },
+    "sha256:b8b212170f09379524aa37366452d960ad8ec770e753a95cad808b86107b07d2": {
+      "result": [
+        [
+          5
+        ]
+      ],
+      "formula-as-evaluated": "=CRITBINOM(10, 0.5, 0.5)"
+    },
+    "sha256:244dddcd048826907f79ceb035a5e445a1561af6b63e5367cae3f6d76c38305c": {
+      "result": [
+        [
+          9
+        ]
+      ],
+      "formula-as-evaluated": "=CRITBINOM(20, 0.3, 0.95)"
+    },
+    "sha256:0c95f7f5036df64504d5331ea0f3382be1a027b5ea166974e1022f23d1b02563": {
+      "result": [
+        [
+          0.6321205588285577
+        ]
+      ],
+      "formula-as-evaluated": "=EXPON.DIST(1, 1, TRUE)"
+    },
+    "sha256:d905265dc14ec4ccf8c97ec109070d958d0036318f38d65a89a6528ba59aeb82": {
+      "result": [
+        [
+          2
+        ]
+      ],
+      "formula-as-evaluated": "=EXPON.DIST(0, 2, FALSE)"
+    },
+    "sha256:ef788437e6712462a89467b953402eae671cbde1e4bf56f35b1b8c21f02b5101": {
+      "result": [
+        [
+          0.2706705664732254
+        ]
+      ],
+      "formula-as-evaluated": "=EXPON.DIST(1, 2, FALSE)"
+    },
+    "sha256:36d64b5cf525b534a594225296e57c47a9223e576e64b0dae5c56d010e4098eb": {
+      "result": [
+        [
+          0.6321205588285577
+        ]
+      ],
+      "formula-as-evaluated": "=EXPONDIST(2, 0.5, TRUE)"
+    },
+    "sha256:cdf809d3062598df6322a24dda6424ccc0d615176e0847ca49ccd2b9434d0182": {
+      "result": [
+        [
+          0.18393972058572117
+        ]
+      ],
+      "formula-as-evaluated": "=EXPONDIST(2, 0.5, FALSE)"
+    },
+    "sha256:2a2a778ab49bb233e57fd3354434255e7c22ce33334c6161270573db55f59015": {
+      "result": [
+        [
+          0.5348805734621996
+        ]
+      ],
+      "formula-as-evaluated": "=F.DIST(1, 5, 10, TRUE)"
+    },
+    "sha256:469427ec56b79263f546061388ddcec5c0f88126a8b7e02a02571c98dcb89fe6": {
+      "result": [
+        [
+          0.4954797834866395
+        ]
+      ],
+      "formula-as-evaluated": "=F.DIST(1, 5, 10, FALSE)"
+    },
+    "sha256:4ee122a18b3a3d2afd255cd051b8c8abeb31b6a28bcf01605f4cf7cd0fb8ed1e": {
+      "result": [
+        [
+          0.049831275797221346
+        ]
+      ],
+      "formula-as-evaluated": "=F.DIST.RT(3.33, 5, 10)"
+    },
+    "sha256:3c175d0025c4715001145e0cd4fc997cb03df9bc4ac42225e13810d28226c85c": {
+      "result": [
+        [
+          0.46511942653780036
+        ]
+      ],
+      "formula-as-evaluated": "=F.DIST.RT(1, 5, 10)"
+    },
+    "sha256:fbd73e6f094419cce6e852fe4269f5efe663426aac20e1c128e2c7a0be62b2bb": {
+      "result": [
+        [
+          0.931933160851048
+        ]
+      ],
+      "formula-as-evaluated": "=F.INV(0.5, 5, 10)"
+    },
+    "sha256:fea92d552981678cea7d61ce9768b547b685749bd7766374bf11014fcdf8ad4a": {
+      "result": [
+        [
+          1.9999999999999987
+        ]
+      ],
+      "formula-as-evaluated": "=F.INV(F.DIST(2, 5, 10, TRUE), 5, 10)"
+    },
+    "sha256:3617ec86b572adee5876fea93f6363d90516f32fffbe89c66566d1f5d5ddc477": {
+      "result": [
+        [
+          3.3258345304130104
+        ]
+      ],
+      "formula-as-evaluated": "=F.INV.RT(0.05, 5, 10)"
+    },
+    "sha256:78f7ec86e39325369764634938046f87797723311ec30ef7935aca9048605d9e": {
+      "result": [
+        [
+          1.9999999999999987
+        ]
+      ],
+      "formula-as-evaluated": "=F.INV.RT(F.DIST.RT(2, 5, 10), 5, 10)"
+    },
+    "sha256:35f35d91d84de135e2dd790d2b6349368fa3e9b05755e330170319bb3bdd6a9a": {
+      "result": [
+        [
+          0.049831275797221346
+        ]
+      ],
+      "formula-as-evaluated": "=FDIST(3.33, 5, 10)"
+    },
+    "sha256:5b010673c7b80100ef94d556e1fee8183561755ea18ee252b014a6bc301d7c81": {
+      "result": [
+        [
+          0.46511942653780036
+        ]
+      ],
+      "formula-as-evaluated": "=FDIST(1, 5, 10)"
+    },
+    "sha256:977ce27449087c1a769122d81580567992a790b61d82ac54cbf3a11d9b8e2e97": {
+      "result": [
+        [
+          3.3258345304130104
+        ]
+      ],
+      "formula-as-evaluated": "=FINV(0.05, 5, 10)"
+    },
+    "sha256:07f9a539c4a636e600d8d9af8524c5d52195b998fdcaf2db339017394a0eb6f1": {
+      "result": [
+        [
+          1.9999999999999987
+        ]
+      ],
+      "formula-as-evaluated": "=FINV(FDIST(2, 5, 10), 5, 10)"
+    },
+    "sha256:4d9674a73e4eb055aad23fa01a3528493d1173ba048a99ffc3cdad7faa46644d": {
+      "result": [
+        [
+          0
+        ]
+      ],
+      "formula-as-evaluated": "=FISHER(0)"
+    },
+    "sha256:dcb419fa60cddc8f676fbf880fdc60130530ede1c1555f0c170a7f15929b156f": {
+      "result": [
+        [
+          0.5493061443340549
+        ]
+      ],
+      "formula-as-evaluated": "=FISHER(0.5)"
+    },
+    "sha256:b3e2e8ffe9dbfac2a9b0f8f5fca7d19042bb006e6e96c387a0dff97277027645": {
+      "result": [
+        [
+          0
+        ]
+      ],
+      "formula-as-evaluated": "=FISHERINV(0)"
+    },
+    "sha256:5f0f59fd04ee57bb91b6c2f013fd66f4c8a085b30a089131a00aad027a875e35": {
+      "result": [
+        [
+          0.75
+        ]
+      ],
+      "formula-as-evaluated": "=FISHERINV(FISHER(0.75))"
+    },
+    "sha256:36ce7fe17e126220d21a76d4dc66e995c38c1bf304c5ff0d2ae7de62d5a73c8f": {
+      "result": [
+        [
+          1
+        ]
+      ],
+      "formula-as-evaluated": "=GAMMA(1)"
+    },
+    "sha256:acf78fc0557d620075eac6da005727e336c096e43fe9e4c2d848fca801eadaf0": {
+      "result": [
+        [
+          24
+        ]
+      ],
+      "formula-as-evaluated": "=GAMMA(5)"
+    },
+    "sha256:a8653027aa207f8ecc01ebd50c7d4805030a55cb5ebd019d30d6ca600f1e0cc1": {
+      "result": [
+        [
+          1.7724538509055159
+        ]
+      ],
+      "formula-as-evaluated": "=GAMMA(0.5)"
+    },
+    "sha256:86736917fe60a99bff824bd74e8822a85c9522a1aa9968874959c3cfc60c6ad1": {
+      "result": [
+        [
+          0.5939941502901616
+        ]
+      ],
+      "formula-as-evaluated": "=GAMMA.DIST(2, 2, 1, TRUE)"
+    },
+    "sha256:2d49cadb21a6365d1384a1eae0462e5b5076a548610307718f34abbab3652324": {
+      "result": [
+        [
+          0.2706705664732254
+        ]
+      ],
+      "formula-as-evaluated": "=GAMMA.DIST(2, 2, 1, FALSE)"
+    },
+    "sha256:5a9f41018a10a68d81cdba6a19792a0c9f18849bd1a9c8b6d779d153692092d0": {
+      "result": [
+        [
+          1.6783469900166612
+        ]
+      ],
+      "formula-as-evaluated": "=GAMMA.INV(0.5, 2, 1)"
+    },
+    "sha256:f9ed6aa7be8914846058c6fe3906415a898984c69fac0ceba776cc00eb52c1b2": {
+      "result": [
+        [
+          2
+        ]
+      ],
+      "formula-as-evaluated": "=GAMMA.INV(GAMMA.DIST(2, 2, 1, TRUE), 2, 1)"
+    },
+    "sha256:b23f0f51ffb3f18606b84fee1d4683fe188c1002bfc07c02988ea498305591be": {
+      "result": [
+        [
+          0.5939941502901616
+        ]
+      ],
+      "formula-as-evaluated": "=GAMMADIST(2, 2, 1, TRUE)"
+    },
+    "sha256:994dd27859739e1d162490645849e1812c23811d331a98d39815bf2f086f6918": {
+      "result": [
+        [
+          0.2706705664732254
+        ]
+      ],
+      "formula-as-evaluated": "=GAMMADIST(2, 2, 1, FALSE)"
+    },
+    "sha256:93c9ca14e5007078decb2f2031e5540b2d748d08d902f8518ee63ad79150872f": {
+      "result": [
+        [
+          1.6783469900166612
+        ]
+      ],
+      "formula-as-evaluated": "=GAMMAINV(0.5, 2, 1)"
+    },
+    "sha256:adb0a886c3511dafd1b47dae33d923ec20fb83b8eef9fd744c9244e02d911407": {
+      "result": [
+        [
+          3
+        ]
+      ],
+      "formula-as-evaluated": "=GAMMAINV(GAMMADIST(3, 2, 1, TRUE), 2, 1)"
+    },
+    "sha256:249632dab92763b78927968fd7a4434c34355562e3fb4e4bb1e52d802d0fec51": {
+      "result": [
+        [
+          0
+        ]
+      ],
+      "formula-as-evaluated": "=GAUSS(0)"
+    },
+    "sha256:ae21ac31cfae548e02decff35b0966cc6993d3788dba04728c854d97718938ab": {
+      "result": [
+        [
+          0.3413447460685429
+        ]
+      ],
+      "formula-as-evaluated": "=GAUSS(1)"
+    },
+    "sha256:c8a7d0659d80641b3738fc8bcd5f30e15469f6720c3f1b699d2ef83836123a6e": {
+      "result": [
+        [
+          0.36326109391124867
+        ]
+      ],
+      "formula-as-evaluated": "=HYPGEOM.DIST(1, 4, 8, 20, FALSE)"
+    },
+    "sha256:ee92de56771c9577bf3450a98ef1ebaa533b0806d328af50ff9efa60a6e07931": {
+      "result": [
+        [
+          0.4654282765737874
+        ]
+      ],
+      "formula-as-evaluated": "=HYPGEOM.DIST(1, 4, 8, 20, TRUE)"
+    },
+    "sha256:57d1ea0783e39b6a9f2caf851c3b7931ce6cd1be54db616f637684e2a34a7253": {
+      "result": [
+        [
+          0.10216718266253871
+        ]
+      ],
+      "formula-as-evaluated": "=HYPGEOM.DIST(0, 4, 8, 20, FALSE)"
+    },
+    "sha256:92e321ef9b64380e15b1edc196ced89e6b48cd7c6b521fc774c335c934bbe381": {
+      "result": [
+        [
+          0.36326109391124867
+        ]
+      ],
+      "formula-as-evaluated": "=HYPGEOMDIST(1, 4, 8, 20)"
+    },
+    "sha256:5c7fe3e73a58fbbdee98cf635ab766f5d75d92a4851ff266e5bcb93600aaa8ac": {
+      "result": [
+        [
+          0.10216718266253871
+        ]
+      ],
+      "formula-as-evaluated": "=HYPGEOMDIST(0, 4, 8, 20)"
+    },
+    "sha256:c28b8587902df5fabc8ab5000c40df865bf7bba8ecab6ff93db89d44ffea6936": {
+      "result": [
+        [
+          1
+        ]
+      ],
+      "formula-as-evaluated": "=LOGINV(0.5, 0, 1)"
+    },
+    "sha256:ba9c3255eb164d45c830037a1646ef664fd53b5e8ab35987881c0a5c2f4f70a1": {
+      "result": [
+        [
+          2
+        ]
+      ],
+      "formula-as-evaluated": "=LOGINV(LOGNORMDIST(2, 0, 1), 0, 1)"
+    },
+    "sha256:ff09c389337182f758d990a3fba2e40d87027a44edda73c86eb921c9db1e6d98": {
+      "result": [
+        [
+          0.7558914042144173
+        ]
+      ],
+      "formula-as-evaluated": "=LOGNORM.DIST(2, 0, 1, TRUE)"
+    },
+    "sha256:42eec0bcef0a6fba115853f416184bf6c22b2f86f0b2135d5c289ff2ef67c6b4": {
+      "result": [
+        [
+          0.15687401927898112
+        ]
+      ],
+      "formula-as-evaluated": "=LOGNORM.DIST(2, 0, 1, FALSE)"
+    },
+    "sha256:cd94d3787c6f3a3e7cc1f922282a7ca932ba71b760f45f99c4d44f83c1c2eee5": {
+      "result": [
+        [
+          1
+        ]
+      ],
+      "formula-as-evaluated": "=LOGNORM.INV(0.5, 0, 1)"
+    },
+    "sha256:fc56bd0600721c4c13f55e79f6105a18674c18b734a2f55c8453c05f2c3ef24b": {
+      "result": [
+        [
+          2
+        ]
+      ],
+      "formula-as-evaluated": "=LOGNORM.INV(LOGNORM.DIST(2, 0, 1, TRUE), 0, 1)"
+    },
+    "sha256:3edcf1741dd5aefbfda77f2c051ece68d6e7e6ff2f69843575e833394116409a": {
+      "result": [
+        [
+          0.5
+        ]
+      ],
+      "formula-as-evaluated": "=LOGNORMDIST(1, 0, 1)"
+    },
+    "sha256:7079eeab318d371f7ee39fc368a4db91f225fe3c76db8a77e341c167f09617b2": {
+      "result": [
+        [
+          0.7558914042144173
+        ]
+      ],
+      "formula-as-evaluated": "=LOGNORMDIST(2, 0, 1)"
+    },
+    "sha256:42663e95d5214fa56cc7f1727d21c68061870c3b8ba1624bdcfeabe7cfd4be19": {
+      "result": [
+        [
+          0.05504866037517788
+        ]
+      ],
+      "formula-as-evaluated": "=NEGBINOM.DIST(10, 5, 0.25, FALSE)"
+    },
+    "sha256:8bfef2b0932d4e5a9d80e4da14994d6d56dd3fa6826264a7373c8b6e4dd9b67c": {
+      "result": [
+        [
+          0.3135140584781766
+        ]
+      ],
+      "formula-as-evaluated": "=NEGBINOM.DIST(10, 5, 0.25, TRUE)"
+    },
+    "sha256:daf4a9baba39196c2912796284e22eb9d88118bb5efb8a1d3ffa093228777aeb": {
+      "result": [
+        [
+          0.03125
+        ]
+      ],
+      "formula-as-evaluated": "=NEGBINOM.DIST(0, 5, 0.5, FALSE)"
+    },
+    "sha256:165142c530f28adef3ae7e761a2023a4686c7a6bbcaada3fa74f6d98d29cd797": {
+      "result": [
+        [
+          0.05504866037517788
+        ]
+      ],
+      "formula-as-evaluated": "=NEGBINOMDIST(10, 5, 0.25)"
+    },
+    "sha256:396dc1e1783062a3f3d83c34d4d8e4cebcbfd782d16f04ac866288ffb5e08a21": {
+      "result": [
+        [
+          0.03125
+        ]
+      ],
+      "formula-as-evaluated": "=NEGBINOMDIST(0, 5, 0.5)"
+    },
+    "sha256:d2db05d031d36b1ded6a05173a2fa370eec3e9eafbf160dbc4cb8c54aa41b9be": {
+      "result": [
+        [
+          0.5
+        ]
+      ],
+      "formula-as-evaluated": "=NORM.DIST(0, 0, 1, TRUE)"
+    },
+    "sha256:14e2518d7da253c03efa277b1491fdbff87fa2d581ec8afc6883aeb46bf10830": {
+      "result": [
+        [
+          0.3989422804014327
+        ]
+      ],
+      "formula-as-evaluated": "=NORM.DIST(0, 0, 1, FALSE)"
+    },
+    "sha256:db7e218924c7e803c9aac5c9c7afb59bf37a43ddc7cf9ccba432643132ec3e75": {
+      "result": [
+        [
+          0.8413447460685429
+        ]
+      ],
+      "formula-as-evaluated": "=NORM.DIST(1, 0, 1, TRUE)"
+    },
+    "sha256:4552e94b449adcb8735dadf6685dfa497f2fb82627e639a48713997e373f9aa6": {
+      "result": [
+        [
+          0.9087887802741321
+        ]
+      ],
+      "formula-as-evaluated": "=NORM.DIST(42, 40, 1.5, TRUE)"
+    },
+    "sha256:3e2c5f261cce7443b5856c38aa49483c6003ed2cb4cb2c8a75de34a5354c4acc": {
+      "result": [
+        [
+          0
+        ]
+      ],
+      "formula-as-evaluated": "=NORM.INV(0.5, 0, 1)"
+    },
+    "sha256:a85b51c9acfe6e72c14a81db28c1c01bc9a51fe79ae7185640acc2b5eb6de14a": {
+      "result": [
+        [
+          1.9599639845400536
+        ]
+      ],
+      "formula-as-evaluated": "=NORM.INV(0.975, 0, 1)"
+    },
+    "sha256:3da2b705f1e4b387f6f5bf03f046031bd3cf9ce4c3bac1b61926c701997c50ca": {
+      "result": [
+        [
+          1.4999999999999998
+        ]
+      ],
+      "formula-as-evaluated": "=NORM.INV(NORM.DIST(1.5, 0, 1, TRUE), 0, 1)"
+    },
+    "sha256:6bb9b6e053c5206f44c204f7499f4b8ecd7cdb844ea048f16b47cbfa1a5de765": {
+      "result": [
+        [
+          0.5
+        ]
+      ],
+      "formula-as-evaluated": "=NORM.S.DIST(0, TRUE)"
+    },
+    "sha256:248ed98c7c96d4b3022bcbbcaac857fa9c07df44687b0646e21fbce58abb4d13": {
+      "result": [
+        [
+          0.3989422804014327
+        ]
+      ],
+      "formula-as-evaluated": "=NORM.S.DIST(0, FALSE)"
+    },
+    "sha256:dfec0929a3d325a282fab3f4e89813d47ccb0234cb579c11fdb4c14e5c9fa9a2": {
+      "result": [
+        [
+          0.9750021048517795
+        ]
+      ],
+      "formula-as-evaluated": "=NORM.S.DIST(1.96, TRUE)"
+    },
+    "sha256:231bf1d33390a3174d2ad9b5d74a0223b75b29797946697d639cf2db2c6fe740": {
+      "result": [
+        [
+          0
+        ]
+      ],
+      "formula-as-evaluated": "=NORM.S.INV(0.5)"
+    },
+    "sha256:6a9878cf4335b21de7cb787d713d4c4a41cfc8aa9f324bb774901410491c0894": {
+      "result": [
+        [
+          1.9599639845400536
+        ]
+      ],
+      "formula-as-evaluated": "=NORM.S.INV(0.975)"
+    },
+    "sha256:e729c680628f919b5f0ad762160c1b0fe138f2be7197f5c1bafc1c89c5ee2733": {
+      "result": [
+        [
+          0.5
+        ]
+      ],
+      "formula-as-evaluated": "=NORMDIST(0, 0, 1, TRUE)"
+    },
+    "sha256:747243293a0cd6f8f42d6653bde71e09aa1600e0ee89cf2fd3858f5e11d91750": {
+      "result": [
+        [
+          0.3989422804014327
+        ]
+      ],
+      "formula-as-evaluated": "=NORMDIST(0, 0, 1, FALSE)"
+    },
+    "sha256:b043a7b4b2ffcdef700b35e82c2fbae21d9eb12693434b6d6657747af98b7c19": {
+      "result": [
+        [
+          0
+        ]
+      ],
+      "formula-as-evaluated": "=NORMINV(0.5, 0, 1)"
+    },
+    "sha256:7915fc66ae2b85e1bb10bebd6e60cd3b479f7648e6b09a7ca11339e3d37022f6": {
+      "result": [
+        [
+          1.6448536269514715
+        ]
+      ],
+      "formula-as-evaluated": "=NORMINV(0.95, 0, 1)"
+    },
+    "sha256:e58f352d30ff1b3b22c8568fda45c2ef0c6bd15c98eb37f48c2440fa9a83462f": {
+      "result": [
+        [
+          0.5
+        ]
+      ],
+      "formula-as-evaluated": "=NORMSDIST(0)"
+    },
+    "sha256:577f7493b21b01e74d11cc70a0b5a63d532804dfc5f0c09c7c388205738c221e": {
+      "result": [
+        [
+          0.9750021048517795
+        ]
+      ],
+      "formula-as-evaluated": "=NORMSDIST(1.96)"
+    },
+    "sha256:dce741acb8b135904315966406b48079a7e9fb500ca48dbc0aa005eff8e92681": {
+      "result": [
+        [
+          0
+        ]
+      ],
+      "formula-as-evaluated": "=NORMSINV(0.5)"
+    },
+    "sha256:7b3caaed76087498e92bef31e178e09ff56151f904d3fc688982df586acdb520": {
+      "result": [
+        [
+          -1.9599639845400538
+        ]
+      ],
+      "formula-as-evaluated": "=NORMSINV(0.025)"
+    },
+    "sha256:5e57e664068a05662d06a5c411d952c21c253c5ab24e65e1c463a6bbe34aea64": {
+      "result": [
+        [
+          0.3989422804014327
+        ]
+      ],
+      "formula-as-evaluated": "=PHI(0)"
+    },
+    "sha256:98c753ca466e73b41129da85ea19be77d543a12d55d9067ab84f2514852ac992": {
+      "result": [
+        [
+          0.24197072451914337
+        ]
+      ],
+      "formula-as-evaluated": "=PHI(1)"
+    },
+    "sha256:645d8e320b3902a2faabd5ded7651015b32622ed41f52d1fdb2b5139155e95b2": {
+      "result": [
+        [
+          0.049787068367863944
+        ]
+      ],
+      "formula-as-evaluated": "=POISSON(0, 3, FALSE)"
+    },
+    "sha256:999bf73ed78e6df697bb0785a5e3adac95e17bbf58156bb35dff67fe840daea1": {
+      "result": [
+        [
+          0.22404180765538775
+        ]
+      ],
+      "formula-as-evaluated": "=POISSON(3, 3, FALSE)"
+    },
+    "sha256:f39b4f4357633b37e693607184289a33e5fd064fa11fa38a293c5c51c42ae346": {
+      "result": [
+        [
+          0.9160820579686966
+        ]
+      ],
+      "formula-as-evaluated": "=POISSON(5, 3, TRUE)"
+    },
+    "sha256:152c1922ab80c847fd9b411e74f47ad37ac329df9f9cbf24cb3359e04f3924cc": {
+      "result": [
+        [
+          0.049787068367863944
+        ]
+      ],
+      "formula-as-evaluated": "=POISSON.DIST(0, 3, FALSE)"
+    },
+    "sha256:4f7cd7273478a7ccd22ea411a13eabd5c8c8d375568d1f8f2185dd9277c6112d": {
+      "result": [
+        [
+          0.22404180765538775
+        ]
+      ],
+      "formula-as-evaluated": "=POISSON.DIST(3, 3, FALSE)"
+    },
+    "sha256:c4aa6a5292a0f81bbeefe949047c0a783b51b10405da3cde1476fa201fb51b20": {
+      "result": [
+        [
+          0.9160820579686966
+        ]
+      ],
+      "formula-as-evaluated": "=POISSON.DIST(5, 3, TRUE)"
+    },
+    "sha256:47f5f87eb0db1785c6ef24a1e46caeab42d7a93083fc1bfab898beff25f1344c": {
+      "result": [
+        [
+          0.5
+        ]
+      ],
+      "formula-as-evaluated": "=T.DIST(0, 10, TRUE)"
+    },
+    "sha256:fc7752636baf22044fe5265e24890f66f91c07a17540ee989cc36b627a86805c": {
+      "result": [
+        [
+          0.38910838396603115
+        ]
+      ],
+      "formula-as-evaluated": "=T.DIST(0, 10, FALSE)"
+    },
+    "sha256:bc98bba215d89db642fd09b89b10a971caa333d96d8fe0cad4b7a7b22b01d3f9": {
+      "result": [
+        [
+          0.9499623689670764
+        ]
+      ],
+      "formula-as-evaluated": "=T.DIST(1.812, 10, TRUE)"
+    },
+    "sha256:03eb28cce9acf6776ac11aa9355e2418730a3f95e32d8e27526db624cf1f62d5": {
+      "result": [
+        [
+          0.10007526206584715
+        ]
+      ],
+      "formula-as-evaluated": "=T.DIST.2T(1.812, 10)"
+    },
+    "sha256:673b92f25c79db51d44010efc642a6122a04dc458ecf7e507c573bb46b8a7f66": {
+      "result": [
+        [
+          0.627893605742973
+        ]
+      ],
+      "formula-as-evaluated": "=T.DIST.2T(0.5, 10)"
+    },
+    "sha256:3bb8c1d5ad78787b9708f0c57a60fb17b017c0f999b2042594ad12e753be9bd4": {
+      "result": [
+        [
+          0.05003763103292357
+        ]
+      ],
+      "formula-as-evaluated": "=T.DIST.RT(1.812, 10)"
+    },
+    "sha256:3a2be5a401fdcd9e5e2a4bf7558ae246e1abc331c2caa6ed918e13003daffdfa": {
+      "result": [
+        [
+          0.5
+        ]
+      ],
+      "formula-as-evaluated": "=T.DIST.RT(0, 10)"
+    },
+    "sha256:5729a5afb0337b5ee2db54ccf43ca184da9a3f0cfc87b9bc91dc04a25bb4e8da": {
+      "result": [
+        [
+          0
+        ]
+      ],
+      "formula-as-evaluated": "=T.INV(0.5, 10)"
+    },
+    "sha256:0c944014bd88fbf43b1d1b615bea44d0e70d718d2941d862b9ba011e87b1f7cd": {
+      "result": [
+        [
+          1.5000000000000002
+        ]
+      ],
+      "formula-as-evaluated": "=T.INV(T.DIST(1.5, 10, TRUE), 10)"
+    },
+    "sha256:e25a99db4bb5d931f77000efd2c56639336cbf8efc089c15e8b8b6c07eb376b4": {
+      "result": [
+        [
+          2.228138851986274
+        ]
+      ],
+      "formula-as-evaluated": "=T.INV.2T(0.05, 10)"
+    },
+    "sha256:b6ab83dabb88d31107e782a9d4e8567b0da564132584644fea6eaa0e6c3a2555": {
+      "result": [
+        [
+          1.5000000000000002
+        ]
+      ],
+      "formula-as-evaluated": "=T.INV.2T(T.DIST.2T(1.5, 10), 10)"
+    },
+    "sha256:a26cb1f833ef0739563ef4662c9e52e0573e748e8415f4de75d423d6522c77cb": {
+      "result": [
+        [
+          0.05003763103292357
+        ]
+      ],
+      "formula-as-evaluated": "=TDIST(1.812, 10, 1)"
+    },
+    "sha256:eabd7c711a8c4d7c9e0796f0c80afbcf16b169cfee8d09ebc1a91ac155436a13": {
+      "result": [
+        [
+          0.10007526206584715
+        ]
+      ],
+      "formula-as-evaluated": "=TDIST(1.812, 10, 2)"
+    },
+    "sha256:0d30b34c0a9b665eb29d5a79e2409d2f99f2bcb4092f18b37b5766d950fab7ca": {
+      "result": [
+        [
+          2.228138851986274
+        ]
+      ],
+      "formula-as-evaluated": "=TINV(0.05, 10)"
+    },
+    "sha256:fa241945d2c2d33768b3a5159796c946cdf073851a25d344076fdb2a84e48fa0": {
+      "result": [
+        [
+          1.5000000000000002
+        ]
+      ],
+      "formula-as-evaluated": "=TINV(TDIST(1.5, 10, 2), 10)"
+    },
+    "sha256:82ec20f9c32a1e023bfbf9d3835f304e358dfd799e57bfa8728c814809d779f6": {
+      "result": [
+        [
+          0.9816843611112658
+        ]
+      ],
+      "formula-as-evaluated": "=WEIBULL(2, 2, 1, TRUE)"
+    },
+    "sha256:f7433561ad51bdd0ada21119dfa292b83877e1b1f11d6cc107616d785957b053": {
+      "result": [
+        [
+          0.07326255555493671
+        ]
+      ],
+      "formula-as-evaluated": "=WEIBULL(2, 2, 1, FALSE)"
+    },
+    "sha256:154993b4005e90b2804c157c7fb1ee7f90ac5e8bd0d576d69761e14e757aca1c": {
+      "result": [
+        [
+          0.9816843611112658
+        ]
+      ],
+      "formula-as-evaluated": "=WEIBULL.DIST(2, 2, 1, TRUE)"
+    },
+    "sha256:1e5fb7dae363448145e54537b403c8563f378e7843645554a2db5dca850911a4": {
+      "result": [
+        [
+          0.07326255555493671
+        ]
+      ],
+      "formula-as-evaluated": "=WEIBULL.DIST(2, 2, 1, FALSE)"
+    },
+    "sha256:0fb126ee72a6a30b65c20010b62c523fa61d342c8ddfb52e23fdadf0437e509f": {
+      "result": [
+        [
+          0
+        ]
+      ],
+      "formula-as-evaluated": "=WEIBULL.DIST(0, 2, 1, TRUE)"
+    }
+  }
+}

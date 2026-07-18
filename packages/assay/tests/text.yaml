@@ -1,0 +1,375 @@
+schemaVersion: 3
+name: Text functions
+tests:
+  - subject: CONCAT
+    formula: =CONCAT("hello", " world")
+    category: value
+    expect: hello world
+    overrides:
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    name: concat-two-args
+  - subject: CONCATENATE
+    category: value
+    formula: =CONCATENATE(A1, A2, A3, "!")
+    grid:
+      A1: Hello
+      A2: " my "
+      A3: World
+    expect: Hello my World!
+    name: concatenate-with-grid
+  - subject: CONCAT
+    formula: =CONCAT("value:", 42)
+    category: value
+    expect: value:42
+    overrides:
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - divergence
+    name: concat-with-numbers
+  - subject: LEFT
+    category: value
+    formula: =LEFT("Sale Price", 4)
+    expect: Sale
+    name: left-with-count
+  - subject: LEFT
+    category: value
+    formula: =LEFT("Sweden")
+    expect: S
+    name: left-default
+  - subject: RIGHT
+    category: value
+    formula: =RIGHT("Sale Price", 5)
+    expect: Price
+    name: right-with-count
+  - subject: RIGHT
+    category: value
+    formula: =RIGHT("Stock Number")
+    expect: r
+    name: right-default
+  - subject: MID
+    category: value
+    formula: =MID("Romain", 3, 4)
+    expect: main
+    name: mid-basic
+  - subject: MID
+    category: value
+    formula: =MID("Romain", 1, 2)
+    expect: Ro
+    name: mid-from-start
+  - subject: MID
+    category: value
+    formula: =MID("Romain", 3, 6)
+    expect: main
+    name: mid-beyond-end
+  - subject: MID
+    formula: =MID("Romain", 0, 3)
+    category: value
+    expect: ""
+    overrides:
+      excel:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+      gsheets:
+        cause: error-code
+        recorded:
+          error: "#NUM!"
+      ironcalc:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+      hyperformula:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+      libreoffice:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+      formulas:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+      pycel:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+    tags:
+      - divergence
+      - error-type
+    name: mid-start-0
+  - subject: MID
+    formula: =MID("Romain", 1, -1)
+    category: value
+    expect:
+      error: "#VALUE!"
+    name: mid-negative-count
+  - subject: LEN
+    category: value
+    formula: =LEN("Phoenix, AZ")
+    expect: 11
+    name: len-basic
+  - subject: LEN
+    category: value
+    formula: =LEN("")
+    expect: 0
+    name: len-empty
+  - subject: LEN
+    category: value
+    formula: =LEN("        One")
+    expect: 11
+    name: len-with-spaces
+  - subject: LOWER
+    category: value
+    formula: =LOWER("E. E. Cummings")
+    expect: e. e. cummings
+    name: lower
+  - subject: UPPER
+    category: value
+    formula: =UPPER("total")
+    expect: TOTAL
+    name: upper
+  - subject: UPPER
+    category: value
+    formula: =UPPER("Yield")
+    expect: YIELD
+    name: upper-mixed
+  - subject: TRIM
+    formula: =TRIM(" First Quarter Earnings ")
+    category: value
+    expect: First Quarter Earnings
+    overrides:
+      pycel:
+        cause: format-rendering
+        recorded: " First Quarter Earnings "
+    name: trim
+  - subject: SUBSTITUTE
+    category: value
+    formula: =SUBSTITUTE("hello world", "world", "earth")
+    expect: hello earth
+    name: substitute-basic
+  - subject: SUBSTITUTE
+    category: value
+    formula: =SUBSTITUTE("abcabc", "a", "x")
+    expect: xbcxbc
+    name: substitute-multiple-occurrences
+  - subject: SUBSTITUTE
+    category: value
+    formula: =SUBSTITUTE("abcabc", "a", "x", 2)
+    expect: abcxbc
+    name: substitute-specific-instance
+  - subject: FIND
+    category: value
+    formula: =FIND("M", "Miriam McGovern")
+    expect: 1
+    name: find-case-sensitive
+  - subject: FIND
+    category: value
+    formula: =FIND("m", "Miriam McGovern")
+    expect: 6
+    name: find-lowercase
+  - subject: FIND
+    category: value
+    formula: =FIND("M", "Miriam McGovern", 3)
+    expect: 8
+    name: find-with-start
+  - subject: FIND
+    formula: =FIND("B", "Miriam McGovern")
+    category: value
+    expect:
+      error: "#VALUE!"
+    name: find-not-found
+  - subject: EXACT
+    formula: =EXACT("word", "word")
+    category: value
+    expect: true
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    name: exact-match
+  - subject: EXACT
+    formula: =EXACT("Word", "word")
+    category: value
+    expect: false
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    name: exact-case-differs
+  - subject: REPLACE
+    formula: =REPLACE("abcdefghijk", 6, 5, "*")
+    category: value
+    expect: abcde*k
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    name: replace-basic
+  - subject: REPLACE
+    formula: =REPLACE("2009", 3, 2, "10")
+    category: value
+    expect: "2010"
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    name: replace-year
+  - subject: REPT
+    formula: =REPT("ha", 3)
+    category: value
+    expect: hahaha
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    name: rept-basic
+  - subject: REPT
+    category: value
+    status: observed
+    formula: =REPT("ha", 0)
+    tags:
+      - divergence
+      - null-vs-empty
+    name: rept-zero
+  - subject: TEXTJOIN
+    formula: =TEXTJOIN(", ", TRUE, A1:A3)
+    category: value
+    grid:
+      A1: Monday
+      A2: Tuesday
+      A3: Wednesday
+    expect: Monday, Tuesday, Wednesday
+    overrides:
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    name: textjoin-comma-separator
+  - subject: TEXTBEFORE
+    formula: =TEXTBEFORE("Brian Wiles", " ")
+    category: value
+    expect: Brian
+    overrides:
+      gsheets:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - divergence
+      - excel-only
+    name: textbefore-space
+  - subject: TEXTBEFORE
+    formula: =TEXTBEFORE("one,two,three", ",", 2)
+    category: value
+    expect: one,two
+    overrides:
+      gsheets:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - divergence
+      - excel-only
+    name: textbefore-second-instance
+  - subject: TEXTAFTER
+    formula: =TEXTAFTER("Brian Wiles", " ")
+    category: value
+    expect: Wiles
+    overrides:
+      gsheets:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - divergence
+      - excel-only
+    name: textafter-space
+  - subject: TEXTAFTER
+    formula: =TEXTAFTER("one,two,three", ",", 2)
+    category: value
+    expect: three
+    overrides:
+      gsheets:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - divergence
+      - excel-only
+    name: textafter-second-instance

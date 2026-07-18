@@ -1,0 +1,16 @@
+id: DV-0244
+summary: "hyperformula, lattice: different argument interpretation — T"
+cause: arg-semantics
+category: value
+engines:
+  - hyperformula
+  - lattice
+behavior:
+  signature: '""'
+test-count: 1
+subjects:
+  - T
+tests:
+  - T/t-of-number
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

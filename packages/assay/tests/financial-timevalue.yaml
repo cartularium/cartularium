@@ -1,0 +1,1390 @@
+schemaVersion: 3
+name: Financial - time-value-of-money and depreciation
+tests:
+  - subject: CUMIPMT
+    category: value
+    status: observed
+    formula: =CUMIPMT(0.05/12, 360, 100000, 1, 12, 0)
+    tags:
+      - financial
+      - timevalue
+    name: cumipmt-first-year-mortgage
+  - subject: CUMIPMT
+    category: value
+    status: observed
+    formula: =CUMIPMT(0.05/12, 360, 100000, 349, 360, 0)
+    tags:
+      - financial
+      - timevalue
+    name: cumipmt-last-year-mortgage
+  - subject: CUMIPMT
+    formula: =CUMIPMT(0.05/12, 360, 100000, 0, 12, 0)
+    category: value
+    expect:
+      error: "#NUM!"
+    overrides:
+      libreoffice:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - financial
+      - timevalue
+    name: cumipmt-invalid-period
+  - subject: CUMPRINC
+    category: value
+    status: observed
+    formula: =CUMPRINC(0.05/12, 360, 100000, 1, 12, 0)
+    tags:
+      - financial
+      - timevalue
+    name: cumprinc-first-year-mortgage
+  - subject: CUMPRINC
+    category: value
+    status: observed
+    formula: =CUMPRINC(0.05/12, 360, 100000, 1, 360, 0)
+    tags:
+      - financial
+      - timevalue
+    name: cumprinc-full-life-equals-principal
+  - subject: CUMPRINC
+    formula: =CUMPRINC(0.05/12, 360, 100000, 1, 12, 2)
+    category: value
+    expect: -1884.1812569966694
+    overrides:
+      excel:
+        cause: error-code
+        recorded:
+          error: "#NUM!"
+      lattice:
+        cause: error-code
+        recorded:
+          error: "#NUM!"
+      ironcalc:
+        cause: error-code
+        recorded:
+          error: "#NUM!"
+      hyperformula:
+        cause: error-code
+        recorded:
+          error: "#NUM!"
+      libreoffice:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+      formulas:
+        cause: error-code
+        recorded:
+          error: "#NUM!"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - financial
+      - timevalue
+    name: cumprinc-invalid-type
+  - subject: DB
+    category: value
+    formula: =DB(1000000, 100000, 6, 1, 12)
+    expect: 319000
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - financial
+      - timevalue
+    name: db-first-period
+  - subject: DB
+    category: value
+    formula: =DB(1000000, 100000, 6, 2, 12)
+    expect: 217239
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - financial
+      - timevalue
+    name: db-second-period
+  - subject: DB
+    category: value
+    status: observed
+    formula: =DB(1000000, 100000, 6, 1, 7)
+    tags:
+      - financial
+      - timevalue
+    name: db-partial-first-month
+  - subject: DDB
+    formula: =DDB(1000, 100, 10, 1)
+    category: value
+    expect: 200
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      gsheets:
+        cause: precision
+        recorded: 199.99999999999994
+    tags:
+      - financial
+      - timevalue
+    name: ddb-period-1
+  - subject: DDB
+    formula: =DDB(1000, 100, 10, 2)
+    category: value
+    expect: 160
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      gsheets:
+        cause: precision
+        recorded: 159.99999999999997
+      formulas:
+        cause: precision
+        recorded: 159.9999999999999
+    tags:
+      - financial
+      - timevalue
+    name: ddb-period-2
+  - subject: DDB
+    formula: =DDB(2400, 300, 10, 1, 1.5)
+    category: value
+    expect: 360
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      gsheets:
+        cause: precision
+        recorded: 360.00000000000006
+    tags:
+      - financial
+      - timevalue
+    name: ddb-custom-factor
+  - subject: DDB
+    category: value
+    status: observed
+    formula: =DDB(1000, 100, 10, 10)
+    tags:
+      - financial
+      - timevalue
+    name: ddb-salvage-floor
+  - subject: EFFECT
+    formula: =EFFECT(0.12, 12)
+    category: value
+    expect: 0.126825
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      excel:
+        cause: precision
+        recorded: 0.12682503013196977
+      gsheets:
+        cause: precision
+        recorded: 0.12682503013196977
+      lattice:
+        cause: precision
+        recorded: 0.12682503013196977
+      ironcalc:
+        cause: precision
+        recorded: 0.12682503
+      hyperformula:
+        cause: precision
+        recorded: 0.12682503013
+      libreoffice:
+        cause: precision
+        recorded: 0.12682503013197
+      formulas:
+        cause: precision
+        recorded: 0.12682503013196977
+    tags:
+      - financial
+      - timevalue
+    name: effect-monthly-compounding
+  - subject: EFFECT
+    formula: =EFFECT(0.05, 1)
+    category: value
+    expect: 0.05
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      excel:
+        cause: precision
+        recorded: 0.050000000000000044
+      gsheets:
+        cause: precision
+        recorded: 0.050000000000000044
+      lattice:
+        cause: precision
+        recorded: 0.050000000000000044
+      formulas:
+        cause: precision
+        recorded: 0.050000000000000044
+    tags:
+      - financial
+      - timevalue
+    name: effect-annual-compounding
+  - subject: EFFECT
+    formula: =EFFECT(0.05, 0)
+    category: value
+    expect:
+      error: "#NUM!"
+    overrides:
+      libreoffice:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - financial
+      - timevalue
+    name: effect-invalid-periods
+  - subject: FV
+    formula: =FV(0.06, 10, -1000)
+    category: value
+    expect: 13180.79
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      excel:
+        cause: precision
+        recorded: 13180.79494238091
+      gsheets:
+        cause: precision
+        recorded: 13180.79494238091
+      lattice:
+        cause: precision
+        recorded: 13180.79494238091
+      hyperformula:
+        cause: precision
+        recorded: 13180.794942
+      libreoffice:
+        cause: precision
+        recorded: 13180.7949423809
+      formulas:
+        cause: precision
+        recorded: 13180.79494238091
+    tags:
+      - financial
+      - timevalue
+    name: fv-annuity-10yr
+  - subject: FV
+    formula: =FV(0.05, 20, 0, -10000)
+    category: value
+    expect: 26532.98
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      excel:
+        cause: precision
+        recorded: 26532.97705144421
+      gsheets:
+        cause: precision
+        recorded: 26532.97705144422
+      lattice:
+        cause: precision
+        recorded: 26532.97705144422
+      hyperformula:
+        cause: precision
+        recorded: 26532.977051
+      libreoffice:
+        cause: precision
+        recorded: 26532.9770514442
+      formulas:
+        cause: precision
+        recorded: 26532.97705144422
+    tags:
+      - financial
+      - timevalue
+    name: fv-lump-sum
+  - subject: FV
+    formula: =FV(0, 10, -100)
+    category: value
+    expect: 1000
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - financial
+      - timevalue
+    name: fv-zero-rate
+  - subject: FVSCHEDULE
+    formula: =FVSCHEDULE(1000, {0.05, 0.06, 0.07})
+    category: value
+    expect: 1191.51
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      excel:
+        cause: arg-semantics
+        recorded: 1190.91
+      gsheets:
+        cause: arg-semantics
+        recorded: 1190.91
+      lattice:
+        cause: arg-semantics
+        recorded: 1190.91
+      hyperformula:
+        cause: arg-semantics
+        recorded: 1190.91
+      libreoffice:
+        cause: arg-semantics
+        recorded: 1190.91
+      formulas:
+        cause: arg-semantics
+        recorded: 1190.9100000000003
+    tags:
+      - financial
+      - timevalue
+      - bare-formula
+    name: fvschedule-three-rates
+  - subject: FVSCHEDULE
+    formula: =FVSCHEDULE(1000, {0.1, 0, 0.1})
+    category: value
+    expect: 1210
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      formulas:
+        cause: precision
+        recorded: 1210.0000000000002
+    tags:
+      - financial
+      - timevalue
+      - bare-formula
+    name: fvschedule-zero-rate-in-schedule
+  - subject: FVSCHEDULE
+    formula: =FVSCHEDULE(500, {0.1})
+    category: value
+    expect: 550
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - financial
+      - timevalue
+    name: fvschedule-single-rate
+  - subject: IPMT
+    formula: =IPMT(0.05/12, 1, 360, -200000)
+    category: value
+    expect: 833.333333
+    overrides:
+      formulas:
+        cause: error-code
+        recorded:
+          error: "#NUM!"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      excel:
+        cause: precision
+        recorded: 833.3333333333334
+      gsheets:
+        cause: precision
+        recorded: 833.3333333333334
+      lattice:
+        cause: precision
+        recorded: 833.3333333333334
+      ironcalc:
+        cause: precision
+        recorded: 833.333333333
+      hyperformula:
+        cause: precision
+        recorded: 833.33333333
+      libreoffice:
+        cause: precision
+        recorded: 833.333333333333
+    tags:
+      - financial
+      - timevalue
+    name: ipmt-first-period-mortgage
+  - subject: IPMT
+    category: value
+    status: observed
+    formula: =IPMT(0.05/12, 360, 360, -200000)
+    tags:
+      - financial
+      - timevalue
+    name: ipmt-last-period-mortgage
+  - subject: IPMT
+    formula: =IPMT(0.05/12, 0, 360, -200000)
+    category: value
+    expect:
+      error: "#NUM!"
+    overrides:
+      libreoffice:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: arg-semantics
+        recorded: 834.3304699
+    tags:
+      - financial
+      - timevalue
+    name: ipmt-invalid-period
+  - subject: IRR
+    category: value
+    status: observed
+    formula: =IRR(A1:A6)
+    grid:
+      A1: -1000
+      A2: 200
+      A3: 200
+      A4: 200
+      A5: 200
+      A6: 200
+    tags:
+      - financial
+      - timevalue
+    name: irr-simple-project
+  - subject: IRR
+    category: value
+    status: observed
+    formula: =IRR(A1:A4)
+    grid:
+      A1: -10000
+      A2: 3000
+      A3: 4200
+      A4: 6800
+    tags:
+      - financial
+      - timevalue
+    name: irr-growing-cashflows
+  - subject: IRR
+    formula: =IRR(A1:A3)
+    category: value
+    grid:
+      A1: 100
+      A2: 200
+      A3: 300
+    expect:
+      error: "#NUM!"
+    overrides:
+      libreoffice:
+        cause: error-code
+        recorded:
+          error: "#N/A"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - financial
+      - timevalue
+    name: irr-no-sign-change
+  - subject: ISPMT
+    category: value
+    status: observed
+    formula: =ISPMT(0.1/12, 1, 36, 8000000)
+    tags:
+      - financial
+      - timevalue
+    name: ispmt-mid-loan
+  - subject: ISPMT
+    formula: =ISPMT(0.05, 0, 5, -1000)
+    category: value
+    expect: 50
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - financial
+      - timevalue
+    name: ispmt-first-period
+  - subject: ISPMT
+    formula: =ISPMT(0.05, 5, 5, -1000)
+    category: value
+    expect: 0
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - financial
+      - timevalue
+    name: ispmt-last-period
+  - subject: MIRR
+    category: value
+    status: observed
+    formula: =MIRR(A1:A6, 0.1, 0.12)
+    grid:
+      A1: -120000
+      A2: 39000
+      A3: 30000
+      A4: 21000
+      A5: 37000
+      A6: 46000
+    tags:
+      - financial
+      - timevalue
+    name: mirr-standard
+  - subject: MIRR
+    category: value
+    status: observed
+    formula: =MIRR(A1:A4, 0.1, 0.1)
+    grid:
+      A1: -1000
+      A2: 500
+      A3: 500
+      A4: 500
+    tags:
+      - financial
+      - timevalue
+    name: mirr-equal-rates
+  - subject: MIRR
+    formula: =MIRR(A1:A3, 0.1, 0.12)
+    category: value
+    grid:
+      A1: 100
+      A2: 200
+      A3: 300
+    expect:
+      error: "#DIV/0!"
+    overrides:
+      libreoffice:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - financial
+      - timevalue
+    name: mirr-no-sign-change
+  - subject: NOMINAL
+    formula: =NOMINAL(0.126825030131969, 12)
+    category: value
+    expect: 0.12
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      excel:
+        cause: precision
+        recorded: 0.1200000000000001
+      gsheets:
+        cause: precision
+        recorded: 0.1200000000000001
+      lattice:
+        cause: precision
+        recorded: 0.1200000000000001
+      formulas:
+        cause: precision
+        recorded: 0.1200000000000001
+    tags:
+      - financial
+      - timevalue
+    name: nominal-monthly
+  - subject: NOMINAL
+    formula: =NOMINAL(0.05, 1)
+    category: value
+    expect: 0.05
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      excel:
+        cause: precision
+        recorded: 0.050000000000000044
+      gsheets:
+        cause: precision
+        recorded: 0.050000000000000044
+      lattice:
+        cause: precision
+        recorded: 0.050000000000000044
+      formulas:
+        cause: precision
+        recorded: 0.050000000000000044
+    tags:
+      - financial
+      - timevalue
+    name: nominal-annual
+  - subject: NOMINAL
+    formula: =NOMINAL(-0.05, 4)
+    category: value
+    expect:
+      error: "#NUM!"
+    overrides:
+      libreoffice:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - financial
+      - timevalue
+    name: nominal-invalid-rate
+  - subject: NPER
+    category: value
+    status: observed
+    formula: =NPER(0.05/12, -1073.64, 200000)
+    tags:
+      - financial
+      - timevalue
+    name: nper-mortgage-like
+  - subject: NPER
+    formula: =NPER(0, -100, 1000)
+    category: value
+    expect: 10
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - financial
+      - timevalue
+    name: nper-zero-rate
+  - subject: NPER
+    formula: =NPER(0.1, -1, 10000)
+    category: value
+    expect:
+      error: "#NUM!"
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - financial
+      - timevalue
+    name: nper-impossible
+  - subject: NPV
+    category: value
+    status: observed
+    formula: =NPV(0.1, -1000, 300, 300, 300, 300, 300)
+    tags:
+      - financial
+      - timevalue
+    name: npv-five-year-annuity
+  - subject: NPV
+    formula: =NPV(0.1, 100)
+    category: value
+    expect: 90.909091
+    overrides:
+      excel:
+        cause: precision
+        recorded: 90.9090909090909
+      gsheets:
+        cause: precision
+        recorded: 90.9090909090909
+      lattice:
+        cause: precision
+        recorded: 90.9090909090909
+      ironcalc:
+        cause: arg-semantics
+        recorded: 90.91
+      hyperformula:
+        cause: precision
+        recorded: 90.909090909
+      libreoffice:
+        cause: precision
+        recorded: 90.9090909090909
+      formulas:
+        cause: precision
+        recorded: 90.9090909090909
+      pycel:
+        cause: precision
+        recorded: 90.9090909090909
+    tags:
+      - financial
+      - timevalue
+    name: npv-single-cashflow
+  - subject: NPV
+    category: value
+    formula: =NPV(0, 100, 200, 300)
+    expect: 600
+    tags:
+      - financial
+      - timevalue
+    name: npv-zero-rate
+  - subject: PDURATION
+    formula: =PDURATION(0.1, 1000, 2000)
+    category: value
+    expect: 7.272541
+    overrides:
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      excel:
+        cause: precision
+        recorded: 7.272540897341714
+      gsheets:
+        cause: precision
+        recorded: 7.272540897341714
+      lattice:
+        cause: precision
+        recorded: 7.272540897341714
+      ironcalc:
+        cause: precision
+        recorded: 7.272540897
+      hyperformula:
+        cause: precision
+        recorded: 7.2725408973
+      formulas:
+        cause: precision
+        recorded: 7.2725408973417185
+    tags:
+      - financial
+      - timevalue
+    name: pduration-double-money-10pct
+  - subject: PDURATION
+    formula: =PDURATION(0.05, 1000, 1000)
+    category: value
+    expect: 0
+    overrides:
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - financial
+      - timevalue
+    name: pduration-no-growth-needed
+  - subject: PDURATION
+    formula: =PDURATION(0, 1000, 2000)
+    category: value
+    expect:
+      error: "#NUM!"
+    overrides:
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - financial
+      - timevalue
+    name: pduration-invalid-rate
+  - subject: PMT
+    formula: =PMT(0.05/12, 360, -200000)
+    category: value
+    expect: 1073.64
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      excel:
+        cause: arg-semantics
+        recorded: 1073.6432460242781
+      gsheets:
+        cause: arg-semantics
+        recorded: 1073.6432460242797
+      lattice:
+        cause: arg-semantics
+        recorded: 1073.6432460242797
+      hyperformula:
+        cause: arg-semantics
+        recorded: 1073.643246
+      libreoffice:
+        cause: arg-semantics
+        recorded: 1073.64324602428
+      formulas:
+        cause: arg-semantics
+        recorded: 1073.6432460242797
+    tags:
+      - financial
+      - timevalue
+    name: pmt-monthly-mortgage
+  - subject: PMT
+    formula: =PMT(0, 12, 12000)
+    category: value
+    expect: -1000
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - financial
+      - timevalue
+    name: pmt-zero-rate
+  - subject: PMT
+    category: value
+    status: observed
+    formula: =PMT(0.06/12, 360, 0, 1000000)
+    tags:
+      - financial
+      - timevalue
+    name: pmt-savings-goal
+  - subject: PPMT
+    category: value
+    status: observed
+    formula: =PPMT(0.05/12, 1, 360, -200000)
+    tags:
+      - financial
+      - timevalue
+    name: ppmt-first-period-mortgage
+  - subject: PPMT
+    formula: =PPMT(0.05/12, 5, 360, -200000) + IPMT(0.05/12, 5, 360, -200000)
+    category: value
+    expect: 1073.64
+    overrides:
+      formulas:
+        cause: error-code
+        recorded:
+          error: "#NUM!"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      excel:
+        cause: arg-semantics
+        recorded: 1073.6432460242781
+      gsheets:
+        cause: arg-semantics
+        recorded: 1073.6432460242795
+      lattice:
+        cause: arg-semantics
+        recorded: 1073.6432460242797
+      ironcalc:
+        cause: arg-semantics
+        recorded: 1073.643246024
+      hyperformula:
+        cause: arg-semantics
+        recorded: 1073.643246
+      libreoffice:
+        cause: arg-semantics
+        recorded: 1073.64324602428
+    tags:
+      - financial
+      - timevalue
+    name: ppmt-ipmt-plus-ppmt-equals-pmt
+  - subject: PPMT
+    formula: =PPMT(0.05/12, 361, 360, -200000)
+    category: value
+    expect:
+      error: "#NUM!"
+    overrides:
+      libreoffice:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: arg-semantics
+        recorded: 1073.643246
+    tags:
+      - financial
+      - timevalue
+    name: ppmt-invalid-period
+  - subject: PV
+    formula: =PV(0.06, 10, -1000)
+    category: value
+    expect: 7360.09
+    overrides:
+      excel:
+        cause: precision
+        recorded: 7360.087051414702
+      gsheets:
+        cause: precision
+        recorded: 7360.087051414702
+      lattice:
+        cause: precision
+        recorded: 7360.087051414702
+      ironcalc:
+        cause: precision
+        recorded: 7360.087051415
+      hyperformula:
+        cause: precision
+        recorded: 7360.0870514
+      libreoffice:
+        cause: precision
+        recorded: 7360.0870514147
+      formulas:
+        cause: precision
+        recorded: 7360.087051414702
+      pycel:
+        cause: precision
+        recorded: 7360.087051414702
+    tags:
+      - financial
+      - timevalue
+    name: pv-annuity-textbook
+  - subject: PV
+    formula: =PV(0.1, 5, 0, -1000)
+    category: value
+    expect: 620.921323
+    overrides:
+      excel:
+        cause: precision
+        recorded: 620.9213230591549
+      gsheets:
+        cause: precision
+        recorded: 620.9213230591549
+      lattice:
+        cause: precision
+        recorded: 620.9213230591549
+      ironcalc:
+        cause: precision
+        recorded: 620.921323059
+      hyperformula:
+        cause: precision
+        recorded: 620.92132306
+      libreoffice:
+        cause: precision
+        recorded: 620.921323059155
+      formulas:
+        cause: precision
+        recorded: 620.9213230591549
+      pycel:
+        cause: precision
+        recorded: 620.9213230591549
+    tags:
+      - financial
+      - timevalue
+    name: pv-lump-sum
+  - subject: PV
+    category: value
+    formula: =PV(0, 10, -100)
+    expect: 1000
+    tags:
+      - financial
+      - timevalue
+    name: pv-zero-rate
+  - subject: RATE
+    category: value
+    status: observed
+    formula: =RATE(360, -1073.64, 200000)
+    tags:
+      - financial
+      - timevalue
+    name: rate-mortgage-implied
+  - subject: RATE
+    category: value
+    status: observed
+    formula: =RATE(10, 0, -500, 1000)
+    tags:
+      - financial
+      - timevalue
+    name: rate-zero-payment
+  - subject: RATE
+    category: value
+    status: observed
+    formula: =RATE(10, 100, 100)
+    tags:
+      - financial
+      - timevalue
+      - divergence
+    name: rate-unreachable
+  - subject: RRI
+    formula: =RRI(8, 1, 2)
+    category: value
+    expect: 0.090508
+    overrides:
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      excel:
+        cause: precision
+        recorded: 0.09050773266525769
+      gsheets:
+        cause: precision
+        recorded: 0.09050773266525769
+      lattice:
+        cause: precision
+        recorded: 0.09050773266525769
+      ironcalc:
+        cause: precision
+        recorded: 0.090507733
+      hyperformula:
+        cause: precision
+        recorded: 0.090507732665
+      formulas:
+        cause: precision
+        recorded: 0.09050773266525769
+    tags:
+      - financial
+      - timevalue
+    name: rri-double-in-8-years
+  - subject: RRI
+    formula: =RRI(5, 1000, 1000)
+    category: value
+    expect: 0
+    overrides:
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - financial
+      - timevalue
+    name: rri-no-growth
+  - subject: RRI
+    category: value
+    status: observed
+    formula: =RRI(0, 1000, 2000)
+    tags:
+      - financial
+      - timevalue
+    name: rri-invalid-periods
+  - subject: SLN
+    formula: =SLN(1000, 100, 10)
+    category: value
+    expect: 90
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - financial
+      - timevalue
+    name: sln-textbook
+  - subject: SLN
+    formula: =SLN(5000, 0, 5)
+    category: value
+    expect: 1000
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - financial
+      - timevalue
+    name: sln-no-salvage
+  - subject: SLN
+    formula: =SLN(1000, 100, 0)
+    category: value
+    expect:
+      error: "#DIV/0!"
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - financial
+      - timevalue
+    name: sln-zero-life
+  - subject: SYD
+    formula: =SYD(1000, 100, 10, 1)
+    category: value
+    expect: 163.636364
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      excel:
+        cause: precision
+        recorded: 163.63636363636363
+      gsheets:
+        cause: precision
+        recorded: 163.63636363636363
+      lattice:
+        cause: precision
+        recorded: 163.63636363636363
+      ironcalc:
+        cause: arg-semantics
+        recorded: 163.64
+      hyperformula:
+        cause: precision
+        recorded: 163.63636364
+      libreoffice:
+        cause: precision
+        recorded: 163.636363636364
+      formulas:
+        cause: precision
+        recorded: 163.63636363636363
+    tags:
+      - financial
+      - timevalue
+    name: syd-period-1
+  - subject: SYD
+    formula: =SYD(1000, 100, 10, 10)
+    category: value
+    expect: 16.363636
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      excel:
+        cause: precision
+        recorded: 16.363636363636363
+      gsheets:
+        cause: precision
+        recorded: 16.363636363636363
+      lattice:
+        cause: precision
+        recorded: 16.363636363636363
+      ironcalc:
+        cause: arg-semantics
+        recorded: 16.36
+      hyperformula:
+        cause: precision
+        recorded: 16.363636364
+      libreoffice:
+        cause: precision
+        recorded: 16.3636363636364
+      formulas:
+        cause: precision
+        recorded: 16.363636363636363
+    tags:
+      - financial
+      - timevalue
+    name: syd-last-period
+  - subject: SYD
+    formula: =SYD(1000, 100, 10, 11)
+    category: value
+    expect:
+      error: "#NUM!"
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      libreoffice:
+        cause: arg-semantics
+        recorded: 0
+    tags:
+      - financial
+      - timevalue
+    name: syd-invalid-period
+  - subject: VDB
+    category: value
+    status: observed
+    formula: =VDB(2400, 300, 10*365, 0, 1)
+    tags:
+      - financial
+      - timevalue
+    name: vdb-first-day
+  - subject: VDB
+    formula: =VDB(2400, 300, 10, 0, 1)
+    category: value
+    expect: 480
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - financial
+      - timevalue
+    name: vdb-first-year
+  - subject: VDB
+    category: value
+    status: observed
+    formula: =VDB(2400, 300, 10, 0, 10, 2, TRUE)
+    tags:
+      - financial
+      - timevalue
+    name: vdb-no-switch
+  - subject: XIRR
+    category: value
+    status: observed
+    formula: =XIRR(A1:A5, B1:B5)
+    grid:
+      A1: -10000
+      A2: 2750
+      A3: 4250
+      A4: 3250
+      A5: 2750
+      B1: 2008-01-01
+      B2: 2008-03-01
+      B3: 2008-10-30
+      B4: 2009-02-15
+      B5: 2009-04-01
+    tags:
+      - financial
+      - timevalue
+    name: xirr-simple-project
+  - subject: XIRR
+    category: value
+    status: observed
+    formula: =XIRR(A1:A3, B1:B3, 0.1)
+    grid:
+      A1: -1000
+      A2: 500
+      A3: 600
+      B1: 2020-01-01
+      B2: 2021-01-01
+      B3: 2022-01-01
+    tags:
+      - financial
+      - timevalue
+    name: xirr-with-guess
+  - subject: XIRR
+    formula: =XIRR(A1:A2, B1:B2)
+    category: value
+    grid:
+      A1: 1000
+      A2: 500
+      B1: 2020-01-01
+      B2: 2021-01-01
+    expect:
+      error: "#NUM!"
+    overrides:
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      libreoffice:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - financial
+      - timevalue
+    name: xirr-no-sign-change
+  - subject: XNPV
+    category: value
+    status: observed
+    formula: =XNPV(0.09, A1:A5, B1:B5)
+    grid:
+      A1: -10000
+      A2: 2750
+      A3: 4250
+      A4: 3250
+      A5: 2750
+      B1: 2008-01-01
+      B2: 2008-03-01
+      B3: 2008-10-30
+      B4: 2009-02-15
+      B5: 2009-04-01
+    tags:
+      - financial
+      - timevalue
+    name: xnpv-standard
+  - subject: XNPV
+    category: value
+    status: observed
+    formula: =XNPV(0.1, A1:A2, B1:B2)
+    grid:
+      A1: 0
+      A2: 1000
+      B1: 2020-01-01
+      B2: 2021-01-01
+    tags:
+      - financial
+      - timevalue
+    name: xnpv-single-future-flow
+  - subject: XNPV
+    formula: =XNPV(0.1, A1:A3, B1:B2)
+    category: value
+    grid:
+      A1: -1000
+      A2: 500
+      A3: 600
+      B1: 2020-01-01
+      B2: 2021-01-01
+    expect:
+      error: "#NUM!"
+    overrides:
+      hyperformula:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+      libreoffice:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      formulas:
+        cause: arg-semantics
+        recorded: -545.5732225865631
+    tags:
+      - financial
+      - timevalue
+    name: xnpv-mismatched-lengths

@@ -1,0 +1,17 @@
+<nav class="rail-toc" data-toc-rail aria-label="table of contents">
+  <span class="eyebrow">contents</span>
+  <ul>
+    {{#entries}}
+    <li>
+      <a href="#{{id}}" data-toc-link="{{id}}">{{label}}</a>
+      {{#children.length}}
+      <ul>
+        {{#children}}
+        <li><a href="#{{id}}" data-toc-link="{{id}}">{{label}}</a></li>
+        {{/children}}
+      </ul>
+      {{/children.length}}
+    </li>
+    {{/entries}}
+  </ul>
+</nav>

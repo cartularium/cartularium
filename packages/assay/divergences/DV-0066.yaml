@@ -1,0 +1,17 @@
+id: DV-0066
+summary: "libreoffice: numeric precision differs — PI, RADIANS"
+cause: precision
+category: value
+engines:
+  - libreoffice
+behavior:
+  signature: "3.14159265358979"
+test-count: 2
+subjects:
+  - PI
+  - RADIANS
+tests:
+  - RADIANS/radians-of-180
+  - PI/pi
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

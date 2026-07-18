@@ -1,0 +1,17 @@
+id: DV-0080
+summary: "excel, gsheets, lattice: numeric precision differs — MINVERSE"
+cause: precision
+category: value
+engines:
+  - excel
+  - gsheets
+  - lattice
+behavior:
+  signature: "[[-1.9999999999999998,1],[1.4999999999999998,-0.49999999999999994]]"
+test-count: 1
+subjects:
+  - MINVERSE
+tests:
+  - MINVERSE/minverse-2x2-generic
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

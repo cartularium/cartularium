@@ -1,0 +1,22 @@
+<div class="cartularium-toc-fab" data-toc-fab>
+  <button class="fab-pill" type="button" data-fab-trigger aria-label="open contents" aria-expanded="false">contents</button>
+  <div class="fab-sheet-scrim" data-fab-close hidden></div>
+  <div class="fab-sheet" role="dialog" aria-label="contents" hidden>
+    <div class="handle" data-fab-handle></div>
+    <span class="eyebrow">contents</span>
+    <ul>
+      {{#entries}}
+      <li>
+        <a href="#{{id}}" data-toc-link="{{id}}">{{label}}</a>
+        {{#children.length}}
+        <ul>
+          {{#children}}
+          <li><a href="#{{id}}" data-toc-link="{{id}}">{{label}}</a></li>
+          {{/children}}
+        </ul>
+        {{/children.length}}
+      </li>
+      {{/entries}}
+    </ul>
+  </div>
+</div>

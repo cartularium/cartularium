@@ -1,0 +1,17 @@
+export interface Env {
+  SESSIONS: KVNamespace
+  RATE_LIMIT: KVNamespace
+  ASSETS: R2Bucket
+  ASSAY_PREVIEW_DB: D1Database
+  ASSAY_PREVIEW: R2Bucket
+  ASSAY_RUNNER_TOKEN: string
+  GITHUB_APP_ID: string
+  GITHUB_APP_PRIVATE_KEY: string
+  GITHUB_APP_CLIENT_ID: string
+  GITHUB_APP_CLIENT_SECRET: string
+  COOKIE_DOMAIN: string
+  CANONICAL_OWNER: string
+  CANONICAL_REPO: string
+  ALLOWED_ORIGINS: string
+  ASSAY_MAINTAINERS?: string
+}

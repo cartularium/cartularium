@@ -1,0 +1,20 @@
+id: DV-0050
+summary: "formulas, hyperformula, ironcalc, pycel: function not implemented — DOLLAR"
+cause: missing-function
+category: value
+engines:
+  - formulas
+  - hyperformula
+  - ironcalc
+  - pycel
+behavior:
+  signature: '{"error":"#NAME?"}'
+test-count: 3
+subjects:
+  - DOLLAR
+tests:
+  - DOLLAR/dollar-basic
+  - DOLLAR/dollar-2-decimals
+  - DOLLAR/dollar-zero-decimals
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

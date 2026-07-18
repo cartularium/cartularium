@@ -1,0 +1,49 @@
+name: assay-tests
+
+# Path-filtered: runs only when assay sources or the workflow itself change.
+
+on:
+  pull_request:
+    paths:
+      - "packages/assay/**"
+      - "pnpm-lock.yaml"
+      - ".github/workflows/assay-tests.yml"
+  push:
+    branches: [main]
+    paths:
+      - "packages/assay/**"
+      - "pnpm-lock.yaml"
+
+concurrency:
+  group: assay-tests-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      # version comes from package.json `packageManager`
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: pnpm
+
+      - name: pnpm install
+        run: pnpm install --frozen-lockfile
+
+      - name: Build assay
+        run: pnpm --filter assay run build
+
+      - name: Unit tests
+        run: pnpm --filter assay run test
+
+      - name: Lint corpus
+        run: node build/cli.js lint
+        working-directory: packages/assay
+
+      - name: Coverage report
+        run: node build/cli.js coverage
+        working-directory: packages/assay

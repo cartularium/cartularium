@@ -1,0 +1,15 @@
+id: DV-0108
+summary: "lattice: rendered with different format — IMSUB"
+cause: format-rendering
+category: value
+engines:
+  - lattice
+behavior:
+  signature: '"{__typeof: \"Complex\", real: 3, imaginary: 3, suffix: \"i\"}"'
+test-count: 1
+subjects:
+  - IMSUB
+tests:
+  - IMSUB/imsub-basic
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

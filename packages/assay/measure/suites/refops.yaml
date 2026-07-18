@@ -1,0 +1,60 @@
+schemaVersion: 3
+name: "sweep: ref:operators"
+tests:
+  - subject: ref:operators
+    name: range
+    formula: =SUM(D1:D3)
+    category: value
+    status: observed
+    tags:
+      - sweep:ref:operators
+      - ax:form=range
+    grid: &a1
+      D1: 1
+      D2: 2
+      D3: 3
+  - subject: ref:operators
+    name: intersect-space
+    formula: =SUM(D1:D3 D2:D2)
+    category: value
+    status: observed
+    tags:
+      - sweep:ref:operators
+      - ax:form=intersect-space
+    grid: *a1
+  - subject: ref:operators
+    name: union
+    formula: =SUM((D1:D1,D3:D3))
+    category: value
+    status: observed
+    tags:
+      - sweep:ref:operators
+      - ax:form=union
+    grid: *a1
+  - subject: ref:operators
+    name: indirect-a1
+    formula: =INDIRECT("D2")
+    category: value
+    status: observed
+    tags:
+      - sweep:ref:operators
+      - ax:form=indirect-a1
+    grid: *a1
+  - subject: ref:operators
+    name: indirect-r1c1
+    formula: =INDIRECT("R2C4",FALSE)
+    category: value
+    status: observed
+    tags:
+      - sweep:ref:operators
+      - ax:form=indirect-r1c1
+    grid: *a1
+  - subject: ref:operators
+    name: offset
+    formula: =OFFSET(D1,1,0)
+    category: value
+    status: observed
+    tags:
+      - sweep:ref:operators
+      - ax:form=offset
+    grid: *a1

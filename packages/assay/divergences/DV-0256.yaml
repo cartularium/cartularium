@@ -1,0 +1,15 @@
+id: DV-0256
+summary: TODO auto-seeded — hyperformula (missing-function) — VLOOKUP
+cause: missing-function
+category: value
+engines:
+  - hyperformula
+behavior:
+  signature: '[[{"error":"#NAME?"},{"error":"#NAME?"}]]'
+test-count: 1
+subjects:
+  - VLOOKUP
+tests:
+  - VLOOKUP/vlookup-array-col-index
+seeded: 2026-05-07
+last-confirmed: 2026-05-07

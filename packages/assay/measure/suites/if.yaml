@@ -1,0 +1,62 @@
+schemaVersion: 3
+name: "sweep: IF"
+tests:
+  - subject: IF
+    name: nonzero
+    formula: =IF(A1, "Y", "N")
+    category: value
+    status: observed
+    tags:
+      - sweep:if
+      - ax:cond_type=nonzero
+    grid:
+      A1: 1
+  - subject: IF
+    name: zero
+    formula: =IF(A1, "Y", "N")
+    category: value
+    status: observed
+    tags:
+      - sweep:if
+      - ax:cond_type=zero
+    grid:
+      A1: 0
+  - subject: IF
+    name: numstr
+    formula: =IF(A1, "Y", "N")
+    category: value
+    status: observed
+    tags:
+      - sweep:if
+      - ax:cond_type=numstr
+    grid:
+      A1: ="1"
+  - subject: IF
+    name: text
+    formula: =IF(A1, "Y", "N")
+    category: value
+    status: observed
+    tags:
+      - sweep:if
+      - ax:cond_type=text
+    grid:
+      A1: x
+  - subject: IF
+    name: blank
+    formula: =IF(A1, "Y", "N")
+    category: value
+    status: observed
+    tags:
+      - sweep:if
+      - ax:cond_type=blank
+    grid: {}
+  - subject: IF
+    name: error
+    formula: =IF(A1, "Y", "N")
+    category: value
+    status: observed
+    tags:
+      - sweep:if
+      - ax:cond_type=error
+    grid:
+      A1: =NA()

@@ -1,0 +1,15 @@
+id: DV-0114
+summary: "excel: function not implemented — INDIRECT"
+cause: missing-function
+category: error-code
+engines:
+  - excel
+behavior:
+  signature: '{"error":"#REF!"}'
+test-count: 1
+subjects:
+  - INDIRECT
+tests:
+  - INDIRECT/ref-error
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

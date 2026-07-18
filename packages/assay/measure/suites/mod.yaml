@@ -1,0 +1,141 @@
+schemaVersion: 3
+name: "sweep: MOD"
+tests:
+  - subject: MOD
+    name: p7-p3-literal
+    formula: =MOD(7, 3)
+    category: value
+    status: observed
+    tags:
+      - sweep:mod
+      - ax:dividend=p7
+      - ax:divisor=p3
+      - ax:encoding=literal
+  - subject: MOD
+    name: p7-p3-ref
+    formula: =MOD(A1, B1)
+    category: value
+    status: observed
+    tags:
+      - sweep:mod
+      - ax:dividend=p7
+      - ax:divisor=p3
+      - ax:encoding=ref
+    grid:
+      A1: 7
+      B1: 3
+  - subject: MOD
+    name: p7-n3-literal
+    formula: =MOD(7, -3)
+    category: value
+    status: observed
+    tags:
+      - sweep:mod
+      - ax:dividend=p7
+      - ax:divisor=n3
+      - ax:encoding=literal
+  - subject: MOD
+    name: p7-n3-ref
+    formula: =MOD(A1, B1)
+    category: value
+    status: observed
+    tags:
+      - sweep:mod
+      - ax:dividend=p7
+      - ax:divisor=n3
+      - ax:encoding=ref
+    grid:
+      A1: 7
+      B1: -3
+  - subject: MOD
+    name: p7-z0-literal
+    formula: =MOD(7, 0)
+    category: value
+    status: observed
+    tags:
+      - sweep:mod
+      - ax:dividend=p7
+      - ax:divisor=z0
+      - ax:encoding=literal
+  - subject: MOD
+    name: p7-z0-ref
+    formula: =MOD(A1, B1)
+    category: value
+    status: observed
+    tags:
+      - sweep:mod
+      - ax:dividend=p7
+      - ax:divisor=z0
+      - ax:encoding=ref
+    grid:
+      A1: 7
+      B1: 0
+  - subject: MOD
+    name: n7-p3-literal
+    formula: =MOD(-7, 3)
+    category: value
+    status: observed
+    tags:
+      - sweep:mod
+      - ax:dividend=n7
+      - ax:divisor=p3
+      - ax:encoding=literal
+  - subject: MOD
+    name: n7-p3-ref
+    formula: =MOD(A1, B1)
+    category: value
+    status: observed
+    tags:
+      - sweep:mod
+      - ax:dividend=n7
+      - ax:divisor=p3
+      - ax:encoding=ref
+    grid:
+      A1: -7
+      B1: 3
+  - subject: MOD
+    name: n7-n3-literal
+    formula: =MOD(-7, -3)
+    category: value
+    status: observed
+    tags:
+      - sweep:mod
+      - ax:dividend=n7
+      - ax:divisor=n3
+      - ax:encoding=literal
+  - subject: MOD
+    name: n7-n3-ref
+    formula: =MOD(A1, B1)
+    category: value
+    status: observed
+    tags:
+      - sweep:mod
+      - ax:dividend=n7
+      - ax:divisor=n3
+      - ax:encoding=ref
+    grid:
+      A1: -7
+      B1: -3
+  - subject: MOD
+    name: n7-z0-literal
+    formula: =MOD(-7, 0)
+    category: value
+    status: observed
+    tags:
+      - sweep:mod
+      - ax:dividend=n7
+      - ax:divisor=z0
+      - ax:encoding=literal
+  - subject: MOD
+    name: n7-z0-ref
+    formula: =MOD(A1, B1)
+    category: value
+    status: observed
+    tags:
+      - sweep:mod
+      - ax:dividend=n7
+      - ax:divisor=z0
+      - ax:encoding=ref
+    grid:
+      A1: -7
+      B1: 0

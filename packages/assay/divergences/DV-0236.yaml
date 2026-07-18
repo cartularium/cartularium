@@ -1,0 +1,18 @@
+id: DV-0236
+summary: "excel, formulas, gsheets, hyperformula: different error code — UNICHAR"
+cause: error-code
+category: value
+engines:
+  - excel
+  - formulas
+  - gsheets
+  - hyperformula
+behavior:
+  signature: '{"error":"#VALUE!"}'
+test-count: 1
+subjects:
+  - UNICHAR
+tests:
+  - UNICHAR/unichar-zero
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

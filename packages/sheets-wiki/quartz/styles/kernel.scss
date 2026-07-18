@@ -1,0 +1,534 @@
+// kernel overrides on top of base.scss: layout grammar, hairlines, paper grain, display typography
+@use "@cartularium/brand/tokens.scss";
+@use "./variables.scss" as *;
+
+html,
+body {
+  margin: 0;
+  background-color: var(--light);
+}
+// flex column pins the chrome footer to viewport bottom on short pages.
+// .page grows to fill the gap; the body's paper grain paints through.
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+body > #quartz-root.page {
+  flex: 1 0 auto;
+}
+body > header,
+body > .footer-host {
+  flex-shrink: 0;
+}
+.page > #quartz-body {
+  row-gap: 0 !important;
+}
+
+// non-toc kinds: editorial 800px frame, no sidebars
+.page:has(> #quartz-body[data-page-kind="about"]),
+.page:has(> #quartz-body[data-page-kind="people"]),
+.page:has(> #quartz-body[data-page-kind="project"]),
+.page:has(> #quartz-body[data-page-kind="page"]) {
+  max-width: 800px !important;
+  padding: 0 1.5rem;
+}
+#quartz-body[data-page-kind="about"],
+#quartz-body[data-page-kind="people"],
+#quartz-body[data-page-kind="project"],
+#quartz-body[data-page-kind="page"] {
+  > .sidebar.left,
+  > .sidebar.right {
+    display: none !important;
+    grid-area: unset !important;
+    height: 0 !important;
+    padding: 0 !important;
+  }
+}
+
+// toc kinds at narrow viewports: same editorial 800px frame, no sidebars (rails hide via chrome.scss; inline + FAB take over)
+@media (max-width: 1123px) {
+  .page:has(> #quartz-body[data-page-kind="function"]),
+  .page:has(> #quartz-body[data-page-kind="concept"]),
+  .page:has(> #quartz-body[data-page-kind="blog"]),
+  .page:has(> #quartz-body[data-page-kind="guide"]) {
+    max-width: 800px !important;
+    padding: 0 1.5rem;
+  }
+  #quartz-body[data-page-kind="function"],
+  #quartz-body[data-page-kind="concept"],
+  #quartz-body[data-page-kind="blog"],
+  #quartz-body[data-page-kind="guide"] {
+    > .sidebar.left,
+    > .sidebar.right {
+      display: none !important;
+      grid-area: unset !important;
+      height: 0 !important;
+      padding: 0 !important;
+    }
+  }
+}
+
+// toc kinds at wide viewports: widened page frame, multi-column grid, sidebars enabled.
+// variables.scss uses $singleColumnGrid at every breakpoint so sidebars stack below
+// content by default. for toc kinds we override grid-template-columns/areas so rails
+// land beside the article instead of underneath it
+@media (min-width: 1124px) {
+  // function/concept stay clamped to a centered 1200px frame: the right rail
+  // is a tight reference column scoped to the article
+  .page:has(> #quartz-body[data-page-kind="function"]),
+  .page:has(> #quartz-body[data-page-kind="concept"]) {
+    max-width: 1200px !important;
+    padding: 0 1.5rem;
+  }
+  // blog/guide go viewport-wide (LW pattern). the inner grid carries 1fr
+  // spacers on either side; the gutter pins near the viewport edge instead
+  // of drifting toward the centered .page's interior
+  .page:has(> #quartz-body[data-page-kind="blog"]),
+  .page:has(> #quartz-body[data-page-kind="guide"]) {
+    max-width: none !important;
+    padding: 0 !important;
+  }
+
+  // place .center in the center grid area (base.scss assigns grid-center to the
+  // inner article only, leaving .center itself unassigned)
+  #quartz-body[data-page-kind="function"] > .center,
+  #quartz-body[data-page-kind="concept"] > .center {
+    grid-area: grid-center !important;
+    min-width: 0; // allow the column to actually shrink to its track width
+  }
+  // blog/guide place via numeric grid-area rather than named area: the
+  // 7-track grid below uses dot-prefixed null-cell tokens in
+  // grid-template-areas, and lightningcss strips spaces inside the template
+  // string. grid-area expressed as the full 4-token form so the optimizer
+  // does not collapse our placement
+  #quartz-body[data-page-kind="blog"] > .center,
+  #quartz-body[data-page-kind="guide"] > .center {
+    grid-area: 1 / 4 / auto / 5 !important;
+    min-width: 0;
+  }
+
+  // function/concept: 2-col [center | rail]. footer is body-level now, no grid row needed
+  #quartz-body[data-page-kind="function"],
+  #quartz-body[data-page-kind="concept"] {
+    grid-template-columns: minmax(0, 1fr) 240px !important;
+    grid-template-rows: auto !important;
+    grid-template-areas: "grid-center grid-sidebar-right" !important;
+    column-gap: 2rem !important;
+  }
+  // sticky on the sidebar itself with align-self: start so the grid item is
+  // rail-height (not row-height) and sticks at viewport top + 6rem
+  #quartz-body[data-page-kind="function"] > .sidebar.right,
+  #quartz-body[data-page-kind="concept"] > .sidebar.right {
+    display: block !important;
+    position: sticky !important;
+    top: 6rem !important;
+    align-self: start !important;
+    height: auto !important;
+    padding: 0 !important;
+  }
+  // function/concept have no left sidebar; the empty wrapper would auto-place
+  // into an implicit grid row at base.scss's .sidebar { height: 100vh },
+  // adding a 100vh phantom row. kill it explicitly
+  #quartz-body[data-page-kind="function"] > .sidebar.left,
+  #quartz-body[data-page-kind="concept"] > .sidebar.left {
+    display: none !important;
+    grid-area: unset !important;
+    height: 0 !important;
+    padding: 0 !important;
+  }
+
+  // blog/guide: LW-pattern 7-track viewport-wide grid. flex spacers on each
+  // outer edge let the gutter pin near the viewport while the article track
+  // (capped at 800px) centers within the remaining space. column-gap is 0 —
+  // the gaps are explicit fixed-width tracks so we can place sidenotes flush
+  // against the gutter track rather than offset by an implicit gap.
+  // tracks: 1=left flex, 2=gutter, 3=gap, 4=article, 5=gap, 6=sidenote, 7=right flex
+  #quartz-body[data-page-kind="blog"],
+  #quartz-body[data-page-kind="guide"] {
+    grid-template-columns:
+      minmax(0, 1fr)
+      minmax(200px, 240px)
+      2rem
+      minmax(0, 800px)
+      2rem
+      200px
+      minmax(0, 1fr) !important;
+    grid-template-rows: auto !important;
+    grid-template-areas: none !important;
+    column-gap: 0 !important;
+  }
+  // gutter sticky at top; sidenote column non-sticky (notes float in from .center).
+  // grid-area is set as the full 4-token form (row-start/col-start/row-end/col-end)
+  // so lightningcss does not collapse our placement into `grid-area: auto`
+  #quartz-body[data-page-kind="blog"] > .sidebar.left,
+  #quartz-body[data-page-kind="guide"] > .sidebar.left {
+    display: block !important;
+    position: sticky !important;
+    top: 6rem !important;
+    align-self: start !important;
+    height: auto !important;
+    padding: 0 !important;
+    grid-area: 1 / 2 / auto / 3 !important;
+  }
+  #quartz-body[data-page-kind="blog"] > .sidebar.right,
+  #quartz-body[data-page-kind="guide"] > .sidebar.right {
+    display: block !important;
+    position: static !important;
+    align-self: start !important;
+    height: auto !important;
+    padding: 0 !important;
+    grid-area: 1 / 6 / auto / 7 !important;
+  }
+}
+
+// .page-header only wraps popover-hint now (breadcrumbs, title, meta). topbar lives at body level
+.page-header {
+  margin: 0 !important;
+}
+
+// override Header.tsx's flex/margin defaults; the inner .cartularium-topbar handles its own layout
+body > header {
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  gap: 0;
+}
+
+// chrome footer's border-top is the page's bottom boundary, so renderPage's <hr/> is hidden
+.center > hr {
+  display: none;
+}
+.page-footer {
+  margin: 0 !important;
+}
+
+// click-jump breathing room: anchored headings clear the topbar's height with air above
+article :is(h1, h2, h3, h4, h5, h6) {
+  scroll-margin-top: 5rem;
+}
+
+// tag list: no inherited browser default 1em top/bottom
+ul.tags {
+  margin: 0.5rem 0 !important;
+}
+
+// toc collapse: make the toggle actually hide content when collapsed
+.toc-content.collapsed,
+ul.toc-content.collapsed {
+  display: none !important;
+}
+.toc {
+  margin: 0.5rem 0 1rem !important;
+}
+
+// table content can wrap; the inherited nowrap on first column breaks long entries
+.table-container > table th:first-child,
+.table-container > table td:first-child {
+  white-space: normal !important;
+}
+// kernel-grade table styling: hairline rules, no chunky borders
+.table-container > table,
+.table-container > table th,
+.table-container > table td {
+  border-color: var(--hairline) !important;
+}
+.table-container > table th {
+  background-color: transparent !important;
+  border-bottom: 1px solid var(--rule) !important;
+  font-weight: 500;
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  text-transform: lowercase;
+  color: var(--ink-3);
+  font-family: var(--font-mono, var(--codeFont));
+}
+.table-container > table td {
+  background-color: transparent !important;
+}
+.table-container > table tbody tr:hover td {
+  background-color: var(--accent-tint, transparent);
+}
+
+// callouts: hairline left rule, no chunky background box
+.callout {
+  background-color: transparent !important;
+  border: none !important;
+  border-left: 2px solid var(--rule) !important;
+  padding: 0.25rem 1rem !important;
+}
+.callout-title {
+  margin-bottom: 0.5rem;
+}
+.callout-title-inner p {
+  font-family: var(--font-mono, var(--codeFont));
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
+  text-transform: lowercase;
+  color: var(--ink-3);
+  margin: 0;
+}
+.callout-icon {
+  display: none !important;
+}
+
+// header anchor links: smaller, less obtrusive
+article h1 a[role="anchor"],
+article h2 a[role="anchor"],
+article h3 a[role="anchor"],
+article h4 a[role="anchor"],
+article h5 a[role="anchor"],
+article h6 a[role="anchor"] {
+  opacity: 0;
+  margin-left: 0.4em;
+  transition: opacity 120ms ease;
+  svg {
+    width: 0.7em;
+    height: 0.7em;
+  }
+}
+article h1:hover a[role="anchor"],
+article h2:hover a[role="anchor"],
+article h3:hover a[role="anchor"],
+article h4:hover a[role="anchor"],
+article h5:hover a[role="anchor"],
+article h6:hover a[role="anchor"] {
+  opacity: 0.5;
+}
+
+// breadcrumbs: monospace eyebrow, no separators in the way
+.breadcrumb-container {
+  font-family: var(--font-mono, var(--codeFont));
+  font-size: 0.75rem;
+  letter-spacing: 0.02em;
+  color: var(--ink-3);
+  text-transform: lowercase;
+  margin-top: 1rem !important;
+}
+.breadcrumb-element a {
+  color: var(--ink-3);
+}
+.breadcrumb-element a:hover {
+  color: var(--accent);
+}
+
+// content meta: small mono, dot separators
+.content-meta {
+  font-family: var(--font-mono, var(--codeFont));
+  font-size: 0.78rem;
+  color: var(--ink-3);
+  font-feature-settings: "tnum";
+  margin-top: 0.5rem !important;
+}
+
+// article title: editorial fraunces
+.article-title {
+  margin: 1.5rem 0 0.5rem !important;
+}
+
+// table of contents: editorial sidebar style, monospace eyebrow header
+.toc {
+  font-size: 0.85rem;
+}
+button.toc-header {
+  text-transform: lowercase;
+  letter-spacing: 0.06em;
+  font-family: var(--font-mono, var(--codeFont));
+  font-size: 0.7rem;
+  color: var(--ink-3);
+  margin-bottom: 0.5rem;
+
+  h3 {
+    font-size: 0.7rem !important;
+    font-family: inherit;
+    font-weight: 500;
+    text-transform: lowercase;
+    letter-spacing: 0.06em;
+  }
+}
+ul.toc-content.overflow > li > a {
+  color: var(--ink-2) !important;
+  opacity: 1 !important;
+  text-decoration: none;
+  &:hover {
+    color: var(--accent) !important;
+  }
+  &.in-view {
+    color: var(--accent) !important;
+    opacity: 1 !important;
+  }
+}
+
+// backlinks: editorial sidebar
+.backlinks {
+  margin-top: 2rem;
+
+  > h3 {
+    text-transform: lowercase;
+    letter-spacing: 0.06em;
+    font-family: var(--font-mono, var(--codeFont));
+    font-size: 0.7rem !important;
+    color: var(--ink-3);
+    font-weight: 500;
+  }
+  > ul.overflow > li > a {
+    color: var(--ink-2);
+    text-decoration: none;
+    &:hover {
+      color: var(--accent);
+    }
+  }
+}
+
+// tags: chip-like, lowercase, mono
+a.internal.tag-link {
+  font-family: var(--font-mono, var(--codeFont));
+  font-size: 0.74rem;
+  text-transform: lowercase;
+  letter-spacing: 0.01em;
+  background-color: transparent !important;
+  border: 1px solid var(--rule);
+  color: var(--ink-3) !important;
+  padding: 0.18em 0.6em !important;
+  &:hover {
+    border-color: var(--accent);
+    color: var(--accent) !important;
+  }
+}
+
+// paper grain overlay. fixed, very subtle, mode-aware blend.
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.4;
+  background-image: url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 180 180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' seed='3'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.04 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  mix-blend-mode: multiply;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([saved-theme="light"]) body::before {
+    mix-blend-mode: screen;
+    opacity: 0.5;
+  }
+}
+:root[saved-theme="dark"] body::before {
+  mix-blend-mode: screen;
+  opacity: 0.5;
+}
+
+// sharp corners universally except dot indicators
+*,
+*::before,
+*::after {
+  border-radius: 0 !important;
+}
+.dot,
+[role="status"] .dot,
+.swatch {
+  border-radius: 50% !important;
+}
+
+// hairline rules instead of thicker default borders
+.callout,
+.tag,
+table,
+th,
+td,
+.clipboard-button,
+pre,
+code,
+blockquote {
+  border-color: var(--rule) !important;
+}
+
+// display typography: fraunces with editorial weight
+h1 {
+  font-family: var(--font-display, var(--titleFont));
+  font-variation-settings:
+    "opsz" 144,
+    "wght" 380,
+    "SOFT" 30;
+  font-weight: 380;
+  letter-spacing: -0.022em;
+  line-height: 1.04;
+}
+
+h2 {
+  font-family: var(--font-display, var(--headerFont));
+  font-variation-settings:
+    "opsz" 36,
+    "wght" 480,
+    "SOFT" 0;
+  font-weight: 480;
+  letter-spacing: -0.014em;
+}
+
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-body, var(--bodyFont));
+}
+
+// monospace eyebrows: 0.7rem mono lowercase, used for section labels
+.eyebrow {
+  display: block;
+  font-family: var(--font-mono, var(--codeFont));
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: var(--gray);
+  margin-bottom: 0.5rem;
+  text-transform: lowercase;
+}
+
+// tabular nums for any explicit number column
+.num,
+.tabular {
+  font-family: var(--font-mono, var(--codeFont));
+  font-feature-settings: "tnum";
+  font-variant-numeric: tabular-nums;
+}
+
+// engine chips. consumers add `chip eng-<name>` to a span.
+.chip {
+  display: inline-block;
+  padding: 0.18em 0.6em;
+  font-family: var(--font-body, var(--bodyFont));
+  font-size: 0.74rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  margin-right: 0.3rem;
+  margin-bottom: 0.2rem;
+  border: 1px solid currentColor;
+  background: transparent;
+}
+.chip.eng-gsheets {
+  color: var(--eng-gsheets);
+}
+.chip.eng-excel {
+  color: var(--eng-excel);
+}
+.chip.eng-lattice {
+  color: var(--eng-lattice);
+}
+.chip.eng-ironcalc {
+  color: var(--eng-ironcalc);
+}
+.chip.eng-hyperformula {
+  color: var(--eng-hyperformula);
+}
+.chip.eng-libreoffice {
+  color: var(--eng-libreoffice);
+}
+.chip.eng-formulas {
+  color: var(--eng-formulas);
+}
+.chip.eng-pycel {
+  color: var(--eng-pycel);
+}

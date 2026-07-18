@@ -1,0 +1,45 @@
+{
+  "name": "@cartularium/sheets-wiki-editor",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Cartularium sheets.wiki contributor editor SPA. Mounts at /edit/* on sheets.wiki.",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite",
+    "preview": "vite preview",
+    "check": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "dependencies": {
+    "@cartularium/brand": "workspace:*",
+    "@cartularium/chrome": "workspace:*",
+    "@cartularium/contracts": "workspace:*",
+    "codemirror": "^6.0.1",
+    "@codemirror/lang-markdown": "^6.3.0",
+    "@codemirror/language": "^6.10.0",
+    "@codemirror/state": "^6.4.1",
+    "@codemirror/view": "^6.34.0",
+    "@codemirror/commands": "^6.6.0",
+    "@codemirror/autocomplete": "^6.18.0",
+    "@codemirror/search": "^6.5.0",
+    "@replit/codemirror-vim": "^6.3.0",
+    "@lezer/highlight": "^1.2.0",
+    "preact": "^10.22.0",
+    "js-yaml": "^4.1.0"
+  },
+  "devDependencies": {
+    "@preact/preset-vite": "^2.10.0",
+    "@testing-library/jest-dom": "^6.5.0",
+    "@testing-library/preact": "^3.2.4",
+    "@types/js-yaml": "^4.0.9",
+    "@types/node": "^22.0.0",
+    "jsdom": "^25.0.0",
+    "typescript": "^5.8.3",
+    "vite": "^5.4.0",
+    "sass": "^1.79.0",
+    "vitest": "^2.1.0"
+  }
+}

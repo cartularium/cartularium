@@ -1,0 +1,17 @@
+id: DV-0095
+summary: "gsheets, hyperformula, ironcalc: different error code — WORKDAY"
+cause: error-code
+category: value
+engines:
+  - gsheets
+  - hyperformula
+  - ironcalc
+behavior:
+  signature: '{"error":"#VALUE!"}'
+test-count: 1
+subjects:
+  - WORKDAY
+tests:
+  - WORKDAY/workday-with-holiday
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

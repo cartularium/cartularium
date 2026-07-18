@@ -1,0 +1,21 @@
+id: DV-0034
+summary: "pycel: different argument interpretation — INDIRECT, OFFSET, XOR"
+cause: arg-semantics
+category: value
+engines:
+  - pycel
+behavior:
+  signature: "0"
+test-count: 5
+subjects:
+  - INDIRECT
+  - OFFSET
+  - XOR
+tests:
+  - XOR/xor-even-trues
+  - XOR/xor-all-false
+  - OFFSET/offset-sum-height-width
+  - OFFSET/offset-sum-shifted-range
+  - INDIRECT/indirect-sum-range
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

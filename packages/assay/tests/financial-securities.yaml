@@ -1,0 +1,760 @@
+schemaVersion: 3
+name: Financial securities functions
+tests:
+  - subject: ACCRINT
+    category: value
+    status: observed
+    formula: =ACCRINT(DATE(2008,3,1), DATE(2008,8,31), DATE(2011,2,15), 0.1, 1000, 2, 0)
+    tags:
+      - financial
+      - securities
+    name: accrint-semiannual
+  - subject: ACCRINT
+    category: value
+    status: observed
+    formula: =ACCRINT(DATE(2011,2,15), DATE(2011,8,15), DATE(2012,2,15), 0.0575, 1000, 1, 1)
+    tags:
+      - financial
+      - securities
+    name: accrint-annual-basis-1
+  - subject: ACCRINT
+    formula: =ACCRINT(DATE(2011,2,15), DATE(2011,5,15), DATE(2012,2,15), 0.0575, 1000, 4, 0)
+    category: value
+    expect: 57.5
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - financial
+      - securities
+    name: accrint-quarterly
+  - subject: ACCRINTM
+    category: value
+    status: observed
+    formula: =ACCRINTM(DATE(2011,2,15), DATE(2011,11,15), 0.0575, 1000, 0)
+    tags:
+      - financial
+      - securities
+    name: accrintm-standard
+  - subject: ACCRINTM
+    category: value
+    status: observed
+    formula: =ACCRINTM(DATE(2011,2,15), DATE(2011,11,15), 0.0575, 1000, 1)
+    tags:
+      - financial
+      - securities
+    name: accrintm-basis-1
+  - subject: ACCRINTM
+    category: value
+    status: observed
+    formula: =ACCRINTM(DATE(2011,2,15), DATE(2011,5,15), 0.065, 1000, 0)
+    tags:
+      - financial
+      - securities
+    name: accrintm-short-period
+  - subject: AMORLINC
+    formula: =AMORLINC(2400, DATE(2008,8,19), DATE(2008,12,31), 300, 1, 0.15, 1)
+    category: value
+    expect: 360
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - financial
+      - securities
+    name: amorlinc-standard
+  - subject: AMORLINC
+    formula: =AMORLINC(2400, DATE(2008,8,19), DATE(2008,12,31), 300, 1, 0.15, 0)
+    category: value
+    expect: 360
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - financial
+      - securities
+    name: amorlinc-basis-0
+  - subject: COUPDAYBS
+    formula: =COUPDAYBS(DATE(2011,2,15), DATE(2021,11,15), 2, 0)
+    category: value
+    expect: 90
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - financial
+      - securities
+    name: coupdaybs-semiannual
+  - subject: COUPDAYBS
+    formula: =COUPDAYBS(DATE(2011,2,15), DATE(2021,11,15), 1, 1)
+    category: value
+    expect: 92
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - financial
+      - securities
+    name: coupdaybs-annual-basis-1
+  - subject: COUPDAYBS
+    formula: =COUPDAYBS(DATE(2011,2,15), DATE(2021,11,15), 4, 0)
+    category: value
+    expect: 0
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - financial
+      - securities
+    name: coupdaybs-quarterly
+  - subject: COUPDAYS
+    formula: =COUPDAYS(DATE(2011,2,15), DATE(2021,11,15), 2, 0)
+    category: value
+    expect: 180
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - financial
+      - securities
+    name: coupdays-semiannual
+  - subject: COUPDAYS
+    formula: =COUPDAYS(DATE(2011,2,15), DATE(2021,11,15), 2, 1)
+    category: value
+    expect: 181
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - financial
+      - securities
+    name: coupdays-actual-basis-1
+  - subject: COUPDAYS
+    formula: =COUPDAYS(DATE(2011,2,15), DATE(2021,11,15), 1, 0)
+    category: value
+    expect: 360
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - financial
+      - securities
+    name: coupdays-annual
+  - subject: COUPDAYSNC
+    formula: =COUPDAYSNC(DATE(2011,2,15), DATE(2021,11,15), 2, 0)
+    category: value
+    expect: 90
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - financial
+      - securities
+    name: coupdaysnc-semiannual
+  - subject: COUPDAYSNC
+    formula: =COUPDAYSNC(DATE(2011,2,15), DATE(2021,11,15), 4, 1)
+    category: value
+    expect: 89
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - financial
+      - securities
+    name: coupdaysnc-quarterly-basis-1
+  - subject: COUPNCD
+    formula: =COUPNCD(DATE(2011,2,15), DATE(2021,11,15), 2, 0)
+    category: value
+    expect: 40678
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - financial
+      - securities
+    name: coupncd-semiannual
+  - subject: COUPNCD
+    formula: =COUPNCD(DATE(2011,2,15), DATE(2021,11,15), 4, 0)
+    category: value
+    expect: 40678
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - financial
+      - securities
+    name: coupncd-quarterly
+  - subject: COUPNCD
+    formula: =COUPNCD(DATE(2011,2,15), DATE(2021,11,15), 1, 1)
+    category: value
+    expect: 40862
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - financial
+      - securities
+    name: coupncd-annual-basis-1
+  - subject: COUPNUM
+    formula: =COUPNUM(DATE(2011,2,15), DATE(2021,11,15), 2, 0)
+    category: value
+    expect: 22
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - financial
+      - securities
+    name: coupnum-semiannual
+  - subject: COUPNUM
+    formula: =COUPNUM(DATE(2011,2,15), DATE(2021,11,15), 4, 1)
+    category: value
+    expect: 43
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - financial
+      - securities
+    name: coupnum-quarterly-basis-1
+  - subject: COUPPCD
+    formula: =COUPPCD(DATE(2011,2,15), DATE(2021,11,15), 2, 0)
+    category: value
+    expect: 40497
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - financial
+      - securities
+    name: couppcd-semiannual
+  - subject: COUPPCD
+    formula: =COUPPCD(DATE(2011,2,15), DATE(2021,11,15), 4, 0)
+    category: value
+    expect: 40589
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - financial
+      - securities
+    name: couppcd-quarterly
+  - subject: COUPPCD
+    formula: =COUPPCD(DATE(2011,2,15), DATE(2021,11,15), 1, 1)
+    category: value
+    expect: 40497
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - financial
+      - securities
+    name: couppcd-annual-basis-1
+  - subject: DISC
+    category: value
+    status: observed
+    formula: =DISC(DATE(2011,2,15), DATE(2011,11,15), 97.975, 100, 0)
+    tags:
+      - financial
+      - securities
+    name: disc-standard
+  - subject: DISC
+    category: value
+    status: observed
+    formula: =DISC(DATE(2011,2,15), DATE(2011,11,15), 97.975, 100, 1)
+    tags:
+      - financial
+      - securities
+    name: disc-basis-1
+  - subject: DOLLARDE
+    formula: =DOLLARDE(1.02, 16)
+    category: value
+    expect: 1.125
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - financial
+      - securities
+    name: dollarde-sixteenths
+  - subject: DOLLARDE
+    category: value
+    formula: =DOLLARDE(1.1, 8)
+    expect: 1.125
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - financial
+      - securities
+    name: dollarde-eighths
+  - subject: DOLLARDE
+    category: value
+    status: observed
+    formula: =DOLLARDE(1.16, 32)
+    tags:
+      - financial
+      - securities
+    name: dollarde-thirty-twos
+  - subject: DOLLARFR
+    formula: =DOLLARFR(1.125, 16)
+    category: value
+    expect: 1.02
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - financial
+      - securities
+    name: dollarfr-sixteenths
+  - subject: DOLLARFR
+    category: value
+    formula: =DOLLARFR(1.125, 8)
+    expect: 1.1
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - financial
+      - securities
+    name: dollarfr-eighths
+  - subject: DOLLARFR
+    category: value
+    formula: =DOLLARFR(1.5, 32)
+    expect: 1.16
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - financial
+      - securities
+    name: dollarfr-thirty-twos
+  - subject: DURATION
+    category: value
+    status: observed
+    formula: =DURATION(DATE(2011,2,15), DATE(2021,11,15), 0.0575, 0.065, 2, 0)
+    tags:
+      - financial
+      - securities
+    name: duration-standard-bond
+  - subject: DURATION
+    category: value
+    status: observed
+    formula: =DURATION(DATE(2011,2,15), DATE(2021,11,15), 0.0575, 0.065, 1, 1)
+    tags:
+      - financial
+      - securities
+    name: duration-annual-basis-1
+  - subject: INTRATE
+    category: value
+    status: observed
+    formula: =INTRATE(DATE(2011,2,15), DATE(2011,11,15), 1000000, 1014420, 0)
+    tags:
+      - financial
+      - securities
+    name: intrate-standard
+  - subject: INTRATE
+    category: value
+    status: observed
+    formula: =INTRATE(DATE(2011,2,15), DATE(2011,11,15), 1000000, 1014420, 1)
+    tags:
+      - financial
+      - securities
+    name: intrate-basis-1
+  - subject: MDURATION
+    category: value
+    status: observed
+    formula: =MDURATION(DATE(2011,2,15), DATE(2021,11,15), 0.0575, 0.065, 2, 0)
+    tags:
+      - financial
+      - securities
+    name: mduration-standard-bond
+  - subject: MDURATION
+    category: value
+    status: observed
+    formula: =MDURATION(DATE(2011,2,15), DATE(2021,11,15), 0.0575, 0.065, 1, 1)
+    tags:
+      - financial
+      - securities
+    name: mduration-annual-basis-1
+  - subject: PRICE
+    category: value
+    status: observed
+    formula: =PRICE(DATE(2011,2,15), DATE(2021,11,15), 0.0575, 0.065, 100, 2, 0)
+    tags:
+      - financial
+      - securities
+    name: price-standard-bond
+  - subject: PRICE
+    category: value
+    status: observed
+    formula: =PRICE(DATE(2011,2,15), DATE(2021,11,15), 0.0575, 0.065, 100, 1, 1)
+    tags:
+      - financial
+      - securities
+    name: price-annual-basis-1
+  - subject: PRICE
+    category: value
+    status: observed
+    formula: =PRICE(DATE(2011,2,15), DATE(2021,11,15), 0.0575, 0.065, 100, 4, 0)
+    tags:
+      - financial
+      - securities
+    name: price-quarterly
+  - subject: PRICEDISC
+    category: value
+    status: observed
+    formula: =PRICEDISC(DATE(2011,2,15), DATE(2011,11,15), 0.0525, 100, 0)
+    tags:
+      - financial
+      - securities
+    name: pricedisc-standard
+  - subject: PRICEDISC
+    category: value
+    status: observed
+    formula: =PRICEDISC(DATE(2011,2,15), DATE(2011,11,15), 0.0525, 100, 1)
+    tags:
+      - financial
+      - securities
+    name: pricedisc-basis-1
+  - subject: PRICEMAT
+    category: value
+    status: observed
+    formula: =PRICEMAT(DATE(2011,2,15), DATE(2011,11,15), DATE(2010,11,15), 0.0575, 0.065, 0)
+    tags:
+      - financial
+      - securities
+    name: pricemat-standard
+  - subject: PRICEMAT
+    category: value
+    status: observed
+    formula: =PRICEMAT(DATE(2011,2,15), DATE(2011,11,15), DATE(2010,11,15), 0.0575, 0.065, 1)
+    tags:
+      - financial
+      - securities
+    name: pricemat-basis-1
+  - subject: RECEIVED
+    category: value
+    status: observed
+    formula: =RECEIVED(DATE(2011,2,15), DATE(2011,11,15), 1000000, 0.0575, 0)
+    tags:
+      - financial
+      - securities
+    name: received-standard
+  - subject: RECEIVED
+    category: value
+    status: observed
+    formula: =RECEIVED(DATE(2011,2,15), DATE(2011,11,15), 1000000, 0.0575, 1)
+    tags:
+      - financial
+      - securities
+    name: received-basis-1
+  - subject: TBILLEQ
+    category: value
+    status: observed
+    formula: =TBILLEQ(DATE(2008,3,31), DATE(2008,6,1), 0.0914)
+    tags:
+      - financial
+      - securities
+    name: tbilleq-standard
+  - subject: TBILLEQ
+    category: value
+    status: observed
+    formula: =TBILLEQ(DATE(2011,2,15), DATE(2011,5,15), 0.065)
+    tags:
+      - financial
+      - securities
+    name: tbilleq-short-maturity
+  - subject: TBILLPRICE
+    category: value
+    formula: =TBILLPRICE(DATE(2008,3,31), DATE(2008,6,1), 0.09)
+    expect: 98.45
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - financial
+      - securities
+    name: tbillprice-standard
+  - subject: TBILLPRICE
+    category: value
+    status: observed
+    formula: =TBILLPRICE(DATE(2011,2,15), DATE(2011,5,15), 0.065)
+    tags:
+      - financial
+      - securities
+    name: tbillprice-short-maturity
+  - subject: TBILLYIELD
+    category: value
+    status: observed
+    formula: =TBILLYIELD(DATE(2008,3,31), DATE(2008,6,1), 98.45)
+    tags:
+      - financial
+      - securities
+    name: tbillyield-standard
+  - subject: TBILLYIELD
+    category: value
+    status: observed
+    formula: =TBILLYIELD(DATE(2011,2,15), DATE(2011,5,15), 98.5)
+    tags:
+      - financial
+      - securities
+    name: tbillyield-short-maturity
+  - subject: YIELD
+    category: value
+    status: observed
+    formula: =YIELD(DATE(2011,2,15), DATE(2021,11,15), 0.0575, 95.04287, 100, 2, 0)
+    tags:
+      - financial
+      - securities
+    name: yield-standard-bond
+  - subject: YIELD
+    category: value
+    status: observed
+    formula: =YIELD(DATE(2011,2,15), DATE(2021,11,15), 0.0575, 95.04287, 100, 1, 1)
+    tags:
+      - financial
+      - securities
+    name: yield-annual-basis-1
+  - subject: YIELD
+    category: value
+    status: observed
+    formula: =YIELD(DATE(2011,2,15), DATE(2021,11,15), 0.0575, 95.04287, 100, 4, 0)
+    tags:
+      - financial
+      - securities
+    name: yield-quarterly
+  - subject: YIELDDISC
+    category: value
+    status: observed
+    formula: =YIELDDISC(DATE(2011,2,15), DATE(2011,11,15), 94.5, 100, 0)
+    tags:
+      - financial
+      - securities
+    name: yielddisc-standard
+  - subject: YIELDDISC
+    category: value
+    status: observed
+    formula: =YIELDDISC(DATE(2011,2,15), DATE(2011,11,15), 94.5, 100, 1)
+    tags:
+      - financial
+      - securities
+    name: yielddisc-basis-1
+  - subject: YIELDMAT
+    category: value
+    status: observed
+    formula: =YIELDMAT(DATE(2011,2,15), DATE(2011,11,15), DATE(2010,11,15), 0.0575, 99.2, 0)
+    tags:
+      - financial
+      - securities
+    name: yieldmat-standard
+  - subject: YIELDMAT
+    category: value
+    status: observed
+    formula: =YIELDMAT(DATE(2011,2,15), DATE(2011,11,15), DATE(2010,11,15), 0.0575, 99.2, 1)
+    tags:
+      - financial
+      - securities
+    name: yieldmat-basis-1

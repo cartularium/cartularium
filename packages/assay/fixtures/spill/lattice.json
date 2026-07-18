@@ -1,0 +1,193 @@
+{
+  "platform": "lattice",
+  "generatedAt": "2026-05-07T21:12:27.661Z",
+  "results": {
+    "sha256:a98613bbfe1a248786ab587de3ebf6606453a4ae002b82997b507abd8488efe4": {
+      "result": [
+        [
+          1
+        ],
+        [
+          2
+        ],
+        [
+          3
+        ]
+      ],
+      "formula-as-evaluated": "=SEQUENCE(3)"
+    },
+    "sha256:73e39202a0d84cab0f580ab1a0cf4695e6efb5d3f2bbdcf86e67f341651f2e55": {
+      "result": [
+        [
+          1,
+          2,
+          3
+        ]
+      ],
+      "formula-as-evaluated": "=SEQUENCE(1, 3)"
+    },
+    "sha256:290873102c80269b042782873f7a5a1bd7d33d16436cdc24bea6d257e0455423": {
+      "result": [
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          5,
+          6
+        ]
+      ],
+      "formula-as-evaluated": "=SEQUENCE(3, 2)"
+    },
+    "sha256:e681e406935826e0a42c14b8d3c3c9cbd48092659283ce8c51173bef961bbf02": {
+      "result": [
+        [
+          1,
+          2,
+          3
+        ]
+      ],
+      "formula-as-evaluated": "=HSTACK(1, 2, 3)"
+    },
+    "sha256:8671e2f5582e8941e3add533280c3abdf2209181f9dc58f50d0d1028ce85015a": {
+      "result": [
+        [
+          1
+        ],
+        [
+          2
+        ],
+        [
+          3
+        ]
+      ],
+      "formula-as-evaluated": "=VSTACK(1, 2, 3)"
+    },
+    "sha256:eb40a5229ee0045436de8ebc4c89a96c70c44ad4809e693ae2ad873ce7e14e23": {
+      "result": [
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          4
+        ]
+      ],
+      "formula-as-evaluated": "=HSTACK(A1:A2, B1:B2)"
+    },
+    "sha256:d83c11ea61597e8cb05bb190f69215e5cf95239ba8351692addb8dbd8757c217": {
+      "result": [
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          4
+        ]
+      ],
+      "formula-as-evaluated": "=VSTACK(A1:B1, A2:B2)"
+    },
+    "sha256:628328a6c6add9e22eef9f4c51d6fd12230d5b6ad990649a3cbe3f3a18748ff9": {
+      "result": [
+        [
+          1,
+          2,
+          3
+        ]
+      ],
+      "formula-as-evaluated": "={1, 2, 3}"
+    },
+    "sha256:1a2119b0767f90d57a812b8a9a31261a894cb1c4106dfee8344338d828125bb8": {
+      "result": [
+        [
+          1
+        ],
+        [
+          2
+        ],
+        [
+          3
+        ]
+      ],
+      "formula-as-evaluated": "={1; 2; 3}"
+    },
+    "sha256:a13dcf56c685bb143e4094bfcda4632c72f99166e1015eb2c781ae281d9ea725": {
+      "result": [
+        [
+          1
+        ],
+        [
+          2
+        ],
+        [
+          3
+        ]
+      ],
+      "formula-as-evaluated": "=SORT({3;1;2})"
+    },
+    "sha256:a7a64b1ba66865cd09fa821f79741ee88039dafc27d58946ee205d94d99a45f5": {
+      "result": [
+        [
+          1
+        ],
+        [
+          2
+        ],
+        [
+          3
+        ]
+      ],
+      "formula-as-evaluated": "=UNIQUE({1;2;1;3;2})"
+    },
+    "sha256:4bbf23bbc1b416a4c8b9df9ffdd65e1ece6b04879d51ae611b80a473bca976b3": {
+      "result": [
+        [
+          1
+        ],
+        [
+          3
+        ],
+        [
+          5
+        ]
+      ],
+      "formula-as-evaluated": "=FILTER({1;2;3;4;5}, {1;0;1;0;1})"
+    },
+    "sha256:73ebbc63c61f23a17de3a1e052d58e1aff331424336ae72ff4021b9d4e3cfebb": {
+      "result": [
+        [
+          2
+        ],
+        [
+          4
+        ],
+        [
+          6
+        ]
+      ],
+      "formula-as-evaluated": "=MAP({1;2;3}, LAMBDA(x, x*2))"
+    },
+    "sha256:8423e680c15d596f4d922ef91dc57526d4347eb5b4675d4d859cce82a0aeda75": {
+      "result": [
+        [
+          6
+        ]
+      ],
+      "formula-as-evaluated": "=SUM(1, 2, 3)"
+    },
+    "sha256:4c16c52b6e083a53093db7e220af4c4382ea7cc5946c47c12f8ce2e3605eab59": {
+      "result": [
+        [
+          20
+        ]
+      ],
+      "formula-as-evaluated": "=INDEX(A1:A3, 2)"
+    }
+  }
+}

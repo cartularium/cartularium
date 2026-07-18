@@ -1,0 +1,15 @@
+id: DV-0136
+summary: "formulas: different argument interpretation — FVSCHEDULE"
+cause: arg-semantics
+category: value
+engines:
+  - formulas
+behavior:
+  signature: "1190.9100000000003"
+test-count: 1
+subjects:
+  - FVSCHEDULE
+tests:
+  - FVSCHEDULE/fvschedule-three-rates
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

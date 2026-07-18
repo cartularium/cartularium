@@ -1,0 +1,26 @@
+id: DV-0038
+summary: "excel, formulas, hyperformula, ironcalc, lattice, libreoffice, pycel:
+  function not implemented — ENCODEURL, ISURL"
+cause: missing-function
+category: value
+engines:
+  - excel
+  - formulas
+  - hyperformula
+  - ironcalc
+  - lattice
+  - libreoffice
+  - pycel
+behavior:
+  signature: '{"error":"#NAME?"}'
+test-count: 4
+subjects:
+  - ENCODEURL
+  - ISURL
+tests:
+  - ENCODEURL/encodeurl-space
+  - ENCODEURL/encodeurl-special-chars
+  - ISURL/isurl-https
+  - ISURL/isurl-not-a-url
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

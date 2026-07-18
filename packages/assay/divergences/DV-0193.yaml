@@ -1,0 +1,15 @@
+id: DV-0193
+summary: "hyperformula: different argument interpretation — INT"
+cause: arg-semantics
+category: value
+engines:
+  - hyperformula
+behavior:
+  signature: "-8"
+test-count: 1
+subjects:
+  - INT
+tests:
+  - INT/int-negative-rounds-down
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

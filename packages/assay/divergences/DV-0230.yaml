@@ -1,0 +1,20 @@
+id: DV-0230
+summary: "excel, formulas, gsheets, lattice, libreoffice: different argument
+  interpretation — SEARCHB"
+cause: arg-semantics
+category: value
+engines:
+  - excel
+  - formulas
+  - gsheets
+  - lattice
+  - libreoffice
+behavior:
+  signature: "6"
+test-count: 1
+subjects:
+  - SEARCHB
+tests:
+  - SEARCHB/searchb-with-start
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

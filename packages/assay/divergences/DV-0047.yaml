@@ -1,0 +1,18 @@
+id: DV-0047
+summary: "hyperformula: different argument interpretation — ISLOGICAL, ISODD"
+cause: arg-semantics
+category: value
+engines:
+  - hyperformula
+behavior:
+  signature: "false"
+test-count: 3
+subjects:
+  - ISLOGICAL
+  - ISODD
+tests:
+  - ISLOGICAL/islogical-of-true
+  - ISLOGICAL/islogical-of-false
+  - ISODD/isodd-negative-odd
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

@@ -1,0 +1,2142 @@
+schemaVersion: 3
+name: Math long-tail functions
+tests:
+  - subject: SIN
+    category: value
+    formula: =SIN(0)
+    expect: 0
+    tags:
+      - math
+    name: sin-at-0
+  - subject: SIN
+    category: value
+    formula: =SIN(PI()/2)
+    expect: 1
+    tags:
+      - math
+    name: sin-at-pi-2
+  - subject: SIN
+    category: value
+    status: observed
+    formula: =SIN(PI())
+    tags:
+      - math
+    name: sin-at-pi
+  - subject: SIN
+    category: value
+    status: observed
+    formula: =SIN(1)
+    tags:
+      - math
+    name: sin-at-1-radian
+  - subject: SIN
+    category: value
+    formula: =SIN(-PI()/2)
+    expect: -1
+    tags:
+      - math
+    name: sin-negative
+  - subject: COS
+    category: value
+    formula: =COS(0)
+    expect: 1
+    tags:
+      - math
+    name: cos-at-0
+  - subject: COS
+    category: value
+    status: observed
+    formula: =COS(PI()/2)
+    tags:
+      - math
+    name: cos-at-pi-2
+  - subject: COS
+    category: value
+    formula: =COS(PI())
+    expect: -1
+    tags:
+      - math
+    name: cos-at-pi
+  - subject: COS
+    category: value
+    status: observed
+    formula: =COS(1)
+    tags:
+      - math
+    name: cos-at-1-radian
+  - subject: COS
+    category: value
+    formula: =COS(-PI())
+    expect: -1
+    tags:
+      - math
+    name: cos-negative-symmetric
+  - subject: TAN
+    category: value
+    formula: =TAN(0)
+    expect: 0
+    tags:
+      - math
+    name: tan-at-0
+  - subject: TAN
+    category: value
+    status: observed
+    formula: =TAN(PI())
+    tags:
+      - math
+    name: tan-at-pi
+  - subject: TAN
+    category: value
+    status: observed
+    formula: =TAN(1)
+    tags:
+      - math
+    name: tan-at-1-radian
+  - subject: TAN
+    category: value
+    status: observed
+    formula: =TAN(-1)
+    tags:
+      - math
+    name: tan-negative
+  - subject: SEC
+    formula: =SEC(0)
+    category: value
+    expect: 1
+    overrides:
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - math
+    name: sec-at-0
+  - subject: SEC
+    formula: =SEC(PI())
+    category: value
+    expect: -1
+    overrides:
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - math
+    name: sec-at-pi
+  - subject: SEC
+    category: value
+    status: observed
+    formula: =SEC(1)
+    tags:
+      - math
+    name: sec-at-1-radian
+  - subject: SEC
+    formula: =SEC(-PI())
+    category: value
+    expect: -1
+    overrides:
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - math
+    name: sec-negative
+  - subject: CSC
+    formula: =CSC(PI()/2)
+    category: value
+    expect: 1
+    overrides:
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - math
+    name: csc-at-pi-2
+  - subject: CSC
+    category: value
+    status: observed
+    formula: =CSC(1)
+    tags:
+      - math
+    name: csc-at-1-radian
+  - subject: CSC
+    formula: =CSC(-PI()/2)
+    category: value
+    expect: -1
+    overrides:
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - math
+    name: csc-negative
+  - subject: CSC
+    category: error-code
+    status: observed
+    formula: =CSC(0)
+    tags:
+      - math
+    name: csc-at-0-error
+  - subject: COT
+    category: value
+    status: observed
+    formula: =COT(PI()/2)
+    tags:
+      - math
+    name: cot-at-pi-2
+  - subject: COT
+    category: value
+    status: observed
+    formula: =COT(1)
+    tags:
+      - math
+    name: cot-at-1-radian
+  - subject: COT
+    category: value
+    status: observed
+    formula: =COT(-1)
+    tags:
+      - math
+    name: cot-negative
+  - subject: COT
+    category: error-code
+    status: observed
+    formula: =COT(0)
+    tags:
+      - math
+    name: cot-at-0-error
+  - subject: SINH
+    category: value
+    formula: =SINH(0)
+    expect: 0
+    tags:
+      - math
+    name: sinh-at-0
+  - subject: SINH
+    category: value
+    status: observed
+    formula: =SINH(1)
+    tags:
+      - math
+    name: sinh-at-1
+  - subject: SINH
+    category: value
+    status: observed
+    formula: =SINH(-1)
+    tags:
+      - math
+    name: sinh-negative
+  - subject: COSH
+    category: value
+    formula: =COSH(0)
+    expect: 1
+    tags:
+      - math
+    name: cosh-at-0
+  - subject: COSH
+    category: value
+    status: observed
+    formula: =COSH(1)
+    tags:
+      - math
+    name: cosh-at-1
+  - subject: COSH
+    category: value
+    status: observed
+    formula: =COSH(-1)
+    tags:
+      - math
+    name: cosh-negative-symmetric
+  - subject: TANH
+    category: value
+    formula: =TANH(0)
+    expect: 0
+    tags:
+      - math
+    name: tanh-at-0
+  - subject: TANH
+    category: value
+    status: observed
+    formula: =TANH(1)
+    tags:
+      - math
+    name: tanh-at-1
+  - subject: TANH
+    category: value
+    status: observed
+    formula: =TANH(-1)
+    tags:
+      - math
+    name: tanh-negative
+  - subject: SECH
+    formula: =SECH(0)
+    category: value
+    expect: 1
+    overrides:
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - math
+    name: sech-at-0
+  - subject: SECH
+    category: value
+    status: observed
+    formula: =SECH(1)
+    tags:
+      - math
+    name: sech-at-1
+  - subject: SECH
+    category: value
+    status: observed
+    formula: =SECH(-1)
+    tags:
+      - math
+    name: sech-negative
+  - subject: CSCH
+    category: value
+    status: observed
+    formula: =CSCH(1)
+    tags:
+      - math
+    name: csch-at-1
+  - subject: CSCH
+    category: value
+    status: observed
+    formula: =CSCH(-1)
+    tags:
+      - math
+    name: csch-negative
+  - subject: CSCH
+    category: error-code
+    status: observed
+    formula: =CSCH(0)
+    tags:
+      - math
+    name: csch-at-0-error
+  - subject: COTH
+    category: value
+    status: observed
+    formula: =COTH(1)
+    tags:
+      - math
+    name: coth-at-1
+  - subject: COTH
+    category: value
+    status: observed
+    formula: =COTH(-1)
+    tags:
+      - math
+    name: coth-negative
+  - subject: COTH
+    category: error-code
+    status: observed
+    formula: =COTH(0)
+    tags:
+      - math
+    name: coth-at-0-error
+  - subject: ASIN
+    category: value
+    formula: =ASIN(0)
+    expect: 0
+    tags:
+      - math
+    name: asin-at-0
+  - subject: ASIN
+    category: value
+    status: observed
+    formula: =ASIN(1)
+    tags:
+      - math
+    name: asin-at-1
+  - subject: ASIN
+    category: value
+    status: observed
+    formula: =ASIN(-1)
+    tags:
+      - math
+    name: asin-negative
+  - subject: ASIN
+    formula: =ASIN(2)
+    category: value
+    expect:
+      error: "#NUM!"
+    tags:
+      - math
+    name: asin-out-of-domain
+  - subject: ACOS
+    category: value
+    formula: =ACOS(1)
+    expect: 0
+    tags:
+      - math
+    name: acos-at-1
+  - subject: ACOS
+    category: value
+    status: observed
+    formula: =ACOS(0)
+    tags:
+      - math
+    name: acos-at-0
+  - subject: ACOS
+    category: value
+    status: observed
+    formula: =ACOS(-1)
+    tags:
+      - math
+    name: acos-negative
+  - subject: ACOS
+    formula: =ACOS(2)
+    category: value
+    expect:
+      error: "#NUM!"
+    tags:
+      - math
+    name: acos-out-of-domain
+  - subject: ATAN
+    category: value
+    formula: =ATAN(0)
+    expect: 0
+    tags:
+      - math
+    name: atan-at-0
+  - subject: ATAN
+    category: value
+    status: observed
+    formula: =ATAN(1)
+    tags:
+      - math
+    name: atan-at-1
+  - subject: ATAN
+    category: value
+    status: observed
+    formula: =ATAN(-1)
+    tags:
+      - math
+    name: atan-negative
+  - subject: ATAN2
+    category: value
+    formula: =ATAN2(1, 0)
+    expect: 0
+    tags:
+      - math
+    name: atan2-on-x-axis
+  - subject: ATAN2
+    category: value
+    status: observed
+    formula: =ATAN2(0, 1)
+    tags:
+      - math
+    name: atan2-on-y-axis
+  - subject: ATAN2
+    category: value
+    status: observed
+    formula: =ATAN2(1, 1)
+    tags:
+      - math
+    name: atan2-diagonal
+  - subject: ATAN2
+    category: value
+    status: observed
+    formula: =ATAN2(-1, -1)
+    tags:
+      - math
+    name: atan2-negative
+  - subject: ASINH
+    category: value
+    formula: =ASINH(0)
+    expect: 0
+    tags:
+      - math
+    name: asinh-at-0
+  - subject: ASINH
+    category: value
+    status: observed
+    formula: =ASINH(1)
+    tags:
+      - math
+    name: asinh-at-1
+  - subject: ASINH
+    category: value
+    status: observed
+    formula: =ASINH(-1)
+    tags:
+      - math
+    name: asinh-negative
+  - subject: ACOSH
+    category: value
+    formula: =ACOSH(1)
+    expect: 0
+    tags:
+      - math
+    name: acosh-at-1
+  - subject: ACOSH
+    category: value
+    status: observed
+    formula: =ACOSH(2)
+    tags:
+      - math
+    name: acosh-greater-than-1
+  - subject: ACOSH
+    formula: =ACOSH(0)
+    category: value
+    expect:
+      error: "#NUM!"
+    overrides:
+      libreoffice:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+    tags:
+      - math
+    name: acosh-out-of-domain
+  - subject: ATANH
+    category: value
+    formula: =ATANH(0)
+    expect: 0
+    tags:
+      - math
+    name: atanh-at-0
+  - subject: ATANH
+    category: value
+    status: observed
+    formula: =ATANH(0.5)
+    tags:
+      - math
+    name: atanh-positive
+  - subject: ATANH
+    category: value
+    status: observed
+    formula: =ATANH(-0.5)
+    tags:
+      - math
+    name: atanh-negative
+  - subject: ATANH
+    formula: =ATANH(1)
+    category: value
+    expect:
+      error: "#NUM!"
+    overrides:
+      libreoffice:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+    tags:
+      - math
+    name: atanh-out-of-domain
+  - subject: ACOT
+    category: value
+    status: observed
+    formula: =ACOT(0)
+    tags:
+      - math
+    name: acot-at-0
+  - subject: ACOT
+    category: value
+    status: observed
+    formula: =ACOT(1)
+    tags:
+      - math
+    name: acot-at-1
+  - subject: ACOT
+    category: value
+    status: observed
+    formula: =ACOT(-1)
+    tags:
+      - math
+    name: acot-negative
+  - subject: ACOTH
+    category: value
+    status: observed
+    formula: =ACOTH(2)
+    tags:
+      - math
+    name: acoth-greater-than-1
+  - subject: ACOTH
+    category: value
+    status: observed
+    formula: =ACOTH(-2)
+    tags:
+      - math
+    name: acoth-less-than-1
+  - subject: ACOTH
+    formula: =ACOTH(1)
+    category: value
+    expect:
+      error: "#NUM!"
+    overrides:
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - math
+    name: acoth-out-of-domain
+  - subject: RADIANS
+    formula: =RADIANS(180)
+    category: value
+    expect: 3.141592653589793
+    overrides:
+      ironcalc:
+        cause: precision
+        recorded: 3.141592654
+      hyperformula:
+        cause: precision
+        recorded: 3.1415926536
+      libreoffice:
+        cause: precision
+        recorded: 3.14159265358979
+    tags:
+      - math
+    name: radians-of-180
+  - subject: RADIANS
+    category: value
+    formula: =RADIANS(0)
+    expect: 0
+    tags:
+      - math
+    name: radians-of-0
+  - subject: RADIANS
+    formula: =RADIANS(90)
+    category: value
+    expect: 1.5707963267948966
+    overrides:
+      ironcalc:
+        cause: precision
+        recorded: 1.570796327
+      hyperformula:
+        cause: precision
+        recorded: 1.5707963268
+      libreoffice:
+        cause: precision
+        recorded: 1.5707963267949
+    tags:
+      - math
+    name: radians-of-90
+  - subject: RADIANS
+    formula: =RADIANS(-180)
+    category: value
+    expect: -3.141592653589793
+    overrides:
+      ironcalc:
+        cause: precision
+        recorded: -3.141592654
+      hyperformula:
+        cause: precision
+        recorded: -3.1415926536
+      libreoffice:
+        cause: precision
+        recorded: -3.14159265358979
+    tags:
+      - math
+    name: radians-negative
+  - subject: DEGREES
+    category: value
+    formula: =DEGREES(PI())
+    expect: 180
+    tags:
+      - math
+    name: degrees-of-pi
+  - subject: DEGREES
+    category: value
+    formula: =DEGREES(0)
+    expect: 0
+    tags:
+      - math
+    name: degrees-of-0
+  - subject: DEGREES
+    category: value
+    formula: =DEGREES(PI()/2)
+    expect: 90
+    tags:
+      - math
+    name: degrees-of-pi-2
+  - subject: DEGREES
+    category: value
+    formula: =DEGREES(-PI())
+    expect: -180
+    tags:
+      - math
+    name: degrees-negative
+  - subject: BASE
+    formula: =BASE(10, 16)
+    category: value
+    expect: A
+    overrides:
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - math
+    name: base-to-hex
+  - subject: BASE
+    formula: =BASE(5, 2)
+    category: value
+    expect: "101"
+    overrides:
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - math
+    name: base-to-binary
+  - subject: BASE
+    formula: =BASE(0, 2)
+    category: value
+    expect: "0"
+    overrides:
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - math
+    name: base-zero
+  - subject: BASE
+    formula: =BASE(5, 2, 8)
+    category: value
+    expect: "00000101"
+    overrides:
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - math
+    name: base-with-min-length-padding
+  - subject: DECIMAL
+    formula: =DECIMAL("A", 16)
+    category: value
+    expect: 10
+    overrides:
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - math
+    name: decimal-from-hex
+  - subject: DECIMAL
+    formula: =DECIMAL("101", 2)
+    category: value
+    expect: 5
+    overrides:
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - math
+    name: decimal-from-binary
+  - subject: DECIMAL
+    formula: =DECIMAL("FF", 16)
+    category: value
+    expect: 255
+    overrides:
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - math
+    name: decimal-from-hex-larger
+  - subject: DECIMAL
+    formula: =DECIMAL("Z", 36)
+    category: value
+    expect: 35
+    overrides:
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - math
+    name: decimal-base-36
+  - subject: CEILING.PRECISE
+    formula: =CEILING.PRECISE(4.3)
+    category: value
+    expect: 5
+    overrides:
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - math
+    name: ceiling-precise-positive
+  - subject: CEILING.PRECISE
+    formula: =CEILING.PRECISE(-4.3)
+    category: value
+    expect: -4
+    overrides:
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      formulas:
+        cause: arg-semantics
+        recorded: 5
+    tags:
+      - math
+    name: ceiling-precise-negative
+  - subject: CEILING.PRECISE
+    formula: =CEILING.PRECISE(4.3, 2)
+    category: value
+    expect: 6
+    overrides:
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - math
+    name: ceiling-precise-with-significance
+  - subject: CEILING.PRECISE
+    formula: =CEILING.PRECISE(-4.3, -2)
+    category: value
+    expect: -4
+    overrides:
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - math
+    name: ceiling-precise-negative-significance-ignored
+  - subject: FLOOR.PRECISE
+    formula: =FLOOR.PRECISE(4.8)
+    category: value
+    expect: 4
+    overrides:
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - math
+    name: floor-precise-positive
+  - subject: FLOOR.PRECISE
+    formula: =FLOOR.PRECISE(-4.3)
+    category: value
+    expect: -5
+    overrides:
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      formulas:
+        cause: arg-semantics
+        recorded: 4
+    tags:
+      - math
+    name: floor-precise-negative
+  - subject: FLOOR.PRECISE
+    formula: =FLOOR.PRECISE(4.8, 2)
+    category: value
+    expect: 4
+    overrides:
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - math
+    name: floor-precise-with-significance
+  - subject: FLOOR.PRECISE
+    formula: =FLOOR.PRECISE(-4.3, -2)
+    category: value
+    expect: -6
+    overrides:
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - math
+    name: floor-precise-negative-significance-ignored
+  - subject: ISO.CEILING
+    formula: =ISO.CEILING(4.3)
+    category: value
+    expect: 5
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - math
+    name: iso-ceiling-positive
+  - subject: ISO.CEILING
+    formula: =ISO.CEILING(-4.3)
+    category: value
+    expect: -4
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      formulas:
+        cause: arg-semantics
+        recorded: 5
+    tags:
+      - math
+    name: iso-ceiling-negative
+  - subject: ISO.CEILING
+    formula: =ISO.CEILING(4.3, 2)
+    category: value
+    expect: 6
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - math
+    name: iso-ceiling-with-significance
+  - subject: ISO.CEILING
+    formula: =ISO.CEILING(-4.3, -2)
+    category: value
+    expect: -4
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - math
+    name: iso-ceiling-negative-significance-ignored
+  - subject: COMBIN
+    formula: =COMBIN(5, 2)
+    category: value
+    expect: 10
+    overrides:
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - math
+    name: combin-basic
+  - subject: COMBIN
+    formula: =COMBIN(8, 8)
+    category: value
+    expect: 1
+    overrides:
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - math
+    name: combin-n-equals-k
+  - subject: COMBIN
+    formula: =COMBIN(8, 0)
+    category: value
+    expect: 1
+    overrides:
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - math
+    name: combin-k-zero
+  - subject: COMBIN
+    formula: =COMBIN(3, 5)
+    category: value
+    expect:
+      error: "#NUM!"
+    overrides:
+      libreoffice:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - math
+    name: combin-k-greater-than-n
+  - subject: COMBINA
+    formula: =COMBINA(5, 2)
+    category: value
+    expect: 15
+    overrides:
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - math
+    name: combina-basic
+  - subject: COMBINA
+    formula: =COMBINA(8, 0)
+    category: value
+    expect: 1
+    overrides:
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - math
+    name: combina-k-zero
+  - subject: COMBINA
+    formula: =COMBINA(4, 3)
+    category: value
+    expect: 20
+    overrides:
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - math
+    name: combina-larger
+  - subject: MULTINOMIAL
+    formula: =MULTINOMIAL(2, 3)
+    category: value
+    expect: 10
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      excel:
+        cause: precision
+        recorded: 9.999999999999998
+    tags:
+      - math
+    name: multinomial-two
+  - subject: MULTINOMIAL
+    formula: =MULTINOMIAL(2, 3, 4)
+    category: value
+    expect: 1260
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      excel:
+        cause: precision
+        recorded: 1259.999999999999
+    tags:
+      - math
+    name: multinomial-three
+  - subject: MULTINOMIAL
+    formula: =MULTINOMIAL(5)
+    category: value
+    expect: 1
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      excel:
+        cause: precision
+        recorded: 0.9999999999999996
+    tags:
+      - math
+    name: multinomial-single
+  - subject: GCD
+    category: value
+    formula: =GCD(12, 18)
+    expect: 6
+    tags:
+      - math
+    name: gcd-basic
+  - subject: GCD
+    category: value
+    formula: =GCD(7, 13)
+    expect: 1
+    tags:
+      - math
+    name: gcd-coprime
+  - subject: GCD
+    category: value
+    formula: =GCD(0, 8)
+    expect: 8
+    tags:
+      - math
+    name: gcd-with-zero
+  - subject: GCD
+    category: value
+    formula: =GCD(24, 36, 60)
+    expect: 12
+    tags:
+      - math
+    name: gcd-multiple-args
+  - subject: LCM
+    category: value
+    formula: =LCM(4, 6)
+    expect: 12
+    tags:
+      - math
+    name: lcm-basic
+  - subject: LCM
+    category: value
+    formula: =LCM(3, 5)
+    expect: 15
+    tags:
+      - math
+    name: lcm-coprime
+  - subject: LCM
+    category: value
+    formula: =LCM(1, 7)
+    expect: 7
+    tags:
+      - math
+    name: lcm-with-one
+  - subject: LCM
+    category: value
+    formula: =LCM(2, 3, 4)
+    expect: 12
+    tags:
+      - math
+    name: lcm-multiple-args
+  - subject: ISEVEN
+    category: value
+    formula: =ISEVEN(4)
+    expect: true
+    tags:
+      - math
+    name: iseven-even
+  - subject: ISEVEN
+    category: value
+    formula: =ISEVEN(3)
+    expect: false
+    tags:
+      - math
+    name: iseven-odd
+  - subject: ISEVEN
+    category: value
+    formula: =ISEVEN(0)
+    expect: true
+    tags:
+      - math
+    name: iseven-zero
+  - subject: ISEVEN
+    category: value
+    formula: =ISEVEN(-2)
+    expect: true
+    tags:
+      - math
+    name: iseven-negative-even
+  - subject: ISODD
+    category: value
+    formula: =ISODD(3)
+    expect: true
+    tags:
+      - math
+    name: isodd-odd
+  - subject: ISODD
+    category: value
+    formula: =ISODD(4)
+    expect: false
+    tags:
+      - math
+    name: isodd-even
+  - subject: ISODD
+    category: value
+    formula: =ISODD(0)
+    expect: false
+    tags:
+      - math
+    name: isodd-zero
+  - subject: ISODD
+    formula: =ISODD(-3)
+    category: value
+    expect: true
+    overrides:
+      hyperformula:
+        cause: arg-semantics
+        recorded: false
+    tags:
+      - math
+    name: isodd-negative-odd
+  - subject: ODD
+    category: value
+    formula: =ODD(3)
+    expect: 3
+    tags:
+      - math
+    name: odd-positive-integer
+  - subject: ODD
+    category: value
+    formula: =ODD(1.5)
+    expect: 3
+    tags:
+      - math
+    name: odd-rounds-up
+  - subject: ODD
+    category: value
+    formula: =ODD(2)
+    expect: 3
+    tags:
+      - math
+    name: odd-of-2
+  - subject: ODD
+    category: value
+    formula: =ODD(-1.5)
+    expect: -3
+    tags:
+      - math
+    name: odd-negative
+  - subject: FACTDOUBLE
+    formula: =FACTDOUBLE(7)
+    category: value
+    expect: 105
+    overrides:
+      pycel:
+        cause: format-rendering
+        recorded: "105"
+    tags:
+      - math
+    name: factdouble-of-7
+  - subject: FACTDOUBLE
+    formula: =FACTDOUBLE(6)
+    category: value
+    expect: 48
+    overrides:
+      pycel:
+        cause: format-rendering
+        recorded: "48"
+    tags:
+      - math
+    name: factdouble-of-6
+  - subject: FACTDOUBLE
+    category: value
+    formula: =FACTDOUBLE(0)
+    expect: 1
+    tags:
+      - math
+    name: factdouble-of-0
+  - subject: FACTDOUBLE
+    formula: =FACTDOUBLE(-1)
+    category: value
+    expect: 1
+    overrides:
+      gsheets:
+        cause: error-code
+        recorded:
+          error: "#NUM!"
+      lattice:
+        cause: error-code
+        recorded:
+          error: "#NUM!"
+      hyperformula:
+        cause: error-code
+        recorded:
+          error: "#NUM!"
+      libreoffice:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+      pycel:
+        cause: error-code
+        recorded:
+          error: "#NUM!"
+    tags:
+      - math
+    name: factdouble-negative
+  - subject: ERFC
+    category: value
+    formula: =ERFC(0)
+    expect: 1
+    tags:
+      - math
+    name: erfc-at-0
+  - subject: ERFC
+    category: value
+    status: observed
+    formula: =ERFC(1)
+    tags:
+      - math
+    name: erfc-at-1
+  - subject: ERFC
+    category: value
+    status: observed
+    formula: =ERFC(-1)
+    tags:
+      - math
+    name: erfc-negative
+  - subject: ERFC.PRECISE
+    formula: =ERFC.PRECISE(0)
+    category: value
+    expect: 1
+    overrides:
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - math
+    name: erfc-precise-at-0
+  - subject: ERFC.PRECISE
+    category: value
+    status: observed
+    formula: =ERFC.PRECISE(1)
+    tags:
+      - math
+    name: erfc-precise-at-1
+  - subject: ERFC.PRECISE
+    category: value
+    status: observed
+    formula: =ERFC.PRECISE(2)
+    tags:
+      - math
+    name: erfc-precise-at-2
+  - subject: GAMMALN
+    formula: =GAMMALN(1)
+    category: value
+    expect: 0
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      ironcalc:
+        cause: precision
+        recorded: -4.44089e-16
+    tags:
+      - math
+    name: gammaln-at-1
+  - subject: GAMMALN
+    formula: =GAMMALN(2)
+    category: value
+    expect: 0
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: precision
+        recorded: -4.4408920985e-16
+    tags:
+      - math
+    name: gammaln-at-2
+  - subject: GAMMALN
+    category: value
+    status: observed
+    formula: =GAMMALN(5)
+    tags:
+      - math
+    name: gammaln-at-5
+  - subject: GAMMALN
+    formula: =GAMMALN(0)
+    category: value
+    expect:
+      error: "#NUM!"
+    overrides:
+      libreoffice:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - math
+    name: gammaln-non-positive
+  - subject: GAMMALN.PRECISE
+    formula: =GAMMALN.PRECISE(1)
+    category: value
+    expect: 0
+    overrides:
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      ironcalc:
+        cause: precision
+        recorded: -4.44089e-16
+    tags:
+      - math
+    name: gammaln-precise-at-1
+  - subject: GAMMALN.PRECISE
+    formula: =GAMMALN.PRECISE(2)
+    category: value
+    expect: 0
+    overrides:
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: precision
+        recorded: -4.4408920985e-16
+    tags:
+      - math
+    name: gammaln-precise-at-2
+  - subject: GAMMALN.PRECISE
+    category: value
+    status: observed
+    formula: =GAMMALN.PRECISE(5)
+    tags:
+      - math
+    name: gammaln-precise-at-5
+  - subject: IMLN
+    category: value
+    status: observed
+    formula: =IMLN("1")
+    tags:
+      - math
+    name: imln-of-real
+  - subject: IMLN
+    category: value
+    status: observed
+    formula: =IMLN("i")
+    tags:
+      - math
+    name: imln-of-i
+  - subject: IMLN
+    category: value
+    status: observed
+    formula: =IMLN("3+4i")
+    tags:
+      - math
+    name: imln-of-complex
+  - subject: IMPOWER
+    category: value
+    status: observed
+    formula: =IMPOWER("2+3i", 2)
+    tags:
+      - math
+    name: impower-squared
+  - subject: IMPOWER
+    category: value
+    status: observed
+    formula: =IMPOWER("i", 2)
+    tags:
+      - math
+    name: impower-of-i-squared
+  - subject: IMPOWER
+    category: value
+    status: observed
+    formula: =IMPOWER("2+3i", 0)
+    tags:
+      - math
+    name: impower-zeroth
+  - subject: IMSQRT
+    category: value
+    status: observed
+    formula: =IMSQRT("4")
+    tags:
+      - math
+    name: imsqrt-of-real
+  - subject: IMSQRT
+    category: value
+    status: observed
+    formula: =IMSQRT("i")
+    tags:
+      - math
+    name: imsqrt-of-i
+  - subject: IMSQRT
+    category: value
+    status: observed
+    formula: =IMSQRT("3+4i")
+    tags:
+      - math
+    name: imsqrt-of-complex
+  - subject: PRODUCT
+    formula: =PRODUCT(2, 3, 4)
+    category: value
+    expect: 24
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - math
+    name: product-scalars
+  - subject: PRODUCT
+    formula: =PRODUCT(5, 0, 3)
+    category: value
+    expect: 0
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - math
+    name: product-with-zero
+  - subject: PRODUCT
+    formula: =PRODUCT(7)
+    category: value
+    expect: 7
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - math
+    name: product-single
+  - subject: PRODUCT
+    formula: =PRODUCT(A1:A3)
+    category: value
+    grid:
+      A1: 2
+      A2: 3
+      A3: 4
+    expect: 24
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - math
+    name: product-with-grid-range
+  - subject: COUNTIFS
+    category: value
+    formula: =COUNTIFS(A1:A4, ">2")
+    grid:
+      A1: 1
+      A2: 2
+      A3: 3
+      A4: 4
+    expect: 2
+    tags:
+      - math
+    name: countifs-single-criterion
+  - subject: COUNTIFS
+    category: value
+    formula: =COUNTIFS(A1:A4, ">1", B1:B4, "x")
+    grid:
+      A1: 1
+      A2: 2
+      A3: 3
+      A4: 4
+      B1: x
+      B2: y
+      B3: x
+      B4: x
+    expect: 2
+    tags:
+      - math
+    name: countifs-two-criteria
+  - subject: COUNTIFS
+    category: value
+    formula: =COUNTIFS(A1:A3, 5)
+    grid:
+      A1: 5
+      A2: 5
+      A3: 6
+    expect: 2
+    tags:
+      - math
+    name: countifs-exact-match
+  - subject: COUNTIFS
+    category: value
+    formula: =COUNTIFS(A1:A2, ">10")
+    grid:
+      A1: 1
+      A2: 2
+    expect: 0
+    tags:
+      - math
+    name: countifs-no-match
+  - subject: COUNTUNIQUE
+    formula: =COUNTUNIQUE(A1:A3)
+    category: value
+    grid:
+      A1: 1
+      A2: 2
+      A3: 3
+    expect: 3
+    overrides:
+      excel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - math
+    name: countunique-distinct
+  - subject: COUNTUNIQUE
+    formula: =COUNTUNIQUE(A1:A5)
+    category: value
+    grid:
+      A1: 1
+      A2: 1
+      A3: 2
+      A4: 2
+      A5: 3
+    expect: 3
+    overrides:
+      excel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - math
+    name: countunique-with-dupes
+  - subject: COUNTUNIQUE
+    formula: =COUNTUNIQUE(A1:A3)
+    category: value
+    grid:
+      A1: a
+      A2: b
+      A3: a
+    expect: 2
+    overrides:
+      excel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - math
+    name: countunique-text
+  - subject: SUBTOTAL
+    formula: =SUBTOTAL(1, A1:A3)
+    category: value
+    grid:
+      A1: 10
+      A2: 20
+      A3: 30
+    expect: 20
+    overrides:
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - math
+    name: subtotal-average
+  - subject: SUBTOTAL
+    formula: =SUBTOTAL(2, A1:A3)
+    category: value
+    grid:
+      A1: 10
+      A2: 20
+      A3: 30
+    expect: 3
+    overrides:
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - math
+    name: subtotal-count
+  - subject: SUBTOTAL
+    formula: =SUBTOTAL(4, A1:A3)
+    category: value
+    grid:
+      A1: 10
+      A2: 20
+      A3: 30
+    expect: 30
+    overrides:
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - math
+    name: subtotal-max
+  - subject: SUBTOTAL
+    formula: =SUBTOTAL(5, A1:A3)
+    category: value
+    grid:
+      A1: 10
+      A2: 20
+      A3: 30
+    expect: 10
+    overrides:
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - math
+    name: subtotal-min
+  - subject: SUBTOTAL
+    formula: =SUBTOTAL(9, A1:A3)
+    category: value
+    grid:
+      A1: 10
+      A2: 20
+      A3: 30
+    expect: 60
+    overrides:
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - math
+    name: subtotal-sum
+  - subject: SERIESSUM
+    formula: =SERIESSUM(1, 0, 1, {1, 1, 1})
+    category: value
+    expect: 3
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - math
+      - bare-formula
+    name: seriessum-constant-coef
+  - subject: SERIESSUM
+    formula: =SERIESSUM(2, 0, 1, {1, 1, 1})
+    category: value
+    expect: 7
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - math
+      - bare-formula
+    name: seriessum-x-squared-series
+  - subject: SERIESSUM
+    formula: =SERIESSUM(1, 1, 1, {2, 3, 4})
+    category: value
+    expect: 9
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - math
+      - bare-formula
+    name: seriessum-x-equals-one
+  - subject: SERIESSUM
+    formula: =SERIESSUM(2, 0, 2, {1, 1})
+    category: value
+    expect: 5
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - math
+      - bare-formula
+    name: seriessum-small
+  - subject: MUNIT
+    formula: =MUNIT(2)
+    category: value
+    expect:
+      - - 1
+        - 0
+      - - 0
+        - 1
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      formulas:
+        cause: shape
+        recorded: null
+    tags:
+      - math
+    name: munit-2x2
+  - subject: MUNIT
+    formula: =MUNIT(3)
+    category: value
+    expect:
+      - - 1
+        - 0
+        - 0
+      - - 0
+        - 1
+        - 0
+      - - 0
+        - 0
+        - 1
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      formulas:
+        cause: shape
+        recorded: null
+    tags:
+      - math
+    name: munit-3x3
+  - subject: MUNIT
+    formula: =MUNIT(1)
+    category: value
+    expect: 1
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - math
+    name: munit-1x1
+  - subject: MUNIT
+    category: error-code
+    status: observed
+    formula: =MUNIT(0)
+    tags:
+      - math
+    name: munit-zero-error
+  - subject: SQRTPI
+    category: value
+    status: observed
+    formula: =SQRTPI(1)
+    tags:
+      - math
+    name: sqrtpi-of-1
+  - subject: SQRTPI
+    formula: =SQRTPI(0)
+    category: value
+    expect: 0
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - math
+    name: sqrtpi-of-0
+  - subject: SQRTPI
+    category: value
+    status: observed
+    formula: =SQRTPI(2)
+    tags:
+      - math
+    name: sqrtpi-of-2
+  - subject: SQRTPI
+    formula: =SQRTPI(-1)
+    category: value
+    expect:
+      error: "#NUM!"
+    overrides:
+      libreoffice:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - math
+    name: sqrtpi-negative
+  - subject: RAND
+    category: volatile
+    semanticDomain: volatile
+    status: volatile
+    formula: =RAND()
+    expect:
+      all-of:
+        - type: number
+        - ge: 0
+        - lt: 1
+    tags:
+      - math
+      - volatile
+    name: rand-smoke
+  - subject: RANDBETWEEN
+    category: volatile
+    semanticDomain: volatile
+    status: volatile
+    formula: =RANDBETWEEN(1, 10)
+    expect:
+      type: number
+    tags:
+      - math
+      - volatile
+    name: randbetween-smoke
+  - subject: RANDARRAY
+    formula: =RANDARRAY(2, 2)
+    category: volatile
+    semanticDomain: volatile
+    features:
+      - dynamic-arrays
+    status: volatile
+    expect:
+      shape:
+        - 2
+        - 2
+    overrides:
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - math
+      - volatile
+    name: randarray-smoke

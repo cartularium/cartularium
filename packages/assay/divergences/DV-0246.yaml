@@ -1,0 +1,15 @@
+id: DV-0246
+summary: "lattice: different argument interpretation — RANDBETWEEN"
+cause: arg-semantics
+category: volatile
+engines:
+  - lattice
+behavior:
+  signature: "8"
+test-count: 1
+subjects:
+  - RANDBETWEEN
+tests:
+  - RANDBETWEEN/randbetween-reversed-bounds
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

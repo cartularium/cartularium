@@ -1,0 +1,15 @@
+id: DV-0126
+summary: "hyperformula: numeric precision differs — EFFECT"
+cause: precision
+category: value
+engines:
+  - hyperformula
+behavior:
+  signature: "0.12682503013"
+test-count: 1
+subjects:
+  - EFFECT
+tests:
+  - EFFECT/effect-monthly-compounding
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

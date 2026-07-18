@@ -1,0 +1,20 @@
+id: DV-0135
+summary: "excel, gsheets, hyperformula, lattice, libreoffice: different argument
+  interpretation — FVSCHEDULE"
+cause: arg-semantics
+category: value
+engines:
+  - excel
+  - gsheets
+  - hyperformula
+  - lattice
+  - libreoffice
+behavior:
+  signature: "1190.91"
+test-count: 1
+subjects:
+  - FVSCHEDULE
+tests:
+  - FVSCHEDULE/fvschedule-three-rates
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

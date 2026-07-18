@@ -1,0 +1,21 @@
+id: DV-0144
+summary: "excel, formulas, gsheets, lattice, libreoffice, pycel: numeric
+  precision differs — NPV"
+cause: precision
+category: value
+engines:
+  - excel
+  - formulas
+  - gsheets
+  - lattice
+  - libreoffice
+  - pycel
+behavior:
+  signature: "90.9090909090909"
+test-count: 1
+subjects:
+  - NPV
+tests:
+  - NPV/npv-single-cashflow
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

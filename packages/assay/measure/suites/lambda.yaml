@@ -1,0 +1,62 @@
+schemaVersion: 3
+name: "sweep: LAMBDA"
+tests:
+  - subject: LAMBDA
+    name: iife
+    formula: =LAMBDA(x, x+1)(5)
+    category: value
+    status: observed
+    tags:
+      - sweep:lambda
+      - ax:form=iife
+  - subject: LAMBDA
+    name: map
+    formula: =MAP(D1:D3, LAMBDA(x, x*2))
+    category: value
+    status: observed
+    tags:
+      - sweep:lambda
+      - ax:form=map
+    grid: &a1
+      D1: 1
+      D2: 2
+      D3: 3
+  - subject: LAMBDA
+    name: reduce
+    formula: =REDUCE(0, D1:D3, LAMBDA(acc, v, acc+v))
+    category: value
+    status: observed
+    tags:
+      - sweep:lambda
+      - ax:form=reduce
+    grid: *a1
+  - subject: LAMBDA
+    name: scan
+    formula: =SCAN(0, D1:D3, LAMBDA(acc, v, acc+v))
+    category: value
+    status: observed
+    tags:
+      - sweep:lambda
+      - ax:form=scan
+    grid: *a1
+  - subject: LAMBDA
+    name: byrow
+    formula: =BYROW(D1:E2, LAMBDA(r, SUM(r)))
+    category: value
+    status: observed
+    tags:
+      - sweep:lambda
+      - ax:form=byrow
+    grid:
+      D1: 1
+      E1: 2
+      D2: 3
+      E2: 4
+  - subject: LAMBDA
+    name: makearray
+    formula: =MAKEARRAY(2, 2, LAMBDA(r, c, r*c))
+    category: value
+    status: observed
+    tags:
+      - sweep:lambda
+      - ax:form=makearray

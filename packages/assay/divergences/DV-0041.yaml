@@ -1,0 +1,20 @@
+id: DV-0041
+summary: "formulas, ironcalc, pycel: function not implemented — SERIESSUM"
+cause: missing-function
+category: value
+engines:
+  - formulas
+  - ironcalc
+  - pycel
+behavior:
+  signature: '{"error":"#NAME?"}'
+test-count: 4
+subjects:
+  - SERIESSUM
+tests:
+  - SERIESSUM/seriessum-constant-coef
+  - SERIESSUM/seriessum-x-squared-series
+  - SERIESSUM/seriessum-x-equals-one
+  - SERIESSUM/seriessum-small
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

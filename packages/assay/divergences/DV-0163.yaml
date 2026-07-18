@@ -1,0 +1,18 @@
+id: DV-0163
+summary: "excel, formulas, gsheets, lattice: numeric precision differs — RRI"
+cause: precision
+category: value
+engines:
+  - excel
+  - formulas
+  - gsheets
+  - lattice
+behavior:
+  signature: "0.09050773266525769"
+test-count: 1
+subjects:
+  - RRI
+tests:
+  - RRI/rri-double-in-8-years
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

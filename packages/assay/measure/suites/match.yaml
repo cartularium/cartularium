@@ -1,0 +1,501 @@
+schemaVersion: 3
+name: "sweep: MATCH"
+tests:
+  - subject: MATCH
+    name: zero-literal-number-present-sorted
+    formula: =MATCH(2, A1:A3, 0)
+    category: value
+    status: observed
+    tags:
+      - sweep:match
+      - ax:match_type=zero
+      - ax:key_encoding=literal
+      - ax:key_type=number
+      - ax:key_present=present
+      - ax:range_sorted=sorted
+    grid:
+      A1: 1
+      A2: 2
+      A3: 3
+  - subject: MATCH
+    name: zero-literal-number-present-unsorted
+    formula: =MATCH(2, A1:A3, 0)
+    category: value
+    status: observed
+    tags:
+      - sweep:match
+      - ax:match_type=zero
+      - ax:key_encoding=literal
+      - ax:key_type=number
+      - ax:key_present=present
+      - ax:range_sorted=unsorted
+    grid:
+      A1: 3
+      A2: 1
+      A3: 2
+  - subject: MATCH
+    name: zero-literal-number-absent-sorted
+    formula: =MATCH(9, A1:A3, 0)
+    category: value
+    status: observed
+    tags:
+      - sweep:match
+      - ax:match_type=zero
+      - ax:key_encoding=literal
+      - ax:key_type=number
+      - ax:key_present=absent
+      - ax:range_sorted=sorted
+    grid:
+      A1: 1
+      A2: 2
+      A3: 3
+  - subject: MATCH
+    name: zero-literal-number-absent-unsorted
+    formula: =MATCH(9, A1:A3, 0)
+    category: value
+    status: observed
+    tags:
+      - sweep:match
+      - ax:match_type=zero
+      - ax:key_encoding=literal
+      - ax:key_type=number
+      - ax:key_present=absent
+      - ax:range_sorted=unsorted
+    grid:
+      A1: 3
+      A2: 1
+      A3: 2
+  - subject: MATCH
+    name: zero-ref-number-present-sorted
+    formula: =MATCH(E1, A1:A3, 0)
+    category: value
+    status: observed
+    tags:
+      - sweep:match
+      - ax:match_type=zero
+      - ax:key_encoding=ref
+      - ax:key_type=number
+      - ax:key_present=present
+      - ax:range_sorted=sorted
+    grid:
+      A1: 1
+      A2: 2
+      A3: 3
+      E1: 2
+  - subject: MATCH
+    name: zero-ref-number-present-unsorted
+    formula: =MATCH(E1, A1:A3, 0)
+    category: value
+    status: observed
+    tags:
+      - sweep:match
+      - ax:match_type=zero
+      - ax:key_encoding=ref
+      - ax:key_type=number
+      - ax:key_present=present
+      - ax:range_sorted=unsorted
+    grid:
+      A1: 3
+      A2: 1
+      A3: 2
+      E1: 2
+  - subject: MATCH
+    name: zero-ref-number-absent-sorted
+    formula: =MATCH(E1, A1:A3, 0)
+    category: value
+    status: observed
+    tags:
+      - sweep:match
+      - ax:match_type=zero
+      - ax:key_encoding=ref
+      - ax:key_type=number
+      - ax:key_present=absent
+      - ax:range_sorted=sorted
+    grid:
+      A1: 1
+      A2: 2
+      A3: 3
+      E1: 9
+  - subject: MATCH
+    name: zero-ref-number-absent-unsorted
+    formula: =MATCH(E1, A1:A3, 0)
+    category: value
+    status: observed
+    tags:
+      - sweep:match
+      - ax:match_type=zero
+      - ax:key_encoding=ref
+      - ax:key_type=number
+      - ax:key_present=absent
+      - ax:range_sorted=unsorted
+    grid:
+      A1: 3
+      A2: 1
+      A3: 2
+      E1: 9
+  - subject: MATCH
+    name: zero-ref-numstr-present-sorted
+    formula: =MATCH(E1, A1:A3, 0)
+    category: value
+    status: observed
+    tags:
+      - sweep:match
+      - ax:match_type=zero
+      - ax:key_encoding=ref
+      - ax:key_type=numstr
+      - ax:key_present=present
+      - ax:range_sorted=sorted
+    grid:
+      A1: 1
+      A2: 2
+      A3: 3
+      E1: ="2"
+  - subject: MATCH
+    name: zero-ref-numstr-present-unsorted
+    formula: =MATCH(E1, A1:A3, 0)
+    category: value
+    status: observed
+    tags:
+      - sweep:match
+      - ax:match_type=zero
+      - ax:key_encoding=ref
+      - ax:key_type=numstr
+      - ax:key_present=present
+      - ax:range_sorted=unsorted
+    grid:
+      A1: 3
+      A2: 1
+      A3: 2
+      E1: ="2"
+  - subject: MATCH
+    name: one-literal-number-present-sorted
+    formula: =MATCH(2, A1:A3, 1)
+    category: value
+    status: observed
+    tags:
+      - sweep:match
+      - ax:match_type=one
+      - ax:key_encoding=literal
+      - ax:key_type=number
+      - ax:key_present=present
+      - ax:range_sorted=sorted
+    grid:
+      A1: 1
+      A2: 2
+      A3: 3
+  - subject: MATCH
+    name: one-literal-number-present-unsorted
+    formula: =MATCH(2, A1:A3, 1)
+    category: value
+    status: observed
+    tags:
+      - sweep:match
+      - ax:match_type=one
+      - ax:key_encoding=literal
+      - ax:key_type=number
+      - ax:key_present=present
+      - ax:range_sorted=unsorted
+    grid:
+      A1: 3
+      A2: 1
+      A3: 2
+  - subject: MATCH
+    name: one-literal-number-absent-sorted
+    formula: =MATCH(9, A1:A3, 1)
+    category: value
+    status: observed
+    tags:
+      - sweep:match
+      - ax:match_type=one
+      - ax:key_encoding=literal
+      - ax:key_type=number
+      - ax:key_present=absent
+      - ax:range_sorted=sorted
+    grid:
+      A1: 1
+      A2: 2
+      A3: 3
+  - subject: MATCH
+    name: one-literal-number-absent-unsorted
+    formula: =MATCH(9, A1:A3, 1)
+    category: value
+    status: observed
+    tags:
+      - sweep:match
+      - ax:match_type=one
+      - ax:key_encoding=literal
+      - ax:key_type=number
+      - ax:key_present=absent
+      - ax:range_sorted=unsorted
+    grid:
+      A1: 3
+      A2: 1
+      A3: 2
+  - subject: MATCH
+    name: one-ref-number-present-sorted
+    formula: =MATCH(E1, A1:A3, 1)
+    category: value
+    status: observed
+    tags:
+      - sweep:match
+      - ax:match_type=one
+      - ax:key_encoding=ref
+      - ax:key_type=number
+      - ax:key_present=present
+      - ax:range_sorted=sorted
+    grid:
+      A1: 1
+      A2: 2
+      A3: 3
+      E1: 2
+  - subject: MATCH
+    name: one-ref-number-present-unsorted
+    formula: =MATCH(E1, A1:A3, 1)
+    category: value
+    status: observed
+    tags:
+      - sweep:match
+      - ax:match_type=one
+      - ax:key_encoding=ref
+      - ax:key_type=number
+      - ax:key_present=present
+      - ax:range_sorted=unsorted
+    grid:
+      A1: 3
+      A2: 1
+      A3: 2
+      E1: 2
+  - subject: MATCH
+    name: one-ref-number-absent-sorted
+    formula: =MATCH(E1, A1:A3, 1)
+    category: value
+    status: observed
+    tags:
+      - sweep:match
+      - ax:match_type=one
+      - ax:key_encoding=ref
+      - ax:key_type=number
+      - ax:key_present=absent
+      - ax:range_sorted=sorted
+    grid:
+      A1: 1
+      A2: 2
+      A3: 3
+      E1: 9
+  - subject: MATCH
+    name: one-ref-number-absent-unsorted
+    formula: =MATCH(E1, A1:A3, 1)
+    category: value
+    status: observed
+    tags:
+      - sweep:match
+      - ax:match_type=one
+      - ax:key_encoding=ref
+      - ax:key_type=number
+      - ax:key_present=absent
+      - ax:range_sorted=unsorted
+    grid:
+      A1: 3
+      A2: 1
+      A3: 2
+      E1: 9
+  - subject: MATCH
+    name: one-ref-numstr-present-sorted
+    formula: =MATCH(E1, A1:A3, 1)
+    category: value
+    status: observed
+    tags:
+      - sweep:match
+      - ax:match_type=one
+      - ax:key_encoding=ref
+      - ax:key_type=numstr
+      - ax:key_present=present
+      - ax:range_sorted=sorted
+    grid:
+      A1: 1
+      A2: 2
+      A3: 3
+      E1: ="2"
+  - subject: MATCH
+    name: one-ref-numstr-present-unsorted
+    formula: =MATCH(E1, A1:A3, 1)
+    category: value
+    status: observed
+    tags:
+      - sweep:match
+      - ax:match_type=one
+      - ax:key_encoding=ref
+      - ax:key_type=numstr
+      - ax:key_present=present
+      - ax:range_sorted=unsorted
+    grid:
+      A1: 3
+      A2: 1
+      A3: 2
+      E1: ="2"
+  - subject: MATCH
+    name: omitted-literal-number-present-sorted
+    formula: =MATCH(2, A1:A3)
+    category: value
+    status: observed
+    tags:
+      - sweep:match
+      - ax:match_type=omitted
+      - ax:key_encoding=literal
+      - ax:key_type=number
+      - ax:key_present=present
+      - ax:range_sorted=sorted
+    grid:
+      A1: 1
+      A2: 2
+      A3: 3
+  - subject: MATCH
+    name: omitted-literal-number-present-unsorted
+    formula: =MATCH(2, A1:A3)
+    category: value
+    status: observed
+    tags:
+      - sweep:match
+      - ax:match_type=omitted
+      - ax:key_encoding=literal
+      - ax:key_type=number
+      - ax:key_present=present
+      - ax:range_sorted=unsorted
+    grid:
+      A1: 3
+      A2: 1
+      A3: 2
+  - subject: MATCH
+    name: omitted-literal-number-absent-sorted
+    formula: =MATCH(9, A1:A3)
+    category: value
+    status: observed
+    tags:
+      - sweep:match
+      - ax:match_type=omitted
+      - ax:key_encoding=literal
+      - ax:key_type=number
+      - ax:key_present=absent
+      - ax:range_sorted=sorted
+    grid:
+      A1: 1
+      A2: 2
+      A3: 3
+  - subject: MATCH
+    name: omitted-literal-number-absent-unsorted
+    formula: =MATCH(9, A1:A3)
+    category: value
+    status: observed
+    tags:
+      - sweep:match
+      - ax:match_type=omitted
+      - ax:key_encoding=literal
+      - ax:key_type=number
+      - ax:key_present=absent
+      - ax:range_sorted=unsorted
+    grid:
+      A1: 3
+      A2: 1
+      A3: 2
+  - subject: MATCH
+    name: omitted-ref-number-present-sorted
+    formula: =MATCH(E1, A1:A3)
+    category: value
+    status: observed
+    tags:
+      - sweep:match
+      - ax:match_type=omitted
+      - ax:key_encoding=ref
+      - ax:key_type=number
+      - ax:key_present=present
+      - ax:range_sorted=sorted
+    grid:
+      A1: 1
+      A2: 2
+      A3: 3
+      E1: 2
+  - subject: MATCH
+    name: omitted-ref-number-present-unsorted
+    formula: =MATCH(E1, A1:A3)
+    category: value
+    status: observed
+    tags:
+      - sweep:match
+      - ax:match_type=omitted
+      - ax:key_encoding=ref
+      - ax:key_type=number
+      - ax:key_present=present
+      - ax:range_sorted=unsorted
+    grid:
+      A1: 3
+      A2: 1
+      A3: 2
+      E1: 2
+  - subject: MATCH
+    name: omitted-ref-number-absent-sorted
+    formula: =MATCH(E1, A1:A3)
+    category: value
+    status: observed
+    tags:
+      - sweep:match
+      - ax:match_type=omitted
+      - ax:key_encoding=ref
+      - ax:key_type=number
+      - ax:key_present=absent
+      - ax:range_sorted=sorted
+    grid:
+      A1: 1
+      A2: 2
+      A3: 3
+      E1: 9
+  - subject: MATCH
+    name: omitted-ref-number-absent-unsorted
+    formula: =MATCH(E1, A1:A3)
+    category: value
+    status: observed
+    tags:
+      - sweep:match
+      - ax:match_type=omitted
+      - ax:key_encoding=ref
+      - ax:key_type=number
+      - ax:key_present=absent
+      - ax:range_sorted=unsorted
+    grid:
+      A1: 3
+      A2: 1
+      A3: 2
+      E1: 9
+  - subject: MATCH
+    name: omitted-ref-numstr-present-sorted
+    formula: =MATCH(E1, A1:A3)
+    category: value
+    status: observed
+    tags:
+      - sweep:match
+      - ax:match_type=omitted
+      - ax:key_encoding=ref
+      - ax:key_type=numstr
+      - ax:key_present=present
+      - ax:range_sorted=sorted
+    grid:
+      A1: 1
+      A2: 2
+      A3: 3
+      E1: ="2"
+  - subject: MATCH
+    name: omitted-ref-numstr-present-unsorted
+    formula: =MATCH(E1, A1:A3)
+    category: value
+    status: observed
+    tags:
+      - sweep:match
+      - ax:match_type=omitted
+      - ax:key_encoding=ref
+      - ax:key_type=numstr
+      - ax:key_present=present
+      - ax:range_sorted=unsorted
+    grid:
+      A1: 3
+      A2: 1
+      A3: 2
+      E1: ="2"

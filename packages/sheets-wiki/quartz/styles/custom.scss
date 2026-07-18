@@ -1,0 +1,49 @@
+// kernel tokens (engine palette, accent variants) on top of Quartz's theme vars.
+@use "@cartularium/brand/tokens.scss";
+@use "./base.scss";
+@use "./kernel.scss";
+@use "./variables.scss" as *;
+
+.table-container {
+  overflow-x: auto;
+
+  & > table {
+    margin: 1rem;
+    padding: 0;
+    border-collapse: collapse;
+    border: 1px solid var(--lightgray);
+
+    th,
+    td {
+      min-width: 25px;
+      padding: 0.4rem 0.7rem;
+      border: 1px solid var(--lightgray);
+    }
+
+    // no wrapping in first column
+    th:first-child,
+    td:first-child {
+      white-space: nowrap;
+    }
+
+    & > * {
+      line-height: 2rem;
+    }
+  }
+}
+
+th {
+  text-align: left;
+  background-color: var(--highlight);
+  font-weight: $semiBoldWeight;
+  border-bottom: 2px solid var(--gray);
+}
+
+td {
+  background-color: var(--light);
+}
+
+thead:empty,
+thead:has(th:empty):not(:has(th:not(:empty))) {
+  display: none;
+}

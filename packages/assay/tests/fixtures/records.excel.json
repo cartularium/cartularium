@@ -1,0 +1,296 @@
+{
+  "platform": "excel",
+  "generatedAt": "2026-04-05T03:38:20.949Z",
+  "results": {
+    "RECORD field access": {
+      "result": [
+        [
+          3
+        ]
+      ]
+    },
+    "RECORD show": {
+      "result": [
+        [
+          "pt(x:3, y:4)"
+        ]
+      ]
+    },
+    "RECORD type probe": {
+      "result": [
+        [
+          "pt"
+        ]
+      ]
+    },
+    "RECORD doesNotUnderstand": {
+      "result": [
+        [
+          "Error: pt:doesNotUnderstand(nonexistent)"
+        ]
+      ]
+    },
+    "RECORD keys": {
+      "result": [
+        [
+          "x",
+          "y"
+        ]
+      ]
+    },
+    "RECORD from WITH": {
+      "result": [
+        [
+          4
+        ]
+      ]
+    },
+    "RECORD from parallel arrays": {
+      "result": [
+        [
+          10
+        ]
+      ]
+    },
+    "RECORD update": {
+      "result": [
+        [
+          99
+        ]
+      ]
+    },
+    "RECORD update preserves other fields": {
+      "result": [
+        [
+          4
+        ]
+      ]
+    },
+    "RECORD eq same": {
+      "result": [
+        [
+          true
+        ]
+      ]
+    },
+    "RECORD eq different values": {
+      "result": [
+        [
+          false
+        ]
+      ]
+    },
+    "RECORD hash deterministic": {
+      "result": [
+        [
+          true
+        ]
+      ]
+    },
+    "RECORD construction error": {
+      "result": [
+        [
+          {
+            "error": "#VALUE!"
+          }
+        ]
+      ]
+    },
+    "WITH lookup": {
+      "result": [
+        [
+          3
+        ]
+      ]
+    },
+    "WITH size": {
+      "result": [
+        [
+          3
+        ]
+      ]
+    },
+    "WITH keys": {
+      "result": [
+        [
+          "a",
+          "b"
+        ]
+      ]
+    },
+    "WITH missing key": {
+      "result": [
+        [
+          {
+            "error": "#N/A"
+          }
+        ]
+      ]
+    },
+    "VALIDATE success": {
+      "result": [
+        [
+          "$249.9"
+        ]
+      ]
+    },
+    "VALIDATE failure": {
+      "result": [
+        [
+          "Error: qty: must be a number"
+        ]
+      ]
+    },
+    "DICT set and get": {
+      "result": [
+        [
+          1
+        ]
+      ]
+    },
+    "DICT show": {
+      "result": [
+        [
+          "dict(a:1, b:2)"
+        ]
+      ]
+    },
+    "DICT size": {
+      "result": [
+        [
+          2
+        ]
+      ]
+    },
+    "DICT has": {
+      "result": [
+        [
+          true
+        ]
+      ]
+    },
+    "DICT has missing": {
+      "result": [
+        [
+          false
+        ]
+      ]
+    },
+    "DICT delete": {
+      "result": [
+        [
+          1
+        ]
+      ]
+    },
+    "DICT keys": {
+      "result": [
+        [
+          "a",
+          "b"
+        ]
+      ]
+    },
+    "DICT.EMPTY type": {
+      "result": [
+        [
+          "dict"
+        ]
+      ]
+    },
+    "DICT.EMPTY size": {
+      "result": [
+        [
+          0
+        ]
+      ]
+    },
+    "DICT.EMPTY show": {
+      "result": [
+        [
+          "dict()"
+        ]
+      ]
+    },
+    "ENUM show": {
+      "result": [
+        [
+          "<light.red>"
+        ]
+      ]
+    },
+    "ENUM variant": {
+      "result": [
+        [
+          "red"
+        ]
+      ]
+    },
+    "ENUM is check": {
+      "result": [
+        [
+          true
+        ]
+      ]
+    },
+    "ENUM is check false": {
+      "result": [
+        [
+          false
+        ]
+      ]
+    },
+    "ENUM type probe": {
+      "result": [
+        [
+          "light.red"
+        ]
+      ]
+    },
+    "ENUM with data": {
+      "result": [
+        [
+          5
+        ]
+      ]
+    },
+    "ENUM without data": {
+      "result": [
+        [
+          {
+            "error": "#CALC!"
+          }
+        ]
+      ]
+    },
+    "ENUM keys without data": {
+      "result": [
+        [
+          "variant"
+        ]
+      ]
+    },
+    "ENUM keys with data": {
+      "result": [
+        [
+          "variant",
+          "data"
+        ]
+      ]
+    },
+    "ENUM eq same": {
+      "result": [
+        [
+          true
+        ]
+      ]
+    },
+    "ENUM eq different variant": {
+      "result": [
+        [
+          false
+        ]
+      ]
+    }
+  }
+}

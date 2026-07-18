@@ -1,0 +1,15 @@
+id: DV-0167
+summary: "ironcalc: different argument interpretation — SYD"
+cause: arg-semantics
+category: value
+engines:
+  - ironcalc
+behavior:
+  signature: "163.64"
+test-count: 1
+subjects:
+  - SYD
+tests:
+  - SYD/syd-period-1
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

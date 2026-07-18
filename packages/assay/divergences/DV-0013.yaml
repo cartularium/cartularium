@@ -1,0 +1,61 @@
+id: DV-0013
+summary: "hyperformula, ironcalc, libreoffice, pycel: function not implemented —
+  FORECAST.LINEAR, MODE.SNGL, MUNIT (+9 more)"
+cause: missing-function
+category: value
+engines:
+  - hyperformula
+  - ironcalc
+  - libreoffice
+  - pycel
+behavior:
+  signature: '{"error":"#NAME?"}'
+test-count: 32
+subjects:
+  - FORECAST.LINEAR
+  - MODE.SNGL
+  - MUNIT
+  - PERCENTILE.EXC
+  - PERCENTILE.INC
+  - PERCENTRANK.EXC
+  - PERCENTRANK.INC
+  - PERMUTATIONA
+  - QUARTILE.EXC
+  - QUARTILE.INC
+  - SINGLE
+  - XMATCH
+tests:
+  - SINGLE/single-explicit-top-left
+  - XMATCH/xmatch-exact
+  - MUNIT/munit-2x2
+  - MUNIT/munit-3x3
+  - MUNIT/munit-1x1
+  - FORECAST.LINEAR/forecast-linear-exact-linear
+  - MODE.SNGL/mode-sngl-clear-winner
+  - MODE.SNGL/mode-sngl-tied-dataset
+  - MODE.SNGL/mode-sngl-no-repeats
+  - PERCENTILE.INC/percentile-inc-25th-on-1-5
+  - PERCENTILE.INC/percentile-inc-50th-on-1-5
+  - PERCENTILE.INC/percentile-inc-75th-on-1-5
+  - PERCENTILE.EXC/percentile-exc-25th-on-1-5
+  - PERCENTILE.EXC/percentile-exc-50th-on-1-5
+  - PERCENTILE.EXC/percentile-exc-75th-on-1-5
+  - PERCENTILE.EXC/percentile-exc-0th-invalid
+  - PERCENTRANK.INC/percentrank-inc-midpoint
+  - PERCENTRANK.INC/percentrank-inc-minimum
+  - PERCENTRANK.INC/percentrank-inc-quarter
+  - PERCENTRANK.EXC/percentrank-exc-midpoint
+  - PERCENTRANK.EXC/percentrank-exc-interior
+  - PERMUTATIONA/permutationa-basic
+  - PERMUTATIONA/permutationa-triple
+  - PERMUTATIONA/permutationa-zero-pick
+  - PERMUTATIONA/permutationa-negative
+  - QUARTILE.INC/quartile-inc-q1-on-1-5
+  - QUARTILE.INC/quartile-inc-q2-on-1-5
+  - QUARTILE.INC/quartile-inc-q3-on-1-5
+  - QUARTILE.EXC/quartile-exc-q1-on-1-5
+  - QUARTILE.EXC/quartile-exc-q2-on-1-5
+  - QUARTILE.EXC/quartile-exc-q3-on-1-5
+  - QUARTILE.EXC/quartile-exc-q0-invalid
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

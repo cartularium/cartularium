@@ -1,0 +1,15 @@
+id: DV-0085
+summary: "formulas: different error code — op:&"
+cause: error-code
+category: value
+engines:
+  - formulas
+behavior:
+  signature: '[[{"error":"#1"},{"error":"#2"},{"error":"#3"}]]'
+test-count: 1
+subjects:
+  - op:&
+tests:
+  - op:concat/concat-row-with-numbers-coerced
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

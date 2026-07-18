@@ -1,0 +1,248 @@
+[
+  {
+    "name": "canonical call",
+    "source": "=sum( 1 , a1 )",
+    "from": "gsheets",
+    "to": "gsheets",
+    "formula": "=SUM(1,A1)",
+    "diagnostics": []
+  },
+  {
+    "name": "excel reference intersection",
+    "source": "=A1:A3 B1:B3",
+    "from": "excel",
+    "to": "excel",
+    "formula": "=A1:A3 B1:B3",
+    "diagnostics": []
+  },
+  {
+    "name": "excel intersection unsupported in sheets",
+    "source": "=A1:A3 B1:B3",
+    "from": "excel",
+    "to": "gsheets",
+    "diagnostics": [
+      {
+        "code": "unsupported-operator",
+        "severity": "error",
+        "message": "Excel intersection cannot be printed as a Google Sheets formula."
+      }
+    ]
+  },
+  {
+    "name": "excel implicit intersection",
+    "source": "=@A1",
+    "from": "excel",
+    "to": "excel",
+    "formula": "=@A1",
+    "diagnostics": []
+  },
+  {
+    "name": "quoted sheet name with apostrophe",
+    "source": "='Q1 O''Brien'!c3",
+    "from": "excel",
+    "to": "excel",
+    "formula": "='Q1 O''Brien'!C3",
+    "diagnostics": []
+  },
+  {
+    "name": "unquoted sheet reference",
+    "source": "=Sheet1!a1",
+    "from": "excel",
+    "to": "excel",
+    "formula": "=Sheet1!A1",
+    "diagnostics": []
+  },
+  {
+    "name": "excel 3d sheet reference",
+    "source": "=SUM(Sheet1:Sheet3!A1)",
+    "from": "excel",
+    "to": "excel",
+    "formula": "=SUM(Sheet1:Sheet3!A1)",
+    "diagnostics": []
+  },
+  {
+    "name": "excel 3d sheet reference unsupported in sheets",
+    "source": "=Sheet1:Sheet3!A1",
+    "from": "excel",
+    "to": "gsheets",
+    "diagnostics": [
+      {
+        "code": "unsupported-reference",
+        "severity": "error",
+        "message": "Excel 3D sheet references cannot be printed as a Google Sheets formula."
+      }
+    ]
+  },
+  {
+    "name": "google sheets row array",
+    "source": "={1,2,3}",
+    "from": "gsheets",
+    "to": "gsheets",
+    "formula": "={1,2,3}",
+    "diagnostics": []
+  },
+  {
+    "name": "boolean literal",
+    "source": "=true",
+    "from": "gsheets",
+    "to": "excel",
+    "formula": "=TRUE",
+    "diagnostics": []
+  },
+  {
+    "name": "scientific number literal",
+    "source": "=1.2e+3",
+    "from": "gsheets",
+    "to": "excel",
+    "formula": "=1.2E+3",
+    "diagnostics": []
+  },
+  {
+    "name": "leading decimal number literal",
+    "source": "=.5+1.",
+    "from": "excel",
+    "to": "excel",
+    "formula": "=.5+1.",
+    "diagnostics": []
+  },
+  {
+    "name": "error literal in call",
+    "source": "=IFERROR(A1,#N/A)",
+    "from": "excel",
+    "to": "excel",
+    "formula": "=IFERROR(A1,#N/A)",
+    "diagnostics": []
+  },
+  {
+    "name": "named reference",
+    "source": "=Revenue",
+    "from": "excel",
+    "to": "excel",
+    "formula": "=Revenue",
+    "diagnostics": []
+  },
+  {
+    "name": "named reference in call",
+    "source": "=SUM(my_name)",
+    "from": "gsheets",
+    "to": "excel",
+    "formula": "=SUM(my_name)",
+    "diagnostics": []
+  },
+  {
+    "name": "omitted function argument",
+    "source": "=IF(A1,,0)",
+    "from": "excel",
+    "to": "excel",
+    "formula": "=IF(A1,,0)",
+    "diagnostics": []
+  },
+  {
+    "name": "omitted function argument in column lookup",
+    "source": "=INDEX(A:A,,1)",
+    "from": "excel",
+    "to": "gsheets",
+    "formula": "=INDEX(A:A,,1)",
+    "diagnostics": []
+  },
+  {
+    "name": "excel spill reference",
+    "source": "=A1#",
+    "from": "excel",
+    "to": "excel",
+    "formula": "=A1#",
+    "diagnostics": []
+  },
+  {
+    "name": "excel spill reference unsupported in sheets",
+    "source": "=A1#",
+    "from": "excel",
+    "to": "gsheets",
+    "diagnostics": [
+      {
+        "code": "unsupported-reference",
+        "severity": "error",
+        "message": "Excel spill references cannot be printed as a Google Sheets formula."
+      }
+    ]
+  },
+  {
+    "name": "whole column range",
+    "source": "=SUM(a:c)",
+    "from": "gsheets",
+    "to": "excel",
+    "formula": "=SUM(A:C)",
+    "diagnostics": []
+  },
+  {
+    "name": "whole row range",
+    "source": "=SUM(1:3)",
+    "from": "excel",
+    "to": "gsheets",
+    "formula": "=SUM(1:3)",
+    "diagnostics": []
+  },
+  {
+    "name": "parenthesized excel reference union",
+    "source": "=SUM((A:A,C:C))",
+    "from": "excel",
+    "to": "excel",
+    "formula": "=SUM((A:A,C:C))",
+    "diagnostics": []
+  },
+  {
+    "name": "excel reference union unsupported in sheets",
+    "source": "=(A1:A3,C1:C3)",
+    "from": "excel",
+    "to": "gsheets",
+    "diagnostics": [
+      {
+        "code": "unsupported-reference",
+        "severity": "error",
+        "message": "Excel reference unions cannot be printed as a Google Sheets formula."
+      }
+    ]
+  },
+  {
+    "name": "google sheets external import unsupported in excel",
+    "source": "=IMPORTXML(\"https://example.com\",\"//title\")",
+    "from": "gsheets",
+    "to": "excel",
+    "diagnostics": [
+      {
+        "code": "unsupported-function",
+        "severity": "error",
+        "message": "IMPORTXML requires Google Sheets external service context."
+      }
+    ]
+  },
+  {
+    "name": "excel structured reference in call",
+    "source": "=SUM(Table1[Amount])",
+    "from": "excel",
+    "to": "excel",
+    "formula": "=SUM(Table1[Amount])",
+    "diagnostics": []
+  },
+  {
+    "name": "excel structured reference unsupported in sheets",
+    "source": "=Table1[Amount]",
+    "from": "excel",
+    "to": "gsheets",
+    "diagnostics": [
+      {
+        "code": "unsupported-reference",
+        "severity": "error",
+        "message": "Excel structured references cannot be printed as a Google Sheets formula."
+      }
+    ]
+  },
+  {
+    "name": "excel structured reference with headers selector",
+    "source": "=Table1[[#Headers],[Amount]]",
+    "from": "excel",
+    "to": "excel",
+    "formula": "=Table1[[#Headers],[Amount]]",
+    "diagnostics": []
+  }
+]

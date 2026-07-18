@@ -1,0 +1,101 @@
+{
+  "subject": "ref:operators",
+  "pair": {
+    "a": "excel",
+    "b": "gsheets"
+  },
+  "numTolerance": 1e-10,
+  "engines": [
+    {
+      "platform": "excel",
+      "generatedAt": "2026-06-04T06:25:29.522Z"
+    },
+    {
+      "platform": "gsheets",
+      "generatedAt": "2026-06-04T06:25:50.252Z"
+    }
+  ],
+  "axisSpace": [
+    {
+      "name": "form",
+      "locus": "syntactic",
+      "cardinality": 6
+    }
+  ],
+  "tallies": {
+    "total": 6,
+    "ok": 6,
+    "incomplete": 0,
+    "agree": 4,
+    "differ": 2,
+    "unimplemented": 0,
+    "precision": 0
+  },
+  "analysis": {
+    "reducts": [
+      [
+        "form"
+      ]
+    ],
+    "core": [
+      "form"
+    ]
+  },
+  "verdict": {
+    "subject": "ref:operators",
+    "completeness": 1,
+    "provisional": false,
+    "pinnedAxes": [],
+    "surface": {
+      "okProbes": 6,
+      "divergentProbes": 2,
+      "divergentFraction": 0.333
+    },
+    "kind": "EXPLICIT_BRIDGE",
+    "discriminators": [
+      "form"
+    ],
+    "byLocus": {
+      "syntactic": [
+        "form"
+      ],
+      "environment": [],
+      "data-borne": []
+    },
+    "trigger": [
+      {
+        "where": {
+          "form": "intersect-space"
+        },
+        "outcome": "differ"
+      },
+      {
+        "where": {
+          "form": "union"
+        },
+        "outcome": "differ"
+      }
+    ],
+    "fix": {
+      "rewriteOn": [
+        "form"
+      ]
+    }
+  },
+  "divergent": [
+    {
+      "name": "intersect-space",
+      "assignment": {
+        "form": "intersect-space"
+      },
+      "outcome": "differ"
+    },
+    {
+      "name": "union",
+      "assignment": {
+        "form": "union"
+      },
+      "outcome": "differ"
+    }
+  ]
+}

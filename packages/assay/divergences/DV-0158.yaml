@@ -1,0 +1,15 @@
+id: DV-0158
+summary: "libreoffice: numeric precision differs — PV"
+cause: precision
+category: value
+engines:
+  - libreoffice
+behavior:
+  signature: "7360.0870514147"
+test-count: 1
+subjects:
+  - PV
+tests:
+  - PV/pv-annuity-textbook
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

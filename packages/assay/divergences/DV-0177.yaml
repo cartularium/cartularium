@@ -1,0 +1,15 @@
+id: DV-0177
+summary: "libreoffice: different argument interpretation — ISNUMBER"
+cause: arg-semantics
+category: value
+engines:
+  - libreoffice
+behavior:
+  signature: "true"
+test-count: 1
+subjects:
+  - ISNUMBER
+tests:
+  - ISNUMBER/isnumber-of-boolean
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

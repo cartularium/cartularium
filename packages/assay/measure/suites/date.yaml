@@ -1,0 +1,51 @@
+schemaVersion: 3
+name: "sweep: DATE"
+tests:
+  - subject: DATE
+    name: normal
+    formula: =DATE(2020, 6, 15)
+    category: value
+    status: observed
+    tags:
+      - sweep:date
+      - ax:case=normal
+  - subject: DATE
+    name: monthover
+    formula: =DATE(2020, 13, 1)
+    category: value
+    status: observed
+    tags:
+      - sweep:date
+      - ax:case=monthover
+  - subject: DATE
+    name: dayover
+    formula: =DATE(2020, 1, 32)
+    category: value
+    status: observed
+    tags:
+      - sweep:date
+      - ax:case=dayover
+  - subject: DATE
+    name: monthzero
+    formula: =DATE(2020, 0, 15)
+    category: value
+    status: observed
+    tags:
+      - sweep:date
+      - ax:case=monthzero
+  - subject: DATE
+    name: dayzero
+    formula: =DATE(2020, 1, 0)
+    category: value
+    status: observed
+    tags:
+      - sweep:date
+      - ax:case=dayzero
+  - subject: DATE
+    name: feb291900
+    formula: =DATE(1900, 2, 29)
+    category: value
+    status: observed
+    tags:
+      - sweep:date
+      - ax:case=feb291900

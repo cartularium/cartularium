@@ -1,0 +1,21 @@
+id: DV-0035
+summary: "formulas, pycel: function not implemented — COMBIN, QUOTIENT"
+cause: missing-function
+category: value
+engines:
+  - formulas
+  - pycel
+behavior:
+  signature: '{"error":"#NAME?"}'
+test-count: 5
+subjects:
+  - COMBIN
+  - QUOTIENT
+tests:
+  - COMBIN/combin-basic
+  - COMBIN/combin-n-equals-k
+  - COMBIN/combin-k-zero
+  - COMBIN/combin-k-greater-than-n
+  - QUOTIENT/quotient-basic
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

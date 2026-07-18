@@ -1,0 +1,115 @@
+{
+  "subject": "T",
+  "pair": {
+    "a": "excel",
+    "b": "gsheets"
+  },
+  "numTolerance": 1e-10,
+  "engines": [
+    {
+      "platform": "excel",
+      "generatedAt": "2026-06-04T06:04:03.469Z"
+    },
+    {
+      "platform": "gsheets",
+      "generatedAt": "2026-06-04T06:04:25.484Z"
+    }
+  ],
+  "axisSpace": [
+    {
+      "name": "arg_type",
+      "locus": "data-borne",
+      "runtimeCheckable": true,
+      "cardinality": 6
+    }
+  ],
+  "tallies": {
+    "total": 6,
+    "ok": 6,
+    "incomplete": 0,
+    "agree": 3,
+    "differ": 3,
+    "unimplemented": 0,
+    "precision": 0
+  },
+  "analysis": {
+    "reducts": [
+      [
+        "arg_type"
+      ]
+    ],
+    "core": [
+      "arg_type"
+    ]
+  },
+  "verdict": {
+    "subject": "T",
+    "completeness": 1,
+    "provisional": false,
+    "pinnedAxes": [],
+    "surface": {
+      "okProbes": 6,
+      "divergentProbes": 3,
+      "divergentFraction": 0.5,
+      "irreducibleRegions": 3
+    },
+    "kind": "IRREDUCIBLE",
+    "discriminators": [
+      "arg_type"
+    ],
+    "byLocus": {
+      "syntactic": [],
+      "environment": [],
+      "data-borne": [
+        "arg_type"
+      ]
+    },
+    "trigger": [
+      {
+        "where": {
+          "arg_type": "number"
+        },
+        "outcome": "differ"
+      },
+      {
+        "where": {
+          "arg_type": "bool"
+        },
+        "outcome": "differ"
+      },
+      {
+        "where": {
+          "arg_type": "blank"
+        },
+        "outcome": "differ"
+      }
+    ],
+    "residualDataBorne": [
+      "arg_type"
+    ],
+    "option": "runtime-guard"
+  },
+  "divergent": [
+    {
+      "name": "number",
+      "assignment": {
+        "arg_type": "number"
+      },
+      "outcome": "differ"
+    },
+    {
+      "name": "bool",
+      "assignment": {
+        "arg_type": "bool"
+      },
+      "outcome": "differ"
+    },
+    {
+      "name": "blank",
+      "assignment": {
+        "arg_type": "blank"
+      },
+      "outcome": "differ"
+    }
+  ]
+}

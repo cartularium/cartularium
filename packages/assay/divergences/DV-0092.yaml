@@ -1,0 +1,15 @@
+id: DV-0092
+summary: "pycel: rendered with different format — SUMPRODUCT"
+cause: format-rendering
+category: value
+engines:
+  - pycel
+behavior:
+  signature: '"50"'
+test-count: 1
+subjects:
+  - SUMPRODUCT
+tests:
+  - SUMPRODUCT/sumproduct-with-boolean-broadcast
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

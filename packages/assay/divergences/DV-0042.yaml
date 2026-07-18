@@ -1,0 +1,22 @@
+id: DV-0042
+summary: "hyperformula: numeric precision differs — NORM.INV, NORM.S.INV,
+  NORMINV (+1 more)"
+cause: precision
+category: value
+engines:
+  - hyperformula
+behavior:
+  signature: "-7.6805464991e-17"
+test-count: 4
+subjects:
+  - NORM.INV
+  - NORM.S.INV
+  - NORMINV
+  - NORMSINV
+tests:
+  - NORM.INV/norm-inv-at-0-5
+  - NORM.S.INV/norm-s-inv-at-0-5
+  - NORMINV/norminv-at-0-5
+  - NORMSINV/normsinv-at-0-5
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

@@ -1,0 +1,16 @@
+# two-tier gate: pre-commit is fast (prettier only) so devs don't bypass it,
+# pre-push runs the full type-check + format check across all packages.
+# CI runs the same gates again as a backstop
+
+pre-commit:
+  skip:
+    - merge
+    - rebase
+  jobs:
+    - name: format check
+      run: pnpm format:check
+
+pre-push:
+  jobs:
+    - name: pnpm check
+      run: pnpm check

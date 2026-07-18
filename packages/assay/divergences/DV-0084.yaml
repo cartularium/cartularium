@@ -1,0 +1,15 @@
+id: DV-0084
+summary: "libreoffice: return shape differs — FREQUENCY"
+cause: shape
+category: value
+engines:
+  - libreoffice
+behavior:
+  signature: "3"
+test-count: 1
+subjects:
+  - FREQUENCY
+tests:
+  - FREQUENCY/frequency-all-below
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

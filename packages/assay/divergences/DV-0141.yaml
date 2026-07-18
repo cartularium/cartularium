@@ -1,0 +1,15 @@
+id: DV-0141
+summary: "libreoffice: numeric precision differs — IPMT"
+cause: precision
+category: value
+engines:
+  - libreoffice
+behavior:
+  signature: "833.333333333333"
+test-count: 1
+subjects:
+  - IPMT
+tests:
+  - IPMT/ipmt-first-period-mortgage
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

@@ -1,0 +1,17 @@
+id: DV-0117
+summary: "gsheets: return shape differs — QUERY"
+cause: shape
+category: value
+engines:
+  - gsheets
+behavior:
+  signature: '[[1,"a"],[2,"b"],[3,"c"]]'
+test-count: 1
+subjects:
+  - QUERY
+tests:
+  - QUERY/query-select-all
+seeded: 2026-04-25
+last-confirmed: 2026-04-25
+status: vanished
+vanished-at: 2026-05-07

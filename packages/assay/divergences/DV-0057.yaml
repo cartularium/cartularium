@@ -1,0 +1,21 @@
+id: DV-0057
+summary: "excel, formulas, gsheets, lattice: numeric precision differs — EFFECT,
+  NOMINAL"
+cause: precision
+category: value
+engines:
+  - excel
+  - formulas
+  - gsheets
+  - lattice
+behavior:
+  signature: "0.050000000000000044"
+test-count: 2
+subjects:
+  - EFFECT
+  - NOMINAL
+tests:
+  - EFFECT/effect-annual-compounding
+  - NOMINAL/nominal-annual
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

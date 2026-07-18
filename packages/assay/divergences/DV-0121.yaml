@@ -1,0 +1,15 @@
+id: DV-0121
+summary: "gsheets: numeric precision differs — DDB"
+cause: precision
+category: value
+engines:
+  - gsheets
+behavior:
+  signature: "159.99999999999997"
+test-count: 1
+subjects:
+  - DDB
+tests:
+  - DDB/ddb-period-2
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

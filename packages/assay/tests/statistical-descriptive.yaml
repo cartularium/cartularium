@@ -1,0 +1,3366 @@
+schemaVersion: 3
+name: Statistical descriptive functions
+tests:
+  - subject: AVEDEV
+    formula: =AVEDEV(A1:A5)
+    category: value
+    grid:
+      A1: 1
+      A2: 2
+      A3: 3
+      A4: 4
+      A5: 5
+    expect: 1.2
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+    name: avedev-whole-numbers
+  - subject: AVEDEV
+    formula: =AVEDEV(1, 2, 3, 4, 5)
+    category: value
+    expect: 1.2
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+    name: avedev-inline
+  - subject: AVEDEV
+    formula: =AVEDEV(7)
+    category: value
+    expect: 0
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+    name: avedev-single-value
+  - subject: AVEDEV
+    formula: =AVEDEV(1, 3)
+    category: value
+    expect: 1
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+    name: avedev-two-values
+  - subject: AVERAGE
+    category: value
+    formula: =AVERAGE(A1:A5)
+    grid:
+      A1: 1
+      A2: 2
+      A3: 3
+      A4: 4
+      A5: 5
+    expect: 3
+    tags:
+      - statistical
+    name: average-whole-numbers
+  - subject: AVERAGE
+    category: value
+    formula: =AVERAGE(2, 4, 6)
+    expect: 4
+    tags:
+      - statistical
+    name: average-inline
+  - subject: AVERAGE
+    category: value
+    formula: =AVERAGE(A1:A3)
+    grid:
+      A1: 10
+      A2: hello
+      A3: 20
+    expect: 15
+    tags:
+      - statistical
+    name: average-ignores-text-in-range
+  - subject: AVERAGE
+    formula: =AVERAGE(A1:A3)
+    category: value
+    expect:
+      error: "#DIV/0!"
+    tags:
+      - statistical
+    name: average-empty-range
+  - subject: AVERAGE.WEIGHTED
+    formula: =AVERAGE.WEIGHTED({1,2,3}, {1,1,1})
+    category: value
+    expect: 2
+    overrides:
+      excel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+      - divergence
+      - bare-formula
+    name: average-weighted-basic
+  - subject: AVERAGE.WEIGHTED
+    formula: =AVERAGE.WEIGHTED({1,2,3}, {1,2,3})
+    category: value
+    expect: 2.3333333333333335
+    overrides:
+      excel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+      - divergence
+      - bare-formula
+    name: average-weighted-skewed
+  - subject: AVERAGE.WEIGHTED
+    formula: =AVERAGE.WEIGHTED(A1:A3, B1:B3)
+    category: value
+    grid:
+      A1: 1
+      A2: 2
+      A3: 3
+      B1: 1
+      B2: 2
+      B3: 3
+    expect: 2.3333333333333335
+    overrides:
+      excel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+      - divergence
+    name: average-weighted-grid
+  - subject: AVERAGEA
+    formula: =AVERAGEA(A1:A5)
+    category: value
+    grid:
+      A1: 1
+      A2: 2
+      A3: 3
+      A4: 4
+      A5: 5
+    expect: 3
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+    name: averagea-whole-numbers
+  - subject: AVERAGEA
+    category: value
+    formula: =AVERAGEA(C1:C5)
+    grid:
+      C1: 1
+      C2: text
+      C3: true
+      C4: false
+      C5: 2
+    expect: 0.8
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+      - divergence
+    name: averagea-mixed-types-coerce
+  - subject: AVERAGEA
+    category: value
+    status: observed
+    formula: =AVERAGEA(1, 2, TRUE)
+    tags:
+      - statistical
+      - divergence
+    name: averagea-inline-booleans
+  - subject: AVERAGEA
+    formula: =AVERAGEA(1, "hello", 2)
+    category: value
+    expect: 1
+    overrides:
+      excel:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+      gsheets:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+      ironcalc:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+      hyperformula:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+      formulas:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+      - divergence
+    name: averagea-text-literal
+  - subject: AVERAGEIF
+    category: value
+    formula: =AVERAGEIF(D1:D5, "A", E1:E5)
+    grid:
+      D1: A
+      D2: B
+      D3: A
+      D4: B
+      D5: A
+      E1: 10
+      E2: 20
+      E3: 30
+      E4: 40
+      E5: 50
+    expect: 30
+    tags:
+      - statistical
+    name: averageif-label-a
+  - subject: AVERAGEIF
+    category: value
+    formula: =AVERAGEIF(A1:A5, ">2")
+    grid:
+      A1: 1
+      A2: 2
+      A3: 3
+      A4: 4
+      A5: 5
+    expect: 4
+    tags:
+      - statistical
+    name: averageif-greater-than
+  - subject: AVERAGEIF
+    formula: =AVERAGEIF(A1:A3, ">100")
+    category: value
+    grid:
+      A1: 1
+      A2: 2
+      A3: 3
+    expect:
+      error: "#DIV/0!"
+    tags:
+      - statistical
+    name: averageif-no-match
+  - subject: AVERAGEIF
+    category: value
+    formula: =AVERAGEIF(A1:A4, 2)
+    grid:
+      A1: 1
+      A2: 2
+      A3: 2
+      A4: 3
+    expect: 2
+    tags:
+      - statistical
+    name: averageif-exact-value
+  - subject: AVERAGEIFS
+    formula: =AVERAGEIFS(E1:E5, D1:D5, "A")
+    category: value
+    grid:
+      D1: A
+      D2: B
+      D3: A
+      D4: B
+      D5: A
+      E1: 10
+      E2: 20
+      E3: 30
+      E4: 40
+      E5: 50
+    expect: 30
+    overrides:
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+    name: averageifs-single-criterion
+  - subject: AVERAGEIFS
+    formula: =AVERAGEIFS(E1:E5, D1:D5, "A", E1:E5, ">15")
+    category: value
+    grid:
+      D1: A
+      D2: B
+      D3: A
+      D4: B
+      D5: A
+      E1: 10
+      E2: 20
+      E3: 30
+      E4: 40
+      E5: 50
+    expect: 40
+    overrides:
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+    name: averageifs-two-criteria
+  - subject: AVERAGEIFS
+    formula: =AVERAGEIFS(A1:A3, B1:B3, "q")
+    category: value
+    grid:
+      A1: 1
+      A2: 2
+      A3: 3
+      B1: x
+      B2: y
+      B3: z
+    expect:
+      error: "#DIV/0!"
+    overrides:
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+    name: averageifs-no-match
+  - subject: COUNT
+    category: value
+    formula: =COUNT(1, 2, 3, 4, 5)
+    expect: 5
+    tags:
+      - statistical
+    name: count-inline-statistical-descriptive
+  - subject: COUNT
+    category: value
+    formula: =COUNT(A1:A5)
+    grid:
+      A1: 1
+      A2: hello
+      A3: 2
+      A4: world
+      A5: 3
+    expect: 3
+    tags:
+      - statistical
+    name: count-ignores-text
+  - subject: COUNT
+    formula: =COUNT(C1:C5)
+    category: value
+    grid:
+      C1: 1
+      C2: text
+      C3: true
+      C4: false
+      C5: 2
+    expect: 2
+    overrides:
+      libreoffice:
+        cause: arg-semantics
+        recorded: 4
+    tags:
+      - statistical
+    name: count-ignores-booleans-in-range
+  - subject: COUNT
+    category: value
+    formula: =COUNT(A1:A3)
+    expect: 0
+    tags:
+      - statistical
+    name: count-empty-range
+  - subject: COUNTA
+    formula: =COUNTA(C1:C5)
+    category: value
+    grid:
+      C1: 1
+      C2: text
+      C3: true
+      C4: false
+      C5: 2
+    expect: 5
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+    name: counta-all-non-empty
+  - subject: COUNTA
+    formula: =COUNTA(A1:A3)
+    category: value
+    grid:
+      A1: 1
+      A3: 3
+    expect: 2
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+    name: counta-with-empty-cell
+  - subject: COUNTA
+    formula: =COUNTA(1, "x", TRUE)
+    category: value
+    expect: 3
+    overrides:
+      formulas:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+    name: counta-inline
+  - subject: COUNTA
+    category: value
+    status: observed
+    formula: =COUNTA(A1:A3)
+    grid:
+      A1: 1
+      A2: ""
+      A3: 3
+    tags:
+      - statistical
+      - divergence
+    name: counta-empty-string-cell
+  - subject: DEVSQ
+    formula: =DEVSQ(A1:A5)
+    category: value
+    grid:
+      A1: 1
+      A2: 2
+      A3: 3
+      A4: 4
+      A5: 5
+    expect: 10
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+    name: devsq-whole-numbers
+  - subject: DEVSQ
+    formula: =DEVSQ(1, 2, 3, 4, 5)
+    category: value
+    expect: 10
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+    name: devsq-inline
+  - subject: DEVSQ
+    formula: =DEVSQ(7)
+    category: value
+    expect: 0
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+    name: devsq-single-value
+  - subject: DEVSQ
+    formula: =DEVSQ(2, 4)
+    category: value
+    expect: 2
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+    name: devsq-two-values
+  - subject: GEOMEAN
+    formula: =GEOMEAN(1, 1, 1)
+    category: value
+    expect: 1
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+    name: geomean-of-1
+  - subject: GEOMEAN
+    formula: =GEOMEAN(2, 8)
+    category: value
+    expect: 4
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      gsheets:
+        cause: precision
+        recorded: 4.000000000000001
+    tags:
+      - statistical
+    name: geomean-perfect-square
+  - subject: GEOMEAN
+    category: value
+    status: observed
+    formula: =GEOMEAN(A1:A5)
+    grid:
+      A1: 1
+      A2: 2
+      A3: 3
+      A4: 4
+      A5: 5
+    tags:
+      - statistical
+    name: geomean-1-5
+  - subject: GEOMEAN
+    formula: =GEOMEAN(0, 2, 4)
+    category: value
+    expect:
+      error: "#NUM!"
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      ironcalc:
+        cause: arg-semantics
+        recorded: 0
+      libreoffice:
+        cause: arg-semantics
+        recorded: 0
+    tags:
+      - statistical
+    name: geomean-with-zero
+  - subject: HARMEAN
+    formula: =HARMEAN(1, 1, 1)
+    category: value
+    expect: 1
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+    name: harmean-all-ones
+  - subject: HARMEAN
+    formula: =HARMEAN(2, 6)
+    category: value
+    expect: 3
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+    name: harmean-two-values
+  - subject: HARMEAN
+    category: value
+    status: observed
+    formula: =HARMEAN(A1:A5)
+    grid:
+      A1: 1
+      A2: 2
+      A3: 3
+      A4: 4
+      A5: 5
+    tags:
+      - statistical
+    name: harmean-1-5
+  - subject: HARMEAN
+    formula: =HARMEAN(0, 2, 4)
+    category: value
+    expect:
+      error: "#NUM!"
+    overrides:
+      libreoffice:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+    name: harmean-with-zero
+  - subject: LARGE
+    category: value
+    formula: =LARGE(A1:A5, 1)
+    grid:
+      A1: 1
+      A2: 2
+      A3: 3
+      A4: 4
+      A5: 5
+    expect: 5
+    tags:
+      - statistical
+    name: large-1st-statistical-descriptive
+  - subject: LARGE
+    category: value
+    formula: =LARGE(A1:A5, 3)
+    grid:
+      A1: 1
+      A2: 2
+      A3: 3
+      A4: 4
+      A5: 5
+    expect: 3
+    tags:
+      - statistical
+    name: large-3rd-statistical-descriptive
+  - subject: LARGE
+    formula: =LARGE({1,2,3}, 5)
+    category: value
+    expect:
+      error: "#NUM!"
+    overrides:
+      libreoffice:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+    tags:
+      - statistical
+      - bare-formula
+    name: large-k-too-big
+  - subject: LARGE
+    formula: =LARGE({1,2,3}, 0)
+    category: value
+    expect:
+      error: "#NUM!"
+    overrides:
+      libreoffice:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+    tags:
+      - statistical
+      - bare-formula
+    name: large-k-zero
+  - subject: MAX
+    category: value
+    formula: =MAX(A1:A5)
+    grid:
+      A1: 1
+      A2: 2
+      A3: 3
+      A4: 4
+      A5: 5
+    expect: 5
+    tags:
+      - statistical
+    name: max-whole-numbers
+  - subject: MAX
+    category: value
+    formula: =MAX(-3, -1, -7)
+    expect: -1
+    tags:
+      - statistical
+    name: max-inline-negatives
+  - subject: MAX
+    category: value
+    formula: =MAX(A1:A3)
+    grid:
+      A1: 1
+      A2: hello
+      A3: 10
+    expect: 10
+    tags:
+      - statistical
+    name: max-ignores-text
+  - subject: MAX
+    category: value
+    formula: =MAX(A1:A3)
+    expect: 0
+    tags:
+      - statistical
+    name: max-empty-range
+  - subject: MIN
+    category: value
+    formula: =MIN(A1:A5)
+    grid:
+      A1: 1
+      A2: 2
+      A3: 3
+      A4: 4
+      A5: 5
+    expect: 1
+    tags:
+      - statistical
+    name: min-whole-numbers
+  - subject: MIN
+    category: value
+    formula: =MIN(-3, -1, -7)
+    expect: -7
+    tags:
+      - statistical
+    name: min-inline-negatives
+  - subject: MIN
+    category: value
+    formula: =MIN(A1:A3)
+    grid:
+      A1: 5
+      A2: hello
+      A3: 10
+    expect: 5
+    tags:
+      - statistical
+    name: min-ignores-text
+  - subject: MIN
+    category: value
+    formula: =MIN(A1:A3)
+    expect: 0
+    tags:
+      - statistical
+    name: min-empty-range
+  - subject: MAXA
+    formula: =MAXA(A1:A5)
+    category: value
+    grid:
+      A1: 1
+      A2: 2
+      A3: 3
+      A4: 4
+      A5: 5
+    expect: 5
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+    name: maxa-whole-numbers
+  - subject: MAXA
+    category: value
+    formula: =MAXA(C1:C5)
+    grid:
+      C1: 1
+      C2: text
+      C3: true
+      C4: false
+      C5: 2
+    expect: 2
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+      - divergence
+    name: maxa-mixed-types
+  - subject: MAXA
+    category: value
+    formula: =MAXA(A1:A3)
+    grid:
+      A1: -5
+      A2: hello
+      A3: -10
+    expect: 0
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+      - divergence
+    name: maxa-negatives-with-text
+  - subject: MAXA
+    formula: =MAXA(-2, -1, TRUE)
+    category: value
+    expect: 1
+    overrides:
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+      - divergence
+    name: maxa-inline-boolean
+  - subject: MINA
+    formula: =MINA(A1:A5)
+    category: value
+    grid:
+      A1: 1
+      A2: 2
+      A3: 3
+      A4: 4
+      A5: 5
+    expect: 1
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+    name: mina-whole-numbers
+  - subject: MINA
+    category: value
+    formula: =MINA(C1:C5)
+    grid:
+      C1: 1
+      C2: text
+      C3: true
+      C4: false
+      C5: 2
+    expect: 0
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+      - divergence
+    name: mina-mixed-types
+  - subject: MINA
+    category: value
+    formula: =MINA(A1:A3)
+    grid:
+      A1: 5
+      A2: hello
+      A3: 10
+    expect: 0
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+      - divergence
+    name: mina-positives-with-text
+  - subject: MINA
+    formula: =MINA(2, 3, FALSE)
+    category: value
+    expect: 0
+    overrides:
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+      - divergence
+    name: mina-inline-boolean-false
+  - subject: MAXIFS
+    formula: =MAXIFS(E1:E5, D1:D5, "A")
+    category: value
+    grid:
+      D1: A
+      D2: B
+      D3: A
+      D4: B
+      D5: A
+      E1: 10
+      E2: 20
+      E3: 30
+      E4: 40
+      E5: 50
+    expect: 50
+    overrides:
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+    name: maxifs-single-criterion
+  - subject: MAXIFS
+    formula: =MAXIFS(A1:A5, A1:A5, "<4")
+    category: value
+    grid:
+      A1: 1
+      A2: 2
+      A3: 3
+      A4: 4
+      A5: 5
+    expect: 3
+    overrides:
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+    name: maxifs-comparator
+  - subject: MAXIFS
+    formula: =MAXIFS(A1:A3, A1:A3, ">100")
+    category: value
+    grid:
+      A1: 1
+      A2: 2
+      A3: 3
+    expect: 0
+    overrides:
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+    name: maxifs-no-match
+  - subject: MINIFS
+    formula: =MINIFS(E1:E5, D1:D5, "A")
+    category: value
+    grid:
+      D1: A
+      D2: B
+      D3: A
+      D4: B
+      D5: A
+      E1: 10
+      E2: 20
+      E3: 30
+      E4: 40
+      E5: 50
+    expect: 10
+    overrides:
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+    name: minifs-single-criterion
+  - subject: MINIFS
+    formula: =MINIFS(A1:A5, A1:A5, ">2")
+    category: value
+    grid:
+      A1: 1
+      A2: 2
+      A3: 3
+      A4: 4
+      A5: 5
+    expect: 3
+    overrides:
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+    name: minifs-comparator
+  - subject: MINIFS
+    formula: =MINIFS(A1:A3, A1:A3, ">100")
+    category: value
+    grid:
+      A1: 1
+      A2: 2
+      A3: 3
+    expect: 0
+    overrides:
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+    name: minifs-no-match
+  - subject: MEDIAN
+    formula: =MEDIAN(A1:A5)
+    category: value
+    grid:
+      A1: 1
+      A2: 2
+      A3: 3
+      A4: 4
+      A5: 5
+    expect: 3
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+    name: median-odd-count-statistical-descriptive
+  - subject: MEDIAN
+    formula: =MEDIAN(1, 2, 3, 4)
+    category: value
+    expect: 2.5
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+    name: median-even-count-statistical-descriptive
+  - subject: MEDIAN
+    formula: =MEDIAN(7)
+    category: value
+    expect: 7
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+    name: median-single-value
+  - subject: MEDIAN
+    formula: =MEDIAN(5, 1, 3, 2, 4)
+    category: value
+    expect: 3
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+    name: median-unsorted
+  - subject: MODE
+    formula: =MODE(B1:B5)
+    category: value
+    grid:
+      B1: 1
+      B2: 2
+      B3: 2
+      B4: 3
+      B5: 3
+    expect: 2
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+      - divergence
+    name: mode-tied-dataset
+  - subject: MODE
+    formula: =MODE(1, 2, 2, 3, 4)
+    category: value
+    expect: 2
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+    name: mode-clear-winner
+  - subject: MODE
+    formula: =MODE(1, 2, 3, 4, 5)
+    category: value
+    expect:
+      error: "#N/A"
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      libreoffice:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+    name: mode-no-repeats
+  - subject: MODE.SNGL
+    formula: =MODE.SNGL(1, 2, 2, 3, 4)
+    category: value
+    expect: 2
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+    name: mode-sngl-clear-winner
+  - subject: MODE.SNGL
+    formula: =MODE.SNGL(B1:B5)
+    category: value
+    grid:
+      B1: 1
+      B2: 2
+      B3: 2
+      B4: 3
+      B5: 3
+    expect: 2
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+      - divergence
+    name: mode-sngl-tied-dataset
+  - subject: MODE.SNGL
+    formula: =MODE.SNGL(1, 2, 3)
+    category: value
+    expect:
+      error: "#N/A"
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+    name: mode-sngl-no-repeats
+  - subject: MODE.MULT
+    category: value
+    status: observed
+    formula: =MODE.MULT(B1:B5)
+    grid:
+      B1: 1
+      B2: 2
+      B3: 2
+      B4: 3
+      B5: 3
+    tags:
+      - statistical
+    name: mode-mult-tied-dataset
+  - subject: MODE.MULT
+    category: value
+    status: observed
+    formula: =MODE.MULT(1, 2, 2, 3, 4)
+    tags:
+      - statistical
+    name: mode-mult-single-mode
+  - subject: MODE.MULT
+    category: value
+    status: observed
+    formula: =MODE.MULT(1, 2, 3)
+    tags:
+      - statistical
+      - divergence
+    name: mode-mult-no-repeats
+  - subject: PERCENTILE
+    formula: =PERCENTILE(A1:A5, 0.25)
+    category: value
+    grid:
+      A1: 1
+      A2: 2
+      A3: 3
+      A4: 4
+      A5: 5
+    expect: 2
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+    name: percentile-25th-on-1-5
+  - subject: PERCENTILE
+    formula: =PERCENTILE(A1:A5, 0.5)
+    category: value
+    grid:
+      A1: 1
+      A2: 2
+      A3: 3
+      A4: 4
+      A5: 5
+    expect: 3
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+    name: percentile-50th-on-1-5
+  - subject: PERCENTILE
+    formula: =PERCENTILE({1,2,3,4,5}, 0)
+    category: value
+    expect: 1
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+      - bare-formula
+    name: percentile-0th
+  - subject: PERCENTILE
+    formula: =PERCENTILE({1,2,3,4,5}, 1)
+    category: value
+    expect: 5
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+      - bare-formula
+    name: percentile-100th
+  - subject: PERCENTILE.INC
+    formula: =PERCENTILE.INC(A1:A5, 0.25)
+    category: value
+    grid:
+      A1: 1
+      A2: 2
+      A3: 3
+      A4: 4
+      A5: 5
+    expect: 2
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+    name: percentile-inc-25th-on-1-5
+  - subject: PERCENTILE.INC
+    formula: =PERCENTILE.INC(A1:A5, 0.5)
+    category: value
+    grid:
+      A1: 1
+      A2: 2
+      A3: 3
+      A4: 4
+      A5: 5
+    expect: 3
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+    name: percentile-inc-50th-on-1-5
+  - subject: PERCENTILE.INC
+    formula: =PERCENTILE.INC(A1:A5, 0.75)
+    category: value
+    grid:
+      A1: 1
+      A2: 2
+      A3: 3
+      A4: 4
+      A5: 5
+    expect: 4
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+    name: percentile-inc-75th-on-1-5
+  - subject: PERCENTILE.EXC
+    formula: =PERCENTILE.EXC(A1:A5, 0.25)
+    category: value
+    grid:
+      A1: 1
+      A2: 2
+      A3: 3
+      A4: 4
+      A5: 5
+    expect: 1.5
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+    name: percentile-exc-25th-on-1-5
+  - subject: PERCENTILE.EXC
+    formula: =PERCENTILE.EXC(A1:A5, 0.5)
+    category: value
+    grid:
+      A1: 1
+      A2: 2
+      A3: 3
+      A4: 4
+      A5: 5
+    expect: 3
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+    name: percentile-exc-50th-on-1-5
+  - subject: PERCENTILE.EXC
+    formula: =PERCENTILE.EXC(A1:A5, 0.75)
+    category: value
+    grid:
+      A1: 1
+      A2: 2
+      A3: 3
+      A4: 4
+      A5: 5
+    expect: 4.5
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+    name: percentile-exc-75th-on-1-5
+  - subject: PERCENTILE.EXC
+    formula: =PERCENTILE.EXC({1,2,3,4,5}, 0)
+    category: value
+    expect:
+      error: "#NUM!"
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+      - bare-formula
+    name: percentile-exc-0th-invalid
+  - subject: PERCENTRANK
+    formula: =PERCENTRANK(A1:A5, 3)
+    category: value
+    grid:
+      A1: 1
+      A2: 2
+      A3: 3
+      A4: 4
+      A5: 5
+    expect: 0.5
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+    name: percentrank-midpoint
+  - subject: PERCENTRANK
+    formula: =PERCENTRANK(A1:A5, 1)
+    category: value
+    grid:
+      A1: 1
+      A2: 2
+      A3: 3
+      A4: 4
+      A5: 5
+    expect: 0
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+    name: percentrank-minimum
+  - subject: PERCENTRANK
+    formula: =PERCENTRANK(A1:A5, 5)
+    category: value
+    grid:
+      A1: 1
+      A2: 2
+      A3: 3
+      A4: 4
+      A5: 5
+    expect: 1
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+    name: percentrank-maximum
+  - subject: PERCENTRANK.INC
+    formula: =PERCENTRANK.INC(A1:A5, 3)
+    category: value
+    grid:
+      A1: 1
+      A2: 2
+      A3: 3
+      A4: 4
+      A5: 5
+    expect: 0.5
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+    name: percentrank-inc-midpoint
+  - subject: PERCENTRANK.INC
+    formula: =PERCENTRANK.INC(A1:A5, 1)
+    category: value
+    grid:
+      A1: 1
+      A2: 2
+      A3: 3
+      A4: 4
+      A5: 5
+    expect: 0
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+    name: percentrank-inc-minimum
+  - subject: PERCENTRANK.INC
+    formula: =PERCENTRANK.INC(A1:A5, 2)
+    category: value
+    grid:
+      A1: 1
+      A2: 2
+      A3: 3
+      A4: 4
+      A5: 5
+    expect: 0.25
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+    name: percentrank-inc-quarter
+  - subject: PERCENTRANK.EXC
+    formula: =PERCENTRANK.EXC(A1:A5, 3)
+    category: value
+    grid:
+      A1: 1
+      A2: 2
+      A3: 3
+      A4: 4
+      A5: 5
+    expect: 0.5
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+    name: percentrank-exc-midpoint
+  - subject: PERCENTRANK.EXC
+    category: value
+    status: observed
+    formula: =PERCENTRANK.EXC(A1:A5, 1)
+    grid:
+      A1: 1
+      A2: 2
+      A3: 3
+      A4: 4
+      A5: 5
+    tags:
+      - statistical
+    name: percentrank-exc-minimum-value
+  - subject: PERCENTRANK.EXC
+    formula: =PERCENTRANK.EXC(A1:A5, 2)
+    category: value
+    grid:
+      A1: 1
+      A2: 2
+      A3: 3
+      A4: 4
+      A5: 5
+    expect: 0.333
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+    name: percentrank-exc-interior
+  - subject: PERMUT
+    formula: =PERMUT(5, 2)
+    category: value
+    expect: 20
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+    name: permut-basic
+  - subject: PERMUT
+    formula: =PERMUT(5, 5)
+    category: value
+    expect: 120
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+    name: permut-full
+  - subject: PERMUT
+    formula: =PERMUT(5, 0)
+    category: value
+    expect: 1
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+    name: permut-zero
+  - subject: PERMUT
+    formula: =PERMUT(3, 5)
+    category: value
+    expect:
+      error: "#NUM!"
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      libreoffice:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+    name: permut-invalid
+  - subject: PERMUTATIONA
+    formula: =PERMUTATIONA(5, 2)
+    category: value
+    expect: 25
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+    name: permutationa-basic
+  - subject: PERMUTATIONA
+    formula: =PERMUTATIONA(3, 3)
+    category: value
+    expect: 27
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+    name: permutationa-triple
+  - subject: PERMUTATIONA
+    formula: =PERMUTATIONA(5, 0)
+    category: value
+    expect: 1
+    overrides:
+      gsheets:
+        cause: error-code
+        recorded:
+          error: "#NUM!"
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+    name: permutationa-zero-pick
+  - subject: PERMUTATIONA
+    formula: =PERMUTATIONA(-1, 2)
+    category: value
+    expect:
+      error: "#NUM!"
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+    name: permutationa-negative
+  - subject: QUARTILE
+    formula: =QUARTILE(A1:A5, 1)
+    category: value
+    grid:
+      A1: 1
+      A2: 2
+      A3: 3
+      A4: 4
+      A5: 5
+    expect: 2
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+    name: quartile-q1-on-1-5
+  - subject: QUARTILE
+    formula: =QUARTILE(A1:A5, 2)
+    category: value
+    grid:
+      A1: 1
+      A2: 2
+      A3: 3
+      A4: 4
+      A5: 5
+    expect: 3
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+    name: quartile-q2-on-1-5
+  - subject: QUARTILE
+    formula: =QUARTILE(A1:A5, 3)
+    category: value
+    grid:
+      A1: 1
+      A2: 2
+      A3: 3
+      A4: 4
+      A5: 5
+    expect: 4
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+    name: quartile-q3-on-1-5
+  - subject: QUARTILE
+    formula: =QUARTILE({1,2,3,4,5}, 5)
+    category: value
+    expect:
+      error: "#NUM!"
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      libreoffice:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+      - bare-formula
+    name: quartile-invalid
+  - subject: QUARTILE.INC
+    formula: =QUARTILE.INC(A1:A5, 1)
+    category: value
+    grid:
+      A1: 1
+      A2: 2
+      A3: 3
+      A4: 4
+      A5: 5
+    expect: 2
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+    name: quartile-inc-q1-on-1-5
+  - subject: QUARTILE.INC
+    formula: =QUARTILE.INC(A1:A5, 2)
+    category: value
+    grid:
+      A1: 1
+      A2: 2
+      A3: 3
+      A4: 4
+      A5: 5
+    expect: 3
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+    name: quartile-inc-q2-on-1-5
+  - subject: QUARTILE.INC
+    formula: =QUARTILE.INC(A1:A5, 3)
+    category: value
+    grid:
+      A1: 1
+      A2: 2
+      A3: 3
+      A4: 4
+      A5: 5
+    expect: 4
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+    name: quartile-inc-q3-on-1-5
+  - subject: QUARTILE.EXC
+    formula: =QUARTILE.EXC(A1:A5, 1)
+    category: value
+    grid:
+      A1: 1
+      A2: 2
+      A3: 3
+      A4: 4
+      A5: 5
+    expect: 1.5
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+    name: quartile-exc-q1-on-1-5
+  - subject: QUARTILE.EXC
+    formula: =QUARTILE.EXC(A1:A5, 2)
+    category: value
+    grid:
+      A1: 1
+      A2: 2
+      A3: 3
+      A4: 4
+      A5: 5
+    expect: 3
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+    name: quartile-exc-q2-on-1-5
+  - subject: QUARTILE.EXC
+    formula: =QUARTILE.EXC(A1:A5, 3)
+    category: value
+    grid:
+      A1: 1
+      A2: 2
+      A3: 3
+      A4: 4
+      A5: 5
+    expect: 4.5
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+    name: quartile-exc-q3-on-1-5
+  - subject: QUARTILE.EXC
+    formula: =QUARTILE.EXC({1,2,3,4,5}, 0)
+    category: value
+    expect:
+      error: "#NUM!"
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+      - bare-formula
+    name: quartile-exc-q0-invalid
+  - subject: RANK
+    formula: =RANK(20, A1:A4)
+    category: value
+    grid:
+      A1: 10
+      A2: 20
+      A3: 20
+      A4: 30
+    expect: 2
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+    name: rank-descending
+  - subject: RANK
+    formula: =RANK(20, A1:A4, 1)
+    category: value
+    grid:
+      A1: 10
+      A2: 20
+      A3: 20
+      A4: 30
+    expect: 2
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+    name: rank-ascending
+  - subject: RANK
+    formula: =RANK(5, A1:A5)
+    category: value
+    grid:
+      A1: 1
+      A2: 2
+      A3: 3
+      A4: 4
+      A5: 5
+    expect: 1
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+    name: rank-top-value
+  - subject: RANK
+    formula: =RANK(5, A1:A3)
+    category: value
+    grid:
+      A1: 1
+      A2: 2
+      A3: 3
+    expect:
+      error: "#N/A"
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+    name: rank-missing-value
+  - subject: RANK.EQ
+    formula: =RANK.EQ(20, A1:A4)
+    category: value
+    grid:
+      A1: 10
+      A2: 20
+      A3: 20
+      A4: 30
+    expect: 2
+    overrides:
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+    name: rank-eq-descending-with-tie
+  - subject: RANK.EQ
+    formula: =RANK.EQ(3, A1:A5, 1)
+    category: value
+    grid:
+      A1: 1
+      A2: 2
+      A3: 3
+      A4: 4
+      A5: 5
+    expect: 3
+    overrides:
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+    name: rank-eq-ascending
+  - subject: RANK.EQ
+    formula: =RANK.EQ(5, A1:A5)
+    category: value
+    grid:
+      A1: 1
+      A2: 2
+      A3: 3
+      A4: 4
+      A5: 5
+    expect: 1
+    overrides:
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+    name: rank-eq-top
+  - subject: RANK.AVG
+    formula: =RANK.AVG(20, A1:A4)
+    category: value
+    grid:
+      A1: 10
+      A2: 20
+      A3: 20
+      A4: 30
+    expect: 2.5
+    overrides:
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+    name: rank-avg-descending-with-tie
+  - subject: RANK.AVG
+    formula: =RANK.AVG(3, A1:A5)
+    category: value
+    grid:
+      A1: 1
+      A2: 2
+      A3: 3
+      A4: 4
+      A5: 5
+    expect: 3
+    overrides:
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+    name: rank-avg-no-tie
+  - subject: RANK.AVG
+    formula: =RANK.AVG(20, A1:A5)
+    category: value
+    grid:
+      A1: 10
+      A2: 20
+      A3: 20
+      A4: 20
+      A5: 30
+    expect: 3
+    overrides:
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+    name: rank-avg-triple-tie
+  - subject: SMALL
+    category: value
+    formula: =SMALL(A1:A5, 1)
+    grid:
+      A1: 1
+      A2: 2
+      A3: 3
+      A4: 4
+      A5: 5
+    expect: 1
+    tags:
+      - statistical
+    name: small-1st-statistical-descriptive
+  - subject: SMALL
+    category: value
+    formula: =SMALL(A1:A5, 3)
+    grid:
+      A1: 1
+      A2: 2
+      A3: 3
+      A4: 4
+      A5: 5
+    expect: 3
+    tags:
+      - statistical
+    name: small-3rd
+  - subject: SMALL
+    formula: =SMALL({1,2,3}, 5)
+    category: value
+    expect:
+      error: "#NUM!"
+    overrides:
+      libreoffice:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+    tags:
+      - statistical
+      - bare-formula
+    name: small-k-too-big
+  - subject: SMALL
+    formula: =SMALL({1,2,3}, 0)
+    category: value
+    expect:
+      error: "#NUM!"
+    overrides:
+      libreoffice:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+    tags:
+      - statistical
+      - bare-formula
+    name: small-k-zero
+  - subject: STANDARDIZE
+    formula: =STANDARDIZE(10, 10, 2)
+    category: value
+    expect: 0
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+    name: standardize-at-mean
+  - subject: STANDARDIZE
+    formula: =STANDARDIZE(12, 10, 2)
+    category: value
+    expect: 1
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+    name: standardize-one-stdev-above
+  - subject: STANDARDIZE
+    formula: =STANDARDIZE(6, 10, 2)
+    category: value
+    expect: -2
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+    name: standardize-two-stdev-below
+  - subject: STANDARDIZE
+    formula: =STANDARDIZE(5, 10, 0)
+    category: value
+    expect:
+      error: "#NUM!"
+    overrides:
+      libreoffice:
+        cause: error-code
+        recorded:
+          error: "#DIV/0!"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+    name: standardize-zero-stdev
+  - subject: STDEV
+    category: value
+    status: observed
+    formula: =STDEV(A1:A5)
+    grid:
+      A1: 1
+      A2: 2
+      A3: 3
+      A4: 4
+      A5: 5
+    tags:
+      - statistical
+    name: stdev-sample-1-5
+  - subject: STDEV
+    category: value
+    status: observed
+    formula: =STDEV(1, 3)
+    tags:
+      - statistical
+    name: stdev-two-values
+  - subject: STDEV
+    formula: =STDEV(5, 5, 5)
+    category: value
+    expect: 0
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+    name: stdev-identical-values
+  - subject: STDEV
+    formula: =STDEV(5)
+    category: value
+    expect:
+      error: "#DIV/0!"
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+    name: stdev-single-value
+  - subject: STDEV.S
+    category: value
+    status: observed
+    formula: =STDEV.S(A1:A5)
+    grid:
+      A1: 1
+      A2: 2
+      A3: 3
+      A4: 4
+      A5: 5
+    tags:
+      - statistical
+    name: stdev-s-sample-1-5
+  - subject: STDEV.S
+    formula: =STDEV.S(5, 5, 5)
+    category: value
+    expect: 0
+    overrides:
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+    name: stdev-s-identical
+  - subject: STDEV.S
+    formula: =STDEV.S(5)
+    category: value
+    expect:
+      error: "#DIV/0!"
+    overrides:
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+    name: stdev-s-single-value
+  - subject: STDEV.P
+    category: value
+    status: observed
+    formula: =STDEV.P(A1:A5)
+    grid:
+      A1: 1
+      A2: 2
+      A3: 3
+      A4: 4
+      A5: 5
+    tags:
+      - statistical
+    name: stdev-p-population-1-5
+  - subject: STDEV.P
+    formula: =STDEV.P(2, 6)
+    category: value
+    expect: 2
+    overrides:
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+    name: stdev-p-two-values
+  - subject: STDEV.P
+    formula: =STDEV.P(5, 5, 5)
+    category: value
+    expect: 0
+    overrides:
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+    name: stdev-p-identical
+  - subject: STDEVP
+    category: value
+    status: observed
+    formula: =STDEVP(A1:A5)
+    grid:
+      A1: 1
+      A2: 2
+      A3: 3
+      A4: 4
+      A5: 5
+    tags:
+      - statistical
+    name: stdevp-population-1-5
+  - subject: STDEVP
+    formula: =STDEVP(2, 6)
+    category: value
+    expect: 2
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+    name: stdevp-two-values
+  - subject: STDEVP
+    formula: =STDEVP(5, 5, 5)
+    category: value
+    expect: 0
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+    name: stdevp-identical
+  - subject: STDEVA
+    category: value
+    status: observed
+    formula: =STDEVA(A1:A5)
+    grid:
+      A1: 1
+      A2: 2
+      A3: 3
+      A4: 4
+      A5: 5
+    tags:
+      - statistical
+    name: stdeva-numeric-only
+  - subject: STDEVA
+    category: value
+    status: observed
+    formula: =STDEVA(C1:C5)
+    grid:
+      C1: 1
+      C2: text
+      C3: true
+      C4: false
+      C5: 2
+    tags:
+      - statistical
+      - divergence
+    name: stdeva-mixed-types
+  - subject: STDEVA
+    category: value
+    status: observed
+    formula: =STDEVA(1, 2, TRUE)
+    tags:
+      - statistical
+      - divergence
+    name: stdeva-inline-boolean
+  - subject: STDEVPA
+    category: value
+    status: observed
+    formula: =STDEVPA(A1:A5)
+    grid:
+      A1: 1
+      A2: 2
+      A3: 3
+      A4: 4
+      A5: 5
+    tags:
+      - statistical
+    name: stdevpa-numeric-only
+  - subject: STDEVPA
+    category: value
+    status: observed
+    formula: =STDEVPA(C1:C5)
+    grid:
+      C1: 1
+      C2: text
+      C3: true
+      C4: false
+      C5: 2
+    tags:
+      - statistical
+      - divergence
+    name: stdevpa-mixed-types
+  - subject: STDEVPA
+    category: value
+    status: observed
+    formula: =STDEVPA(1, 2, TRUE)
+    tags:
+      - statistical
+      - divergence
+    name: stdevpa-inline-boolean
+  - subject: TRIMMEAN
+    formula: =TRIMMEAN(A1:A5, 0.4)
+    category: value
+    grid:
+      A1: 1
+      A2: 2
+      A3: 3
+      A4: 4
+      A5: 5
+    expect: 3
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+    name: trimmean-40pct-on-1-5
+  - subject: TRIMMEAN
+    formula: =TRIMMEAN(A1:A5, 0)
+    category: value
+    grid:
+      A1: 1
+      A2: 2
+      A3: 3
+      A4: 4
+      A5: 5
+    expect: 3
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+    name: trimmean-zero-percent
+  - subject: TRIMMEAN
+    formula: =TRIMMEAN({1,2,3,4,100}, 0.4)
+    category: value
+    expect: 3
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+      - bare-formula
+    name: trimmean-skewed-dataset
+  - subject: TRIMMEAN
+    formula: =TRIMMEAN({1,2,3}, 1)
+    category: value
+    expect:
+      error: "#NUM!"
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      libreoffice:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+      - bare-formula
+    name: trimmean-invalid-percent
+  - subject: VAR
+    formula: =VAR(A1:A5)
+    category: value
+    grid:
+      A1: 1
+      A2: 2
+      A3: 3
+      A4: 4
+      A5: 5
+    expect: 2.5
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+    name: var-sample-1-5
+  - subject: VAR
+    formula: =VAR(1, 3)
+    category: value
+    expect: 2
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+    name: var-two-values
+  - subject: VAR
+    formula: =VAR(5, 5, 5)
+    category: value
+    expect: 0
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+    name: var-identical
+  - subject: VAR
+    formula: =VAR(5)
+    category: value
+    expect:
+      error: "#DIV/0!"
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+    name: var-single-value
+  - subject: VAR.S
+    formula: =VAR.S(A1:A5)
+    category: value
+    grid:
+      A1: 1
+      A2: 2
+      A3: 3
+      A4: 4
+      A5: 5
+    expect: 2.5
+    overrides:
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+    name: var-s-sample-1-5
+  - subject: VAR.S
+    formula: =VAR.S(5, 5, 5)
+    category: value
+    expect: 0
+    overrides:
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+    name: var-s-identical
+  - subject: VAR.S
+    formula: =VAR.S(5)
+    category: value
+    expect:
+      error: "#DIV/0!"
+    overrides:
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+    name: var-s-single-value
+  - subject: VAR.P
+    formula: =VAR.P(A1:A5)
+    category: value
+    grid:
+      A1: 1
+      A2: 2
+      A3: 3
+      A4: 4
+      A5: 5
+    expect: 2
+    overrides:
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+    name: var-p-population-1-5
+  - subject: VAR.P
+    formula: =VAR.P(2, 6)
+    category: value
+    expect: 4
+    overrides:
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+    name: var-p-two-values
+  - subject: VAR.P
+    formula: =VAR.P(5, 5, 5)
+    category: value
+    expect: 0
+    overrides:
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+    name: var-p-identical
+  - subject: VARP
+    formula: =VARP(A1:A5)
+    category: value
+    grid:
+      A1: 1
+      A2: 2
+      A3: 3
+      A4: 4
+      A5: 5
+    expect: 2
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+    name: varp-population-1-5
+  - subject: VARP
+    formula: =VARP(2, 6)
+    category: value
+    expect: 4
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+    name: varp-two-values
+  - subject: VARP
+    formula: =VARP(5, 5, 5)
+    category: value
+    expect: 0
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+    name: varp-identical
+  - subject: VARA
+    formula: =VARA(A1:A5)
+    category: value
+    grid:
+      A1: 1
+      A2: 2
+      A3: 3
+      A4: 4
+      A5: 5
+    expect: 2.5
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+    name: vara-numeric-only
+  - subject: VARA
+    category: value
+    status: observed
+    formula: =VARA(C1:C5)
+    grid:
+      C1: 1
+      C2: text
+      C3: true
+      C4: false
+      C5: 2
+    tags:
+      - statistical
+      - divergence
+    name: vara-mixed-types
+  - subject: VARA
+    category: value
+    status: observed
+    formula: =VARA(1, 2, TRUE)
+    tags:
+      - statistical
+      - divergence
+    name: vara-inline-boolean
+  - subject: VARPA
+    formula: =VARPA(A1:A5)
+    category: value
+    grid:
+      A1: 1
+      A2: 2
+      A3: 3
+      A4: 4
+      A5: 5
+    expect: 2
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+    name: varpa-numeric-only
+  - subject: VARPA
+    category: value
+    status: observed
+    formula: =VARPA(C1:C5)
+    grid:
+      C1: 1
+      C2: text
+      C3: true
+      C4: false
+      C5: 2
+    tags:
+      - statistical
+      - divergence
+    name: varpa-mixed-types
+  - subject: VARPA
+    category: value
+    status: observed
+    formula: =VARPA(1, 2, TRUE)
+    tags:
+      - statistical
+      - divergence
+    name: varpa-inline-boolean

@@ -1,0 +1,19 @@
+id: DV-0159
+summary: "excel, formulas, gsheets, lattice, pycel: numeric precision differs — PV"
+cause: precision
+category: value
+engines:
+  - excel
+  - formulas
+  - gsheets
+  - lattice
+  - pycel
+behavior:
+  signature: "620.9213230591549"
+test-count: 1
+subjects:
+  - PV
+tests:
+  - PV/pv-lump-sum
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

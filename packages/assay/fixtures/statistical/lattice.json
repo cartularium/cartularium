@@ -1,0 +1,174 @@
+{
+  "platform": "lattice",
+  "generatedAt": "2026-05-07T21:12:27.664Z",
+  "results": {
+    "sha256:9e9ab937fc9a634ffb4a08cdb37ffecd4ee5a7fb2f6bcbe3fc555a731fd002a9": {
+      "result": [
+        [
+          2.5
+        ]
+      ],
+      "formula-as-evaluated": "=AVERAGE(1, 2, 3, 4)"
+    },
+    "sha256:5f325ec9af238e76fbbfb3e2d97bd8ac8bfbefca3ff543ca36bde111094a8b5e": {
+      "result": [
+        [
+          2
+        ]
+      ],
+      "formula-as-evaluated": "=AVERAGE(B1:B3)"
+    },
+    "sha256:cc83d1c1be4c95f6cbed4b31b9dc2e877dcc4fddce2ab38d6671e2c50f2bc977": {
+      "result": [
+        [
+          1
+        ]
+      ],
+      "formula-as-evaluated": "=COUNT(B1:B3)"
+    },
+    "sha256:d2154108dbd7dea9db03c5ff03bbf028a1caded86c94d4f7fa0d2d1c2bbe42f1": {
+      "result": [
+        [
+          3
+        ]
+      ],
+      "formula-as-evaluated": "=COUNT(1, 2, 3)"
+    },
+    "sha256:904c368c6459e9ccae3f2bb7a63dbe1a6e003432126d912035f3935a1a7a0d51": {
+      "result": [
+        [
+          2
+        ]
+      ],
+      "formula-as-evaluated": "=COUNTA(B1:B3)"
+    },
+    "sha256:01e84121de572e8d1877c825d6bf2a4b891f1b846581fb93c084073db1145509": {
+      "result": [
+        [
+          3
+        ]
+      ],
+      "formula-as-evaluated": "=COUNTBLANK(A1:A5)"
+    },
+    "sha256:8b8c391063b5f7b86f1258de05c8d96fdb29d5ea12aac4a4ee4a3f394cef9656": {
+      "result": [
+        [
+          2
+        ]
+      ],
+      "formula-as-evaluated": "=COUNTIF(A1:A4, \">2\")"
+    },
+    "sha256:ed14666443593d4c2297eedfbe2ab3ba6ab7c798ca1fbf6a2bd19b32973e3303": {
+      "result": [
+        [
+          5
+        ]
+      ],
+      "formula-as-evaluated": "=MAX(1, 5, 3, 2, 4)"
+    },
+    "sha256:6d116d04ae7491145c6340e38cef7a6a6f21a6508d5f8a1a49ef0e2de9700f33": {
+      "result": [
+        [
+          30
+        ]
+      ],
+      "formula-as-evaluated": "=MAX(A1:A3)"
+    },
+    "sha256:b8f0a0983552d7e9470d4c51388958bd3df513406e2b033d3cab5b48a93e51f2": {
+      "result": [
+        [
+          1
+        ]
+      ],
+      "formula-as-evaluated": "=MIN(1, 5, 3, 2, 4)"
+    },
+    "sha256:2a4b8cde48933005745bd66806da452c7180c58daca977e6354c974ca18efffe": {
+      "result": [
+        [
+          10
+        ]
+      ],
+      "formula-as-evaluated": "=MIN(A1:A3)"
+    },
+    "sha256:63232ab89f923d197384aad34093dc16bd7321ec4d08929d80ec3b87919c2cc0": {
+      "result": [
+        [
+          9
+        ]
+      ],
+      "formula-as-evaluated": "=LARGE({3,1,4,1,5,9}, 1)"
+    },
+    "sha256:9090505cc233350e75de251072bc80c08c08a689830e5994ab7212ee612d18a5": {
+      "result": [
+        [
+          4
+        ]
+      ],
+      "formula-as-evaluated": "=LARGE({3,1,4,1,5,9}, 3)"
+    },
+    "sha256:d5a2f94ae15bee8c0a0be93425448e41168b72b7192e39113b3ccb07df6a4303": {
+      "result": [
+        [
+          1
+        ]
+      ],
+      "formula-as-evaluated": "=SMALL({3,1,4,1,5,9}, 1)"
+    },
+    "sha256:be32d26dcda625302ce38d6c1252c63aa5b7d258ff1b69bcaaef02a43c434997": {
+      "result": [
+        [
+          1
+        ]
+      ],
+      "formula-as-evaluated": "=SMALL({3,1,4,1,5,9}, 2)"
+    },
+    "sha256:dcddac212afc21b57bb0fc4699f40b9adaf956bd19371b63308bc258495c3c2d": {
+      "result": [
+        [
+          3
+        ]
+      ],
+      "formula-as-evaluated": "=MEDIAN(1, 2, 3, 4, 5)"
+    },
+    "sha256:7888cd892e344323eeb50ee93ec7005fd53f60fe655b2612b96f77fc95e500af": {
+      "result": [
+        [
+          2.5
+        ]
+      ],
+      "formula-as-evaluated": "=MEDIAN(1, 2, 3, 4)"
+    },
+    "sha256:ef51c104c91bd48e8eb02c3b4a5eed8737049c4bb0b768e8f38c56e8e2adc740": {
+      "result": [
+        [
+          5
+        ]
+      ],
+      "formula-as-evaluated": "=SUMIF(A1:A3, \">1\")"
+    },
+    "sha256:26f3e52bf21fa5a468ec71db5b3e641bc0e486d54e77b775cfba4c5aa86a7e17": {
+      "result": [
+        [
+          20
+        ]
+      ],
+      "formula-as-evaluated": "=SUMIFS(A1:A4, B1:B4, \"=A*\")"
+    },
+    "sha256:cf717ea6cdcf0c2f0c016cdcd118e9955e3ca4600c3fd41c12e0867f8a844014": {
+      "result": [
+        [
+          15
+        ]
+      ],
+      "formula-as-evaluated": "=MAXIFS(A1:A4, B1:B4, \"=A*\")"
+    },
+    "sha256:c8b0806e1f92209954bd05093d77a569e9d656e8c6377f47a9bdd4960a93dde0": {
+      "result": [
+        [
+          5
+        ]
+      ],
+      "formula-as-evaluated": "=MINIFS(A1:A4, B1:B4, \"=A*\")"
+    }
+  }
+}

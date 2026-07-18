@@ -1,0 +1,27 @@
+id: DV-0031
+summary: "excel, formulas, gsheets, libreoffice: different argument
+  interpretation — CLEAN, LEFTB, RIGHTB (+1 more)"
+cause: arg-semantics
+category: value
+engines:
+  - excel
+  - formulas
+  - gsheets
+  - libreoffice
+behavior:
+  signature: "null"
+test-count: 6
+subjects:
+  - CLEAN
+  - LEFTB
+  - RIGHTB
+  - T
+tests:
+  - CLEAN/clean-empty
+  - LEFTB/leftb-zero
+  - RIGHTB/rightb-zero
+  - T/t-number
+  - T/t-boolean
+  - T/t-empty
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

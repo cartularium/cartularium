@@ -1,0 +1,127 @@
+id: DV-0002
+summary: "excel, formulas, hyperformula, ironcalc, libreoffice, pycel: function
+  not implemented — ADD, AVERAGE.WEIGHTED, DIVIDE (+12 more)"
+cause: missing-function
+category: value
+engines:
+  - excel
+  - formulas
+  - hyperformula
+  - ironcalc
+  - libreoffice
+  - pycel
+behavior:
+  signature: '{"error":"#NAME?"}'
+test-count: 93
+subjects:
+  - ADD
+  - AVERAGE.WEIGHTED
+  - DIVIDE
+  - EQ
+  - GT
+  - GTE
+  - ISBETWEEN
+  - LT
+  - LTE
+  - MINUS
+  - MULTIPLY
+  - NE
+  - UMINUS
+  - UNARY_PERCENT
+  - UPLUS
+tests:
+  - ADD/add-numbers
+  - ADD/add-negatives
+  - ADD/add-zero
+  - ADD/add-decimals
+  - ADD/add-boolean-coerces-to-1
+  - ADD/add-string-number-coerces
+  - ADD/add-matches-plus-operator
+  - MINUS/minus-numbers
+  - MINUS/minus-negative-result
+  - MINUS/minus-zero
+  - MINUS/minus-boolean-coerces
+  - MINUS/minus-string-coerces
+  - MINUS/minus-matches-minus-operator
+  - MULTIPLY/multiply-numbers
+  - MULTIPLY/multiply-by-zero
+  - MULTIPLY/multiply-negative
+  - MULTIPLY/multiply-boolean-coerces
+  - MULTIPLY/multiply-string-coerces
+  - MULTIPLY/multiply-matches-star-operator
+  - DIVIDE/divide-numbers
+  - DIVIDE/divide-by-zero
+  - DIVIDE/divide-fractional
+  - DIVIDE/divide-negative
+  - DIVIDE/divide-string-coerces
+  - DIVIDE/divide-matches-slash-operator
+  - UMINUS/uminus-positive
+  - UMINUS/uminus-negative
+  - UMINUS/uminus-zero
+  - UMINUS/uminus-boolean-coerces
+  - UMINUS/uminus-string-coerces
+  - UMINUS/uminus-matches-unary-minus
+  - UPLUS/uplus-positive
+  - UPLUS/uplus-negative
+  - UPLUS/uplus-zero
+  - UPLUS/uplus-boolean
+  - UPLUS/uplus-string
+  - UPLUS/uplus-numeric-string
+  - UNARY_PERCENT/unary-percent-fifty
+  - UNARY_PERCENT/unary-percent-one
+  - UNARY_PERCENT/unary-percent-zero
+  - UNARY_PERCENT/unary-percent-negative
+  - UNARY_PERCENT/unary-percent-hundred
+  - UNARY_PERCENT/unary-percent-string-coerces
+  - UNARY_PERCENT/unary-percent-matches-percent-operator
+  - EQ/eq-numbers-equal
+  - EQ/eq-numbers-unequal
+  - EQ/eq-strings-equal
+  - EQ/eq-case-sensitivity
+  - EQ/eq-string-matches-number
+  - EQ/eq-boolean-to-number
+  - EQ/eq-empty-vs-zero
+  - EQ/eq-matches-equals-operator
+  - NE/ne-numbers-unequal
+  - NE/ne-numbers-equal
+  - NE/ne-strings-unequal
+  - NE/ne-string-vs-number
+  - NE/ne-case-difference
+  - NE/ne-matches-neq-operator
+  - GT/gt-greater
+  - GT/gt-equal
+  - GT/gt-less
+  - GT/gt-strings-lex
+  - GT/gt-string-vs-number
+  - GT/gt-matches-gt-operator
+  - GTE/gte-greater
+  - GTE/gte-equal
+  - GTE/gte-less
+  - GTE/gte-string-vs-number
+  - GTE/gte-matches-gte-operator
+  - LT/lt-less
+  - LT/lt-equal
+  - LT/lt-greater
+  - LT/lt-strings-lex
+  - LT/lt-string-vs-number
+  - LT/lt-matches-lt-operator
+  - LTE/lte-less
+  - LTE/lte-equal
+  - LTE/lte-greater
+  - LTE/lte-string-vs-number
+  - LTE/lte-matches-lte-operator
+  - ISBETWEEN/isbetween-inside
+  - ISBETWEEN/isbetween-below
+  - ISBETWEEN/isbetween-above
+  - ISBETWEEN/isbetween-lower-boundary-default-inclusive
+  - ISBETWEEN/isbetween-upper-boundary-default-inclusive
+  - ISBETWEEN/isbetween-lower-exclusive-boundary
+  - ISBETWEEN/isbetween-upper-exclusive-boundary
+  - ISBETWEEN/isbetween-both-exclusive-inside
+  - ISBETWEEN/isbetween-string-value
+  - ISBETWEEN/isbetween-negative-range
+  - AVERAGE.WEIGHTED/average-weighted-basic
+  - AVERAGE.WEIGHTED/average-weighted-skewed
+  - AVERAGE.WEIGHTED/average-weighted-grid
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

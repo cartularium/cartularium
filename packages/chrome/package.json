@@ -1,0 +1,49 @@
+{
+  "name": "@cartularium/chrome",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Cartularium chrome primitives: top bar, drawer, ToC, related drawer, footer. Markup templates, vanilla JS, and SCSS shared across properties.",
+  "license": "MIT",
+  "type": "module",
+  "main": "./index.js",
+  "types": "./index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./index.d.ts",
+      "default": "./index.js"
+    },
+    "./templates/topbar.html": "./templates/topbar.html",
+    "./templates/drawer.html": "./templates/drawer.html",
+    "./templates/footer.html": "./templates/footer.html",
+    "./templates/related.html": "./templates/related.html",
+    "./templates/toc-rail.html": "./templates/toc-rail.html",
+    "./templates/toc-gutter.html": "./templates/toc-gutter.html",
+    "./templates/toc-fab.html": "./templates/toc-fab.html",
+    "./templates/error-404.html": "./templates/error-404.html",
+    "./styles/chrome.scss": "./styles/chrome.scss",
+    "./styles/print.scss": "./styles/print.scss",
+    "./scripts/chrome.js": "./scripts/chrome.js",
+    "./scripts/sidenotes.js": "./scripts/sidenotes.js",
+    "./scripts/render.js": {
+      "types": "./scripts/render.d.ts",
+      "default": "./scripts/render.js"
+    },
+    "./data/imprints.json": "./data/imprints.json",
+    "./README.md": "./README.md"
+  },
+  "files": [
+    "templates/",
+    "styles/",
+    "scripts/",
+    "data/",
+    "index.js",
+    "index.d.ts",
+    "README.md"
+  ],
+  "scripts": {
+    "test": "node --test test/*.test.mjs"
+  },
+  "dependencies": {
+    "@cartularium/brand": "workspace:*"
+  }
+}

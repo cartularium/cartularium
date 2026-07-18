@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title><%= it.title %></title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<script>
+(function(){try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark'){document.documentElement.setAttribute('data-theme',t);document.documentElement.setAttribute('saved-theme',t);}}catch(e){}})();
+</script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,300..700,0..100&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="<%= it.relPath %>/assets/styles.css?v=<%= it.assetVersion %>">
+</head>
+<body>
+<%~ it.chrome.topbar %>
+<%~ it.chrome.drawer %>
+<main>
+<%~ it.body %>
+</main>
+<%~ it.chrome.footer %>
+<script>window.__ASSAY_ASSET_VERSION__ = "<%= it.assetVersion %>";</script>
+<script src="<%= it.relPath %>/assets/chrome.js?v=<%= it.assetVersion %>" defer></script>
+<% (it.scripts || ["assets/filter.js"]).forEach(function(s) { %><script src="<%= it.relPath %>/<%= s %>?v=<%= it.assetVersion %>" defer></script>
+<% }) %>
+</body>
+</html>

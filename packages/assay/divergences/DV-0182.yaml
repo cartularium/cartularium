@@ -1,0 +1,15 @@
+id: DV-0182
+summary: "libreoffice: numeric precision differs — RADIANS"
+cause: precision
+category: value
+engines:
+  - libreoffice
+behavior:
+  signature: "1.5707963267949"
+test-count: 1
+subjects:
+  - RADIANS
+tests:
+  - RADIANS/radians-of-90
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

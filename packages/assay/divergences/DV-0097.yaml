@@ -1,0 +1,16 @@
+id: DV-0097
+summary: "hyperformula, pycel: different argument interpretation — BITAND"
+cause: arg-semantics
+category: value
+engines:
+  - hyperformula
+  - pycel
+behavior:
+  signature: "0"
+test-count: 1
+subjects:
+  - BITAND
+tests:
+  - BITAND/bitand-exceeds-2-48
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

@@ -1,0 +1,262 @@
+{
+  "platform": "excel",
+  "generatedAt": "2026-06-04T06:04:03.468Z",
+  "results": {
+    "sha256:d32cd18d30c93061ba9fb941000215151c4d4bf6afd2febe4208f7aad6c3de0b": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 1
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n",
+              "raw_xml": {
+                "formula_text": "MOD(7, 3)"
+              }
+            },
+            "formula": "MOD(7, 3)"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=MOD(7, 3)"
+    },
+    "sha256:da4b2096bc6b88bb88d39a20650615de378c80a6d3ec05b778e2475e3164de10": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 1
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n",
+              "raw_xml": {
+                "formula_text": "MOD(A1, B1)"
+              }
+            },
+            "formula": "MOD(A1, B1)"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=MOD(A1, B1)"
+    },
+    "sha256:d6fc5e26de3e12735cd4204511eb1a31be5b7a568595cb3245016ddaac69271b": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": -2
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n",
+              "raw_xml": {
+                "formula_text": "MOD(7, -3)"
+              }
+            },
+            "formula": "MOD(7, -3)"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=MOD(7, -3)"
+    },
+    "sha256:45992c224f6ac2ef15536b9944a5147ad67c653aba5c28fdfabb3494b04c26d1": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": -2
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n",
+              "raw_xml": {
+                "formula_text": "MOD(A1, B1)"
+              }
+            },
+            "formula": "MOD(A1, B1)"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=MOD(A1, B1)"
+    },
+    "sha256:7a0e49738a3ba1fd0dfc5eff98bb48e2469522b4af5d88e01dce517f5daf17e8": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "error",
+              "sentinel": "#DIV/0!"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "e",
+              "raw_xml": {
+                "t": "e",
+                "formula_text": "MOD(7, 0)"
+              }
+            },
+            "formula": "MOD(7, 0)"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=MOD(7, 0)"
+    },
+    "sha256:fa384ab6f1cb7a315d7759134c9a5858436c38769802fe7440abedbe82edce12": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "error",
+              "sentinel": "#DIV/0!"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "e",
+              "raw_xml": {
+                "t": "e",
+                "formula_text": "MOD(A1, B1)"
+              }
+            },
+            "formula": "MOD(A1, B1)"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=MOD(A1, B1)"
+    },
+    "sha256:be77d1c58848bd665409783adeb484f789a995373a3f1d76630520daa1113ede": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 2
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n",
+              "raw_xml": {
+                "formula_text": "MOD(-7, 3)"
+              }
+            },
+            "formula": "MOD(-7, 3)"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=MOD(-7, 3)"
+    },
+    "sha256:2ce0c244c7b6dd154905f5c3ec7c8698d97515a0faf523b7eeca64f2065a8e46": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 2
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n",
+              "raw_xml": {
+                "formula_text": "MOD(A1, B1)"
+              }
+            },
+            "formula": "MOD(A1, B1)"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=MOD(A1, B1)"
+    },
+    "sha256:dd4b7b4c402a2d59ca2f21eeadeb6aae582fac0915e78e5a7ae4da729ea2e566": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": -1
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n",
+              "raw_xml": {
+                "formula_text": "MOD(-7, -3)"
+              }
+            },
+            "formula": "MOD(-7, -3)"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=MOD(-7, -3)"
+    },
+    "sha256:69ca84d94505d92b669504720fcdd968eefe6e442b9be2824e3f0b1d98a5599b": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": -1
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n",
+              "raw_xml": {
+                "formula_text": "MOD(A1, B1)"
+              }
+            },
+            "formula": "MOD(A1, B1)"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=MOD(A1, B1)"
+    },
+    "sha256:14e778388bc687bffa4bf1c16d6c063c6979e5e59cd04a114f0ef2dd9d655a77": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "error",
+              "sentinel": "#DIV/0!"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "e",
+              "raw_xml": {
+                "t": "e",
+                "formula_text": "MOD(-7, 0)"
+              }
+            },
+            "formula": "MOD(-7, 0)"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=MOD(-7, 0)"
+    },
+    "sha256:01f8ce7323c2a2a5f94eb937dd69f9bfb4652593fa7f03aa9cf56969ce52cec0": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "error",
+              "sentinel": "#DIV/0!"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "e",
+              "raw_xml": {
+                "t": "e",
+                "formula_text": "MOD(A1, B1)"
+              }
+            },
+            "formula": "MOD(A1, B1)"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=MOD(A1, B1)"
+    }
+  }
+}

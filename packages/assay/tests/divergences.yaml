@@ -1,0 +1,121 @@
+schemaVersion: 3
+name: Known divergences
+tests:
+  - subject: CONCAT
+    formula: =CONCAT("a", "b", "c")
+    category: value
+    expect: abc
+    overrides:
+      gsheets:
+        cause: error-code
+        recorded:
+          error: "#N/A"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - text
+      - divergence
+    name: concat-vs-concatenate-arity
+  - subject: lit:array
+    category: value
+    status: observed
+    formula: ={1;2;3}
+    tags:
+      - array
+      - divergence
+      - bare-formula
+    name: array-literal-semicolons
+  - subject: LAMBDA
+    category: value
+    features:
+      - lambda
+    formula: =LAMBDA(x, x+1)(5)
+    expect: 6
+    tags:
+      - lambda
+    name: lambda-named-function-inline-cost
+  - subject: HSTACK
+    formula: =HSTACK(A1, 1/0)
+    category: error-code
+    features:
+      - dynamic-arrays
+    grid:
+      A1: 1
+    expect:
+      - - 1
+        - error: "#DIV/0!"
+    overrides:
+      excel:
+        cause: error-code
+        recorded:
+          error: "#DIV/0!"
+      lattice:
+        cause: error-code
+        recorded:
+          error: "#DIV/0!"
+    tags:
+      - array
+      - divergence
+      - error
+    name: hstack-with-error-value
+  - subject: SWITCH
+    formula: =SWITCH(1, 1, "yes")
+    category: value
+    expect: yes
+    overrides:
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - logical
+      - divergence
+    name: switch-3-arg-form
+  - subject: SWITCH
+    formula: =SWITCH(99, 1, "one", "default")
+    category: value
+    expect: default
+    overrides:
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - logical
+      - divergence
+    name: switch-4-arg-with-no-match
+  - subject: op:=
+    category: value
+    formula: =0=""
+    expect: false
+    tags:
+      - type-coercion
+      - divergence
+    name: empty-string-vs-zero-comparison
+  - subject: "TRUE"
+    category: value
+    formula: =TRUE+1
+    expect: 2
+    overrides:
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - type-coercion
+      - divergence
+    name: true-1

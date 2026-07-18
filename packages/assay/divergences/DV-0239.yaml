@@ -1,0 +1,15 @@
+id: DV-0239
+summary: "pycel: rendered with different format — TRIM"
+cause: format-rendering
+category: value
+engines:
+  - pycel
+behavior:
+  signature: '" First Quarter Earnings "'
+test-count: 1
+subjects:
+  - TRIM
+tests:
+  - TRIM/trim
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

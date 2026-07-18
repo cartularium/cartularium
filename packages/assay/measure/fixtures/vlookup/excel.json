@@ -1,0 +1,2910 @@
+{
+  "platform": "excel",
+  "generatedAt": "2026-06-04T06:04:03.470Z",
+  "results": {
+    "sha256:add8658798294beb1f9a954052fd31c664f308a82fa1d009d261ad03e9dc2439": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "b"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "s",
+              "raw_xml": {
+                "t": "str",
+                "formula_text": "VLOOKUP(2, A1:C3, 2, FALSE)"
+              }
+            },
+            "formula": "VLOOKUP(2, A1:C3, 2, FALSE)"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=VLOOKUP(2, A1:C3, 2, FALSE)"
+    },
+    "sha256:2e45a3dd0a0345e875f699ccc206c8b9f3c7ea4217a52e966d7b0f98cee21a3b": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "error",
+              "sentinel": "#REF!"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "e",
+              "raw_xml": {
+                "t": "e",
+                "formula_text": "VLOOKUP(2, A1:C3, 5, FALSE)"
+              }
+            },
+            "formula": "VLOOKUP(2, A1:C3, 5, FALSE)"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=VLOOKUP(2, A1:C3, 5, FALSE)"
+    },
+    "sha256:19f3061cb812d8903f9a9ad8268937c339429d7c03415be0c85b490cdf90fe81": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "b"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "s",
+              "raw_xml": {
+                "t": "str",
+                "cm": 1,
+                "formula_text": "VLOOKUP(2, A1:C3, {2,3}, FALSE)",
+                "formula_array_marker": "array",
+                "formula_array_ref": "AA1:AB1"
+              },
+              "saved_as_array": true
+            },
+            "formula": "VLOOKUP(2, A1:C3, {2,3}, FALSE)"
+          },
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "y"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "s",
+              "raw_xml": {
+                "t": "str"
+              }
+            }
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=VLOOKUP(2, A1:C3, {2,3}, FALSE)"
+    },
+    "sha256:4900f93d0e6dbef7f9aba04f4002ad647efd5436ca008c9793ecf0d9af7ed270": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "b"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "s",
+              "raw_xml": {
+                "t": "str",
+                "formula_text": "VLOOKUP(2, A1:C3, 2, FALSE)"
+              }
+            },
+            "formula": "VLOOKUP(2, A1:C3, 2, FALSE)"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=VLOOKUP(2, A1:C3, 2, FALSE)"
+    },
+    "sha256:9bf4d16a8e2a143bf4fe22c688eae4ba55c394982f0d24e1c12010a252628c65": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "error",
+              "sentinel": "#REF!"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "e",
+              "raw_xml": {
+                "t": "e",
+                "formula_text": "VLOOKUP(2, A1:C3, 5, FALSE)"
+              }
+            },
+            "formula": "VLOOKUP(2, A1:C3, 5, FALSE)"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=VLOOKUP(2, A1:C3, 5, FALSE)"
+    },
+    "sha256:5b7a6270192d44aefbab4a5a3a56de1c43f65d9289d840dfed12e599f1e0821c": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "b"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "s",
+              "raw_xml": {
+                "t": "str",
+                "cm": 1,
+                "formula_text": "VLOOKUP(2, A1:C3, {2,3}, FALSE)",
+                "formula_array_marker": "array",
+                "formula_array_ref": "AA1:AB1"
+              },
+              "saved_as_array": true
+            },
+            "formula": "VLOOKUP(2, A1:C3, {2,3}, FALSE)"
+          },
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "y"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "s",
+              "raw_xml": {
+                "t": "str"
+              }
+            }
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=VLOOKUP(2, A1:C3, {2,3}, FALSE)"
+    },
+    "sha256:b0882500cf2c2154a9d3834e208dfcb8c850bbe267f5b5a70abf4efb696937a9": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "error",
+              "sentinel": "#N/A"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "e",
+              "raw_xml": {
+                "t": "e",
+                "formula_text": "VLOOKUP(9, A1:C3, 2, FALSE)"
+              }
+            },
+            "formula": "VLOOKUP(9, A1:C3, 2, FALSE)"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=VLOOKUP(9, A1:C3, 2, FALSE)"
+    },
+    "sha256:ad31eb3e0dd7b50f41cd08bcea5fccd0381efc09893c9c20d486792e45af94c4": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "error",
+              "sentinel": "#N/A"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "e",
+              "raw_xml": {
+                "t": "e",
+                "formula_text": "VLOOKUP(9, A1:C3, 5, FALSE)"
+              }
+            },
+            "formula": "VLOOKUP(9, A1:C3, 5, FALSE)"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=VLOOKUP(9, A1:C3, 5, FALSE)"
+    },
+    "sha256:c3dadecbf35d56ee880fbe2a706742223385127681c08f3318c54c6ca3949207": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "error",
+              "sentinel": "#N/A"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "e",
+              "raw_xml": {
+                "t": "e",
+                "cm": 1,
+                "formula_text": "VLOOKUP(9, A1:C3, {2,3}, FALSE)",
+                "formula_array_marker": "array",
+                "formula_array_ref": "AA1"
+              },
+              "saved_as_array": true
+            },
+            "formula": "VLOOKUP(9, A1:C3, {2,3}, FALSE)"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=VLOOKUP(9, A1:C3, {2,3}, FALSE)"
+    },
+    "sha256:e7656639faab9eec1ea0f6669c22012f256ca5c38c47eb2ac4625cfaaa1978d5": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "error",
+              "sentinel": "#N/A"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "e",
+              "raw_xml": {
+                "t": "e",
+                "formula_text": "VLOOKUP(9, A1:C3, 2, FALSE)"
+              }
+            },
+            "formula": "VLOOKUP(9, A1:C3, 2, FALSE)"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=VLOOKUP(9, A1:C3, 2, FALSE)"
+    },
+    "sha256:7a5b1e6edd61ae86a0cf790a1edb339810fb468b661d61fd4ebcdbd242af1a37": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "error",
+              "sentinel": "#N/A"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "e",
+              "raw_xml": {
+                "t": "e",
+                "formula_text": "VLOOKUP(9, A1:C3, 5, FALSE)"
+              }
+            },
+            "formula": "VLOOKUP(9, A1:C3, 5, FALSE)"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=VLOOKUP(9, A1:C3, 5, FALSE)"
+    },
+    "sha256:f8a2dc376e59ffe24b364964fbce648117b5d794fc21d8a5dd77ed398b52a72c": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "error",
+              "sentinel": "#N/A"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "e",
+              "raw_xml": {
+                "t": "e",
+                "cm": 1,
+                "formula_text": "VLOOKUP(9, A1:C3, {2,3}, FALSE)",
+                "formula_array_marker": "array",
+                "formula_array_ref": "AA1"
+              },
+              "saved_as_array": true
+            },
+            "formula": "VLOOKUP(9, A1:C3, {2,3}, FALSE)"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=VLOOKUP(9, A1:C3, {2,3}, FALSE)"
+    },
+    "sha256:d012bd038de2536a3d596af0295cc3ff94c5da656fc24020a0c942b37d28204e": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "b"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "s",
+              "raw_xml": {
+                "t": "str",
+                "formula_text": "VLOOKUP(E1, A1:C3, 2, FALSE)"
+              }
+            },
+            "formula": "VLOOKUP(E1, A1:C3, 2, FALSE)"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=VLOOKUP(E1, A1:C3, 2, FALSE)"
+    },
+    "sha256:8f9029ace875d4e24a7fb17fc00508114b5c3954e15fdca8b1f67fa7d4ce2009": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "error",
+              "sentinel": "#REF!"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "e",
+              "raw_xml": {
+                "t": "e",
+                "formula_text": "VLOOKUP(E1, A1:C3, 5, FALSE)"
+              }
+            },
+            "formula": "VLOOKUP(E1, A1:C3, 5, FALSE)"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=VLOOKUP(E1, A1:C3, 5, FALSE)"
+    },
+    "sha256:a5ed2fdc1db83e04019e4b78c8bd67e4301dc036aee770d0ae6824653994c2b0": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "b"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "s",
+              "raw_xml": {
+                "t": "str",
+                "cm": 1,
+                "formula_text": "VLOOKUP(E1, A1:C3, {2,3}, FALSE)",
+                "formula_array_marker": "array",
+                "formula_array_ref": "AA1:AB1"
+              },
+              "saved_as_array": true
+            },
+            "formula": "VLOOKUP(E1, A1:C3, {2,3}, FALSE)"
+          },
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "y"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "s",
+              "raw_xml": {
+                "t": "str"
+              }
+            }
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=VLOOKUP(E1, A1:C3, {2,3}, FALSE)"
+    },
+    "sha256:440b2bde4f925c8765eb1b874453d7cf33b5419b2e3039cc4cc53fbda1930216": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "b"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "s",
+              "raw_xml": {
+                "t": "str",
+                "formula_text": "VLOOKUP(E1, A1:C3, 2, FALSE)"
+              }
+            },
+            "formula": "VLOOKUP(E1, A1:C3, 2, FALSE)"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=VLOOKUP(E1, A1:C3, 2, FALSE)"
+    },
+    "sha256:808d0b65881059ac636b33d9435018fcc1977df5b98db5342f84d0b2960b1822": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "error",
+              "sentinel": "#REF!"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "e",
+              "raw_xml": {
+                "t": "e",
+                "formula_text": "VLOOKUP(E1, A1:C3, 5, FALSE)"
+              }
+            },
+            "formula": "VLOOKUP(E1, A1:C3, 5, FALSE)"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=VLOOKUP(E1, A1:C3, 5, FALSE)"
+    },
+    "sha256:1f5470f2feada063e44d7ecf4ee8edf2ab805912a07683d4c862e05b816e5bb3": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "b"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "s",
+              "raw_xml": {
+                "t": "str",
+                "cm": 1,
+                "formula_text": "VLOOKUP(E1, A1:C3, {2,3}, FALSE)",
+                "formula_array_marker": "array",
+                "formula_array_ref": "AA1:AB1"
+              },
+              "saved_as_array": true
+            },
+            "formula": "VLOOKUP(E1, A1:C3, {2,3}, FALSE)"
+          },
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "y"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "s",
+              "raw_xml": {
+                "t": "str"
+              }
+            }
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=VLOOKUP(E1, A1:C3, {2,3}, FALSE)"
+    },
+    "sha256:1bbf238d67d921d64759e0dc33e26c3793907a45c0622e6a1600702c1a49374d": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "error",
+              "sentinel": "#N/A"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "e",
+              "raw_xml": {
+                "t": "e",
+                "formula_text": "VLOOKUP(E1, A1:C3, 2, FALSE)"
+              }
+            },
+            "formula": "VLOOKUP(E1, A1:C3, 2, FALSE)"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=VLOOKUP(E1, A1:C3, 2, FALSE)"
+    },
+    "sha256:2a478da646f831d748522ca3b8e3c2064ff9ecef3fc7a6d15e86e4ea7cc03b00": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "error",
+              "sentinel": "#N/A"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "e",
+              "raw_xml": {
+                "t": "e",
+                "formula_text": "VLOOKUP(E1, A1:C3, 5, FALSE)"
+              }
+            },
+            "formula": "VLOOKUP(E1, A1:C3, 5, FALSE)"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=VLOOKUP(E1, A1:C3, 5, FALSE)"
+    },
+    "sha256:b1614c26829666714a1b8ada0f9e6f87e47c1cc65668b75ee9d2c62b437755ba": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "error",
+              "sentinel": "#N/A"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "e",
+              "raw_xml": {
+                "t": "e",
+                "cm": 1,
+                "formula_text": "VLOOKUP(E1, A1:C3, {2,3}, FALSE)",
+                "formula_array_marker": "array",
+                "formula_array_ref": "AA1"
+              },
+              "saved_as_array": true
+            },
+            "formula": "VLOOKUP(E1, A1:C3, {2,3}, FALSE)"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=VLOOKUP(E1, A1:C3, {2,3}, FALSE)"
+    },
+    "sha256:9c82ef7c5ab9c33988be35b7141f1c68e9e565663a7db5aa3b57454b7c39fc5d": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "error",
+              "sentinel": "#N/A"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "e",
+              "raw_xml": {
+                "t": "e",
+                "formula_text": "VLOOKUP(E1, A1:C3, 2, FALSE)"
+              }
+            },
+            "formula": "VLOOKUP(E1, A1:C3, 2, FALSE)"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=VLOOKUP(E1, A1:C3, 2, FALSE)"
+    },
+    "sha256:8dc00d15bd4d2b99e6ec36e875a8e3ccd1ceeefbdeab00e51226f385fcf432c1": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "error",
+              "sentinel": "#N/A"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "e",
+              "raw_xml": {
+                "t": "e",
+                "formula_text": "VLOOKUP(E1, A1:C3, 5, FALSE)"
+              }
+            },
+            "formula": "VLOOKUP(E1, A1:C3, 5, FALSE)"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=VLOOKUP(E1, A1:C3, 5, FALSE)"
+    },
+    "sha256:0944b7922fd0a65902764b8dea7b0cc45c14d3e8cb7e417cfe15a26a839372da": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "error",
+              "sentinel": "#N/A"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "e",
+              "raw_xml": {
+                "t": "e",
+                "cm": 1,
+                "formula_text": "VLOOKUP(E1, A1:C3, {2,3}, FALSE)",
+                "formula_array_marker": "array",
+                "formula_array_ref": "AA1"
+              },
+              "saved_as_array": true
+            },
+            "formula": "VLOOKUP(E1, A1:C3, {2,3}, FALSE)"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=VLOOKUP(E1, A1:C3, {2,3}, FALSE)"
+    },
+    "sha256:80086ee2086f06f48257a93fd7da40c2294509ade4176ae85815202164ac2c81": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "error",
+              "sentinel": "#N/A"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "e",
+              "raw_xml": {
+                "t": "e",
+                "formula_text": "VLOOKUP(E1, A1:C3, 2, FALSE)"
+              }
+            },
+            "formula": "VLOOKUP(E1, A1:C3, 2, FALSE)"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=VLOOKUP(E1, A1:C3, 2, FALSE)"
+    },
+    "sha256:9f5925f0f04959dd29f25acdbc9cb83a159bfe0e5a27fea3fd19ec48134cefa4": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "error",
+              "sentinel": "#N/A"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "e",
+              "raw_xml": {
+                "t": "e",
+                "formula_text": "VLOOKUP(E1, A1:C3, 2, FALSE)"
+              }
+            },
+            "formula": "VLOOKUP(E1, A1:C3, 2, FALSE)"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=VLOOKUP(E1, A1:C3, 2, FALSE)"
+    },
+    "sha256:2c94569e4c75ce8cb1df394ff65f33fd83234ef31e787e5e244f58b5c195b3bb": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "error",
+              "sentinel": "#N/A"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "e",
+              "raw_xml": {
+                "t": "e",
+                "formula_text": "VLOOKUP(E1, A1:C3, 2, FALSE)"
+              }
+            },
+            "formula": "VLOOKUP(E1, A1:C3, 2, FALSE)"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=VLOOKUP(E1, A1:C3, 2, FALSE)"
+    },
+    "sha256:8d7daba844da288d8f55c199af87afcd470493fe049d06516d556d2ee25271db": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "error",
+              "sentinel": "#N/A"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "e",
+              "raw_xml": {
+                "t": "e",
+                "formula_text": "VLOOKUP(E1, A1:C3, 2, FALSE)"
+              }
+            },
+            "formula": "VLOOKUP(E1, A1:C3, 2, FALSE)"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=VLOOKUP(E1, A1:C3, 2, FALSE)"
+    },
+    "sha256:9a164c035122886b989a6e846dd4c9aacaa5d7f500ab89883f796f94790a5e7f": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "b"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "s",
+              "raw_xml": {
+                "t": "str",
+                "formula_text": "VLOOKUP(2, A1:C3, 2, 0)"
+              }
+            },
+            "formula": "VLOOKUP(2, A1:C3, 2, 0)"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=VLOOKUP(2, A1:C3, 2, 0)"
+    },
+    "sha256:e00760bc13a96fded3084fda1223d2319eccdd3293c82726b4357fe6891e2b6c": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "error",
+              "sentinel": "#REF!"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "e",
+              "raw_xml": {
+                "t": "e",
+                "formula_text": "VLOOKUP(2, A1:C3, 5, 0)"
+              }
+            },
+            "formula": "VLOOKUP(2, A1:C3, 5, 0)"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=VLOOKUP(2, A1:C3, 5, 0)"
+    },
+    "sha256:7e35a7b8961b4a917a3e2e97738c28f199379d5aadf6890acd44e620026fd395": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "b"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "s",
+              "raw_xml": {
+                "t": "str",
+                "cm": 1,
+                "formula_text": "VLOOKUP(2, A1:C3, {2,3}, 0)",
+                "formula_array_marker": "array",
+                "formula_array_ref": "AA1:AB1"
+              },
+              "saved_as_array": true
+            },
+            "formula": "VLOOKUP(2, A1:C3, {2,3}, 0)"
+          },
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "y"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "s",
+              "raw_xml": {
+                "t": "str"
+              }
+            }
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=VLOOKUP(2, A1:C3, {2,3}, 0)"
+    },
+    "sha256:fcaaf312e43b04cde532e69b6cf015513cf79a613efdc4100336caf85d677fd0": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "b"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "s",
+              "raw_xml": {
+                "t": "str",
+                "formula_text": "VLOOKUP(2, A1:C3, 2, 0)"
+              }
+            },
+            "formula": "VLOOKUP(2, A1:C3, 2, 0)"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=VLOOKUP(2, A1:C3, 2, 0)"
+    },
+    "sha256:0709fe96ef962713aa8c7844b9c98d8f26aa895f9d333c5c8a9900b422c2d0a4": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "error",
+              "sentinel": "#REF!"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "e",
+              "raw_xml": {
+                "t": "e",
+                "formula_text": "VLOOKUP(2, A1:C3, 5, 0)"
+              }
+            },
+            "formula": "VLOOKUP(2, A1:C3, 5, 0)"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=VLOOKUP(2, A1:C3, 5, 0)"
+    },
+    "sha256:84900c398833cf46de766a51aebb37299ecc38498cd3dbcacc9ce5ec0e867837": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "b"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "s",
+              "raw_xml": {
+                "t": "str",
+                "cm": 1,
+                "formula_text": "VLOOKUP(2, A1:C3, {2,3}, 0)",
+                "formula_array_marker": "array",
+                "formula_array_ref": "AA1:AB1"
+              },
+              "saved_as_array": true
+            },
+            "formula": "VLOOKUP(2, A1:C3, {2,3}, 0)"
+          },
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "y"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "s",
+              "raw_xml": {
+                "t": "str"
+              }
+            }
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=VLOOKUP(2, A1:C3, {2,3}, 0)"
+    },
+    "sha256:6095ba36fac869a8b67c6178b6b450f596118fb2dcc611e8b8af2b397c01a4b2": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "error",
+              "sentinel": "#N/A"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "e",
+              "raw_xml": {
+                "t": "e",
+                "formula_text": "VLOOKUP(9, A1:C3, 2, 0)"
+              }
+            },
+            "formula": "VLOOKUP(9, A1:C3, 2, 0)"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=VLOOKUP(9, A1:C3, 2, 0)"
+    },
+    "sha256:c434ace9cfd6c8de8ddeeff62c9fbf931027e9ec98544382b7334448f7344570": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "error",
+              "sentinel": "#N/A"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "e",
+              "raw_xml": {
+                "t": "e",
+                "formula_text": "VLOOKUP(9, A1:C3, 5, 0)"
+              }
+            },
+            "formula": "VLOOKUP(9, A1:C3, 5, 0)"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=VLOOKUP(9, A1:C3, 5, 0)"
+    },
+    "sha256:3ddcb3ff38db7fb4f5229149ff735395d123bd9c0562bcf002defe5c43f48e7f": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "error",
+              "sentinel": "#N/A"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "e",
+              "raw_xml": {
+                "t": "e",
+                "cm": 1,
+                "formula_text": "VLOOKUP(9, A1:C3, {2,3}, 0)",
+                "formula_array_marker": "array",
+                "formula_array_ref": "AA1"
+              },
+              "saved_as_array": true
+            },
+            "formula": "VLOOKUP(9, A1:C3, {2,3}, 0)"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=VLOOKUP(9, A1:C3, {2,3}, 0)"
+    },
+    "sha256:41fb407bbdd5218bfc9d0c35076372feab95ce2e33274b035233f453a2d95a7f": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "error",
+              "sentinel": "#N/A"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "e",
+              "raw_xml": {
+                "t": "e",
+                "formula_text": "VLOOKUP(9, A1:C3, 2, 0)"
+              }
+            },
+            "formula": "VLOOKUP(9, A1:C3, 2, 0)"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=VLOOKUP(9, A1:C3, 2, 0)"
+    },
+    "sha256:37f02c43690af1bf94da603a5b426122a93299429453a7d03e998f50a3d235e3": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "error",
+              "sentinel": "#N/A"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "e",
+              "raw_xml": {
+                "t": "e",
+                "formula_text": "VLOOKUP(9, A1:C3, 5, 0)"
+              }
+            },
+            "formula": "VLOOKUP(9, A1:C3, 5, 0)"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=VLOOKUP(9, A1:C3, 5, 0)"
+    },
+    "sha256:8b5960735c9b928c6be4e1eb9401e842f4128f087afeeb05c8924178b0c2c110": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "error",
+              "sentinel": "#N/A"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "e",
+              "raw_xml": {
+                "t": "e",
+                "cm": 1,
+                "formula_text": "VLOOKUP(9, A1:C3, {2,3}, 0)",
+                "formula_array_marker": "array",
+                "formula_array_ref": "AA1"
+              },
+              "saved_as_array": true
+            },
+            "formula": "VLOOKUP(9, A1:C3, {2,3}, 0)"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=VLOOKUP(9, A1:C3, {2,3}, 0)"
+    },
+    "sha256:a5b8990f8ab3ca06e0d1931fc12d2a2eea06391cb28be34ab14b6069ee3f3534": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "b"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "s",
+              "raw_xml": {
+                "t": "str",
+                "formula_text": "VLOOKUP(E1, A1:C3, 2, 0)"
+              }
+            },
+            "formula": "VLOOKUP(E1, A1:C3, 2, 0)"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=VLOOKUP(E1, A1:C3, 2, 0)"
+    },
+    "sha256:9cf6ade2e65d2e3728e3e714fc84e054ed7655cfeaf4712a0dbb2eac7709284b": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "error",
+              "sentinel": "#REF!"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "e",
+              "raw_xml": {
+                "t": "e",
+                "formula_text": "VLOOKUP(E1, A1:C3, 5, 0)"
+              }
+            },
+            "formula": "VLOOKUP(E1, A1:C3, 5, 0)"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=VLOOKUP(E1, A1:C3, 5, 0)"
+    },
+    "sha256:6a2140875312b788e38e37a74c5f0b85b2730f52aafd8ca69a59f33bf4b91b69": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "b"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "s",
+              "raw_xml": {
+                "t": "str",
+                "cm": 1,
+                "formula_text": "VLOOKUP(E1, A1:C3, {2,3}, 0)",
+                "formula_array_marker": "array",
+                "formula_array_ref": "AA1:AB1"
+              },
+              "saved_as_array": true
+            },
+            "formula": "VLOOKUP(E1, A1:C3, {2,3}, 0)"
+          },
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "y"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "s",
+              "raw_xml": {
+                "t": "str"
+              }
+            }
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=VLOOKUP(E1, A1:C3, {2,3}, 0)"
+    },
+    "sha256:aaeb7ca006c7a3e73e6c559126f7e5d5ffad3fed9dbd03bb2ac3bee467ec43de": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "b"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "s",
+              "raw_xml": {
+                "t": "str",
+                "formula_text": "VLOOKUP(E1, A1:C3, 2, 0)"
+              }
+            },
+            "formula": "VLOOKUP(E1, A1:C3, 2, 0)"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=VLOOKUP(E1, A1:C3, 2, 0)"
+    },
+    "sha256:f8393192663631cb13074eaf5b6ee20240cd5cef5ebf9bd67bb974b2dbbc6ce8": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "error",
+              "sentinel": "#REF!"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "e",
+              "raw_xml": {
+                "t": "e",
+                "formula_text": "VLOOKUP(E1, A1:C3, 5, 0)"
+              }
+            },
+            "formula": "VLOOKUP(E1, A1:C3, 5, 0)"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=VLOOKUP(E1, A1:C3, 5, 0)"
+    },
+    "sha256:fb7ca5a6cace278ef0741ad7cf1f8c1af130e6aeff63843055fe9b5ce33dbe8c": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "b"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "s",
+              "raw_xml": {
+                "t": "str",
+                "cm": 1,
+                "formula_text": "VLOOKUP(E1, A1:C3, {2,3}, 0)",
+                "formula_array_marker": "array",
+                "formula_array_ref": "AA1:AB1"
+              },
+              "saved_as_array": true
+            },
+            "formula": "VLOOKUP(E1, A1:C3, {2,3}, 0)"
+          },
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "y"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "s",
+              "raw_xml": {
+                "t": "str"
+              }
+            }
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=VLOOKUP(E1, A1:C3, {2,3}, 0)"
+    },
+    "sha256:b6ae103d1553ca2a02d8b073479feae069ca8ed6b84ef1c3db52cb2b29d4c0a8": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "error",
+              "sentinel": "#N/A"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "e",
+              "raw_xml": {
+                "t": "e",
+                "formula_text": "VLOOKUP(E1, A1:C3, 2, 0)"
+              }
+            },
+            "formula": "VLOOKUP(E1, A1:C3, 2, 0)"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=VLOOKUP(E1, A1:C3, 2, 0)"
+    },
+    "sha256:95f2f456604cea360edea74bc8fc20871f2c8a91e9a9fb749365db995b828253": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "error",
+              "sentinel": "#N/A"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "e",
+              "raw_xml": {
+                "t": "e",
+                "formula_text": "VLOOKUP(E1, A1:C3, 5, 0)"
+              }
+            },
+            "formula": "VLOOKUP(E1, A1:C3, 5, 0)"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=VLOOKUP(E1, A1:C3, 5, 0)"
+    },
+    "sha256:58888e6a908e4d7879dd45f2f26509373e95b3f65057c6c6403be500454f01de": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "error",
+              "sentinel": "#N/A"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "e",
+              "raw_xml": {
+                "t": "e",
+                "cm": 1,
+                "formula_text": "VLOOKUP(E1, A1:C3, {2,3}, 0)",
+                "formula_array_marker": "array",
+                "formula_array_ref": "AA1"
+              },
+              "saved_as_array": true
+            },
+            "formula": "VLOOKUP(E1, A1:C3, {2,3}, 0)"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=VLOOKUP(E1, A1:C3, {2,3}, 0)"
+    },
+    "sha256:8bf82087b0d70e974fdc82047287c35a4c244310dc99b5bc267729d7ce5e142c": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "error",
+              "sentinel": "#N/A"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "e",
+              "raw_xml": {
+                "t": "e",
+                "formula_text": "VLOOKUP(E1, A1:C3, 2, 0)"
+              }
+            },
+            "formula": "VLOOKUP(E1, A1:C3, 2, 0)"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=VLOOKUP(E1, A1:C3, 2, 0)"
+    },
+    "sha256:b6ef3a727883e394876fe70bd31e712bb9178a9f0ab4c8f080733286ae2501a1": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "error",
+              "sentinel": "#N/A"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "e",
+              "raw_xml": {
+                "t": "e",
+                "formula_text": "VLOOKUP(E1, A1:C3, 5, 0)"
+              }
+            },
+            "formula": "VLOOKUP(E1, A1:C3, 5, 0)"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=VLOOKUP(E1, A1:C3, 5, 0)"
+    },
+    "sha256:c04a82d3c24c0b8371478004e42be7f54240d5f093e9939dcebc9ddc1e3b73a6": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "error",
+              "sentinel": "#N/A"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "e",
+              "raw_xml": {
+                "t": "e",
+                "cm": 1,
+                "formula_text": "VLOOKUP(E1, A1:C3, {2,3}, 0)",
+                "formula_array_marker": "array",
+                "formula_array_ref": "AA1"
+              },
+              "saved_as_array": true
+            },
+            "formula": "VLOOKUP(E1, A1:C3, {2,3}, 0)"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=VLOOKUP(E1, A1:C3, {2,3}, 0)"
+    },
+    "sha256:5de9ffa0998fd5d142e9dd97518de13a3fc7798428758ce263cf8bd255eed22d": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "error",
+              "sentinel": "#N/A"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "e",
+              "raw_xml": {
+                "t": "e",
+                "formula_text": "VLOOKUP(E1, A1:C3, 2, 0)"
+              }
+            },
+            "formula": "VLOOKUP(E1, A1:C3, 2, 0)"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=VLOOKUP(E1, A1:C3, 2, 0)"
+    },
+    "sha256:c6ecd0cc7ed76634e6dd2ffa53a4ca5b8fe69389f209c57465ea8310353fa69f": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "error",
+              "sentinel": "#N/A"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "e",
+              "raw_xml": {
+                "t": "e",
+                "formula_text": "VLOOKUP(E1, A1:C3, 2, 0)"
+              }
+            },
+            "formula": "VLOOKUP(E1, A1:C3, 2, 0)"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=VLOOKUP(E1, A1:C3, 2, 0)"
+    },
+    "sha256:bc8bc3422ecb2cd1b1c3ddc25c62adb23373ebccbc8095c608016433f419703d": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "error",
+              "sentinel": "#N/A"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "e",
+              "raw_xml": {
+                "t": "e",
+                "formula_text": "VLOOKUP(E1, A1:C3, 2, 0)"
+              }
+            },
+            "formula": "VLOOKUP(E1, A1:C3, 2, 0)"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=VLOOKUP(E1, A1:C3, 2, 0)"
+    },
+    "sha256:ff9ccfedbc4ff16ff88bba1e995143bda027a8e41f53e0203934a0e732c8ded6": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "error",
+              "sentinel": "#N/A"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "e",
+              "raw_xml": {
+                "t": "e",
+                "formula_text": "VLOOKUP(E1, A1:C3, 2, 0)"
+              }
+            },
+            "formula": "VLOOKUP(E1, A1:C3, 2, 0)"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=VLOOKUP(E1, A1:C3, 2, 0)"
+    },
+    "sha256:42f9e205ff087d7a03f8e3004aaf2ace4df1a320c96737e13f93fed4ee3e268a": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "b"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "s",
+              "raw_xml": {
+                "t": "str",
+                "formula_text": "VLOOKUP(2, A1:C3, 2, TRUE)"
+              }
+            },
+            "formula": "VLOOKUP(2, A1:C3, 2, TRUE)"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=VLOOKUP(2, A1:C3, 2, TRUE)"
+    },
+    "sha256:37d9a5d1c380cf7c3593160ef0a008f8dbcd8c7d302487165bf46fc4b86a9509": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "error",
+              "sentinel": "#REF!"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "e",
+              "raw_xml": {
+                "t": "e",
+                "formula_text": "VLOOKUP(2, A1:C3, 5, TRUE)"
+              }
+            },
+            "formula": "VLOOKUP(2, A1:C3, 5, TRUE)"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=VLOOKUP(2, A1:C3, 5, TRUE)"
+    },
+    "sha256:1db730a8adbf3c5790c5238cf228faf124ac688761923438805317977e1e65e0": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "b"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "s",
+              "raw_xml": {
+                "t": "str",
+                "cm": 1,
+                "formula_text": "VLOOKUP(2, A1:C3, {2,3}, TRUE)",
+                "formula_array_marker": "array",
+                "formula_array_ref": "AA1:AB1"
+              },
+              "saved_as_array": true
+            },
+            "formula": "VLOOKUP(2, A1:C3, {2,3}, TRUE)"
+          },
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "y"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "s",
+              "raw_xml": {
+                "t": "str"
+              }
+            }
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=VLOOKUP(2, A1:C3, {2,3}, TRUE)"
+    },
+    "sha256:e4441ae5291d83b62c98ee79c9a11f63f20902c4381f68543c6c030b6a04243c": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "b"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "s",
+              "raw_xml": {
+                "t": "str",
+                "formula_text": "VLOOKUP(2, A1:C3, 2, TRUE)"
+              }
+            },
+            "formula": "VLOOKUP(2, A1:C3, 2, TRUE)"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=VLOOKUP(2, A1:C3, 2, TRUE)"
+    },
+    "sha256:8b1afbed4925ecf2726d1aa50b0240b45e1122b1b53b607cbe11a9354e56619b": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "error",
+              "sentinel": "#REF!"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "e",
+              "raw_xml": {
+                "t": "e",
+                "formula_text": "VLOOKUP(2, A1:C3, 5, TRUE)"
+              }
+            },
+            "formula": "VLOOKUP(2, A1:C3, 5, TRUE)"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=VLOOKUP(2, A1:C3, 5, TRUE)"
+    },
+    "sha256:3e4a11d86e17a8b1b07ffbecec0fd356c3de52d063de94cef2440e3cb71e19fc": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "b"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "s",
+              "raw_xml": {
+                "t": "str",
+                "cm": 1,
+                "formula_text": "VLOOKUP(2, A1:C3, {2,3}, TRUE)",
+                "formula_array_marker": "array",
+                "formula_array_ref": "AA1:AB1"
+              },
+              "saved_as_array": true
+            },
+            "formula": "VLOOKUP(2, A1:C3, {2,3}, TRUE)"
+          },
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "y"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "s",
+              "raw_xml": {
+                "t": "str"
+              }
+            }
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=VLOOKUP(2, A1:C3, {2,3}, TRUE)"
+    },
+    "sha256:28f15dde07886676e26e18decdc4c36a3b972447003a128a1c7bf2dfd5aa4f93": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "c"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "s",
+              "raw_xml": {
+                "t": "str",
+                "formula_text": "VLOOKUP(9, A1:C3, 2, TRUE)"
+              }
+            },
+            "formula": "VLOOKUP(9, A1:C3, 2, TRUE)"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=VLOOKUP(9, A1:C3, 2, TRUE)"
+    },
+    "sha256:32fcbf6660e7349f8012893eca57e4ba563b39aaaca577ebbf156a9996466b96": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "error",
+              "sentinel": "#REF!"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "e",
+              "raw_xml": {
+                "t": "e",
+                "formula_text": "VLOOKUP(9, A1:C3, 5, TRUE)"
+              }
+            },
+            "formula": "VLOOKUP(9, A1:C3, 5, TRUE)"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=VLOOKUP(9, A1:C3, 5, TRUE)"
+    },
+    "sha256:7425df14afa18bd2bbc132d328b53bae54eb44b00299b9e066f86fccdbc8e4ba": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "c"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "s",
+              "raw_xml": {
+                "t": "str",
+                "cm": 1,
+                "formula_text": "VLOOKUP(9, A1:C3, {2,3}, TRUE)",
+                "formula_array_marker": "array",
+                "formula_array_ref": "AA1:AB1"
+              },
+              "saved_as_array": true
+            },
+            "formula": "VLOOKUP(9, A1:C3, {2,3}, TRUE)"
+          },
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "z"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "s",
+              "raw_xml": {
+                "t": "str"
+              }
+            }
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=VLOOKUP(9, A1:C3, {2,3}, TRUE)"
+    },
+    "sha256:872562b82c3e1bcc0fe94078874cb3aeb8be6b8619ba42040a3e7c61fa62236a": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "b"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "s",
+              "raw_xml": {
+                "t": "str",
+                "formula_text": "VLOOKUP(9, A1:C3, 2, TRUE)"
+              }
+            },
+            "formula": "VLOOKUP(9, A1:C3, 2, TRUE)"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=VLOOKUP(9, A1:C3, 2, TRUE)"
+    },
+    "sha256:f48bbf188d4f1b2b013609b69096ce0b57b805755b771f4fb363ebd0e43d711f": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "error",
+              "sentinel": "#REF!"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "e",
+              "raw_xml": {
+                "t": "e",
+                "formula_text": "VLOOKUP(9, A1:C3, 5, TRUE)"
+              }
+            },
+            "formula": "VLOOKUP(9, A1:C3, 5, TRUE)"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=VLOOKUP(9, A1:C3, 5, TRUE)"
+    },
+    "sha256:cca90a1759b40170ad9e9bec13827a34888fd5adf7a7588bd362be25aaf4a5fb": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "b"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "s",
+              "raw_xml": {
+                "t": "str",
+                "cm": 1,
+                "formula_text": "VLOOKUP(9, A1:C3, {2,3}, TRUE)",
+                "formula_array_marker": "array",
+                "formula_array_ref": "AA1:AB1"
+              },
+              "saved_as_array": true
+            },
+            "formula": "VLOOKUP(9, A1:C3, {2,3}, TRUE)"
+          },
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "y"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "s",
+              "raw_xml": {
+                "t": "str"
+              }
+            }
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=VLOOKUP(9, A1:C3, {2,3}, TRUE)"
+    },
+    "sha256:f86114b7e6685a37318a5beffced7c23580d8d53ff2fc209f7836dea1346da41": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "b"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "s",
+              "raw_xml": {
+                "t": "str",
+                "formula_text": "VLOOKUP(E1, A1:C3, 2, TRUE)"
+              }
+            },
+            "formula": "VLOOKUP(E1, A1:C3, 2, TRUE)"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=VLOOKUP(E1, A1:C3, 2, TRUE)"
+    },
+    "sha256:043b585cadcd945fac8869dc08fd7b0fff548616929cef0b00263bf834193b48": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "error",
+              "sentinel": "#REF!"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "e",
+              "raw_xml": {
+                "t": "e",
+                "formula_text": "VLOOKUP(E1, A1:C3, 5, TRUE)"
+              }
+            },
+            "formula": "VLOOKUP(E1, A1:C3, 5, TRUE)"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=VLOOKUP(E1, A1:C3, 5, TRUE)"
+    },
+    "sha256:61eab33877b2201a57d3b2504fee9f671564fe28511497eac50cd1473258f5e8": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "b"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "s",
+              "raw_xml": {
+                "t": "str",
+                "cm": 1,
+                "formula_text": "VLOOKUP(E1, A1:C3, {2,3}, TRUE)",
+                "formula_array_marker": "array",
+                "formula_array_ref": "AA1:AB1"
+              },
+              "saved_as_array": true
+            },
+            "formula": "VLOOKUP(E1, A1:C3, {2,3}, TRUE)"
+          },
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "y"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "s",
+              "raw_xml": {
+                "t": "str"
+              }
+            }
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=VLOOKUP(E1, A1:C3, {2,3}, TRUE)"
+    },
+    "sha256:3ecf6a2bf6fab9e4d886ce78aa3997cafd1cfcf8bbce4c14cf6631cd9ac454c2": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "b"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "s",
+              "raw_xml": {
+                "t": "str",
+                "formula_text": "VLOOKUP(E1, A1:C3, 2, TRUE)"
+              }
+            },
+            "formula": "VLOOKUP(E1, A1:C3, 2, TRUE)"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=VLOOKUP(E1, A1:C3, 2, TRUE)"
+    },
+    "sha256:1ba6baef23d69ab6dd628247e570987a43ae06fce3de6716e9f67a55375fa65e": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "error",
+              "sentinel": "#REF!"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "e",
+              "raw_xml": {
+                "t": "e",
+                "formula_text": "VLOOKUP(E1, A1:C3, 5, TRUE)"
+              }
+            },
+            "formula": "VLOOKUP(E1, A1:C3, 5, TRUE)"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=VLOOKUP(E1, A1:C3, 5, TRUE)"
+    },
+    "sha256:778dd04b3b175fe7ce10105305e13f7a0424b39995a76f3774613a83dc3149ad": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "b"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "s",
+              "raw_xml": {
+                "t": "str",
+                "cm": 1,
+                "formula_text": "VLOOKUP(E1, A1:C3, {2,3}, TRUE)",
+                "formula_array_marker": "array",
+                "formula_array_ref": "AA1:AB1"
+              },
+              "saved_as_array": true
+            },
+            "formula": "VLOOKUP(E1, A1:C3, {2,3}, TRUE)"
+          },
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "y"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "s",
+              "raw_xml": {
+                "t": "str"
+              }
+            }
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=VLOOKUP(E1, A1:C3, {2,3}, TRUE)"
+    },
+    "sha256:9c2b7917ef8925005e70d60309b9046bb3c6d8341668803cede13dd33ca0ef2f": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "c"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "s",
+              "raw_xml": {
+                "t": "str",
+                "formula_text": "VLOOKUP(E1, A1:C3, 2, TRUE)"
+              }
+            },
+            "formula": "VLOOKUP(E1, A1:C3, 2, TRUE)"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=VLOOKUP(E1, A1:C3, 2, TRUE)"
+    },
+    "sha256:e90974c873caa4c981f6839fb23dd77cd66956dd242d46f801bbd85dad2f2b26": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "error",
+              "sentinel": "#REF!"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "e",
+              "raw_xml": {
+                "t": "e",
+                "formula_text": "VLOOKUP(E1, A1:C3, 5, TRUE)"
+              }
+            },
+            "formula": "VLOOKUP(E1, A1:C3, 5, TRUE)"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=VLOOKUP(E1, A1:C3, 5, TRUE)"
+    },
+    "sha256:5f312f224dffea453e9c8b7ba2d6abb25d049fb972baf53f4a0091ce0f1192ed": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "c"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "s",
+              "raw_xml": {
+                "t": "str",
+                "cm": 1,
+                "formula_text": "VLOOKUP(E1, A1:C3, {2,3}, TRUE)",
+                "formula_array_marker": "array",
+                "formula_array_ref": "AA1:AB1"
+              },
+              "saved_as_array": true
+            },
+            "formula": "VLOOKUP(E1, A1:C3, {2,3}, TRUE)"
+          },
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "z"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "s",
+              "raw_xml": {
+                "t": "str"
+              }
+            }
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=VLOOKUP(E1, A1:C3, {2,3}, TRUE)"
+    },
+    "sha256:403a735f5a7d37ec4eb886757a0ca501cc332d1b4a25eca82936252da819fea9": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "b"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "s",
+              "raw_xml": {
+                "t": "str",
+                "formula_text": "VLOOKUP(E1, A1:C3, 2, TRUE)"
+              }
+            },
+            "formula": "VLOOKUP(E1, A1:C3, 2, TRUE)"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=VLOOKUP(E1, A1:C3, 2, TRUE)"
+    },
+    "sha256:f7486a37dedca3c4e875385150ce3947e9512758a2f3abe3b2f553cd3565c883": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "error",
+              "sentinel": "#REF!"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "e",
+              "raw_xml": {
+                "t": "e",
+                "formula_text": "VLOOKUP(E1, A1:C3, 5, TRUE)"
+              }
+            },
+            "formula": "VLOOKUP(E1, A1:C3, 5, TRUE)"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=VLOOKUP(E1, A1:C3, 5, TRUE)"
+    },
+    "sha256:2930569e732e73cfe38fbc281b4e1b78201f7321f2dd3b4c935dbf5459be193c": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "b"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "s",
+              "raw_xml": {
+                "t": "str",
+                "cm": 1,
+                "formula_text": "VLOOKUP(E1, A1:C3, {2,3}, TRUE)",
+                "formula_array_marker": "array",
+                "formula_array_ref": "AA1:AB1"
+              },
+              "saved_as_array": true
+            },
+            "formula": "VLOOKUP(E1, A1:C3, {2,3}, TRUE)"
+          },
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "y"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "s",
+              "raw_xml": {
+                "t": "str"
+              }
+            }
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=VLOOKUP(E1, A1:C3, {2,3}, TRUE)"
+    },
+    "sha256:de10aefa64a57e1c9789dea753927bebe9a12220a8d9a5eac6b170bf3df93f5f": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "error",
+              "sentinel": "#N/A"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "e",
+              "raw_xml": {
+                "t": "e",
+                "formula_text": "VLOOKUP(E1, A1:C3, 2, TRUE)"
+              }
+            },
+            "formula": "VLOOKUP(E1, A1:C3, 2, TRUE)"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=VLOOKUP(E1, A1:C3, 2, TRUE)"
+    },
+    "sha256:d9d0c3bed2a2d7f8fd482c6794668b4041e308e7a741ffbd46b2ecd010890b76": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "error",
+              "sentinel": "#N/A"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "e",
+              "raw_xml": {
+                "t": "e",
+                "formula_text": "VLOOKUP(E1, A1:C3, 2, TRUE)"
+              }
+            },
+            "formula": "VLOOKUP(E1, A1:C3, 2, TRUE)"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=VLOOKUP(E1, A1:C3, 2, TRUE)"
+    },
+    "sha256:5b04ad90e25c545fb2bfdad5fb47f09d4f8ba4972170f7e383733904bcc32704": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "error",
+              "sentinel": "#N/A"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "e",
+              "raw_xml": {
+                "t": "e",
+                "formula_text": "VLOOKUP(E1, A1:C3, 2, TRUE)"
+              }
+            },
+            "formula": "VLOOKUP(E1, A1:C3, 2, TRUE)"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=VLOOKUP(E1, A1:C3, 2, TRUE)"
+    },
+    "sha256:4eae82c4de5037f09f306bd0920adabdb41373f32bdb4a1b6e7c5589889d02e7": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "error",
+              "sentinel": "#N/A"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "e",
+              "raw_xml": {
+                "t": "e",
+                "formula_text": "VLOOKUP(E1, A1:C3, 2, TRUE)"
+              }
+            },
+            "formula": "VLOOKUP(E1, A1:C3, 2, TRUE)"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=VLOOKUP(E1, A1:C3, 2, TRUE)"
+    },
+    "sha256:705186c402aa77f8443fc641d080ea7b0d268d8b7229305be1d216e14e3814fd": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "b"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "s",
+              "raw_xml": {
+                "t": "str",
+                "formula_text": "VLOOKUP(2, A1:C3, 2)"
+              }
+            },
+            "formula": "VLOOKUP(2, A1:C3, 2)"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=VLOOKUP(2, A1:C3, 2)"
+    },
+    "sha256:be8868c1d0981a78d70a5d1cf49c16d3480ddec55ce097f321d84f05e57eb6c3": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "error",
+              "sentinel": "#REF!"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "e",
+              "raw_xml": {
+                "t": "e",
+                "formula_text": "VLOOKUP(2, A1:C3, 5)"
+              }
+            },
+            "formula": "VLOOKUP(2, A1:C3, 5)"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=VLOOKUP(2, A1:C3, 5)"
+    },
+    "sha256:892a4884fbca2fc537b59875f1319385d6b898bfda05f76f3a7abf77ce403470": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "b"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "s",
+              "raw_xml": {
+                "t": "str",
+                "cm": 1,
+                "formula_text": "VLOOKUP(2, A1:C3, {2,3})",
+                "formula_array_marker": "array",
+                "formula_array_ref": "AA1:AB1"
+              },
+              "saved_as_array": true
+            },
+            "formula": "VLOOKUP(2, A1:C3, {2,3})"
+          },
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "y"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "s",
+              "raw_xml": {
+                "t": "str"
+              }
+            }
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=VLOOKUP(2, A1:C3, {2,3})"
+    },
+    "sha256:f892844c51c996170deeb7812a41d3c3ade9c2f2a86a5be6496222a6816d84c9": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "b"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "s",
+              "raw_xml": {
+                "t": "str",
+                "formula_text": "VLOOKUP(2, A1:C3, 2)"
+              }
+            },
+            "formula": "VLOOKUP(2, A1:C3, 2)"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=VLOOKUP(2, A1:C3, 2)"
+    },
+    "sha256:128cdd611c0d51586da126aea7878c119162831efe50f61ec336aa61ff2b406c": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "error",
+              "sentinel": "#REF!"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "e",
+              "raw_xml": {
+                "t": "e",
+                "formula_text": "VLOOKUP(2, A1:C3, 5)"
+              }
+            },
+            "formula": "VLOOKUP(2, A1:C3, 5)"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=VLOOKUP(2, A1:C3, 5)"
+    },
+    "sha256:937119f639debca969879c1be0430cc6492fd6034d339d476d1788a4e6ef9f1a": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "b"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "s",
+              "raw_xml": {
+                "t": "str",
+                "cm": 1,
+                "formula_text": "VLOOKUP(2, A1:C3, {2,3})",
+                "formula_array_marker": "array",
+                "formula_array_ref": "AA1:AB1"
+              },
+              "saved_as_array": true
+            },
+            "formula": "VLOOKUP(2, A1:C3, {2,3})"
+          },
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "y"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "s",
+              "raw_xml": {
+                "t": "str"
+              }
+            }
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=VLOOKUP(2, A1:C3, {2,3})"
+    },
+    "sha256:4f705b2f90e6d2cb341ca0d6654e48e1fc6fac33a7631705bf40a68657b9dce0": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "c"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "s",
+              "raw_xml": {
+                "t": "str",
+                "formula_text": "VLOOKUP(9, A1:C3, 2)"
+              }
+            },
+            "formula": "VLOOKUP(9, A1:C3, 2)"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=VLOOKUP(9, A1:C3, 2)"
+    },
+    "sha256:7d216589872db81db137095269cfc3684aaaf8a3aac5efb55aa4860d8ee346b4": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "error",
+              "sentinel": "#REF!"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "e",
+              "raw_xml": {
+                "t": "e",
+                "formula_text": "VLOOKUP(9, A1:C3, 5)"
+              }
+            },
+            "formula": "VLOOKUP(9, A1:C3, 5)"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=VLOOKUP(9, A1:C3, 5)"
+    },
+    "sha256:664d982e16e03aab4d857664293375f5c54e1af733b16de303806a21b33eb2b8": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "c"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "s",
+              "raw_xml": {
+                "t": "str",
+                "cm": 1,
+                "formula_text": "VLOOKUP(9, A1:C3, {2,3})",
+                "formula_array_marker": "array",
+                "formula_array_ref": "AA1:AB1"
+              },
+              "saved_as_array": true
+            },
+            "formula": "VLOOKUP(9, A1:C3, {2,3})"
+          },
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "z"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "s",
+              "raw_xml": {
+                "t": "str"
+              }
+            }
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=VLOOKUP(9, A1:C3, {2,3})"
+    },
+    "sha256:b057240e217eadc5cb1e614f9e68c24a2fb5d3c1693a797f1bd2b62df1233efe": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "b"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "s",
+              "raw_xml": {
+                "t": "str",
+                "formula_text": "VLOOKUP(9, A1:C3, 2)"
+              }
+            },
+            "formula": "VLOOKUP(9, A1:C3, 2)"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=VLOOKUP(9, A1:C3, 2)"
+    },
+    "sha256:555c34fd49f44bbb9224492ce92f800e333caa801c3208488626ce049ec9cc73": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "error",
+              "sentinel": "#REF!"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "e",
+              "raw_xml": {
+                "t": "e",
+                "formula_text": "VLOOKUP(9, A1:C3, 5)"
+              }
+            },
+            "formula": "VLOOKUP(9, A1:C3, 5)"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=VLOOKUP(9, A1:C3, 5)"
+    },
+    "sha256:c90b46457863b5d21252860da78dc5ad3b247da21833dafa27602835c63b04f8": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "b"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "s",
+              "raw_xml": {
+                "t": "str",
+                "cm": 1,
+                "formula_text": "VLOOKUP(9, A1:C3, {2,3})",
+                "formula_array_marker": "array",
+                "formula_array_ref": "AA1:AB1"
+              },
+              "saved_as_array": true
+            },
+            "formula": "VLOOKUP(9, A1:C3, {2,3})"
+          },
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "y"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "s",
+              "raw_xml": {
+                "t": "str"
+              }
+            }
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=VLOOKUP(9, A1:C3, {2,3})"
+    },
+    "sha256:61f9142ac3d8692d11e90abff536d3f45ca5237c5bbd7c8bd0a1270cf6626903": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "b"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "s",
+              "raw_xml": {
+                "t": "str",
+                "formula_text": "VLOOKUP(E1, A1:C3, 2)"
+              }
+            },
+            "formula": "VLOOKUP(E1, A1:C3, 2)"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=VLOOKUP(E1, A1:C3, 2)"
+    },
+    "sha256:55d204b58886233e84bc4ffa41209d4c05ec082f57b7a9a679599176183a55ee": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "error",
+              "sentinel": "#REF!"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "e",
+              "raw_xml": {
+                "t": "e",
+                "formula_text": "VLOOKUP(E1, A1:C3, 5)"
+              }
+            },
+            "formula": "VLOOKUP(E1, A1:C3, 5)"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=VLOOKUP(E1, A1:C3, 5)"
+    },
+    "sha256:50725627e5ae6f19e46cb15b63dc0f5ad67ed76cf1e9e55efbdfa55a46855d77": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "b"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "s",
+              "raw_xml": {
+                "t": "str",
+                "cm": 1,
+                "formula_text": "VLOOKUP(E1, A1:C3, {2,3})",
+                "formula_array_marker": "array",
+                "formula_array_ref": "AA1:AB1"
+              },
+              "saved_as_array": true
+            },
+            "formula": "VLOOKUP(E1, A1:C3, {2,3})"
+          },
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "y"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "s",
+              "raw_xml": {
+                "t": "str"
+              }
+            }
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=VLOOKUP(E1, A1:C3, {2,3})"
+    },
+    "sha256:3f734996bfe4b8353aa876aca3eda41015873909f6cf30ec406f33b5f1136643": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "b"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "s",
+              "raw_xml": {
+                "t": "str",
+                "formula_text": "VLOOKUP(E1, A1:C3, 2)"
+              }
+            },
+            "formula": "VLOOKUP(E1, A1:C3, 2)"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=VLOOKUP(E1, A1:C3, 2)"
+    },
+    "sha256:cb9e22ad898f58fa673d824f65a8fbc6eff8094d86d13803e6ba166e270d79e2": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "error",
+              "sentinel": "#REF!"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "e",
+              "raw_xml": {
+                "t": "e",
+                "formula_text": "VLOOKUP(E1, A1:C3, 5)"
+              }
+            },
+            "formula": "VLOOKUP(E1, A1:C3, 5)"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=VLOOKUP(E1, A1:C3, 5)"
+    },
+    "sha256:19d42bdaaead6fd5f7b9657adf7e0f85a0bda11ca339fa2605b9a6ee244e5148": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "b"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "s",
+              "raw_xml": {
+                "t": "str",
+                "cm": 1,
+                "formula_text": "VLOOKUP(E1, A1:C3, {2,3})",
+                "formula_array_marker": "array",
+                "formula_array_ref": "AA1:AB1"
+              },
+              "saved_as_array": true
+            },
+            "formula": "VLOOKUP(E1, A1:C3, {2,3})"
+          },
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "y"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "s",
+              "raw_xml": {
+                "t": "str"
+              }
+            }
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=VLOOKUP(E1, A1:C3, {2,3})"
+    },
+    "sha256:b77bc47f6a112922e98517d804868e78539d44cd79a89cf92482ea2c043bc891": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "c"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "s",
+              "raw_xml": {
+                "t": "str",
+                "formula_text": "VLOOKUP(E1, A1:C3, 2)"
+              }
+            },
+            "formula": "VLOOKUP(E1, A1:C3, 2)"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=VLOOKUP(E1, A1:C3, 2)"
+    },
+    "sha256:b9c869e0959d0b70310a19066c74c3e6fd0b5ddee3c8166c38b6934d0b2cf87a": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "error",
+              "sentinel": "#REF!"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "e",
+              "raw_xml": {
+                "t": "e",
+                "formula_text": "VLOOKUP(E1, A1:C3, 5)"
+              }
+            },
+            "formula": "VLOOKUP(E1, A1:C3, 5)"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=VLOOKUP(E1, A1:C3, 5)"
+    },
+    "sha256:cc67493005d805f54acaeef4b143b71c33d485959edf6d8c42924d24f77b6974": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "c"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "s",
+              "raw_xml": {
+                "t": "str",
+                "cm": 1,
+                "formula_text": "VLOOKUP(E1, A1:C3, {2,3})",
+                "formula_array_marker": "array",
+                "formula_array_ref": "AA1:AB1"
+              },
+              "saved_as_array": true
+            },
+            "formula": "VLOOKUP(E1, A1:C3, {2,3})"
+          },
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "z"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "s",
+              "raw_xml": {
+                "t": "str"
+              }
+            }
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=VLOOKUP(E1, A1:C3, {2,3})"
+    },
+    "sha256:9eacd47639e56c26c7e691cd1a735ed014b9a81c4c6b60144d6192f3f9ba3192": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "b"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "s",
+              "raw_xml": {
+                "t": "str",
+                "formula_text": "VLOOKUP(E1, A1:C3, 2)"
+              }
+            },
+            "formula": "VLOOKUP(E1, A1:C3, 2)"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=VLOOKUP(E1, A1:C3, 2)"
+    },
+    "sha256:8c6e8008afeb76b288bb72e65bb89ff069fc6c81161f90635b36b79b1b6ccc92": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "error",
+              "sentinel": "#REF!"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "e",
+              "raw_xml": {
+                "t": "e",
+                "formula_text": "VLOOKUP(E1, A1:C3, 5)"
+              }
+            },
+            "formula": "VLOOKUP(E1, A1:C3, 5)"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=VLOOKUP(E1, A1:C3, 5)"
+    },
+    "sha256:bead7c2fe1b9bdeb8d6f8ea8a9815136b7e1a8ff68e3a67d7721ff98689b97cb": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "b"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "s",
+              "raw_xml": {
+                "t": "str",
+                "cm": 1,
+                "formula_text": "VLOOKUP(E1, A1:C3, {2,3})",
+                "formula_array_marker": "array",
+                "formula_array_ref": "AA1:AB1"
+              },
+              "saved_as_array": true
+            },
+            "formula": "VLOOKUP(E1, A1:C3, {2,3})"
+          },
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "y"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "s",
+              "raw_xml": {
+                "t": "str"
+              }
+            }
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=VLOOKUP(E1, A1:C3, {2,3})"
+    },
+    "sha256:6ccb7d07c5aa1af8f33d2a2270b1ebe2143e2244675886af450643aa54456c52": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "error",
+              "sentinel": "#N/A"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "e",
+              "raw_xml": {
+                "t": "e",
+                "formula_text": "VLOOKUP(E1, A1:C3, 2)"
+              }
+            },
+            "formula": "VLOOKUP(E1, A1:C3, 2)"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=VLOOKUP(E1, A1:C3, 2)"
+    },
+    "sha256:36f0b7477da481aeffc19f3fc1d1147e9c2131c466a4243733e95c90130967ef": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "error",
+              "sentinel": "#N/A"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "e",
+              "raw_xml": {
+                "t": "e",
+                "formula_text": "VLOOKUP(E1, A1:C3, 2)"
+              }
+            },
+            "formula": "VLOOKUP(E1, A1:C3, 2)"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=VLOOKUP(E1, A1:C3, 2)"
+    },
+    "sha256:2c031b11824bffa6947f51fb3f86eea5673ce0577468311fc49b457425ee9c26": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "error",
+              "sentinel": "#N/A"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "e",
+              "raw_xml": {
+                "t": "e",
+                "formula_text": "VLOOKUP(E1, A1:C3, 2)"
+              }
+            },
+            "formula": "VLOOKUP(E1, A1:C3, 2)"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=VLOOKUP(E1, A1:C3, 2)"
+    },
+    "sha256:4a0452ee2967984c9f325665e6c2894782f2816c46b0bde7693f239956a75abc": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "error",
+              "sentinel": "#N/A"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "e",
+              "raw_xml": {
+                "t": "e",
+                "formula_text": "VLOOKUP(E1, A1:C3, 2)"
+              }
+            },
+            "formula": "VLOOKUP(E1, A1:C3, 2)"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=VLOOKUP(E1, A1:C3, 2)"
+    }
+  }
+}

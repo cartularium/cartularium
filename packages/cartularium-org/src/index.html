@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>cartularium</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="A community of spreadsheet practitioners building everything we wished existed. References, catalogues, registries, tools.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,300..700,0..100&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="./styles.css">
+<script>
+// pre-paint theme to avoid FOUC
+(function () {
+  try {
+    var saved = localStorage.getItem("cartularium-theme");
+    if (saved) document.documentElement.setAttribute("data-theme", saved);
+  } catch (_) {}
+})();
+</script>
+</head>
+<body>
+
+{{{topbar}}}
+
+<main class="landing rise">
+
+  <section class="masthead">
+    <h1><span class="imp-mark"></span>cartularium</h1>
+    <div class="dek-block">
+      <p class="dek">A community of spreadsheet practitioners building everything we wished existed.</p>
+      <p class="meta-line">
+        <span>est. 2026</span>
+        <span class="sep">·</span>
+        <span>{{counts.volumesPublished}} volumes</span>
+        <span class="sep">·</span>
+        <span>1 instrument</span>
+        <span class="sep">·</span>
+        <span>open contributions</span>
+      </p>
+    </div>
+  </section>
+
+  <section class="colophon" id="colophon">
+    <div class="col">
+      <span class="k">community</span>
+      <span class="v"><a href="https://discord.gg/M9GKpPd">discord ↗</a></span>
+    </div>
+    <div class="col">
+      <span class="k">in encyclopaedia</span>
+      <span class="v"><a href="{{urls.wiki}}/functions">{{counts.functions}} function pages →</a></span>
+    </div>
+    <div class="col">
+      <span class="k">in catalogue</span>
+      <span class="v"><a href="{{urls.assay}}"><span class="accent">{{counts.divergences}}</span> divergences →</a></span>
+    </div>
+    <div class="col">
+      <span class="k">source</span>
+      <span class="v"><a href="https://github.com/cartularium/cartularium">github ↗</a></span>
+    </div>
+  </section>
+
+  <div class="section-head">
+    <div class="lhs">
+      <span class="num">i.</span>
+      <h2>The volumes</h2>
+    </div>
+    <span class="rhs">two published · one in development · one instrument</span>
+  </div>
+
+  <div class="volumes" id="volumes">
+
+    <a class="volume" href="{{urls.wiki}}">
+      <div class="row-1">
+        <span class="vol-meta"><span class="status-dot"></span>volume <span class="num">i</span> · encyclopaedia</span>
+        <span class="vol-domain">sheets.wiki<span class="arrow">→</span></span>
+      </div>
+      <div class="wordmark">sheets.wiki</div>
+        <p class="vol-blurb">An encyclopaedia of spreadsheet practice. Function reference, concept guides, blog.</p>
+      <div class="vol-chips">
+        <span class="chip category">functions</span>
+        <span class="chip category">concepts</span>
+        <span class="chip category">blog</span>
+      </div>
+      <div class="vol-stats">
+        <span><span class="k">function pages</span><span class="v">{{counts.functions}}</span></span>
+        <span><span class="k">concept pages</span><span class="v">—</span></span>
+        <span><span class="k">posts</span><span class="v">—</span></span>
+        <span><span class="k">last edit</span><span class="v">{{lastPublished}}</span></span>
+      </div>
+    </a>
+
+    <a class="volume" href="{{urls.assay}}">
+      <div class="row-1">
+        <span class="vol-meta"><span class="status-dot"></span>volume <span class="num">ii</span> · catalogue</span>
+        <span class="vol-domain">assay.sheets.wiki<span class="arrow">→</span></span>
+      </div>
+      <div class="wordmark">assay</div>
+      <p class="vol-blurb">A reference of where spreadsheet engines diverge. {{counts.divergences}} divergences across eight engines, indexed by cause, with the fixture tests behind every claim.</p>
+      <div class="vol-chips">
+        <span class="chip eng-gsheets">gsheets</span>
+        <span class="chip eng-excel">excel</span>
+        <span class="chip eng-lattice">lattice</span>
+        <span class="chip eng-ironcalc">ironcalc</span>
+        <span class="chip eng-hyperformula">hyperformula</span>
+        <span class="chip eng-libreoffice">libreoffice</span>
+        <span class="chip eng-formulas">formulas</span>
+        <span class="chip eng-pycel">pycel</span>
+      </div>
+      <div class="vol-stats">
+        <span><span class="k">divergences</span><span class="v">{{counts.divergences}}</span></span>
+        <span><span class="k">engines</span><span class="v">8</span></span>
+        <span><span class="k">causes</span><span class="v">—</span></span>
+        <span><span class="k">last seeded</span><span class="v">—</span></span>
+      </div>
+    </a>
+
+    <a class="volume volume-wip" href="https://formulary.dev">
+      <div class="row-1">
+        <span class="vol-meta"><span class="status-dot dev"></span>volume <span class="num">iii</span> · registry + tool</span>
+        <span class="vol-domain">formulary.dev<span class="arrow">→</span></span>
+      </div>
+      <div class="wordmark">formulary</div>
+      <p class="vol-blurb">A package manager and registry for named functions and lambdas: versioned, dependency-tracked, importable.</p>
+      <div class="vol-chips">
+        <span class="chip eng-gsheets">gsheets</span>
+        <span class="chip eng-excel">excel</span>
+        <span class="chip eng-lattice">lattice</span>
+        <span class="chip category">named functions</span>
+      </div>
+      <div class="vol-stats">
+        <span><span class="k">status</span><span class="v">in development</span></span>
+        <span><span class="k">packages</span><span class="v">—</span></span>
+        <span><span class="k">functions</span><span class="v">—</span></span>
+        <span><span class="k">first release</span><span class="v">tbd</span></span>
+      </div>
+    </a>
+
+    <a class="volume" href="https://latlang.org">
+      <div class="row-1">
+        <span class="vol-meta"><span class="status-dot dev"></span>instrument · standalone</span>
+        <span class="vol-domain">latlang.org<span class="arrow">→</span></span>
+      </div>
+      <div class="wordmark">lattice</div>
+          <p class="vol-blurb">A programming language with spreadsheet semantics: reactive cells, broad compatibility with other engines, and a compiled runtime.</p>
+      <div class="vol-chips">
+        <span class="chip eng-lattice">engine</span>
+        <span class="chip category">ide</span>
+        <span class="chip category">language</span>
+      </div>
+      <div class="vol-stats">
+        <span><span class="k">status</span><span class="v">in development</span></span>
+        <span><span class="k">version</span><span class="v">—</span></span>
+        <span><span class="k">stdlib fns</span><span class="v">—</span></span>
+        <span><span class="k">last build</span><span class="v">—</span></span>
+      </div>
+    </a>
+  </div>
+
+  <div class="section-head">
+    <div class="lhs">
+      <span class="num">ii.</span>
+      <h2>What cartularium is</h2>
+    </div>
+    <span class="rhs">a community, with volumes</span>
+  </div>
+
+  <section class="about" id="about">
+    <div class="prose">
+      <p class="lead">A community of spreadsheet practitioners collecting what we know into volumes anyone can cite.</p>
+      <p>Cartularium started as sheets.wiki: a durable place for the answers people kept retyping in Discord and Reddit threads, with a permalink and an edit history. The wiki kept running into questions it couldn't really answer on its own, mostly about how the engines disagree and whether somebody had already written the formula. Those gaps grew into the other volumes.</p>
+      <p>The name fits the shape. A <em>cartularium</em> in medieval Latin meant either a book of transcribed documents or the people who kept the book. Cartularium the imprint is both: the community writes down what it knows, and the community keeps the record current.</p>
+    </div>
+    <aside class="aside">
+      <span class="eyebrow">how to take part</span>
+      <ul class="aside-list">
+        <li><span class="bullet">a.</span><span>Edit a page on the wiki or the catalogue. Every page has a github edit link.</span></li>
+        <li><span class="bullet">b.</span><span>File a divergence to assay if you've seen two engines disagree on the same input.</span></li>
+        <li><span class="bullet">c.</span><span>Publish a package to formulary, once it ships.</span></li>
+        <li><span class="bullet">d.</span><span>Hang out on <a href="https://discord.gg/M9GKpPd">discord</a>. Most of the editing happens out loud there.</span></li>
+      </ul>
+    </aside>
+  </section>
+
+  <div class="section-head">
+    <div class="lhs">
+      <span class="num">iii.</span>
+      <h2>Recent across the imprint</h2>
+    </div>
+    <span class="rhs">newest first</span>
+  </div>
+
+  <!-- placeholder activity rows; replace with a generated feed once an aggregator exists -->
+  <section class="activity" id="activity">
+    {{#activity}}
+    <div class="row">
+      <span class="when">{{when}}</span>
+      <span class="where" {{#whereColor}}style="color: var(--{{whereColor}})"{{/whereColor}}>{{where}}</span>
+      <span class="what">{{{what}}}</span>
+      <span class="ref">{{#ref}}<a href="{{href}}">{{label}} →</a>{{/ref}}</span>
+    </div>
+    {{/activity}}
+  </section>
+
+  <footer class="site-footer">
+    <div class="col">
+      <h4>volumes</h4>
+      <ul>
+        <li><a href="{{urls.wiki}}">sheets.wiki<span class="gloss">encyclopaedia</span></a></li>
+        <li><a href="{{urls.assay}}">assay<span class="gloss">divergence catalogue</span></a></li>
+        <li><a href="https://formulary.dev">formulary<span class="gloss">registry, in dev</span></a></li>
+        <li><a href="https://latlang.org">lattice<span class="gloss">instrument, in dev</span></a></li>
+      </ul>
+    </div>
+    <div class="col">
+      <h4>community</h4>
+      <ul>
+        <li><a href="https://discord.gg/M9GKpPd">discord ↗</a></li>
+        <li><a href="https://github.com/cartularium/cartularium">contribute</a></li>
+        <li><a href="{{urls.wiki}}/about/style-guide">style guide</a></li>
+      </ul>
+    </div>
+    <div class="col">
+      <h4>data &amp; source</h4>
+      <ul>
+        <li><a href="https://github.com/cartularium/cartularium">github ↗</a></li>
+        <li><a href="mailto:hello@cartularium.org">hello@cartularium.org</a></li>
+      </ul>
+    </div>
+    <div class="imprint-line">
+      <span class="seal"><span class="dot-mark"></span>cartularium · est. 2026 · written by its readers</span>
+      <span>paper-and-ink · MIT for code · cc by 4.0 for written content</span>
+    </div>
+  </footer>
+</main>
+
+<script>
+(function () {
+  var root = document.documentElement;
+  function paint() {
+    var dark = root.getAttribute("data-theme") === "dark"
+      || (!root.getAttribute("data-theme") && matchMedia("(prefers-color-scheme: dark)").matches);
+    var btn = document.querySelector("[data-theme-toggle]");
+    if (btn) btn.textContent = dark ? "☀" : "☾";
+  }
+  paint();
+  document.addEventListener("click", function (e) {
+    var btn = e.target.closest && e.target.closest("[data-theme-toggle]");
+    if (!btn) return;
+    var next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
+    root.setAttribute("data-theme", next);
+    try { localStorage.setItem("cartularium-theme", next); } catch (_) {}
+    paint();
+  });
+})();
+</script>
+</body>
+</html>

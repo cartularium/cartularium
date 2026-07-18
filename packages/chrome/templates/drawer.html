@@ -1,0 +1,28 @@
+<div class="cartularium-drawer" data-cartularium-drawer hidden>
+  <div class="drawer-scrim" data-drawer-close></div>
+  <aside class="drawer" role="dialog" aria-label="navigation">
+    <input class="search-input" type="search" placeholder="{{search.placeholder}}" data-search-input />
+    <nav>
+      <span class="eyebrow">navigate</span>
+      <ul class="nav-list">
+        {{#nav.items}}
+        <li><a href="{{href}}">{{label}}</a></li>
+        {{/nav.items}}
+      </ul>
+    </nav>
+    {{#imprints.length}}
+    <nav>
+      <span class="eyebrow">other cartularium volumes</span>
+      <ul class="imprint-list">
+        {{#imprints}}
+        <li><a href="{{href}}">{{label}}<span class="sigil-int"></span></a></li>
+        {{/imprints}}
+      </ul>
+    </nav>
+    {{/imprints.length}}
+    <div class="theme-row">
+      <span>theme</span>
+      <button class="theme-btn" type="button" data-theme-toggle aria-label="toggle theme">{{theme.icon}}</button>
+    </div>
+  </aside>
+</div>

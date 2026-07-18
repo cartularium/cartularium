@@ -1,0 +1,15 @@
+id: DV-0223
+summary: "libreoffice: different error code — STANDARDIZE"
+cause: error-code
+category: value
+engines:
+  - libreoffice
+behavior:
+  signature: '{"error":"#DIV/0!"}'
+test-count: 1
+subjects:
+  - STANDARDIZE
+tests:
+  - STANDARDIZE/standardize-zero-stdev
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

@@ -1,0 +1,17 @@
+id: DV-0061
+summary: "formulas: different argument interpretation — ISNUMBER, N"
+cause: arg-semantics
+category: value
+engines:
+  - formulas
+behavior:
+  signature: "true"
+test-count: 2
+subjects:
+  - ISNUMBER
+  - N
+tests:
+  - ISNUMBER/isnumber-of-numeric-text
+  - N/n-of-true-info
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

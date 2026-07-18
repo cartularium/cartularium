@@ -1,0 +1,59 @@
+id: DV-0012
+summary: "hyperformula: different error code — DATEDIF, DATEVALUE, DAYS (+8 more)"
+cause: error-code
+category: value
+engines:
+  - hyperformula
+behavior:
+  signature: '{"error":"#VALUE!"}'
+test-count: 35
+subjects:
+  - DATEDIF
+  - DATEVALUE
+  - DAYS
+  - DAYS360
+  - ISOWEEKNUM
+  - NETWORKDAYS
+  - NETWORKDAYS.INTL
+  - SPLIT
+  - WEEKNUM
+  - WORKDAY
+  - WORKDAY.INTL
+tests:
+  - DATEDIF/datedif-years
+  - DATEDIF/datedif-months
+  - DATEDIF/datedif-days
+  - DATEDIF/datedif-md-day-only
+  - DATEDIF/datedif-ym-month-only
+  - DATEVALUE/datevalue-iso
+  - DAYS/days-basic
+  - DAYS/days-negative
+  - DAYS/days-same-day
+  - DAYS/days-across-year
+  - DAYS360/days360-basic
+  - DAYS360/days360-full-year
+  - DAYS360/days360-european-method
+  - ISOWEEKNUM/isoweeknum-mid-year
+  - ISOWEEKNUM/isoweeknum-jan-1-belongs-to-prev-year
+  - ISOWEEKNUM/isoweeknum-first-week
+  - NETWORKDAYS/networkdays-basic-week
+  - NETWORKDAYS/networkdays-across-weekend
+  - NETWORKDAYS/networkdays-reversed
+  - NETWORKDAYS.INTL/networkdays-intl-default-weekend
+  - NETWORKDAYS.INTL/networkdays-intl-numeric-weekend-sun-only
+  - NETWORKDAYS.INTL/networkdays-intl-string-weekend-fri-sat
+  - NETWORKDAYS.INTL/networkdays-intl-string-weekend-custom
+  - WEEKNUM/weeknum-default
+  - WEEKNUM/weeknum-monday-start
+  - WORKDAY/workday-forward
+  - WORKDAY/workday-backward
+  - WORKDAY/workday-zero-offset
+  - WORKDAY.INTL/workday-intl-default-weekend
+  - WORKDAY.INTL/workday-intl-numeric-weekend-fri-sat
+  - WORKDAY.INTL/workday-intl-string-weekend
+  - WORKDAY.INTL/workday-intl-sunday-only-string
+  - SPLIT/split-comma
+  - SPLIT/split-multi-delim
+  - SPLIT/split-single-token
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

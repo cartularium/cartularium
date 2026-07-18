@@ -1,0 +1,15 @@
+id: DV-0176
+summary: "formulas: different argument interpretation — XNPV"
+cause: arg-semantics
+category: value
+engines:
+  - formulas
+behavior:
+  signature: "-545.5732225865631"
+test-count: 1
+subjects:
+  - XNPV
+tests:
+  - XNPV/xnpv-mismatched-lengths
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

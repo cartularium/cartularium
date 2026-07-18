@@ -1,0 +1,15 @@
+id: DV-0157
+summary: "hyperformula: numeric precision differs — PV"
+cause: precision
+category: value
+engines:
+  - hyperformula
+behavior:
+  signature: "7360.0870514"
+test-count: 1
+subjects:
+  - PV
+tests:
+  - PV/pv-annuity-textbook
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

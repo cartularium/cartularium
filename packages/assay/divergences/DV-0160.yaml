@@ -1,0 +1,15 @@
+id: DV-0160
+summary: "ironcalc: numeric precision differs — PV"
+cause: precision
+category: value
+engines:
+  - ironcalc
+behavior:
+  signature: "620.921323059"
+test-count: 1
+subjects:
+  - PV
+tests:
+  - PV/pv-lump-sum
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

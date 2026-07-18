@@ -1,0 +1,16 @@
+id: DV-0248
+summary: "ironcalc: SUM doesn't coerce booleans or numeric strings — returns 0"
+cause: arg-semantics
+category: value
+engines:
+  - ironcalc
+behavior:
+  signature: "0"
+test-count: 2
+subjects:
+  - SUM
+tests:
+  - SUM/sum-with-booleans
+  - SUM/sum-with-numeric-string
+seeded: 2026-04-26
+last-confirmed: 2026-04-26

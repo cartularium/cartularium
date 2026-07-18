@@ -1,0 +1,17 @@
+id: DV-0138
+summary: "excel, gsheets, lattice: numeric precision differs — IPMT"
+cause: precision
+category: value
+engines:
+  - excel
+  - gsheets
+  - lattice
+behavior:
+  signature: "833.3333333333334"
+test-count: 1
+subjects:
+  - IPMT
+tests:
+  - IPMT/ipmt-first-period-mortgage
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

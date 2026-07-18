@@ -1,0 +1,37 @@
+id: DV-0018
+summary: "lattice: different error code — ADD, AVERAGE, AVERAGE.WEIGHTED (+5 more)"
+cause: error-code
+category: value
+engines:
+  - lattice
+behavior:
+  signature: '{"error":"#VALUE!"}'
+test-count: 16
+subjects:
+  - ADD
+  - AVERAGE
+  - AVERAGE.WEIGHTED
+  - DATE
+  - FILTER
+  - FLATTEN
+  - ISFORMULA
+  - Z.TEST
+tests:
+  - FLATTEN/flatten-multiple-args
+  - DATE/date-month-overflow
+  - DATE/date-day-overflow
+  - DATE/date-negative-month
+  - AVERAGE/average-of-range-with-error-cell
+  - ISFORMULA/isformula-of-formula-cell
+  - ISFORMULA/isformula-of-number-cell
+  - ISFORMULA/isformula-of-blank-cell
+  - ISFORMULA/isformula-of-text-cell
+  - FILTER/filter-no-results
+  - ADD/add-boolean-coerces-to-1
+  - ADD/add-string-number-coerces
+  - Z.TEST/z-test-canonical
+  - AVERAGE.WEIGHTED/average-weighted-basic
+  - AVERAGE.WEIGHTED/average-weighted-skewed
+  - AVERAGE.WEIGHTED/average-weighted-grid
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

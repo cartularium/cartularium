@@ -1,0 +1,15 @@
+id: DV-0178
+summary: "formulas: different argument interpretation — N"
+cause: arg-semantics
+category: value
+engines:
+  - formulas
+behavior:
+  signature: "false"
+test-count: 1
+subjects:
+  - N
+tests:
+  - N/n-of-false-info
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

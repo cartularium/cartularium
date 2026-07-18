@@ -1,0 +1,788 @@
+schemaVersion: 3
+name: Lookup long-tail
+tests:
+  - subject: ROW
+    category: value
+    formula: =ROW(A1)
+    expect: 1
+    tags:
+      - lookup
+    name: row-a1
+  - subject: ROW
+    category: value
+    formula: =ROW(A5)
+    expect: 5
+    tags:
+      - lookup
+    name: row-a5
+  - subject: ROW
+    category: value
+    formula: =ROW(C10)
+    expect: 10
+    tags:
+      - lookup
+    name: row-c10
+  - subject: ROW
+    category: value
+    status: observed
+    formula: =ROW(B7:D9)
+    tags:
+      - lookup
+    name: row-range-first-row
+  - subject: ROW
+    category: value
+    formula: =ROW()
+    expect: 1
+    tags:
+      - lookup
+    name: row-no-arg
+  - subject: COLUMN
+    category: value
+    formula: =COLUMN(A1)
+    expect: 1
+    tags:
+      - lookup
+    name: column-a1
+  - subject: COLUMN
+    category: value
+    formula: =COLUMN(C1)
+    expect: 3
+    tags:
+      - lookup
+    name: column-c1
+  - subject: COLUMN
+    category: value
+    formula: =COLUMN(Z1)
+    expect: 26
+    tags:
+      - lookup
+    name: column-z1
+  - subject: COLUMN
+    category: value
+    status: observed
+    formula: =COLUMN(D2:F4)
+    tags:
+      - lookup
+    name: column-range-first-col
+  - subject: COLUMN
+    formula: =COLUMN()
+    category: value
+    # Cell-position-dependent: each driver picks a target cell. gsheets uses AA1
+    # (col 27 1-indexed); the lattice driver writes to a different cell. Both
+    # report the formula's own column 1-indexed. Recorded as observed.
+    status: observed
+    tags:
+      - lookup
+    name: column-no-arg
+  - subject: ROWS
+    formula: =ROWS(A1:A3)
+    category: value
+    expect: 3
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - lookup
+    name: rows-3-row-range
+  - subject: ROWS
+    formula: =ROWS(A1)
+    category: value
+    expect: 1
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - lookup
+    name: rows-single-cell
+  - subject: ROWS
+    formula: =ROWS(B2:D10)
+    category: value
+    expect: 9
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - lookup
+    name: rows-rectangular
+  - subject: ROWS
+    formula: =ROWS({1;2;3;4})
+    category: value
+    expect: 4
+    overrides:
+      ironcalc:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+      formulas:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - lookup
+      - bare-formula
+    name: rows-array-literal
+  - subject: ROWS
+    formula: =ROWS({1,2;3,4;5,6})
+    category: value
+    expect: 3
+    overrides:
+      ironcalc:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+      formulas:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - lookup
+      - bare-formula
+    name: rows-2d-array-literal
+  - subject: COLUMNS
+    formula: =COLUMNS(A1:C1)
+    category: value
+    expect: 3
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - lookup
+    name: columns-3-col-range
+  - subject: COLUMNS
+    formula: =COLUMNS(A1)
+    category: value
+    expect: 1
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - lookup
+    name: columns-single-cell
+  - subject: COLUMNS
+    formula: =COLUMNS(B2:D10)
+    category: value
+    expect: 3
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - lookup
+    name: columns-rectangular
+  - subject: COLUMNS
+    formula: =COLUMNS({1,2,3,4,5})
+    category: value
+    expect: 5
+    overrides:
+      ironcalc:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+      formulas:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - lookup
+      - bare-formula
+    name: columns-array-literal
+  - subject: COLUMNS
+    formula: =COLUMNS({1,2;3,4;5,6})
+    category: value
+    expect: 2
+    overrides:
+      ironcalc:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+      formulas:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - lookup
+      - bare-formula
+    name: columns-2d-array-literal
+  - subject: ADDRESS
+    formula: =ADDRESS(1,1)
+    category: value
+    expect: $A$1
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - lookup
+    name: address-absolute-a1
+  - subject: ADDRESS
+    formula: =ADDRESS(1,1,4)
+    category: value
+    expect: A1
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - lookup
+    name: address-relative
+  - subject: ADDRESS
+    formula: =ADDRESS(2,3,2)
+    category: value
+    expect: C$2
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - lookup
+    name: address-row-absolute
+  - subject: ADDRESS
+    formula: =ADDRESS(2,3,3)
+    category: value
+    expect: $C2
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - lookup
+    name: address-col-absolute
+  - subject: ADDRESS
+    formula: =ADDRESS(5,26,4)
+    category: value
+    expect: Z5
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - lookup
+    name: address-column-z
+  - subject: ADDRESS
+    formula: =ADDRESS(1,27,4)
+    category: value
+    expect: AA1
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - lookup
+    name: address-column-aa
+  - subject: ADDRESS
+    category: value
+    status: observed
+    formula: =ADDRESS(1,1,1,TRUE,"Sheet2")
+    tags:
+      - lookup
+    name: address-with-sheet
+  - subject: OFFSET
+    formula: =OFFSET(A1,1,0)+0
+    category: value
+    grid:
+      A1: 10
+      A2: 20
+      A3: 30
+    expect: 20
+    overrides:
+      ironcalc:
+        cause: error-code
+        recorded:
+          error: "#N/IMPL!"
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+    tags:
+      - lookup
+    name: offset-down-one
+  - subject: OFFSET
+    formula: =OFFSET(A1,0,2)+0
+    category: value
+    grid:
+      A1: 1
+      B1: 2
+      C1: 3
+    expect: 3
+    overrides:
+      ironcalc:
+        cause: error-code
+        recorded:
+          error: "#N/IMPL!"
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+    tags:
+      - lookup
+    name: offset-right-one
+  - subject: OFFSET
+    formula: =OFFSET(A1,0,0)+0
+    category: value
+    grid:
+      A1: 42
+    expect: 42
+    overrides:
+      ironcalc:
+        cause: error-code
+        recorded:
+          error: "#N/IMPL!"
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+    tags:
+      - lookup
+    name: offset-zero
+  - subject: OFFSET
+    formula: =SUM(OFFSET(A1,0,0,2,2))
+    category: value
+    grid:
+      A1: 1
+      B1: 2
+      A2: 3
+      B2: 4
+    expect: 10
+    overrides:
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: arg-semantics
+        recorded: 0
+    tags:
+      - lookup
+    name: offset-sum-height-width
+  - subject: OFFSET
+    formula: =SUM(OFFSET(A1,1,0,3,1))
+    category: value
+    grid:
+      A1: 0
+      A2: 5
+      A3: 10
+      A4: 15
+    expect: 30
+    overrides:
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: arg-semantics
+        recorded: 0
+    tags:
+      - lookup
+    name: offset-sum-shifted-range
+  - subject: OFFSET
+    formula: =OFFSET(A3,-2,0)+0
+    category: value
+    grid:
+      A1: 1
+      A2: 2
+      A3: 3
+    expect: 1
+    overrides:
+      ironcalc:
+        cause: error-code
+        recorded:
+          error: "#N/IMPL!"
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+    tags:
+      - lookup
+    name: offset-negative-rows
+  - subject: INDIRECT
+    formula: =INDIRECT("A1")
+    category: value
+    grid:
+      A1: 42
+    expect: 42
+    overrides:
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - lookup
+    name: indirect-a1-to-value
+  - subject: INDIRECT
+    formula: =INDIRECT("B3")
+    category: value
+    grid:
+      B3: hello
+    expect: hello
+    overrides:
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - lookup
+    name: indirect-text-cell
+  - subject: INDIRECT
+    formula: =SUM(INDIRECT("A1:A3"))
+    category: value
+    grid:
+      A1: 1
+      A2: 2
+      A3: 3
+    expect: 6
+    overrides:
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: arg-semantics
+        recorded: 0
+    tags:
+      - lookup
+    name: indirect-sum-range
+  - subject: INDIRECT
+    formula: =INDIRECT("A" & 5)
+    category: value
+    grid:
+      A5: 99
+    expect: 99
+    overrides:
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - lookup
+    name: indirect-concatenated
+  - subject: INDIRECT
+    formula: =INDIRECT("not a ref")
+    category: value
+    expect:
+      error: "#REF!"
+    overrides:
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - lookup
+    name: indirect-bad-ref
+  - subject: INDIRECT
+    formula: =INDIRECT("R1C1", FALSE)
+    category: value
+    grid:
+      A1: 7
+    expect: 7
+    overrides:
+      lattice:
+        cause: error-code
+        recorded:
+          error: "#N/A"
+      ironcalc:
+        cause: error-code
+        recorded:
+          error: "#N/IMPL!"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - lookup
+    name: indirect-r1c1-style
+  - subject: LOOKUP
+    formula: =LOOKUP(2, A1:A3, B1:B3)
+    category: value
+    grid:
+      A1: 1
+      A2: 2
+      A3: 3
+      B1: apple
+      B2: banana
+      B3: cherry
+    expect: banana
+    overrides:
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - lookup
+    name: lookup-exact-sorted
+  - subject: LOOKUP
+    formula: =LOOKUP(4, A1:A3, B1:B3)
+    category: value
+    grid:
+      A1: 1
+      A2: 3
+      A3: 5
+      B1: low
+      B2: mid
+      B3: high
+    expect: mid
+    overrides:
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - lookup
+    name: lookup-approximate
+  - subject: LOOKUP
+    formula: =LOOKUP(20, A1:A3)
+    category: value
+    grid:
+      A1: 10
+      A2: 20
+      A3: 30
+    expect: 20
+    overrides:
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - lookup
+    name: lookup-vector-form-no-result
+  - subject: LOOKUP
+    formula: =LOOKUP(5, A1:A3, B1:B3)
+    category: value
+    grid:
+      A1: 10
+      A2: 20
+      A3: 30
+      B1: a
+      B2: b
+      B3: c
+    expect:
+      error: "#N/A"
+    overrides:
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - lookup
+    name: lookup-below-range
+  - subject: LOOKUP
+    formula: =LOOKUP(99, A1:A3, B1:B3)
+    category: value
+    grid:
+      A1: 1
+      A2: 2
+      A3: 3
+      B1: a
+      B2: b
+      B3: c
+    expect: c
+    overrides:
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - lookup
+    name: lookup-above-range-picks-last
+  - subject: LOOKUP
+    category: value
+    status: observed
+    formula: =LOOKUP(2, {1,2,3;"a","b","c"})
+    tags:
+      - lookup
+      - bare-formula
+    name: lookup-array-form
+  - subject: FORMULATEXT
+    formula: =FORMULATEXT(A1)
+    category: value
+    semanticDomain: metadata
+    features:
+      - external-io
+    grid:
+      A1: =1+2
+    expect: =1+2
+    tags:
+      - lookup
+    name: formulatext-of-formula-cell
+  - subject: FORMULATEXT
+    category: value
+    semanticDomain: metadata
+    features:
+      - external-io
+    status: observed
+    formula: =FORMULATEXT(A1)
+    grid:
+      A1: 42
+    tags:
+      - lookup
+    name: formulatext-of-value-cell
+  - subject: FORMULATEXT
+    category: value
+    semanticDomain: metadata
+    features:
+      - external-io
+    status: observed
+    formula: =FORMULATEXT(A1)
+    tags:
+      - lookup
+    name: formulatext-of-empty
+  - subject: FORMULATEXT
+    formula: =FORMULATEXT(B1)
+    category: value
+    semanticDomain: metadata
+    features:
+      - external-io
+    grid:
+      A1: 1
+      A2: 2
+      B1: =SUM(A1:A2)
+    expect: =SUM(A1:A2)
+    tags:
+      - lookup
+    name: formulatext-sum-formula
+  - subject: GETPIVOTDATA
+    category: value
+    semanticDomain: grid-context
+    features:
+      - external-io
+    status: observed
+    formula: =GETPIVOTDATA("Sales", A1)
+    tags:
+      - lookup
+    name: getpivotdata-smoke
+  - subject: GETPIVOTDATA
+    category: value
+    semanticDomain: grid-context
+    features:
+      - external-io
+    status: observed
+    formula: =GETPIVOTDATA("Total", A1, "Region", "West")
+    tags:
+      - lookup
+    name: getpivotdata-with-field
+  - subject: SHEET
+    formula: =SHEET()
+    category: value
+    semanticDomain: metadata
+    features:
+      - external-io
+    status: observed
+    tags:
+      - lookup
+    name: sheet-no-arg
+  - subject: SHEET
+    formula: =SHEET(A1)
+    category: value
+    semanticDomain: metadata
+    features:
+      - external-io
+    status: observed
+    grid:
+      A1: 1
+    tags:
+      - lookup
+    name: sheet-self-ref
+  - subject: SHEET
+    formula: =SHEET("Sheet1")
+    category: value
+    semanticDomain: metadata
+    features:
+      - external-io
+    expect: 1
+    tags:
+      - lookup
+    name: sheet-by-name-string
+  - subject: SHEET
+    category: value
+    semanticDomain: metadata
+    features:
+      - external-io
+    status: observed
+    formula: =SHEET("NoSuchSheet")
+    tags:
+      - lookup
+    name: sheet-invalid-name

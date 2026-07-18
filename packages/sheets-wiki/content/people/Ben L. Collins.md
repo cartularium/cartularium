@@ -1,0 +1,1 @@
+Ben L. Collins is a Google Sheets educator known for his [blog](https://www.benlcollins.com/), [newsletter](https://www.benlcollins.com/google-sheets-tips/), and [courses](https://courses.benlcollins.com/).

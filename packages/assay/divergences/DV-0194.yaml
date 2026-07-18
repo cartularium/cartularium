@@ -1,0 +1,15 @@
+id: DV-0194
+summary: "hyperformula: different argument interpretation — MOD"
+cause: arg-semantics
+category: value
+engines:
+  - hyperformula
+behavior:
+  signature: "-1"
+test-count: 1
+subjects:
+  - MOD
+tests:
+  - MOD/mod-negative-dividend
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

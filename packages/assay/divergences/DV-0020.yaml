@@ -1,0 +1,32 @@
+id: DV-0020
+summary: "gsheets: function not implemented — IMAGE, IMPORTDATA, IMPORTFEED (+4 more)"
+cause: missing-function
+category: value
+engines:
+  - gsheets
+behavior:
+  signature: '{"error":"#REF!"}'
+test-count: 12
+subjects:
+  - IMAGE
+  - IMPORTDATA
+  - IMPORTFEED
+  - IMPORTHTML
+  - IMPORTRANGE
+  - IMPORTXML
+  - REGEXMATCH
+tests:
+  - IMPORTDATA/importdata-csv-smoke
+  - IMPORTFEED/importfeed-rss-smoke
+  - IMPORTHTML/importhtml-table-smoke
+  - IMPORTXML/importxml-xpath-smoke
+  - IMPORTRANGE/importrange-cross-sheet-smoke
+  - IMAGE/image-url-smoke
+  - REGEXMATCH/match-unicode-property-class-on-non-ascii-letters
+  - REGEXMATCH/match-unicode-property-class-rejects-digits
+  - REGEXMATCH/match-unicode-property-class-on-cjk
+  - REGEXMATCH/lookbehind-in-pattern
+  - REGEXMATCH/lookahead-in-pattern
+  - REGEXMATCH/negative-lookahead-in-pattern
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

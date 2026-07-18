@@ -1,0 +1,20 @@
+id: DV-0075
+summary: "hyperformula, lattice: return shape differs — COLUMN, ROW"
+cause: shape
+category: value
+engines:
+  - hyperformula
+  - lattice
+behavior:
+  signature: "1"
+test-count: 2
+subjects:
+  - COLUMN
+  - ROW
+tests:
+  - ROW/row-over-range-returns-array
+  - COLUMN/column-over-range-returns-array
+seeded: 2026-04-25
+last-confirmed: 2026-04-25
+status: vanished
+vanished-at: 2026-04-26

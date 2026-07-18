@@ -1,0 +1,26 @@
+id: DV-0026
+summary: "excel, formulas, hyperformula, ironcalc, libreoffice: function not
+  implemented — POW"
+cause: missing-function
+category: value
+engines:
+  - excel
+  - formulas
+  - hyperformula
+  - ironcalc
+  - libreoffice
+behavior:
+  signature: '{"error":"#NAME?"}'
+test-count: 7
+subjects:
+  - POW
+tests:
+  - POW/pow-integer
+  - POW/pow-zero-exponent
+  - POW/pow-negative-exponent
+  - POW/pow-fractional-exponent
+  - POW/pow-negative-base-fractional-exponent
+  - POW/pow-zero-to-zero
+  - POW/pow-matches-caret-operator
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

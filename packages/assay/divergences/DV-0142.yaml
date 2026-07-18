@@ -1,0 +1,15 @@
+id: DV-0142
+summary: "hyperformula: different argument interpretation — IPMT"
+cause: arg-semantics
+category: value
+engines:
+  - hyperformula
+behavior:
+  signature: "834.3304699"
+test-count: 1
+subjects:
+  - IPMT
+tests:
+  - IPMT/ipmt-invalid-period
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

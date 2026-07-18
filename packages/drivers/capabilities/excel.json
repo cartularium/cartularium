@@ -1,0 +1,18 @@
+{
+  "engine": "excel",
+  "description": "Microsoft Excel (Mac via AppleScript). Modern dynamic arrays + spill behavior; native broadcasting.",
+  "features": {
+    "broadcasting": { "support": "native" },
+    "dynamic-arrays": { "support": "native" },
+    "lambda": { "support": "native" },
+    "higher-order-lambda": { "support": "native" },
+    "regex": { "support": "wrapped", "adapter": "rename-fn", "from": "REGEXMATCH", "to": "REGEXTEST" },
+    "external-io": { "support": "absent", "note": "IMPORTRANGE/IMPORTHTML/GOOGLEFINANCE/IMPORTXML are GSheets-specific" },
+    "volatile": { "support": "native" },
+    "iterative-calc": { "support": "native" },
+    "structured-refs": { "support": "native" },
+    "let-bindings": { "support": "native" },
+    "implicit-intersection": { "support": "native" },
+    "spill-blocking": { "support": "native" }
+  }
+}

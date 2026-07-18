@@ -1,0 +1,2278 @@
+{
+  "platform": "gsheets",
+  "generatedAt": "2026-05-29T07:55:02.189Z",
+  "results": {
+    "sha256:abd926a9de6826e815d41e3df05de857862a00614103c9c6b20ac57a45c4183c": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "boolean",
+              "value": true
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "boolean",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=REGEXMATCH(\"hello world\", \"world\")"
+                },
+                "effectiveValue": {
+                  "boolValue": true
+                },
+                "formattedValue": "TRUE",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "REGEXMATCH(\"hello world\", \"world\")",
+            "formatted": "TRUE"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=REGEXMATCH(\"hello world\", \"world\")"
+    },
+    "sha256:a961606de1d08dbd79f97c83a0517d692080e37609e01c236ca05fad8d152a8f": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "boolean",
+              "value": false
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "boolean",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=REGEXMATCH(\"hello\", \"xyz\")"
+                },
+                "effectiveValue": {
+                  "boolValue": false
+                },
+                "formattedValue": "FALSE",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "REGEXMATCH(\"hello\", \"xyz\")",
+            "formatted": "FALSE"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=REGEXMATCH(\"hello\", \"xyz\")"
+    },
+    "sha256:3cee7253af54635ceff14954d85b7b42e840f253e58f0692fb7f1e747deeebf4": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "boolean",
+              "value": true
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "boolean",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=REGEXMATCH(\"hello\", \"^hello$\")"
+                },
+                "effectiveValue": {
+                  "boolValue": true
+                },
+                "formattedValue": "TRUE",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "REGEXMATCH(\"hello\", \"^hello$\")",
+            "formatted": "TRUE"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=REGEXMATCH(\"hello\", \"^hello$\")"
+    },
+    "sha256:caaedd8e166cce8c68a96ad1776a8ef685d07f528872294ab060a29721e9975c": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "boolean",
+              "value": false
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "boolean",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=REGEXMATCH(\"hello world\", \"^hello$\")"
+                },
+                "effectiveValue": {
+                  "boolValue": false
+                },
+                "formattedValue": "FALSE",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "REGEXMATCH(\"hello world\", \"^hello$\")",
+            "formatted": "FALSE"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=REGEXMATCH(\"hello world\", \"^hello$\")"
+    },
+    "sha256:c470d2fe5c7c5aaefca0c7e997df95f7afd62963e52ea0c8205a0a37a1022671": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "boolean",
+              "value": true
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "boolean",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=REGEXMATCH(\"hello\", \"^hel\")"
+                },
+                "effectiveValue": {
+                  "boolValue": true
+                },
+                "formattedValue": "TRUE",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "REGEXMATCH(\"hello\", \"^hel\")",
+            "formatted": "TRUE"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=REGEXMATCH(\"hello\", \"^hel\")"
+    },
+    "sha256:e3dd31c27af932428dd9e6cbbeeeaf1264d7ac2864586746304af1b0df97935f": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "boolean",
+              "value": true
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "boolean",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=REGEXMATCH(\"hello\", \"llo$\")"
+                },
+                "effectiveValue": {
+                  "boolValue": true
+                },
+                "formattedValue": "TRUE",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "REGEXMATCH(\"hello\", \"llo$\")",
+            "formatted": "TRUE"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=REGEXMATCH(\"hello\", \"llo$\")"
+    },
+    "sha256:4131320fc59e6cd8f2fe56f673182b253ae16fcbd731b7186d2be9dde1f559a7": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "boolean",
+              "value": true
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "boolean",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=REGEXMATCH(\"abc 123\", \"\\d+\")"
+                },
+                "effectiveValue": {
+                  "boolValue": true
+                },
+                "formattedValue": "TRUE",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "REGEXMATCH(\"abc 123\", \"\\d+\")",
+            "formatted": "TRUE"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=REGEXMATCH(\"abc 123\", \"\\d+\")"
+    },
+    "sha256:c64e8b67437f2e0af9bcbfbaa0449bfb40499eafa17c9253f057410f3a0e46db": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "boolean",
+              "value": false
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "boolean",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=REGEXMATCH(\"abc\", \"\\d+\")"
+                },
+                "effectiveValue": {
+                  "boolValue": false
+                },
+                "formattedValue": "FALSE",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "REGEXMATCH(\"abc\", \"\\d+\")",
+            "formatted": "FALSE"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=REGEXMATCH(\"abc\", \"\\d+\")"
+    },
+    "sha256:2a1ab5c7aff1a43e375ac05a70a74578e72bb9ba60cc049c7cf9036194dcf919": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "boolean",
+              "value": true
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "boolean",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=REGEXMATCH(\"hello_world\", \"\\w+\")"
+                },
+                "effectiveValue": {
+                  "boolValue": true
+                },
+                "formattedValue": "TRUE",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "REGEXMATCH(\"hello_world\", \"\\w+\")",
+            "formatted": "TRUE"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=REGEXMATCH(\"hello_world\", \"\\w+\")"
+    },
+    "sha256:5630c24b48411a18da4187263f9656f5ffcc964cf05774177159e3572cc1604e": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "boolean",
+              "value": true
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "boolean",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=REGEXMATCH(\"hello\", \"[a-z]+\")"
+                },
+                "effectiveValue": {
+                  "boolValue": true
+                },
+                "formattedValue": "TRUE",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "REGEXMATCH(\"hello\", \"[a-z]+\")",
+            "formatted": "TRUE"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=REGEXMATCH(\"hello\", \"[a-z]+\")"
+    },
+    "sha256:06db09b46f675797eff6cf109abd6b02603f5c3b212230ea6beb4295cd4c645f": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "boolean",
+              "value": false
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "boolean",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=REGEXMATCH(\"HELLO\", \"[a-z]+\")"
+                },
+                "effectiveValue": {
+                  "boolValue": false
+                },
+                "formattedValue": "FALSE",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "REGEXMATCH(\"HELLO\", \"[a-z]+\")",
+            "formatted": "FALSE"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=REGEXMATCH(\"HELLO\", \"[a-z]+\")"
+    },
+    "sha256:da29535437402fe8c8611d1a3b366eecf305fd5e635db90af4a25ce223b6b402": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "boolean",
+              "value": true
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "boolean",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=REGEXMATCH(\"abc123\", \"[a-z]{3}\\d{3}\")"
+                },
+                "effectiveValue": {
+                  "boolValue": true
+                },
+                "formattedValue": "TRUE",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "REGEXMATCH(\"abc123\", \"[a-z]{3}\\d{3}\")",
+            "formatted": "TRUE"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=REGEXMATCH(\"abc123\", \"[a-z]{3}\\d{3}\")"
+    },
+    "sha256:8b181aff58be0eab765c0b72e062b8ce3b6b306e04cc72076450d8fb591dcc50": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "boolean",
+              "value": true
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "boolean",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=REGEXMATCH(\"aab\", \"a{2,3}b\")"
+                },
+                "effectiveValue": {
+                  "boolValue": true
+                },
+                "formattedValue": "TRUE",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "REGEXMATCH(\"aab\", \"a{2,3}b\")",
+            "formatted": "TRUE"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=REGEXMATCH(\"aab\", \"a{2,3}b\")"
+    },
+    "sha256:124b3d1331316addcbae50fd03ff74fdfef9e5262fede9f7f55c77b3df865c3a": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "boolean",
+              "value": false
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "boolean",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=REGEXMATCH(\"ab\", \"a{2,3}b\")"
+                },
+                "effectiveValue": {
+                  "boolValue": false
+                },
+                "formattedValue": "FALSE",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "REGEXMATCH(\"ab\", \"a{2,3}b\")",
+            "formatted": "FALSE"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=REGEXMATCH(\"ab\", \"a{2,3}b\")"
+    },
+    "sha256:2c96270449e595d06e44d8f81c9f634b3079288730ed6ccb63a6b2081b1afa9c": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "boolean",
+              "value": true
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "boolean",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=REGEXMATCH(\"cat\", \"cat|dog\")"
+                },
+                "effectiveValue": {
+                  "boolValue": true
+                },
+                "formattedValue": "TRUE",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "REGEXMATCH(\"cat\", \"cat|dog\")",
+            "formatted": "TRUE"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=REGEXMATCH(\"cat\", \"cat|dog\")"
+    },
+    "sha256:20c95997bbfbf32fadf8863ad6f63a39b9a942bcee34404b194e9a2536115af4": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "boolean",
+              "value": true
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "boolean",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=REGEXMATCH(\"dog\", \"cat|dog\")"
+                },
+                "effectiveValue": {
+                  "boolValue": true
+                },
+                "formattedValue": "TRUE",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "REGEXMATCH(\"dog\", \"cat|dog\")",
+            "formatted": "TRUE"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=REGEXMATCH(\"dog\", \"cat|dog\")"
+    },
+    "sha256:2a5bfbd6a5fcbca6443f24d3feac4d0fb6d9b1e3f4871379f9c4c318233ae163": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "boolean",
+              "value": false
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "boolean",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=REGEXMATCH(\"fish\", \"cat|dog\")"
+                },
+                "effectiveValue": {
+                  "boolValue": false
+                },
+                "formattedValue": "FALSE",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "REGEXMATCH(\"fish\", \"cat|dog\")",
+            "formatted": "FALSE"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=REGEXMATCH(\"fish\", \"cat|dog\")"
+    },
+    "sha256:ed8da47cb57e6a2bbc6d80774c3ff31e887bdcf743a9b490791cded577ae5db6": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "boolean",
+              "value": true
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "boolean",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=REGEXMATCH(\"hello world\", \"\\bworld\\b\")"
+                },
+                "effectiveValue": {
+                  "boolValue": true
+                },
+                "formattedValue": "TRUE",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "REGEXMATCH(\"hello world\", \"\\bworld\\b\")",
+            "formatted": "TRUE"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=REGEXMATCH(\"hello world\", \"\\bworld\\b\")"
+    },
+    "sha256:38f376a2ad2b5282668773a623f2d7fb7c26e36333fd050d783a623ba118eed6": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "boolean",
+              "value": false
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "boolean",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=REGEXMATCH(\"helloworld\", \"\\bworld\\b\")"
+                },
+                "effectiveValue": {
+                  "boolValue": false
+                },
+                "formattedValue": "FALSE",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "REGEXMATCH(\"helloworld\", \"\\bworld\\b\")",
+            "formatted": "FALSE"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=REGEXMATCH(\"helloworld\", \"\\bworld\\b\")"
+    },
+    "sha256:cf7f639448ea861d8f6de728702021571a55d6013e1bbdb2fd8aea5b84e5e7e7": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "boolean",
+              "value": false
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "boolean",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=REGEXMATCH(\"HELLO\", \"hello\")"
+                },
+                "effectiveValue": {
+                  "boolValue": false
+                },
+                "formattedValue": "FALSE",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "REGEXMATCH(\"HELLO\", \"hello\")",
+            "formatted": "FALSE"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=REGEXMATCH(\"HELLO\", \"hello\")"
+    },
+    "sha256:483ca755d387eabe14c7f42649bc2ab4b7547f15a7a9741ac5477e26f4af5b6e": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "boolean",
+              "value": true
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "boolean",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=REGEXMATCH(\"HELLO\", \"(?i)hello\")"
+                },
+                "effectiveValue": {
+                  "boolValue": true
+                },
+                "formattedValue": "TRUE",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "REGEXMATCH(\"HELLO\", \"(?i)hello\")",
+            "formatted": "TRUE"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=REGEXMATCH(\"HELLO\", \"(?i)hello\")"
+    },
+    "sha256:f67c69a29195941e55b5f2ddef4405d56dd4155bac9617d8233d02586e359692": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "error",
+              "sentinel": "#REF!"
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "error",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=REGEXMATCH(\"café\", \"\\p{L}+\")"
+                },
+                "effectiveValue": {
+                  "errorValue": {
+                    "type": "REF",
+                    "message": "Function REGEXMATCH parameter 2 value \"\\p{L}+\" is not a valid regular expression."
+                  }
+                },
+                "formattedValue": "#REF!",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "REGEXMATCH(\"café\", \"\\p{L}+\")",
+            "formatted": "#REF!"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=REGEXMATCH(\"café\", \"\\p{L}+\")"
+    },
+    "sha256:8284edcb98a1dc3962ace7645833449c5560f08b778d5ba2a3d5ff69ec14b46d": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "error",
+              "sentinel": "#REF!"
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "error",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=REGEXMATCH(\"123\", \"\\p{L}\")"
+                },
+                "effectiveValue": {
+                  "errorValue": {
+                    "type": "REF",
+                    "message": "Function REGEXMATCH parameter 2 value \"\\p{L}\" is not a valid regular expression."
+                  }
+                },
+                "formattedValue": "#REF!",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "REGEXMATCH(\"123\", \"\\p{L}\")",
+            "formatted": "#REF!"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=REGEXMATCH(\"123\", \"\\p{L}\")"
+    },
+    "sha256:9f541380d0f01827d2af1efb92ae86d04271816d011591f08469d9ab7b1d1e5f": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "error",
+              "sentinel": "#REF!"
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "error",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=REGEXMATCH(\"你好世界\", \"\\p{L}+\")"
+                },
+                "effectiveValue": {
+                  "errorValue": {
+                    "type": "REF",
+                    "message": "Function REGEXMATCH parameter 2 value \"\\p{L}+\" is not a valid regular expression."
+                  }
+                },
+                "formattedValue": "#REF!",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "REGEXMATCH(\"你好世界\", \"\\p{L}+\")",
+            "formatted": "#REF!"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=REGEXMATCH(\"你好世界\", \"\\p{L}+\")"
+    },
+    "sha256:ef9c852ce19c876731a1cf683afdc325804dc6d1f2ce4b1d99cfa061dfd8bae4": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "boolean",
+              "value": true
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "boolean",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=REGEXMATCH(\"Ångström\", \"Å\")"
+                },
+                "effectiveValue": {
+                  "boolValue": true
+                },
+                "formattedValue": "TRUE",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "REGEXMATCH(\"Ångström\", \"Å\")",
+            "formatted": "TRUE"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=REGEXMATCH(\"Ångström\", \"Å\")"
+    },
+    "sha256:eeee1885d74edb993739879eefd724fdb43e7478d721f06640734b48e460b7c5": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "résumé"
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "string",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=REGEXEXTRACT(\"résumé template\", \"résumé\")"
+                },
+                "effectiveValue": {
+                  "stringValue": "résumé"
+                },
+                "formattedValue": "résumé",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "REGEXEXTRACT(\"résumé template\", \"résumé\")",
+            "formatted": "résumé"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=REGEXEXTRACT(\"résumé template\", \"résumé\")"
+    },
+    "sha256:39358130d0634993d41630acd8c9eb569f6cd4ecb06191fb07118424878bdb9a": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "boolean",
+              "value": true
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "boolean",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=REGEXMATCH(\"CAFÉ\", \"(?i)café\")"
+                },
+                "effectiveValue": {
+                  "boolValue": true
+                },
+                "formattedValue": "TRUE",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "REGEXMATCH(\"CAFÉ\", \"(?i)café\")",
+            "formatted": "TRUE"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=REGEXMATCH(\"CAFÉ\", \"(?i)café\")"
+    },
+    "sha256:3542d886b41dcfa26e31dfd29b3f0ef1f95a22ba541dc75a61dc8eaac61dfe1f": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "123"
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "string",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=REGEXEXTRACT(\"abc 123 def\", \"\\d+\")"
+                },
+                "effectiveValue": {
+                  "stringValue": "123"
+                },
+                "formattedValue": "123",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "REGEXEXTRACT(\"abc 123 def\", \"\\d+\")",
+            "formatted": "123"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=REGEXEXTRACT(\"abc 123 def\", \"\\d+\")"
+    },
+    "sha256:b144a121a4fd76bdf40e340d89af64a262c531f89ea3359802a2ebf0ebc308da": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "$100"
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "string",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=REGEXEXTRACT(\"Price: $100\", \"\\$\\d+\")"
+                },
+                "effectiveValue": {
+                  "stringValue": "$100"
+                },
+                "formattedValue": "$100",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "REGEXEXTRACT(\"Price: $100\", \"\\$\\d+\")",
+            "formatted": "$100"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=REGEXEXTRACT(\"Price: $100\", \"\\$\\d+\")"
+    },
+    "sha256:8c4b1fdf8d1b19f09856d7fc8ea9c5ec5975681a1710b912a58563bbdc3152b1": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "1"
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "string",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=REGEXEXTRACT(\"one 1 two 2 three 3\", \"\\d+\")"
+                },
+                "effectiveValue": {
+                  "stringValue": "1"
+                },
+                "formattedValue": "1",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "REGEXEXTRACT(\"one 1 two 2 three 3\", \"\\d+\")",
+            "formatted": "1"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=REGEXEXTRACT(\"one 1 two 2 three 3\", \"\\d+\")"
+    },
+    "sha256:7810364991ac166eb12ac781f6a645470b2e0427c2b3e058ff9ee55678f087d9": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "100"
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "string",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=REGEXEXTRACT(\"Price: $100\", \"\\$(\\d+)\")"
+                },
+                "effectiveValue": {
+                  "stringValue": "100"
+                },
+                "formattedValue": "100",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "REGEXEXTRACT(\"Price: $100\", \"\\$(\\d+)\")",
+            "formatted": "100"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=REGEXEXTRACT(\"Price: $100\", \"\\$(\\d+)\")"
+    },
+    "sha256:25f62ecb6eaf18e49bcd061abf8549d9ab751dec7a947ad5d00a1345bd81738d": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "2025"
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "string",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=REGEXEXTRACT(\"2025-03-01\", \"(\\d{4})-(\\d{2})-(\\d{2})\")"
+                },
+                "effectiveValue": {
+                  "stringValue": "2025"
+                },
+                "formattedValue": "2025",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "REGEXEXTRACT(\"2025-03-01\", \"(\\d{4})-(\\d{2})-(\\d{2})\")",
+            "formatted": "2025"
+          },
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "03"
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "string",
+              "raw_api": {
+                "effectiveValue": {
+                  "stringValue": "03"
+                },
+                "formattedValue": "03",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formatted": "03"
+          },
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "01"
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "string",
+              "raw_api": {
+                "effectiveValue": {
+                  "stringValue": "01"
+                },
+                "formattedValue": "01",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formatted": "01"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=REGEXEXTRACT(\"2025-03-01\", \"(\\d{4})-(\\d{2})-(\\d{2})\")"
+    },
+    "sha256:cbcad7ec6c4d61d453ee416477aaa987dab0cf3e5765ba131f0c169d98beac73": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "foo"
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "string",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=REGEXEXTRACT(\"foo bar baz\", \"(\\w+)\\s+(\\w+)\")"
+                },
+                "effectiveValue": {
+                  "stringValue": "foo"
+                },
+                "formattedValue": "foo",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "REGEXEXTRACT(\"foo bar baz\", \"(\\w+)\\s+(\\w+)\")",
+            "formatted": "foo"
+          },
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "bar"
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "string",
+              "raw_api": {
+                "effectiveValue": {
+                  "stringValue": "bar"
+                },
+                "formattedValue": "bar",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formatted": "bar"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=REGEXEXTRACT(\"foo bar baz\", \"(\\w+)\\s+(\\w+)\")"
+    },
+    "sha256:21570510a86ad6b6a1b6ddae3b09035bc6cdce7b35b940a361556f2b3a2b944a": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "error",
+              "sentinel": "#N/A"
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "error",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=REGEXEXTRACT(\"hello\", \"\\d+\")"
+                },
+                "effectiveValue": {
+                  "errorValue": {
+                    "type": "N_A",
+                    "message": "Function REGEXEXTRACT parameter 2 value \"\\d+\" does not match text of Function REGEXEXTRACT parameter 1 value \"hello\"."
+                  }
+                },
+                "formattedValue": "#N/A",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "REGEXEXTRACT(\"hello\", \"\\d+\")",
+            "formatted": "#N/A"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=REGEXEXTRACT(\"hello\", \"\\d+\")"
+    },
+    "sha256:6bce9a409481d83a8aa370addc4274523c6de514dfea40a0998ad7e2861850ab": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "error",
+              "sentinel": "#N/A"
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "error",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=REGEXEXTRACT(\"\", \"\\d+\")"
+                },
+                "effectiveValue": {
+                  "errorValue": {
+                    "type": "N_A",
+                    "message": "Function REGEXEXTRACT parameter 2 value \"\\d+\" does not match text of Function REGEXEXTRACT parameter 1 value \"\"."
+                  }
+                },
+                "formattedValue": "#N/A",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "REGEXEXTRACT(\"\", \"\\d+\")",
+            "formatted": "#N/A"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=REGEXEXTRACT(\"\", \"\\d+\")"
+    },
+    "sha256:7fd8bfccbf6ccfc63ce617912c96bb0ae799ff6a43373e9179c40821f8665644": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "Hello"
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "string",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=REGEXEXTRACT(\"Hello World\", \"(?i)(\\w+)\")"
+                },
+                "effectiveValue": {
+                  "stringValue": "Hello"
+                },
+                "formattedValue": "Hello",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "REGEXEXTRACT(\"Hello World\", \"(?i)(\\w+)\")",
+            "formatted": "Hello"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=REGEXEXTRACT(\"Hello World\", \"(?i)(\\w+)\")"
+    },
+    "sha256:62bae751885b7678fd6768baa2353f8ee7f70c612826d32c6276a8e939e93918": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "error",
+              "sentinel": "#N/A"
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "error",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=REGEXEXTRACT(\"a1 b2 c3\", \"\\d+\", 1)"
+                },
+                "effectiveValue": {
+                  "errorValue": {
+                    "type": "N_A",
+                    "message": "Wrong number of arguments to REGEXEXTRACT. Expected 2 arguments, but got 3 arguments."
+                  }
+                },
+                "formattedValue": "#N/A",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "REGEXEXTRACT(\"a1 b2 c3\", \"\\d+\", 1)",
+            "formatted": "#N/A"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=REGEXEXTRACT(\"a1 b2 c3\", \"\\d+\", 1)"
+    },
+    "sha256:89bcf7a8f6a8ba93cb0eead24d5d2a77dd6df35a1c811af4be76fcca77970599": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "error",
+              "sentinel": "#N/A"
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "error",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=REGEXEXTRACT(\"2025-03-01\", \"(\\d{4})-(\\d{2})-(\\d{2})\", 2)"
+                },
+                "effectiveValue": {
+                  "errorValue": {
+                    "type": "N_A",
+                    "message": "Wrong number of arguments to REGEXEXTRACT. Expected 2 arguments, but got 3 arguments."
+                  }
+                },
+                "formattedValue": "#N/A",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "REGEXEXTRACT(\"2025-03-01\", \"(\\d{4})-(\\d{2})-(\\d{2})\", 2)",
+            "formatted": "#N/A"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=REGEXEXTRACT(\"2025-03-01\", \"(\\d{4})-(\\d{2})-(\\d{2})\", 2)"
+    },
+    "sha256:5f7151b7bf5f8436ec92579979013c86a6b289030bd7620de20d7e77f1f7bc9a": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "axbxcx"
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "string",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=REGEXREPLACE(\"a1b2c3\", \"\\d\", \"x\")"
+                },
+                "effectiveValue": {
+                  "stringValue": "axbxcx"
+                },
+                "formattedValue": "axbxcx",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "REGEXREPLACE(\"a1b2c3\", \"\\d\", \"x\")",
+            "formatted": "axbxcx"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=REGEXREPLACE(\"a1b2c3\", \"\\d\", \"x\")"
+    },
+    "sha256:4b81b1820ac18e9dc7452e42ab8e42ebf49c5ff9068184a61a080bb1bd4872ef": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "xbbx"
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "string",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=REGEXREPLACE(\"aabbaa\", \"a+\", \"x\")"
+                },
+                "effectiveValue": {
+                  "stringValue": "xbbx"
+                },
+                "formattedValue": "xbbx",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "REGEXREPLACE(\"aabbaa\", \"a+\", \"x\")",
+            "formatted": "xbbx"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=REGEXREPLACE(\"aabbaa\", \"a+\", \"x\")"
+    },
+    "sha256:835e95cd90769eaff12995eea7f001c7906e3e8815e979e2ac2d6a416a518d17": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "hello-world"
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "string",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=REGEXREPLACE(\"hello world\", \"\\s+\", \"-\")"
+                },
+                "effectiveValue": {
+                  "stringValue": "hello-world"
+                },
+                "formattedValue": "hello-world",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "REGEXREPLACE(\"hello world\", \"\\s+\", \"-\")",
+            "formatted": "hello-world"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=REGEXREPLACE(\"hello world\", \"\\s+\", \"-\")"
+    },
+    "sha256:69898b44e4f177a5517baebd7f3ef39dd99c982892be0c41b891b6274d1fa05a": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "hello"
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "string",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=REGEXREPLACE(\"hello\", \"\\d+\", \"x\")"
+                },
+                "effectiveValue": {
+                  "stringValue": "hello"
+                },
+                "formattedValue": "hello",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "REGEXREPLACE(\"hello\", \"\\d+\", \"x\")",
+            "formatted": "hello"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=REGEXREPLACE(\"hello\", \"\\d+\", \"x\")"
+    },
+    "sha256:b81c735dab6ec326d9ef763a7c9650aaf8fe2fbc6fdeda889ed655d94db459c8": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "string",
+              "value": ""
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "null",
+              "semantic_null": false,
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=REGEXREPLACE(\"\", \"\\d+\", \"x\")"
+                },
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "REGEXREPLACE(\"\", \"\\d+\", \"x\")"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=REGEXREPLACE(\"\", \"\\d+\", \"x\")"
+    },
+    "sha256:4aaca2abb4a0f9efb241c2cd82f9e7a4a4389fe0d27d708ad19da9aef4dbe578": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "[hello] [world]"
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "string",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=REGEXREPLACE(\"hello world\", \"(\\w+)\", \"[$1]\")"
+                },
+                "effectiveValue": {
+                  "stringValue": "[hello] [world]"
+                },
+                "formattedValue": "[hello] [world]",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "REGEXREPLACE(\"hello world\", \"(\\w+)\", \"[$1]\")",
+            "formatted": "[hello] [world]"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=REGEXREPLACE(\"hello world\", \"(\\w+)\", \"[$1]\")"
+    },
+    "sha256:3f28158d9c1c3efc010e2e7d69a0e65bd96e2a44537ff419efc867a48e07c842": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "Smith, John"
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "string",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=REGEXREPLACE(\"John Smith\", \"(\\w+) (\\w+)\", \"$2, $1\")"
+                },
+                "effectiveValue": {
+                  "stringValue": "Smith, John"
+                },
+                "formattedValue": "Smith, John",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "REGEXREPLACE(\"John Smith\", \"(\\w+) (\\w+)\", \"$2, $1\")",
+            "formatted": "Smith, John"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=REGEXREPLACE(\"John Smith\", \"(\\w+) (\\w+)\", \"$2, $1\")"
+    },
+    "sha256:becc645d13fafdb09622e8b52d7a9973c2204ecc04cf6cc7f56d0ff34c813123": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "01/03/2025"
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "string",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=REGEXREPLACE(\"2025-03-01\", \"(\\d+)-(\\d+)-(\\d+)\", \"$3/$2/$1\")"
+                },
+                "effectiveValue": {
+                  "stringValue": "01/03/2025"
+                },
+                "formattedValue": "01/03/2025",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "REGEXREPLACE(\"2025-03-01\", \"(\\d+)-(\\d+)-(\\d+)\", \"$3/$2/$1\")",
+            "formatted": "01/03/2025"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=REGEXREPLACE(\"2025-03-01\", \"(\\d+)-(\\d+)-(\\d+)\", \"$3/$2/$1\")"
+    },
+    "sha256:2a484724be4727f9502a9662d3b94b7c01e06e4641ba48f4066a7863d0cfeb37": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "hi WORLD hi"
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "string",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=REGEXREPLACE(\"Hello WORLD hello\", \"(?i)hello\", \"hi\")"
+                },
+                "effectiveValue": {
+                  "stringValue": "hi WORLD hi"
+                },
+                "formattedValue": "hi WORLD hi",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "REGEXREPLACE(\"Hello WORLD hello\", \"(?i)hello\", \"hi\")",
+            "formatted": "hi WORLD hi"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=REGEXREPLACE(\"Hello WORLD hello\", \"(?i)hello\", \"hi\")"
+    },
+    "sha256:8851c990dcacf828d5b768414ac9d27cdeb1c94de41c019cef15486e0966c061": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "error",
+              "sentinel": "#REF!"
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "error",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=REGEXMATCH(\"hello\", \"(?<=hel)lo\")"
+                },
+                "effectiveValue": {
+                  "errorValue": {
+                    "type": "REF",
+                    "message": "Function REGEXMATCH parameter 2 value \"(?&lt;=hel)lo\" is not a valid regular expression."
+                  }
+                },
+                "formattedValue": "#REF!",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "REGEXMATCH(\"hello\", \"(?<=hel)lo\")",
+            "formatted": "#REF!"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=REGEXMATCH(\"hello\", \"(?<=hel)lo\")"
+    },
+    "sha256:506526333a305da1b9ade7b78775a666390b0e929bae5ef7b4bcc3845cae8a1f": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "error",
+              "sentinel": "#REF!"
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "error",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=REGEXMATCH(\"foobar\", \"foo(?=bar)\")"
+                },
+                "effectiveValue": {
+                  "errorValue": {
+                    "type": "REF",
+                    "message": "Function REGEXMATCH parameter 2 value \"foo(?=bar)\" is not a valid regular expression."
+                  }
+                },
+                "formattedValue": "#REF!",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "REGEXMATCH(\"foobar\", \"foo(?=bar)\")",
+            "formatted": "#REF!"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=REGEXMATCH(\"foobar\", \"foo(?=bar)\")"
+    },
+    "sha256:24a10fad3caafe4cb64c41ebabd3dee6cfd63fa5f797e03709e51a040d105799": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "error",
+              "sentinel": "#REF!"
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "error",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=REGEXMATCH(\"foobar\", \"foo(?!baz)\")"
+                },
+                "effectiveValue": {
+                  "errorValue": {
+                    "type": "REF",
+                    "message": "Function REGEXMATCH parameter 2 value \"foo(?!baz)\" is not a valid regular expression."
+                  }
+                },
+                "formattedValue": "#REF!",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "REGEXMATCH(\"foobar\", \"foo(?!baz)\")",
+            "formatted": "#REF!"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=REGEXMATCH(\"foobar\", \"foo(?!baz)\")"
+    }
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "platform": "formulas",
+  "generatedAt": "2026-05-11T09:33:51.183Z",
+  "results": {
+    "sha256:f28047be6ad9da65de596232acdc10084ec95dc8ccf837e0676947caab4356f0": {
+      "result": [
+        [
+          "abc"
+        ]
+      ],
+      "formula-as-evaluated": "=CONCAT(\"a\", \"b\", \"c\")"
+    },
+    "sha256:876d5455a0d62b260812d897d0382017050bb1b7d23deb702ec9fdc8e21f9bca": {
+      "result": [
+        [
+          1
+        ],
+        [
+          2
+        ],
+        [
+          3
+        ]
+      ],
+      "formula-as-evaluated": "={1;2;3}"
+    },
+    "sha256:3046ebd56050c92e93193df989481da91fdf1d9af7690c0c540da23d030b4599": {
+      "result": [
+        [
+          {
+            "error": "#VALUE!"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=LAMBDA(x, x+1)(5)"
+    },
+    "sha256:44bfdb43b4b08f945ed5f77f22837ca19c9d2a0595006c8fc8e466c4b9aefda9": {
+      "result": [
+        [
+          1,
+          {
+            "error": "#DIV/0!"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=HSTACK(A1, 1/0)"
+    },
+    "sha256:a9b88bb44b79d457239f1f883260fd988c99f992f7072c4b136dbd5479c9061a": {
+      "result": [
+        [
+          "yes"
+        ]
+      ],
+      "formula-as-evaluated": "=SWITCH(1, 1, \"yes\")"
+    },
+    "sha256:816969837d6ce4b1389608fb0b91b831109100e8a37cd72d0b31ffea080f8eb7": {
+      "result": [
+        [
+          "default"
+        ]
+      ],
+      "formula-as-evaluated": "=SWITCH(99, 1, \"one\", \"default\")"
+    },
+    "sha256:8c80925ed0b5d9a28555f7a340e3720ba9d43f55ed00ef74da38f892ca66a96a": {
+      "result": [
+        [
+          false
+        ]
+      ],
+      "formula-as-evaluated": "=0=\"\""
+    },
+    "sha256:6b833b6295783c14373be0a686eca7aa601036513970c50587070175d14fe5c9": {
+      "result": [
+        [
+          2
+        ]
+      ],
+      "formula-as-evaluated": "=TRUE+1"
+    }
+  }
+}

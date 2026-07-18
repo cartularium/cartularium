@@ -1,0 +1,91 @@
+id: DV-0008
+summary: "libreoffice: different error code — ACOSH, ATANH, BIN2DEC (+35 more)"
+cause: error-code
+category: value
+engines:
+  - libreoffice
+behavior:
+  signature: '{"error":"#VALUE!"}'
+test-count: 40
+subjects:
+  - ACOSH
+  - ATANH
+  - BIN2DEC
+  - BIN2HEX
+  - BIN2OCT
+  - CEILING
+  - COMBIN
+  - CUMIPMT
+  - CUMPRINC
+  - DEC2BIN
+  - DEC2HEX
+  - DEC2OCT
+  - DGET
+  - EFFECT
+  - FACT
+  - FACTDOUBLE
+  - FLOOR
+  - GAMMALN
+  - HARMEAN
+  - HEX2BIN
+  - HEX2DEC
+  - HEX2OCT
+  - IPMT
+  - LARGE
+  - MIRR
+  - MODE
+  - NOMINAL
+  - OCT2BIN
+  - OCT2DEC
+  - OCT2HEX
+  - PERMUT
+  - PPMT
+  - QUARTILE
+  - SMALL
+  - SQRT
+  - SQRTPI
+  - TRIMMEAN
+  - XIRR
+tests:
+  - DGET/dget-multiple-matches-error
+  - BIN2DEC/bin2dec-too-long
+  - BIN2HEX/bin2hex-invalid
+  - BIN2OCT/bin2oct-places-too-small
+  - DEC2BIN/dec2bin-out-of-range
+  - DEC2HEX/dec2hex-places-too-small
+  - DEC2OCT/dec2oct-out-of-range
+  - HEX2BIN/hex2bin-out-of-range
+  - HEX2DEC/hex2dec-invalid
+  - HEX2OCT/hex2oct-out-of-range
+  - OCT2BIN/oct2bin-out-of-range
+  - OCT2DEC/oct2dec-invalid
+  - OCT2HEX/oct2hex-invalid
+  - CUMIPMT/cumipmt-invalid-period
+  - CUMPRINC/cumprinc-invalid-type
+  - EFFECT/effect-invalid-periods
+  - IPMT/ipmt-invalid-period
+  - MIRR/mirr-no-sign-change
+  - NOMINAL/nominal-invalid-rate
+  - PPMT/ppmt-invalid-period
+  - XIRR/xirr-no-sign-change
+  - ACOSH/acosh-out-of-domain
+  - ATANH/atanh-out-of-domain
+  - COMBIN/combin-k-greater-than-n
+  - FACTDOUBLE/factdouble-negative
+  - GAMMALN/gammaln-non-positive
+  - SQRTPI/sqrtpi-negative
+  - CEILING/ceiling-positive-num-negative-sig
+  - FLOOR/floor-zero-significance
+  - SQRT/sqrt-negative
+  - FACT/fact-negative
+  - HARMEAN/harmean-with-zero
+  - LARGE/large-k-too-big
+  - LARGE/large-k-zero
+  - MODE/mode-no-repeats
+  - PERMUT/permut-invalid
+  - QUARTILE/quartile-invalid
+  - SMALL/small-k-too-big
+  - SMALL/small-k-zero
+  - TRIMMEAN/trimmean-invalid-percent
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

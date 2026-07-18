@@ -1,0 +1,101 @@
+{
+  "subject": "feature:lambda-array",
+  "pair": {
+    "a": "excel",
+    "b": "gsheets"
+  },
+  "numTolerance": 1e-10,
+  "engines": [
+    {
+      "platform": "excel",
+      "generatedAt": "2026-06-04T06:25:29.522Z"
+    },
+    {
+      "platform": "gsheets",
+      "generatedAt": "2026-06-04T06:25:50.252Z"
+    }
+  ],
+  "axisSpace": [
+    {
+      "name": "form",
+      "locus": "syntactic",
+      "cardinality": 3
+    }
+  ],
+  "tallies": {
+    "total": 3,
+    "ok": 3,
+    "incomplete": 0,
+    "agree": 1,
+    "differ": 2,
+    "unimplemented": 0,
+    "precision": 0
+  },
+  "analysis": {
+    "reducts": [
+      [
+        "form"
+      ]
+    ],
+    "core": [
+      "form"
+    ]
+  },
+  "verdict": {
+    "subject": "feature:lambda-array",
+    "completeness": 1,
+    "provisional": false,
+    "pinnedAxes": [],
+    "surface": {
+      "okProbes": 3,
+      "divergentProbes": 2,
+      "divergentFraction": 0.667
+    },
+    "kind": "EXPLICIT_BRIDGE",
+    "discriminators": [
+      "form"
+    ],
+    "byLocus": {
+      "syntactic": [
+        "form"
+      ],
+      "environment": [],
+      "data-borne": []
+    },
+    "trigger": [
+      {
+        "where": {
+          "form": "stack-call"
+        },
+        "outcome": "differ"
+      },
+      {
+        "where": {
+          "form": "lit-lambda"
+        },
+        "outcome": "differ"
+      }
+    ],
+    "fix": {
+      "rewriteOn": [
+        "form"
+      ]
+    }
+  },
+  "divergent": [
+    {
+      "name": "stack-call",
+      "assignment": {
+        "form": "stack-call"
+      },
+      "outcome": "differ"
+    },
+    {
+      "name": "lit-lambda",
+      "assignment": {
+        "form": "lit-lambda"
+      },
+      "outcome": "differ"
+    }
+  ]
+}

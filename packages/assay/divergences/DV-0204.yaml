@@ -1,0 +1,16 @@
+id: DV-0204
+summary: "gsheets, pycel: different error code — POW"
+cause: error-code
+category: value
+engines:
+  - gsheets
+  - pycel
+behavior:
+  signature: '{"error":"#NUM!"}'
+test-count: 1
+subjects:
+  - POW
+tests:
+  - POW/pow-negative-base-fractional-exponent
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

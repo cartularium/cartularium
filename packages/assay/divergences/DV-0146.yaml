@@ -1,0 +1,15 @@
+id: DV-0146
+summary: "hyperformula: numeric precision differs — NPV"
+cause: precision
+category: value
+engines:
+  - hyperformula
+behavior:
+  signature: "90.909090909"
+test-count: 1
+subjects:
+  - NPV
+tests:
+  - NPV/npv-single-cashflow
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

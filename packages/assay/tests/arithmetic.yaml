@@ -1,0 +1,59 @@
+schemaVersion: 3
+name: Arithmetic
+tests:
+  - subject: op:+
+    category: value
+    formula: =1+1
+    expect: 2
+    name: addition
+  - subject: op:/
+    formula: =10/3
+    category: value
+    expect: 3.333333333333333
+    overrides:
+      excel:
+        cause: precision
+        recorded: 3.3333333333333335
+      gsheets:
+        cause: precision
+        recorded: 3.3333333333333335
+      lattice:
+        cause: precision
+        recorded: 3.3333333333333335
+      ironcalc:
+        cause: precision
+        recorded: 3.333333333
+      hyperformula:
+        cause: precision
+        recorded: 3.3333333333
+      libreoffice:
+        cause: precision
+        recorded: 3.33333333333333
+      formulas:
+        cause: precision
+        recorded: 3.3333333333333335
+      pycel:
+        cause: precision
+        recorded: 3.3333333333333335
+    name: division
+  - subject: op:/
+    formula: =1/0
+    category: value
+    expect:
+      error: "#DIV/0!"
+    name: division-by-zero
+  - subject: op:^
+    category: value
+    formula: =2^-3
+    expect: 0.125
+    name: negative-exponent
+  - subject: op:+
+    category: value
+    formula: =2+3*4
+    expect: 14
+    name: operator-precedence
+  - subject: op:&
+    category: value
+    formula: ="hello" & " " & "world"
+    expect: hello world
+    name: concatenation

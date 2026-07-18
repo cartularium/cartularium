@@ -1,0 +1,15 @@
+id: DV-0173
+summary: "libreoffice: numeric precision differs — SYD"
+cause: precision
+category: value
+engines:
+  - libreoffice
+behavior:
+  signature: "16.3636363636364"
+test-count: 1
+subjects:
+  - SYD
+tests:
+  - SYD/syd-last-period
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

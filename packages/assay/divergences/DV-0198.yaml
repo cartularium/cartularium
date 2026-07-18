@@ -1,0 +1,15 @@
+id: DV-0198
+summary: "libreoffice: numeric precision differs — SQRT"
+cause: precision
+category: value
+engines:
+  - libreoffice
+behavior:
+  signature: "1.4142135623731"
+test-count: 1
+subjects:
+  - SQRT
+tests:
+  - SQRT/sqrt-irrational
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

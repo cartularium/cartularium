@@ -1,0 +1,15 @@
+id: DV-0111
+summary: "lattice: rendered with different format — IMPRODUCT"
+cause: format-rendering
+category: value
+engines:
+  - lattice
+behavior:
+  signature: '"{__typeof: \"Complex\", real: -5, imaginary: 10, suffix: \"i\"}"'
+test-count: 1
+subjects:
+  - IMPRODUCT
+tests:
+  - IMPRODUCT/improduct-basic
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

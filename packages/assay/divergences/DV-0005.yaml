@@ -1,0 +1,89 @@
+id: DV-0005
+summary: "ironcalc, pycel: function not implemented — ADDRESS, CHAR, CLEAN (+17 more)"
+cause: missing-function
+category: value
+engines:
+  - ironcalc
+  - pycel
+behavior:
+  signature: '{"error":"#NAME?"}'
+test-count: 55
+subjects:
+  - ADDRESS
+  - CHAR
+  - CLEAN
+  - CODE
+  - CRITBINOM
+  - FVSCHEDULE
+  - LOGINV
+  - LOGNORMDIST
+  - MMULT
+  - MULTINOMIAL
+  - NORMINV
+  - NORMSDIST
+  - NORMSINV
+  - PROPER
+  - STDEV
+  - STDEVP
+  - TRANSPOSE
+  - VAR
+  - VARP
+  - ZTEST
+tests:
+  - TRANSPOSE/transpose-row-to-col
+  - TRANSPOSE/transpose-col-to-row
+  - TRANSPOSE/transpose-2x2
+  - TRANSPOSE/transpose-from-grid
+  - MMULT/mmult-a-times-identity
+  - MMULT/mmult-2x2-generic
+  - MMULT/mmult-row-by-col
+  - MMULT/mmult-dimension-mismatch
+  - FVSCHEDULE/fvschedule-three-rates
+  - FVSCHEDULE/fvschedule-zero-rate-in-schedule
+  - FVSCHEDULE/fvschedule-single-rate
+  - ADDRESS/address-absolute-a1
+  - ADDRESS/address-relative
+  - ADDRESS/address-row-absolute
+  - ADDRESS/address-col-absolute
+  - ADDRESS/address-column-z
+  - ADDRESS/address-column-aa
+  - MULTINOMIAL/multinomial-two
+  - MULTINOMIAL/multinomial-three
+  - MULTINOMIAL/multinomial-single
+  - ZTEST/ztest-canonical
+  - STDEV/stdev-identical-values
+  - STDEV/stdev-single-value
+  - STDEVP/stdevp-two-values
+  - STDEVP/stdevp-identical
+  - VAR/var-sample-1-5
+  - VAR/var-two-values
+  - VAR/var-identical
+  - VAR/var-single-value
+  - VARP/varp-population-1-5
+  - VARP/varp-two-values
+  - VARP/varp-identical
+  - CRITBINOM/critbinom-median
+  - CRITBINOM/critbinom-tail
+  - LOGINV/loginv-at-0-5
+  - LOGNORMDIST/lognormdist-at-1
+  - NORMINV/norminv-at-0-5
+  - NORMSDIST/normsdist-at-0
+  - NORMSINV/normsinv-at-0-5
+  - CHAR/char-uppercase-a
+  - CHAR/char-lowercase-a
+  - CHAR/char-digit-0
+  - CHAR/char-space
+  - CLEAN/clean-strips-tab
+  - CLEAN/clean-strips-newline
+  - CLEAN/clean-plain-passthrough
+  - CLEAN/clean-empty
+  - CODE/code-uppercase-a
+  - CODE/code-lowercase-a
+  - CODE/code-first-char
+  - CODE/code-empty
+  - PROPER/proper-hello-world
+  - PROPER/proper-all-caps
+  - PROPER/proper-mixed
+  - PROPER/proper-apostrophe
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

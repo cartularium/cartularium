@@ -1,0 +1,62 @@
+name: Charter Primitives
+
+requires:
+  charter: ../../../charter/excel
+
+tests:
+  # ── HASH ──────────────────────────────────────────────
+  - name: HASH string
+    formula: '=HASH("hello")'
+    expect: 1335831723
+
+  - name: HASH empty string
+    formula: '=HASH("")'
+    expect: 2166136261
+
+  - name: HASH true
+    formula: "=HASH(TRUE)"
+    tags: [func:TRUE]
+    expect: 67918732
+
+  - name: HASH false
+    formula: "=HASH(FALSE)"
+    tags: [func:FALSE]
+    expect: 84696351
+
+  - name: HASH zero
+    formula: "=HASH(0)"
+    expect: 46947589
+
+  - name: HASH integer
+    formula: "=HASH(42)"
+    record: true
+
+  # ── PASS ──────────────────────────────────────────────
+  - name: PASS returns not_handled on call
+    formula: '=PASS("anything")'
+    expect: "#VALUE!"
+
+  - name: PASS error probe
+    formula: "=PASS(#NULL!)"
+    expect: "__not_handled__"
+
+  # ── ARR.SET ───────────────────────────────────────────
+  - name: ARR.SET middle
+    formula: "=ARR.SET({1,2,3}, 2, 99)"
+    expect:
+      - [1, 99, 3]
+
+  - name: ARR.SET first
+    formula: "=ARR.SET({1,2,3}, 1, 99)"
+    expect:
+      - [99, 2, 3]
+
+  - name: ARR.SET last
+    formula: "=ARR.SET({1,2,3}, 3, 99)"
+    expect:
+      - [1, 2, 99]
+
+  - name: ARR.SET single element
+    formula: "=ARR.SET({1}, 1, 99)"
+    expect:
+      - [99]

@@ -1,0 +1,17 @@
+id: DV-0064
+summary: "ironcalc: numeric precision differs — PI, RADIANS"
+cause: precision
+category: value
+engines:
+  - ironcalc
+behavior:
+  signature: "3.141592654"
+test-count: 2
+subjects:
+  - PI
+  - RADIANS
+tests:
+  - RADIANS/radians-of-180
+  - PI/pi
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

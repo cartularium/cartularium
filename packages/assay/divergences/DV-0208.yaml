@@ -1,0 +1,15 @@
+id: DV-0208
+summary: "lattice: different argument interpretation — REGEXEXTRACT"
+cause: arg-semantics
+category: value
+engines:
+  - lattice
+behavior:
+  signature: '"ABC123"'
+test-count: 1
+subjects:
+  - REGEXEXTRACT
+tests:
+  - REGEXEXTRACT/extract-case-insensitive-via-4th-arg
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

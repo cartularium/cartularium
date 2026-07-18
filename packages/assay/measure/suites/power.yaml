@@ -1,0 +1,243 @@
+schemaVersion: 3
+name: "sweep: POWER"
+tests:
+  - subject: POWER
+    name: p2-i2-caret
+    formula: =(2)^(2)
+    category: value
+    status: observed
+    tags:
+      - sweep:power
+      - ax:base=p2
+      - ax:exp=i2
+      - ax:form=caret
+  - subject: POWER
+    name: p2-i2-fn
+    formula: =POWER(2, 2)
+    category: value
+    status: observed
+    tags:
+      - sweep:power
+      - ax:base=p2
+      - ax:exp=i2
+      - ax:form=fn
+  - subject: POWER
+    name: p2-half-caret
+    formula: =(2)^(0.5)
+    category: value
+    status: observed
+    tags:
+      - sweep:power
+      - ax:base=p2
+      - ax:exp=half
+      - ax:form=caret
+  - subject: POWER
+    name: p2-half-fn
+    formula: =POWER(2, 0.5)
+    category: value
+    status: observed
+    tags:
+      - sweep:power
+      - ax:base=p2
+      - ax:exp=half
+      - ax:form=fn
+  - subject: POWER
+    name: p2-ni1-caret
+    formula: =(2)^(-1)
+    category: value
+    status: observed
+    tags:
+      - sweep:power
+      - ax:base=p2
+      - ax:exp=ni1
+      - ax:form=caret
+  - subject: POWER
+    name: p2-ni1-fn
+    formula: =POWER(2, -1)
+    category: value
+    status: observed
+    tags:
+      - sweep:power
+      - ax:base=p2
+      - ax:exp=ni1
+      - ax:form=fn
+  - subject: POWER
+    name: p2-z0-caret
+    formula: =(2)^(0)
+    category: value
+    status: observed
+    tags:
+      - sweep:power
+      - ax:base=p2
+      - ax:exp=z0
+      - ax:form=caret
+  - subject: POWER
+    name: p2-z0-fn
+    formula: =POWER(2, 0)
+    category: value
+    status: observed
+    tags:
+      - sweep:power
+      - ax:base=p2
+      - ax:exp=z0
+      - ax:form=fn
+  - subject: POWER
+    name: n2-i2-caret
+    formula: =(-2)^(2)
+    category: value
+    status: observed
+    tags:
+      - sweep:power
+      - ax:base=n2
+      - ax:exp=i2
+      - ax:form=caret
+  - subject: POWER
+    name: n2-i2-fn
+    formula: =POWER(-2, 2)
+    category: value
+    status: observed
+    tags:
+      - sweep:power
+      - ax:base=n2
+      - ax:exp=i2
+      - ax:form=fn
+  - subject: POWER
+    name: n2-half-caret
+    formula: =(-2)^(0.5)
+    category: value
+    status: observed
+    tags:
+      - sweep:power
+      - ax:base=n2
+      - ax:exp=half
+      - ax:form=caret
+  - subject: POWER
+    name: n2-half-fn
+    formula: =POWER(-2, 0.5)
+    category: value
+    status: observed
+    tags:
+      - sweep:power
+      - ax:base=n2
+      - ax:exp=half
+      - ax:form=fn
+  - subject: POWER
+    name: n2-ni1-caret
+    formula: =(-2)^(-1)
+    category: value
+    status: observed
+    tags:
+      - sweep:power
+      - ax:base=n2
+      - ax:exp=ni1
+      - ax:form=caret
+  - subject: POWER
+    name: n2-ni1-fn
+    formula: =POWER(-2, -1)
+    category: value
+    status: observed
+    tags:
+      - sweep:power
+      - ax:base=n2
+      - ax:exp=ni1
+      - ax:form=fn
+  - subject: POWER
+    name: n2-z0-caret
+    formula: =(-2)^(0)
+    category: value
+    status: observed
+    tags:
+      - sweep:power
+      - ax:base=n2
+      - ax:exp=z0
+      - ax:form=caret
+  - subject: POWER
+    name: n2-z0-fn
+    formula: =POWER(-2, 0)
+    category: value
+    status: observed
+    tags:
+      - sweep:power
+      - ax:base=n2
+      - ax:exp=z0
+      - ax:form=fn
+  - subject: POWER
+    name: z0-i2-caret
+    formula: =(0)^(2)
+    category: value
+    status: observed
+    tags:
+      - sweep:power
+      - ax:base=z0
+      - ax:exp=i2
+      - ax:form=caret
+  - subject: POWER
+    name: z0-i2-fn
+    formula: =POWER(0, 2)
+    category: value
+    status: observed
+    tags:
+      - sweep:power
+      - ax:base=z0
+      - ax:exp=i2
+      - ax:form=fn
+  - subject: POWER
+    name: z0-half-caret
+    formula: =(0)^(0.5)
+    category: value
+    status: observed
+    tags:
+      - sweep:power
+      - ax:base=z0
+      - ax:exp=half
+      - ax:form=caret
+  - subject: POWER
+    name: z0-half-fn
+    formula: =POWER(0, 0.5)
+    category: value
+    status: observed
+    tags:
+      - sweep:power
+      - ax:base=z0
+      - ax:exp=half
+      - ax:form=fn
+  - subject: POWER
+    name: z0-ni1-caret
+    formula: =(0)^(-1)
+    category: value
+    status: observed
+    tags:
+      - sweep:power
+      - ax:base=z0
+      - ax:exp=ni1
+      - ax:form=caret
+  - subject: POWER
+    name: z0-ni1-fn
+    formula: =POWER(0, -1)
+    category: value
+    status: observed
+    tags:
+      - sweep:power
+      - ax:base=z0
+      - ax:exp=ni1
+      - ax:form=fn
+  - subject: POWER
+    name: z0-z0-caret
+    formula: =(0)^(0)
+    category: value
+    status: observed
+    tags:
+      - sweep:power
+      - ax:base=z0
+      - ax:exp=z0
+      - ax:form=caret
+  - subject: POWER
+    name: z0-z0-fn
+    formula: =POWER(0, 0)
+    category: value
+    status: observed
+    tags:
+      - sweep:power
+      - ax:base=z0
+      - ax:exp=z0
+      - ax:form=fn

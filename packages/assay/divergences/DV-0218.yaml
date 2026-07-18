@@ -1,0 +1,18 @@
+id: DV-0218
+summary: "excel, formulas, gsheets, lattice: numeric precision differs — PROB"
+cause: precision
+category: value
+engines:
+  - excel
+  - formulas
+  - gsheets
+  - lattice
+behavior:
+  signature: "0.6000000000000001"
+test-count: 1
+subjects:
+  - PROB
+tests:
+  - PROB/prob-uniform-bound
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

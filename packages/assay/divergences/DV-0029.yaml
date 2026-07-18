@@ -1,0 +1,25 @@
+id: DV-0029
+summary: "formulas, ironcalc, libreoffice, pycel: function not implemented —
+  ARRAYFORMULA, SPLIT"
+cause: missing-function
+category: value
+engines:
+  - formulas
+  - ironcalc
+  - libreoffice
+  - pycel
+behavior:
+  signature: '{"error":"#NAME?"}'
+test-count: 6
+subjects:
+  - ARRAYFORMULA
+  - SPLIT
+tests:
+  - ARRAYFORMULA/arrayformula-multiply-range
+  - ARRAYFORMULA/arrayformula-text-concat
+  - SPLIT/split-comma
+  - SPLIT/split-multi-delim
+  - SPLIT/split-single-token
+  - SPLIT/split-empty-tokens
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

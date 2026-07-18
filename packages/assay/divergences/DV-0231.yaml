@@ -1,0 +1,16 @@
+id: DV-0231
+summary: "excel, hyperformula: different error code — SPLIT"
+cause: error-code
+category: value
+engines:
+  - excel
+  - hyperformula
+behavior:
+  signature: '{"error":"#N/A"}'
+test-count: 1
+subjects:
+  - SPLIT
+tests:
+  - SPLIT/split-empty-tokens
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

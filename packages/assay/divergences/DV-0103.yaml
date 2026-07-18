@@ -1,0 +1,15 @@
+id: DV-0103
+summary: "lattice: rendered with different format — COMPLEX"
+cause: format-rendering
+category: value
+engines:
+  - lattice
+behavior:
+  signature: '"{__typeof: \"Complex\", real: 3, imaginary: 4, suffix: \"j\"}"'
+test-count: 1
+subjects:
+  - COMPLEX
+tests:
+  - COMPLEX/complex-j-suffix
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

@@ -1,0 +1,17 @@
+id: DV-0147
+summary: "excel, gsheets, lattice: numeric precision differs — PDURATION"
+cause: precision
+category: value
+engines:
+  - excel
+  - gsheets
+  - lattice
+behavior:
+  signature: "7.272540897341714"
+test-count: 1
+subjects:
+  - PDURATION
+tests:
+  - PDURATION/pduration-double-money-10pct
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

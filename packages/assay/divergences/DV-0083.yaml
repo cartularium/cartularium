@@ -1,0 +1,19 @@
+id: DV-0083
+summary: "excel, formulas, gsheets, lattice, libreoffice: different error code — MMULT"
+cause: error-code
+category: value
+engines:
+  - excel
+  - formulas
+  - gsheets
+  - lattice
+  - libreoffice
+behavior:
+  signature: '{"error":"#VALUE!"}'
+test-count: 1
+subjects:
+  - MMULT
+tests:
+  - MMULT/mmult-dimension-mismatch
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

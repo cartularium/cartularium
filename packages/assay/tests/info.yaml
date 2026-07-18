@@ -1,0 +1,1168 @@
+schemaVersion: 3
+name: Info functions
+tests:
+  - subject: ISNUMBER
+    category: value
+    formula: =ISNUMBER(42)
+    expect: true
+    tags:
+      - info
+    name: isnumber-of-integer
+  - subject: ISNUMBER
+    category: value
+    formula: =ISNUMBER(3.14)
+    expect: true
+    tags:
+      - info
+    name: isnumber-of-decimal
+  - subject: ISNUMBER
+    category: value
+    formula: =ISNUMBER("hello")
+    expect: false
+    tags:
+      - info
+    name: isnumber-of-text
+  - subject: ISNUMBER
+    formula: =ISNUMBER("42")
+    category: value
+    expect: false
+    overrides:
+      formulas:
+        cause: arg-semantics
+        recorded: true
+    tags:
+      - info
+    name: isnumber-of-numeric-text
+  - subject: ISNUMBER
+    formula: =ISNUMBER(TRUE)
+    category: value
+    expect: false
+    overrides:
+      libreoffice:
+        cause: arg-semantics
+        recorded: true
+    tags:
+      - info
+    name: isnumber-of-boolean
+  - subject: ISNUMBER
+    category: value
+    formula: =ISNUMBER(A1)
+    grid:
+      A1: null
+    expect: false
+    tags:
+      - info
+    name: isnumber-of-blank-cell
+  - subject: ISNUMBER
+    category: value
+    formula: =ISNUMBER(A1)
+    grid:
+      A1: 100
+    expect: true
+    tags:
+      - info
+    name: isnumber-of-number-cell
+  - subject: ISNUMBER
+    category: error-code
+    formula: =ISNUMBER(1/0)
+    expect: false
+    tags:
+      - info
+    name: isnumber-of-error
+  - subject: ISTEXT
+    category: value
+    formula: =ISTEXT("hello")
+    expect: true
+    tags:
+      - info
+    name: istext-of-text
+  - subject: ISTEXT
+    category: value
+    formula: =ISTEXT("")
+    expect: true
+    tags:
+      - info
+    name: istext-of-empty-string
+  - subject: ISTEXT
+    category: value
+    formula: =ISTEXT(42)
+    expect: false
+    tags:
+      - info
+    name: istext-of-number
+  - subject: ISTEXT
+    category: value
+    formula: =ISTEXT(TRUE)
+    expect: false
+    tags:
+      - info
+    name: istext-of-boolean
+  - subject: ISTEXT
+    category: value
+    formula: =ISTEXT(A1)
+    grid:
+      A1: null
+    expect: false
+    tags:
+      - info
+    name: istext-of-blank-cell
+  - subject: ISTEXT
+    category: value
+    formula: =ISTEXT(A1)
+    grid:
+      A1: hello
+    expect: true
+    tags:
+      - info
+    name: istext-of-text-cell
+  - subject: ISTEXT
+    category: error-code
+    formula: =ISTEXT(1/0)
+    expect: false
+    tags:
+      - info
+    name: istext-of-error
+  - subject: ISNONTEXT
+    category: value
+    formula: =ISNONTEXT(42)
+    expect: true
+    tags:
+      - info
+    name: isnontext-of-number
+  - subject: ISNONTEXT
+    category: value
+    formula: =ISNONTEXT("hello")
+    expect: false
+    tags:
+      - info
+    name: isnontext-of-text
+  - subject: ISNONTEXT
+    category: value
+    formula: =ISNONTEXT(TRUE)
+    expect: true
+    tags:
+      - info
+    name: isnontext-of-boolean
+  - subject: ISNONTEXT
+    category: value
+    formula: =ISNONTEXT(A1)
+    grid:
+      A1: null
+    expect: true
+    tags:
+      - info
+    name: isnontext-of-blank-cell
+  - subject: ISNONTEXT
+    category: error-code
+    formula: =ISNONTEXT(1/0)
+    expect: true
+    tags:
+      - info
+      - divergence
+    name: isnontext-of-error
+  - subject: ISLOGICAL
+    formula: =ISLOGICAL(TRUE)
+    category: value
+    expect: true
+    overrides:
+      hyperformula:
+        cause: arg-semantics
+        recorded: false
+    tags:
+      - info
+    name: islogical-of-true
+  - subject: ISLOGICAL
+    formula: =ISLOGICAL(FALSE)
+    category: value
+    expect: true
+    overrides:
+      hyperformula:
+        cause: arg-semantics
+        recorded: false
+    tags:
+      - info
+    name: islogical-of-false
+  - subject: ISLOGICAL
+    category: value
+    formula: =ISLOGICAL(1)
+    expect: false
+    tags:
+      - info
+    name: islogical-of-number
+  - subject: ISLOGICAL
+    category: value
+    formula: =ISLOGICAL("TRUE")
+    expect: false
+    tags:
+      - info
+    name: islogical-of-text
+  - subject: ISLOGICAL
+    category: value
+    formula: =ISLOGICAL(A1)
+    grid:
+      A1: null
+    expect: false
+    tags:
+      - info
+    name: islogical-of-blank-cell
+  - subject: ISLOGICAL
+    category: error-code
+    formula: =ISLOGICAL(1/0)
+    expect: false
+    tags:
+      - info
+    name: islogical-of-error
+  - subject: ISBLANK
+    category: value
+    formula: =ISBLANK(A1)
+    grid:
+      A1: null
+    expect: true
+    tags:
+      - info
+    name: isblank-of-blank-cell
+  - subject: ISBLANK
+    category: value
+    formula: =ISBLANK(A1)
+    grid:
+      A1: 0
+    expect: false
+    tags:
+      - info
+    name: isblank-of-number-cell
+  - subject: ISBLANK
+    category: value
+    formula: =ISBLANK(A1)
+    grid:
+      A1: hello
+    expect: false
+    tags:
+      - info
+    name: isblank-of-text-cell
+  - subject: ISBLANK
+    category: value
+    status: observed
+    formula: =ISBLANK(A1)
+    grid:
+      A1: ""
+    tags:
+      - info
+      - divergence
+    name: isblank-of-empty-string-cell
+  - subject: ISBLANK
+    category: value
+    formula: =ISBLANK(42)
+    expect: false
+    tags:
+      - info
+    name: isblank-of-literal-number
+  - subject: ISBLANK
+    category: value
+    formula: =ISBLANK("")
+    expect: false
+    tags:
+      - info
+      - divergence
+    name: isblank-of-literal-empty-string
+  - subject: ISERR
+    category: value
+    formula: =ISERR(1/0)
+    expect: true
+    tags:
+      - info
+    name: iserr-of-div-0
+  - subject: ISERR
+    category: value
+    formula: =ISERR(NA())
+    expect: false
+    tags:
+      - info
+    name: iserr-of-na
+  - subject: ISERR
+    category: value
+    formula: =ISERR(42)
+    expect: false
+    tags:
+      - info
+    name: iserr-of-number
+  - subject: ISERR
+    category: value
+    formula: =ISERR("hello")
+    expect: false
+    tags:
+      - info
+    name: iserr-of-text
+  - subject: ISERR
+    category: value
+    formula: =ISERR(A1)
+    grid:
+      A1: null
+    expect: false
+    tags:
+      - info
+    name: iserr-of-blank-cell
+  - subject: ISERROR
+    category: value
+    formula: =ISERROR(1/0)
+    expect: true
+    tags:
+      - info
+    name: iserror-of-div-0
+  - subject: ISERROR
+    category: value
+    formula: =ISERROR(NA())
+    expect: true
+    tags:
+      - info
+    name: iserror-of-na
+  - subject: ISERROR
+    category: value
+    formula: =ISERROR("a"+1)
+    expect: true
+    tags:
+      - info
+    name: iserror-of-value
+  - subject: ISERROR
+    category: value
+    formula: =ISERROR(42)
+    expect: false
+    tags:
+      - info
+    name: iserror-of-number
+  - subject: ISERROR
+    category: value
+    formula: =ISERROR("hello")
+    expect: false
+    tags:
+      - info
+    name: iserror-of-text
+  - subject: ISERROR
+    category: value
+    formula: =ISERROR(A1)
+    grid:
+      A1: null
+    expect: false
+    tags:
+      - info
+    name: iserror-of-blank-cell
+  - subject: ISNA
+    category: value
+    formula: =ISNA(NA())
+    expect: true
+    tags:
+      - info
+    name: isna-of-na
+  - subject: ISNA
+    category: value
+    formula: =ISNA(1/0)
+    expect: false
+    tags:
+      - info
+    name: isna-of-div-0
+  - subject: ISNA
+    category: value
+    formula: =ISNA(42)
+    expect: false
+    tags:
+      - info
+    name: isna-of-number
+  - subject: ISNA
+    category: value
+    formula: =ISNA("hello")
+    expect: false
+    tags:
+      - info
+    name: isna-of-text
+  - subject: ISNA
+    category: value
+    formula: =ISNA(MATCH(99, {1,2,3}, 0))
+    expect: true
+    tags:
+      - info
+      - bare-formula
+    name: isna-of-match-miss
+  - subject: ISFORMULA
+    formula: =ISFORMULA(A1)
+    category: value
+    grid:
+      A1: =1+1
+    expect: true
+    overrides:
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - info
+      - divergence
+    name: isformula-of-formula-cell
+  - subject: ISFORMULA
+    formula: =ISFORMULA(A1)
+    category: value
+    grid:
+      A1: 42
+    expect: false
+    overrides:
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - info
+      - divergence
+    name: isformula-of-number-cell
+  - subject: ISFORMULA
+    formula: =ISFORMULA(A1)
+    category: value
+    grid:
+      A1: null
+    expect: false
+    overrides:
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - info
+      - divergence
+    name: isformula-of-blank-cell
+  - subject: ISFORMULA
+    formula: =ISFORMULA(A1)
+    category: value
+    grid:
+      A1: hello
+    expect: false
+    overrides:
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - info
+      - divergence
+    name: isformula-of-text-cell
+  - subject: ISREF
+    category: value
+    status: observed
+    formula: =ISREF(A1)
+    tags:
+      - info
+      - divergence
+    name: isref-of-single-cell
+  - subject: ISREF
+    category: value
+    status: observed
+    formula: =ISREF(A1:A3)
+    tags:
+      - info
+      - divergence
+    name: isref-of-range
+  - subject: ISREF
+    category: value
+    formula: =ISREF(42)
+    expect: false
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - info
+      - divergence
+    name: isref-of-literal-number
+  - subject: ISREF
+    category: value
+    formula: =ISREF("A1")
+    expect: false
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - info
+      - divergence
+    name: isref-of-literal-text
+  - subject: ISREF
+    category: value
+    status: observed
+    formula: =ISREF(INDIRECT("A1"))
+    tags:
+      - info
+      - divergence
+    name: isref-of-indirect-valid
+  - subject: ISDATE
+    category: value
+    status: observed
+    formula: =ISDATE("2024-01-15")
+    tags:
+      - info
+      - divergence
+    name: isdate-of-date-string
+  - subject: ISDATE
+    formula: =ISDATE(42)
+    category: value
+    expect: false
+    overrides:
+      excel:
+        cause: error-code
+        recorded:
+          error: "#N/A"
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - info
+      - divergence
+    name: isdate-of-number
+  - subject: ISDATE
+    formula: =ISDATE("hello")
+    category: value
+    expect: false
+    overrides:
+      excel:
+        cause: error-code
+        recorded:
+          error: "#N/A"
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - info
+      - divergence
+    name: isdate-of-text
+  - subject: ISDATE
+    formula: =ISDATE(DATE(2024,1,15))
+    category: value
+    expect: true
+    overrides:
+      excel:
+        cause: error-code
+        recorded:
+          error: "#N/A"
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - info
+      - divergence
+    name: isdate-of-date-call
+  - subject: ISEMAIL
+    formula: =ISEMAIL("user@example.com")
+    category: value
+    expect: true
+    overrides:
+      excel:
+        cause: missing-function
+        recorded:
+          error: "#N/A"
+      lattice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - info
+      - divergence
+    name: isemail-valid
+  - subject: ISEMAIL
+    formula: =ISEMAIL("not-an-email")
+    category: value
+    expect: false
+    overrides:
+      excel:
+        cause: missing-function
+        recorded:
+          error: "#N/A"
+      lattice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - info
+      - divergence
+    name: isemail-invalid
+  - subject: ISEMAIL
+    formula: =ISEMAIL(42)
+    category: value
+    expect: false
+    overrides:
+      excel:
+        cause: missing-function
+        recorded:
+          error: "#N/A"
+      lattice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - info
+      - divergence
+    name: isemail-of-number
+  - subject: ISEMAIL
+    formula: =ISEMAIL(A1)
+    category: value
+    grid:
+      A1: null
+    expect: false
+    overrides:
+      excel:
+        cause: missing-function
+        recorded:
+          error: "#N/A"
+      lattice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - info
+      - divergence
+    name: isemail-of-blank-cell
+  - subject: N
+    category: value
+    formula: =N(42)
+    expect: 42
+    tags:
+      - info
+    name: n-of-number-info
+  - subject: N
+    category: value
+    formula: =N("hello")
+    expect: 0
+    tags:
+      - info
+    name: n-of-text
+  - subject: N
+    formula: =N(TRUE)
+    category: value
+    expect: 1
+    overrides:
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      formulas:
+        cause: arg-semantics
+        recorded: true
+    tags:
+      - info
+    name: n-of-true-info
+  - subject: N
+    formula: =N(FALSE)
+    category: value
+    expect: 0
+    overrides:
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      formulas:
+        cause: arg-semantics
+        recorded: false
+    tags:
+      - info
+    name: n-of-false-info
+  - subject: N
+    category: value
+    formula: =N(A1)
+    grid:
+      A1: null
+    expect: 0
+    tags:
+      - info
+    name: n-of-blank-cell
+  - subject: N
+    formula: =N(1/0)
+    category: error-code
+    expect:
+      error: "#DIV/0!"
+    tags:
+      - info
+    name: n-of-error-info
+  - subject: NA
+    formula: =NA()
+    category: value
+    expect:
+      error: "#N/A"
+    tags:
+      - info
+    name: na-nullary
+  - subject: NA
+    formula: =NA()+1
+    category: value
+    expect:
+      error: "#N/A"
+    tags:
+      - info
+    name: na-used-in-arithmetic
+  - subject: TYPE
+    category: value
+    status: observed
+    formula: =TYPE(42)
+    tags:
+      - info
+      - divergence
+    name: type-of-number
+  - subject: TYPE
+    category: value
+    status: observed
+    formula: =TYPE("hello")
+    tags:
+      - info
+      - divergence
+    name: type-of-text
+  - subject: TYPE
+    category: value
+    status: observed
+    formula: =TYPE(TRUE)
+    tags:
+      - info
+      - divergence
+    name: type-of-boolean
+  - subject: TYPE
+    category: error-code
+    status: observed
+    formula: =TYPE(1/0)
+    tags:
+      - info
+      - divergence
+    name: type-of-error
+  - subject: TYPE
+    category: value
+    status: observed
+    formula: =TYPE({1,2,3})
+    tags:
+      - info
+      - divergence
+      - bare-formula
+    name: type-of-array
+  - subject: TYPE
+    category: value
+    status: observed
+    formula: =TYPE(A1)
+    grid:
+      A1: null
+    tags:
+      - info
+      - divergence
+    name: type-of-blank-cell
+  - subject: ERROR.TYPE
+    formula: =ERROR.TYPE(1/0)
+    category: error-code
+    expect: 2
+    overrides:
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - info
+    name: error-type-of-div-0-info
+  - subject: ERROR.TYPE
+    formula: =ERROR.TYPE(NA())
+    category: error-code
+    expect: 7
+    overrides:
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - info
+    name: error-type-of-na
+  - subject: ERROR.TYPE
+    formula: =ERROR.TYPE("a"+1)
+    category: error-code
+    expect: 3
+    overrides:
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - info
+    name: error-type-of-value-info
+  - subject: ERROR.TYPE
+    formula: =ERROR.TYPE(42)
+    category: error-code
+    expect:
+      error: "#N/A"
+    overrides:
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - info
+    name: error-type-of-non-error-number
+  - subject: ERROR.TYPE
+    formula: =ERROR.TYPE("hello")
+    category: error-code
+    expect:
+      error: "#N/A"
+    overrides:
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - info
+    name: error-type-of-non-error-text
+  - subject: ERROR.TYPE
+    formula: =ERROR.TYPE(INDIRECT("ZZZZ99999999"))
+    category: error-code
+    expect: 4
+    overrides:
+      lattice:
+        cause: error-code
+        recorded:
+          error: "#N/A"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - info
+      - divergence
+    name: error-type-of-ref-error
+  - subject: CELL
+    formula: =CELL("address", A1)
+    category: value
+    semanticDomain: metadata
+    grid:
+      A1: 42
+    expect: $A$1
+    overrides:
+      lattice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - info
+      - divergence
+    name: cell-address
+  - subject: CELL
+    formula: =CELL("contents", A1)
+    category: value
+    semanticDomain: metadata
+    grid:
+      A1: 42
+    expect: 42
+    overrides:
+      lattice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - info
+      - divergence
+    name: cell-contents
+  - subject: CELL
+    formula: =CELL("row", B3)
+    category: value
+    semanticDomain: metadata
+    grid:
+      B3: 42
+    expect: 3
+    overrides:
+      lattice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - info
+      - divergence
+    name: cell-row
+  - subject: CELL
+    formula: =CELL("col", B3)
+    category: value
+    semanticDomain: metadata
+    grid:
+      B3: 42
+    expect: 2
+    overrides:
+      lattice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - info
+      - divergence
+    name: cell-col
+  - subject: CELL
+    formula: =CELL("type", A1)
+    category: value
+    semanticDomain: metadata
+    grid:
+      A1: hello
+    expect: l
+    overrides:
+      lattice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - info
+      - divergence
+    name: cell-type-text
+  - subject: CELL
+    category: format
+    semanticDomain: display
+    status: observed
+    formula: =CELL("format", A1)
+    grid:
+      A1: 42
+    tags:
+      - info
+      - divergence
+    name: cell-format
+  - subject: SHEETS
+    category: value
+    semanticDomain: metadata
+    status: observed
+    formula: =SHEETS()
+    tags:
+      - info
+      - divergence
+      - excel-only
+    name: sheets-no-arg
+  - subject: SHEETS
+    category: value
+    semanticDomain: metadata
+    status: observed
+    formula: =SHEETS(A1)
+    tags:
+      - info
+      - divergence
+      - excel-only
+    name: sheets-of-reference

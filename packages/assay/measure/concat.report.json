@@ -1,0 +1,102 @@
+{
+  "subject": "op:&",
+  "pair": {
+    "a": "excel",
+    "b": "gsheets"
+  },
+  "numTolerance": 1e-10,
+  "engines": [
+    {
+      "platform": "excel",
+      "generatedAt": "2026-06-04T06:04:03.467Z"
+    },
+    {
+      "platform": "gsheets",
+      "generatedAt": "2026-06-04T06:04:25.480Z"
+    }
+  ],
+  "axisSpace": [
+    {
+      "name": "left_type",
+      "locus": "data-borne",
+      "runtimeCheckable": true,
+      "cardinality": 5
+    },
+    {
+      "name": "right_type",
+      "locus": "data-borne",
+      "runtimeCheckable": true,
+      "cardinality": 5
+    }
+  ],
+  "tallies": {
+    "total": 25,
+    "ok": 25,
+    "incomplete": 0,
+    "agree": 24,
+    "differ": 1,
+    "unimplemented": 0,
+    "precision": 0
+  },
+  "analysis": {
+    "reducts": [
+      [
+        "left_type",
+        "right_type"
+      ]
+    ],
+    "core": [
+      "left_type",
+      "right_type"
+    ]
+  },
+  "verdict": {
+    "subject": "op:&",
+    "completeness": 1,
+    "provisional": false,
+    "pinnedAxes": [],
+    "surface": {
+      "okProbes": 25,
+      "divergentProbes": 1,
+      "divergentFraction": 0.04,
+      "irreducibleRegions": 1
+    },
+    "kind": "IRREDUCIBLE",
+    "discriminators": [
+      "left_type",
+      "right_type"
+    ],
+    "byLocus": {
+      "syntactic": [],
+      "environment": [],
+      "data-borne": [
+        "left_type",
+        "right_type"
+      ]
+    },
+    "trigger": [
+      {
+        "where": {
+          "left_type": "blank",
+          "right_type": "blank"
+        },
+        "outcome": "differ"
+      }
+    ],
+    "residualDataBorne": [
+      "left_type",
+      "right_type"
+    ],
+    "option": "runtime-guard"
+  },
+  "divergent": [
+    {
+      "name": "blank-blank",
+      "assignment": {
+        "left_type": "blank",
+        "right_type": "blank"
+      },
+      "outcome": "differ"
+    }
+  ]
+}

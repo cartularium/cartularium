@@ -1,0 +1,85 @@
+{
+  "subject": "feature:implicit-intersection",
+  "pair": {
+    "a": "excel",
+    "b": "gsheets"
+  },
+  "numTolerance": 1e-10,
+  "engines": [
+    {
+      "platform": "excel",
+      "generatedAt": "2026-06-04T06:25:29.521Z"
+    },
+    {
+      "platform": "gsheets",
+      "generatedAt": "2026-06-04T06:25:50.249Z"
+    }
+  ],
+  "axisSpace": [
+    {
+      "name": "form",
+      "locus": "syntactic",
+      "cardinality": 3
+    }
+  ],
+  "tallies": {
+    "total": 3,
+    "ok": 3,
+    "incomplete": 0,
+    "agree": 0,
+    "differ": 3,
+    "unimplemented": 0,
+    "precision": 0
+  },
+  "analysis": {
+    "reducts": [
+      []
+    ],
+    "core": []
+  },
+  "verdict": {
+    "subject": "feature:implicit-intersection",
+    "completeness": 1,
+    "provisional": false,
+    "pinnedAxes": [],
+    "surface": {
+      "okProbes": 3,
+      "divergentProbes": 3,
+      "divergentFraction": 1
+    },
+    "kind": "EXPLICIT_BRIDGE",
+    "discriminators": [],
+    "trigger": [
+      {
+        "where": {},
+        "outcome": "differ"
+      }
+    ],
+    "fix": {
+      "note": "diverges unconditionally (differ); whole-function rewrite"
+    }
+  },
+  "divergent": [
+    {
+      "name": "at-col",
+      "assignment": {
+        "form": "at-col"
+      },
+      "outcome": "differ"
+    },
+    {
+      "name": "at-row",
+      "assignment": {
+        "form": "at-row"
+      },
+      "outcome": "differ"
+    },
+    {
+      "name": "at-fn",
+      "assignment": {
+        "form": "at-fn"
+      },
+      "outcome": "differ"
+    }
+  ]
+}

@@ -1,0 +1,142 @@
+{
+  "subject": "POWER",
+  "pair": {
+    "a": "excel",
+    "b": "gsheets"
+  },
+  "numTolerance": 1e-10,
+  "engines": [
+    {
+      "platform": "excel",
+      "generatedAt": "2026-06-04T06:04:03.469Z"
+    },
+    {
+      "platform": "gsheets",
+      "generatedAt": "2026-06-04T06:04:25.483Z"
+    }
+  ],
+  "axisSpace": [
+    {
+      "name": "base",
+      "locus": "data-borne",
+      "runtimeCheckable": true,
+      "cardinality": 3
+    },
+    {
+      "name": "exp",
+      "locus": "data-borne",
+      "runtimeCheckable": true,
+      "cardinality": 4
+    },
+    {
+      "name": "form",
+      "locus": "syntactic",
+      "cardinality": 2
+    }
+  ],
+  "tallies": {
+    "total": 24,
+    "ok": 24,
+    "incomplete": 0,
+    "agree": 20,
+    "differ": 4,
+    "unimplemented": 0,
+    "precision": 0
+  },
+  "analysis": {
+    "reducts": [
+      [
+        "base",
+        "exp"
+      ]
+    ],
+    "core": [
+      "base",
+      "exp"
+    ]
+  },
+  "verdict": {
+    "subject": "POWER",
+    "completeness": 1,
+    "provisional": false,
+    "pinnedAxes": [],
+    "surface": {
+      "okProbes": 24,
+      "divergentProbes": 4,
+      "divergentFraction": 0.167,
+      "irreducibleRegions": 2
+    },
+    "kind": "IRREDUCIBLE",
+    "discriminators": [
+      "base",
+      "exp"
+    ],
+    "byLocus": {
+      "syntactic": [],
+      "environment": [],
+      "data-borne": [
+        "base",
+        "exp"
+      ]
+    },
+    "trigger": [
+      {
+        "where": {
+          "base": "z0",
+          "exp": "ni1"
+        },
+        "outcome": "differ"
+      },
+      {
+        "where": {
+          "base": "z0",
+          "exp": "z0"
+        },
+        "outcome": "differ"
+      }
+    ],
+    "residualDataBorne": [
+      "base",
+      "exp"
+    ],
+    "option": "runtime-guard"
+  },
+  "divergent": [
+    {
+      "name": "z0-ni1-caret",
+      "assignment": {
+        "base": "z0",
+        "exp": "ni1",
+        "form": "caret"
+      },
+      "outcome": "differ"
+    },
+    {
+      "name": "z0-ni1-fn",
+      "assignment": {
+        "base": "z0",
+        "exp": "ni1",
+        "form": "fn"
+      },
+      "outcome": "differ"
+    },
+    {
+      "name": "z0-z0-caret",
+      "assignment": {
+        "base": "z0",
+        "exp": "z0",
+        "form": "caret"
+      },
+      "outcome": "differ"
+    },
+    {
+      "name": "z0-z0-fn",
+      "assignment": {
+        "base": "z0",
+        "exp": "z0",
+        "form": "fn"
+      },
+      "outcome": "differ"
+    }
+  ]
+}

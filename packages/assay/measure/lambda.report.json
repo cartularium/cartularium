@@ -1,0 +1,54 @@
+{
+  "subject": "LAMBDA",
+  "pair": {
+    "a": "excel",
+    "b": "gsheets"
+  },
+  "numTolerance": 1e-10,
+  "engines": [
+    {
+      "platform": "excel",
+      "generatedAt": "2026-06-04T06:16:37.367Z"
+    },
+    {
+      "platform": "gsheets",
+      "generatedAt": "2026-06-04T06:16:53.639Z"
+    }
+  ],
+  "axisSpace": [
+    {
+      "name": "form",
+      "locus": "syntactic",
+      "cardinality": 6
+    }
+  ],
+  "tallies": {
+    "total": 6,
+    "ok": 6,
+    "incomplete": 0,
+    "agree": 6,
+    "differ": 0,
+    "unimplemented": 0,
+    "precision": 0
+  },
+  "analysis": {
+    "reducts": [
+      []
+    ],
+    "core": []
+  },
+  "verdict": {
+    "subject": "LAMBDA",
+    "completeness": 1,
+    "provisional": false,
+    "pinnedAxes": [],
+    "surface": {
+      "okProbes": 6,
+      "divergentProbes": 0,
+      "divergentFraction": 0
+    },
+    "kind": "AGREES_EVERYWHERE",
+    "discriminators": []
+  },
+  "divergent": []
+}

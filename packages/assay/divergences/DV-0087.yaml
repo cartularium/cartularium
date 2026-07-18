@@ -1,0 +1,16 @@
+id: DV-0087
+summary: "gsheets, lattice: different error code — op:+"
+cause: error-code
+category: value
+engines:
+  - gsheets
+  - lattice
+behavior:
+  signature: '{"error":"#VALUE!"}'
+test-count: 1
+subjects:
+  - op:+
+tests:
+  - op:add/ragged-literal-in-arithmetic
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

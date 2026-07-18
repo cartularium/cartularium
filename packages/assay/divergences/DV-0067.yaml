@@ -1,0 +1,17 @@
+id: DV-0067
+summary: "formulas: different argument interpretation — CEILING.PRECISE, ISO.CEILING"
+cause: arg-semantics
+category: value
+engines:
+  - formulas
+behavior:
+  signature: "5"
+test-count: 2
+subjects:
+  - CEILING.PRECISE
+  - ISO.CEILING
+tests:
+  - CEILING.PRECISE/ceiling-precise-negative
+  - ISO.CEILING/iso-ceiling-negative
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

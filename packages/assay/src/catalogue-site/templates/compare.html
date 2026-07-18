@@ -1,0 +1,65 @@
+<header>
+  <h1>Engine comparison</h1>
+  <p class="dek">Pick a target engine and a reference set. Tests are classified by whether the target matches the consensus across the references, sides with only some, or stands alone.</p>
+</header>
+
+<section class="compare-config">
+  <div class="presets">
+    <span class="presets-label">Presets:</span>
+    <% it.presets.forEach(function(p) { %>
+      <button type="button" class="preset" data-target="<%= p.target %>" data-ref="<%= p.ref.join(',') %>"><%= p.label %></button>
+    <% }) %>
+  </div>
+
+  <div class="compare-pickers">
+    <label>
+      <span>Target:</span>
+      <select id="target-picker">
+        <% it.allEngines.forEach(function(e) { %>
+          <option value="<%= e %>"><%= e %></option>
+        <% }) %>
+      </select>
+    </label>
+    <fieldset class="ref-picker">
+      <legend>Reference engines:</legend>
+      <% it.allEngines.forEach(function(e) { %>
+        <label class="engine-pick">
+          <input type="checkbox" name="ref" value="<%= e %>">
+          <span class="chip eng eng-<%= e %>"><%= e %></span>
+        </label>
+      <% }) %>
+    </fieldset>
+    <button type="button" id="copy-link" class="copy-link">Copy permalink</button>
+  </div>
+</section>
+
+<section id="summary" class="compare-summary"></section>
+
+<section>
+  <div class="section-header">
+    <h2>Tests <span id="result-count" class="result-count"></span></h2>
+    <div class="filter-chips" id="verdict-filters"></div>
+  </div>
+
+  <div class="tests-table-wrap">
+    <table id="compare-table">
+      <thead>
+        <tr>
+          <th data-sort="text">Test</th>
+          <th data-sort="text">Subject</th>
+          <th data-sort="text">Formula</th>
+          <th>Expected</th>
+          <th data-sort="text">Verdict</th>
+          <th>Target value</th>
+          <th>Reference values</th>
+          <th>DV</th>
+        </tr>
+      </thead>
+      <tbody id="compare-body"></tbody>
+    </table>
+  </div>
+</section>
+
+<script type="application/json" id="corpus">
+<%~ it.corpusJson %>
+</script>

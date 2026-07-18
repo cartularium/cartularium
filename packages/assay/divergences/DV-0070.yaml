@@ -1,0 +1,16 @@
+id: DV-0070
+summary: "formulas: return shape differs — MUNIT"
+cause: shape
+category: value
+engines:
+  - formulas
+behavior:
+  signature: "null"
+test-count: 2
+subjects:
+  - MUNIT
+tests:
+  - MUNIT/munit-2x2
+  - MUNIT/munit-3x3
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

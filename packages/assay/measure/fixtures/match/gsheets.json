@@ -1,0 +1,1326 @@
+{
+  "platform": "gsheets",
+  "generatedAt": "2026-06-04T06:04:25.482Z",
+  "results": {
+    "sha256:dad87442418681f877ba6edaae6b7b16582660dc7694f0f80c32783f8cbd9a1c": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 2
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "number",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=MATCH(2, A1:A3, 0)"
+                },
+                "effectiveValue": {
+                  "numberValue": 2
+                },
+                "formattedValue": "2",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "MATCH(2, A1:A3, 0)",
+            "formatted": "2"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=MATCH(2, A1:A3, 0)"
+    },
+    "sha256:910d6cc96535dd2d666903e835dff7dc240b2abb09ebe0df72edf2d7a57bd6f6": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 3
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "number",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=MATCH(2, A1:A3, 0)"
+                },
+                "effectiveValue": {
+                  "numberValue": 3
+                },
+                "formattedValue": "3",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "MATCH(2, A1:A3, 0)",
+            "formatted": "3"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=MATCH(2, A1:A3, 0)"
+    },
+    "sha256:ac8d68a2dac2944b271dc039cf7c6d8bf70ea7ff769eeb922d744d736f093be0": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "error",
+              "sentinel": "#N/A"
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "error",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=MATCH(9, A1:A3, 0)"
+                },
+                "effectiveValue": {
+                  "errorValue": {
+                    "type": "N_A",
+                    "message": "Did not find value '9' in MATCH evaluation."
+                  }
+                },
+                "formattedValue": "#N/A",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "MATCH(9, A1:A3, 0)",
+            "formatted": "#N/A"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=MATCH(9, A1:A3, 0)"
+    },
+    "sha256:55b8bf979504aff4a9e8cf185691d41d23f99534ab634edfae7b977d4a099800": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "error",
+              "sentinel": "#N/A"
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "error",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=MATCH(9, A1:A3, 0)"
+                },
+                "effectiveValue": {
+                  "errorValue": {
+                    "type": "N_A",
+                    "message": "Did not find value '9' in MATCH evaluation."
+                  }
+                },
+                "formattedValue": "#N/A",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "MATCH(9, A1:A3, 0)",
+            "formatted": "#N/A"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=MATCH(9, A1:A3, 0)"
+    },
+    "sha256:23a054b5629d2a013a296fd7821712bd4b9dcef3593c078a86de5462f6babe26": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 2
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "number",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=MATCH(E1, A1:A3, 0)"
+                },
+                "effectiveValue": {
+                  "numberValue": 2
+                },
+                "formattedValue": "2",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "MATCH(E1, A1:A3, 0)",
+            "formatted": "2"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=MATCH(E1, A1:A3, 0)"
+    },
+    "sha256:41f698f57a37386d10928ae4f7962488220509075cfd7b0289c3c0ecc9e1279e": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 3
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "number",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=MATCH(E1, A1:A3, 0)"
+                },
+                "effectiveValue": {
+                  "numberValue": 3
+                },
+                "formattedValue": "3",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "MATCH(E1, A1:A3, 0)",
+            "formatted": "3"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=MATCH(E1, A1:A3, 0)"
+    },
+    "sha256:a442f7bb4c75fb98d21fb1943304411a1d00c27ffcdabec75be32fff42d71cef": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "error",
+              "sentinel": "#N/A"
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "error",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=MATCH(E1, A1:A3, 0)"
+                },
+                "effectiveValue": {
+                  "errorValue": {
+                    "type": "N_A",
+                    "message": "Did not find value '9' in MATCH evaluation."
+                  }
+                },
+                "formattedValue": "#N/A",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "MATCH(E1, A1:A3, 0)",
+            "formatted": "#N/A"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=MATCH(E1, A1:A3, 0)"
+    },
+    "sha256:50374ef1b4e1356ae1be333a22670cd6e23c4afaa1e6004f58fe2f9473f3f755": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "error",
+              "sentinel": "#N/A"
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "error",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=MATCH(E1, A1:A3, 0)"
+                },
+                "effectiveValue": {
+                  "errorValue": {
+                    "type": "N_A",
+                    "message": "Did not find value '9' in MATCH evaluation."
+                  }
+                },
+                "formattedValue": "#N/A",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "MATCH(E1, A1:A3, 0)",
+            "formatted": "#N/A"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=MATCH(E1, A1:A3, 0)"
+    },
+    "sha256:75e856ccb4abc80458bb7e39cef80f4342937400766bee15fbbaffee5c289512": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "error",
+              "sentinel": "#N/A"
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "error",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=MATCH(E1, A1:A3, 0)"
+                },
+                "effectiveValue": {
+                  "errorValue": {
+                    "type": "N_A",
+                    "message": "Did not find value '2' in MATCH evaluation."
+                  }
+                },
+                "formattedValue": "#N/A",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "MATCH(E1, A1:A3, 0)",
+            "formatted": "#N/A"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=MATCH(E1, A1:A3, 0)"
+    },
+    "sha256:e9d925a4774e6cc3ed399054d99210c2097a2f1a250c4ee834e6d91b25ab319c": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "error",
+              "sentinel": "#N/A"
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "error",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=MATCH(E1, A1:A3, 0)"
+                },
+                "effectiveValue": {
+                  "errorValue": {
+                    "type": "N_A",
+                    "message": "Did not find value '2' in MATCH evaluation."
+                  }
+                },
+                "formattedValue": "#N/A",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "MATCH(E1, A1:A3, 0)",
+            "formatted": "#N/A"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=MATCH(E1, A1:A3, 0)"
+    },
+    "sha256:9a878341b6f6b83cd5ab5ad095472c3eed42869fc093d635fc22e162680f9383": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 2
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "number",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=MATCH(2, A1:A3, 1)"
+                },
+                "effectiveValue": {
+                  "numberValue": 2
+                },
+                "formattedValue": "2",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "MATCH(2, A1:A3, 1)",
+            "formatted": "2"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=MATCH(2, A1:A3, 1)"
+    },
+    "sha256:8bf81635cf0c3f780321c8665628be184d879f936153a6c77e908670ab72139a": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 3
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "number",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=MATCH(2, A1:A3, 1)"
+                },
+                "effectiveValue": {
+                  "numberValue": 3
+                },
+                "formattedValue": "3",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "MATCH(2, A1:A3, 1)",
+            "formatted": "3"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=MATCH(2, A1:A3, 1)"
+    },
+    "sha256:0861d1472a4a83b49848667c98f137c4f8e18e3c48d9cf9e3824bbc7c434dd9e": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 3
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "number",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=MATCH(9, A1:A3, 1)"
+                },
+                "effectiveValue": {
+                  "numberValue": 3
+                },
+                "formattedValue": "3",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "MATCH(9, A1:A3, 1)",
+            "formatted": "3"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=MATCH(9, A1:A3, 1)"
+    },
+    "sha256:3b9987c7822278f4430a5d75f8a092b83fa52fec877bbba08f0967517d221560": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 3
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "number",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=MATCH(9, A1:A3, 1)"
+                },
+                "effectiveValue": {
+                  "numberValue": 3
+                },
+                "formattedValue": "3",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "MATCH(9, A1:A3, 1)",
+            "formatted": "3"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=MATCH(9, A1:A3, 1)"
+    },
+    "sha256:8291211708fc8cea4ddbdc718908c0c0e72c956066a11ecd3d33f8af47abf696": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 2
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "number",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=MATCH(E1, A1:A3, 1)"
+                },
+                "effectiveValue": {
+                  "numberValue": 2
+                },
+                "formattedValue": "2",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "MATCH(E1, A1:A3, 1)",
+            "formatted": "2"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=MATCH(E1, A1:A3, 1)"
+    },
+    "sha256:e04917a90266d28756fce7ccd1ba355e78f27683b22893430cd0121ee7a9315d": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 3
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "number",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=MATCH(E1, A1:A3, 1)"
+                },
+                "effectiveValue": {
+                  "numberValue": 3
+                },
+                "formattedValue": "3",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "MATCH(E1, A1:A3, 1)",
+            "formatted": "3"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=MATCH(E1, A1:A3, 1)"
+    },
+    "sha256:ca45aa1a74109c31a63ba4de7b46fbcd290bc6d776eb8cf6916fad2d53a7ce0a": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 3
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "number",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=MATCH(E1, A1:A3, 1)"
+                },
+                "effectiveValue": {
+                  "numberValue": 3
+                },
+                "formattedValue": "3",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "MATCH(E1, A1:A3, 1)",
+            "formatted": "3"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=MATCH(E1, A1:A3, 1)"
+    },
+    "sha256:adffa66b08c6b34d408d2e77e8235558f413580ec41846b65c0b5908bdfa1f03": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 3
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "number",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=MATCH(E1, A1:A3, 1)"
+                },
+                "effectiveValue": {
+                  "numberValue": 3
+                },
+                "formattedValue": "3",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "MATCH(E1, A1:A3, 1)",
+            "formatted": "3"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=MATCH(E1, A1:A3, 1)"
+    },
+    "sha256:bf607743bd7b4f1e6e543828eb65dc4938f483af4eed520f2da66c15b549ea96": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "error",
+              "sentinel": "#N/A"
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "error",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=MATCH(E1, A1:A3, 1)"
+                },
+                "effectiveValue": {
+                  "errorValue": {
+                    "type": "N_A",
+                    "message": "Did not find value '2' in MATCH evaluation."
+                  }
+                },
+                "formattedValue": "#N/A",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "MATCH(E1, A1:A3, 1)",
+            "formatted": "#N/A"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=MATCH(E1, A1:A3, 1)"
+    },
+    "sha256:ff8e8d17bceca98bb3097558f4f08ca4e0bf836afbc30af2529e72a57aeedae7": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "error",
+              "sentinel": "#N/A"
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "error",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=MATCH(E1, A1:A3, 1)"
+                },
+                "effectiveValue": {
+                  "errorValue": {
+                    "type": "N_A",
+                    "message": "Did not find value '2' in MATCH evaluation."
+                  }
+                },
+                "formattedValue": "#N/A",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "MATCH(E1, A1:A3, 1)",
+            "formatted": "#N/A"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=MATCH(E1, A1:A3, 1)"
+    },
+    "sha256:bdbfce347174065fb30e1020ff887ce70146d4efd97cef05f25509aa4323769c": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 2
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "number",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=MATCH(2, A1:A3)"
+                },
+                "effectiveValue": {
+                  "numberValue": 2
+                },
+                "formattedValue": "2",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "MATCH(2, A1:A3)",
+            "formatted": "2"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=MATCH(2, A1:A3)"
+    },
+    "sha256:eaf0d2b353a90138738b30afdc82c613f35df132ceee4e818a165e2f2685e953": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 3
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "number",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=MATCH(2, A1:A3)"
+                },
+                "effectiveValue": {
+                  "numberValue": 3
+                },
+                "formattedValue": "3",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "MATCH(2, A1:A3)",
+            "formatted": "3"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=MATCH(2, A1:A3)"
+    },
+    "sha256:843a7b25c13112ef4be8ac465b3593b40a54d8c35d6fe15e3c1a3543cddb38de": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 3
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "number",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=MATCH(9, A1:A3)"
+                },
+                "effectiveValue": {
+                  "numberValue": 3
+                },
+                "formattedValue": "3",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "MATCH(9, A1:A3)",
+            "formatted": "3"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=MATCH(9, A1:A3)"
+    },
+    "sha256:da9103ed6a4a5b918f76a11eee642d092cd47b81dbf4d453ae52e10d2e39e4b6": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 3
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "number",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=MATCH(9, A1:A3)"
+                },
+                "effectiveValue": {
+                  "numberValue": 3
+                },
+                "formattedValue": "3",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "MATCH(9, A1:A3)",
+            "formatted": "3"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=MATCH(9, A1:A3)"
+    },
+    "sha256:3afabf75c9e44d7d02b3d09afb1bff8f722b8c99292c9bb77e439a033ea70dbe": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 2
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "number",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=MATCH(E1, A1:A3)"
+                },
+                "effectiveValue": {
+                  "numberValue": 2
+                },
+                "formattedValue": "2",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "MATCH(E1, A1:A3)",
+            "formatted": "2"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=MATCH(E1, A1:A3)"
+    },
+    "sha256:85f27b148d1898511cb284245860195e89564a9765f9fe02ceed8ee4dd40c726": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 3
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "number",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=MATCH(E1, A1:A3)"
+                },
+                "effectiveValue": {
+                  "numberValue": 3
+                },
+                "formattedValue": "3",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "MATCH(E1, A1:A3)",
+            "formatted": "3"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=MATCH(E1, A1:A3)"
+    },
+    "sha256:9326c3e921346d2a325e3745db1ca2b69ac5da645e5f486a9cbe0a722c91820d": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 3
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "number",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=MATCH(E1, A1:A3)"
+                },
+                "effectiveValue": {
+                  "numberValue": 3
+                },
+                "formattedValue": "3",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "MATCH(E1, A1:A3)",
+            "formatted": "3"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=MATCH(E1, A1:A3)"
+    },
+    "sha256:a7c8d6a9fe94a9928ce0039cb5fee5e0474ebbdd1094da5325b5537b33ebce94": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 3
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "number",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=MATCH(E1, A1:A3)"
+                },
+                "effectiveValue": {
+                  "numberValue": 3
+                },
+                "formattedValue": "3",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "MATCH(E1, A1:A3)",
+            "formatted": "3"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=MATCH(E1, A1:A3)"
+    },
+    "sha256:e4f86767ad6e6ecc2c5232d8e39c6eee4c23ab673a502f6a58c0eda0dcd64fe7": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "error",
+              "sentinel": "#N/A"
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "error",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=MATCH(E1, A1:A3)"
+                },
+                "effectiveValue": {
+                  "errorValue": {
+                    "type": "N_A",
+                    "message": "Did not find value '2' in MATCH evaluation."
+                  }
+                },
+                "formattedValue": "#N/A",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "MATCH(E1, A1:A3)",
+            "formatted": "#N/A"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=MATCH(E1, A1:A3)"
+    },
+    "sha256:806ee450b09e59d0f22137d909f1622668eaa71ef4db0e69bd8feb86161f4d19": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "error",
+              "sentinel": "#N/A"
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "error",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=MATCH(E1, A1:A3)"
+                },
+                "effectiveValue": {
+                  "errorValue": {
+                    "type": "N_A",
+                    "message": "Did not find value '2' in MATCH evaluation."
+                  }
+                },
+                "formattedValue": "#N/A",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "MATCH(E1, A1:A3)",
+            "formatted": "#N/A"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=MATCH(E1, A1:A3)"
+    }
+  }
+}

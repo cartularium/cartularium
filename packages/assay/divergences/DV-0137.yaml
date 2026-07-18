@@ -1,0 +1,15 @@
+id: DV-0137
+summary: "formulas: numeric precision differs — FVSCHEDULE"
+cause: precision
+category: value
+engines:
+  - formulas
+behavior:
+  signature: "1210.0000000000002"
+test-count: 1
+subjects:
+  - FVSCHEDULE
+tests:
+  - FVSCHEDULE/fvschedule-zero-rate-in-schedule
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

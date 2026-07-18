@@ -1,0 +1,16 @@
+id: DV-0203
+summary: "excel, gsheets: numeric precision differs — LN"
+cause: precision
+category: value
+engines:
+  - excel
+  - gsheets
+behavior:
+  signature: "0.9999999999999981"
+test-count: 1
+subjects:
+  - LN
+tests:
+  - LN/ln-e
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

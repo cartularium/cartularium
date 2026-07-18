@@ -1,0 +1,15 @@
+id: DV-0145
+summary: "ironcalc: different argument interpretation — NPV"
+cause: arg-semantics
+category: value
+engines:
+  - ironcalc
+behavior:
+  signature: "90.91"
+test-count: 1
+subjects:
+  - NPV
+tests:
+  - NPV/npv-single-cashflow
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

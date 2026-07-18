@@ -1,0 +1,88 @@
+{
+  "subject": "feature:array-op",
+  "pair": {
+    "a": "excel",
+    "b": "gsheets"
+  },
+  "numTolerance": 1e-10,
+  "engines": [
+    {
+      "platform": "excel",
+      "generatedAt": "2026-06-04T06:13:38.055Z"
+    },
+    {
+      "platform": "gsheets",
+      "generatedAt": "2026-06-04T06:13:47.170Z"
+    }
+  ],
+  "axisSpace": [
+    {
+      "name": "context",
+      "locus": "syntactic",
+      "cardinality": 2
+    }
+  ],
+  "tallies": {
+    "total": 2,
+    "ok": 2,
+    "incomplete": 0,
+    "agree": 1,
+    "differ": 1,
+    "unimplemented": 0,
+    "precision": 0
+  },
+  "analysis": {
+    "reducts": [
+      [
+        "context"
+      ]
+    ],
+    "core": [
+      "context"
+    ]
+  },
+  "verdict": {
+    "subject": "feature:array-op",
+    "completeness": 1,
+    "provisional": false,
+    "pinnedAxes": [],
+    "surface": {
+      "okProbes": 2,
+      "divergentProbes": 1,
+      "divergentFraction": 0.5
+    },
+    "kind": "EXPLICIT_BRIDGE",
+    "discriminators": [
+      "context"
+    ],
+    "byLocus": {
+      "syntactic": [
+        "context"
+      ],
+      "environment": [],
+      "data-borne": []
+    },
+    "trigger": [
+      {
+        "where": {
+          "context": "bare"
+        },
+        "outcome": "differ"
+      }
+    ],
+    "fix": {
+      "rewriteOn": [
+        "context"
+      ]
+    }
+  },
+  "divergent": [
+    {
+      "name": "bare",
+      "assignment": {
+        "context": "bare"
+      },
+      "outcome": "differ"
+    }
+  ]
+}

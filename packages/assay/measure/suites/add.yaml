@@ -1,0 +1,293 @@
+schemaVersion: 3
+name: "sweep: op:+"
+tests:
+  - subject: op:+
+    name: number-number
+    formula: =A1+B1
+    category: value
+    status: observed
+    tags:
+      - sweep:op:+
+      - ax:left_type=number
+      - ax:right_type=number
+    grid:
+      A1: 3
+      B1: 3
+  - subject: op:+
+    name: number-numstr
+    formula: =A1+B1
+    category: value
+    status: observed
+    tags:
+      - sweep:op:+
+      - ax:left_type=number
+      - ax:right_type=numstr
+    grid:
+      A1: 3
+      B1: ="3"
+  - subject: op:+
+    name: number-text
+    formula: =A1+B1
+    category: value
+    status: observed
+    tags:
+      - sweep:op:+
+      - ax:left_type=number
+      - ax:right_type=text
+    grid:
+      A1: 3
+      B1: x
+  - subject: op:+
+    name: number-bool
+    formula: =A1+B1
+    category: value
+    status: observed
+    tags:
+      - sweep:op:+
+      - ax:left_type=number
+      - ax:right_type=bool
+    grid:
+      A1: 3
+      B1: true
+  - subject: op:+
+    name: number-blank
+    formula: =A1+B1
+    category: value
+    status: observed
+    tags:
+      - sweep:op:+
+      - ax:left_type=number
+      - ax:right_type=blank
+    grid:
+      A1: 3
+  - subject: op:+
+    name: numstr-number
+    formula: =A1+B1
+    category: value
+    status: observed
+    tags:
+      - sweep:op:+
+      - ax:left_type=numstr
+      - ax:right_type=number
+    grid:
+      A1: ="3"
+      B1: 3
+  - subject: op:+
+    name: numstr-numstr
+    formula: =A1+B1
+    category: value
+    status: observed
+    tags:
+      - sweep:op:+
+      - ax:left_type=numstr
+      - ax:right_type=numstr
+    grid:
+      A1: ="3"
+      B1: ="3"
+  - subject: op:+
+    name: numstr-text
+    formula: =A1+B1
+    category: value
+    status: observed
+    tags:
+      - sweep:op:+
+      - ax:left_type=numstr
+      - ax:right_type=text
+    grid:
+      A1: ="3"
+      B1: x
+  - subject: op:+
+    name: numstr-bool
+    formula: =A1+B1
+    category: value
+    status: observed
+    tags:
+      - sweep:op:+
+      - ax:left_type=numstr
+      - ax:right_type=bool
+    grid:
+      A1: ="3"
+      B1: true
+  - subject: op:+
+    name: numstr-blank
+    formula: =A1+B1
+    category: value
+    status: observed
+    tags:
+      - sweep:op:+
+      - ax:left_type=numstr
+      - ax:right_type=blank
+    grid:
+      A1: ="3"
+  - subject: op:+
+    name: text-number
+    formula: =A1+B1
+    category: value
+    status: observed
+    tags:
+      - sweep:op:+
+      - ax:left_type=text
+      - ax:right_type=number
+    grid:
+      A1: x
+      B1: 3
+  - subject: op:+
+    name: text-numstr
+    formula: =A1+B1
+    category: value
+    status: observed
+    tags:
+      - sweep:op:+
+      - ax:left_type=text
+      - ax:right_type=numstr
+    grid:
+      A1: x
+      B1: ="3"
+  - subject: op:+
+    name: text-text
+    formula: =A1+B1
+    category: value
+    status: observed
+    tags:
+      - sweep:op:+
+      - ax:left_type=text
+      - ax:right_type=text
+    grid:
+      A1: x
+      B1: x
+  - subject: op:+
+    name: text-bool
+    formula: =A1+B1
+    category: value
+    status: observed
+    tags:
+      - sweep:op:+
+      - ax:left_type=text
+      - ax:right_type=bool
+    grid:
+      A1: x
+      B1: true
+  - subject: op:+
+    name: text-blank
+    formula: =A1+B1
+    category: value
+    status: observed
+    tags:
+      - sweep:op:+
+      - ax:left_type=text
+      - ax:right_type=blank
+    grid:
+      A1: x
+  - subject: op:+
+    name: bool-number
+    formula: =A1+B1
+    category: value
+    status: observed
+    tags:
+      - sweep:op:+
+      - ax:left_type=bool
+      - ax:right_type=number
+    grid:
+      A1: true
+      B1: 3
+  - subject: op:+
+    name: bool-numstr
+    formula: =A1+B1
+    category: value
+    status: observed
+    tags:
+      - sweep:op:+
+      - ax:left_type=bool
+      - ax:right_type=numstr
+    grid:
+      A1: true
+      B1: ="3"
+  - subject: op:+
+    name: bool-text
+    formula: =A1+B1
+    category: value
+    status: observed
+    tags:
+      - sweep:op:+
+      - ax:left_type=bool
+      - ax:right_type=text
+    grid:
+      A1: true
+      B1: x
+  - subject: op:+
+    name: bool-bool
+    formula: =A1+B1
+    category: value
+    status: observed
+    tags:
+      - sweep:op:+
+      - ax:left_type=bool
+      - ax:right_type=bool
+    grid:
+      A1: true
+      B1: true
+  - subject: op:+
+    name: bool-blank
+    formula: =A1+B1
+    category: value
+    status: observed
+    tags:
+      - sweep:op:+
+      - ax:left_type=bool
+      - ax:right_type=blank
+    grid:
+      A1: true
+  - subject: op:+
+    name: blank-number
+    formula: =A1+B1
+    category: value
+    status: observed
+    tags:
+      - sweep:op:+
+      - ax:left_type=blank
+      - ax:right_type=number
+    grid:
+      B1: 3
+  - subject: op:+
+    name: blank-numstr
+    formula: =A1+B1
+    category: value
+    status: observed
+    tags:
+      - sweep:op:+
+      - ax:left_type=blank
+      - ax:right_type=numstr
+    grid:
+      B1: ="3"
+  - subject: op:+
+    name: blank-text
+    formula: =A1+B1
+    category: value
+    status: observed
+    tags:
+      - sweep:op:+
+      - ax:left_type=blank
+      - ax:right_type=text
+    grid:
+      B1: x
+  - subject: op:+
+    name: blank-bool
+    formula: =A1+B1
+    category: value
+    status: observed
+    tags:
+      - sweep:op:+
+      - ax:left_type=blank
+      - ax:right_type=bool
+    grid:
+      B1: true
+  - subject: op:+
+    name: blank-blank
+    formula: =A1+B1
+    category: value
+    status: observed
+    tags:
+      - sweep:op:+
+      - ax:left_type=blank
+      - ax:right_type=blank
+    grid: {}

@@ -1,0 +1,15 @@
+id: DV-0216
+summary: "pycel: numeric precision differs — INTERCEPT"
+cause: precision
+category: value
+engines:
+  - pycel
+behavior:
+  signature: "0.9999999999999989"
+test-count: 1
+subjects:
+  - INTERCEPT
+tests:
+  - INTERCEPT/intercept-exact-linear
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

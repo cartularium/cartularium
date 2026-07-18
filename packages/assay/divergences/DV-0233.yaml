@@ -1,0 +1,15 @@
+id: DV-0233
+summary: "hyperformula: rendered with different format — TEXT"
+cause: format-rendering
+category: value
+engines:
+  - hyperformula
+behavior:
+  signature: '"0.3%"'
+test-count: 1
+subjects:
+  - TEXT
+tests:
+  - TEXT/text-percent
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

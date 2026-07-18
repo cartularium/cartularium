@@ -1,0 +1,622 @@
+schemaVersion: 3
+name: Type coercion
+tests:
+  - subject: op:+
+    category: value
+    formula: =TRUE+0
+    expect: 1
+    overrides:
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - coercion
+      - bool-to-num
+      - divergence
+    name: true-plus-zero
+  - subject: op:+
+    category: value
+    formula: =FALSE+0
+    expect: 0
+    overrides:
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - coercion
+      - bool-to-num
+      - divergence
+    name: false-plus-zero
+  - subject: op:+
+    category: value
+    formula: =TRUE+1
+    expect: 2
+    overrides:
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - coercion
+      - bool-to-num
+      - divergence
+    name: true-plus-one
+  - subject: op:*
+    category: value
+    formula: =TRUE*TRUE
+    expect: 1
+    overrides:
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - coercion
+      - bool-to-num
+      - divergence
+    name: true-times-true
+  - subject: op:-
+    category: value
+    formula: =TRUE-FALSE
+    expect: 1
+    overrides:
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - coercion
+      - bool-to-num
+      - divergence
+    name: true-minus-false
+  - subject: SUM
+    category: value
+    formula: =SUM(TRUE, FALSE, TRUE)
+    expect: 2
+    overrides:
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      ironcalc:
+        cause: arg-semantics
+        recorded: 0
+    tags:
+      - coercion
+      - bool-to-num
+      - divergence
+    name: sum-with-booleans
+  - subject: SUM
+    formula: =SUM(A1:A3)
+    category: value
+    grid:
+      A1: true
+      A2: false
+      A3: true
+    expect: 0
+    overrides:
+      lattice:
+        cause: arg-semantics
+        recorded: 2
+        note: lattice text-coercion in SUM differs
+    tags:
+      - coercion
+      - bool-to-num
+      - divergence
+    name: sum-of-boolean-range
+  - subject: AVERAGE
+    formula: =AVERAGE(TRUE, FALSE, TRUE)
+    category: value
+    expect: 0.6666666666666666
+    overrides:
+      lattice:
+        cause: error-code
+        recorded:
+          error: "#DIV/0!"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - coercion
+      - bool-to-num
+      - divergence
+    name: average-with-booleans
+  - subject: op:+
+    category: value
+    formula: ="1"+0
+    expect: 1
+    tags:
+      - coercion
+      - str-to-num
+      - divergence
+    name: numeric-string-plus-zero
+  - subject: op:+
+    category: value
+    formula: ="2"+"3"
+    expect: 5
+    tags:
+      - coercion
+      - str-to-num
+      - divergence
+    name: numeric-string-plus-numeric-string
+  - subject: op:*
+    category: value
+    formula: ="5"*2
+    expect: 10
+    tags:
+      - coercion
+      - str-to-num
+      - divergence
+    name: numeric-string-times-number
+  - subject: op:+
+    formula: ="abc"+1
+    category: value
+    expect:
+      error: "#VALUE!"
+    tags:
+      - coercion
+      - str-to-num
+    name: non-numeric-string-plus-number
+  - subject: op:+
+    formula: =""+1
+    category: value
+    expect: 1
+    overrides:
+      excel:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+      lattice:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+      ironcalc:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+    tags:
+      - coercion
+      - str-to-num
+      - divergence
+    name: empty-string-plus-number
+  - subject: op:+
+    category: value
+    formula: =" "+1
+    expect:
+      error: "#VALUE!"
+    tags:
+      - coercion
+      - str-to-num
+      - divergence
+    name: whitespace-string-plus-number
+  - subject: SUM
+    formula: =SUM("1", "2", "3")
+    category: value
+    expect: 6
+    overrides:
+      ironcalc:
+        cause: arg-semantics
+        recorded: 0
+        note: ironcalc does not coerce numeric strings in SUM
+    tags:
+      - coercion
+      - str-to-num
+    name: sum-with-numeric-string
+  - subject: SUM
+    category: value
+    status: observed
+    formula: =SUM(A1:A3)
+    grid:
+      A1: "1"
+      A2: "2"
+      A3: "3"
+    tags:
+      - coercion
+      - str-to-num
+      - divergence
+    name: sum-of-string-range
+  - subject: op:&
+    category: value
+    formula: =1&2
+    expect: "12"
+    tags:
+      - coercion
+      - num-to-str
+    name: number-concat-number
+  - subject: op:&
+    category: value
+    formula: =TRUE&"x"
+    expect: TRUEx
+    overrides:
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - coercion
+      - bool-to-str
+      - divergence
+    name: boolean-concat-string
+  - subject: op:&
+    category: value
+    formula: =1&TRUE
+    expect: 1TRUE
+    overrides:
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - coercion
+      - num-to-str
+      - bool-to-str
+      - divergence
+    name: number-concat-boolean
+  - subject: op:&
+    formula: =#N/A&"x"
+    category: error-code
+    expect:
+      error: "#N/A"
+    tags:
+      - coercion
+      - error-concat
+    name: error-concat-string-type-coercion
+  - subject: op:+
+    category: value
+    formula: =A1+1
+    grid:
+      A1: null
+    expect: 1
+    tags:
+      - coercion
+      - blank
+    name: blank-cell-plus-number
+  - subject: op:*
+    category: value
+    formula: =A1*10
+    grid:
+      A1: null
+    expect: 0
+    tags:
+      - coercion
+      - blank
+    name: blank-cell-in-arithmetic
+  - subject: op:&
+    category: value
+    formula: =A1&"x"
+    grid:
+      A1: null
+    expect: x
+    tags:
+      - coercion
+      - blank
+    name: blank-cell-in-concatenation
+  - subject: op:=
+    category: value
+    formula: =A1=0
+    grid:
+      A1: null
+    expect: true
+    tags:
+      - coercion
+      - blank
+      - divergence
+    name: blank-equals-zero
+  - subject: op:=
+    category: value
+    formula: =A1=""
+    grid:
+      A1: null
+    expect: true
+    tags:
+      - coercion
+      - blank
+      - divergence
+    name: blank-equals-empty-string
+  - subject: op:=
+    category: value
+    formula: =0=""
+    expect: false
+    tags:
+      - coercion
+      - blank
+      - divergence
+    name: zero-equals-empty-string
+  - subject: op:<
+    category: value
+    formula: =1<"a"
+    expect: true
+    tags:
+      - coercion
+      - comparison
+      - divergence
+    name: number-less-than-string
+  - subject: op:<
+    category: value
+    formula: ="a"<1
+    expect: false
+    tags:
+      - coercion
+      - comparison
+      - divergence
+    name: string-less-than-number
+  - subject: op:=
+    category: value
+    formula: =TRUE=1
+    expect: false
+    overrides:
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - coercion
+      - comparison
+      - divergence
+    name: boolean-equals-number
+  - subject: op:<
+    category: value
+    status: observed
+    formula: =TRUE<2
+    tags:
+      - coercion
+      - comparison
+      - divergence
+    name: boolean-less-than-number
+  - subject: op:=
+    category: value
+    formula: ="a"="A"
+    expect: true
+    tags:
+      - coercion
+      - comparison
+      - divergence
+    name: string-comparison-case-sensitivity
+  - subject: op:=
+    category: value
+    formula: ="1"=1
+    expect: false
+    tags:
+      - coercion
+      - comparison
+      - divergence
+    name: numeric-string-equals-number
+  - subject: op:unary-
+    category: value
+    formula: =-TRUE
+    expect: -1
+    overrides:
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - coercion
+      - bool-to-num
+      - unary
+      - divergence
+    name: unary-minus-on-true
+  - subject: op:unary-
+    category: value
+    formula: =-"5"
+    expect: -5
+    tags:
+      - coercion
+      - str-to-num
+      - unary
+      - divergence
+    name: unary-minus-on-numeric-string
+  - subject: op:unary-
+    category: value
+    formula: =--TRUE
+    expect: 1
+    overrides:
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      ironcalc:
+        cause: arg-semantics
+        recorded: true
+    tags:
+      - coercion
+      - bool-to-num
+      - double-unary
+      - divergence
+    name: double-unary-on-true
+  - subject: op:unary-
+    category: value
+    formula: =--FALSE
+    expect: 0
+    overrides:
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      ironcalc:
+        cause: arg-semantics
+        recorded: false
+    tags:
+      - coercion
+      - bool-to-num
+      - double-unary
+      - divergence
+    name: double-unary-on-false
+  - subject: op:unary+
+    category: value
+    formula: =+"5"
+    expect: "5"
+    overrides:
+      lattice:
+        cause: error-code
+        recorded:
+          error: "#PARSE!"
+    tags:
+      - coercion
+      - str-to-num
+      - unary
+      - divergence
+    subjectRef: legacy:6f703a756e6172792b
+    name: unary-plus-on-string
+  - subject: N
+    formula: =N(TRUE)
+    category: value
+    expect: 1
+    overrides:
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - coercion
+    name: n-of-true-type-coercion
+  - subject: N
+    formula: =N(FALSE)
+    category: value
+    expect: 0
+    overrides:
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - coercion
+    name: n-of-false-type-coercion
+  - subject: N
+    category: value
+    formula: =N("hello")
+    expect: 0
+    tags:
+      - coercion
+    name: n-of-string
+  - subject: N
+    category: value
+    formula: =N(42)
+    expect: 42
+    tags:
+      - coercion
+    name: n-of-number-type-coercion
+  - subject: N
+    formula: =N(#VALUE!)
+    category: error-code
+    expect:
+      error: "#VALUE!"
+    tags:
+      - coercion
+    name: n-of-error-type-coercion
+  - subject: T
+    category: value
+    formula: =T("hello")
+    expect: hello
+    tags:
+      - coercion
+    name: t-of-string
+  - subject: T
+    formula: =T(42)
+    category: value
+    expect: null
+    overrides:
+      lattice:
+        cause: arg-semantics
+        recorded: ""
+      hyperformula:
+        cause: arg-semantics
+        recorded: ""
+    tags:
+      - coercion
+    name: t-of-number
+  - subject: T
+    category: value
+    status: observed
+    formula: =T(TRUE)
+    tags:
+      - coercion
+      - divergence
+    name: t-of-boolean
+  - subject: VALUE
+    category: value
+    formula: =VALUE("123.45")
+    expect: 123.45
+    tags:
+      - coercion
+    name: value-of-numeric-string
+  - subject: VALUE
+    formula: =VALUE("abc")
+    category: value
+    expect:
+      error: "#VALUE!"
+    tags:
+      - coercion
+    name: value-of-non-numeric-string
+  - subject: VALUE
+    category: value
+    formula: =VALUE("TRUE")
+    expect:
+      error: "#VALUE!"
+    tags:
+      - coercion
+      - divergence
+    name: value-of-boolean-string
+  - subject: TEXT
+    formula: =TEXT(1234.5, "#,##0.00")
+    category: format
+    semanticDomain: display
+    expect: 1,234.50
+    overrides:
+      hyperformula:
+        cause: format-rendering
+        recorded: 1235,##0.00
+    tags:
+      - coercion
+      - divergence
+    name: text-number-with-format
+  - subject: SUM
+    category: value
+    status: observed
+    formula: =SUM({TRUE,FALSE,TRUE})
+    tags:
+      - coercion
+      - bool-to-num
+      - divergence
+      - bare-formula
+    name: boolean-array-in-sum
+  - subject: SUM
+    category: value
+    status: observed
+    formula: =SUM({1,"2",TRUE})
+    tags:
+      - coercion
+      - divergence
+      - bare-formula
+    name: mixed-array-in-sum
+  - subject: PRODUCT
+    category: value
+    status: observed
+    formula: =PRODUCT({"2","3","4"})
+    tags:
+      - coercion
+      - str-to-num
+      - divergence
+      - bare-formula
+    name: string-array-in-product
+  - subject: N
+    formula: =N({TRUE,FALSE,TRUE})
+    category: value
+    features:
+      - broadcasting
+    expect:
+      - - 1
+        - 0
+        - 1
+    overrides:
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - coercion
+      - broadcast
+    name: n-over-boolean-array

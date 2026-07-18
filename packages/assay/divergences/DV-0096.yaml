@@ -1,0 +1,16 @@
+id: DV-0096
+summary: "excel, lattice: different error code — HSTACK"
+cause: error-code
+category: error-code
+engines:
+  - excel
+  - lattice
+behavior:
+  signature: '{"error":"#DIV/0!"}'
+test-count: 1
+subjects:
+  - HSTACK
+tests:
+  - HSTACK/hstack-with-error-value
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

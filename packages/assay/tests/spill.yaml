@@ -1,0 +1,192 @@
+schemaVersion: 3
+name: Spill behavior
+tests:
+  - subject: SEQUENCE
+    category: interaction
+    semanticDomain: grid-context
+    features:
+      - dynamic-arrays
+    formula: =SEQUENCE(3)
+    expect:
+      - - 1
+      - - 2
+      - - 3
+    name: sequence-column-spill
+  - subject: SEQUENCE
+    category: interaction
+    semanticDomain: grid-context
+    features:
+      - dynamic-arrays
+    formula: =SEQUENCE(1, 3)
+    expect:
+      - - 1
+        - 2
+        - 3
+    name: sequence-row-spill
+  - subject: SEQUENCE
+    category: interaction
+    semanticDomain: grid-context
+    features:
+      - dynamic-arrays
+    formula: =SEQUENCE(3, 2)
+    expect:
+      - - 1
+        - 2
+      - - 3
+        - 4
+      - - 5
+        - 6
+    name: sequence-2d-spill
+  - subject: HSTACK
+    category: value
+    features:
+      - dynamic-arrays
+    formula: =HSTACK(1, 2, 3)
+    expect:
+      - - 1
+        - 2
+        - 3
+    name: hstack-scalars
+  - subject: VSTACK
+    category: value
+    features:
+      - dynamic-arrays
+    formula: =VSTACK(1, 2, 3)
+    expect:
+      - - 1
+      - - 2
+      - - 3
+    name: vstack-scalars
+  - subject: HSTACK
+    category: value
+    features:
+      - dynamic-arrays
+    formula: =HSTACK(A1:A2, B1:B2)
+    grid:
+      A1: 1
+      A2: 2
+      B1: 3
+      B2: 4
+    expect:
+      - - 1
+        - 3
+      - - 2
+        - 4
+    name: hstack-arrays
+  - subject: VSTACK
+    category: value
+    features:
+      - dynamic-arrays
+    formula: =VSTACK(A1:B1, A2:B2)
+    grid:
+      A1: 1
+      B1: 2
+      A2: 3
+      B2: 4
+    expect:
+      - - 1
+        - 2
+      - - 3
+        - 4
+    name: vstack-arrays
+  - subject: lit:array
+    formula: ={1, 2, 3}
+    category: value
+    expect:
+      - - 1
+        - 2
+        - 3
+    overrides:
+      ironcalc:
+        cause: error-code
+        recorded:
+          error: "#N/IMPL!"
+      libreoffice:
+        cause: shape
+        recorded: 1
+      pycel:
+        cause: shape
+        recorded: 1
+    tags:
+      - bare-formula
+    name: array-literal-row
+  - subject: lit:array
+    category: value
+    status: observed
+    formula: ={1; 2; 3}
+    tags:
+      - divergence
+      - bare-formula
+    name: array-literal-column
+  - subject: SORT
+    formula: =SORT({3;1;2})
+    category: interaction
+    semanticDomain: grid-context
+    features:
+      - dynamic-arrays
+    expect:
+      - - 1
+      - - 2
+      - - 3
+    tags:
+      - divergence
+      - bare-formula
+    name: sort-spill
+  - subject: UNIQUE
+    formula: =UNIQUE({1;2;1;3;2})
+    category: interaction
+    semanticDomain: grid-context
+    features:
+      - dynamic-arrays
+    expect:
+      - - 1
+      - - 2
+      - - 3
+    tags:
+      - divergence
+      - bare-formula
+    name: unique-spill
+  - subject: FILTER
+    formula: =FILTER({1;2;3;4;5}, {1;0;1;0;1})
+    category: interaction
+    semanticDomain: grid-context
+    features:
+      - dynamic-arrays
+    expect:
+      - - 1
+      - - 3
+      - - 5
+    tags:
+      - divergence
+      - bare-formula
+    name: filter-spill
+  - subject: MAP
+    category: interaction
+    semanticDomain: grid-context
+    formula: =MAP({1;2;3}, LAMBDA(x, x*2))
+    expect:
+      - - 2
+      - - 4
+      - - 6
+    tags:
+      - bare-formula
+    features:
+      - dynamic-arrays
+      - lambda
+      - higher-order-lambda
+    name: map-spill
+  - subject: SUM
+    category: interaction
+    semanticDomain: grid-context
+    formula: =SUM(1, 2, 3)
+    expect: 6
+    name: single-cell-result-no-spill
+  - subject: INDEX
+    category: value
+    formula: =INDEX(A1:A3, 2)
+    grid:
+      A1: 10
+      A2: 20
+      A3: 30
+    expect: 20
+    name: index-from-spilled-source

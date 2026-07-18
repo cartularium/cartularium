@@ -1,0 +1,26 @@
+id: DV-0021
+summary: "formulas: function not implemented — OFFSET, SUBTOTAL"
+cause: missing-function
+category: value
+engines:
+  - formulas
+behavior:
+  signature: '{"error":"#NAME?"}'
+test-count: 11
+subjects:
+  - OFFSET
+  - SUBTOTAL
+tests:
+  - OFFSET/offset-down-one
+  - OFFSET/offset-right-one
+  - OFFSET/offset-zero
+  - OFFSET/offset-sum-height-width
+  - OFFSET/offset-sum-shifted-range
+  - OFFSET/offset-negative-rows
+  - SUBTOTAL/subtotal-average
+  - SUBTOTAL/subtotal-count
+  - SUBTOTAL/subtotal-max
+  - SUBTOTAL/subtotal-min
+  - SUBTOTAL/subtotal-sum
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

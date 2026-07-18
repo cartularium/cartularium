@@ -1,0 +1,59 @@
+name = "cartularium-edit-shell"
+main = "src/index.ts"
+compatibility_date = "2026-04-01"
+compatibility_flags = ["nodejs_compat"]
+
+[[kv_namespaces]]
+binding = "SESSIONS"
+id = "b1c9441ac13e4f699f6175bacd711fd9"
+
+[[kv_namespaces]]
+binding = "RATE_LIMIT"
+id = "798bc3b0890e473286dd24e2ace52651"
+
+[[r2_buckets]]
+binding = "ASSETS"
+bucket_name = "cartularium-edit-assets"
+# `remote = true` makes `wrangler dev` hit the real R2 bucket instead of the
+# default local simulator — so a dev-uploaded image's URL actually works and
+# the object shows in the production R2 dashboard. Production deploys ignore
+# this field. Cost: dev sessions accumulate real R2 objects; clean up via
+# `pnpm --filter @cartularium/edit-shell wrangler r2 object delete \
+#   cartularium-edit-assets <key>` if they pile up.
+remote = true
+
+[[r2_buckets]]
+binding = "ASSAY_PREVIEW"
+bucket_name = "cartularium-assay-preview"
+
+[[d1_databases]]
+binding = "ASSAY_PREVIEW_DB"
+database_name = "cartularium-assay-preview"
+database_id = "472458f9-9aa8-4d72-9907-e3729b87ebbc"
+
+[vars]
+GITHUB_APP_ID = "3537864"
+COOKIE_DOMAIN = ".sheets.wiki"
+CANONICAL_OWNER = "cartularium"
+CANONICAL_REPO = "cartularium"
+ALLOWED_ORIGINS = "https://sheets.wiki,https://assay.sheets.wiki,https://dev.sheets.wiki"
+ASSAY_MAINTAINERS = "Astral1119"
+
+# Secrets set via `wrangler secret put`:
+#   GITHUB_APP_PRIVATE_KEY
+#   GITHUB_APP_CLIENT_ID
+#   GITHUB_APP_CLIENT_SECRET
+#   GITHUB_APP_WEBHOOK_SECRET (future, only when webhooks are wired)
+#   ASSAY_RUNNER_TOKEN
+
+[[routes]]
+pattern = "sheets.wiki/api/edit/*"
+zone_name = "sheets.wiki"
+
+[[routes]]
+pattern = "assay.sheets.wiki/api/edit/*"
+zone_name = "sheets.wiki"
+
+[[routes]]
+pattern = "dev.sheets.wiki/api/edit/*"
+zone_name = "sheets.wiki"

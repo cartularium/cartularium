@@ -1,0 +1,18 @@
+id: DV-0249
+summary: "hyperformula: COLUMN/ROW return scalar instead of broadcasting over
+  the input range"
+cause: shape
+category: value
+engines:
+  - hyperformula
+behavior:
+  signature: "1"
+test-count: 2
+subjects:
+  - COLUMN
+  - ROW
+tests:
+  - ROW/row-over-range-returns-array
+  - COLUMN/column-over-range-returns-array
+seeded: 2026-04-26
+last-confirmed: 2026-04-26

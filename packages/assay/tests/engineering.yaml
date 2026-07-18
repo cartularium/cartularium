@@ -1,0 +1,1485 @@
+schemaVersion: 3
+name: Engineering functions
+tests:
+  - subject: BIN2DEC
+    category: value
+    formula: =BIN2DEC("1010")
+    expect: 10
+    tags:
+      - engineering
+    name: bin2dec-positive
+  - subject: BIN2DEC
+    category: value
+    formula: =BIN2DEC("0")
+    expect: 0
+    tags:
+      - engineering
+    name: bin2dec-zero
+  - subject: BIN2DEC
+    category: value
+    formula: =BIN2DEC("1111111111")
+    expect: -1
+    tags:
+      - engineering
+    name: bin2dec-max-negative-two-s-complement
+  - subject: BIN2DEC
+    category: value
+    formula: =BIN2DEC("1111111110")
+    expect: -2
+    tags:
+      - engineering
+    name: bin2dec-negative-via-two-s-complement
+  - subject: BIN2DEC
+    formula: =BIN2DEC("11111111110")
+    category: value
+    expect:
+      error: "#NUM!"
+    overrides:
+      libreoffice:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+    tags:
+      - engineering
+    name: bin2dec-too-long
+  - subject: BIN2HEX
+    category: value
+    formula: =BIN2HEX("1010")
+    expect: A
+    tags:
+      - engineering
+    name: bin2hex-positive
+  - subject: BIN2HEX
+    category: value
+    formula: =BIN2HEX("1010", 4)
+    expect: 000A
+    tags:
+      - engineering
+    name: bin2hex-with-places-padding
+  - subject: BIN2HEX
+    category: value
+    formula: =BIN2HEX("1111111111")
+    expect: FFFFFFFFFF
+    tags:
+      - engineering
+    name: bin2hex-negative-two-s-complement
+  - subject: BIN2HEX
+    formula: =BIN2HEX("12")
+    category: value
+    expect:
+      error: "#NUM!"
+    overrides:
+      libreoffice:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+    tags:
+      - engineering
+    name: bin2hex-invalid
+  - subject: BIN2OCT
+    category: value
+    formula: =BIN2OCT("1001")
+    expect: "11"
+    tags:
+      - engineering
+    name: bin2oct-positive
+  - subject: BIN2OCT
+    category: value
+    formula: =BIN2OCT("1001", 4)
+    expect: "0011"
+    tags:
+      - engineering
+    name: bin2oct-with-places-padding
+  - subject: BIN2OCT
+    category: value
+    formula: =BIN2OCT("1111111111")
+    expect: "7777777777"
+    tags:
+      - engineering
+    name: bin2oct-negative-two-s-complement
+  - subject: BIN2OCT
+    formula: =BIN2OCT("11111111", 1)
+    category: value
+    expect:
+      error: "#NUM!"
+    overrides:
+      libreoffice:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+    tags:
+      - engineering
+    name: bin2oct-places-too-small
+  - subject: DEC2BIN
+    category: value
+    formula: =DEC2BIN(10)
+    expect: "1010"
+    tags:
+      - engineering
+    name: dec2bin-positive
+  - subject: DEC2BIN
+    category: value
+    formula: =DEC2BIN(10, 8)
+    expect: "00001010"
+    tags:
+      - engineering
+    name: dec2bin-with-places-padding
+  - subject: DEC2BIN
+    category: value
+    formula: =DEC2BIN(-2)
+    expect: "1111111110"
+    tags:
+      - engineering
+    name: dec2bin-negative
+  - subject: DEC2BIN
+    formula: =DEC2BIN(512)
+    category: value
+    expect:
+      error: "#NUM!"
+    overrides:
+      libreoffice:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+    tags:
+      - engineering
+    name: dec2bin-out-of-range
+  - subject: DEC2HEX
+    category: value
+    formula: =DEC2HEX(255)
+    expect: FF
+    tags:
+      - engineering
+    name: dec2hex-positive
+  - subject: DEC2HEX
+    category: value
+    formula: =DEC2HEX(10, 4)
+    expect: 000A
+    tags:
+      - engineering
+    name: dec2hex-with-places-padding
+  - subject: DEC2HEX
+    category: value
+    formula: =DEC2HEX(-1)
+    expect: FFFFFFFFFF
+    tags:
+      - engineering
+    name: dec2hex-negative
+  - subject: DEC2HEX
+    formula: =DEC2HEX(255, 1)
+    category: value
+    expect:
+      error: "#NUM!"
+    overrides:
+      libreoffice:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+    tags:
+      - engineering
+    name: dec2hex-places-too-small
+  - subject: DEC2OCT
+    category: value
+    formula: =DEC2OCT(8)
+    expect: "10"
+    tags:
+      - engineering
+    name: dec2oct-positive
+  - subject: DEC2OCT
+    category: value
+    formula: =DEC2OCT(8, 4)
+    expect: "0010"
+    tags:
+      - engineering
+    name: dec2oct-with-places-padding
+  - subject: DEC2OCT
+    category: value
+    formula: =DEC2OCT(-1)
+    expect: "7777777777"
+    tags:
+      - engineering
+    name: dec2oct-negative
+  - subject: DEC2OCT
+    formula: =DEC2OCT(536870912)
+    category: value
+    expect:
+      error: "#NUM!"
+    overrides:
+      libreoffice:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+    tags:
+      - engineering
+    name: dec2oct-out-of-range
+  - subject: HEX2BIN
+    category: value
+    formula: =HEX2BIN("A")
+    expect: "1010"
+    tags:
+      - engineering
+    name: hex2bin-positive
+  - subject: HEX2BIN
+    category: value
+    formula: =HEX2BIN("A", 8)
+    expect: "00001010"
+    tags:
+      - engineering
+    name: hex2bin-with-places-padding
+  - subject: HEX2BIN
+    category: value
+    formula: =HEX2BIN("FFFFFFFFFF")
+    expect: "1111111111"
+    tags:
+      - engineering
+    name: hex2bin-negative-two-s-complement
+  - subject: HEX2BIN
+    formula: =HEX2BIN("200")
+    category: value
+    expect:
+      error: "#NUM!"
+    overrides:
+      libreoffice:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+    tags:
+      - engineering
+    name: hex2bin-out-of-range
+  - subject: HEX2DEC
+    category: value
+    formula: =HEX2DEC("FF")
+    expect: 255
+    tags:
+      - engineering
+    name: hex2dec-two-letters
+  - subject: HEX2DEC
+    category: value
+    formula: =HEX2DEC("0")
+    expect: 0
+    tags:
+      - engineering
+    name: hex2dec-zero
+  - subject: HEX2DEC
+    category: value
+    formula: =HEX2DEC("FFFFFFFFFF")
+    expect: -1
+    tags:
+      - engineering
+    name: hex2dec-negative-two-s-complement
+  - subject: HEX2DEC
+    formula: =HEX2DEC("G")
+    category: value
+    expect:
+      error: "#NUM!"
+    overrides:
+      libreoffice:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+    tags:
+      - engineering
+    name: hex2dec-invalid
+  - subject: HEX2OCT
+    category: value
+    formula: =HEX2OCT("F")
+    expect: "17"
+    tags:
+      - engineering
+    name: hex2oct-positive
+  - subject: HEX2OCT
+    category: value
+    formula: =HEX2OCT("F", 4)
+    expect: "0017"
+    tags:
+      - engineering
+    name: hex2oct-with-places-padding
+  - subject: HEX2OCT
+    category: value
+    formula: =HEX2OCT("FFFFFFFFFF")
+    expect: "7777777777"
+    tags:
+      - engineering
+    name: hex2oct-negative-two-s-complement
+  - subject: HEX2OCT
+    formula: =HEX2OCT("40000000")
+    category: value
+    expect:
+      error: "#NUM!"
+    overrides:
+      libreoffice:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+    tags:
+      - engineering
+    name: hex2oct-out-of-range
+  - subject: OCT2BIN
+    category: value
+    formula: =OCT2BIN("7")
+    expect: "111"
+    tags:
+      - engineering
+    name: oct2bin-positive
+  - subject: OCT2BIN
+    category: value
+    formula: =OCT2BIN("7", 8)
+    expect: "00000111"
+    tags:
+      - engineering
+    name: oct2bin-with-places-padding
+  - subject: OCT2BIN
+    category: value
+    formula: =OCT2BIN("7777777777")
+    expect: "1111111111"
+    tags:
+      - engineering
+    name: oct2bin-negative-two-s-complement
+  - subject: OCT2BIN
+    formula: =OCT2BIN("1000")
+    category: value
+    expect:
+      error: "#NUM!"
+    overrides:
+      libreoffice:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+    tags:
+      - engineering
+    name: oct2bin-out-of-range
+  - subject: OCT2DEC
+    category: value
+    formula: =OCT2DEC("17")
+    expect: 15
+    tags:
+      - engineering
+    name: oct2dec-positive
+  - subject: OCT2DEC
+    category: value
+    formula: =OCT2DEC("0")
+    expect: 0
+    tags:
+      - engineering
+    name: oct2dec-zero
+  - subject: OCT2DEC
+    category: value
+    formula: =OCT2DEC("7777777777")
+    expect: -1
+    tags:
+      - engineering
+    name: oct2dec-negative-two-s-complement
+  - subject: OCT2DEC
+    formula: =OCT2DEC("8")
+    category: value
+    expect:
+      error: "#NUM!"
+    overrides:
+      libreoffice:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+    tags:
+      - engineering
+    name: oct2dec-invalid
+  - subject: OCT2HEX
+    category: value
+    formula: =OCT2HEX("17")
+    expect: F
+    tags:
+      - engineering
+    name: oct2hex-positive
+  - subject: OCT2HEX
+    category: value
+    formula: =OCT2HEX("17", 4)
+    expect: 000F
+    tags:
+      - engineering
+    name: oct2hex-with-places-padding
+  - subject: OCT2HEX
+    category: value
+    formula: =OCT2HEX("7777777777")
+    expect: FFFFFFFFFF
+    tags:
+      - engineering
+    name: oct2hex-negative-two-s-complement
+  - subject: OCT2HEX
+    formula: =OCT2HEX("9")
+    category: value
+    expect:
+      error: "#NUM!"
+    overrides:
+      libreoffice:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+    tags:
+      - engineering
+    name: oct2hex-invalid
+  - subject: BITAND
+    formula: =BITAND(5, 3)
+    category: value
+    expect: 1
+    overrides:
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - engineering
+    name: bitand-basic
+  - subject: BITAND
+    formula: =BITAND(12, 0)
+    category: value
+    expect: 0
+    overrides:
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - engineering
+    name: bitand-zero
+  - subject: BITAND
+    formula: =BITAND(-1, 3)
+    category: error-code
+    expect:
+      error: "#NUM!"
+    overrides:
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - engineering
+    name: bitand-negative-error
+  - subject: BITAND
+    formula: =BITAND(281474976710656, 1)
+    category: value
+    expect:
+      error: "#NUM!"
+    overrides:
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: arg-semantics
+        recorded: 0
+      pycel:
+        cause: arg-semantics
+        recorded: 0
+    tags:
+      - engineering
+    name: bitand-exceeds-2-48
+  - subject: BITOR
+    formula: =BITOR(5, 3)
+    category: value
+    expect: 7
+    overrides:
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - engineering
+    name: bitor-basic
+  - subject: BITOR
+    formula: =BITOR(8, 4)
+    category: value
+    expect: 12
+    overrides:
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - engineering
+    name: bitor-disjoint
+  - subject: BITOR
+    formula: =BITOR(-1, 3)
+    category: error-code
+    expect:
+      error: "#NUM!"
+    overrides:
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - engineering
+    name: bitor-negative-error
+  - subject: BITXOR
+    formula: =BITXOR(5, 3)
+    category: value
+    expect: 6
+    overrides:
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - engineering
+    name: bitxor-basic
+  - subject: BITXOR
+    formula: =BITXOR(7, 7)
+    category: value
+    expect: 0
+    overrides:
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - engineering
+    name: bitxor-self-zero
+  - subject: BITXOR
+    formula: =BITXOR(-1, 3)
+    category: error-code
+    expect:
+      error: "#NUM!"
+    overrides:
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - engineering
+    name: bitxor-negative-error
+  - subject: BITLSHIFT
+    formula: =BITLSHIFT(1, 3)
+    category: value
+    expect: 8
+    overrides:
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - engineering
+    name: bitlshift-basic
+  - subject: BITLSHIFT
+    formula: =BITLSHIFT(42, 0)
+    category: value
+    expect: 42
+    overrides:
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - engineering
+    name: bitlshift-zero-shift
+  - subject: BITLSHIFT
+    formula: =BITLSHIFT(16, -2)
+    category: value
+    expect: 4
+    overrides:
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - engineering
+    name: bitlshift-negative-shift-acts-as-rshift
+  - subject: BITLSHIFT
+    formula: =BITLSHIFT(-1, 2)
+    category: error-code
+    expect:
+      error: "#NUM!"
+    overrides:
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - engineering
+    name: bitlshift-negative-number-error
+  - subject: BITRSHIFT
+    formula: =BITRSHIFT(16, 2)
+    category: value
+    expect: 4
+    overrides:
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - engineering
+    name: bitrshift-basic
+  - subject: BITRSHIFT
+    formula: =BITRSHIFT(42, 0)
+    category: value
+    expect: 42
+    overrides:
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - engineering
+    name: bitrshift-zero-shift
+  - subject: BITRSHIFT
+    formula: =BITRSHIFT(1, -3)
+    category: value
+    expect: 8
+    overrides:
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - engineering
+    name: bitrshift-negative-shift-acts-as-lshift
+  - subject: BITRSHIFT
+    formula: =BITRSHIFT(-1, 2)
+    category: error-code
+    expect:
+      error: "#NUM!"
+    overrides:
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - engineering
+    name: bitrshift-negative-number-error
+  - subject: DELTA
+    formula: =DELTA(5, 5)
+    category: value
+    expect: 1
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - engineering
+    name: delta-equal
+  - subject: DELTA
+    formula: =DELTA(5, 6)
+    category: value
+    expect: 0
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - engineering
+    name: delta-not-equal
+  - subject: DELTA
+    formula: =DELTA(0)
+    category: value
+    expect: 1
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - engineering
+    name: delta-default-second-zero
+  - subject: DELTA
+    formula: =DELTA(1)
+    category: value
+    expect: 0
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - engineering
+    name: delta-default-second-nonzero
+  - subject: GESTEP
+    formula: =GESTEP(5, 3)
+    category: value
+    expect: 1
+    overrides:
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - engineering
+    name: gestep-greater
+  - subject: GESTEP
+    formula: =GESTEP(2, 3)
+    category: value
+    expect: 0
+    overrides:
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - engineering
+    name: gestep-less
+  - subject: GESTEP
+    formula: =GESTEP(3, 3)
+    category: value
+    expect: 1
+    overrides:
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - engineering
+    name: gestep-equal
+  - subject: GESTEP
+    formula: =GESTEP(-1)
+    category: value
+    expect: 0
+    overrides:
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - engineering
+    name: gestep-default-step-zero
+  - subject: ERF
+    category: value
+    formula: =ERF(0)
+    expect: 0
+    tags:
+      - engineering
+    name: erf-zero
+  - subject: ERF
+    category: value
+    status: observed
+    formula: =ERF(1)
+    tags:
+      - engineering
+    name: erf-one
+  - subject: ERF
+    category: value
+    status: observed
+    formula: =ERF(-1)
+    tags:
+      - engineering
+    name: erf-negative
+  - subject: ERF
+    category: value
+    status: observed
+    formula: =ERF(0, 1)
+    tags:
+      - engineering
+    name: erf-two-arg-lower-upper
+  - subject: ERF.PRECISE
+    formula: =ERF.PRECISE(0)
+    category: value
+    expect: 0
+    overrides:
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - engineering
+    name: erf-precise-zero
+  - subject: ERF.PRECISE
+    category: value
+    status: observed
+    formula: =ERF.PRECISE(1)
+    tags:
+      - engineering
+    name: erf-precise-one
+  - subject: ERF.PRECISE
+    category: value
+    status: observed
+    formula: =ERF.PRECISE(-0.5)
+    tags:
+      - engineering
+    name: erf-precise-negative
+  - subject: COMPLEX
+    formula: =COMPLEX(3, 4)
+    category: value
+    expect: 3+4i
+    overrides:
+      lattice:
+        cause: format-rendering
+        recorded: '{__typeof: "Complex", real: 3, imaginary: 4, suffix: "i"}'
+      pycel:
+        cause: format-rendering
+        recorded: (3+4j)
+    tags:
+      - engineering
+    name: complex-basic
+  - subject: COMPLEX
+    formula: =COMPLEX(5, 0)
+    category: value
+    expect: "5"
+    overrides:
+      lattice:
+        cause: format-rendering
+        recorded: '{__typeof: "Complex", real: 5, imaginary: 0, suffix: "i"}'
+      pycel:
+        cause: format-rendering
+        recorded: (5+0j)
+    tags:
+      - engineering
+    name: complex-real-only
+  - subject: COMPLEX
+    formula: =COMPLEX(0, 1)
+    category: value
+    expect: i
+    overrides:
+      lattice:
+        cause: format-rendering
+        recorded: '{__typeof: "Complex", real: 0, imaginary: 1, suffix: "i"}'
+      pycel:
+        cause: format-rendering
+        recorded: 1j
+    tags:
+      - engineering
+    name: complex-imaginary-only
+  - subject: COMPLEX
+    formula: =COMPLEX(3, -4)
+    category: value
+    expect: 3-4i
+    overrides:
+      lattice:
+        cause: format-rendering
+        recorded: '{__typeof: "Complex", real: 3, imaginary: -4, suffix: "i"}'
+      pycel:
+        cause: format-rendering
+        recorded: (3-4j)
+    tags:
+      - engineering
+    name: complex-negative-imaginary
+  - subject: COMPLEX
+    formula: =COMPLEX(3, 4, "j")
+    category: value
+    expect: 3+4j
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      lattice:
+        cause: format-rendering
+        recorded: '{__typeof: "Complex", real: 3, imaginary: 4, suffix: "j"}'
+    tags:
+      - engineering
+    name: complex-j-suffix
+  - subject: IMABS
+    formula: =IMABS("3+4i")
+    category: value
+    expect: 5
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - engineering
+    name: imabs-3-4-5-triangle
+  - subject: IMABS
+    formula: =IMABS("5")
+    category: value
+    expect: 5
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - engineering
+    name: imabs-real-only
+  - subject: IMABS
+    formula: =IMABS("4i")
+    category: value
+    expect: 4
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - engineering
+    name: imabs-imaginary-only
+  - subject: IMAGINARY
+    formula: =IMAGINARY("3+4i")
+    category: value
+    expect: 4
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - engineering
+    name: imaginary-basic
+  - subject: IMAGINARY
+    formula: =IMAGINARY("5")
+    category: value
+    expect: 0
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - engineering
+    name: imaginary-real-only
+  - subject: IMAGINARY
+    formula: =IMAGINARY("3-4i")
+    category: value
+    expect: -4
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - engineering
+    name: imaginary-negative
+  - subject: IMREAL
+    formula: =IMREAL("3+4i")
+    category: value
+    expect: 3
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - engineering
+    name: imreal-basic
+  - subject: IMREAL
+    formula: =IMREAL("4i")
+    category: value
+    expect: 0
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - engineering
+    name: imreal-imaginary-only
+  - subject: IMREAL
+    formula: =IMREAL("-3+4i")
+    category: value
+    expect: -3
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - engineering
+    name: imreal-negative
+  - subject: IMARGUMENT
+    category: value
+    status: observed
+    formula: =IMARGUMENT("3+4i")
+    tags:
+      - engineering
+    name: imargument-basic
+  - subject: IMARGUMENT
+    formula: =IMARGUMENT("1")
+    category: value
+    expect: 0
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - engineering
+    name: imargument-real-positive
+  - subject: IMARGUMENT
+    category: value
+    status: observed
+    formula: =IMARGUMENT("i")
+    tags:
+      - engineering
+    name: imargument-pure-imaginary
+  - subject: IMCONJUGATE
+    formula: =IMCONJUGATE("3+4i")
+    category: value
+    expect: 3-4i
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      lattice:
+        cause: format-rendering
+        recorded: '{__typeof: "Complex", real: 3, imaginary: -4, suffix: "i"}'
+    tags:
+      - engineering
+    name: imconjugate-basic
+  - subject: IMCONJUGATE
+    formula: =IMCONJUGATE("3-4i")
+    category: value
+    expect: 3+4i
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      lattice:
+        cause: format-rendering
+        recorded: '{__typeof: "Complex", real: 3, imaginary: 4, suffix: "i"}'
+    tags:
+      - engineering
+    name: imconjugate-negative-imaginary
+  - subject: IMCONJUGATE
+    formula: =IMCONJUGATE("5")
+    category: value
+    expect: "5"
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      lattice:
+        cause: format-rendering
+        recorded: '{__typeof: "Complex", real: 5, imaginary: 0, suffix: "i"}'
+    tags:
+      - engineering
+    name: imconjugate-real-only
+  - subject: IMSUM
+    formula: =IMSUM("1+2i", "3+4i")
+    category: value
+    expect: 4+6i
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      lattice:
+        cause: format-rendering
+        recorded: '{__typeof: "Complex", real: 4, imaginary: 6, suffix: "i"}'
+    tags:
+      - engineering
+    name: imsum-basic
+  - subject: IMSUM
+    formula: =IMSUM("1+i", "2+2i", "3+3i")
+    category: value
+    expect: 6+6i
+    overrides:
+      ironcalc:
+        cause: error-code
+        recorded:
+          error: "#ERROR!"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      lattice:
+        cause: format-rendering
+        recorded: '{__typeof: "Complex", real: 6, imaginary: 6, suffix: "i"}'
+    tags:
+      - engineering
+    name: imsum-three-args
+  - subject: IMSUM
+    formula: =IMSUM("1+2i", "1-2i")
+    category: value
+    expect: "2"
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      lattice:
+        cause: format-rendering
+        recorded: '{__typeof: "Complex", real: 2, imaginary: 0, suffix: "i"}'
+    tags:
+      - engineering
+    name: imsum-cancel-imaginary
+  - subject: IMSUB
+    formula: =IMSUB("5+6i", "2+3i")
+    category: value
+    expect: 3+3i
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      lattice:
+        cause: format-rendering
+        recorded: '{__typeof: "Complex", real: 3, imaginary: 3, suffix: "i"}'
+    tags:
+      - engineering
+    name: imsub-basic
+  - subject: IMSUB
+    formula: =IMSUB("3+4i", "3+4i")
+    category: value
+    expect: "0"
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      lattice:
+        cause: format-rendering
+        recorded: '{__typeof: "Complex", real: 0, imaginary: 0, suffix: "i"}'
+    tags:
+      - engineering
+    name: imsub-to-zero
+  - subject: IMSUB
+    formula: =IMSUB("5", "2")
+    category: value
+    expect: "3"
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      lattice:
+        cause: format-rendering
+        recorded: '{__typeof: "Complex", real: 3, imaginary: 0, suffix: "i"}'
+    tags:
+      - engineering
+    name: imsub-real-only
+  - subject: IMPRODUCT
+    formula: =IMPRODUCT("1+2i", "3+4i")
+    category: value
+    expect: -5+10i
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      lattice:
+        cause: format-rendering
+        recorded: '{__typeof: "Complex", real: -5, imaginary: 10, suffix: "i"}'
+    tags:
+      - engineering
+    name: improduct-basic
+  - subject: IMPRODUCT
+    formula: =IMPRODUCT("3+4i", "2")
+    category: value
+    expect: 6+8i
+    overrides:
+      formulas:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      lattice:
+        cause: format-rendering
+        recorded: '{__typeof: "Complex", real: 6, imaginary: 8, suffix: "i"}'
+    tags:
+      - engineering
+    name: improduct-by-real
+  - subject: IMPRODUCT
+    formula: =IMPRODUCT("i", "i")
+    category: value
+    expect: "-1"
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      lattice:
+        cause: format-rendering
+        recorded: '{__typeof: "Complex", real: -1, imaginary: 0, suffix: "i"}'
+    tags:
+      - engineering
+    name: improduct-i-squared
+  - subject: IMDIV
+    formula: =IMDIV("-5+10i", "1+2i")
+    category: value
+    expect: 3+4i
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      lattice:
+        cause: format-rendering
+        recorded: '{__typeof: "Complex", real: 3, imaginary: 4, suffix: "i"}'
+    tags:
+      - engineering
+    name: imdiv-basic
+  - subject: IMDIV
+    formula: =IMDIV("6+8i", "2")
+    category: value
+    expect: 3+4i
+    overrides:
+      formulas:
+        cause: error-code
+        recorded:
+          error: "#NUM!"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      lattice:
+        cause: format-rendering
+        recorded: '{__typeof: "Complex", real: 3, imaginary: 4, suffix: "i"}'
+    tags:
+      - engineering
+    name: imdiv-by-real
+  - subject: IMDIV
+    category: value
+    status: observed
+    formula: =IMDIV("1+2i", "0")
+    tags:
+      - engineering
+    name: imdiv-by-zero
+  - subject: IMEXP
+    category: value
+    status: observed
+    formula: =IMEXP("0")
+    tags:
+      - engineering
+    name: imexp-zero
+  - subject: IMEXP
+    category: value
+    status: observed
+    formula: =IMEXP("1")
+    tags:
+      - engineering
+    name: imexp-real
+  - subject: IMEXP
+    category: value
+    status: observed
+    formula: =IMEXP("1+1i")
+    tags:
+      - engineering
+    name: imexp-imaginary
+  - subject: IMLOG
+    category: value
+    status: observed
+    formula: =IMLOG("1")
+    tags:
+      - engineering
+    name: imlog-natural-of-1
+  - subject: IMLOG
+    category: value
+    status: observed
+    formula: =IMLOG("3+4i")
+    tags:
+      - engineering
+    name: imlog-complex
+  - subject: IMLOG10
+    category: value
+    status: observed
+    formula: =IMLOG10("10")
+    tags:
+      - engineering
+    name: imlog10-of-10
+  - subject: IMLOG10
+    category: value
+    status: observed
+    formula: =IMLOG10("3+4i")
+    tags:
+      - engineering
+    name: imlog10-complex
+  - subject: IMLOG2
+    category: value
+    status: observed
+    formula: =IMLOG2("8")
+    tags:
+      - engineering
+    name: imlog2-of-8
+  - subject: IMLOG2
+    category: value
+    status: observed
+    formula: =IMLOG2("3+4i")
+    tags:
+      - engineering
+    name: imlog2-complex
+  - subject: IMCOS
+    category: value
+    status: observed
+    formula: =IMCOS("0")
+    tags:
+      - engineering
+    name: imcos-zero
+  - subject: IMCOS
+    category: value
+    status: observed
+    formula: =IMCOS("1+1i")
+    tags:
+      - engineering
+    name: imcos-complex
+  - subject: IMCOSH
+    category: value
+    status: observed
+    formula: =IMCOSH("0")
+    tags:
+      - engineering
+    name: imcosh-zero
+  - subject: IMCOSH
+    category: value
+    status: observed
+    formula: =IMCOSH("1+1i")
+    tags:
+      - engineering
+    name: imcosh-complex
+  - subject: IMCOT
+    category: value
+    status: observed
+    formula: =IMCOT("1")
+    tags:
+      - engineering
+    name: imcot-real
+  - subject: IMCOT
+    category: value
+    status: observed
+    formula: =IMCOT("1+1i")
+    tags:
+      - engineering
+    name: imcot-complex
+  - subject: IMCOTH
+    category: value
+    status: observed
+    formula: =IMCOTH("1")
+    tags:
+      - engineering
+    name: imcoth-real
+  - subject: IMCOTH
+    category: value
+    status: observed
+    formula: =IMCOTH("1+1i")
+    tags:
+      - engineering
+    name: imcoth-complex
+  - subject: IMCSC
+    category: value
+    status: observed
+    formula: =IMCSC("1")
+    tags:
+      - engineering
+    name: imcsc-real
+  - subject: IMCSC
+    category: value
+    status: observed
+    formula: =IMCSC("1+1i")
+    tags:
+      - engineering
+    name: imcsc-complex
+  - subject: IMCSCH
+    category: value
+    status: observed
+    formula: =IMCSCH("1")
+    tags:
+      - engineering
+    name: imcsch-real
+  - subject: IMCSCH
+    category: value
+    status: observed
+    formula: =IMCSCH("1+1i")
+    tags:
+      - engineering
+    name: imcsch-complex
+  - subject: IMSEC
+    category: value
+    status: observed
+    formula: =IMSEC("0")
+    tags:
+      - engineering
+    name: imsec-zero
+  - subject: IMSEC
+    category: value
+    status: observed
+    formula: =IMSEC("1+1i")
+    tags:
+      - engineering
+    name: imsec-complex
+  - subject: IMSECH
+    category: value
+    status: observed
+    formula: =IMSECH("0")
+    tags:
+      - engineering
+    name: imsech-zero
+  - subject: IMSECH
+    category: value
+    status: observed
+    formula: =IMSECH("1+1i")
+    tags:
+      - engineering
+    name: imsech-complex
+  - subject: IMSIN
+    category: value
+    status: observed
+    formula: =IMSIN("0")
+    tags:
+      - engineering
+    name: imsin-zero
+  - subject: IMSIN
+    category: value
+    status: observed
+    formula: =IMSIN("1+1i")
+    tags:
+      - engineering
+    name: imsin-complex
+  - subject: IMSINH
+    category: value
+    status: observed
+    formula: =IMSINH("0")
+    tags:
+      - engineering
+    name: imsinh-zero
+  - subject: IMSINH
+    category: value
+    status: observed
+    formula: =IMSINH("1+1i")
+    tags:
+      - engineering
+    name: imsinh-complex
+  - subject: IMTAN
+    category: value
+    status: observed
+    formula: =IMTAN("0")
+    tags:
+      - engineering
+    name: imtan-zero
+  - subject: IMTAN
+    category: value
+    status: observed
+    formula: =IMTAN("1+1i")
+    tags:
+      - engineering
+    name: imtan-complex
+  - subject: IMTANH
+    category: value
+    status: observed
+    formula: =IMTANH("0")
+    tags:
+      - engineering
+    name: imtanh-zero
+  - subject: IMTANH
+    category: value
+    status: observed
+    formula: =IMTANH("1+1i")
+    tags:
+      - engineering
+    name: imtanh-complex

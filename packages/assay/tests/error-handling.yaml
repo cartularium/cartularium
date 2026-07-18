@@ -1,0 +1,460 @@
+schemaVersion: 3
+name: Error handling
+tests:
+  - subject: op:/
+    formula: =1/0
+    category: value
+    expect:
+      error: "#DIV/0!"
+    tags:
+      - error
+      - identity
+    name: div-0-identity
+  - subject: op:+
+    formula: ="abc"+1
+    category: error-code
+    expect:
+      error: "#VALUE!"
+    tags:
+      - error
+      - identity
+    name: value-error
+  - subject: INDIRECT
+    formula: =INDIRECT("ZZZ99999")
+    category: error-code
+    expect: null
+    overrides:
+      excel:
+        cause: missing-function
+        recorded:
+          error: "#REF!"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - error
+      - identity
+      - divergence
+    name: ref-error
+  - subject: feature:name-error
+    formula: =NOTAFUNCTION()
+    category: error-code
+    expect:
+      error: "#NAME?"
+    tags:
+      - error
+      - identity
+    name: name-error
+  - subject: VLOOKUP
+    formula: =VLOOKUP("missing", {1,2;3,4}, 2, FALSE)
+    category: error-code
+    expect:
+      error: "#N/A"
+    overrides:
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - error
+      - identity
+      - bare-formula
+    name: n-a-error
+  - subject: SQRT
+    formula: =SQRT(-1)
+    category: error-code
+    expect:
+      error: "#NUM!"
+    tags:
+      - error
+      - identity
+    name: num-error
+  - subject: SUM
+    formula: "=SUM(1, #N/A, 3)"
+    category: value
+    expect:
+      error: "#N/A"
+    tags:
+      - error
+      - aggregation
+    name: sum-with-one-n-a
+  - subject: SUM
+    formula: =SUM(1, 1/0, 3)
+    category: value
+    expect:
+      error: "#DIV/0!"
+    tags:
+      - error
+      - aggregation
+    name: sum-with-one-div-0
+  - subject: AVERAGE
+    formula: "=AVERAGE(1, #VALUE!, 3)"
+    category: error-code
+    expect:
+      error: "#VALUE!"
+    tags:
+      - error
+      - aggregation
+    name: average-with-one-error
+  - subject: COUNT
+    category: value
+    formula: "=COUNT(1, #N/A, 3, #DIV/0!)"
+    expect: 2
+    tags:
+      - error
+      - aggregation
+    name: count-ignores-errors
+  - subject: COUNTA
+    category: value
+    formula: "=COUNTA(1, #N/A, 3, #DIV/0!)"
+    expect: 4
+    tags:
+      - error
+      - aggregation
+      - divergence
+    name: counta-counts-errors
+  - subject: MAX
+    formula: "=MAX(1, #N/A, 3)"
+    category: error-code
+    expect:
+      error: "#N/A"
+    tags:
+      - error
+      - aggregation
+    name: max-with-error
+  - subject: MIN
+    formula: "=MIN(1, #VALUE!, 3)"
+    category: error-code
+    expect:
+      error: "#VALUE!"
+    tags:
+      - error
+      - aggregation
+    name: min-with-error
+  - subject: SUM
+    formula: =SUM(A1:A3)
+    category: error-code
+    grid:
+      A1: 1
+      A2: =1/0
+      A3: 3
+    expect:
+      error: "#DIV/0!"
+    tags:
+      - error
+      - aggregation
+    name: sum-of-range-with-error-cell
+  - subject: AVERAGE
+    formula: =AVERAGE(A1:A3)
+    category: error-code
+    grid:
+      A1: 10
+      A2: =#N/A
+      A3: 30
+    expect:
+      error: "#N/A"
+    tags:
+      - error
+      - aggregation
+    name: average-of-range-with-error-cell
+  - subject: AGGREGATE
+    formula: =AGGREGATE(9, 6, A1:A3)
+    category: value
+    grid:
+      A1: 1
+      A2: =1/0
+      A3: 3
+    expect: 4
+    overrides:
+      gsheets:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      lattice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - error
+      - divergence
+    name: aggregate-sum-ignoring-errors
+  - subject: IFERROR
+    category: value
+    formula: =IFERROR(1/0, "err")
+    expect: err
+    tags:
+      - error
+    name: iferror-catches-div-0
+  - subject: IFERROR
+    category: value
+    formula: =IFERROR(42, "err")
+    expect: 42
+    tags:
+      - error
+    name: iferror-passes-clean-value
+  - subject: IFERROR
+    category: value
+    formula: =IFERROR(#N/A, "fallback")
+    expect: fallback
+    tags:
+      - error
+    name: iferror-catches-n-a
+  - subject: IFNA
+    category: value
+    formula: =IFNA(#N/A, "caught")
+    expect: caught
+    tags:
+      - error
+    name: ifna-catches-n-a-only
+  - subject: IFNA
+    formula: =IFNA(1/0, "caught")
+    category: value
+    expect:
+      error: "#DIV/0!"
+    tags:
+      - error
+    name: ifna-does-not-catch-div-0
+  - subject: IFNA
+    category: value
+    formula: =IFNA(42, "caught")
+    expect: 42
+    tags:
+      - error
+    name: ifna-passes-clean-value
+  - subject: IFERROR
+    category: value
+    features:
+      - broadcasting
+    formula: "=IFERROR({1, #N/A, 3}, 0)"
+    expect:
+      - - 1
+        - 0
+        - 3
+    tags:
+      - error
+      - broadcast
+      - divergence
+    name: iferror-over-array-with-errors
+  - subject: IFERROR
+    category: value
+    features:
+      - broadcasting
+    formula: =IFERROR(10/{1,0,2}, -1)
+    expect:
+      - - 10
+        - -1
+        - 5
+    tags:
+      - error
+      - broadcast
+      - divergence
+    name: iferror-over-division-with-zero
+  - subject: op:+
+    formula: =#N/A+1
+    category: error-code
+    expect:
+      error: "#N/A"
+    tags:
+      - error
+      - propagation
+    name: error-plus-number
+  - subject: op:*
+    formula: =#DIV/0!*5
+    category: error-code
+    expect:
+      error: "#DIV/0!"
+    tags:
+      - error
+      - propagation
+    name: error-times-number
+  - subject: op:&
+    formula: =#VALUE!&"x"
+    category: error-code
+    expect:
+      error: "#VALUE!"
+    tags:
+      - error
+      - propagation
+    name: error-concat-string-error-handling
+  - subject: IF
+    formula: =IF(#N/A, "yes", "no")
+    category: error-code
+    expect:
+      error: "#N/A"
+    tags:
+      - error
+      - propagation
+    name: error-in-if-condition
+  - subject: IF
+    formula: '=IF(FALSE, #N/A, "ok")'
+    category: error-code
+    expect: ok
+    overrides:
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - error
+      - propagation
+    name: error-in-if-true-branch-not-taken
+  - subject: IF
+    formula: '=IF(TRUE, #N/A, "ok")'
+    category: error-code
+    expect:
+      error: "#N/A"
+    overrides:
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - error
+      - propagation
+    name: error-in-if-true-branch-taken
+  - subject: ISERROR
+    category: value
+    formula: =ISERROR(1/0)
+    expect: true
+    tags:
+      - error
+    name: iserror-on-div-0
+  - subject: ISERROR
+    category: value
+    formula: =ISERROR(42)
+    expect: false
+    tags:
+      - error
+    name: iserror-on-clean-value
+  - subject: ISERROR
+    category: value
+    formula: =ISERROR(#N/A)
+    expect: true
+    tags:
+      - error
+    name: iserror-on-n-a
+  - subject: ISERR
+    category: value
+    formula: =ISERR(#N/A)
+    expect: false
+    tags:
+      - error
+    name: iserr-excludes-n-a
+  - subject: ISERR
+    category: value
+    formula: =ISERR(1/0)
+    expect: true
+    tags:
+      - error
+    name: iserr-on-div-0
+  - subject: ISNA
+    category: value
+    formula: =ISNA(#N/A)
+    expect: true
+    tags:
+      - error
+    name: isna-on-n-a
+  - subject: ISNA
+    category: value
+    formula: =ISNA(1/0)
+    expect: false
+    tags:
+      - error
+    name: isna-on-div-0
+  - subject: ERROR.TYPE
+    formula: =ERROR.TYPE(1/0)
+    category: error-code
+    expect: 2
+    overrides:
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - error
+    name: error-type-of-div-0-error-handling
+  - subject: ERROR.TYPE
+    formula: =ERROR.TYPE(#N/A)
+    category: error-code
+    expect: 7
+    overrides:
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - error
+    name: error-type-of-n-a
+  - subject: ERROR.TYPE
+    formula: =ERROR.TYPE("a"+1)
+    category: error-code
+    expect: 3
+    overrides:
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - error
+    name: error-type-of-value-error-handling
+  - subject: ERROR.TYPE
+    formula: =ERROR.TYPE(42)
+    category: error-code
+    expect:
+      error: "#N/A"
+    overrides:
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - error
+    name: error-type-of-clean-value
+  - subject: op:+
+    category: value
+    formula: =#N/A+1/0
+    expect:
+      error: "#N/A"
+    tags:
+      - error
+      - hierarchy
+      - divergence
+    name: n-a-plus-div-0-left-wins
+  - subject: op:+
+    category: value
+    formula: =1/0+#N/A
+    expect:
+      error: "#DIV/0!"
+    tags:
+      - error
+      - hierarchy
+      - divergence
+    name: div-0-plus-n-a-left-wins
+  - subject: op:+
+    category: value
+    formula: =("a"+1)+NOTAFUNCTION()
+    expect:
+      error: "#VALUE!"
+    tags:
+      - error
+      - hierarchy
+      - divergence
+    name: value-plus-name
+  - subject: SUM
+    category: error-code
+    formula: =SUM(#N/A, 1/0)
+    expect:
+      error: "#N/A"
+    tags:
+      - error
+      - hierarchy
+    name: nested-error-priority

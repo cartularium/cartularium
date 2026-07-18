@@ -1,0 +1,25 @@
+name = "cartularium-edit-shell-test"
+main = "src/index.ts"
+compatibility_date = "2026-04-01"
+compatibility_flags = ["nodejs_compat"]
+
+[[kv_namespaces]]
+binding = "SESSIONS"
+id = "test-sessions"
+
+[[kv_namespaces]]
+binding = "RATE_LIMIT"
+id = "test-rate-limit"
+
+[[r2_buckets]]
+binding = "ASSETS"
+bucket_name = "cartularium-edit-assets-test"
+
+[[r2_buckets]]
+binding = "ASSAY_PREVIEW"
+bucket_name = "cartularium-assay-preview-test"
+
+[[d1_databases]]
+binding = "ASSAY_PREVIEW_DB"
+database_name = "cartularium-assay-preview-test"
+database_id = "00000000-0000-0000-0000-000000000000"

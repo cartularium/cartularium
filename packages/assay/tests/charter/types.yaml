@@ -1,0 +1,119 @@
+name: Charter Object Protocol
+
+requires:
+  charter: ../../../charter/excel
+
+tests:
+  # ── OBJ ───────────────────────────────────────────────
+  - name: OBJ type probe
+    formula: '=OBJ("point", LAMBDA(msg, [arg], PASS))(#NULL!)'
+    tags: [func:LAMBDA]
+    expect: "point"
+
+  - name: OBJ default show
+    formula: '=OBJ("point", LAMBDA(msg, [arg], PASS))("show")'
+    tags: [func:LAMBDA]
+    expect: "<point>"
+
+  - name: OBJ default type
+    formula: '=OBJ("point", LAMBDA(msg, [arg], PASS))("type")'
+    tags: [func:LAMBDA]
+    expect: "point"
+
+  - name: OBJ default eq is false
+    formula: '=OBJ("point", LAMBDA(msg, [arg], PASS))("eq", OBJ("point", LAMBDA(msg, [arg], PASS)))'
+    tags: [func:LAMBDA]
+    expect: false
+
+  - name: OBJ doesNotUnderstand
+    formula: '=SHOW(OBJ("point", LAMBDA(msg, [arg], PASS))("nonexistent"))'
+    tags: [func:LAMBDA]
+    expect: "Error: point:doesNotUnderstand(nonexistent)"
+
+  - name: OBJ handler result passthrough
+    formula: '=OBJ("point", LAMBDA(msg, [arg], IF(msg = "x", 42, PASS)))("x")'
+    tags: [func:LAMBDA]
+    expect: 42
+
+  - name: OBJ handler error caught
+    formula: '=SHOW(OBJ("point", LAMBDA(msg, [arg], 1/0))("x"))'
+    tags: [func:LAMBDA]
+    expect: "Error: point:x (#DIV/0!)"
+
+  - name: OBJ handler charter error propagated
+    formula: '=OBJ("point", LAMBDA(msg, [arg], ERR("inner", FALSE)))("x")(#NULL!)'
+    tags: [func:LAMBDA]
+    expect: "error"
+
+  # ── SHOW ──────────────────────────────────────────────
+  - name: SHOW scalar number
+    formula: "=SHOW(42)"
+    expect: 42
+
+  - name: SHOW scalar string
+    formula: '=SHOW("hello")'
+    expect: "hello"
+
+  - name: SHOW scalar boolean
+    formula: "=SHOW(TRUE)"
+    tags: [func:TRUE]
+    expect: true
+
+  - name: SHOW charter error
+    formula: '=SHOW(ERR("x", FALSE))'
+    tags: [func:FALSE]
+    expect: "Error: x"
+
+  # ── OK ────────────────────────────────────────────────
+  - name: OK passes through error
+    formula: '=OK(ERR("fail", FALSE), LAMBDA(x, x * 2))(#NULL!)'
+    tags: [func:FALSE]
+    expect: "error"
+
+  - name: OK applies fn on success
+    formula: "=OK(5, LAMBDA(x, x * 2))"
+    tags: [func:LAMBDA]
+    expect: 10
+
+  # ── PIPE ──────────────────────────────────────────────
+  - name: PIPE message chain
+    formula: '=PIPE(DICT(FALSE, FALSE), HSTACK("set", WITH("key", "a", "val", 1), "set", WITH("key", "b", "val", 2), "size", ""))'
+    tags: [func:FALSE]
+    expect: 2
+
+  # ── WHEN ──────────────────────────────────────────────
+  - name: WHEN matches type
+    formula: '=WHEN(ENUM("light", "red"), HSTACK("light.red", LAMBDA(o, "stop"), "light.green", LAMBDA(o, "go")))'
+    tags: [func:HSTACK]
+    expect: "stop"
+
+  - name: WHEN default fallback
+    formula: '=WHEN(ENUM("light", "yellow"), HSTACK("light.red", LAMBDA(o, "stop"), "light.green", LAMBDA(o, "go")), LAMBDA(o, "caution"))'
+    tags: [func:HSTACK]
+    expect: "caution"
+
+  # ── IS ────────────────────────────────────────────────
+  - name: IS matching type
+    formula: '=IS("pt")(RECORD("pt", {"x","y"}, {3,4}))'
+    expect:
+      excel: 3
+    record: true
+
+  - name: IS wrong type
+    formula: '=SHOW(IS("pt")(ENUM("light", "red")))'
+    expect: "Error: expected pt, got light.red"
+
+  - name: IS with context
+    formula: '=SHOW(IS("pt")(42, "arg1"))'
+    expect: "Error: arg1: expected pt, got non-object"
+
+  # ── GIVEN ─────────────────────────────────────────────
+  - name: GIVEN all valid
+    formula: '=GIVEN(WITH("x", 3, "y", 4), LAMBDA(v, v("x") + v("y")))'
+    tags: [func:LAMBDA]
+    expect: 7
+
+  - name: GIVEN with error
+    formula: '=SHOW(GIVEN(WITH("x", ERR("bad x", FALSE), "y", 4), LAMBDA(v, v("x") + v("y"))))'
+    tags: [func:FALSE]
+    expect: "Error: bad x"

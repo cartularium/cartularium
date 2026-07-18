@@ -1,0 +1,17 @@
+id: DV-0071
+summary: "gsheets: different error code — MID, PERMUTATIONA"
+cause: error-code
+category: value
+engines:
+  - gsheets
+behavior:
+  signature: '{"error":"#NUM!"}'
+test-count: 2
+subjects:
+  - MID
+  - PERMUTATIONA
+tests:
+  - PERMUTATIONA/permutationa-zero-pick
+  - MID/mid-start-0
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

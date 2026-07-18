@@ -1,0 +1,15 @@
+id: DV-0243
+summary: "lattice: different error code — op:unary+"
+cause: error-code
+category: value
+engines:
+  - lattice
+behavior:
+  signature: '{"error":"#PARSE!"}'
+test-count: 1
+subjects:
+  - op:unary+
+tests:
+  - legacy:6f703a756e6172792b/unary-plus-on-string
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

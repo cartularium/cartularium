@@ -1,0 +1,270 @@
+{
+  "platform": "gsheets",
+  "generatedAt": "2026-06-04T06:30:30.309Z",
+  "results": {
+    "sha256:469aa3b68eeabd0f18e43a5c0b6cda2705e0efb0db694bbdba18e7edb32310ff": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 6
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "number",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=SUM(D1:D3)"
+                },
+                "effectiveValue": {
+                  "numberValue": 6
+                },
+                "formattedValue": "6",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "SUM(D1:D3)",
+            "formatted": "6"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=SUM(D1:D3)"
+    },
+    "sha256:675f333c3524a9605ba7a12435ceef3aeec388ae250758b974c0122e29ce5e87": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "extended-error",
+              "sentinel": "#ERROR!"
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "error",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=SUM(D1:D3 D2:D2)"
+                },
+                "effectiveValue": {
+                  "errorValue": {
+                    "type": "ERROR",
+                    "message": "Formula parse error."
+                  }
+                },
+                "formattedValue": "#ERROR!",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "SUM(D1:D3 D2:D2)",
+            "formatted": "#ERROR!"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=SUM(D1:D3 D2:D2)"
+    },
+    "sha256:c7a3b79c71a0deecfe336a5008f453f2da4da90e26ecbb3f36a03899447e457c": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "extended-error",
+              "sentinel": "#ERROR!"
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "error",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=SUM((D1:D1,D3:D3))"
+                },
+                "effectiveValue": {
+                  "errorValue": {
+                    "type": "ERROR",
+                    "message": "Formula parse error."
+                  }
+                },
+                "formattedValue": "#ERROR!",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "SUM((D1:D1,D3:D3))",
+            "formatted": "#ERROR!"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=SUM((D1:D1,D3:D3))"
+    },
+    "sha256:bb92b4cdc9d159bed327cca43d8cf5d7146698ad691e972b78b620f0abd19f39": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 2
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "number",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=INDIRECT(\"D2\")"
+                },
+                "effectiveValue": {
+                  "numberValue": 2
+                },
+                "formattedValue": "2",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "INDIRECT(\"D2\")",
+            "formatted": "2"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=INDIRECT(\"D2\")"
+    },
+    "sha256:a58f78467c152239023ccda26fe949703b9b1c86898cafe1ea87475631f3af4b": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 2
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "number",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=INDIRECT(\"R2C4\",FALSE)"
+                },
+                "effectiveValue": {
+                  "numberValue": 2
+                },
+                "formattedValue": "2",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "INDIRECT(\"R2C4\",FALSE)",
+            "formatted": "2"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=INDIRECT(\"R2C4\",FALSE)"
+    },
+    "sha256:01205e11e6e8ddc81c1201e1f68d7dbcc51b2826120fac551a31dda8b93c48c6": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 2
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "number",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=OFFSET(D1,1,0)"
+                },
+                "effectiveValue": {
+                  "numberValue": 2
+                },
+                "formattedValue": "2",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "OFFSET(D1,1,0)",
+            "formatted": "2"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=OFFSET(D1,1,0)"
+    }
+  }
+}

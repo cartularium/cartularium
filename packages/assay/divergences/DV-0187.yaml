@@ -1,0 +1,15 @@
+id: DV-0187
+summary: "excel: numeric precision differs — MULTINOMIAL"
+cause: precision
+category: value
+engines:
+  - excel
+behavior:
+  signature: "9.999999999999998"
+test-count: 1
+subjects:
+  - MULTINOMIAL
+tests:
+  - MULTINOMIAL/multinomial-two
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

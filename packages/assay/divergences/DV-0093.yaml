@@ -1,0 +1,16 @@
+id: DV-0093
+summary: "hyperformula, ironcalc: different error code — DATEVALUE"
+cause: error-code
+category: value
+engines:
+  - hyperformula
+  - ironcalc
+behavior:
+  signature: '{"error":"#VALUE!"}'
+test-count: 1
+subjects:
+  - DATEVALUE
+tests:
+  - DATEVALUE/datevalue-long-form
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

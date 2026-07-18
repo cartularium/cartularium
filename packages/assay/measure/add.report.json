@@ -1,0 +1,61 @@
+{
+  "subject": "op:+",
+  "pair": {
+    "a": "excel",
+    "b": "gsheets"
+  },
+  "numTolerance": 1e-10,
+  "engines": [
+    {
+      "platform": "excel",
+      "generatedAt": "2026-06-04T06:04:03.466Z"
+    },
+    {
+      "platform": "gsheets",
+      "generatedAt": "2026-06-04T06:04:25.477Z"
+    }
+  ],
+  "axisSpace": [
+    {
+      "name": "left_type",
+      "locus": "data-borne",
+      "runtimeCheckable": true,
+      "cardinality": 5
+    },
+    {
+      "name": "right_type",
+      "locus": "data-borne",
+      "runtimeCheckable": true,
+      "cardinality": 5
+    }
+  ],
+  "tallies": {
+    "total": 25,
+    "ok": 25,
+    "incomplete": 0,
+    "agree": 25,
+    "differ": 0,
+    "unimplemented": 0,
+    "precision": 0
+  },
+  "analysis": {
+    "reducts": [
+      []
+    ],
+    "core": []
+  },
+  "verdict": {
+    "subject": "op:+",
+    "completeness": 1,
+    "provisional": false,
+    "pinnedAxes": [],
+    "surface": {
+      "okProbes": 25,
+      "divergentProbes": 0,
+      "divergentFraction": 0
+    },
+    "kind": "AGREES_EVERYWHERE",
+    "discriminators": []
+  },
+  "divergent": []
+}

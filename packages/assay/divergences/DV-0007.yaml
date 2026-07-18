@@ -1,0 +1,67 @@
+id: DV-0007
+summary: "libreoffice: function not implemented — BITAND, BITLSHIFT, BITOR (+10 more)"
+cause: missing-function
+category: value
+engines:
+  - libreoffice
+behavior:
+  signature: '{"error":"#NAME?"}'
+test-count: 41
+subjects:
+  - BITAND
+  - BITLSHIFT
+  - BITOR
+  - BITRSHIFT
+  - BITXOR
+  - CEILING.MATH
+  - CEILING.PRECISE
+  - FLOOR.MATH
+  - FLOOR.PRECISE
+  - GAMMA
+  - IFNA
+  - MAXIFS
+  - MINIFS
+tests:
+  - BITAND/bitand-basic
+  - BITAND/bitand-zero
+  - BITAND/bitand-negative-error
+  - BITAND/bitand-exceeds-2-48
+  - BITOR/bitor-basic
+  - BITOR/bitor-disjoint
+  - BITOR/bitor-negative-error
+  - BITXOR/bitxor-basic
+  - BITXOR/bitxor-self-zero
+  - BITXOR/bitxor-negative-error
+  - BITLSHIFT/bitlshift-basic
+  - BITLSHIFT/bitlshift-zero-shift
+  - BITLSHIFT/bitlshift-negative-shift-acts-as-rshift
+  - BITLSHIFT/bitlshift-negative-number-error
+  - BITRSHIFT/bitrshift-basic
+  - BITRSHIFT/bitrshift-zero-shift
+  - BITRSHIFT/bitrshift-negative-shift-acts-as-lshift
+  - BITRSHIFT/bitrshift-negative-number-error
+  - IFNA/ifna-no-error
+  - CEILING.PRECISE/ceiling-precise-positive
+  - CEILING.PRECISE/ceiling-precise-negative
+  - CEILING.PRECISE/ceiling-precise-with-significance
+  - CEILING.PRECISE/ceiling-precise-negative-significance-ignored
+  - FLOOR.PRECISE/floor-precise-positive
+  - FLOOR.PRECISE/floor-precise-negative
+  - FLOOR.PRECISE/floor-precise-with-significance
+  - FLOOR.PRECISE/floor-precise-negative-significance-ignored
+  - CEILING.MATH/ceiling-math-basic
+  - CEILING.MATH/ceiling-math-with-significance
+  - FLOOR.MATH/floor-math-basic
+  - FLOOR.MATH/floor-math-with-significance
+  - MAXIFS/maxifs-single-criterion
+  - MAXIFS/maxifs-comparator
+  - MAXIFS/maxifs-no-match
+  - MINIFS/minifs-single-criterion
+  - MINIFS/minifs-comparator
+  - MINIFS/minifs-no-match
+  - GAMMA/gamma-at-1
+  - GAMMA/gamma-at-5
+  - MAXIFS/maxifs-with-criteria
+  - MINIFS/minifs-with-criteria
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

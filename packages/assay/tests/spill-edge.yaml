@@ -1,0 +1,330 @@
+schemaVersion: 3
+name: Spill edge cases
+tests:
+  - subject: feature:spill-blocking
+    formula: =SEQUENCE(3)
+    category: interaction
+    semanticDomain: grid-context
+    features:
+      - dynamic-arrays
+    grid:
+      AA2: blocker
+    expect:
+      - - 1
+      - - 2
+      - - 3
+    overrides:
+      excel:
+        cause: error-code
+        recorded:
+          - - error: "#VALUE!"
+          - - blocker
+      gsheets:
+        cause: missing-function
+        recorded:
+          - - error: "#REF!"
+          - - blocker
+    tags:
+      - spill
+      - blocked
+      - divergence
+    name: spill-blocked-by-occupied-cell-column
+  - subject: feature:spill-blocking
+    category: interaction
+    semanticDomain: grid-context
+    features:
+      - dynamic-arrays
+    status: observed
+    formula: =SEQUENCE(1, 3)
+    grid:
+      AB1: blocker
+    tags:
+      - spill
+      - blocked
+      - divergence
+    name: spill-blocked-by-occupied-cell-row
+  - subject: feature:spill-blocking
+    category: interaction
+    semanticDomain: grid-context
+    features:
+      - dynamic-arrays
+    status: observed
+    formula: =SEQUENCE(2, 2)
+    grid:
+      AB2: blocker
+    tags:
+      - spill
+      - blocked
+      - divergence
+    name: spill-blocked-by-occupied-cell-2d
+  - subject: feature:spill-blocking
+    formula: =SEQUENCE(10)
+    category: interaction
+    semanticDomain: grid-context
+    features:
+      - dynamic-arrays
+    grid:
+      AA5: blocker
+    expect:
+      - - 1
+      - - 2
+      - - 3
+      - - 4
+      - - 5
+      - - 6
+      - - 7
+      - - 8
+      - - 9
+      - - 10
+    overrides:
+      excel:
+        cause: error-code
+        recorded:
+          - - error: "#VALUE!"
+          - - null
+          - - null
+          - - null
+          - - blocker
+      gsheets:
+        cause: missing-function
+        recorded:
+          - - error: "#REF!"
+          - - null
+          - - null
+          - - null
+          - - blocker
+    tags:
+      - spill
+      - blocked
+      - divergence
+    name: spill-blocked-distant-cell
+  - subject: feature:spill-blocking
+    category: value
+    features:
+      - dynamic-arrays
+    formula: =SEQUENCE(2)
+    expect:
+      - - 1
+      - - 2
+    tags:
+      - spill
+    name: no-block-when-result-fits
+  - subject: SORT
+    category: value
+    features:
+      - dynamic-arrays
+    status: observed
+    formula: =SORT(SEQUENCE(5), 1, -1)
+    tags:
+      - spill
+      - divergence
+    name: sort-of-sequence-descending
+  - subject: SORT
+    category: value
+    features:
+      - dynamic-arrays
+    formula: =SORT(SEQUENCE(5), 1, 1)
+    expect:
+      - - 1
+      - - 2
+      - - 3
+      - - 4
+      - - 5
+    tags:
+      - spill
+    name: sort-of-sequence-ascending
+  - subject: FILTER
+    category: value
+    features:
+      - dynamic-arrays
+    formula: =FILTER(SEQUENCE(5), SEQUENCE(5)>2)
+    expect:
+      - - 3
+      - - 4
+      - - 5
+    tags:
+      - spill
+    name: filter-of-sequence
+  - subject: UNIQUE
+    category: value
+    formula: =UNIQUE({1;2;1;3;2;3})
+    expect:
+      - - 1
+      - - 2
+      - - 3
+    tags:
+      - spill
+      - bare-formula
+    features:
+      - dynamic-arrays
+    name: unique-of-repeated-column
+  - subject: SORT
+    category: value
+    formula: =SORT(FILTER({5;3;1;4;2}, {TRUE;TRUE;FALSE;TRUE;FALSE}))
+    expect:
+      - - 3
+      - - 4
+      - - 5
+    tags:
+      - spill
+      - bare-formula
+    features:
+      - dynamic-arrays
+    name: sort-of-filter
+  - subject: INDEX
+    category: value
+    features:
+      - dynamic-arrays
+    formula: =INDEX(SEQUENCE(5, 5), 3, 4)
+    expect: 14
+    tags:
+      - spill
+    name: index-into-sequence
+  - subject: FILTER
+    formula: =FILTER({1;2;3}, {FALSE;FALSE;FALSE})
+    category: value
+    features:
+      - dynamic-arrays
+    # Pre-coalescing the old driver read openpyxl's #VALUE! fallback; the
+    # D9 wire-in (2026-05-23) correctly surfaces Excel's modern #CALC!
+    # which is what Excel actually emits for "FILTER with no matches" via
+    # the rich-value error family.
+    expect: { error: "#CALC!" }
+    overrides:
+      gsheets:
+        cause: error-code
+        recorded:
+          error: "#N/A"
+    tags:
+      - spill
+      - empty-result
+      - divergence
+      - bare-formula
+    name: filter-returns-no-rows
+  - subject: UNIQUE
+    category: value
+    formula: =UNIQUE({5;5;5})
+    expect: 5
+    tags:
+      - spill
+      - bare-formula
+    features:
+      - dynamic-arrays
+    name: unique-on-single-value
+  - subject: TRANSPOSE
+    category: value
+    features:
+      - dynamic-arrays
+    formula: =TRANSPOSE(SEQUENCE(3))
+    expect:
+      - - 1
+        - 2
+        - 3
+    tags:
+      - spill
+    name: transpose-of-sequence
+  - subject: SORT
+    category: value
+    status: observed
+    formula: =SORT(UNIQUE({3;1;4;1;5;9;2;6;5;3}), 1, -1)
+    tags:
+      - spill
+      - divergence
+      - bare-formula
+    features:
+      - dynamic-arrays
+    name: sort-descending-unique
+  - subject: TOCOL
+    category: value
+    features:
+      - dynamic-arrays
+    formula: =TOCOL(SEQUENCE(2,3))
+    expect:
+      - - 1
+      - - 2
+      - - 3
+      - - 4
+      - - 5
+      - - 6
+    tags:
+      - spill
+    name: tocol-of-2d-sequence
+  - subject: HSTACK
+    category: value
+    features:
+      - dynamic-arrays
+    formula: =HSTACK(SEQUENCE(3), SEQUENCE(3, 1, 10))
+    expect:
+      - - 1
+        - 10
+      - - 2
+        - 11
+      - - 3
+        - 12
+    tags:
+      - spill
+    name: hstack-two-sequences
+  - subject: VSTACK
+    category: value
+    features:
+      - dynamic-arrays
+    formula: =VSTACK(SEQUENCE(1, 3), SEQUENCE(1, 3, 10))
+    expect:
+      - - 1
+        - 2
+        - 3
+      - - 10
+        - 11
+        - 12
+    tags:
+      - spill
+    name: vstack-two-sequences
+  - subject: op:+
+    category: value
+    features:
+      - broadcasting
+      - dynamic-arrays
+    formula: =SEQUENCE(3)+10
+    expect:
+      - - 11
+      - - 12
+      - - 13
+    tags:
+      - spill
+      - broadcast
+    name: sequence-plus-scalar
+  - subject: op:*
+    category: value
+    features:
+      - broadcasting
+      - dynamic-arrays
+    formula: =SEQUENCE(3)*SEQUENCE(3)
+    expect:
+      - - 1
+      - - 4
+      - - 9
+    tags:
+      - spill
+      - broadcast
+    name: two-sequences-multiplied-elementwise
+  - subject: op:*
+    category: value
+    features:
+      - broadcasting
+      - dynamic-arrays
+    formula: =SEQUENCE(1,3)*SEQUENCE(3,1)
+    expect:
+      - - 1
+        - 2
+        - 3
+      - - 2
+        - 4
+        - 6
+      - - 3
+        - 6
+        - 9
+    tags:
+      - spill
+      - broadcast
+      - outer-product
+    name: row-sequence-times-column-sequence-outer

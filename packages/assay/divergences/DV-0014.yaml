@@ -1,0 +1,44 @@
+id: DV-0014
+summary: "hyperformula, pycel: different error code — DAY, EDATE, EOMONTH (+4 more)"
+cause: error-code
+category: value
+engines:
+  - hyperformula
+  - pycel
+behavior:
+  signature: '{"error":"#VALUE!"}'
+test-count: 23
+subjects:
+  - DAY
+  - EDATE
+  - EOMONTH
+  - MONTH
+  - WEEKDAY
+  - YEAR
+  - YEARFRAC
+tests:
+  - DAY/day-from-string
+  - DAY/day-end-of-month
+  - DAY/day-leap-day
+  - EDATE/edate-forward
+  - EDATE/edate-backward
+  - EDATE/edate-month-end-clamp
+  - EDATE/edate-zero
+  - EOMONTH/eomonth-current-month
+  - EOMONTH/eomonth-forward-by-2
+  - EOMONTH/eomonth-backward
+  - EOMONTH/eomonth-leap-february
+  - MONTH/month-from-string
+  - MONTH/month-december
+  - WEEKDAY/weekday-default-sunday-1
+  - WEEKDAY/weekday-sunday-1-convention
+  - WEEKDAY/weekday-monday-1-convention
+  - WEEKDAY/weekday-monday-0-convention
+  - YEAR/year-from-string
+  - YEAR/year-millennium
+  - YEARFRAC/yearfrac-half-year-default
+  - YEARFRAC/yearfrac-us-30-360
+  - YEARFRAC/yearfrac-actual-actual
+  - YEARFRAC/yearfrac-same-date
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

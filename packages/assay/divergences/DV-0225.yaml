@@ -1,0 +1,16 @@
+id: DV-0225
+summary: "gsheets, lattice: numeric precision differs — GAMMA"
+cause: precision
+category: value
+engines:
+  - gsheets
+  - lattice
+behavior:
+  signature: "24.000000000000004"
+test-count: 1
+subjects:
+  - GAMMA
+tests:
+  - GAMMA/gamma-at-5
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

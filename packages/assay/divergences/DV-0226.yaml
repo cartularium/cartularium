@@ -1,0 +1,15 @@
+id: DV-0226
+summary: "libreoffice: different argument interpretation — COUNT"
+cause: arg-semantics
+category: value
+engines:
+  - libreoffice
+behavior:
+  signature: "2"
+test-count: 1
+subjects:
+  - COUNT
+tests:
+  - COUNT/count-numbers-only
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

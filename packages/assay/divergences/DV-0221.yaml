@@ -1,0 +1,15 @@
+id: DV-0221
+summary: "gsheets: numeric precision differs — GEOMEAN"
+cause: precision
+category: value
+engines:
+  - gsheets
+behavior:
+  signature: "4.000000000000001"
+test-count: 1
+subjects:
+  - GEOMEAN
+tests:
+  - GEOMEAN/geomean-perfect-square
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

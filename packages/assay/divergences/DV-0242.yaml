@@ -1,0 +1,17 @@
+id: DV-0242
+summary: "lattice: different argument interpretation — SUM"
+cause: arg-semantics
+category: value
+engines:
+  - lattice
+behavior:
+  signature: "0"
+test-count: 1
+subjects:
+  - SUM
+tests:
+  - SUM/sum-with-numeric-string
+seeded: 2026-04-25
+last-confirmed: 2026-04-25
+status: vanished
+vanished-at: 2026-04-26

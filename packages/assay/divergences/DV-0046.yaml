@@ -1,0 +1,18 @@
+id: DV-0046
+summary: "hyperformula: different argument interpretation — PMT, PPMT"
+cause: arg-semantics
+category: value
+engines:
+  - hyperformula
+behavior:
+  signature: "1073.643246"
+test-count: 3
+subjects:
+  - PMT
+  - PPMT
+tests:
+  - PMT/pmt-monthly-mortgage
+  - PPMT/ppmt-ipmt-plus-ppmt-equals-pmt
+  - PPMT/ppmt-invalid-period
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

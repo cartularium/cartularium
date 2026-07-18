@@ -1,0 +1,17 @@
+id: DV-0068
+summary: "ironcalc: numeric precision differs — GAMMALN, GAMMALN.PRECISE"
+cause: precision
+category: value
+engines:
+  - ironcalc
+behavior:
+  signature: "-4.44089e-16"
+test-count: 2
+subjects:
+  - GAMMALN
+  - GAMMALN.PRECISE
+tests:
+  - GAMMALN/gammaln-at-1
+  - GAMMALN.PRECISE/gammaln-precise-at-1
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

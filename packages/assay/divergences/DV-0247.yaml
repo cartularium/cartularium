@@ -1,0 +1,15 @@
+id: DV-0247
+summary: "lattice: different argument interpretation — NOW"
+cause: arg-semantics
+category: value
+engines:
+  - lattice
+behavior:
+  signature: '{"error":"#VALUE!"}'
+test-count: 1
+subjects:
+  - NOW
+tests:
+  - NOW/today-equals-int-of-now
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

@@ -1,0 +1,15 @@
+id: DV-0129
+summary: "hyperformula: numeric precision differs — FV"
+cause: precision
+category: value
+engines:
+  - hyperformula
+behavior:
+  signature: "13180.794942"
+test-count: 1
+subjects:
+  - FV
+tests:
+  - FV/fv-annuity-10yr
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

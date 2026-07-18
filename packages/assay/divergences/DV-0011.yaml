@@ -1,0 +1,63 @@
+id: DV-0011
+summary: "formulas, hyperformula, pycel: function not implemented — DAVERAGE,
+  DCOUNT, DCOUNTA (+8 more)"
+cause: missing-function
+category: value
+engines:
+  - formulas
+  - hyperformula
+  - pycel
+behavior:
+  signature: '{"error":"#NAME?"}'
+test-count: 36
+subjects:
+  - DAVERAGE
+  - DCOUNT
+  - DCOUNTA
+  - DGET
+  - DMAX
+  - DMIN
+  - DPRODUCT
+  - DSTDEVP
+  - DSUM
+  - DVAR
+  - DVARP
+tests:
+  - DSUM/dsum-apples-total
+  - DSUM/dsum-field-by-index
+  - DSUM/dsum-comparator-criteria
+  - DSUM/dsum-empty-result
+  - DCOUNT/dcount-apples
+  - DCOUNT/dcount-field-by-index
+  - DCOUNT/dcount-ignores-text-in-numeric-field
+  - DCOUNT/dcount-empty-result
+  - DCOUNTA/dcounta-apples
+  - DCOUNTA/dcounta-field-by-index
+  - DCOUNTA/dcounta-empty-result
+  - DGET/dget-single-match
+  - DGET/dget-field-by-index
+  - DGET/dget-multiple-matches-error
+  - DGET/dget-no-match-error
+  - DMAX/dmax-apples
+  - DMAX/dmax-field-by-index
+  - DMAX/dmax-comparator-criteria
+  - DMIN/dmin-apples
+  - DMIN/dmin-field-by-index
+  - DMIN/dmin-all-rows
+  - DPRODUCT/dproduct-apples-price
+  - DPRODUCT/dproduct-field-by-index
+  - DPRODUCT/dproduct-empty-result
+  - DAVERAGE/daverage-apples
+  - DAVERAGE/daverage-field-by-index
+  - DAVERAGE/daverage-comparator-criteria
+  - DSTDEVP/dstdevp-bananas-units
+  - DSTDEVP/dstdevp-apples-price
+  - DSTDEVP/dstdevp-field-by-index
+  - DVAR/dvar-apples-price
+  - DVAR/dvar-bananas-units
+  - DVAR/dvar-field-by-index
+  - DVARP/dvarp-apples-price
+  - DVARP/dvarp-bananas-units
+  - DVARP/dvarp-field-by-index
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

@@ -1,0 +1,18 @@
+id: DV-0241
+summary: "excel, lattice: different error code — op:+"
+cause: error-code
+category: value
+engines:
+  - excel
+  - lattice
+behavior:
+  signature: '{"error":"#VALUE!"}'
+test-count: 1
+subjects:
+  - op:+
+tests:
+  - op:add/empty-string-plus-number
+seeded: 2026-04-25
+last-confirmed: 2026-04-25
+status: vanished
+vanished-at: 2026-04-26

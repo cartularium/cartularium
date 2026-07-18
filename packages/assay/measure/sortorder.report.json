@@ -1,0 +1,114 @@
+{
+  "subject": "feature:sort-order",
+  "pair": {
+    "a": "excel",
+    "b": "gsheets"
+  },
+  "numTolerance": 1e-10,
+  "engines": [
+    {
+      "platform": "excel",
+      "generatedAt": "2026-06-04T06:25:29.522Z"
+    },
+    {
+      "platform": "gsheets",
+      "generatedAt": "2026-06-04T06:25:50.253Z"
+    }
+  ],
+  "axisSpace": [
+    {
+      "name": "case",
+      "locus": "syntactic",
+      "cardinality": 4
+    }
+  ],
+  "tallies": {
+    "total": 4,
+    "ok": 4,
+    "incomplete": 0,
+    "agree": 1,
+    "differ": 3,
+    "unimplemented": 0,
+    "precision": 0
+  },
+  "analysis": {
+    "reducts": [
+      [
+        "case"
+      ]
+    ],
+    "core": [
+      "case"
+    ]
+  },
+  "verdict": {
+    "subject": "feature:sort-order",
+    "completeness": 1,
+    "provisional": false,
+    "pinnedAxes": [],
+    "surface": {
+      "okProbes": 4,
+      "divergentProbes": 3,
+      "divergentFraction": 0.75
+    },
+    "kind": "EXPLICIT_BRIDGE",
+    "discriminators": [
+      "case"
+    ],
+    "byLocus": {
+      "syntactic": [
+        "case"
+      ],
+      "environment": [],
+      "data-borne": []
+    },
+    "trigger": [
+      {
+        "where": {
+          "case": "num"
+        },
+        "outcome": "differ"
+      },
+      {
+        "where": {
+          "case": "text-case"
+        },
+        "outcome": "differ"
+      },
+      {
+        "where": {
+          "case": "mixed"
+        },
+        "outcome": "differ"
+      }
+    ],
+    "fix": {
+      "rewriteOn": [
+        "case"
+      ]
+    }
+  },
+  "divergent": [
+    {
+      "name": "num",
+      "assignment": {
+        "case": "num"
+      },
+      "outcome": "differ"
+    },
+    {
+      "name": "text-case",
+      "assignment": {
+        "case": "text-case"
+      },
+      "outcome": "differ"
+    },
+    {
+      "name": "mixed",
+      "assignment": {
+        "case": "mixed"
+      },
+      "outcome": "differ"
+    }
+  ]
+}

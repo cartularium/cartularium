@@ -1,0 +1,15 @@
+id: DV-0165
+summary: "hyperformula: numeric precision differs — RRI"
+cause: precision
+category: value
+engines:
+  - hyperformula
+behavior:
+  signature: "0.090507732665"
+test-count: 1
+subjects:
+  - RRI
+tests:
+  - RRI/rri-double-in-8-years
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

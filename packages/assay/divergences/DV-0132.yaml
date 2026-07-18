@@ -1,0 +1,17 @@
+id: DV-0132
+summary: "formulas, gsheets, lattice: numeric precision differs — FV"
+cause: precision
+category: value
+engines:
+  - formulas
+  - gsheets
+  - lattice
+behavior:
+  signature: "26532.97705144422"
+test-count: 1
+subjects:
+  - FV
+tests:
+  - FV/fv-lump-sum
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

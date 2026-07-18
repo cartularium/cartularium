@@ -1,0 +1,120 @@
+name: Charter Error Model
+
+requires:
+  charter: ../../../charter/excel
+
+tests:
+  # ── ERR ───────────────────────────────────────────────
+  - name: ERR error probe
+    formula: '=ERR("test", FALSE)(#NULL!)'
+    tags: [func:FALSE]
+    expect: "error"
+
+  - name: ERR show simple
+    formula: '=SHOW(ERR("test", FALSE))'
+    tags: [func:FALSE]
+    expect: "Error: test"
+
+  - name: ERR ctx
+    formula: '=ERR("oops", FALSE)("ctx")'
+    tags: [func:FALSE]
+    expect: "oops"
+
+  - name: ERR absorbs messages
+    formula: '=ERR("x", FALSE)("anything")(#NULL!)'
+    tags: [func:FALSE]
+    expect: "error"
+
+  - name: ERR push trace
+    formula: '=SHOW(ERR("inner", FALSE)("_push", "outer"))'
+    tags: [func:FALSE]
+    expect: "Error: inner | outer"
+
+  # ── TRY ───────────────────────────────────────────────
+  - name: TRY catches div/0
+    formula: '=SHOW(TRY(1/0, "divide"))'
+    expect: "Error: divide (#DIV/0!)"
+
+  - name: TRY passes through good value
+    formula: '=TRY(42, "test")'
+    expect: 42
+
+  # ── GUARD ─────────────────────────────────────────────
+  - name: GUARD wraps error
+    formula: '=SHOW(GUARD(1/0, "ctx"))'
+    expect: "Error: ctx"
+
+  - name: GUARD passes through value
+    formula: '=GUARD(42, "ctx")'
+    expect: 42
+
+  - name: GUARD pushes trace on charter error
+    formula: '=SHOW(GUARD(ERR("inner", FALSE), "outer"))'
+    tags: [func:FALSE]
+    expect: "Error: inner | outer"
+
+  # ── EXPECT ────────────────────────────────────────────
+  - name: EXPECT type match passes
+    formula: '=SHOW(EXPECT("not a point", "geo.point", "test"))'
+    expect: "Error: test: expected geo.point, got scalar"
+
+  - name: EXPECT predicate failure
+    formula: '=SHOW(EXPECT(-5, LAMBDA(_v, IF(_v < 0, "must be positive", TRUE)), "speed"))'
+    tags: [func:LAMBDA]
+    expect: "Error: speed: must be positive"
+
+  - name: EXPECT predicate success
+    formula: '=EXPECT(5, LAMBDA(_v, IF(_v < 0, "must be positive", TRUE)), "speed")'
+    tags: [func:LAMBDA]
+    expect: 5
+
+  # ── IS.NUM / IS.STR ──────────────────────────────────
+  - name: IS.NUM passes number
+    formula: "=IS.NUM(42)"
+    expect: 42
+
+  - name: IS.NUM rejects string
+    formula: '=SHOW(IS.NUM("hello"))'
+    expect: "Error: must be a number"
+
+  - name: IS.STR passes string
+    formula: '=IS.STR("hello")'
+    expect: "hello"
+
+  - name: IS.STR rejects number
+    formula: "=SHOW(IS.STR(42))"
+    expect: "Error: must be a string"
+
+  - name: IS.NUM with context
+    formula: '=SHOW(IS.NUM("bad", "qty"))'
+    expect: "Error: qty: must be a number"
+
+  - name: IS.NUM catches platform error
+    formula: '=SHOW(IS.NUM(1/0, "val"))'
+    expect: "Error: val: #DIV/0!"
+
+  - name: IS.NUM passes through charter error
+    formula: '=IS.NUM(ERR("upstream", FALSE))(#NULL!)'
+    tags: [func:FALSE]
+    expect: "error"
+
+  # ── OK chaining ───────────────────────────────────────
+  - name: OK chain short circuits on error
+    formula: '=OK(OK(ERR("fail", FALSE), LAMBDA(x, x + 1)), LAMBDA(x, x * 2))(#NULL!)'
+    tags: [func:FALSE]
+    expect: "error"
+
+  - name: OK chain success
+    formula: "=OK(OK(5, LAMBDA(x, x + 1)), LAMBDA(x, x * 2))"
+    tags: [func:LAMBDA]
+    expect: 12
+
+  # ── EXPECT edge cases ────────────────────────────────
+  - name: EXPECT passes through charter error
+    formula: '=EXPECT(ERR("upstream", FALSE), "pt", "test")(#NULL!)'
+    tags: [func:FALSE]
+    expect: "error"
+
+  - name: EXPECT catches platform error
+    formula: '=SHOW(EXPECT(1/0, "pt", "test"))'
+    expect: "Error: test: got error"

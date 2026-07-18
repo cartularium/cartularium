@@ -1,0 +1,2863 @@
+schemaVersion: 3
+name: "sweep: VLOOKUP"
+tests:
+  - subject: VLOOKUP
+    name: false-literal-number-present-sorted-inb-plain-dynamic
+    formula: =VLOOKUP(2, A1:C3, 2, FALSE)
+    category: value
+    status: observed
+    tags:
+      - sweep:vlookup
+      - ax:range_lookup=false
+      - ax:key_encoding=literal
+      - ax:key_type=number
+      - ax:key_present=present
+      - ax:range_sorted=sorted
+      - ax:col_index_form=inb
+      - ax:gsheets_null_kind=plain
+      - ax:array_mode=dynamic
+    grid:
+      A1: 1
+      B1: a
+      C1: x
+      A2: 2
+      B2: b
+      C2: y
+      A3: 3
+      B3: c
+      C3: z
+  - subject: VLOOKUP
+    name: false-literal-number-present-sorted-oob-plain-dynamic
+    formula: =VLOOKUP(2, A1:C3, 5, FALSE)
+    category: value
+    status: observed
+    tags:
+      - sweep:vlookup
+      - ax:range_lookup=false
+      - ax:key_encoding=literal
+      - ax:key_type=number
+      - ax:key_present=present
+      - ax:range_sorted=sorted
+      - ax:col_index_form=oob
+      - ax:gsheets_null_kind=plain
+      - ax:array_mode=dynamic
+    grid:
+      A1: 1
+      B1: a
+      C1: x
+      A2: 2
+      B2: b
+      C2: y
+      A3: 3
+      B3: c
+      C3: z
+  - subject: VLOOKUP
+    name: false-literal-number-present-sorted-arr-plain-dynamic
+    formula: =VLOOKUP(2, A1:C3, {2,3}, FALSE)
+    category: value
+    status: observed
+    tags:
+      - sweep:vlookup
+      - ax:range_lookup=false
+      - ax:key_encoding=literal
+      - ax:key_type=number
+      - ax:key_present=present
+      - ax:range_sorted=sorted
+      - ax:col_index_form=arr
+      - ax:gsheets_null_kind=plain
+      - ax:array_mode=dynamic
+    grid:
+      A1: 1
+      B1: a
+      C1: x
+      A2: 2
+      B2: b
+      C2: y
+      A3: 3
+      B3: c
+      C3: z
+  - subject: VLOOKUP
+    name: false-literal-number-present-unsorted-inb-plain-dynamic
+    formula: =VLOOKUP(2, A1:C3, 2, FALSE)
+    category: value
+    status: observed
+    tags:
+      - sweep:vlookup
+      - ax:range_lookup=false
+      - ax:key_encoding=literal
+      - ax:key_type=number
+      - ax:key_present=present
+      - ax:range_sorted=unsorted
+      - ax:col_index_form=inb
+      - ax:gsheets_null_kind=plain
+      - ax:array_mode=dynamic
+    grid:
+      A1: 3
+      B1: c
+      C1: z
+      A2: 1
+      B2: a
+      C2: x
+      A3: 2
+      B3: b
+      C3: y
+  - subject: VLOOKUP
+    name: false-literal-number-present-unsorted-oob-plain-dynamic
+    formula: =VLOOKUP(2, A1:C3, 5, FALSE)
+    category: value
+    status: observed
+    tags:
+      - sweep:vlookup
+      - ax:range_lookup=false
+      - ax:key_encoding=literal
+      - ax:key_type=number
+      - ax:key_present=present
+      - ax:range_sorted=unsorted
+      - ax:col_index_form=oob
+      - ax:gsheets_null_kind=plain
+      - ax:array_mode=dynamic
+    grid:
+      A1: 3
+      B1: c
+      C1: z
+      A2: 1
+      B2: a
+      C2: x
+      A3: 2
+      B3: b
+      C3: y
+  - subject: VLOOKUP
+    name: false-literal-number-present-unsorted-arr-plain-dynamic
+    formula: =VLOOKUP(2, A1:C3, {2,3}, FALSE)
+    category: value
+    status: observed
+    tags:
+      - sweep:vlookup
+      - ax:range_lookup=false
+      - ax:key_encoding=literal
+      - ax:key_type=number
+      - ax:key_present=present
+      - ax:range_sorted=unsorted
+      - ax:col_index_form=arr
+      - ax:gsheets_null_kind=plain
+      - ax:array_mode=dynamic
+    grid:
+      A1: 3
+      B1: c
+      C1: z
+      A2: 1
+      B2: a
+      C2: x
+      A3: 2
+      B3: b
+      C3: y
+  - subject: VLOOKUP
+    name: false-literal-number-absent-sorted-inb-plain-dynamic
+    formula: =VLOOKUP(9, A1:C3, 2, FALSE)
+    category: value
+    status: observed
+    tags:
+      - sweep:vlookup
+      - ax:range_lookup=false
+      - ax:key_encoding=literal
+      - ax:key_type=number
+      - ax:key_present=absent
+      - ax:range_sorted=sorted
+      - ax:col_index_form=inb
+      - ax:gsheets_null_kind=plain
+      - ax:array_mode=dynamic
+    grid:
+      A1: 1
+      B1: a
+      C1: x
+      A2: 2
+      B2: b
+      C2: y
+      A3: 3
+      B3: c
+      C3: z
+  - subject: VLOOKUP
+    name: false-literal-number-absent-sorted-oob-plain-dynamic
+    formula: =VLOOKUP(9, A1:C3, 5, FALSE)
+    category: value
+    status: observed
+    tags:
+      - sweep:vlookup
+      - ax:range_lookup=false
+      - ax:key_encoding=literal
+      - ax:key_type=number
+      - ax:key_present=absent
+      - ax:range_sorted=sorted
+      - ax:col_index_form=oob
+      - ax:gsheets_null_kind=plain
+      - ax:array_mode=dynamic
+    grid:
+      A1: 1
+      B1: a
+      C1: x
+      A2: 2
+      B2: b
+      C2: y
+      A3: 3
+      B3: c
+      C3: z
+  - subject: VLOOKUP
+    name: false-literal-number-absent-sorted-arr-plain-dynamic
+    formula: =VLOOKUP(9, A1:C3, {2,3}, FALSE)
+    category: value
+    status: observed
+    tags:
+      - sweep:vlookup
+      - ax:range_lookup=false
+      - ax:key_encoding=literal
+      - ax:key_type=number
+      - ax:key_present=absent
+      - ax:range_sorted=sorted
+      - ax:col_index_form=arr
+      - ax:gsheets_null_kind=plain
+      - ax:array_mode=dynamic
+    grid:
+      A1: 1
+      B1: a
+      C1: x
+      A2: 2
+      B2: b
+      C2: y
+      A3: 3
+      B3: c
+      C3: z
+  - subject: VLOOKUP
+    name: false-literal-number-absent-unsorted-inb-plain-dynamic
+    formula: =VLOOKUP(9, A1:C3, 2, FALSE)
+    category: value
+    status: observed
+    tags:
+      - sweep:vlookup
+      - ax:range_lookup=false
+      - ax:key_encoding=literal
+      - ax:key_type=number
+      - ax:key_present=absent
+      - ax:range_sorted=unsorted
+      - ax:col_index_form=inb
+      - ax:gsheets_null_kind=plain
+      - ax:array_mode=dynamic
+    grid:
+      A1: 3
+      B1: c
+      C1: z
+      A2: 1
+      B2: a
+      C2: x
+      A3: 2
+      B3: b
+      C3: y
+  - subject: VLOOKUP
+    name: false-literal-number-absent-unsorted-oob-plain-dynamic
+    formula: =VLOOKUP(9, A1:C3, 5, FALSE)
+    category: value
+    status: observed
+    tags:
+      - sweep:vlookup
+      - ax:range_lookup=false
+      - ax:key_encoding=literal
+      - ax:key_type=number
+      - ax:key_present=absent
+      - ax:range_sorted=unsorted
+      - ax:col_index_form=oob
+      - ax:gsheets_null_kind=plain
+      - ax:array_mode=dynamic
+    grid:
+      A1: 3
+      B1: c
+      C1: z
+      A2: 1
+      B2: a
+      C2: x
+      A3: 2
+      B3: b
+      C3: y
+  - subject: VLOOKUP
+    name: false-literal-number-absent-unsorted-arr-plain-dynamic
+    formula: =VLOOKUP(9, A1:C3, {2,3}, FALSE)
+    category: value
+    status: observed
+    tags:
+      - sweep:vlookup
+      - ax:range_lookup=false
+      - ax:key_encoding=literal
+      - ax:key_type=number
+      - ax:key_present=absent
+      - ax:range_sorted=unsorted
+      - ax:col_index_form=arr
+      - ax:gsheets_null_kind=plain
+      - ax:array_mode=dynamic
+    grid:
+      A1: 3
+      B1: c
+      C1: z
+      A2: 1
+      B2: a
+      C2: x
+      A3: 2
+      B3: b
+      C3: y
+  - subject: VLOOKUP
+    name: false-ref-number-present-sorted-inb-plain-dynamic
+    formula: =VLOOKUP(E1, A1:C3, 2, FALSE)
+    category: value
+    status: observed
+    tags:
+      - sweep:vlookup
+      - ax:range_lookup=false
+      - ax:key_encoding=ref
+      - ax:key_type=number
+      - ax:key_present=present
+      - ax:range_sorted=sorted
+      - ax:col_index_form=inb
+      - ax:gsheets_null_kind=plain
+      - ax:array_mode=dynamic
+    grid:
+      A1: 1
+      B1: a
+      C1: x
+      A2: 2
+      B2: b
+      C2: y
+      A3: 3
+      B3: c
+      C3: z
+      E1: 2
+  - subject: VLOOKUP
+    name: false-ref-number-present-sorted-oob-plain-dynamic
+    formula: =VLOOKUP(E1, A1:C3, 5, FALSE)
+    category: value
+    status: observed
+    tags:
+      - sweep:vlookup
+      - ax:range_lookup=false
+      - ax:key_encoding=ref
+      - ax:key_type=number
+      - ax:key_present=present
+      - ax:range_sorted=sorted
+      - ax:col_index_form=oob
+      - ax:gsheets_null_kind=plain
+      - ax:array_mode=dynamic
+    grid:
+      A1: 1
+      B1: a
+      C1: x
+      A2: 2
+      B2: b
+      C2: y
+      A3: 3
+      B3: c
+      C3: z
+      E1: 2
+  - subject: VLOOKUP
+    name: false-ref-number-present-sorted-arr-plain-dynamic
+    formula: =VLOOKUP(E1, A1:C3, {2,3}, FALSE)
+    category: value
+    status: observed
+    tags:
+      - sweep:vlookup
+      - ax:range_lookup=false
+      - ax:key_encoding=ref
+      - ax:key_type=number
+      - ax:key_present=present
+      - ax:range_sorted=sorted
+      - ax:col_index_form=arr
+      - ax:gsheets_null_kind=plain
+      - ax:array_mode=dynamic
+    grid:
+      A1: 1
+      B1: a
+      C1: x
+      A2: 2
+      B2: b
+      C2: y
+      A3: 3
+      B3: c
+      C3: z
+      E1: 2
+  - subject: VLOOKUP
+    name: false-ref-number-present-unsorted-inb-plain-dynamic
+    formula: =VLOOKUP(E1, A1:C3, 2, FALSE)
+    category: value
+    status: observed
+    tags:
+      - sweep:vlookup
+      - ax:range_lookup=false
+      - ax:key_encoding=ref
+      - ax:key_type=number
+      - ax:key_present=present
+      - ax:range_sorted=unsorted
+      - ax:col_index_form=inb
+      - ax:gsheets_null_kind=plain
+      - ax:array_mode=dynamic
+    grid:
+      A1: 3
+      B1: c
+      C1: z
+      A2: 1
+      B2: a
+      C2: x
+      A3: 2
+      B3: b
+      C3: y
+      E1: 2
+  - subject: VLOOKUP
+    name: false-ref-number-present-unsorted-oob-plain-dynamic
+    formula: =VLOOKUP(E1, A1:C3, 5, FALSE)
+    category: value
+    status: observed
+    tags:
+      - sweep:vlookup
+      - ax:range_lookup=false
+      - ax:key_encoding=ref
+      - ax:key_type=number
+      - ax:key_present=present
+      - ax:range_sorted=unsorted
+      - ax:col_index_form=oob
+      - ax:gsheets_null_kind=plain
+      - ax:array_mode=dynamic
+    grid:
+      A1: 3
+      B1: c
+      C1: z
+      A2: 1
+      B2: a
+      C2: x
+      A3: 2
+      B3: b
+      C3: y
+      E1: 2
+  - subject: VLOOKUP
+    name: false-ref-number-present-unsorted-arr-plain-dynamic
+    formula: =VLOOKUP(E1, A1:C3, {2,3}, FALSE)
+    category: value
+    status: observed
+    tags:
+      - sweep:vlookup
+      - ax:range_lookup=false
+      - ax:key_encoding=ref
+      - ax:key_type=number
+      - ax:key_present=present
+      - ax:range_sorted=unsorted
+      - ax:col_index_form=arr
+      - ax:gsheets_null_kind=plain
+      - ax:array_mode=dynamic
+    grid:
+      A1: 3
+      B1: c
+      C1: z
+      A2: 1
+      B2: a
+      C2: x
+      A3: 2
+      B3: b
+      C3: y
+      E1: 2
+  - subject: VLOOKUP
+    name: false-ref-number-absent-sorted-inb-plain-dynamic
+    formula: =VLOOKUP(E1, A1:C3, 2, FALSE)
+    category: value
+    status: observed
+    tags:
+      - sweep:vlookup
+      - ax:range_lookup=false
+      - ax:key_encoding=ref
+      - ax:key_type=number
+      - ax:key_present=absent
+      - ax:range_sorted=sorted
+      - ax:col_index_form=inb
+      - ax:gsheets_null_kind=plain
+      - ax:array_mode=dynamic
+    grid:
+      A1: 1
+      B1: a
+      C1: x
+      A2: 2
+      B2: b
+      C2: y
+      A3: 3
+      B3: c
+      C3: z
+      E1: 9
+  - subject: VLOOKUP
+    name: false-ref-number-absent-sorted-oob-plain-dynamic
+    formula: =VLOOKUP(E1, A1:C3, 5, FALSE)
+    category: value
+    status: observed
+    tags:
+      - sweep:vlookup
+      - ax:range_lookup=false
+      - ax:key_encoding=ref
+      - ax:key_type=number
+      - ax:key_present=absent
+      - ax:range_sorted=sorted
+      - ax:col_index_form=oob
+      - ax:gsheets_null_kind=plain
+      - ax:array_mode=dynamic
+    grid:
+      A1: 1
+      B1: a
+      C1: x
+      A2: 2
+      B2: b
+      C2: y
+      A3: 3
+      B3: c
+      C3: z
+      E1: 9
+  - subject: VLOOKUP
+    name: false-ref-number-absent-sorted-arr-plain-dynamic
+    formula: =VLOOKUP(E1, A1:C3, {2,3}, FALSE)
+    category: value
+    status: observed
+    tags:
+      - sweep:vlookup
+      - ax:range_lookup=false
+      - ax:key_encoding=ref
+      - ax:key_type=number
+      - ax:key_present=absent
+      - ax:range_sorted=sorted
+      - ax:col_index_form=arr
+      - ax:gsheets_null_kind=plain
+      - ax:array_mode=dynamic
+    grid:
+      A1: 1
+      B1: a
+      C1: x
+      A2: 2
+      B2: b
+      C2: y
+      A3: 3
+      B3: c
+      C3: z
+      E1: 9
+  - subject: VLOOKUP
+    name: false-ref-number-absent-unsorted-inb-plain-dynamic
+    formula: =VLOOKUP(E1, A1:C3, 2, FALSE)
+    category: value
+    status: observed
+    tags:
+      - sweep:vlookup
+      - ax:range_lookup=false
+      - ax:key_encoding=ref
+      - ax:key_type=number
+      - ax:key_present=absent
+      - ax:range_sorted=unsorted
+      - ax:col_index_form=inb
+      - ax:gsheets_null_kind=plain
+      - ax:array_mode=dynamic
+    grid:
+      A1: 3
+      B1: c
+      C1: z
+      A2: 1
+      B2: a
+      C2: x
+      A3: 2
+      B3: b
+      C3: y
+      E1: 9
+  - subject: VLOOKUP
+    name: false-ref-number-absent-unsorted-oob-plain-dynamic
+    formula: =VLOOKUP(E1, A1:C3, 5, FALSE)
+    category: value
+    status: observed
+    tags:
+      - sweep:vlookup
+      - ax:range_lookup=false
+      - ax:key_encoding=ref
+      - ax:key_type=number
+      - ax:key_present=absent
+      - ax:range_sorted=unsorted
+      - ax:col_index_form=oob
+      - ax:gsheets_null_kind=plain
+      - ax:array_mode=dynamic
+    grid:
+      A1: 3
+      B1: c
+      C1: z
+      A2: 1
+      B2: a
+      C2: x
+      A3: 2
+      B3: b
+      C3: y
+      E1: 9
+  - subject: VLOOKUP
+    name: false-ref-number-absent-unsorted-arr-plain-dynamic
+    formula: =VLOOKUP(E1, A1:C3, {2,3}, FALSE)
+    category: value
+    status: observed
+    tags:
+      - sweep:vlookup
+      - ax:range_lookup=false
+      - ax:key_encoding=ref
+      - ax:key_type=number
+      - ax:key_present=absent
+      - ax:range_sorted=unsorted
+      - ax:col_index_form=arr
+      - ax:gsheets_null_kind=plain
+      - ax:array_mode=dynamic
+    grid:
+      A1: 3
+      B1: c
+      C1: z
+      A2: 1
+      B2: a
+      C2: x
+      A3: 2
+      B3: b
+      C3: y
+      E1: 9
+  - subject: VLOOKUP
+    name: false-ref-string-present-sorted-inb-plain-dynamic
+    formula: =VLOOKUP(E1, A1:C3, 2, FALSE)
+    category: value
+    status: observed
+    tags:
+      - sweep:vlookup
+      - ax:range_lookup=false
+      - ax:key_encoding=ref
+      - ax:key_type=string
+      - ax:key_present=present
+      - ax:range_sorted=sorted
+      - ax:col_index_form=inb
+      - ax:gsheets_null_kind=plain
+      - ax:array_mode=dynamic
+    grid:
+      A1: 1
+      B1: a
+      C1: x
+      A2: 2
+      B2: b
+      C2: y
+      A3: 3
+      B3: c
+      C3: z
+      E1: ="2"
+  - subject: VLOOKUP
+    name: false-ref-blank-present-sorted-inb-plain-dynamic
+    formula: =VLOOKUP(E1, A1:C3, 2, FALSE)
+    category: value
+    status: observed
+    tags:
+      - sweep:vlookup
+      - ax:range_lookup=false
+      - ax:key_encoding=ref
+      - ax:key_type=blank
+      - ax:key_present=present
+      - ax:range_sorted=sorted
+      - ax:col_index_form=inb
+      - ax:gsheets_null_kind=plain
+      - ax:array_mode=dynamic
+    grid:
+      A1: 1
+      B1: a
+      C1: x
+      A2: 2
+      B2: b
+      C2: y
+      A3: 3
+      B3: c
+      C3: z
+  - subject: VLOOKUP
+    name: false-ref-blank-present-sorted-inb-empty-dynamic
+    formula: =VLOOKUP(E1, A1:C3, 2, FALSE)
+    category: value
+    status: observed
+    tags:
+      - sweep:vlookup
+      - ax:range_lookup=false
+      - ax:key_encoding=ref
+      - ax:key_type=blank
+      - ax:key_present=present
+      - ax:range_sorted=sorted
+      - ax:col_index_form=inb
+      - ax:gsheets_null_kind=empty
+      - ax:array_mode=dynamic
+    grid:
+      A1: 1
+      B1: a
+      C1: x
+      A2: 2
+      B2: b
+      C2: y
+      A3: 3
+      B3: c
+      C3: z
+      E1: =""
+  - subject: VLOOKUP
+    name: false-ref-blank-present-sorted-inb-runtimenull-dynamic
+    formula: =VLOOKUP(E1, A1:C3, 2, FALSE)
+    category: value
+    status: observed
+    tags:
+      - sweep:vlookup
+      - ax:range_lookup=false
+      - ax:key_encoding=ref
+      - ax:key_type=blank
+      - ax:key_present=present
+      - ax:range_sorted=sorted
+      - ax:col_index_form=inb
+      - ax:gsheets_null_kind=runtimenull
+      - ax:array_mode=dynamic
+    grid:
+      A1: 1
+      B1: a
+      C1: x
+      A2: 2
+      B2: b
+      C2: y
+      A3: 3
+      B3: c
+      C3: z
+      E1: =IF(,,)
+  - subject: VLOOKUP
+    name: zero-literal-number-present-sorted-inb-plain-dynamic
+    formula: =VLOOKUP(2, A1:C3, 2, 0)
+    category: value
+    status: observed
+    tags:
+      - sweep:vlookup
+      - ax:range_lookup=zero
+      - ax:key_encoding=literal
+      - ax:key_type=number
+      - ax:key_present=present
+      - ax:range_sorted=sorted
+      - ax:col_index_form=inb
+      - ax:gsheets_null_kind=plain
+      - ax:array_mode=dynamic
+    grid:
+      A1: 1
+      B1: a
+      C1: x
+      A2: 2
+      B2: b
+      C2: y
+      A3: 3
+      B3: c
+      C3: z
+  - subject: VLOOKUP
+    name: zero-literal-number-present-sorted-oob-plain-dynamic
+    formula: =VLOOKUP(2, A1:C3, 5, 0)
+    category: value
+    status: observed
+    tags:
+      - sweep:vlookup
+      - ax:range_lookup=zero
+      - ax:key_encoding=literal
+      - ax:key_type=number
+      - ax:key_present=present
+      - ax:range_sorted=sorted
+      - ax:col_index_form=oob
+      - ax:gsheets_null_kind=plain
+      - ax:array_mode=dynamic
+    grid:
+      A1: 1
+      B1: a
+      C1: x
+      A2: 2
+      B2: b
+      C2: y
+      A3: 3
+      B3: c
+      C3: z
+  - subject: VLOOKUP
+    name: zero-literal-number-present-sorted-arr-plain-dynamic
+    formula: =VLOOKUP(2, A1:C3, {2,3}, 0)
+    category: value
+    status: observed
+    tags:
+      - sweep:vlookup
+      - ax:range_lookup=zero
+      - ax:key_encoding=literal
+      - ax:key_type=number
+      - ax:key_present=present
+      - ax:range_sorted=sorted
+      - ax:col_index_form=arr
+      - ax:gsheets_null_kind=plain
+      - ax:array_mode=dynamic
+    grid:
+      A1: 1
+      B1: a
+      C1: x
+      A2: 2
+      B2: b
+      C2: y
+      A3: 3
+      B3: c
+      C3: z
+  - subject: VLOOKUP
+    name: zero-literal-number-present-unsorted-inb-plain-dynamic
+    formula: =VLOOKUP(2, A1:C3, 2, 0)
+    category: value
+    status: observed
+    tags:
+      - sweep:vlookup
+      - ax:range_lookup=zero
+      - ax:key_encoding=literal
+      - ax:key_type=number
+      - ax:key_present=present
+      - ax:range_sorted=unsorted
+      - ax:col_index_form=inb
+      - ax:gsheets_null_kind=plain
+      - ax:array_mode=dynamic
+    grid:
+      A1: 3
+      B1: c
+      C1: z
+      A2: 1
+      B2: a
+      C2: x
+      A3: 2
+      B3: b
+      C3: y
+  - subject: VLOOKUP
+    name: zero-literal-number-present-unsorted-oob-plain-dynamic
+    formula: =VLOOKUP(2, A1:C3, 5, 0)
+    category: value
+    status: observed
+    tags:
+      - sweep:vlookup
+      - ax:range_lookup=zero
+      - ax:key_encoding=literal
+      - ax:key_type=number
+      - ax:key_present=present
+      - ax:range_sorted=unsorted
+      - ax:col_index_form=oob
+      - ax:gsheets_null_kind=plain
+      - ax:array_mode=dynamic
+    grid:
+      A1: 3
+      B1: c
+      C1: z
+      A2: 1
+      B2: a
+      C2: x
+      A3: 2
+      B3: b
+      C3: y
+  - subject: VLOOKUP
+    name: zero-literal-number-present-unsorted-arr-plain-dynamic
+    formula: =VLOOKUP(2, A1:C3, {2,3}, 0)
+    category: value
+    status: observed
+    tags:
+      - sweep:vlookup
+      - ax:range_lookup=zero
+      - ax:key_encoding=literal
+      - ax:key_type=number
+      - ax:key_present=present
+      - ax:range_sorted=unsorted
+      - ax:col_index_form=arr
+      - ax:gsheets_null_kind=plain
+      - ax:array_mode=dynamic
+    grid:
+      A1: 3
+      B1: c
+      C1: z
+      A2: 1
+      B2: a
+      C2: x
+      A3: 2
+      B3: b
+      C3: y
+  - subject: VLOOKUP
+    name: zero-literal-number-absent-sorted-inb-plain-dynamic
+    formula: =VLOOKUP(9, A1:C3, 2, 0)
+    category: value
+    status: observed
+    tags:
+      - sweep:vlookup
+      - ax:range_lookup=zero
+      - ax:key_encoding=literal
+      - ax:key_type=number
+      - ax:key_present=absent
+      - ax:range_sorted=sorted
+      - ax:col_index_form=inb
+      - ax:gsheets_null_kind=plain
+      - ax:array_mode=dynamic
+    grid:
+      A1: 1
+      B1: a
+      C1: x
+      A2: 2
+      B2: b
+      C2: y
+      A3: 3
+      B3: c
+      C3: z
+  - subject: VLOOKUP
+    name: zero-literal-number-absent-sorted-oob-plain-dynamic
+    formula: =VLOOKUP(9, A1:C3, 5, 0)
+    category: value
+    status: observed
+    tags:
+      - sweep:vlookup
+      - ax:range_lookup=zero
+      - ax:key_encoding=literal
+      - ax:key_type=number
+      - ax:key_present=absent
+      - ax:range_sorted=sorted
+      - ax:col_index_form=oob
+      - ax:gsheets_null_kind=plain
+      - ax:array_mode=dynamic
+    grid:
+      A1: 1
+      B1: a
+      C1: x
+      A2: 2
+      B2: b
+      C2: y
+      A3: 3
+      B3: c
+      C3: z
+  - subject: VLOOKUP
+    name: zero-literal-number-absent-sorted-arr-plain-dynamic
+    formula: =VLOOKUP(9, A1:C3, {2,3}, 0)
+    category: value
+    status: observed
+    tags:
+      - sweep:vlookup
+      - ax:range_lookup=zero
+      - ax:key_encoding=literal
+      - ax:key_type=number
+      - ax:key_present=absent
+      - ax:range_sorted=sorted
+      - ax:col_index_form=arr
+      - ax:gsheets_null_kind=plain
+      - ax:array_mode=dynamic
+    grid:
+      A1: 1
+      B1: a
+      C1: x
+      A2: 2
+      B2: b
+      C2: y
+      A3: 3
+      B3: c
+      C3: z
+  - subject: VLOOKUP
+    name: zero-literal-number-absent-unsorted-inb-plain-dynamic
+    formula: =VLOOKUP(9, A1:C3, 2, 0)
+    category: value
+    status: observed
+    tags:
+      - sweep:vlookup
+      - ax:range_lookup=zero
+      - ax:key_encoding=literal
+      - ax:key_type=number
+      - ax:key_present=absent
+      - ax:range_sorted=unsorted
+      - ax:col_index_form=inb
+      - ax:gsheets_null_kind=plain
+      - ax:array_mode=dynamic
+    grid:
+      A1: 3
+      B1: c
+      C1: z
+      A2: 1
+      B2: a
+      C2: x
+      A3: 2
+      B3: b
+      C3: y
+  - subject: VLOOKUP
+    name: zero-literal-number-absent-unsorted-oob-plain-dynamic
+    formula: =VLOOKUP(9, A1:C3, 5, 0)
+    category: value
+    status: observed
+    tags:
+      - sweep:vlookup
+      - ax:range_lookup=zero
+      - ax:key_encoding=literal
+      - ax:key_type=number
+      - ax:key_present=absent
+      - ax:range_sorted=unsorted
+      - ax:col_index_form=oob
+      - ax:gsheets_null_kind=plain
+      - ax:array_mode=dynamic
+    grid:
+      A1: 3
+      B1: c
+      C1: z
+      A2: 1
+      B2: a
+      C2: x
+      A3: 2
+      B3: b
+      C3: y
+  - subject: VLOOKUP
+    name: zero-literal-number-absent-unsorted-arr-plain-dynamic
+    formula: =VLOOKUP(9, A1:C3, {2,3}, 0)
+    category: value
+    status: observed
+    tags:
+      - sweep:vlookup
+      - ax:range_lookup=zero
+      - ax:key_encoding=literal
+      - ax:key_type=number
+      - ax:key_present=absent
+      - ax:range_sorted=unsorted
+      - ax:col_index_form=arr
+      - ax:gsheets_null_kind=plain
+      - ax:array_mode=dynamic
+    grid:
+      A1: 3
+      B1: c
+      C1: z
+      A2: 1
+      B2: a
+      C2: x
+      A3: 2
+      B3: b
+      C3: y
+  - subject: VLOOKUP
+    name: zero-ref-number-present-sorted-inb-plain-dynamic
+    formula: =VLOOKUP(E1, A1:C3, 2, 0)
+    category: value
+    status: observed
+    tags:
+      - sweep:vlookup
+      - ax:range_lookup=zero
+      - ax:key_encoding=ref
+      - ax:key_type=number
+      - ax:key_present=present
+      - ax:range_sorted=sorted
+      - ax:col_index_form=inb
+      - ax:gsheets_null_kind=plain
+      - ax:array_mode=dynamic
+    grid:
+      A1: 1
+      B1: a
+      C1: x
+      A2: 2
+      B2: b
+      C2: y
+      A3: 3
+      B3: c
+      C3: z
+      E1: 2
+  - subject: VLOOKUP
+    name: zero-ref-number-present-sorted-oob-plain-dynamic
+    formula: =VLOOKUP(E1, A1:C3, 5, 0)
+    category: value
+    status: observed
+    tags:
+      - sweep:vlookup
+      - ax:range_lookup=zero
+      - ax:key_encoding=ref
+      - ax:key_type=number
+      - ax:key_present=present
+      - ax:range_sorted=sorted
+      - ax:col_index_form=oob
+      - ax:gsheets_null_kind=plain
+      - ax:array_mode=dynamic
+    grid:
+      A1: 1
+      B1: a
+      C1: x
+      A2: 2
+      B2: b
+      C2: y
+      A3: 3
+      B3: c
+      C3: z
+      E1: 2
+  - subject: VLOOKUP
+    name: zero-ref-number-present-sorted-arr-plain-dynamic
+    formula: =VLOOKUP(E1, A1:C3, {2,3}, 0)
+    category: value
+    status: observed
+    tags:
+      - sweep:vlookup
+      - ax:range_lookup=zero
+      - ax:key_encoding=ref
+      - ax:key_type=number
+      - ax:key_present=present
+      - ax:range_sorted=sorted
+      - ax:col_index_form=arr
+      - ax:gsheets_null_kind=plain
+      - ax:array_mode=dynamic
+    grid:
+      A1: 1
+      B1: a
+      C1: x
+      A2: 2
+      B2: b
+      C2: y
+      A3: 3
+      B3: c
+      C3: z
+      E1: 2
+  - subject: VLOOKUP
+    name: zero-ref-number-present-unsorted-inb-plain-dynamic
+    formula: =VLOOKUP(E1, A1:C3, 2, 0)
+    category: value
+    status: observed
+    tags:
+      - sweep:vlookup
+      - ax:range_lookup=zero
+      - ax:key_encoding=ref
+      - ax:key_type=number
+      - ax:key_present=present
+      - ax:range_sorted=unsorted
+      - ax:col_index_form=inb
+      - ax:gsheets_null_kind=plain
+      - ax:array_mode=dynamic
+    grid:
+      A1: 3
+      B1: c
+      C1: z
+      A2: 1
+      B2: a
+      C2: x
+      A3: 2
+      B3: b
+      C3: y
+      E1: 2
+  - subject: VLOOKUP
+    name: zero-ref-number-present-unsorted-oob-plain-dynamic
+    formula: =VLOOKUP(E1, A1:C3, 5, 0)
+    category: value
+    status: observed
+    tags:
+      - sweep:vlookup
+      - ax:range_lookup=zero
+      - ax:key_encoding=ref
+      - ax:key_type=number
+      - ax:key_present=present
+      - ax:range_sorted=unsorted
+      - ax:col_index_form=oob
+      - ax:gsheets_null_kind=plain
+      - ax:array_mode=dynamic
+    grid:
+      A1: 3
+      B1: c
+      C1: z
+      A2: 1
+      B2: a
+      C2: x
+      A3: 2
+      B3: b
+      C3: y
+      E1: 2
+  - subject: VLOOKUP
+    name: zero-ref-number-present-unsorted-arr-plain-dynamic
+    formula: =VLOOKUP(E1, A1:C3, {2,3}, 0)
+    category: value
+    status: observed
+    tags:
+      - sweep:vlookup
+      - ax:range_lookup=zero
+      - ax:key_encoding=ref
+      - ax:key_type=number
+      - ax:key_present=present
+      - ax:range_sorted=unsorted
+      - ax:col_index_form=arr
+      - ax:gsheets_null_kind=plain
+      - ax:array_mode=dynamic
+    grid:
+      A1: 3
+      B1: c
+      C1: z
+      A2: 1
+      B2: a
+      C2: x
+      A3: 2
+      B3: b
+      C3: y
+      E1: 2
+  - subject: VLOOKUP
+    name: zero-ref-number-absent-sorted-inb-plain-dynamic
+    formula: =VLOOKUP(E1, A1:C3, 2, 0)
+    category: value
+    status: observed
+    tags:
+      - sweep:vlookup
+      - ax:range_lookup=zero
+      - ax:key_encoding=ref
+      - ax:key_type=number
+      - ax:key_present=absent
+      - ax:range_sorted=sorted
+      - ax:col_index_form=inb
+      - ax:gsheets_null_kind=plain
+      - ax:array_mode=dynamic
+    grid:
+      A1: 1
+      B1: a
+      C1: x
+      A2: 2
+      B2: b
+      C2: y
+      A3: 3
+      B3: c
+      C3: z
+      E1: 9
+  - subject: VLOOKUP
+    name: zero-ref-number-absent-sorted-oob-plain-dynamic
+    formula: =VLOOKUP(E1, A1:C3, 5, 0)
+    category: value
+    status: observed
+    tags:
+      - sweep:vlookup
+      - ax:range_lookup=zero
+      - ax:key_encoding=ref
+      - ax:key_type=number
+      - ax:key_present=absent
+      - ax:range_sorted=sorted
+      - ax:col_index_form=oob
+      - ax:gsheets_null_kind=plain
+      - ax:array_mode=dynamic
+    grid:
+      A1: 1
+      B1: a
+      C1: x
+      A2: 2
+      B2: b
+      C2: y
+      A3: 3
+      B3: c
+      C3: z
+      E1: 9
+  - subject: VLOOKUP
+    name: zero-ref-number-absent-sorted-arr-plain-dynamic
+    formula: =VLOOKUP(E1, A1:C3, {2,3}, 0)
+    category: value
+    status: observed
+    tags:
+      - sweep:vlookup
+      - ax:range_lookup=zero
+      - ax:key_encoding=ref
+      - ax:key_type=number
+      - ax:key_present=absent
+      - ax:range_sorted=sorted
+      - ax:col_index_form=arr
+      - ax:gsheets_null_kind=plain
+      - ax:array_mode=dynamic
+    grid:
+      A1: 1
+      B1: a
+      C1: x
+      A2: 2
+      B2: b
+      C2: y
+      A3: 3
+      B3: c
+      C3: z
+      E1: 9
+  - subject: VLOOKUP
+    name: zero-ref-number-absent-unsorted-inb-plain-dynamic
+    formula: =VLOOKUP(E1, A1:C3, 2, 0)
+    category: value
+    status: observed
+    tags:
+      - sweep:vlookup
+      - ax:range_lookup=zero
+      - ax:key_encoding=ref
+      - ax:key_type=number
+      - ax:key_present=absent
+      - ax:range_sorted=unsorted
+      - ax:col_index_form=inb
+      - ax:gsheets_null_kind=plain
+      - ax:array_mode=dynamic
+    grid:
+      A1: 3
+      B1: c
+      C1: z
+      A2: 1
+      B2: a
+      C2: x
+      A3: 2
+      B3: b
+      C3: y
+      E1: 9
+  - subject: VLOOKUP
+    name: zero-ref-number-absent-unsorted-oob-plain-dynamic
+    formula: =VLOOKUP(E1, A1:C3, 5, 0)
+    category: value
+    status: observed
+    tags:
+      - sweep:vlookup
+      - ax:range_lookup=zero
+      - ax:key_encoding=ref
+      - ax:key_type=number
+      - ax:key_present=absent
+      - ax:range_sorted=unsorted
+      - ax:col_index_form=oob
+      - ax:gsheets_null_kind=plain
+      - ax:array_mode=dynamic
+    grid:
+      A1: 3
+      B1: c
+      C1: z
+      A2: 1
+      B2: a
+      C2: x
+      A3: 2
+      B3: b
+      C3: y
+      E1: 9
+  - subject: VLOOKUP
+    name: zero-ref-number-absent-unsorted-arr-plain-dynamic
+    formula: =VLOOKUP(E1, A1:C3, {2,3}, 0)
+    category: value
+    status: observed
+    tags:
+      - sweep:vlookup
+      - ax:range_lookup=zero
+      - ax:key_encoding=ref
+      - ax:key_type=number
+      - ax:key_present=absent
+      - ax:range_sorted=unsorted
+      - ax:col_index_form=arr
+      - ax:gsheets_null_kind=plain
+      - ax:array_mode=dynamic
+    grid:
+      A1: 3
+      B1: c
+      C1: z
+      A2: 1
+      B2: a
+      C2: x
+      A3: 2
+      B3: b
+      C3: y
+      E1: 9
+  - subject: VLOOKUP
+    name: zero-ref-string-present-sorted-inb-plain-dynamic
+    formula: =VLOOKUP(E1, A1:C3, 2, 0)
+    category: value
+    status: observed
+    tags:
+      - sweep:vlookup
+      - ax:range_lookup=zero
+      - ax:key_encoding=ref
+      - ax:key_type=string
+      - ax:key_present=present
+      - ax:range_sorted=sorted
+      - ax:col_index_form=inb
+      - ax:gsheets_null_kind=plain
+      - ax:array_mode=dynamic
+    grid:
+      A1: 1
+      B1: a
+      C1: x
+      A2: 2
+      B2: b
+      C2: y
+      A3: 3
+      B3: c
+      C3: z
+      E1: ="2"
+  - subject: VLOOKUP
+    name: zero-ref-blank-present-sorted-inb-plain-dynamic
+    formula: =VLOOKUP(E1, A1:C3, 2, 0)
+    category: value
+    status: observed
+    tags:
+      - sweep:vlookup
+      - ax:range_lookup=zero
+      - ax:key_encoding=ref
+      - ax:key_type=blank
+      - ax:key_present=present
+      - ax:range_sorted=sorted
+      - ax:col_index_form=inb
+      - ax:gsheets_null_kind=plain
+      - ax:array_mode=dynamic
+    grid:
+      A1: 1
+      B1: a
+      C1: x
+      A2: 2
+      B2: b
+      C2: y
+      A3: 3
+      B3: c
+      C3: z
+  - subject: VLOOKUP
+    name: zero-ref-blank-present-sorted-inb-empty-dynamic
+    formula: =VLOOKUP(E1, A1:C3, 2, 0)
+    category: value
+    status: observed
+    tags:
+      - sweep:vlookup
+      - ax:range_lookup=zero
+      - ax:key_encoding=ref
+      - ax:key_type=blank
+      - ax:key_present=present
+      - ax:range_sorted=sorted
+      - ax:col_index_form=inb
+      - ax:gsheets_null_kind=empty
+      - ax:array_mode=dynamic
+    grid:
+      A1: 1
+      B1: a
+      C1: x
+      A2: 2
+      B2: b
+      C2: y
+      A3: 3
+      B3: c
+      C3: z
+      E1: =""
+  - subject: VLOOKUP
+    name: zero-ref-blank-present-sorted-inb-runtimenull-dynamic
+    formula: =VLOOKUP(E1, A1:C3, 2, 0)
+    category: value
+    status: observed
+    tags:
+      - sweep:vlookup
+      - ax:range_lookup=zero
+      - ax:key_encoding=ref
+      - ax:key_type=blank
+      - ax:key_present=present
+      - ax:range_sorted=sorted
+      - ax:col_index_form=inb
+      - ax:gsheets_null_kind=runtimenull
+      - ax:array_mode=dynamic
+    grid:
+      A1: 1
+      B1: a
+      C1: x
+      A2: 2
+      B2: b
+      C2: y
+      A3: 3
+      B3: c
+      C3: z
+      E1: =IF(,,)
+  - subject: VLOOKUP
+    name: true-literal-number-present-sorted-inb-plain-dynamic
+    formula: =VLOOKUP(2, A1:C3, 2, TRUE)
+    category: value
+    status: observed
+    tags:
+      - sweep:vlookup
+      - ax:range_lookup=true
+      - ax:key_encoding=literal
+      - ax:key_type=number
+      - ax:key_present=present
+      - ax:range_sorted=sorted
+      - ax:col_index_form=inb
+      - ax:gsheets_null_kind=plain
+      - ax:array_mode=dynamic
+    grid:
+      A1: 1
+      B1: a
+      C1: x
+      A2: 2
+      B2: b
+      C2: y
+      A3: 3
+      B3: c
+      C3: z
+  - subject: VLOOKUP
+    name: true-literal-number-present-sorted-oob-plain-dynamic
+    formula: =VLOOKUP(2, A1:C3, 5, TRUE)
+    category: value
+    status: observed
+    tags:
+      - sweep:vlookup
+      - ax:range_lookup=true
+      - ax:key_encoding=literal
+      - ax:key_type=number
+      - ax:key_present=present
+      - ax:range_sorted=sorted
+      - ax:col_index_form=oob
+      - ax:gsheets_null_kind=plain
+      - ax:array_mode=dynamic
+    grid:
+      A1: 1
+      B1: a
+      C1: x
+      A2: 2
+      B2: b
+      C2: y
+      A3: 3
+      B3: c
+      C3: z
+  - subject: VLOOKUP
+    name: true-literal-number-present-sorted-arr-plain-dynamic
+    formula: =VLOOKUP(2, A1:C3, {2,3}, TRUE)
+    category: value
+    status: observed
+    tags:
+      - sweep:vlookup
+      - ax:range_lookup=true
+      - ax:key_encoding=literal
+      - ax:key_type=number
+      - ax:key_present=present
+      - ax:range_sorted=sorted
+      - ax:col_index_form=arr
+      - ax:gsheets_null_kind=plain
+      - ax:array_mode=dynamic
+    grid:
+      A1: 1
+      B1: a
+      C1: x
+      A2: 2
+      B2: b
+      C2: y
+      A3: 3
+      B3: c
+      C3: z
+  - subject: VLOOKUP
+    name: true-literal-number-present-unsorted-inb-plain-dynamic
+    formula: =VLOOKUP(2, A1:C3, 2, TRUE)
+    category: value
+    status: observed
+    tags:
+      - sweep:vlookup
+      - ax:range_lookup=true
+      - ax:key_encoding=literal
+      - ax:key_type=number
+      - ax:key_present=present
+      - ax:range_sorted=unsorted
+      - ax:col_index_form=inb
+      - ax:gsheets_null_kind=plain
+      - ax:array_mode=dynamic
+    grid:
+      A1: 3
+      B1: c
+      C1: z
+      A2: 1
+      B2: a
+      C2: x
+      A3: 2
+      B3: b
+      C3: y
+  - subject: VLOOKUP
+    name: true-literal-number-present-unsorted-oob-plain-dynamic
+    formula: =VLOOKUP(2, A1:C3, 5, TRUE)
+    category: value
+    status: observed
+    tags:
+      - sweep:vlookup
+      - ax:range_lookup=true
+      - ax:key_encoding=literal
+      - ax:key_type=number
+      - ax:key_present=present
+      - ax:range_sorted=unsorted
+      - ax:col_index_form=oob
+      - ax:gsheets_null_kind=plain
+      - ax:array_mode=dynamic
+    grid:
+      A1: 3
+      B1: c
+      C1: z
+      A2: 1
+      B2: a
+      C2: x
+      A3: 2
+      B3: b
+      C3: y
+  - subject: VLOOKUP
+    name: true-literal-number-present-unsorted-arr-plain-dynamic
+    formula: =VLOOKUP(2, A1:C3, {2,3}, TRUE)
+    category: value
+    status: observed
+    tags:
+      - sweep:vlookup
+      - ax:range_lookup=true
+      - ax:key_encoding=literal
+      - ax:key_type=number
+      - ax:key_present=present
+      - ax:range_sorted=unsorted
+      - ax:col_index_form=arr
+      - ax:gsheets_null_kind=plain
+      - ax:array_mode=dynamic
+    grid:
+      A1: 3
+      B1: c
+      C1: z
+      A2: 1
+      B2: a
+      C2: x
+      A3: 2
+      B3: b
+      C3: y
+  - subject: VLOOKUP
+    name: true-literal-number-absent-sorted-inb-plain-dynamic
+    formula: =VLOOKUP(9, A1:C3, 2, TRUE)
+    category: value
+    status: observed
+    tags:
+      - sweep:vlookup
+      - ax:range_lookup=true
+      - ax:key_encoding=literal
+      - ax:key_type=number
+      - ax:key_present=absent
+      - ax:range_sorted=sorted
+      - ax:col_index_form=inb
+      - ax:gsheets_null_kind=plain
+      - ax:array_mode=dynamic
+    grid:
+      A1: 1
+      B1: a
+      C1: x
+      A2: 2
+      B2: b
+      C2: y
+      A3: 3
+      B3: c
+      C3: z
+  - subject: VLOOKUP
+    name: true-literal-number-absent-sorted-oob-plain-dynamic
+    formula: =VLOOKUP(9, A1:C3, 5, TRUE)
+    category: value
+    status: observed
+    tags:
+      - sweep:vlookup
+      - ax:range_lookup=true
+      - ax:key_encoding=literal
+      - ax:key_type=number
+      - ax:key_present=absent
+      - ax:range_sorted=sorted
+      - ax:col_index_form=oob
+      - ax:gsheets_null_kind=plain
+      - ax:array_mode=dynamic
+    grid:
+      A1: 1
+      B1: a
+      C1: x
+      A2: 2
+      B2: b
+      C2: y
+      A3: 3
+      B3: c
+      C3: z
+  - subject: VLOOKUP
+    name: true-literal-number-absent-sorted-arr-plain-dynamic
+    formula: =VLOOKUP(9, A1:C3, {2,3}, TRUE)
+    category: value
+    status: observed
+    tags:
+      - sweep:vlookup
+      - ax:range_lookup=true
+      - ax:key_encoding=literal
+      - ax:key_type=number
+      - ax:key_present=absent
+      - ax:range_sorted=sorted
+      - ax:col_index_form=arr
+      - ax:gsheets_null_kind=plain
+      - ax:array_mode=dynamic
+    grid:
+      A1: 1
+      B1: a
+      C1: x
+      A2: 2
+      B2: b
+      C2: y
+      A3: 3
+      B3: c
+      C3: z
+  - subject: VLOOKUP
+    name: true-literal-number-absent-unsorted-inb-plain-dynamic
+    formula: =VLOOKUP(9, A1:C3, 2, TRUE)
+    category: value
+    status: observed
+    tags:
+      - sweep:vlookup
+      - ax:range_lookup=true
+      - ax:key_encoding=literal
+      - ax:key_type=number
+      - ax:key_present=absent
+      - ax:range_sorted=unsorted
+      - ax:col_index_form=inb
+      - ax:gsheets_null_kind=plain
+      - ax:array_mode=dynamic
+    grid:
+      A1: 3
+      B1: c
+      C1: z
+      A2: 1
+      B2: a
+      C2: x
+      A3: 2
+      B3: b
+      C3: y
+  - subject: VLOOKUP
+    name: true-literal-number-absent-unsorted-oob-plain-dynamic
+    formula: =VLOOKUP(9, A1:C3, 5, TRUE)
+    category: value
+    status: observed
+    tags:
+      - sweep:vlookup
+      - ax:range_lookup=true
+      - ax:key_encoding=literal
+      - ax:key_type=number
+      - ax:key_present=absent
+      - ax:range_sorted=unsorted
+      - ax:col_index_form=oob
+      - ax:gsheets_null_kind=plain
+      - ax:array_mode=dynamic
+    grid:
+      A1: 3
+      B1: c
+      C1: z
+      A2: 1
+      B2: a
+      C2: x
+      A3: 2
+      B3: b
+      C3: y
+  - subject: VLOOKUP
+    name: true-literal-number-absent-unsorted-arr-plain-dynamic
+    formula: =VLOOKUP(9, A1:C3, {2,3}, TRUE)
+    category: value
+    status: observed
+    tags:
+      - sweep:vlookup
+      - ax:range_lookup=true
+      - ax:key_encoding=literal
+      - ax:key_type=number
+      - ax:key_present=absent
+      - ax:range_sorted=unsorted
+      - ax:col_index_form=arr
+      - ax:gsheets_null_kind=plain
+      - ax:array_mode=dynamic
+    grid:
+      A1: 3
+      B1: c
+      C1: z
+      A2: 1
+      B2: a
+      C2: x
+      A3: 2
+      B3: b
+      C3: y
+  - subject: VLOOKUP
+    name: true-ref-number-present-sorted-inb-plain-dynamic
+    formula: =VLOOKUP(E1, A1:C3, 2, TRUE)
+    category: value
+    status: observed
+    tags:
+      - sweep:vlookup
+      - ax:range_lookup=true
+      - ax:key_encoding=ref
+      - ax:key_type=number
+      - ax:key_present=present
+      - ax:range_sorted=sorted
+      - ax:col_index_form=inb
+      - ax:gsheets_null_kind=plain
+      - ax:array_mode=dynamic
+    grid:
+      A1: 1
+      B1: a
+      C1: x
+      A2: 2
+      B2: b
+      C2: y
+      A3: 3
+      B3: c
+      C3: z
+      E1: 2
+  - subject: VLOOKUP
+    name: true-ref-number-present-sorted-oob-plain-dynamic
+    formula: =VLOOKUP(E1, A1:C3, 5, TRUE)
+    category: value
+    status: observed
+    tags:
+      - sweep:vlookup
+      - ax:range_lookup=true
+      - ax:key_encoding=ref
+      - ax:key_type=number
+      - ax:key_present=present
+      - ax:range_sorted=sorted
+      - ax:col_index_form=oob
+      - ax:gsheets_null_kind=plain
+      - ax:array_mode=dynamic
+    grid:
+      A1: 1
+      B1: a
+      C1: x
+      A2: 2
+      B2: b
+      C2: y
+      A3: 3
+      B3: c
+      C3: z
+      E1: 2
+  - subject: VLOOKUP
+    name: true-ref-number-present-sorted-arr-plain-dynamic
+    formula: =VLOOKUP(E1, A1:C3, {2,3}, TRUE)
+    category: value
+    status: observed
+    tags:
+      - sweep:vlookup
+      - ax:range_lookup=true
+      - ax:key_encoding=ref
+      - ax:key_type=number
+      - ax:key_present=present
+      - ax:range_sorted=sorted
+      - ax:col_index_form=arr
+      - ax:gsheets_null_kind=plain
+      - ax:array_mode=dynamic
+    grid:
+      A1: 1
+      B1: a
+      C1: x
+      A2: 2
+      B2: b
+      C2: y
+      A3: 3
+      B3: c
+      C3: z
+      E1: 2
+  - subject: VLOOKUP
+    name: true-ref-number-present-unsorted-inb-plain-dynamic
+    formula: =VLOOKUP(E1, A1:C3, 2, TRUE)
+    category: value
+    status: observed
+    tags:
+      - sweep:vlookup
+      - ax:range_lookup=true
+      - ax:key_encoding=ref
+      - ax:key_type=number
+      - ax:key_present=present
+      - ax:range_sorted=unsorted
+      - ax:col_index_form=inb
+      - ax:gsheets_null_kind=plain
+      - ax:array_mode=dynamic
+    grid:
+      A1: 3
+      B1: c
+      C1: z
+      A2: 1
+      B2: a
+      C2: x
+      A3: 2
+      B3: b
+      C3: y
+      E1: 2
+  - subject: VLOOKUP
+    name: true-ref-number-present-unsorted-oob-plain-dynamic
+    formula: =VLOOKUP(E1, A1:C3, 5, TRUE)
+    category: value
+    status: observed
+    tags:
+      - sweep:vlookup
+      - ax:range_lookup=true
+      - ax:key_encoding=ref
+      - ax:key_type=number
+      - ax:key_present=present
+      - ax:range_sorted=unsorted
+      - ax:col_index_form=oob
+      - ax:gsheets_null_kind=plain
+      - ax:array_mode=dynamic
+    grid:
+      A1: 3
+      B1: c
+      C1: z
+      A2: 1
+      B2: a
+      C2: x
+      A3: 2
+      B3: b
+      C3: y
+      E1: 2
+  - subject: VLOOKUP
+    name: true-ref-number-present-unsorted-arr-plain-dynamic
+    formula: =VLOOKUP(E1, A1:C3, {2,3}, TRUE)
+    category: value
+    status: observed
+    tags:
+      - sweep:vlookup
+      - ax:range_lookup=true
+      - ax:key_encoding=ref
+      - ax:key_type=number
+      - ax:key_present=present
+      - ax:range_sorted=unsorted
+      - ax:col_index_form=arr
+      - ax:gsheets_null_kind=plain
+      - ax:array_mode=dynamic
+    grid:
+      A1: 3
+      B1: c
+      C1: z
+      A2: 1
+      B2: a
+      C2: x
+      A3: 2
+      B3: b
+      C3: y
+      E1: 2
+  - subject: VLOOKUP
+    name: true-ref-number-absent-sorted-inb-plain-dynamic
+    formula: =VLOOKUP(E1, A1:C3, 2, TRUE)
+    category: value
+    status: observed
+    tags:
+      - sweep:vlookup
+      - ax:range_lookup=true
+      - ax:key_encoding=ref
+      - ax:key_type=number
+      - ax:key_present=absent
+      - ax:range_sorted=sorted
+      - ax:col_index_form=inb
+      - ax:gsheets_null_kind=plain
+      - ax:array_mode=dynamic
+    grid:
+      A1: 1
+      B1: a
+      C1: x
+      A2: 2
+      B2: b
+      C2: y
+      A3: 3
+      B3: c
+      C3: z
+      E1: 9
+  - subject: VLOOKUP
+    name: true-ref-number-absent-sorted-oob-plain-dynamic
+    formula: =VLOOKUP(E1, A1:C3, 5, TRUE)
+    category: value
+    status: observed
+    tags:
+      - sweep:vlookup
+      - ax:range_lookup=true
+      - ax:key_encoding=ref
+      - ax:key_type=number
+      - ax:key_present=absent
+      - ax:range_sorted=sorted
+      - ax:col_index_form=oob
+      - ax:gsheets_null_kind=plain
+      - ax:array_mode=dynamic
+    grid:
+      A1: 1
+      B1: a
+      C1: x
+      A2: 2
+      B2: b
+      C2: y
+      A3: 3
+      B3: c
+      C3: z
+      E1: 9
+  - subject: VLOOKUP
+    name: true-ref-number-absent-sorted-arr-plain-dynamic
+    formula: =VLOOKUP(E1, A1:C3, {2,3}, TRUE)
+    category: value
+    status: observed
+    tags:
+      - sweep:vlookup
+      - ax:range_lookup=true
+      - ax:key_encoding=ref
+      - ax:key_type=number
+      - ax:key_present=absent
+      - ax:range_sorted=sorted
+      - ax:col_index_form=arr
+      - ax:gsheets_null_kind=plain
+      - ax:array_mode=dynamic
+    grid:
+      A1: 1
+      B1: a
+      C1: x
+      A2: 2
+      B2: b
+      C2: y
+      A3: 3
+      B3: c
+      C3: z
+      E1: 9
+  - subject: VLOOKUP
+    name: true-ref-number-absent-unsorted-inb-plain-dynamic
+    formula: =VLOOKUP(E1, A1:C3, 2, TRUE)
+    category: value
+    status: observed
+    tags:
+      - sweep:vlookup
+      - ax:range_lookup=true
+      - ax:key_encoding=ref
+      - ax:key_type=number
+      - ax:key_present=absent
+      - ax:range_sorted=unsorted
+      - ax:col_index_form=inb
+      - ax:gsheets_null_kind=plain
+      - ax:array_mode=dynamic
+    grid:
+      A1: 3
+      B1: c
+      C1: z
+      A2: 1
+      B2: a
+      C2: x
+      A3: 2
+      B3: b
+      C3: y
+      E1: 9
+  - subject: VLOOKUP
+    name: true-ref-number-absent-unsorted-oob-plain-dynamic
+    formula: =VLOOKUP(E1, A1:C3, 5, TRUE)
+    category: value
+    status: observed
+    tags:
+      - sweep:vlookup
+      - ax:range_lookup=true
+      - ax:key_encoding=ref
+      - ax:key_type=number
+      - ax:key_present=absent
+      - ax:range_sorted=unsorted
+      - ax:col_index_form=oob
+      - ax:gsheets_null_kind=plain
+      - ax:array_mode=dynamic
+    grid:
+      A1: 3
+      B1: c
+      C1: z
+      A2: 1
+      B2: a
+      C2: x
+      A3: 2
+      B3: b
+      C3: y
+      E1: 9
+  - subject: VLOOKUP
+    name: true-ref-number-absent-unsorted-arr-plain-dynamic
+    formula: =VLOOKUP(E1, A1:C3, {2,3}, TRUE)
+    category: value
+    status: observed
+    tags:
+      - sweep:vlookup
+      - ax:range_lookup=true
+      - ax:key_encoding=ref
+      - ax:key_type=number
+      - ax:key_present=absent
+      - ax:range_sorted=unsorted
+      - ax:col_index_form=arr
+      - ax:gsheets_null_kind=plain
+      - ax:array_mode=dynamic
+    grid:
+      A1: 3
+      B1: c
+      C1: z
+      A2: 1
+      B2: a
+      C2: x
+      A3: 2
+      B3: b
+      C3: y
+      E1: 9
+  - subject: VLOOKUP
+    name: true-ref-string-present-sorted-inb-plain-dynamic
+    formula: =VLOOKUP(E1, A1:C3, 2, TRUE)
+    category: value
+    status: observed
+    tags:
+      - sweep:vlookup
+      - ax:range_lookup=true
+      - ax:key_encoding=ref
+      - ax:key_type=string
+      - ax:key_present=present
+      - ax:range_sorted=sorted
+      - ax:col_index_form=inb
+      - ax:gsheets_null_kind=plain
+      - ax:array_mode=dynamic
+    grid:
+      A1: 1
+      B1: a
+      C1: x
+      A2: 2
+      B2: b
+      C2: y
+      A3: 3
+      B3: c
+      C3: z
+      E1: ="2"
+  - subject: VLOOKUP
+    name: true-ref-blank-present-sorted-inb-plain-dynamic
+    formula: =VLOOKUP(E1, A1:C3, 2, TRUE)
+    category: value
+    status: observed
+    tags:
+      - sweep:vlookup
+      - ax:range_lookup=true
+      - ax:key_encoding=ref
+      - ax:key_type=blank
+      - ax:key_present=present
+      - ax:range_sorted=sorted
+      - ax:col_index_form=inb
+      - ax:gsheets_null_kind=plain
+      - ax:array_mode=dynamic
+    grid:
+      A1: 1
+      B1: a
+      C1: x
+      A2: 2
+      B2: b
+      C2: y
+      A3: 3
+      B3: c
+      C3: z
+  - subject: VLOOKUP
+    name: true-ref-blank-present-sorted-inb-empty-dynamic
+    formula: =VLOOKUP(E1, A1:C3, 2, TRUE)
+    category: value
+    status: observed
+    tags:
+      - sweep:vlookup
+      - ax:range_lookup=true
+      - ax:key_encoding=ref
+      - ax:key_type=blank
+      - ax:key_present=present
+      - ax:range_sorted=sorted
+      - ax:col_index_form=inb
+      - ax:gsheets_null_kind=empty
+      - ax:array_mode=dynamic
+    grid:
+      A1: 1
+      B1: a
+      C1: x
+      A2: 2
+      B2: b
+      C2: y
+      A3: 3
+      B3: c
+      C3: z
+      E1: =""
+  - subject: VLOOKUP
+    name: true-ref-blank-present-sorted-inb-runtimenull-dynamic
+    formula: =VLOOKUP(E1, A1:C3, 2, TRUE)
+    category: value
+    status: observed
+    tags:
+      - sweep:vlookup
+      - ax:range_lookup=true
+      - ax:key_encoding=ref
+      - ax:key_type=blank
+      - ax:key_present=present
+      - ax:range_sorted=sorted
+      - ax:col_index_form=inb
+      - ax:gsheets_null_kind=runtimenull
+      - ax:array_mode=dynamic
+    grid:
+      A1: 1
+      B1: a
+      C1: x
+      A2: 2
+      B2: b
+      C2: y
+      A3: 3
+      B3: c
+      C3: z
+      E1: =IF(,,)
+  - subject: VLOOKUP
+    name: omitted-literal-number-present-sorted-inb-plain-dynamic
+    formula: =VLOOKUP(2, A1:C3, 2)
+    category: value
+    status: observed
+    tags:
+      - sweep:vlookup
+      - ax:range_lookup=omitted
+      - ax:key_encoding=literal
+      - ax:key_type=number
+      - ax:key_present=present
+      - ax:range_sorted=sorted
+      - ax:col_index_form=inb
+      - ax:gsheets_null_kind=plain
+      - ax:array_mode=dynamic
+    grid:
+      A1: 1
+      B1: a
+      C1: x
+      A2: 2
+      B2: b
+      C2: y
+      A3: 3
+      B3: c
+      C3: z
+  - subject: VLOOKUP
+    name: omitted-literal-number-present-sorted-oob-plain-dynamic
+    formula: =VLOOKUP(2, A1:C3, 5)
+    category: value
+    status: observed
+    tags:
+      - sweep:vlookup
+      - ax:range_lookup=omitted
+      - ax:key_encoding=literal
+      - ax:key_type=number
+      - ax:key_present=present
+      - ax:range_sorted=sorted
+      - ax:col_index_form=oob
+      - ax:gsheets_null_kind=plain
+      - ax:array_mode=dynamic
+    grid:
+      A1: 1
+      B1: a
+      C1: x
+      A2: 2
+      B2: b
+      C2: y
+      A3: 3
+      B3: c
+      C3: z
+  - subject: VLOOKUP
+    name: omitted-literal-number-present-sorted-arr-plain-dynamic
+    formula: =VLOOKUP(2, A1:C3, {2,3})
+    category: value
+    status: observed
+    tags:
+      - sweep:vlookup
+      - ax:range_lookup=omitted
+      - ax:key_encoding=literal
+      - ax:key_type=number
+      - ax:key_present=present
+      - ax:range_sorted=sorted
+      - ax:col_index_form=arr
+      - ax:gsheets_null_kind=plain
+      - ax:array_mode=dynamic
+    grid:
+      A1: 1
+      B1: a
+      C1: x
+      A2: 2
+      B2: b
+      C2: y
+      A3: 3
+      B3: c
+      C3: z
+  - subject: VLOOKUP
+    name: omitted-literal-number-present-unsorted-inb-plain-dynamic
+    formula: =VLOOKUP(2, A1:C3, 2)
+    category: value
+    status: observed
+    tags:
+      - sweep:vlookup
+      - ax:range_lookup=omitted
+      - ax:key_encoding=literal
+      - ax:key_type=number
+      - ax:key_present=present
+      - ax:range_sorted=unsorted
+      - ax:col_index_form=inb
+      - ax:gsheets_null_kind=plain
+      - ax:array_mode=dynamic
+    grid:
+      A1: 3
+      B1: c
+      C1: z
+      A2: 1
+      B2: a
+      C2: x
+      A3: 2
+      B3: b
+      C3: y
+  - subject: VLOOKUP
+    name: omitted-literal-number-present-unsorted-oob-plain-dynamic
+    formula: =VLOOKUP(2, A1:C3, 5)
+    category: value
+    status: observed
+    tags:
+      - sweep:vlookup
+      - ax:range_lookup=omitted
+      - ax:key_encoding=literal
+      - ax:key_type=number
+      - ax:key_present=present
+      - ax:range_sorted=unsorted
+      - ax:col_index_form=oob
+      - ax:gsheets_null_kind=plain
+      - ax:array_mode=dynamic
+    grid:
+      A1: 3
+      B1: c
+      C1: z
+      A2: 1
+      B2: a
+      C2: x
+      A3: 2
+      B3: b
+      C3: y
+  - subject: VLOOKUP
+    name: omitted-literal-number-present-unsorted-arr-plain-dynamic
+    formula: =VLOOKUP(2, A1:C3, {2,3})
+    category: value
+    status: observed
+    tags:
+      - sweep:vlookup
+      - ax:range_lookup=omitted
+      - ax:key_encoding=literal
+      - ax:key_type=number
+      - ax:key_present=present
+      - ax:range_sorted=unsorted
+      - ax:col_index_form=arr
+      - ax:gsheets_null_kind=plain
+      - ax:array_mode=dynamic
+    grid:
+      A1: 3
+      B1: c
+      C1: z
+      A2: 1
+      B2: a
+      C2: x
+      A3: 2
+      B3: b
+      C3: y
+  - subject: VLOOKUP
+    name: omitted-literal-number-absent-sorted-inb-plain-dynamic
+    formula: =VLOOKUP(9, A1:C3, 2)
+    category: value
+    status: observed
+    tags:
+      - sweep:vlookup
+      - ax:range_lookup=omitted
+      - ax:key_encoding=literal
+      - ax:key_type=number
+      - ax:key_present=absent
+      - ax:range_sorted=sorted
+      - ax:col_index_form=inb
+      - ax:gsheets_null_kind=plain
+      - ax:array_mode=dynamic
+    grid:
+      A1: 1
+      B1: a
+      C1: x
+      A2: 2
+      B2: b
+      C2: y
+      A3: 3
+      B3: c
+      C3: z
+  - subject: VLOOKUP
+    name: omitted-literal-number-absent-sorted-oob-plain-dynamic
+    formula: =VLOOKUP(9, A1:C3, 5)
+    category: value
+    status: observed
+    tags:
+      - sweep:vlookup
+      - ax:range_lookup=omitted
+      - ax:key_encoding=literal
+      - ax:key_type=number
+      - ax:key_present=absent
+      - ax:range_sorted=sorted
+      - ax:col_index_form=oob
+      - ax:gsheets_null_kind=plain
+      - ax:array_mode=dynamic
+    grid:
+      A1: 1
+      B1: a
+      C1: x
+      A2: 2
+      B2: b
+      C2: y
+      A3: 3
+      B3: c
+      C3: z
+  - subject: VLOOKUP
+    name: omitted-literal-number-absent-sorted-arr-plain-dynamic
+    formula: =VLOOKUP(9, A1:C3, {2,3})
+    category: value
+    status: observed
+    tags:
+      - sweep:vlookup
+      - ax:range_lookup=omitted
+      - ax:key_encoding=literal
+      - ax:key_type=number
+      - ax:key_present=absent
+      - ax:range_sorted=sorted
+      - ax:col_index_form=arr
+      - ax:gsheets_null_kind=plain
+      - ax:array_mode=dynamic
+    grid:
+      A1: 1
+      B1: a
+      C1: x
+      A2: 2
+      B2: b
+      C2: y
+      A3: 3
+      B3: c
+      C3: z
+  - subject: VLOOKUP
+    name: omitted-literal-number-absent-unsorted-inb-plain-dynamic
+    formula: =VLOOKUP(9, A1:C3, 2)
+    category: value
+    status: observed
+    tags:
+      - sweep:vlookup
+      - ax:range_lookup=omitted
+      - ax:key_encoding=literal
+      - ax:key_type=number
+      - ax:key_present=absent
+      - ax:range_sorted=unsorted
+      - ax:col_index_form=inb
+      - ax:gsheets_null_kind=plain
+      - ax:array_mode=dynamic
+    grid:
+      A1: 3
+      B1: c
+      C1: z
+      A2: 1
+      B2: a
+      C2: x
+      A3: 2
+      B3: b
+      C3: y
+  - subject: VLOOKUP
+    name: omitted-literal-number-absent-unsorted-oob-plain-dynamic
+    formula: =VLOOKUP(9, A1:C3, 5)
+    category: value
+    status: observed
+    tags:
+      - sweep:vlookup
+      - ax:range_lookup=omitted
+      - ax:key_encoding=literal
+      - ax:key_type=number
+      - ax:key_present=absent
+      - ax:range_sorted=unsorted
+      - ax:col_index_form=oob
+      - ax:gsheets_null_kind=plain
+      - ax:array_mode=dynamic
+    grid:
+      A1: 3
+      B1: c
+      C1: z
+      A2: 1
+      B2: a
+      C2: x
+      A3: 2
+      B3: b
+      C3: y
+  - subject: VLOOKUP
+    name: omitted-literal-number-absent-unsorted-arr-plain-dynamic
+    formula: =VLOOKUP(9, A1:C3, {2,3})
+    category: value
+    status: observed
+    tags:
+      - sweep:vlookup
+      - ax:range_lookup=omitted
+      - ax:key_encoding=literal
+      - ax:key_type=number
+      - ax:key_present=absent
+      - ax:range_sorted=unsorted
+      - ax:col_index_form=arr
+      - ax:gsheets_null_kind=plain
+      - ax:array_mode=dynamic
+    grid:
+      A1: 3
+      B1: c
+      C1: z
+      A2: 1
+      B2: a
+      C2: x
+      A3: 2
+      B3: b
+      C3: y
+  - subject: VLOOKUP
+    name: omitted-ref-number-present-sorted-inb-plain-dynamic
+    formula: =VLOOKUP(E1, A1:C3, 2)
+    category: value
+    status: observed
+    tags:
+      - sweep:vlookup
+      - ax:range_lookup=omitted
+      - ax:key_encoding=ref
+      - ax:key_type=number
+      - ax:key_present=present
+      - ax:range_sorted=sorted
+      - ax:col_index_form=inb
+      - ax:gsheets_null_kind=plain
+      - ax:array_mode=dynamic
+    grid:
+      A1: 1
+      B1: a
+      C1: x
+      A2: 2
+      B2: b
+      C2: y
+      A3: 3
+      B3: c
+      C3: z
+      E1: 2
+  - subject: VLOOKUP
+    name: omitted-ref-number-present-sorted-oob-plain-dynamic
+    formula: =VLOOKUP(E1, A1:C3, 5)
+    category: value
+    status: observed
+    tags:
+      - sweep:vlookup
+      - ax:range_lookup=omitted
+      - ax:key_encoding=ref
+      - ax:key_type=number
+      - ax:key_present=present
+      - ax:range_sorted=sorted
+      - ax:col_index_form=oob
+      - ax:gsheets_null_kind=plain
+      - ax:array_mode=dynamic
+    grid:
+      A1: 1
+      B1: a
+      C1: x
+      A2: 2
+      B2: b
+      C2: y
+      A3: 3
+      B3: c
+      C3: z
+      E1: 2
+  - subject: VLOOKUP
+    name: omitted-ref-number-present-sorted-arr-plain-dynamic
+    formula: =VLOOKUP(E1, A1:C3, {2,3})
+    category: value
+    status: observed
+    tags:
+      - sweep:vlookup
+      - ax:range_lookup=omitted
+      - ax:key_encoding=ref
+      - ax:key_type=number
+      - ax:key_present=present
+      - ax:range_sorted=sorted
+      - ax:col_index_form=arr
+      - ax:gsheets_null_kind=plain
+      - ax:array_mode=dynamic
+    grid:
+      A1: 1
+      B1: a
+      C1: x
+      A2: 2
+      B2: b
+      C2: y
+      A3: 3
+      B3: c
+      C3: z
+      E1: 2
+  - subject: VLOOKUP
+    name: omitted-ref-number-present-unsorted-inb-plain-dynamic
+    formula: =VLOOKUP(E1, A1:C3, 2)
+    category: value
+    status: observed
+    tags:
+      - sweep:vlookup
+      - ax:range_lookup=omitted
+      - ax:key_encoding=ref
+      - ax:key_type=number
+      - ax:key_present=present
+      - ax:range_sorted=unsorted
+      - ax:col_index_form=inb
+      - ax:gsheets_null_kind=plain
+      - ax:array_mode=dynamic
+    grid:
+      A1: 3
+      B1: c
+      C1: z
+      A2: 1
+      B2: a
+      C2: x
+      A3: 2
+      B3: b
+      C3: y
+      E1: 2
+  - subject: VLOOKUP
+    name: omitted-ref-number-present-unsorted-oob-plain-dynamic
+    formula: =VLOOKUP(E1, A1:C3, 5)
+    category: value
+    status: observed
+    tags:
+      - sweep:vlookup
+      - ax:range_lookup=omitted
+      - ax:key_encoding=ref
+      - ax:key_type=number
+      - ax:key_present=present
+      - ax:range_sorted=unsorted
+      - ax:col_index_form=oob
+      - ax:gsheets_null_kind=plain
+      - ax:array_mode=dynamic
+    grid:
+      A1: 3
+      B1: c
+      C1: z
+      A2: 1
+      B2: a
+      C2: x
+      A3: 2
+      B3: b
+      C3: y
+      E1: 2
+  - subject: VLOOKUP
+    name: omitted-ref-number-present-unsorted-arr-plain-dynamic
+    formula: =VLOOKUP(E1, A1:C3, {2,3})
+    category: value
+    status: observed
+    tags:
+      - sweep:vlookup
+      - ax:range_lookup=omitted
+      - ax:key_encoding=ref
+      - ax:key_type=number
+      - ax:key_present=present
+      - ax:range_sorted=unsorted
+      - ax:col_index_form=arr
+      - ax:gsheets_null_kind=plain
+      - ax:array_mode=dynamic
+    grid:
+      A1: 3
+      B1: c
+      C1: z
+      A2: 1
+      B2: a
+      C2: x
+      A3: 2
+      B3: b
+      C3: y
+      E1: 2
+  - subject: VLOOKUP
+    name: omitted-ref-number-absent-sorted-inb-plain-dynamic
+    formula: =VLOOKUP(E1, A1:C3, 2)
+    category: value
+    status: observed
+    tags:
+      - sweep:vlookup
+      - ax:range_lookup=omitted
+      - ax:key_encoding=ref
+      - ax:key_type=number
+      - ax:key_present=absent
+      - ax:range_sorted=sorted
+      - ax:col_index_form=inb
+      - ax:gsheets_null_kind=plain
+      - ax:array_mode=dynamic
+    grid:
+      A1: 1
+      B1: a
+      C1: x
+      A2: 2
+      B2: b
+      C2: y
+      A3: 3
+      B3: c
+      C3: z
+      E1: 9
+  - subject: VLOOKUP
+    name: omitted-ref-number-absent-sorted-oob-plain-dynamic
+    formula: =VLOOKUP(E1, A1:C3, 5)
+    category: value
+    status: observed
+    tags:
+      - sweep:vlookup
+      - ax:range_lookup=omitted
+      - ax:key_encoding=ref
+      - ax:key_type=number
+      - ax:key_present=absent
+      - ax:range_sorted=sorted
+      - ax:col_index_form=oob
+      - ax:gsheets_null_kind=plain
+      - ax:array_mode=dynamic
+    grid:
+      A1: 1
+      B1: a
+      C1: x
+      A2: 2
+      B2: b
+      C2: y
+      A3: 3
+      B3: c
+      C3: z
+      E1: 9
+  - subject: VLOOKUP
+    name: omitted-ref-number-absent-sorted-arr-plain-dynamic
+    formula: =VLOOKUP(E1, A1:C3, {2,3})
+    category: value
+    status: observed
+    tags:
+      - sweep:vlookup
+      - ax:range_lookup=omitted
+      - ax:key_encoding=ref
+      - ax:key_type=number
+      - ax:key_present=absent
+      - ax:range_sorted=sorted
+      - ax:col_index_form=arr
+      - ax:gsheets_null_kind=plain
+      - ax:array_mode=dynamic
+    grid:
+      A1: 1
+      B1: a
+      C1: x
+      A2: 2
+      B2: b
+      C2: y
+      A3: 3
+      B3: c
+      C3: z
+      E1: 9
+  - subject: VLOOKUP
+    name: omitted-ref-number-absent-unsorted-inb-plain-dynamic
+    formula: =VLOOKUP(E1, A1:C3, 2)
+    category: value
+    status: observed
+    tags:
+      - sweep:vlookup
+      - ax:range_lookup=omitted
+      - ax:key_encoding=ref
+      - ax:key_type=number
+      - ax:key_present=absent
+      - ax:range_sorted=unsorted
+      - ax:col_index_form=inb
+      - ax:gsheets_null_kind=plain
+      - ax:array_mode=dynamic
+    grid:
+      A1: 3
+      B1: c
+      C1: z
+      A2: 1
+      B2: a
+      C2: x
+      A3: 2
+      B3: b
+      C3: y
+      E1: 9
+  - subject: VLOOKUP
+    name: omitted-ref-number-absent-unsorted-oob-plain-dynamic
+    formula: =VLOOKUP(E1, A1:C3, 5)
+    category: value
+    status: observed
+    tags:
+      - sweep:vlookup
+      - ax:range_lookup=omitted
+      - ax:key_encoding=ref
+      - ax:key_type=number
+      - ax:key_present=absent
+      - ax:range_sorted=unsorted
+      - ax:col_index_form=oob
+      - ax:gsheets_null_kind=plain
+      - ax:array_mode=dynamic
+    grid:
+      A1: 3
+      B1: c
+      C1: z
+      A2: 1
+      B2: a
+      C2: x
+      A3: 2
+      B3: b
+      C3: y
+      E1: 9
+  - subject: VLOOKUP
+    name: omitted-ref-number-absent-unsorted-arr-plain-dynamic
+    formula: =VLOOKUP(E1, A1:C3, {2,3})
+    category: value
+    status: observed
+    tags:
+      - sweep:vlookup
+      - ax:range_lookup=omitted
+      - ax:key_encoding=ref
+      - ax:key_type=number
+      - ax:key_present=absent
+      - ax:range_sorted=unsorted
+      - ax:col_index_form=arr
+      - ax:gsheets_null_kind=plain
+      - ax:array_mode=dynamic
+    grid:
+      A1: 3
+      B1: c
+      C1: z
+      A2: 1
+      B2: a
+      C2: x
+      A3: 2
+      B3: b
+      C3: y
+      E1: 9
+  - subject: VLOOKUP
+    name: omitted-ref-string-present-sorted-inb-plain-dynamic
+    formula: =VLOOKUP(E1, A1:C3, 2)
+    category: value
+    status: observed
+    tags:
+      - sweep:vlookup
+      - ax:range_lookup=omitted
+      - ax:key_encoding=ref
+      - ax:key_type=string
+      - ax:key_present=present
+      - ax:range_sorted=sorted
+      - ax:col_index_form=inb
+      - ax:gsheets_null_kind=plain
+      - ax:array_mode=dynamic
+    grid:
+      A1: 1
+      B1: a
+      C1: x
+      A2: 2
+      B2: b
+      C2: y
+      A3: 3
+      B3: c
+      C3: z
+      E1: ="2"
+  - subject: VLOOKUP
+    name: omitted-ref-blank-present-sorted-inb-plain-dynamic
+    formula: =VLOOKUP(E1, A1:C3, 2)
+    category: value
+    status: observed
+    tags:
+      - sweep:vlookup
+      - ax:range_lookup=omitted
+      - ax:key_encoding=ref
+      - ax:key_type=blank
+      - ax:key_present=present
+      - ax:range_sorted=sorted
+      - ax:col_index_form=inb
+      - ax:gsheets_null_kind=plain
+      - ax:array_mode=dynamic
+    grid:
+      A1: 1
+      B1: a
+      C1: x
+      A2: 2
+      B2: b
+      C2: y
+      A3: 3
+      B3: c
+      C3: z
+  - subject: VLOOKUP
+    name: omitted-ref-blank-present-sorted-inb-empty-dynamic
+    formula: =VLOOKUP(E1, A1:C3, 2)
+    category: value
+    status: observed
+    tags:
+      - sweep:vlookup
+      - ax:range_lookup=omitted
+      - ax:key_encoding=ref
+      - ax:key_type=blank
+      - ax:key_present=present
+      - ax:range_sorted=sorted
+      - ax:col_index_form=inb
+      - ax:gsheets_null_kind=empty
+      - ax:array_mode=dynamic
+    grid:
+      A1: 1
+      B1: a
+      C1: x
+      A2: 2
+      B2: b
+      C2: y
+      A3: 3
+      B3: c
+      C3: z
+      E1: =""
+  - subject: VLOOKUP
+    name: omitted-ref-blank-present-sorted-inb-runtimenull-dynamic
+    formula: =VLOOKUP(E1, A1:C3, 2)
+    category: value
+    status: observed
+    tags:
+      - sweep:vlookup
+      - ax:range_lookup=omitted
+      - ax:key_encoding=ref
+      - ax:key_type=blank
+      - ax:key_present=present
+      - ax:range_sorted=sorted
+      - ax:col_index_form=inb
+      - ax:gsheets_null_kind=runtimenull
+      - ax:array_mode=dynamic
+    grid:
+      A1: 1
+      B1: a
+      C1: x
+      A2: 2
+      B2: b
+      C2: y
+      A3: 3
+      B3: c
+      C3: z
+      E1: =IF(,,)

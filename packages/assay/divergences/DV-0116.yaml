@@ -1,0 +1,17 @@
+id: DV-0116
+summary: "lattice: different argument interpretation — IF"
+cause: arg-semantics
+category: error-code
+engines:
+  - lattice
+behavior:
+  signature: '"no"'
+test-count: 1
+subjects:
+  - IF
+tests:
+  - IF/error-in-if-condition
+seeded: 2026-04-25
+last-confirmed: 2026-04-25
+status: vanished
+vanished-at: 2026-04-26

@@ -1,0 +1,140 @@
+{
+  "platform": "excel",
+  "generatedAt": "2026-06-04T06:36:57.909Z",
+  "results": {
+    "sha256:b9739d8453e8bf97f2df029f077ada04c08db44f4135e767a080961c2dda3ef5": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "error",
+              "sentinel": "#NAME?"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "e",
+              "raw_xml": {
+                "t": "e",
+                "cm": 1,
+                "formula_text": "REGEXMATCH(\"abc123\", \"[0-9]+\")",
+                "formula_array_marker": "array",
+                "formula_array_ref": "AA1"
+              },
+              "saved_as_array": true
+            },
+            "formula": "REGEXMATCH(\"abc123\", \"[0-9]+\")"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=REGEXMATCH(\"abc123\", \"[0-9]+\")"
+    },
+    "sha256:02602cb41aac89e12e9d0b758404c2b0c03ec69e1341323ecad599d8dc5cf56f": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "boolean",
+              "value": true
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "b",
+              "raw_xml": {
+                "t": "b",
+                "formula_text": "_xlfn.REGEXTEST(\"abc123\", \"[0-9]+\")",
+                "formula_namespaces": [
+                  "_xlfn"
+                ]
+              }
+            },
+            "formula": "_xlfn.REGEXTEST(\"abc123\", \"[0-9]+\")"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=REGEXTEST(\"abc123\", \"[0-9]+\")"
+    },
+    "sha256:ca5331645063a0942b4bca7fbe117182c24c92004118f107e570ef59cb817317": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "123"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "s",
+              "raw_xml": {
+                "t": "str",
+                "cm": 1,
+                "formula_text": "_xlfn.REGEXEXTRACT(\"abc123\", \"[0-9]+\")",
+                "formula_array_marker": "array",
+                "formula_array_ref": "AA1",
+                "formula_namespaces": [
+                  "_xlfn"
+                ]
+              },
+              "saved_as_array": true
+            },
+            "formula": "_xlfn.REGEXEXTRACT(\"abc123\", \"[0-9]+\")"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=REGEXEXTRACT(\"abc123\", \"[0-9]+\")"
+    },
+    "sha256:bbd4f50382ac130b1009bde1cca01bcc82e98175506ffb86ae140ca5d864338e": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "2024-01"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "s",
+              "raw_xml": {
+                "t": "str",
+                "cm": 1,
+                "formula_text": "_xlfn.REGEXEXTRACT(\"2024-01\", \"([0-9]+)-([0-9]+)\")",
+                "formula_array_marker": "array",
+                "formula_array_ref": "AA1",
+                "formula_namespaces": [
+                  "_xlfn"
+                ]
+              },
+              "saved_as_array": true
+            },
+            "formula": "_xlfn.REGEXEXTRACT(\"2024-01\", \"([0-9]+)-([0-9]+)\")"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=REGEXEXTRACT(\"2024-01\", \"([0-9]+)-([0-9]+)\")"
+    },
+    "sha256:a1d833c3e0c96ac98b0e951af1f7d8bc6523bdae456fc972c379ddc8cab91b48": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "abc#"
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "s",
+              "raw_xml": {
+                "t": "str",
+                "formula_text": "_xlfn.REGEXREPLACE(\"abc123\", \"[0-9]+\", \"#\")",
+                "formula_namespaces": [
+                  "_xlfn"
+                ]
+              }
+            },
+            "formula": "_xlfn.REGEXREPLACE(\"abc123\", \"[0-9]+\", \"#\")"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=REGEXREPLACE(\"abc123\", \"[0-9]+\", \"#\")"
+    }
+  }
+}

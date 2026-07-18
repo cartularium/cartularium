@@ -1,0 +1,58 @@
+.palette-scrim {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 12vh;
+  z-index: 1100;
+}
+
+.palette-modal {
+  width: min(560px, 92vw);
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  // match brand chrome: hairline + scrim, no drop shadow
+  font-family: var(--font-mono);
+  display: flex;
+  flex-direction: column;
+}
+
+.palette-input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.7rem 0.9rem;
+  font-family: inherit;
+  font-size: 0.95rem;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--hairline);
+  color: var(--ink);
+  outline: none;
+}
+
+.palette-list {
+  list-style: none;
+  margin: 0;
+  padding: 0.3rem 0;
+  max-height: 50vh;
+  overflow-y: auto;
+}
+
+.palette-item {
+  padding: 0.4rem 0.9rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: var(--ink-2);
+  &:hover {
+    background: var(--paper-2);
+    color: var(--ink);
+  }
+}
+
+.palette-empty {
+  padding: 0.8rem 0.9rem;
+  color: var(--ink-4);
+  font-style: italic;
+}

@@ -1,0 +1,15 @@
+id: DV-0196
+summary: "ironcalc: numeric precision differs — SQRT"
+cause: precision
+category: value
+engines:
+  - ironcalc
+behavior:
+  signature: "1.414213562"
+test-count: 1
+subjects:
+  - SQRT
+tests:
+  - SQRT/sqrt-irrational
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

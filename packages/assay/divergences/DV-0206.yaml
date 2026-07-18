@@ -1,0 +1,15 @@
+id: DV-0206
+summary: "formulas: numeric precision differs — CONVERT"
+cause: precision
+category: value
+engines:
+  - formulas
+behavior:
+  signature: "211.99999999999994"
+test-count: 1
+subjects:
+  - CONVERT
+tests:
+  - CONVERT/convert-celsius-to-fahrenheit
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

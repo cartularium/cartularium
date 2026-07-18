@@ -1,0 +1,21 @@
+id: DV-0027
+summary: "ironcalc: function not implemented — REPLACE, SUMPRODUCT"
+cause: missing-function
+category: value
+engines:
+  - ironcalc
+behavior:
+  signature: '{"error":"#NAME?"}'
+test-count: 6
+subjects:
+  - REPLACE
+  - SUMPRODUCT
+tests:
+  - SUMPRODUCT/double-unary-coerces-boolean-row-to-numeric
+  - SUMPRODUCT/sumproduct-with-two-ranges
+  - SUMPRODUCT/sumproduct-with-boolean-broadcast
+  - SUMPRODUCT/sumproduct-basic
+  - REPLACE/replace-basic
+  - REPLACE/replace-year
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

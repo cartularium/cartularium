@@ -1,0 +1,17 @@
+id: DV-0059
+summary: "excel: different argument interpretation — PMT, PPMT"
+cause: arg-semantics
+category: value
+engines:
+  - excel
+behavior:
+  signature: "1073.6432460242781"
+test-count: 2
+subjects:
+  - PMT
+  - PPMT
+tests:
+  - PMT/pmt-monthly-mortgage
+  - PPMT/ppmt-ipmt-plus-ppmt-equals-pmt
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

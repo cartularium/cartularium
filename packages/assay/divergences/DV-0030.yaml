@@ -1,0 +1,22 @@
+id: DV-0030
+summary: "ironcalc: different error code — INDIRECT, OFFSET, lit:array"
+cause: error-code
+category: value
+engines:
+  - ironcalc
+behavior:
+  signature: '{"error":"#N/IMPL!"}'
+test-count: 6
+subjects:
+  - INDIRECT
+  - OFFSET
+  - lit:array
+tests:
+  - OFFSET/offset-down-one
+  - OFFSET/offset-right-one
+  - OFFSET/offset-zero
+  - OFFSET/offset-negative-rows
+  - INDIRECT/indirect-r1c1-style
+  - lit:array/array-literal-row
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

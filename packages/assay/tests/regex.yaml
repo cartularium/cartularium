@@ -1,0 +1,595 @@
+schemaVersion: 3
+name: Regex functions
+tests:
+  - subject: REGEXMATCH
+    category: value
+    features:
+      - regex
+    formula:
+      gsheets: =REGEXMATCH("hello world", "world")
+      excel: =REGEXTEST("hello world", "world")
+      lattice: =REGEXMATCH("hello world", "world")
+    expect: true
+    name: match-basic-substring
+  - subject: REGEXMATCH
+    category: value
+    features:
+      - regex
+    formula:
+      gsheets: =REGEXMATCH("hello", "xyz")
+      excel: =REGEXTEST("hello", "xyz")
+      lattice: =REGEXMATCH("hello", "xyz")
+    expect: false
+    name: match-returns-false-when-no-match
+  - subject: REGEXMATCH
+    category: value
+    features:
+      - regex
+    formula:
+      gsheets: =REGEXMATCH("hello", "^hello$")
+      excel: =REGEXTEST("hello", "^hello$")
+      lattice: =REGEXMATCH("hello", "^hello$")
+    expect: true
+    name: match-anchors-start-and-end
+  - subject: REGEXMATCH
+    category: value
+    features:
+      - regex
+    formula:
+      gsheets: =REGEXMATCH("hello world", "^hello$")
+      excel: =REGEXTEST("hello world", "^hello$")
+      lattice: =REGEXMATCH("hello world", "^hello$")
+    expect: false
+    name: match-anchors-fail-on-partial-string
+  - subject: REGEXMATCH
+    category: value
+    features:
+      - regex
+    formula:
+      gsheets: =REGEXMATCH("hello", "^hel")
+      excel: =REGEXTEST("hello", "^hel")
+      lattice: =REGEXMATCH("hello", "^hel")
+    expect: true
+    name: match-start-anchor-only
+  - subject: REGEXMATCH
+    category: value
+    features:
+      - regex
+    formula:
+      gsheets: =REGEXMATCH("hello", "llo$")
+      excel: =REGEXTEST("hello", "llo$")
+      lattice: =REGEXMATCH("hello", "llo$")
+    expect: true
+    name: match-end-anchor-only
+  - subject: REGEXMATCH
+    category: value
+    features:
+      - regex
+    formula:
+      gsheets: =REGEXMATCH("abc 123", "\d+")
+      excel: =REGEXTEST("abc 123", "\d+")
+      lattice: =REGEXMATCH("abc 123", "\d+")
+    expect: true
+    name: match-digit-class
+  - subject: REGEXMATCH
+    category: value
+    features:
+      - regex
+    formula:
+      gsheets: =REGEXMATCH("abc", "\d+")
+      excel: =REGEXTEST("abc", "\d+")
+      lattice: =REGEXMATCH("abc", "\d+")
+    expect: false
+    name: match-digit-class-no-digits
+  - subject: REGEXMATCH
+    category: value
+    features:
+      - regex
+    formula:
+      gsheets: =REGEXMATCH("hello_world", "\w+")
+      excel: =REGEXTEST("hello_world", "\w+")
+      lattice: =REGEXMATCH("hello_world", "\w+")
+    expect: true
+    name: match-word-class
+  - subject: REGEXMATCH
+    category: value
+    features:
+      - regex
+    formula:
+      gsheets: =REGEXMATCH("hello", "[a-z]+")
+      excel: =REGEXTEST("hello", "[a-z]+")
+      lattice: =REGEXMATCH("hello", "[a-z]+")
+    expect: true
+    name: match-lowercase-range
+  - subject: REGEXMATCH
+    category: value
+    features:
+      - regex
+    formula:
+      gsheets: =REGEXMATCH("HELLO", "[a-z]+")
+      excel: =REGEXTEST("HELLO", "[a-z]+")
+      lattice: =REGEXMATCH("HELLO", "[a-z]+")
+    expect: false
+    name: match-lowercase-range-rejects-uppercase
+  - subject: REGEXMATCH
+    category: value
+    features:
+      - regex
+    formula:
+      gsheets: =REGEXMATCH("abc123", "[a-z]{3}\d{3}")
+      excel: =REGEXTEST("abc123", "[a-z]{3}\d{3}")
+      lattice: =REGEXMATCH("abc123", "[a-z]{3}\d{3}")
+    expect: true
+    name: match-exact-count-quantifier
+  - subject: REGEXMATCH
+    category: value
+    features:
+      - regex
+    formula:
+      gsheets: =REGEXMATCH("aab", "a{2,3}b")
+      excel: =REGEXTEST("aab", "a{2,3}b")
+      lattice: =REGEXMATCH("aab", "a{2,3}b")
+    expect: true
+    name: match-range-quantifier-within-bounds
+  - subject: REGEXMATCH
+    category: value
+    features:
+      - regex
+    formula:
+      gsheets: =REGEXMATCH("ab", "a{2,3}b")
+      excel: =REGEXTEST("ab", "a{2,3}b")
+      lattice: =REGEXMATCH("ab", "a{2,3}b")
+    expect: false
+    name: match-range-quantifier-below-minimum
+  - subject: REGEXMATCH
+    category: value
+    features:
+      - regex
+    formula:
+      gsheets: =REGEXMATCH("cat", "cat|dog")
+      excel: =REGEXTEST("cat", "cat|dog")
+      lattice: =REGEXMATCH("cat", "cat|dog")
+    expect: true
+    name: match-alternation-first-branch
+  - subject: REGEXMATCH
+    category: value
+    features:
+      - regex
+    formula:
+      gsheets: =REGEXMATCH("dog", "cat|dog")
+      excel: =REGEXTEST("dog", "cat|dog")
+      lattice: =REGEXMATCH("dog", "cat|dog")
+    expect: true
+    name: match-alternation-second-branch
+  - subject: REGEXMATCH
+    category: value
+    features:
+      - regex
+    formula:
+      gsheets: =REGEXMATCH("fish", "cat|dog")
+      excel: =REGEXTEST("fish", "cat|dog")
+      lattice: =REGEXMATCH("fish", "cat|dog")
+    expect: false
+    name: match-alternation-neither-branch
+  - subject: REGEXMATCH
+    category: value
+    features:
+      - regex
+    formula:
+      gsheets: =REGEXMATCH("hello world", "\bworld\b")
+      excel: =REGEXTEST("hello world", "\bworld\b")
+      lattice: =REGEXMATCH("hello world", "\bworld\b")
+    expect: true
+    name: match-word-boundary-hit
+  - subject: REGEXMATCH
+    category: value
+    features:
+      - regex
+    formula:
+      gsheets: =REGEXMATCH("helloworld", "\bworld\b")
+      excel: =REGEXTEST("helloworld", "\bworld\b")
+      lattice: =REGEXMATCH("helloworld", "\bworld\b")
+    expect: false
+    name: match-word-boundary-miss
+  - subject: REGEXMATCH
+    category: value
+    features:
+      - regex
+    formula:
+      gsheets: =REGEXMATCH("HELLO", "hello")
+      excel: =REGEXTEST("HELLO", "hello")
+      lattice: =REGEXMATCH("HELLO", "hello")
+    expect: false
+    name: match-case-sensitive-by-default
+  - subject: REGEXMATCH
+    category: value
+    features:
+      - regex
+    formula:
+      gsheets: =REGEXMATCH("HELLO", "(?i)hello")
+      excel: =REGEXTEST("HELLO", "(?i)hello")
+      lattice: =REGEXMATCH("HELLO", "(?i)hello")
+    expect: true
+    name: match-case-insensitive-via-inline-flag
+  - subject: REGEXMATCH
+    formula:
+      gsheets: =REGEXMATCH("café", "\p{L}+")
+      excel: =REGEXTEST("café", "\p{L}+")
+      lattice: =REGEXMATCH("café", "\p{L}+")
+    category: value
+    features:
+      - regex
+    expect: true
+    overrides:
+      gsheets:
+        cause: missing-function
+        recorded:
+          error: "#REF!"
+    tags:
+      - engine-divergence
+      - unicode-property
+    name: match-unicode-property-class-on-non-ascii-letters
+  - subject: REGEXMATCH
+    formula:
+      gsheets: =REGEXMATCH("123", "\p{L}")
+      excel: =REGEXTEST("123", "\p{L}")
+      lattice: =REGEXMATCH("123", "\p{L}")
+    category: value
+    features:
+      - regex
+    expect: false
+    overrides:
+      gsheets:
+        cause: missing-function
+        recorded:
+          error: "#REF!"
+    tags:
+      - engine-divergence
+      - unicode-property
+    name: match-unicode-property-class-rejects-digits
+  - subject: REGEXMATCH
+    formula:
+      gsheets: =REGEXMATCH("你好世界", "\p{L}+")
+      excel: =REGEXTEST("你好世界", "\p{L}+")
+      lattice: =REGEXMATCH("你好世界", "\p{L}+")
+    category: value
+    features:
+      - regex
+    expect: true
+    overrides:
+      gsheets:
+        cause: missing-function
+        recorded:
+          error: "#REF!"
+    tags:
+      - engine-divergence
+      - unicode-property
+    name: match-unicode-property-class-on-cjk
+  - subject: REGEXMATCH
+    category: value
+    features:
+      - regex
+    formula:
+      gsheets: =REGEXMATCH("Ångström", "Å")
+      excel: =REGEXTEST("Ångström", "Å")
+      lattice: =REGEXMATCH("Ångström", "Å")
+    expect: true
+    name: match-non-ascii-literal
+  - subject: REGEXEXTRACT
+    category: value
+    features:
+      - regex
+    formula: =REGEXEXTRACT("résumé template", "résumé")
+    expect: résumé
+    name: extract-non-ascii-literal
+  - subject: REGEXMATCH
+    category: value
+    features:
+      - regex
+    formula:
+      gsheets: =REGEXMATCH("CAFÉ", "(?i)café")
+      excel: =REGEXTEST("CAFÉ", "(?i)café")
+      lattice: =REGEXMATCH("CAFÉ", "(?i)café")
+    expect: true
+    name: match-non-ascii-case-insensitive-via-inline-flag
+  - subject: REGEXEXTRACT
+    category: value
+    features:
+      - regex
+    formula: =REGEXEXTRACT("abc 123 def", "\d+")
+    expect: "123"
+    name: extract-full-match-when-no-capture-groups
+  - subject: REGEXEXTRACT
+    category: value
+    features:
+      - regex
+    formula: '=REGEXEXTRACT("Price: $100", "\$\d+")'
+    expect: $100
+    name: extract-full-match-no-groups-with-dollar-sign
+  - subject: REGEXEXTRACT
+    category: value
+    features:
+      - regex
+    formula: =REGEXEXTRACT("one 1 two 2 three 3", "\d+")
+    expect: "1"
+    name: extract-first-of-multiple-full-matches
+  - subject: REGEXEXTRACT
+    category: value
+    features:
+      - regex
+    status: observed
+    formula: '=REGEXEXTRACT("Price: $100", "\$(\d+)")'
+    tags:
+      - engine-divergence
+      - capture-groups
+    name: extract-single-capture-group
+  - subject: REGEXEXTRACT
+    category: value
+    features:
+      - regex
+    status: observed
+    formula: =REGEXEXTRACT("2025-03-01", "(\d{4})-(\d{2})-(\d{2})")
+    tags:
+      - engine-divergence
+      - capture-groups
+    name: extract-capture-groups-when-multiple-groups-present
+  - subject: REGEXEXTRACT
+    category: value
+    features:
+      - regex
+    status: observed
+    formula: =REGEXEXTRACT("foo bar baz", "(\w+)\s+(\w+)")
+    tags:
+      - engine-divergence
+      - capture-groups
+    name: extract-two-word-groups
+  - subject: REGEXEXTRACT
+    formula: =REGEXEXTRACT("hello", "\d+")
+    category: value
+    features:
+      - regex
+    expect:
+      error: "#N/A"
+    name: extract-no-match-returns-na
+  - subject: REGEXEXTRACT
+    formula: =REGEXEXTRACT("", "\d+")
+    category: value
+    features:
+      - regex
+    expect:
+      error: "#N/A"
+    name: extract-no-match-on-empty-text
+  - subject: REGEXEXTRACT
+    category: value
+    features:
+      - regex
+    formula: =REGEXEXTRACT("Hello World", "(?i)(\w+)")
+    expect: Hello
+    name: extract-case-insensitive-via-inline-flag
+  - subject: REGEXEXTRACT
+    formula: =REGEXEXTRACT("a1 b2 c3", "\d+", 1)
+    category: value
+    features:
+      - regex
+    expect:
+      - - "1"
+        - "2"
+        - "3"
+    overrides:
+      gsheets:
+        cause: error-code
+        recorded:
+          error: "#N/A"
+    tags:
+      - lattice-extension
+      - excel-undocumented
+    name: extract-return-mode-1-all-matches-row-vector
+  - subject: REGEXEXTRACT
+    formula: =REGEXEXTRACT("2025-03-01", "(\d{4})-(\d{2})-(\d{2})", 2)
+    category: value
+    features:
+      - regex
+    expect:
+      - - "2025"
+        - "03"
+        - "01"
+    overrides:
+      gsheets:
+        cause: error-code
+        recorded:
+          error: "#N/A"
+    tags:
+      - lattice-extension
+      - excel-undocumented
+    name: extract-return-mode-2-capture-groups-from-first-match
+  - subject: REGEXREPLACE
+    category: value
+    features:
+      - regex
+    formula: =REGEXREPLACE("a1b2c3", "\d", "x")
+    expect: axbxcx
+    name: replace-all-digits
+  - subject: REGEXREPLACE
+    category: value
+    features:
+      - regex
+    formula: =REGEXREPLACE("aabbaa", "a+", "x")
+    expect: xbbx
+    name: replace-greedy-pattern-all-occurrences
+  - subject: REGEXREPLACE
+    category: value
+    features:
+      - regex
+    formula: =REGEXREPLACE("hello world", "\s+", "-")
+    expect: hello-world
+    name: replace-whitespace-all
+  - subject: REGEXREPLACE
+    category: value
+    features:
+      - regex
+    formula: =REGEXREPLACE("hello", "\d+", "x")
+    expect: hello
+    name: replace-no-match-unchanged
+  - subject: REGEXREPLACE
+    formula: =REGEXREPLACE("", "\d+", "x")
+    category: value
+    features:
+      - regex
+    # Sheets returns "" (empty string); the gsheets driver normalizes empty
+    # cells to null. Lattice records "" directly. Accept either.
+    expect:
+      any-of:
+        - null
+        - ""
+    tags:
+      - empty-string
+    name: replace-empty-text-unchanged
+  - subject: REGEXREPLACE
+    category: value
+    features:
+      - regex
+    formula: =REGEXREPLACE("hello world", "(\w+)", "[$1]")
+    expect: "[hello] [world]"
+    name: replace-with-single-backreference
+  - subject: REGEXREPLACE
+    category: value
+    features:
+      - regex
+    formula: =REGEXREPLACE("John Smith", "(\w+) (\w+)", "$2, $1")
+    expect: Smith, John
+    name: replace-swap-first-and-last-name
+  - subject: REGEXREPLACE
+    category: value
+    features:
+      - regex
+    formula: =REGEXREPLACE("2025-03-01", "(\d+)-(\d+)-(\d+)", "$3/$2/$1")
+    expect: 01/03/2025
+    name: replace-date-reformat-three-groups
+  - subject: REGEXREPLACE
+    category: value
+    features:
+      - regex
+    formula:
+      excel: =REGEXREPLACE("aabbaa", "a+", "x", 1)
+      lattice: =REGEXREPLACE("aabbaa", "a+", "x", 1)
+    expect: xbbaa
+    tags:
+      - excel-only
+      - lattice
+    name: replace-first-occurrence-only
+  - subject: REGEXREPLACE
+    category: value
+    features:
+      - regex
+    formula:
+      excel: =REGEXREPLACE("aabbaa", "a+", "x", -1)
+      lattice: =REGEXREPLACE("aabbaa", "a+", "x", -1)
+    expect: aabbx
+    tags:
+      - excel-only
+      - lattice
+    name: replace-last-occurrence-only
+  - subject: REGEXREPLACE
+    category: value
+    features:
+      - regex
+    formula:
+      excel: =REGEXREPLACE("a1 a2 a3", "a\d", "x", 2)
+      lattice: =REGEXREPLACE("a1 a2 a3", "a\d", "x", 2)
+    expect: a1 x a3
+    tags:
+      - excel-only
+      - lattice
+    name: replace-nth-occurrence
+  - subject: REGEXREPLACE
+    category: value
+    features:
+      - regex
+    formula:
+      excel: =REGEXREPLACE("Hello WORLD hello", "hello", "hi", 0, 1)
+      lattice: =REGEXREPLACE("Hello WORLD hello", "hello", "hi", 0, 1)
+    expect: hi WORLD hi
+    tags:
+      - excel-only
+      - lattice
+    name: replace-case-insensitive-via-excel-param
+  - subject: REGEXEXTRACT
+    formula:
+      excel: '=REGEXEXTRACT("ITEM: ABC123", "item: ([A-Z]+\d+)", 0, 1)'
+      lattice: '=REGEXEXTRACT("ITEM: ABC123", "item: ([A-Z]+\d+)", 0, 1)'
+    category: value
+    features:
+      - regex
+    expect: "ITEM: ABC123"
+    overrides:
+      lattice:
+        expect: ABC123
+        cause: arg-semantics
+        recorded: ABC123
+        note: 4th-arg (return-mode) interpretation differs
+    tags:
+      - excel-only
+      - lattice
+      - engine-divergence
+    name: extract-case-insensitive-via-4th-arg
+  - subject: REGEXREPLACE
+    category: value
+    features:
+      - regex
+    formula: =REGEXREPLACE("Hello WORLD hello", "(?i)hello", "hi")
+    expect: hi WORLD hi
+    name: replace-case-insensitive-via-inline-flag
+  - subject: REGEXMATCH
+    formula:
+      gsheets: =REGEXMATCH("hello", "(?<=hel)lo")
+      excel: =REGEXTEST("hello", "(?<=hel)lo")
+      lattice: =REGEXMATCH("hello", "(?<=hel)lo")
+    category: value
+    features:
+      - regex
+    expect: true
+    overrides:
+      gsheets:
+        cause: missing-function
+        recorded:
+          error: "#REF!"
+    tags:
+      - engine-divergence
+      - lookaround
+    name: lookbehind-in-pattern
+  - subject: REGEXMATCH
+    formula:
+      gsheets: =REGEXMATCH("foobar", "foo(?=bar)")
+      excel: =REGEXTEST("foobar", "foo(?=bar)")
+      lattice: =REGEXMATCH("foobar", "foo(?=bar)")
+    category: value
+    features:
+      - regex
+    expect: true
+    overrides:
+      gsheets:
+        cause: missing-function
+        recorded:
+          error: "#REF!"
+    tags:
+      - engine-divergence
+      - lookaround
+    name: lookahead-in-pattern
+  - subject: REGEXMATCH
+    formula:
+      gsheets: =REGEXMATCH("foobar", "foo(?!baz)")
+      excel: =REGEXTEST("foobar", "foo(?!baz)")
+      lattice: =REGEXMATCH("foobar", "foo(?!baz)")
+    category: value
+    features:
+      - regex
+    expect: true
+    overrides:
+      gsheets:
+        cause: missing-function
+        recorded:
+          error: "#REF!"
+    tags:
+      - engine-divergence
+      - lookaround
+    name: negative-lookahead-in-pattern

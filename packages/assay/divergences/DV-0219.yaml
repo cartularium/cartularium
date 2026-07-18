@@ -1,0 +1,20 @@
+id: DV-0219
+summary: "excel, formulas, gsheets, hyperformula, ironcalc: different error code
+  — AVERAGEA"
+cause: error-code
+category: value
+engines:
+  - excel
+  - formulas
+  - gsheets
+  - hyperformula
+  - ironcalc
+behavior:
+  signature: '{"error":"#VALUE!"}'
+test-count: 1
+subjects:
+  - AVERAGEA
+tests:
+  - AVERAGEA/averagea-text-literal
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

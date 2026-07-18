@@ -1,0 +1,15 @@
+id: DV-0197
+summary: "hyperformula: numeric precision differs — SQRT"
+cause: precision
+category: value
+engines:
+  - hyperformula
+behavior:
+  signature: "1.4142135624"
+test-count: 1
+subjects:
+  - SQRT
+tests:
+  - SQRT/sqrt-irrational
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

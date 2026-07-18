@@ -1,0 +1,15 @@
+id: DV-0161
+summary: "hyperformula: numeric precision differs — PV"
+cause: precision
+category: value
+engines:
+  - hyperformula
+behavior:
+  signature: "620.92132306"
+test-count: 1
+subjects:
+  - PV
+tests:
+  - PV/pv-lump-sum
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

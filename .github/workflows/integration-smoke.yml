@@ -1,0 +1,65 @@
+name: integration-smoke
+
+# Builds assay + sheets-wiki together to exercise the manifest contract.
+# assertSupportedManifestVersion in functionData.ts catches version mismatch
+# during the sheets-wiki build itself; this workflow additionally verifies that
+# the merged data made it through to rendered output (see scripts/integration-smoke.mjs).
+
+on:
+  pull_request:
+    paths:
+      - "packages/assay/**"
+      - "packages/sheets-wiki/**"
+      - "packages/sheets-wiki-editor/**"
+      - "packages/contracts/**"
+      - "packages/brand/**"
+      - "packages/chrome/**"
+      - "pnpm-lock.yaml"
+      - ".github/workflows/integration-smoke.yml"
+      - ".github/scripts/integration-smoke.mjs"
+  push:
+    branches: [main]
+    paths:
+      - "packages/assay/**"
+      - "packages/sheets-wiki/**"
+      - "packages/sheets-wiki-editor/**"
+      - "packages/contracts/**"
+      - "packages/brand/**"
+      - "packages/chrome/**"
+      - "pnpm-lock.yaml"
+
+concurrency:
+  group: integration-smoke-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      # version comes from package.json `packageManager`
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: pnpm
+
+      - name: pnpm install
+        run: pnpm install --frozen-lockfile
+
+      - name: Build assay
+        run: pnpm --filter assay run build
+
+      - name: Build assay catalogue (emits manifest.json)
+        run: node build/cli.js catalogue
+        working-directory: packages/assay
+
+      - name: Build sheets-wiki-editor
+        run: pnpm --filter @cartularium/sheets-wiki-editor run build
+
+      - name: Build sheets-wiki (consumes manifest)
+        run: pnpm --filter sheets-wiki run build
+
+      - name: Verify integration data flow
+        run: node .github/scripts/integration-smoke.mjs

@@ -1,0 +1,139 @@
+{
+  "platform": "excel",
+  "generatedAt": "2026-06-04T06:36:51.326Z",
+  "results": {
+    "sha256:33fc24a1d675d54fc070474e6868a73f282a642bd0506549a235ff93c4fcde67": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 2
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n",
+              "raw_xml": {
+                "cm": 1,
+                "formula_text": "_xlfn.MAP({1;2;3}, _xlfn.LAMBDA(_xlpm.x, _xlpm.x*2))",
+                "formula_array_marker": "array",
+                "formula_array_ref": "AA1:AA3",
+                "formula_namespaces": [
+                  "_xlfn",
+                  "_xlpm"
+                ]
+              },
+              "saved_as_array": true
+            },
+            "formula": "_xlfn.MAP({1;2;3}, _xlfn.LAMBDA(_xlpm.x, _xlpm.x*2))"
+          }
+        ],
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 4
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          }
+        ],
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 6
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=MAP({1;2;3}, LAMBDA(x, x*2))"
+    },
+    "sha256:a40c33d7f2951f6889b2b121cab642ca2736b7d8aee277e6822eba6ad911ad09": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 2
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n",
+              "raw_xml": {
+                "cm": 1,
+                "formula_text": "_xlfn.MAP(_xlfn.HSTACK(_xlfn.LAMBDA(_xlpm.x, _xlpm.x+1), _xlfn.LAMBDA(_xlpm.x, _xlpm.x+2)), _xlfn.LAMBDA(_xlpm.x, _xlpm.x(1)))",
+                "formula_array_marker": "array",
+                "formula_array_ref": "AA1:AB1",
+                "formula_namespaces": [
+                  "_xlfn",
+                  "_xlpm"
+                ]
+              },
+              "saved_as_array": true
+            },
+            "formula": "_xlfn.MAP(_xlfn.HSTACK(_xlfn.LAMBDA(_xlpm.x, _xlpm.x+1), _xlfn.LAMBDA(_xlpm.x, _xlpm.x+2)), _xlfn.LAMBDA(_xlpm.x, _xlpm.x(1)))"
+          },
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 3
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=MAP(HSTACK(LAMBDA(x, x+1), LAMBDA(x, x+2)), LAMBDA(x, x(1)))"
+    },
+    "sha256:523257bac7d5dcd94b11fc890ab57b6f75f4c68bb14879c924684429b4d6efc8": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 10
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n",
+              "raw_xml": {
+                "cm": 1,
+                "formula_text": "_xlfn.MAP(_xlfn.VSTACK(_xlfn.LAMBDA(_xlpm.x, _xlpm.x*2), _xlfn.LAMBDA(_xlpm.x, _xlpm.x*3)), _xlfn.LAMBDA(_xlpm.x, _xlpm.x(5)))",
+                "formula_array_marker": "array",
+                "formula_array_ref": "AA1:AA2",
+                "formula_namespaces": [
+                  "_xlfn",
+                  "_xlpm"
+                ]
+              },
+              "saved_as_array": true
+            },
+            "formula": "_xlfn.MAP(_xlfn.VSTACK(_xlfn.LAMBDA(_xlpm.x, _xlpm.x*2), _xlfn.LAMBDA(_xlpm.x, _xlpm.x*3)), _xlfn.LAMBDA(_xlpm.x, _xlpm.x(5)))"
+          }
+        ],
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 15
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=MAP(VSTACK(LAMBDA(x, x*2), LAMBDA(x, x*3)), LAMBDA(x, x(5)))"
+    }
+  }
+}

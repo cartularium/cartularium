@@ -1,0 +1,18 @@
+id: DV-0166
+summary: "excel, formulas, gsheets, lattice: numeric precision differs — SYD"
+cause: precision
+category: value
+engines:
+  - excel
+  - formulas
+  - gsheets
+  - lattice
+behavior:
+  signature: "163.63636363636363"
+test-count: 1
+subjects:
+  - SYD
+tests:
+  - SYD/syd-period-1
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

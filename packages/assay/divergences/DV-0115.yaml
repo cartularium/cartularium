@@ -1,0 +1,19 @@
+id: DV-0115
+summary: "gsheets, hyperformula, lattice: function not implemented — AGGREGATE"
+cause: missing-function
+category: value
+engines:
+  - gsheets
+  - hyperformula
+  - lattice
+behavior:
+  signature: '{"error":"#NAME?"}'
+test-count: 1
+subjects:
+  - AGGREGATE
+tests:
+  - AGGREGATE/aggregate-sum-ignoring-errors
+seeded: 2026-04-25
+last-confirmed: 2026-04-25
+status: vanished
+vanished-at: 2026-04-26

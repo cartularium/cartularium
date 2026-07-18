@@ -1,0 +1,20 @@
+id: DV-0037
+summary: "formulas: different error code — COUNTA, IMPRODUCT, SEARCH"
+cause: error-code
+category: value
+engines:
+  - formulas
+behavior:
+  signature: '{"error":"#VALUE!"}'
+test-count: 4
+subjects:
+  - COUNTA
+  - IMPRODUCT
+  - SEARCH
+tests:
+  - IMPRODUCT/improduct-by-real
+  - COUNTA/counta-inline
+  - SEARCH/search-wildcard-question
+  - SEARCH/search-wildcard-star
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

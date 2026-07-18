@@ -1,0 +1,1504 @@
+{
+  "platform": "formulas",
+  "generatedAt": "2026-05-11T09:33:51.187Z",
+  "results": {
+    "sha256:083be856ce42042e07581db45c9acf7e6bb471837aac6a79ad06d248a93131dd": {
+      "result": [
+        [
+          1.2
+        ]
+      ],
+      "formula-as-evaluated": "=AVEDEV(A1:A5)"
+    },
+    "sha256:cbdfb37a4a2e5e9f855394b1d122c72e9dee1acb1761508c3517370f6bcb5f76": {
+      "result": [
+        [
+          1.2
+        ]
+      ],
+      "formula-as-evaluated": "=AVEDEV(1, 2, 3, 4, 5)"
+    },
+    "sha256:01002e3b56de92640431bce9f80f1f1e4c34442e7f9cb42b5bf286ff5f000f1e": {
+      "result": [
+        [
+          0
+        ]
+      ],
+      "formula-as-evaluated": "=AVEDEV(7)"
+    },
+    "sha256:309bd4d22fb5ee372977a8a7d1fb34fa0a4a7d17d972a0fdcf4644f78a76dffc": {
+      "result": [
+        [
+          1
+        ]
+      ],
+      "formula-as-evaluated": "=AVEDEV(1, 3)"
+    },
+    "sha256:cd4c5987df69e95e82b385d5c061aacf2d7aa5abb669b5d450c002607e8e38da": {
+      "result": [
+        [
+          3
+        ]
+      ],
+      "formula-as-evaluated": "=AVERAGE(A1:A5)"
+    },
+    "sha256:e215fa68bd6e96d0e060e0bfd52fce9b6fa0f122fcd8110d422c496957dadf56": {
+      "result": [
+        [
+          4
+        ]
+      ],
+      "formula-as-evaluated": "=AVERAGE(2, 4, 6)"
+    },
+    "sha256:5a856393284ab6e270f8368b4cc9912db5c5880c854da842d8cdf4344876a246": {
+      "result": [
+        [
+          15
+        ]
+      ],
+      "formula-as-evaluated": "=AVERAGE(A1:A3)"
+    },
+    "sha256:d7cda2a667f2b5ad0adbdb1811199433d6fdc3f076f4125d56f6f037a18e2b55": {
+      "result": [
+        [
+          {
+            "error": "#DIV/0!"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=AVERAGE(A1:A3)"
+    },
+    "sha256:4cebd0bdc0819eab260bffc072c5e440f5f223c30f6bd24ca169300b2a27edaf": {
+      "result": [
+        [
+          {
+            "error": "#NAME?"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=AVERAGE.WEIGHTED({1,2,3}, {1,1,1})"
+    },
+    "sha256:004261a65299d38348ea48176e53422667d5960d2a42b6f6dc31c67549176bb2": {
+      "result": [
+        [
+          {
+            "error": "#NAME?"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=AVERAGE.WEIGHTED({1,2,3}, {1,2,3})"
+    },
+    "sha256:0e32008e5a7aef948c7033dcf69ef08aac2e9547ac25e8271e1e9a26c069a931": {
+      "result": [
+        [
+          {
+            "error": "#NAME?"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=AVERAGE.WEIGHTED(A1:A3, B1:B3)"
+    },
+    "sha256:655046f463d81100cf8eec11abce03e93bd5ba1ae2ffffdba14cba58c35b84f3": {
+      "result": [
+        [
+          3
+        ]
+      ],
+      "formula-as-evaluated": "=AVERAGEA(A1:A5)"
+    },
+    "sha256:f980784491f3dfa6a8e5f867633e5fecde2dd8a4147b0aeb768c4e36f0444028": {
+      "result": [
+        [
+          0.8
+        ]
+      ],
+      "formula-as-evaluated": "=AVERAGEA(C1:C5)"
+    },
+    "sha256:800cb2f64bf8e0fffdfdbe4db1f33ba26f76d36fb63062c002522343961984d7": {
+      "result": [
+        [
+          1.3333333333333333
+        ]
+      ],
+      "formula-as-evaluated": "=AVERAGEA(1, 2, TRUE)"
+    },
+    "sha256:5af92282d7f7301647390dbed7b9b32db37cc3c92ca1b472aad7f1f45d7e8901": {
+      "result": [
+        [
+          {
+            "error": "#VALUE!"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=AVERAGEA(1, \"hello\", 2)"
+    },
+    "sha256:0085898526cea0ba73e6548d28ee839d2871f5314feb1c543ae4e161cbcadcb2": {
+      "result": [
+        [
+          30
+        ]
+      ],
+      "formula-as-evaluated": "=AVERAGEIF(D1:D5, \"A\", E1:E5)"
+    },
+    "sha256:cdca77b19dfd3eaee1af324539e35b658c6c4f07c25055e106bd564a60b42bcb": {
+      "result": [
+        [
+          4
+        ]
+      ],
+      "formula-as-evaluated": "=AVERAGEIF(A1:A5, \">2\")"
+    },
+    "sha256:6447fb7215bbecfecf1cff971aee6c32fb5017aa6ec1468afa39f864196cc25f": {
+      "result": [
+        [
+          {
+            "error": "#DIV/0!"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=AVERAGEIF(A1:A3, \">100\")"
+    },
+    "sha256:694104787a7005a1af0859e0934f147948662474cade753c94534e7c27f9d0b5": {
+      "result": [
+        [
+          2
+        ]
+      ],
+      "formula-as-evaluated": "=AVERAGEIF(A1:A4, 2)"
+    },
+    "sha256:c6bd91e91ddcfe679a20875c7e1535fe59f2d4d5f92b1fcffe715267101d1079": {
+      "result": [
+        [
+          30
+        ]
+      ],
+      "formula-as-evaluated": "=AVERAGEIFS(E1:E5, D1:D5, \"A\")"
+    },
+    "sha256:9866416bad87fa8c05ebc7c4aad5b22951cced6ab61e53f60e178b2685541976": {
+      "result": [
+        [
+          40
+        ]
+      ],
+      "formula-as-evaluated": "=AVERAGEIFS(E1:E5, D1:D5, \"A\", E1:E5, \">15\")"
+    },
+    "sha256:9e952dca7fcac1470eab8e3a2e4b428cd543e871a89b73139e6002bbd22c020b": {
+      "result": [
+        [
+          {
+            "error": "#DIV/0!"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=AVERAGEIFS(A1:A3, B1:B3, \"q\")"
+    },
+    "sha256:e55e5a98f5260c7c1c5f3c17c0ece85e77db3fe925a11ccaac47b431f23ade07": {
+      "result": [
+        [
+          5
+        ]
+      ],
+      "formula-as-evaluated": "=COUNT(1, 2, 3, 4, 5)"
+    },
+    "sha256:f2f7ab4f955f9407ff8cd9835791a32e0a8e80652c6e400c06c0427a51d2d7ad": {
+      "result": [
+        [
+          3
+        ]
+      ],
+      "formula-as-evaluated": "=COUNT(A1:A5)"
+    },
+    "sha256:b301297a87cc547aef1eef9e144e778c57309eda8a5bbfabde4a7bfd6de70c9d": {
+      "result": [
+        [
+          2
+        ]
+      ],
+      "formula-as-evaluated": "=COUNT(C1:C5)"
+    },
+    "sha256:29c9c064f7ccc4c4e1023cf958a9a41b1dd645ae81cb6caf2d528c0535c8253c": {
+      "result": [
+        [
+          0
+        ]
+      ],
+      "formula-as-evaluated": "=COUNT(A1:A3)"
+    },
+    "sha256:5620a16a30f6f0c53e7fc0526b2a2649a9635e82ceeed30960ced9ee7ce64a27": {
+      "result": [
+        [
+          5
+        ]
+      ],
+      "formula-as-evaluated": "=COUNTA(C1:C5)"
+    },
+    "sha256:a939b1f6b75048c19986c9fc4c97917f57672b9974200d8f80c91aa96e937703": {
+      "result": [
+        [
+          2
+        ]
+      ],
+      "formula-as-evaluated": "=COUNTA(A1:A3)"
+    },
+    "sha256:3ed40ae0c8e78a8ef131e7e3c9b214e6f863a89407704cd31cf8216ad5dab09a": {
+      "result": [
+        [
+          {
+            "error": "#VALUE!"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=COUNTA(1, \"x\", TRUE)"
+    },
+    "sha256:f39eab250e1cc3580ae9b50a9df162dd40754487ea8eb9e654f79ea522f751de": {
+      "result": [
+        [
+          2
+        ]
+      ],
+      "formula-as-evaluated": "=COUNTA(A1:A3)"
+    },
+    "sha256:03a6ecaa485d4b8af28c7947141e54ea1b517702692a718b2ce19f682dba27df": {
+      "result": [
+        [
+          10
+        ]
+      ],
+      "formula-as-evaluated": "=DEVSQ(A1:A5)"
+    },
+    "sha256:f47869275db0c6af51ab60a9bebcb863377c604b7487407a70c54660ce4eb5b2": {
+      "result": [
+        [
+          10
+        ]
+      ],
+      "formula-as-evaluated": "=DEVSQ(1, 2, 3, 4, 5)"
+    },
+    "sha256:bf15b75ae895a15f8fe175556a120b03f4e5d1c46ce15b8c4565b80d6ca1b02b": {
+      "result": [
+        [
+          0
+        ]
+      ],
+      "formula-as-evaluated": "=DEVSQ(7)"
+    },
+    "sha256:06833831a6ce8f1833a6060b7ce3408727b1ac0a7b7e636be9c6a732a7690645": {
+      "result": [
+        [
+          2
+        ]
+      ],
+      "formula-as-evaluated": "=DEVSQ(2, 4)"
+    },
+    "sha256:4baf033a575027058460415f6c163d52a92685ab631cc96af623696755045b1f": {
+      "result": [
+        [
+          1
+        ]
+      ],
+      "formula-as-evaluated": "=GEOMEAN(1, 1, 1)"
+    },
+    "sha256:c2b46a50aa4fd58aebb0ec873219b5366cca81524252b42f9feb8bca0bb2ea59": {
+      "result": [
+        [
+          4
+        ]
+      ],
+      "formula-as-evaluated": "=GEOMEAN(2, 8)"
+    },
+    "sha256:a7c996aebdb10b27dc20cee1189015dbcff5752d34ffcd93520edbff51bc41e3": {
+      "result": [
+        [
+          2.6051710846973517
+        ]
+      ],
+      "formula-as-evaluated": "=GEOMEAN(A1:A5)"
+    },
+    "sha256:59f7fe5e56b7321805f6320fde2d0e4f37336c08b6ca301b6c808acd8bde6c3d": {
+      "result": [
+        [
+          {
+            "error": "#NUM!"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=GEOMEAN(0, 2, 4)"
+    },
+    "sha256:b90846a2ac371a0b62a9d90d05bc8e179b5cbf77e4cde58e2dff9a567285bcd0": {
+      "result": [
+        [
+          1
+        ]
+      ],
+      "formula-as-evaluated": "=HARMEAN(1, 1, 1)"
+    },
+    "sha256:a13402cf1548bfc6411f5f633947a06265fedf955b84a45961474a68ce5ef5a2": {
+      "result": [
+        [
+          3
+        ]
+      ],
+      "formula-as-evaluated": "=HARMEAN(2, 6)"
+    },
+    "sha256:7b04770bddcee796c6a37f67b741eeefadd34613838b8dd868fa96706b252cb0": {
+      "result": [
+        [
+          2.18978102189781
+        ]
+      ],
+      "formula-as-evaluated": "=HARMEAN(A1:A5)"
+    },
+    "sha256:0654669d57169daa53d03b4c8fb556eb5afd13d6cff065fb993b43ea99c86f89": {
+      "result": [
+        [
+          {
+            "error": "#NUM!"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=HARMEAN(0, 2, 4)"
+    },
+    "sha256:d74489e6345f4cca8ddd3fe619d2d34f4e2739a04ccb23664c677490b47f28c2": {
+      "result": [
+        [
+          5
+        ]
+      ],
+      "formula-as-evaluated": "=LARGE(A1:A5, 1)"
+    },
+    "sha256:a72bcdac373ea2e6e0482a8351e3d134ebb368c22e82546eb604e6fd411eedae": {
+      "result": [
+        [
+          3
+        ]
+      ],
+      "formula-as-evaluated": "=LARGE(A1:A5, 3)"
+    },
+    "sha256:d3fa01e6baa2ba70b8fc61e7b4ac3a4cb706ffb1b2371bb75c72e6b125f3976a": {
+      "result": [
+        [
+          {
+            "error": "#NUM!"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=LARGE({1,2,3}, 5)"
+    },
+    "sha256:71f4930b0be1373cecdac3e6175c40b1e29512a332bf1e771acba6f9cf89aeb2": {
+      "result": [
+        [
+          {
+            "error": "#NUM!"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=LARGE({1,2,3}, 0)"
+    },
+    "sha256:5044993fb47257e3793dab4dcd2e570d85f0cf9df1cfaef1e492452c25c13cd7": {
+      "result": [
+        [
+          5
+        ]
+      ],
+      "formula-as-evaluated": "=MAX(A1:A5)"
+    },
+    "sha256:af40ca40ac4f4ece9345884652d24c108368029813f6fa1380fa69d7518140b0": {
+      "result": [
+        [
+          -1
+        ]
+      ],
+      "formula-as-evaluated": "=MAX(-3, -1, -7)"
+    },
+    "sha256:367c805129d321b3acf29f7dbac7a6eac987d0283d485faa9333855e884417f8": {
+      "result": [
+        [
+          10
+        ]
+      ],
+      "formula-as-evaluated": "=MAX(A1:A3)"
+    },
+    "sha256:e042b6bee6e0880e222cebd6b75fbda080d92eb8442b488353f0fd759b380c68": {
+      "result": [
+        [
+          0
+        ]
+      ],
+      "formula-as-evaluated": "=MAX(A1:A3)"
+    },
+    "sha256:183aa4c1812028f97247996e4bf85928ba3b5134d13d3a589b76b24f4820c149": {
+      "result": [
+        [
+          1
+        ]
+      ],
+      "formula-as-evaluated": "=MIN(A1:A5)"
+    },
+    "sha256:6bb873502cb37694ecd81194846688a15b3678091f459ec74faa8a12a22db8e9": {
+      "result": [
+        [
+          -7
+        ]
+      ],
+      "formula-as-evaluated": "=MIN(-3, -1, -7)"
+    },
+    "sha256:1e2ed1c5a1c5d35095072fb92146512c234dad157e12ae15616983f3c60528fe": {
+      "result": [
+        [
+          5
+        ]
+      ],
+      "formula-as-evaluated": "=MIN(A1:A3)"
+    },
+    "sha256:44340ba17617a5d6e58d78ba8cca2e4069d94d60fc40c5935c6d1b31f3417d90": {
+      "result": [
+        [
+          0
+        ]
+      ],
+      "formula-as-evaluated": "=MIN(A1:A3)"
+    },
+    "sha256:d4954393c33f5dd61757e8011b50ad8792a54c736eb71f745834f2b272708139": {
+      "result": [
+        [
+          5
+        ]
+      ],
+      "formula-as-evaluated": "=MAXA(A1:A5)"
+    },
+    "sha256:6640eb83e6d6201bb6351923552fbab6f525f21f00a810f16862944cf8a4b6bb": {
+      "result": [
+        [
+          2
+        ]
+      ],
+      "formula-as-evaluated": "=MAXA(C1:C5)"
+    },
+    "sha256:c99e43c94ea19942f17ece3b1cb67516f38bad0df55b27530123a08b2e46391b": {
+      "result": [
+        [
+          0
+        ]
+      ],
+      "formula-as-evaluated": "=MAXA(A1:A3)"
+    },
+    "sha256:1987db32ddc740194c82c4255e45a09c55c6ad501488b5b109e122dad46dcf1d": {
+      "result": [
+        [
+          1
+        ]
+      ],
+      "formula-as-evaluated": "=MAXA(-2, -1, TRUE)"
+    },
+    "sha256:e5c89679820a742cb7379cf1b07898425a94e74546eeca192bc779e8e42d9bf1": {
+      "result": [
+        [
+          1
+        ]
+      ],
+      "formula-as-evaluated": "=MINA(A1:A5)"
+    },
+    "sha256:4c8cf7e7b32365a2ab40ebc2802fcc74848714809d10ad2eb7a7638d8523731a": {
+      "result": [
+        [
+          0
+        ]
+      ],
+      "formula-as-evaluated": "=MINA(C1:C5)"
+    },
+    "sha256:e6531662cb0aadf63bc4df7ad6d3db33cc371ac7f50f5526cb4e503c0842aecd": {
+      "result": [
+        [
+          0
+        ]
+      ],
+      "formula-as-evaluated": "=MINA(A1:A3)"
+    },
+    "sha256:606f8b8f2eae9109df3236853e79133be90918fea0f05a61ba9d2246cb354281": {
+      "result": [
+        [
+          0
+        ]
+      ],
+      "formula-as-evaluated": "=MINA(2, 3, FALSE)"
+    },
+    "sha256:98b9e1373e3da7076f70b87902e9615553f7d4e4dddce9d9756103a70e347603": {
+      "result": [
+        [
+          50
+        ]
+      ],
+      "formula-as-evaluated": "=MAXIFS(E1:E5, D1:D5, \"A\")"
+    },
+    "sha256:178d5682a369d838d7dd2cfb1d62f1aab73793ee1d209b7a2c21cb45fc07fc36": {
+      "result": [
+        [
+          3
+        ]
+      ],
+      "formula-as-evaluated": "=MAXIFS(A1:A5, A1:A5, \"<4\")"
+    },
+    "sha256:7bfa1ed192b6691a940e0805c9f1949db95c267f900ee08ddbe00306fe9a61b4": {
+      "result": [
+        [
+          0
+        ]
+      ],
+      "formula-as-evaluated": "=MAXIFS(A1:A3, A1:A3, \">100\")"
+    },
+    "sha256:c2d5530d60bdd28cc0165b8a9cb0c0b7e9a3171f13692a1522c15eb400fef7ce": {
+      "result": [
+        [
+          10
+        ]
+      ],
+      "formula-as-evaluated": "=MINIFS(E1:E5, D1:D5, \"A\")"
+    },
+    "sha256:9025618b9612dc2448b690141e72793255c9027c247fbd54dfcfd7ad5c6cd436": {
+      "result": [
+        [
+          3
+        ]
+      ],
+      "formula-as-evaluated": "=MINIFS(A1:A5, A1:A5, \">2\")"
+    },
+    "sha256:07aacf33ec4b7997e435f289e5e3fa69afbf7af10b3daca0a3a4bda5df260de5": {
+      "result": [
+        [
+          0
+        ]
+      ],
+      "formula-as-evaluated": "=MINIFS(A1:A3, A1:A3, \">100\")"
+    },
+    "sha256:669d22b9824aee29b71afb67642909e13333053a5c96b3d93e6f075180979267": {
+      "result": [
+        [
+          3
+        ]
+      ],
+      "formula-as-evaluated": "=MEDIAN(A1:A5)"
+    },
+    "sha256:7888cd892e344323eeb50ee93ec7005fd53f60fe655b2612b96f77fc95e500af": {
+      "result": [
+        [
+          2.5
+        ]
+      ],
+      "formula-as-evaluated": "=MEDIAN(1, 2, 3, 4)"
+    },
+    "sha256:2ac57c4111ba8af4536c06f8b8608a1032876e703f0939a5a7f81a0175c30a8a": {
+      "result": [
+        [
+          7
+        ]
+      ],
+      "formula-as-evaluated": "=MEDIAN(7)"
+    },
+    "sha256:41b08f8d4f7f95232b8f098d764f576e6d957b22be6d31daf5f6d6603517f084": {
+      "result": [
+        [
+          3
+        ]
+      ],
+      "formula-as-evaluated": "=MEDIAN(5, 1, 3, 2, 4)"
+    },
+    "sha256:cdc99cf7d58b15dd2334859dce92c5586c45be3262384c86a0dd0c3c8fde513d": {
+      "result": [
+        [
+          2
+        ]
+      ],
+      "formula-as-evaluated": "=MODE(B1:B5)"
+    },
+    "sha256:9032b98b1bde0210af41a6ea788ab6a562f369cb9409a1c2db8afebae8285fc4": {
+      "result": [
+        [
+          2
+        ]
+      ],
+      "formula-as-evaluated": "=MODE(1, 2, 2, 3, 4)"
+    },
+    "sha256:e09434513edbd7141207f9afd6522555f31864a2de34959e88e35411c486d121": {
+      "result": [
+        [
+          {
+            "error": "#N/A"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=MODE(1, 2, 3, 4, 5)"
+    },
+    "sha256:9e017c263bcb021bd87b08aae2ebafefdcd5ac107d8af07256e5d72c1294e88e": {
+      "result": [
+        [
+          2
+        ]
+      ],
+      "formula-as-evaluated": "=MODE.SNGL(1, 2, 2, 3, 4)"
+    },
+    "sha256:30a4c2e0cd6b4be295c23e3ab1ae36f8792798d21c90e171b807c2b072be4b47": {
+      "result": [
+        [
+          2
+        ]
+      ],
+      "formula-as-evaluated": "=MODE.SNGL(B1:B5)"
+    },
+    "sha256:6c0ead9b476fd090fce484c582ab1c4345492e91424b3082a86a5218a71a42d7": {
+      "result": [
+        [
+          {
+            "error": "#N/A"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=MODE.SNGL(1, 2, 3)"
+    },
+    "sha256:40f7974fc478b9f5d3a64e749e16a6d1e7b72e032fe09bb9273b7938b582926f": {
+      "result": [
+        [
+          "[2, 3]"
+        ]
+      ],
+      "formula-as-evaluated": "=MODE.MULT(B1:B5)"
+    },
+    "sha256:ca4d9be2cb1f21f80b7f5263c6ae456283ffb7ec551a9cfbdc9144c05a6d1276": {
+      "result": [
+        [
+          "[2]"
+        ]
+      ],
+      "formula-as-evaluated": "=MODE.MULT(1, 2, 2, 3, 4)"
+    },
+    "sha256:53c63f44c83a1b7a8f0ffbe08fdbc026451c75700a9c513d085c40b31556dc21": {
+      "result": [
+        [
+          {
+            "error": "#N/A"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=MODE.MULT(1, 2, 3)"
+    },
+    "sha256:c951e02448ef789195aec50bb63948ed887c93704ed04b8ec3d622c2c2299788": {
+      "result": [
+        [
+          2
+        ]
+      ],
+      "formula-as-evaluated": "=PERCENTILE(A1:A5, 0.25)"
+    },
+    "sha256:a31bd9c5e55abadaa20954338853ca13764902a7f0db21f509087cb0485a56f9": {
+      "result": [
+        [
+          3
+        ]
+      ],
+      "formula-as-evaluated": "=PERCENTILE(A1:A5, 0.5)"
+    },
+    "sha256:cde204e9577a1047ffcf3eb0d204477088431d172323910f7a4ec3b9e3087283": {
+      "result": [
+        [
+          1
+        ]
+      ],
+      "formula-as-evaluated": "=PERCENTILE({1,2,3,4,5}, 0)"
+    },
+    "sha256:1d43857a9eb0117b3c31bda83d3fbe7af511ba96bb9e9385adaf2fff19dc416a": {
+      "result": [
+        [
+          5
+        ]
+      ],
+      "formula-as-evaluated": "=PERCENTILE({1,2,3,4,5}, 1)"
+    },
+    "sha256:d9b735adc9350cd19cc7212325c222f786993d7ac4bcdb704522b8e5cac8d9f2": {
+      "result": [
+        [
+          2
+        ]
+      ],
+      "formula-as-evaluated": "=PERCENTILE.INC(A1:A5, 0.25)"
+    },
+    "sha256:28dcc53aa0b31df2eb1c9e050a2ce681ccd2891cd06efc05345ebebbe05b624c": {
+      "result": [
+        [
+          3
+        ]
+      ],
+      "formula-as-evaluated": "=PERCENTILE.INC(A1:A5, 0.5)"
+    },
+    "sha256:5909921835f60732945cb1b342a78e794d6f72ca0e12fdea2037e61d353d931e": {
+      "result": [
+        [
+          4
+        ]
+      ],
+      "formula-as-evaluated": "=PERCENTILE.INC(A1:A5, 0.75)"
+    },
+    "sha256:ad0022b2f71fbf17aede7fe91862432c2da8c10406eb0cc161d7edfb07d2e47b": {
+      "result": [
+        [
+          1.5
+        ]
+      ],
+      "formula-as-evaluated": "=PERCENTILE.EXC(A1:A5, 0.25)"
+    },
+    "sha256:98352d381dcf672662e715e49b603dc7a9e536fd13e28b39be1cfe60680f0016": {
+      "result": [
+        [
+          3
+        ]
+      ],
+      "formula-as-evaluated": "=PERCENTILE.EXC(A1:A5, 0.5)"
+    },
+    "sha256:e2f9939621cecfa96a9d47ea394575173a1d09804a2a452de6b4bccad75a5bc8": {
+      "result": [
+        [
+          4.5
+        ]
+      ],
+      "formula-as-evaluated": "=PERCENTILE.EXC(A1:A5, 0.75)"
+    },
+    "sha256:9fba3e08b58fe65e1d0fc671b5e7e17212dc48ccdf4efa473f5cd6efc4b88848": {
+      "result": [
+        [
+          {
+            "error": "#NUM!"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=PERCENTILE.EXC({1,2,3,4,5}, 0)"
+    },
+    "sha256:45e50c1b9ca5534fa5bdfc822b6186991f1ee36dacadb55565330552ec97658c": {
+      "result": [
+        [
+          0.5
+        ]
+      ],
+      "formula-as-evaluated": "=PERCENTRANK(A1:A5, 3)"
+    },
+    "sha256:89492aca85ded96ea7893f08f679a22102db0ad0edaa93a5dfed413da1b3a64d": {
+      "result": [
+        [
+          0
+        ]
+      ],
+      "formula-as-evaluated": "=PERCENTRANK(A1:A5, 1)"
+    },
+    "sha256:d3c2c22045b875f64332dd1a5e21b308b061d186d24b4270e584f3459ec875f9": {
+      "result": [
+        [
+          1
+        ]
+      ],
+      "formula-as-evaluated": "=PERCENTRANK(A1:A5, 5)"
+    },
+    "sha256:a960d135f8093dc0fced4af51658b062b118e2e8f2148fca8060a4867fe66a62": {
+      "result": [
+        [
+          0.5
+        ]
+      ],
+      "formula-as-evaluated": "=PERCENTRANK.INC(A1:A5, 3)"
+    },
+    "sha256:b62dc154b4c73c1b1f74840cfb085ead788aa8a85d7562108807fb2a74c81b0a": {
+      "result": [
+        [
+          0
+        ]
+      ],
+      "formula-as-evaluated": "=PERCENTRANK.INC(A1:A5, 1)"
+    },
+    "sha256:3aa5e8342a344922971334d12da1a79388541375a92379b435ad40ee039dc71e": {
+      "result": [
+        [
+          0.25
+        ]
+      ],
+      "formula-as-evaluated": "=PERCENTRANK.INC(A1:A5, 2)"
+    },
+    "sha256:665276f41d28c278eb442569846b8cf11593bf207993d0d7e86109bcd06a0455": {
+      "result": [
+        [
+          0.5
+        ]
+      ],
+      "formula-as-evaluated": "=PERCENTRANK.EXC(A1:A5, 3)"
+    },
+    "sha256:bd52d29af51a3fa076c13f717bba976eb18ffbbecde0b095309b6a5e98d1568e": {
+      "result": [
+        [
+          0.166
+        ]
+      ],
+      "formula-as-evaluated": "=PERCENTRANK.EXC(A1:A5, 1)"
+    },
+    "sha256:08af0ba36d1bd2a21fd24ce1163282aca6e03fd0bcfe113cc3a16c1c9136e7c1": {
+      "result": [
+        [
+          0.333
+        ]
+      ],
+      "formula-as-evaluated": "=PERCENTRANK.EXC(A1:A5, 2)"
+    },
+    "sha256:012917693d879c3c2be574594e7d3d2b426780d81958a780f0610df2fa3e5fe4": {
+      "result": [
+        [
+          20
+        ]
+      ],
+      "formula-as-evaluated": "=PERMUT(5, 2)"
+    },
+    "sha256:879e5772bfd68ac48d138ee91c3c5aa949dcf67e07928e7d223d43a24d5aafd4": {
+      "result": [
+        [
+          120
+        ]
+      ],
+      "formula-as-evaluated": "=PERMUT(5, 5)"
+    },
+    "sha256:995f0fec2b48299b6105575aba70e789355fce4f12249a5c7f773e21f79b221d": {
+      "result": [
+        [
+          1
+        ]
+      ],
+      "formula-as-evaluated": "=PERMUT(5, 0)"
+    },
+    "sha256:afa2ad1ac31c3675835c87b87e03713d5b2df90d6a6d93893fddc688c8ea12e4": {
+      "result": [
+        [
+          {
+            "error": "#NUM!"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=PERMUT(3, 5)"
+    },
+    "sha256:7f76a9d5b4fc2de762b1b1a41040d0c8eb561bb98ed10c38820a6deb2f737f82": {
+      "result": [
+        [
+          25
+        ]
+      ],
+      "formula-as-evaluated": "=PERMUTATIONA(5, 2)"
+    },
+    "sha256:76ff71d59d0db3b2d60eb26f6e709ecb90f930d58800d5bad171455bee75be98": {
+      "result": [
+        [
+          27
+        ]
+      ],
+      "formula-as-evaluated": "=PERMUTATIONA(3, 3)"
+    },
+    "sha256:0065e532b789728326533391b614a8260d162baeb8268942b3bcca13711f90dc": {
+      "result": [
+        [
+          1
+        ]
+      ],
+      "formula-as-evaluated": "=PERMUTATIONA(5, 0)"
+    },
+    "sha256:dce138abff0e32c68810ec10f1e7ab888bb0867d343c87b976d586437414a1ae": {
+      "result": [
+        [
+          {
+            "error": "#NUM!"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=PERMUTATIONA(-1, 2)"
+    },
+    "sha256:b6da150f5848b8a5c08b43d47802313dfe83559dffca920dcd80711853218a89": {
+      "result": [
+        [
+          2
+        ]
+      ],
+      "formula-as-evaluated": "=QUARTILE(A1:A5, 1)"
+    },
+    "sha256:d616745957fc708a3ae03f1c1d47d9ac7d85b56c5c638a8dd87e308805f11b1d": {
+      "result": [
+        [
+          3
+        ]
+      ],
+      "formula-as-evaluated": "=QUARTILE(A1:A5, 2)"
+    },
+    "sha256:c263bbf69d28cd603ddbb20aa323099d07585dc8dcd481266aff3849bde64625": {
+      "result": [
+        [
+          4
+        ]
+      ],
+      "formula-as-evaluated": "=QUARTILE(A1:A5, 3)"
+    },
+    "sha256:cbc2e50b9c93bcf2ab71015592e5f50a4034e4ecf6233376e04f2adcf53da4bb": {
+      "result": [
+        [
+          {
+            "error": "#NUM!"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=QUARTILE({1,2,3,4,5}, 5)"
+    },
+    "sha256:2588beb4d044e414dc54d35ac3707405b72f0dec0391497df38d90163fc08307": {
+      "result": [
+        [
+          2
+        ]
+      ],
+      "formula-as-evaluated": "=QUARTILE.INC(A1:A5, 1)"
+    },
+    "sha256:03568f5472224829e5fb9a7f2ef3adecc5d1b77ed0e8d6836ab519ccf1e7367f": {
+      "result": [
+        [
+          3
+        ]
+      ],
+      "formula-as-evaluated": "=QUARTILE.INC(A1:A5, 2)"
+    },
+    "sha256:5b34dbaac6caeae5c1c4d3fb899e847ccc0f2e00c19e92e3999717e5fda567fb": {
+      "result": [
+        [
+          4
+        ]
+      ],
+      "formula-as-evaluated": "=QUARTILE.INC(A1:A5, 3)"
+    },
+    "sha256:ee2e067821703e17a0a9f49b283a4f7da034daa7da37528fe4e95f7b7e5eb215": {
+      "result": [
+        [
+          1.5
+        ]
+      ],
+      "formula-as-evaluated": "=QUARTILE.EXC(A1:A5, 1)"
+    },
+    "sha256:29f74c3f941c115930fd0975399f996acc06ac758afd679929f802d8daeda8f4": {
+      "result": [
+        [
+          3
+        ]
+      ],
+      "formula-as-evaluated": "=QUARTILE.EXC(A1:A5, 2)"
+    },
+    "sha256:5e83cb3d8d53d5f36f5a97947d451aece8977c4a4987807c7f081c4b74811761": {
+      "result": [
+        [
+          4.5
+        ]
+      ],
+      "formula-as-evaluated": "=QUARTILE.EXC(A1:A5, 3)"
+    },
+    "sha256:8bd20f874fef60a70d52c47c0364a48e0531e4a2d0f57a5c255806351db06d01": {
+      "result": [
+        [
+          {
+            "error": "#NUM!"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=QUARTILE.EXC({1,2,3,4,5}, 0)"
+    },
+    "sha256:57648395fc03765ab1b2c0db92fb3a921779d8d1b8211d7bcb59e42e780ffb8a": {
+      "result": [
+        [
+          2
+        ]
+      ],
+      "formula-as-evaluated": "=RANK(20, A1:A4)"
+    },
+    "sha256:b6410affc951679a13f8111b50294269ae82dca67ec13b73026810a86690f9d8": {
+      "result": [
+        [
+          2
+        ]
+      ],
+      "formula-as-evaluated": "=RANK(20, A1:A4, 1)"
+    },
+    "sha256:11181fc50079e7101496cc78f848af6f23b3fbbe6270df19f2b83414c42c1986": {
+      "result": [
+        [
+          1
+        ]
+      ],
+      "formula-as-evaluated": "=RANK(5, A1:A5)"
+    },
+    "sha256:d737bf83e696a26eea20779961ec86556e36789c43d88225010b42f831ea9179": {
+      "result": [
+        [
+          {
+            "error": "#N/A"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=RANK(5, A1:A3)"
+    },
+    "sha256:9a4a64eb36d4e41e052be5a96553ab10a3dd34065cb84a3cda1ff387c740a4a4": {
+      "result": [
+        [
+          2
+        ]
+      ],
+      "formula-as-evaluated": "=RANK.EQ(20, A1:A4)"
+    },
+    "sha256:145f99cf4502d7d915b530e6cc8ef17ab72516e27e3023235d787cf991ddebb4": {
+      "result": [
+        [
+          3
+        ]
+      ],
+      "formula-as-evaluated": "=RANK.EQ(3, A1:A5, 1)"
+    },
+    "sha256:ff65dce7df404d35507d80893d3e07d57cd558b72901cc7436e3ab4d484a0ac4": {
+      "result": [
+        [
+          1
+        ]
+      ],
+      "formula-as-evaluated": "=RANK.EQ(5, A1:A5)"
+    },
+    "sha256:488e971922bcda44368a4e9da7cdec80cedbd9c967636eccbd653f461f7c5ca8": {
+      "result": [
+        [
+          2.5
+        ]
+      ],
+      "formula-as-evaluated": "=RANK.AVG(20, A1:A4)"
+    },
+    "sha256:8b32c3deb96408fb26dea5145f765df4700ee639a954f0a66fc36e48af936e0e": {
+      "result": [
+        [
+          3
+        ]
+      ],
+      "formula-as-evaluated": "=RANK.AVG(3, A1:A5)"
+    },
+    "sha256:c9cc2dc62236683f8a6659495a4ea34dfabc0609de70af4eb455fd43841161a9": {
+      "result": [
+        [
+          3
+        ]
+      ],
+      "formula-as-evaluated": "=RANK.AVG(20, A1:A5)"
+    },
+    "sha256:e50bc65a071dfded206df795e5e64a5631d18f0a83ac3cfb668afe9c9df7e8e0": {
+      "result": [
+        [
+          1
+        ]
+      ],
+      "formula-as-evaluated": "=SMALL(A1:A5, 1)"
+    },
+    "sha256:cb2135440b77d9a1371d429b82d1c9e1e425e14449e45a38c6aed7a92ec235c6": {
+      "result": [
+        [
+          3
+        ]
+      ],
+      "formula-as-evaluated": "=SMALL(A1:A5, 3)"
+    },
+    "sha256:03b985283fd11c8349be602bb78b834ce2d7c90ec76a31f3af89a7e9bd4eed5f": {
+      "result": [
+        [
+          {
+            "error": "#NUM!"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=SMALL({1,2,3}, 5)"
+    },
+    "sha256:9c2e63a3ba83f65eb2ef37c5e711cdb0017e9b4b33f44a845259c24f0bacb7b4": {
+      "result": [
+        [
+          {
+            "error": "#NUM!"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=SMALL({1,2,3}, 0)"
+    },
+    "sha256:8fc10bfbd93415935fb1f3b9666ded99690d88a8db5ded92bfb30173f45888f7": {
+      "result": [
+        [
+          0
+        ]
+      ],
+      "formula-as-evaluated": "=STANDARDIZE(10, 10, 2)"
+    },
+    "sha256:5ecee7a473fd8dbdf40e4275ff7a74f6eed1d4a902744c317c4a2f710a1a5135": {
+      "result": [
+        [
+          1
+        ]
+      ],
+      "formula-as-evaluated": "=STANDARDIZE(12, 10, 2)"
+    },
+    "sha256:cd316e58a8bbe7d2ae8f026ec2dd4c6840fe28869deffc13563d7117bd080b78": {
+      "result": [
+        [
+          -2
+        ]
+      ],
+      "formula-as-evaluated": "=STANDARDIZE(6, 10, 2)"
+    },
+    "sha256:2f7995cd0f43a2d163c01ad6addfe2adcc82deb3bebe11388c8b97b436cf7302": {
+      "result": [
+        [
+          {
+            "error": "#NUM!"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=STANDARDIZE(5, 10, 0)"
+    },
+    "sha256:06a547b260a6085b8a0f9f82845be902166d2bc5442a2debc1dc5a24996b9769": {
+      "result": [
+        [
+          1.5811388300841898
+        ]
+      ],
+      "formula-as-evaluated": "=STDEV(A1:A5)"
+    },
+    "sha256:cc5558665c8d6979054eecdaabb1cb7bbdf39e17ba19f970517a6e328008d5b3": {
+      "result": [
+        [
+          1.4142135623730951
+        ]
+      ],
+      "formula-as-evaluated": "=STDEV(1, 3)"
+    },
+    "sha256:d4a4ff000b82d3cff47363ff688503175bcfabd27d4b8de158a0e3f3226bf6c6": {
+      "result": [
+        [
+          0
+        ]
+      ],
+      "formula-as-evaluated": "=STDEV(5, 5, 5)"
+    },
+    "sha256:45327af80497d440fb3415882620cbca5261f132d2ad12b1b3e91b174e566f67": {
+      "result": [
+        [
+          {
+            "error": "#DIV/0!"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=STDEV(5)"
+    },
+    "sha256:536ea90bd5f0f7522c01e1426494ce413d562e1934d4c1e7220a0291c76cd20d": {
+      "result": [
+        [
+          1.5811388300841898
+        ]
+      ],
+      "formula-as-evaluated": "=STDEV.S(A1:A5)"
+    },
+    "sha256:a0cc260d0a2db818a00324d509ac2ff77737748e6f90507851bfaabbe84e13fb": {
+      "result": [
+        [
+          0
+        ]
+      ],
+      "formula-as-evaluated": "=STDEV.S(5, 5, 5)"
+    },
+    "sha256:059061c70e568b0cba506306dd3bb0491a983692c2e334c6e72e17a4261db4b0": {
+      "result": [
+        [
+          {
+            "error": "#DIV/0!"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=STDEV.S(5)"
+    },
+    "sha256:dccad11f76f4468ee57ff92d5b622980e8d7a642a821b4acaf48fb2201c3da3b": {
+      "result": [
+        [
+          1.4142135623730951
+        ]
+      ],
+      "formula-as-evaluated": "=STDEV.P(A1:A5)"
+    },
+    "sha256:c475762166355b3a77c2c2a5da5d92b553a7639c30dbd01a614519713b4a01a8": {
+      "result": [
+        [
+          2
+        ]
+      ],
+      "formula-as-evaluated": "=STDEV.P(2, 6)"
+    },
+    "sha256:8f90cb93dbf5962fcc27a56564f6af2633f9c6ad70b27a37244d6534686fae6a": {
+      "result": [
+        [
+          0
+        ]
+      ],
+      "formula-as-evaluated": "=STDEV.P(5, 5, 5)"
+    },
+    "sha256:2390eaa1a395a2a60044dd5fcdc552b4396dee2d4f01c7305de946b0527d7036": {
+      "result": [
+        [
+          1.4142135623730951
+        ]
+      ],
+      "formula-as-evaluated": "=STDEVP(A1:A5)"
+    },
+    "sha256:959cb820e9cf19738b3d473484655d2f57fc43d19691de855d5024ecf644de03": {
+      "result": [
+        [
+          2
+        ]
+      ],
+      "formula-as-evaluated": "=STDEVP(2, 6)"
+    },
+    "sha256:482c10cbaddb2b45356903492de596e43bb589fa682a1e5728c751c09a5bb849": {
+      "result": [
+        [
+          0
+        ]
+      ],
+      "formula-as-evaluated": "=STDEVP(5, 5, 5)"
+    },
+    "sha256:52ce205bd6e8eac109194063e7ab915b8786887f121841f87cae6f930d80a25c": {
+      "result": [
+        [
+          1.5811388300841898
+        ]
+      ],
+      "formula-as-evaluated": "=STDEVA(A1:A5)"
+    },
+    "sha256:21ff3131d1ab60356756b66665ffd433102844249f24e879f01c9b58b3c5a10f": {
+      "result": [
+        [
+          0.8366600265340756
+        ]
+      ],
+      "formula-as-evaluated": "=STDEVA(C1:C5)"
+    },
+    "sha256:ca56e4a009d0b8273d15d6563c032eac3e9214d44c967d869d055924dd7e473c": {
+      "result": [
+        [
+          0.5773502691896257
+        ]
+      ],
+      "formula-as-evaluated": "=STDEVA(1, 2, TRUE)"
+    },
+    "sha256:bf10b65a75b0f362bf18edc84d5a873800224b7cbd5b61e4180b6be59609d292": {
+      "result": [
+        [
+          1.4142135623730951
+        ]
+      ],
+      "formula-as-evaluated": "=STDEVPA(A1:A5)"
+    },
+    "sha256:9b8ce9281cfac6f13e8872193494d5912e75e6be520fa5b179876cc2b352d2f8": {
+      "result": [
+        [
+          0.7483314773547883
+        ]
+      ],
+      "formula-as-evaluated": "=STDEVPA(C1:C5)"
+    },
+    "sha256:0d7c75a733277327f1a441ed4c5db53c699f6a84456dc267e5dafe7a467d1a5d": {
+      "result": [
+        [
+          0.4714045207910317
+        ]
+      ],
+      "formula-as-evaluated": "=STDEVPA(1, 2, TRUE)"
+    },
+    "sha256:15a93c063f65c615bd087f0bb8f6886d833e488dd302402b4ac62ba9b9de7491": {
+      "result": [
+        [
+          3
+        ]
+      ],
+      "formula-as-evaluated": "=TRIMMEAN(A1:A5, 0.4)"
+    },
+    "sha256:ff2cbe41d4f09c620a53d3aa43bee9895e83ba1cd07a4e83fe356a2800c30a38": {
+      "result": [
+        [
+          3
+        ]
+      ],
+      "formula-as-evaluated": "=TRIMMEAN(A1:A5, 0)"
+    },
+    "sha256:526225dae8c7a56791790092b4c0b145970e6cd8fd7a52b4e41b739e25108867": {
+      "result": [
+        [
+          3
+        ]
+      ],
+      "formula-as-evaluated": "=TRIMMEAN({1,2,3,4,100}, 0.4)"
+    },
+    "sha256:806dc00022d77ad9a590521dfae429bb2bcd58e35a4acadda4c95d9b38ffad6f": {
+      "result": [
+        [
+          {
+            "error": "#NUM!"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=TRIMMEAN({1,2,3}, 1)"
+    },
+    "sha256:49479c0f871ce286a59927d644e3bd2b123ffb45940d51b2a31239bdda97a454": {
+      "result": [
+        [
+          2.5
+        ]
+      ],
+      "formula-as-evaluated": "=VAR(A1:A5)"
+    },
+    "sha256:71a4adfcaea77696d7b4e9c0816d89036000226e5a524ffd3d500c829b90ac84": {
+      "result": [
+        [
+          2
+        ]
+      ],
+      "formula-as-evaluated": "=VAR(1, 3)"
+    },
+    "sha256:b6325872d80240423a1d2505d0fd18e5f0812c1c7a3bc8b6785d33418094177d": {
+      "result": [
+        [
+          0
+        ]
+      ],
+      "formula-as-evaluated": "=VAR(5, 5, 5)"
+    },
+    "sha256:91a3b7a4ee48db77efaee01139ff4bd2f6fd89717cce5ebde3a7036b2aa08f92": {
+      "result": [
+        [
+          {
+            "error": "#DIV/0!"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=VAR(5)"
+    },
+    "sha256:53609b2c65286466f3ec75b93fba6dcab25bd581f8010c7e403a764ff35bba66": {
+      "result": [
+        [
+          2.5
+        ]
+      ],
+      "formula-as-evaluated": "=VAR.S(A1:A5)"
+    },
+    "sha256:7fe5524f18a6c504e358667a9ce6767fdd540ae8502a781a70e22c74100fa5e1": {
+      "result": [
+        [
+          0
+        ]
+      ],
+      "formula-as-evaluated": "=VAR.S(5, 5, 5)"
+    },
+    "sha256:5993e7ad54e3a0abdc81610afb9f8da3f7ba950ccfb9cd376391595b5ee0d7be": {
+      "result": [
+        [
+          {
+            "error": "#DIV/0!"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=VAR.S(5)"
+    },
+    "sha256:454a94f577981256487f771edf76a80b8a6673a8bb8fb25306227f2070127a80": {
+      "result": [
+        [
+          2
+        ]
+      ],
+      "formula-as-evaluated": "=VAR.P(A1:A5)"
+    },
+    "sha256:c7d9b771f1c199083c69ddee90d9b91c4d99723ec535d249a3bb6d263d35ded1": {
+      "result": [
+        [
+          4
+        ]
+      ],
+      "formula-as-evaluated": "=VAR.P(2, 6)"
+    },
+    "sha256:c6e2f0884cef42694b101c144487feb6672f3d308f77527bc9ad54412a66aced": {
+      "result": [
+        [
+          0
+        ]
+      ],
+      "formula-as-evaluated": "=VAR.P(5, 5, 5)"
+    },
+    "sha256:dc0c575970bd9baea8961717bd5001d12d5dfca0843875f8f858c5a20823d47c": {
+      "result": [
+        [
+          2
+        ]
+      ],
+      "formula-as-evaluated": "=VARP(A1:A5)"
+    },
+    "sha256:cae6338949f61785ac7e38914cc5e726159500c864d71e3c0ac044311e575067": {
+      "result": [
+        [
+          4
+        ]
+      ],
+      "formula-as-evaluated": "=VARP(2, 6)"
+    },
+    "sha256:766c74ac81d234fe718928fdf2ab4d708f0f4774a1cd0f0cae91d8712fe875cc": {
+      "result": [
+        [
+          0
+        ]
+      ],
+      "formula-as-evaluated": "=VARP(5, 5, 5)"
+    },
+    "sha256:6b463848d1cde03c3246449b3590cc6e73978f37d0b0ea2fcec1ed07017a7a3f": {
+      "result": [
+        [
+          2.5
+        ]
+      ],
+      "formula-as-evaluated": "=VARA(A1:A5)"
+    },
+    "sha256:7a5156a2ddbdaa0d9117c6ec69f2b2fe1c3c9af36425edeacf9878442990a3c2": {
+      "result": [
+        [
+          0.7000000000000001
+        ]
+      ],
+      "formula-as-evaluated": "=VARA(C1:C5)"
+    },
+    "sha256:d9e358ef61640b6d6e502111f3c5baf6e1d620e0106845bc29e5d00414cecd6c": {
+      "result": [
+        [
+          0.3333333333333333
+        ]
+      ],
+      "formula-as-evaluated": "=VARA(1, 2, TRUE)"
+    },
+    "sha256:cd49c918f1ca169e4d73cb993971730132e9529d7795b3ccfe4a1c8768d4e790": {
+      "result": [
+        [
+          2
+        ]
+      ],
+      "formula-as-evaluated": "=VARPA(A1:A5)"
+    },
+    "sha256:31d447f666957328f9b1f2f54ed361b3f51dea2141da0c2f9fe79e386169ce23": {
+      "result": [
+        [
+          0.56
+        ]
+      ],
+      "formula-as-evaluated": "=VARPA(C1:C5)"
+    },
+    "sha256:94c9d96b883057aaeb3ac31ae13e1386581c7d4ada57ea51dcd7c4dc2965ba88": {
+      "result": [
+        [
+          0.2222222222222222
+        ]
+      ],
+      "formula-as-evaluated": "=VARPA(1, 2, TRUE)"
+    }
+  }
+}

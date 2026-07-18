@@ -1,0 +1,113 @@
+id: DV-0004
+summary: "libreoffice, pycel: function not implemented — ACOTH, ARABIC,
+  BINOM.INV (+27 more)"
+cause: missing-function
+category: value
+engines:
+  - libreoffice
+  - pycel
+behavior:
+  signature: '{"error":"#NAME?"}'
+test-count: 68
+subjects:
+  - ACOTH
+  - ARABIC
+  - BINOM.INV
+  - CHISQ.TEST
+  - COVARIANCE.S
+  - CSC
+  - DAYS
+  - DECIMAL
+  - GAMMALN.PRECISE
+  - GAUSS
+  - ISFORMULA
+  - ISOWEEKNUM
+  - LOGNORM.INV
+  - NORM.INV
+  - NORM.S.INV
+  - PDURATION
+  - RRI
+  - SEC
+  - SECH
+  - SKEW.P
+  - STDEV.P
+  - STDEV.S
+  - SWITCH
+  - T.DIST.RT
+  - T.INV
+  - UNICODE
+  - VAR.P
+  - VAR.S
+  - XLOOKUP
+  - Z.TEST
+tests:
+  - DAYS/days-basic
+  - DAYS/days-negative
+  - DAYS/days-same-day
+  - DAYS/days-across-year
+  - ISOWEEKNUM/isoweeknum-mid-year
+  - ISOWEEKNUM/isoweeknum-jan-1-belongs-to-prev-year
+  - ISOWEEKNUM/isoweeknum-first-week
+  - SWITCH/switch-3-arg-form
+  - SWITCH/switch-4-arg-with-no-match
+  - PDURATION/pduration-double-money-10pct
+  - PDURATION/pduration-no-growth-needed
+  - PDURATION/pduration-invalid-rate
+  - RRI/rri-double-in-8-years
+  - RRI/rri-no-growth
+  - ISFORMULA/isformula-of-formula-cell
+  - ISFORMULA/isformula-of-number-cell
+  - ISFORMULA/isformula-of-blank-cell
+  - ISFORMULA/isformula-of-text-cell
+  - SWITCH/switch-match-first
+  - SWITCH/switch-match-second
+  - SWITCH/switch-with-default
+  - SWITCH/switch-no-match-no-default
+  - XLOOKUP/xlookup-basic
+  - XLOOKUP/xlookup-not-found-with-default
+  - SEC/sec-at-0
+  - SEC/sec-at-pi
+  - SEC/sec-negative
+  - CSC/csc-at-pi-2
+  - CSC/csc-negative
+  - SECH/sech-at-0
+  - ACOTH/acoth-out-of-domain
+  - DECIMAL/decimal-from-hex
+  - DECIMAL/decimal-from-binary
+  - DECIMAL/decimal-from-hex-larger
+  - DECIMAL/decimal-base-36
+  - GAMMALN.PRECISE/gammaln-precise-at-1
+  - GAMMALN.PRECISE/gammaln-precise-at-2
+  - COVARIANCE.S/covariance-s-canonical
+  - COVARIANCE.S/covariance-s-linear
+  - SKEW.P/skew-p-symmetric
+  - Z.TEST/z-test-canonical
+  - STDEV.S/stdev-s-identical
+  - STDEV.S/stdev-s-single-value
+  - STDEV.P/stdev-p-two-values
+  - STDEV.P/stdev-p-identical
+  - VAR.S/var-s-sample-1-5
+  - VAR.S/var-s-identical
+  - VAR.S/var-s-single-value
+  - VAR.P/var-p-population-1-5
+  - VAR.P/var-p-two-values
+  - VAR.P/var-p-identical
+  - BINOM.INV/binom-inv-median
+  - BINOM.INV/binom-inv-tail
+  - CHISQ.TEST/chisq-test-identical-ranges
+  - GAUSS/gauss-at-0
+  - LOGNORM.INV/lognorm-inv-at-0-5
+  - NORM.INV/norm-inv-at-0-5
+  - NORM.S.INV/norm-s-inv-at-0-5
+  - T.DIST.RT/t-dist-rt-at-0
+  - T.INV/t-inv-at-0-5
+  - ARABIC/arabic-xiv
+  - ARABIC/arabic-mcmxciv
+  - ARABIC/arabic-empty
+  - ARABIC/arabic-lowercase
+  - UNICODE/unicode-uppercase-a
+  - UNICODE/unicode-snowman
+  - UNICODE/unicode-heart
+  - UNICODE/unicode-first-char
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

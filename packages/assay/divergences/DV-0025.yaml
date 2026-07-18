@@ -1,0 +1,24 @@
+id: DV-0025
+summary: "formulas, libreoffice, pycel: function not implemented — BASE, COMBINA"
+cause: missing-function
+category: value
+engines:
+  - formulas
+  - libreoffice
+  - pycel
+behavior:
+  signature: '{"error":"#NAME?"}'
+test-count: 7
+subjects:
+  - BASE
+  - COMBINA
+tests:
+  - BASE/base-to-hex
+  - BASE/base-to-binary
+  - BASE/base-zero
+  - BASE/base-with-min-length-padding
+  - COMBINA/combina-basic
+  - COMBINA/combina-k-zero
+  - COMBINA/combina-larger
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

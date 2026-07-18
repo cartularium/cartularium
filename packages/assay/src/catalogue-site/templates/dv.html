@@ -1,0 +1,73 @@
+<nav class="breadcrumb"><a href="../../">← all divergences</a></nav>
+
+<header>
+  <h1><%= it.dv.id %></h1>
+  <p class="summary"><%= it.dv.summary %></p>
+</header>
+
+<section class="metadata">
+  <dl>
+    <dt>Cause</dt><dd><span class="chip cause cause-<%= it.dv.cause %>"><%= it.dv.cause %></span></dd>
+    <dt>Category</dt><dd><span class="chip category"><%= it.dv.category %></span></dd>
+    <dt>Diverging engines</dt>
+    <dd>
+      <% it.dv.engines.forEach(function(e) { %><span class="chip eng eng-<%= e %>"><%= e %></span><% }) %>
+    </dd>
+    <dt>Behavior signature</dt><dd><code><%= it.dv.behavior.signature %></code></dd>
+    <dt>Test count</dt><dd><%= it.dv.testCount %></dd>
+    <dt>Seeded</dt><dd><%= it.dv.seeded %></dd>
+    <dt>Last confirmed</dt><dd><%= it.dv.lastConfirmed %></dd>
+  </dl>
+</section>
+
+<section>
+  <h2>Subjects (<%= it.dv.subjects.length %>)</h2>
+  <div class="subjects">
+    <% it.subjects.forEach(function(s) { %><a class="subject-pill" href="<%= s.href %>"><%= s.name %></a> <% }) %>
+  </div>
+</section>
+
+<section>
+  <div class="section-header">
+    <h2>Tests (<%= it.dv.tests.length %>)</h2>
+    <p class="legend">
+      <span class="legend-item"><span class="swatch verdict-match"></span> matches canonical</span>
+      <span class="legend-item"><span class="swatch verdict-diverge"></span> diverges</span>
+      <span class="legend-item"><span class="swatch verdict-no-data"></span> no fixture</span>
+      <span class="legend-item"><span class="swatch in-cluster"></span> in this DV's cluster</span>
+    </p>
+  </div>
+
+  <div class="tests-table-wrap">
+    <table class="tests-engines">
+      <thead>
+        <tr>
+          <th>Test</th>
+          <th>Formula</th>
+          <th>Canonical</th>
+          <% it.allEngines.forEach(function(e) { %>
+            <th class="engine-col<%= it.clusterEngines.has(e) ? ' in-cluster' : '' %>"><span class="chip eng eng-<%= e %>"><%= e %></span></th>
+          <% }) %>
+        </tr>
+      </thead>
+      <tbody>
+        <% it.testRows.forEach(function(r) { %>
+          <% if (r.missing) { %>
+            <tr><td><code><%= r.id %></code></td><td colspan="<%= it.allEngines.length + 2 %>" class="muted">test not found in current corpus</td></tr>
+          <% } else { %>
+            <tr class="test-row">
+              <td class="test-id"><a href="../../test/<%= r.id %>/"><code><%= r.id %></code></a></td>
+              <td><code class="formula"><%= r.formula %></code></td>
+              <td class="canonical"><%= r.canonical %></td>
+              <% r.cells.forEach(function(c) { %>
+                <td class="engine-cell verdict-<%= c.verdict %><%= c.inCluster ? ' in-cluster' : '' %>" title="<%= c.title %>">
+                  <span class="engine-tag"><%= c.engine %></span><span class="engine-value"><%= c.value %></span>
+                </td>
+              <% }) %>
+            </tr>
+          <% } %>
+        <% }) %>
+      </tbody>
+    </table>
+  </div>
+</section>

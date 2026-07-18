@@ -1,0 +1,1475 @@
+schemaVersion: 3
+name: Statistical distributions
+tests:
+  - subject: BETA.DIST
+    category: value
+    status: observed
+    formula: =BETA.DIST(0.5, 2, 2, TRUE, 0, 1)
+    tags:
+      - statistical
+      - distributions
+    name: beta-dist-cdf-at-0-5
+  - subject: BETA.DIST
+    category: value
+    status: observed
+    formula: =BETA.DIST(0.5, 2, 2, FALSE, 0, 1)
+    tags:
+      - statistical
+      - distributions
+    name: beta-dist-pdf-at-0-5
+  - subject: BETA.DIST
+    formula: =BETA.DIST(1, 2, 5, TRUE, 0, 1)
+    category: value
+    expect: 1
+    overrides:
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+      - distributions
+    name: beta-dist-cdf-at-boundary
+  - subject: BETA.INV
+    category: value
+    status: observed
+    formula: =BETA.INV(0.5, 2, 2, 0, 1)
+    tags:
+      - statistical
+      - distributions
+    name: beta-inv-at-0-5
+  - subject: BETA.INV
+    category: value
+    status: observed
+    formula: =BETA.INV(BETA.DIST(0.3, 2, 5, TRUE, 0, 1), 2, 5, 0, 1)
+    tags:
+      - statistical
+      - distributions
+    name: beta-inv-roundtrip
+  - subject: BETADIST
+    category: value
+    status: observed
+    formula: =BETADIST(0.5, 2, 2)
+    tags:
+      - statistical
+      - distributions
+    name: betadist-central
+  - subject: BETADIST
+    category: value
+    status: observed
+    formula: =BETADIST(5, 2, 3, 0, 10)
+    tags:
+      - statistical
+      - distributions
+    name: betadist-with-bounds
+  - subject: BETAINV
+    category: value
+    status: observed
+    formula: =BETAINV(0.5, 2, 2)
+    tags:
+      - statistical
+      - distributions
+    name: betainv-at-0-5
+  - subject: BETAINV
+    category: value
+    status: observed
+    formula: =BETAINV(BETADIST(0.4, 3, 2), 3, 2)
+    tags:
+      - statistical
+      - distributions
+    name: betainv-roundtrip
+  - subject: BINOM.DIST
+    category: value
+    status: observed
+    formula: =BINOM.DIST(0, 10, 0.5, FALSE)
+    tags:
+      - statistical
+      - distributions
+    name: binom-dist-pmf-at-0
+  - subject: BINOM.DIST
+    category: value
+    status: observed
+    formula: =BINOM.DIST(5, 10, 0.5, FALSE)
+    tags:
+      - statistical
+      - distributions
+    name: binom-dist-pmf-at-k-5-n-10
+  - subject: BINOM.DIST
+    formula: =BINOM.DIST(10, 10, 0.5, TRUE)
+    category: value
+    expect: 1
+    overrides:
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      lattice:
+        cause: precision
+        recorded: 1.0000000000000033
+    tags:
+      - statistical
+      - distributions
+    name: binom-dist-cdf-at-n
+  - subject: BINOM.DIST
+    category: value
+    status: observed
+    formula: =BINOM.DIST(3, 10, 0.25, TRUE)
+    tags:
+      - statistical
+      - distributions
+    name: binom-dist-tail-probability
+  - subject: BINOM.INV
+    formula: =BINOM.INV(10, 0.5, 0.5)
+    category: value
+    expect: 5
+    overrides:
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+      - distributions
+    name: binom-inv-median
+  - subject: BINOM.INV
+    formula: =BINOM.INV(20, 0.3, 0.95)
+    category: value
+    expect: 9
+    overrides:
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+      - distributions
+    name: binom-inv-tail
+  - subject: BINOMDIST
+    formula: =BINOMDIST(2, 5, 0.5, FALSE)
+    category: value
+    expect: 0.3125
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+      - distributions
+    name: binomdist-pmf
+  - subject: BINOMDIST
+    category: value
+    status: observed
+    formula: =BINOMDIST(2, 5, 0.5, TRUE)
+    tags:
+      - statistical
+      - distributions
+    name: binomdist-cdf
+  - subject: CHIDIST
+    category: value
+    status: observed
+    formula: =CHIDIST(4, 4)
+    tags:
+      - statistical
+      - distributions
+    name: chidist-at-mean-df-4
+  - subject: CHIDIST
+    category: value
+    status: observed
+    formula: =CHIDIST(18.307, 10)
+    tags:
+      - statistical
+      - distributions
+    name: chidist-tail-df-10
+  - subject: CHIINV
+    category: value
+    status: observed
+    formula: =CHIINV(0.05, 10)
+    tags:
+      - statistical
+      - distributions
+    name: chiinv-0-05-df-10
+  - subject: CHIINV
+    category: value
+    status: observed
+    formula: =CHIINV(CHIDIST(5, 4), 4)
+    tags:
+      - statistical
+      - distributions
+    name: chiinv-roundtrip
+  - subject: CHISQ.DIST
+    category: value
+    status: observed
+    formula: =CHISQ.DIST(4, 4, TRUE)
+    tags:
+      - statistical
+      - distributions
+    name: chisq-dist-cdf-df-4
+  - subject: CHISQ.DIST
+    category: value
+    status: observed
+    formula: =CHISQ.DIST(4, 4, FALSE)
+    tags:
+      - statistical
+      - distributions
+    name: chisq-dist-pdf-df-4
+  - subject: CHISQ.DIST.RT
+    category: value
+    status: observed
+    formula: =CHISQ.DIST.RT(18.307, 10)
+    tags:
+      - statistical
+      - distributions
+    name: chisq-dist-rt-df-10
+  - subject: CHISQ.DIST.RT
+    category: value
+    status: observed
+    formula: =CHISQ.DIST.RT(4, 4)
+    tags:
+      - statistical
+      - distributions
+    name: chisq-dist-rt-median
+  - subject: CHISQ.INV
+    category: value
+    status: observed
+    formula: =CHISQ.INV(0.5, 4)
+    tags:
+      - statistical
+      - distributions
+    name: chisq-inv-at-0-5-df-4
+  - subject: CHISQ.INV
+    category: value
+    status: observed
+    formula: =CHISQ.INV(CHISQ.DIST(5, 4, TRUE), 4)
+    tags:
+      - statistical
+      - distributions
+    name: chisq-inv-roundtrip
+  - subject: CHISQ.INV.RT
+    category: value
+    status: observed
+    formula: =CHISQ.INV.RT(0.05, 10)
+    tags:
+      - statistical
+      - distributions
+    name: chisq-inv-rt-at-0-05-df-10
+  - subject: CHISQ.INV.RT
+    category: value
+    status: observed
+    formula: =CHISQ.INV.RT(CHISQ.DIST.RT(5, 4), 4)
+    tags:
+      - statistical
+      - distributions
+    name: chisq-inv-rt-roundtrip
+  - subject: CHISQ.TEST
+    category: value
+    status: observed
+    formula: =CHISQ.TEST(A1:C2, A4:C5)
+    grid:
+      A1: 58
+      B1: 11
+      C1: 10
+      A2: 35
+      B2: 25
+      C2: 23
+      A4: 45.35
+      B4: 17.56
+      C4: 16.09
+      A5: 47.65
+      B5: 18.44
+      C5: 16.91
+    tags:
+      - statistical
+      - distributions
+    name: chisq-test-2x3-contingency
+  - subject: CHISQ.TEST
+    formula: =CHISQ.TEST(A1:B2, A4:B5)
+    category: value
+    grid:
+      A1: 10
+      B1: 20
+      A2: 10
+      B2: 20
+      A4: 10
+      B4: 20
+      A5: 10
+      B5: 20
+    expect: 1
+    overrides:
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+      - distributions
+    name: chisq-test-identical-ranges
+  - subject: CHITEST
+    category: value
+    status: observed
+    formula: =CHITEST(A1:C2, A4:C5)
+    grid:
+      A1: 58
+      B1: 11
+      C1: 10
+      A2: 35
+      B2: 25
+      C2: 23
+      A4: 45.35
+      B4: 17.56
+      C4: 16.09
+      A5: 47.65
+      B5: 18.44
+      C5: 16.91
+    tags:
+      - statistical
+      - distributions
+    name: chitest-2x3-contingency
+  - subject: CHITEST
+    category: value
+    status: observed
+    formula: =CHITEST(A1:B2, A4:B5)
+    grid:
+      A1: 30
+      B1: 20
+      A2: 25
+      B2: 25
+      A4: 27.5
+      B4: 22.5
+      A5: 27.5
+      B5: 22.5
+    tags:
+      - statistical
+      - distributions
+    name: chitest-small-table
+  - subject: CONFIDENCE.NORM
+    category: value
+    status: observed
+    formula: =CONFIDENCE.NORM(0.05, 1, 100)
+    tags:
+      - statistical
+      - distributions
+    name: confidence-norm-standard
+  - subject: CONFIDENCE.NORM
+    category: value
+    status: observed
+    formula: =CONFIDENCE.NORM(0.01, 2.5, 50)
+    tags:
+      - statistical
+      - distributions
+    name: confidence-norm-99-percent
+  - subject: CRITBINOM
+    formula: =CRITBINOM(10, 0.5, 0.5)
+    category: value
+    expect: 5
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+      - distributions
+    name: critbinom-median
+  - subject: CRITBINOM
+    formula: =CRITBINOM(20, 0.3, 0.95)
+    category: value
+    expect: 9
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+      - distributions
+    name: critbinom-tail
+  - subject: EXPON.DIST
+    category: value
+    status: observed
+    formula: =EXPON.DIST(1, 1, TRUE)
+    tags:
+      - statistical
+      - distributions
+    name: expon-dist-cdf-at-mean
+  - subject: EXPON.DIST
+    formula: =EXPON.DIST(0, 2, FALSE)
+    category: value
+    expect: 2
+    overrides:
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+      - distributions
+    name: expon-dist-pdf-at-0
+  - subject: EXPON.DIST
+    category: value
+    status: observed
+    formula: =EXPON.DIST(1, 2, FALSE)
+    tags:
+      - statistical
+      - distributions
+    name: expon-dist-pdf-at-x-1
+  - subject: EXPONDIST
+    category: value
+    status: observed
+    formula: =EXPONDIST(2, 0.5, TRUE)
+    tags:
+      - statistical
+      - distributions
+    name: expondist-cdf
+  - subject: EXPONDIST
+    category: value
+    status: observed
+    formula: =EXPONDIST(2, 0.5, FALSE)
+    tags:
+      - statistical
+      - distributions
+    name: expondist-pdf
+  - subject: F.DIST
+    category: value
+    status: observed
+    formula: =F.DIST(1, 5, 10, TRUE)
+    tags:
+      - statistical
+      - distributions
+    name: f-dist-cdf
+  - subject: F.DIST
+    category: value
+    status: observed
+    formula: =F.DIST(1, 5, 10, FALSE)
+    tags:
+      - statistical
+      - distributions
+    name: f-dist-pdf
+  - subject: F.DIST.RT
+    category: value
+    status: observed
+    formula: =F.DIST.RT(3.33, 5, 10)
+    tags:
+      - statistical
+      - distributions
+    name: f-dist-rt-tail
+  - subject: F.DIST.RT
+    category: value
+    status: observed
+    formula: =F.DIST.RT(1, 5, 10)
+    tags:
+      - statistical
+      - distributions
+    name: f-dist-rt-central
+  - subject: F.INV
+    category: value
+    status: observed
+    formula: =F.INV(0.5, 5, 10)
+    tags:
+      - statistical
+      - distributions
+    name: f-inv-at-0-5
+  - subject: F.INV
+    category: value
+    status: observed
+    formula: =F.INV(F.DIST(2, 5, 10, TRUE), 5, 10)
+    tags:
+      - statistical
+      - distributions
+    name: f-inv-roundtrip
+  - subject: F.INV.RT
+    category: value
+    status: observed
+    formula: =F.INV.RT(0.05, 5, 10)
+    tags:
+      - statistical
+      - distributions
+    name: f-inv-rt-at-0-05
+  - subject: F.INV.RT
+    category: value
+    status: observed
+    formula: =F.INV.RT(F.DIST.RT(2, 5, 10), 5, 10)
+    tags:
+      - statistical
+      - distributions
+    name: f-inv-rt-roundtrip
+  - subject: FDIST
+    category: value
+    status: observed
+    formula: =FDIST(3.33, 5, 10)
+    tags:
+      - statistical
+      - distributions
+    name: fdist-tail
+  - subject: FDIST
+    category: value
+    status: observed
+    formula: =FDIST(1, 5, 10)
+    tags:
+      - statistical
+      - distributions
+    name: fdist-central
+  - subject: FINV
+    category: value
+    status: observed
+    formula: =FINV(0.05, 5, 10)
+    tags:
+      - statistical
+      - distributions
+    name: finv-at-0-05
+  - subject: FINV
+    category: value
+    status: observed
+    formula: =FINV(FDIST(2, 5, 10), 5, 10)
+    tags:
+      - statistical
+      - distributions
+    name: finv-roundtrip
+  - subject: FISHER
+    formula: =FISHER(0)
+    category: value
+    expect: 0
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+      - distributions
+    name: fisher-at-0
+  - subject: FISHER
+    category: value
+    status: observed
+    formula: =FISHER(0.5)
+    tags:
+      - statistical
+      - distributions
+    name: fisher-at-0-5
+  - subject: FISHERINV
+    formula: =FISHERINV(0)
+    category: value
+    expect: 0
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+      - distributions
+    name: fisherinv-at-0
+  - subject: FISHERINV
+    category: value
+    formula: =FISHERINV(FISHER(0.75))
+    expect: 0.75
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+      - distributions
+    name: fisherinv-roundtrip
+  - subject: GAMMA
+    formula: =GAMMA(1)
+    category: value
+    expect: 1
+    overrides:
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+      - distributions
+    name: gamma-at-1
+  - subject: GAMMA
+    formula: =GAMMA(5)
+    category: value
+    expect: 24
+    overrides:
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      gsheets:
+        cause: precision
+        recorded: 24.000000000000004
+      lattice:
+        cause: precision
+        recorded: 24.000000000000004
+    tags:
+      - statistical
+      - distributions
+    name: gamma-at-5
+  - subject: GAMMA
+    category: value
+    status: observed
+    formula: =GAMMA(0.5)
+    tags:
+      - statistical
+      - distributions
+    name: gamma-at-0-5
+  - subject: GAMMA.DIST
+    category: value
+    status: observed
+    formula: =GAMMA.DIST(2, 2, 1, TRUE)
+    tags:
+      - statistical
+      - distributions
+    name: gamma-dist-cdf
+  - subject: GAMMA.DIST
+    category: value
+    status: observed
+    formula: =GAMMA.DIST(2, 2, 1, FALSE)
+    tags:
+      - statistical
+      - distributions
+    name: gamma-dist-pdf
+  - subject: GAMMA.INV
+    category: value
+    status: observed
+    formula: =GAMMA.INV(0.5, 2, 1)
+    tags:
+      - statistical
+      - distributions
+    name: gamma-inv-at-0-5
+  - subject: GAMMA.INV
+    formula: =GAMMA.INV(GAMMA.DIST(2, 2, 1, TRUE), 2, 1)
+    category: value
+    expect: 2
+    overrides:
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+      - distributions
+    name: gamma-inv-roundtrip
+  - subject: GAMMADIST
+    category: value
+    status: observed
+    formula: =GAMMADIST(2, 2, 1, TRUE)
+    tags:
+      - statistical
+      - distributions
+    name: gammadist-cdf
+  - subject: GAMMADIST
+    category: value
+    status: observed
+    formula: =GAMMADIST(2, 2, 1, FALSE)
+    tags:
+      - statistical
+      - distributions
+    name: gammadist-pdf
+  - subject: GAMMAINV
+    category: value
+    status: observed
+    formula: =GAMMAINV(0.5, 2, 1)
+    tags:
+      - statistical
+      - distributions
+    name: gammainv-at-0-5
+  - subject: GAMMAINV
+    category: value
+    status: observed
+    formula: =GAMMAINV(GAMMADIST(3, 2, 1, TRUE), 2, 1)
+    tags:
+      - statistical
+      - distributions
+    name: gammainv-roundtrip
+  - subject: GAUSS
+    formula: =GAUSS(0)
+    category: value
+    expect: 0
+    overrides:
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+      - distributions
+    name: gauss-at-0
+  - subject: GAUSS
+    category: value
+    status: observed
+    formula: =GAUSS(1)
+    tags:
+      - statistical
+      - distributions
+    name: gauss-at-1
+  - subject: HYPGEOM.DIST
+    category: value
+    status: observed
+    formula: =HYPGEOM.DIST(1, 4, 8, 20, FALSE)
+    tags:
+      - statistical
+      - distributions
+    name: hypgeom-dist-pmf
+  - subject: HYPGEOM.DIST
+    category: value
+    status: observed
+    formula: =HYPGEOM.DIST(1, 4, 8, 20, TRUE)
+    tags:
+      - statistical
+      - distributions
+    name: hypgeom-dist-cdf
+  - subject: HYPGEOM.DIST
+    category: value
+    status: observed
+    formula: =HYPGEOM.DIST(0, 4, 8, 20, FALSE)
+    tags:
+      - statistical
+      - distributions
+    name: hypgeom-dist-at-0
+  - subject: HYPGEOMDIST
+    category: value
+    status: observed
+    formula: =HYPGEOMDIST(1, 4, 8, 20)
+    tags:
+      - statistical
+      - distributions
+    name: hypgeomdist-basic
+  - subject: HYPGEOMDIST
+    category: value
+    status: observed
+    formula: =HYPGEOMDIST(0, 4, 8, 20)
+    tags:
+      - statistical
+      - distributions
+    name: hypgeomdist-zero-successes
+  - subject: LOGINV
+    formula: =LOGINV(0.5, 0, 1)
+    category: value
+    expect: 1
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+      - distributions
+    name: loginv-at-0-5
+  - subject: LOGINV
+    category: value
+    status: observed
+    formula: =LOGINV(LOGNORMDIST(2, 0, 1), 0, 1)
+    tags:
+      - statistical
+      - distributions
+    name: loginv-roundtrip
+  - subject: LOGNORM.DIST
+    category: value
+    status: observed
+    formula: =LOGNORM.DIST(2, 0, 1, TRUE)
+    tags:
+      - statistical
+      - distributions
+    name: lognorm-dist-cdf
+  - subject: LOGNORM.DIST
+    category: value
+    status: observed
+    formula: =LOGNORM.DIST(2, 0, 1, FALSE)
+    tags:
+      - statistical
+      - distributions
+    name: lognorm-dist-pdf
+  - subject: LOGNORM.INV
+    formula: =LOGNORM.INV(0.5, 0, 1)
+    category: value
+    expect: 1
+    overrides:
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+      - distributions
+    name: lognorm-inv-at-0-5
+  - subject: LOGNORM.INV
+    category: value
+    status: observed
+    formula: =LOGNORM.INV(LOGNORM.DIST(2, 0, 1, TRUE), 0, 1)
+    tags:
+      - statistical
+      - distributions
+    name: lognorm-inv-roundtrip
+  - subject: LOGNORMDIST
+    formula: =LOGNORMDIST(1, 0, 1)
+    category: value
+    expect: 0.5
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: error-code
+        recorded:
+          error: "#N/A"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+      - distributions
+    name: lognormdist-at-1
+  - subject: LOGNORMDIST
+    category: value
+    status: observed
+    formula: =LOGNORMDIST(2, 0, 1)
+    tags:
+      - statistical
+      - distributions
+    name: lognormdist-at-2
+  - subject: NEGBINOM.DIST
+    category: value
+    status: observed
+    formula: =NEGBINOM.DIST(10, 5, 0.25, FALSE)
+    tags:
+      - statistical
+      - distributions
+    name: negbinom-dist-pmf
+  - subject: NEGBINOM.DIST
+    category: value
+    status: observed
+    formula: =NEGBINOM.DIST(10, 5, 0.25, TRUE)
+    tags:
+      - statistical
+      - distributions
+    name: negbinom-dist-cdf
+  - subject: NEGBINOM.DIST
+    category: value
+    status: observed
+    formula: =NEGBINOM.DIST(0, 5, 0.5, FALSE)
+    tags:
+      - statistical
+      - distributions
+    name: negbinom-dist-at-0-failures
+  - subject: NEGBINOMDIST
+    category: value
+    status: observed
+    formula: =NEGBINOMDIST(10, 5, 0.25)
+    tags:
+      - statistical
+      - distributions
+    name: negbinomdist-basic
+  - subject: NEGBINOMDIST
+    category: value
+    status: observed
+    formula: =NEGBINOMDIST(0, 5, 0.5)
+    tags:
+      - statistical
+      - distributions
+    name: negbinomdist-at-0
+  - subject: NORM.DIST
+    formula: =NORM.DIST(0, 0, 1, TRUE)
+    category: value
+    expect: 0.5
+    overrides:
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+      - distributions
+    name: norm-dist-at-mean-cdf
+  - subject: NORM.DIST
+    category: value
+    status: observed
+    formula: =NORM.DIST(0, 0, 1, FALSE)
+    tags:
+      - statistical
+      - distributions
+    name: norm-dist-at-mean-pdf
+  - subject: NORM.DIST
+    category: value
+    status: observed
+    formula: =NORM.DIST(1, 0, 1, TRUE)
+    tags:
+      - statistical
+      - distributions
+    name: norm-dist-at-1-sigma-cdf
+  - subject: NORM.DIST
+    category: value
+    status: observed
+    formula: =NORM.DIST(42, 40, 1.5, TRUE)
+    tags:
+      - statistical
+      - distributions
+    name: norm-dist-non-standard
+  - subject: NORM.INV
+    formula: =NORM.INV(0.5, 0, 1)
+    category: value
+    expect: 0
+    overrides:
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: precision
+        recorded: -7.6805464991e-17
+    tags:
+      - statistical
+      - distributions
+    name: norm-inv-at-0-5
+  - subject: NORM.INV
+    category: value
+    status: observed
+    formula: =NORM.INV(0.975, 0, 1)
+    tags:
+      - statistical
+      - distributions
+    name: norm-inv-at-0-975
+  - subject: NORM.INV
+    category: value
+    status: observed
+    formula: =NORM.INV(NORM.DIST(1.5, 0, 1, TRUE), 0, 1)
+    tags:
+      - statistical
+      - distributions
+    name: norm-inv-roundtrip
+  - subject: NORM.S.DIST
+    formula: =NORM.S.DIST(0, TRUE)
+    category: value
+    expect: 0.5
+    overrides:
+      gsheets:
+        cause: error-code
+        recorded:
+          error: "#N/A"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+      - distributions
+    name: norm-s-dist-at-0-cdf
+  - subject: NORM.S.DIST
+    category: value
+    status: observed
+    formula: =NORM.S.DIST(0, FALSE)
+    tags:
+      - statistical
+      - distributions
+    name: norm-s-dist-at-0-pdf
+  - subject: NORM.S.DIST
+    category: value
+    status: observed
+    formula: =NORM.S.DIST(1.96, TRUE)
+    tags:
+      - statistical
+      - distributions
+    name: norm-s-dist-at-1-96
+  - subject: NORM.S.INV
+    formula: =NORM.S.INV(0.5)
+    category: value
+    expect: 0
+    overrides:
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: precision
+        recorded: -7.6805464991e-17
+    tags:
+      - statistical
+      - distributions
+    name: norm-s-inv-at-0-5
+  - subject: NORM.S.INV
+    category: value
+    status: observed
+    formula: =NORM.S.INV(0.975)
+    tags:
+      - statistical
+      - distributions
+    name: norm-s-inv-at-0-975
+  - subject: NORMDIST
+    formula: =NORMDIST(0, 0, 1, TRUE)
+    category: value
+    expect: 0.5
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+      - distributions
+    name: normdist-at-mean-cdf
+  - subject: NORMDIST
+    category: value
+    status: observed
+    formula: =NORMDIST(0, 0, 1, FALSE)
+    tags:
+      - statistical
+      - distributions
+    name: normdist-at-mean-pdf
+  - subject: NORMINV
+    formula: =NORMINV(0.5, 0, 1)
+    category: value
+    expect: 0
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: precision
+        recorded: -7.6805464991e-17
+    tags:
+      - statistical
+      - distributions
+    name: norminv-at-0-5
+  - subject: NORMINV
+    category: value
+    status: observed
+    formula: =NORMINV(0.95, 0, 1)
+    tags:
+      - statistical
+      - distributions
+    name: norminv-at-0-95
+  - subject: NORMSDIST
+    formula: =NORMSDIST(0)
+    category: value
+    expect: 0.5
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: error-code
+        recorded:
+          error: "#N/A"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+      - distributions
+    name: normsdist-at-0
+  - subject: NORMSDIST
+    category: value
+    status: observed
+    formula: =NORMSDIST(1.96)
+    tags:
+      - statistical
+      - distributions
+    name: normsdist-at-1-96
+  - subject: NORMSINV
+    formula: =NORMSINV(0.5)
+    category: value
+    expect: 0
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: precision
+        recorded: -7.6805464991e-17
+    tags:
+      - statistical
+      - distributions
+    name: normsinv-at-0-5
+  - subject: NORMSINV
+    category: value
+    status: observed
+    formula: =NORMSINV(0.025)
+    tags:
+      - statistical
+      - distributions
+    name: normsinv-at-0-025
+  - subject: PHI
+    category: value
+    status: observed
+    formula: =PHI(0)
+    tags:
+      - statistical
+      - distributions
+    name: phi-at-0
+  - subject: PHI
+    category: value
+    status: observed
+    formula: =PHI(1)
+    tags:
+      - statistical
+      - distributions
+    name: phi-at-1
+  - subject: POISSON
+    category: value
+    status: observed
+    formula: =POISSON(0, 3, FALSE)
+    tags:
+      - statistical
+      - distributions
+    name: poisson-pmf-at-0
+  - subject: POISSON
+    category: value
+    status: observed
+    formula: =POISSON(3, 3, FALSE)
+    tags:
+      - statistical
+      - distributions
+    name: poisson-pmf-at-mean
+  - subject: POISSON
+    category: value
+    status: observed
+    formula: =POISSON(5, 3, TRUE)
+    tags:
+      - statistical
+      - distributions
+    name: poisson-cdf
+  - subject: POISSON.DIST
+    category: value
+    status: observed
+    formula: =POISSON.DIST(0, 3, FALSE)
+    tags:
+      - statistical
+      - distributions
+    name: poisson-dist-pmf-at-0
+  - subject: POISSON.DIST
+    category: value
+    status: observed
+    formula: =POISSON.DIST(3, 3, FALSE)
+    tags:
+      - statistical
+      - distributions
+    name: poisson-dist-pmf-at-mean
+  - subject: POISSON.DIST
+    category: value
+    status: observed
+    formula: =POISSON.DIST(5, 3, TRUE)
+    tags:
+      - statistical
+      - distributions
+    name: poisson-dist-cdf
+  - subject: T.DIST
+    formula: =T.DIST(0, 10, TRUE)
+    category: value
+    expect: 0.5
+    overrides:
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+      - distributions
+    name: t-dist-cdf-at-0
+  - subject: T.DIST
+    category: value
+    status: observed
+    formula: =T.DIST(0, 10, FALSE)
+    tags:
+      - statistical
+      - distributions
+    name: t-dist-pdf-at-0
+  - subject: T.DIST
+    category: value
+    status: observed
+    formula: =T.DIST(1.812, 10, TRUE)
+    tags:
+      - statistical
+      - distributions
+    name: t-dist-tail
+  - subject: T.DIST.2T
+    category: value
+    status: observed
+    formula: =T.DIST.2T(1.812, 10)
+    tags:
+      - statistical
+      - distributions
+    name: t-dist-2t-df-10
+  - subject: T.DIST.2T
+    category: value
+    status: observed
+    formula: =T.DIST.2T(0.5, 10)
+    tags:
+      - statistical
+      - distributions
+    name: t-dist-2t-central
+  - subject: T.DIST.RT
+    category: value
+    status: observed
+    formula: =T.DIST.RT(1.812, 10)
+    tags:
+      - statistical
+      - distributions
+    name: t-dist-rt-df-10
+  - subject: T.DIST.RT
+    formula: =T.DIST.RT(0, 10)
+    category: value
+    expect: 0.5
+    overrides:
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+      - distributions
+    name: t-dist-rt-at-0
+  - subject: T.INV
+    formula: =T.INV(0.5, 10)
+    category: value
+    expect: 0
+    overrides:
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+      - distributions
+    name: t-inv-at-0-5
+  - subject: T.INV
+    category: value
+    status: observed
+    formula: =T.INV(T.DIST(1.5, 10, TRUE), 10)
+    tags:
+      - statistical
+      - distributions
+    name: t-inv-roundtrip
+  - subject: T.INV.2T
+    category: value
+    status: observed
+    formula: =T.INV.2T(0.05, 10)
+    tags:
+      - statistical
+      - distributions
+    name: t-inv-2t-95-df-10
+  - subject: T.INV.2T
+    category: value
+    status: observed
+    formula: =T.INV.2T(T.DIST.2T(1.5, 10), 10)
+    tags:
+      - statistical
+      - distributions
+    name: t-inv-2t-roundtrip
+  - subject: TDIST
+    category: value
+    status: observed
+    formula: =TDIST(1.812, 10, 1)
+    tags:
+      - statistical
+      - distributions
+    name: tdist-one-tailed
+  - subject: TDIST
+    category: value
+    status: observed
+    formula: =TDIST(1.812, 10, 2)
+    tags:
+      - statistical
+      - distributions
+    name: tdist-two-tailed
+  - subject: TINV
+    category: value
+    status: observed
+    formula: =TINV(0.05, 10)
+    tags:
+      - statistical
+      - distributions
+    name: tinv-95-df-10
+  - subject: TINV
+    category: value
+    status: observed
+    formula: =TINV(TDIST(1.5, 10, 2), 10)
+    tags:
+      - statistical
+      - distributions
+    name: tinv-roundtrip
+  - subject: WEIBULL
+    category: value
+    status: observed
+    formula: =WEIBULL(2, 2, 1, TRUE)
+    tags:
+      - statistical
+      - distributions
+    name: weibull-cdf
+  - subject: WEIBULL
+    category: value
+    status: observed
+    formula: =WEIBULL(2, 2, 1, FALSE)
+    tags:
+      - statistical
+      - distributions
+    name: weibull-pdf
+  - subject: WEIBULL.DIST
+    category: value
+    status: observed
+    formula: =WEIBULL.DIST(2, 2, 1, TRUE)
+    tags:
+      - statistical
+      - distributions
+    name: weibull-dist-cdf
+  - subject: WEIBULL.DIST
+    category: value
+    status: observed
+    formula: =WEIBULL.DIST(2, 2, 1, FALSE)
+    tags:
+      - statistical
+      - distributions
+    name: weibull-dist-pdf
+  - subject: WEIBULL.DIST
+    formula: =WEIBULL.DIST(0, 2, 1, TRUE)
+    category: value
+    expect: 0
+    overrides:
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+      - distributions
+    name: weibull-dist-at-0

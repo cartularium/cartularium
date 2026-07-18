@@ -1,0 +1,19 @@
+id: DV-0094
+summary: "gsheets, hyperformula, ironcalc, libreoffice: different error code —
+  NETWORKDAYS"
+cause: error-code
+category: value
+engines:
+  - gsheets
+  - hyperformula
+  - ironcalc
+  - libreoffice
+behavior:
+  signature: '{"error":"#VALUE!"}'
+test-count: 1
+subjects:
+  - NETWORKDAYS
+tests:
+  - NETWORKDAYS/networkdays-with-holiday
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

@@ -1,0 +1,27 @@
+{
+  "name": "@cartularium/contracts",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Cross-property contracts: assay → sheets-wiki manifest schema, shared enum types.",
+  "license": "MIT",
+  "type": "module",
+  "main": "build/index.js",
+  "types": "build/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./build/index.js",
+      "types": "./build/index.d.ts"
+    }
+  },
+  "files": ["build"],
+  "scripts": {
+    "build": "tsc",
+    "check": "tsc --noEmit",
+    "clean": "rm -rf build *.tsbuildinfo",
+    "test": "node --test --import tsx ./src/*.test.ts"
+  },
+  "devDependencies": {
+    "tsx": "^4.19.0",
+    "typescript": "^5.8.3"
+  }
+}

@@ -1,0 +1,17 @@
+id: DV-0065
+summary: "hyperformula: numeric precision differs — PI, RADIANS"
+cause: precision
+category: value
+engines:
+  - hyperformula
+behavior:
+  signature: "3.1415926536"
+test-count: 2
+subjects:
+  - PI
+  - RADIANS
+tests:
+  - RADIANS/radians-of-180
+  - PI/pi
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

@@ -1,0 +1,186 @@
+name: Charter Records & Collections
+
+requires:
+  charter: ../../../charter/excel
+
+tests:
+  # ── RECORD ────────────────────────────────────────────
+  - name: RECORD field access
+    formula: '=RECORD("pt", {"x","y"}, {3,4})("x")'
+    expect: 3
+
+  - name: RECORD show
+    formula: '=SHOW(RECORD("pt", WITH("x", 3, "y", 4)))'
+    expect: "pt(x:3, y:4)"
+
+  - name: RECORD type probe
+    formula: '=RECORD("pt", {"x","y"}, {3,4})(#NULL!)'
+    expect: "pt"
+
+  - name: RECORD doesNotUnderstand
+    formula: '=SHOW(RECORD("pt", WITH("x", 3, "y", 4))("nonexistent"))'
+    expect: "Error: pt:doesNotUnderstand(nonexistent)"
+
+  - name: RECORD keys
+    formula: '=RECORD("pt", {"x","y"}, {3,4})("keys")'
+    expect:
+      - ["x", "y"]
+
+  - name: RECORD from WITH
+    formula: '=RECORD("pt", WITH("x", 3, "y", 4))("y")'
+    expect: 4
+
+  - name: RECORD from parallel arrays
+    formula: '=RECORD("pt", {"x","y"}, {10,20})("x")'
+    expect: 10
+
+  - name: RECORD update
+    formula: '=RECORD("pt", {"x","y"}, {3,4})("update", WITH("x", 99))("x")'
+    expect: 99
+
+  - name: RECORD update preserves other fields
+    formula: '=RECORD("pt", {"x","y"}, {3,4})("update", WITH("x", 99))("y")'
+    expect: 4
+
+  - name: RECORD eq same
+    formula: '=RECORD("pt", {"x","y"}, {3,4})("eq", RECORD("pt", {"x","y"}, {3,4}))'
+    expect: true
+
+  - name: RECORD eq different values
+    formula: '=RECORD("pt", {"x","y"}, {3,4})("eq", RECORD("pt", {"x","y"}, {5,6}))'
+    expect: false
+
+  - name: RECORD hash deterministic
+    formula: '=RECORD("pt", {"x","y"}, {3,4})("hash") = RECORD("pt", {"x","y"}, {3,4})("hash")'
+    expect: true
+
+  - name: RECORD construction error
+    formula: '=SHOW(RECORD("pt", 42))'
+    record: true
+    tags: [edge-case]
+
+  # ── WITH ──────────────────────────────────────────────
+  - name: WITH lookup
+    formula: '=WITH("x", 3, "y", 4)("x")'
+    expect: 3
+
+  - name: WITH size
+    formula: '=WITH("a", 1, "b", 2, "c", 3)("__size__")'
+    expect: 3
+
+  - name: WITH keys
+    formula: '=WITH("a", 1, "b", 2)("__keys__")'
+    expect:
+      - ["a", "b"]
+
+  - name: WITH missing key
+    formula: '=WITH("a", 1)("z")'
+    expect: "#N/A"
+
+  # ── VALIDATE ──────────────────────────────────────────
+  - name: VALIDATE success
+    formula: '=SHOW(VALIDATE({"qty", "price"}, {10, 24.99}, IS.NUM, LAMBDA(_v, "$" & ROUND(_v("qty") * _v("price"), 2))))'
+    tags: [func:LAMBDA]
+    expect: "$249.9"
+
+  - name: VALIDATE failure
+    formula: '=SHOW(VALIDATE({"qty", "price"}, {"bad", 24.99}, IS.NUM, LAMBDA(_v, "ok")))'
+    tags: [func:LAMBDA]
+    expect: "Error: qty: must be a number"
+
+  # ── DICT ──────────────────────────────────────────────
+  - name: DICT set and get
+    formula: '=LET(_d, DICT(FALSE, FALSE), _d1, _d("set", WITH("key", "a", "val", 1)), _d1("get", "a"))'
+    tags: [func:LET]
+    expect: 1
+
+  - name: DICT show
+    formula: '=LET(_d, DICT(FALSE, FALSE), _d1, _d("set", WITH("key", "a", "val", 1)), _d2, _d1("set", WITH("key", "b", "val", 2)), SHOW(_d2))'
+    tags: [func:LET]
+    expect: "dict(a:1, b:2)"
+
+  - name: DICT size
+    formula: '=LET(_d, DICT(FALSE, FALSE), _d1, _d("set", WITH("key", "a", "val", 1)), _d2, _d1("set", WITH("key", "b", "val", 2)), _d2("size"))'
+    tags: [func:LET]
+    expect: 2
+
+  - name: DICT has
+    formula: '=LET(_d, DICT(FALSE, FALSE), _d1, _d("set", WITH("key", "a", "val", 1)), _d1("has", "a"))'
+    tags: [func:LET]
+    expect: true
+
+  - name: DICT has missing
+    formula: '=LET(_d, DICT(FALSE, FALSE), _d1, _d("set", WITH("key", "a", "val", 1)), _d1("has", "z"))'
+    tags: [func:LET]
+    expect: false
+
+  - name: DICT delete
+    formula: '=LET(_d, DICT(FALSE, FALSE), _d1, _d("set", WITH("key", "a", "val", 1)), _d2, _d1("set", WITH("key", "b", "val", 2)), _d3, _d2("delete", "a"), _d3("size"))'
+    tags: [func:LET]
+    expect: 1
+
+  - name: DICT keys
+    formula: '=LET(_d, DICT(FALSE, FALSE), _d1, _d("set", WITH("key", "a", "val", 1)), _d2, _d1("set", WITH("key", "b", "val", 2)), _d2("keys"))'
+    tags: [func:LET]
+    expect:
+      - ["a", "b"]
+
+  - name: DICT.EMPTY type
+    formula: "=DICT.EMPTY(#NULL!)"
+    expect: "dict"
+
+  - name: DICT.EMPTY size
+    formula: '=DICT.EMPTY("size")'
+    expect: 0
+
+  - name: DICT.EMPTY show
+    formula: '=SHOW(DICT.EMPTY)'
+    expect: "dict()"
+
+  # ── ENUM ──────────────────────────────────────────────
+  - name: ENUM show
+    formula: '=SHOW(ENUM("light", "red"))'
+    expect: "<light.red>"
+
+  - name: ENUM variant
+    formula: '=ENUM("light", "red")("variant")'
+    expect: "red"
+
+  - name: ENUM is check
+    formula: '=ENUM("light", "red")("is", "red")'
+    expect: true
+
+  - name: ENUM is check false
+    formula: '=ENUM("light", "red")("is", "green")'
+    expect: false
+
+  - name: ENUM type probe
+    formula: '=ENUM("light", "red")(#NULL!)'
+    expect: "light.red"
+
+  - name: ENUM with data
+    formula: '=ENUM("action", "move", 5)("data")'
+    expect: 5
+
+  - name: ENUM without data
+    formula: '=ENUM("action", "stop")("data")'
+    record: true
+    tags: [edge-case]
+
+  - name: ENUM keys without data
+    formula: '=ENUM("light", "red")("keys")'
+    expect:
+      - ["variant"]
+
+  - name: ENUM keys with data
+    formula: '=ENUM("action", "move", 5)("keys")'
+    expect:
+      - ["variant", "data"]
+
+  - name: ENUM eq same
+    formula: '=ENUM("light", "red")("eq", ENUM("light", "red"))'
+    expect: true
+
+  - name: ENUM eq different variant
+    formula: '=ENUM("light", "red")("eq", ENUM("light", "green"))'
+    expect: false

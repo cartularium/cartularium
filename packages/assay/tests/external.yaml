@@ -1,0 +1,677 @@
+schemaVersion: 3
+name: Google, Web, and external-I/O functions
+tests:
+  - subject: "TRUE"
+    category: value
+    formula: =TRUE()
+    expect: true
+    tags:
+      - logical
+    name: true-basic
+  - subject: "FALSE"
+    category: value
+    formula: =FALSE()
+    expect: false
+    tags:
+      - logical
+    name: false-basic
+  - subject: SORTN
+    category: value
+    semanticDomain: partial
+    supportLevel: unsupported
+    formula: =SORTN({5;2;8;1;4}, 3)
+    expect:
+      error: "#NAME?"
+    overrides:
+      gsheets:
+        cause: shape
+        recorded:
+          - - 1
+          - - 2
+          - - 4
+    tags:
+      - filter
+      - bare-formula
+    name: sortn-top-3
+  - subject: SORTN
+    category: value
+    semanticDomain: partial
+    supportLevel: unsupported
+    formula: =SORTN({5;2;8;1;4}, 3, 0, 1, TRUE)
+    expect:
+      error: "#NAME?"
+    overrides:
+      gsheets:
+        cause: shape
+        recorded:
+          - - 1
+          - - 2
+          - - 4
+    tags:
+      - filter
+      - bare-formula
+    name: sortn-top-3-ascending
+  - subject: ENCODEURL
+    formula: =ENCODEURL("a b")
+    category: value
+    expect: a%20b
+    overrides:
+      excel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      lattice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - web
+    name: encodeurl-space
+  - subject: ENCODEURL
+    formula: =ENCODEURL("hello world/?&=")
+    category: value
+    expect: hello%20world%2F%3F%26%3D
+    overrides:
+      excel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      lattice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - web
+    name: encodeurl-special-chars
+  - subject: ISURL
+    formula: =ISURL("https://example.com")
+    category: value
+    expect: true
+    overrides:
+      excel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      lattice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - web
+    name: isurl-https
+  - subject: ISURL
+    formula: =ISURL("not a url")
+    category: value
+    expect: false
+    overrides:
+      excel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      lattice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - web
+    name: isurl-not-a-url
+  - subject: HYPERLINK
+    formula: =HYPERLINK("https://example.com", "click me")
+    category: value
+    semanticDomain: display
+    supportLevel: design-pending
+    features:
+      - external-io
+    expect: click me
+    tags:
+      - web
+    name: hyperlink-with-label
+  - subject: HYPERLINK
+    formula: =HYPERLINK("https://example.com")
+    category: value
+    semanticDomain: display
+    supportLevel: design-pending
+    features:
+      - external-io
+    expect: https://example.com
+    tags:
+      - web
+    name: hyperlink-url-only
+  - subject: IMPORTDATA
+    category: value
+    semanticDomain: external-effect
+    supportLevel: design-pending
+    features:
+      - external-io
+    formula: =IMPORTDATA("https://example.com/data.csv")
+    expect:
+      error: "#NAME?"
+    overrides:
+      gsheets:
+        cause: missing-function
+        recorded:
+          error: "#REF!"
+    tags:
+      - external
+      - skip-reason:network
+    name: importdata-csv-smoke
+  - subject: IMPORTFEED
+    category: value
+    semanticDomain: external-effect
+    supportLevel: design-pending
+    features:
+      - external-io
+    formula: =IMPORTFEED("https://example.com/feed.xml")
+    expect:
+      error: "#NAME?"
+    overrides:
+      gsheets:
+        cause: missing-function
+        recorded:
+          error: "#REF!"
+    tags:
+      - external
+      - skip-reason:network
+    name: importfeed-rss-smoke
+  - subject: IMPORTHTML
+    category: value
+    semanticDomain: external-effect
+    supportLevel: design-pending
+    features:
+      - external-io
+    formula: =IMPORTHTML("https://example.com/page.html", "table", 1)
+    expect:
+      error: "#NAME?"
+    overrides:
+      gsheets:
+        cause: missing-function
+        recorded:
+          error: "#REF!"
+    tags:
+      - external
+      - skip-reason:network
+    name: importhtml-table-smoke
+  - subject: IMPORTXML
+    category: value
+    semanticDomain: external-effect
+    supportLevel: design-pending
+    features:
+      - external-io
+    formula: =IMPORTXML("https://example.com/data.xml", "//title")
+    expect:
+      error: "#NAME?"
+    overrides:
+      gsheets:
+        cause: missing-function
+        recorded:
+          error: "#REF!"
+    tags:
+      - external
+      - skip-reason:network
+    name: importxml-xpath-smoke
+  - subject: IMPORTRANGE
+    category: value
+    semanticDomain: external-effect
+    supportLevel: design-pending
+    features:
+      - external-io
+    formula: =IMPORTRANGE("https://docs.google.com/spreadsheets/d/abc123", "Sheet1!A1:B2")
+    expect:
+      error: "#NAME?"
+    overrides:
+      gsheets:
+        cause: missing-function
+        recorded:
+          error: "#REF!"
+    tags:
+      - external
+      - skip-reason:network
+    name: importrange-cross-sheet-smoke
+  - subject: ARRAYFORMULA
+    formula: =ARRAYFORMULA({1;2;3} * 2)
+    category: value
+    expect:
+      - - 2
+      - - 4
+      - - 6
+    overrides:
+      excel:
+        cause: error-code
+        recorded:
+          error: "#NAME?"
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - google
+      - bare-formula
+    name: arrayformula-multiply-range
+  - subject: ARRAYFORMULA
+    formula: =ARRAYFORMULA({"a";"b"} & "!")
+    category: value
+    expect:
+      - - a!
+      - - b!
+    overrides:
+      excel:
+        cause: error-code
+        recorded:
+          error: "#NAME?"
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - google
+      - bare-formula
+    name: arrayformula-text-concat
+  - subject: QUERY
+    formula: =QUERY({1,"a";2,"b";3,"c"}, "select *")
+    category: value
+    semanticDomain: partial
+    supportLevel: subset
+    expect:
+      - [ 1, a ]
+      - [ 2, b ]
+      - [ 3, c ]
+    overrides:
+      excel:
+        cause: error-code
+        recorded:
+          error: "#N/A"
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - google
+      - bare-formula
+    name: query-select-all
+  - subject: QUERY
+    formula: =QUERY({1,"a";2,"b";3,"c"}, "select Col2")
+    category: value
+    semanticDomain: partial
+    supportLevel: subset
+    expect:
+      - [ a ]
+      - [ b ]
+      - [ c ]
+    overrides:
+      excel:
+        cause: error-code
+        recorded:
+          error: "#N/A"
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - google
+      - bare-formula
+    name: query-select-col
+  - subject: QUERY
+    formula: =QUERY({0,0;1,2;3,4}, "offset 1")
+    category: value
+    semanticDomain: partial
+    supportLevel: subset
+    expect:
+      - [ 1, 2 ]
+      - [ 3, 4 ]
+    overrides:
+      excel:
+        cause: error-code
+        recorded:
+          error: "#NAME?"
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - google
+      - bare-formula
+      - array-argument
+    name: query-offset-1
+  - subject: GOOGLEFINANCE
+    formula: =GOOGLEFINANCE("GOOG", "price")
+    category: value
+    semanticDomain: external-effect
+    supportLevel: design-pending
+    status: observed
+    features:
+      - external-io
+    overrides:
+      excel:
+        cause: missing-function
+        recorded:
+          error: "#N/A"
+      lattice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - google
+      - external
+      - skip-reason:network
+    name: googlefinance-price-smoke
+  - subject: GOOGLETRANSLATE
+    formula: =GOOGLETRANSLATE("hello", "en", "es")
+    category: value
+    semanticDomain: external-effect
+    supportLevel: design-pending
+    features:
+      - external-io
+    expect: Hola
+    overrides:
+      excel:
+        cause: missing-function
+        recorded:
+          error: "#N/A"
+      lattice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - google
+      - external
+      - skip-reason:network
+    name: googletranslate-en-to-es
+  - subject: DETECTLANGUAGE
+    formula: =DETECTLANGUAGE("hello world")
+    category: value
+    semanticDomain: external-effect
+    supportLevel: design-pending
+    expect: en
+    overrides:
+      excel:
+        cause: missing-function
+        recorded:
+          error: "#N/A"
+      lattice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - google
+      - external
+      - skip-reason:network
+    name: detectlanguage-english
+  - subject: IMAGE
+    category: value
+    semanticDomain: display
+    supportLevel: design-pending
+    features:
+      - external-io
+    formula: =IMAGE("https://example.com/pic.png")
+    expect:
+      error: "#NAME?"
+    overrides:
+      gsheets:
+        cause: missing-function
+        recorded:
+          error: "#REF!"
+    tags:
+      - google
+      - skip-reason:network
+    name: image-url-smoke
+  - subject: SPARKLINE
+    formula: =SPARKLINE({1;2;3;4;5})
+    category: value
+    semanticDomain: display
+    supportLevel: design-pending
+    features:
+      - external-io
+    expect: null
+    overrides:
+      excel:
+        cause: missing-function
+        recorded:
+          error: "#N/A"
+      lattice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - google
+      - bare-formula
+    name: sparkline-inline-chart

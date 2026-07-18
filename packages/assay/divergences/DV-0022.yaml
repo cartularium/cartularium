@@ -1,0 +1,23 @@
+id: DV-0022
+summary: "libreoffice: return shape differs — MINVERSE, MMULT, TRANSPOSE"
+cause: shape
+category: value
+engines:
+  - libreoffice
+behavior:
+  signature: "1"
+test-count: 7
+subjects:
+  - MINVERSE
+  - MMULT
+  - TRANSPOSE
+tests:
+  - TRANSPOSE/transpose-row-to-col
+  - TRANSPOSE/transpose-col-to-row
+  - TRANSPOSE/transpose-2x2
+  - TRANSPOSE/transpose-from-grid
+  - MINVERSE/minverse-2x2-identity
+  - MINVERSE/minverse-3x3-identity
+  - MMULT/mmult-a-times-identity
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

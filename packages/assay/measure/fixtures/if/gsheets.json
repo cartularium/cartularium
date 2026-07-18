@@ -1,0 +1,272 @@
+{
+  "platform": "gsheets",
+  "generatedAt": "2026-06-04T06:04:25.481Z",
+  "results": {
+    "sha256:7c398c136a5691040c06401b4b71f8b0576315c64d11f829055f299ba4aaf7d5": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "Y"
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "string",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=IF(A1, \"Y\", \"N\")"
+                },
+                "effectiveValue": {
+                  "stringValue": "Y"
+                },
+                "formattedValue": "Y",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "IF(A1, \"Y\", \"N\")",
+            "formatted": "Y"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=IF(A1, \"Y\", \"N\")"
+    },
+    "sha256:a15e9d14d72505a4513ddd208e28196663d58698f7902d14744c8dad01d4c243": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "N"
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "string",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=IF(A1, \"Y\", \"N\")"
+                },
+                "effectiveValue": {
+                  "stringValue": "N"
+                },
+                "formattedValue": "N",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "IF(A1, \"Y\", \"N\")",
+            "formatted": "N"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=IF(A1, \"Y\", \"N\")"
+    },
+    "sha256:8385e8be059206f16335c943a71c06fc51be4d326b479d158275efa89ed01720": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "error",
+              "sentinel": "#VALUE!"
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "error",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=IF(A1, \"Y\", \"N\")"
+                },
+                "effectiveValue": {
+                  "errorValue": {
+                    "type": "VALUE",
+                    "message": "Function IF parameter 1 expects boolean values. But '1' is a text and cannot be coerced to a boolean."
+                  }
+                },
+                "formattedValue": "#VALUE!",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "IF(A1, \"Y\", \"N\")",
+            "formatted": "#VALUE!"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=IF(A1, \"Y\", \"N\")"
+    },
+    "sha256:f94ee69a8c51dae490ff69299e147427bee8fa22f2d22dc275f7015a33789ab7": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "error",
+              "sentinel": "#VALUE!"
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "error",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=IF(A1, \"Y\", \"N\")"
+                },
+                "effectiveValue": {
+                  "errorValue": {
+                    "type": "VALUE",
+                    "message": "Function IF parameter 1 expects boolean values. But 'x' is a text and cannot be coerced to a boolean."
+                  }
+                },
+                "formattedValue": "#VALUE!",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "IF(A1, \"Y\", \"N\")",
+            "formatted": "#VALUE!"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=IF(A1, \"Y\", \"N\")"
+    },
+    "sha256:b4e258c511d3f3b6720226507bb5016312693bfc729223142bd3dda46675fb0d": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "string",
+              "value": "N"
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "string",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=IF(A1, \"Y\", \"N\")"
+                },
+                "effectiveValue": {
+                  "stringValue": "N"
+                },
+                "formattedValue": "N",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "IF(A1, \"Y\", \"N\")",
+            "formatted": "N"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=IF(A1, \"Y\", \"N\")"
+    },
+    "sha256:8d1eb76861bc150068a52e9ae568366c53ef92ed8ac4f54d0a8b126035a1f56a": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "error",
+              "sentinel": "#N/A"
+            },
+            "engine": {
+              "platform": "gsheets",
+              "wire_kind": "error",
+              "raw_api": {
+                "userEnteredValue": {
+                  "formulaValue": "=IF(A1, \"Y\", \"N\")"
+                },
+                "effectiveValue": {
+                  "errorValue": {
+                    "type": "N_A"
+                  }
+                },
+                "formattedValue": "#N/A",
+                "effectiveFormat": {
+                  "textFormat": {
+                    "foregroundColor": {},
+                    "fontFamily": "Arial",
+                    "fontSize": 10,
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "underline": false,
+                    "foregroundColorStyle": {
+                      "rgbColor": {}
+                    }
+                  },
+                  "hyperlinkDisplayType": "PLAIN_TEXT"
+                }
+              }
+            },
+            "formula": "IF(A1, \"Y\", \"N\")",
+            "formatted": "#N/A"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=IF(A1, \"Y\", \"N\")"
+    }
+  }
+}

@@ -1,0 +1,15 @@
+id: DV-0150
+summary: "formulas: numeric precision differs — PDURATION"
+cause: precision
+category: value
+engines:
+  - formulas
+behavior:
+  signature: "7.2725408973417185"
+test-count: 1
+subjects:
+  - PDURATION
+tests:
+  - PDURATION/pduration-double-money-10pct
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

@@ -1,0 +1,19 @@
+id: DV-0045
+summary: "formulas: different error code — IMDIV, IPMT, PPMT"
+cause: error-code
+category: value
+engines:
+  - formulas
+behavior:
+  signature: '{"error":"#NUM!"}'
+test-count: 3
+subjects:
+  - IMDIV
+  - IPMT
+  - PPMT
+tests:
+  - IMDIV/imdiv-by-real
+  - IPMT/ipmt-first-period-mortgage
+  - PPMT/ppmt-ipmt-plus-ppmt-equals-pmt
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

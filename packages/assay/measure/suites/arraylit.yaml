@@ -1,0 +1,48 @@
+schemaVersion: 3
+name: "sweep: lit:array"
+tests:
+  - subject: lit:array
+    name: const1d
+    formula: ={1,2,3}
+    category: value
+    status: observed
+    tags:
+      - sweep:lit:array
+      - ax:content=const1d
+  - subject: lit:array
+    name: const2d
+    formula: ={1,2;3,4}
+    category: value
+    status: observed
+    tags:
+      - sweep:lit:array
+      - ax:content=const2d
+  - subject: lit:array
+    name: withref
+    formula: ={1,2,D1}
+    category: value
+    status: observed
+    tags:
+      - sweep:lit:array
+      - ax:content=withref
+    grid:
+      D1: 5
+  - subject: lit:array
+    name: withfn
+    formula: ={1,2,SUM(D1:D2)}
+    category: value
+    status: observed
+    tags:
+      - sweep:lit:array
+      - ax:content=withfn
+    grid:
+      D1: 5
+      D2: 6
+  - subject: lit:array
+    name: withop
+    formula: ={1,2,1+1}
+    category: value
+    status: observed
+    tags:
+      - sweep:lit:array
+      - ax:content=withop

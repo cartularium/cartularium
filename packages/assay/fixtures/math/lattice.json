@@ -1,0 +1,536 @@
+{
+  "platform": "lattice",
+  "generatedAt": "2026-05-07T21:12:27.660Z",
+  "results": {
+    "sha256:14a02177e28c08aea014ec52b813828721787f6ab69c8ed58fb2f1229f179630": {
+      "result": [
+        [
+          3
+        ]
+      ],
+      "formula-as-evaluated": "=ABS(3)"
+    },
+    "sha256:4b880f2b44d3adea4e3a86082cd6a9ef5668d6768fa771f127bbc034b1d8d23a": {
+      "result": [
+        [
+          3.4
+        ]
+      ],
+      "formula-as-evaluated": "=ABS(-3.4)"
+    },
+    "sha256:9a6adb93ca743d9fffe9e8cd33b003259e10c05f92c1d7a2b46d66713205b933": {
+      "result": [
+        [
+          0
+        ]
+      ],
+      "formula-as-evaluated": "=ABS(0)"
+    },
+    "sha256:7f1f9f23c32651bb0672a1098c18ebfe721193ef4b5b0acfe56cdae0a7a70220": {
+      "result": [
+        [
+          3
+        ]
+      ],
+      "formula-as-evaluated": "=CEILING(2.5, 1)"
+    },
+    "sha256:b30802a7500f96c9c32f40c0f2f3886a72e9287a38696b6038231725d81b6fa7": {
+      "result": [
+        [
+          -4
+        ]
+      ],
+      "formula-as-evaluated": "=CEILING(-2.5, -2)"
+    },
+    "sha256:650b20aa93658ea6e2b61a199c7ea9da94efdc4a5267d1fb2a063b1c17c7f1ba": {
+      "result": [
+        [
+          -2
+        ]
+      ],
+      "formula-as-evaluated": "=CEILING(-2.5, 2)"
+    },
+    "sha256:fef6f7a3a08f40052271a247d13050d73584e4281c060c331b5cc9ef06e5b20f": {
+      "result": [
+        [
+          0.24
+        ]
+      ],
+      "formula-as-evaluated": "=CEILING(0.234, 0.01)"
+    },
+    "sha256:48c5033b88888b7e25dfe59fb54590dd996d5274ee81164b74dcefbd36085744": {
+      "result": [
+        [
+          {
+            "error": "#NUM!"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=CEILING(2, -2)"
+    },
+    "sha256:77c27f2ed0e33f73d16026bf8366e9f0e63836d60166ed86815ec3404a162a13": {
+      "result": [
+        [
+          6
+        ]
+      ],
+      "formula-as-evaluated": "=CEILING.MATH(5.2)"
+    },
+    "sha256:c3ecbed13686a2a2a4d91125d80e383a7f6e138b65cff9153e00508373d3d14f": {
+      "result": [
+        [
+          6
+        ]
+      ],
+      "formula-as-evaluated": "=CEILING.MATH(5.2, 2)"
+    },
+    "sha256:1aa4d8db47a0631ea600696dfc772fac1728577cc2bd279d0bd95bd06f427d38": {
+      "result": [
+        [
+          2
+        ]
+      ],
+      "formula-as-evaluated": "=FLOOR(3.7, 2)"
+    },
+    "sha256:c3cc7fc8742f3f863f5b97d8f275e1662a343b0032bbc92b30f765547b4da6e5": {
+      "result": [
+        [
+          -2
+        ]
+      ],
+      "formula-as-evaluated": "=FLOOR(-2.5, -2)"
+    },
+    "sha256:10fffb6170ce33e2920714d7f7599f249c7298417470bfb16f1fe1a34036a3fc": {
+      "result": [
+        [
+          1.5
+        ]
+      ],
+      "formula-as-evaluated": "=FLOOR(1.58, 0.1)"
+    },
+    "sha256:c22c38922882abfc4674b3ae78aa5663661e068f9d650fe43c6d88f6e1f4651e": {
+      "result": [
+        [
+          0.23
+        ]
+      ],
+      "formula-as-evaluated": "=FLOOR(0.234, 0.01)"
+    },
+    "sha256:b4447608864f16f45e81524482da837e9575bc84345f3522d5cf721e63a4f535": {
+      "result": [
+        [
+          {
+            "error": "#DIV/0!"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=FLOOR(2, 0)"
+    },
+    "sha256:c2bf7a7fb02e85c0a564c5fb0db5c8994f641df761887fe0a5bcb913efc99534": {
+      "result": [
+        [
+          5
+        ]
+      ],
+      "formula-as-evaluated": "=FLOOR.MATH(5.2)"
+    },
+    "sha256:936930df074e49cb890eb6f04ea007027ba9c1a6bfc7c2e63b1b25115035caf3": {
+      "result": [
+        [
+          4
+        ]
+      ],
+      "formula-as-evaluated": "=FLOOR.MATH(5.2, 2)"
+    },
+    "sha256:eabe830e03682cd7ea0bff1b3ddeebc1a69b02a821d8b32f64417211b4c15f59": {
+      "result": [
+        [
+          8
+        ]
+      ],
+      "formula-as-evaluated": "=INT(8.9)"
+    },
+    "sha256:48bf76770b02f87c0f33a5e5d238968b7bf85b337e204770b773dc7c5d92ea4e": {
+      "result": [
+        [
+          -9
+        ]
+      ],
+      "formula-as-evaluated": "=INT(-8.9)"
+    },
+    "sha256:deb8e32f0b73ffffff56edac67d306ac2f112ac14b4d1b805f93f0628269ae7c": {
+      "result": [
+        [
+          1
+        ]
+      ],
+      "formula-as-evaluated": "=MOD(5, 2)"
+    },
+    "sha256:4f8579fb7633950c72493211edf31244914609223974a8f479c536aa0239386f": {
+      "result": [
+        [
+          0
+        ]
+      ],
+      "formula-as-evaluated": "=MOD(6, 3)"
+    },
+    "sha256:d87a45cd0bc8af51a2c23baa0226cdc75c8a4aadd373f9791b0a71540f2bcabe": {
+      "result": [
+        [
+          1
+        ]
+      ],
+      "formula-as-evaluated": "=MOD(-5, 2)"
+    },
+    "sha256:31e1f8b40582e335dff0af29af45ca93bfcb8e345b2aae3c8b8a554ae7e78681": {
+      "result": [
+        [
+          {
+            "error": "#DIV/0!"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=MOD(5, 0)"
+    },
+    "sha256:22f8de689d08260783d5ccefa179e7dbfd89db5d39c04d577f795b8588eb1ef1": {
+      "result": [
+        [
+          100
+        ]
+      ],
+      "formula-as-evaluated": "=POWER(10, 2)"
+    },
+    "sha256:ab3803b65affcf83d7ead8da6f3fbe76826b3a3c276f1169ffe85ab1c8a67996": {
+      "result": [
+        [
+          6.25
+        ]
+      ],
+      "formula-as-evaluated": "=POWER(2.5, 2)"
+    },
+    "sha256:80ad5db1ffe1ea83d93a9d5efd98b8dc008bd7eaf38f198a52a83ffb248846d1": {
+      "result": [
+        [
+          0.125
+        ]
+      ],
+      "formula-as-evaluated": "=POWER(2, -3)"
+    },
+    "sha256:ff5b38256c58847124697078254a2796425069ad0714ca1bb5685b481cd93877": {
+      "result": [
+        [
+          1
+        ]
+      ],
+      "formula-as-evaluated": "=ROUND(0.6, 0)"
+    },
+    "sha256:a40e429035df0972321df2b03e183d24d5ad6274a68355ae63dffec09761f23b": {
+      "result": [
+        [
+          1
+        ]
+      ],
+      "formula-as-evaluated": "=ROUND(1.3, 0)"
+    },
+    "sha256:85f963cc7aeed49401310950c3eae2b6dd50d7ecb137099de1c6f740bec478b0": {
+      "result": [
+        [
+          1.3
+        ]
+      ],
+      "formula-as-evaluated": "=ROUND(1.25, 1)"
+    },
+    "sha256:79594847f5ce204738fae7fe058d9bd9a24a5bf2b195785f733c7ae93aabe8a4": {
+      "result": [
+        [
+          1200
+        ]
+      ],
+      "formula-as-evaluated": "=ROUND(1234, -2)"
+    },
+    "sha256:4f5ea77f2a68d2d7b744dba09652141d7ccdbe196e692d2d4a169dd110f6eccc": {
+      "result": [
+        [
+          0.0063
+        ]
+      ],
+      "formula-as-evaluated": "=ROUND(1.05*(0.0284+0.0046)-0.0284, 4)"
+    },
+    "sha256:8ce476878448eeb4ee212e54ee44bb32da042dc3454f4ead77cdd98ad4504481": {
+      "result": [
+        [
+          1.3
+        ]
+      ],
+      "formula-as-evaluated": "=ROUNDUP(1.24, 1)"
+    },
+    "sha256:9115dfad74f09d804976c52be4e1ee13c2c0bae7d45ead390b43b5f60533efdc": {
+      "result": [
+        [
+          1.2
+        ]
+      ],
+      "formula-as-evaluated": "=ROUNDDOWN(1.26, 1)"
+    },
+    "sha256:dbeb52a82c3cf931a159c0a28d11d2571ffb50aa9169d5d697a98dd81e2277d0": {
+      "result": [
+        [
+          2
+        ]
+      ],
+      "formula-as-evaluated": "=SQRT(4)"
+    },
+    "sha256:e1c42aeba7f3bfbdbd9652037c923f6ca459185947f38de60089b0ffcfe114ca": {
+      "result": [
+        [
+          1.4142135623730951
+        ]
+      ],
+      "formula-as-evaluated": "=SQRT(2)"
+    },
+    "sha256:48dadac2dc15931d4416cbf375ec45f106827f3736e9acaca991269f98e917e9": {
+      "result": [
+        [
+          {
+            "error": "#NUM!"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=SQRT(-4)"
+    },
+    "sha256:490eca742a99271e64785faefed935249ebadaa7c2e82b3e6a66ee9a586b8236": {
+      "result": [
+        [
+          6
+        ]
+      ],
+      "formula-as-evaluated": "=SUM(1, 2, 3)"
+    },
+    "sha256:0c7db1874705499013196f5df0b34be9c19b2fc5b6ee6dc4467e530f997835bb": {
+      "result": [
+        [
+          6
+        ]
+      ],
+      "formula-as-evaluated": "=SUM({1, 2, 3})"
+    },
+    "sha256:33a7206c57d9b65dcff5ccd2f3cbf6b175a167fc6a762e0a6f6d230671301613": {
+      "result": [
+        [
+          6
+        ]
+      ],
+      "formula-as-evaluated": "=SUM({1; 2; 3})"
+    },
+    "sha256:36110dc385bfad7cfed862b9f07e2305815797d1cb49783804fc3ff5cf1d2530": {
+      "result": [
+        [
+          21
+        ]
+      ],
+      "formula-as-evaluated": "=SUM({1, 2; 3, 4; 5, 6})"
+    },
+    "sha256:7fff1089368b1d296579a3959ce4db5d397b9d82adaed0cd46af489f6a4e6bb9": {
+      "result": [
+        [
+          60
+        ]
+      ],
+      "formula-as-evaluated": "=SUM(A1:A3)"
+    },
+    "sha256:aff0f0351a90abeb521083267a99da72c0c0d1bbc4476f1d4e158f226ff862ef": {
+      "result": [
+        [
+          0
+        ]
+      ],
+      "formula-as-evaluated": "=SUM()"
+    },
+    "sha256:701fe65e7cbc34f0ef2a7b05a4ccd61a967c121197ca72e0df59105f07fd26ae": {
+      "result": [
+        [
+          32
+        ]
+      ],
+      "formula-as-evaluated": "=SUMPRODUCT(A1:A3, B1:B3)"
+    },
+    "sha256:89d0ecde4e3fe754a1b44ee0254fc9e5c14f682cb2bfd47b49d5f5f53f19c272": {
+      "result": [
+        [
+          1
+        ]
+      ],
+      "formula-as-evaluated": "=EXP(0)"
+    },
+    "sha256:18a3c270f9e4d3d92ed65b0ebec7d416b570657c314d0bad933ea7319ea37be6": {
+      "result": [
+        [
+          2.718281828459045
+        ]
+      ],
+      "formula-as-evaluated": "=EXP(1)"
+    },
+    "sha256:7c4732d7c9ace1c2746fdd2d39a7810c176d8e812549c9992314bac3c1519aa5": {
+      "result": [
+        [
+          1
+        ]
+      ],
+      "formula-as-evaluated": "=SIGN(10)"
+    },
+    "sha256:be94afe01cf092e23977675ed825c99bb020d849836282b2dd2efa942a86c095": {
+      "result": [
+        [
+          0
+        ]
+      ],
+      "formula-as-evaluated": "=SIGN(0)"
+    },
+    "sha256:7aa0a40da6e1c74b114443d0f8dc779fdfd03993ea9af7a334849d1f0262e829": {
+      "result": [
+        [
+          -1
+        ]
+      ],
+      "formula-as-evaluated": "=SIGN(-10)"
+    },
+    "sha256:7fabe83cf9146e6b53dcb4f036d6fd5ce11768f3c32a082428a9839280749735": {
+      "result": [
+        [
+          9
+        ]
+      ],
+      "formula-as-evaluated": "=MROUND(10, 3)"
+    },
+    "sha256:cf64faaf317c9b9fc70195a23424e03d16fd80aeb64dd7b84610b69df5d6881a": {
+      "result": [
+        [
+          10
+        ]
+      ],
+      "formula-as-evaluated": "=TRUNC(10)"
+    },
+    "sha256:a791296635b924c761ea850623903571ac083c567e4187206eb86d1755db879d": {
+      "result": [
+        [
+          10.2
+        ]
+      ],
+      "formula-as-evaluated": "=TRUNC(10.22, 1)"
+    },
+    "sha256:5f771548bd28effa453f872eb5049aa1c1bec5964450a4d9f4ef4d0dc0d4cb71": {
+      "result": [
+        [
+          4
+        ]
+      ],
+      "formula-as-evaluated": "=SUMSQ(2)"
+    },
+    "sha256:e7c57bd5b7afff67e733bc1b8c5ebd44540338fbf31082632f9760281947fabb": {
+      "result": [
+        [
+          5
+        ]
+      ],
+      "formula-as-evaluated": "=SUMSQ(1, 2)"
+    },
+    "sha256:6b6df9e42a64e2d76a86a19795c66566f28794d8b42604eff06324803ccd3074": {
+      "result": [
+        [
+          1
+        ]
+      ],
+      "formula-as-evaluated": "=LN(2.718281828459045)"
+    },
+    "sha256:1714712de905246f5ae0eb03a4dd52e31100800e0305e87e3ef61c241021f9e1": {
+      "result": [
+        [
+          1
+        ]
+      ],
+      "formula-as-evaluated": "=LOG(10)"
+    },
+    "sha256:c93901011856ac41b4afdd86a8a592e9e5a8f5a75c7aea065e3e108a069802d0": {
+      "result": [
+        [
+          3
+        ]
+      ],
+      "formula-as-evaluated": "=LOG(8, 2)"
+    },
+    "sha256:c2fc65bd1aefd5c9715538351260ea4abe5aec0dc339b9961d9d03f2e5650d11": {
+      "result": [
+        [
+          5
+        ]
+      ],
+      "formula-as-evaluated": "=LOG10(100000)"
+    },
+    "sha256:d8bea845067671df78099b337a578661d90ecd4e9f9d382f5c42b897dd79fc28": {
+      "result": [
+        [
+          120
+        ]
+      ],
+      "formula-as-evaluated": "=FACT(5)"
+    },
+    "sha256:2fde52d1bb5764ebea0a266347fcfb3d95176297b8deccedc72f03f96ded3370": {
+      "result": [
+        [
+          1
+        ]
+      ],
+      "formula-as-evaluated": "=FACT(0)"
+    },
+    "sha256:4f44f7ece4eaa32657a8bb51167a11747dab4ad4fad8b89eb4322838d1561f78": {
+      "result": [
+        [
+          {
+            "error": "#NUM!"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=FACT(-1)"
+    },
+    "sha256:481da2f1ebf4678eb371320ad728aba6d847bcaf6a7dbe71c20618e61289858c": {
+      "result": [
+        [
+          2
+        ]
+      ],
+      "formula-as-evaluated": "=QUOTIENT(5, 2)"
+    },
+    "sha256:27ab8f74732c714e2a0b76dd54a1a8062517dc0168a56a97df8efa54a6fd2987": {
+      "result": [
+        [
+          2
+        ]
+      ],
+      "formula-as-evaluated": "=EVEN(1.5)"
+    },
+    "sha256:61d281fb2c66aacf6cb5051b8af570823e8d714208feb2cf99dd2a18892494b9": {
+      "result": [
+        [
+          4
+        ]
+      ],
+      "formula-as-evaluated": "=EVEN(3)"
+    },
+    "sha256:1334bcd874f5f4dc9ff2824b93582442876bae33e760254022e80412d791afc3": {
+      "result": [
+        [
+          -2
+        ]
+      ],
+      "formula-as-evaluated": "=EVEN(-1)"
+    },
+    "sha256:2bae1726f9e34559683a38c9940b735f0d8bbee4e521d7c56b8cb7634e190be4": {
+      "result": [
+        [
+          3.141592653589793
+        ]
+      ],
+      "formula-as-evaluated": "=PI()"
+    }
+  }
+}

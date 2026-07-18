@@ -1,0 +1,17 @@
+id: DV-0069
+summary: "hyperformula: numeric precision differs — GAMMALN, GAMMALN.PRECISE"
+cause: precision
+category: value
+engines:
+  - hyperformula
+behavior:
+  signature: "-4.4408920985e-16"
+test-count: 2
+subjects:
+  - GAMMALN
+  - GAMMALN.PRECISE
+tests:
+  - GAMMALN/gammaln-at-2
+  - GAMMALN.PRECISE/gammaln-precise-at-2
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

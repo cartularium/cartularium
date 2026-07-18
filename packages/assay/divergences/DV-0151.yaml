@@ -1,0 +1,17 @@
+id: DV-0151
+summary: "formulas, gsheets, lattice: different argument interpretation — PMT"
+cause: arg-semantics
+category: value
+engines:
+  - formulas
+  - gsheets
+  - lattice
+behavior:
+  signature: "1073.6432460242797"
+test-count: 1
+subjects:
+  - PMT
+tests:
+  - PMT/pmt-monthly-mortgage
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

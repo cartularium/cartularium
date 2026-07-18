@@ -1,0 +1,62 @@
+schemaVersion: 3
+name: "sweep: T"
+tests:
+  - subject: T
+    name: number
+    formula: =T(A1)
+    category: value
+    status: observed
+    tags:
+      - sweep:t
+      - ax:arg_type=number
+    grid:
+      A1: 3
+  - subject: T
+    name: numstr
+    formula: =T(A1)
+    category: value
+    status: observed
+    tags:
+      - sweep:t
+      - ax:arg_type=numstr
+    grid:
+      A1: ="3"
+  - subject: T
+    name: text
+    formula: =T(A1)
+    category: value
+    status: observed
+    tags:
+      - sweep:t
+      - ax:arg_type=text
+    grid:
+      A1: x
+  - subject: T
+    name: bool
+    formula: =T(A1)
+    category: value
+    status: observed
+    tags:
+      - sweep:t
+      - ax:arg_type=bool
+    grid:
+      A1: true
+  - subject: T
+    name: blank
+    formula: =T(A1)
+    category: value
+    status: observed
+    tags:
+      - sweep:t
+      - ax:arg_type=blank
+    grid: {}
+  - subject: T
+    name: error
+    formula: =T(A1)
+    category: value
+    status: observed
+    tags:
+      - sweep:t
+      - ax:arg_type=error
+    grid:
+      A1: =NA()

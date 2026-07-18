@@ -1,0 +1,17 @@
+id: DV-0055
+summary: "lattice: different error code — AVERAGE, SUM"
+cause: error-code
+category: error-code
+engines:
+  - lattice
+behavior:
+  signature: '{"error":"#DIV/0!"}'
+test-count: 2
+subjects:
+  - AVERAGE
+  - SUM
+tests:
+  - SUM/nested-error-priority
+  - AVERAGE/average-with-booleans
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

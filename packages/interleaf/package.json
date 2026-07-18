@@ -1,0 +1,30 @@
+{
+  "name": "@cartularium/interleaf",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Formula text transpiler between spreadsheet dialects.",
+  "license": "MIT",
+  "type": "module",
+  "main": "build/index.js",
+  "types": "build/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./build/index.js",
+      "types": "./build/index.d.ts"
+    }
+  },
+  "files": ["build"],
+  "scripts": {
+    "build": "pnpm --filter @cartularium/contracts run build && tsc",
+    "check": "pnpm --filter @cartularium/contracts run build && tsc --noEmit",
+    "clean": "rm -rf build *.tsbuildinfo",
+    "test": "pnpm --filter @cartularium/contracts run build && node --test --import tsx ./src/*.test.ts"
+  },
+  "dependencies": {
+    "@cartularium/contracts": "workspace:*"
+  },
+  "devDependencies": {
+    "tsx": "^4.19.0",
+    "typescript": "^5.8.3"
+  }
+}

@@ -1,0 +1,15 @@
+id: DV-0079
+summary: "libreoffice: numeric precision differs — op:/"
+cause: precision
+category: value
+engines:
+  - libreoffice
+behavior:
+  signature: "3.33333333333333"
+test-count: 1
+subjects:
+  - op:/
+tests:
+  - op:divide/division
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

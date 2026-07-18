@@ -1,0 +1,33 @@
+name: lint
+
+# Workspace-wide formatting check. Runs on every PR and every push to main.
+# Per-package linters/typechecks live in their own workflows.
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+concurrency:
+  group: lint-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  format:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      # version comes from package.json `packageManager` — pnpm/action-setup@v4
+      # errors if both are set
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: pnpm
+
+      - name: pnpm install
+        run: pnpm install --frozen-lockfile
+
+      - name: Prettier check
+        run: pnpm format:check

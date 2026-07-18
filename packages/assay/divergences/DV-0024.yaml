@@ -1,0 +1,27 @@
+id: DV-0024
+summary: "formulas, hyperformula, ironcalc, libreoffice, pycel: function not
+  implemented — ISDATE, JOIN"
+cause: missing-function
+category: value
+engines:
+  - formulas
+  - hyperformula
+  - ironcalc
+  - libreoffice
+  - pycel
+behavior:
+  signature: '{"error":"#NAME?"}'
+test-count: 7
+subjects:
+  - ISDATE
+  - JOIN
+tests:
+  - ISDATE/isdate-of-number
+  - ISDATE/isdate-of-text
+  - ISDATE/isdate-of-date-call
+  - JOIN/join-basic
+  - JOIN/join-with-numbers
+  - JOIN/join-empty-delim
+  - JOIN/join-single-element
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

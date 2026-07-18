@@ -1,0 +1,16 @@
+id: DV-0214
+summary: "libreoffice, pycel: return shape differs — lit:array"
+cause: shape
+category: value
+engines:
+  - libreoffice
+  - pycel
+behavior:
+  signature: "1"
+test-count: 1
+subjects:
+  - lit:array
+tests:
+  - lit:array/array-literal-row
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

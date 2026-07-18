@@ -1,0 +1,18 @@
+{
+  "engine": "lattice",
+  "description": "Lattice formula engine (subprocess). Native dynamic arrays + broadcasting.",
+  "features": {
+    "broadcasting": { "support": "native" },
+    "dynamic-arrays": { "support": "native" },
+    "lambda": { "support": "native" },
+    "higher-order-lambda": { "support": "native" },
+    "regex": { "support": "native" },
+    "external-io": { "support": "absent" },
+    "volatile": { "support": "native" },
+    "iterative-calc": { "support": "absent" },
+    "structured-refs": { "support": "absent" },
+    "let-bindings": { "support": "native" },
+    "implicit-intersection": { "support": "absent" },
+    "spill-blocking": { "support": "native" }
+  }
+}

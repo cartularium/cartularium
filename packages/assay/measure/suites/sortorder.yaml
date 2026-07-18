@@ -1,0 +1,120 @@
+schemaVersion: 3
+name: "sweep: feature:sort-order"
+tests:
+  - subject: feature:sort-order
+    name: num-asc
+    formula: =SORT(D1:D3)
+    category: value
+    status: observed
+    tags:
+      - sweep:feature:sort-order
+      - ax:data=num
+      - ax:order=asc
+    grid:
+      D1: 3
+      D2: 1
+      D3: 2
+  - subject: feature:sort-order
+    name: num-desc-num
+    formula: =SORT(D1:D3,1,-1)
+    category: value
+    status: observed
+    tags:
+      - sweep:feature:sort-order
+      - ax:data=num
+      - ax:order=desc-num
+    grid:
+      D1: 3
+      D2: 1
+      D3: 2
+  - subject: feature:sort-order
+    name: num-desc-bool
+    formula: =SORT(D1:D3,1,FALSE)
+    category: value
+    status: observed
+    tags:
+      - sweep:feature:sort-order
+      - ax:data=num
+      - ax:order=desc-bool
+    grid:
+      D1: 3
+      D2: 1
+      D3: 2
+  - subject: feature:sort-order
+    name: textcase-asc
+    formula: =SORT(D1:D3)
+    category: value
+    status: observed
+    tags:
+      - sweep:feature:sort-order
+      - ax:data=textcase
+      - ax:order=asc
+    grid:
+      D1: b
+      D2: A
+      D3: a
+  - subject: feature:sort-order
+    name: textcase-desc-num
+    formula: =SORT(D1:D3,1,-1)
+    category: value
+    status: observed
+    tags:
+      - sweep:feature:sort-order
+      - ax:data=textcase
+      - ax:order=desc-num
+    grid:
+      D1: b
+      D2: A
+      D3: a
+  - subject: feature:sort-order
+    name: textcase-desc-bool
+    formula: =SORT(D1:D3,1,FALSE)
+    category: value
+    status: observed
+    tags:
+      - sweep:feature:sort-order
+      - ax:data=textcase
+      - ax:order=desc-bool
+    grid:
+      D1: b
+      D2: A
+      D3: a
+  - subject: feature:sort-order
+    name: mixed-asc
+    formula: =SORT(D1:D3)
+    category: value
+    status: observed
+    tags:
+      - sweep:feature:sort-order
+      - ax:data=mixed
+      - ax:order=asc
+    grid:
+      D1: 2
+      D2: a
+      D3: 1
+  - subject: feature:sort-order
+    name: mixed-desc-num
+    formula: =SORT(D1:D3,1,-1)
+    category: value
+    status: observed
+    tags:
+      - sweep:feature:sort-order
+      - ax:data=mixed
+      - ax:order=desc-num
+    grid:
+      D1: 2
+      D2: a
+      D3: 1
+  - subject: feature:sort-order
+    name: mixed-desc-bool
+    formula: =SORT(D1:D3,1,FALSE)
+    category: value
+    status: observed
+    tags:
+      - sweep:feature:sort-order
+      - ax:data=mixed
+      - ax:order=desc-bool
+    grid:
+      D1: 2
+      D2: a
+      D3: 1

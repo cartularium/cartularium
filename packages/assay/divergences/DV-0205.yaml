@@ -1,0 +1,16 @@
+id: DV-0205
+summary: "formulas, lattice: numeric precision differs — CONVERT"
+cause: precision
+category: value
+engines:
+  - formulas
+  - lattice
+behavior:
+  signature: "12.000000000000002"
+test-count: 1
+subjects:
+  - CONVERT
+tests:
+  - CONVERT/convert-feet-to-inches
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

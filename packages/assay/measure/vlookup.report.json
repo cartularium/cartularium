@@ -1,0 +1,644 @@
+{
+  "subject": "VLOOKUP",
+  "pair": {
+    "a": "excel",
+    "b": "gsheets"
+  },
+  "numTolerance": 1e-10,
+  "engines": [
+    {
+      "platform": "excel",
+      "generatedAt": "2026-06-04T06:04:03.470Z"
+    },
+    {
+      "platform": "gsheets",
+      "generatedAt": "2026-06-04T06:04:25.485Z"
+    }
+  ],
+  "axisSpace": [
+    {
+      "name": "range_lookup",
+      "locus": "syntactic",
+      "cardinality": 4
+    },
+    {
+      "name": "key_encoding",
+      "locus": "syntactic",
+      "cardinality": 2
+    },
+    {
+      "name": "key_type",
+      "locus": "data-borne",
+      "runtimeCheckable": false,
+      "cardinality": 3
+    },
+    {
+      "name": "key_present",
+      "locus": "data-borne",
+      "runtimeCheckable": false,
+      "cardinality": 2
+    },
+    {
+      "name": "range_sorted",
+      "locus": "data-borne",
+      "runtimeCheckable": false,
+      "cardinality": 2
+    },
+    {
+      "name": "col_index_form",
+      "locus": "syntactic",
+      "cardinality": 3
+    },
+    {
+      "name": "gsheets_null_kind",
+      "locus": "data-borne",
+      "runtimeCheckable": false,
+      "cardinality": 3
+    },
+    {
+      "name": "array_mode",
+      "locus": "environment",
+      "cardinality": 1
+    }
+  ],
+  "tallies": {
+    "total": 112,
+    "ok": 112,
+    "incomplete": 0,
+    "agree": 80,
+    "differ": 32,
+    "unimplemented": 0,
+    "precision": 0
+  },
+  "analysis": {
+    "reducts": [
+      [
+        "range_lookup",
+        "key_present",
+        "col_index_form"
+      ]
+    ],
+    "core": [
+      "range_lookup",
+      "key_present",
+      "col_index_form"
+    ]
+  },
+  "verdict": {
+    "subject": "VLOOKUP",
+    "completeness": 1,
+    "provisional": true,
+    "pinnedAxes": [
+      {
+        "axis": "array_mode",
+        "locus": "environment"
+      }
+    ],
+    "surface": {
+      "okProbes": 112,
+      "divergentProbes": 32,
+      "divergentFraction": 0.286,
+      "irreducibleRegions": 8
+    },
+    "kind": "IRREDUCIBLE",
+    "discriminators": [
+      "range_lookup",
+      "key_present",
+      "col_index_form"
+    ],
+    "byLocus": {
+      "syntactic": [
+        "range_lookup",
+        "col_index_form"
+      ],
+      "environment": [],
+      "data-borne": [
+        "key_present"
+      ]
+    },
+    "trigger": [
+      {
+        "where": {
+          "range_lookup": "false",
+          "key_present": "present",
+          "col_index_form": "arr"
+        },
+        "outcome": "differ"
+      },
+      {
+        "where": {
+          "range_lookup": "false",
+          "key_present": "absent",
+          "col_index_form": "oob"
+        },
+        "outcome": "differ"
+      },
+      {
+        "where": {
+          "range_lookup": "zero",
+          "key_present": "present",
+          "col_index_form": "arr"
+        },
+        "outcome": "differ"
+      },
+      {
+        "where": {
+          "range_lookup": "zero",
+          "key_present": "absent",
+          "col_index_form": "oob"
+        },
+        "outcome": "differ"
+      },
+      {
+        "where": {
+          "range_lookup": "true",
+          "key_present": "present",
+          "col_index_form": "arr"
+        },
+        "outcome": "differ"
+      },
+      {
+        "where": {
+          "range_lookup": "true",
+          "key_present": "absent",
+          "col_index_form": "arr"
+        },
+        "outcome": "differ"
+      },
+      {
+        "where": {
+          "range_lookup": "omitted",
+          "key_present": "present",
+          "col_index_form": "arr"
+        },
+        "outcome": "differ"
+      },
+      {
+        "where": {
+          "range_lookup": "omitted",
+          "key_present": "absent",
+          "col_index_form": "arr"
+        },
+        "outcome": "differ"
+      }
+    ],
+    "staticNarrowing": [
+      "range_lookup",
+      "col_index_form"
+    ],
+    "residualDataBorne": [
+      "key_present"
+    ],
+    "option": "author-flag"
+  },
+  "divergent": [
+    {
+      "name": "false-literal-number-present-sorted-arr-plain-dynamic",
+      "assignment": {
+        "range_lookup": "false",
+        "key_encoding": "literal",
+        "key_type": "number",
+        "key_present": "present",
+        "range_sorted": "sorted",
+        "col_index_form": "arr",
+        "gsheets_null_kind": "plain",
+        "array_mode": "dynamic"
+      },
+      "outcome": "differ"
+    },
+    {
+      "name": "false-literal-number-present-unsorted-arr-plain-dynamic",
+      "assignment": {
+        "range_lookup": "false",
+        "key_encoding": "literal",
+        "key_type": "number",
+        "key_present": "present",
+        "range_sorted": "unsorted",
+        "col_index_form": "arr",
+        "gsheets_null_kind": "plain",
+        "array_mode": "dynamic"
+      },
+      "outcome": "differ"
+    },
+    {
+      "name": "false-literal-number-absent-sorted-oob-plain-dynamic",
+      "assignment": {
+        "range_lookup": "false",
+        "key_encoding": "literal",
+        "key_type": "number",
+        "key_present": "absent",
+        "range_sorted": "sorted",
+        "col_index_form": "oob",
+        "gsheets_null_kind": "plain",
+        "array_mode": "dynamic"
+      },
+      "outcome": "differ"
+    },
+    {
+      "name": "false-literal-number-absent-unsorted-oob-plain-dynamic",
+      "assignment": {
+        "range_lookup": "false",
+        "key_encoding": "literal",
+        "key_type": "number",
+        "key_present": "absent",
+        "range_sorted": "unsorted",
+        "col_index_form": "oob",
+        "gsheets_null_kind": "plain",
+        "array_mode": "dynamic"
+      },
+      "outcome": "differ"
+    },
+    {
+      "name": "false-ref-number-present-sorted-arr-plain-dynamic",
+      "assignment": {
+        "range_lookup": "false",
+        "key_encoding": "ref",
+        "key_type": "number",
+        "key_present": "present",
+        "range_sorted": "sorted",
+        "col_index_form": "arr",
+        "gsheets_null_kind": "plain",
+        "array_mode": "dynamic"
+      },
+      "outcome": "differ"
+    },
+    {
+      "name": "false-ref-number-present-unsorted-arr-plain-dynamic",
+      "assignment": {
+        "range_lookup": "false",
+        "key_encoding": "ref",
+        "key_type": "number",
+        "key_present": "present",
+        "range_sorted": "unsorted",
+        "col_index_form": "arr",
+        "gsheets_null_kind": "plain",
+        "array_mode": "dynamic"
+      },
+      "outcome": "differ"
+    },
+    {
+      "name": "false-ref-number-absent-sorted-oob-plain-dynamic",
+      "assignment": {
+        "range_lookup": "false",
+        "key_encoding": "ref",
+        "key_type": "number",
+        "key_present": "absent",
+        "range_sorted": "sorted",
+        "col_index_form": "oob",
+        "gsheets_null_kind": "plain",
+        "array_mode": "dynamic"
+      },
+      "outcome": "differ"
+    },
+    {
+      "name": "false-ref-number-absent-unsorted-oob-plain-dynamic",
+      "assignment": {
+        "range_lookup": "false",
+        "key_encoding": "ref",
+        "key_type": "number",
+        "key_present": "absent",
+        "range_sorted": "unsorted",
+        "col_index_form": "oob",
+        "gsheets_null_kind": "plain",
+        "array_mode": "dynamic"
+      },
+      "outcome": "differ"
+    },
+    {
+      "name": "zero-literal-number-present-sorted-arr-plain-dynamic",
+      "assignment": {
+        "range_lookup": "zero",
+        "key_encoding": "literal",
+        "key_type": "number",
+        "key_present": "present",
+        "range_sorted": "sorted",
+        "col_index_form": "arr",
+        "gsheets_null_kind": "plain",
+        "array_mode": "dynamic"
+      },
+      "outcome": "differ"
+    },
+    {
+      "name": "zero-literal-number-present-unsorted-arr-plain-dynamic",
+      "assignment": {
+        "range_lookup": "zero",
+        "key_encoding": "literal",
+        "key_type": "number",
+        "key_present": "present",
+        "range_sorted": "unsorted",
+        "col_index_form": "arr",
+        "gsheets_null_kind": "plain",
+        "array_mode": "dynamic"
+      },
+      "outcome": "differ"
+    },
+    {
+      "name": "zero-literal-number-absent-sorted-oob-plain-dynamic",
+      "assignment": {
+        "range_lookup": "zero",
+        "key_encoding": "literal",
+        "key_type": "number",
+        "key_present": "absent",
+        "range_sorted": "sorted",
+        "col_index_form": "oob",
+        "gsheets_null_kind": "plain",
+        "array_mode": "dynamic"
+      },
+      "outcome": "differ"
+    },
+    {
+      "name": "zero-literal-number-absent-unsorted-oob-plain-dynamic",
+      "assignment": {
+        "range_lookup": "zero",
+        "key_encoding": "literal",
+        "key_type": "number",
+        "key_present": "absent",
+        "range_sorted": "unsorted",
+        "col_index_form": "oob",
+        "gsheets_null_kind": "plain",
+        "array_mode": "dynamic"
+      },
+      "outcome": "differ"
+    },
+    {
+      "name": "zero-ref-number-present-sorted-arr-plain-dynamic",
+      "assignment": {
+        "range_lookup": "zero",
+        "key_encoding": "ref",
+        "key_type": "number",
+        "key_present": "present",
+        "range_sorted": "sorted",
+        "col_index_form": "arr",
+        "gsheets_null_kind": "plain",
+        "array_mode": "dynamic"
+      },
+      "outcome": "differ"
+    },
+    {
+      "name": "zero-ref-number-present-unsorted-arr-plain-dynamic",
+      "assignment": {
+        "range_lookup": "zero",
+        "key_encoding": "ref",
+        "key_type": "number",
+        "key_present": "present",
+        "range_sorted": "unsorted",
+        "col_index_form": "arr",
+        "gsheets_null_kind": "plain",
+        "array_mode": "dynamic"
+      },
+      "outcome": "differ"
+    },
+    {
+      "name": "zero-ref-number-absent-sorted-oob-plain-dynamic",
+      "assignment": {
+        "range_lookup": "zero",
+        "key_encoding": "ref",
+        "key_type": "number",
+        "key_present": "absent",
+        "range_sorted": "sorted",
+        "col_index_form": "oob",
+        "gsheets_null_kind": "plain",
+        "array_mode": "dynamic"
+      },
+      "outcome": "differ"
+    },
+    {
+      "name": "zero-ref-number-absent-unsorted-oob-plain-dynamic",
+      "assignment": {
+        "range_lookup": "zero",
+        "key_encoding": "ref",
+        "key_type": "number",
+        "key_present": "absent",
+        "range_sorted": "unsorted",
+        "col_index_form": "oob",
+        "gsheets_null_kind": "plain",
+        "array_mode": "dynamic"
+      },
+      "outcome": "differ"
+    },
+    {
+      "name": "true-literal-number-present-sorted-arr-plain-dynamic",
+      "assignment": {
+        "range_lookup": "true",
+        "key_encoding": "literal",
+        "key_type": "number",
+        "key_present": "present",
+        "range_sorted": "sorted",
+        "col_index_form": "arr",
+        "gsheets_null_kind": "plain",
+        "array_mode": "dynamic"
+      },
+      "outcome": "differ"
+    },
+    {
+      "name": "true-literal-number-present-unsorted-arr-plain-dynamic",
+      "assignment": {
+        "range_lookup": "true",
+        "key_encoding": "literal",
+        "key_type": "number",
+        "key_present": "present",
+        "range_sorted": "unsorted",
+        "col_index_form": "arr",
+        "gsheets_null_kind": "plain",
+        "array_mode": "dynamic"
+      },
+      "outcome": "differ"
+    },
+    {
+      "name": "true-literal-number-absent-sorted-arr-plain-dynamic",
+      "assignment": {
+        "range_lookup": "true",
+        "key_encoding": "literal",
+        "key_type": "number",
+        "key_present": "absent",
+        "range_sorted": "sorted",
+        "col_index_form": "arr",
+        "gsheets_null_kind": "plain",
+        "array_mode": "dynamic"
+      },
+      "outcome": "differ"
+    },
+    {
+      "name": "true-literal-number-absent-unsorted-arr-plain-dynamic",
+      "assignment": {
+        "range_lookup": "true",
+        "key_encoding": "literal",
+        "key_type": "number",
+        "key_present": "absent",
+        "range_sorted": "unsorted",
+        "col_index_form": "arr",
+        "gsheets_null_kind": "plain",
+        "array_mode": "dynamic"
+      },
+      "outcome": "differ"
+    },
+    {
+      "name": "true-ref-number-present-sorted-arr-plain-dynamic",
+      "assignment": {
+        "range_lookup": "true",
+        "key_encoding": "ref",
+        "key_type": "number",
+        "key_present": "present",
+        "range_sorted": "sorted",
+        "col_index_form": "arr",
+        "gsheets_null_kind": "plain",
+        "array_mode": "dynamic"
+      },
+      "outcome": "differ"
+    },
+    {
+      "name": "true-ref-number-present-unsorted-arr-plain-dynamic",
+      "assignment": {
+        "range_lookup": "true",
+        "key_encoding": "ref",
+        "key_type": "number",
+        "key_present": "present",
+        "range_sorted": "unsorted",
+        "col_index_form": "arr",
+        "gsheets_null_kind": "plain",
+        "array_mode": "dynamic"
+      },
+      "outcome": "differ"
+    },
+    {
+      "name": "true-ref-number-absent-sorted-arr-plain-dynamic",
+      "assignment": {
+        "range_lookup": "true",
+        "key_encoding": "ref",
+        "key_type": "number",
+        "key_present": "absent",
+        "range_sorted": "sorted",
+        "col_index_form": "arr",
+        "gsheets_null_kind": "plain",
+        "array_mode": "dynamic"
+      },
+      "outcome": "differ"
+    },
+    {
+      "name": "true-ref-number-absent-unsorted-arr-plain-dynamic",
+      "assignment": {
+        "range_lookup": "true",
+        "key_encoding": "ref",
+        "key_type": "number",
+        "key_present": "absent",
+        "range_sorted": "unsorted",
+        "col_index_form": "arr",
+        "gsheets_null_kind": "plain",
+        "array_mode": "dynamic"
+      },
+      "outcome": "differ"
+    },
+    {
+      "name": "omitted-literal-number-present-sorted-arr-plain-dynamic",
+      "assignment": {
+        "range_lookup": "omitted",
+        "key_encoding": "literal",
+        "key_type": "number",
+        "key_present": "present",
+        "range_sorted": "sorted",
+        "col_index_form": "arr",
+        "gsheets_null_kind": "plain",
+        "array_mode": "dynamic"
+      },
+      "outcome": "differ"
+    },
+    {
+      "name": "omitted-literal-number-present-unsorted-arr-plain-dynamic",
+      "assignment": {
+        "range_lookup": "omitted",
+        "key_encoding": "literal",
+        "key_type": "number",
+        "key_present": "present",
+        "range_sorted": "unsorted",
+        "col_index_form": "arr",
+        "gsheets_null_kind": "plain",
+        "array_mode": "dynamic"
+      },
+      "outcome": "differ"
+    },
+    {
+      "name": "omitted-literal-number-absent-sorted-arr-plain-dynamic",
+      "assignment": {
+        "range_lookup": "omitted",
+        "key_encoding": "literal",
+        "key_type": "number",
+        "key_present": "absent",
+        "range_sorted": "sorted",
+        "col_index_form": "arr",
+        "gsheets_null_kind": "plain",
+        "array_mode": "dynamic"
+      },
+      "outcome": "differ"
+    },
+    {
+      "name": "omitted-literal-number-absent-unsorted-arr-plain-dynamic",
+      "assignment": {
+        "range_lookup": "omitted",
+        "key_encoding": "literal",
+        "key_type": "number",
+        "key_present": "absent",
+        "range_sorted": "unsorted",
+        "col_index_form": "arr",
+        "gsheets_null_kind": "plain",
+        "array_mode": "dynamic"
+      },
+      "outcome": "differ"
+    },
+    {
+      "name": "omitted-ref-number-present-sorted-arr-plain-dynamic",
+      "assignment": {
+        "range_lookup": "omitted",
+        "key_encoding": "ref",
+        "key_type": "number",
+        "key_present": "present",
+        "range_sorted": "sorted",
+        "col_index_form": "arr",
+        "gsheets_null_kind": "plain",
+        "array_mode": "dynamic"
+      },
+      "outcome": "differ"
+    },
+    {
+      "name": "omitted-ref-number-present-unsorted-arr-plain-dynamic",
+      "assignment": {
+        "range_lookup": "omitted",
+        "key_encoding": "ref",
+        "key_type": "number",
+        "key_present": "present",
+        "range_sorted": "unsorted",
+        "col_index_form": "arr",
+        "gsheets_null_kind": "plain",
+        "array_mode": "dynamic"
+      },
+      "outcome": "differ"
+    },
+    {
+      "name": "omitted-ref-number-absent-sorted-arr-plain-dynamic",
+      "assignment": {
+        "range_lookup": "omitted",
+        "key_encoding": "ref",
+        "key_type": "number",
+        "key_present": "absent",
+        "range_sorted": "sorted",
+        "col_index_form": "arr",
+        "gsheets_null_kind": "plain",
+        "array_mode": "dynamic"
+      },
+      "outcome": "differ"
+    },
+    {
+      "name": "omitted-ref-number-absent-unsorted-arr-plain-dynamic",
+      "assignment": {
+        "range_lookup": "omitted",
+        "key_encoding": "ref",
+        "key_type": "number",
+        "key_present": "absent",
+        "range_sorted": "unsorted",
+        "col_index_form": "arr",
+        "gsheets_null_kind": "plain",
+        "array_mode": "dynamic"
+      },
+      "outcome": "differ"
+    }
+  ]
+}

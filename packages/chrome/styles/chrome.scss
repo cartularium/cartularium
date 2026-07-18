@@ -1,0 +1,856 @@
+// @cartularium/chrome — chrome layer styles.
+// imports brand tokens and adds the chrome-specific markup styling.
+// keep all rules scoped to chrome class names so consumers can adopt without
+// stomping their own styles. one exception: the html-level scroll-lock helper.
+
+@use "@cartularium/brand/tokens.scss";
+
+// theme toggle, shared between topbar and drawer
+.theme-btn {
+  background: transparent;
+  border: 1px solid var(--rule);
+  color: var(--ink-3);
+  font-size: 0.95rem;
+  padding: 0.25rem 0.55rem;
+  cursor: pointer;
+  line-height: 1;
+  &:hover { border-color: var(--accent); color: var(--accent); }
+}
+
+// top bar
+
+.cartularium-topbar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid var(--rule);
+  background: var(--paper);
+  font-family: var(--font-body);
+
+  .wordmark {
+    font-family: var(--font-display);
+    font-variation-settings: "opsz" 36, "wght" 480, "SOFT" 0;
+    font-weight: 480;
+    font-size: 1.4rem;
+    color: var(--ink);
+    text-decoration: none;
+    letter-spacing: -0.01em;
+  }
+
+  .spacer { flex: 1; }
+
+  .topbar-nav {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+
+    a {
+      font-family: var(--font-mono);
+      font-size: 0.82rem;
+      text-transform: lowercase;
+      color: var(--ink-2);
+      text-decoration: none;
+      padding: 0.2rem 0;
+      &:hover { color: var(--accent); }
+      &.active {
+        color: var(--accent);
+        border-bottom: 1px solid var(--accent);
+      }
+    }
+    .sep { color: var(--ink-4); user-select: none; }
+  }
+
+  .search-btn {
+    background: transparent;
+    border: 1px solid var(--rule);
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    color: var(--ink-3);
+    padding: 0.4rem 0.75rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+
+    &:hover { border-color: var(--accent); color: var(--accent); }
+
+    .key {
+      border: 1px solid var(--rule);
+      padding: 0 0.3em;
+      font-size: 0.68rem;
+      color: var(--ink-4);
+    }
+  }
+
+  .hamburger {
+    display: none;
+    background: transparent;
+    border: 1px solid var(--rule);
+    color: var(--ink-3);
+    padding: 0.4rem 0.6rem;
+    cursor: pointer;
+    font-family: var(--font-mono);
+  }
+
+  // mobile: collapse everything except wordmark + hamburger
+  @media (max-width: 720px) {
+    .topbar-nav,
+    .search-btn,
+    .theme-btn { display: none; }
+    .hamburger { display: block; }
+  }
+}
+
+// mobile drawer
+
+.cartularium-drawer {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+
+  &[hidden] { display: none; }
+
+  .drawer-scrim {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.32);
+  }
+  .drawer {
+    position: absolute;
+    top: 0; right: 0; bottom: 0;
+    width: 280px;
+    background: var(--paper);
+    border-left: 1px solid var(--rule);
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    gap: 1rem;
+    overflow-y: auto;
+    transform: translateX(0);
+    transition: transform 240ms ease-out;
+  }
+  &[data-state="closed"] .drawer { transform: translateX(100%); }
+
+  .search-input {
+    border: 1px solid var(--rule);
+    background: transparent;
+    padding: 0.5rem 0.75rem;
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--ink-2);
+    width: 100%;
+  }
+  .nav-list,
+  .imprint-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      padding: 0.5rem 0;
+      border-bottom: 1px solid var(--hairline);
+    }
+    a {
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      text-transform: lowercase;
+      color: var(--ink-2);
+      text-decoration: none;
+      &:hover { color: var(--accent); }
+    }
+  }
+  .imprint-list a {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 0.5rem;
+  }
+  .pill-tiny {
+    font-size: 0.65rem;
+    color: var(--ink-4);
+    border: 1px solid var(--rule);
+    padding: 0.05em 0.35em;
+  }
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    text-transform: lowercase;
+    letter-spacing: 0.06em;
+    color: var(--ink-3);
+  }
+  .theme-row {
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--rule);
+
+    span {
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      color: var(--ink-3);
+    }
+  }
+}
+
+// scroll-lock helper — set on <html> when a modal is open
+html.cartularium-scroll-locked {
+  overflow: hidden;
+  height: 100%;
+}
+
+// footer
+
+.cartularium-footer {
+  // mirrors topbar: paper background + hairline border on the page-side edge
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 1.5rem 1.5rem 2rem;
+  border-top: 1px solid var(--rule);
+  background: var(--paper);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--ink-3);
+  display: flex;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+  align-items: baseline;
+
+  a { color: var(--ink-3); text-decoration: none; &:hover { color: var(--accent); } }
+  .attr {
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+    text-transform: lowercase;
+  }
+  .sep { color: var(--ink-4); }
+}
+
+// right-rail toc (function/concept, desktop)
+
+.rail-toc {
+  position: sticky;
+  top: 6rem;
+  max-height: calc(100vh - 8rem);
+  overflow-y: auto;
+  border-left: 1px solid var(--rule);
+  padding-left: 1rem;
+  width: 240px;
+
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    text-transform: lowercase;
+    letter-spacing: 0.06em;
+    color: var(--ink-3);
+    margin-bottom: 0.75rem;
+    display: block;
+  }
+
+  ul { list-style: none; padding: 0; margin: 0; font-size: 0.85rem; }
+  ul ul { padding-left: 0.85rem; }
+  li { margin: 0.25rem 0; }
+
+  a {
+    color: var(--ink-2);
+    text-decoration: none;
+    display: block;
+    padding: 0.12rem 0;
+    border-left: 2px solid transparent;
+    margin-left: -1rem;
+    padding-left: calc(1rem - 2px);
+    &:hover { color: var(--accent); }
+    &.active {
+      color: var(--accent);
+      border-left-color: var(--accent);
+      background: var(--accent-pale);
+    }
+  }
+}
+
+// left-gutter toc (blog/guide, desktop). LW-derived layout: a viewport-bounded
+// rule with a dot-rail (one tick per heading) and a progress indicator, all
+// always visible at ~55% opacity. labels render to the right of each tick,
+// hidden by default; gutter:hover fades them in. labels wrap multi-line and
+// use the gutter track's full width — no ellipsis truncation.
+//
+// y-positioning is JS-driven (initGutterPositions in chrome.js): each label is
+// placed at a fractional offset along the gutter mapped from the heading's
+// fractional offset within <article>.
+
+.gutter-toc {
+  position: relative;
+  height: calc(100vh - 8rem); // matches sidebar's `top: 6rem` plus a 2rem foot
+  overflow: hidden;
+  padding-right: 1rem;
+
+  .gutter-line {
+    position: relative;
+    height: 100%;
+
+    .rule {
+      position: absolute;
+      left: 1rem;
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      background: var(--rule);
+      opacity: 0.55;
+      transition: opacity 220ms ease 320ms;
+    }
+    .progress {
+      position: absolute;
+      left: calc(1rem - 1px);
+      width: 3px;
+      background: var(--accent);
+      opacity: 0.55;
+      transition: opacity 220ms ease 320ms;
+      // top + height set via JS as user scrolls
+    }
+  }
+
+  .gutter-label {
+    position: absolute;
+    left: 0;
+    right: 0;
+    padding-left: 2rem;
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    font-weight: 400;
+    text-transform: lowercase;
+    color: var(--ink-2);
+    text-decoration: none;
+    line-height: 1.25;
+    letter-spacing: 0.01em;
+
+    .tick {
+      position: absolute;
+      left: calc(1rem - 2.5px);
+      top: 0.2em;
+      width: 6px;
+      height: 6px;
+      // override the universal border-radius:0 reset so the dot stays round
+      border-radius: 50% !important;
+      background: var(--ink-3);
+      opacity: 0.7;
+      transition: background 160ms, opacity 220ms ease 320ms;
+    }
+
+    .text {
+      display: block;
+      // wrap and break on the gutter track width; no ellipsis
+      white-space: normal;
+      word-break: break-word;
+      font-weight: 400;
+      opacity: 0;
+      transition: opacity 220ms ease 320ms, color 160ms;
+    }
+
+    &:hover .text { color: var(--accent); }
+    &.active .tick {
+      background: var(--accent);
+      opacity: 1;
+    }
+    &.active .text {
+      color: var(--accent);
+      font-weight: 500;
+      opacity: 1;
+    }
+  }
+
+  // gutter hover: brighten everything together with a faster transition
+  &:hover {
+    .rule, .progress { opacity: 1; transition: opacity 160ms ease 0ms; }
+    .gutter-label .tick { opacity: 1; transition: opacity 160ms ease 0ms; }
+    .gutter-label .text { opacity: 1; transition: opacity 160ms ease 0ms; }
+  }
+}
+
+// mobile fab toc
+
+.cartularium-toc-fab {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  z-index: 150;
+
+  .fab-pill {
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    text-transform: lowercase;
+    letter-spacing: 0.04em;
+    color: var(--ink-2);
+    padding: 0.55rem 0.85rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+
+    &::after { content: "▾"; font-size: 0.9em; }
+    &:hover { border-color: var(--accent); color: var(--accent); }
+  }
+
+  .fab-sheet-scrim {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.32);
+    z-index: 5;
+  }
+  .fab-sheet {
+    position: fixed;
+    left: 0; right: 0; bottom: 0;
+    max-height: 70vh;
+    background: var(--paper);
+    border-top: 1px solid var(--rule);
+    padding: 1rem 1.25rem 1.5rem;
+    z-index: 6;
+    overflow-y: auto;
+
+    .handle {
+      width: 40px;
+      height: 3px;
+      background: var(--rule);
+      margin: 0 auto 1rem;
+    }
+    .eyebrow {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      text-transform: lowercase;
+      letter-spacing: 0.06em;
+      color: var(--ink-3);
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+    ul { list-style: none; padding: 0; margin: 0; font-size: 0.95rem; }
+    ul ul { padding-left: 1rem; }
+    li { padding: 0.4rem 0; border-bottom: 1px solid var(--hairline); }
+    li:last-child { border-bottom: none; }
+    a {
+      color: var(--ink-2);
+      text-decoration: none;
+      &.active { color: var(--accent); }
+    }
+  }
+}
+
+// viewport gating for toc variants
+@media (max-width: 1123px) {
+  .rail-toc,
+  .gutter-toc { display: none !important; }
+}
+@media (min-width: 1124px) {
+  .cartularium-toc-fab { display: none !important; }
+  // !important: Quartz's TableOfContents injects `.toc { display: flex }` later in the cascade
+  .toc-host-inline,
+  .toc { display: none !important; }
+}
+
+// related drawer
+
+.related-drawer {
+  // no border-top: renderPage's <hr/> above page-footer already serves as separator
+  margin: 1.5rem 0 0;
+  padding-top: 0;
+
+  .section { margin-bottom: 1.5rem; }
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    text-transform: lowercase;
+    letter-spacing: 0.06em;
+    color: var(--ink-3);
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+  ul { list-style: none; padding: 0; margin: 0; }
+  li {
+    padding: 0.35rem 0;
+    border-bottom: 1px solid var(--hairline);
+    font-size: 0.92rem;
+    &:last-child { border-bottom: none; }
+
+    a {
+      color: var(--ink-2);
+      text-decoration: none;
+      display: block;
+      &:hover {
+        color: var(--accent);
+        .cp-pill { border-color: var(--accent); color: var(--accent); }
+      }
+    }
+  }
+  .engines { margin: 0 0.5em; }
+  .verdict {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    color: var(--ink-3);
+
+    &.pass { color: var(--status-pass); }
+    &.fail { color: var(--status-fail); }
+  }
+  .sep { color: var(--ink-4); margin: 0 0.4em; }
+
+  .mentioned-list {
+    font-size: 0.92rem;
+    line-height: 1.7;
+
+    li { display: inline; border: none; padding: 0; }
+    li a { display: inline; }
+    li:not(:last-child)::after {
+      content: " · ";
+      color: var(--ink-4);
+      margin: 0 0.15em;
+    }
+  }
+}
+
+// cross-property pill (structural contexts only)
+
+.cp-pill {
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  text-transform: lowercase;
+  letter-spacing: 0.05em;
+  color: var(--ink-3);
+  border: 1px solid var(--rule);
+  padding: 0.05em 0.4em;
+  margin-left: 0.25em;
+  background: transparent;
+  vertical-align: 0.05em;
+  white-space: nowrap;
+}
+
+// inline sigil (cross-imprint vs external)
+
+.sigil-int,
+.sigil-ext {
+  display: inline-block;
+  font-size: 0.85em;
+  opacity: 0.6;
+  margin-left: 0.2em;
+  vertical-align: 0.05em;
+  font-weight: 400;
+}
+.sigil-int::before { content: "→"; }
+.sigil-ext::before { content: "↗"; }
+a:hover .sigil-int,
+a:hover .sigil-ext { opacity: 0.9; }
+
+// engine chips
+
+// full chip, used in badge rows
+.engine-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  margin: 1rem 0 1.5rem;
+  align-items: baseline;
+
+  .chip {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.25em;
+    padding: 0.18em 0.6em;
+    font-family: var(--font-body);
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    white-space: nowrap;
+    border: 1px solid currentColor;
+    background: transparent;
+    text-decoration: none;
+    cursor: pointer;
+
+    &.status-missing { opacity: 0.5; text-decoration: line-through; text-decoration-color: currentColor; }
+    &.status-partial {
+      background: color-mix(in oklch, currentColor 12%, transparent);
+      &::after { content: "↘"; font-size: 0.7em; opacity: 0.7; }
+    }
+    &:hover { background: color-mix(in oklch, currentColor 15%, transparent); }
+    &:focus-visible { outline: 1px solid var(--accent); outline-offset: 2px; }
+
+    &.eng-gsheets { color: var(--eng-gsheets); }
+    &.eng-excel { color: var(--eng-excel); }
+    &.eng-lattice { color: var(--eng-lattice); }
+  }
+}
+
+// mini chip, used inline in related-drawer rows
+.eng-mini {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.15em;
+  padding: 0.04em 0.4em;
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  border: 1px solid currentColor;
+  background: transparent;
+  margin: 0 0.15em 0 0;
+  vertical-align: 0.05em;
+
+  &.eng-gsheets { color: var(--eng-gsheets); }
+  &.eng-excel { color: var(--eng-excel); }
+  &.eng-lattice { color: var(--eng-lattice); }
+  &.eng-ironcalc { color: var(--eng-ironcalc); }
+  &.eng-pycel { color: var(--eng-pycel); }
+  .glyph { font-size: 0.85em; opacity: 0.85; }
+  &.fail { opacity: 0.55; .label { text-decoration: line-through; } }
+}
+
+// sidenotes (blog/guide). wide viewports float the body into the right
+// gutter via negative margin; narrow viewports collapse to inline
+// tap-popovers via :target on the anchor's #fn-N href.
+
+.sidenote-pair { display: inline; }
+
+.sidenote-anchor {
+  font-family: var(--font-body);
+  font-size: 0.78em;
+  line-height: 1;
+  color: var(--accent);
+  cursor: pointer;
+  font-weight: 500;
+  text-decoration: none;
+  margin: 0 0.05em;
+  padding: 0 3px;
+  border-radius: 2px;
+  background: transparent;
+  vertical-align: 0.4em;
+  transition: background 120ms, color 120ms;
+
+  &.fn-active {
+    background: var(--accent);
+    color: var(--paper);
+  }
+}
+
+.sidenote {
+  // narrow viewport default: hidden until the anchor is tapped (handler
+  // toggles .fn-active which reveals as an inline block beneath the line)
+  display: none;
+  font-size: 0.85rem;
+  color: var(--ink-3);
+  font-family: var(--font-body);
+  line-height: 1.45;
+  padding: 0.4rem 0.6rem;
+  border-top: 1px solid var(--hairline);
+  border-bottom: 1px solid var(--hairline);
+  margin: 0.4rem 0;
+  transition: background 120ms, border-color 120ms, color 120ms;
+
+  // narrow tap reveals via :target (anchor href is #fn-N). hover handler
+  // toggles .fn-active for desktop. either path → visible.
+  &.fn-active,
+  &:target {
+    display: block;
+    background: var(--accent-pale);
+    color: var(--ink-2);
+    border-color: var(--accent);
+  }
+
+  .num {
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--accent);
+    margin-right: 0.35em;
+  }
+}
+
+// wide viewport: float into the reserved right gutter. column-gap is 2rem
+// and the gutter is 180px (kernel.scss), so the negative margin clears
+// .center entirely and lands the note in the next track
+@media (min-width: 1124px) {
+  .sidenote {
+    display: block;
+    float: right;
+    clear: right;
+    width: 180px;
+    margin-right: calc(-180px - 2rem);
+    margin-top: 0.1em;
+    margin-bottom: 0.6rem;
+    padding: 0.25rem 0;
+    border-top: 1px solid var(--hairline);
+    border-bottom: none;
+    background: transparent;
+
+    // hover (.fn-active) and click (:target) share one visual treatment
+    &.fn-active,
+    &:target {
+      background: var(--accent-tint);
+      color: var(--ink);
+      border-top: 1px solid var(--accent);
+      border-left: 2px solid var(--accent);
+      padding-left: 0.5rem;
+      // shift left by the new border so the note doesn't reflow on activation
+      margin-left: -2px;
+    }
+    .num {
+      transition: color 120ms;
+    }
+    &.fn-active .num,
+    &:target .num {
+      color: var(--accent);
+      font-weight: 600;
+    }
+  }
+}
+
+// error pages
+
+.cartularium-error {
+  max-width: 64ch;
+  padding: 4rem 1.5rem;
+
+  h1 {
+    font-family: var(--font-display);
+    font-variation-settings: "opsz" 144, "wght" 380, "SOFT" 30;
+    font-weight: 380;
+    font-size: 3rem;
+    letter-spacing: -0.022em;
+    line-height: 1.04;
+    margin-bottom: 1rem;
+  }
+  .error-detail {
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    color: var(--ink-3);
+    margin-bottom: 1rem;
+  }
+  code {
+    font-family: var(--font-mono);
+    font-size: 0.92em;
+    background: var(--paper-2);
+    padding: 0.05em 0.4em;
+    border: 1px solid var(--hairline);
+  }
+}
+
+// sticky category bar primitive (used on /functions; reusable across properties)
+.category-bar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 1rem;
+  padding: 0.5rem 0;
+  background: var(--paper);
+  border-bottom: 1px solid var(--rule);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  text-transform: lowercase;
+
+  a {
+    color: var(--ink-3);
+    text-decoration: none;
+    padding: 0.15rem 0;
+    border-bottom: 1px solid transparent;
+
+    &:hover { color: var(--accent); }
+    &.active {
+      color: var(--ink);
+      border-bottom-color: var(--accent);
+    }
+  }
+}
+
+// thin scrollbars on chrome's own scrollable surfaces; article scrollbars
+// stay browser-default
+
+@media (max-width: 720px) {
+  .cartularium-drawer .drawer,
+  .cartularium-toc-fab .fab-sheet,
+  .rail-toc {
+    scrollbar-width: thin;
+    scrollbar-color: var(--ink-4) transparent;
+  }
+  .cartularium-drawer .drawer::-webkit-scrollbar,
+  .cartularium-toc-fab .fab-sheet::-webkit-scrollbar,
+  .rail-toc::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+  .cartularium-drawer .drawer::-webkit-scrollbar-thumb,
+  .cartularium-toc-fab .fab-sheet::-webkit-scrollbar-thumb,
+  .rail-toc::-webkit-scrollbar-thumb {
+    background: var(--ink-4);
+  }
+  .cartularium-drawer .drawer::-webkit-scrollbar-track,
+  .cartularium-toc-fab .fab-sheet::-webkit-scrollbar-track,
+  .rail-toc::-webkit-scrollbar-track {
+    background: transparent;
+  }
+}
+
+.cartularium-footer .edit-link {
+  // structural-context link: terse, low-chrome (chrome.scss already defines
+  // .sigil-int / .sigil-ext globally; the literal "Edit ↗" text in the
+  // template renders the arrow inline so we don't double-up).
+  color: var(--ink-3);
+  &:hover { color: var(--accent); }
+}
+
+// editor-mode topbar controls (rendered only when {{#editor}} data is passed)
+
+.cartularium-topbar .account-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.2rem 0.55rem;
+  border: 1px solid var(--rule);
+  background: transparent;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--ink-2);
+  cursor: pointer;
+  user-select: none;
+  &:hover { border-color: var(--accent); color: var(--accent); }
+
+  .avatar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.2rem;
+    height: 1.2rem;
+    border-radius: 50%;
+    background: var(--paper-3);
+    font-size: 0.7rem;
+    font-weight: 500;
+    color: var(--ink);
+  }
+  .handle { font-size: 0.85rem; }
+  .caret { color: var(--ink-3); font-size: 0.75rem; }
+}
+
+.cartularium-topbar .editor-submit-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.3rem 0.7rem;
+  border: 1px solid var(--accent);
+  background: transparent;
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  cursor: pointer;
+  &:hover:not([disabled]) {
+    background: var(--accent);
+    color: var(--paper);
+  }
+  &[disabled] {
+    color: var(--ink-4);
+    border-color: var(--rule);
+    cursor: not-allowed;
+  }
+}

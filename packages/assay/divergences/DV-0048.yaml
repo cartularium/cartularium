@@ -1,0 +1,18 @@
+id: DV-0048
+summary: "formulas, hyperformula: function not implemented — INDIRECT"
+cause: missing-function
+category: value
+engines:
+  - formulas
+  - hyperformula
+behavior:
+  signature: '{"error":"#NAME?"}'
+test-count: 3
+subjects:
+  - INDIRECT
+tests:
+  - INDIRECT/indirect-concatenated
+  - INDIRECT/indirect-bad-ref
+  - INDIRECT/indirect-r1c1-style
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

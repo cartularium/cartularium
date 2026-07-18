@@ -1,0 +1,1353 @@
+schemaVersion: 3
+name: Date functions
+tests:
+  - subject: DATE
+    category: value
+    formula: =DATE(2025, 3, 15)
+    expect: 45731
+    tags:
+      - date
+    name: date-basic
+  - subject: DATE
+    category: value
+    formula: =DATE(2024, 2, 29)
+    expect: 45351
+    tags:
+      - date
+    name: date-leap-day
+  - subject: DATE
+    category: value
+    formula: =DATE(2025, 13, 1)
+    expect: 46023
+    overrides:
+      lattice:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+    tags:
+      - date
+    name: date-month-overflow
+  - subject: DATE
+    category: value
+    formula: =DATE(2025, 1, 32)
+    expect: 45689
+    overrides:
+      lattice:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+    tags:
+      - date
+    name: date-day-overflow
+  - subject: DATE
+    category: value
+    formula: =DATE(2025, -1, 15)
+    expect: 45611
+    overrides:
+      lattice:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+    tags:
+      - date
+    name: date-negative-month
+  - subject: DATEDIF
+    formula: =DATEDIF("2020-01-15", "2025-03-20", "Y")
+    category: value
+    expect: 5
+    overrides:
+      hyperformula:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - date
+    name: datedif-years
+  - subject: DATEDIF
+    formula: =DATEDIF("2020-01-15", "2025-03-20", "M")
+    category: value
+    expect: 62
+    overrides:
+      hyperformula:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - date
+    name: datedif-months
+  - subject: DATEDIF
+    formula: =DATEDIF("2025-01-01", "2025-02-01", "D")
+    category: value
+    expect: 31
+    overrides:
+      hyperformula:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - date
+    name: datedif-days
+  - subject: DATEDIF
+    formula: =DATEDIF("2020-01-15", "2025-03-20", "MD")
+    category: value
+    expect: 5
+    overrides:
+      hyperformula:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - date
+    name: datedif-md-day-only
+  - subject: DATEDIF
+    formula: =DATEDIF("2020-01-15", "2025-03-20", "YM")
+    category: value
+    expect: 2
+    overrides:
+      hyperformula:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - date
+    name: datedif-ym-month-only
+  - subject: DATEVALUE
+    category: value
+    formula: =DATEVALUE("2025-03-15")
+    expect: 45731
+    overrides:
+      hyperformula:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+    tags:
+      - date
+    name: datevalue-iso
+  - subject: DATEVALUE
+    formula: =DATEVALUE("March 15, 2025")
+    category: value
+    expect: 45731
+    overrides:
+      ironcalc:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+      hyperformula:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+    tags:
+      - date
+    name: datevalue-long-form
+  - subject: DATEVALUE
+    formula: =DATEVALUE("not a date")
+    category: value
+    expect:
+      error: "#VALUE!"
+    tags:
+      - date
+    name: datevalue-invalid
+  - subject: DAY
+    formula: =DAY("2025-03-15")
+    category: value
+    expect: 15
+    overrides:
+      hyperformula:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+      pycel:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+    tags:
+      - date
+    name: day-from-string
+  - subject: DAY
+    formula: =DAY("2025-01-31")
+    category: value
+    expect: 31
+    overrides:
+      hyperformula:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+      pycel:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+    tags:
+      - date
+    name: day-end-of-month
+  - subject: DAY
+    formula: =DAY("2024-02-29")
+    category: value
+    expect: 29
+    overrides:
+      hyperformula:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+      pycel:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+    tags:
+      - date
+    name: day-leap-day
+  - subject: DAY
+    category: value
+    formula: =DAY(DATE(2025, 3, 15))
+    expect: 15
+    tags:
+      - date
+    name: day-from-date
+  - subject: DAYS
+    formula: =DAYS("2025-03-15", "2025-03-01")
+    category: value
+    expect: 14
+    overrides:
+      hyperformula:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - date
+    name: days-basic
+  - subject: DAYS
+    formula: =DAYS("2025-03-01", "2025-03-15")
+    category: value
+    expect: -14
+    overrides:
+      hyperformula:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - date
+    name: days-negative
+  - subject: DAYS
+    formula: =DAYS("2025-03-15", "2025-03-15")
+    category: value
+    expect: 0
+    overrides:
+      hyperformula:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - date
+    name: days-same-day
+  - subject: DAYS
+    formula: =DAYS("2025-01-01", "2024-01-01")
+    category: value
+    expect: 366
+    overrides:
+      hyperformula:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - date
+    name: days-across-year
+  - subject: DAYS360
+    formula: =DAYS360("2025-01-15", "2025-03-15")
+    category: value
+    expect: 60
+    overrides:
+      hyperformula:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - date
+    name: days360-basic
+  - subject: DAYS360
+    formula: =DAYS360("2024-01-01", "2025-01-01")
+    category: value
+    expect: 360
+    overrides:
+      hyperformula:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - date
+    name: days360-full-year
+  - subject: DAYS360
+    formula: =DAYS360("2025-01-31", "2025-03-31", TRUE)
+    category: value
+    expect: 60
+    overrides:
+      hyperformula:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - date
+    name: days360-european-method
+  - subject: EDATE
+    formula: =EDATE("2025-01-15", 3)
+    category: value
+    expect: 45762
+    overrides:
+      hyperformula:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+      pycel:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+    tags:
+      - date
+    name: edate-forward
+  - subject: EDATE
+    formula: =EDATE("2025-01-15", -3)
+    category: value
+    expect: 45580
+    overrides:
+      hyperformula:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+      pycel:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+    tags:
+      - date
+    name: edate-backward
+  - subject: EDATE
+    formula: =EDATE("2025-01-31", 1)
+    category: value
+    expect: 45716
+    overrides:
+      hyperformula:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+      pycel:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+    tags:
+      - date
+    name: edate-month-end-clamp
+  - subject: EDATE
+    formula: =EDATE("2025-03-15", 0)
+    category: value
+    expect: 45731
+    overrides:
+      hyperformula:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+      pycel:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+    tags:
+      - date
+    name: edate-zero
+  - subject: EOMONTH
+    formula: =EOMONTH("2025-03-15", 0)
+    category: value
+    expect: 45747
+    overrides:
+      hyperformula:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+      pycel:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+    tags:
+      - date
+    name: eomonth-current-month
+  - subject: EOMONTH
+    formula: =EOMONTH("2025-03-15", 2)
+    category: value
+    expect: 45808
+    overrides:
+      hyperformula:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+      pycel:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+    tags:
+      - date
+    name: eomonth-forward-by-2
+  - subject: EOMONTH
+    formula: =EOMONTH("2025-03-15", -1)
+    category: value
+    expect: 45716
+    overrides:
+      hyperformula:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+      pycel:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+    tags:
+      - date
+    name: eomonth-backward
+  - subject: EOMONTH
+    formula: =EOMONTH("2024-02-10", 0)
+    category: value
+    expect: 45351
+    overrides:
+      hyperformula:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+      pycel:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+    tags:
+      - date
+    name: eomonth-leap-february
+  - subject: EPOCHTODATE
+    formula: =EPOCHTODATE(1700000000, 1)
+    category: value
+    expect: 45244.92592592593
+    overrides:
+      excel:
+        cause: missing-function
+        recorded:
+          error: "#N/A"
+      lattice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - date
+    name: epochtodate-seconds
+  - subject: EPOCHTODATE
+    formula: =EPOCHTODATE(1700000000000, 2)
+    category: value
+    expect: 45244.92592592593
+    overrides:
+      excel:
+        cause: missing-function
+        recorded:
+          error: "#N/A"
+      lattice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - date
+    name: epochtodate-millis
+  - subject: EPOCHTODATE
+    formula: =EPOCHTODATE(1700000000)
+    category: value
+    expect: 45244.92592592593
+    overrides:
+      excel:
+        cause: missing-function
+        recorded:
+          error: "#N/A"
+      lattice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - date
+    name: epochtodate-default-unit
+  - subject: HOUR
+    formula: =HOUR("13:30:45")
+    category: value
+    expect: 13
+    overrides:
+      ironcalc:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+    tags:
+      - date
+    name: hour-from-string
+  - subject: HOUR
+    formula: =HOUR("00:00:00")
+    category: value
+    expect: 0
+    overrides:
+      ironcalc:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+    tags:
+      - date
+    name: hour-midnight
+  - subject: HOUR
+    formula: =HOUR(TIME(9, 15, 30))
+    category: value
+    expect: 9
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - date
+    name: hour-from-time
+  - subject: ISOWEEKNUM
+    formula: =ISOWEEKNUM("2025-06-15")
+    category: value
+    expect: 24
+    overrides:
+      hyperformula:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - date
+    name: isoweeknum-mid-year
+  - subject: ISOWEEKNUM
+    formula: =ISOWEEKNUM("2023-01-01")
+    category: value
+    expect: 52
+    overrides:
+      hyperformula:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - date
+    name: isoweeknum-jan-1-belongs-to-prev-year
+  - subject: ISOWEEKNUM
+    formula: =ISOWEEKNUM("2024-01-01")
+    category: value
+    expect: 1
+    overrides:
+      hyperformula:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - date
+    name: isoweeknum-first-week
+  - subject: MINUTE
+    formula: =MINUTE("13:30:45")
+    category: value
+    expect: 30
+    overrides:
+      ironcalc:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+    tags:
+      - date
+    name: minute-basic
+  - subject: MINUTE
+    formula: =MINUTE("13:00:00")
+    category: value
+    expect: 0
+    overrides:
+      ironcalc:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+    tags:
+      - date
+    name: minute-zero
+  - subject: MINUTE
+    formula: =MINUTE(TIME(9, 15, 30))
+    category: value
+    expect: 15
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - date
+    name: minute-from-time
+  - subject: MONTH
+    formula: =MONTH("2025-03-15")
+    category: value
+    expect: 3
+    overrides:
+      hyperformula:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+      pycel:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+    tags:
+      - date
+    name: month-from-string
+  - subject: MONTH
+    formula: =MONTH("2025-12-31")
+    category: value
+    expect: 12
+    overrides:
+      hyperformula:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+      pycel:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+    tags:
+      - date
+    name: month-december
+  - subject: MONTH
+    category: value
+    formula: =MONTH(DATE(2025, 7, 4))
+    expect: 7
+    tags:
+      - date
+    name: month-from-date
+  - subject: NETWORKDAYS
+    formula: =NETWORKDAYS("2025-03-03", "2025-03-07")
+    category: value
+    expect: 5
+    overrides:
+      hyperformula:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - date
+    name: networkdays-basic-week
+  - subject: NETWORKDAYS
+    formula: =NETWORKDAYS("2025-03-07", "2025-03-10")
+    category: value
+    expect: 2
+    overrides:
+      hyperformula:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - date
+    name: networkdays-across-weekend
+  - subject: NETWORKDAYS
+    formula: =NETWORKDAYS("2025-03-03", "2025-03-07", "2025-03-05")
+    category: value
+    expect: 4
+    overrides:
+      gsheets:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+      ironcalc:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+      hyperformula:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+      libreoffice:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - date
+    name: networkdays-with-holiday
+  - subject: NETWORKDAYS
+    formula: =NETWORKDAYS("2025-03-07", "2025-03-03")
+    category: value
+    expect: -5
+    overrides:
+      hyperformula:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - date
+    name: networkdays-reversed
+  - subject: NETWORKDAYS.INTL
+    formula: =NETWORKDAYS.INTL("2025-03-03", "2025-03-07", 1)
+    category: value
+    expect: 5
+    overrides:
+      hyperformula:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - date
+    name: networkdays-intl-default-weekend
+  - subject: NETWORKDAYS.INTL
+    formula: =NETWORKDAYS.INTL("2025-03-03", "2025-03-09", 11)
+    category: value
+    expect: 6
+    overrides:
+      hyperformula:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - date
+    name: networkdays-intl-numeric-weekend-sun-only
+  - subject: NETWORKDAYS.INTL
+    formula: =NETWORKDAYS.INTL("2025-03-03", "2025-03-09", "0000011")
+    category: value
+    expect: 5
+    overrides:
+      hyperformula:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - date
+    name: networkdays-intl-string-weekend-fri-sat
+  - subject: NETWORKDAYS.INTL
+    formula: =NETWORKDAYS.INTL("2025-03-03", "2025-03-09", "0000001")
+    category: value
+    expect: 6
+    overrides:
+      hyperformula:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - date
+    name: networkdays-intl-string-weekend-custom
+  - subject: NOW
+    category: volatile
+    semanticDomain: volatile
+    status: volatile
+    formula: =NOW()
+    expect:
+      type: number
+    tags:
+      - date
+      - volatile
+    name: now
+  - subject: SECOND
+    formula: =SECOND("13:30:45")
+    category: value
+    expect: 45
+    overrides:
+      ironcalc:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+    tags:
+      - date
+    name: second-basic
+  - subject: SECOND
+    formula: =SECOND("13:30:00")
+    category: value
+    expect: 0
+    overrides:
+      ironcalc:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+    tags:
+      - date
+    name: second-zero
+  - subject: SECOND
+    formula: =SECOND(TIME(9, 15, 30))
+    category: value
+    expect: 30
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - date
+    name: second-from-time
+  - subject: TIME
+    category: value
+    status: observed
+    formula: =TIME(9, 30, 0)
+    tags:
+      - date
+    name: time-basic
+  - subject: TIME
+    formula: =TIME(0, 0, 0)
+    category: value
+    expect: 0
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - date
+    name: time-midnight
+  - subject: TIME
+    category: value
+    status: observed
+    formula: =TIME(25, 0, 0)
+    tags:
+      - date
+    name: time-overflow-rolls
+  - subject: TIMEVALUE
+    category: value
+    formula: =TIMEVALUE("13:30:00")
+    expect: 0.5625
+    tags:
+      - date
+    name: timevalue-basic
+  - subject: TIMEVALUE
+    category: value
+    formula: =TIMEVALUE("12:00:00")
+    expect: 0.5
+    tags:
+      - date
+    name: timevalue-noon
+  - subject: TIMEVALUE
+    category: value
+    formula: =TIMEVALUE("00:00:00")
+    expect: 0
+    tags:
+      - date
+    name: timevalue-midnight
+  - subject: TODAY
+    category: volatile
+    semanticDomain: volatile
+    status: volatile
+    formula: =TODAY()
+    expect:
+      type: number
+    tags:
+      - date
+      - volatile
+    name: today
+  - subject: WEEKDAY
+    formula: =WEEKDAY("2025-03-16")
+    category: value
+    expect: 1
+    overrides:
+      hyperformula:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+      pycel:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+    tags:
+      - date
+    name: weekday-default-sunday-1
+  - subject: WEEKDAY
+    formula: =WEEKDAY("2025-03-17", 1)
+    category: value
+    expect: 2
+    overrides:
+      hyperformula:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+      pycel:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+    tags:
+      - date
+    name: weekday-sunday-1-convention
+  - subject: WEEKDAY
+    formula: =WEEKDAY("2025-03-17", 2)
+    category: value
+    expect: 1
+    overrides:
+      hyperformula:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+      pycel:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+    tags:
+      - date
+    name: weekday-monday-1-convention
+  - subject: WEEKDAY
+    formula: =WEEKDAY("2025-03-17", 3)
+    category: value
+    expect: 0
+    overrides:
+      hyperformula:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+      pycel:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+    tags:
+      - date
+    name: weekday-monday-0-convention
+  - subject: WEEKNUM
+    formula: =WEEKNUM("2025-01-05")
+    category: value
+    expect: 2
+    overrides:
+      hyperformula:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - date
+    name: weeknum-default
+  - subject: WEEKNUM
+    formula: =WEEKNUM("2025-01-05", 2)
+    category: value
+    expect: 1
+    overrides:
+      hyperformula:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - date
+    name: weeknum-monday-start
+  - subject: WEEKNUM
+    category: value
+    status: observed
+    formula: =WEEKNUM("2023-01-01", 21)
+    tags:
+      - date
+    name: weeknum-iso-system
+  - subject: WORKDAY
+    formula: =WORKDAY("2025-03-03", 5)
+    category: value
+    expect: 45726
+    overrides:
+      hyperformula:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - date
+    name: workday-forward
+  - subject: WORKDAY
+    formula: =WORKDAY("2025-03-10", -5)
+    category: value
+    expect: 45719
+    overrides:
+      hyperformula:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - date
+    name: workday-backward
+  - subject: WORKDAY
+    formula: =WORKDAY("2025-03-03", 5, "2025-03-05")
+    category: value
+    expect: 45727
+    overrides:
+      gsheets:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+      ironcalc:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+      hyperformula:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - date
+    name: workday-with-holiday
+  - subject: WORKDAY
+    formula: =WORKDAY("2025-03-03", 0)
+    category: value
+    expect: 45719
+    overrides:
+      hyperformula:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - date
+    name: workday-zero-offset
+  - subject: WORKDAY.INTL
+    formula: =WORKDAY.INTL("2025-03-03", 5, 1)
+    category: value
+    expect: 45726
+    overrides:
+      hyperformula:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - date
+    name: workday-intl-default-weekend
+  - subject: WORKDAY.INTL
+    formula: =WORKDAY.INTL("2025-03-03", 5, 7)
+    category: value
+    expect: 45726
+    overrides:
+      hyperformula:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - date
+    name: workday-intl-numeric-weekend-fri-sat
+  - subject: WORKDAY.INTL
+    formula: =WORKDAY.INTL("2025-03-03", 5, "0000011")
+    category: value
+    expect: 45726
+    overrides:
+      hyperformula:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - date
+    name: workday-intl-string-weekend
+  - subject: WORKDAY.INTL
+    formula: =WORKDAY.INTL("2025-03-03", 5, "0000001")
+    category: value
+    expect: 45724
+    overrides:
+      hyperformula:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - date
+    name: workday-intl-sunday-only-string
+  - subject: YEAR
+    formula: =YEAR("2025-03-15")
+    category: value
+    expect: 2025
+    overrides:
+      hyperformula:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+      pycel:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+    tags:
+      - date
+    name: year-from-string
+  - subject: YEAR
+    category: value
+    formula: =YEAR(DATE(1999, 12, 31))
+    expect: 1999
+    tags:
+      - date
+    name: year-from-date
+  - subject: YEAR
+    formula: =YEAR("2000-01-01")
+    category: value
+    expect: 2000
+    overrides:
+      hyperformula:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+      pycel:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+    tags:
+      - date
+    name: year-millennium
+  - subject: YEARFRAC
+    formula: =YEARFRAC("2025-01-01", "2025-07-01")
+    category: value
+    expect: 0.5
+    overrides:
+      hyperformula:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+      pycel:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+    tags:
+      - date
+    name: yearfrac-half-year-default
+  - subject: YEARFRAC
+    formula: =YEARFRAC("2025-01-01", "2026-01-01", 0)
+    category: value
+    expect: 1
+    overrides:
+      hyperformula:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+      pycel:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+    tags:
+      - date
+    name: yearfrac-us-30-360
+  - subject: YEARFRAC
+    formula: =YEARFRAC("2025-01-01", "2026-01-01", 1)
+    category: value
+    expect: 1
+    overrides:
+      hyperformula:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+      pycel:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+    tags:
+      - date
+    name: yearfrac-actual-actual
+  - subject: YEARFRAC
+    category: value
+    status: observed
+    formula: =YEARFRAC("2025-01-01", "2026-01-01", 2)
+    tags:
+      - date
+    name: yearfrac-actual-360
+  - subject: YEARFRAC
+    formula: =YEARFRAC("2025-03-15", "2025-03-15")
+    category: value
+    expect: 0
+    overrides:
+      hyperformula:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+      pycel:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+    tags:
+      - date
+    name: yearfrac-same-date

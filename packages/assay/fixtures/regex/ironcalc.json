@@ -1,0 +1,216 @@
+{
+  "platform": "ironcalc",
+  "generatedAt": "2026-05-11T09:33:31.323Z",
+  "results": {
+    "sha256:eeee1885d74edb993739879eefd724fdb43e7478d721f06640734b48e460b7c5": {
+      "result": [
+        [
+          {
+            "error": "#NAME?"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=REGEXEXTRACT(\"résumé template\", \"résumé\")"
+    },
+    "sha256:3542d886b41dcfa26e31dfd29b3f0ef1f95a22ba541dc75a61dc8eaac61dfe1f": {
+      "result": [
+        [
+          {
+            "error": "#NAME?"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=REGEXEXTRACT(\"abc 123 def\", \"\\d+\")"
+    },
+    "sha256:b144a121a4fd76bdf40e340d89af64a262c531f89ea3359802a2ebf0ebc308da": {
+      "result": [
+        [
+          {
+            "error": "#NAME?"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=REGEXEXTRACT(\"Price: $100\", \"\\$\\d+\")"
+    },
+    "sha256:8c4b1fdf8d1b19f09856d7fc8ea9c5ec5975681a1710b912a58563bbdc3152b1": {
+      "result": [
+        [
+          {
+            "error": "#NAME?"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=REGEXEXTRACT(\"one 1 two 2 three 3\", \"\\d+\")"
+    },
+    "sha256:7810364991ac166eb12ac781f6a645470b2e0427c2b3e058ff9ee55678f087d9": {
+      "result": [
+        [
+          {
+            "error": "#NAME?"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=REGEXEXTRACT(\"Price: $100\", \"\\$(\\d+)\")"
+    },
+    "sha256:25f62ecb6eaf18e49bcd061abf8549d9ab751dec7a947ad5d00a1345bd81738d": {
+      "result": [
+        [
+          {
+            "error": "#NAME?"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=REGEXEXTRACT(\"2025-03-01\", \"(\\d{4})-(\\d{2})-(\\d{2})\")"
+    },
+    "sha256:cbcad7ec6c4d61d453ee416477aaa987dab0cf3e5765ba131f0c169d98beac73": {
+      "result": [
+        [
+          {
+            "error": "#NAME?"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=REGEXEXTRACT(\"foo bar baz\", \"(\\w+)\\s+(\\w+)\")"
+    },
+    "sha256:21570510a86ad6b6a1b6ddae3b09035bc6cdce7b35b940a361556f2b3a2b944a": {
+      "result": [
+        [
+          {
+            "error": "#NAME?"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=REGEXEXTRACT(\"hello\", \"\\d+\")"
+    },
+    "sha256:6bce9a409481d83a8aa370addc4274523c6de514dfea40a0998ad7e2861850ab": {
+      "result": [
+        [
+          {
+            "error": "#NAME?"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=REGEXEXTRACT(\"\", \"\\d+\")"
+    },
+    "sha256:7fd8bfccbf6ccfc63ce617912c96bb0ae799ff6a43373e9179c40821f8665644": {
+      "result": [
+        [
+          {
+            "error": "#NAME?"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=REGEXEXTRACT(\"Hello World\", \"(?i)(\\w+)\")"
+    },
+    "sha256:62bae751885b7678fd6768baa2353f8ee7f70c612826d32c6276a8e939e93918": {
+      "result": [
+        [
+          {
+            "error": "#NAME?"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=REGEXEXTRACT(\"a1 b2 c3\", \"\\d+\", 1)"
+    },
+    "sha256:89bcf7a8f6a8ba93cb0eead24d5d2a77dd6df35a1c811af4be76fcca77970599": {
+      "result": [
+        [
+          {
+            "error": "#NAME?"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=REGEXEXTRACT(\"2025-03-01\", \"(\\d{4})-(\\d{2})-(\\d{2})\", 2)"
+    },
+    "sha256:5f7151b7bf5f8436ec92579979013c86a6b289030bd7620de20d7e77f1f7bc9a": {
+      "result": [
+        [
+          {
+            "error": "#NAME?"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=REGEXREPLACE(\"a1b2c3\", \"\\d\", \"x\")"
+    },
+    "sha256:4b81b1820ac18e9dc7452e42ab8e42ebf49c5ff9068184a61a080bb1bd4872ef": {
+      "result": [
+        [
+          {
+            "error": "#NAME?"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=REGEXREPLACE(\"aabbaa\", \"a+\", \"x\")"
+    },
+    "sha256:835e95cd90769eaff12995eea7f001c7906e3e8815e979e2ac2d6a416a518d17": {
+      "result": [
+        [
+          {
+            "error": "#NAME?"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=REGEXREPLACE(\"hello world\", \"\\s+\", \"-\")"
+    },
+    "sha256:69898b44e4f177a5517baebd7f3ef39dd99c982892be0c41b891b6274d1fa05a": {
+      "result": [
+        [
+          {
+            "error": "#NAME?"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=REGEXREPLACE(\"hello\", \"\\d+\", \"x\")"
+    },
+    "sha256:b81c735dab6ec326d9ef763a7c9650aaf8fe2fbc6fdeda889ed655d94db459c8": {
+      "result": [
+        [
+          {
+            "error": "#NAME?"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=REGEXREPLACE(\"\", \"\\d+\", \"x\")"
+    },
+    "sha256:4aaca2abb4a0f9efb241c2cd82f9e7a4a4389fe0d27d708ad19da9aef4dbe578": {
+      "result": [
+        [
+          {
+            "error": "#NAME?"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=REGEXREPLACE(\"hello world\", \"(\\w+)\", \"[$1]\")"
+    },
+    "sha256:3f28158d9c1c3efc010e2e7d69a0e65bd96e2a44537ff419efc867a48e07c842": {
+      "result": [
+        [
+          {
+            "error": "#NAME?"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=REGEXREPLACE(\"John Smith\", \"(\\w+) (\\w+)\", \"$2, $1\")"
+    },
+    "sha256:becc645d13fafdb09622e8b52d7a9973c2204ecc04cf6cc7f56d0ff34c813123": {
+      "result": [
+        [
+          {
+            "error": "#NAME?"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=REGEXREPLACE(\"2025-03-01\", \"(\\d+)-(\\d+)-(\\d+)\", \"$3/$2/$1\")"
+    },
+    "sha256:2a484724be4727f9502a9662d3b94b7c01e06e4641ba48f4066a7863d0cfeb37": {
+      "result": [
+        [
+          {
+            "error": "#NAME?"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=REGEXREPLACE(\"Hello WORLD hello\", \"(?i)hello\", \"hi\")"
+    }
+  }
+}

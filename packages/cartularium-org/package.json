@@ -1,0 +1,20 @@
+{
+  "name": "@cartularium/cartularium-org",
+  "version": "0.1.0",
+  "private": true,
+  "description": "cartularium.org — imprint home.",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "build": "node scripts-build/build.mjs",
+    "serve": "node scripts-build/serve.mjs",
+    "check": "prettier . --check"
+  },
+  "dependencies": {
+    "@cartularium/brand": "workspace:*",
+    "@cartularium/chrome": "workspace:*"
+  },
+  "devDependencies": {
+    "sass": "^1.83.0"
+  }
+}

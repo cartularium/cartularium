@@ -1,0 +1,98 @@
+{
+  "platform": "excel",
+  "generatedAt": "2026-04-09T07:39:46.755Z",
+  "results": {
+    "HASH string": {
+      "result": [
+        [
+          1335831723
+        ]
+      ]
+    },
+    "HASH empty string": {
+      "result": [
+        [
+          2166136261
+        ]
+      ]
+    },
+    "HASH true": {
+      "result": [
+        [
+          67918732
+        ]
+      ]
+    },
+    "HASH false": {
+      "result": [
+        [
+          84696351
+        ]
+      ]
+    },
+    "HASH zero": {
+      "result": [
+        [
+          46947589
+        ]
+      ]
+    },
+    "HASH integer": {
+      "result": [
+        [
+          3892947654
+        ]
+      ]
+    },
+    "PASS returns not_handled on call": {
+      "result": [
+        [
+          {
+            "error": "#VALUE!"
+          }
+        ]
+      ]
+    },
+    "PASS error probe": {
+      "result": [
+        [
+          "__not_handled__"
+        ]
+      ]
+    },
+    "ARR.SET middle": {
+      "result": [
+        [
+          1,
+          99,
+          3
+        ]
+      ]
+    },
+    "ARR.SET first": {
+      "result": [
+        [
+          99,
+          2,
+          3
+        ]
+      ]
+    },
+    "ARR.SET last": {
+      "result": [
+        [
+          1,
+          2,
+          99
+        ]
+      ]
+    },
+    "ARR.SET single element": {
+      "result": [
+        [
+          99
+        ]
+      ]
+    }
+  }
+}

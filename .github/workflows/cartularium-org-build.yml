@@ -1,0 +1,49 @@
+name: cartularium-org-build
+
+# Path-filtered: runs only when cartularium-org sources, brand tokens,
+# chrome primitives, or the workflow itself change. Build smoke test only;
+# prettier coverage lives in lint.yml.
+
+on:
+  pull_request:
+    paths:
+      - "packages/cartularium-org/**"
+      - "packages/brand/**"
+      - "packages/chrome/**"
+      # build.mjs counts these directories at homepage-render time
+      - "packages/sheets-wiki/content/function/**"
+      - "packages/assay/divergences/**"
+      - "pnpm-lock.yaml"
+      - ".github/workflows/cartularium-org-build.yml"
+  push:
+    branches: [main]
+    paths:
+      - "packages/cartularium-org/**"
+      - "packages/brand/**"
+      - "packages/chrome/**"
+      - "packages/sheets-wiki/content/function/**"
+      - "packages/assay/divergences/**"
+      - "pnpm-lock.yaml"
+
+concurrency:
+  group: cartularium-org-build-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      # version comes from package.json `packageManager`
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: pnpm
+
+      - name: pnpm install
+        run: pnpm install --frozen-lockfile
+
+      - name: Build cartularium-org
+        run: pnpm --filter @cartularium/cartularium-org run build

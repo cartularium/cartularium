@@ -1,0 +1,326 @@
+.assay-host {
+  max-width: 86rem;
+  margin: 0 auto;
+  padding: 1.4rem 1.25rem 2rem;
+}
+
+.lineage-strip-assay {
+  border-bottom: 1px solid var(--hairline);
+}
+
+.assay-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.assay-head h1 {
+  margin: 0 0 0.25rem;
+  font-family: var(--font-display);
+  font-size: 1.55rem;
+  font-weight: 400;
+}
+
+.assay-head p {
+  margin: 0;
+  color: var(--ink-2);
+  font-size: 0.9rem;
+}
+
+.assay-runner {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: var(--ink-2);
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  white-space: nowrap;
+}
+
+.assay-runner code,
+.assay-proposal code {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  overflow-wrap: anywhere;
+}
+
+.assay-dot {
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 50%;
+  background: var(--ink-3);
+}
+
+.assay-dot.status-ok {
+  background: var(--accent);
+}
+
+.assay-alert {
+  margin-bottom: 0.8rem;
+  border: 1px solid var(--rule);
+  padding: 0.55rem 0.7rem;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+}
+
+.assay-alert.error {
+  border-color: var(--eng-ironcalc);
+  color: var(--eng-ironcalc);
+}
+
+.assay-alert.success {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.assay-layout {
+  display: grid;
+  grid-template-columns: minmax(18rem, 0.9fr) minmax(18rem, 1fr) minmax(22rem, 1.35fr);
+  gap: 1rem;
+  align-items: start;
+}
+
+.assay-panel {
+  border: 1px solid var(--rule);
+  background: var(--paper);
+  min-width: 0;
+}
+
+.assay-panel-head {
+  min-height: 2.65rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.55rem 0.7rem;
+  border-bottom: 1px solid var(--hairline);
+}
+
+.assay-panel-head h2 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.assay-panel-head span {
+  color: var(--ink-3);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+}
+
+.assay-panel button,
+.assay-actions button {
+  border: 1px solid var(--rule);
+  background: var(--paper);
+  color: var(--ink);
+  font: inherit;
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  line-height: 1;
+  min-height: 2rem;
+  padding: 0.45rem 0.62rem;
+  cursor: pointer;
+}
+
+.assay-panel button:hover:not(:disabled),
+.assay-actions button:hover:not(:disabled) {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.assay-panel button:disabled,
+.assay-actions button:disabled {
+  color: var(--ink-3);
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+
+.assay-panel button.primary,
+.assay-actions button.primary {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.assay-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.assay-form label,
+.assay-review-actions label {
+  display: grid;
+  gap: 0.28rem;
+}
+
+.assay-form label {
+  padding: 0.52rem 0.7rem;
+  border-bottom: 1px solid var(--hairline);
+}
+
+.assay-form label span,
+.assay-review-actions label span {
+  color: var(--ink-3);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+}
+
+.assay-form input,
+.assay-form select,
+.assay-form textarea,
+.assay-review-actions input {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid var(--hairline);
+  background: var(--paper-2);
+  color: var(--ink);
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  padding: 0.45rem 0.5rem;
+}
+
+.assay-form textarea {
+  resize: vertical;
+}
+
+.assay-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  padding: 0.65rem 0.7rem;
+}
+
+.assay-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  padding: 0.6rem 0.7rem;
+  border-bottom: 1px solid var(--hairline);
+}
+
+.assay-tabs button.active {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.assay-case-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.assay-case-list li + li {
+  border-top: 1px solid var(--hairline);
+}
+
+.assay-case-list button {
+  width: 100%;
+  min-height: 4.45rem;
+  display: grid;
+  gap: 0.24rem;
+  justify-items: start;
+  border: 0;
+  border-left: 3px solid transparent;
+  text-align: left;
+  padding: 0.65rem 0.7rem;
+}
+
+.assay-case-list button.selected {
+  border-left-color: var(--accent);
+  background: var(--paper-2);
+}
+
+.case-title {
+  color: var(--ink);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  overflow-wrap: anywhere;
+}
+
+.case-meta,
+.case-state {
+  color: var(--ink-3);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+}
+
+.assay-loading,
+.assay-empty {
+  margin: 0;
+  padding: 1rem 0.7rem;
+  color: var(--ink-3);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+}
+
+.assay-review-actions {
+  display: grid;
+  grid-template-columns: minmax(6rem, auto) minmax(10rem, 1fr) minmax(5rem, auto);
+  gap: 0.55rem;
+  align-items: end;
+  padding: 0.7rem;
+  border-bottom: 1px solid var(--hairline);
+}
+
+.assay-review-actions button {
+  min-width: 5.2rem;
+}
+
+.assay-proposal {
+  padding: 0.8rem 0.7rem;
+}
+
+.assay-proposal h3 {
+  margin: 0 0 0.35rem;
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.assay-proposal p {
+  margin: 0 0 0.6rem;
+}
+
+.assay-proposal pre {
+  margin: 0;
+  max-height: 22rem;
+  overflow: auto;
+  border: 1px solid var(--hairline);
+  background: var(--paper-2);
+  padding: 0.7rem;
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  white-space: pre-wrap;
+}
+
+@media (max-width: 1120px) {
+  .assay-layout {
+    grid-template-columns: minmax(18rem, 0.85fr) minmax(22rem, 1.15fr);
+  }
+
+  .assay-detail {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 760px) {
+  .assay-host {
+    padding: 1rem 0.75rem 1.6rem;
+  }
+
+  .assay-head {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .assay-layout,
+  .assay-review-actions {
+    grid-template-columns: 1fr;
+  }
+
+  .assay-detail {
+    grid-column: auto;
+  }
+}

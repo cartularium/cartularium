@@ -1,0 +1,21 @@
+id: DV-0229
+summary: "excel, gsheets, hyperformula, ironcalc, lattice, libreoffice:
+  different argument interpretation — SEARCH"
+cause: arg-semantics
+category: value
+engines:
+  - excel
+  - gsheets
+  - hyperformula
+  - ironcalc
+  - lattice
+  - libreoffice
+behavior:
+  signature: "1"
+test-count: 1
+subjects:
+  - SEARCH
+tests:
+  - SEARCH/search-wildcard-question
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

@@ -1,0 +1,994 @@
+schemaVersion: 3
+name: Statistical analytics (regression, tests, shape)
+tests:
+  - subject: CORREL
+    category: value
+    status: observed
+    formula: =CORREL(A1:A5, B1:B5)
+    grid:
+      A1: 1
+      A2: 2
+      A3: 3
+      A4: 4
+      A5: 5
+      B1: 2
+      B2: 4
+      B3: 5
+      B4: 4
+      B5: 5
+    tags:
+      - statistical
+      - analytics
+    name: correl-strong-positive
+  - subject: CORREL
+    category: value
+    formula: =CORREL(A1:A3, B1:B3)
+    grid:
+      A1: 1
+      A2: 2
+      A3: 3
+      B1: 2
+      B2: 4
+      B3: 6
+    expect: 1
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+      - analytics
+    name: correl-perfect-positive
+  - subject: CORREL
+    category: value
+    formula: =CORREL(A1:A3, B1:B3)
+    grid:
+      A1: 1
+      A2: 2
+      A3: 3
+      B1: 6
+      B2: 4
+      B3: 2
+    expect: -1
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+      - analytics
+    name: correl-perfect-negative
+  - subject: COVAR
+    category: value
+    status: observed
+    formula: =COVAR(A1:A5, B1:B5)
+    grid:
+      A1: 1
+      A2: 2
+      A3: 3
+      A4: 4
+      A5: 5
+      B1: 2
+      B2: 4
+      B3: 5
+      B4: 4
+      B5: 5
+    tags:
+      - statistical
+      - analytics
+    name: covar-canonical
+  - subject: COVAR
+    category: value
+    status: observed
+    formula: =COVAR(A1:A3, B1:B3)
+    grid:
+      A1: 1
+      A2: 2
+      A3: 3
+      B1: 2
+      B2: 4
+      B3: 6
+    tags:
+      - statistical
+      - analytics
+    name: covar-small-set
+  - subject: COVARIANCE.P
+    category: value
+    status: observed
+    formula: =COVARIANCE.P(A1:A5, B1:B5)
+    grid:
+      A1: 1
+      A2: 2
+      A3: 3
+      A4: 4
+      A5: 5
+      B1: 2
+      B2: 4
+      B3: 5
+      B4: 4
+      B5: 5
+    tags:
+      - statistical
+      - analytics
+    name: covariance-p-canonical
+  - subject: COVARIANCE.P
+    category: value
+    status: observed
+    formula: =COVARIANCE.P(A1:A3, B1:B3)
+    grid:
+      A1: 1
+      A2: 2
+      A3: 3
+      B1: 2
+      B2: 4
+      B3: 6
+    tags:
+      - statistical
+      - analytics
+    name: covariance-p-linear
+  - subject: COVARIANCE.S
+    formula: =COVARIANCE.S(A1:A5, B1:B5)
+    category: value
+    grid:
+      A1: 1
+      A2: 2
+      A3: 3
+      A4: 4
+      A5: 5
+      B1: 2
+      B2: 4
+      B3: 5
+      B4: 4
+      B5: 5
+    expect: 1.5
+    overrides:
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+      - analytics
+    name: covariance-s-canonical
+  - subject: COVARIANCE.S
+    formula: =COVARIANCE.S(A1:A3, B1:B3)
+    category: value
+    grid:
+      A1: 1
+      A2: 2
+      A3: 3
+      B1: 2
+      B2: 4
+      B3: 6
+    expect: 2
+    overrides:
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+      - analytics
+    name: covariance-s-linear
+  - subject: FORECAST
+    category: value
+    status: observed
+    formula: =FORECAST(6, B1:B5, A1:A5)
+    grid:
+      A1: 1
+      A2: 2
+      A3: 3
+      A4: 4
+      A5: 5
+      B1: 2
+      B2: 4
+      B3: 5
+      B4: 4
+      B5: 5
+    tags:
+      - statistical
+      - analytics
+    name: forecast-linear-fit
+  - subject: FORECAST
+    formula: =FORECAST(4, B1:B3, A1:A3)
+    category: value
+    grid:
+      A1: 1
+      A2: 2
+      A3: 3
+      B1: 2
+      B2: 4
+      B3: 6
+    expect: 8
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+      - analytics
+    name: forecast-exact-linear
+  - subject: FORECAST.LINEAR
+    category: value
+    status: observed
+    formula: =FORECAST.LINEAR(6, B1:B5, A1:A5)
+    grid:
+      A1: 1
+      A2: 2
+      A3: 3
+      A4: 4
+      A5: 5
+      B1: 2
+      B2: 4
+      B3: 5
+      B4: 4
+      B5: 5
+    tags:
+      - statistical
+      - analytics
+    name: forecast-linear-canonical
+  - subject: FORECAST.LINEAR
+    formula: =FORECAST.LINEAR(4, B1:B3, A1:A3)
+    category: value
+    grid:
+      A1: 1
+      A2: 2
+      A3: 3
+      B1: 2
+      B2: 4
+      B3: 6
+    expect: 8
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+      - analytics
+    name: forecast-linear-exact-linear
+  - subject: INTERCEPT
+    category: value
+    status: observed
+    formula: =INTERCEPT(B1:B5, A1:A5)
+    grid:
+      A1: 1
+      A2: 2
+      A3: 3
+      A4: 4
+      A5: 5
+      B1: 2
+      B2: 4
+      B3: 5
+      B4: 4
+      B5: 5
+    tags:
+      - statistical
+      - analytics
+    name: intercept-canonical
+  - subject: INTERCEPT
+    formula: =INTERCEPT(B1:B3, A1:A3)
+    category: value
+    grid:
+      A1: 1
+      A2: 2
+      A3: 3
+      B1: 3
+      B2: 5
+      B3: 7
+    expect: 1
+    overrides:
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: precision
+        recorded: 0.9999999999999989
+    tags:
+      - statistical
+      - analytics
+    name: intercept-exact-linear
+  - subject: PEARSON
+    category: value
+    status: observed
+    formula: =PEARSON(A1:A5, B1:B5)
+    grid:
+      A1: 1
+      A2: 2
+      A3: 3
+      A4: 4
+      A5: 5
+      B1: 2
+      B2: 4
+      B3: 5
+      B4: 4
+      B5: 5
+    tags:
+      - statistical
+      - analytics
+    name: pearson-canonical
+  - subject: PEARSON
+    category: value
+    formula: =PEARSON(A1:A3, B1:B3)
+    grid:
+      A1: 1
+      A2: 2
+      A3: 3
+      B1: 2
+      B2: 4
+      B3: 6
+    expect: 1
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+      - analytics
+    name: pearson-perfect-positive
+  - subject: RSQ
+    category: value
+    status: observed
+    formula: =RSQ(B1:B5, A1:A5)
+    grid:
+      A1: 1
+      A2: 2
+      A3: 3
+      A4: 4
+      A5: 5
+      B1: 2
+      B2: 4
+      B3: 5
+      B4: 4
+      B5: 5
+    tags:
+      - statistical
+      - analytics
+    name: rsq-canonical
+  - subject: RSQ
+    category: value
+    formula: =RSQ(B1:B3, A1:A3)
+    grid:
+      A1: 1
+      A2: 2
+      A3: 3
+      B1: 2
+      B2: 4
+      B3: 6
+    expect: 1
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+      - analytics
+    name: rsq-perfect-fit
+  - subject: SLOPE
+    category: value
+    status: observed
+    formula: =SLOPE(B1:B5, A1:A5)
+    grid:
+      A1: 1
+      A2: 2
+      A3: 3
+      A4: 4
+      A5: 5
+      B1: 2
+      B2: 4
+      B3: 5
+      B4: 4
+      B5: 5
+    tags:
+      - statistical
+      - analytics
+    name: slope-linear-fit
+  - subject: SLOPE
+    formula: =SLOPE(B1:B3, A1:A3)
+    category: value
+    grid:
+      A1: 1
+      A2: 2
+      A3: 3
+      B1: 3
+      B2: 5
+      B3: 7
+    expect: 2
+    overrides:
+      pycel:
+        cause: precision
+        recorded: 2.000000000000001
+    tags:
+      - statistical
+      - analytics
+    name: slope-exact-integer
+  - subject: STEYX
+    category: value
+    status: observed
+    formula: =STEYX(B1:B5, A1:A5)
+    grid:
+      A1: 1
+      A2: 2
+      A3: 3
+      A4: 4
+      A5: 5
+      B1: 2
+      B2: 4
+      B3: 5
+      B4: 4
+      B5: 5
+    tags:
+      - statistical
+      - analytics
+    name: steyx-canonical
+  - subject: STEYX
+    category: value
+    formula: =STEYX(B1:B4, A1:A4)
+    grid:
+      A1: 1
+      A2: 2
+      A3: 3
+      A4: 4
+      B1: 3
+      B2: 5
+      B3: 7
+      B4: 9
+    expect: 0
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+      - analytics
+    name: steyx-perfect-fit
+  - subject: CONFIDENCE
+    category: value
+    status: observed
+    formula: =CONFIDENCE(0.05, 1, 100)
+    tags:
+      - statistical
+      - analytics
+    name: confidence-normal-95
+  - subject: CONFIDENCE
+    category: value
+    status: observed
+    formula: =CONFIDENCE(0.01, 2.5, 50)
+    tags:
+      - statistical
+      - analytics
+    name: confidence-normal-99
+  - subject: CONFIDENCE.T
+    category: value
+    status: observed
+    formula: =CONFIDENCE.T(0.05, 1, 25)
+    tags:
+      - statistical
+      - analytics
+    name: confidence-t-small-sample
+  - subject: CONFIDENCE.T
+    category: value
+    status: observed
+    formula: =CONFIDENCE.T(0.05, 2.5, 50)
+    tags:
+      - statistical
+      - analytics
+    name: confidence-t-medium-sample
+  - subject: F.TEST
+    category: value
+    status: observed
+    formula: =F.TEST(A1:A5, B1:B5)
+    grid:
+      A1: 1
+      A2: 2
+      A3: 3
+      A4: 4
+      A5: 5
+      B1: 2
+      B2: 4
+      B3: 5
+      B4: 4
+      B5: 5
+    tags:
+      - statistical
+      - analytics
+    name: f-test-similar-variance
+  - subject: F.TEST
+    category: value
+    status: observed
+    formula: =F.TEST(A1:A4, B1:B4)
+    grid:
+      A1: 1
+      A2: 2
+      A3: 3
+      A4: 4
+      B1: 10
+      B2: 20
+      B3: 30
+      B4: 40
+    tags:
+      - statistical
+      - analytics
+    name: f-test-different-variance
+  - subject: FTEST
+    category: value
+    status: observed
+    formula: =FTEST(A1:A5, B1:B5)
+    grid:
+      A1: 1
+      A2: 2
+      A3: 3
+      A4: 4
+      A5: 5
+      B1: 2
+      B2: 4
+      B3: 5
+      B4: 4
+      B5: 5
+    tags:
+      - statistical
+      - analytics
+    name: ftest-canonical
+  - subject: FTEST
+    category: value
+    status: observed
+    formula: =FTEST(A1:A4, B1:B4)
+    grid:
+      A1: 1
+      A2: 2
+      A3: 3
+      A4: 4
+      B1: 10
+      B2: 20
+      B3: 30
+      B4: 40
+    tags:
+      - statistical
+      - analytics
+    name: ftest-different-variance
+  - subject: KURT
+    category: value
+    status: observed
+    formula: =KURT(A1:A5)
+    grid:
+      A1: 1
+      A2: 2
+      A3: 3
+      A4: 4
+      A5: 5
+    tags:
+      - statistical
+      - analytics
+    name: kurt-canonical
+  - subject: KURT
+    category: value
+    status: observed
+    formula: =KURT(A1:A5)
+    grid:
+      A1: 1
+      A2: 3
+      A3: 3
+      A4: 3
+      A5: 5
+    tags:
+      - statistical
+      - analytics
+    name: kurt-peaked
+  - subject: KURT
+    category: value
+    status: observed
+    formula: =KURT(3, 4, 5, 2, 3, 4, 5, 6, 4, 7)
+    tags:
+      - statistical
+      - analytics
+    name: kurt-inline
+  - subject: MARGINOFERROR
+    category: value
+    status: observed
+    formula: =MARGINOFERROR(A1:A5, 0.05)
+    grid:
+      A1: 1
+      A2: 2
+      A3: 3
+      A4: 4
+      A5: 5
+    tags:
+      - statistical
+      - analytics
+    name: marginoferror-basic
+  - subject: MARGINOFERROR
+    category: value
+    status: observed
+    formula: =MARGINOFERROR(A1:A5, 0.01)
+    grid:
+      A1: 10
+      A2: 20
+      A3: 30
+      A4: 40
+      A5: 50
+    tags:
+      - statistical
+      - analytics
+    name: marginoferror-wider-data
+  - subject: PROB
+    formula: =PROB(A1:A5, B1:B5, 2, 4)
+    category: value
+    grid:
+      A1: 1
+      A2: 2
+      A3: 3
+      A4: 4
+      A5: 5
+      B1: 0.2
+      B2: 0.2
+      B3: 0.2
+      B4: 0.2
+      B5: 0.2
+    expect: 0.6
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      excel:
+        cause: precision
+        recorded: 0.6000000000000001
+      gsheets:
+        cause: precision
+        recorded: 0.6000000000000001
+      lattice:
+        cause: precision
+        recorded: 0.6000000000000001
+      formulas:
+        cause: precision
+        recorded: 0.6000000000000001
+    tags:
+      - statistical
+      - analytics
+    name: prob-uniform-bound
+  - subject: PROB
+    formula: =PROB(A1:A5, B1:B5, 3)
+    category: value
+    grid:
+      A1: 1
+      A2: 2
+      A3: 3
+      A4: 4
+      A5: 5
+      B1: 0.2
+      B2: 0.2
+      B3: 0.2
+      B4: 0.2
+      B5: 0.2
+    expect: 0.2
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+      - analytics
+    name: prob-single-upper
+  - subject: PROB
+    formula: =PROB(A1:A3, B1:B3, 1, 3)
+    category: value
+    grid:
+      A1: 1
+      A2: 2
+      A3: 3
+      B1: 0.5
+      B2: 0.3
+      B3: 0.2
+    expect: 1
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+      - analytics
+    name: prob-full-range
+  - subject: SKEW
+    category: value
+    formula: =SKEW(A1:A5)
+    grid:
+      A1: 1
+      A2: 2
+      A3: 3
+      A4: 4
+      A5: 5
+    expect: 0
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+      - analytics
+    name: skew-symmetric
+  - subject: SKEW
+    category: value
+    status: observed
+    formula: =SKEW(A1:A5)
+    grid:
+      A1: 1
+      A2: 1
+      A3: 2
+      A4: 3
+      A5: 10
+    tags:
+      - statistical
+      - analytics
+    name: skew-right-tail
+  - subject: SKEW
+    category: value
+    status: observed
+    formula: =SKEW(3, 4, 5, 2, 3, 4, 5, 6, 4, 7)
+    tags:
+      - statistical
+      - analytics
+    name: skew-inline
+  - subject: SKEW.P
+    formula: =SKEW.P(A1:A5)
+    category: value
+    grid:
+      A1: 1
+      A2: 2
+      A3: 3
+      A4: 4
+      A5: 5
+    expect: 0
+    overrides:
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+      - analytics
+    name: skew-p-symmetric
+  - subject: SKEW.P
+    category: value
+    status: observed
+    formula: =SKEW.P(A1:A5)
+    grid:
+      A1: 1
+      A2: 1
+      A3: 2
+      A4: 3
+      A5: 10
+    tags:
+      - statistical
+      - analytics
+    name: skew-p-right-tail
+  - subject: T.TEST
+    category: value
+    status: observed
+    formula: =T.TEST(A1:A5, B1:B5, 2, 1)
+    grid:
+      A1: 1
+      A2: 2
+      A3: 3
+      A4: 4
+      A5: 5
+      B1: 2
+      B2: 4
+      B3: 5
+      B4: 4
+      B5: 5
+    tags:
+      - statistical
+      - analytics
+    name: t-test-two-tail-paired
+  - subject: T.TEST
+    category: value
+    status: observed
+    formula: =T.TEST(A1:A5, B1:B5, 1, 2)
+    grid:
+      A1: 1
+      A2: 2
+      A3: 3
+      A4: 4
+      A5: 5
+      B1: 2
+      B2: 4
+      B3: 5
+      B4: 4
+      B5: 5
+    tags:
+      - statistical
+      - analytics
+    name: t-test-one-tail-equal-var
+  - subject: T.TEST
+    category: value
+    status: observed
+    formula: =T.TEST(A1:A5, B1:B5, 2, 3)
+    grid:
+      A1: 1
+      A2: 2
+      A3: 3
+      A4: 4
+      A5: 5
+      B1: 2
+      B2: 4
+      B3: 5
+      B4: 4
+      B5: 5
+    tags:
+      - statistical
+      - analytics
+    name: t-test-two-tail-unequal-var
+  - subject: TTEST
+    category: value
+    status: observed
+    formula: =TTEST(A1:A5, B1:B5, 2, 1)
+    grid:
+      A1: 1
+      A2: 2
+      A3: 3
+      A4: 4
+      A5: 5
+      B1: 2
+      B2: 4
+      B3: 5
+      B4: 4
+      B5: 5
+    tags:
+      - statistical
+      - analytics
+    name: ttest-two-tail-paired
+  - subject: TTEST
+    category: value
+    status: observed
+    formula: =TTEST(A1:A5, B1:B5, 1, 2)
+    grid:
+      A1: 1
+      A2: 2
+      A3: 3
+      A4: 4
+      A5: 5
+      B1: 2
+      B2: 4
+      B3: 5
+      B4: 4
+      B5: 5
+    tags:
+      - statistical
+      - analytics
+    name: ttest-one-tail-equal-var
+  - subject: Z.TEST
+    formula: =Z.TEST(A1:A5, 3)
+    category: value
+    grid:
+      A1: 1
+      A2: 2
+      A3: 3
+      A4: 4
+      A5: 5
+    expect: 0.5
+    overrides:
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+      - analytics
+    name: z-test-canonical
+  - subject: Z.TEST
+    category: value
+    status: observed
+    formula: =Z.TEST(A1:A5, 4, 1.5)
+    grid:
+      A1: 1
+      A2: 2
+      A3: 3
+      A4: 4
+      A5: 5
+    tags:
+      - statistical
+      - analytics
+    name: z-test-with-sigma
+  - subject: ZTEST
+    formula: =ZTEST(A1:A5, 3)
+    category: value
+    grid:
+      A1: 1
+      A2: 2
+      A3: 3
+      A4: 4
+      A5: 5
+    expect: 0.5
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - statistical
+      - analytics
+    name: ztest-canonical
+  - subject: ZTEST
+    category: value
+    status: observed
+    formula: =ZTEST(A1:A5, 4, 1.5)
+    grid:
+      A1: 1
+      A2: 2
+      A3: 3
+      A4: 4
+      A5: 5
+    tags:
+      - statistical
+      - analytics
+    name: ztest-with-sigma

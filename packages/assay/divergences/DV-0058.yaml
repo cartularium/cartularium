@@ -1,0 +1,17 @@
+id: DV-0058
+summary: "libreoffice: different error code — IFNA, IRR"
+cause: error-code
+category: value
+engines:
+  - libreoffice
+behavior:
+  signature: '{"error":"#N/A"}'
+test-count: 2
+subjects:
+  - IFNA
+  - IRR
+tests:
+  - IRR/irr-no-sign-change
+  - IFNA/ifna-with-na
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

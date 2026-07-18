@@ -1,0 +1,135 @@
+id: DV-0003
+summary: "hyperformula, ironcalc, pycel: function not implemented — ACCRINT,
+  AMORLINC, ASC (+28 more)"
+cause: missing-function
+category: value
+engines:
+  - hyperformula
+  - ironcalc
+  - pycel
+behavior:
+  signature: '{"error":"#NAME?"}'
+test-count: 88
+subjects:
+  - ACCRINT
+  - AMORLINC
+  - ASC
+  - BINOMDIST
+  - COUPDAYBS
+  - COUPDAYS
+  - COUPDAYSNC
+  - COUPNCD
+  - COUPNUM
+  - COUPPCD
+  - FINDB
+  - FIXED
+  - FREQUENCY
+  - LEFTB
+  - LENB
+  - MDETERM
+  - MIDB
+  - MINVERSE
+  - MODE
+  - NORMDIST
+  - PERCENTILE
+  - PERCENTRANK
+  - PERMUT
+  - PROB
+  - QUARTILE
+  - RANK
+  - REPLACEB
+  - RIGHTB
+  - SEARCHB
+  - TRIMMEAN
+  - VDB
+tests:
+  - MDETERM/mdeterm-2x2-identity
+  - MDETERM/mdeterm-2x2-generic
+  - MDETERM/mdeterm-3x3-identity
+  - MDETERM/mdeterm-singular
+  - MINVERSE/minverse-2x2-identity
+  - MINVERSE/minverse-2x2-generic
+  - MINVERSE/minverse-3x3-identity
+  - FREQUENCY/frequency-basic-bins
+  - FREQUENCY/frequency-all-below
+  - FREQUENCY/frequency-single-bin
+  - ACCRINT/accrint-quarterly
+  - AMORLINC/amorlinc-standard
+  - AMORLINC/amorlinc-basis-0
+  - COUPDAYBS/coupdaybs-semiannual
+  - COUPDAYBS/coupdaybs-annual-basis-1
+  - COUPDAYBS/coupdaybs-quarterly
+  - COUPDAYS/coupdays-semiannual
+  - COUPDAYS/coupdays-actual-basis-1
+  - COUPDAYS/coupdays-annual
+  - COUPDAYSNC/coupdaysnc-semiannual
+  - COUPDAYSNC/coupdaysnc-quarterly-basis-1
+  - COUPNCD/coupncd-semiannual
+  - COUPNCD/coupncd-quarterly
+  - COUPNCD/coupncd-annual-basis-1
+  - COUPNUM/coupnum-semiannual
+  - COUPNUM/coupnum-quarterly-basis-1
+  - COUPPCD/couppcd-semiannual
+  - COUPPCD/couppcd-quarterly
+  - COUPPCD/couppcd-annual-basis-1
+  - VDB/vdb-first-year
+  - PROB/prob-uniform-bound
+  - PROB/prob-single-upper
+  - PROB/prob-full-range
+  - MODE/mode-tied-dataset
+  - MODE/mode-clear-winner
+  - MODE/mode-no-repeats
+  - PERCENTILE/percentile-25th-on-1-5
+  - PERCENTILE/percentile-50th-on-1-5
+  - PERCENTILE/percentile-0th
+  - PERCENTILE/percentile-100th
+  - PERCENTRANK/percentrank-midpoint
+  - PERCENTRANK/percentrank-minimum
+  - PERCENTRANK/percentrank-maximum
+  - PERMUT/permut-basic
+  - PERMUT/permut-full
+  - PERMUT/permut-zero
+  - PERMUT/permut-invalid
+  - QUARTILE/quartile-q1-on-1-5
+  - QUARTILE/quartile-q2-on-1-5
+  - QUARTILE/quartile-q3-on-1-5
+  - QUARTILE/quartile-invalid
+  - RANK/rank-descending
+  - RANK/rank-ascending
+  - RANK/rank-top-value
+  - RANK/rank-missing-value
+  - TRIMMEAN/trimmean-40pct-on-1-5
+  - TRIMMEAN/trimmean-zero-percent
+  - TRIMMEAN/trimmean-skewed-dataset
+  - TRIMMEAN/trimmean-invalid-percent
+  - BINOMDIST/binomdist-pmf
+  - NORMDIST/normdist-at-mean-cdf
+  - ASC/asc-fullwidth-alpha
+  - ASC/asc-fullwidth-digits
+  - ASC/asc-ascii-passthrough
+  - FINDB/findb-ascii
+  - FINDB/findb-at-start
+  - FINDB/findb-not-found
+  - FIXED/fixed-basic
+  - FIXED/fixed-no-commas
+  - FIXED/fixed-default
+  - LEFTB/leftb-ascii
+  - LEFTB/leftb-default
+  - LEFTB/leftb-zero
+  - LENB/lenb-ascii
+  - LENB/lenb-empty
+  - LENB/lenb-spaces
+  - MIDB/midb-ascii
+  - MIDB/midb-from-start
+  - MIDB/midb-beyond-end
+  - REPLACEB/replaceb-ascii
+  - REPLACEB/replaceb-year
+  - REPLACEB/replaceb-empty-insert
+  - RIGHTB/rightb-ascii
+  - RIGHTB/rightb-default
+  - RIGHTB/rightb-zero
+  - SEARCHB/searchb-ascii
+  - SEARCHB/searchb-with-start
+  - SEARCHB/searchb-not-found
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

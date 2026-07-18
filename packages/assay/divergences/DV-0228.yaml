@@ -1,0 +1,22 @@
+id: DV-0228
+summary: "excel, formulas, gsheets, hyperformula, ironcalc, lattice,
+  libreoffice: different argument interpretation — SEARCH"
+cause: arg-semantics
+category: value
+engines:
+  - excel
+  - formulas
+  - gsheets
+  - hyperformula
+  - ironcalc
+  - lattice
+  - libreoffice
+behavior:
+  signature: "6"
+test-count: 1
+subjects:
+  - SEARCH
+tests:
+  - SEARCH/search-with-start
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

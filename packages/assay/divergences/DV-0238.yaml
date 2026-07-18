@@ -1,0 +1,21 @@
+id: DV-0238
+summary: "excel, formulas, hyperformula, ironcalc, libreoffice, pycel: different
+  error code — MID"
+cause: error-code
+category: value
+engines:
+  - excel
+  - formulas
+  - hyperformula
+  - ironcalc
+  - libreoffice
+  - pycel
+behavior:
+  signature: '{"error":"#VALUE!"}'
+test-count: 1
+subjects:
+  - MID
+tests:
+  - MID/mid-start-0
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

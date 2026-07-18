@@ -1,0 +1,18 @@
+id: DV-0192
+summary: "gsheets, hyperformula, lattice, pycel: different error code — FACTDOUBLE"
+cause: error-code
+category: value
+engines:
+  - gsheets
+  - hyperformula
+  - lattice
+  - pycel
+behavior:
+  signature: '{"error":"#NUM!"}'
+test-count: 1
+subjects:
+  - FACTDOUBLE
+tests:
+  - FACTDOUBLE/factdouble-negative
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

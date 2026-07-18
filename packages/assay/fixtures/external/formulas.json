@@ -1,0 +1,252 @@
+{
+  "platform": "formulas",
+  "generatedAt": "2026-05-11T09:33:51.183Z",
+  "results": {
+    "sha256:6fc729b544754b432b17823cc649287f026faaffcfef8994530a463b22cbc0ca": {
+      "result": [
+        [
+          true
+        ]
+      ],
+      "formula-as-evaluated": "=TRUE()"
+    },
+    "sha256:c46886599e97ef3f303b9d3c8ab19f23d70cf7fb7e37ac81805b27e52fe2c83c": {
+      "result": [
+        [
+          false
+        ]
+      ],
+      "formula-as-evaluated": "=FALSE()"
+    },
+    "sha256:c3f265df3e131763cf0985c0f95121a61711209bff7e1ec7bc1260a60660ebab": {
+      "result": [
+        [
+          {
+            "error": "#NAME?"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=SORTN({5;2;8;1;4}, 3)"
+    },
+    "sha256:baf395102b0350c95e33399eaa22b369e2d059ec455f29e61def87df215516f4": {
+      "result": [
+        [
+          {
+            "error": "#NAME?"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=SORTN({5;2;8;1;4}, 3, 0, 1, TRUE)"
+    },
+    "sha256:9c1c99889a9bc72f8910eef7a06bd91d0cead9d19002b9b75c96dc4522f2ddbd": {
+      "result": [
+        [
+          {
+            "error": "#NAME?"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=ENCODEURL(\"a b\")"
+    },
+    "sha256:714a9ff8741ad69173160c8b78a53f4a050a2f7585f7fd04cd1dce2115fe571b": {
+      "result": [
+        [
+          {
+            "error": "#NAME?"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=ENCODEURL(\"hello world/?&=\")"
+    },
+    "sha256:0e50fdfcb1a0ca1cdf4bcc2398f89eb13d8c054539acd9eaf5bef234d0b1a665": {
+      "result": [
+        [
+          {
+            "error": "#NAME?"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=ISURL(\"https://example.com\")"
+    },
+    "sha256:f57db941de8acb0ba81281aaf63c2cd9f3d7465852da60fd71c378aa3c998ddf": {
+      "result": [
+        [
+          {
+            "error": "#NAME?"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=ISURL(\"not a url\")"
+    },
+    "sha256:49ba6439289c77fc4d015a2db4f36ef89580dbb79795e816b71cc852e614acce": {
+      "result": [
+        [
+          {
+            "error": "#NAME?"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=HYPERLINK(\"https://example.com\", \"click me\")"
+    },
+    "sha256:9a5f5b352f6e908c0c76a77ee98feb8bc30f9ce4d6efe9d30702027b031344eb": {
+      "result": [
+        [
+          {
+            "error": "#NAME?"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=HYPERLINK(\"https://example.com\")"
+    },
+    "sha256:801560e2dc28e9fce58f163fd4e3f74eca2b737b7f5d13382fcc932f8074d696": {
+      "result": [
+        [
+          {
+            "error": "#NAME?"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=IMPORTDATA(\"https://example.com/data.csv\")"
+    },
+    "sha256:335bf191846e1d1025ffe854404a0289db3a4e937da938545434407fffd36a44": {
+      "result": [
+        [
+          {
+            "error": "#NAME?"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=IMPORTFEED(\"https://example.com/feed.xml\")"
+    },
+    "sha256:eb9ef8554d77c6555ba1e706f3aaf9a38e24b9e82ffbbb681d5fc82b2d784b14": {
+      "result": [
+        [
+          {
+            "error": "#NAME?"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=IMPORTHTML(\"https://example.com/page.html\", \"table\", 1)"
+    },
+    "sha256:efc0e128821c1733b704c6ce8558b28087abc515bc556e07afde72902b5dab6e": {
+      "result": [
+        [
+          {
+            "error": "#NAME?"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=IMPORTXML(\"https://example.com/data.xml\", \"//title\")"
+    },
+    "sha256:9afffa267b9f80a5eaba9614b9cdc8151d8aa5dc816b57ea2cdc06962ba9a3de": {
+      "result": [
+        [
+          {
+            "error": "#NAME?"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=IMPORTRANGE(\"https://docs.google.com/spreadsheets/d/abc123\", \"Sheet1!A1:B2\")"
+    },
+    "sha256:65601270148f71176390a57a2da27970d03269a8a7b69554c2b200ba08f52038": {
+      "result": [
+        [
+          {
+            "error": "#NAME?"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=ARRAYFORMULA({1;2;3} * 2)"
+    },
+    "sha256:a13cc48d99716efa41847bbd323f1ab49757330faf7f42c629250deac72a6487": {
+      "result": [
+        [
+          {
+            "error": "#NAME?"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=ARRAYFORMULA({\"a\";\"b\"} & \"!\")"
+    },
+    "sha256:d019ac02c6bd17a57dc8d68b994c68d346a14bdb112adac74a4bfb79b37b2d68": {
+      "result": [
+        [
+          {
+            "error": "#NAME?"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=QUERY({1,\"a\";2,\"b\";3,\"c\"}, \"select *\")"
+    },
+    "sha256:886519f774beac6a29bb87c1d85fad445980e486038b447ec630276d683db3be": {
+      "result": [
+        [
+          {
+            "error": "#NAME?"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=QUERY({1,\"a\";2,\"b\";3,\"c\"}, \"select Col2\")"
+    },
+    "sha256:770c5b8f2c5021dc46dc02d769a9157267e8f73ed0530045bf7435aad7191632": {
+      "result": [
+        [
+          {
+            "error": "#NAME?"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=QUERY({0,0;1,2;3,4}, \"offset 1\")"
+    },
+    "sha256:a39f168c3115c5cd990bc7cad78e4b699ca9496b046c3a37f6971a46d2782c49": {
+      "result": [
+        [
+          {
+            "error": "#NAME?"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=GOOGLEFINANCE(\"GOOG\", \"price\")"
+    },
+    "sha256:1c4c60e372cc86eeb3d8d7bd4234d7fca05279ba9e126728daaa0aa413ae9129": {
+      "result": [
+        [
+          {
+            "error": "#NAME?"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=GOOGLETRANSLATE(\"hello\", \"en\", \"es\")"
+    },
+    "sha256:400b637882f895442678edee0a7f0360fd9268d7677b0590daf480f4e17348e9": {
+      "result": [
+        [
+          {
+            "error": "#NAME?"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=DETECTLANGUAGE(\"hello world\")"
+    },
+    "sha256:c64aa9b2eb34798a7462d97f72167e130a8d4349615ca6093fccfc4ceda2ee18": {
+      "result": [
+        [
+          {
+            "error": "#NAME?"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=IMAGE(\"https://example.com/pic.png\")"
+    },
+    "sha256:7cfa315619361306d6364caa3029523f12cfc13f357545e422d9c712bef65dbd": {
+      "result": [
+        [
+          {
+            "error": "#NAME?"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=SPARKLINE({1;2;3;4;5})"
+    }
+  }
+}

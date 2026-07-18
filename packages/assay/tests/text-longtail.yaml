@@ -1,0 +1,1936 @@
+schemaVersion: 3
+name: Text long-tail functions
+tests:
+  - subject: ARABIC
+    formula: =ARABIC("XIV")
+    category: value
+    expect: 14
+    overrides:
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - text
+    name: arabic-xiv
+  - subject: ARABIC
+    formula: =ARABIC("MCMXCIV")
+    category: value
+    expect: 1994
+    overrides:
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - text
+    name: arabic-mcmxciv
+  - subject: ARABIC
+    formula: =ARABIC("")
+    category: value
+    expect: 0
+    overrides:
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - text
+    name: arabic-empty
+  - subject: ARABIC
+    formula: =ARABIC("xiv")
+    category: value
+    expect: 14
+    overrides:
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - text
+    name: arabic-lowercase
+  - subject: ARABIC
+    category: value
+    status: observed
+    formula: =ARABIC("hello")
+    tags:
+      - text
+      - divergence
+    name: arabic-invalid
+  - subject: ASC
+    formula: =ASC("ABC")
+    category: value
+    expect: ABC
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - text
+      - dbcs
+    name: asc-fullwidth-alpha
+  - subject: ASC
+    formula: =ASC("123")
+    category: value
+    expect: "123"
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - text
+      - dbcs
+    name: asc-fullwidth-digits
+  - subject: ASC
+    formula: =ASC("hello")
+    category: value
+    expect: hello
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - text
+      - dbcs
+    name: asc-ascii-passthrough
+  - subject: ASC
+    category: value
+    status: observed
+    formula: =ASC("")
+    tags:
+      - text
+      - dbcs
+    name: asc-empty
+  - subject: CHAR
+    formula: =CHAR(65)
+    category: value
+    expect: A
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - text
+    name: char-uppercase-a
+  - subject: CHAR
+    formula: =CHAR(97)
+    category: value
+    expect: a
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - text
+    name: char-lowercase-a
+  - subject: CHAR
+    formula: =CHAR(48)
+    category: value
+    expect: "0"
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - text
+    name: char-digit-0
+  - subject: CHAR
+    formula: =CHAR(32)
+    category: value
+    expect: " "
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - text
+    name: char-space
+  - subject: CHAR
+    category: value
+    status: observed
+    formula: =CHAR(0)
+    tags:
+      - text
+      - divergence
+    name: char-out-of-range
+  - subject: CLEAN
+    formula: =CLEAN("hello" & CHAR(9) & "world")
+    category: value
+    expect: helloworld
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - text
+    name: clean-strips-tab
+  - subject: CLEAN
+    formula: =CLEAN("line1" & CHAR(10) & "line2")
+    category: value
+    expect: line1line2
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - text
+    name: clean-strips-newline
+  - subject: CLEAN
+    formula: =CLEAN("hello world")
+    category: value
+    expect: hello world
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - text
+    name: clean-plain-passthrough
+  - subject: CLEAN
+    formula: =CLEAN("")
+    category: value
+    expect: ""
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      excel:
+        cause: arg-semantics
+        recorded: null
+      libreoffice:
+        cause: arg-semantics
+        recorded: null
+      formulas:
+        cause: arg-semantics
+        recorded: null
+    tags:
+      - text
+    name: clean-empty
+  - subject: CODE
+    formula: =CODE("A")
+    category: value
+    expect: 65
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - text
+    name: code-uppercase-a
+  - subject: CODE
+    formula: =CODE("a")
+    category: value
+    expect: 97
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - text
+    name: code-lowercase-a
+  - subject: CODE
+    formula: =CODE("Alphabet")
+    category: value
+    expect: 65
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - text
+    name: code-first-char
+  - subject: CODE
+    formula: =CODE("")
+    category: value
+    expect: 0
+    overrides:
+      excel:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+      gsheets:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+      lattice:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+      formulas:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - text
+      - divergence
+    name: code-empty
+  - subject: DOLLAR
+    formula: =DOLLAR(1234.567)
+    category: value
+    expect: $1,234.57
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - text
+      - locale
+    name: dollar-basic
+  - subject: DOLLAR
+    formula: =DOLLAR(1234.567, 2)
+    category: value
+    expect: $1,234.57
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - text
+      - locale
+    name: dollar-2-decimals
+  - subject: DOLLAR
+    formula: =DOLLAR(1234.567, 0)
+    category: value
+    expect: $1,235
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - text
+      - locale
+    name: dollar-zero-decimals
+  - subject: DOLLAR
+    category: value
+    status: observed
+    formula: =DOLLAR(-1234.5, 2)
+    tags:
+      - text
+      - locale
+    name: dollar-negative
+  - subject: FINDB
+    formula: =FINDB("world", "hello world")
+    category: value
+    expect: 7
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - text
+    name: findb-ascii
+  - subject: FINDB
+    formula: =FINDB("h", "hello")
+    category: value
+    expect: 1
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - text
+    name: findb-at-start
+  - subject: FINDB
+    formula: =FINDB("z", "hello")
+    category: value
+    expect:
+      error: "#VALUE!"
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - text
+    name: findb-not-found
+  - subject: FINDB
+    category: value
+    status: observed
+    formula: =FINDB("い", "あいう")
+    tags:
+      - text
+      - dbcs
+    name: findb-dbcs
+  - subject: FIXED
+    formula: =FIXED(1234.567, 1)
+    category: value
+    expect: 1,234.6
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - text
+      - locale
+    name: fixed-basic
+  - subject: FIXED
+    formula: =FIXED(1234.567, 1, TRUE)
+    category: value
+    expect: "1234.6"
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - text
+      - locale
+    name: fixed-no-commas
+  - subject: FIXED
+    formula: =FIXED(1234.567)
+    category: value
+    expect: 1,234.57
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - text
+      - locale
+    name: fixed-default
+  - subject: FIXED
+    category: value
+    status: observed
+    formula: =FIXED(1234.567, -1)
+    tags:
+      - text
+      - locale
+    name: fixed-negative-decimals
+  - subject: JOIN
+    formula: =JOIN("-", {"a","b","c"})
+    category: value
+    expect: a-b-c
+    overrides:
+      excel:
+        cause: error-code
+        recorded:
+          error: "#N/A"
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - text
+      - bare-formula
+    name: join-basic
+  - subject: JOIN
+    formula: =JOIN(",", {1,2,3})
+    category: value
+    expect: 1,2,3
+    overrides:
+      excel:
+        cause: error-code
+        recorded:
+          error: "#N/A"
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - text
+      - bare-formula
+    name: join-with-numbers
+  - subject: JOIN
+    formula: =JOIN("", {"a","b","c"})
+    category: value
+    expect: abc
+    overrides:
+      excel:
+        cause: error-code
+        recorded:
+          error: "#N/A"
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - text
+      - bare-formula
+    name: join-empty-delim
+  - subject: JOIN
+    formula: =JOIN("-", {"solo"})
+    category: value
+    expect: solo
+    overrides:
+      excel:
+        cause: error-code
+        recorded:
+          error: "#N/A"
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - text
+    name: join-single-element
+  - subject: LEFTB
+    formula: =LEFTB("Sale Price", 4)
+    category: value
+    expect: Sale
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - text
+    name: leftb-ascii
+  - subject: LEFTB
+    formula: =LEFTB("hello")
+    category: value
+    expect: h
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - text
+    name: leftb-default
+  - subject: LEFTB
+    formula: =LEFTB("hello", 0)
+    category: value
+    expect: ""
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      excel:
+        cause: arg-semantics
+        recorded: null
+      libreoffice:
+        cause: arg-semantics
+        recorded: null
+      formulas:
+        cause: arg-semantics
+        recorded: null
+    tags:
+      - text
+    name: leftb-zero
+  - subject: LEFTB
+    category: value
+    status: observed
+    formula: =LEFTB("あいう", 2)
+    tags:
+      - text
+      - dbcs
+    name: leftb-dbcs
+  - subject: LENB
+    formula: =LENB("hello")
+    category: value
+    expect: 5
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - text
+    name: lenb-ascii
+  - subject: LENB
+    formula: =LENB("")
+    category: value
+    expect: 0
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - text
+    name: lenb-empty
+  - subject: LENB
+    formula: =LENB("   ")
+    category: value
+    expect: 3
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - text
+    name: lenb-spaces
+  - subject: LENB
+    category: value
+    status: observed
+    formula: =LENB("あ")
+    tags:
+      - text
+      - dbcs
+    name: lenb-dbcs
+  - subject: MIDB
+    formula: =MIDB("Romain", 3, 4)
+    category: value
+    expect: main
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - text
+    name: midb-ascii
+  - subject: MIDB
+    formula: =MIDB("Romain", 1, 2)
+    category: value
+    expect: Ro
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - text
+    name: midb-from-start
+  - subject: MIDB
+    formula: =MIDB("Romain", 3, 100)
+    category: value
+    expect: main
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - text
+    name: midb-beyond-end
+  - subject: MIDB
+    category: value
+    status: observed
+    formula: =MIDB("あいう", 3, 2)
+    tags:
+      - text
+      - dbcs
+    name: midb-dbcs
+  - subject: PROPER
+    formula: =PROPER("hello world")
+    category: value
+    expect: Hello World
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - text
+    name: proper-hello-world
+  - subject: PROPER
+    formula: =PROPER("THIS IS A TITLE")
+    category: value
+    expect: This Is A Title
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - text
+    name: proper-all-caps
+  - subject: PROPER
+    formula: =PROPER("76BudGet")
+    category: value
+    expect: 76Budget
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - text
+    name: proper-mixed
+  - subject: PROPER
+    formula: =PROPER("o'brien")
+    category: value
+    expect: O'Brien
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - text
+      - divergence
+    name: proper-apostrophe
+  - subject: REPLACEB
+    formula: =REPLACEB("abcdefghijk", 6, 5, "*")
+    category: value
+    expect: abcde*k
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - text
+    name: replaceb-ascii
+  - subject: REPLACEB
+    formula: =REPLACEB("2009", 3, 2, "10")
+    category: value
+    expect: "2010"
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - text
+    name: replaceb-year
+  - subject: REPLACEB
+    formula: =REPLACEB("hello", 2, 3, "")
+    category: value
+    expect: ho
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - text
+    name: replaceb-empty-insert
+  - subject: REPLACEB
+    category: value
+    status: observed
+    formula: =REPLACEB("あいう", 3, 2, "X")
+    tags:
+      - text
+      - dbcs
+    name: replaceb-dbcs
+  - subject: RIGHTB
+    formula: =RIGHTB("Sale Price", 5)
+    category: value
+    expect: Price
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - text
+    name: rightb-ascii
+  - subject: RIGHTB
+    formula: =RIGHTB("hello")
+    category: value
+    expect: o
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - text
+    name: rightb-default
+  - subject: RIGHTB
+    formula: =RIGHTB("hello", 0)
+    category: value
+    expect: ""
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      excel:
+        cause: arg-semantics
+        recorded: null
+      libreoffice:
+        cause: arg-semantics
+        recorded: null
+      formulas:
+        cause: arg-semantics
+        recorded: null
+    tags:
+      - text
+    name: rightb-zero
+  - subject: RIGHTB
+    category: value
+    status: observed
+    formula: =RIGHTB("あいう", 2)
+    tags:
+      - text
+      - dbcs
+    name: rightb-dbcs
+  - subject: ROMAN
+    formula: =ROMAN(14)
+    category: value
+    expect: XIV
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - text
+    name: roman-14-xiv
+  - subject: ROMAN
+    formula: =ROMAN(1994)
+    category: value
+    expect: MCMXCIV
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - text
+    name: roman-1994
+  - subject: ROMAN
+    formula: =ROMAN(1)
+    category: value
+    expect: I
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - text
+    name: roman-1
+  - subject: ROMAN
+    category: value
+    status: observed
+    formula: =ROMAN(0)
+    tags:
+      - text
+    name: roman-zero
+  - subject: ROMAN
+    formula: =ROMAN(499, 0)
+    category: value
+    expect: CDXCIX
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - text
+    name: roman-499-form0
+  - subject: SEARCH
+    formula: =SEARCH("m", "Miriam McGovern")
+    category: value
+    expect: 1
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - text
+    name: search-case-insensitive
+  - subject: SEARCH
+    formula: =SEARCH("m", "Miriam McGovern", 3)
+    category: value
+    expect: 5
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      excel:
+        cause: arg-semantics
+        recorded: 6
+      gsheets:
+        cause: arg-semantics
+        recorded: 6
+      lattice:
+        cause: arg-semantics
+        recorded: 6
+      ironcalc:
+        cause: arg-semantics
+        recorded: 6
+      hyperformula:
+        cause: arg-semantics
+        recorded: 6
+      libreoffice:
+        cause: arg-semantics
+        recorded: 6
+      formulas:
+        cause: arg-semantics
+        recorded: 6
+    tags:
+      - text
+    name: search-with-start
+  - subject: SEARCH
+    formula: =SEARCH("m?r", "Miriam McGovern")
+    category: value
+    expect: 4
+    overrides:
+      formulas:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      excel:
+        cause: arg-semantics
+        recorded: 1
+      gsheets:
+        cause: arg-semantics
+        recorded: 1
+      lattice:
+        cause: arg-semantics
+        recorded: 1
+      ironcalc:
+        cause: arg-semantics
+        recorded: 1
+      hyperformula:
+        cause: arg-semantics
+        recorded: 1
+      libreoffice:
+        cause: arg-semantics
+        recorded: 1
+    tags:
+      - text
+    name: search-wildcard-question
+  - subject: SEARCH
+    formula: =SEARCH("M*n", "Miriam McGovern")
+    category: value
+    expect: 1
+    overrides:
+      formulas:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - text
+    name: search-wildcard-star
+  - subject: SEARCH
+    formula: =SEARCH("z", "Miriam McGovern")
+    category: value
+    expect:
+      error: "#VALUE!"
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - text
+    name: search-not-found
+  - subject: SEARCHB
+    formula: =SEARCHB("m", "Miriam McGovern")
+    category: value
+    expect: 1
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - text
+    name: searchb-ascii
+  - subject: SEARCHB
+    formula: =SEARCHB("M", "Miriam McGovern", 3)
+    category: value
+    expect: 8
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      excel:
+        cause: arg-semantics
+        recorded: 6
+      gsheets:
+        cause: arg-semantics
+        recorded: 6
+      lattice:
+        cause: arg-semantics
+        recorded: 6
+      libreoffice:
+        cause: arg-semantics
+        recorded: 6
+      formulas:
+        cause: arg-semantics
+        recorded: 6
+    tags:
+      - text
+    name: searchb-with-start
+  - subject: SEARCHB
+    formula: =SEARCHB("z", "Miriam")
+    category: value
+    expect:
+      error: "#VALUE!"
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - text
+    name: searchb-not-found
+  - subject: SEARCHB
+    category: value
+    status: observed
+    formula: =SEARCHB("い", "あいう")
+    tags:
+      - text
+      - dbcs
+    name: searchb-dbcs
+  - subject: SPLIT
+    formula: =SPLIT("a,b,c", ",")
+    category: value
+    expect:
+      - - a
+        - b
+        - c
+    overrides:
+      excel:
+        cause: error-code
+        recorded:
+          error: "#N/A"
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - text
+    name: split-comma
+  - subject: SPLIT
+    formula: =SPLIT("a-b_c", "-_")
+    category: value
+    expect:
+      - - a
+        - b
+        - c
+    overrides:
+      excel:
+        cause: error-code
+        recorded:
+          error: "#N/A"
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - text
+    name: split-multi-delim
+  - subject: SPLIT
+    formula: =SPLIT("hello", ",")
+    category: value
+    expect: hello
+    overrides:
+      excel:
+        cause: error-code
+        recorded:
+          error: "#N/A"
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - text
+    name: split-single-token
+  - subject: SPLIT
+    formula: =SPLIT("a,,b", ",", TRUE, FALSE)
+    category: value
+    expect:
+      - - a
+        - ""
+        - b
+    overrides:
+      excel:
+        cause: error-code
+        recorded:
+          error: "#N/A"
+      gsheets:
+        # D8.β confirms this is a GENUINE Null, not a wire-format artifact:
+        # the ISBLANK side-channel probe returns TRUE on SPLIT's kept empty
+        # token (semantic_null: true), unlike the formula-cell empty-string
+        # cases (CLEAN(""), T(42), …) which probe FALSE and recover "". So
+        # gsheets really diverges from the canonical "" here.
+        cause: null-vs-zero
+        recorded:
+          - - a
+            - null
+            - b
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: error-code
+        recorded:
+          error: "#N/A"
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      formulas:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - text
+    name: split-empty-tokens
+  - subject: T
+    formula: =T("hello")
+    category: value
+    expect: hello
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - text
+    name: t-text-passthrough
+  - subject: T
+    formula: =T("42")
+    category: value
+    expect: "42"
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - text
+    name: t-numeric-string-literal
+  - subject: T
+    formula: =T(42)
+    category: value
+    expect: ""
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      excel:
+        cause: arg-semantics
+        recorded: null
+      libreoffice:
+        cause: arg-semantics
+        recorded: null
+      formulas:
+        cause: arg-semantics
+        recorded: null
+    tags:
+      - text
+    name: t-number
+  - subject: T
+    formula: =T(TRUE)
+    category: value
+    expect: ""
+    overrides:
+      hyperformula:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      excel:
+        cause: arg-semantics
+        recorded: null
+      libreoffice:
+        cause: arg-semantics
+        recorded: null
+      formulas:
+        cause: arg-semantics
+        recorded: null
+    tags:
+      - text
+    name: t-boolean
+  - subject: T
+    formula: =T("")
+    category: value
+    expect: ""
+    overrides:
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      excel:
+        cause: arg-semantics
+        recorded: null
+      libreoffice:
+        cause: arg-semantics
+        recorded: null
+      formulas:
+        cause: arg-semantics
+        recorded: null
+    tags:
+      - text
+    name: t-empty
+  - subject: TEXT
+    formula: =TEXT(1234.5, "#,##0.00")
+    category: value
+    expect: 1,234.50
+    overrides:
+      hyperformula:
+        cause: format-rendering
+        recorded: 1235,##0.00
+    tags:
+      - text
+      - locale
+    name: text-thousands
+  - subject: TEXT
+    formula: =TEXT(1234, "0000000")
+    category: value
+    expect: "0001234"
+    overrides:
+      lattice:
+        cause: format-rendering
+        recorded: "1234"
+        note: lattice ignores 0-padding directives in TEXT format string
+    tags:
+      - text
+      - locale
+    name: text-integer
+  - subject: TEXT
+    formula: =TEXT(0.25, "0.0%")
+    category: value
+    expect: 25.0%
+    overrides:
+      hyperformula:
+        cause: format-rendering
+        recorded: 0.3%
+    tags:
+      - text
+      - locale
+    name: text-percent
+  - subject: TEXT
+    category: value
+    formula: =TEXT(DATE(2024,1,15), "yyyy-mm-dd")
+    expect: 2024-01-15
+    overrides:
+      lattice:
+        cause: error-code
+        recorded:
+          error: "#TYPE!"
+    tags:
+      - text
+      - locale
+    name: text-date
+  - subject: TEXT
+    formula: =TEXT(1234.5, "$#,##0.00")
+    category: value
+    expect: $1,234.50
+    overrides:
+      hyperformula:
+        cause: format-rendering
+        recorded: $1235,##0.00
+    tags:
+      - text
+      - locale
+    name: text-currency
+  - subject: UNICHAR
+    formula: =UNICHAR(65)
+    category: value
+    expect: A
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - text
+    name: unichar-uppercase-a
+  - subject: UNICHAR
+    formula: =UNICHAR(9731)
+    category: value
+    expect: ☃
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - text
+    name: unichar-snowman
+  - subject: UNICHAR
+    formula: =UNICHAR(9829)
+    category: value
+    expect: ♥
+    overrides:
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - text
+    name: unichar-emoji-bmp
+  - subject: UNICHAR
+    formula: =UNICHAR(0)
+    category: value
+    expect: "\0"
+    overrides:
+      excel:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+      gsheets:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+      ironcalc:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      hyperformula:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      formulas:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - text
+      - divergence
+    name: unichar-zero
+  - subject: UNICODE
+    formula: =UNICODE("A")
+    category: value
+    expect: 65
+    overrides:
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - text
+    name: unicode-uppercase-a
+  - subject: UNICODE
+    formula: =UNICODE("☃")
+    category: value
+    expect: 9731
+    overrides:
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - text
+    name: unicode-snowman
+  - subject: UNICODE
+    formula: =UNICODE("♥")
+    category: value
+    expect: 9829
+    overrides:
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - text
+    name: unicode-heart
+  - subject: UNICODE
+    formula: =UNICODE("Alphabet")
+    category: value
+    expect: 65
+    overrides:
+      libreoffice:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+      pycel:
+        cause: missing-function
+        recorded:
+          error: "#NAME?"
+    tags:
+      - text
+    name: unicode-first-char
+  - subject: UNICODE
+    category: value
+    status: observed
+    formula: =UNICODE("")
+    tags:
+      - text
+      - divergence
+    name: unicode-empty
+  - subject: VALUE
+    category: value
+    formula: =VALUE("42")
+    expect: 42
+    tags:
+      - text
+    name: value-integer-string
+  - subject: VALUE
+    category: value
+    formula: =VALUE("3.14")
+    expect: 3.14
+    tags:
+      - text
+    name: value-decimal-string
+  - subject: VALUE
+    category: value
+    formula: =VALUE("-100")
+    expect: -100
+    tags:
+      - text
+    name: value-negative
+  - subject: VALUE
+    formula: =VALUE("")
+    category: value
+    expect: 0
+    overrides:
+      excel:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+      lattice:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+      ironcalc:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+      hyperformula:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+      libreoffice:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+      formulas:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+      pycel:
+        cause: error-code
+        recorded:
+          error: "#VALUE!"
+    tags:
+      - text
+      - divergence
+    name: value-empty
+  - subject: VALUE
+    formula: =VALUE("hello")
+    category: value
+    expect:
+      error: "#VALUE!"
+    tags:
+      - text
+    name: value-non-numeric

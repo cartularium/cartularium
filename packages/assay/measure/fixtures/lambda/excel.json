@@ -1,0 +1,272 @@
+{
+  "platform": "excel",
+  "generatedAt": "2026-06-04T06:16:37.367Z",
+  "results": {
+    "sha256:ac5e5ac555051010a631c52e6346a44ea906cda83f608796bedf9fadefecd69a": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 6
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n",
+              "raw_xml": {
+                "cm": 1,
+                "formula_text": "_xlfn.LAMBDA(_xlpm.x, _xlpm.x+1)(5)",
+                "formula_array_marker": "array",
+                "formula_array_ref": "AA1",
+                "formula_namespaces": [
+                  "_xlfn",
+                  "_xlpm"
+                ]
+              },
+              "saved_as_array": true
+            },
+            "formula": "_xlfn.LAMBDA(_xlpm.x, _xlpm.x+1)(5)"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=LAMBDA(x, x+1)(5)"
+    },
+    "sha256:b91483f5f2822a72e8ccf465697c5e3335e8435098e50020a4846efe53cba6eb": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 2
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n",
+              "raw_xml": {
+                "cm": 1,
+                "formula_text": "_xlfn.MAP(D1:D3, _xlfn.LAMBDA(_xlpm.x, _xlpm.x*2))",
+                "formula_array_marker": "array",
+                "formula_array_ref": "AA1:AA3",
+                "formula_namespaces": [
+                  "_xlfn",
+                  "_xlpm"
+                ]
+              },
+              "saved_as_array": true
+            },
+            "formula": "_xlfn.MAP(D1:D3, _xlfn.LAMBDA(_xlpm.x, _xlpm.x*2))"
+          }
+        ],
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 4
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          }
+        ],
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 6
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=MAP(D1:D3, LAMBDA(x, x*2))"
+    },
+    "sha256:9f04af4115598e762bec64650b485bfcc832b6215db7ed52eb4ddbe3ca7b8c93": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 6
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n",
+              "raw_xml": {
+                "cm": 1,
+                "formula_text": "_xlfn.REDUCE(0, D1:D3, _xlfn.LAMBDA(_xlpm.acc,_xlpm.v, _xlpm.acc+_xlpm.v))",
+                "formula_array_marker": "array",
+                "formula_array_ref": "AA1",
+                "formula_namespaces": [
+                  "_xlfn",
+                  "_xlpm"
+                ]
+              },
+              "saved_as_array": true
+            },
+            "formula": "_xlfn.REDUCE(0, D1:D3, _xlfn.LAMBDA(_xlpm.acc,_xlpm.v, _xlpm.acc+_xlpm.v))"
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=REDUCE(0, D1:D3, LAMBDA(acc, v, acc+v))"
+    },
+    "sha256:f577de3004fa63f86a88a4e7b7100364ca4cb6c376cbc3f6b871e418c4fe26d7": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 1
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n",
+              "raw_xml": {
+                "cm": 1,
+                "formula_text": "_xlfn.SCAN(0, D1:D3, _xlfn.LAMBDA(_xlpm.acc,_xlpm.v, _xlpm.acc+_xlpm.v))",
+                "formula_array_marker": "array",
+                "formula_array_ref": "AA1:AA3",
+                "formula_namespaces": [
+                  "_xlfn",
+                  "_xlpm"
+                ]
+              },
+              "saved_as_array": true
+            },
+            "formula": "_xlfn.SCAN(0, D1:D3, _xlfn.LAMBDA(_xlpm.acc,_xlpm.v, _xlpm.acc+_xlpm.v))"
+          }
+        ],
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 3
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          }
+        ],
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 6
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=SCAN(0, D1:D3, LAMBDA(acc, v, acc+v))"
+    },
+    "sha256:fdadd05463aad99d31e65fccdf714a22b481afbc1a1dd5df4ec3f3e044b49e7e": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 3
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n",
+              "raw_xml": {
+                "cm": 1,
+                "formula_text": "_xlfn.BYROW(D1:E2, _xlfn.LAMBDA(_xlpm.r, SUM(_xlpm.r)))",
+                "formula_array_marker": "array",
+                "formula_array_ref": "AA1:AA2",
+                "formula_namespaces": [
+                  "_xlfn",
+                  "_xlpm"
+                ]
+              },
+              "saved_as_array": true
+            },
+            "formula": "_xlfn.BYROW(D1:E2, _xlfn.LAMBDA(_xlpm.r, SUM(_xlpm.r)))"
+          }
+        ],
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 7
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=BYROW(D1:E2, LAMBDA(r, SUM(r)))"
+    },
+    "sha256:028cf6ca53c1fea2748b2cb953780176695f90032436e896fcf01d5d8bbc4c8c": {
+      "result": [
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 1
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n",
+              "raw_xml": {
+                "cm": 1,
+                "formula_text": "_xlfn.MAKEARRAY(2, 2, _xlfn.LAMBDA(_xlpm.r,_xlpm.c, _xlpm.r*_xlpm.c))",
+                "formula_array_marker": "array",
+                "formula_array_ref": "AA1:AB2",
+                "formula_namespaces": [
+                  "_xlfn",
+                  "_xlpm"
+                ]
+              },
+              "saved_as_array": true
+            },
+            "formula": "_xlfn.MAKEARRAY(2, 2, _xlfn.LAMBDA(_xlpm.r,_xlpm.c, _xlpm.r*_xlpm.c))"
+          },
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 2
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          }
+        ],
+        [
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 2
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          },
+          {
+            "primitive": {
+              "kind": "number",
+              "value": 4
+            },
+            "engine": {
+              "platform": "excel",
+              "data_type": "n"
+            }
+          }
+        ]
+      ],
+      "formula-as-evaluated": "=MAKEARRAY(2, 2, LAMBDA(r, c, r*c))"
+    }
+  }
+}

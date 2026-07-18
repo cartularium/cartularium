@@ -1,0 +1,66 @@
+{
+  "subject": "MOD",
+  "pair": {
+    "a": "excel",
+    "b": "gsheets"
+  },
+  "numTolerance": 1e-10,
+  "engines": [
+    {
+      "platform": "excel",
+      "generatedAt": "2026-06-04T06:04:03.468Z"
+    },
+    {
+      "platform": "gsheets",
+      "generatedAt": "2026-06-04T06:04:25.483Z"
+    }
+  ],
+  "axisSpace": [
+    {
+      "name": "dividend",
+      "locus": "data-borne",
+      "runtimeCheckable": true,
+      "cardinality": 2
+    },
+    {
+      "name": "divisor",
+      "locus": "data-borne",
+      "runtimeCheckable": true,
+      "cardinality": 3
+    },
+    {
+      "name": "encoding",
+      "locus": "syntactic",
+      "cardinality": 2
+    }
+  ],
+  "tallies": {
+    "total": 12,
+    "ok": 12,
+    "incomplete": 0,
+    "agree": 12,
+    "differ": 0,
+    "unimplemented": 0,
+    "precision": 0
+  },
+  "analysis": {
+    "reducts": [
+      []
+    ],
+    "core": []
+  },
+  "verdict": {
+    "subject": "MOD",
+    "completeness": 1,
+    "provisional": false,
+    "pinnedAxes": [],
+    "surface": {
+      "okProbes": 12,
+      "divergentProbes": 0,
+      "divergentFraction": 0
+    },
+    "kind": "AGREES_EVERYWHERE",
+    "discriminators": []
+  },
+  "divergent": []
+}

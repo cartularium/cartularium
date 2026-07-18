@@ -1,0 +1,16 @@
+id: DV-0253
+summary: "ironcalc: --FALSE returns boolean false instead of coercing through
+  unary-minus to 0"
+cause: arg-semantics
+category: value
+engines:
+  - ironcalc
+behavior:
+  signature: "false"
+test-count: 1
+subjects:
+  - op:unary-
+tests:
+  - op:unary-/double-unary-on-false
+seeded: 2026-04-26
+last-confirmed: 2026-04-26

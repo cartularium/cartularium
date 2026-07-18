@@ -1,0 +1,15 @@
+id: DV-0082
+summary: "libreoffice: return shape differs — MMULT"
+cause: shape
+category: value
+engines:
+  - libreoffice
+behavior:
+  signature: "19"
+test-count: 1
+subjects:
+  - MMULT
+tests:
+  - MMULT/mmult-2x2-generic
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

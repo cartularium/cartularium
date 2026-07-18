@@ -1,0 +1,20 @@
+id: DV-0039
+summary: "formulas, ironcalc: different error code — COLUMNS, ROWS"
+cause: error-code
+category: value
+engines:
+  - formulas
+  - ironcalc
+behavior:
+  signature: '{"error":"#VALUE!"}'
+test-count: 4
+subjects:
+  - COLUMNS
+  - ROWS
+tests:
+  - ROWS/rows-array-literal
+  - ROWS/rows-2d-array-literal
+  - COLUMNS/columns-array-literal
+  - COLUMNS/columns-2d-array-literal
+seeded: 2026-04-25
+last-confirmed: 2026-04-25

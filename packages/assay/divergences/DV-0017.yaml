@@ -1,0 +1,46 @@
+id: DV-0017
+summary: "hyperformula, libreoffice, pycel: function not implemented —
+  BETA.DIST, BINOM.DIST, ERF.PRECISE (+10 more)"
+cause: missing-function
+category: value
+engines:
+  - hyperformula
+  - libreoffice
+  - pycel
+behavior:
+  signature: '{"error":"#NAME?"}'
+test-count: 17
+subjects:
+  - BETA.DIST
+  - BINOM.DIST
+  - ERF.PRECISE
+  - ERFC.PRECISE
+  - EXPON.DIST
+  - GAMMA.INV
+  - NORM.DIST
+  - NORM.S.DIST
+  - RANK.AVG
+  - RANK.EQ
+  - T.DIST
+  - TEXTJOIN
+  - WEIBULL.DIST
+tests:
+  - ERF.PRECISE/erf-precise-zero
+  - ERFC.PRECISE/erfc-precise-at-0
+  - RANK.EQ/rank-eq-descending-with-tie
+  - RANK.EQ/rank-eq-ascending
+  - RANK.EQ/rank-eq-top
+  - RANK.AVG/rank-avg-descending-with-tie
+  - RANK.AVG/rank-avg-no-tie
+  - RANK.AVG/rank-avg-triple-tie
+  - BETA.DIST/beta-dist-cdf-at-boundary
+  - BINOM.DIST/binom-dist-cdf-at-n
+  - EXPON.DIST/expon-dist-pdf-at-0
+  - GAMMA.INV/gamma-inv-roundtrip
+  - NORM.DIST/norm-dist-at-mean-cdf
+  - NORM.S.DIST/norm-s-dist-at-0-cdf
+  - T.DIST/t-dist-cdf-at-0
+  - WEIBULL.DIST/weibull-dist-at-0
+  - TEXTJOIN/textjoin-comma-separator
+seeded: 2026-04-25
+last-confirmed: 2026-04-25
