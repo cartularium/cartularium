@@ -1,4 +1,5 @@
 import { Hono } from "hono"
+import { coerceStimulusGrid, stimulusPayload } from "@cartularium/contracts"
 import type { Env } from "../env"
 import {
   ASSAY_API_VERSION,
@@ -55,7 +56,7 @@ interface AcceptedAssayProposal {
   acceptedResultId: string
   canonicalCaseId: string
   caseHash: string
-  semanticHash: string
+  stimulusHash: string
   reviewReferences: ReviewReferences
   suggestedPath: string
   yaml: string
@@ -523,30 +524,6 @@ function normalizeSubmittedCaseForHash(
   }
 }
 
-function normalizeSubmittedCaseForSemanticHash(
-  submittedCase: Record<string, unknown>,
-): Record<string, unknown> {
-  const normalized: Record<string, unknown> = {}
-  for (const key of [
-    "subject",
-    "formula",
-    "grid",
-    "expect",
-    "overrides",
-    "features",
-    "supportLevel",
-    "status",
-    "setup",
-    "assertions",
-  ] as const) {
-    const value = submittedCase[key]
-    if (value !== undefined) {
-      normalized[key] = key === "features" && Array.isArray(value) ? [...value].sort() : value
-    }
-  }
-  return normalized
-}
-
 function canonicalJson(value: unknown): string {
   if (Array.isArray(value)) return `[${value.map((item) => canonicalJson(item)).join(",")}]`
   if (isRecord(value)) {
@@ -639,7 +616,7 @@ function proposalBody(args: {
   resultId: string
   requestedPlatforms: string[]
   fileContent: string
-  semanticHash: string
+  stimulusHash: string
   reviewReferences: ReviewReferences
 }): string {
   const previewJob = args.reviewReferences.previewJob
@@ -650,7 +627,7 @@ function proposalBody(args: {
     `Submitted assay case: ${args.submittedCase.id}`,
     `Accepted preview result: ${args.resultId}`,
     `Preview input hash: ${args.submittedCase.case_hash}`,
-    `Semantic hash: ${args.semanticHash}`,
+    `Stimulus hash: ${args.stimulusHash}`,
     `Submitter: ${args.submittedCase.owner_id}`,
     `Requested platforms: ${args.requestedPlatforms.join(", ")}`,
     "",
@@ -692,7 +669,7 @@ async function buildAcceptedAssayProposal(args: {
   const suiteStem = testSuiteStem(canonicalCaseId)
   const suggestedPath = `packages/assay/tests/${suiteStem}.yaml`
   const yaml = renderAssayTestYaml(args.candidate, canonicalCaseId)
-  const semanticHash = await submittedSemanticHash(args.candidate)
+  const stimulusHash = await submittedStimulusHash(args.candidate)
   const content = [
     "schemaVersion: 3",
     `name: ${yamlScalar(`${suiteStem} submissions`)}`,
@@ -706,7 +683,7 @@ async function buildAcceptedAssayProposal(args: {
     resultId: row.accepted_result_id!,
     requestedPlatforms,
     fileContent: content,
-    semanticHash,
+    stimulusHash,
     reviewReferences: references,
   })
 
@@ -715,7 +692,7 @@ async function buildAcceptedAssayProposal(args: {
     acceptedResultId: row.accepted_result_id!,
     canonicalCaseId,
     caseHash: row.case_hash,
-    semanticHash,
+    stimulusHash,
     reviewReferences: references,
     suggestedPath,
     yaml,
@@ -760,10 +737,18 @@ async function submittedCaseHash(
   }))
 }
 
-async function submittedSemanticHash(submittedCase: Record<string, unknown>): Promise<string> {
-  const hash = await sha256Hex(canonicalJson({
-    version: "assay-case-v1",
-    case: normalizeSubmittedCaseForSemanticHash(submittedCase),
+// The stability substrate's stimulus hash (assay-stimulus-v1), byte-shared
+// with assay via the contracts payload builder — never a local copy again.
+// A submitted preview case is standalone (no suite definitions/fixtures),
+// so its authored formula IS the resolved formula; the grid gets the same
+// error-string coercion assay's parser applies.
+async function submittedStimulusHash(submittedCase: Record<string, unknown>): Promise<string> {
+  const grid = submittedCase.grid
+  const hash = await sha256Hex(stimulusPayload({
+    formula: submittedCase.formula,
+    grid: grid && typeof grid === "object" && !Array.isArray(grid)
+      ? coerceStimulusGrid(grid as Record<string, unknown>)
+      : undefined,
   }))
   return `sha256:${hash}`
 }
