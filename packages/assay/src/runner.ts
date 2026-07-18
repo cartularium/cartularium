@@ -175,7 +175,15 @@ export function runFromFixtures(
       }
 
       const fixture = fixtures[platform];
-      const entry = fixture.results[key];
+      // v2 files key by declared id; v1 fossils (hibernated engines) by
+      // semanticHash — transitional fallback until the hibernation item.
+      // The stale rule: a v2 entry recorded under a different stimulus than
+      // the live case cannot satisfy the lookup.
+      let entry: FixtureEntry | undefined =
+        fixture.results[key] ?? (test.semanticHash ? fixture.results[test.semanticHash] : undefined);
+      if (entry?.stimulus !== undefined && test.stimulusHash !== undefined && entry.stimulus !== test.stimulusHash) {
+        entry = undefined;
+      }
 
       if (!entry) {
         allResults.push({

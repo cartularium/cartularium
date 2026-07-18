@@ -26,9 +26,25 @@ export interface FixtureEntry {
   // exact formula text the engine evaluated (post-adapter wrap)
   // schema §10: makes adapter behaviour debuggable from fixtures alone
   "formula-as-evaluated"?: string;
+  // === stability-substrate provenance (fixture v2, approved 2026-07-18) ===
+  /** stimulus hash the entry was observed under; a mismatch with the live
+   * case is the STALE rule — the entry cannot satisfy a live lookup */
+  stimulus?: `sha256:${string}`;
+  fingerprint?: `sha256:${string}`;
+  fpv?: number;
+  /** ledger run that produced this entry; null with preLedger marks data
+   * recorded outside the ledger (pre-run-#1 lift, ad-hoc generate) */
+  run_id?: string | null;
+  /** observation instant, when the ledger recorded one */
+  at?: string | null;
+  preLedger?: true;
 }
 
 export interface FixtureFile {
+  /** 2 = stability-substrate format, results keyed by DECLARED id with
+   * per-entry provenance; absent = v1, keyed by semanticHash, read through
+   * the retained legacy lift until the hibernation item lands */
+  schemaVersion?: 2;
   platform: Platform;
   generatedAt: string;
   results: Record<string, FixtureEntry>;
@@ -72,13 +88,32 @@ export function loadFixture(testFilePath: string, platform: Platform): FixtureFi
   const path = fixturePath(testFilePath, platform);
   if (!existsSync(path)) return null;
   const raw = JSON.parse(readFileSync(path, "utf8")) as {
+    schemaVersion?: number;
     platform: Platform;
     generatedAt: string;
     results: Record<string, LegacyEntry>;
   };
-  // Back-compat lift-on-read (§6.6): old fixtures carry {result, error,
-  // driverIssue, skipped} and/or a legacy scalar grid; new ones already carry
-  // `.outcome`. liftEntryToOutcome handles both.
+  if (raw.schemaVersion === 2) {
+    // v2 is strict: entries carry `.outcome` and provenance; no lifting.
+    for (const [id, entry] of Object.entries(raw.results)) {
+      if (!entry.outcome) {
+        throw new Error(`${path}: v2 fixture entry ${id} has no outcome — refusing to lift a v2 file`);
+      }
+    }
+    return {
+      schemaVersion: 2,
+      platform: raw.platform,
+      generatedAt: raw.generatedAt,
+      results: raw.results as Record<string, FixtureEntry>,
+    };
+  }
+  if (raw.schemaVersion !== undefined) {
+    throw new Error(`${path}: unknown fixture schemaVersion ${raw.schemaVersion}`);
+  }
+  // v1 legacy path — the RETAINED read-only lift (stability substrate,
+  // decision point 8): hibernated engines' files stay v1 fossils, keyed by
+  // semanticHash, until the hibernation item lands. {result, error,
+  // driverIssue, skipped} and/or legacy scalar grids lift to §6.6 Outcomes.
   const results: Record<string, FixtureEntry> = {};
   for (const [name, entry] of Object.entries(raw.results)) {
     results[name] = { outcome: liftEntryToOutcome(entry, platform) };
@@ -127,6 +162,7 @@ export function saveFixture(
   const merged = { ...existing, ...clean };
 
   const fixture: FixtureFile = {
+    schemaVersion: 2,
     platform,
     generatedAt: new Date().toISOString(),
     results: merged,
@@ -136,9 +172,19 @@ export function saveFixture(
 }
 
 // true when an entry should be re-queried by `--missing`: our-bug (driver-error)
-// and transient (infra) outcomes are retry candidates; engine-attributable
-// results (value/rejected/crashed) are real catalogue data, not retried.
-export function isRetryable(entry: FixtureEntry | undefined): boolean {
+// and transient (infra) outcomes are retry candidates, and — the STALE rule
+// (fixture v2) — so is any entry observed under a different stimulus than the
+// live case declares: a revised case's old answer must never satisfy a live
+// lookup or silently survive a partial regen. Engine-attributable results
+// (value/rejected/crashed) at the live stimulus are real catalogue data.
+export function isRetryable(
+  entry: FixtureEntry | undefined,
+  liveStimulus?: `sha256:${string}`,
+): boolean {
   if (!entry) return true;
-  return entry.outcome.kind === "driver-error" || entry.outcome.kind === "infra";
+  if (entry.outcome.kind === "driver-error" || entry.outcome.kind === "infra") return true;
+  if (liveStimulus !== undefined && entry.stimulus !== undefined && entry.stimulus !== liveStimulus) {
+    return true;
+  }
+  return false;
 }

@@ -1,5 +1,5 @@
 import { createHash } from "node:crypto";
-import { canonicalJson } from "./semantic-hash.js";
+import { stimulusPayload } from "@cartularium/contracts";
 
 /**
  * The stimulus hash records WHAT AN ENGINE IS ASKED TO DO, nothing else.
@@ -25,14 +25,13 @@ import { canonicalJson } from "./semantic-hash.js";
  * engine sees. `features` is also excluded: it drives skip/adapter
  * reconciliation, which is capability provenance recorded per run.
  */
+// The payload construction is SHARED via @cartularium/contracts
+// (stimulusPayload) so edit-shell's preview hashes identical bytes with
+// WebCrypto — a second copy is exactly what the adversarial review flagged.
 export function stimulusHashForCase(raw: {
   formula: unknown;
   grid?: unknown;
   environment?: unknown;
 }): `sha256:${string}` {
-  const stimulus: Record<string, unknown> = { formula: raw.formula };
-  if (raw.grid !== undefined) stimulus.grid = raw.grid;
-  if (raw.environment !== undefined) stimulus.environment = raw.environment;
-  const payload = { version: "assay-stimulus-v1", stimulus };
-  return `sha256:${createHash("sha256").update(canonicalJson(payload)).digest("hex")}`;
+  return `sha256:${createHash("sha256").update(stimulusPayload(raw)).digest("hex")}`;
 }

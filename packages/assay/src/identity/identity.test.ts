@@ -102,7 +102,7 @@ describe("assay v3 identity", () => {
     expect(a).toMatch(/^sha256:[0-9a-f]{64}$/);
   });
 
-  it("uses semantic hash as v3 case key", () => {
+  it("uses the declared id as the case key (stability substrate)", () => {
     const test = {
       id: "EXPAND/pad-value",
       subject: "EXPAND",
@@ -116,7 +116,7 @@ describe("assay v3 identity", () => {
       ],
       semanticHash: "sha256:abc123",
     };
-    expect(caseKey(test)).toBe("sha256:abc123");
+    expect(caseKey(test)).toBe("EXPAND/pad-value");
   });
 
   it("stimulus hash covers exactly what the engine is asked", () => {

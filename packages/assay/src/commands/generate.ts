@@ -7,6 +7,7 @@ import { evaluateTasks } from "../runner.js";
 import type { TestSuite } from "../format/catalogue.js";
 import { isRetryable, loadFixture, saveFixture, type FixtureEntry } from "../fixtures.js";
 import { caseKey } from "../identity/index.js";
+import { FPV, fingerprintOutcome } from "../fingerprint/index.js";
 import { cleanupWorkbook, createWorkbook, type WorkbookResult } from "../workbook.js";
 import {
   buildDrivers,
@@ -63,6 +64,7 @@ export async function generate(args: string[]): Promise<void> {
         tests: Array<{
           id: string;
           key: string;
+          stimulus?: `sha256:${string}`;
           formula: string;
           asEvaluated: string;
           grid?: Record<string, CellValue>;
@@ -78,13 +80,12 @@ export async function generate(args: string[]): Promise<void> {
         if (onlyMissing) {
           const existing = loadFixture(file, platform);
           if (existing) {
-            const retry = new Set<string>();
-            for (const [id, entry] of Object.entries(existing.results)) {
-              if (isRetryable(entry)) retry.add(id);
-            }
             tests = tests.filter((t) => {
               const key = caseKey(t);
-              return !(key in existing.results) || retry.has(key);
+              // v1 files key by semanticHash — transitional fallback until
+              // the hibernation item retires them
+              const entry = existing.results[key] ?? (t.semanticHash ? existing.results[t.semanticHash] : undefined);
+              return isRetryable(entry, t.stimulusHash);
             });
           }
         }
@@ -96,6 +97,7 @@ export async function generate(args: string[]): Promise<void> {
           resolved.push({
             id: t.id,
             key: caseKey(t),
+            stimulus: t.stimulusHash,
             formula: r.formula,
             asEvaluated: r.asEvaluated,
             grid: t.grid,
@@ -133,8 +135,19 @@ export async function generate(args: string[]): Promise<void> {
         const entries: Record<string, FixtureEntry> = {};
         for (let i = 0; i < ft.tests.length; i++) {
           const r = allOutcomes[offset + i];
-          const { id, key, asEvaluated } = ft.tests[i];
-          entries[key] = { outcome: r.outcome, "formula-as-evaluated": asEvaluated };
+          const { id, key, stimulus, asEvaluated } = ft.tests[i];
+          // preLedger until the `generate --record` integration threads real
+          // run provenance: ad-hoc generates are visibly outside the ledger
+          entries[key] = {
+            outcome: r.outcome,
+            "formula-as-evaluated": asEvaluated,
+            stimulus,
+            fingerprint: fingerprintOutcome(r.outcome),
+            fpv: FPV,
+            run_id: null,
+            at: null,
+            preLedger: true,
+          };
           // Surface non-value/non-skipped outcomes (rejected/crashed/infra/…) to the log.
           if (r.outcome.kind !== "value" && r.outcome.kind !== "skipped") {
             driverIssuesLog.push({
