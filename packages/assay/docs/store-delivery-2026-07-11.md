@@ -1,6 +1,10 @@
 # Store→build delivery path (PROPOSED 2026-07-11)
 
 **Status: PROPOSED — reference implementation this session; maintainer ratification pending.**
+
+**Public `/api/assay` lane is EXPERIMENTAL** (maintainer decision 2026-07-18, provenance sign-off
+item 3): it ships, but the response shapes may change without notice — every response carries
+`X-Assay-Api-Stability: experimental`.
 The deferred blocker behind **#4** (store-as-read-source; retiring the in-repo DV YAML /
 `history` / `seedCatalogue`) and behind the **live coverage endpoint / human verification
 surface** ("manifest-into-Worker delivery", 3d handoff). Two data flows cross the

@@ -72,6 +72,7 @@ describe("public assay read lane (/api/assay)", () => {
     const res = await SELF.fetch(`${BASE}/fork-annotations`)
     expect(res.status).toBe(200)
     expect(res.headers.get("Access-Control-Allow-Origin")).toBe("*")
+    expect(res.headers.get("X-Assay-Api-Stability")).toBe("experimental")
     const body = (await res.json()) as { version: number; annotations: Array<{ id: string; scope: unknown[] }> }
     expect(body.version).toBe(1)
     expect(body.annotations.map((a) => a.id)).toEqual(["DV-0001"])

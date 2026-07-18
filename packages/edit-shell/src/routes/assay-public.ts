@@ -1,5 +1,10 @@
 // The PUBLIC read lane — /api/assay/* (store-delivery-2026-07-11.md, D-A1).
 //
+// EXPERIMENTAL surface (maintainer decision 2026-07-18, provenance sign-off item 3): this lane
+// ships but is explicitly declared unstable — the response shapes below may change without notice.
+// Every response carries `X-Assay-Api-Stability: experimental` (set in the shared middleware) so
+// consumers can detect the posture. No /v0/ path prefix yet; the header is the marker.
+//
 // Sessionless, published-only, CORS-open: a public dataset out, nothing in. Deliberately a
 // separate mount from the authoring shell (/api/edit/assay/*), whose session → rate-limit →
 // visibility middleware stack is load-bearing for contributor privacy — this lane's only
@@ -30,10 +35,12 @@ export const MANIFEST_R2_KEY = "assay/manifest-v5.json"
 const app = new Hono<{ Bindings: Env }>()
 
 // public dataset: any origin may read; results are cacheable for five minutes.
+// The stability marker declares this an experimental surface whose shape may change without notice.
 app.use("*", async (c, next) => {
   await next()
   c.header("Access-Control-Allow-Origin", "*")
   c.header("Cache-Control", "public, max-age=300")
+  c.header("X-Assay-Api-Stability", "experimental")
 })
 
 async function publishedAnnotations(env: Env): Promise<ForkAnnotationRow[]> {
