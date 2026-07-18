@@ -27,6 +27,12 @@ The URL uses the slug, not the number (`/problems/combine-skus/`) — LeetCode's
 split: number for identity and speech, slug for the address. Filename is both:
 `ld-NNNN-slug.yaml`.
 
+Retired numbers so far: **ld-0016 Pocket Calculator** (2026-07-18) — QUERY's
+select clause evaluates arithmetic, so the difficulty existed only behind a
+QUERY ban; a problem must not be centered on a trick people have to
+randomly know, nor on forbidding one. First retirement; the number stays
+retired.
+
 Content-hash identity was considered and rejected: problems are mutable
 documents — re-oracles rewrite `expected`, statements get reworded, grades get
 recalibrated — and identity has to survive all of that, because submissions,
@@ -178,13 +184,13 @@ speculatively.
 - `external` — IMAGE, GOOGLEFINANCE, GOOGLETRANSLATE, DETECTLANGUAGE. These
   are an exfiltration channel, and IMAGE errors `#REF!` in API-created sheets
   regardless.
-- `query` — QUERY. Per-problem only: its select clause evaluates arithmetic
-  with correct precedence, which guts evaluator problems (ld-0016). Where a
-  ban is load-bearing like this, say so in the statement — solvers should
-  learn it before submitting, not from the lint reject.
 
-Default the first three on; `query` only where QUERY is the solution rather
-than a tool. An unknown class name throws at judge time, so typos
+Default all three on. A ban must never be load-bearing for difficulty: if a
+problem is only hard because some function is forbidden, the problem is
+wrong, not the solver (see the ld-0016 retirement below). Before grading,
+ask what the *easiest* legitimate solve is — QUERY arithmetic, REGEX
+built-ins, and approximate-match lookups have all shortcut an intended
+skill at least once. An unknown class name throws at judge time, so typos
 fail loudly. Lint rejects cost zero API writes — they are also the abuse
 filter, so don't loosen bans casually.
 

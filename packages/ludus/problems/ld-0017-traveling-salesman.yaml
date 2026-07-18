@@ -1,0 +1,335 @@
+id: ld-0017
+slug: traveling-salesman
+title: Traveling Salesman
+difficulty: 9
+requires:
+  - arrays
+  - lambda
+  - algorithmic
+tags:
+  - graphs
+  - algorithms
+statement: |
+  Your client runs same-day deliveries. Each morning the van leaves the
+  depot, visits every client location exactly once, and returns to the
+  depot. The city is full of one-way streets, so travel times are
+  asymmetric: the table gives minutes from the row's location to the
+  column's location, and A-to-B rarely equals B-to-A.
+
+  The depot is the first row. Produce the fastest full route as a list of
+  location names, one per row of OUTPUT: the depot, every location in
+  visiting order, and the depot again at the end. There is always exactly
+  one fastest route. Up to seven locations total.
+challenges:
+  - oner
+  - generalized
+  - golfed
+template:
+  sheets:
+    - title: About
+    - title: Input
+    - title: Answer
+  input: Input!B2:I9
+  output: Answer!B3:B10
+  answerHeaders:
+    - Route
+  spreadsheetId: 1uum0rQg7p8IPScH0HF6Wx0Mi54J8a8_P9il0do_EiFc
+reference: =LET(names, FILTER(Input!B3:B9, Input!B3:B9 <> ""), m, ROWS(names), dmat,
+  ARRAYFORMULA(ARRAY_CONSTRAIN(Input!C3:I9, m, m) * 1), nf, m - 1, full, 2 ^ nf - 1, big, 99999999,
+  dstart, LAMBDA(j, INDEX(dmat, 1, j + 1)), dcost, LAMBDA(i, j, INDEX(dmat, i + 1, j + 1)), dback,
+  LAMBDA(j, INDEX(dmat, j + 1, 1)), bitin, LAMBDA(sv, j, BITAND(sv, 2 ^ (j - 1)) > 0), pcount,
+  LAMBDA(sv, SUMPRODUCT(ARRAYFORMULA((BITAND(sv, 2 ^ SEQUENCE(1, nf, 0)) > 0) * 1))), init,
+  MAKEARRAY(full, nf, LAMBDA(sv, j, IF(sv = 2 ^ (j - 1), dstart(j), big))), tbl, REDUCE(init,
+  SEQUENCE(nf - 1, 1, 2), LAMBDA(prev, k, MAKEARRAY(full, nf, LAMBDA(sv, j, IF(OR(pcount(sv) <> k,
+  NOT(bitin(sv, j))), INDEX(prev, sv, j), LET(sm, sv - 2 ^ (j - 1), MIN(MAP(SEQUENCE(nf), LAMBDA(i,
+  IF(bitin(sm, i), INDEX(prev, sm, i) + dcost(i, j), big)))))))))), endcosts, MAP(SEQUENCE(nf),
+  LAMBDA(j, INDEX(tbl, full, j) + dback(j))), bestj, MATCH(MIN(endcosts), endcosts, 0), walked,
+  REDUCE(full & "~" & bestj & "~" & INDEX(names, bestj + 1), SEQUENCE(nf - 1), LAMBDA(acc, t,
+  LET(scur, VALUE(REGEXEXTRACT(acc, "^([^~]+)")), j, VALUE(REGEXEXTRACT(acc, "^[^~]+~([^~]+)")),
+  path, REGEXEXTRACT(acc, "^[^~]+~[^~]+~(.*)$"), sm, scur - 2 ^ (j - 1), pj, MATCH(INDEX(tbl, scur,
+  j), MAP(SEQUENCE(nf), LAMBDA(i, IF(bitin(sm, i), INDEX(tbl, sm, i) + dcost(i, j), big))), 0), sm &
+  "~" & pj & "~" & INDEX(names, pj + 1) & "◆" & path))), fin, REGEXEXTRACT(walked,
+  "^[^~]+~[^~]+~(.*)$"), TRANSPOSE(SPLIT(INDEX(names, 1) & "◆" & fin & "◆" & INDEX(names, 1), "◆")))
+selftest:
+  alt: =LET(names, FILTER(Input!B3:B9, Input!B3:B9 <> ""), m, ROWS(names), dmat,
+    ARRAYFORMULA(ARRAY_CONSTRAIN(Input!C3:I9, m, m) * 1), nf, m - 1, np, PRODUCT(SEQUENCE(nf)),
+    fact, LAMBDA(x, IF(x = 0, 1, PRODUCT(SEQUENCE(x)))), digits, TEXTJOIN("", 1, SEQUENCE(1, nf)),
+    evalp, LAMBDA(p, LET(res, REDUCE(0 & "~1~" & digits & "~", SEQUENCE(nf), LAMBDA(acc, t,
+    LET(cost, VALUE(REGEXEXTRACT(acc, "^([^~]+)")), cur, VALUE(REGEXEXTRACT(acc, "^[^~]+~([^~]+)")),
+    rem, REGEXEXTRACT(acc, "^[^~]+~[^~]+~([^~]*)~"), ord, REGEXEXTRACT(acc, "~([^~]*)$"), cnt,
+    LEN(rem), pos, MOD(FLOOR(p / fact(cnt - 1)), cnt) + 1, pick, VALUE(MID(rem, pos, 1)), (cost +
+    INDEX(dmat, cur, pick + 1)) & "~" & (pick + 1) & "~" & (LEFT(rem, pos - 1) & MID(rem, pos + 1,
+    9)) & "~" & (ord & MID(rem, pos, 1))))), LET(cost, VALUE(REGEXEXTRACT(res, "^([^~]+)")), cur,
+    VALUE(REGEXEXTRACT(res, "^[^~]+~([^~]+)")), ord, REGEXEXTRACT(res, "~([^~]*)$"), (cost +
+    INDEX(dmat, cur, 1)) & "~" & ord))), all, MAP(SEQUENCE(np, 1, 0), evalp), vals,
+    ARRAYFORMULA(VALUE(REGEXEXTRACT(all, "^([^~]+)"))), bidx, MATCH(MIN(vals), vals, 0), ord,
+    REGEXEXTRACT(INDEX(all, bidx), "~(.*)$"), route, TEXTJOIN("◆", 1, MAP(SEQUENCE(LEN(ord)),
+    LAMBDA(q, INDEX(names, VALUE(MID(ord, q, 1)) + 1)))), TRANSPOSE(SPLIT(INDEX(names, 1) & "◆" &
+    route & "◆" & INDEX(names, 1), "◆")))
+compare:
+  numbers:
+    epsilon: 1e-9
+  rowOrder: exact
+lint:
+  ban:
+    - volatile
+    - import
+    - external
+cases:
+  - kind: sample
+    input:
+      - - null
+        - Depot
+        - Mill
+        - Quarry
+        - Bridge
+        - Harbor
+      - - Depot
+        - null
+        - 37
+        - 40
+        - 23
+        - 93
+      - - Mill
+        - 47
+        - null
+        - 40
+        - 62
+        - 88
+      - - Quarry
+        - 37
+        - 45
+        - null
+        - 38
+        - 8
+      - - Bridge
+        - 80
+        - 87
+        - 72
+        - null
+        - 26
+      - - Harbor
+        - 68
+        - 19
+        - 86
+        - 27
+        - null
+    expected:
+      - - Depot
+      - - Bridge
+      - - Harbor
+      - - Mill
+      - - Quarry
+      - - Depot
+  - kind: hidden
+    input:
+      - - null
+        - Depot
+        - Fern
+        - Grove
+        - Haven
+        - Iris
+        - Knoll
+        - Marsh
+      - - Depot
+        - null
+        - 78
+        - 42
+        - 17
+        - 87
+        - 82
+        - 17
+      - - Fern
+        - 92
+        - null
+        - 25
+        - 84
+        - 42
+        - 13
+        - 20
+      - - Grove
+        - 32
+        - 8
+        - null
+        - 20
+        - 12
+        - 19
+        - 47
+      - - Haven
+        - 40
+        - 76
+        - 67
+        - null
+        - 79
+        - 34
+        - 62
+      - - Iris
+        - 53
+        - 10
+        - 82
+        - 50
+        - null
+        - 91
+        - 91
+      - - Knoll
+        - 11
+        - 66
+        - 58
+        - 65
+        - 17
+        - null
+        - 44
+      - - Marsh
+        - 81
+        - 71
+        - 24
+        - 54
+        - 47
+        - 91
+        - null
+    expected:
+      - - Depot
+      - - Haven
+      - - Marsh
+      - - Grove
+      - - Iris
+      - - Fern
+      - - Knoll
+      - - Depot
+  - kind: hidden
+    input:
+      - - null
+        - Hub
+        - Acme
+        - Bolt
+        - Crux
+        - Dyna
+        - Echo
+        - Flux
+      - - Hub
+        - null
+        - 25
+        - 28
+        - 59
+        - 9
+        - 29
+        - 57
+      - - Acme
+        - 82
+        - null
+        - 8
+        - 21
+        - 30
+        - 59
+        - 64
+      - - Bolt
+        - 63
+        - 75
+        - null
+        - 48
+        - 20
+        - 67
+        - 40
+      - - Crux
+        - 49
+        - 16
+        - 53
+        - null
+        - 17
+        - 91
+        - 86
+      - - Dyna
+        - 41
+        - 46
+        - 62
+        - 58
+        - null
+        - 62
+        - 18
+      - - Echo
+        - 46
+        - 25
+        - 43
+        - 59
+        - 40
+        - null
+        - 86
+      - - Flux
+        - 12
+        - 33
+        - 37
+        - 67
+        - 90
+        - 64
+        - null
+    expected:
+      - - Hub
+      - - Echo
+      - - Acme
+      - - Bolt
+      - - Crux
+      - - Dyna
+      - - Flux
+      - - Hub
+  - kind: hidden
+    input:
+      - - null
+        - Yard
+        - Nook
+        - Onyx
+        - Pier
+        - Quay
+        - Reef
+      - - Yard
+        - null
+        - 90
+        - 75
+        - 79
+        - 17
+        - 47
+      - - Nook
+        - 95
+        - null
+        - 59
+        - 9
+        - 48
+        - 30
+      - - Onyx
+        - 81
+        - 49
+        - null
+        - 74
+        - 51
+        - 9
+      - - Pier
+        - 66
+        - 68
+        - 95
+        - null
+        - 41
+        - 87
+      - - Quay
+        - 11
+        - 64
+        - 18
+        - 32
+        - null
+        - 59
+      - - Reef
+        - 28
+        - 63
+        - 43
+        - 94
+        - 8
+        - null
+    expected:
+      - - Yard
+      - - Quay
+      - - Onyx
+      - - Reef
+      - - Nook
+      - - Pier
+      - - Yard
+verified:
+  asOf: 2026-07-18
+  hash: 20cdd099ccf1576e
