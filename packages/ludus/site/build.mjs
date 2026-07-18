@@ -1,6 +1,7 @@
 // Static site for ludus: index + one page per problem, rendered from
 // problems/*.yaml. Only sample cases are published — hidden cases never
 // reach the build output. Pattern cloned from cartularium-org.
+import { createHash } from "node:crypto"
 import { cpSync, mkdirSync, readFileSync, readdirSync, rmSync, writeFileSync } from "node:fs"
 import { createRequire } from "node:module"
 import { dirname, join } from "node:path"
@@ -22,7 +23,10 @@ export const SRC = join(PKG, "site")
 export const OUT = join(PKG, "public")
 const PROBLEMS = join(PKG, "problems")
 const HOST = "ludus.sheets.wiki"
-const ASSET_VERSION = process.env.CF_PAGES_COMMIT_SHA ?? process.env.GITHUB_SHA ?? "dev"
+// content hash set by build() once assets are emitted — a constant fallback
+// ("dev") once shipped identical asset URLs every deploy, so edges and
+// browsers kept serving stale JS after the panel rewrite
+let assetVersion = "unset"
 // judge service base URL; unset → submit box renders as a disabled stub
 const SERVICE_URL = process.env.LUDUS_SERVICE_URL ?? null
 
@@ -73,7 +77,7 @@ function page({ root, title, description, body }) {
     root,
     title,
     description,
-    assetVersion: ASSET_VERSION,
+    assetVersion,
     body,
     ...chromeParts(root),
   })
@@ -227,6 +231,21 @@ export function build() {
   mkdirSync(OUT, { recursive: true })
   mkdirSync(join(OUT, "assets"), { recursive: true })
 
+  // assets first, so pages can reference them by content hash
+  const css = sass.compile(join(SRC, "styles.scss"), {
+    loadPaths: [join(REPO, "node_modules"), join(PKG, "node_modules")],
+    style: "compressed",
+  }).css
+  writeFileSync(join(OUT, "styles.css"), css)
+  cpSync(require.resolve("@cartularium/chrome/scripts/chrome.js"), join(OUT, "assets", "chrome.js"))
+  cpSync(join(SRC, "assets", "submit.js"), join(OUT, "assets", "submit.js"))
+  assetVersion = createHash("sha256")
+    .update(css)
+    .update(readFileSync(join(OUT, "assets", "chrome.js")))
+    .update(readFileSync(join(OUT, "assets", "submit.js")))
+    .digest("hex")
+    .slice(0, 10)
+
   const problems = readdirSync(PROBLEMS)
     .filter((f) => f.endsWith(".yaml"))
     .map((f) => parse(readFileSync(join(PROBLEMS, f), "utf8")))
@@ -255,15 +274,6 @@ export function build() {
       }),
     )
   }
-
-  const css = sass.compile(join(SRC, "styles.scss"), {
-    loadPaths: [join(REPO, "node_modules"), join(PKG, "node_modules")],
-    style: "compressed",
-  }).css
-  writeFileSync(join(OUT, "styles.css"), css)
-
-  cpSync(require.resolve("@cartularium/chrome/scripts/chrome.js"), join(OUT, "assets", "chrome.js"))
-  cpSync(join(SRC, "assets", "submit.js"), join(OUT, "assets", "submit.js"))
 
   return { counts: { problems: problems.length } }
 }
