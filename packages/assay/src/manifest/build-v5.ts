@@ -50,7 +50,9 @@ const OUTCOME_CLAIM_TAGS = new Set([
   "divergence",
   "coercion-divergence",
   "excel-only",
-  // asserts a cross-engine outcome; found published on 10 regex cases (3f audit, 2026-07-11)
+  // asserts a cross-engine outcome; found published on 10 regex cases (3f audit, 2026-07-11) —
+  // the predicted denylist-rot leak this gate exists to catch. Maintainer confirmed it belongs
+  // here 2026-07-18 (internal provenance sign-off item 7).
   "engine-divergence",
 ]);
 
@@ -187,9 +189,12 @@ export function buildManifestV5(input: BuildManifestV5Input): ManifestV5 {
 
   // per-test entries — EVERY corpus case, function-subject or not (op:* / lit:* / feature:* /
   // legacy:*). The V4-era function-only gate silently dropped 88 observed cases (86 with live
-  // fixture outcomes, several fork-bearing) from the published relation layer — clipping truth,
-  // which the charter forbids (thresholds route cost, never truth). Widened 2026-07-11 (3f,
-  // reclassify-policy D-3f-4): the `functions` rollup below stays function-scoped (it iterates
+  // fixture outcomes, several fork-bearing) from the published relation layer, clipping the
+  // subject universe (danglings 17 → 0 once they publish). The maintainer ratified this widening
+  // 2026-07-18 (internal provenance sign-off item 2), recording the scope rule for Assay's
+  // charter: Assay's subject universe is everything that can be read by or affected by spreadsheet
+  // formulas — operators and literals are formula-facing, so they belong in it. Widened 2026-07-11
+  // (3f, reclassify-policy D-3f-4): the `functions` rollup below stays function-scoped (it iterates
   // fnSet), so this only ADDS test entries; it cannot leak non-functions into the rollup.
   const tests: Record<string, ManifestV5TestEntry> = {};
   const aliases: Record<string, ManifestV5AliasEntry> = {};
