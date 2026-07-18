@@ -19,7 +19,7 @@ export interface MatrixReport {
   totalOverrides: number;
   perEngine: EngineStats[];
   pairwise: PairwiseRow[];
-  clusters: DivergenceCluster[];
+  clusters: ForkCluster[];
 }
 
 export interface EngineStats {
@@ -44,7 +44,7 @@ export interface PairwiseRow {
   agreementPct: number;
 }
 
-export interface DivergenceCluster {
+export interface ForkCluster {
   // stable handle: `<cause>__<engines-sorted>__<sig-hash>`
   key: string;
   cause: Cause;
@@ -211,7 +211,7 @@ export function computeMatrix(suiteFiles: string[]): MatrixReport {
   }
 
   // sort clusters by testCount desc
-  const clusterList: DivergenceCluster[] = [...clusters.entries()]
+  const clusterList: ForkCluster[] = [...clusters.entries()]
     .map(([key, c]) => {
       const dominantCategory = [...c.categories.entries()].sort((a, b) => b[1] - a[1])[0]?.[0] ?? ("value" as Category);
       return {
@@ -270,7 +270,7 @@ export function printMatrix(report: MatrixReport, opts: PrintOptions = {}): void
 }
 
 function printHeader(report: MatrixReport): void {
-  console.log(`── Divergence matrix ──`);
+  console.log(`── Fork matrix ──`);
   console.log(`  tests scanned:    ${report.totalTests}`);
   console.log(`  total overrides:  ${report.totalOverrides}`);
   console.log(`  cluster groups:   ${report.clusters.length}`);
@@ -461,7 +461,7 @@ export function seedCatalogue(report: MatrixReport, dir: string, opts: SeedOptio
 }
 
 // one-line human summary derived from the cluster's structure
-function clusterSummary(c: DivergenceCluster): string {
+function clusterSummary(c: ForkCluster): string {
   const enginesStr = c.engines.join(", ");
   const subjectsStr = c.subjects.length <= 3
     ? c.subjects.join(", ")

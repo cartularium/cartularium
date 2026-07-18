@@ -3,7 +3,7 @@
 import { existsSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import * as YAML from "yaml";
-import type { DivergenceCluster } from "../divergence-matrix.js";
+import type { ForkCluster } from "../fork-matrix.js";
 import { clusterKey } from "../divergences/cluster.js";
 import type { Platform } from "../format/values.js";
 import type { Cause } from "../format/catalogue.js";
@@ -26,7 +26,7 @@ export type DvEventDraft = Omit<DvEventRow, "run_id" | "ts">;
 
 export interface DvDelta {
   events: DvEventDraft[];
-  seedActions: Array<{ dv_id: string; cluster: DivergenceCluster; path: string }>;
+  seedActions: Array<{ dv_id: string; cluster: ForkCluster; path: string }>;
   statusActions: Array<{ dv_id: string; path: string; kind: "vanish" | "resurrect" }>;
 }
 
@@ -34,7 +34,7 @@ export interface DvDelta {
 // for applying seedActions (writing yaml files) under the same lock that
 // guards history writes
 export function diffClusters(
-  clusters: DivergenceCluster[],
+  clusters: ForkCluster[],
   divergencesDir: string,
 ): DvDelta {
   const existing = loadExistingDvs(divergencesDir);

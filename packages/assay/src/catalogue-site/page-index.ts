@@ -23,7 +23,7 @@ export function renderIndex(dvs: DvEntry[]): string {
 
   return renderPage(
     "index",
-    { title: "Divergence catalogue — assay", relPath: ".", current: "index" },
+    { title: "Fork catalogue — assay", relPath: ".", current: "index" },
     {
       dvs: dvsForTemplate,
       dvCount: dvs.length,
