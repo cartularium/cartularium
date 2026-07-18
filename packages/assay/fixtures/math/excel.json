@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "platform": "excel",
-  "generatedAt": "2026-07-18T22:14:58.621Z",
+  "generatedAt": "2026-07-18T22:19:02.298Z",
   "results": {
     "ABS/abs-positive": {
       "outcome": {
@@ -2154,27 +2154,71 @@
     },
     "POWER/power-zero-base-zero-exponent": {
       "outcome": {
-        "kind": "rejected",
-        "reason": "excel rejected formula (would prompt AutoRecovery)"
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "error",
+                "sentinel": "#NUM!"
+              },
+              "engine": {
+                "platform": "excel",
+                "data_type": "e",
+                "raw_xml": {
+                  "t": "e",
+                  "formula_text": "POWER(0, 0)"
+                }
+              },
+              "formula": "POWER(0, 0)"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
       },
       "formula-as-evaluated": "=POWER(0, 0)",
       "stimulus": "sha256:310929086ca8ae65bda80aaf656ff1b8081ceb8d4f030bef0d660341c4264bca",
-      "fingerprint": "sha256:03cd8606eea992d1087f4c5045a8d609a466e8548407440ba80d7d6a5783e347",
+      "fingerprint": "sha256:f3a7c5ef3dc55973380ab8685af4886919ca174f93d2e56814d91074798899a6",
       "fpv": 1,
-      "run_id": "2026-07-18T22:14:53Z.65ba",
-      "at": "2026-07-18T22:14:58.618Z"
+      "run_id": "2026-07-18T22:18:57Z.ab85",
+      "at": "2026-07-18T22:19:02.294Z"
     },
     "POWER/power-zero-base-negative-exponent": {
       "outcome": {
-        "kind": "rejected",
-        "reason": "excel rejected formula (would prompt AutoRecovery)"
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "error",
+                "sentinel": "#DIV/0!"
+              },
+              "engine": {
+                "platform": "excel",
+                "data_type": "e",
+                "raw_xml": {
+                  "t": "e",
+                  "formula_text": "POWER(0, -1)"
+                }
+              },
+              "formula": "POWER(0, -1)"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
       },
       "formula-as-evaluated": "=POWER(0, -1)",
       "stimulus": "sha256:1b6d32566d986081b71807499ec310a3a2edf9cc771bde80883b8930ccaca56d",
-      "fingerprint": "sha256:03cd8606eea992d1087f4c5045a8d609a466e8548407440ba80d7d6a5783e347",
+      "fingerprint": "sha256:9e9c3c33922769ff43b5ee707235ee42da4c50fca21170ab577b0fd144aecc52",
       "fpv": 1,
-      "run_id": "2026-07-18T22:14:53Z.65ba",
-      "at": "2026-07-18T22:14:58.618Z"
+      "run_id": "2026-07-18T22:18:57Z.ab85",
+      "at": "2026-07-18T22:19:02.294Z"
     }
   }
 }

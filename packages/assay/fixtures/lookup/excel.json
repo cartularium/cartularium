@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "platform": "excel",
-  "generatedAt": "2026-07-18T22:14:58.619Z",
+  "generatedAt": "2026-07-18T22:19:02.297Z",
   "results": {
     "INDEX/index-row-and-column": {
       "outcome": {
@@ -702,15 +702,37 @@
     },
     "VLOOKUP/vlookup-column-index-out-of-range-miss": {
       "outcome": {
-        "kind": "rejected",
-        "reason": "excel rejected formula (would prompt AutoRecovery)"
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "error",
+                "sentinel": "#N/A"
+              },
+              "engine": {
+                "platform": "excel",
+                "data_type": "e",
+                "raw_xml": {
+                  "t": "e",
+                  "formula_text": "VLOOKUP(9, A1:C3, 5, FALSE)"
+                }
+              },
+              "formula": "VLOOKUP(9, A1:C3, 5, FALSE)"
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 1
+        }
       },
       "formula-as-evaluated": "=VLOOKUP(9, A1:C3, 5, FALSE)",
       "stimulus": "sha256:fd96c30bfb58a131b640afcf7059505facb49ad66016c7cbbe745a3d9641f838",
-      "fingerprint": "sha256:03cd8606eea992d1087f4c5045a8d609a466e8548407440ba80d7d6a5783e347",
+      "fingerprint": "sha256:c98ddc95a4f5716ef17b94c5c73c9ede35dff1666986224ac03e53fce8c29367",
       "fpv": 1,
-      "run_id": "2026-07-18T22:14:53Z.65ba",
-      "at": "2026-07-18T22:14:58.618Z"
+      "run_id": "2026-07-18T22:18:57Z.ab85",
+      "at": "2026-07-18T22:19:02.294Z"
     }
   }
 }

@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "platform": "excel",
-  "generatedAt": "2026-07-18T22:14:58.619Z",
+  "generatedAt": "2026-07-18T22:19:02.297Z",
   "results": {
     "LAMBDA/lambda-basic-iife": {
       "outcome": {
@@ -1336,27 +1336,107 @@
     },
     "MAP/map-hstack-of-lambdas": {
       "outcome": {
-        "kind": "rejected",
-        "reason": "excel rejected formula (would prompt AutoRecovery)"
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 2
+              },
+              "engine": {
+                "platform": "excel",
+                "data_type": "n",
+                "raw_xml": {
+                  "cm": 1,
+                  "formula_text": "_xlfn.MAP(_xlfn.HSTACK(_xlfn.LAMBDA(_xlpm.x,_xlpm.x+1),_xlfn.LAMBDA(_xlpm.x,_xlpm.x+2)), _xlfn.LAMBDA(_xlpm.x,_xlpm.x(1)))",
+                  "formula_array_marker": "array",
+                  "formula_array_ref": "CC1:CD1",
+                  "formula_namespaces": [
+                    "_xlfn",
+                    "_xlpm"
+                  ]
+                },
+                "saved_as_array": true
+              },
+              "formula": "_xlfn.MAP(_xlfn.HSTACK(_xlfn.LAMBDA(_xlpm.x,_xlpm.x+1),_xlfn.LAMBDA(_xlpm.x,_xlpm.x+2)), _xlfn.LAMBDA(_xlpm.x,_xlpm.x(1)))"
+            },
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 3
+              },
+              "engine": {
+                "platform": "excel",
+                "data_type": "n"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 1,
+          "cols": 2
+        }
       },
       "formula-as-evaluated": "=MAP(HSTACK(LAMBDA(x,x+1),LAMBDA(x,x+2)), LAMBDA(x,x(1)))",
       "stimulus": "sha256:93375d5c4fc4a268a203d51ac043e9c412d1e78f738295b26ddfeb310373de8e",
-      "fingerprint": "sha256:03cd8606eea992d1087f4c5045a8d609a466e8548407440ba80d7d6a5783e347",
+      "fingerprint": "sha256:70da1bf2bd04005832243300c06a91591c4aaea1404678484a6989ebc513856f",
       "fpv": 1,
-      "run_id": "2026-07-18T22:14:53Z.65ba",
-      "at": "2026-07-18T22:14:58.618Z"
+      "run_id": "2026-07-18T22:18:57Z.ab85",
+      "at": "2026-07-18T22:19:02.294Z"
     },
     "MAP/map-vstack-of-lambdas": {
       "outcome": {
-        "kind": "rejected",
-        "reason": "excel rejected formula (would prompt AutoRecovery)"
+        "kind": "value",
+        "grid": [
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 10
+              },
+              "engine": {
+                "platform": "excel",
+                "data_type": "n",
+                "raw_xml": {
+                  "cm": 1,
+                  "formula_text": "_xlfn.MAP(_xlfn.VSTACK(_xlfn.LAMBDA(_xlpm.x,_xlpm.x*2),_xlfn.LAMBDA(_xlpm.x,_xlpm.x*3)), _xlfn.LAMBDA(_xlpm.x,_xlpm.x(5)))",
+                  "formula_array_marker": "array",
+                  "formula_array_ref": "A21:A22",
+                  "formula_namespaces": [
+                    "_xlfn",
+                    "_xlpm"
+                  ]
+                },
+                "saved_as_array": true
+              },
+              "formula": "_xlfn.MAP(_xlfn.VSTACK(_xlfn.LAMBDA(_xlpm.x,_xlpm.x*2),_xlfn.LAMBDA(_xlpm.x,_xlpm.x*3)), _xlfn.LAMBDA(_xlpm.x,_xlpm.x(5)))"
+            }
+          ],
+          [
+            {
+              "primitive": {
+                "kind": "number",
+                "value": 15
+              },
+              "engine": {
+                "platform": "excel",
+                "data_type": "n"
+              }
+            }
+          ]
+        ],
+        "extent": {
+          "rows": 2,
+          "cols": 1
+        }
       },
       "formula-as-evaluated": "=MAP(VSTACK(LAMBDA(x,x*2),LAMBDA(x,x*3)), LAMBDA(x,x(5)))",
       "stimulus": "sha256:65f663524487db917c0b828b97d756395e8aae8c30191d2212503aeb19a31742",
-      "fingerprint": "sha256:03cd8606eea992d1087f4c5045a8d609a466e8548407440ba80d7d6a5783e347",
+      "fingerprint": "sha256:7b753288b00026dd4ec97c7cfcd0ff65a066d3c675ee241a6b0ca0995571aeca",
       "fpv": 1,
-      "run_id": "2026-07-18T22:14:53Z.65ba",
-      "at": "2026-07-18T22:14:58.618Z"
+      "run_id": "2026-07-18T22:18:57Z.ab85",
+      "at": "2026-07-18T22:19:02.294Z"
     }
   }
 }
