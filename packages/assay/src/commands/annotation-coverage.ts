@@ -44,7 +44,13 @@ export function annotationCoverage(): void {
     const dvs = loadDvs(catalogueDir);
     const tests = loadTests(testsDir);
     const outcomes = loadFixtureOutcomes("fixtures", tests);
-    const manifest = buildManifestV5({ dvs, tests, outcomes, generatedAt: new Date().toISOString() });
+    const manifest = buildManifestV5({
+      dvs,
+      tests,
+      outcomes,
+      generatedAt: new Date().toISOString(),
+      provenance: { runs: [] },
+    });
     const report = computeForkCoverage(manifest, annotations);
 
     if (values.json) {

@@ -218,6 +218,21 @@ export interface ManifestV5TombstoneEntry {
   reason: string
 }
 
+export interface ManifestV5Provenance {
+  runs: Array<{
+    run_id: string
+    evidence_commit: string
+    engines: Record<string, {
+      driver: string
+      engine_version: string | null
+      conditions: {
+        locale: string
+        calc: { epoch: string; iterative: boolean; precision: string }
+      }
+    }>
+  }>
+}
+
 export interface ManifestV5 {
   version: 5
   generatedAt: string
@@ -228,6 +243,7 @@ export interface ManifestV5 {
   aliases: Record<string, ManifestV5AliasEntry>
   tombstones: Record<string, ManifestV5TombstoneEntry>
   hashes: Record<`sha256:${string}`, string>
+  provenance: ManifestV5Provenance
 }
 
 export type FormulaCompatibilitySupport =

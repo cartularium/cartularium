@@ -3,6 +3,7 @@ import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { afterEach, beforeEach, describe, expect, it } from "vitest";
 import { newRunId, readRows, snapshotCapabilities, validateRunRow } from "./io.js";
+import { loadLedgerIndex } from "./index-read.js";
 import { engineRunInfo } from "./record.js";
 import { LedgerWriter, RESULTS_FILE, RUNS_FILE, readLedger } from "./writer.js";
 import type { EngineRunInfo } from "./types.js";
@@ -159,6 +160,30 @@ describe("ledger", () => {
   it("refuses interior corruption", () => {
     writeFileSync(join(dir, RUNS_FILE), 'not json\n{"row":"run"}\n');
     expect(() => readRows(join(dir, RUNS_FILE))).toThrow(/interior/);
+  });
+
+  it("indexes orphan lifecycle rows while skipping malformed rows and corrections", () => {
+    writeFileSync(join(dir, RUNS_FILE), [
+      JSON.stringify({
+        row: "complete",
+        run_id: "orphan",
+        at: "2026-07-18T14:05:00Z",
+        observed: {},
+        counts: {},
+      }),
+      JSON.stringify({ row: "evidence", run_id: "orphan", commit: "cafe", files: {} }),
+      JSON.stringify({ row: "complete", run_id: "malformed" }),
+      JSON.stringify({ row: "correction", corrects: "orphan", replaces: {} }),
+      "",
+    ].join("\n"));
+
+    const index = loadLedgerIndex(join(dir, RUNS_FILE));
+    expect(index.get("orphan")).toMatchObject({
+      complete: { row: "complete" },
+      evidence: { row: "evidence", commit: "cafe" },
+    });
+    expect(index.get("orphan")?.run).toBeUndefined();
+    expect(index.has("malformed")).toBe(false);
   });
 
   it("one writer at a time", () => {

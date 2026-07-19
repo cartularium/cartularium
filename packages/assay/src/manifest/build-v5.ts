@@ -68,6 +68,7 @@ export interface BuildManifestV5Input {
   /** hash/ref/id → platform → the §6.6 Outcome (already lifted from legacy entries). */
   outcomes: Map<string, Map<Platform, Outcome>>;
   generatedAt: string;
+  provenance: ManifestV5["provenance"];
 }
 
 /** Map a per-engine Outcome to its capability. `classOf` is the engine's agreement-class index
@@ -260,5 +261,6 @@ export function buildManifestV5(input: BuildManifestV5Input): ManifestV5 {
     aliases,
     tombstones: {} as Record<string, ManifestV5TombstoneEntry>,
     hashes,
+    provenance: input.provenance,
   };
 }

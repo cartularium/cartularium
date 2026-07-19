@@ -43,7 +43,13 @@ function build(
       new Map(Object.entries(byEngine) as [Platform, Outcome][]),
     );
   }
-  const input: BuildManifestV5Input = { dvs: [], tests: testMap, outcomes, generatedAt: "2026-06-17T00:00:00.000Z" };
+  const input: BuildManifestV5Input = {
+    dvs: [],
+    tests: testMap,
+    outcomes,
+    generatedAt: "2026-06-17T00:00:00.000Z",
+    provenance: { runs: [] },
+  };
   return buildManifestV5(input);
 }
 

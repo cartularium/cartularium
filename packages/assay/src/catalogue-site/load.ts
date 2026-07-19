@@ -6,7 +6,11 @@ import * as YAML from "yaml";
 import type { ScopeClause } from "@cartularium/contracts";
 import { loadTestSuite } from "../format/parse.js";
 import { caseKey } from "../identity/index.js";
-import { liftEntryToOutcome, type LegacyEntry } from "../fixtures.js";
+import {
+  liftEntryToOutcome,
+  type FixtureEntry,
+  type LegacyEntry,
+} from "../fixtures.js";
 import { isPlatform, type Outcome, type Platform } from "../format/values.js";
 
 export interface DvEntry {
@@ -243,6 +247,47 @@ export function loadFixtureOutcomes(
         for (const target of targets) {
           if (!out.has(target)) out.set(target, new Map());
           out.get(target)!.set(engine, outcome);
+        }
+      }
+    }
+  }
+  return out;
+}
+
+// test key → engine → the complete fixture entry. This is the
+// publication-aware sibling of loadFixtureOutcomes: legacy outcomes are still
+// lifted, but provenance is neither discarded nor synthesized.
+export function loadFixtureEntries(
+  dir: string,
+  keep: Set<string> | Map<string, TestInfo>,
+): Map<string, Map<Platform, FixtureEntry>> {
+  const out = new Map<string, Map<Platform, FixtureEntry>>();
+  if (!existsSync(dir)) return out;
+  const keyTargets = fixtureKeyTargets(keep);
+  for (const suite of readdirSync(dir)) {
+    const suitePath = join(dir, suite);
+    let stat;
+    try { stat = readdirSync(suitePath); } catch { continue; }
+    for (const f of stat) {
+      if (!f.endsWith(".json")) continue;
+      const engine = f.replace(/\.json$/, "");
+      if (!isPlatform(engine)) continue;
+      let fx: { results?: Record<string, LegacyEntry & Partial<FixtureEntry>> };
+      try {
+        fx = JSON.parse(readFileSync(join(suitePath, f), "utf8"));
+      } catch {
+        continue;
+      }
+      for (const [tid, persisted] of Object.entries(fx.results ?? {})) {
+        const targets = keyTargets.get(tid) ?? (keep instanceof Set && isSemanticHash(tid) ? [tid] : undefined);
+        if (!targets) continue;
+        const entry: FixtureEntry = {
+          ...persisted,
+          outcome: liftEntryToOutcome(persisted, engine),
+        };
+        for (const target of targets) {
+          if (!out.has(target)) out.set(target, new Map());
+          out.get(target)!.set(engine, entry);
         }
       }
     }
