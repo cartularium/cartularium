@@ -12,7 +12,7 @@ import {
 import { dirname, join } from "node:path";
 import { acquireLock, type LockHandle } from "../history/io.js";
 import { canonicalJson } from "../identity/semantic-hash.js";
-import type { RunId } from "./types.js";
+import type { RunId, RunRow } from "./types.js";
 
 export function newRunId(start: Date): RunId {
   const iso = start.toISOString().replace(/\.\d{3}Z$/, "Z");
@@ -68,10 +68,41 @@ export function sha256OfFile(path: string): `sha256:${string}` {
   return `sha256:${createHash("sha256").update(readFileSync(path)).digest("hex")}`;
 }
 
+export function validateRunRow(row: unknown): RunRow {
+  const run = row as Record<string, unknown>;
+  const runId = run.run_id;
+  const engines = run.engines as Record<string, unknown>;
+  if (run.schema === undefined) {
+    for (const [engine, value] of Object.entries(engines)) {
+      const capabilities = (value as Record<string, unknown>)?.capabilities;
+      if (typeof capabilities !== "string" || !capabilities.startsWith("sha256:")) {
+        throw new Error(`ledger: run ${runId}: schema-1 row missing capabilities for ${engine}`);
+      }
+    }
+    return row as RunRow;
+  }
+  if (run.schema === 2) {
+    for (const [engine, value] of Object.entries(engines)) {
+      const capabilities = (value as Record<string, unknown>)?.capabilities;
+      if (capabilities !== undefined && (
+        typeof capabilities !== "string" || !capabilities.startsWith("sha256:")
+      )) {
+        throw new Error(`ledger: run ${runId}: schema-2 row has malformed capabilities for ${engine}`);
+      }
+    }
+    return row as RunRow;
+  }
+  throw new Error(`ledger: run ${runId}: unknown run-row schema ${run.schema}`);
+}
+
 // content-addressed capabilities snapshot: one JSON object holding every
 // capability file, stored at history/capabilities/<hash>.json so the run
 // row's hash always has a materialized referent
-export function snapshotCapabilities(capabilitiesDir: string, historyDir: string): `sha256:${string}` {
+export function snapshotCapabilities(
+  capabilitiesDir: string,
+  historyDir: string,
+): `sha256:${string}` | null {
+  if (!existsSync(capabilitiesDir)) return null;
   const files = readdirSync(capabilitiesDir).filter((f) => f.endsWith(".json")).sort();
   const snapshot: Record<string, unknown> = {};
   for (const f of files) {

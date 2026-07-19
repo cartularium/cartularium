@@ -9,6 +9,9 @@ corpus.
 
 Files here are append-only JSONL (interim storage; the row semantics, not
 the format, are the contract). Rows are never edited; corrections are rows.
+Capability snapshot blobs under `capabilities/` are permanent. Schema-1 run
+rows reference them by hash forever; the source capability directory may
+retire, but these blobs never do.
 
 ## archive-pre-refounding/
 

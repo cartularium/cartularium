@@ -2,7 +2,8 @@ import { appendFileSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { afterEach, beforeEach, describe, expect, it } from "vitest";
-import { newRunId, readRows, snapshotCapabilities } from "./io.js";
+import { newRunId, readRows, snapshotCapabilities, validateRunRow } from "./io.js";
+import { engineRunInfo } from "./record.js";
 import { LedgerWriter, RESULTS_FILE, RUNS_FILE, readLedger } from "./writer.js";
 import type { EngineRunInfo } from "./types.js";
 
@@ -13,6 +14,12 @@ const ENGINE: EngineRunInfo = {
   conditions: { locale: "en-US", calc: { epoch: "1899-12-30", iterative: false, precision: "full" } },
   capacity_events: [],
 };
+
+function withoutCapabilities(info: EngineRunInfo): EngineRunInfo {
+  const copy = { ...info };
+  delete copy.capabilities;
+  return copy;
+}
 
 let dir: string;
 beforeEach(() => { dir = mkdtempSync(join(tmpdir(), "assay-ledger-")); });
@@ -29,6 +36,62 @@ function openRun(w: LedgerWriter) {
 }
 
 describe("ledger", () => {
+  it("accepts a serialized schema-1 run row with capabilities", () => {
+    const line = '{"row":"run","run_id":"2026-07-18T14:00:00Z.0001","seq":1,"trigger":"manual","scope":{"kind":"full"},"corpus_commit":"deadbeef","engines":{"gsheets":{"driver":"@cartularium/drivers@0.1.0+abc123","engine_version":null,"capabilities":"sha256:0000000000000000000000000000000000000000000000000000000000000000","conditions":{"locale":"en-US","calc":{"epoch":"1899-12-30","iterative":false,"precision":"full"}},"capacity_events":[]}}}\n';
+    writeFileSync(join(dir, RUNS_FILE), line);
+
+    const [run] = readLedger(dir).runs;
+    expect(run.run_id).toBe("2026-07-18T14:00:00Z.0001");
+    expect("schema" in run).toBe(false);
+  });
+
+  it("rejects a schema-1 run row missing capabilities", () => {
+    expect(() => validateRunRow({
+      row: "run",
+      run_id: "2026-07-18T14:00:00Z.0001",
+      seq: 1,
+      trigger: "manual",
+      scope: { kind: "full" },
+      corpus_commit: "deadbeef",
+      engines: { gsheets: withoutCapabilities(ENGINE) },
+    })).toThrow("ledger: run 2026-07-18T14:00:00Z.0001: schema-1 row missing capabilities for gsheets");
+  });
+
+  it("accepts a schema-2 run row without capabilities", () => {
+    expect(validateRunRow({
+      row: "run",
+      schema: 2,
+      run_id: "2026-07-18T14:00:00Z.0002",
+      seq: 2,
+      trigger: "manual",
+      scope: { kind: "full" },
+      corpus_commit: "deadbeef",
+      engines: { gsheets: withoutCapabilities(ENGINE) },
+    })).toMatchObject({ schema: 2 });
+  });
+
+  it("rejects malformed schema-2 capabilities", () => {
+    expect(() => validateRunRow({
+      row: "run",
+      schema: 2,
+      run_id: "2026-07-18T14:00:00Z.0002",
+      seq: 2,
+      trigger: "manual",
+      scope: { kind: "full" },
+      corpus_commit: "deadbeef",
+      engines: { gsheets: { ...ENGINE, capabilities: "not-a-sha" } },
+    })).toThrow(/schema-2 row has malformed capabilities for gsheets/);
+  });
+
+  it("rejects unknown run-row schemas", () => {
+    expect(() => validateRunRow({
+      row: "run",
+      schema: 3,
+      run_id: "2026-07-18T14:00:00Z.0003",
+      engines: {},
+    })).toThrow("ledger: run 2026-07-18T14:00:00Z.0003: unknown run-row schema 3");
+  });
+
   it("run ids are instant-plus-suffix and branch-merge safe", () => {
     const a = newRunId(new Date("2026-07-18T14:00:00.000Z"));
     const b = newRunId(new Date("2026-07-18T14:00:00.000Z"));
@@ -64,6 +127,15 @@ describe("ledger", () => {
     const w2 = new LedgerWriter(dir);
     expect(w2.nextSeq()).toBe(2);
     w2.release();
+  });
+
+  it("stamps schema 2 when opening a run", () => {
+    const w = new LedgerWriter(dir);
+    openRun(w);
+    w.release();
+
+    const [run] = readLedger(dir).runs;
+    expect((run as { schema?: unknown }).schema).toBe(2);
   });
 
   it("a run without a completion row is visibly incomplete", () => {
@@ -131,5 +203,20 @@ describe("ledger", () => {
     // deterministic: same content, same address
     expect(snapshotCapabilities(caps, dir)).toBe(hash);
     rmSync(caps, { recursive: true, force: true });
+  });
+
+  it("omits capabilities when the source directory does not exist", () => {
+    const driversDir = mkdtempSync(join(dir, "drivers-"));
+    writeFileSync(join(driversDir, "package.json"), '{"version":"0.1.0"}');
+    expect(snapshotCapabilities(join(driversDir, "capabilities"), dir)).toBeNull();
+
+    const info = engineRunInfo({
+      driversDir,
+      historyDir: dir,
+      corpusCommit: "deadbeef",
+      engineVersion: null,
+      conditions: ENGINE.conditions,
+    });
+    expect("capabilities" in info).toBe(false);
   });
 });

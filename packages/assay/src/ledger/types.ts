@@ -18,7 +18,8 @@ import type { Platform } from "../format/values.js";
 /** durable run id: UTC start instant + random suffix — branch-merge safe */
 export type RunId = `${string}Z.${string}`;
 
-export interface EngineRunInfo {
+// v1: rows written before the schema field existed (absence = schema 1)
+export interface EngineRunInfoV1 {
   /** driver identity: package version + git sha of the built tree */
   driver: string;
   /** null when the engine exposes no version string (gsheets) */
@@ -34,7 +35,29 @@ export interface EngineRunInfo {
   capacity_events: Array<{ at: string; event: string }>;
 }
 
-export interface RunRow {
+// v2: capabilities may disappear with the source capability directory;
+// limits_model names the execution-limit regime once packet C lands
+export interface EngineRunInfoV2 {
+  /** driver identity: package version + git sha of the built tree */
+  driver: string;
+  /** null when the engine exposes no version string (gsheets) */
+  engine_version: string | null;
+  /** content-addressed snapshot under history/capabilities/<sha>.json */
+  capabilities?: `sha256:${string}`;
+  /** execution-limit regime; absent until per-task driver events land */
+  limits_model?: { kind: "per-task-driver-events"; version: number };
+  /** the closed D-row set (decision point 5): locale + calc settings */
+  conditions: {
+    locale: string;
+    calc: { epoch: string; iterative: boolean; precision: string };
+  };
+  /** capacity is a monitored signal, never a constant: events at the seam */
+  capacity_events: Array<{ at: string; event: string }>;
+}
+
+export type EngineRunInfo = EngineRunInfoV2;
+
+export interface RunRowV1 {
   row: "run";
   run_id: RunId;
   /** human-facing sequence label; no row references it, renumberable */
@@ -45,9 +68,27 @@ export interface RunRow {
   scope: { kind: "full" } | { kind: "subset" };
   /** git sha of the corpus as run — recording requires a clean tree */
   corpus_commit: string;
-  engines: Partial<Record<Platform, EngineRunInfo>>;
+  engines: Partial<Record<Platform, EngineRunInfoV1>>;
   note?: string;
 }
+
+export interface RunRowV2 {
+  row: "run";
+  schema: 2;
+  run_id: RunId;
+  /** human-facing sequence label; no row references it, renumberable */
+  seq: number;
+  trigger: "manual" | "ci";
+  /** intent; a subset run's realized selection lands on the completion row
+   * (it is discovered during the sweep, and rows are immutable) */
+  scope: { kind: "full" } | { kind: "subset" };
+  /** git sha of the corpus as run — recording requires a clean tree */
+  corpus_commit: string;
+  engines: Partial<Record<Platform, EngineRunInfoV2>>;
+  note?: string;
+}
+
+export type RunRow = RunRowV1 | RunRowV2;
 
 export interface ResultRow {
   row: "result";

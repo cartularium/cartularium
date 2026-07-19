@@ -89,10 +89,11 @@ export function engineRunInfo(args: {
   engineVersion: string | null;
   conditions: DeclaredConditions;
 }): EngineRunInfo {
+  const capabilities = snapshotCapabilities(join(args.driversDir, "capabilities"), args.historyDir);
   return {
     driver: driverIdentity(args.driversDir, args.corpusCommit),
     engine_version: args.engineVersion,
-    capabilities: snapshotCapabilities(join(args.driversDir, "capabilities"), args.historyDir),
+    ...(capabilities === null ? {} : { capabilities }),
     conditions: args.conditions,
     capacity_events: [],
   };

@@ -5,9 +5,9 @@
 
 import { join } from "node:path";
 import type { LockHandle } from "../history/io.js";
-import { appendRows, lockLedger, newRowId, newRunId, readRows } from "./io.js";
+import { appendRows, lockLedger, newRowId, newRunId, readRows, validateRunRow } from "./io.js";
 import type {
-  CompletionRow, CorrectionRow, EvidenceRow, ResultRow, RunId, RunRow, RunsFileRow,
+  CompletionRow, CorrectionRow, EvidenceRow, ResultRow, RunId, RunRow, RunRowV2, RunsFileRow,
 } from "./types.js";
 
 export const RUNS_FILE = "runs.jsonl";
@@ -36,9 +36,17 @@ export class LedgerWriter {
   /** run_id may be pre-generated (newRunId) so sweep artifacts can reference
    * it before the row lands — rows are order-insensitive, so the run row
    * legally arrives after the sweep with its real observation windows */
-  openRun(row: Omit<RunRow, "row" | "run_id" | "seq"> & { start: Date; run_id?: RunId }): RunRow {
+  openRun(
+    row: Omit<RunRowV2, "row" | "schema" | "run_id" | "seq"> & { start: Date; run_id?: RunId },
+  ): RunRowV2 {
     const { start, run_id, ...rest } = row;
-    const run: RunRow = { row: "run", run_id: run_id ?? newRunId(start), seq: this.nextSeq(), ...rest };
+    const run: RunRowV2 = {
+      row: "run",
+      schema: 2,
+      run_id: run_id ?? newRunId(start),
+      seq: this.nextSeq(),
+      ...rest,
+    };
     appendRows(this.runsPath, [run]);
     this.open.add(run.run_id);
     return run;
@@ -107,7 +115,9 @@ export interface LedgerView {
 export function readLedger(historyDir: string): LedgerView {
   const runsRead = readRows<RunsFileRow>(join(historyDir, RUNS_FILE));
   const resultsRead = readRows<ResultRow>(join(historyDir, RESULTS_FILE));
-  const runs = runsRead.rows.filter((r): r is RunRow => r.row === "run");
+  const runs = runsRead.rows
+    .filter((r): r is RunRow => r.row === "run")
+    .map(validateRunRow);
   const completions = runsRead.rows.filter((r): r is CompletionRow => r.row === "complete");
   const done = new Set(completions.map((c) => c.run_id));
   return {
