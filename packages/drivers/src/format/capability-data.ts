@@ -18,13 +18,11 @@ export interface FeatureCapability {
   /** adapter primitive (only when support === "wrapped") */
   adapter?: AdapterName;
   /** adapter parameters; shape depends on the adapter */
-  from?: string;
-  to?: string;
   prepend?: string;
   note?: string;
 }
 
-export type AdapterName = "arrayformula-wrap" | "rename-fn" | "prepend";
+export type AdapterName = "arrayformula-wrap" | "prepend";
 
 export interface CapabilityFile {
   engine: Platform;

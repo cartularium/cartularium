@@ -36,24 +36,12 @@ export function reconcileFeatures(
   return { kind: "native" };
 }
 
-// memoize rename-fn regexes per adapter — `from` is fixed at config-load
-const RENAME_RE_CACHE = new WeakMap<FeatureCapability, RegExp>();
-
 export function applyAdapter(formula: string, adapter: FeatureCapability): string {
   switch (adapter.adapter) {
     case "arrayformula-wrap": {
       return formula.startsWith("=")
         ? `=ARRAYFORMULA(${formula.slice(1)})`
         : `=ARRAYFORMULA(${formula})`;
-    }
-    case "rename-fn": {
-      if (!adapter.from || !adapter.to) return formula;
-      let re = RENAME_RE_CACHE.get(adapter);
-      if (!re) {
-        re = new RegExp(`\\b${adapter.from}\\s*\\(`, "g");
-        RENAME_RE_CACHE.set(adapter, re);
-      }
-      return formula.replace(re, `${adapter.to}(`);
     }
     case "prepend": {
       if (!adapter.prepend) return formula;

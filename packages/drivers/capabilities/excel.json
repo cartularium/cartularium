@@ -6,7 +6,7 @@
     "dynamic-arrays": { "support": "native" },
     "lambda": { "support": "native" },
     "higher-order-lambda": { "support": "native" },
-    "regex": { "support": "wrapped", "adapter": "rename-fn", "from": "REGEXMATCH", "to": "REGEXTEST" },
+    "regex": { "support": "native" },
     "external-io": { "support": "absent", "note": "IMPORTRANGE/IMPORTHTML/GOOGLEFINANCE/IMPORTXML are GSheets-specific" },
     "volatile": { "support": "native" },
     "iterative-calc": { "support": "native" },
