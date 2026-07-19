@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "platform": "excel",
-  "generatedAt": "2026-07-18T22:19:02.296Z",
+  "generatedAt": "2026-07-19T02:23:58.306Z",
   "results": {
     "CONCAT/concat-vs-concatenate-arity": {
       "outcome": {
@@ -362,8 +362,8 @@
       "stimulus": "sha256:65618d54bbd936fd8c2bd156c9367526fd479c11184d45650bf3c1c58413c960",
       "fingerprint": "sha256:f13d9c9c73eeb80c34f97364b302cdc64049f75c43a0381299a3ccde79a6e234",
       "fpv": 1,
-      "run_id": "2026-07-18T22:18:57Z.ab85",
-      "at": "2026-07-18T22:19:02.294Z"
+      "run_id": "2026-07-19T02:23:52Z.be59",
+      "at": "2026-07-19T02:23:58.305Z"
     },
     "feature:reference-union/union-in-sum": {
       "outcome": {
@@ -395,8 +395,8 @@
       "stimulus": "sha256:140ae7b4ccda64bcd47317fc36ae4a511d6ecba141d12af2a022953a873d6f5a",
       "fingerprint": "sha256:669d643132b4430cc68e613fdae30972321483db9558d121ed2fa2762974c9b8",
       "fpv": 1,
-      "run_id": "2026-07-18T22:18:57Z.ab85",
-      "at": "2026-07-18T22:19:02.294Z"
+      "run_id": "2026-07-19T02:23:52Z.be59",
+      "at": "2026-07-19T02:23:58.305Z"
     },
     "feature:implicit-intersection/at-inside-sum": {
       "outcome": {
@@ -431,8 +431,8 @@
       "stimulus": "sha256:415891eb832b0739cf8dba74a88cdb149940d2b5e38880ae545160f8f2a760a1",
       "fingerprint": "sha256:43412a89a2157f2c4788feb0281c4a1151687dc9d65d9710c6a2e9db523e740d",
       "fpv": 1,
-      "run_id": "2026-07-18T22:18:57Z.ab85",
-      "at": "2026-07-18T22:19:02.294Z"
+      "run_id": "2026-07-19T02:23:52Z.be59",
+      "at": "2026-07-19T02:23:58.305Z"
     },
     "REGEXMATCH/regexmatch-native-name-cross-engine": {
       "outcome": {
@@ -441,21 +441,22 @@
           [
             {
               "primitive": {
-                "kind": "boolean",
-                "value": true
+                "kind": "error",
+                "sentinel": "#NAME?"
               },
               "engine": {
                 "platform": "excel",
-                "data_type": "b",
+                "data_type": "e",
                 "raw_xml": {
-                  "t": "b",
-                  "formula_text": "_xlfn.REGEXTEST(\"abc123\", \"[0-9]+\")",
-                  "formula_namespaces": [
-                    "_xlfn"
-                  ]
-                }
+                  "t": "e",
+                  "cm": 1,
+                  "formula_text": "REGEXMATCH(\"abc123\", \"[0-9]+\")",
+                  "formula_array_marker": "array",
+                  "formula_array_ref": "A1"
+                },
+                "saved_as_array": true
               },
-              "formula": "_xlfn.REGEXTEST(\"abc123\", \"[0-9]+\")"
+              "formula": "REGEXMATCH(\"abc123\", \"[0-9]+\")"
             }
           ]
         ],
@@ -464,12 +465,12 @@
           "cols": 1
         }
       },
-      "formula-as-evaluated": "=REGEXTEST(\"abc123\", \"[0-9]+\")",
+      "formula-as-evaluated": "=REGEXMATCH(\"abc123\", \"[0-9]+\")",
       "stimulus": "sha256:6d96fbbd6da882a45ccde7f3821e852cce134e9aa14d8658581a72ea09d2b428",
-      "fingerprint": "sha256:d5700d641c4a9b9a358b961db1d68db9a66ae895f49fcb67cf595f5e1fa51d9c",
+      "fingerprint": "sha256:18c466c30752b33549fe679095342ebb61a84ea50a4a9611bedacf4cfff74ffd",
       "fpv": 1,
-      "run_id": "2026-07-18T22:18:57Z.ab85",
-      "at": "2026-07-18T22:19:02.294Z"
+      "run_id": "2026-07-19T02:23:52Z.be59",
+      "at": "2026-07-19T02:23:58.305Z"
     },
     "REGEXTEST/regextest-native-name-cross-engine": {
       "outcome": {
@@ -505,8 +506,8 @@
       "stimulus": "sha256:50dd2b41204f80fb3f66af74c4f37676552332cb62912e481db8359b33514cd2",
       "fingerprint": "sha256:d5700d641c4a9b9a358b961db1d68db9a66ae895f49fcb67cf595f5e1fa51d9c",
       "fpv": 1,
-      "run_id": "2026-07-18T22:18:57Z.ab85",
-      "at": "2026-07-18T22:19:02.294Z"
+      "run_id": "2026-07-19T02:23:52Z.be59",
+      "at": "2026-07-19T02:23:58.305Z"
     }
   }
 }
