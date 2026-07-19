@@ -322,6 +322,10 @@ export { computeForkCoverage } from "./fork-coverage.js"
 // stability substrate: the shared assay-stimulus-v1 payload (hashed by
 // assay with node:crypto and by edit-shell with WebCrypto)
 export { canonicalJson, coerceStimulusGrid, stimulusPayload } from "./stimulus-hash.js"
+
+// the closed feature-name registry (capabilities decision, 2026-07-18)
+export { ASSAY_FEATURES, isKnownAssayFeature } from "./features.js"
+export type { AssayFeature } from "./features.js"
 export type { AnnotationCoverage, ForkCoverageReport } from "./fork-coverage.js"
 
 // edit-wiki page index — see edit-index.ts

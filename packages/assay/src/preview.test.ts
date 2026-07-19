@@ -150,6 +150,19 @@ describe("assay preview", () => {
     ]));
   });
 
+  it("rejects unknown feature names against the registry", async () => {
+    const input = previewInput();
+    input.candidate.features = ["regex", "broadcasing"];
+    input.candidateHash = computeCandidateHash(input);
+
+    const result = await runAssayPreview(input);
+
+    expect(result.platforms).toEqual({});
+    expect(result.diagnostics).toEqual(expect.arrayContaining([
+      expect.objectContaining({ field: "candidate.features", severity: "error" }),
+    ]));
+  });
+
   it("blocks unsupported categories, platforms, and external formulas", async () => {
     const input = previewInput();
     input.requestedPlatforms = ["lattice"];

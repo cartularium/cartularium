@@ -3,6 +3,7 @@ import { parse as parseYaml } from "yaml";
 import { isCellError, type CellValue, type GridValue, type Platform, type CellError, ALL_PLATFORMS } from "./values.js";
 import { type TestSuite, type TestCase, type Override, type Matcher, type PlatformFormula, type Status, type SupportLevel, type Cause, type Category } from "./catalogue.js";
 import { reconcileFeatures, applyAdapter } from "./capabilities.js";
+import { isKnownAssayFeature, ASSAY_FEATURES } from "@cartularium/contracts";
 import {
   deriveCategory,
   derivePublicRef,
@@ -139,7 +140,7 @@ function parseTestCase(
     subjectRef,
     name,
     category,
-    features: Array.isArray(obj.features) ? (obj.features as string[]) : undefined,
+    features: validatedFeatures(obj.features, id),
     supportLevel: typeof obj.supportLevel === "string" ? obj.supportLevel as SupportLevel : undefined,
     status: obj.status as Status | undefined,
     formula,
@@ -150,6 +151,20 @@ function parseTestCase(
     tags: Array.isArray(obj.tags) ? (obj.tags as unknown[]).map(String) : undefined,
     aliases: Array.isArray(obj.aliases) ? (obj.aliases as unknown[]).map(String) : undefined,
   };
+}
+
+function validatedFeatures(value: unknown, id: string): string[] | undefined {
+  if (!Array.isArray(value)) return undefined;
+  const features = (value as unknown[]).map(String);
+  const unknown = features.filter((f) => !isKnownAssayFeature(f));
+  if (unknown.length > 0) {
+    throw new Error(
+      `Test ${id}: unknown feature(s) ${unknown.map((f) => `"${f}"`).join(", ")} — ` +
+        `features must come from the registry (${ASSAY_FEATURES.join(", ")}); ` +
+        `a new name enters by editing ASSAY_FEATURES in @cartularium/contracts`,
+    );
+  }
+  return features;
 }
 
 function stringRequired(value: unknown, field: string, context?: string): string {

@@ -5,6 +5,32 @@ import { describe, expect, it } from "vitest";
 import { semanticHashForCase } from "../identity/index.js";
 import { loadTestSuite } from "./parse.js";
 
+describe("feature registry", () => {
+  it("rejects a case declaring an unknown feature name", () => {
+    const dir = mkdtempSync(join(tmpdir(), "assay-feature-registry-"));
+    const path = join(dir, "typo.yaml");
+    writeFileSync(
+      path,
+      [
+        "schemaVersion: 3",
+        "name: Typo",
+        "tests:",
+        "  - subject: SEQUENCE",
+        "    name: typo-feature",
+        "    formula: '=SEQUENCE(3)'",
+        "    expect:",
+        "      - [1]",
+        "      - [2]",
+        "      - [3]",
+        "    features: [broadcasing]",
+        "",
+      ].join("\n"),
+    );
+
+    expect(() => loadTestSuite(path)).toThrow(/unknown feature\(s\) "broadcasing"/);
+  });
+});
+
 describe("schemaVersion 3", () => {
   it("derives id, subjectRef, category, and semanticHash", () => {
     const dir = mkdtempSync(join(tmpdir(), "assay-v3-parse-"));

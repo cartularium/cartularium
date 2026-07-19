@@ -1,4 +1,5 @@
 import { createHash } from "node:crypto";
+import { ASSAY_FEATURES, isKnownAssayFeature } from "@cartularium/contracts";
 import { getAccessToken } from "./auth.js";
 import type { Driver } from "@cartularium/drivers";
 import { ExcelDriver } from "@cartularium/drivers";
@@ -234,6 +235,16 @@ function validatePreviewShape(input: AssayPreviewInput): AssayPreviewResult["dia
   }
   if (input.candidate.features !== undefined && !isStringArray(input.candidate.features)) {
     diagnostics.push(error("candidate.features", "candidate.features must be an array of strings."));
+  } else if (input.candidate.features !== undefined) {
+    const unknown = input.candidate.features.filter((f) => !isKnownAssayFeature(f));
+    if (unknown.length > 0) {
+      diagnostics.push(
+        error(
+          "candidate.features",
+          `unknown feature(s) ${unknown.map((f) => `"${f}"`).join(", ")} — known: ${ASSAY_FEATURES.join(", ")}.`,
+        ),
+      );
+    }
   }
   if (input.candidate.tags !== undefined && !isStringArray(input.candidate.tags)) {
     diagnostics.push(error("candidate.tags", "candidate.tags must be an array of strings."));

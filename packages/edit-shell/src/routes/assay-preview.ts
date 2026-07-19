@@ -1,5 +1,5 @@
 import { Hono } from "hono"
-import { coerceStimulusGrid, stimulusPayload } from "@cartularium/contracts"
+import { ASSAY_FEATURES, coerceStimulusGrid, isKnownAssayFeature, stimulusPayload } from "@cartularium/contracts"
 import type { Env } from "../env"
 import {
   ASSAY_API_VERSION,
@@ -493,6 +493,14 @@ function validateSubmittedCase(body: Record<string, unknown>): Array<{ field: st
 
   if (candidate.features !== undefined && !stringList(candidate.features)) {
     details.push({ field: "case.features", message: "case.features must be an array of strings." })
+  } else if (candidate.features !== undefined) {
+    const unknown = (candidate.features as string[]).filter((f) => !isKnownAssayFeature(f))
+    if (unknown.length > 0) {
+      details.push({
+        field: "case.features",
+        message: `Unknown feature(s) ${unknown.map((f) => `"${f}"`).join(", ")}. Known features: ${ASSAY_FEATURES.join(", ")}.`,
+      })
+    }
   }
   if (candidate.tags !== undefined && !stringList(candidate.tags)) {
     details.push({ field: "case.tags", message: "case.tags must be an array of strings." })
