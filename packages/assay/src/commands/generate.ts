@@ -28,6 +28,14 @@ import {
   type SuiteTally,
 } from "./shared.js";
 
+export function runScope(
+  onlyMissing: boolean,
+  fileArgCount: number,
+  tagCount: number,
+): { kind: "full" } | { kind: "subset" } {
+  return onlyMissing || fileArgCount > 0 || tagCount > 0 ? { kind: "subset" } : { kind: "full" };
+}
+
 export async function generate(args: string[]): Promise<void> {
   const files = resolveFiles(args);
   if (!files.length) {
@@ -40,6 +48,8 @@ export async function generate(args: string[]): Promise<void> {
   const onlyMissing = values.missing as boolean;
   const verbose = values.verbose as boolean;
   const quiet = values.quiet as boolean;
+  const scope = runScope(onlyMissing, args.length, tags?.length ?? 0);
+  const isSubset = scope.kind === "subset";
 
   // --record: the recorded pipeline (stability substrate §3). The run row
   // lands BEFORE the sweep so a crash leaves a visibly incomplete run;
@@ -96,8 +106,8 @@ export async function generate(args: string[]): Promise<void> {
       start,
       run_id: runId,
       trigger: "manual",
-      // a file-limited generate is a subset run too — "full" means the corpus
-      scope: onlyMissing || args.length > 0 ? { kind: "subset" } : { kind: "full" },
+      // any filtered generate is a subset run — "full" means the corpus
+      scope,
       corpus_commit: corpusCommit,
       engines,
       note: (values.note as string | undefined) ?? undefined,
@@ -287,9 +297,9 @@ export async function generate(args: string[]): Promise<void> {
       new Date().toISOString(),
       recording.observed,
       recording.counts,
-      // a subset run's realized selection is discovered during the sweep,
+      // a filtered run's realized selection is discovered during the sweep,
       // so it rides the completion row (rows are immutable)
-      onlyMissing ? [...recording.selection].sort() : undefined,
+      isSubset ? [...recording.selection].sort() : undefined,
     );
     recording.writer.release();
     if (!quiet) {
