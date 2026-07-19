@@ -75,11 +75,23 @@ export interface Extent {
 
 export type CrashChannel = "process-death" | "host-wedge" | "timeout" | "capacity" | (string & {});
 
+/** open like CrashChannel: limits are discovered empirically */
+export type LimitMechanism =
+  | "interactive-grant"
+  | "condition-incompatible"
+  | "unimplemented"
+  | (string & {});
+
+export interface ExecutionLimit {
+  mechanism: LimitMechanism;
+  detail?: string;
+}
+
 export type SkipCause =
   | "capability"
   | "seed-infidelity"
   | "policy"
-  | "environment-incompatible"
+  | "execution-limit"
   | (string & {});
 
 /** Extensible monitored-signal record; host-effect signals accrete here (§6.4). */
@@ -97,7 +109,8 @@ export type Outcome =
   | { kind: "crashed"; channel: CrashChannel; detail?: string }
   | { kind: "pending"; source?: string }
   // NOT engine-attributable (excluded from divergence)
-  | { kind: "skipped"; cause: SkipCause; reason?: string }
+  | { kind: "skipped"; cause: Exclude<SkipCause, "execution-limit">; reason?: string }
+  | { kind: "skipped"; cause: "execution-limit"; limit: ExecutionLimit; reason?: string }
   | { kind: "driver-error"; detail: string }
   | { kind: "infra"; detail: string; retryable?: boolean }
   // openness floor — observed but unattributable => honest no-data

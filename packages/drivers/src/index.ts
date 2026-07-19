@@ -40,6 +40,8 @@ export type {
   Outcome,
   Extent,
   CrashChannel,
+  ExecutionLimit,
+  LimitMechanism,
   SkipCause,
   Observed,
 } from "./format/values.js";

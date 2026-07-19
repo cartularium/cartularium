@@ -344,7 +344,11 @@ export class GSheetsDriver implements Driver {
         // Not engine-attributable: these tasks never ran (upstream fatal).
         for (let j = lo; j < hi; j++) {
           results[liveIdx[j]] = {
-            outcome: { kind: "skipped", cause: "policy", reason: "not-run: upstream fatal error" },
+            outcome: {
+              kind: "infra",
+              detail: "not run: earlier chunk failed fatally",
+              retryable: true,
+            },
           };
         }
         continue;

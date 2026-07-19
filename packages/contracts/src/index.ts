@@ -160,7 +160,14 @@ export type EngineObservation =
   | { capability: "unsupported" }
   | {
       capability: "no-data"
-      cause: "policy" | "seed-infidelity" | "environment-incompatible" | "infra" | "driver-error" | "unclassified"
+      cause:
+        | "policy"
+        | "seed-infidelity"
+        | "environment-incompatible"
+        | "execution-limit"
+        | "infra"
+        | "driver-error"
+        | "unclassified"
     }
 
 /** One agreement-class. `engines` is an unordered set (no privileged member). `values` is the

@@ -102,6 +102,22 @@ describe("buildManifestV5 — verdict-free comparison output", () => {
     expect(m.functions.QUERY.engines.excel.status).toBe("missing");
   });
 
+  it("carries execution limits as explicit no-data causes", () => {
+    const executionLimit: Outcome = {
+      kind: "skipped",
+      cause: "execution-limit",
+      limit: { mechanism: "interactive-grant" },
+    };
+    const m = build([
+      [test("IMPORTDATA/grant", "IMPORTDATA", "sha256:grant"), { gsheets: executionLimit }],
+    ]);
+
+    expect(m.tests["IMPORTDATA/grant"].engines.gsheets).toEqual({
+      capability: "no-data",
+      cause: "execution-limit",
+    });
+  });
+
   it("publishes case-property tags through the R1 hygiene gate (outcome-claim tags dropped)", () => {
     const m = build([
       [

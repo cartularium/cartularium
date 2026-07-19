@@ -85,9 +85,21 @@ function toObservation(o: Outcome, classOf: number | undefined): EngineObservati
       // capability-skip = "engine lacks this" → the absent/partial signal; other skip causes
       // are genuinely unknown (not a capability claim).
       if (o.cause === "capability") return { capability: "unsupported" };
-      if (o.cause === "policy" || o.cause === "seed-infidelity" || o.cause === "environment-incompatible") {
+      if (
+        o.cause === "policy" ||
+        o.cause === "seed-infidelity" ||
+        o.cause === "environment-incompatible" ||
+        o.cause === "execution-limit"
+      ) {
         // guarded — SkipCause's open `(string & {})` member blocks ===-narrowing on its own
-        return { capability: "no-data", cause: o.cause as "policy" | "seed-infidelity" | "environment-incompatible" };
+        return {
+          capability: "no-data",
+          cause: o.cause as
+            | "policy"
+            | "seed-infidelity"
+            | "environment-incompatible"
+            | "execution-limit",
+        };
       }
       return { capability: "no-data", cause: "unclassified" };
     case "infra":
