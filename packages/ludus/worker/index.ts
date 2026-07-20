@@ -7,6 +7,13 @@
 import { deleteSpreadsheet, parseSpreadsheetId, setTokenProvider, sheetsApi } from "../src/api.js";
 import { judge } from "../src/judge.js";
 import type { Problem } from "../src/problem-types.js";
+import {
+  buildPostSolveStats,
+  isSolutionMetrics,
+  measureSolution,
+  type PostSolveStats,
+  type SolutionMetrics,
+} from "../src/solution-stats.js";
 import type { Snapshot } from "../src/snapshot.js";
 import problemsJson from "./problems.gen.json";
 
@@ -26,6 +33,7 @@ const MAX_GRID_CELLS = 250_000;
 // submissions running longer than this are considered stalled (waitUntil died)
 const STALL_MS = 3 * 60_000;
 const MAX_STORED_PROGRAM_BYTES = 900_000; // stay under D1 value limits
+const STATS_COHORT_LIMIT = 500;
 
 let cachedToken: { value: string; expiresAt: number } | null = null;
 function tokenProviderFor(env: Env): () => Promise<string> {
@@ -157,14 +165,20 @@ async function process(id: string, problem: Problem, sheetId: string, env: Env):
       if (deleted) scratch = null;
     }
 
+    const program = storableProgram(result.program);
+    const metrics =
+      result.verdict === "accepted" && result.program && program
+        ? JSON.stringify(measureSolution(result.program))
+        : null;
     await env.DB.prepare(
-      "UPDATE submissions SET status = 'done', verdict = ?1, detail = ?2, scratch_id = ?3, program = ?4, updated_at = ?5 WHERE id = ?6",
+      "UPDATE submissions SET status = 'done', verdict = ?1, detail = ?2, scratch_id = ?3, program = ?4, metrics = ?5, updated_at = ?6 WHERE id = ?7",
     )
       .bind(
         result.verdict,
         JSON.stringify({ lintErrors: result.lintErrors, cases }),
         scratch,
-        storableProgram(result.program),
+        program,
+        metrics,
         Date.now(),
         id,
       )
@@ -180,10 +194,17 @@ async function process(id: string, problem: Problem, sheetId: string, env: Env):
 
 async function getSubmission(id: string, env: Env, req: Request): Promise<Response> {
   const row = await env.DB.prepare(
-    "SELECT problem_id, status, verdict, detail, updated_at FROM submissions WHERE id = ?1",
+    "SELECT problem_id, status, verdict, detail, metrics, updated_at FROM submissions WHERE id = ?1",
   )
     .bind(id)
-    .first<{ problem_id: string; status: string; verdict: string | null; detail: string | null; updated_at: number }>();
+    .first<{
+      problem_id: string;
+      status: string;
+      verdict: string | null;
+      detail: string | null;
+      metrics: string | null;
+      updated_at: number;
+    }>();
   if (!row) return json(env, req, { error: "not found" }, 404);
 
   // stale recovery: a submission stuck in 'running' means the judging
@@ -204,12 +225,43 @@ async function getSubmission(id: string, env: Env, req: Request): Promise<Respon
     });
   }
 
+  const stats = row.verdict === "accepted" ? await postSolveStats(row.problem_id, row.metrics, env) : null;
   return json(env, req, {
     problemId: row.problem_id,
     status: row.status,
     verdict: row.verdict,
     detail: row.detail ? JSON.parse(row.detail) : null,
+    stats,
   });
+}
+
+async function postSolveStats(
+  problemId: string,
+  currentJson: string | null,
+  env: Env,
+): Promise<PostSolveStats | null> {
+  const current = parseMetrics(currentJson);
+  if (!current) return null;
+  const rows = await env.DB.prepare(
+    "SELECT metrics FROM submissions WHERE problem_id = ?1 AND verdict = 'accepted' AND metrics IS NOT NULL ORDER BY created_at DESC LIMIT ?2",
+  )
+    .bind(problemId, STATS_COHORT_LIMIT)
+    .all<{ metrics: string }>();
+  const accepted = rows.results.flatMap((row) => {
+    const metrics = parseMetrics(row.metrics);
+    return metrics ? [metrics] : [];
+  });
+  return buildPostSolveStats(current, accepted);
+}
+
+function parseMetrics(json: string | null): SolutionMetrics | null {
+  if (!json) return null;
+  try {
+    const value: unknown = JSON.parse(json);
+    return isSolutionMetrics(value) ? value : null;
+  } catch {
+    return null;
+  }
 }
 
 async function gridCellCount(sheetId: string): Promise<number> {

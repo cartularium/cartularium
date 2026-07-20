@@ -85,6 +85,56 @@
       return html;
     }
 
+    function number(v) {
+      return Number.isInteger(v) ? String(v) : Number(v).toFixed(1);
+    }
+
+    function statsRow(label, current, distribution) {
+      return (
+        "<tr><th>" + esc(label) + "</th><td>" + number(current) + "</td><td>" +
+        number(distribution.median) + "</td><td>" + number(distribution.min) + "–" +
+        number(distribution.max) + "</td></tr>"
+      );
+    }
+
+    function renderStats(stats) {
+      if (!stats || !stats.current) return "";
+      var current = stats.current;
+      var html = '<section class="vstats"><h3>How this solution compares</h3>';
+      if (!stats.cohort) {
+        html +=
+          '<p class="vsub">Your solution uses ' + current.formulaCharacters + " formula characters across " +
+          current.formulaCells + " formula cell" + (current.formulaCells === 1 ? "" : "s") + ".</p>" +
+          '<p class="vnote">Aggregate comparison appears after ' + stats.minimumSampleSize +
+          " accepted solutions; " + stats.sampleSize + " recorded.</p>";
+      } else {
+        html +=
+          '<p class="vnote">Based on ' + stats.sampleSize +
+          " accepted solutions. Formula characters include the leading =; template formulas are excluded.</p>" +
+          '<div class="grid-scroll"><table class="grid stats-grid">' +
+          "<tr><th>Metric</th><th>Yours</th><th>Median</th><th>Range</th></tr>" +
+          statsRow("Formula characters", current.formulaCharacters, stats.cohort.formulaCharacters) +
+          statsRow("Formula cells", current.formulaCells, stats.cohort.formulaCells) +
+          "</table></div>";
+        var functions = stats.cohort.functions.slice(0, 12);
+        if (functions.length) {
+          html +=
+            '<h4>Function census</h4><div class="grid-scroll"><table class="grid stats-grid">' +
+            "<tr><th>Function</th><th>Accepted solutions</th></tr>" +
+            functions.map(function (entry) {
+              var used = current.functions.indexOf(entry.name) !== -1 ? ' class="used"' : "";
+              return "<tr" + used + "><td>" + esc(entry.name) + "</td><td>" + entry.solutions + " / " +
+                stats.sampleSize + " (" + entry.percent + "%)</td></tr>";
+            }).join("") +
+            "</table></div>";
+        }
+      }
+      if (current.functions.length) {
+        html += '<p class="vnote">Functions in yours: ' + current.functions.map(esc).join(", ") + ".</p>";
+      }
+      return html + "</section>";
+    }
+
     function renderDone(data) {
       var v = data.verdict;
       var detail = data.detail || {};
@@ -123,6 +173,7 @@
       }
       html += sampleDiff(cases);
       if (detail.message) html += '<p class="vnote">' + esc(detail.message) + "</p>";
+      if (v === "accepted") html += renderStats(data.stats);
       show(html);
     }
 

@@ -45,6 +45,10 @@ Verdicts: accepted · wrong-answer · lint-reject · unsupported-feature ·
 sheet-inaccessible · template-damaged. Sample-case failures print full diffs;
 hidden cases show only a coarse category.
 
+Accepted submissions show formula length, formula-cell count, and functions used.
+Anonymous cohort comparisons appear after three accepted solutions have been recorded;
+only accepted programs enter the aggregate.
+
 Any link-readable sheet id works — UI-authored and wild sheets are better evidence than
 the API-authored fixture (API authoring biases toward round-trip success).
 
