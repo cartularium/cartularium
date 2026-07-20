@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 import { UnsupportedWorkbookError } from "./api.js";
+import { NamedFunctionInlineError } from "@cartularium/formula-syntax";
 import { judge } from "./judge.js";
 import type { Problem } from "./problem-types.js";
 import type { Snapshot } from "./snapshot.js";
@@ -61,6 +62,44 @@ test("returns unsupported-feature for an explicit workbook limit", async () => {
 
   assert.equal(result.verdict, "unsupported-feature");
   assert.deepEqual(result.lintErrors, ["XLSX export exceeds limit"]);
+});
+
+test("lints prepared named-function formulas before materialization", async () => {
+  let materialized = false;
+  const result = await judge({ ...problem, lint: { ban: ["import"] } }, "source", {
+    extractSnapshot: async () => structuredClone(snapshot),
+    extractNamedFunctions: async () => [{ name: "FETCH", definition: 'LAMBDA(x,IMPORTRANGE("id",x))' }],
+    prepareNamedFunctions: (program) => {
+      const prepared = structuredClone(program);
+      prepared.namedFunctions = [];
+      prepared.sheets[0].cells = [[{ ue: { formulaValue: '=IMPORTRANGE("id","A1")' } }]];
+      return prepared;
+    },
+    rehydrate: async () => {
+      materialized = true;
+      return "scratch";
+    },
+  });
+
+  assert.equal(result.verdict, "lint-reject");
+  assert.match(result.lintErrors[0], /banned function class "import"/);
+  assert.equal(materialized, false);
+  assert.deepEqual(result.program?.namedFunctions, [
+    { name: "FETCH", definition: 'LAMBDA(x,IMPORTRANGE("id",x))' },
+  ]);
+});
+
+test("returns unsupported-feature for a bounded inliner refusal", async () => {
+  const result = await judge(problem, "source", {
+    extractSnapshot: async () => structuredClone(snapshot),
+    extractNamedFunctions: async () => [{ name: "F", definition: "LAMBDA(x,F(x))" }],
+    prepareNamedFunctions: () => {
+      throw new NamedFunctionInlineError("recursive-definition", "recursive named functions: F → F");
+    },
+  });
+
+  assert.equal(result.verdict, "unsupported-feature");
+  assert.deepEqual(result.lintErrors, ["recursive named functions: F → F"]);
 });
 
 test("propagates inspection transport failures as judge errors", async () => {

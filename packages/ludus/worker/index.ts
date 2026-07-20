@@ -6,6 +6,7 @@
 // Upgrade path when volume demands it: CF Queues consumer + scratch pool.
 import { deleteSpreadsheet, parseSpreadsheetId, setTokenProvider, sheetsApi } from "../src/api.js";
 import { judge } from "../src/judge.js";
+import { inlineSnapshotNamedFunctions } from "../src/named-function-materializer.js";
 import type { Problem } from "../src/problem-types.js";
 import {
   buildPostSolveStats,
@@ -23,6 +24,7 @@ export interface Env {
   GOOGLE_CLIENT_SECRET: string;
   GOOGLE_REFRESH_TOKEN: string;
   ALLOWED_ORIGIN?: string;
+  NAMED_FUNCTION_MATERIALIZER?: string;
 }
 
 const PROBLEMS = problemsJson as unknown as Record<string, Problem>;
@@ -147,7 +149,11 @@ async function process(id: string, problem: Problem, sheetId: string, env: Env):
       return;
     }
 
-    const result = await judge(problem, sheetId);
+    const result = await judge(problem, sheetId, {
+      ...(env.NAMED_FUNCTION_MATERIALIZER === "inline"
+        ? { prepareNamedFunctions: inlineSnapshotNamedFunctions }
+        : {}),
+    });
 
     // disclosure rule enforced at the API boundary: hidden cases expose only
     // pass + coarse category; the sample case may carry its mismatch detail

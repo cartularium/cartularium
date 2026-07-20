@@ -1,4 +1,5 @@
 // The judge pipeline: extract → inspect → lint → rehydrate → hidden cases → verdict.
+import { NamedFunctionInlineError } from "@cartularium/formula-syntax";
 import { sleep, UnsupportedWorkbookError } from "./api.js";
 import { parseRange } from "./a1.js";
 import { compareGrids, type GridComparison } from "./compare.js";
@@ -34,6 +35,7 @@ export interface JudgeResult {
 interface JudgeDependencies {
   extractSnapshot: typeof extractSnapshot;
   extractNamedFunctions: typeof extractNamedFunctions;
+  prepareNamedFunctions: (snapshot: Snapshot) => Snapshot | Promise<Snapshot>;
   rehydrate: typeof rehydrate;
 }
 
@@ -76,7 +78,9 @@ export async function judge(
     if (!(err instanceof UnsupportedWorkbookError)) throw err;
     return { verdict: "unsupported-feature", lintErrors: [err.message], cases: [], program };
   }
-  if (program.namedFunctions.length > 0) {
+  let executable = program;
+  const prepareNamedFunctions = dependencies.prepareNamedFunctions;
+  if (program.namedFunctions.length > 0 && !prepareNamedFunctions) {
     const allNames = program.namedFunctions.map((fn) => fn.name).sort();
     const names = allNames.slice(0, 20).join(", ") + (allNames.length > 20 ? `, and ${allNames.length - 20} more` : "");
     return {
@@ -87,13 +91,22 @@ export async function judge(
     };
   }
 
-  const lintErrors = lint(problem, program);
+  if (program.namedFunctions.length > 0 && prepareNamedFunctions) {
+    try {
+      executable = await prepareNamedFunctions(program);
+    } catch (err) {
+      if (!(err instanceof NamedFunctionInlineError)) throw err;
+      return { verdict: "unsupported-feature", lintErrors: [err.message], cases: [], program };
+    }
+  }
+
+  const lintErrors = lint(problem, executable);
   if (lintErrors.length > 0) {
     return { verdict: "lint-reject", lintErrors, cases: [], program };
   }
 
   // rehydrate the user's program into a judge-owned scratch sheet
-  const scratchId = await materialize(program, `ludus-judge-${problem.id}`);
+  const scratchId = await materialize(executable, `ludus-judge-${problem.id}`);
   const ids = await loadSheetIds(scratchId);
 
   const cases: CaseResult[] = [];
