@@ -12,7 +12,9 @@ faithful on real-world sheets is the project's top technical risk. This spike me
 it: extract → rehydrate → diff computed outputs against the original, and catalogue what
 doesn't survive.
 
-Requires assay's Google OAuth setup (`assay login`; token in `~/.assayrc.json`).
+Maintainer commands use Ludus's judge identity. Authenticate it with
+`pnpm --filter @cartularium/ludus run login`; the token lives in
+`~/.ludusrc.json`.
 
 ```
 pnpm --filter @cartularium/ludus gnarly
@@ -39,8 +41,9 @@ pnpm --filter @cartularium/ludus judge    problems/wp-0001-combine-skus.yaml <sh
 # extract → lint → rehydrate → hidden cases → verdict (exit 0 = accepted)
 ```
 
-Verdicts: accepted · wrong-answer · lint-reject · sheet-inaccessible · template-damaged.
-Sample-case failures print full diffs; hidden cases show only a coarse category.
+Verdicts: accepted · wrong-answer · lint-reject · unsupported-feature ·
+sheet-inaccessible · template-damaged. Sample-case failures print full diffs;
+hidden cases show only a coarse category.
 
 Any link-readable sheet id works — UI-authored and wild sheets are better evidence than
 the API-authored fixture (API authoring biases toward round-trip success).
@@ -48,7 +51,9 @@ the API-authored fixture (API authoring biases toward round-trip success).
 ### Known extraction gaps (v1 — by design, catalogue before fixing)
 
 Extraction captures `userEnteredValue` + `userEnteredFormat.numberFormat`, sheet
-structure, spreadsheet locale/timeZone, and named ranges. It does **not** yet capture:
-data validation (including checkboxes), conditional formats, protected ranges, iterative
-calc settings, filters, charts, pivots. Diffs caused by these land in the report as
-evidence, which is the point of the spike.
+structure, spreadsheet locale/timeZone, and named ranges. XLSX metadata inspection
+detects named functions; the judge returns `unsupported-feature` until a validated
+inliner can preserve them. Extraction does **not** yet capture data validation
+(including checkboxes), conditional formats, protected ranges, iterative calc settings,
+filters, charts, or pivots. Diffs caused by these land in the report as evidence, which
+is the point of the spike.

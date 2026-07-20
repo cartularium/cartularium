@@ -229,6 +229,7 @@ function storableProgram(program: Snapshot | undefined): string | null {
   const stripped = {
     title: program.title,
     namedRanges: program.namedRanges,
+    namedFunctions: program.namedFunctions,
     sheets: program.sheets.map((s) => ({
       title: s.title,
       cells: s.cells.map((row) => row.map((c) => (c ? { ue: c.ue, fmt: c.fmt } : null))),

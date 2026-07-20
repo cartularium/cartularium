@@ -42,11 +42,18 @@ export interface NamedRangeSnap {
   };
 }
 
+export interface NamedFunctionSnap {
+  name: string;
+  definition: string;
+  comment?: string;
+}
+
 export interface Snapshot {
   spreadsheetId: string;
   title: string;
   locale?: string;
   timeZone?: string;
   namedRanges: NamedRangeSnap[];
+  namedFunctions: NamedFunctionSnap[];
   sheets: SheetSnap[];
 }

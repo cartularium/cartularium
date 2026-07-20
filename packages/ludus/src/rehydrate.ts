@@ -7,6 +7,9 @@ const CELLS_PER_REQUEST = 4000;
 // structure via create, content via batchUpdate/updateCells (the same write
 // path a pooled scratch sheet would use). Returns the new spreadsheet id.
 export async function rehydrate(snapshot: Snapshot, title: string): Promise<string> {
+  if (snapshot.namedFunctions.length > 0) {
+    throw new Error("rehydration cannot preserve named functions");
+  }
   const created = (await sheetsApi("", {
     method: "POST",
     body: JSON.stringify({

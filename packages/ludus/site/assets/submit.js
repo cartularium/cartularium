@@ -33,6 +33,8 @@
     var GUIDANCE = {
       "lint-reject":
         "Rejected before judging — nothing was graded. Fix the flagged cells and resubmit.",
+      "unsupported-feature":
+        "This workbook uses a Sheets feature the judge cannot reproduce safely yet. Nothing was graded.",
       "sheet-inaccessible":
         "The judge could not open your sheet. Share it with “Anyone with the link” as Viewer, then resubmit.",
       "template-damaged":

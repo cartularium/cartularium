@@ -133,6 +133,7 @@ export function buildTemplate(
       { name: "INPUT", range: toGridRange(sheetIndex.get(input.sheet)!, input) },
       { name: "OUTPUT", range: toGridRange(sheetIndex.get(output.sheet)!, output) },
     ],
+    namedFunctions: [],
     sheets: problem.template.sheets.map((sheet, i) => {
       const cells = grids.get(sheet.title)!;
       return {

@@ -36,6 +36,7 @@ export async function extractSnapshot(spreadsheetId: string): Promise<Snapshot> 
     locale: doc.properties?.locale,
     timeZone: doc.properties?.timeZone,
     namedRanges: doc.namedRanges ?? [],
+    namedFunctions: [],
     sheets: (doc.sheets ?? []).map((sheet) => {
       const rowData = sheet.data?.[0]?.rowData ?? [];
       const cells = trim(rowData.map((row) => (row.values ?? []).map(toCellSnap)));

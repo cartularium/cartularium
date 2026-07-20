@@ -13,6 +13,7 @@
     "login": "tsx src/cli-login.ts",
     "verify:identity": "tsx src/cli-verify.ts",
     "verify:live": "tsx src/cli-smoke-live.ts",
+    "test": "tsx --test src/*.test.ts",
     "check": "tsc --noEmit",
     "build:site": "node site/build.mjs",
     "serve:site": "node site/serve.mjs",
@@ -23,16 +24,17 @@
     "dev:worker": "node worker/build-problems.mjs && node worker/make-dev-vars.mjs && wrangler dev --local"
   },
   "dependencies": {
-    "yaml": "^2.7.0",
     "@cartularium/brand": "workspace:*",
-    "@cartularium/chrome": "workspace:*"
+    "@cartularium/chrome": "workspace:*",
+    "fflate": "0.7.4",
+    "yaml": "^2.7.0"
   },
   "devDependencies": {
+    "@cloudflare/workers-types": "^4.20250701.0",
     "@types/node": "^22.0.0",
+    "sass": "^1.83.0",
     "tsx": "^4.19.0",
     "typescript": "^5.8.3",
-    "sass": "^1.83.0",
-    "wrangler": "^4.0.0",
-    "@cloudflare/workers-types": "^4.20250701.0"
+    "wrangler": "^4.0.0"
   }
 }

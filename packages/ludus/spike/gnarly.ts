@@ -37,6 +37,7 @@ const fixture: Snapshot = {
       range: { sheetId: 0, startRowIndex: 0, endRowIndex: 5, startColumnIndex: 0, endColumnIndex: 1 },
     },
   ],
+  namedFunctions: [],
   sheets: [
     sheet(0, "Basics", [
       [n(1), s("plain string"), b(true)],

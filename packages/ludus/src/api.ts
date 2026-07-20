@@ -1,4 +1,14 @@
 const SHEETS_BASE = "https://sheets.googleapis.com/v4/spreadsheets";
+const MAX_XLSX_BYTES = 12 * 1024 * 1024;
+
+export class UnsupportedWorkbookError extends Error {
+  override name = "UnsupportedWorkbookError";
+}
+
+interface XlsxExportDependencies {
+  fetch: typeof fetch;
+  sleep: typeof sleep;
+}
 
 // Runtime-agnostic auth seam: node CLIs install a provider via useNodeAuth()
 // (node-auth.ts); the Worker installs a refresh-token provider from its env.
@@ -47,6 +57,77 @@ export async function sheetsApi(
 
 export function sleep(ms: number): Promise<void> {
   return new Promise((r) => setTimeout(r, ms));
+}
+
+// Sheets exposes named functions only through its XLSX export. Testing found
+// the docs export route accepts the Sheets API OAuth identity for link-shared
+// workbooks that drive.file cannot address.
+export async function exportSpreadsheetXlsx(
+  spreadsheetId: string,
+  dependencies: Partial<XlsxExportDependencies> = {},
+): Promise<Uint8Array> {
+  const request = dependencies.fetch ?? fetch;
+  const wait = dependencies.sleep ?? sleep;
+  const url = `https://docs.google.com/spreadsheets/d/${spreadsheetId}/export?format=xlsx`;
+  for (let attempt = 0; ; attempt++) {
+    let res: Response;
+    try {
+      res = await request(url, { headers: { Authorization: `Bearer ${await token()}` } });
+    } catch (err) {
+      if (attempt >= 4) throw err;
+      await wait(1500 * 2 ** attempt);
+      continue;
+    }
+
+    if (res.ok) return readBoundedResponse(res, MAX_XLSX_BYTES);
+    if (res.status === 403) {
+      throw new UnsupportedWorkbookError(
+        "workbook export is disabled — allow viewers to download, print, and copy",
+      );
+    }
+
+    const retryable = res.status === 429 || res.status >= 500;
+    if (retryable && attempt < 4) {
+      await res.body?.cancel();
+      const retryAfter = Number(res.headers.get("retry-after")) || 0;
+      await wait(Math.max(retryAfter * 1000, 1500 * 2 ** attempt));
+      continue;
+    }
+    throw new Error(`XLSX export: ${res.status} ${(await res.text()).slice(0, 500)}`);
+  }
+}
+
+export async function readBoundedResponse(res: Response, maxBytes: number): Promise<Uint8Array> {
+  const declared = Number(res.headers.get("content-length"));
+  if (Number.isFinite(declared) && declared > maxBytes) {
+    throw new UnsupportedWorkbookError(`XLSX export exceeds ${maxBytes} bytes`);
+  }
+  if (!res.body) {
+    const bytes = new Uint8Array(await res.arrayBuffer());
+    if (bytes.length > maxBytes) throw new UnsupportedWorkbookError(`XLSX export exceeds ${maxBytes} bytes`);
+    return bytes;
+  }
+
+  const reader = res.body.getReader();
+  const chunks: Uint8Array[] = [];
+  let size = 0;
+  for (;;) {
+    const { done, value } = await reader.read();
+    if (done) break;
+    size += value.length;
+    if (size > maxBytes) {
+      await reader.cancel();
+      throw new UnsupportedWorkbookError(`XLSX export exceeds ${maxBytes} bytes`);
+    }
+    chunks.push(value);
+  }
+  const bytes = new Uint8Array(size);
+  let offset = 0;
+  for (const chunk of chunks) {
+    bytes.set(chunk, offset);
+    offset += chunk.length;
+  }
+  return bytes;
 }
 
 // Drive delete — works only for files this app created, and only when the

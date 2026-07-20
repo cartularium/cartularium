@@ -1,5 +1,5 @@
-// The judge pipeline: extract → lint → rehydrate → run hidden cases → verdict.
-import { sleep } from "./api.js";
+// The judge pipeline: extract → inspect → lint → rehydrate → hidden cases → verdict.
+import { sleep, UnsupportedWorkbookError } from "./api.js";
 import { parseRange } from "./a1.js";
 import { compareGrids, type GridComparison } from "./compare.js";
 import { extractSnapshot } from "./extract.js";
@@ -7,11 +7,13 @@ import type { Problem } from "./problem-types.js";
 import { rehydrate } from "./rehydrate.js";
 import { loadSheetIds, readRect, writeRect } from "./rect.js";
 import type { Snapshot } from "./snapshot.js";
+import { extractNamedFunctions } from "./workbook-features.js";
 
 export type Verdict =
   | "accepted"
   | "wrong-answer"
   | "lint-reject"
+  | "unsupported-feature"
   | "sheet-inaccessible"
   | "template-damaged";
 
@@ -29,6 +31,12 @@ export interface JudgeResult {
   program?: Snapshot;
 }
 
+interface JudgeDependencies {
+  extractSnapshot: typeof extractSnapshot;
+  extractNamedFunctions: typeof extractNamedFunctions;
+  rehydrate: typeof rehydrate;
+}
+
 const BAN_PATTERNS: Record<string, RegExp> = {
   volatile: /\b(NOW|TODAY|RAND|RANDBETWEEN|RANDARRAY)\s*\(/i,
   import: /\bIMPORT(RANGE|DATA|XML|HTML|FEED)\s*\(/i,
@@ -38,10 +46,17 @@ const BAN_PATTERNS: Record<string, RegExp> = {
   external: /\b(IMAGE|GOOGLEFINANCE|GOOGLETRANSLATE|DETECTLANGUAGE)\s*\(/i,
 };
 
-export async function judge(problem: Problem, userSpreadsheetId: string): Promise<JudgeResult> {
+export async function judge(
+  problem: Problem,
+  userSpreadsheetId: string,
+  dependencies: Partial<JudgeDependencies> = {},
+): Promise<JudgeResult> {
+  const extract = dependencies.extractSnapshot ?? extractSnapshot;
+  const inspectNamedFunctions = dependencies.extractNamedFunctions ?? extractNamedFunctions;
+  const materialize = dependencies.rehydrate ?? rehydrate;
   let program: Snapshot;
   try {
-    program = await extractSnapshot(userSpreadsheetId);
+    program = await extract(userSpreadsheetId);
   } catch (err) {
     return {
       verdict: "sheet-inaccessible",
@@ -55,13 +70,30 @@ export async function judge(problem: Problem, userSpreadsheetId: string): Promis
     return { verdict: "template-damaged", lintErrors: structural, cases: [], program };
   }
 
+  try {
+    program.namedFunctions = await inspectNamedFunctions(userSpreadsheetId);
+  } catch (err) {
+    if (!(err instanceof UnsupportedWorkbookError)) throw err;
+    return { verdict: "unsupported-feature", lintErrors: [err.message], cases: [], program };
+  }
+  if (program.namedFunctions.length > 0) {
+    const allNames = program.namedFunctions.map((fn) => fn.name).sort();
+    const names = allNames.slice(0, 20).join(", ") + (allNames.length > 20 ? `, and ${allNames.length - 20} more` : "");
+    return {
+      verdict: "unsupported-feature",
+      lintErrors: [`named functions are not supported yet: ${names}`],
+      cases: [],
+      program,
+    };
+  }
+
   const lintErrors = lint(problem, program);
   if (lintErrors.length > 0) {
     return { verdict: "lint-reject", lintErrors, cases: [], program };
   }
 
   // rehydrate the user's program into a judge-owned scratch sheet
-  const scratchId = await rehydrate(program, `ludus-judge-${problem.id}`);
+  const scratchId = await materialize(program, `ludus-judge-${problem.id}`);
   const ids = await loadSheetIds(scratchId);
 
   const cases: CaseResult[] = [];
