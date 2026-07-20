@@ -59,6 +59,25 @@ export async function deleteSpreadsheet(spreadsheetId: string): Promise<boolean>
   return res.ok;
 }
 
+// Make an app-created sheet readable by anyone with its link. Used when
+// publishing templates and by the production smoke test.
+export async function shareSpreadsheet(spreadsheetId: string): Promise<void> {
+  const res = await fetch(
+    `https://www.googleapis.com/drive/v3/files/${spreadsheetId}/permissions`,
+    {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${await token()}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ type: "anyone", role: "reader" }),
+    },
+  );
+  if (!res.ok) {
+    throw new Error(`Drive permissions.create: ${res.status} ${await res.text()}`);
+  }
+}
+
 // accepts a bare id or a full docs.google.com URL
 export function parseSpreadsheetId(input: string): string {
   const m = input.match(/\/d\/([\w-]+)/);

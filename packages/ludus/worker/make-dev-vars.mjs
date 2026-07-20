@@ -1,17 +1,16 @@
-// Generate .dev.vars (gitignored) for `wrangler dev` from the local judge
-// identity: OAuth client from assay's credentials.json (interim, until
-// ludus owns a client) + refresh token from ~/.ludusrc.json.
-import { readFileSync, writeFileSync } from "node:fs"
+// Generate .dev.vars (gitignored) for `wrangler dev` from Ludus's OAuth
+// client and the local judge refresh token.
+import { existsSync, readFileSync, writeFileSync } from "node:fs"
 import { homedir } from "node:os"
 import { dirname, join } from "node:path"
 import { fileURLToPath } from "node:url"
 
 const PKG = join(dirname(fileURLToPath(import.meta.url)), "..")
-import { existsSync } from "node:fs"
 const credsPath =
-  [process.env.LUDUS_GOOGLE_CREDENTIALS_PATH, join(PKG, "credentials.json"), join(PKG, "..", "assay", "credentials.json")]
+  [process.env.LUDUS_GOOGLE_CREDENTIALS_PATH, join(PKG, "credentials.json")]
     .filter(Boolean)
     .find((p) => existsSync(p))
+if (!credsPath) throw new Error("no Ludus credentials.json")
 const raw = JSON.parse(readFileSync(credsPath, "utf8"))
 const creds = raw.installed || raw.web
 const token = JSON.parse(readFileSync(join(homedir(), ".ludusrc.json"), "utf8"))

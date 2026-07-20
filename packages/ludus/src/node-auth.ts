@@ -1,6 +1,4 @@
-// Node-side auth bootstrap for the CLIs: judge identity first
-// (~/.ludusrc.json), personal assay token as a dev fallback.
-import { getAccessToken } from "assay";
+// Node-side auth bootstrap for the CLIs. Missing judge auth fails closed.
 import { setTokenProvider } from "./api.js";
 import { getJudgeAccessToken } from "./auth.js";
 
@@ -10,14 +8,9 @@ export function useNodeAuth(): void {
     if (cached) return cached;
     cached = await getJudgeAccessToken();
     if (cached) return cached;
-    cached = await getAccessToken();
-    if (!cached) {
-      throw new Error(
-        "No Google identity available. Run `pnpm --filter @cartularium/ludus run login` " +
-          "(judge identity) or `assay login` (personal fallback).",
-      );
-    }
-    console.error("[ludus] no judge identity — falling back to personal assay token");
-    return cached;
+    throw new Error(
+      "Ludus judge identity is not authenticated. " +
+        "Run `pnpm --filter @cartularium/ludus run login`.",
+    );
   });
 }

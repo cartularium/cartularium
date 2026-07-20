@@ -1,7 +1,5 @@
-// Ludus's own token store (~/.ludusrc.json) so the judge service
-// identity stays separate from the developer's personal assay token.
-// Interim coupling: reuses assay's published OAuth client (same client id/secret,
-// same registered localhost redirect) until ludus owns a client of its own.
+// Ludus's own token store (~/.ludusrc.json) and OAuth client keep the judge
+// identity separate from the developer's personal Assay identity.
 import { existsSync, readFileSync, writeFileSync } from "node:fs";
 import { createServer } from "node:http";
 import { homedir } from "node:os";
@@ -10,7 +8,7 @@ import { fileURLToPath } from "node:url";
 
 const TOKEN_PATH = join(homedir(), ".ludusrc.json");
 const SCOPES = ["https://www.googleapis.com/auth/spreadsheets", "https://www.googleapis.com/auth/drive.file"];
-const REDIRECT_PORT = 8090; // must match the redirect URI registered on assay's client
+const REDIRECT_PORT = 8090; // must match the redirect URI registered on Ludus's client
 const REDIRECT_URI = `http://localhost:${REDIRECT_PORT}`;
 
 interface ClientCredentials {
@@ -26,11 +24,9 @@ interface TokenData {
 
 function loadClientCredentials(): ClientCredentials {
   const pkg = join(dirname(fileURLToPath(import.meta.url)), "..");
-  // ludus's own OAuth client first; assay's published client as fallback
   const candidates = [
     process.env.LUDUS_GOOGLE_CREDENTIALS_PATH,
     join(pkg, "credentials.json"),
-    join(pkg, "..", "assay", "credentials.json"),
   ].filter((p): p is string => Boolean(p));
   const path = candidates.find((p) => existsSync(p));
   if (!path) {
@@ -45,7 +41,7 @@ function loadClientCredentials(): ClientCredentials {
   return { clientId: creds.client_id, clientSecret: creds.client_secret };
 }
 
-/** null when no judge-identity token exists (callers fall back to assay's token) */
+/** null when no judge-identity token exists */
 export async function getJudgeAccessToken(): Promise<string | null> {
   const envToken = process.env.LUDUS_GOOGLE_TOKEN_JSON;
   const data: TokenData | null = envToken
@@ -73,7 +69,7 @@ async function refresh(refreshToken: string): Promise<TokenData | null> {
       grant_type: "refresh_token",
     }),
   });
-  if (!res.ok) return null;
+  if (!res.ok) throw new Error(`Judge token refresh failed: ${res.status}`);
   const tokens = (await res.json()) as { access_token: string; expires_in: number };
   const data: TokenData = {
     access_token: tokens.access_token,

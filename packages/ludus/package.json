@@ -11,6 +11,8 @@
     "judge": "tsx src/cli-judge.ts",
     "selftest": "tsx src/cli-selftest.ts",
     "login": "tsx src/cli-login.ts",
+    "verify:identity": "tsx src/cli-verify.ts",
+    "verify:live": "tsx src/cli-smoke-live.ts",
     "check": "tsc --noEmit",
     "build:site": "node site/build.mjs",
     "serve:site": "node site/serve.mjs",
@@ -21,7 +23,6 @@
     "dev:worker": "node worker/build-problems.mjs && node worker/make-dev-vars.mjs && wrangler dev --local"
   },
   "dependencies": {
-    "assay": "workspace:*",
     "yaml": "^2.7.0",
     "@cartularium/brand": "workspace:*",
     "@cartularium/chrome": "workspace:*"
