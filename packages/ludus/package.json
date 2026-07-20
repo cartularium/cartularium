@@ -14,6 +14,7 @@
     "login": "tsx src/cli-login.ts",
     "verify:identity": "tsx src/cli-verify.ts",
     "verify:live": "tsx src/cli-smoke-live.ts",
+    "verify:named-functions": "pnpm run build:formula-syntax && tsx spike/named-function-differential.ts",
     "test": "pnpm run build:formula-syntax && tsx --test src/*.test.ts",
     "check": "pnpm run build:formula-syntax && tsc --noEmit",
     "build:site": "node site/build.mjs",

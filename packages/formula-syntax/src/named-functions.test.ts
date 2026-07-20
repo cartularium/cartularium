@@ -123,6 +123,22 @@ test("preserves arrays, errors, strings, and anchored references", () => {
   );
 });
 
+test("never rewrites function-like text inside strings", () => {
+  assert.equal(
+    inline('=IF(A1="DOUBLE(1)",DOUBLE(2),"escaped ""DOUBLE(3)""")', [
+      { name: "DOUBLE", definition: "LAMBDA(x,x*2)" },
+    ]).formula,
+    '=IF(A1="DOUBLE(1)",LAMBDA(x,x*2)(2),"escaped ""DOUBLE(3)""")',
+  );
+  assert.equal(
+    inline("=TEXT_ONLY(1)", [
+      { name: "TEXT_ONLY", definition: 'LAMBDA(x,"HELPER(x)")' },
+      { name: "HELPER", definition: "LAMBDA(x,x+1)" },
+    ]).formula,
+    '=LAMBDA(x,"HELPER(x)")(1)',
+  );
+});
+
 test("rejects direct and mutual recursion", () => {
   assert.throws(
     () => inline("=F(1)", [{ name: "F", definition: "LAMBDA(x,F(x-1))" }]),
