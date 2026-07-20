@@ -2,6 +2,7 @@
 // Imports real named functions, compares their computed cells with an inlined
 // scratch workbook, and deletes every app-owned fixture.
 import { strFromU8, strToU8, unzipSync, zipSync } from "fflate";
+import { NamedFunctionInlineError } from "@cartularium/formula-syntax";
 import { deleteSpreadsheet, exportSpreadsheetXlsx, sheetsApi, sleep } from "../src/api.js";
 import { getJudgeAccessToken } from "../src/auth.js";
 import { extractSnapshot } from "../src/extract.js";
@@ -27,6 +28,18 @@ const definitions = [
   { name: "SHADOW", definition: "LAMBDA(x,LET(DOUBLE,LAMBDA(y,y+10),DOUBLE(x)))" },
   { name: "LAZY_BRANCH", definition: "LAMBDA(x,IF(FALSE,x+x,7))" },
   { name: "PACK", definition: 'LAMBDA(x,{x,"DOUBLE(77)";IF(x>0,x+1,0),NA()})' },
+  { name: "DIRECT_REF", definition: "LAMBDA(x,x+B2)" },
+  { name: "ABS_REF", definition: "LAMBDA(x,x+'Input data'!$B$2)" },
+  { name: "MIXED_REF", definition: "LAMBDA(x,x+$B2+B$2)" },
+  { name: "NAMED_REF", definition: "LAMBDA(x,x+RATE)" },
+  {
+    name: "SCOPED_REF",
+    definition: "LAMBDA(x,LET(offset,'Input data'!$B$3,LAMBDA(y,y+offset)(x)))",
+  },
+  {
+    name: "RANGE_REF",
+    definition: "LAMBDA(values,SUM(values)+SUM('Input data'!$A$2:$A$4))",
+  },
   { name: "RECURSE", definition: "LAMBDA(x,RECURSE(x))" },
 ];
 
@@ -46,9 +59,18 @@ const values = [
   { range: "Cases!L1", values: [["=PACK(4)"]] },
   { range: "Cases!N1", values: [['=IF("DOUBLE(1)"="DOUBLE(1)",DOUBLE(2),0)']] },
   { range: "Cases!N2", values: [["=DOUBLE(SUM((1+2),3))"]] },
+  { range: "Cases!P1", values: [["=DIRECT_REF(1)"]] },
+  { range: "Cases!P2", values: [["=DIRECT_REF(2)"]] },
+  { range: "Cases!P4", values: [["=ABS_REF(1)"]] },
+  { range: "Cases!P5", values: [["=MIXED_REF(1)"]] },
+  { range: "Cases!P6", values: [["=NAMED_REF(1)"]] },
+  { range: "Cases!R1", values: [["=SCOPED_REF(1)"]] },
+  { range: "Cases!R2", values: [["=RANGE_REF(A2:A4)"]] },
+  { range: "'Input data'!D2", values: [["=DIRECT_REF(1)"]] },
+  { range: "'Input data'!D3", values: [["=MIXED_REF(1)"]] },
 ];
 
-const expectedCells: Array<{ a1: string; value?: number | string; error?: string }> = [
+const expectedCells: Array<{ sheet?: string; a1: string; value?: number | string; error?: string }> = [
   { a1: "D1", value: 42 },
   { a1: "D2", value: 12 },
   { a1: "D4", value: 2 },
@@ -71,6 +93,15 @@ const expectedCells: Array<{ a1: string; value?: number | string; error?: string
   { a1: "M2", error: "N_A" },
   { a1: "N1", value: 4 },
   { a1: "N2", value: 12 },
+  { a1: "P1", value: 1 },
+  { a1: "P2", value: 2 },
+  { a1: "P4", value: 101 },
+  { a1: "P5", value: 1 },
+  { a1: "P6", value: 101 },
+  { a1: "R1", value: 201 },
+  { a1: "R2", value: 24 },
+  { sheet: "Input data", a1: "D2", value: 1 },
+  { sheet: "Input data", a1: "D3", value: 301 },
 ];
 
 const owned = new Set<string>();
@@ -78,11 +109,57 @@ try {
   const created = (await sheetsApi("", {
     method: "POST",
     body: JSON.stringify({
-      properties: { title: "ludus-named-function-differential-source" },
-      sheets: [{ properties: { title: "Cases" } }],
+      properties: {
+        title: "ludus-named-function-differential-source",
+        locale: "de_DE",
+        timeZone: "Europe/Berlin",
+      },
+      sheets: [
+        { properties: { sheetId: 101, title: "Cases" } },
+        { properties: { sheetId: 202, title: "Input data" } },
+      ],
     }),
   })) as { spreadsheetId: string };
   owned.add(created.spreadsheetId);
+
+  await sheetsApi(`/${created.spreadsheetId}:batchUpdate`, {
+    method: "POST",
+    body: JSON.stringify({
+      requests: [
+        {
+          addNamedRange: {
+            namedRange: {
+              name: "RATE",
+              range: {
+                sheetId: 202,
+                startRowIndex: 1,
+                endRowIndex: 2,
+                startColumnIndex: 1,
+                endColumnIndex: 2,
+              },
+            },
+          },
+        },
+      ],
+    }),
+  });
+  await sheetsApi(`/${created.spreadsheetId}/values:batchUpdate`, {
+    method: "POST",
+    body: JSON.stringify({
+      valueInputOption: "USER_ENTERED",
+      data: [
+        {
+          range: "'Input data'!A1:B4",
+          values: [
+            ["base", "rate"],
+            [5, 100],
+            [6, 200],
+            [7, 300],
+          ],
+        },
+      ],
+    }),
+  });
 
   const xlsx = injectNamedFunctions(await exportSpreadsheetXlsx(created.spreadsheetId));
   const importedId = await importSpreadsheet(xlsx, "ludus-named-function-differential-original");
@@ -95,12 +172,29 @@ try {
 
   const original = await extractSnapshot(importedId);
   original.namedFunctions = await extractNamedFunctions(importedId);
-  const executable = inlineSnapshotNamedFunctions(original);
+  let contextDependentRejected = false;
+  try {
+    inlineSnapshotNamedFunctions(original);
+  } catch (error) {
+    contextDependentRejected =
+      error instanceof NamedFunctionInlineError && error.code === "context-dependent-reference";
+  }
+
+  const safeOriginal = structuredClone(original);
+  safeOriginal.namedFunctions = safeOriginal.namedFunctions.filter(
+    (definition) => !["DIRECT_REF", "MIXED_REF"].includes(definition.name),
+  );
+  clearCell(safeOriginal, "Cases", "P1");
+  clearCell(safeOriginal, "Cases", "P2");
+  clearCell(safeOriginal, "Cases", "P5");
+  clearCell(safeOriginal, "Input data", "D2");
+  clearCell(safeOriginal, "Input data", "D3");
+  const executable = inlineSnapshotNamedFunctions(safeOriginal);
   const inlinedId = await rehydrate(executable, "ludus-named-function-differential-inlined");
   owned.add(inlinedId);
   await sleep(2_000);
   const inlined = await extractSnapshot(inlinedId);
-  const report = diffSnapshots(original, inlined);
+  const report = diffSnapshots(safeOriginal, inlined);
   const importedNames = original.namedFunctions.map((fn) => fn.name).sort();
   const expectedNames = definitions.map((fn) => fn.name).sort();
   const namesMatch = JSON.stringify(importedNames) === JSON.stringify(expectedNames);
@@ -109,8 +203,8 @@ try {
   let recursiveRejected = false;
   try {
     inlineSnapshotNamedFunctions({
-      ...original,
-      sheets: original.sheets.map((sheet, index) =>
+      ...safeOriginal,
+      sheets: safeOriginal.sheets.map((sheet, index) =>
         index === 0
           ? {
               ...sheet,
@@ -130,12 +224,14 @@ try {
   for (const [verdict, count] of Object.entries(report.counts)) {
     if (count > 0) console.log(`${verdict}: ${count}`);
   }
+  console.log(`context-dependent rejection: ${contextDependentRejected ? "pass" : "FAIL"}`);
   console.log(`recursive rejection: ${recursiveRejected ? "pass" : "FAIL"}`);
   if (
     !namesMatch ||
     expectationFailures.length > 0 ||
     report.missingSheets.length > 0 ||
     report.diffs.length > 0 ||
+    !contextDependentRejected ||
     !recursiveRejected
   ) {
     console.error(
@@ -146,6 +242,7 @@ try {
           expectationFailures,
           missingSheets: report.missingSheets,
           diffs: report.diffs,
+          contextDependentRejected,
         },
         null,
         2,
@@ -213,14 +310,26 @@ function escapeXml(value: string): string {
 
 function matchesExpected(
   snapshot: Snapshot,
-  expected: { a1: string; value?: number | string; error?: string },
+  expected: { sheet?: string; a1: string; value?: number | string; error?: string },
 ): boolean {
   const match = expected.a1.match(/^([A-Z]+)(\d+)$/);
   if (!match) throw new Error(`invalid test address: ${expected.a1}`);
   const column = [...match[1]].reduce((value, letter) => value * 26 + letter.charCodeAt(0) - 64, 0) - 1;
   const row = Number(match[2]) - 1;
-  const effective = snapshot.sheets.find((sheet) => sheet.title === "Cases")?.cells[row]?.[column]?.ev;
+  const effective = snapshot.sheets.find((sheet) => sheet.title === (expected.sheet ?? "Cases"))?.cells[
+    row
+  ]?.[column]?.ev;
   if (expected.error !== undefined) return effective?.errorValue?.type === expected.error;
   const value = effective?.numberValue ?? effective?.stringValue ?? effective?.boolValue;
   return value === expected.value;
+}
+
+function clearCell(snapshot: Snapshot, sheetTitle: string, a1: string): void {
+  const match = a1.match(/^([A-Z]+)(\d+)$/);
+  if (!match) throw new Error(`invalid test address: ${a1}`);
+  const column = [...match[1]].reduce((value, letter) => value * 26 + letter.charCodeAt(0) - 64, 0) - 1;
+  const row = Number(match[2]) - 1;
+  const sheet = snapshot.sheets.find((candidate) => candidate.title === sheetTitle);
+  if (!sheet) throw new Error(`missing test sheet: ${sheetTitle}`);
+  if (sheet.cells[row]) sheet.cells[row][column] = null;
 }

@@ -1,4 +1,8 @@
-export { googleSheetsSyntax, tokenizeGoogleSheetsFormula } from "./dialects/gsheets.js";
+export {
+  googleSheetsReferenceMode,
+  googleSheetsSyntax,
+  tokenizeGoogleSheetsFormula,
+} from "./dialects/gsheets.js";
 export { parseLossless, printNode, printNodes, type CallNode, type Node, type TokenNode } from "./cst.js";
 export { canonical, functionCalls, referencedIdentifiers, rewriteIdentifiers } from "./scope.js";
 export {

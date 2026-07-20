@@ -25,4 +25,5 @@ export interface Token {
 export interface FormulaSyntax {
   dialect: string;
   tokenize(source: string): Token[];
+  referenceMode(token: Token): "fixed" | "context-dependent" | undefined;
 }

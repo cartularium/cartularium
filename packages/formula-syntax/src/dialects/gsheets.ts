@@ -9,6 +9,7 @@ const PATTERNS: Array<[TokenKind, RegExp]> = [
   ["opaque-reference", /^#(?:N\/A|REF!|VALUE!|NAME\?|DIV\/0!|NUM!|NULL!|ERROR!)/i],
   ["opaque-reference", /^\$?[A-Za-z]{1,3}\$?\d+(?::\$?[A-Za-z]{1,3}\$?\d+)?/],
   ["opaque-reference", /^\$?[A-Za-z]{1,3}:\$?[A-Za-z]{1,3}/],
+  ["opaque-reference", /^\$?\d+:\$?\d+/],
   ["number", /^\d+(?:\.\d+)?(?:[eE][+-]?\d+)?/],
   ["identifier", /^[A-Za-z_][A-Za-z0-9_.]*/],
   ["lparen", /^\(/],
@@ -26,7 +27,20 @@ const PATTERNS: Array<[TokenKind, RegExp]> = [
 export const googleSheetsSyntax: FormulaSyntax = {
   dialect: "gsheets",
   tokenize: tokenizeGoogleSheetsFormula,
+  referenceMode: googleSheetsReferenceMode,
 };
+
+export function googleSheetsReferenceMode(token: Token): "fixed" | "context-dependent" | undefined {
+  if (token.kind !== "opaque-reference") return undefined;
+  const cell = token.value.match(/^(\$?[A-Za-z]{1,3})(\$?\d+)(?::(\$?[A-Za-z]{1,3})(\$?\d+))?$/);
+  if (cell) return cell.slice(1).filter(Boolean).every((part) => part.startsWith("$")) ? "fixed" : "context-dependent";
+  const columns = token.value.match(/^(\$?[A-Za-z]{1,3}):(\$?[A-Za-z]{1,3})$/);
+  if (columns) return columns.slice(1).every((part) => part.startsWith("$")) ? "fixed" : "context-dependent";
+  const rows = token.value.match(/^(\$?\d+):(\$?\d+)$/);
+  if (rows) return rows.slice(1).every((part) => part.startsWith("$")) ? "fixed" : "context-dependent";
+  if (token.value.includes("[")) return "context-dependent";
+  return undefined;
+}
 
 export function tokenizeGoogleSheetsFormula(source: string): Token[] {
   const tokens: Token[] = [];

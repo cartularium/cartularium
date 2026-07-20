@@ -27,5 +27,6 @@ const result = inlineNamedFunctions(
 Named functions expand as immediately invoked `LAMBDA` expressions. This preserves
 argument binding and lazy branches without beta-reducing parameters. Expansion is
 case-insensitive, scope-aware, transitive, and bounded. Recursive definitions,
-protected-name collisions, malformed definitions, and configured prohibited calls
-fail closed.
+context-dependent references, protected-name collisions, malformed definitions, and
+configured prohibited calls fail closed. Fully absolute references and named ranges
+remain eligible for expansion.

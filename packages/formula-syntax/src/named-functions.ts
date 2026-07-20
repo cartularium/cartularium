@@ -9,6 +9,7 @@ export interface NamedFunctionDefinition {
 
 export type NamedFunctionInlineErrorCode =
   | "ambiguous-name"
+  | "context-dependent-reference"
   | "duplicate-name"
   | "expansion-limit"
   | "invalid-definition"
@@ -164,8 +165,17 @@ function normalizeDefinition(source: NamedFunctionDefinition, syntax: FormulaSyn
   definition = definition.replace(/^_xlfn\.LAMBDA\b/i, "LAMBDA");
   let nodes: Node[];
   try {
-    nodes = parseLossless(syntax.tokenize(definition));
+    const tokens = syntax.tokenize(definition);
+    const relative = tokens.find((token) => syntax.referenceMode(token) === "context-dependent");
+    if (relative) {
+      throw new NamedFunctionInlineError(
+        "context-dependent-reference",
+        `${source.name} contains context-dependent reference ${relative.value}`,
+      );
+    }
+    nodes = parseLossless(tokens);
   } catch (error) {
+    if (error instanceof NamedFunctionInlineError) throw error;
     throw new NamedFunctionInlineError(
       "invalid-definition",
       `${source.name} is not a complete LAMBDA: ${error instanceof Error ? error.message : String(error)}`,

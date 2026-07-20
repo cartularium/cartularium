@@ -139,6 +139,21 @@ test("never rewrites function-like text inside strings", () => {
   );
 });
 
+test("accepts fixed references and rejects context-dependent references", () => {
+  assert.equal(
+    inline("=F(1)", [{ name: "F", definition: "LAMBDA(x,x+$A$1+'Input data'!$B$2+RATE)" }]).formula,
+    "=LAMBDA(x,x+$A$1+'Input data'!$B$2+RATE)(1)",
+  );
+  for (const reference of ["A1", "$A1", "A$1", "A:A", "$A:B", "1:1", "$1:2", "Table1[Amount]"]) {
+    assert.throws(
+      () => inline("=F(1)", [{ name: "F", definition: `LAMBDA(x,x+${reference})` }]),
+      (error) =>
+        error instanceof NamedFunctionInlineError && error.code === "context-dependent-reference",
+      reference,
+    );
+  }
+});
+
 test("rejects direct and mutual recursion", () => {
   assert.throws(
     () => inline("=F(1)", [{ name: "F", definition: "LAMBDA(x,F(x-1))" }]),

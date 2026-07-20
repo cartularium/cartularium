@@ -43,6 +43,17 @@ test("rejects named-function and named-range collisions", () => {
   );
 });
 
+test("rejects context-dependent references inside used definitions", () => {
+  const original = fixture();
+  original.namedFunctions = [{ name: "OFFSET_VALUE", definition: "LAMBDA(x,x+$B2)" }];
+  original.sheets[0].cells = [[{ ue: { formulaValue: "=OFFSET_VALUE(1)" } }]];
+  assert.throws(
+    () => inlineSnapshotNamedFunctions(original),
+    (error) =>
+      error instanceof NamedFunctionInlineError && error.code === "context-dependent-reference",
+  );
+});
+
 test("bounds total workbook expansion", () => {
   assert.throws(
     () => inlineSnapshotNamedFunctions(fixture(), { maxTotalFormulaCharacters: 10 }),
