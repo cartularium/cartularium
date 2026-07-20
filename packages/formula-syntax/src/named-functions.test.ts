@@ -154,11 +154,84 @@ test("accepts fixed references and rejects context-dependent references", () => 
   }
 });
 
-test("rejects direct and mutual recursion", () => {
-  assert.throws(
-    () => inline("=F(1)", [{ name: "F", definition: "LAMBDA(x,F(x-1))" }]),
-    (error) => error instanceof NamedFunctionInlineError && error.code === "recursive-definition",
+test("lowers direct recursion through hygienic self-application", () => {
+  assert.deepEqual(
+    inline("=COUNTDOWN(10)", [
+      { name: "COUNTDOWN", definition: "LAMBDA(n,IF(n=0,0,1+COUNTDOWN(n-1)))" },
+    ]),
+    {
+      formula:
+        "=LAMBDA(n,LET(LUDUS_RECUR_1,LAMBDA(LUDUS_SELF_1,n,IF(n=0,0,1+LUDUS_SELF_1(LUDUS_SELF_1,n-1))),LUDUS_RECUR_1(LUDUS_RECUR_1,n)))(10)",
+      inlinedFunctions: ["COUNTDOWN"],
+    },
   );
+});
+
+test("keeps recursive bare functions callable by lambda helpers", () => {
+  assert.equal(
+    inline("=MAP(A1:A3,F)", [
+      { name: "F", definition: "LAMBDA(n,IF(n=0,0,1+F(n-1)))" },
+    ]).formula,
+    "=MAP(A1:A3,LAMBDA(n,LET(LUDUS_RECUR_1,LAMBDA(LUDUS_SELF_1,n,IF(n=0,0,1+LUDUS_SELF_1(LUDUS_SELF_1,n-1))),LUDUS_RECUR_1(LUDUS_RECUR_1,n))))",
+  );
+});
+
+test("avoids generated-name capture in recursive definitions", () => {
+  assert.equal(
+    inline("=F(3)", [
+      {
+        name: "F",
+        definition:
+          "LAMBDA(LUDUS_SELF_1,LET(LUDUS_RECUR_1,LUDUS_SELF_1,IF(LUDUS_SELF_1=0,LUDUS_RECUR_1,F(LUDUS_SELF_1-1))))",
+      },
+    ]).formula,
+    "=LAMBDA(LUDUS_SELF_1,LET(LUDUS_RECUR_2,LAMBDA(LUDUS_SELF_2,LUDUS_SELF_1,LET(LUDUS_RECUR_1,LUDUS_SELF_1,IF(LUDUS_SELF_1=0,LUDUS_RECUR_1,LUDUS_SELF_2(LUDUS_SELF_2,LUDUS_SELF_1-1)))),LUDUS_RECUR_2(LUDUS_RECUR_2,LUDUS_SELF_1)))(3)",
+  );
+});
+
+test("allows recursive functions to use expanded non-recursive dependencies", () => {
+  const result = inline("=F(3)", [
+    { name: "ADD_ONE", definition: "LAMBDA(x,x+1)" },
+    { name: "F", definition: "LAMBDA(n,IF(n=0,0,ADD_ONE(F(n-1))))" },
+  ]);
+  assert.match(result.formula, /LAMBDA\(x,x\+1\)\(LUDUS_SELF_1\(LUDUS_SELF_1,n-1\)\)/);
+  assert.deepEqual(result.inlinedFunctions, ["ADD_ONE", "F"]);
+});
+
+test("rewrites multiple recursive calls but not strings or shadowed names", () => {
+  const result = inline("=FIB(5)", [
+    {
+      name: "FIB",
+      definition:
+        'LAMBDA(n,IF(n<2,n+N("FIB(99)"),LET(FIB,LAMBDA(x,x+100),FIB(0)*0)+FIB(n-1)+FIB(n-2)))',
+    },
+  ]);
+  assert.match(result.formula, /"FIB\(99\)"/);
+  assert.match(result.formula, /LET\(FIB,LAMBDA\(x,x\+100\),FIB\(0\)\*0\)/);
+  assert.equal(result.formula.match(/LUDUS_SELF_1\(LUDUS_SELF_1,n-/g)?.length, 2);
+});
+
+test("keeps maxDepth as the transitive expansion bound", () => {
+  assert.doesNotThrow(() =>
+    inline("=F(1)", [{ name: "F", definition: "LAMBDA(n,IF(n=0,0,F(n-1)))" }], {
+      maxDepth: 1,
+    }),
+  );
+  assert.throws(
+    () =>
+      inline(
+        "=F(1)",
+        [
+          { name: "F", definition: "LAMBDA(n,IF(n=0,0,G(F(n-1))))" },
+          { name: "G", definition: "LAMBDA(n,n)" },
+        ],
+        { maxDepth: 1 },
+      ),
+    (error) => error instanceof NamedFunctionInlineError && error.code === "expansion-limit",
+  );
+});
+
+test("rejects mutual recursion", () => {
   assert.throws(
     () =>
       inline("=F(1)", [

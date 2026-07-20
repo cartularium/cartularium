@@ -12,6 +12,27 @@ export function rewriteIdentifiers(
   return printNodes(nodes.map((node) => rewriteNode(node, new Set(), normalized)));
 }
 
+export function rewriteRecursiveReferences(
+  source: string,
+  syntax: FormulaSyntax,
+  target: string,
+  self: string,
+  parameters: string[],
+  separator: string,
+): string {
+  const rewrite: RecursiveRewrite = {
+    target: canonical(target),
+    self,
+    bareReplacement: `LAMBDA(${parameters.join(separator)}${separator}${self}(${[
+      self,
+      ...parameters,
+    ].join(separator)}))`,
+    separator,
+  };
+  const nodes = parseLossless(syntax.tokenize(source));
+  return printNodes(nodes.map((node) => rewriteRecursiveNode(node, new Set(), rewrite)));
+}
+
 export function referencedIdentifiers(
   source: string,
   syntax: FormulaSyntax,
@@ -52,6 +73,99 @@ function rewriteNode(
     name: rewriteToken(node.name, scope, replacements),
     args: node.args.map((arg) => arg.map((child) => rewriteNode(child, scope, replacements))),
   };
+}
+
+function rewriteRecursiveNode(
+  node: Node,
+  scope: ReadonlySet<string>,
+  rewrite: RecursiveRewrite,
+): Node {
+  if (node.kind === "token") {
+    if (
+      node.token.kind !== "identifier" ||
+      scope.has(rewrite.target) ||
+      canonical(node.token.value) !== rewrite.target
+    ) {
+      return node;
+    }
+    return { ...node, token: { ...node.token, value: rewrite.bareReplacement } };
+  }
+
+  const name = canonical(node.name.token.value);
+  if (name === "LET") {
+    return rewriteRecursiveLet(node, scope, rewrite);
+  }
+  if (name === "LAMBDA") {
+    return rewriteRecursiveLambda(node, scope, rewrite);
+  }
+  const args = node.args.map((arg) =>
+    arg.map((child) => rewriteRecursiveNode(child, scope, rewrite)),
+  );
+  if (scope.has(rewrite.target) || name !== rewrite.target) return { ...node, args };
+  const selfArgument: Node[] = [syntheticToken("identifier", rewrite.self)];
+  if (args.length > 0) selfArgument.push(syntheticToken("comma", rewrite.separator));
+  return {
+    ...node,
+    name: { ...node.name, token: { ...node.name.token, value: rewrite.self } },
+    args: [selfArgument, ...args],
+  };
+}
+
+interface RecursiveRewrite {
+  target: string;
+  self: string;
+  bareReplacement: string;
+  separator: string;
+}
+
+function syntheticToken(kind: "identifier" | "comma", value: string): TokenNode {
+  return { kind: "token", token: { kind, value, start: 0, end: 0 } };
+}
+
+function rewriteRecursiveLet(
+  node: CallNode,
+  scope: ReadonlySet<string>,
+  rewrite: RecursiveRewrite,
+): CallNode {
+  const current = new Set(scope);
+  const args: Node[][] = [];
+  for (let i = 0; i < node.args.length; ) {
+    const arg = node.args[i];
+    if (i === node.args.length - 1) {
+      args.push(
+        arg.map((child) => rewriteRecursiveNode(child, current, rewrite)),
+      );
+      break;
+    }
+    args.push(arg);
+    const value = node.args[i + 1];
+    if (value) {
+      args.push(
+        value.map((child) => rewriteRecursiveNode(child, current, rewrite)),
+      );
+    }
+    const declared = declarationName(arg);
+    if (declared) current.add(declared);
+    i += 2;
+  }
+  return { ...node, args };
+}
+
+function rewriteRecursiveLambda(
+  node: CallNode,
+  scope: ReadonlySet<string>,
+  rewrite: RecursiveRewrite,
+): CallNode {
+  const current = new Set(scope);
+  const args = node.args.map((arg, index) => {
+    if (index === node.args.length - 1) {
+      return arg.map((child) => rewriteRecursiveNode(child, current, rewrite));
+    }
+    const declared = declarationName(arg);
+    if (declared) current.add(declared);
+    return arg;
+  });
+  return { ...node, args };
 }
 
 function rewriteToken(

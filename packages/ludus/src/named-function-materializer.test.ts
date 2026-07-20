@@ -34,6 +34,17 @@ test("inlines a snapshot without mutating the stored program", () => {
   assert.equal(original.namedFunctions.length, 2);
 });
 
+test("materializes direct recursion without unrolling it", () => {
+  const original = fixture();
+  original.namedFunctions = [
+    { name: "COUNTDOWN", definition: "LAMBDA(n,IF(n=0,0,1+COUNTDOWN(n-1)))" },
+  ];
+  original.sheets[0].cells = [[{ ue: { formulaValue: "=COUNTDOWN(10)" } }]];
+  const formula = inlineSnapshotNamedFunctions(original).sheets[0].cells[0][0]?.ue?.formulaValue;
+  assert.match(formula ?? "", /LUDUS_SELF_1\(LUDUS_SELF_1,n-1\)/);
+  assert.equal(formula?.match(/IF\(/g)?.length, 1);
+});
+
 test("rejects named-function and named-range collisions", () => {
   const original = fixture();
   original.namedRanges.push({ name: "TWICE", range: { sheetId: 0 } });

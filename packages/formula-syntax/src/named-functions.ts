@@ -1,5 +1,11 @@
 import { parseLossless, type CallNode, type Node, type TokenNode } from "./cst.js";
-import { canonical, functionCalls, referencedIdentifiers, rewriteIdentifiers } from "./scope.js";
+import {
+  canonical,
+  functionCalls,
+  referencedIdentifiers,
+  rewriteIdentifiers,
+  rewriteRecursiveReferences,
+} from "./scope.js";
 import type { FormulaSyntax } from "./token.js";
 
 export interface NamedFunctionDefinition {
@@ -106,7 +112,8 @@ export function createNamedFunctionInliner(
     const source = byName.get(name);
     if (!source) throw new Error(`Missing named-function definition: ${name}`);
     const normalized = normalizeDefinition(source, syntax);
-    const dependencies = referencedIdentifiers(normalized, syntax, byName.keys());
+    const dependencies = referencedIdentifiers(normalized.formula, syntax, byName.keys());
+    const recursive = dependencies.delete(name);
     const replacements = new Map<string, string>();
     const functions: string[] = [];
     for (const dependency of dependencies) {
@@ -114,7 +121,16 @@ export function createNamedFunctionInliner(
       replacements.set(dependency, result.formula);
       for (const used of result.functions) if (!functions.includes(used)) functions.push(used);
     }
-    const expandedFormula = rewriteIdentifiers(normalized, syntax, replacements);
+    let expandedFormula = rewriteIdentifiers(normalized.formula, syntax, replacements);
+    if (recursive) {
+      expandedFormula = lowerDirectRecursion(
+        expandedFormula,
+        normalized,
+        name,
+        syntax,
+        protectedNames,
+      );
+    }
     assertLength(expandedFormula, maxFormulaLength);
     functions.push(name);
     const result = { formula: expandedFormula, functions };
@@ -159,7 +175,14 @@ function assertNoProhibitedCalls(
   }
 }
 
-function normalizeDefinition(source: NamedFunctionDefinition, syntax: FormulaSyntax): string {
+interface NormalizedDefinition {
+  formula: string;
+  parameters: string[];
+  parameterInsertionOffset: number;
+  separator: string;
+}
+
+function normalizeDefinition(source: NamedFunctionDefinition, syntax: FormulaSyntax): NormalizedDefinition {
   let definition = source.definition.trim();
   if (definition.startsWith("=")) definition = definition.slice(1).trim();
   definition = definition.replace(/^_xlfn\.LAMBDA\b/i, "LAMBDA");
@@ -186,10 +209,27 @@ function normalizeDefinition(source: NamedFunctionDefinition, syntax: FormulaSyn
     throw new NamedFunctionInlineError("invalid-definition", `${source.name} is not a complete LAMBDA`);
   }
   const parameters = call.args.slice(0, -1).map(parameterName);
-  if (parameters.some((name) => name === null) || new Set(parameters).size !== parameters.length) {
+  const canonicalParameters = parameters.map((name) => name === null ? null : canonical(name));
+  if (
+    parameters.some((name) => name === null) ||
+    new Set(canonicalParameters).size !== canonicalParameters.length
+  ) {
     throw new NamedFunctionInlineError("invalid-definition", `${source.name} has invalid or duplicate parameters`);
   }
-  return definition;
+  const separatorNode = call.args[0].find(
+    (node): node is TokenNode =>
+      node.kind === "token" && ["comma", "semicolon"].includes(node.token.kind),
+  );
+  const separator = separatorNode?.token.value;
+  if (!separator) {
+    throw new NamedFunctionInlineError("invalid-definition", `${source.name} has no argument separator`);
+  }
+  return {
+    formula: definition,
+    parameters: parameters as string[],
+    parameterInsertionOffset: call.lparen.token.end,
+    separator,
+  };
 }
 
 function parameterName(nodes: Node[]): string | null {
@@ -200,9 +240,48 @@ function parameterName(nodes: Node[]): string | null {
   );
   if (significant.length !== 1 || significant[0].kind !== "token") return null;
   const token = significant[0] as TokenNode;
-  return token.token.kind === "identifier" && IDENTIFIER.test(token.token.value)
-    ? canonical(token.token.value)
-    : null;
+  return token.token.kind === "identifier" && IDENTIFIER.test(token.token.value) ? token.token.value : null;
+}
+
+function lowerDirectRecursion(
+  expanded: string,
+  normalized: NormalizedDefinition,
+  functionName: string,
+  syntax: FormulaSyntax,
+  protectedNames: ReadonlySet<string>,
+): string {
+  const used = new Set<string>(protectedNames);
+  for (const token of syntax.tokenize(expanded)) {
+    if (token.kind === "identifier") used.add(canonical(token.value));
+  }
+  const recur = freshIdentifier("LUDUS_RECUR", used);
+  const self = freshIdentifier("LUDUS_SELF", used);
+  const recursiveBody = rewriteRecursiveReferences(
+    expanded,
+    syntax,
+    functionName,
+    self,
+    normalized.parameters,
+    normalized.separator,
+  );
+  const implementation =
+    recursiveBody.slice(0, normalized.parameterInsertionOffset) +
+    self +
+    normalized.separator +
+    recursiveBody.slice(normalized.parameterInsertionOffset);
+  const separator = normalized.separator;
+  const parameters = normalized.parameters.join(separator);
+  const callArguments = [recur, ...normalized.parameters].join(separator);
+  return `LAMBDA(${parameters}${separator}LET(${recur}${separator}${implementation}${separator}${recur}(${callArguments})))`;
+}
+
+function freshIdentifier(stem: string, used: Set<string>): string {
+  for (let suffix = 1; ; suffix++) {
+    const candidate = `${stem}_${suffix}`;
+    if (used.has(candidate)) continue;
+    used.add(candidate);
+    return candidate;
+  }
 }
 
 function assertLength(formula: string, max: number): void {

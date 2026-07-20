@@ -40,7 +40,17 @@ const definitions = [
     name: "RANGE_REF",
     definition: "LAMBDA(values,SUM(values)+SUM('Input data'!$A$2:$A$4))",
   },
-  { name: "RECURSE", definition: "LAMBDA(x,RECURSE(x))" },
+  {
+    name: "RECURSE",
+    definition: 'LAMBDA(n,IF(n<0,NA(),IF(n=0,IF(FALSE,"RECURSE(99)",0),1+RECURSE(n-1))))',
+  },
+  { name: "FIB", definition: "LAMBDA(n,IF(n<2,n,FIB(n-1)+FIB(n-2)))" },
+  {
+    name: "RECURSIVE_GRID",
+    definition: "LAMBDA(n,IF(n=0,{0,1},ARRAYFORMULA(RECURSIVE_GRID(n-1)+1)))",
+  },
+  { name: "MUTUAL_A", definition: "LAMBDA(x,MUTUAL_B(x))" },
+  { name: "MUTUAL_B", definition: "LAMBDA(x,MUTUAL_A(x))" },
 ];
 
 const values = [
@@ -66,6 +76,11 @@ const values = [
   { range: "Cases!P6", values: [["=NAMED_REF(1)"]] },
   { range: "Cases!R1", values: [["=SCOPED_REF(1)"]] },
   { range: "Cases!R2", values: [["=RANGE_REF(A2:A4)"]] },
+  { range: "Cases!T1", values: [["=RECURSE(10)"]] },
+  { range: "Cases!T2", values: [["=FIB(10)"]] },
+  { range: "Cases!T3", values: [["=RECURSE(-1)"]] },
+  { range: "Cases!T4", values: [["=MAP(A2:A4,RECURSE)"]] },
+  { range: "Cases!V1", values: [["=RECURSIVE_GRID(2)"]] },
   { range: "'Input data'!D2", values: [["=DIRECT_REF(1)"]] },
   { range: "'Input data'!D3", values: [["=MIXED_REF(1)"]] },
 ];
@@ -100,6 +115,14 @@ const expectedCells: Array<{ sheet?: string; a1: string; value?: number | string
   { a1: "P6", value: 101 },
   { a1: "R1", value: 201 },
   { a1: "R2", value: 24 },
+  { a1: "T1", value: 10 },
+  { a1: "T2", value: 55 },
+  { a1: "T3", error: "N_A" },
+  { a1: "T4", value: 1 },
+  { a1: "T5", value: 2 },
+  { a1: "T6", value: 3 },
+  { a1: "V1", value: 2 },
+  { a1: "W1", value: 3 },
   { sheet: "Input data", a1: "D2", value: 1 },
   { sheet: "Input data", a1: "D3", value: 301 },
 ];
@@ -198,9 +221,11 @@ try {
   const importedNames = original.namedFunctions.map((fn) => fn.name).sort();
   const expectedNames = definitions.map((fn) => fn.name).sort();
   const namesMatch = JSON.stringify(importedNames) === JSON.stringify(expectedNames);
-  const expectationFailures = expectedCells.filter((expected) => !matchesExpected(original, expected));
+  const expectationFailures = expectedCells
+    .filter((expected) => !matchesExpected(original, expected))
+    .map((expected) => ({ ...expected, actual: effectiveAt(original, expected) }));
 
-  let recursiveRejected = false;
+  let mutualRecursionRejected = false;
   try {
     inlineSnapshotNamedFunctions({
       ...safeOriginal,
@@ -208,13 +233,13 @@ try {
         index === 0
           ? {
               ...sheet,
-              cells: [[{ ue: { formulaValue: "=RECURSE(1)" } }]],
+              cells: [[{ ue: { formulaValue: "=MUTUAL_A(1)" } }]],
             }
           : sheet,
       ),
     });
   } catch (error) {
-    recursiveRejected = error instanceof Error && /recursive named functions/.test(error.message);
+    mutualRecursionRejected = error instanceof Error && /recursive named functions/.test(error.message);
   }
 
   console.log(`named functions: ${importedNames.join(", ")}`);
@@ -225,14 +250,14 @@ try {
     if (count > 0) console.log(`${verdict}: ${count}`);
   }
   console.log(`context-dependent rejection: ${contextDependentRejected ? "pass" : "FAIL"}`);
-  console.log(`recursive rejection: ${recursiveRejected ? "pass" : "FAIL"}`);
+  console.log(`mutual-recursion rejection: ${mutualRecursionRejected ? "pass" : "FAIL"}`);
   if (
     !namesMatch ||
     expectationFailures.length > 0 ||
     report.missingSheets.length > 0 ||
     report.diffs.length > 0 ||
     !contextDependentRejected ||
-    !recursiveRejected
+    !mutualRecursionRejected
   ) {
     console.error(
       JSON.stringify(
@@ -312,16 +337,20 @@ function matchesExpected(
   snapshot: Snapshot,
   expected: { sheet?: string; a1: string; value?: number | string; error?: string },
 ): boolean {
+  const effective = effectiveAt(snapshot, expected);
+  if (expected.error !== undefined) return effective?.errorValue?.type === expected.error;
+  const value = effective?.numberValue ?? effective?.stringValue ?? effective?.boolValue;
+  return value === expected.value;
+}
+
+function effectiveAt(snapshot: Snapshot, expected: { sheet?: string; a1: string }) {
   const match = expected.a1.match(/^([A-Z]+)(\d+)$/);
   if (!match) throw new Error(`invalid test address: ${expected.a1}`);
   const column = [...match[1]].reduce((value, letter) => value * 26 + letter.charCodeAt(0) - 64, 0) - 1;
   const row = Number(match[2]) - 1;
-  const effective = snapshot.sheets.find((sheet) => sheet.title === (expected.sheet ?? "Cases"))?.cells[
+  return snapshot.sheets.find((sheet) => sheet.title === (expected.sheet ?? "Cases"))?.cells[
     row
   ]?.[column]?.ev;
-  if (expected.error !== undefined) return effective?.errorValue?.type === expected.error;
-  const value = effective?.numberValue ?? effective?.stringValue ?? effective?.boolValue;
-  return value === expected.value;
 }
 
 function clearCell(snapshot: Snapshot, sheetTitle: string, a1: string): void {
