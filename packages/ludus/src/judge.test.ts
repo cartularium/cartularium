@@ -1,8 +1,8 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 import { UnsupportedWorkbookError } from "./api.js";
-import { NamedFunctionInlineError } from "@cartularium/formula-syntax";
 import { judge } from "./judge.js";
+import { UnsupportedMaterializationError } from "./materialization.js";
 import type { Problem } from "./problem-types.js";
 import type { Snapshot } from "./snapshot.js";
 
@@ -49,6 +49,10 @@ test("returns unsupported-feature before materialization for named functions", a
 
   assert.equal(result.verdict, "unsupported-feature");
   assert.match(result.lintErrors[0], /DOUBLE/);
+  assert.deepEqual(result.unsupportedFeature, {
+    feature: "named-functions",
+    code: "materializer-unavailable",
+  });
   assert.equal(materialized, false);
 });
 
@@ -97,12 +101,19 @@ test("returns unsupported-feature for a bounded inliner refusal", async () => {
       { name: "G", definition: "LAMBDA(x,F(x))" },
     ],
     prepareNamedFunctions: () => {
-      throw new NamedFunctionInlineError("recursive-definition", "recursive named functions: F → G → F");
+      throw new UnsupportedMaterializationError(
+        { feature: "named-functions", code: "recursive-definition" },
+        "recursive named functions: F → G → F",
+      );
     },
   });
 
   assert.equal(result.verdict, "unsupported-feature");
   assert.deepEqual(result.lintErrors, ["recursive named functions: F → G → F"]);
+  assert.deepEqual(result.unsupportedFeature, {
+    feature: "named-functions",
+    code: "recursive-definition",
+  });
 });
 
 test("propagates inspection transport failures as judge errors", async () => {

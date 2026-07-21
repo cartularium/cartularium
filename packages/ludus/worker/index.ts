@@ -187,7 +187,11 @@ async function process(id: string, problem: Problem, sheetId: string, env: Env):
     )
       .bind(
         result.verdict,
-        JSON.stringify({ lintErrors: result.lintErrors, cases }),
+        JSON.stringify({
+          lintErrors: result.lintErrors,
+          cases,
+          ...(result.unsupportedFeature ? { unsupportedFeature: result.unsupportedFeature } : {}),
+        }),
         scratch,
         program,
         metrics,

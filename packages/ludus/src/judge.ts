@@ -1,9 +1,12 @@
 // The judge pipeline: extract → inspect → lint → rehydrate → hidden cases → verdict.
-import { NamedFunctionInlineError } from "@cartularium/formula-syntax";
 import { sleep, UnsupportedWorkbookError } from "./api.js";
 import { parseRange } from "./a1.js";
 import { compareGrids, type GridComparison } from "./compare.js";
 import { extractSnapshot } from "./extract.js";
+import {
+  UnsupportedMaterializationError,
+  type UnsupportedMaterializationDetail,
+} from "./materialization.js";
 import type { Problem } from "./problem-types.js";
 import { rehydrate } from "./rehydrate.js";
 import { loadSheetIds, readRect, writeRect } from "./rect.js";
@@ -27,6 +30,7 @@ export interface JudgeResult {
   verdict: Verdict;
   lintErrors: string[];
   cases: CaseResult[];
+  unsupportedFeature?: UnsupportedMaterializationDetail;
   scratchId?: string;
   /** the extracted program (absent only when the sheet was inaccessible) */
   program?: Snapshot;
@@ -87,6 +91,7 @@ export async function judge(
       verdict: "unsupported-feature",
       lintErrors: [`named functions are not supported yet: ${names}`],
       cases: [],
+      unsupportedFeature: { feature: "named-functions", code: "materializer-unavailable" },
       program,
     };
   }
@@ -95,8 +100,14 @@ export async function judge(
     try {
       executable = await prepareNamedFunctions(program);
     } catch (err) {
-      if (!(err instanceof NamedFunctionInlineError)) throw err;
-      return { verdict: "unsupported-feature", lintErrors: [err.message], cases: [], program };
+      if (!(err instanceof UnsupportedMaterializationError)) throw err;
+      return {
+        verdict: "unsupported-feature",
+        lintErrors: [err.message],
+        cases: [],
+        unsupportedFeature: err.detail,
+        program,
+      };
     }
   }
 

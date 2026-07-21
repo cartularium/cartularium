@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { NamedFunctionInlineError } from "@cartularium/formula-syntax";
+import { UnsupportedMaterializationError } from "./materialization.js";
 import {
   inlineSnapshotNamedFunctions,
   NAMED_FUNCTION_ACCEPTANCE_LIMITS,
@@ -77,7 +77,8 @@ test("rejects mutual recursion", () => {
   original.sheets[0].cells = [[{ ue: { formulaValue: "=F(1)" } }]];
   assert.throws(
     () => inlineSnapshotNamedFunctions(original),
-    (error) => error instanceof NamedFunctionInlineError && error.code === "recursive-definition",
+    (error) =>
+      error instanceof UnsupportedMaterializationError && error.detail.code === "recursive-definition",
   );
 });
 
@@ -86,7 +87,7 @@ test("rejects named-function and named-range collisions", () => {
   original.namedRanges.push({ name: "TWICE", range: { sheetId: 0 } });
   assert.throws(
     () => inlineSnapshotNamedFunctions(original),
-    (error) => error instanceof NamedFunctionInlineError && error.code === "ambiguous-name",
+    (error) => error instanceof UnsupportedMaterializationError && error.detail.code === "ambiguous-name",
   );
 });
 
@@ -97,13 +98,14 @@ test("rejects context-dependent references inside used definitions", () => {
   assert.throws(
     () => inlineSnapshotNamedFunctions(original),
     (error) =>
-      error instanceof NamedFunctionInlineError && error.code === "context-dependent-reference",
+      error instanceof UnsupportedMaterializationError &&
+      error.detail.code === "context-dependent-reference",
   );
 });
 
 test("bounds total workbook expansion", () => {
   assert.throws(
     () => inlineSnapshotNamedFunctions(fixture(), { maxTotalFormulaCharacters: 10 }),
-    (error) => error instanceof NamedFunctionInlineError && error.code === "expansion-limit",
+    (error) => error instanceof UnsupportedMaterializationError && error.detail.code === "expansion-limit",
   );
 });

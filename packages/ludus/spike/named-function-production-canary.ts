@@ -1,6 +1,5 @@
-// Production canary for the spreadsheet-id rollout gate. `create` leaves one
-// locally preflighted sheet for allowlisting; `submit` exercises the public
-// Worker; `delete` removes the source after the gate has been cleared.
+// Production named-function canary. `smoke` owns the complete create, submit,
+// and delete lifecycle. The lower-level commands remain for rollout diagnosis.
 import { strFromU8, strToU8, unzipSync, zipSync } from "fflate";
 import { deleteSpreadsheet, exportSpreadsheetXlsx, shareSpreadsheet, sleep } from "../src/api.js";
 import { getJudgeAccessToken } from "../src/auth.js";
@@ -9,6 +8,7 @@ import { inlineSnapshotNamedFunctions } from "../src/named-function-materializer
 import { useNodeAuth } from "../src/node-auth.js";
 import { loadProblem } from "../src/problem.js";
 import { loadSheetIds, readRect, writeRect } from "../src/rect.js";
+import { runCleanupSafeSmoke } from "../src/smoke-lifecycle.js";
 import { createFromTemplate } from "../src/template.js";
 
 useNodeAuth();
@@ -16,7 +16,17 @@ useNodeAuth();
 const command = process.argv[2];
 const service = process.env.LUDUS_SERVICE_URL ?? "https://ludus-judge.astral-b83.workers.dev";
 
-if (command === "create") {
+if (command === "smoke") {
+  await runCleanupSafeSmoke({
+    create: createCanary,
+    submit: submitCanary,
+    remove: async (spreadsheetId) => {
+      const deleted = await deleteSpreadsheet(spreadsheetId);
+      console.log(`deleted canary: ${deleted ? "yes" : "NO"}`);
+      return deleted;
+    },
+  });
+} else if (command === "create") {
   await createCanary();
 } else if (command === "submit" && process.argv[3]) {
   await submitCanary(process.argv[3]);
@@ -25,11 +35,11 @@ if (command === "create") {
   console.log(`deleted canary: ${deleted ? "yes" : "NO"}`);
   if (!deleted) process.exitCode = 1;
 } else {
-  console.error("usage: canary:named-functions create | submit <sheet-id> | delete <sheet-id>");
+  console.error("usage: canary:named-functions smoke | create | submit <sheet-id> | delete <sheet-id>");
   process.exitCode = 1;
 }
 
-async function createCanary(): Promise<void> {
+async function createCanary(): Promise<string> {
   const problem = loadProblem("problems/ld-0001-combine-skus.yaml");
   const sourceId = await createFromTemplate(problem, "ludus-named-function-production-source", {
     sampleInput: true,
@@ -67,6 +77,7 @@ async function createCanary(): Promise<void> {
     await shareSpreadsheet(canaryId);
     console.log(`canary spreadsheet: ${canaryId}`);
     console.log(`canary url: https://docs.google.com/spreadsheets/d/${canaryId}`);
+    return canaryId;
   } catch (error) {
     if (canaryId) await deleteSpreadsheet(canaryId);
     throw error;
@@ -101,7 +112,7 @@ async function submitCanary(spreadsheetId: string): Promise<void> {
     console.log(`verdict: ${status.verdict ?? "missing"}`);
     if (status.verdict !== "accepted") {
       console.error(JSON.stringify(status.detail ?? null, null, 2));
-      process.exitCode = 1;
+      throw new Error(`production canary returned ${status.verdict ?? "missing verdict"}`);
     }
     return;
   }

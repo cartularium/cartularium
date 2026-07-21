@@ -4,6 +4,7 @@ import {
   NamedFunctionInlineError,
   type NamedFunctionInlineOptions,
 } from "@cartularium/formula-syntax";
+import { UnsupportedMaterializationError } from "./materialization.js";
 import type { Snapshot } from "./snapshot.js";
 
 const MAX_TOTAL_FORMULA_CHARACTERS = 1_000_000;
@@ -21,6 +22,21 @@ type MaterializerOptions = NamedFunctionInlineOptions & {
 export function inlineSnapshotNamedFunctions(
   snapshot: Snapshot,
   options: MaterializerOptions = {},
+): Snapshot {
+  try {
+    return inlineSnapshotNamedFunctionsWithCst(snapshot, options);
+  } catch (error) {
+    if (!(error instanceof NamedFunctionInlineError)) throw error;
+    throw new UnsupportedMaterializationError(
+      { feature: "named-functions", code: error.code },
+      error.message,
+    );
+  }
+}
+
+function inlineSnapshotNamedFunctionsWithCst(
+  snapshot: Snapshot,
+  options: MaterializerOptions,
 ): Snapshot {
   const output = structuredClone(snapshot);
   const {

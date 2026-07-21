@@ -1,11 +1,11 @@
-// Live differential probe for the disabled named-function materializer.
+// Live differential probe for the named-function materializer.
 // Imports real named functions, compares their computed cells with an inlined
 // scratch workbook, and deletes every app-owned fixture.
 import { strFromU8, strToU8, unzipSync, zipSync } from "fflate";
-import { NamedFunctionInlineError } from "@cartularium/formula-syntax";
 import { deleteSpreadsheet, exportSpreadsheetXlsx, sheetsApi, sleep } from "../src/api.js";
 import { getJudgeAccessToken } from "../src/auth.js";
 import { extractSnapshot } from "../src/extract.js";
+import { UnsupportedMaterializationError } from "../src/materialization.js";
 import { inlineSnapshotNamedFunctions } from "../src/named-function-materializer.js";
 import { useNodeAuth } from "../src/node-auth.js";
 import { rehydrate } from "../src/rehydrate.js";
@@ -200,7 +200,8 @@ try {
     inlineSnapshotNamedFunctions(original);
   } catch (error) {
     contextDependentRejected =
-      error instanceof NamedFunctionInlineError && error.code === "context-dependent-reference";
+      error instanceof UnsupportedMaterializationError &&
+      error.detail.code === "context-dependent-reference";
   }
 
   const safeOriginal = structuredClone(original);
@@ -239,7 +240,9 @@ try {
       ),
     });
   } catch (error) {
-    mutualRecursionRejected = error instanceof Error && /recursive named functions/.test(error.message);
+    mutualRecursionRejected =
+      error instanceof UnsupportedMaterializationError &&
+      error.detail.code === "recursive-definition";
   }
 
   console.log(`named functions: ${importedNames.join(", ")}`);
