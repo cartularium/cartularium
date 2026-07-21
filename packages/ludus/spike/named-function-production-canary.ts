@@ -15,49 +15,89 @@ useNodeAuth();
 
 const command = process.argv[2];
 const service = process.env.LUDUS_SERVICE_URL ?? "https://ludus-judge.astral-b83.workers.dev";
+const acceptedDefinitions = [
+  { name: "COUNTDOWN", definition: "LAMBDA(n,IF(n=0,0,1+COUNTDOWN(n-1)))" },
+  {
+    name: "SOLVE",
+    definition:
+      'LAMBDA(t,LET(d,FILTER(t,INDEX(t,,1)<>""),QUERY(d,"select Col1, sum(Col2), sum(Col3), sum(Col3)/sum(Col2) group by Col1 label sum(Col2) \'\', sum(Col3) \'\', sum(Col3)/sum(Col2) \'\'",0*COUNTDOWN(5))))',
+  },
+];
+const refusalDefinitions = [
+  { name: "MUTUAL_A", definition: "LAMBDA(x,MUTUAL_B(x))" },
+  { name: "MUTUAL_B", definition: "LAMBDA(x,MUTUAL_A(x))" },
+];
+
+interface CanarySpec {
+  name: string;
+  definitions: Array<{ name: string; definition: string }>;
+  formula: string;
+  expected: "accepted" | { feature: "named-functions"; code: string };
+}
+
+const acceptedCanary: CanarySpec = {
+  name: "accepted",
+  definitions: acceptedDefinitions,
+  formula: "=SOLVE({Input!A2:D9;Input!E2:H9;Input!I2:L9})",
+  expected: "accepted",
+};
+const refusalCanary: CanarySpec = {
+  name: "refusal",
+  definitions: refusalDefinitions,
+  formula: "=MUTUAL_A(1)",
+  expected: { feature: "named-functions", code: "recursive-definition" },
+};
 
 if (command === "smoke") {
   await runCleanupSafeSmoke({
-    create: createCanary,
-    submit: submitCanary,
-    remove: async (spreadsheetId) => {
-      const deleted = await deleteSpreadsheet(spreadsheetId);
-      console.log(`deleted canary: ${deleted ? "yes" : "NO"}`);
-      return deleted;
-    },
+    create: () => createCanary(acceptedCanary),
+    submit: (spreadsheetId) => submitCanary(spreadsheetId, acceptedCanary),
+    remove: removeCanary,
+  });
+} else if (command === "refusal") {
+  await runCleanupSafeSmoke({
+    create: () => createCanary(refusalCanary),
+    submit: (spreadsheetId) => submitCanary(spreadsheetId, refusalCanary),
+    remove: removeCanary,
   });
 } else if (command === "create") {
-  await createCanary();
+  await createCanary(acceptedCanary);
 } else if (command === "submit" && process.argv[3]) {
-  await submitCanary(process.argv[3]);
+  await submitCanary(process.argv[3], acceptedCanary);
 } else if (command === "delete" && process.argv[3]) {
   const deleted = await deleteSpreadsheet(process.argv[3]);
   console.log(`deleted canary: ${deleted ? "yes" : "NO"}`);
   if (!deleted) process.exitCode = 1;
 } else {
-  console.error("usage: canary:named-functions smoke | create | submit <sheet-id> | delete <sheet-id>");
+  console.error(
+    "usage: canary:named-functions smoke | refusal | create | submit <sheet-id> | delete <sheet-id>",
+  );
   process.exitCode = 1;
 }
 
-async function createCanary(): Promise<string> {
+async function removeCanary(spreadsheetId: string): Promise<boolean> {
+  const deleted = await deleteSpreadsheet(spreadsheetId);
+  console.log(`deleted canary: ${deleted ? "yes" : "NO"}`);
+  return deleted;
+}
+
+async function createCanary(spec: CanarySpec): Promise<string> {
   const problem = loadProblem("problems/ld-0001-combine-skus.yaml");
   const sourceId = await createFromTemplate(problem, "ludus-named-function-production-source", {
     sampleInput: true,
   });
   let canaryId = "";
   try {
-    const xlsx = injectNamedFunctions(await exportSpreadsheetXlsx(sourceId));
-    canaryId = await importSpreadsheet(xlsx, "ludus-named-function-production-canary");
+    const xlsx = injectNamedFunctions(await exportSpreadsheetXlsx(sourceId), spec.definitions);
+    canaryId = await importSpreadsheet(xlsx, `ludus-named-function-production-${spec.name}`);
     const ids = await loadSheetIds(canaryId);
-    await writeRect(canaryId, ids, problem.template.output, [
-      ["=SOLVE({Input!A2:D9;Input!E2:H9;Input!I2:L9})"],
-    ]);
+    await writeRect(canaryId, ids, problem.template.output, [[spec.formula]]);
     const result = await judge(problem, canaryId, {
       prepareNamedFunctions: inlineSnapshotNamedFunctions,
     });
     const scratchOutput = result.scratchId ? await readRect(result.scratchId, problem.template.output) : [];
     if (result.scratchId) await deleteSpreadsheet(result.scratchId);
-    if (result.verdict !== "accepted") {
+    if (spec.expected === "accepted" && result.verdict !== "accepted") {
       const importedFormula = result.program?.sheets
         .flatMap((sheet) => sheet.cells.flat())
         .find((cell) => cell?.ue?.formulaValue?.includes("SOLVE"))?.ue?.formulaValue;
@@ -74,6 +114,20 @@ async function createCanary(): Promise<string> {
           JSON.stringify({ lintErrors: result.lintErrors, importedFormula, expandedFormula, scratchOutput, failures }),
       );
     }
+    if (
+      spec.expected !== "accepted" &&
+      (result.verdict !== "unsupported-feature" ||
+        result.unsupportedFeature?.feature !== spec.expected.feature ||
+        result.unsupportedFeature.code !== spec.expected.code)
+    ) {
+      throw new Error(
+        `local refusal preflight mismatch: ${JSON.stringify({
+          verdict: result.verdict,
+          unsupportedFeature: result.unsupportedFeature,
+          lintErrors: result.lintErrors,
+        })}`,
+      );
+    }
     await shareSpreadsheet(canaryId);
     console.log(`canary spreadsheet: ${canaryId}`);
     console.log(`canary url: https://docs.google.com/spreadsheets/d/${canaryId}`);
@@ -86,7 +140,7 @@ async function createCanary(): Promise<string> {
   }
 }
 
-async function submitCanary(spreadsheetId: string): Promise<void> {
+async function submitCanary(spreadsheetId: string, spec: CanarySpec): Promise<void> {
   const response = await fetch(`${service}/api/submit`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
@@ -110,24 +164,44 @@ async function submitCanary(spreadsheetId: string): Promise<void> {
       continue;
     }
     console.log(`verdict: ${status.verdict ?? "missing"}`);
-    if (status.verdict !== "accepted") {
+    if (spec.expected === "accepted" && status.verdict !== "accepted") {
       console.error(JSON.stringify(status.detail ?? null, null, 2));
       throw new Error(`production canary returned ${status.verdict ?? "missing verdict"}`);
+    }
+    if (spec.expected !== "accepted") {
+      const unsupportedFeature = readUnsupportedFeature(status.detail);
+      console.log(`refusal: ${unsupportedFeature?.feature ?? "missing"}/${unsupportedFeature?.code ?? "missing"}`);
+      if (
+        status.verdict !== "unsupported-feature" ||
+        unsupportedFeature?.feature !== spec.expected.feature ||
+        unsupportedFeature.code !== spec.expected.code
+      ) {
+        throw new Error(
+          `production refusal mismatch: ${JSON.stringify({
+            verdict: status.verdict,
+            detail: status.detail,
+          })}`,
+        );
+      }
     }
     return;
   }
   throw new Error("production canary timed out");
 }
 
-function injectNamedFunctions(xlsx: Uint8Array): Uint8Array {
-  const definitions = [
-    { name: "COUNTDOWN", definition: "LAMBDA(n,IF(n=0,0,1+COUNTDOWN(n-1)))" },
-    {
-      name: "SOLVE",
-      definition:
-        'LAMBDA(t,LET(d,FILTER(t,INDEX(t,,1)<>""),QUERY(d,"select Col1, sum(Col2), sum(Col3), sum(Col3)/sum(Col2) group by Col1 label sum(Col2) \'\', sum(Col3) \'\', sum(Col3)/sum(Col2) \'\'",0*COUNTDOWN(5))))',
-    },
-  ];
+function readUnsupportedFeature(
+  detail: unknown,
+): { feature?: string; code?: string } | undefined {
+  if (!detail || typeof detail !== "object") return undefined;
+  const unsupportedFeature = (detail as { unsupportedFeature?: unknown }).unsupportedFeature;
+  if (!unsupportedFeature || typeof unsupportedFeature !== "object") return undefined;
+  return unsupportedFeature as { feature?: string; code?: string };
+}
+
+function injectNamedFunctions(
+  xlsx: Uint8Array,
+  definitions: Array<{ name: string; definition: string }>,
+): Uint8Array {
   const files = unzipSync(xlsx);
   const path = "xl/workbook.xml";
   const source = strFromU8(files[path]);

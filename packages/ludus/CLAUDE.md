@@ -16,8 +16,8 @@ Authoring guide: `docs/authoring.md` — read it before touching `problems/`.
   `dev:worker`, `check`, `check:worker`.
 - After a Worker deploy, run `verify:live` and `canary:named-functions smoke`.
   Both commands create and delete their source spreadsheets. The named-function
-  canary also retains `create`, `submit <sheet-id>`, and `delete <sheet-id>` for
-  rollout-gate diagnosis.
+  canary also has `refusal` to verify structured refusal telemetry, and retains
+  `create`, `submit <sheet-id>`, and `delete <sheet-id>` for rollout diagnosis.
 - Regenerating a template mints a new spreadsheet id, so the deployed site's copy
   links and the worker's problem bundle go stale together — always redeploy both
   (authoring guide, loop step 5).
