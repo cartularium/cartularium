@@ -56,8 +56,10 @@ the API-authored fixture (API authoring biases toward round-trip success).
 
 Extraction captures `userEnteredValue` + `userEnteredFormat.numberFormat`, sheet
 structure, spreadsheet locale/timeZone, and named ranges. XLSX metadata inspection
-detects named functions; the judge returns `unsupported-feature` until a validated
-inliner can preserve them. Extraction does **not** yet capture data validation
+detects named functions. A rollout-gated inliner preserves reachable ordinary and
+directly recursive definitions. It returns `unsupported-feature` for mutual recursion,
+ambiguous names, context-dependent exported references, malformed definitions, and
+configured expansion limits. Extraction does **not** yet capture data validation
 (including checkboxes), conditional formats, protected ranges, iterative calc settings,
 filters, charts, or pivots. Diffs caused by these land in the report as evidence, which
 is the point of the spike.

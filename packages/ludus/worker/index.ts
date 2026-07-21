@@ -7,6 +7,7 @@
 import { deleteSpreadsheet, parseSpreadsheetId, setTokenProvider, sheetsApi } from "../src/api.js";
 import { judge } from "../src/judge.js";
 import { inlineSnapshotNamedFunctions } from "../src/named-function-materializer.js";
+import { shouldInlineNamedFunctions } from "../src/named-function-rollout.js";
 import type { Problem } from "../src/problem-types.js";
 import {
   buildPostSolveStats,
@@ -25,6 +26,7 @@ export interface Env {
   GOOGLE_REFRESH_TOKEN: string;
   ALLOWED_ORIGIN?: string;
   NAMED_FUNCTION_MATERIALIZER?: string;
+  NAMED_FUNCTION_CANARY_SPREADSHEET_IDS?: string;
 }
 
 const PROBLEMS = problemsJson as unknown as Record<string, Problem>;
@@ -150,7 +152,11 @@ async function process(id: string, problem: Problem, sheetId: string, env: Env):
     }
 
     const result = await judge(problem, sheetId, {
-      ...(env.NAMED_FUNCTION_MATERIALIZER === "inline"
+      ...(shouldInlineNamedFunctions(
+        sheetId,
+        env.NAMED_FUNCTION_MATERIALIZER,
+        env.NAMED_FUNCTION_CANARY_SPREADSHEET_IDS,
+      )
         ? { prepareNamedFunctions: inlineSnapshotNamedFunctions }
         : {}),
     });

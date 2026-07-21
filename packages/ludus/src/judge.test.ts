@@ -92,14 +92,17 @@ test("lints prepared named-function formulas before materialization", async () =
 test("returns unsupported-feature for a bounded inliner refusal", async () => {
   const result = await judge(problem, "source", {
     extractSnapshot: async () => structuredClone(snapshot),
-    extractNamedFunctions: async () => [{ name: "F", definition: "LAMBDA(x,F(x))" }],
+    extractNamedFunctions: async () => [
+      { name: "F", definition: "LAMBDA(x,G(x))" },
+      { name: "G", definition: "LAMBDA(x,F(x))" },
+    ],
     prepareNamedFunctions: () => {
-      throw new NamedFunctionInlineError("recursive-definition", "recursive named functions: F → F");
+      throw new NamedFunctionInlineError("recursive-definition", "recursive named functions: F → G → F");
     },
   });
 
   assert.equal(result.verdict, "unsupported-feature");
-  assert.deepEqual(result.lintErrors, ["recursive named functions: F → F"]);
+  assert.deepEqual(result.lintErrors, ["recursive named functions: F → G → F"]);
 });
 
 test("propagates inspection transport failures as judge errors", async () => {

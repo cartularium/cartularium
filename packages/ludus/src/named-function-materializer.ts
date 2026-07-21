@@ -7,21 +7,38 @@ import {
 import type { Snapshot } from "./snapshot.js";
 
 const MAX_TOTAL_FORMULA_CHARACTERS = 1_000_000;
+export const NAMED_FUNCTION_ACCEPTANCE_LIMITS = {
+  maxDefinitions: 256,
+  maxDepth: 20,
+  maxFormulaLength: 50_000,
+  maxTotalFormulaCharacters: MAX_TOTAL_FORMULA_CHARACTERS,
+} as const;
+
+type MaterializerOptions = NamedFunctionInlineOptions & {
+  maxTotalFormulaCharacters?: number;
+};
 
 export function inlineSnapshotNamedFunctions(
   snapshot: Snapshot,
-  options: NamedFunctionInlineOptions & { maxTotalFormulaCharacters?: number } = {},
+  options: MaterializerOptions = {},
 ): Snapshot {
   const output = structuredClone(snapshot);
+  const {
+    maxTotalFormulaCharacters = NAMED_FUNCTION_ACCEPTANCE_LIMITS.maxTotalFormulaCharacters,
+    protectedIdentifiers: additionalProtectedIdentifiers = [],
+    ...inlineOptions
+  } = options;
   const protectedIdentifiers = [
     ...snapshot.namedRanges.map((range) => range.name),
-    ...(options.protectedIdentifiers ?? []),
+    ...additionalProtectedIdentifiers,
   ];
-  const inliner = createNamedFunctionInliner(
-    snapshot.namedFunctions,
-    googleSheetsSyntax,
-    { ...options, protectedIdentifiers },
-  );
+  const inliner = createNamedFunctionInliner(snapshot.namedFunctions, googleSheetsSyntax, {
+    maxDefinitions: NAMED_FUNCTION_ACCEPTANCE_LIMITS.maxDefinitions,
+    maxDepth: NAMED_FUNCTION_ACCEPTANCE_LIMITS.maxDepth,
+    maxFormulaLength: NAMED_FUNCTION_ACCEPTANCE_LIMITS.maxFormulaLength,
+    ...inlineOptions,
+    protectedIdentifiers,
+  });
   let totalFormulaCharacters = 0;
 
   for (const sheet of output.sheets) {
@@ -32,11 +49,10 @@ export function inlineSnapshotNamedFunctions(
         const result = inliner.inline(formula);
         cell.ue!.formulaValue = result.formula;
         totalFormulaCharacters += result.formula.length;
-        const max = options.maxTotalFormulaCharacters ?? MAX_TOTAL_FORMULA_CHARACTERS;
-        if (totalFormulaCharacters > max) {
+        if (totalFormulaCharacters > maxTotalFormulaCharacters) {
           throw new NamedFunctionInlineError(
             "expansion-limit",
-            `expanded workbook has more than ${max} formula characters`,
+            `expanded workbook has more than ${maxTotalFormulaCharacters} formula characters`,
           );
         }
       }
