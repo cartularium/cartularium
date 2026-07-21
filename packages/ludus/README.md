@@ -56,7 +56,7 @@ the API-authored fixture (API authoring biases toward round-trip success).
 
 Extraction captures `userEnteredValue` + `userEnteredFormat.numberFormat`, sheet
 structure, spreadsheet locale/timeZone, and named ranges. XLSX metadata inspection
-detects named functions. A rollout-gated inliner preserves reachable ordinary and
+detects named functions. The production inliner preserves reachable ordinary and
 directly recursive definitions. It returns `unsupported-feature` for mutual recursion,
 ambiguous names, context-dependent exported references, malformed definitions, and
 configured expansion limits. Extraction does **not** yet capture data validation
