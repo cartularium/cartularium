@@ -5,10 +5,12 @@ import {
   collectProbeCandidates,
   colLetter,
   richCellToRichValue,
+  splitIsolates,
   type ProbeCandidate,
   type RichCell,
   type RichGrid,
 } from "./gsheets.js";
+import type { PlacedTask } from "./contract/packing.js";
 
 const API_BASE = "https://sheets.googleapis.com/v4/spreadsheets";
 const DRIVE_FILE_URL = "https://www.googleapis.com/drive/v3/files/run-sheet";
@@ -40,6 +42,59 @@ afterEach(() => {
 function cell(kind: RichCell["kind"], scalar: RichCell["scalar"] = null): RichCell {
   return { scalar, kind };
 }
+
+function placement(placement: PlacedTask["placement"], host: number): PlacedTask {
+  return {
+    taskIndex: host,
+    placement,
+    host,
+    region: { top: 1, left: 1, rows: 20, cols: 20 },
+  };
+}
+
+describe("splitIsolates", () => {
+  it("splits a mixed batch while preserving original indices", () => {
+    const placements = [
+      placement("lump", 0),
+      placement("in-place", 1),
+      placement("isolate", 2),
+      placement("lump", 3),
+      placement("isolate", 4),
+    ];
+
+    expect(splitIsolates(placements)).toEqual({
+      coHosted: [
+        { index: 0, placement: placements[0] },
+        { index: 1, placement: placements[1] },
+        { index: 3, placement: placements[3] },
+      ],
+      isolated: [
+        { index: 2, placement: placements[2] },
+        { index: 4, placement: placements[4] },
+      ],
+    });
+  });
+
+  it("keeps every index in order when there are no isolate tasks", () => {
+    const placements = [
+      placement("lump", 0),
+      placement("in-place", 1),
+      placement("lump", 2),
+    ];
+
+    const split = splitIsolates(placements);
+    expect(split.isolated).toEqual([]);
+    expect(split.coHosted.map(({ index }) => index)).toEqual([0, 1, 2]);
+  });
+
+  it("returns an empty co-hosted sequence for an all-isolate batch", () => {
+    const placements = [placement("isolate", 0), placement("isolate", 1)];
+
+    const split = splitIsolates(placements);
+    expect(split.coHosted).toEqual([]);
+    expect(split.isolated.map(({ index }) => index)).toEqual([0, 1]);
+  });
+});
 
 describe("colLetter", () => {
   it("maps 0-based indices to A1 letters", () => {

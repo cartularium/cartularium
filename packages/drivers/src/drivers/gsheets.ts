@@ -109,6 +109,20 @@ function chunkByHosts(placements: PlacedTask[], maxHosts: number): Array<[number
   return chunks;
 }
 
+/** Split placements into the co-hostable sequence and the isolate sequence,
+ * each entry carrying its index into the live-task arrays. */
+export function splitIsolates(placements: PlacedTask[]): {
+  coHosted: Array<{ index: number; placement: PlacedTask }>;
+  isolated: Array<{ index: number; placement: PlacedTask }>;
+} {
+  const coHosted: Array<{ index: number; placement: PlacedTask }> = [];
+  const isolated: Array<{ index: number; placement: PlacedTask }> = [];
+  placements.forEach((placement, index) => {
+    (placement.placement === "isolate" ? isolated : coHosted).push({ index, placement });
+  });
+  return { coHosted, isolated };
+}
+
 /** True iff a result's top-left is gsheets' spill-block error (#REF! — "array result
  * was not expanded because it would overwrite data"). For a CO-TILED lump that's an
  * artifact of a neighbour tile, not the real answer (alone it spills freely). */
@@ -336,39 +350,101 @@ export class GSheetsDriver implements Driver {
       },
     );
     const placements = plan.tasks;
-    const chunks = chunkByHosts(placements, CHUNK_SHEETS);
+    const { coHosted, isolated } = splitIsolates(placements);
+    const coHostedPlacements = coHosted.map(({ placement }) => placement);
+    const chunks = chunkByHosts(coHostedPlacements, CHUNK_SHEETS);
 
     let aborted = false;
-    for (const [lo, hi] of chunks) {
-      if (aborted) {
-        // Not engine-attributable: these tasks never ran (upstream fatal).
-        for (let j = lo; j < hi; j++) {
-          results[liveIdx[j]] = {
+    let isolationSpreadsheetId: string | undefined;
+    try {
+      for (const [lo, hi] of chunks) {
+        const entries = coHosted.slice(lo, hi);
+        if (aborted) {
+          // Not engine-attributable: these tasks never ran (upstream fatal).
+          for (const { index } of entries) {
+            results[liveIdx[index]] = {
+              outcome: {
+                kind: "infra",
+                detail: "not run: earlier chunk failed fatally",
+                retryable: true,
+              },
+            };
+          }
+          continue;
+        }
+
+        try {
+          const chunkResults = await this.runChunk(
+            entries.map(({ index }) => liveTasks[index]),
+            entries.map(({ placement }) => placement),
+          );
+          for (let j = 0; j < chunkResults.length; j++) {
+            results[liveIdx[entries[j].index]] = chunkResults[j];
+          }
+        } catch (e: unknown) {
+          const msg = e instanceof Error ? e.message : String(e);
+          // A host wedge is handled inside runChunk (D4 un-wedge + attribution), so
+          // anything thrown to here is transport/quota/auth — not engine-attributable,
+          // retryable; genuine auth/quota aborts the remaining run (isFatal).
+          for (const { index } of entries) {
+            results[liveIdx[index]] = {
+              outcome: { kind: "infra", detail: msg, retryable: true },
+            };
+          }
+          if (isFatal(msg)) aborted = true;
+        }
+      }
+
+      for (let i = 0; i < isolated.length; i++) {
+        const { index, placement } = isolated[i];
+        if (aborted) {
+          results[liveIdx[index]] = {
             outcome: {
               kind: "infra",
               detail: "not run: earlier chunk failed fatally",
               retryable: true,
             },
           };
+          continue;
         }
-        continue;
-      }
 
-      try {
-        const chunkResults = await this.runChunk(liveTasks.slice(lo, hi), placements.slice(lo, hi));
-        for (let j = 0; j < chunkResults.length; j++) {
-          results[liveIdx[lo + j]] = chunkResults[j];
+        if (!isolationSpreadsheetId) {
+          try {
+            isolationSpreadsheetId = await this.createThrowawaySpreadsheet(
+              "assay-isolate (scratch — safe to trash)",
+            );
+          } catch (e: unknown) {
+            const msg = e instanceof Error ? e.message : String(e);
+            for (let j = i; j < isolated.length; j++) {
+              results[liveIdx[isolated[j].index]] = {
+                outcome: {
+                  kind: "infra",
+                  detail: `isolation unavailable: ${msg}`,
+                  retryable: true,
+                },
+              };
+            }
+            break;
+          }
         }
-      } catch (e: unknown) {
-        const msg = e instanceof Error ? e.message : String(e);
-        // A host wedge is handled inside runChunk (D4 un-wedge + attribution), so
-        // anything thrown to here is transport/quota/auth — not engine-attributable,
-        // retryable; genuine auth/quota aborts the remaining run (isFatal).
-        for (let j = lo; j < hi; j++) {
-          results[liveIdx[j]] = { outcome: { kind: "infra", detail: msg, retryable: true } };
+
+        try {
+          const [isolatedResult] = await this.runChunk(
+            [liveTasks[index]],
+            [placement],
+            isolationSpreadsheetId,
+          );
+          results[liveIdx[index]] = isolatedResult;
+        } catch (e: unknown) {
+          const msg = e instanceof Error ? e.message : String(e);
+          results[liveIdx[index]] = {
+            outcome: { kind: "infra", detail: msg, retryable: true },
+          };
+          if (isFatal(msg)) aborted = true;
         }
-        if (isFatal(msg)) aborted = true;
       }
+    } finally {
+      if (isolationSpreadsheetId) await this.deleteSpreadsheet(isolationSpreadsheetId);
     }
 
     return results.map(
@@ -391,6 +467,10 @@ export class GSheetsDriver implements Driver {
     const spreadsheetId = this.config.spreadsheetId;
     this.createdSpreadsheet = false;
     this.config.spreadsheetId = undefined;
+    await this.deleteSpreadsheet(spreadsheetId);
+  }
+
+  private async deleteSpreadsheet(spreadsheetId: string): Promise<void> {
     try {
       const res = await fetch(
         `https://www.googleapis.com/drive/v3/files/${encodeURIComponent(spreadsheetId)}`,
@@ -412,6 +492,7 @@ export class GSheetsDriver implements Driver {
   private async runChunk(
     tasks: DriverTask[],
     placements: PlacedTask[],
+    spreadsheetId: string = this.spreadsheetId,
   ): Promise<DriverTaskResult[]> {
     const stamp = `${Date.now()}-${Math.floor(Math.random() * 1e6)}`;
     // One sheet per distinct HOST; co-tiled lumps share a host. Size each host to
@@ -436,27 +517,30 @@ export class GSheetsDriver implements Driver {
     const probeTitle = `${SHEET_PREFIX}probe-${stamp}`;
     this.sheetsCreated += hostOrder.length; // amortization signal (host sheets, not tasks)
 
-    const addRes = await this.batchUpdate([
-      ...hostOrder.map((h) => ({
-        addSheet: {
-          properties: {
-            title: hostToTitle.get(h),
-            gridProperties: {
-              rowCount: hostExtent.get(h)!.rows,
-              columnCount: hostExtent.get(h)!.cols,
+    const addRes = await this.batchUpdate(
+      [
+        ...hostOrder.map((h) => ({
+          addSheet: {
+            properties: {
+              title: hostToTitle.get(h),
+              gridProperties: {
+                rowCount: hostExtent.get(h)!.rows,
+                columnCount: hostExtent.get(h)!.cols,
+              },
+            },
+          },
+        })),
+        {
+          addSheet: {
+            properties: {
+              title: probeTitle,
+              gridProperties: { rowCount: PROBE_SHEET_ROWS, columnCount: 2 },
             },
           },
         },
-      })),
-      {
-        addSheet: {
-          properties: {
-            title: probeTitle,
-            gridProperties: { rowCount: PROBE_SHEET_ROWS, columnCount: 2 },
-          },
-        },
-      },
-    ]);
+      ],
+      spreadsheetId,
+    );
 
     const replies = addRes.replies as Array<{ addSheet?: { properties?: { sheetId?: number } } }>;
     const hostSheetIds: number[] = replies
@@ -475,8 +559,8 @@ export class GSheetsDriver implements Driver {
         raw.push(...part.raw);
         userEntered.push(...part.userEntered);
       }
-      await this.valuesBatchUpdate(raw, "RAW");
-      await this.valuesBatchUpdate(userEntered, "USER_ENTERED");
+      await this.valuesBatchUpdate(raw, "RAW", spreadsheetId);
+      await this.valuesBatchUpdate(userEntered, "USER_ENTERED", spreadsheetId);
 
       await sleep(CALC_WAIT_MS);
 
@@ -485,14 +569,17 @@ export class GSheetsDriver implements Driver {
       const ranges = placements.map((p, i) => `'${taskTitle[i]}'!${regionRangeA1(p.region)}`);
       let richGrids: RichGrid[];
       try {
-        richGrids = await this.spreadsheetsGetRich(ranges);
+        richGrids = await this.spreadsheetsGetRich(ranges, spreadsheetId);
       } catch (e: unknown) {
         if (!(e instanceof GSheetsWedgeError)) throw e;
         // The whole spreadsheet wedged (§6.1): one poison formula 500s every read.
         // Heal it by clearing every task's formula cell (we don't yet know which is
         // poison) so it stays reusable + teardown's deleteSheet works, then attribute
         // the crash by re-running each suspect in isolation.
-        await this.clearFormulaCells(taskTitle.map((t, i) => ({ title: t, cell: formulaCells[i] })));
+        await this.clearFormulaCells(
+          taskTitle.map((t, i) => ({ title: t, cell: formulaCells[i] })),
+          spreadsheetId,
+        );
         return await this.attributeWedge(tasks, e.channel);
       }
 
@@ -504,7 +591,7 @@ export class GSheetsDriver implements Driver {
         top: p.region.top,
         left: p.region.left,
       }));
-      await this.disambiguateBlanks(richGrids, origins, probeTitle);
+      await this.disambiguateBlanks(richGrids, origins, probeTitle, spreadsheetId);
 
       const results: DriverTaskResult[] = tasks.map((_t, i) => ({
         outcome: valueOutcome(trimRichGrid(promoteRichGrid(richGrids[i] ?? []))),
@@ -512,7 +599,7 @@ export class GSheetsDriver implements Driver {
 
       // #REF!-artifact recovery: a co-tiled lump blocked by a neighbour tile comes
       // back #REF! — re-run it ALONE (canonical sheet) so it spills freely, override.
-      await this.recoverSpillBlocked(tasks, placements, results);
+      await this.recoverSpillBlocked(tasks, placements, results, spreadsheetId);
 
       return results;
     } finally {
@@ -522,6 +609,7 @@ export class GSheetsDriver implements Driver {
         [...hostSheetIds, probeSheetId]
           .filter((id) => id >= 0)
           .map((sheetId) => ({ deleteSheet: { sheetId } })),
+        spreadsheetId,
       ).catch(() => {});
     }
   }
@@ -552,6 +640,7 @@ export class GSheetsDriver implements Driver {
     tasks: DriverTask[],
     placements: PlacedTask[],
     results: DriverTaskResult[],
+    spreadsheetId: string = this.spreadsheetId,
   ): Promise<void> {
     const hostCount = new Map<number, number>();
     for (const p of placements) hostCount.set(p.host, (hostCount.get(p.host) ?? 0) + 1);
@@ -562,7 +651,7 @@ export class GSheetsDriver implements Driver {
       }
     }
     for (const i of suspects) {
-      results[i] = await this.runOneIsolated(tasks[i], this.spreadsheetId);
+      results[i] = await this.runOneIsolated(tasks[i], spreadsheetId);
     }
   }
 
@@ -572,9 +661,10 @@ export class GSheetsDriver implements Driver {
    * is the spreadsheet itself. We provision ONE fresh throwaway spreadsheet and
    * re-run each suspect alone in it (un-wedging between, so a poison suspect doesn't
    * block the next) — the suspect that re-wedges is the culprit (crashed{channel});
-   * its clean siblings yield real values. The throwaway can't be deleted without
-   * `drive.file` scope, so it orphans (accepted cruft, §6 backlog). If provisioning
-   * fails, fall back to the honest coarse outcome: the whole chunk crashed.
+   * its clean siblings yield real values. The throwaway is deleted on completion,
+   * best-effort. A token minted before the `drive.file` scope was added will fail the
+   * delete and orphan it. If provisioning fails, fall back to the honest coarse
+   * outcome: the whole chunk crashed.
    */
   private async attributeWedge(
     chunk: DriverTask[],
@@ -590,18 +680,20 @@ export class GSheetsDriver implements Driver {
       return chunk.map(() => ({ outcome: { kind: "crashed", channel: fallbackChannel } }));
     }
     const out: DriverTaskResult[] = [];
-    for (const task of chunk) {
-      out.push(await this.runOneIsolated(task, throwawayId));
+    try {
+      for (const task of chunk) {
+        out.push(await this.runOneIsolated(task, throwawayId));
+      }
+    } finally {
+      await this.deleteSpreadsheet(throwawayId);
     }
-    process.stderr.write(
-      `  [gsheets] wedge recovery: orphaned throwaway spreadsheet ${throwawayId} ` +
-        `(no drive.file scope to delete — sweep manually)\n`,
-    );
     return out;
   }
 
   /** Create a fresh empty spreadsheet (spreadsheets scope) for wedge isolation. */
-  private async createThrowawaySpreadsheet(): Promise<string> {
+  private async createThrowawaySpreadsheet(
+    title = "assay-wedge-recovery (scratch — safe to trash)",
+  ): Promise<string> {
     // spreadsheets.create has no spreadsheetId in the path, so it bypasses apiFetch.
     const res = await fetch(API_BASE, {
       method: "POST",
@@ -610,7 +702,7 @@ export class GSheetsDriver implements Driver {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        properties: { title: "assay-wedge-recovery (scratch — safe to trash)" },
+        properties: { title },
       }),
     });
     if (!res.ok) throw new Error(`create throwaway: ${res.status} ${await res.text()}`);
@@ -675,17 +767,23 @@ export class GSheetsDriver implements Driver {
     richGrids: RichGrid[],
     origins: Array<{ title: string; top: number; left: number }>,
     probeTitle: string,
+    spreadsheetId: string = this.spreadsheetId,
   ): Promise<void> {
     const candidates = collectProbeCandidates(richGrids, origins);
     if (candidates.length === 0) return;
 
     const probeFormulas = candidates.map((c) => [`=ISBLANK('${c.sheetTitle}'!${c.coord})`]);
-    await this.valuesBatchUpdate([{ range: `'${probeTitle}'!A1`, values: probeFormulas }]);
+    await this.valuesBatchUpdate(
+      [{ range: `'${probeTitle}'!A1`, values: probeFormulas }],
+      "USER_ENTERED",
+      spreadsheetId,
+    );
     await sleep(CALC_WAIT_MS);
 
-    const [probeGrid] = await this.spreadsheetsGetRich([
-      `'${probeTitle}'!A1:A${candidates.length}`,
-    ]);
+    const [probeGrid] = await this.spreadsheetsGetRich(
+      [`'${probeTitle}'!A1:A${candidates.length}`],
+      spreadsheetId,
+    );
     // Only a genuine boolean ISBLANK result is a verdict. A missing or
     // non-boolean probe read (timing miss, malformed response) yields
     // `undefined` — the cell is left unprobed rather than silently classified,
