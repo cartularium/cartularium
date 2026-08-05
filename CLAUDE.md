@@ -11,7 +11,7 @@ Before working in `packages/`, read the relevant per-package `CLAUDE.md` (it aut
 ## Global conventions
 
 - Use `pnpm`, not npm. The monorepo is pnpm workspaces (see `pnpm-workspace.yaml`).
-- Specs live in `internal/superpowers/specs/` (dated, in the inner internal repo). Plans live in `internal/superpowers/plans/`.
+- Specs live in `internal/specs/` (per-property subdirectories, in the inner internal repo). Plans live in `internal/plans/`, decisions in `internal/decisions/`, research records in `internal/research/`.
 - Tests vary per package — check the package's `CLAUDE.md` for the right invocation (some use `vitest run`, some use `tsx --test`, some need full file paths).
 - `@cartularium/contracts` must be built before consumers import its runtime exports (`pnpm --filter @cartularium/contracts run build`). Types alone don't trigger a rebuild.
 - `wrangler` is per-package, not workspace-root. Use `pnpm --filter @cartularium/edit-shell <cmd>` or cd into the package.
